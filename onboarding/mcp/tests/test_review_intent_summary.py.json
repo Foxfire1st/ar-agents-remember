@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:41a6e1237836e737f34e9b8cff80b808a9d450cf40ef5f46509eb3e492983f01",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:bbd4996c7d1ffce0ef05423ac1a7b493dc7ed0268680b1fbcd25ff578ec8fb2a",
             "locator": {
               "kind": "symbol",
@@ -72,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff774629b2cfd2d42701073f0df40bfeb15ce298",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:1a37d7dc8d9c57d32b3de022e6b5ed7c861a0fd8f617701a5f3da3f62efe3d4d",
             "locator": {
-              "end": 61,
+              "end": 83,
               "kind": "line_range",
-              "start": 47
+              "start": 69
             }
           },
           "kind": "test"
@@ -202,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd5b9a11804f0ddc25ae6cc727bbad6bd40f9720",
+            "blob": "0e16e2bbc800340c4b8bb1b7d3f9d72173fc3888",
             "content": "sha256:33e248a5dc8236adc94be461a7384eb753c94ce29a613946b5331c9f219fb00d",
             "locator": {
-              "end": 277,
+              "end": 308,
               "kind": "line_range",
-              "start": 277
+              "start": 308
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:164e3986fd4e28ca792df9040cdaefd77c4cfc677cdb20a7ee2cbf5630b496cd",
             "locator": {
               "end": 717,
@@ -232,7 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:bb687427daa9c360d3c6667df278b60a182488ad90a3901aa27464ca8bae4940",
             "locator": {
               "end": 729,
@@ -244,7 +244,7 @@
         },
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:9e6c8616b65e73c512b18316a3e964ed0db196f130db93e4823a3734ee228ed4",
             "locator": {
               "end": 813,
@@ -256,12 +256,29 @@
         },
         {
           "anchor": {
-            "blob": "06e555b2752e05ce0ef1cb089929a6f429dbbab1",
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
             "content": "sha256:e9d8c176ab7acf9677d39865b8c384add2c46543ca45f0b250fad571d9c45c58",
             "locator": {
               "end": 864,
               "kind": "line_range",
               "start": 816
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions.\n\nAnchor: \"def test_the_route_answers_every_typed_state_in_the_body(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b301ddf87d84f7aed1af9ca5c85eba5586219b3f",
+            "content": "sha256:7a68dd9f840b36ac38f8a498d2e6aeffb138a5e8dd3bfabc50a5494a49ffd610",
+            "locator": {
+              "end": 645,
+              "kind": "line_range",
+              "start": 596
             }
           },
           "kind": "test"

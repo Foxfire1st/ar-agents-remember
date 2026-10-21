@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Log append/read, held reconciliation and presentation jointly prevent a held loss from being displayed forever as waiting, with bounded-log and own-message terminal tests."
+  },
+  "applicability": "Per-recipient developer sent-log append/read and reconciliation of its held messages.",
+  "conditions": [
+    "A log row carries send time, target, pick IDs, message ID, message path/hash and state; the UI exposes these exact fields.",
+    "Each recipient retains at most 200 rows and the folder at most 256 recipient logs; read work is bounded independently.",
+    "Held rows retain their held-message ID, receipt path and request ID. Settlement reads that receipt, or its historical request file if the receipt path is gone, and changes outcome only for a recorded end of that held ID; no such end leaves it held.",
+    "Undelivered terminal evidence marks the durable message file undelivered and refreshes the path/hash in the log; log eviction never deletes message or pick payload files."
+  ],
+  "exclusions": [
+    "A delivered subset of a drain does not prove every held message delivered.",
+    "No resend or payload deletion is offered by this log."
+  ],
+  "id": "INV-0WDKPN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Curator synthesis at A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, change sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; MIK-R188 v1 packet; source producer rows: MIK-R188@v1 rule 10 · sent-picks log. Original producer inputs: role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028. Tests named only as proof anchors; this helper ran no tests."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "TRAY12",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each recipient’s bounded sent log identifies the exact filed message and picks; held settlement follows that message’s own terminal evidence and never leaves a proved undelivered send labelled held.",
+  "status": "proposed",
+  "supersedes": []
+}

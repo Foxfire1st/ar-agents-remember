@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reviewSelection.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection forms and sort domain\n\nAnchor: \"export type ReviewSelection =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29353bd243bdf273728bce29c4ab535326b8fcad",
+            "content": "sha256:36fac4da4590945ac8f0103fe5c417218e481fcd8f25f17bd601ffdbd1e84d19",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Complete labels and memory-dependent subset\n\nAnchor: \"export const REVIEW_SORTS: readonly ReviewSort[] = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29353bd243bdf273728bce29c4ab535326b8fcad",
+            "content": "sha256:0e709e969cd497ceabe61d7b8d6cc81b7f69f755bf3c443f05db18c12705716c",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

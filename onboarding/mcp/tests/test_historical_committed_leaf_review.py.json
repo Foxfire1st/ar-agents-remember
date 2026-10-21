@@ -1,685 +1,122 @@
 {
   "path": "mcp/tests/test_historical_committed_leaf_review.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+        "content": "sha256:ec0be12ccf0888d6c9ea63c32b926229b911bab5d14b0cc74b8cd32f39326e87",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_older_comparison_number_serves_that_record_s_outline_and_summary"
+        }
+      },
+      "facet": "Through the production entries/summary collaborators, comparisons 1 and 2 return their own echoed numbers, outline changes and added counts; an unrecorded entries number returns 404 candidate_unresolved, while missing and negative summary numbers return 200 unavailable with the offending input and no counts.",
+      "id": "PRF-1MBBHQ",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "10": {
-      "note": "Fresh-process reconstruction.",
+    "38": {
+      "note": "The fresh child uses the actual serving composition and explicit configuration descriptor, with inherited import paths visible.\n\nAnchor: \"def closed_fixture(tmp_path: Path) -> World:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:04e8055bea0e55512a30f7180869204f0ac58e8cc22163086695a58ab010404a",
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:2cf43c4ab3b2fe5e1a075af271df06ad282f8a29cad8ace70b1b129b826a0117",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Later task isolation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Pre-feature source and legacy-unavailable knowledge.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:724f5b8b6a7239ac0557e06f699d4803d9ee667e131d138185115c43f3eabe5b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Typed historical absence opens no canonical database.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:addc14cfb430e1dd040d0698e95e6e12da801683c77192a4e63c854042b1306a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_generation_that_recorded_no_intent_half_states_that_absence_as_its_own_fact"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Lost recorded range refuses as unresolved.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:d52a8d398f553d0e667a78df3d1be083faccb8cff821b842ba54e6943701de15",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_range_the_repository_cannot_resolve_is_unresolved_not_not_live"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "Lost recorded objects remain unavailable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:cec3b842e03f10bc9d23587ce1e63d70b8c6710c6e35f9f0512eb442197ba791",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "Unrecorded cleaned leaf remains not live.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:ea6b25f439b3b74ad5bcf5159a149c450bfef89346dbadb619c63a7dab41bead",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_with_nothing_recorded_is_refused_by_name"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "Current limitations are generated by the exact tree and historical owners.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:e6d90d7bba88cf9a818d0bd8aae35b186c667a7fdabec0fc2ef82822786194c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_leaf_limitations"
-            },
-            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
-            "content": "sha256:8423c4d644715a3f5c23cb8e7f1033c4d513ec33fd794adb9046a9cba5b31b96",
-            "locator": {
-              "kind": "symbol",
-              "name": "tree_limitations"
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The exact-scope consumer row for this module in the shared diff-scope case support.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c83d0685d42e8f13f8dbcf94308ac4e52e0750f",
-            "content": "sha256:5f421d71737878ca98346b3a6cc0c84c6a05edf9d1ae312aff921415b8b64db7",
-            "locator": {
-              "end": 526,
+              "end": 159,
               "kind": "line_range",
-              "start": 480
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:ffee3a8e8b849eb122f6ac5ad01689b0e8afb394959fae67cf39622c5f4191bc",
-            "locator": {
-              "end": 470,
-              "kind": "line_range",
-              "start": 470
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:cf39a6d1456942201d0cc1cf934baa6a388dd6ffb5044c79cc2f989e88624b89",
-            "locator": {
-              "end": 1040,
-              "kind": "line_range",
-              "start": 1040
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5c83d0685d42e8f13f8dbcf94308ac4e52e0750f",
-            "content": "sha256:ef18a5e264e743ea76f6263b7d6151a6ac90da5923b36f9835867d43cfb265c7",
-            "locator": {
-              "end": 1681,
-              "kind": "line_range",
-              "start": 1681
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "The current shared diff-scope support artifact declares this test module as an exact consumer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c83d0685d42e8f13f8dbcf94308ac4e52e0750f",
-            "content": "sha256:8c5ece682832fd9cd1e9825d805855d4ce7643c4e203f6da1c6380af1f0720ae",
-            "locator": {
-              "end": 564,
-              "kind": "line_range",
-              "start": 529
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "The route every case drives, and the lane the module belongs to.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:987347ddd334ec49e6950bf148954565eed37fb27925f8622d425067b7e0c60d",
-            "locator": {
-              "kind": "symbol",
-              "name": "REVIEW_ROUTE"
+              "start": 55
             }
           },
           "kind": "test"
         }
       ]
     },
-    "22": {
-      "note": "**The child that reopens the same comparison in an interpreter sharing no state with the parent.**",
+    "39": {
+      "note": "Recorded selected bytes and selector-free task-context facts survive cleanup independently.\n\nAnchor: \"def test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte(closed_fixture: World) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:fd9318c757da39384c8f188d10d0a6fe1f02bd773e55ac4ebbd4fa169cdbe983",
-            "locator": {
-              "kind": "symbol",
-              "name": "_CHILD_SERVE"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The R01 enclosure fixture this module extends, one fresh enclosure per case.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:a2be9ae5922cb3e90a91d6003a5bfcf4e53126c46f624d806b5459943c7301bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_fixture"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "**The production composition the cases read through: the real route, the real collaborators, the real record loader.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:0214119d51ca8a204794642630172fbc668a69cfa1185c06a2007e96dd924e18",
-            "locator": {
-              "kind": "symbol",
-              "name": "_serve"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "**The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:459321e5023e7cdc507f2ea1a1e566c86f384d5ab9eac70af7529106ec982adf",
-            "locator": {
-              "kind": "symbol",
-              "name": "_served_in_a_new_process"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:6b0c898d00655e49fbc5cada3d22143be3f12de967a3d039a0fe4dbb383f8850",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "**The restart case: the same bytes from a fresh interpreter that knows only the coordination root.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:04e8055bea0e55512a30f7180869204f0ac58e8cc22163086695a58ab010404a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "28": {
-      "note": "**The contamination case: bytes, binding and provenance unchanged after a later task lands, and the later path absent from the inventory.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "**The pre-feature case: the recorded source range exposed with the absence of an intent generation stated as a typed absence.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:724f5b8b6a7239ac0557e06f699d4803d9ee667e131d138185115c43f3eabe5b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "30": {
-      "note": "**The F2 case: a recorded range the repository cannot resolve is `candidate_unresolved`, not the intake defect's code.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:d52a8d398f553d0e667a78df3d1be083faccb8cff821b842ba54e6943701de15",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_range_the_repository_cannot_resolve_is_unresolved_not_not_live"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "31": {
-      "note": "Lost retained code and memory objects produce unavailable-history, unavailable source inventory and an unresolved knowledge statement. The named-subject request refuses as candidate_dataset_absent and later-task content is absent; this case supplies no record-owned deletion statement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:cec3b842e03f10bc9d23587ce1e63d70b8c6710c6e35f9f0512eb442197ba791",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "32": {
-      "note": "**The one state in which the intake defect's code is still the honest answer.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:ea6b25f439b3b74ad5bcf5159a149c450bfef89346dbadb619c63a7dab41bead",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_with_nothing_recorded_is_refused_by_name"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "33": {
-      "note": "The exact-scope consumer row for this module in the shared diff-scope case support.  Anchor: `test_historical_committed_leaf_review`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "68eabe2819683cd161fd0ce5f318d761ca6b06ea",
-            "content": "sha256:14086538da7c0a77ea5652a3cc94d8fe53160798a639d363643a40811fc410d0",
-            "locator": {
-              "end": 1954,
-              "kind": "line_range",
-              "start": 1954
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "34": {
-      "note": "**The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:a1f6cdde24257d638371b1f33411cf932deadd6c6b1665c23a00de8305478478",
-            "locator": {
-              "kind": "symbol",
-              "name": "LATER_TASK_PATH"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:f88382cdaed5af782a775519d08130a9282a76ae61597125ac5ae57dc3c7b843",
-            "locator": {
-              "kind": "symbol",
-              "name": "LATER_TASK_TEXT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0bb89b7a62d7a5d2ace7d7d4059221d7eaee1879",
-            "content": "sha256:9f4eff49adc04ca6f0dbf7c5facce9e36eca6fea967382a208ca41285ef4a3b7",
-            "locator": {
-              "kind": "symbol",
-              "name": "commit"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "35": {
-      "note": "**The declared history tokens the cases assert, read from the resolution module's own vocabulary.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:c3824a2a639e614e4efc6428d9f941e4d910132be8e607bab8f6b7570cc84a1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ClosedLeafReview"
-            },
-            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:e6d90d7bba88cf9a818d0bd8aae35b186c667a7fdabec0fc2ef82822786194c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_leaf_limitations"
-            },
-            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:4b30260a67b9141d81f1188a0a83dbc1131d4bd12294f185a5e2ec681ef1b9cc",
-            "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 177
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:1c22c4cf2ce3d666d65c10bbc2ee817abd5eeb8f8e426a0106607bdb994365e5",
-            "locator": {
-              "end": 347,
-              "kind": "line_range",
-              "start": 336
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "36": {
-      "note": "The first source case preserves selector-free task-context inventory and tree provenance across cleanup without inventing a comparison, while retaining separate subject-byte equality assertions.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d7f0f2dd7de7eea201d9cb40101940adc559cf7f",
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
             "content": "sha256:559a51d453e9eeef62c3f1e4cf5bf326a241e0c9769bf4e54574fd36c7dd902c",
             "locator": {
-              "end": 193,
+              "end": 199,
               "kind": "line_range",
-              "start": 156
+              "start": 162
             }
           },
           "kind": "test"
         }
       ]
     },
-    "37": {
-      "note": "The lane selects this module once and seven exact-scope lifecycle artifact records name it; these are registrations, not executed evidence.\n\nAnchor: inclusive source ranges",
+    "40": {
+      "note": "A fresh interpreter and later fixture commit retain exact recorded answers.\n\nAnchor: \"def test_a_fresh_process_reconstructs_the_same_recorded_comparison(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "84cce0f393581232e13b894229176d4d1c0fa9e1",
-            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:033ead4f249a4b285b9dd629788f4cdac8821cc0618819456b06c1c16f280158",
             "locator": {
-              "end": 90,
+              "end": 233,
               "kind": "line_range",
-              "start": 90
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:74a425e443b3a05a4eba703c6d5ca94cabe71ea207f75a50311ea99328e0d7cb",
-            "locator": {
-              "end": 655,
-              "kind": "line_range",
-              "start": 125
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:031c3b0e2a9443da4986f86c9cf4b1552d4f91c0e9b9dd22b0259a2304cd54c4",
-            "locator": {
-              "end": 740,
-              "kind": "line_range",
-              "start": 656
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:880ceed72bf38b6c86651c63583c5a736e415f22a6d216a3ea47895e1e9ae8b2",
-            "locator": {
-              "end": 1024,
-              "kind": "line_range",
-              "start": 987
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:347378358f59cc09af14b088b83f40737edd6b25d64a46210f6e420d073b8f04",
-            "locator": {
-              "end": 2075,
-              "kind": "line_range",
-              "start": 1545
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:f305c30dec61d95487dd0f32112478a9ad86885bbb7f6d4b07db0aff15dd7485",
-            "locator": {
-              "end": 2377,
-              "kind": "line_range",
-              "start": 2340
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:f76d938468678f7d810570d6949255a770be78395278ea7a129c38eab367654a",
-            "locator": {
-              "end": 2462,
-              "kind": "line_range",
-              "start": 2378
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6e26eb448f7ada2260e3ada83ae098bb720ffbdf",
-            "content": "sha256:3651f541dd4816bb80aac7039adae26eefbb8683bbf4b784231e223f33de8ebd",
-            "locator": {
-              "end": 2828,
-              "kind": "line_range",
-              "start": 2776
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
+              "start": 202
+            }
           },
           "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "Cleanup preserves exact recorded bytes.",
+    "41": {
+      "note": "Legacy source/typed absence and lost range retain distinct measured/unavailable/refused facts.\n\nAnchor: \"def test_a_pre_feature_leaf_exposes_its_recorded_source_range_and_its_absence(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:6b0c898d00655e49fbc5cada3d22143be3f12de967a3d039a0fe4dbb383f8850",
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:6b232d88b21c6e81288f7378479046fb77602471e4811bb76547e85ae32a303d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
+              "end": 323,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Lost retained objects are unavailable without substitution; a never-recorded cleaned leaf stays not live.\n\nAnchor: \"def test_expected_content_that_no_longer_resolves_is_unavailable_not_substituted(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:9bf92c420fdab5ed5e8231d190b756ad6bad5378724975e3ff13ece4bfe41ea4",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Numbered reads preserve their own outline/counts, unavailable-number limits and separate retained catalogue answers.\n\nAnchor: \"def _numbered_reads(world: World):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
+            "content": "sha256:9778198b42e56aeb66e4326d62e4e019f42344362f91b8075e04dc4e1247cf48",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 380
             }
           },
           "kind": "test"

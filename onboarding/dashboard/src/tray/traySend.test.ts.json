@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/tray/traySend.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+        "content": "sha256:16b8671232ed985140c8cd22139be04483d433c4289988a7cc47dfefcaa5e1a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "Send > composes one POST body per target, with every pick, its note and the text"
+        }
+      },
+      "facet": "On all-target success the sent snapshot’s picks/text clear and the browser retains every per-target result.",
+      "id": "PRF-1Q18T2",
+      "invariant": "INV-P7QEA9",
+      "origin": {
+        "handoffEntry": "TRAY10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+        "content": "sha256:5c6dff9ca607b672da04ac37f8f97633cb7995054244bad7a8c008e8942bd635",
+        "locator": {
+          "kind": "symbol",
+          "name": "Send > counts a held target as sent; a refused one keeps the picks and the text and becomes the target"
+        }
+      },
+      "facet": "Held plus refused results retain the snapshot and narrow the next target to the refused agent; the held target is not selected for resend.",
+      "id": "PRF-DKEYCK",
+      "invariant": "INV-P7QEA9",
+      "origin": {
+        "handoffEntry": "TRAY10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+        "content": "sha256:2e7419d796b54c64ec2da4760896b580b0192a8a7d168d922cdd3f12afd7a1b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "Send > keeps the tray unchanged when the server cannot be reached"
+        }
+      },
+      "facet": "Fetch failure is represented by refusal and preserves picks/text for retry.",
+      "id": "PRF-TN4T0H",
+      "invariant": "INV-P7QEA9",
+      "origin": {
+        "handoffEntry": "TRAY10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+        "content": "sha256:16b8671232ed985140c8cd22139be04483d433c4289988a7cc47dfefcaa5e1a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "Send > composes one POST body per target, with every pick, its note and the text"
+        }
+      },
+      "facet": "A send snapshot issues one complete body to each selected target, carrying all picks, note and text.",
+      "id": "PRF-YMG65J",
+      "invariant": "INV-T6DV0Q",
+      "origin": {
+        "handoffEntry": "TRAY08",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('composes one POST body per target, with every pick, its note and the text', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:9bf6de04eb6e3044016cccb7c07561edb6523c8b16f5abf86589862c6562b573",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('counts a held target as sent; a refused one keeps the picks and the text and becomes the target', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:562309286548f8668bd090c4d2a0b1856f426d4ff30f311c996abc200d1f2b31",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('keeps the tray unchanged when the server cannot be reached', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:822f4b3fbc17cff0d23f0c550c7063d1045979bd77ee85f12664c7ab565dd874",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('sends without a repository when none can be named, and keeps the server\\'s refusal by name', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:eaa483083c4ad7814d613cec6cf706ae183b3474be1f0f1c3cd564ba54c4c87a",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('names an answer without a delivery body by its status and the server\\'s detail text', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:7adcb18d8f3a857a917fb05ea743b5ad820c6de0cf9234fc08d31788ea555dee",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks one per-target snapshot POST and truthful browser settlement.\n\nAnchor: \"it('sends nothing without a target, and refuses a message over a bound by name', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c16aae8d341271caddb1bc15591f65a0cd08f3d6",
+            "content": "sha256:b2a22597c952b74f3bfd8c25e90d160bd3d626d03659c54a708f446ccfb4f9f9",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

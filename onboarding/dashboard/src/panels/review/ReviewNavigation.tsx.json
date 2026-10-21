@@ -3,25 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
-        "locator": {
-          "kind": "symbol",
-          "name": "useReviewNavigation"
-        }
-      },
-      "id": "RLZ-228GGE",
-      "invariant": "INV-RMTHRQ0K",
-      "origin": {
-        "handoffEntry": "L177-INV-RMTHRQ0K",
-        "leaf": "260928-MIK-L177"
-      },
-      "rationale": "The holder of the engagement state and the subject rule: it is where the expired key stops an unengaged reader's late selection.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
         "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
         "locator": {
           "kind": "symbol",
@@ -34,35 +16,17 @@
         "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "The options of a selection. Without `keepTree` a selection starts the tree afresh, so every caller that passes no options is an outside selection.",
+      "rationale": "The low-level navigation SelectionOptions describes keepTree, while the admitted page selection wrapper supplies an explicit value: in-page defaults true and current outside callers pass false. The interface comment alone does not establish the page default.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:3906301b7f13ce15f738c837523b611ce753910996b28ac4f41b76ea6bd85a51",
         "locator": {
-          "kind": "symbol",
-          "name": "SUBJECT_HOLD_MS"
-        }
-      },
-      "id": "RLZ-3Y0WSP",
-      "invariant": "INV-EPB2CXBE",
-      "origin": {
-        "handoffEntry": "L177-INV-EPB2CXBE",
-        "leaf": "260928-MIK-L177"
-      },
-      "rationale": "The bound itself: the wait after which the open stops waiting for a subject and reads the task context.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:960625c0e9d36907aebaa0fd1deda490ee696f1327e9e2a8d479e8660617b567",
-        "locator": {
-          "end": 209,
+          "end": 111,
           "kind": "line_range",
-          "start": 139
+          "start": 59
         }
       },
       "id": "RLZ-CCAZC6N3",
@@ -70,67 +34,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Is where the reviewer reads the catalogue once on entry, through useReviewCatalogue keyed on this comparison, and picks the initial subject from it. It holds the review read as settling only until the catalogue answers or SUBJECT_HOLD_MS expires, so the review is asked for just the subject the catalogue chose; a new snapshot pair for the same comparison bumps the generation and re-keys the read.",
+      "rationale": "Starts the catalogue for the addressed comparison but chooses only the target-named or reader-selected subject; a catalogue answer never chooses a subject.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:f17d723da8071b6659af84c887f6bf7501b40710766d9f7a35caaa81ccdd1031",
-        "locator": {
-          "end": 121,
-          "kind": "line_range",
-          "start": 64
-        }
-      },
-      "id": "RLZ-F8W21K",
-      "invariant": "INV-QAR0F3",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 6",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It renders the outline and lane totals as one summary, retaining explicit loading and unavailable values.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
-        "locator": {
-          "kind": "symbol",
-          "name": "initialSubject"
-        }
-      },
-      "id": "RLZ-GRV9V6",
-      "invariant": "INV-MGXG8S",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 7",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It applies the first-real-change selection to an unnamed entry while keeping an explicit subject authoritative.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
-        "locator": {
-          "kind": "symbol",
-          "name": "useReaderEngagement"
-        }
-      },
-      "id": "RLZ-MTG17Z99",
-      "invariant": "INV-RMTHRQ0K",
-      "origin": {
-        "leaf": "260921-ICR-L48"
-      },
-      "rationale": "Observes the reader's gestures passively on the surface root and reports them to engage; it handles no event itself.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -142,30 +52,13 @@
         "handoffEntry": "L177-INV-115RDW8H",
         "leaf": "260928-MIK-L177"
       },
-      "rationale": "This hook composes the subject an open reads: it selects the catalogue's subject inside the hold, and past the hold it leaves the subject undecided so no second main read is issued.",
+      "rationale": "Starts the catalogue for the addressed comparison but chooses only the target-named or reader-selected subject; a catalogue answer never chooses a subject.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
-        "locator": {
-          "kind": "symbol",
-          "name": "SUBJECT_HOLD_MS"
-        }
-      },
-      "id": "RLZ-SZ1XRDXE",
-      "invariant": "INV-EPB2CXBE",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Fixes the bound of the first-read hold at 750 ms, the value the navigation's timer uses before releasing a stalled catalogue into the task-context review.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
+        "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+        "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
         "locator": {
           "kind": "symbol",
           "name": "useReviewNavigation"
@@ -178,304 +71,71 @@
       },
       "rationale": "Reads the recorded-subject catalogue through useReviewCatalogue when the reviewer is mounted, keyed on this comparison and its snapshot generation, and returns that whole catalogue with the chosen subject and onSelect, so every subject the catalogue records is selectable inside the review.",
       "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
-        "locator": {
-          "kind": "symbol",
-          "name": "useReviewNavigation"
-        }
-      },
-      "id": "RLZ-WBPK96KD",
-      "invariant": "INV-RMTHRQ0K",
-      "origin": {
-        "leaf": "260921-ICR-L48"
-      },
-      "rationale": "Its engage callback freezes the subject on screen as the reader's own choice once the bounded wait has released a read, without overwriting an explicit selection queued by the same gesture.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-        "content": "sha256:b2c98599ff5b7eb7c1c8069c78ea87616a75343d25c937debef7cd444224f23c",
-        "locator": {
-          "kind": "symbol",
-          "name": "useReviewNavigation"
-        }
-      },
-      "id": "RLZ-ZCE8D5GH",
-      "invariant": "INV-EPB2CXBE",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Holds the first review read only while no subject is chosen or named and the catalogue has neither answered nor refused. A SUBJECT_HOLD_MS timer then ends the hold for that key, so a slow or stalled catalogue releases into the task-context review instead of blocking it.",
-      "role": "primary-authority"
     }
   ],
   "references": {
-    "11": {
-      "note": "How a selection treats the walked tree, and the page a selection may ask for.",
+    "37": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function initialSubject(target: {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:cf73c19481f2d21e96b89f995f48e152510c048328940b3e377e38605bf2d80b",
             "locator": {
-              "kind": "symbol",
-              "name": "SelectionOptions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "What the workspace receives: the catalogue, the subject and the selection callback with its options.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:8813a8858741137b603631d0bf6d52d3ba1c8a5a399362be070af9789715a658",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewNavigationState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The hold bound and why it exists.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
-            "locator": {
-              "kind": "symbol",
-              "name": "SUBJECT_HOLD_MS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Subject choice is outline-first; full observed generation quarantines catalogue rows, the bounded hold expires and engagement preserves the reader's choice.\n\nAnchor: `useReviewNavigation`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The passive gesture observer the surface mounts on its root.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReaderEngagement"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Surface-side observation reports complete comparison generation, including code-only movement.\n\nAnchor: `useObservedComparison`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "initialSubject keeps an explicit target, otherwise chooses the first real outlined change; no real change means no subject, with catalogue fallback only without an outline.\n\nAnchor: `initialSubject`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:ecc7f0093d30a2dbe8ec141692e9aa90dfea2481fe99d8762bb1b2c10b851c58",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The surface's selection reads the options: `keepTree` and `page`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectSelection"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The workspace supplies walked entries to navigation counts and catalogue outline/admission to the compact tree.\n\nAnchor: file",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
-            "content": "sha256:c0b1b3930f4981807c20a685f3e5769dd61c526c959e81bf4fe790f98e16364b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The two delayed-catalogue cases: an engaged reader is not moved, an idle reader is landed on the first family without a remount.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
-            "content": "sha256:f4ed76ab22acca829485da319fcac381edc45cf4f12f5744816283e6b36cb503",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "The rail combines existing summary text with optional caller-supplied codeSummary, then open reason/tree/destination slots; it makes no new measurement.\n\nAnchor: exact current function span",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:1004c70f25eaa7e79bec391600c26eddd24513c3839c750cade67bef6d96cd7c",
-            "locator": {
-              "end": 94,
+              "end": 150,
               "kind": "line_range",
-              "start": 64
+              "start": 136
             }
           },
           "kind": "code"
         }
       ]
     },
-    "26": {
-      "note": "navigationSummary derives outline counts only after catalogue admission and retains unavailable reason rather than synthesizing an empty count.\n\nAnchor: exact current function span",
+    "38": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function useReviewNavigation(target: {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:8f7bdbae2559b33230329256df0782848e0757ec05c169b63493ab7de90c5a65",
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:1042e1365ea0d4e3e6b3cd49cb0d1300dae78f94e5fa82705e261c751df99d15",
             "locator": {
-              "end": 106,
+              "end": 76,
               "kind": "line_range",
-              "start": 96
+              "start": 61
             }
           },
           "kind": "code"
         }
       ]
     },
-    "27": {
-      "note": "The summary combines changed-family/invariant counts with attributionSummary; an unavailable lane count says the change set could not be measured.",
+    "39": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function useObservedComparison(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:de77db673e551ec98707bc9fe834959b0457cbb0dd98111d81b6ec567b5afee7",
-            "locator": {
-              "kind": "symbol",
-              "name": "summaryText"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:267afb2d67acfb5e8eaef6e11ed9e50f1948cdd0b5b16bf91e50f41ec97d7988",
-            "locator": {
-              "kind": "symbol",
-              "name": "attributionSummary"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "Outline-first opening subject, none without real change",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:a0b2fafe30cb36e103b0264be04de090dd9f5418df933ce58bc88398ae5a9e53",
-            "locator": {
-              "kind": "symbol",
-              "name": "initialSubject"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "Choice, settling, comparison generation and engage",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:0f41a9e2d507fe7766185518e6c08c76cefe82a73862688b1c5f7a3aa99fa958",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewNavigation"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "Surface-side comparison generation reporting",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
             "content": "sha256:053a1179c87186403f843ef806d7dd502ee2b6a5c1d428fb33163e019e0cf484",
             "locator": {
-              "kind": "symbol",
-              "name": "useObservedComparison"
+              "end": 133,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "ReviewNavigation.tsx current behavior at this source owner.\n\nAnchor: \"export function outlineUnavailableReason(catalogue: ReviewNavigationState['catalogue']): string \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:e75af8715c4b15d118ed8299c7767842cb3b3ac5dbc6692310cb4930c4257ca8",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "code"

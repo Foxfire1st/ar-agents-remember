@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l89.l104-cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Historical comparison identity and exact retained population\n\nAnchor: \"{\"state\":\"trees\",\"repository_id\":\"agents-remember\",\"master\":\"260928_maintained-invariant-knowledge\",\"leaf_id\":\"260928-MIK-L104\",\"comparison\":{\"schema\":\"ar-revie\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02e16fbf9f82bf3a647b38383f98bf530c1709cf",
+            "content": "sha256:d38333d0146838de6651ecee246fe3580744607a1c0484cad3abaec9f28e5542",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

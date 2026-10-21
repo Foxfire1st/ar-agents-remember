@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/codeContextPreference.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Store Changes only/Full context at browser key, defaulting to changes for missing/unknown/denied storage.\n\nAnchor: \"export const CODE_CONTEXT_KEY = 'review.code-context.v1';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e51e83175f4d087a5bc860a62ce6cda221ef141",
+            "content": "sha256:6ec4eb55c201603c3f37838b2046d819f5d6108ac018694d504d55dc37b55d4d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Store Changes only/Full context at browser key, defaulting to changes for missing/unknown/denied storage.\n\nAnchor: \"function readCodeContext(store: Pick<Storage, 'getItem'> \\| undefined): CodeContext {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e51e83175f4d087a5bc860a62ce6cda221ef141",
+            "content": "sha256:23e39e0ab3390fab8b7414648cff675c09cc4be495f7ddf92dcee49681720a41",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Store Changes only/Full context at browser key, defaulting to changes for missing/unknown/denied storage.\n\nAnchor: \"export const codeContextStore = createStore<CodeContextState>((set) => ({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e51e83175f4d087a5bc860a62ce6cda221ef141",
+            "content": "sha256:9092e63acc5ddbb312b079e394a197f49ce8ddf2f749e9536245fc48fba13fb9",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

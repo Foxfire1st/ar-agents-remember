@@ -2,17 +2,17 @@
   "path": "dashboard/src/panels/review/FamilyReviewCenter.members.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Synthetic changed member statement atop a native family capture asserts must not->mustnot del/ins, one intent-diff, no whitespace-only marker, and both exact revision open callbacks.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('word-diffs a family member statement once while keeping both revision links', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "dbd0a59afcaf020cc1e1f7581dba64b92e71a21f",
-            "content": "sha256:8894b773b8486c9f1e6f92f3ae867955bb8a6038257b2878ee2c08cc13b660cb",
+            "blob": "4d8922911176936248706d44d79a0d433f022764",
+            "content": "sha256:f17a613f1a972b9d20376a50d0d571d7fc8717a7be512cedcd6a4699a79fcae5",
             "locator": {
-              "end": 74,
+              "end": 72,
               "kind": "line_range",
-              "start": 1
+              "start": 24
             }
           },
           "kind": "test"

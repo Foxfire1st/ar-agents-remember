@@ -2,15 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.meaning.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The mounted suite exercises badges, step blocks, keyboard activation and failure/empty branches.",
+    "2": {
+      "note": "Mounted effects, steps, keyboard explanations, required-field states and opening-only non-subject reads.\n\nAnchor: \"import { afterEach, beforeEach, expect, it, vi } from 'vitest';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "59e58722e55ab8e69ca4c8cee4c0af0c6b91a982",
-            "content": "sha256:d53c599c94adcdf9e5c203535ecaea5ec9ab9bf995dfdf11e2b64cddd913af9d",
+            "blob": "3a44255364673c981a2f2a44f6023faa39de902f",
+            "content": "sha256:eaea6b9e075ec93640fa604b324a355dfe712c48ac4ad9be3d20811d283766cd",
             "locator": {
-              "end": 315,
+              "end": 310,
               "kind": "line_range",
               "start": 1
             }

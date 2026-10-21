@@ -1,109 +1,103 @@
 {
   "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+        "content": "sha256:637452d5f77d4e75a201fbcefbe82ff92b13366185662dcac26abd251bedfde7",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws each condition as one line with its marks, and opens only the one clicked in place"
+        }
+      },
+      "facet": "Every displayed condition keeps a focusable collapsed line with complete added/removed marked text; click, Enter and Space alter only their own expansion states and no collection details/disclosure node is introduced.",
+      "id": "PRF-3GVM4Z",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+        "content": "sha256:20a47dbb829b5b5e8324f191003e65acd36707720d288e6b9c00847d27ebcf82",
+        "locator": {
+          "kind": "symbol",
+          "name": "reads only the selected revisions' field rows"
+        }
+      },
+      "facet": "With no member rows or carried display versions, the changed-statement label names no revision number while only exact selected-revision field changes enter the wording comparison.",
+      "id": "PRF-CFASBJ",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+        "content": "sha256:444bf14bb42d7ed1f30d6ce42be2164d98e6aac6c704fa1a4bf828e9ac11679e",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws a changed condition as one line with its word marks on it"
+        }
+      },
+      "facet": "A paired text edit retains exact removed/added word marks in its single line, and opening it leaves the unchanged first condition closed.",
+      "id": "PRF-Q3KQE6",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+        "content": "sha256:30fd5548a847e1addc72041fe4e55d33f980b013871f8c402566fa523988bba9",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows an above-ratio pair side by side by default, says why on its line, and offers it inline"
+        }
+      },
+      "facet": "A mostly rewritten condition starts side by side with its ratio explanation and can switch inline while its individually expanded line stays open.",
+      "id": "PRF-W2QQHH",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+        "content": "sha256:ad6b4964c14a6bf39d81f6b89e476547a2d019711c25f2352d7a4c6a595e5e65",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws a paired condition side by side on its one line, both halves marked, and opens it alone"
+        }
+      },
+      "facet": "In side-by-side layout, the paired condition retains removed words only on before and added words only on after; opening that line leaves its sibling closed.",
+      "id": "PRF-W84X3Z",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The real bodies the cases start from, and the accessible-text reader.\n\nAnchor: \"const payload = captured('gitTrees.invariant.captured.json');\"; \"function spoken(node: Node): string {\"",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('computes each text passage once for both layout choice and drawing', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:3a352187e85d60b64608123f75f0a033af9325fc168fbe27f140c99fb934fffe",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:7ef0a8197ab2fd50b7be21b040206293eb018d7dafeaa13c5afc928e8034552d",
             "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 33
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "Base statement fixture for diff passages",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
-            "content": "sha256:d7862d63efefdd6a90744765227882f4323bb66d26317275393786890c3d811a",
-            "locator": {
-              "kind": "symbol",
-              "name": "STATEMENT"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Review mount helper with scope and revision options",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
-            "content": "sha256:39d2c2b8e8d4354fdcff4dc7552cb8b1aafd5bb8941865f15c3b160daeb19779",
-            "locator": {
-              "kind": "symbol",
-              "name": "review"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
-            "content": "sha256:43cf09de750801064b79ec2b638072c0d2b4f8a793df45f0df8781260b081aa0",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 72
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Tree scope fixture for comparison passages",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
-            "content": "sha256:ccbfc110efbab806328f5a58acad45d6cfa23967c8ced350a48d3d2949888c7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "scope"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Layout persistence assertions across passages",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
-            "content": "sha256:87d5cabff4fa1c6c487a0ba196fa87d152fec5e33e3e5f3246678a6b61073097",
-            "locator": {
-              "kind": "symbol",
-              "name": "layouts"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Three added declarations assert single computation per passage, accessible descriptions on unequal-gap rows and coarse rendering of 1500-by-1500 lists.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:ba4c3428ebed3dd6216b165caa6e196806de5a946ac59dc22ba354114bed041b",
-            "locator": {
-              "end": 155,
+              "end": 124,
               "kind": "line_range",
               "start": 114
             }
@@ -112,135 +106,510 @@
         }
       ]
     },
-    "2": {
-      "note": "The review helper derives a successor, supplies per-side member rows and mounts SelectedStatement in the captured payload's IntentWordDiffScope.",
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('explains unequal list gaps on their removed and added rows', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:798da58cee080de24dfbb9f6a5e18b89c17cec127682b1cf1569f724ca328604",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:81cd6242aeec1d03a9912708d3bf8e9db3252421c614b45ce82223a73cbbf904",
             "locator": {
-              "kind": "symbol",
-              "name": "review"
+              "end": 140,
+              "kind": "line_range",
+              "start": 125
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "The conforming example, condition-only, R2-1, list alignment and applicability cases.\n\nAnchor: \"marks the changed words of the statement in place, in one passage\"; \"offers no layout control when a paired condition changed only its whitespace\"",
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states the cell bound when lists are shown without alignment', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:fa27296cb843828a0b8e86ff075c1bc1a0dfcd607bc6c3c638738df01b22035d",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:fba21878cf1dda6550ab219a4c757c3b47100f461314d6b279ca1d3b7048a3ab",
             "locator": {
-              "end": 198,
+              "end": 156,
               "kind": "line_range",
-              "start": 118
+              "start": 141
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Selected-revision field sourcing in the captured comparison scope and the retained three-shape same-revision differing-text table.\n\nAnchor: inclusive source ranges",
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks the changed words of the statement in place, in one passage', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:c4e3cfcf0f6549ffa5a513cfce5f8c8aa0fbb3a1135279a5c8eaa4d867eeee08",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:29f9b7c83ec31087027efa3bda9a09a7de2da0fe586abcb76e0b3be8f731af7c",
             "locator": {
-              "end": 301,
+              "end": 176,
               "kind": "line_range",
-              "start": 238
+              "start": 157
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "F4's cases and the same-revision label.\n\nAnchor: \"labels an applicability recorded on one side only as a known absence, with no diff\"; \"shows a list the comparison only reported joined as reported, never aligned\"; \"diffs one revision whose text differs between the two sides, and says so\"",
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"shows a condition-only revision's changed condition in place and the statement once\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:8fc2495eb768c63586d1a169d10219e65d769e14c603200a00f7b44a9a02fd11",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:45d761a702d387b6654671940e3f51b08052e19fd8e61167ab12a0fbca114a35",
             "locator": {
-              "end": 349,
+              "end": 192,
               "kind": "line_range",
-              "start": 266
+              "start": 177
             }
           },
           "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "Whitespace-only, the rewrite and the preference.\n\nAnchor: \"renders a whitespace-only change once, labelled, with both exact texts disclosed\"; \"shows a rewrite side by side by default, says why, and can still show it inline\"",
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('offers no layout control when a paired condition changed only its whitespace', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:8e369c4d1e83878b226432af0a7b6af888f5a6377da864d72df6ae6c5f21564a",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:302864a5f2b1bf68f8582ed3d18061e6d7c4019abd0c4687eede1189881c473e",
             "locator": {
-              "end": 422,
+              "end": 202,
               "kind": "line_range",
-              "start": 351
+              "start": 193
             }
           },
           "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "Three declarations cover known-absent added/removed statements, unreadable sides and unresolved revision selection; no dataset or ambiguous-selection case remains.\n\nAnchor: inclusive source ranges",
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('aligns conditions and exclusions by exact text: added, removed and moved items', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:8668c4ef325106b9b6f29257591389004d3e696aa32b5ba0c0b89d9fae71f519",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:8782ec3ed73c7cb4dfed0d6285b242d3f7a9a051c99ac6ca0581ebcef80a65a1",
             "locator": {
-              "end": 532,
+              "end": 229,
               "kind": "line_range",
-              "start": 468
+              "start": 203
             }
           },
           "kind": "test"
         }
       ]
     },
-    "8": {
-      "note": "The family guarantee.\n\nAnchor: \"describe('the family guarantee'\"",
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws each condition as one line with its marks, and opens only the one clicked in place', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d5b09cb94bee944c0558b6a08e7c61804808367",
-            "content": "sha256:1cae4b3014c1e18b713b74beb9d1027795d1d77eb10310e6516995560690e06d",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:87aeaa0338c00ad588d70086ee5861b4575abb1ad52397b03c4d5402d02a76f9",
             "locator": {
-              "end": 580,
+              "end": 254,
               "kind": "line_range",
-              "start": 507
+              "start": 230
             }
           },
           "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "The retained center-details guaranteeFact helper case classifies differing text as same_revision_text_changed and identical captured text as unchanged_revision. Navigator guarantee/member-tag tests and the dataset-path helper expectation are absent.\n\nAnchor: inclusive source ranges",
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a changed condition as one line with its word marks on it', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:8bf8615f57e0856358286345aa8eff68ee365acfe14653b5edee3bf1e99962f3",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:6668b022d152a165ad3e70bdb05a708c4b6d404fe32a6e2727b6d06a7efebb21",
             "locator": {
-              "end": 626,
+              "end": 271,
               "kind": "line_range",
-              "start": 612
+              "start": 255
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a paired condition side by side on its one line, both halves marked, and opens it alone', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:708383ce257eea8a0748460094404aa366ac4d953df0ea8600d7befa3942d65a",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows an above-ratio pair side by side by default, says why on its line, and offers it inline', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:bfb6ca3d6b6b56f62b32a685436c4fe6b41bf777f1011366212e3ff03b68cf4f",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('word-diffs a changed applicability as its own passage', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:4cf319ccb780495f87e2c6845f40601c9ef7a8729adade9a21e9e9045e994cdf",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"reads only the selected revisions' field rows\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:341f6e84dbe6021b368124e6d35ff821a276be00694d09088c9c0548930e132f",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('says \"Statement unchanged\" for one revision whose texts are the same, with or without rows', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:fb600bc7af8edc2bcff6d146c263bc9bed998e3d364b46d4951a50d366ebcee0",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('labels an applicability recorded on one side only as a known absence, with no diff', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:7c625e52946152cd0883bf0c83f1e56ce31c30ff6cce8481d8cd25388b9887a6",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 391
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows a list the comparison only reported joined as reported, never aligned', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:a222d0425c2950acd1c7a03322322f96f5c90e69d9d7352667b714ee9b85d3b5",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows a whitespace change inside a changed passage as glyphs, announced in words', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:353bf00f1b707d008a9d40e95d62d1db0b882a38301ceaa799c5c5064ea07c80",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps \"wording unchanged\" for a new revision whose every field is identical', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:5b2668256f3f6dc211493cb9636a6a198119e382d770d618510e87ba380ad3b2",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('diffs one revision whose text differs between the two sides, and says so', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:a04610a3136cc32c3eee84263df67965539b1cff5b4d955b3e7bc3c7c0506b94",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 455
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('renders a whitespace-only change once, labelled, with both exact texts disclosed', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:118b1f655407d98a6b664d33a93c3d12d18ef63b127cf3db25ad7d8391826ce7",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 466
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows a rewrite side by side by default, says why, and can still show it inline', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:639ff4a53bb9933a39c4840003d6597c98c7d6ff418c7a9a39f930be3dfd647c",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('switches every passage between inline and side by side and keeps the choice locally', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:313b4b7c0977095c747547c59b16f0aab6c5f5d94496ead550b58f9ba7751e52",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 503
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('defaults to inline when browser storage is unavailable, and the toggle still works', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:cdddd9ed0cd1132a0a8900a1479c75787747195fde739228e92ab8a95799e45a",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 518
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('labels an added or removed statement with its known-absent side and draws no diff', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:d20d89ddaa4c7c51af369aa30d17233158b40a83911e26efff42c98620dce155",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names an unreadable side as unreadable, never known absent, and never diffs against it', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:536ff93195c3bb032a2a4e97cd1be055089ef73e3ffc1eca3bd80c1959723ee8",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws no diff for an unresolved revision selection', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:854333c31f332c13f60fe8eacfc7e7ca420271d7ca22d6c47a3bd5c538fc58c6",
+            "locator": {
+              "end": 621,
+              "kind": "line_range",
+              "start": 601
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('word-diffs a changed guarantee, with the revisions as compact metadata', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:37aac8d4096db108644780000f6c01d92dc5da0aabadbce1734170c61920c626",
+            "locator": {
+              "end": 642,
+              "kind": "line_range",
+              "start": 622
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('diffs a guarantee whose one revision carries different text, and answers null otherwise', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:f3086580d31a35d67ca38a838395e6eea2502295872a311682a966d025af0a5a",
+            "locator": {
+              "end": 657,
+              "kind": "line_range",
+              "start": 643
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('offers no layout control for a whitespace-only guarantee change', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:406f92846e118c04e4c312436ca8836032c4678638327bc1f0229d6813c1e4fc",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 658
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('labels a one-sided guarantee as a known absence only when the other side records none', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:fddc7f987f76cdcac879228d0f671350b31214add22b32ae58091ff9bd265f13",
+            "locator": {
+              "end": 696,
+              "kind": "line_range",
+              "start": 669
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"names the center details' guarantee fact for one revision whose texts differ\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
+            "content": "sha256:7505d3a650a44572a3752d22c9f8557d0bedafc6d25cbaf513fff5ca52850913",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 697
             }
           },
           "kind": "test"

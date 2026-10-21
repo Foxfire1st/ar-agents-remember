@@ -2,126 +2,81 @@
   "path": "dashboard/src/panels/review/ReviewSurface.worklistRepair.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Canonical family record for the joined journeys\n\nAnchor: `familyId`",
+    "10": {
+      "note": "One complete per-side entry-identity list within subject Technical details, with no review content in provenance.\n\nAnchor: \"it.each(['family', 'invariant'] as const)(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
+            "blob": "caf99397b8d8f6d329b48a771050a0beb90c3256",
+            "content": "sha256:96138a31c198fa5da9b883bf2c17d86e8ebf4b1ebea4a9ab5d480229582d6060",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Reply replacement over served captures",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:8877fdd8c5629a1c607526c98f3a6aebecc1686fcb9cd7502c4c0beb62de4b27",
-            "locator": {
-              "kind": "symbol",
-              "name": "replaceReplies"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Subject mount helper for family and invariant records\n\nAnchor: `mount`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Entry-identity disclosure check with side blobs",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:655b25956bdf5a987d997abe70faafe573dc3a77f385cc70265ccc7e73e18a2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "checkEntryIdentities"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:0aabe35570177d604ea3198f86bb6f5e361ad611a624f3d3d0be62b8925596e6",
-            "locator": {
-              "end": 74,
+              "end": 126,
               "kind": "line_range",
-              "start": 56
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
-            "locator": {
-              "kind": "file"
+              "start": 92
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Incomplete, absent and unbound wire-state builder\n\nAnchor: `wireWorklist`",
+    "11": {
+      "note": "F06 stale/unverifiable reasons on changed-entry card sides, outside details; unchanged locations remain grouped.\n\nAnchor: \"it('F06 shows captured resolved-stale reasons and a supplied unverifiable proof-side reason outside disclosures', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:3ddc35f51968e7bc31da3fa9b8fc042ead06eafcbe3c368fb205cea8c6dca3f6",
+            "blob": "caf99397b8d8f6d329b48a771050a0beb90c3256",
+            "content": "sha256:c3a33b8d54375fb3c7910886df78ad3f24000121efc3f7b09c4637a35fee7de4",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The F06 journey checks the supplied reason sibling by entry and side outside disclosures.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f598f8260c9a21616394d8facf2eda63d055fffc",
-            "content": "sha256:ea3883bd175a011889a7eb956f79d6e13a77e3e7cb1fc92dea864546061e27d1",
-            "locator": {
-              "end": 160,
+              "end": 175,
               "kind": "line_range",
-              "start": 114
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Synthetic reply routing and measured/partial/held/refused/mismatched worklist states.\n\nAnchor: `replaceReplies`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf99397b8d8f6d329b48a771050a0beb90c3256",
+            "content": "sha256:bdebebf72a4d521e8d6e588692b07693f147da253a1c1966dbb74a1cf017be5a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Synthetic reply routing and measured/partial/held/refused/mismatched worklist states.\n\nAnchor: \"worklist.detail = 'no MIK-R08 worklist applies to this leaf, or none was persisted for it';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf99397b8d8f6d329b48a771050a0beb90c3256",
+            "content": "sha256:eff767a7eccf5e0ddaae561cf88d74636e86a35f004726a329825ac592418116",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "One complete per-side entry-identity list within subject Technical details, with no review content in provenance.\n\nAnchor: `checkEntryIdentities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caf99397b8d8f6d329b48a771050a0beb90c3256",
+            "content": "sha256:bdebebf72a4d521e8d6e588692b07693f147da253a1c1966dbb74a1cf017be5a",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

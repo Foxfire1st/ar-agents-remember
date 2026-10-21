@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/tray/fileLineGutter.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Adds accessible line/range picks to the dashboard file viewer.\n\nAnchor: \"export function takeFileLine(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdeb8a7a1986749ed54a80c7bdb0cc5ae476d7e8",
+            "content": "sha256:66074584bd876fe5bf5f3a775e2eb3d390a2902dd547fddc8acf07893c94dec1",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adds accessible line/range picks to the dashboard file viewer.\n\nAnchor: \"const from = extend ? anchor.line : line;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdeb8a7a1986749ed54a80c7bdb0cc5ae476d7e8",
+            "content": "sha256:6433d8c69f8d5a4b95c17c8f344ee0459d6bb2585980d41130295755d58d3107",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Adds accessible line/range picks to the dashboard file viewer.\n\nAnchor: \"export function trayLineGutter(target: FileLineTarget, firstLine = 1, store: StoreApi<TrayState> = trayStore): Extension {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdeb8a7a1986749ed54a80c7bdb0cc5ae476d7e8",
+            "content": "sha256:8cd0b7491e1b0bda0982a3dd181260eeb891c4c4835ad6642d8ff1e166c8c169",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

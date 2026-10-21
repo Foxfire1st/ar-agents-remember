@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "469e43fcedccf18a7cafdf8a4742d86aaf9a67a1",
+        "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
         "content": "sha256:c46ac594a4329e1097044b65606fb3b3559556c5ae1bbc1f76db8091a621ed6a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,41 @@
     },
     {
       "anchor": {
-        "blob": "469e43fcedccf18a7cafdf8a4742d86aaf9a67a1",
+        "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+        "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cards_read_answers_without_memory_values_when_they_cannot_be_read"
+        }
+      },
+      "facet": "A missing after index returns retained entries with no invented values and the exact bound tree/reason; an injected query failure also returns entries without values and names the tree and I/O error.",
+      "id": "PRF-H6YMKV",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+        "content": "sha256:8d0c3bf94324e95540acae43cf2fd358340c350ef3ecab6e551ef17bff2e4005",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cards_read_gives_each_entry_its_four_memory_values_at_the_after_tree"
+        }
+      },
+      "facet": "Every card entry equals the four independently queried bound-after-index values, including distinct realizations, family incoming links, proof absence and only open path weaknesses; a lane answer carries no entry-memory values.",
+      "id": "PRF-HBQ25C",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
         "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",
@@ -37,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "469e43fcedccf18a7cafdf8a4742d86aaf9a67a1",
+        "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
         "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",
@@ -55,387 +89,153 @@
   ],
   "realizes": [],
   "references": {
-    "15": {
-      "note": "The module docstring: the fixture world.",
+    "38": {
+      "note": "Four-tree records/pins, first-read effects and repeated no-write state remain declared.\n\nAnchor: \"def test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:d6f658159659f18d230e49afa34e632a06a277a069212ab7c97c8cd826bd2720",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:bc2d1e361e4b159185281a1eaceaf402e14c3730b367f2b8e4a2870416264072",
             "locator": {
-              "end": 6,
+              "end": 246,
               "kind": "line_range",
-              "start": 1
+              "start": 130
             }
           },
           "kind": "test"
         }
       ]
     },
-    "16": {
-      "note": "The fixture's state and helpers.",
+    "39": {
+      "note": "Leaf-wide currentness/worklist and selected-subject Git budgets retain their precise fixture populations.\n\nAnchor: \"def test_the_tree_view_shows_currentness_per_side_and_the_worklist_without_a_knowledge_diff(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0bb89b7a62d7a5d2ace7d7d4059221d7eaee1879",
-            "content": "sha256:f36b92dce1cde15639da4d93671607157715f52c16f3eed23ba347624c380928",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:af115692d79aaa0dd6ae7c6837b5a5038b1eda88c399afaae03a83e82c2fb111",
             "locator": {
-              "kind": "symbol",
-              "name": "World"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Four trees, pinned candidates, and reuse.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "A repeat read writes nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "The tree-view fixture preserves per-side currentness and computed linked worklist while omitting knowledge_diff.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:5a43fb42d8cce51ea77b1ac31e28791eabda19d1ab3b31fa0c7b3c10894840ed",
-            "locator": {
-              "end": 278,
+              "end": 365,
               "kind": "line_range",
-              "start": 242
+              "start": 249
             }
           },
           "kind": "test"
         }
       ]
     },
-    "20": {
-      "note": "Reopening names a tree Git cannot produce.",
+    "40": {
+      "note": "Capture memo equality and cache-constructor failure/sharing assertions remain explicit.\n\nAnchor: \"def test_an_unmoved_worktree_skips_to_the_tree_a_rederive_would_derive(world: World) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:9e5e14c9db727ece48c63fae3e9ab731262f5c97c5c90a5e7426997bab614d9f",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:1913d002094341940720527bc853ed3273db46c79445d2a384eb132992afa8f1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_comparison_reopens_from_its_tree_ids_and_names_a_tree_git_can_no_longer_produce"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "The route serves the port and refuses without one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_tree_view_route_serves_the_port_and_refuses_when_unwired"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "Rows are found by the row subject an item names, through the real isolated computation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "The converted-memory fixture world with its live leaf.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0bb89b7a62d7a5d2ace7d7d4059221d7eaee1879",
-            "content": "sha256:f36b92dce1cde15639da4d93671607157715f52c16f3eed23ba347624c380928",
-            "locator": {
-              "kind": "symbol",
-              "name": "World"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
-            "locator": {
-              "end": 87,
+              "end": 500,
               "kind": "line_range",
-              "start": 86
+              "start": 381
             }
           },
           "kind": "test"
         }
       ]
     },
-    "24": {
-      "note": "Pins and reuse.",
+    "41": {
+      "note": "Partial, reopen/conversion, derived-index-only and legacy source-only paths retain typed side facts.\n\nAnchor: \"def test_a_partial_index_shows_its_state_on_the_affected_side(world: World) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:f550c8e81702bb0db360a5f9e4e9aae395e6788c31e0f89408c5476b6aab9481",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "A repeat read writes nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "Committed candidates and the refused pin.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:6d8bfb8d90830fb5c244b1f838a806cfda4712e16d44f0dac95ef0ff2c4a4ceb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_committed_candidates_need_no_ref_and_a_failed_pin_refuses_naming_repository_and_ref"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:5a43fb42d8cce51ea77b1ac31e28791eabda19d1ab3b31fa0c7b3c10894840ed",
-            "locator": {
-              "end": 278,
+              "end": 698,
               "kind": "line_range",
-              "start": 242
+              "start": 509
             }
           },
           "kind": "test"
         }
       ]
     },
-    "28": {
-      "note": "Reopen, the converted base, and the legacy comparison.",
+    "42": {
+      "note": "Archive/route and focused-entry assertions preserve pin ownership, bounds and code-side identities.\n\nAnchor: \"def test_pins_are_named_by_the_task_directory_and_archival_removes_them(world: World) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:9e5e14c9db727ece48c63fae3e9ab731262f5c97c5c90a5e7426997bab614d9f",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:3b8dd08bc3b43392b39314adb98dc44320507c15923351edcafed23bcfa3562c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_comparison_reopens_from_its_tree_ids_and_names_a_tree_git_can_no_longer_produce"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "Derived-index-only reads; unconverted leaves keep source and name knowledge `legacy-unavailable` without a candidate database or pins. The former dataset-preservation account is historical.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:5f252250d76b1de489e683773bee1a192709d6ef1a2c49d1944c4f3424f671b4",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "30": {
-      "note": "Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:e51cebf9f8897db2a061d6a4c49002aee80833078e9406863d5c3004abb7d235",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pins_are_named_by_the_task_directory_and_archival_removes_them"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "31": {
-      "note": "The cards read: four entries located on both sides, each helper's per-entry facts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:f45ad849bb31de426fc5c10f074f046ccf7a770878fdaafc90298ab08781bf2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "32": {
-      "note": "Unavailable against absent, and the history row found through `facts.row`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:7d7524bfd1142ccac5de49c6d57c956dbddbcb7bc7808eaf8cbc174636f12c01",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "33": {
-      "note": "The excerpt bound and the placement cache (review F3).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:6c438613fe822afdc0d1abdbe58da9ed7a90f205d93e3dd7a8f0f4b682ddee4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_excerpt_longer_than_its_bound_is_a_stated_prefix"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "34": {
-      "note": "The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "35": {
-      "note": "The lane row.  Anchor: `test_review_git_trees`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "336df58909b51f4d95b46ff2171db1219169f22d",
-            "content": "sha256:7fcf260a4e8fd98bdd644f9bcf9a47c392b0d00eb84f79ce6cc84938ecb61909",
-            "locator": {
-              "end": 278,
+              "end": 846,
               "kind": "line_range",
-              "start": 274
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "36": {
-      "note": "Only an owner's latest attempt's row is shown; another owner's row stays.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
+              "start": 703
             }
           },
           "kind": "test"
         }
       ]
     },
-    "37": {
-      "note": "The leaf-wide tree answer omits knowledge_diff and focused entries, keeps snake_case currentness and leaf-owned history rows; a separate case names the affected side’s partial index.",
+    "43": {
+      "note": "The four after-memory values and optional symbol names are compared with their exact index definitions; lane answers omit them.\n\nAnchor: \"def _memory_facts(world: World) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a630dbb097f2987b418b7f8b477bfe6fcba96132",
-            "content": "sha256:0f7f6aa1c701cd2ba3537fea1dd1f218a452a939916e79a15fd8b8ed74ed2940",
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:7647c788015ccbbf8ac1ef2fba01c40dff7cb180d4d2b9b7bddd312677080433",
             "locator": {
-              "end": 502,
+              "end": 944,
               "kind": "line_range",
-              "start": 491
+              "start": 849
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "Absent/faulted memory reads keep entries/reasons and are not retained; successful reads can then settle.\n\nAnchor: \"def test_the_cards_read_answers_without_memory_values_when_they_cannot_be_read(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:418793da544c952ec55ebe33f19550f57bc0372c318d60c00953d6fd1feb6274",
+            "locator": {
+              "end": 995,
+              "kind": "line_range",
+              "start": 947
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "Code absence versus unreadable and latest history attempts retain distinct owner facts.\n\nAnchor: \"def test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:e972df627731888ffd27dc3e702c6952279cff12db0935083277a343ad3f89fd",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 998
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "Excerpts/placement cache and proof-only unchanged-path admission retain their finite/read-only contracts.\n\nAnchor: \"def test_an_excerpt_longer_than_its_bound_is_a_stated_prefix() -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "content": "sha256:7453e60a85b67c92ed1a774f2a5800065065b827a48b9a9f4f11155c4eb14773",
+            "locator": {
+              "end": 1189,
+              "kind": "line_range",
+              "start": 1067
             }
           },
           "kind": "test"

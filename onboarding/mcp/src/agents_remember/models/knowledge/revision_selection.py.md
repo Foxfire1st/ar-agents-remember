@@ -2,91 +2,25 @@
 
 ## Governing Overview
 
-[models route overview](../overview.md)
+[Owning route overview](../overview.md)
 
 ## Purpose
 
-The value describing an invariant or family's selected revision on each compared memory tree.
-The application owner is `application/review_revision_comparison.py`; this module performs no
-SQL, Git resolution, lineage traversal or selection policy. The current projected-record policy
-constructs empty or singleton head/retained lists, not a history of selectable dataset revisions.
-The former `ambiguous` state and intermediate-revision-selection account are retired below.
+Carry a selected invariant/family revision pair, its display labels and each selected revision’s recorded writer evidence.
 
 ## Code Commentary
 
-### Logic
+The revision-selection state remains compared/unresolved/added/removed. ReviewRevisionSelection carries subject kind/id, optional before/after revision ids and display versions, declared head/retained tuples, statement, and optional per-side ReviewRevisionWriter values. A missing writer field can mean no selected side or that writer evidence was not read; it is not a guessed owner.
 
-- `RevisionSelectionState` admits `compared`, `unresolved`, `added` and `removed`.
-- `ReviewRevisionSelection` carries the `invariant`/`family` kind, record identity, optional
-  before/after revision IDs, each side's head/retained tuples, and a bounded explanatory statement.
-  The field names remain; they do not themselves establish database lineage or read authenticity.
-- `_require_the_state_to_match_the_pair` checks presence, not recency: compared requires both
-  IDs; added only after; removed only before; unresolved neither.
-- `_require_the_pair_to_come_from_the_heads` requires a non-None selection to belong to its
-  declared side's heads. `_require_the_heads_to_come_from_the_retained` requires each head to
-  belong to its declared retained set. These are consistency constraints over supplied values,
-  not independent proof that those values came from a memory tree.
-- The producer filters by the selected subject's kind and identity and obtains its first matching
-  non-None revision item on each side. It builds empty/singleton lists from those items and names
-  the pair/addition/removal/no-selection explicitly. It does not walk predecessor edges, diagnose
-  multiple lineage heads, pick a newest revision, or offer intermediate revisions as selectors.
-  The DTO's tuple annotations do not enforce a maximum length or reject duplicate list members.
-- `revision_heads` is deterministic sorting of its supplied population, not graph-head discovery.
-- The knowledge pane carries an optional selection. Its actual implication is selection present
-  implies `subject_selected`; the converse is not required. In particular a path seed may name no
-  invariant/family identity and carry no revision selection. A task-context pane cannot carry one.
+RevisionWriterState distinguishes recorded history ownership, introduced revision-one origin, no recorded writer and unavailable history. ReviewRevisionWriter has a bounded nonempty detail and requires nonempty owners exactly for recorded/introduced states; not_recorded/unavailable carry no owners. The application history reader, not this DTO, supplies the evidence.
 
-### Conventions
+The three original validators still require the state’s exact pair-presence pattern, selected ids within declared heads and declared heads within retained sets. They do not enforce singleton size/duplicates, read authenticity or lineage. The current producer constructs empty/singleton lists and uses subject-specific first matching side items; revision_heads remains deterministic sorting, not graph discovery.
 
-The model and state union are the public exports. Reference/prose fields use the shared bounds,
-immutable collections have tuple defaults, and `KnowledgeModel` supplies the frozen/extra-forbidden
-base behavior. No new record kind, writer or dedicated verdict field is declared here. The free
-`statement` string is not a semantic filter against arbitrary prose or conclusions.
+A knowledge pane can carry this selection only when subject_selected, but not every subject-selected pane must carry one: a path seed can name no invariant/family. A task-context pane cannot carry one. Shared reference/prose/label bounds and the frozen, extra-forbidden KnowledgeModel apply.
 
-### Invariants And Boundaries
+## Invariants And Boundaries
 
-The selected-pair presence pattern and declared-set membership are constructor checks. Empty or
-singleton lists are what the examined producer constructs, not a separately enforced DTO size
-limit. None of these checks authenticates source reads, proves uniqueness of arbitrary caller
-items, certifies a comparison, or reinterprets an old review on a replacement tree. The old
-multi-head ambiguity and selectable retained-history claims are not current product behavior.
-
-### Todos
-
-No additional implementation work is asserted by this card.
-
-## Evidence
-
-### Docs References
-
-No configured Domain Documentation source was available for this pass. Current implementation
-facts below are grounded in the repository's model, producer and direct pane boundary.
-
-### Repo-Internal References
-
-- The current module and value describe a projected record pair, not multi-head lineage or unforgeable input provenance. [1]
-
-- The public exports remain the model and its state union. [2]
-
-- The closed state vocabulary is compared, unresolved, added and removed; ambiguous is no longer admitted. [3]
-
-- The value records subject kind/identity, optional pair, side lists and bounded statement; tuples have no singleton-size validator. [4]
-
-- The declared state requires the exact presence pattern of the before/after pair, with unresolved carrying neither. [5]
-
-- A non-None selection must belong to its declared side heads; this is membership consistency, not source authentication. [6]
-
-- Every declared head must belong to the declared retained set; no lineage traversal or provenance check is performed. [7]
-
-- The value reuses reference/prose bounds and the frozen extra-forbidden base model, not new per-item tuple bounds. [8]
-
-- The pane field and one-direction guard allow selection only for subject_selected, without requiring every compared path seed to carry one. [9]
-
-- The current subject-specific producer constructs empty/singleton lists and explicit state/statement from projected side items; sorting is not multi-head lineage selection. [10]
-
-### Cross-Repo References
-
-No external-system boundary is implemented by this value model or its cited same-repository owners.
+The model performs no SQL, Git resolution, lineage traversal, selection policy or writer inference. It checks consistency of supplied values, and its free statement/detail strings do not semantically filter arbitrary conclusions. Display labels and recorded owners do not turn a comparison into acceptance or authenticate its source reads.
 
 ## Historical BASE Account
 
@@ -221,3 +155,11 @@ examined freeze07 source. Useful original prose is retained for custody, not exe
 > No meaningful cross-repo references found.
 
 </details>
+
+## Evidence
+
+- Writer states and owner-presence validation keep recorded/introduced distinct from missing/unavailable evidence. [11]
+- The selection includes per-side display versions and optional writer fields. [12]
+- Pair/head/retained validators constrain supplied membership and state, not provenance. [13]
+- The producer forwards each selected record’s display version without changing selection policy. [14]
+- The pane’s guard is one-directional: selection implies subject_selected. [15]

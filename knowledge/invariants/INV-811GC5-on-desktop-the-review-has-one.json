@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The scroll-owner contract spans the cockpit main, review grid, reading column and content-sized panes; the former narrow clipping made long review content unreachable even with zero horizontal document overflow."
+  },
+  "applicability": "Scroll ownership and reachable reading content on the review page across its desktop and stacked layouts.",
+  "conditions": [
+    "Above40rem the root does not scroll, the tree uses exactly one inner CSS-height scroller with overscroll containment, and reading content scrolls in its column under a sticky head.",
+    "At40rem and narrower the tree stacks above reading content and ReviewMain provides the vertical scroll owner; the reading column is overflow-visible vertically and clips horizontally without becoming another scroller.",
+    "Content-sized review diffs and statement/guarantee panes use fit, with no own max-height scrollbox.",
+    "Local row reveal changes tree scrollTop rather than inline tree heights; controls and pinned rows retain their own layout."
+  ],
+  "exclusions": [
+    "The chat frame, tray list and Explanation frame, which keep their own admitted scroll owners.",
+    "Fresh browser wheel/touch geometry acceptance by this helper.",
+    "The separate selected-line1px rule and its D417 evaluation disposition."
+  ],
+  "id": "INV-811GC5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 0, exact id MIK-R89@v2 rule 1 · tree scroller; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 29, exact id MIK-R89@v2 rule 9 · tree height; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 32, exact id MIK-R89@v2 rule 11 · 390 px; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 119, exact id MIK-R89@v2 rule 1 · top line; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 120, exact id MIK-R89@v2 rule 1 · tree column; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 121, exact id MIK-R89@v2 rule 1 · reading column; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 122, exact id MIK-R89@v2 rule 1 · no card scroll box; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 153, exact id MIK-R89@v2 rule 11 · the tree stacks at 390 px; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 188, exact id P-R7; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 189, exact id P-R9; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 198, exact id L89-R1-015; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 201, exact id L89-R1-033; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 14, exact id L89-R1-015; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 32, exact id L89-R1-033; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470; no new execution or code acceptance claim.",
+        "Curator-owned attachment projection only, separate from unchanged Worker280 and Reviewer54 producer data. A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, Cockpit.tsx blob e6f341599ab594a4a3b9a451a9ccdfec9b2ab411; full current invariant statement, applicability, conditions and exclusions read and retained verbatim. Reconciled against worklist-after-wave5.json and current sidecars; no tests, CLI, AR operation or memory write performed by this helper. Supports the existing RP09 narrow main-page scrolling condition; no geometry or browser assertion is inferred from a DOM-only test.",
+        "Explicit Curator-owned supplemental projection, separate from unchanged Worker280 and Reviewer54 producer lists; A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470. Complete changed bodies and the three source diffs were read. Static inspection only; no code/test run, writer, AR operation, quality check or memory/Git write by this helper. The existing RP09 condition explicitly names content-sized review diff and statement/guarantee panes. FilePane lines23–32 and its fit-dependent host selection at104 were read in the full136-line body; no geometry proof is inferred."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP09",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On desktop the review has one CSS-sized tree scroller and a separate reading-column scroller; at40rem and narrower the stacked main page owns content scrolling, and cards add no internal scroll boxes.",
+  "status": "proposed",
+  "supersedes": []
+}

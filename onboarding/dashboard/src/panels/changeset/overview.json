@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
             "content": "sha256:963636f838a021db3e4d2aef8df3e8216a722f3f5a51d8ddd7f705c06c7d03b8",
             "locator": {
-              "end": 148,
+              "end": 272,
               "kind": "line_range",
-              "start": 141
+              "start": 265
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:9cb7c1608471f6293a509aa3b3a4375373af844a648aa37982391749ac30f15b",
             "locator": {
-              "end": 78,
+              "end": 79,
               "kind": "line_range",
-              "start": 77
+              "start": 78
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:b52cb6555d13a6037152c24e113693ceb949967d977b1db78682129a9278753e",
             "locator": {
-              "end": 161,
+              "end": 164,
               "kind": "line_range",
-              "start": 161
+              "start": 164
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:820db497595b065edcce8a209717bec28e5769ccb4bf4e60888edc4bcd8879f6",
             "locator": {
-              "end": 56,
+              "end": 57,
               "kind": "line_range",
-              "start": 55
+              "start": 56
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
             "content": "sha256:f4a7aed8100db99e8f239d60c9f5f1f3b42093d7bced0cc7bbe7958b4c35f240",
             "locator": {
               "end": 7,
@@ -281,12 +281,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
             "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
             "locator": {
-              "end": 315,
+              "end": 381,
               "kind": "line_range",
-              "start": 275
+              "start": 341
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -299,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
             "locator": {
               "kind": "symbol",
@@ -392,7 +392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
             "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
             "locator": {
               "kind": "symbol",
@@ -439,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -614,31 +614,54 @@
       ]
     },
     "34": {
-      "note": "Card Full file and expression excerpts pass marks; the former lane-window owner is retired.",
+      "note": "Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:19df7cf1a8bdafc3171b6c320ad4a2b1bc714b3506787085a3aa2f400e95c8b3",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
             "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 80
+              "kind": "symbol",
+              "name": "ChangedExcerpt"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:72f42d03b971637de6e84c78fede7747d0c4d4147bf0602cc3330a5443bc47d3",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
             "locator": {
-              "end": 542,
-              "kind": "line_range",
-              "start": 509
+              "kind": "symbol",
+              "name": "fitHost"
             },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffPane"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:8e16b6236191a73b0895f6895b0b021ccfa3397b797b2d44cb39d25d3cd89c92",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
           "kind": "code"
         }
@@ -649,12 +672,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
             "content": "sha256:c28ff3b0e7e02357c51cb76e0c9c20979d9a43bcfc434b5f5103e66c207bb5d8",
             "locator": {
-              "end": 210,
+              "end": 213,
               "kind": "line_range",
-              "start": 144
+              "start": 147
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -675,12 +698,12 @@
         },
         {
           "anchor": {
-            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
             "content": "sha256:f1c88b971953926bf88b7c64cb48ee0d6978cb6c2b43e28f87a331103eb5d0da",
             "locator": {
-              "end": 484,
+              "end": 539,
               "kind": "line_range",
-              "start": 379
+              "start": 434
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -937,7 +960,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
             "locator": {
               "kind": "symbol",
@@ -961,7 +984,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c6208c52420c00fd01116c624f4c0f7c2fcd40e08144a300a64385f7d4fc2978",
             "locator": {
               "kind": "symbol",
@@ -978,7 +1001,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:080be2e5600ac8b7a9949ade0f6ce6cc8585a729473058f3684659ba7aac78a8",
             "locator": {
               "kind": "symbol",
@@ -990,7 +1013,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:e41bdca5f06750025dcea84c29dbff5a0c28e87fe8848e67a6e0a9bd01a7fb3c",
             "locator": {
               "kind": "symbol",
@@ -1019,7 +1042,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
             "locator": {
               "kind": "symbol",
@@ -1036,7 +1059,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
             "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
             "locator": {
               "kind": "symbol",
@@ -1075,7 +1098,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:2f219116e804e8824fe2db735a2565dcafba8aa6bc45afdac7fd2ad31aba0ea3",
             "locator": {
               "kind": "symbol",
@@ -1087,7 +1110,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:de97b09bf077e170d0fe5fb0d988cd854779fd3f5ae6cbf2e38f438628e859c6",
             "locator": {
               "kind": "symbol",
@@ -1122,6 +1145,53 @@
               "end": 222,
               "kind": "line_range",
               "start": 222
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation.\n\nAnchor: `sidebarPanelProps`; `sidebarHandleProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:42857f34852a31b12829f01da6ad02b6ebad11f4cf54cc369b062f11fbc3d772",
+            "locator": {
+              "kind": "symbol",
+              "name": "railOpen"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The header toggle owns changeset-left visibility outside the changed-file rail.\n\nAnchor: `useSidebar`; `SidebarToggle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:42857f34852a31b12829f01da6ad02b6ebad11f4cf54cc369b062f11fbc3d772",
+            "locator": {
+              "kind": "symbol",
+              "name": "railOpen"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:181a690f7ef94502b8f310f53b91fdd3af8d150bf3255a576aa02eeb9f10b3ed",
+            "locator": {
+              "end": 1036,
+              "kind": "line_range",
+              "start": 1008
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1211,7 +1281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
             "content": "sha256:4c1ee7ea52690bf26e08d81dae077c82c25e2b12b98eac954503f2824feda89e",
             "locator": {
               "kind": "symbol",

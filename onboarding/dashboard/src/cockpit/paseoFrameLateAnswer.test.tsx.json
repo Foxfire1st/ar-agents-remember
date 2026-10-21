@@ -3,14 +3,57 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The suite contrasts responsive late answers with true ping silence and checks each loaded document's own readiness wait, input release, native failure and legacy capability notices.",
+      "note": "The suite contrasts responsive late answers with true ping silence and checks each loaded document's own readiness wait, input release, native failure and legacy capability notices.\n\nAnchor: \"describe(\"a change of the selection while the host is slow\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d3d822c873c78f1aadb4c169c54e297976bb3dc8",
-            "content": "sha256:a1f7308037a27d8b58c6911d745bc1da0509ebbcffc0e8d7ab43e4fea7712a9a",
+            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "content": "sha256:ba8bd6dead89de333c05deca24a6888c988bcf43d67b037621746cf635595042",
             "locator": {
-              "kind": "file"
+              "end": 338,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current offer includes pick, the dashboard hello advertises pick/showing, and a missing-pick notice preserves message switching without an early-answer warning.\n\nAnchor: \"const CURRENT = [\"open-agent\", \"ping\", \"page\", \"shown-on-display\", \"navigated\", \"on-chat\", \"load-failed\", \"pick\"];\"; \"expect(posts).toHaveBeenCalledWith({ type: \"ar.hello\", capabilities: [\"late-answer\", \"navigated\", \"on-chat\", \"load-failed\", \"pick\", \"showing\"] }, FRAME_ORIGIN);\"; \"[\"cannot pick chat text\", CURRENT.filter((ability) => ability !== \"pick\"), \"it lacks pick.\", false],\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "content": "sha256:43ea3650b8ac685cd6d24f7054d5147121e5b86b01f53c4869a9ed294ad77d7f",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "content": "sha256:c70fab90986cd3f20bd2d9560da072a079abaa7aa96f1438eeab304127ef02cc",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dc67d831c6f15288b0618e6c39b0dea3bb268631",
+            "content": "sha256:58342e40de0b571fc2b7ad7a4c053fbb3eb977c0cbd3a92fab272cc6dffdd6c1",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 303
             }
           },
           "kind": "test"

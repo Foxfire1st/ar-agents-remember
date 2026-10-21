@@ -3,44 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:30db6d2d504c23f4ef8163f7c2d92c6723fae4bb2388c9721da188a08a6bc6f0",
-        "locator": {
-          "kind": "symbol",
-          "name": "rowMeaningBadge"
-        }
-      },
-      "id": "RLZ-60GFP7",
-      "invariant": "INV-76C676",
-      "origin": {
-        "handoffEntry": "L43-C-recorded-effect-propagation",
-        "leaf": "260928-MIK-L43"
-      },
-      "rationale": "The eligible row’s own outline labels form its compact badge without changing primary change facts or traversal stops.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-        "locator": {
-          "kind": "symbol",
-          "name": "FamilyTree"
-        }
-      },
-      "id": "RLZ-85HWGR",
-      "invariant": "INV-CK3PTB",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Computes the families shown under the filter once and passes the traversal hook the name of exactly those rows in the order on screen, so the status is tied to what the reader sees.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:374bf51400b021ba73db845466c7460c8e2065af054469111e13fc6521128ce0",
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+        "content": "sha256:253f02a828adbfe1f0ef50aa9e3fc1fe596665c3787a7ce0c8858d54f887e880",
         "locator": {
           "kind": "symbol",
           "name": "RosterLine"
@@ -57,61 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
-        "locator": {
-          "kind": "symbol",
-          "name": "OutlineNode"
-        }
-      },
-      "id": "RLZ-D0892J",
-      "invariant": "INV-PKFP2R",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 2",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "Its button supplies the one-line box, ellipsis, whole title, accessible name and single primary badge.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
-        "locator": {
-          "kind": "symbol",
-          "name": "OutlineNode"
-        }
-      },
-      "id": "RLZ-HT081Q",
-      "invariant": "INV-AY7A8V",
-      "origin": {
-        "handoffEntry": "L86-CODE-R1-F03",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It supplies family plus subject occurrence identity to the existing traversal.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
-        "locator": {
-          "kind": "symbol",
-          "name": "nodeBadges"
-        }
-      },
-      "id": "RLZ-K8M23Z",
-      "invariant": "INV-76C676",
-      "origin": {
-        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
-        "leaf": "260928-MIK-L43"
-      },
-      "rationale": "The row accessible name includes the eligible own recorded-effect sequence while its primary-change traversal classification remains unchanged.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
         "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
         "locator": {
           "kind": "symbol",
@@ -129,62 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-        "locator": {
-          "kind": "symbol",
-          "name": "FamilyTree"
-        }
-      },
-      "id": "RLZ-QS7G44",
-      "invariant": "INV-NSG0D4",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Draws admitted outline/catalogue groups with walked member facts overlaid, applies persisted All/Changed view and title query, and renders compact rows and traversal status. Changed view retains selected members and selected/kept family visibility; a text query may hide nonmatching families and rows. It does not render Family context details or substitute delivered roster members for the complete index outline.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-        "locator": {
-          "kind": "symbol",
-          "name": "FamilyTree"
-        }
-      },
-      "id": "RLZ-X5HCD5",
-      "invariant": "INV-DEDX8T",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 9",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It filters the outline rows by their family title, record identifier and invariant summary inside the active view.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-        "locator": {
-          "kind": "symbol",
-          "name": "FamilyTree"
-        }
-      },
-      "id": "RLZ-XXW6ZB",
-      "invariant": "INV-27SPEH",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 5",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It applies the stored view and retains selected and walked rows while filtering the complete outline.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-        "content": "sha256:374bf51400b021ba73db845466c7460c8e2065af054469111e13fc6521128ce0",
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+        "content": "sha256:253f02a828adbfe1f0ef50aa9e3fc1fe596665c3787a7ce0c8858d54f887e880",
         "locator": {
           "kind": "symbol",
           "name": "RosterLine"
@@ -200,389 +56,69 @@
     }
   ],
   "references": {
-    "16": {
-      "note": "What the caller passes for the walked tree: its entries, the kept families with the subject each was last read for, a notice and the selected subject's state.",
+    "56": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export interface WalkedTree {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:813d725a81409c3c4717d145a0454b1628ef6e57b91b08d6f8b2a9af83a27bdc",
             "locator": {
-              "kind": "symbol",
-              "name": "WalkedTree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "Member rows are the union of both sides by exact revision, with the wording comparison for a revision on both sides.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
-            "locator": {
-              "kind": "symbol",
-              "name": "memberRows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "The roster line states returned, total and remaining counts beside the loaded membership rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
-            "locator": {
-              "kind": "symbol",
-              "name": "RosterLine"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "36": {
-      "note": "The continuation control: one per side with an incomplete page and a published cursor, named with its family.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "RosterNext"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "Arrow keys move focus among the tree nodes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:50319d40ad93d146cb9c1589211684b18c23802f60f9cc17dc8d836c7425f5a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "treeArrow"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "The traversal the tree binds, with the rows it shows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:f0e076fa7a23de01535d871d1215c1a03c393d658377c8edf80e124d7b088d0c",
-            "locator": {
-              "kind": "symbol",
-              "name": "useChangeTraversal"
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "41": {
-      "note": "Tree section with filter, triage bar and row list",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyTree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "42": {
-      "note": "View and order resolution with the no-change sentence",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:8b532d664b9b58de51b506ae65c0c6d6f05c95d0683511096396eaeaece300a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "useTreeRows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "43": {
-      "note": "One-line row button with badge and kept tag",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
-            "locator": {
-              "kind": "symbol",
-              "name": "OutlineNode"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "44": {
-      "note": "Kept tag naming the subject the family was last read for",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:c0544018e4d6477a283fa4e0ddb7ecde0b2b195dd294c02967193e24f4f7145e",
-            "locator": {
-              "kind": "symbol",
-              "name": "KeptTag"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "45": {
-      "note": "Selection matching for subjects and family selections",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:c330b9ae246c23542ef334d9fbb4e1a6500c10498b29c943848aac55b3b97811",
-            "locator": {
-              "kind": "symbol",
-              "name": "rowSelected"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "46": {
-      "note": "Case-insensitive query matches row identifiers and titles; view selection first retains real changes, selected rows and walked family context. A nonmatching query can still filter those retained rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:f3bf0dbd57b18703ca5eac0e327530bb84da4ce9ae185328b3aaf2a9dc8a2d75",
-            "locator": {
-              "kind": "symbol",
-              "name": "shownGroup"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "47": {
-      "note": "Traversal keyed to the shown rows",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:a0c9e6be10161e3832e834cc7ce3d2ceefce34b7e1e44d43c8bdece194c2da0d",
-            "locator": {
-              "end": 473,
+              "end": 39,
               "kind": "line_range",
-              "start": 468
+              "start": 24
             }
           },
           "kind": "code"
         }
       ]
     },
-    "48": {
-      "note": "Recorded meaning labels are an additional compact badge only for added, removed or changed record rows with steps.",
+    "57": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function memberRows(entry: ReviewFamilyContextEntry): MemberRow[] {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:7747bb72c0c480706cc4fc0f4ccd637439cba69e23851635d4f489b74c6cc05f",
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:8c4829d58a42f52954e2b65341eb309adc4c470c44528b9a9cb3193b1d6590d1",
             "locator": {
-              "kind": "file"
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
         }
       ]
     },
-    "49": {
-      "note": "Compact catalogue navigation delegates outline grouping and badges, filters row identifiers and titles, preserves selected/walked context within the selected view, and renders one-line title/badge/kept buttons rather than semantic statement disclosures. Recorded meaning labels are supplementary, eligible only for changed record rows; aggregate-only family badges are not primary traversal changes.\n\nAnchor: `FamilyTree` `OutlineNode` `nodeBadges` `shownGroup` `useTreeRows`",
+    "58": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function RosterLine({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:bb187d4906137a6d83a4effdbe5323d613970c6bd0c6bc57025695521682947a",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyTree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
-            "locator": {
-              "kind": "symbol",
-              "name": "OutlineNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
-            "locator": {
-              "kind": "symbol",
-              "name": "nodeBadges"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:f3bf0dbd57b18703ca5eac0e327530bb84da4ce9ae185328b3aaf2a9dc8a2d75",
-            "locator": {
-              "kind": "symbol",
-              "name": "shownGroup"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:8b532d664b9b58de51b506ae65c0c6d6f05c95d0683511096396eaeaece300a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "useTreeRows"
+              "end": 143,
+              "kind": "line_range",
+              "start": 89
             }
           },
           "kind": "code"
         }
       ]
     },
-    "50": {
-      "note": "Optional leaf-wide source facts enter outline grouping only through the supplied tree read and comparison. The exact count is distinct unchanged outline invariant identities whose delivered implementation fact is established; unavailable or mismatched facts stay unknown rather than zero.\n\nAnchor: `FamilyTreeProps` `admittedGroups` `matchingTreeRead` `codeFacts` `codeChangesCount`",
+    "59": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function RosterNext({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:8ec9fa4497e0e61de45c995fc13c719996b77984c97cb24b12479fa4bded5fe4",
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:201756238eb442e095080a5ce1a52c535730a449b26a56bcd52899232981f972",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyTreeProps"
+              "end": 160,
+              "kind": "line_range",
+              "start": 145
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:9b34dc26a8223b978f914490645fe10e38a3277ffa072fc27c9fce61d9825023",
-            "locator": {
-              "kind": "symbol",
-              "name": "admittedGroups"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:f0723ce21bfe8503275bd8a18e130fda8b8cad35648e882cd8b3b971ae540711",
-            "locator": {
-              "kind": "symbol",
-              "name": "matchingTreeRead"
-            },
-            "path": "dashboard/src/panels/review/codeFacts.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:a360060b4b0d237bc9e1b05b597a131ae2dd5f59b90561bb71ac2ec6a75ccd45",
-            "locator": {
-              "kind": "symbol",
-              "name": "codeFacts"
-            },
-            "path": "dashboard/src/panels/review/codeFacts.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:ec0b0e6df571e1df7449e21997766d268b89c8d457ab903e2f23d5829343196d",
-            "locator": {
-              "kind": "symbol",
-              "name": "codeChangesCount"
-            },
-            "path": "dashboard/src/panels/review/codeFacts.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "51": {
-      "note": "Late delivered code facts enrich existing rows with a polite count notice. The same-comparison count-change wrapper snapshots list/ancestor scroll positions before mutation and restores them after update; it does not select or focus a new row.\n\nAnchor: `FamilyTree` `CodeFactsScrollAnchor` `useCodeFactsNotice`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyTree"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:f274dab8902eaa4694b6b48b4d9b898bf87c5c7d05da3e4d294e3f65627d2355",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeFactsScrollAnchor"
-            },
-            "path": "dashboard/src/panels/review/codeFacts.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:ee22685ecc7773d71acd210ca0ce8c61232afe4c0b66753942329ae29061fdcf",
-            "locator": {
-              "kind": "symbol",
-              "name": "useCodeFactsNotice"
-            },
-            "path": "dashboard/src/panels/review/codeFacts.ts"
           },
           "kind": "code"
         }

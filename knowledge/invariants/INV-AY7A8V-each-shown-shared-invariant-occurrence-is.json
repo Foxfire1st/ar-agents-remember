@@ -5,13 +5,18 @@
     ],
     "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.navigation.test.tsx mounted j/k/Next/Previous shared occurrence case; l86-repair-W2/tree.md"
   },
-  "applicability": "Shared invariant occurrences in tree traversal.",
+  "applicability": "Next/previous block traversal in the intent-review reading column for the shown comparison.",
   "conditions": [
-    "Each shown occurrence under its family is a distinct stop.",
-    "Summary counts still deduplicate invariant identity."
+    "The stop order is the shown subjects' drawn changed blocks in display order, followed by the read code-without-invariant hunks.",
+    "A subject listed under multiple families draws its blocks only at its first occurrence; another occurrence is a selection place, not duplicate blocks.",
+    "A card that draws multiple entries keeps every entry's distinct identity as an alias for its one traversal stop; summary location counts continue to count entries.",
+    "With nothing selected, either command selects the first block. From a family, subject, folded group or unread lane file, movement is relative to that displayed place.",
+    "At an end, the selection stays and the polite end message names the absence of an earlier or later block."
   ],
   "exclusions": [
-    "Count identity changes."
+    "Treating every family occurrence or every alias of one shared region as a separate traversal stop.",
+    "Unchanged and not-comparable grouped locations as changed-block stops.",
+    "Tree-arrow focus navigation, text-input keystrokes and commands outside their admitted review zone."
   ],
   "id": "INV-AY7A8V",
   "origin": {
@@ -25,9 +30,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each shown shared invariant occurrence is a distinct traversal stop under its family while summary counts still deduplicate invariant identity.",
+  "statement": "The review's j and k commands traverse changed blocks by comparison-bound block identity, with one stop per drawn shared region.",
   "status": "proposed",
   "supersedes": []
 }

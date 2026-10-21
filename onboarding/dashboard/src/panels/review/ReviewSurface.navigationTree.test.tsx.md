@@ -2,21 +2,24 @@
 
 ## Governing Overview
 
-[dashboard/src/panels overview](../../overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-The whole mounted R86 surface replays the leaf-built L37 responses with fetch replaced. Four cases assert first-change selection, Changed/All row population and tooltips/filtering without disclosures, existing comparison-viewer filters and return state, open worklist state, and in-card Full file without a changeset request. They do not assert rendered markers on that unchanged Full-file payload.
+Check the mounted page’s unselected opening, compact tree views and the offered comparison-viewer and Worklist destinations over retained L37 replies.
 
 ## Code Commentary
 
-The first case derives initial selection and summary expectations through the triage helpers, checks 116 All-view DOM rows with nonempty titles, narrows them by filtering without another request and checks disclosure categories. It measures neither row height nor single-line geometry. The viewer case checks comparison-5 request selectors, presses `j` only and checks the unchanged selected row, then asserts Back restores trigger focus and assigned scroll state without another read; it does not press `k`. The worklist case preserves the selected subject with no patch node. The card case opens the Full-file host and asserts no viewer/changeset request; it does not assert hunk markers.
+An unnamed opening sends one task-context intent read with no selector, selects no tree row and draws no subject slot. Changed counts come from the captured outline; All has 116 family/member rows, excluding pinned and location rows. Every family/member/location row has a title. Filtering shrinks the subject population without a request and the tree has no disclosures.
+
+The captured lane has 138 files without invariant attribution and offers only its unexplained Full-page link, alongside All changes. Both destinations draw a first diff using comparison 5 without a mode selector. Pressing j in the viewer does not select a review tree row. Back restores the trigger’s focus and assigned reading-column scrollTop without another read.
+
+With an explicitly named family, the persisted Worklist opens as its own view, retains the selected subject row and draws no knowledge patch or Item facts panel. Clicking that same selected row returns to its subject reading. The disclosure helper checks only the mounted fixture’s allowed identifiers/provenance details, with no review content inside and at most twenty details; it is not a global page-cardinality rule.
+
+### Evidence Boundary
+
+These are source-inspected mounted checks with the inputs and replacements named here. This analysis did not execute them, recapture backend output, measure a real browser, or reopen the passed code candidate or D417 closures. Declaration counts and DOM assertions are not execution receipts. The three current declarations use fetch replay and assigned jsdom scrollTop. They do not prove viewport geometry, single-line row height, k behavior, unknown-destination availability or removed Full-file markers.
 
 ## Evidence
 
-- Stored view and order reset for each case [1]
-
-- Disclosure contract for every mounted view [2]
-- First-change derivation from the captured outline [3]
-
-- Changed and All counts from the captured outline [4]
+- Unselected opening, current offered viewer destinations and Worklist selection retention. [5]

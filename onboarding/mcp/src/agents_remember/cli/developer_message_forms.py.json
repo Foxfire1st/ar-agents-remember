@@ -1,0 +1,275 @@
+{
+  "path": "mcp/src/agents_remember/cli/developer_message_forms.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:b7dad00d172ac66d5eb1745c9ff2e1381ad7b27b4b02af6cf4f2c930dbb92eb2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_form"
+        }
+      },
+      "id": "RLZ-0N4KQB",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A task: read the document's Markdown file, or its JSON when it has none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:b23a7dd0cf6928a4cc20a25ba2d393672d0be1d22cd7766b880c224dffe84ace",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_block_form"
+        }
+      },
+      "id": "RLZ-1R2YR2",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A review block: `knowledge_read` for the entry's invariant and its revision at the block side's memory tree, at the leaf's memory root, the invariant's record at that tree, then `git show <side tree>:<path>` for the range.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:7b8c2748c969e11e84144748e6a44a836330c09d707cbbcfc7aee7da0a999c64",
+        "locator": {
+          "kind": "symbol",
+          "name": "_change_set_form"
+        }
+      },
+      "id": "RLZ-6VWKQQ",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A change set: `git diff` over the code and the memory tree pairs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:122c083a96553a5ba3c0777da107a331d674490d074d8ce73ab7616ffc687227",
+        "locator": {
+          "kind": "symbol",
+          "name": "written_form"
+        }
+      },
+      "id": "RLZ-7DQRTD",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Renders one reference by its kind's form function.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:075e15bde0f4de5cd1bfab09a18f0e76418cee659db5d277300b954e68a901a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_form"
+        }
+      },
+      "id": "RLZ-7SFQYT",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "An invariant or family: `knowledge_read` with the record id and the revision read at the named memory tree, then `git show` of the record file at that tree; picked on a comparison, it names the leaf's memory root (P-T2, L89-R1-019).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:e922a03a211e96a2598f4d5d8adb1a08f953b34b9ec3a15e27d431e1e3052223",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checked_revision"
+        }
+      },
+      "id": "RLZ-9N7F9K",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses a sent revision the tree does not hold (L89-R1-019).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:1630e81a2caee78ff1b3fe7a8e41f4d44fea8d8d99eb9a586abd71034cf93673",
+        "locator": {
+          "kind": "symbol",
+          "name": "_contradiction"
+        }
+      },
+      "id": "RLZ-C3T0QQ",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses a reference whose parts name different objects before it is rendered (L89-R1-026).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:0ac6e1d5225bde0dab851733d821988c9035025bb7ec17d30298a9096fb51fb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_at"
+        }
+      },
+      "id": "RLZ-GKD3EA",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the record's path and its revision at the named memory tree (L89-R1-019).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:0a272c8b584f86861a9c5e4e52ede00ec171f8d02971e235278e22d6613bdb28",
+        "locator": {
+          "kind": "symbol",
+          "name": "_code_without_invariant_form"
+        }
+      },
+      "id": "RLZ-K0AQ9A",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Code without an invariant: `git diff <base tree> <candidate tree> -- <path>`.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:7cbfc98c11d05792e8dce27d313a971c4a7fff07eddedf27591d49ba2140935f",
+        "locator": {
+          "kind": "symbol",
+          "name": "FormRoots.comparison_memory_root"
+        }
+      },
+      "id": "RLZ-MW6JEE",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The leaf's memory worktree while it exists, else the repository's memory root.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:4c93050466e362da1624c21a92042e9927d04f8b0b65035f135d50203e0c3da0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_file_in_tree"
+        }
+      },
+      "id": "RLZ-N514HT",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Finds a record's path in a named memory tree with a read-only `git ls-tree`.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+        "content": "sha256:5a7373277d45c64f6f6f73d1840ce2db7ce30974570cc83df7725ac17d9a5a32",
+        "locator": {
+          "kind": "symbol",
+          "name": "_file_line_form"
+        }
+      },
+      "id": "RLZ-SFBH2T",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "File lines: read the file in the File Viewer's checkout at the line range.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Renders supported structured picks into exact written references and opening calls.\n\nAnchor: \"class FormRoots:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+            "content": "sha256:6ff57baabcc6194765a8a32c78d8228238bf1c155199f19ccd68b6e2d74220df",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Renders supported structured picks into exact written references and opening calls.\n\nAnchor: \"def written_form(reference: Any, roots: FormRoots) -> tuple[str, ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+            "content": "sha256:64a1e934f021d0882f7adb622e49c608ff87853cf318633821342e35e704f419",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Renders supported structured picks into exact written references and opening calls.\n\nAnchor: \"def _contradiction(reference: Any) -> str \\| None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f8e3705f9637bf2840652c182c726f6f855a32",
+            "content": "sha256:8b28c5822c5100d7116a8b437bfcf87929ddd4f1e663d22fa47053b4a380ce43",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

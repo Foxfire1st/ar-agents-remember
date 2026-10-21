@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/readerAnchor.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Implement the settled reader-line mechanism separately from allowed selection landing.\n\nAnchor: \"function lineElement(scroller: HTMLElement, line: number): Line {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec2bbbe7dd435e5a97d997b5b2fe0c0f4ad0cd57",
+            "content": "sha256:88f11daed95203b3eec946764e365170219e7ad09ce21e9b8a6c607dadd0aa59",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Implement the settled reader-line mechanism separately from allowed selection landing.\n\nAnchor: \"function lineIn(box: HTMLElement, dom: HTMLElement, view: EditorView, line: number): EditorLine \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec2bbbe7dd435e5a97d997b5b2fe0c0f4ad0cd57",
+            "content": "sha256:a8a889a93eaec6df7c17c39b05bc4132aab010e99b5708011b25f7729a460ade",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 234
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Implement the settled reader-line mechanism separately from allowed selection landing.\n\nAnchor: \"function editorTop(at: EditorLine): number \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec2bbbe7dd435e5a97d997b5b2fe0c0f4ad0cd57",
+            "content": "sha256:6f1ffde857c5734c129aa4149cee66345720677cf6db73a40ef23a3a1c18eb48",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -5,12 +5,12 @@
     ],
     "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); ReviewSurface.worklistRepair.test.tsx; browser/report.md one group/10family/12member entries and exact digests"
   },
-  "applicability": "Entry identifiers for a card selection.",
+  "applicability": "Entry identifiers for the shown review page card-read entries.",
   "conditions": [
-    "One disclosure lists every selected realization/proof identifier with per-side blob and content digests."
+    "One list enumerates every supplied card-read entry once, retaining each before/after blob and content digest."
   ],
   "exclusions": [
-    "Per-card repetition of the identifier list."
+    "Per-card identifier-list repetition."
   ],
   "id": "INV-9VPYCZ",
   "origin": {
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A selection has one entry-identifiers disclosure containing every realization/proof identifier and its supplied per-side blob and content digest.",
+  "statement": "The review page has one entry-identifiers list inside its Technical details provenance fold, containing every supplied card-read realization/proof identifier and its per-side blob and content digest.",
   "status": "proposed",
   "supersedes": []
 }

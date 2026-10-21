@@ -2,204 +2,51 @@
   "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The real bodies and the scratch leaf they describe.\n\nAnchor: \"captured<ReviewResult>('laneReview.task.captured.json')\"",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws each destination in the existing page in the lane answer order, with its one reason sentence', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:9d900241c19c7ffdde9454628c509511eaf67337f07d5942bb33f3df535a7fd1",
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:427dbaec59ff69f21e360886540fe8ca1504566ee9344af9e8faef45145abcea",
             "locator": {
-              "end": 30,
+              "end": 47,
               "kind": "line_range",
-              "start": 1
+              "start": 21
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "The mounted destination case asserts Changes without an invariant with 167 files, lane path order, one reason sentence, and the two-file Unknown attribution destination.\n\nAnchor: inclusive source ranges",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps All working while lane counts are being read, and never supplies guessed buckets', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
-            "content": "sha256:a9b0ad1de68f4173802b4d3d54af0f34408d3d5f55b6d8d1d3e354367fb7751e",
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:90752e689e2538e66c8d0b40392e3ca9d8b233d574643b578c71b8c6da141e5e",
             "locator": {
-              "end": 42,
+              "end": 80,
               "kind": "line_range",
-              "start": 18
+              "start": 48
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "While the lane read is held, All remains usable, both destination filters are disabled, and Changes without an invariant becomes enabled after release.\n\nAnchor: inclusive source ranges",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states an unanswered leaf worklist as reading in its own view, never as no gate item', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
-            "content": "sha256:3f835bd819577708d1a4517cea2fac1ecd23ec788eae14a5a2785d0522e3d448",
+            "blob": "b9edd45516adabad6f33e502b8c6832599c0a00d",
+            "content": "sha256:2e49f46a567fdfcf354fdaec6d2728c3550961505e5616f6eb487b9eefd3211e",
             "locator": {
-              "end": 73,
+              "end": 93,
               "kind": "line_range",
-              "start": 43
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "The held worklist view states that it is reading; after release the rail asserts Worklist 518 open.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
-            "content": "sha256:682a9de06deb1baac73988823e7b985bea2e64450958787b0a2667fd2c542a53",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 74
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The fetch stub, with a held read.\n\nAnchor: \"function answer(url: URL): unknown {\"; \"function serve(hold?\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:e87e312bf6e184be391b6f49812ef40c613542592d8a0de5ce1c1182329940e7",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 39
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Case 1: destinations after the families, one lane read.\n\nAnchor: \"offers the two lane destinations after the families, with their file and hunk totals\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:b4208a1f7f309f648eeddb28c688fab9ca1605233bf8fed064411149f37e100c",
-            "locator": {
-              "end": 99,
-              "kind": "line_range",
-              "start": 85
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Case 2: rows in the server's order and a focused hunk.\n\nAnchor: \"lists unexplained files first, then attributed files, and opens one on its unexplained hunk\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:61fbde1e85324ed8d0b1b1af82a359cbd9ff7af7461e6fcdcc0df3fc578eaf80",
-            "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Case 3: the unknown file with its reason.\n\nAnchor: \"lists the file of unknown attribution with the reason no range is supplied\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:fad02b6c8c4835eb84c599e008bd154c2aefbefda1e778f4a55caa836c2b4d8c",
-            "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Case 4: the gate's items still being read.\n\nAnchor: \"says the gate's items are still being read, never that the gate raised none\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:e1ba5a628ba9ab61d8111a94b70e2531f1c7b243b4aaad893963390beebbdba1",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 158
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Cases 5 and 6: the explorer labels from the lane, or pending (ruling Q1).\n\nAnchor: \"labels the source explorer with the lane's bucket for every changed file\"; \"labels the explorer pending while the lane is read, never with a guessed bucket\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:90459e7fdc1e6facca88e3499dc893abbff8e4ac302f0954e44de24918e3c92c",
-            "locator": {
-              "end": 229,
-              "kind": "line_range",
-              "start": 188
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Case 7: the technical details from the lane (review F1).\n\nAnchor: \"lists the lane's unexplained and unknown files in the technical details\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:4fe0da5cecbd3cec551fd0fdfd7c4c6954b4d95580e52ac57f5e92c4068502bf",
-            "locator": {
-              "end": 258,
-              "kind": "line_range",
-              "start": 231
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The module reads its lane fixture from l86.lane.captured.json.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5c408f31936d1dfd89f2c899046cd173afa074ca",
-            "content": "sha256:d987dbb9be8890dcabfba1d461847ddf283759e0937dc7fefd2bd4dce3cb6e7a",
-            "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 17
+              "start": 81
             }
           },
           "kind": "test"

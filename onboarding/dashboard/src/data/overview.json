@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:cfdc38c8a205eae017d16bee399919ce85eceac54ce1e7a1a109ee9cb1441c31",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:eda31ec526822901962a3a4e5ab79ebed7c3263c207c1b0b247c42e71eeef236",
             "locator": {
               "kind": "symbol",
@@ -30,12 +30,12 @@
         },
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:f7d45420cd7d2c250a5a21ef27a56271fecf06588c9ff6e0bfadf4d4d4fbd831",
             "locator": {
-              "end": 241,
+              "end": 259,
               "kind": "line_range",
-              "start": 241
+              "start": 259
             },
             "path": "dashboard/src/data/reviewFamily.ts"
           },
@@ -48,12 +48,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
             "locator": {
-              "end": 209,
+              "end": 210,
               "kind": "line_range",
-              "start": 204
+              "start": 205
             },
             "path": "dashboard/src/data/reviewLane.ts"
           },
@@ -61,12 +61,12 @@
         },
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:7a6edf9b56b9290a93fb635cd5be841cca0c286dcc93a8600383f3352fb37284",
             "locator": {
-              "end": 276,
+              "end": 277,
               "kind": "line_range",
-              "start": 248
+              "start": 249
             },
             "path": "dashboard/src/data/reviewLane.ts"
           },
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:e6a0545e61865480c8b99354a7eaf8de24b661527abe1181e8faf663aca79a62",
             "locator": {
               "end": 86,
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:79e265ba1c0dff3d6818c191e7366898deed8ab3e5712e09514ae56b63dd286b",
             "locator": {
               "kind": "symbol",
@@ -257,12 +257,186 @@
         }
       ]
     },
+    "110": {
+      "note": "The card store admits stable answers and retries transient read failures instead of retaining them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:7542b756f670622abecdec2079bad7f41224088d2623e8a53db6a0a24c57e9e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepableCardAnswer"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:4f7ef88cf00fde32f3e6ada8c6e305c55e6ba26dd9643fa619537f5443afa97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchCardEntries"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Shown-set card reads sort and deduplicate at most500 IDs per chunk and merge in chunk order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:f445d9876c6071b239be4d7baaa1ca91615b50dfec52f16a97fff7f744d85b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CARD_CHUNK"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardChunks"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:1fa61188476acdc749083ae4484280cf9e83be41d2f261379406300997118881",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergedCards"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSetCards"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "The catalogue request transmits optional recorded comparison identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "113": {
+      "note": "Catalogue local keys include the optional number and forward it to the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "Intent summaries carry optional comparison identity and can wait until a number is known.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:fc0b2a4a6595c5054589f2997e066b4a854324579e47638a14e0737f5a13cc53",
+            "locator": {
+              "kind": "symbol",
+              "name": "summaryUrl"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:f10a5068b1d1409adc09525b4af0bf8f0459f4254c4e3d20d4c5abb459b6283e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "115": {
+      "note": "The family mirror carries selected display versions and recorded writer observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:1d4eb393aac21ae08c0342c362cd3dead4c7d32f35680a6bb6d7b26309ae3198",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionWriter"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:d5f2846e5a7615aaf88a5dbbf0dde5ecf26660822bf34c645c23b09480023a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelection"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "15": {
       "note": "The three locator declarations.",
       "targets": [
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:4d9b98fee7a48498685ef440e0a8a0d3c15f4c33c0d9991740c47dc0efc6aade",
             "locator": {
               "kind": "symbol",
@@ -274,7 +448,7 @@
         },
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:7579e6163c0ca902594f7dd86155a1e0ef920e4b508461056eed377578545cab",
             "locator": {
               "kind": "symbol",
@@ -291,7 +465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
             "locator": {
               "kind": "symbol",
@@ -337,7 +511,7 @@
         },
         {
           "anchor": {
-            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
             "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
             "locator": {
               "kind": "symbol",
@@ -354,7 +528,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
@@ -400,7 +574,7 @@
         },
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -463,7 +637,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 42,
@@ -476,7 +650,7 @@
         },
         {
           "anchor": {
-            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
             "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
             "locator": {
               "end": 38,
@@ -489,7 +663,7 @@
         },
         {
           "anchor": {
-            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,
@@ -533,12 +707,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:faef4dafa9f822bbd133039f932b85f3ed53963e045da9f0fe5d9d5c12e62e89",
             "locator": {
-              "end": 581,
+              "end": 435,
               "kind": "line_range",
-              "start": 581
+              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -551,7 +725,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:b4de4cacb6a3d60b886bdac02c57d0fbfe97046151afac25168afdcd10e212f2",
             "locator": {
               "end": 98,
@@ -565,16 +739,15 @@
       ]
     },
     "30": {
-      "note": "**The entry call: the task context alone, because a selector is what it is being asked for.**",
+      "note": "The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:9638940a5240aa1ca24c1a58b12234c0b784036776af19bc5085579d9d922efb",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
             "locator": {
-              "end": 800,
-              "kind": "line_range",
-              "start": 800
+              "kind": "symbol",
+              "name": "intentReviewEntries"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -587,7 +760,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -599,7 +772,7 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:494d09652a67833a98c55a7fa7f5647a9630d71c6355a7cb85d093dc166ba880",
             "locator": {
               "kind": "symbol",
@@ -611,12 +784,12 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:24c209e91cf40031f894eb6d0385fc2b83a75e687b0061b6ffdbe464622a4708",
             "locator": {
-              "end": 727,
+              "end": 581,
               "kind": "line_range",
-              "start": 727
+              "start": 581
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -695,7 +868,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:9b1b00c8d99758ebca583aad6b9dd2478b4631ba89c975e3b1d9626474386b90",
             "locator": {
               "end": 4,
@@ -713,12 +886,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:120ee0b56342b5eef6994cc6b88801676ac536ccce4757950a23d7d01ca2c02e",
             "locator": {
-              "end": 547,
+              "end": 401,
               "kind": "line_range",
-              "start": 547
+              "start": 401
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -731,7 +904,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
             "locator": {
               "kind": "symbol",
@@ -743,7 +916,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:9ae896a10dad7d4c5f4f7cab603a529c3c5e41269f3c6d22f6128aae1e8f54dd",
             "locator": {
               "kind": "symbol",
@@ -773,7 +946,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:f0562673993cbc1b914392217debb15c996e78e15fd7ad216ed341d97623e366",
             "locator": {
               "kind": "symbol",
@@ -785,7 +958,7 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:fa61b803b77cd44bd7425f4b38c5153b6416be5ea89e7fc711f68ffaa35c0541",
             "locator": {
               "kind": "symbol",
@@ -797,7 +970,7 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
             "locator": {
               "kind": "symbol",
@@ -814,7 +987,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
             "locator": {
               "kind": "symbol",
@@ -826,7 +999,7 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:0d1fc3fb34c2a83ac997a203c89912e95c91fddf442d21f980b500da2b9f12c1",
             "locator": {
               "kind": "symbol",
@@ -903,12 +1076,12 @@
       ]
     },
     "42": {
-      "note": "Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner.",
+      "note": "Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8a91035417026d4649506297946286a4abd6d17",
-            "content": "sha256:335ea7b3eadaa98c1fbaaaf8a34a21c953fdc1ea2d43753075dcbe78482b1084",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:8e3dc14b56c971b106e75dff7e72407f165fa28801829cf68d27165906c1a86d",
             "locator": {
               "kind": "symbol",
               "name": "ChangeList"
@@ -919,167 +1092,192 @@
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
-              "name": "SourceContent"
+              "name": "useReviewChangePage"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "43": {
-      "note": "**The six-member state literal and optional-text side mirror preserve the server contract. This interface is not a discriminated text/state validator and shared transport does not enforce a complete payload guarantee.**",
+      "note": "The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3df3bff746bde383b406b3741ba46e14f4d56695d025bffa61336eb44ae94531",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewSourceSideState"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:aa4a4272fb0a9304c6d8356b90127e46d5ecf04e88fd32c12c24b34a5559ec20",
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:4238ed779a8790fb8f72c024a28bd7ddc31a1f7240d482a695d6b0feec7d83b2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReviewSourceSide"
             },
-            "path": "dashboard/src/data/reviewTransport.ts"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
           },
           "kind": "code"
         }
       ]
     },
     "44": {
-      "note": "**The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.**",
+      "note": "The retained backend expansion carries both requested tree identities, both side values, currentness, path-bound measurement and admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:d6c2f0cb4e05611a6ee870f5ac40440cd1b98f76becc8be2dfd54a95c43ae515",
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:3a3dc099eb0b876ca6894e60776ea0f172e0feb5e9711146d9b0302d0a7be502",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceExpansion"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
           },
           "kind": "code"
         }
       ]
     },
     "45": {
-      "note": "**The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.**",
+      "note": "The retained backend content/refused envelope enforces one expansion or one refusal, never both.",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:3077955a6263794f03a7acf7ae87de8b88be58ed1fe0c79d783f6952e9a80d83",
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:e99cc7aa6d8c6656ea4b600fc2b0a5c9fd81255d5c93edca94086ab9e8a1c984",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceContentResult"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
           },
           "kind": "code"
         }
       ]
     },
     "46": {
-      "note": "**Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.**",
+      "note": "The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "api_review_intent_source_content"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/serving/review.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:aa4a4272fb0a9304c6d8356b90127e46d5ecf04e88fd32c12c24b34a5559ec20",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_source_content_response"
             },
-            "path": "dashboard/src/data/reviewTransport.ts"
+            "path": "mcp/src/agents_remember/serving/review.py"
           },
           "kind": "code"
         }
       ]
     },
     "47": {
-      "note": "**The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.**",
+      "note": "The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:66e1e3215cf562886d8e320a12b9d0c01fc0e876248931f5e27f07af43f229e0",
+            "blob": "6c2e7ac2757c47106b9bcea90649843259b0ba17",
+            "content": "sha256:0b63a74d8f3e792c4d24782b4f54ee357c448b75b20688f3a50a47f5329d2bd3",
             "locator": {
-              "end": 826,
-              "kind": "line_range",
-              "start": 825
+              "kind": "symbol",
+              "name": "ReviewSourceContentRequest"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/models/knowledge/review_source_content.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:60baed14bbecb537b3704d480d87ac1ce4fd443cf25883b425c73fc3f16e9f6a",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
             "locator": {
-              "end": 836,
-              "kind": "line_range",
-              "start": 835
+              "kind": "symbol",
+              "name": "_content"
             },
-            "path": "dashboard/src/data/review.ts"
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         }
       ]
     },
     "48": {
-      "note": "ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message.",
+      "note": "Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
-              "name": "FullFile"
+              "name": "useReviewChangePage"
             },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeOverlay"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "49": {
-      "note": "The renderer the expansion's fields feed, and its three state-decided branches.",
+      "note": "The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 71
+              "kind": "symbol",
+              "name": "_side_content"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:a5a422ceed02ef1b4316876f67da1f6a7cce1d44a555e16cd3bae81a6742a484",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         }
@@ -1090,7 +1288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
             "locator": {
               "kind": "symbol",
@@ -1102,7 +1300,7 @@
         },
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
@@ -1119,7 +1317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:518ba97a2e876a750a674facde42ec49d1f01b376028d44f80204506341ecca1",
             "locator": {
               "kind": "symbol",
@@ -1131,7 +1329,7 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:e2a13520375f7b850be1252be1a1a0852a60585640444d8778b26b8651a29b2c",
             "locator": {
               "kind": "symbol",
@@ -1143,7 +1341,7 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:5916c4a623a8d92d33dd2e79fe2de9624a4b08b8f31d531a8769a86d5dda886a",
             "locator": {
               "kind": "symbol",
@@ -1155,12 +1353,12 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
-              "end": 75,
+              "end": 76,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -1173,7 +1371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
             "content": "sha256:394328357c2e3b05e2777722c87ca0301cc3b5283ef8893394e67378c6a39910",
             "locator": {
               "kind": "symbol",
@@ -1237,7 +1435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
             "locator": {
               "kind": "symbol",
@@ -1254,12 +1452,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:66cb63de23c042cf0174db4b81d76f32c98e9bd39c3c51a84e4d85a82997e4f8",
             "locator": {
-              "end": 249,
+              "end": 252,
               "kind": "line_range",
-              "start": 237
+              "start": 240
             },
             "path": "dashboard/src/data/knowledgeReader.ts"
           },
@@ -1356,12 +1554,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
             "locator": {
-              "end": 240,
+              "end": 287,
               "kind": "line_range",
-              "start": 238
+              "start": 285
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1418,14 +1616,28 @@
       ]
     },
     "68": {
-      "note": "The entries hook shares cached/in-flight card reads, suppresses unmounted retell callbacks without aborting the shared read, and returns null without a comparison or invariant set.  Anchor: `useReviewTreeEntries`",
+      "note": "useChangeSetCards reads the page's shown invariant set in sorted distinct chunks of at most 500 and shares only admitted stable answers and in-flight acquisitions; inactive/unbound reads return null.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "useChangeSetCards"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:97b943f987f48d6f3bcd3e2317f8e39915d089afbcbd56419ad0a90dd0db3d4c",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 449
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1454,7 +1666,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
             "locator": {
               "kind": "symbol",
@@ -1466,7 +1678,7 @@
         },
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:15f70b6870a24452a148a06dfa75248f9a6c960d88c355baa91e2ed88cc975c0",
             "locator": {
               "kind": "symbol",
@@ -1659,7 +1871,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
             "locator": {
               "kind": "symbol",
@@ -1694,12 +1906,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "blob": "4b743f0cc40d0d1fa48a7abc9a7c92ac75d640ef",
             "content": "sha256:7ce922dacb14d14136004d944fed2be6bdf9e9966ad2e480139ce8eba245f6b5",
             "locator": {
-              "end": 173,
+              "end": 147,
               "kind": "line_range",
-              "start": 162
+              "start": 136
             },
             "path": "dashboard/src/data/reviewTransport.test.ts"
           },
@@ -1712,12 +1924,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "blob": "4b743f0cc40d0d1fa48a7abc9a7c92ac75d640ef",
             "content": "sha256:be605aa7ebd5f50727d335966a1906dca4eebae03ff9764b638d32fa98614200",
             "locator": {
-              "end": 190,
+              "end": 164,
               "kind": "line_range",
-              "start": 175
+              "start": 149
             },
             "path": "dashboard/src/data/reviewTransport.test.ts"
           },
@@ -1813,12 +2025,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:aa41a3bc886f40d6b6e027809b5283b42d9fdf16d291b0472d2fe1a6473f715d",
             "locator": {
-              "end": 97,
+              "end": 105,
               "kind": "line_range",
-              "start": 68
+              "start": 76
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1849,12 +2061,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:0fd9b133872cdd857136be3e3c2930c47bf8c4fa8c691cc1ea5d6901170701ec",
             "locator": {
-              "end": 646,
+              "end": 500,
               "kind": "line_range",
-              "start": 612
+              "start": 466
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1867,7 +2079,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:7bc8633a1ba277589e8b7476efd0234a310b96c8e6c431070b4cdf98e734c94d",
             "locator": {
               "kind": "symbol",
@@ -1880,29 +2092,15 @@
       ]
     },
     "90": {
-      "note": "Catalogue history/generation keying does not transmit those values; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined.",
+      "note": "Catalogue history/generation remain local keying inputs, while an optional comparison number is transmitted and included in the request identity; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined.",
       "targets": [
         {
           "anchor": {
-            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
-            "content": "sha256:f6f082e2f96f4358d40dd4d2d9c9183edae98281ea4e2c59148ee4a40daf9625",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
             "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 57
-            },
-            "path": "dashboard/src/data/useReviewCatalogue.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
-            "content": "sha256:80ecd36b18d0fe1b6da7434a1a89ba58e49ca0714a7b3b90841340576bbb3a43",
-            "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 91
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
             },
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
@@ -1969,7 +2167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:85a81c40eeaf85406352c6b0411ec95907c7be98590ec7ab0832b419fc8cabdb",
             "locator": {
               "end": 18,
@@ -1982,12 +2180,12 @@
         },
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:751f7cd53a91de65b6ef2785c51e8bcc709b664c9236f4ae17de31587b3f4cc5",
             "locator": {
-              "end": 446,
+              "end": 455,
               "kind": "line_range",
-              "start": 428
+              "start": 437
             },
             "path": "dashboard/src/data/knowledgeReader.ts"
           },
@@ -2000,12 +2198,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
             "content": "sha256:7c135bcd48aeda9f4f62462d9b05b5ae5dacdc3cf39adb3af7f144071b9711db",
             "locator": {
-              "end": 414,
+              "end": 423,
               "kind": "line_range",
-              "start": 390
+              "start": 399
             },
             "path": "dashboard/src/data/knowledgeReader.ts"
           },

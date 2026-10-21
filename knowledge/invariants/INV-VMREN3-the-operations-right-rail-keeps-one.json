@@ -5,15 +5,19 @@
     ],
     "justification": "The keepalive obligation needs both the rail shell wrapper and the frame descriptor latch; neither file alone promises the retained element. Typed per-case proofs were withdrawn as extractor-unsupported; case evidence lives at file granularity in the cards."
   },
-  "applicability": "Operations right-rail document chat after the first shown chat, for dashboard-open lifetime.",
+  "applicability": "The shell's right-rail document chat for the dashboard-open lifetime after its frame has been created, including the review page's chat column.",
   "conditions": [
-    "The frame was created on first showing; creation stays lazy.",
-    "The rail keeps its document position; no reparenting."
+    "Operations keeps first-show creation when no preload was requested; a review requests preload while its chat column is closed.",
+    "A cold review preload loads the Paseo client without an agent address or agent start; showing the column asks for its bound existing task chat through ar.open when the channel is ready.",
+    "The review is a grid slot beside the same right rail, and neither the DocumentChat nor its iframe is moved to another parent.",
+    "River/chat and sidebar visibility changes hide the retained wrapper; ordinary page transitions and ready-channel task changes retain the same frame generation.",
+    "The hidden wrapper remains out of keyboard and accessibility reach."
   ],
   "exclusions": [
-    "Chats page, whose behaviour is unchanged.",
-    "Host application or version change.",
-    "Eager mount on dashboard open."
+    "The Chats page's separate frame.",
+    "A host application or version change.",
+    "Explicit Retry, host-return or qualified unavailable-channel recovery loads, which keep their existing separate rules.",
+    "Any new agent menu or creation of an agent on page/column open."
   ],
   "id": "INV-VMREN3",
   "origin": {
@@ -27,9 +31,9 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Operations right rail keeps one DocumentChat mounted and hides it instead of unmounting it, so the single chat frame stays loaded and keeps draft and scroll across the river toggle.",
+  "statement": "The shell keeps one DocumentChat and its frame mounted across Operations, task documents and the review page, hiding it without unloading so draft and scroll survive visibility toggles.",
   "status": "proposed",
   "supersedes": []
 }

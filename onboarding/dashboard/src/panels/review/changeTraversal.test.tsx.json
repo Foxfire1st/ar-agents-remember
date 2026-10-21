@@ -3,88 +3,208 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
-        "content": "sha256:e71d33b9260fe63079354753728124c26796b6799fc0ad017d7f45efe3a62d4e",
+        "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+        "content": "sha256:0437d835bec73093e644c5f9886b6cb7a702cbe78c466847406d1b1810fd5758",
         "locator": {
           "kind": "symbol",
-          "name": "beside"
+          "name": "renders a status only beside the stops it was said for, and never again once other stops were shown"
         }
       },
-      "facet": "On the hook alone, with every render recorded: no render shows the status beside other rows, the first such render included; when the first rows are shown again the status does not come back; and a new move is answered again.",
-      "id": "PRF-MKDXY2",
+      "facet": "With every hook render recorded, an end status is absent on the first and every later render with different ordered stops, stays absent when the old stops return, and appears again only after a new move.",
+      "id": "PRF-FJQRM8",
       "invariant": "INV-CK3PTB",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-MKDXY2",
+        "leaf": "260928-MIK-L89"
       }
     }
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The file's statement of why the hook is tested alone.",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves from an entry that its region\\'s card draws as from that card', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
-            "content": "sha256:bff20c8e553185f7c69b1a3f8c0422857e5bdbeec6a219931577f0e0c74c32f7",
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:cabf6788325e73b4e63c2a5b365323d09d725d09e2e75b2a34472876a195b9ad",
             "locator": {
-              "end": 3,
+              "end": 99,
               "kind": "line_range",
-              "start": 1
+              "start": 91
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The probe that records the status of every render.",
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves from a family heading into its members, and before it to the block above', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
-            "content": "sha256:20d837c67cf6f8c3b4114b634c927df7b79770ed55a639c0c626bf1f310247b0",
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:d6f3d21856ee43ab6b6e2793f4d7530a6b1ed61e94b5e1bbf45d912db16d6bdf",
             "locator": {
-              "kind": "symbol",
-              "name": "Probe"
+              "end": 124,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "A status is rendered only beside the rows it was said for and never again once other rows were shown.",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves from a lane file not yet read to the hunks around it, and from the lane to its first hunk', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
-            "content": "sha256:cd563d65bc005c41f17c64263079ca73ed6ff05a99f877b9c80e096f1a60cfb4",
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:9f053aced1d62dd79d692fe7b97ae1f9509f3e36e520bc8dc777bda8c7f76780",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the selection at an end, and starts at the first block only from no selection', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:bc8df2bd1edb8f165268ac88feb818896a48b7e6c7291c95b50cf421ebb4a74c",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('renders a status only beside the stops it was said for, and never again once other stops were shown', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:33fb75a6c98423fe13407c0276b17c9c83c6848dd7bba0de4fbe3563240c79e1",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('binds j and k on the review zone, moves by block identity, and stays inert in a text field', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:664685fc44b23f54240d213f5f3b3f92f18109c6a9d55aef01b20c5aef2742a2",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('walk the changed blocks in display order, then the lane hunks', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:e855ffe2dc5cebf70d58309f9eb906a8c65d06142c1da12ba2f7d3a7e153bfdb",
             "locator": {
               "end": 45,
               "kind": "line_range",
-              "start": 28
+              "start": 37
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The hook that keeps the status with its rows.",
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('start at the first block from no selection and move by identity', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
-            "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:88ce38a0f123a7c2bcb0014ff06cf20e54e767adc4afb8c81ba7640d747282e7",
             "locator": {
-              "kind": "symbol",
-              "name": "useStatusFor"
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.ts"
+              "end": 54,
+              "kind": "line_range",
+              "start": 46
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('enter a selected subject at its first block, and end with the selection kept', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:c3a777532e48a39c360e29c56b6cb02ced62f7bca7171882007b9d8bfdbc4277",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves from a subject without changed blocks to the blocks around its place', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:c505c71a5ef8928edfa417c2e0c41c44abf5a4f25e97c9bb343e51cab80c3daf",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves from a folded location to the blocks around its subject\\'s groups', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "053b987fa1eff355a183aa249ebae58255385a93",
+            "content": "sha256:0292b8c63b9885c8d97dc7301d97ed8bc9da7285253d863387c0c9360d5ec94f",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
         }
       ]
     }

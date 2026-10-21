@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/tray/pickKey.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dba185c8cbf4473f02cc57303c14e00e392e68ca",
+        "content": "sha256:46baab8b5e49d42ba3289ce0718ddcd25c95a9231d00476d2eef34bacbfaa7ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickKey"
+        }
+      },
+      "id": "RLZ-8M3X70",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Provides the object identity used for current membership and duplicate rejection; the existing TRAY01 exact-identity policy remains separate and unchanged.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "dba185c8cbf4473f02cc57303c14e00e392e68ca",
+        "content": "sha256:07e63b06dea229699b645b40fb1496cbb4b1af50326c66891eec1aa28bb93fe1",
+        "locator": {
+          "kind": "symbol",
+          "name": "referenceKey"
+        }
+      },
+      "id": "RLZ-KQ76QB",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Includes each supported object kind’s exact identity fields in reference deduplication.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines when two collection picks are the same object.\n\nAnchor: \"export function pickKey(input: TrayPickInput): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dba185c8cbf4473f02cc57303c14e00e392e68ca",
+            "content": "sha256:46baab8b5e49d42ba3289ce0718ddcd25c95a9231d00476d2eef34bacbfaa7ef",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -101,7 +101,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Suppresses the initial read while navigation holds the question and then starts the selected keyed question without a duplicate default read; explicit refresh and memory-input invalidation retain their own nonce/epoch boundaries.",
+      "rationale": "The surface supplies this keyed read cycle without a hold. Its effect starts the current task-context or explicit-subject question once, while refresh and memory invalidation retain their separate nonce/epoch boundaries.",
       "role": "enforcement"
     },
     {

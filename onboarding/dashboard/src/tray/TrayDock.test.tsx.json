@@ -1,0 +1,230 @@
+{
+  "path": "dashboard/src/tray/TrayDock.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+        "content": "sha256:ae231dfaa7b41e23ebe868163ef975668e59bd8952f15b1a8efc31784e41e655",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray dock > docks in the chat column above the composer and reserves the tray’s height there"
+        }
+      },
+      "facet": "The document dock draws outside the iframe, reports its measured height through tray-space, and keeps the corner dock hidden.",
+      "id": "PRF-1N30K2",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+        "content": "sha256:59f7329ee39489219962cc3278800735929eeaa6e0ce1a2e50dfd6492db2eea6",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray dock > places the tray over the frame, its bottom edge just above the message box"
+        }
+      },
+      "facet": "Pure rectangle placement keeps the dock bottom above the measured composer top and recomputes height from the current frame.",
+      "id": "PRF-2BS35D",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+        "content": "sha256:f80a4e0651bec722e0d0a3642ecfaeff30e9559854f4df1e50d66367830024c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray dock > sits below the frame with one named notice when the message box cannot be read"
+        }
+      },
+      "facet": "Unavailable composer state draws the below-frame tray and the named composer notice.",
+      "id": "PRF-J9B1HF",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+        "content": "sha256:b441618a44dbf92ce52c83d6b440ee5ff53bfb6bcca4ae9dad37bd84e150b7ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray dock > bounds the full view to the frame above the message box: its list scrolls, the message field and Send stay"
+        }
+      },
+      "facet": "The expanded dock applies the measured max height and keeps the message/Send area outside the scrolling pick list.",
+      "id": "PRF-SNBN7C",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('places the tray over the frame, its bottom edge just above the message box', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:2101b3689ae296b1ef1ee315f307a68feba5c90a56c1201d7c6b69dc654148ea",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('docks in the chat column above the composer and reserves the tray’s height there', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:fb36002ffadac90d3ec43089046d3a3afd46f736062ee706d77d4b4ba6413b52",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('sits below the frame with one named notice when the message box cannot be read', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:d79e4ec169a641d7fb9e1c6f603727e3fb30035719763122a6a7dcbab516a64e",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('shows a new pick as one line \"⊕ Attached · n\", with no list, target, notes, message, Send, preferences or log', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:85e1ce523766d241c99e76a524d0ef09cbcaa9325de7632490cc349b0af6c4d8",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('expands on a click on its line and minimises again, and a new pick keeps either state', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:ab3154969a520fa6d371c5b40deaa440ac4febcc415de48b678150b12d7a1a24",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('keeps a refusal by name on the line, and the answer of a Send it returns to', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:5bc031d160385435159be32cad11d93421e1c28c24820e53e5344f133f9533d5",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('reserves the height of the tray as it is drawn, the line or the full view', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:755d531aecd7a67d9e64634f130f1e78622750c54647216e9d74c098ac5c5ef3",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('bounds the full view to the frame above the message box: its list scrolls, the message field and Send stay', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:dac923a45af2d25595a905364738dd3108cfc1622c62ae2482a29e90cac92cfe",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks single-dock geometry, reserved height and minimized/full/closed transitions.\n\nAnchor: \"it('docks at the bottom right where no chat column is shown', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "accbb6707bc483b0369d1f752ca0e68138bc2393",
+            "content": "sha256:e9cbc4e2902b380ff294901dc2b2243f16e9a18b0f83dcd0329f415f0490bde7",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

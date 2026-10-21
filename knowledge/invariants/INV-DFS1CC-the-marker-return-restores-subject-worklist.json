@@ -7,12 +7,13 @@
   },
   "applicability": "Return from a followed intent marker in the existing review workspace.",
   "conditions": [
-    "The captured subject is restored before the worklist boolean, opened path, layout and full-file choice.",
-    "The production workspace state exposes setWorklist; a recording test stand-in must match that interface."
+    "Capture holds subject, chosen family context and worklist only.",
+    "Restore selects captured subject/context before restoring worklist because choosing a subject leaves worklist.",
+    "The tree-focus request is cleared for marker return."
   ],
   "exclusions": [
-    "Comparison-viewer Back/Escape, which is a separate return path.",
-    "A claim that this leaf repaired a user-facing marker-store failure; the delivered real-store witness found none."
+    "Removed workspace opened-file, layout and Full file state is not reconstructed.",
+    "Comparison-viewer Back/Escape is a separate return path."
   ],
   "id": "INV-DFS1CC",
   "origin": {
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L154",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The marker return restores subject, worklist view, opened file, layout and full-file choice through the real workspace store.",
+  "statement": "Returning from a followed marker restores the captured subject and family context before the worklist view, and clears the tree-focus request on return.",
   "status": "proposed",
   "supersedes": []
 }

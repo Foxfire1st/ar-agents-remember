@@ -2,65 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.navigationTree.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Stored view and order reset for each case",
+    "5": {
+      "note": "Unselected opening, current offered viewer destinations and Worklist selection retention.\n\nAnchor: \"import { afterEach, beforeEach, expect, it, vi } from 'vitest';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
-            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
+            "blob": "7008a139ee01736894e63cc56fc50219ecd3463a",
+            "content": "sha256:8d95b4a3ac2084b3168adfbdb3374666c7b8df4af177dbb404279f95e6c7d943",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Disclosure contract for every mounted view",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
-            "content": "sha256:2845bb0267aa3ffe6510da6a56d9e232ac6b79a76c713d662284ecdcfbe17db9",
-            "locator": {
-              "kind": "symbol",
-              "name": "disclosureContract"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "First-change derivation from the captured outline",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
-            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Changed and All counts from the captured outline",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f388d806db14f15f15fe9f4bfc2b36f297e9df23",
-            "content": "sha256:13cf6e0e5bd0af8fe3f19fbc380e17ef73fb557e7cad32bc6a0ed0233f54c6a7",
-            "locator": {
-              "end": 127,
+              "end": 122,
               "kind": "line_range",
               "start": 1
             }

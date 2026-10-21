@@ -2,17 +2,51 @@
   "path": "dashboard/src/cockpit/Cockpit.reviewHash.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Adds recorded startup hash/refusal and real browser-history API playback in jsdom; selected-subject query changes do not replace the mounted surface or add an intent read, and Back closes a nested change-set page and restores Knowledge. Fixtures and fetch routing are explicit, not native browser acceptance.",
+    "2": {
+      "note": "Recorded startup addresses the correct review refusal and leaves through Back.\n\nAnchor: \"it('opens a recorded review link at startup and shows the existing refusal for unknown targets', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e5613a64f7c351fc126e50011c0e9a640e8f879b",
-            "content": "sha256:3994bad1fbf574a9d211baca0e4506d708e815a988eb96c7778476197bc805a1",
+            "blob": "111cc6252a3ece93e68ac812941f6ffe4520a9a2",
+            "content": "sha256:075862a226c07c94ddae7e9f3cc8bd28db7ae0c991fc044371be5418d0510d52",
             "locator": {
-              "end": 157,
+              "end": 64,
               "kind": "line_range",
-              "start": 1
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fetch router explicitly refuses out-of-scope card requests rather than substituting captures.\n\nAnchor: \"const id = url.searchParams.get('selectorId');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "111cc6252a3ece93e68ac812941f6ffe4520a9a2",
+            "content": "sha256:1f8ae4fef2313a7c073006604bf359fde9f1e5f44416fed410319745b78b1324",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An extra selector key retains the surface; tree All changes and browser Back restore the prior Knowledge view.\n\nAnchor: \"it('browser Back closes the review including its open change-set page, without putting selection in the hash', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "111cc6252a3ece93e68ac812941f6ffe4520a9a2",
+            "content": "sha256:602222a34bb7eb65e908d1cfef56c4c19675325ee73c7adbea263a98a93c6046",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "test"

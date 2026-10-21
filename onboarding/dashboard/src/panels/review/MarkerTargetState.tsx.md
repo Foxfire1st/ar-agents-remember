@@ -2,39 +2,49 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[Review route overview](overview.md)
 
 ## Purpose
 
-Show a followed intent marker's unknown membership distinctly from confirmed no-family, while keeping
-the review's independently composed family context visible. Production target explanations are main
-reading-area and member-center facts, not semantic disclosures added to compact navigation rows.
+Show a followed marker's unknown membership distinctly from confirmed no-family, keeping the review's independently composed family context beside it. These are target and selected-member explanations, with their mount locations established by the reading-area callers.
 
 ## Code Commentary
 
-unknownTarget admits only membership_unknown. useMemberTarget matches exact family and member-revision
-keys for the retained row-note export and main-page change facts. That local row-prop match does not
-establish that the current family roster actually returned such a row.
+`unknownTarget` accepts only `membership_unknown`. `useMemberTarget` matches exact family and member-revision keys; `MemberTargetNote` draws that matched target's tag and reason with an optional accessible-description ID. Supplied matching row props do not establish that a current family roster actually contains that row, and the retained export alone establishes no production navigation mount.
 
-The updated invariant fallback uses hasTargetMember: a returned family must match the target family
-key and either returned side must contain its exact invariant-revision key. Merely seeing the named
-family is insufficient when its roster is unreadable. useInvariantTargetState first requires that the
-selected invariant matches the marker target; only an actually returned exact member suppresses the
-fallback. No confirmed membership or absence is inferred from a family-only context.
+`hasTargetMember` requires both the exact target family and its invariant-revision key on either returned side. A family ID without a readable matching member cannot suppress the fallback. `useInvariantTargetState` also requires the selected subject to be the target invariant. Neither a confirmed membership nor a confirmed absence is inferred from a family-only context.
 
-InvariantTargetState is an open focusable section with state/reason labels and the review context
-state/detail beside it. MemberFamilyLabel keeps the marker's unknown and the context's own label
-separate. MemberTargetNote remains an exact-row-props export, not a current compact-tree mount.
+`InvariantTargetState` is an open focusable section, labelled by its state and described by its reason. It retains the separate review context's detail and now translates that context's state through `familyStateWords(context.state)` rather than printing the machine state directly. Its legacy rail test ID does not determine its actual mount. `SelectedSlot` mounts the target note before the selected center; the workspace focus chooser prefers this explicit target-state destination before the ordinary current tree row.
 
-Stored tests distinguish captured unreadable-roster behavior from a deliberately synthetic healthy
-roster positive branch. The synthetic mixed component inputs prove a renderer branch, not a newly
-produced same-comparison membership fact or fresh browser run.
+`MemberFamilyLabel` keeps the target's unknown reason distinct from the context's own member/family label. `FamilyReviewCenter.MemberTargetLine` mounts it before the invariant content only when the marker fallback applies. Main-page member change facts also read the exact family/revision target and add its unknown tag to the membership reason, without replacing the comparison's separate facts.
+
+Stored mounted tests check a named unknown target over a partial roster, matching reason/center state and focus. Stored component cases distinguish supplied row props, native unreadable context and explicitly synthetic alternate renderer inputs. The healthy-roster positive branch combines component inputs for that branch; it is not a newly produced same-comparison membership fact or a fresh browser result.
 
 ## Invariants And Boundaries
 
-Unknown membership is not confirmed no-family. Legacy rail test IDs do not determine actual mount
-location. This module neither reclassifies a marker nor owns Back/scroll restoration; those owners'
-old execution observations below retain their historical scope.
+Unknown membership is not confirmed no-family. This module neither reclassifies the marker nor owns Back, editor scrolling or restoration. Its retained note export and synthetic renderer controls must not be read as proof of a current sidebar integration.
+
+## Evidence
+
+- The followed marker unknown-membership state remains distinct from confirmed no-family while the review context is kept separately. [1]
+- Only a membership_unknown target is admitted by unknownTarget. [2]
+- MemberTargetNote renders its tagged reason only for matching exact family/revision row props. [3]
+- useMemberTarget matches the followed unknown target by family key and invariant-revision key. [4]
+- An invariant fallback is suppressed only when its exact target member actually occurs in the returned family roster. [5]
+- The focusable target section shows state and reason and translates the separate review-context state through familyStateWords. [6]
+- The member label preserves the review context label and qualifies it when marker membership is unknown. [7]
+- The retained note takes an optional accessible-description ID; its existence does not prove that a production navigation row mounts it. [12]
+- The one unknown-attribution label is explicitly named. [14]
+- The retained row-note export uses only the exact matched target and its reason. [15]
+- The focusable target and center label retain marker unknown separately from their supplied review context. [17]
+- The fallback member check requires exact family and revision identity on either returned side. [18]
+- The answered SelectedSlot mounts MarkerTargetNote before the selected center content. [8]
+- The selection-focus chooser prefers the explicit target-state destination before a current tree row. [9]
+- A stored mounted test follows the named unknown occurrence and checks its native reason, partial family-state label, matching center reason and target focus. [10]
+- Stored component tests distinguish exact supplied row props, an unreadable roster and an explicitly synthetic healthy-roster positive branch; these are not new producer facts. [11]
+- The main-page membership-reason renderer adds the marker unknown tag while keeping the independently composed change reason. [13]
+- MemberTargetLine mounts the unknown marker family label before the invariant statement, steps and judgment. [19]
+- Main-page member change facts call useMemberChange with exact family and revision keys before drawing MemberChangeBadge. [20]
 
 ## Historical source-epoch account — superseded where different
 
@@ -114,34 +124,3 @@ The current account and renewed source evidence govern; prose reference markers 
 >   module's state is its `Attribution unknown` tag; this note stays for dataset reviews, and `InvariantTargetState` and
 >   `MemberFamilyLabel` stay for the invariant view and the rail. The row check is shared as `useMemberTarget`, and the
 >   note gained an optional `id` so the row is described by it.
-
-## Evidence
-
-### Docs References
-
-No configured domain-documentation source was available. Current implementation claims use direct
-source; requirement/provenance names are not fresh runtime evidence.
-
-### Repo-Internal References
-
-- The followed unknown-membership state stays distinct from confirmed no-family while the review context remains separately visible. [1]
-- The stored captured-fixture marker case checks the partial roster fallback, delivered reason, center label and focus; this is not a fresh real-data run. [10]
-- Stored unit cases distinguish synthetic exact row props, an unreadable native roster and an explicitly synthetic healthy-roster positive branch. [11]
-- The retained note accepts an optional accessible-description ID and separates its tag/reason; it is not a current dataset-row integration. [12]
-- On a tree comparison the target is a tag on the change facts' membership line (MIK-L33). [13]
-- Unknown-attribution marker constant and row text [14]
-- The retained exact-row note renders only the matched followed target, independently of whether production navigation mounts it. [15]
-- Main-page target context and the member-center label retain both marker unknown and the review context. [17]
-- Only a `membership_unknown` target shows anything. [2]
-- The member row's note, only on the exact family and revision. [3]
-- The row check shared with the change badge (MIK-L33 merge round). [4]
-- The invariant target fallback is suppressed only when the exact family/member revision actually occurs on a returned side, not merely when the family ID exists. [5]
-- The focusable main-page state exposes its heading, reason and separate context openly; its legacy rail test ID does not make it a sidebar mount. [6]
-- The centre's family line, with the review's label moved here. [7]
-- Current integrations are main-page invariant context, the member-center label and main-page change facts; the old member-button mount is removed. [8]
-- The current workspace selection-focus chooser retains the explicit target-state destination before its ordinary tree focus path. [9]
-- A family-only or unreadable roster cannot suppress the invariant fallback: hasTargetMember requires both the exact family key and a matching invariant revision on either returned side. [18]
-
-### Cross-Repo References
-
-No new cross-repository boundary is introduced by these presentation helpers.

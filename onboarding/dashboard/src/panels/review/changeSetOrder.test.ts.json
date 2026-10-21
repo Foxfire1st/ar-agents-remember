@@ -1,0 +1,332 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOrder.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:d28d5a6811637257d870cb07145e6c8d2964577a261ffcbdf5e6e5069b018c71",
+        "locator": {
+          "kind": "symbol",
+          "name": "orders the changed locations by role (app.js:120), then the largest span"
+        }
+      },
+      "facet": "The captured subject has its exact role/span location order, with the unchanged and not-comparable groups retaining their own ordered collections.",
+      "id": "PRF-431VAB",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:c2e5e9951c8b949e3c35b76735d0746fb4ab2290d78c24b72ca22281b2346fbe",
+        "locator": {
+          "kind": "symbol",
+          "name": "Memory currentness ranks an unrealized subject without entries before current entries (e9b9d515), in the tree and the column"
+        }
+      },
+      "facet": "An unrealized subject with no entries precedes a subject with current recorded entries, and a subject without either measurement remains last as not measured in both projections.",
+      "id": "PRF-6X83YJ",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:e6ff31fdf529563ead61aad75791bb01f4a74ec8a8881327d5dbe12cb25bc118",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws the L181 triple as one row whose one card lists its three entries"
+        }
+      },
+      "facet": "Three captured entries at one comparison region draw one row/card containing all three IDs; distinct ranges of the same file remain separate.",
+      "id": "PRF-72M97H",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:adc33b1cfc725feccd136689a2c59486dc7cb736df46b101f809531845314d64",
+        "locator": {
+          "kind": "symbol",
+          "name": "counts a removed file's lines as removed, and keeps the range where a side's text is not known"
+        }
+      },
+      "facet": "A known absent after side reports zero additions and the complete supplied before-line count; unresolved, unread and truncated sides retain their mapped ranges instead of becoming empty.",
+      "id": "PRF-731GMP",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:1573e2c9cff658da620ddc0b12cf3ce8460afba846f72f5c7937e339cd636364",
+        "locator": {
+          "kind": "symbol",
+          "name": "nests subjects under their family, which takes the place of its first member"
+        }
+      },
+      "facet": "The synthetic families take their first ranked member positions and the model produces identical tree/column subject sequences and corresponding block subjects.",
+      "id": "PRF-7K1J05",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:cf07cd3a48e2e73c97bdaf7459e46fdd9f9cac4b13ae841ed725515c930d5598",
+        "locator": {
+          "kind": "symbol",
+          "name": "Authored: the outline order"
+        }
+      },
+      "facet": "Authored returns the captured outline invariant order.",
+      "id": "PRF-ABQKFJ",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:1e49ae2b8aec0215d620a19d33b0c3235678ba934944c65052d2059a0a24efe2",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows a member of two families once in the column, at its first place"
+        }
+      },
+      "facet": "A repeated family member retains both tree occurrences but draws changed entries and the column subject only at its first occurrence.",
+      "id": "PRF-C3R49S",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:d57a7e3d2c61c48642a5cdd39c503e7abbb52cd1b50612b1e683b38764b04a87",
+        "locator": {
+          "kind": "symbol",
+          "name": "counts a location row's lines from its two excerpts, else shows its span (W10)"
+        }
+      },
+      "facet": "The captured location reason contains signed line counts and a concrete three-line edit returns two additions and one removal.",
+      "id": "PRF-CM7KES",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:2bdb8e237ec2535cf9b3da82bc19a6cc05c5e779f5fbc335a8c5618ede4b63c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps each entry with its own identity, and every count by entry"
+        }
+      },
+      "facet": "The shared triple keeps three distinct block keys and one drawn traversal stop while changed/folded counters remain entry based.",
+      "id": "PRF-DN10AB",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:2efe5b33d63bf62a1f1d14e32c4eb27b6341ff182d941968bec657ad65f83ec6",
+        "locator": {
+          "kind": "symbol",
+          "name": "Priority: effect, then change kind, then changed locations and their spans, then the id"
+        }
+      },
+      "facet": "The captured L104 subjects appear in the exact expected Priority sequence.",
+      "id": "PRF-M2VWV6",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:d3b3b035a63c3e54eb7c9f36a5681a999f3b5ca52111ec3586c7464085fb9af5",
+        "locator": {
+          "kind": "symbol",
+          "name": "the four memory sorts rank a subject by its highest entry value, ties in Priority order"
+        }
+      },
+      "facet": "Each of the four numeric sort options produces the expected subject sequence, and a non-first entry with the highest path value determines its subject rank.",
+      "id": "PRF-SHGHAG",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:2357dfc78ef43d361c5180d5d7e84587596bb2bf02c069bd6ed70f1e5376f12e",
+        "locator": {
+          "kind": "symbol",
+          "name": "Memory currentness breaks a tie of the shown state by Priority, with no read-4 stage (e9b9d515), in the tree and the column"
+        }
+      },
+      "facet": "Subjects with equal shown stale state retain Priority order despite different read-4 states, and tree/column sequences agree.",
+      "id": "PRF-V38XS1",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:42086b8031748de14587e38aeeace500939299bc35fa86e850b8c8d24da719c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "reads an unknown stored sort as Priority and the earlier Order values by their meaning (W7)"
+        }
+      },
+      "facet": "Unknown, unavailable and throwing storage reads use Priority; stored triage, authored and a named numeric sort retain their declared meanings.",
+      "id": "PRF-V6B3WE",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:d442b81703a9b827e8aae516dcdaa1292baaad37b089b7d78ffe1caddeb1a13b",
+        "locator": {
+          "kind": "symbol",
+          "name": "Memory currentness: the subject's shown state over read 4 and its entries, then Priority"
+        }
+      },
+      "facet": "Synthetic stale and unverifiable entry states and an unrealized read-4 invariant produce stale, unverifiable and unrealized subjects in that order.",
+      "id": "PRF-X83HQ7",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:837fc822548e1f9b96c4296916dedc19dbb71251f0c6011ad33dc56d681e31b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows the memory sorts unavailable with the reason and keeps Priority while they are"
+        }
+      },
+      "facet": "Unavailable values retain the requested numeric sort, apply the full Priority sequence and disable all four numeric options with the returned reason.",
+      "id": "PRF-XBPDD5",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "content": "sha256:076600a855d4f3f77ea3ebb94cfb38b1b659fcee5dc3a45f1124fb84b6e819ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "counts a side with no file as no lines: an added file's lines are all added (MIK-R86 v2 rule 2)"
+        }
+      },
+      "facet": "Known absent before sides in the captured realization and proof produce exactly +35 −0 and +59 −0.",
+      "id": "PRF-YMEQSP",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Entries, line counts and shared-region drawing\n\nAnchor: \"it('shows the one changed invariant with 15 changed, 31 unchanged and 28 not comparable entries', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+            "content": "sha256:0cfc35f118fbb4b2e0da8fd3d8d06cb902bad2d8d1b8b8921a408fc231a42bd4",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sorts, currentness, availability and family placement\n\nAnchor: \"const PRIORITY = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+            "content": "sha256:60336296df31a42c97a57adb81334863802bd729781aad866f50e0270443fb6c",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "View/selection/pending/filter/folded-group contracts\n\nAnchor: \"it('Changed shows the real changes, All every subject, and read 5 asks for the shown ones', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+            "content": "sha256:3dca4a0bfeecefc53192621a4886358250221536e37999448a8e35cdec5fdfd1",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

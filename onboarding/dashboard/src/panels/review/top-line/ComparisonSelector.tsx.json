@@ -1,0 +1,131 @@
+{
+  "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+        "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-2W3B3Z",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It exposes recorded numbers and clears the menu on the reader choice.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+        "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-6DBQ2Q",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The comparison label is the host for its optional named change-set offer; an absent pick supplies no offer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+        "content": "sha256:8283a3a364fb574b74252b49cc25b42fba4b3e9881fb94bc07fff1fa4a8a6784",
+        "locator": {
+          "kind": "symbol",
+          "name": "addSlot"
+        }
+      },
+      "id": "RLZ-PTHDAG",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It reserves the widest taken-state add control instead of letting the adjacent chip move.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+        "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-Q1YCQD",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It reserves the adjacent label/add widths so their state changes do not consume the chip place.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Reserved widths\n\nAnchor: \"const label = css({ display: 'inline-block', minWidth: '14ch', textAlign: 'start' });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:8249a1f80022674f829c83748671d94b63fbba8d64f5de373ef4b1c1b4f00905",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shown time, current row and latest/read-only labels\n\nAnchor: \"// One number's row: the number, its recorded time where a read gives it, and its state.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:641fdbc2a7f628e624ca39359a2e87c8e8a480a6a39e0a5c294d41cb615c9b3a",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Descending menu, selection callback and tray pick\n\nAnchor: \"export function ComparisonSelector({ leaf, shown, recordedAt, now, latest, onChoose, pick, buttonRef }: ComparisonSelectorProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

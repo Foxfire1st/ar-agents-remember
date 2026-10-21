@@ -1,0 +1,47 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The staged-read and batch proofs prevent a first-paint fanout or a permanent first-gesture wait that leaves visible code unread."
+  },
+  "applicability": "Incremental marker and lane classification/text reads inside the review reading column.",
+  "conditions": [
+    "A lane file in view starts without a gesture after the opening gate opens; files further down start when near view.",
+    "A card marker read also waits for the first page scroll, wheel, touch move, movement key outside editable fields, or selection.",
+    "The gate counts files: one lane file holds a slot until both classification and text requests settle, so eight files can mean16 requests.",
+    "Once near-view admission succeeds it is retained for that block. The current gate opening signal is cards no longer reading, not a join over every opening response."
+  ],
+  "exclusions": [
+    "Deferring an already-visible lane file until a gesture.",
+    "Counting the two requests of one lane file as two files.",
+    "Claiming a wall-clock performance bound or full-browser1px stability from this request gate."
+  ],
+  "id": "INV-FZ473E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 127, exact id MIK-R89@v2 rule 2 · lane file reads; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 163, exact id W5; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 182, exact id P-R1; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 230, exact id L89-R1-040; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 235, exact id ruling f43ae286; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 39, exact id L89-R1-040; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; original captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0.",
+        "Exact source item judgments and original producer data remain separate in review-page-analysis/hunk-judgments.batch3.json; no execution or acceptance claim.",
+        "Covered persisted worklist items: sha256:07a5d8d0eccdcdc203a8227686e76c45497a75bd1ab852e510a6573e45737951, sha256:2d237ab63a2fd2f187a7522e3c9d3bdb2da15d83bb5fbfce03c7d63a346610e7, sha256:47ccd8d39e00eddf4b8dbb2669e52943f2bf104ae59a2933b8c2e2467f5813ed, sha256:c2445e840a50e7c9218cfaf9c9ac93d5ebae1bf823075dd0448c4d4bed0989a2"
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP08",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Once the opening card read settles, near-view lane files may read without a gesture; near-view card markers also require reader engagement; at most eight files are active at once.",
+  "status": "proposed",
+  "supersedes": []
+}

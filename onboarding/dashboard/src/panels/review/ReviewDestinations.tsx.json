@@ -2,32 +2,34 @@
   "path": "dashboard/src/panels/review/ReviewDestinations.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Comparison-bound navigation destinations: `laneCounts` owns the described branch.",
+    "5": {
+      "note": "ReviewDestinations.tsx current behavior at this source owner.\n\nAnchor: \"export function treeLane(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
-            "content": "sha256:1aa52fc3e95bbf014c51d282ed28e20dde633ac6806996415917aab80e7dca8f",
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:832f7457ab3dd9fbcee9bc4269c93e532159695ec9d78cc56b24e31cb6ae1341",
             "locator": {
-              "kind": "symbol",
-              "name": "laneCounts"
+              "end": 53,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Comparison-bound navigation destinations: `ReviewDestinations` owns the described branch.",
+    "6": {
+      "note": "ReviewDestinations.tsx current behavior at this source owner.\n\nAnchor: \"export function TreePinned({ lane, query, selection, onSelect, onOpenLane, worklist, onOpenWorklist }: TreePinnedProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b5e4040a72d349d97a84add749bff36f6a104c5f",
-            "content": "sha256:7e81d26de66108ee74142153bfce952b39b42d75974310043c87ac3af12cab33",
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:b8c1c73208751321143a30c9220a21d349bb8e835c37e3f1bb2f2d7abc19dadb",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewDestinations"
+              "end": 144,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"

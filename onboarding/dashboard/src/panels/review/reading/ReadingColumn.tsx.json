@@ -1,0 +1,131 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-1XPBH8",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It owns desktop reading scroll and switches to overflow-visible stacked content.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-84KPQX",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "RP08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It owns the gate per mounted column, opens it when cards settle and engages it on selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-8SASP9",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Places treeToggle first and chatToggle last in the sticky reading head within the reading column, outside the separately mounted tree column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+        "content": "sha256:7b5f9b30a688468c978a34a6df6fb6d7c3799e1a4daf26efc9b21d895ac4d3d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "readingColumn"
+        }
+      },
+      "id": "RLZ-RX8AYB",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Its CSS owns desktop vertical scroll and switches to vertically visible clipped-horizontal content at40rem.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"function useHeadPadding(scroller: React.RefObject<HTMLDivElement \\| null>): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:c0fd27eb8c50d03825ae55c6bea3db0d46cfb4b18ee43e57d0485008e736f9c4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"const readingColumn = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:269912571f361d189b524bfddc49841ad657ae5af9a7795994a83f15f0536ca3",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"const head = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:14d3565929756e761306be509999fb0eda2d1e8ea32cf3e1eac4aaec5669d56b",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

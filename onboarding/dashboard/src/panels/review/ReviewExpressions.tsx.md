@@ -8,7 +8,11 @@
 
 The source was deleted. Its dataset-only file accordion, revision-to-location selection and file-card expansion no longer run; no equivalent accordion relocated. The original card and sidecar remain in their existing custody for retirement/history, not as an active implementation claim.
 
-The separately reusable ExpressionControls presentation controls were extracted to ExpressionControls.tsx. That extraction does not preserve ReviewExpressions behavior. CenterExpressions now renders focused cards or the measured-tree-comparison explanation. SourceContent remains for expression-card Full file only.
+ExpressionControls was extracted during the earlier retirement, without preserving the removed accordion. A4-F5 subsequently removes those controls and SourceContent as well. ReadingColumn now owns the page-level Changes only / Full context control and draws the shared model's subjects and lane; no card Full file fallback remains.
+
+The previous retirement note is preserved as the intermediate source epoch only:
+
+> The separately reusable ExpressionControls presentation controls were extracted to ExpressionControls.tsx. That extraction does not preserve ReviewExpressions behavior. CenterExpressions now renders focused cards or the measured-tree-comparison explanation. SourceContent remains for expression-card Full file only.
 
 ## Retained Historical Account
 
@@ -80,7 +84,16 @@ The following account describes the removed implementation only. Its present-ten
 > - Revision-to-location join for the selected intent (historical reference 8)
 > - Card byte delegation with exact inventory tree identities (historical reference 9)
 
+## Source-content transition and retained historical references
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - Surviving controls are independent presentation callbacks, not a relocated accordion. (historical reference 10)
+> - CenterExpressions has no retired file-view fallback. (historical reference 11)
+
 ## Evidence
 
-- Surviving controls are independent presentation callbacks, not a relocated accordion. [10]
-- CenterExpressions has no retired file-view fallback. [11]
+
+
+- The current page-level Code context control selects Changes only or Full context through the persisted code-context store; the old ExpressionControls callbacks are retired. [10]
+- ReadingColumn renders the shared model's subject groups and lane under its page-level control; the retired file accordion is not this composition. [11]

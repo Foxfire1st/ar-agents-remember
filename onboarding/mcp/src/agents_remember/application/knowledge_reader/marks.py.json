@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "61718db7dbdd11ac0f6126a630ca9cdfc341346d",
+        "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
         "content": "sha256:b1cbba990e0eebefe98ce4b88e63885acf451345b30a99ec44a4d30b9668ee5e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,43 @@
     },
     {
       "anchor": {
-        "blob": "61718db7dbdd11ac0f6126a630ca9cdfc341346d",
+        "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+        "content": "sha256:01ff0ea841e4ec51113de1d385d112030425a71ee22df3466a384a340ee06968",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_weakness_counts_in"
+        }
+      },
+      "id": "RLZ-F8Q99E",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-8F35XR",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Counts open weakness records by each non-None anchor path in the supplied index; paths with no count remain absent. open_weakness_counts delegates through selection.index. The supplied-index entry point supports RP04's same-open after-index facts; no zero is fabricated for unreadable measurement by this helper alone.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+        "content": "sha256:8c35011c331e44cf16be47814f8a7dc825c5d83c293982a69b1ac713ed4f860c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_weaknesses_in"
+        }
+      },
+      "id": "RLZ-M7ZAYC",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-8F35XR",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads weakness records from the supplied KnowledgeIndex, validates them, skips unreadable records, and sorts them by id; _weaknesses delegates with selection.index. This is the lower-level support allowing the card-facts reader to use its already-open bound after index, rather than reopening current memory.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
         "content": "sha256:24e91bdf19e5470a597656fba760fe0a49151b31f5ca50eb3b978687cf2a63c9",
         "locator": {
           "kind": "symbol",
@@ -38,6 +74,92 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Weakness lists and the shared open-index count retain validation/filtering and omit zero paths.\n\nAnchor: \"def _weaknesses_in(index: KnowledgeIndex) -> list[WeaknessRecord]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+            "content": "sha256:da8d076b57dd09d182e953893cd3a90f53fddf2b341178b773fb2fa3e962aed8",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mixed moved/unverifiable links follow explicit stale-first precedence.\n\nAnchor: \"def dependent_movement(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+            "content": "sha256:24e91bdf19e5470a597656fba760fe0a49151b31f5ca50eb3b978687cf2a63c9",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attribution checks the observed file/anchor transition rather than unrelated path edits.\n\nAnchor: \"def _moving_commit(opened: Any, path: str) -> dict[str, Any]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+            "content": "sha256:a2614923423cacbfb5c266acd483f4cadf6df6a220094b63ae1f4ee30a01b5ac",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only exact committed provenance can select history for attribution.\n\nAnchor: \"def _selected_commit(tree: CodeTree) -> str \\| None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+            "content": "sha256:1b5c266cf6853cde14548d67ce414884f1f3bc99e03fdcefcfa005520a0b50ef",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Dependent filters, per-path counts and single-record failure labels remain derived.\n\nAnchor: \"def dependent_list(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e8473a55f4b5ad85cbc9314f3f769f469ff7aa",
+            "content": "sha256:b214e9a08e855f909d6202b26a8c0716f543c9a82be006a31f06ebd52b60cc58",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

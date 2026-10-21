@@ -1,0 +1,184 @@
+{
+  "path": "dashboard/src/panels/review/reading/useReviewSelection.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewSelection"
+        }
+      },
+      "id": "RLZ-32B5MZ",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Explicit in-page keepTree selections now use the one selection owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewSelection"
+        }
+      },
+      "id": "RLZ-8XHR0Q",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The one selection carries keepTree and optional explicit page.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewSelection"
+        }
+      },
+      "id": "RLZ-9ZV5SCXK",
+      "invariant": "INV-MCVSM81V",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "The recorded opener/focus request moved from subjectSelection to the one page selection hook.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:afef678f50d596dcf58474e5f8795e5754b2cebcbcbc235b0c0a00a58794c58b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionUrl"
+        }
+      },
+      "id": "RLZ-DCBWZM",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It cancels an old pending restore when selection changes and writes only the settled current selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:c1c9516d139dfef6b33105f649863706136a9f1b577e003c8a028670b3e2f097",
+        "locator": {
+          "kind": "symbol",
+          "name": "readSubjectOf"
+        }
+      },
+      "id": "RLZ-GDJKVZ",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It refuses to make a fresh subject read while an older number is shown.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewSelection"
+        }
+      },
+      "id": "RLZ-KQQ22F",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The page selection explicitly records keepTree intent; current callers mark outside URL/target/marker selections false and in-page selections true.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "258cff00a099c47959540190b805d35455941118",
+        "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewSelection"
+        }
+      },
+      "id": "RLZ-NENP96",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The one selection hook records from/after focus request for the later-render guard.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Route one selection to subject read/context/workspace/scroll.\n\nAnchor: \"export function readSubjectOf(selection: ReviewSelection \\| null, cards: ChangeSetCards, older: boolean): ReviewSubject \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:4585b83fd7fae4dee01cb720cc36b9fd34db429ee98bdd818b8f2d08d19c4d78",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Route one selection to subject read/context/workspace/scroll.\n\nAnchor: \"function familyContextOf(selection: ReviewSelection \\| null, subject: ReviewSubject \\| undefined, model: ChangeSetModel): FamilySelection \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:e8cff2c32499c909f0981b8121b62ffdec80a9c950ba7aabe45b5dd83995dccc",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Route one selection to subject read/context/workspace/scroll.\n\nAnchor: \"export function useReviewSelection(initial: ReviewSelection \\| null, deps: React.RefObject<SelectionDeps \\| null>) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:7cc80556ede20b901872583157feef505231184e232130995effce6e6e60b526",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

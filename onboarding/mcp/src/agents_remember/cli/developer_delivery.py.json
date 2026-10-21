@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/cli/developer_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
+        "content": "sha256:28b19a833f078881777e3bbf06521ea9e3817a1baeccc7fa969ffd0ef0b1463f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_hold"
+        }
+      },
+      "id": "RLZ-FFSH5T",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Answers a partial drain by whether this send’s own held-message ID ended.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Adapts filed developer messages to the existing native host send/held lane.\n\nAnchor: \"class DeveloperDelivery:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
+            "content": "sha256:2aae3420c8dd32d5fd194c3ab8e841f1b46986b2e6ced66820014cb37f0e1c2b",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adapts filed developer messages to the existing native host send/held lane.\n\nAnchor: \"def deliver_or_hold(delivery: DeveloperDelivery) -> dict[str, Any]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
+            "content": "sha256:cf33b7b69802017ba63fd037463fc76bac41cbb872b45cc4745e6c424b29bcd3",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Adapts filed developer messages to the existing native host send/held lane.\n\nAnchor: \"- A held seat, or a recipient for which anything waits, gets the message held behind it:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
+            "content": "sha256:fa7d52fa120d6c74d05f3a63a0948adc3bd8b6ab3f3c55863cda13f43ebfec9d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -36,6 +36,24 @@
       },
       "rationale": "Delegates to the shared badge map whose final exact-inventory pass overrides lane labels with non-text for binary, symlink, submodule and mode-only paths, including All-list paths absent from a lane destination.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+        "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
+        "locator": {
+          "kind": "symbol",
+          "name": "laneFiles"
+        }
+      },
+      "id": "RLZ-VRT71P",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The full viewer filter selects the same lane destination whose file path the continuation asks for.",
+      "role": "enforcement"
     }
   ],
   "references": {

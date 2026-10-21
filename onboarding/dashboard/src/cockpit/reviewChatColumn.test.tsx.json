@@ -1,0 +1,281 @@
+{
+  "path": "dashboard/src/cockpit/reviewChatColumn.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:1b6fd1f0006366969fafd1cbaad6e1a9b33c54069f468bb556e5ab0937036416",
+        "locator": {
+          "kind": "symbol",
+          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > shows the bound launcher for a task without a chat and starts nothing"
+        }
+      },
+      "facet": "A bound task with no worker chat keeps the frame in an aria-hidden wrapper, shows its bound launcher and makes zero dispatch requests.",
+      "id": "PRF-4615FC",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "walks Operations → task document → review → open column → Back on the same frame, loaded once"
+        }
+      },
+      "facet": "With the stand-in review surface at the default wide media, the shell has a14px gutter and0px closed chat track, then a500px open chat track. Its independent frame-continuity assertions do not prove width-class transitions.",
+      "id": "PRF-4PNB3K",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:bd3df56d314c2372c362e0e582d3b5d9fbdd90d6e4441216e56123f6aaf5ce46",
+        "locator": {
+          "kind": "symbol",
+          "name": "preloads a cold review closed, reads nothing else, and opens the leaf’s own chat by one switch"
+        }
+      },
+      "facet": "A cold review renders the retained chat column hidden before its control is activated; one explicit switch shows its bound existing task chat. The test asserts this closed-first state without broadening storage or target-change coverage.",
+      "id": "PRF-61AQS9",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:7cd91f9fd48ae8d941040e09e30d2f89e98b5515ee1e61a9e490f24f44bcaaaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > names a review whose task the task list does not hold, and reads no chat for it"
+        }
+      },
+      "facet": "An unknown leaf gets the task-list problem line, with zero document-chat requests and no open message.",
+      "id": "PRF-AN13G3",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:afa2c6f6d1b9591fdda306d9da01550481905d54470ace4ccaea269a9de63ca4",
+        "locator": {
+          "kind": "symbol",
+          "name": "never makes the narrow page scroll sideways"
+        }
+      },
+      "facet": "Under stubbed40rem/narrow-class/overlay media, the configured chat width is420px with fixed placement and maxWidth calc(100vw - 1.6rem); the shell has one grid track. These are assigned DOM/style assertions, not measured scroll extents.",
+      "id": "PRF-BHVDYV",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > walks Operations → task document → review → open column → Back on the same frame, loaded once"
+        }
+      },
+      "facet": "With the mocked review surface and native-frame handshake stand-in, the Operations → task → review → open → Back walk retains the same rail iframe element and generation and records one descriptor read, one load and one hello. This does not measure browser draft/scroll preservation.",
+      "id": "PRF-HTR2KV",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:80159276045aea96b67770cedc15ee405f577bc31f85e8cdc4f6ea22c8f89bb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "remembers a dragged width per width class"
+        }
+      },
+      "facet": "With stubbed wide media, ArrowLeft on the actual review-chat resize handle changes the default500px to524 and stores only cockpit.review.chat-w.wide; narrow and Operations right-width keys remain absent. Despite its title, the test fires a keyboard event, not a pointer drag.",
+      "id": "PRF-S5NGKB",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:ba6443b61220f566d40df83093cfb8df289aac8b8ba2dc98dd895237cfc781c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "lies over the reading column below 1440 px as the same element, at its width class"
+        }
+      },
+      "facet": "Under stubbed lower-width media, opening the 420px absolute chat overlay keeps the shell chat track 0px with 12px gutter; its edge close control hides it.",
+      "id": "PRF-S9C0DN",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:ba6443b61220f566d40df83093cfb8df289aac8b8ba2dc98dd895237cfc781c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "lies over the reading column below 1440 px as the same element, at its width class"
+        }
+      },
+      "facet": "Under stubbed <=1600 and<1440 media, the chat is the same element with absolute placement and420px configured width; the shell retains12px gutter and0px chat track, and its edge control closes it.",
+      "id": "PRF-SJT56V",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:afa2c6f6d1b9591fdda306d9da01550481905d54470ace4ccaea269a9de63ca4",
+        "locator": {
+          "kind": "symbol",
+          "name": "never makes the narrow page scroll sideways"
+        }
+      },
+      "facet": "Under stubbed narrow media, the chat is fixed with max-width calc(100vw - 1.6rem) and the shell has one minmax(0,1fr) track; the test asserts assigned styles, not an actual measured scroll extent.",
+      "id": "PRF-WZN9ZT",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:34ecfff1b478d688b7b69c0ddf9af0c8350b7a05c821eb5b7a0d5a57cb0ca73d",
+        "locator": {
+          "kind": "symbol",
+          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > holds a review opened before the task list arrives and never binds the architect"
+        }
+      },
+      "facet": "Before task hydration the column names its wait, performs no document-chat request and posts no open; after hydration it opens the worker and never requests Architect.",
+      "id": "PRF-XMJ22P",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:2ad634d2aa00c808d69a68452ff83cb618d798d7be75847f81bd5f25362ef457",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens closed again after a reload with it open, and stores nothing for the chat side"
+        }
+      },
+      "facet": "The actual Cockpit review column opens in the first mount, starts hidden with aria-expanded=false on the second mount, and leaves no review open-state storage key; numeric chat-width keys are excluded from that assertion.",
+      "id": "PRF-YEH1HJ",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "walks Operations → task document → review → open column → Back on the same frame, loaded once"
+        }
+      },
+      "facet": "With a stand-in review surface, the review body has a 0px closed chat track with 14px gutter and a 500px track after opening; the fixture also asserts its existing frame continuity separately.",
+      "id": "PRF-Z2QN05",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frame continuity and cold preload/task binding\n\nAnchor: \"it('walks Operations → task document → review → open column → Back on the same frame, loaded once', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+            "content": "sha256:46d9ee62718c7140ab47e8a340cdc2e270666341f704c4ea95cfd75c501fe728",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pending/absent/agentless/unreachable/reload boundaries\n\nAnchor: \"it('holds a review opened before the task list arrives and never binds the architect', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+            "content": "sha256:e0ca50d62cdc4a6c8d7ddca0e88f37138d7f50cdf2640bbb9ec14411583fcc6b",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Overlay/narrow placement and independent width persistence\n\nAnchor: \"function media(matching: string[]) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+            "content": "sha256:952ea96908a7d0240ee6e629016adfc8866dd1cd2105843b6d6151422ef62703",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

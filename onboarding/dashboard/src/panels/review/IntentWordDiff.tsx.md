@@ -2,58 +2,50 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[Review route overview](overview.md)
 
 ## Purpose
 
-Render supplied intent wording and family guarantees as readable passages, with removal/addition marks, explicit one-sided states and local layout choices. `wordDiff.ts` owns segmentation/alignment; `intent-passage/model.ts` prepares shared text/list results; this module draws them. The complete previous account is retained below as historical, not as an active dataset-review API or current performance measurement.
+Render supplied statement, applicability, condition, exclusion and family-guarantee wording with semantic removal/addition marks, explicit one-sided states and the reader's wording-layout preference. Text segmentation and list alignment belong to `wordDiff.ts` and shared preparation; this module draws their results.
 
 ## Code Commentary
 
-### Scope and prepared values
+`TreeComparisonScope` exposes the supplied boolean; `IntentWordDiffScope` derives it from the payload token. The exported renderers consume their supplied shapes, rather than each enforcing a mode gate. `IntentStatementBody` prepares only changed fields and shares the prepared map between layout eligibility and drawing. A statement is prepared only when both sides are present; projected lists remain reported joined text, rather than an invented item alignment.
 
-`TreeComparisonScope` exposes a supplied boolean. `IntentWordDiffScope` derives it from the payload’s parsed tree-comparison token, and `useTreeComparison` reads it. This is context wiring for callers, not an internal precondition enforced by every exported renderer. In particular, current `guaranteeFact(entry)` no longer accepts the old `tree` boolean: a same-revision guarantee whose text differs gets `same_revision_text_changed` whenever that helper is called.
+A prose passage renders identical text once, or a labelled whitespace-only after text plus both exact texts. Word passages use the local preference, with an inline-preferred rewrite shown side by side until the reader chooses Show inline for that current text pair. Semantic `del`/`ins` marks, strike/underline and hidden change announcements retain the non-colour distinction. Whitespace glyphs are hidden from assistive technology and described in words. The common prose style is now 0.83rem with line-height 1.7.
 
-`IntentStatementBody` builds a memoized map only for fields named by changed wording. A statement is prepared only when both supplied statement sides are present. Other fields go through `preparePassage`, including the projected flag. The same prepared map supplies layout eligibility and drawing; the old `offersLayout`/`drawsPassage`/`wordsPassage` recomputation path is gone. Do not carry the earlier duplicate-computation timing note into the current account.
+Each condition or exclusion is now one independently expandable line. `ListPassage` keeps a set of open row indices, `ItemLine` exposes a focusable button role and `aria-expanded`, and click, Enter or Space toggles that row in place. Closed lines ellipsize without removing their full text from the page; open lines wrap. Unchanged and moved content stays literal, with moved positions labelled; added/removed rows retain marks and applicable fallback-note descriptions.
 
-`preparePassage` computes a text diff for two strings, or list alignment for two arrays only when not projected. Changed list pairs carry their own prepared text diffs. `passageHasWords` checks those results, so identical/whitespace-only/projected/one-sided data does not manufacture a word-layout control.
+Changed list pairs use `LinePassage`. Inline layout retains the word marks; side-by-side uses separate before/after halves, each ellipsized while closed. A rewrite's short visible `rewritten` tag retains its full reason for assistive technology and reveals the sentence on expansion. Once the rewrite row is open, Show inline is offered outside its line. This list-item override is local boolean state in that mounted changed-item component; it is not the NUL-separated text-pair token used by the ordinary prose passage.
 
-### Drawing and layout
+`IntentStatementBody` now accepts its header. Compared content puts the header and eligible wording-layout control on the same wrapping line through `StatementHead`; added/removed content keeps the header before its one-sided prose. A non-present statement side is drawn by `KnowledgeStatements`, not diffed against an absent or unavailable side. Only actual `absent` marks a statement counterpart as known absent.
 
-- `IntentTextPassage` uses a supplied diff or memoizes `textDiff(before, after)`, then delegates to `TextPassageBody`. Identical text appears once. Whitespace-only changes show the after text plus both exact texts with visible whitespace.
-- A word passage uses the browser-local prose preference. An inline-preferred rewrite falls back to side-by-side with the actual rewrite reason; **Show inline** records this passage’s current NUL-separated text-pair token in local React state. This is neither persisted preference nor a global cache or proof that arbitrary text-pair encodings cannot collide.
-- `Prose` preserves same runs and draws changed runs through `Mark`. A removal uses `del`/strike and an addition `ins`/underline, plus visually hidden change announcements. Whitespace glyphs are hidden from assistive technology and announced in words with a separating space. Side-by-side filters added runs from Before and removed runs from After.
-- `ListPassage` consumes prepared rows; it no longer performs alignment itself. Unchanged rows stay plain, changed pairs use their prepared passage, moved rows name their original/new positions, and added/removed rows use marks. Cell-limit and unpaired-gap notes are displayed and linked to applicable added/removed rows with `aria-describedby`.
-- Projected array fields are joined and labelled as supplied, not aligned into invented items. Two strings use a passage; the remaining field branch emits its known-one-sided label and selected supplied value. This is the literal consumed-shape branch, not a general validator of arbitrary objects.
+Guarantees compare supplied text even at the same revision. `GuaranteeTextChange` keeps the compact revision metadata, same-revision-text-differs note and word passage. It no longer renders its own Revision records disclosure: those raw identifiers belong to the page's Technical details owner. `OneSidedGuaranteeLabel` calls only `not_recorded` known absent; other side states stay qualified.
 
-### Statement and guarantee boundaries
+## Invariants And Boundaries
 
-`StatementText` falls back to `KnowledgeStatements` whenever either statement side is not present; it does not diff against an unavailable/absent side. Added/removed selections use `OneSidedStatement`: its counterpart is called known absent only when that side’s state is `absent`; otherwise its actual state/detail is named. Other selection routing belongs to the caller; this function itself branches explicitly on added/removed and the supplied wording, rather than implementing a removed ambiguous-state protocol.
-
-`guaranteeTextChange` needs both guarantees and differing supplied joint-guarantee strings, not different revision identities. `GuaranteeTextChange` shows revision metadata, a same-revision-text-differs note when applicable, the passage with layout offered for words, and a revision-record disclosure. `OneSidedGuaranteeLabel` treats only `not_recorded` as known absence; unreadable/other states retain a qualified label.
-
-### Changes and limits
-
-Actual BASE/current source adds shared passage preparation, optional prepared diffs, accessible list notes and the exported passage wrapper, and removes the tree parameter from `guaranteeFact`. These are changes, not comment-only preservation. This card does not certify every caller’s routing, algorithmic byte reassembly, a newly executed accessibility/viewport test, or a timing/performance result. It changes no typed invariant or original producer list.
+This is rendering and local interaction, not validation of arbitrary input objects or a fresh browser, accessibility or performance result. The current source diff adds the one-line list interactions and statement-header placement, changes prose metrics and removes the local guarantee-identifier disclosure. Shared passage preparation already existed in the captured base and is not newly introduced by this diff.
 
 ## Evidence
 
-No domain documentation source is configured. Findings below cite the actual renderer and preparation owner. Historical packets/rulings in the retained account are provenance, not a fresh execution grade.
-
-- Supplied tree-comparison context and payload-token wiring. [19]
-- Browser-local layout control delegates the selected preference. [20]
-- Removal/addition and whitespace announcements are rendered with semantic marks. [21]
-- Same runs and side-filtered Before/After prose preserve the supplied parts. [22]
-- Whitespace-only output includes the after text and both exact whitespace-visible texts. [23]
-- Prepared or memoized text diffs flow into local layout, rewrite and coarse rendering. [24]
-- Prepared list rows, fallback notes and described-by links are rendered together. [25]
-- One-sided statements distinguish known absence from supplied non-present states. [26]
-- Projected lists and string/remaining field branches consume the actual supplied shapes. [27]
-- Present-side checks and shared prepared-map layout/drawing belong to the statement renderer. [28]
-- Guarantee text comparison and the current one-argument fact helper compare supplied text. [29]
-- Changed guarantees preserve revision metadata and word-passage layout controls. [30]
-- Only not_recorded gives the known-absent one-sided guarantee label. [31]
-- Shared preparation aligns nonprojected arrays and prepares changed-pair diffs for both layout and drawing. [32]
+- The supplied comparison scope and payload-token wiring remain explicit. [19]
+- The layout control delegates to the browser-local wording preference. [20]
+- Semantic removal/addition marks retain hidden announcements and whitespace descriptions. [21]
+- Prose draws same runs literally and filters the before/after sides from supplied parts. [22]
+- Whitespace-only prose keeps after text and both exact whitespace-visible values. [23]
+- Prepared or memoized diffs feed ordinary prose layout and a text-pair-local inline override. Ordinary prose passages render rewrite reason, coarse note and chosen inline/side-by-side layout. [24]
+- Each prepared list row has its own open index, line control and applicable fallback description. [25]
+- One-sided statement labels distinguish actual absence from unavailable or other supplied states. [26]
+- Projected lists remain joined reported values; ordinary arrays and text use their respective rendering branches. [27]
+- Statement rendering shares prepared values and keeps its supplied header beside eligible layout control. [28]
+- Guarantee changes and facts compare supplied text, including differing text at the same revision. [29]
+- The guarantee body retains compact revision metadata and its passage, without the removed Revision records disclosure. [30]
+- Only not_recorded gives a known-absent one-sided guarantee label. [31]
+- List-item lines retain before/after wording, rewrite reasons and the local open-row inline offer. [33]
+- Each list item opens by click, Enter or Space, with its complete text retained and exposed by expansion. [34]
+- Closed item lines ellipsize; opened lines and their side-by-side halves wrap, while rewrite reasons retain accessible full text. [35]
+- Prose typography uses the supplied mockup metrics. [36]
+- Shared preparation aligns only nonprojected arrays and prepares changed-pair diffs once for both layout eligibility and drawing. [32]
 
 ## Historical predecessor account
 

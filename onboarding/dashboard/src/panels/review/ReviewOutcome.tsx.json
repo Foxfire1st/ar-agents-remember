@@ -154,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
             "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
             "locator": {
               "kind": "symbol",
@@ -167,17 +167,17 @@
       ]
     },
     "14": {
-      "note": "SourceContent consumes the shared problem renderer for transported failures.",
+      "note": "Current lane file-diff failures consume the shared ReviewProblemBlock with the failed file named as subject; the removed SourceContent consumer belongs to the prior source epoch.",
       "targets": [
         {
           "anchor": {
-            "blob": "1007f8c974a9b47e37d20a691a0f716894c94d79",
-            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:5552923981e8a6240989f377c96e073124102188a82cac2962928eb3227dc970",
             "locator": {
               "kind": "symbol",
-              "name": "SourceContent"
+              "name": "FileBody"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
           },
           "kind": "code"
         }
@@ -188,12 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:6715d7c3a94bcc93f13446cbd6abe910499fb2f8dd1d939df0db609958381afe",
             "locator": {
-              "end": 265,
+              "end": 267,
               "kind": "line_range",
-              "start": 253
+              "start": 255
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -201,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:1ef729ae671eee804c3eef29e61851c2605c891b1316998da1c87d877e16bdd6",
             "locator": {
-              "end": 283,
+              "end": 285,
               "kind": "line_range",
-              "start": 267
+              "start": 269
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:025380c51b7ceda9d452fa208cefc2a50ef86505fcb0d5d36dc913432d920373",
             "locator": {
-              "end": 324,
+              "end": 326,
               "kind": "line_range",
-              "start": 314
+              "start": 316
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -227,12 +227,12 @@
         },
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:81cef175e3084cef503aca5ed647d7da7f2ae080b8984b73f479f69ce0310d23",
             "locator": {
-              "end": 355,
+              "end": 357,
               "kind": "line_range",
-              "start": 326
+              "start": 328
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -240,12 +240,12 @@
         },
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:dce4d2c191c71c2c1d9916d19c67c39ff94582ec3982f91f00f086a5a198c7ea",
             "locator": {
-              "end": 497,
+              "end": 515,
               "kind": "line_range",
-              "start": 488
+              "start": 506
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -253,12 +253,12 @@
         },
         {
           "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
             "content": "sha256:fc90bf0e45bcb5a1157e5538bc3cf4c1aa1df71f6ad5ae0a03dee6d6b694c803",
             "locator": {
-              "end": 507,
+              "end": 525,
               "kind": "line_range",
-              "start": 499
+              "start": 517
             },
             "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
@@ -267,44 +267,31 @@
       ]
     },
     "16": {
-      "note": "Stored expansion cases stub fetch and assert transported failure fields and explicit retry; historical route-capture provenance is not a fresh server read.\n\nAnchor: `carries the code, reason, offending input and next action of an unwired adapter`; `names an unadmitted query as a validation failure rather than as the thrown message`; `offers a retry for a socket that never answered, and the retry re-reads`",
+      "note": "Surviving mounted-surface cases stub fetch and assert unavailable/validation/authority fields and explicit network retry; the removed expansion cases remain historical evidence, not current execution.\n\nAnchor: `keeps the unavailable-adapter, validation and authority states apart`; `offers an explicit retry for a network failure, and the retry renders the answer`",
       "targets": [
         {
           "anchor": {
-            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
-            "content": "sha256:21a054b82f0f277c02f080e8a1c3b9fe5fdaef3a16ffc43c8ad6e20ae01888a9",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:81cef175e3084cef503aca5ed647d7da7f2ae080b8984b73f479f69ce0310d23",
             "locator": {
-              "end": 77,
+              "end": 357,
               "kind": "line_range",
-              "start": 53
+              "start": 328
             },
-            "path": "dashboard/src/panels/review/SourceContentRefusal.test.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
-            "content": "sha256:6babaea41b4fbd0b3f5be81f4b45543a3681c8be571dfebf63fb1f1cfbf21fc2",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:cc5495254eaafaa7efb306e540b0c86b45d0bb4e1e36e308b715c9b962a0a4e3",
             "locator": {
-              "end": 112,
+              "end": 377,
               "kind": "line_range",
-              "start": 79
+              "start": 359
             },
-            "path": "dashboard/src/panels/review/SourceContentRefusal.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "34a5aba0f7b2d447402d602f738cca270d05dfbf",
-            "content": "sha256:acf8c4fc4bcc8bbb8436b8c5b1eae9c93e2c32c5ae7f887f91ec5a4e20153e09",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 114
-            },
-            "path": "dashboard/src/panels/review/SourceContentRefusal.test.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
           },
           "kind": "test"
         }

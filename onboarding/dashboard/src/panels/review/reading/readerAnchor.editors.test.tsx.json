@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/readerAnchor.editors.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Real editors retain the addressed line and only newly visible unmeasured editors receive a measurement request.\n\nAnchor: \"it('keeps an editor's line at the view top while its pane changes height below and above it, and is built again', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9348a7e52c6db57fe2f5be3716cc11f7a43af56d",
+            "content": "sha256:d6ea803e7adfe5c98da711985887847d50f1653e3af0a66990672a68cfcd75cb",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A line initially in an editor gap remains stable while later lines grow.\n\nAnchor: \"it('takes the line of an editor whose gap held the view top, and keeps it while its lines below grow', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9348a7e52c6db57fe2f5be3716cc11f7a43af56d",
+            "content": "sha256:24f4fb4284bbec6424298432090d2d3ff3705ebc7b60a10e918b9cd6b4e0a1d7",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Both controlled side-by-side lanes and held-box relayouts retain the sampled line positions.\n\nAnchor: \"it('holds both sides of a side-by-side diff at the top in every painted frame after a scroll', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9348a7e52c6db57fe2f5be3716cc11f7a43af56d",
+            "content": "sha256:083864d1fb778abe64a7b26594d9b739590107426b4679649d115e7a8c72ec15",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

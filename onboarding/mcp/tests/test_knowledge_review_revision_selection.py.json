@@ -1,199 +1,191 @@
 {
   "path": "mcp/tests/test_knowledge_review_revision_selection.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:465690aac889ee012d1863eb87d722bbf9c092794665199a26f5aa4c496c067a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_reviewed_leafs_own_change_names_the_reviewed_leaf"
+        }
+      },
+      "facet": "A changed row at revision2 in the reviewed leaf's own open history yields that leaf as the recorded after writer.",
+      "id": "PRF-3EG3ST",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:f0ef49bbbcd8a2f01dcc9feb94b289903d8cf410350e9184bfa9bf151953748f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_revision_no_history_row_claims_has_no_recorded_writer"
+        }
+      },
+      "facet": "A same-revision no_impact row from another leaf does not name a writer: the composed after state is not_recorded with no owners and detail naming revision2.",
+      "id": "PRF-A75MXD",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:cfea0958e530a865e7afa5a9419d7a1140590040878815b4f227e9f0c3e9f7c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_selection_carries_each_selected_revisions_display_version"
+        }
+      },
+      "facet": "A real text-backed single-revision comparison projects r1 as before_display_version and after_display_version beside the selected ids; this case does not prove distinct version values or an absent side.",
+      "id": "PRF-BERVRE",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:44add4f6850f5bedde39016ff770cf6376d75ed6cc8815d233532621aeaac964",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_carried_revision_names_the_owner_whose_history_wrote_it"
+        }
+      },
+      "facet": "With invariant revision2 written by another leaf's closed changed row, composed selection names that leaf as the recorded after writer and the baseline revision1 introducing leaf as the introduced before writer.",
+      "id": "PRF-K0KAXD",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+        "content": "sha256:956454ca586895aebb6f0f0f280c258cd99ba9adbd9ada8d5610b94088ca38c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_incomplete_after_index_leaves_the_writer_unavailable"
+        }
+      },
+      "facet": "An incomplete after index caused by a malformed record yields unavailable, no owners and an incomplete detail instead of asserting no writer.",
+      "id": "PRF-S0JBG6",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "16": {
-      "note": "The single retained revision pair compares head to head and records that revision as the sole head on both sides.",
+    "35": {
+      "note": "Text-backed snapshot pairs require one retained revision per side and use projected identities.\n\nAnchor: \"def _build_snapshot(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
-            "content": "sha256:dbc506685ef63f4aaed872147229e93cc8133ea333c3c9e5e16ef91018ce646c",
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:4c1faf010f5065450946d246505342aa438779c8750c5bbd6e6abd803c91dd0e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_single_retained_revision_pair_compares_head_to_head"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "A known-empty after side produces a removal with the before revision recorded, no after revision and no after heads.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
-            "content": "sha256:d26029891241c52ddf42e26823c15f3519df3aadbf3151693aadf5719e5b4452",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "`test_the_review_pane_renders_the_selected_head_pairs_own_statements` supplies the current fixture or assertion described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:1a2ed3fccac8e2632e700a93e330d8c37b68370ac84d7d40002a87e36d4a1bf3",
-            "locator": {
-              "end": 64,
+              "end": 214,
               "kind": "line_range",
-              "start": 59
+              "start": 101
             }
           },
           "kind": "test"
         }
       ]
     },
-    "22": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+    "36": {
+      "note": "One head pair and per-side r1 display versions are declared directly.\n\nAnchor: \"def test_a_single_retained_revision_pair_compares_head_to_head(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:adae89c721e538d4cbdb34f0eb235e720577dcbdfe98c2a6a655d9dcdd9eb53f",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
-            },
-            "path": "mcp/tests/knowledge_rows_test_support.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "_select calls select_subject_revisions with the comparison page items and fixture identity seed, requires an available selection and returns it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33894208b9dd5fd9cf89d0e267064c6064641774",
-            "content": "sha256:375986d2e4038d4dd8a64786b69bcd35a674aa295a4d9b9b363c9bc1e53266d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_select"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "The module's own lane declaration, which is what makes the classification its own rather than a budget convenience.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "37f38708bee5b9ca734f9fecef63fcd0cf20e5e8",
-            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
-            "locator": {
-              "kind": "symbol",
-              "name": "pytestmark"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "The fixed recorded statements every authored revision carries, so a head's text is assertable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "37f38708bee5b9ca734f9fecef63fcd0cf20e5e8",
-            "content": "sha256:c596aaa7f3a6c0d6d0714e2b10874362d78c6842a1c1b1c87618a60a62171246",
-            "locator": {
-              "kind": "symbol",
-              "name": "STATEMENTS"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "The adapter's own function under test, called exactly as `compose_review` calls it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:c339878c1eb6da08c3ba21d3b8452e19bce0c046adf093cb9e7de01d894aa2d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_select"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "30": {
-      "note": "The known-empty side: a removal under the R06 contract with the before head recorded and the after side absent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:5814a0dc41fc56acea744067ad44e77b812aa343eef92e6b368830deb305ca91",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "33": {
-      "note": "The pane case: the served payload records the compared head pair and renders the heads' own recorded statements as `present`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dfb58bf4430757ad55e934aa37cc7bc6ed0f69c",
-            "content": "sha256:08dcdf36572af45fba09a070f6f216091fb71b547f8b6bb146f8952e871c9761",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_review_pane_renders_the_selected_head_pairs_own_statements"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "34": {
-      "note": "The lane row, inserted mid-list in the alphabetical knowledge run.\n\nAnchor: `test_knowledge_review_revision_selection`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
-            "content": "sha256:ca0181cb2687cc93f7d2ddab0b83e2d688779fdfad7c0f7e2aa50a3da01d612f",
-            "locator": {
-              "end": 153,
+              "end": 287,
               "kind": "line_range",
-              "start": 153
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
+              "start": 254
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "A known-empty after side remains a removal; real composition renders each selected operand.\n\nAnchor: \"def test_a_known_empty_after_side_stays_a_removal_with_the_before_head_recorded(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:6bb5b2336c782e74c4f9c4ff0b7f36211be30a4386a88245130f79aaadc8de8c",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Converted writer fixtures resolve the actual task and compose from explicit history files.\n\nAnchor: \"def _changed_row(owner_revision: int, row_id: str = \"ROW-W11111\") -> dict[str, object]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:c8616112cc8719f71fee12d0d1f144097eb4a60816d501371049aabf27a3db5d",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 431
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "Carried and own changed rows name their writer while introduction names origin.\n\nAnchor: \"def test_a_carried_revision_names_the_owner_whose_history_wrote_it(tmp_path: Path) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:c1ca20dc74444d55cb8538e6444015d1b0bc24f674c7c0bc907ba6ade33ab47d",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 473
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "A no-impact row is not a writer, and incomplete history coverage stays unavailable.\n\nAnchor: \"def test_a_revision_no_history_row_claims_has_no_recorded_writer(tmp_path: Path) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d375393178fa450325eb3ce7c15c93c6c7981c46",
+            "content": "sha256:b02f271642c77e2a0b010b43b47a8c4ed1e80db6eb6d96ffefd1a19e5a793c9c",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 513
+            }
           },
           "kind": "test"
         }

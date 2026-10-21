@@ -2,80 +2,18 @@
   "path": "dashboard/src/panels/review/ReviewMovement.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The subject-read guard replaces both movement labels while pending or unavailable; answered missing owners fall back to not-measured. It does not measure or classify movement.",
+    "5": {
+      "note": "Complete owner records survive while absent payloads and absent owners receive different labels.\n\nAnchor: \"export function movementRecord(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a6b1d97a9f545bf2bdc1a19893821d020d32657",
-            "content": "sha256:a862162074386430a354ef38baf210ee0a345d93a096b1f3bb036deda203ff4f",
+            "blob": "9ecd5ed2d0b5efb648b67a3a3e5795c44933c75b",
+            "content": "sha256:59f0234bd0d92ce28bcfb7ea565c4dccf75e22b10e80af55d0a3811317169973",
             "locator": {
-              "kind": "symbol",
-              "name": "movementState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The compact sync/external state line is a marked semantic root, not an identity or a movement-reason display.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a6b1d97a9f545bf2bdc1a19893821d020d32657",
-            "content": "sha256:e665ef9a88335c7d0529d534b78165344d51d35ac047e663f0ec7933fd2bdacc",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewMovementStatus"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The marked facts root preserves complete supplied owner objects as wrapped JSON only for an answered read with at least one owner; it is not a filtered technical-metadata projection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a6b1d97a9f545bf2bdc1a19893821d020d32657",
-            "content": "sha256:3f80ffcc7bb68c0f1d0ce84c0d656fdf834eba8f56655755703a473f912bd632",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewMovementFacts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The actual header mounts status and a single complete facts block openly before FamilyScope and outside ScopeMetadata; comparison identity provenance remains separate.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:3ddccbc0659d327baa4a30fb21002d0fc16696304ce126f4e64d060734a9c8e4",
-            "locator": {
-              "end": 67,
+              "end": 16,
               "kind": "line_range",
-              "start": 52
-            },
-            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:3323cc760405cf94dadd8629cdd861a06f3b42db550b21bd8991f5d181b865a4",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 105
-            },
-            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+              "start": 7
+            }
           },
           "kind": "code"
         }

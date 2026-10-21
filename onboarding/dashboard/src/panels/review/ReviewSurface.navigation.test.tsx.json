@@ -3,62 +3,79 @@
   "proves": [
     {
       "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
+        "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+        "content": "sha256:a689aa7a9762b5828a3f9c9cab63bdfba8ec387903d160aa4d8787daf08c4c46",
         "locator": {
           "kind": "symbol",
-          "name": "pressedAgain"
+          "name": "keeps unreadable knowledge source-only without inventing a family or telling the reader to select one"
         }
       },
-      "facet": "A `j` pressed in the turn that shows the previous answer lands focus on the newly selected row, so the next `j` steps on from it to the following change.",
-      "id": "PRF-8296K7",
-      "invariant": "INV-T1ZHP5",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
-        "locator": {
-          "kind": "symbol",
-          "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
-        }
-      },
-      "facet": "A catalogue answering after the bounded wait fills the navigation without issuing a second main read.",
-      "id": "PRF-8XGKV4",
+      "facet": "When the catalogue refuses historical knowledge and task-context family context is unavailable, ordinary entry leaves no family row, subject section or selected subject slot; the reading column offers source-only content rather than prompting an invented subject. This facet proves absence of automatic subject selection only, not the catalogue count or selected-subject read behavior.",
+      "id": "PRF-8TJJ78",
       "invariant": "INV-115RDW8H",
       "origin": {
-        "handoffEntry": "L177-INV-115RDW8H",
-        "leaf": "260928-MIK-L177"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-HUNK-INV-115RDW8H",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:24dcaeb989eae7126d3981e286a9056925d356e880e191b0d2fa999c3402a07c",
+        "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+        "content": "sha256:b18d00175650c43c8d3997074e28cc508d701dfc214a70fa6e615ea20fd43314",
         "locator": {
           "kind": "symbol",
-          "name": "does not move a reader who is working when the catalogue answers after the bounded wait"
+          "name": "F03 restores a shared member under the family it was selected in after a reload"
         }
       },
-      "facet": "A reader already working in the task-context view is not moved when the catalogue answers after the bounded wait.",
-      "id": "PRF-EM61A7",
-      "invariant": "INV-EPB2CXBE",
+      "facet": "After selecting a shared member from its second family, the URL obtains a selection value; unmounting and remounting restores the member reading with that family context and marks that same family occurrence current in the tree. The fixture answers reads immediately. This guards reload preservation of a shared member's selected family context, not delayed restore supersession, history-entry counts, or block/hunk identity validation.",
+      "id": "PRF-JB0YMB",
+      "invariant": "INV-WRKBDD",
       "origin": {
-        "handoffEntry": "L177-INV-EPB2CXBE",
-        "leaf": "260928-MIK-L177"
+        "handoffEntry": "L89-W6-PROOF-INV-WRKBDD",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
+        "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+        "content": "sha256:9266f6455fef74a44031186c16afce064acc7702bd96339caaaf535d7836c421",
         "locator": {
           "kind": "symbol",
-          "name": "selected"
+          "name": "keeps every j pressed in the turn that shows the previous answer, and lands focus on each selected block"
+        }
+      },
+      "facet": "A j pressed by a MutationObserver in the turn showing the first block selects the second block with focus on its row; a third j reaches the third block. Those three blocks issue exactly task context and two distinct invariant reviews.",
+      "id": "PRF-KKCB9V",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-8296K7",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+        "content": "sha256:0da8815dd717086fcd6c723ab80b4d258761eb0fd51a107fabd056b89df63921",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the reviewer mounted across family → invariant → family, pending only in the slot, and reuses what it read"
+        }
+      },
+      "facet": "During the held invariant selection, the pending slot names that invariant; the previous family center, raw selection, family scope and comparison identity are absent under its heading. The same workspace, tree, reading column, technical disclosure and tree scroll survive. The test then answers the invariant and returns to the already-read family without a review or source-content request.",
+      "id": "PRF-MP0QAC",
+      "invariant": "INV-8VQR13WX",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-HUNK-INV-8VQR13WX",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+        "content": "sha256:280a2fe6c30b8b67b7e5b777459700c862ccd24092a3e1e2399fa4387dd26be6",
+        "locator": {
+          "kind": "symbol",
+          "name": "lands focus on a family chosen in the turn that shows the previous answer, before its effects have run"
         }
       },
       "facet": "A family chosen in the turn that shows the previous answer, before that answer's effects have run, gets focus on its own row and not on the page body.",
@@ -68,370 +85,242 @@
         "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
         "leaf": "260928-MIK-L39"
       }
-    },
-    {
-      "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:f72df1b919361b3cbc047860edd831b6b7fe80166052339c058cb12f50fc9a43",
-        "locator": {
-          "kind": "symbol",
-          "name": "opens one main read when the catalogue answers after the bounded wait (L177-R1-07)"
-        }
-      },
-      "facet": "After the bound the unengaged reader is given no subject by the late catalogue, so the open stays at one main read.",
-      "id": "PRF-TB6EZD",
-      "invariant": "INV-RMTHRQ0K",
-      "origin": {
-        "handoffEntry": "L177-INV-RMTHRQ0K",
-        "leaf": "260928-MIK-L177"
-      }
     }
   ],
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "af790a779d5ba61b711780eacd345f968d32bbbc",
-        "content": "sha256:c1e14b21363cbd4e9e207b3ced7673dfb179f00ef70a062a4282c9d395f3072c",
-        "locator": {
-          "kind": "file"
-        }
-      },
-      "id": "RLZ-21J3Q6",
-      "invariant": "INV-WZC60Z",
-      "origin": {
-        "handoffEntry": "MIK-R87@v1 9",
-        "leaf": "260928-MIK-L87"
-      },
-      "rationale": "This suite advances the selection hold on fake time while retaining the two prior-answer focus-order cases.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {
-    "10": {
-      "note": "B is independently read before cached A is restored; the later invariant-to-A return makes no review/content read and leaves B tagged kept.\n\nAnchor: inclusive source ranges",
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with nothing selected from ordinary entry, navigates families and a member in place and preserves the full source population', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:9dbb0a19dcaf1712eb90aac5b3f4314bda84da8a6e6872500e4e19d3285e1535",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:5c14ec338ccec7262209843b32c2d863e21e04d2c26d647c29f0b52091356d06",
             "locator": {
-              "end": 287,
+              "end": 106,
               "kind": "line_range",
-              "start": 282
+              "start": 75
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps unreadable knowledge source-only without inventing a family or telling the reader to select one', async () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:cab96ffb7c77da3420912a023bc08aa25c04f8035d6d72092462b5a880528a0c",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:d4c712f7df2bec917242d6322984349038807ec564719cb9b07640375be35e5f",
             "locator": {
-              "end": 371,
+              "end": 245,
               "kind": "line_range",
-              "start": 348
+              "start": 107
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Latest selection wins; a superseded answer is not kept.",
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the reviewer mounted across family → invariant → family, pending only in the slot, and reuses what it read', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:68fe3ca015bcb743b9ce22614fccb16d6d97dee84b60853a56c2c5ef1a2d781f",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:777323617a676801ea634d7a236cd4408eacbd1406afb8b17d647da2ca9d701c",
             "locator": {
-              "end": 490,
+              "end": 342,
               "kind": "line_range",
-              "start": 444
+              "start": 246
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "Late catalogue with and without reader engagement.",
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('settles on the latest of rapid selections and never shows a superseded answer', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
-            "content": "sha256:86fc4c29021af0ab94e583322c53b1f2236a18bb144470b03446d47f0503c465",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:73be3e4e68676a5974cb60a4413dc3a5f522e8114fbcd12799f4b29d5233fd69",
             "locator": {
-              "end": 546,
+              "end": 390,
               "kind": "line_range",
-              "start": 495
+              "start": 343
             }
           },
           "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "The delivered late task-context reply does not displace the selected family. This case does not assert later task-answer reuse.\n\nAnchor: inclusive source ranges",
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['after', 'before'] as const)(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:68694904eded4789df4699e7dab56e52a7086857051b1aa0869011abd84974eb",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:ed961e03df0f221a436dd6e0414ec24fca9fba941e977803ac08e3c889906de3",
             "locator": {
-              "end": 500,
+              "end": 439,
               "kind": "line_range",
-              "start": 475
+              "start": 391
             }
           },
           "kind": "test"
         }
       ]
     },
-    "14": {
-      "note": "Failed or refused selection stated in the reading area for the requested subject.",
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['failed', 'refused'] as const)(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:c6281660c215a116277160112ee07276b37e525abfd324dff1f6f5299912d293",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:f8c719087d3492282358ce5f52a76078682925987b7599b8ae9df2ddfc5cb387",
             "locator": {
-              "end": 668,
+              "end": 522,
               "kind": "line_range",
-              "start": 590
+              "start": 440
             }
           },
           "kind": "test"
         }
       ]
     },
-    "15": {
-      "note": "Focus the reader moved while pending is kept.",
+    "31": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('leaves focus where the reader moved it while the selected subject was pending', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:016acf3007bcd55517c447c74f8c8546ef014de60572eea586724d6e7561c283",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:bfd5b3cc34889c52eaccfc1de67255c73dc55099886cc26b4cc22fa662be84b3",
             "locator": {
-              "end": 698,
+              "end": 555,
               "kind": "line_range",
-              "start": 670
+              "start": 523
             }
           },
           "kind": "test"
         }
       ]
     },
-    "16": {
-      "note": "Forced order by pointer: focus lands on the family chosen before the previous answer's effects have run.",
+    "32": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lands focus on a family chosen in the turn that shows the previous answer, before its effects have run', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:3b9376200d20e53d763b06048e7c2ef94522366e04bd3cf0456b53b4d9445cb1",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:c2f3ce2036947809b4234e053f95d80be61316bd6b3b249ee01df79455078949",
             "locator": {
-              "end": 731,
+              "end": 587,
               "kind": "line_range",
-              "start": 703
+              "start": 556
             }
           },
           "kind": "test"
         }
       ]
     },
-    "17": {
-      "note": "Forced order by key: every `j` pressed in that turn is kept and focus lands on each selected row.",
+    "33": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every j pressed in the turn that shows the previous answer, and lands focus on each selected block', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
-            "content": "sha256:f31b1d12667870b13899f50382bb27cb1756f93df79a3ee42e5117bed5a47b74",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:b0b89b323294a966d569fa9867b1867b58288f0b842a893bdca63e7c232021f5",
             "locator": {
-              "end": 779,
+              "end": 756,
               "kind": "line_range",
-              "start": 733
+              "start": 588
             }
           },
           "kind": "test"
         }
       ]
     },
-    "18": {
-      "note": "The guard the forced-order cases pin.",
+    "34": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F03 shows a shared changed occurrence under both families and selects each by its row with one invariant read', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-            "content": "sha256:1bba0e66f72a21b8fd9796a272ffbb1dea4948a9c8f69433bf70b5268c6a7bc9",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:af05f90ceecae94b2c3da162a76e0a966d140c4036dfdee77bde5ba16284c4b4",
             "locator": {
-              "kind": "symbol",
-              "name": "useSelectionFocus"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The forced-key case serves independent captured member and family selector answers; walk utilities supply keyboard and selection helpers.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:fa9fc7af3455e2b7c628cc24d50a62b3d330be99b415343be1bc81d065eab34a",
-            "locator": {
-              "end": 715,
+              "end": 804,
               "kind": "line_range",
-              "start": 655
+              "start": 757
             }
           },
           "kind": "test"
         }
       ]
     },
-    "20": {
-      "note": "Shared-member world with outline and families",
+    "35": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F03 restores a shared member under the family it was selected in after a reload', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:63c56a74e111f77e8305ee9130fd5f8045a961562b65a4c1d91579ca0c0b3f2a",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:53a221fdd03c0e8312f7865f6d7305d8a23bb70ee27a558c43fdf353db96e8c8",
             "locator": {
-              "kind": "symbol",
-              "name": "sharedNavigationWorld"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:8c557932b98b8cb878a9fc2ad684bfd96a382405869383f959ee4ffb9f1333b6",
-            "locator": {
-              "end": 735,
+              "end": 901,
               "kind": "line_range",
-              "start": 717
+              "start": 805
             }
           },
           "kind": "test"
         }
       ]
     },
-    "21": {
-      "note": "Outline reply with auxiliary refusal for the shared world",
+    "36": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['memory', 'code'] as const)(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:dd9f737deda3010813e215af1a8dc79744f6814e30894165dea9a3a65921b7f4",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:7cae4d0f11375a0d493a0651999d56b934370523c6e40264dbda797800cd7013",
             "locator": {
-              "kind": "symbol",
-              "name": "outlineReply"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:f43857602334bd555a4bb1222bbcdf7f07b96d742b3c48ed17456cb4b7651fc3",
-            "locator": {
-              "end": 782,
+              "end": 941,
               "kind": "line_range",
-              "start": 764
+              "start": 902
             }
           },
           "kind": "test"
         }
       ]
     },
-    "22": {
-      "note": "Mount of the shared world with request capture",
+    "37": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F04 makes a failed generation reread explicit without reviving the prior semantic outline', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:60b5af76435e80cbc2ba2b700f8cb7085a564af7950b673376ee7e2624c1437d",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:d58d94f757e0a430d3fbf29cf6227caa0a0b666e5b67d7a56aeddc48201a5fea",
             "locator": {
-              "kind": "symbol",
-              "name": "mountSharedWorld"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "Generation inputs begin with current family content and synthetic outline facts, then perturb comparison or code generation and outline content independently of sharedNavigationWorld.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:ba4260dadbd0e502383dce97fdee0c6776d2c4b9a0eff20d7e2e0523a8878b74",
-            "locator": {
-              "kind": "symbol",
-              "name": "generationWorld"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "Held next-catalogue with releases for late answers",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:4133bffde8e4b3d42b2ec59434834a0ff44f9d0c2a20b09f8c85e4c090ea87bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "holdNextCatalogue"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "16857f2dc76aee57f3d36e398de620019282feaa",
-            "content": "sha256:4b5308fb6e12df07ed0ea0ede948fb28905dbb2baba20cbca8f61a8d75f60f4c",
-            "locator": {
-              "end": 917,
+              "end": 973,
               "kind": "line_range",
-              "start": 899
+              "start": 942
             }
           },
           "kind": "test"
         }
       ]
     },
-    "8": {
-      "note": "The module's own statement of what it pins, why its replies are held, and what the two forced-order cases force.",
+    "38": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F04 ignores a late catalogue answer superseded by another admitted generation', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:54441ba0a852635769b383f5fd08dbf4b35afe40d37abbcb471571294f6ab331",
+            "blob": "5b1512810047abc2fa73f3c328c758c95c93acc2",
+            "content": "sha256:5f0ceecae782318ed30aa521eb06d98ee27c444f72a90636b950025bab811abf",
             "locator": {
-              "end": 17,
+              "end": 1002,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4527c1a55df306503a92176f7027d7c5a4eb30e0",
-            "content": "sha256:6057f709786225700c886ba5419109a30ec80220bddea0d44af20a042b41695c",
-            "locator": {
-              "kind": "symbol",
-              "name": "delayedServer"
+              "start": 974
             }
           },
           "kind": "test"

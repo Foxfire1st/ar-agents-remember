@@ -1,0 +1,51 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The old-file-list and no-subject-read cases guard mixing code or judgment from a different comparison into a historical review."
+  },
+  "applicability": "Numbered review-page comparison selection and backend entries/summary resolution for live or landed leaves.",
+  "conditions": [
+    "List1 through latest from the trees answer; choosing another number clears selection and binds subsequent comparison reads to that number.",
+    "Numbered entries/summary reopen the leaf contract recorded trees rather than capture current worktrees or substitute a legacy generation.",
+    "Historical outline, card/lane/file facts, markers and traversal use the shown number; subject statements/judgments are latest-only and historical mode states that limitation without issuing a subject read.",
+    "The canvas remains bound to latest and Technical details labels when its raw payload is latest rather than pretending it is the older shown number.",
+    "Negative entries comparison is 400 bad-request and a missing recorded number is 404 candidate_unresolved; summary keeps its 200 typed-unavailable response convention."
+  ],
+  "exclusions": [
+    "An unrecorded number silently falling back to latest.",
+    "Showing latest source-file facts as historical.",
+    "Promising that canvas revisions or authored subject reads are replayed historically.",
+    "Browser card-answer retention and retry have a separate policy; recorded-serving reuse remains owned by INV-YTPBCF. The live parent worklist memo remains INV-5M9WY3."
+  ],
+  "id": "INV-HAJ9SH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 30, exact id MIK-R89@v2 rule 10 · comparison on entries and summary; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 102, exact id W16; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 150, exact id MIK-R89@v2 rule 10 · the selector; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 151, exact id MIK-R89@v2 rule 10 · an older number; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 164, exact id W17; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 171, exact id I3; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 187, exact id P-R6; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "Cache retention/keepability is deliberately excluded and remains owned by INV-YTPBCF; INV-5M9WY3 retains its separate live-worklist memo scope.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470; no new execution or code acceptance claim.",
+        "Static complete source bodies, current record meanings and exact captured A4-F5 diff read; no tests or browser checks run.",
+        "Frozen code tree 25756231aa86f63ba59f91bec01146d27461e470 over cd0e68f0410f2de2d1955ecdbee6628630631d9a; captured patch SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP11",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Choosing an older comparison shows that recorded number read-only across outline, summary, cards and file facts, and reads no latest subject judgment in its place.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -12,7 +12,7 @@
     "In-tree callers explicitly request keepTree: compact outline family/member rows, traversal selection and a member opened in the main-page roster. A handler for kept-family pagination is not a rendered sidebar continuation control.",
     "Same-revision family sides merge every returned member; distinct revisions keep their separate sides and recorded partiality.",
     "The requested subject's pending, failed, refused or context-free state is stated in the main reading area, not above the tree.",
-    "Stored walk families are ordered by identity; rendered rows instead follow the persisted triage/authored order, All/Changed view, query and available index outline with walked facts overlaid.",
+    "Stored walk families are ordered by identity; rendered rows follow the shared change-set model in the active sort, All/Changed view and text query, with walked facts overlaid.",
     "Retained context does not promise that every returned member stays visibly rendered; Changed preserves selected-member and selected/kept-family visibility subject to the text query."
   ],
   "exclusions": [
@@ -34,7 +34,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "An explicit in-tree selection retains the already-read family and member context within the same comparison and adds the selected subject's delivered context. Non-current families remain kept with their last-read subject; pending, failed and refused reads do not erase that retained union.",
   "status": "proposed",

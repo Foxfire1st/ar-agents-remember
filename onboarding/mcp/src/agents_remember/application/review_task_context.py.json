@@ -2,15 +2,15 @@
   "path": "mcp/src/agents_remember/application/review_task_context.py",
   "realizes": [],
   "references": {
-    "18": {
-      "note": "The entry recheck precedes receipt/attribution reads and the actual payload has no selected comparison or old record bundle.\n\nAnchor: Current source boundary",
+    "26": {
+      "note": "The entry recheck precedes receipt/attribution and the no-subject response retains required empty/unavailable states.\n\nAnchor: \"def task_context_review(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:7c0f71b2f70beb2dceeeab99e857152dc4a5fa67689e1180c2411dca888ee129",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:8abb654f734d5874cba410862a0e4c89a5ad23abeb73ebe7879f4031a69a333d",
             "locator": {
-              "end": 125,
+              "end": 170,
               "kind": "line_range",
               "start": 68
             }
@@ -19,119 +19,68 @@
         }
       ]
     },
-    "19": {
-      "note": "No-subject family/meaning/currentness states, descriptive Git movement and limitations are explicit.\n\nAnchor: Current source boundary",
+    "27": {
+      "note": "All changes is named as the inventory destination in the no-family/currentness reasons.\n\nAnchor: \"# present, because a current build's answer without it is invalid (MIK-R43 rule 9).\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:53f441772b6c33bba0efc6f94927ffc1eb4d4a14126decd206ac5021964eae40",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:fe6f5e7f2dccf3f17f292556986f07cf82e85af76e1b5c8652f9710df442db90",
             "locator": {
-              "end": 167,
+              "end": 149,
               "kind": "line_range",
-              "start": 126
+              "start": 129
             }
           },
           "kind": "code"
         }
       ]
     },
-    "20": {
-      "note": "Unreadability limitations and unresolved task-context panes retain their actual reason.\n\nAnchor: Current source boundary",
+    "28": {
+      "note": "Unresolved pane reasons preserve unavailable, historical, unreadable, absent and ordinary priority.\n\nAnchor: \"def _task_context_pane(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:5a2c988dc2cf98af4afeb9693dd647ff502b1f014beee3922a32f1862dfc4872",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:e57a3b4c9ea41ee1f482211d08a1b780971d699193a47261b4da0597062ff3a6",
             "locator": {
-              "end": 197,
+              "end": 247,
               "kind": "line_range",
-              "start": 170
+              "start": 183
             }
           },
           "kind": "code"
         }
       ]
     },
-    "21": {
-      "note": "The actual reason priority keeps unavailable, recorded, unreadable, absent and unselected facts distinct.\n\nAnchor: Current source boundary",
+    "29": {
+      "note": "Independent attribution retains partial/unavailable side facts.\n\nAnchor: \"def pair_attribution(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:1258166c36badef09b2d2271c636cfe229d40e9aa7ca7af9d2abe9244d8e31fa",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:176094c68466a841640c7e5ff635fb123557b456c318e3a1296a0e1e60d24829",
             "locator": {
-              "end": 243,
+              "end": 334,
               "kind": "line_range",
-              "start": 200
+              "start": 250
             }
           },
           "kind": "code"
         }
       ]
     },
-    "22": {
-      "note": "Pair attribution binds independent sides before delegating the observed-path partition.\n\nAnchor: Current source boundary",
+    "30": {
+      "note": "Namespace failure and existing identity readers retain actual per-side failure policies.\n\nAnchor: \"def _pair_without_namespace(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:8f5a17fdb8e79d177f24bc0a9c8aaa2adb82d6cc10ee962551da63a507133ff7",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:65c830f037af0af24a8cba17ff0ba8574ccc6d3f66a060e2bd14e72d7b727233",
             "locator": {
-              "end": 292,
+              "end": 423,
               "kind": "line_range",
-              "start": 246
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "Partial/unavailable native tree sides retain their own labeled attribution context.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:a37d983b66d9225269e28b830a88bbad4335e970a994e7db385e78ef1fd01635",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 295
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "Namespace failure leaves the After side unavailable while independently binding Before where readable.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:79fd888b8c6c7f4de52274ca85424cd36f875cd8d38809ca6fe5adf8acec19ce",
-            "locator": {
-              "end": 361,
-              "kind": "line_range",
-              "start": 333
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "Existing identity/open-side adapters carry their named failure states rather than manufacturing knowledge.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:4518a1c3702a495484d9db44392ac0f531e9acaa17a5ea0129773ea5760349e9",
-            "locator": {
-              "end": 419,
-              "kind": "line_range",
-              "start": 364
+              "start": 337
             }
           },
           "kind": "code"

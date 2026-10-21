@@ -1,0 +1,257 @@
+{
+  "path": "mcp/src/agents_remember/cli/developer_messages.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:f28905f863df54e18653d6519cb63e85c4bb826b2d2d2a88ba67f8cc3a942f3e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare"
+        }
+      },
+      "id": "RLZ-0S6B4V",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Independently rejects excessive picks and decoded image/message bytes before forms are filed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:2420f87d6483efa29228a93c1bd2c06051ec9123e071bd462f783d7d929d1a07",
+        "locator": {
+          "kind": "symbol",
+          "name": "_file"
+        }
+      },
+      "id": "RLZ-1FSKF5",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes the header fields and names each saved file and the message file in the text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:8e0f8cdc8cbe732e345cb7943b327d0937da4e31acc11315d737baa8b77589eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_text"
+        }
+      },
+      "id": "RLZ-2G1CJ2",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps a bounded held wake text ending with the complete filed-message pointer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:3afa22f259882d20d940eac2d890a6c8d169835fb0d6272f6beaaefb861933c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Composer"
+        }
+      },
+      "id": "RLZ-6XTW8P",
+      "invariant": "INV-T6DV0Q",
+      "origin": {
+        "handoffEntry": "TRAY08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Numbers the picks and writes each with its form, attachment line and note.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:3394ca77f60cefe07040478455c9b0a28472030a55cebd23157fd9494facc327",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repository"
+        }
+      },
+      "id": "RLZ-7XN9MC",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names a taskless target's repository: the page's, else the server's one configured repository; with none, the send is refused as `unknown-repository` (P-T3).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:4529dbb041f7e958cc917f840ea716abe42b93b3513e83a5d4527a83e94f9ebc",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_developer_message"
+        }
+      },
+      "id": "RLZ-BDY70K",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Prepares and files the complete payload before handing it to native deliver_or_hold.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:f33e10f625eb90e6362f8278136072614b27978a815397912efae20c1801d4e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_developer_chat_routes"
+        }
+      },
+      "id": "RLZ-FPTS5V",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the body as a bounded stream before JSON/model parsing; an over-limit body returns a named refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:1f58751518088e3144b566a0fd8dc86fa4cf872939b157d46b94b2640dd83377",
+        "locator": {
+          "kind": "symbol",
+          "name": "_log"
+        }
+      },
+      "id": "RLZ-HXABNE",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes the time, target, pick ids, message id, file, SHA-256 and state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:2420f87d6483efa29228a93c1bd2c06051ec9123e071bd462f783d7d929d1a07",
+        "locator": {
+          "kind": "symbol",
+          "name": "_file"
+        }
+      },
+      "id": "RLZ-TFSD0V",
+      "invariant": "INV-T6DV0Q",
+      "origin": {
+        "handoffEntry": "TRAY08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Builds the message in rule 8's order and the bridge payload with its images and text attachments.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:2efa00b4b38e16346ffcc6329e653d6b645fd10243f2b6bd4d72176bdf6684c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_provenance"
+        }
+      },
+      "id": "RLZ-V3X3W0",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes the provenance line into the message, with the seat's role.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+        "content": "sha256:f142fa4753b5d816d379d577fcf768c52db1abda9763a97a976975f3c22b3db7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_provenance"
+        }
+      },
+      "id": "RLZ-WGMVED",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses a bad agent id or time by name before Send (ebdae1e5).",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Implements dashboard developer-channel composition, file-first sending and sent-log HTTP routes.\n\nAnchor: \"class DeveloperMessageRequest(_Wire):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+            "content": "sha256:d10cd129b98cf043f0d90eeac350868f18c1541b922e557153033e21530fc63b",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Implements dashboard developer-channel composition, file-first sending and sent-log HTTP routes.\n\nAnchor: \"def send_developer_message(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+            "content": "sha256:d4f0b318f25a90de8f212666b79c8c47f45125c71a96a94c0a4a416817a0d6c7",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Implements dashboard developer-channel composition, file-first sending and sent-log HTTP routes.\n\nAnchor: \"prepared = _prepare(config, request, FormRoots(config, leaf_memory_root))\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7df2ef4ebcb324fe5a2042fabfce7e9a4f6f3b7a",
+            "content": "sha256:8df7aba0f0ee8894c6a527908fbebee02aa9165e0401b593578eaee573a434cd",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

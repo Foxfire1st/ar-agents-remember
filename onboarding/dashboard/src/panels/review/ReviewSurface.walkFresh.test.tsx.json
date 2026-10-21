@@ -3,46 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:67f3fb3214e0d343ced82cde4cf4a543502096e6271625efe92ead8d3c10b6ba",
         "locator": {
-          "kind": "symbol",
-          "name": "atClick"
-        }
-      },
-      "facet": "A refresh asked before the effects of the previous answer have run scrolls nothing at the click and brings the selected row into view once its own answer is shown.",
-      "id": "PRF-2CF5YF",
-      "invariant": "INV-T1ZHP5",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:65b31236193cb40763aecbc742393f0d2fb9a7e0b70c99cb92ba9b2e7de0fca9",
-        "locator": {
-          "kind": "symbol",
-          "name": "retry"
-        }
-      },
-      "facet": "After a refresh whose read failed, the retry is the refresh again: nothing scrolls at the click, the selected row is brought into view when the answer is shown, one review is read, and the tree is the selected subject's own.",
-      "id": "PRF-581Q8Y",
-      "invariant": "INV-T1ZHP5",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
-        "leaf": "260928-MIK-L39"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:883febb2232efe2d3703979c5a130752b991639a863474f6bdd4d8bf985c5120",
-        "locator": {
-          "end": 292,
+          "end": 310,
           "kind": "line_range",
-          "start": 264
+          "start": 281
         }
       },
       "facet": "Following an intent marker and returning clears kept tags; both outline families remain on both answers.",
@@ -55,12 +21,46 @@
     },
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:0e701c1ef5934c8cbc61240b8849758c3df317c38a4cb1614926b8f312b8c3d5",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:42ba3e198c7c5d3e9f19c30aa6a1351060d9a2acc55cb46a90488ae90fae33a1",
         "locator": {
-          "end": 164,
+          "kind": "symbol",
+          "name": "keeps the walked tree at the actions rule 9 says change nothing"
+        }
+      },
+      "facet": "Choosing authored Sort, switching Changed/All, opening Worklist and reselecting its family, then All changes/Back preserve both outline families and kept tags and issue no new subject review read.",
+      "id": "PRF-B9BD28",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-XMAZ9R",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:7e117f49c32b477758061100bb62efb7b94975dca2c84a723bbffd4c14372629",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens with nothing selected, reads no subject, and a late catalogue selects nothing"
+        }
+      },
+      "facet": "While the catalogue is held, one review request asks for task context before catalogue release with no selectorId. Releasing the catalogue leaves both outline families present, no kept tags, no selected row or subject slot, and still exactly one review request.",
+      "id": "PRF-BEB14G",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-V91N1W",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:f2e8a2bd32b3bb7ce019c8b4a75eab19fe2f75131f1c71ae48f354d92b17fc0e",
+        "locator": {
+          "end": 181,
           "kind": "line_range",
-          "start": 151
+          "start": 166
         }
       },
       "facet": "The offer to open task context after refusal clears kept tags at the click and after the task context appears; both outline families remain.",
@@ -73,29 +73,46 @@
     },
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:840ddfc695158c9ac5c6b9d2407dc7764d878925b339355ed085ac03f6912d44",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:8b593df44ec82aa671edfbafc1d01d44df2869cf9ae85d007aac016e2f89a3c5",
         "locator": {
           "kind": "symbol",
-          "name": "keeps the families and states the subject when the answer composes no family context"
+          "name": "brings the selected row into view when the retry of a failed refresh is answered"
         }
       },
-      "facet": "When the answer of an in-tree selection composes no family context, both families stay, both are tagged as kept, the reading area states that no family was recorded for the selected subject, and the requested row keeps the mark.",
-      "id": "PRF-HBWR8S",
-      "invariant": "INV-NSG0D4",
+      "facet": "After a failed refresh has settled, retry causes no immediate tree reveal, reveals the selected row when its answer is shown, makes exactly one review read, removes Retry and retains both outline families.",
+      "id": "PRF-CQYKFJ",
+      "invariant": "INV-T1ZHP5",
       "origin": {
-        "handoffEntry": "L57-M1-facet-PRF-CNYVD3-replacement",
-        "leaf": "260928-MIK-L57"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-581Q8Y",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:a88781ecd967541b1bda29f44c466f58b54d32e4e90343b7a412281190c0ef86",
+        "locator": {
+          "kind": "symbol",
+          "name": "waits for the answer of a refresh asked before the effects of the previous answer have run"
+        }
+      },
+      "facet": "A refresh requested by a MutationObserver in the turn showing the previous member answer records the prior reveal prefix and receives a selected-row reveal after that prefix when its own answer is shown.",
+      "id": "PRF-J86Z2E",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-2CF5YF",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
         "content": "sha256:3d0ab7a6715887bb9d07121bed6d1219451784b3c3615526b9618275f48cd1db",
         "locator": {
-          "end": 115,
+          "end": 134,
           "kind": "line_range",
-          "start": 103
+          "start": 122
         }
       },
       "facet": "An in-tree selection answered by another comparison clears kept tags and announces comparison change while both outline families remain.",
@@ -108,46 +125,27 @@
     },
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:e4ffcf3537286d5a771276796c9d19f2f258f7f6dc898784887a4b34312c7b63",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:11de7f61e6d1a411b8d79eecd8c881c866b15bb261c991b1df0ec862c3bb4d33",
         "locator": {
-          "end": 337,
-          "kind": "line_range",
-          "start": 294
+          "kind": "symbol",
+          "name": "keeps the families and states the subject when the answer composes no family context"
         }
       },
-      "facet": "After the bounded hold the reviewer shows task context; the late catalogue selects its first family with both outline families present and no kept tags.",
-      "id": "PRF-V91N1W",
-      "invariant": "INV-9ZKYWQ",
+      "facet": "When an in-tree answer composes no family context, both outline families remain and are tagged kept, the requested row keeps its mark, and the selected subject slot contains no family label or family metadata.",
+      "id": "PRF-ZN66GD",
+      "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "L81-A003-replace-PRF-V5BWKQ",
-        "leaf": "260928-MIK-L81"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:1f3dc126bfbac6f87c9f6e683837390b48658f60a2d7be267903374eaa36e5ae",
-        "locator": {
-          "end": 393,
-          "kind": "line_range",
-          "start": 365
-        }
-      },
-      "facet": "Order/view toggles, Worklist and filtered comparison destinations/Back retain outline families and kept tags and issue no subject review read.",
-      "id": "PRF-XMAZ9R",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "L81-A003-replace-PRF-RX5N2X",
-        "leaf": "260928-MIK-L81"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-HBWR8S",
+        "leaf": "260928-MIK-L89"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:607cc683e16074c2598cfa396f1d4e2627751986a0f692afcdc1a76128f6b227",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:25819f5da3a07ea2a9f6e7ded339a653beea4396e1f9c303dc4d6f36e12600a4",
         "locator": {
           "kind": "file"
         }
@@ -163,12 +161,12 @@
     },
     {
       "anchor": {
-        "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-        "content": "sha256:0a53407b1137e4d1730f469e4add973fb031b3bba3c887654c4a038306308db3",
+        "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+        "content": "sha256:1c34e00f332d2b439827af6475b9e7dc1a38f1e7b93f97e85862925d35febeab",
         "locator": {
-          "end": 479,
+          "end": 502,
           "kind": "line_range",
-          "start": 408
+          "start": 423
         }
       },
       "id": "RLZ-TRH263",
@@ -182,190 +180,134 @@
     }
   ],
   "references": {
-    "18": {
-      "note": "The kept state every case starts from.\n\nAnchor: `keptState`",
+    "46": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the walk when the already-selected family row is chosen, with focus and no new read', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:8d5ff8feeaf3d2e88783045353358fdcba632b995b449f764a43ea682bb02c30",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "Reselecting the already-selected family preserves both families and its kept tag with no new read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "All changes opens and returns without resetting the walk or reading subjects; focus returns to the trigger.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "Refresh clears kept reads while preserving both complete outline families at click and answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "Afresh at a refresh of the review.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:f4ebcb8a49f4c37a784b4a3af903f93c79673a32ce118493da7105fb10a371d0",
-            "locator": {
-              "end": 112,
+              "end": 89,
               "kind": "line_range",
-              "start": 102
+              "start": 77
             }
           },
           "kind": "test"
         }
       ]
     },
-    "23": {
-      "note": "Afresh at an answer of another comparison, with the notice.",
+    "47": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('All changes opens the comparison viewer and returns without resetting the walk or reading subjects', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:665a57959276b09ab1cf3c682a1600f2f33ae799189629f06a0250180f40be4c",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:6d69a3097d9dc368302d1fb146039fb79a3278424fcd0fe3e4d10637e0fa710b",
             "locator": {
-              "end": 126,
+              "end": 109,
               "kind": "line_range",
-              "start": 114
+              "start": 90
             }
           },
           "kind": "test"
         }
       ]
     },
-    "24": {
-      "note": "A refused read keeps every row and the mark; `k` works from it.",
+    "48": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('refresh clears kept reads while preserving every row of the outline', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:8dc28532de0391911bdb88cb5e127194524aa31d1d7425411d88e106b3f635a2",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:78c4c4006c1232f449257c0876a583972e61cafca37712014d8fe36e5687d043",
             "locator": {
-              "end": 160,
+              "end": 121,
               "kind": "line_range",
-              "start": 144
+              "start": 110
             }
           },
           "kind": "test"
         }
       ]
     },
-    "25": {
-      "note": "The offer to open task context clears kept tags but preserves both outline families at click and answer.",
+    "49": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('starts afresh at an answer of another comparison and says so', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:2454fb26357e5dbb8fb2ae496d02f3160df71fa8490844d91b5daf27d4915981",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "A failed read keeps every row; the retry's answer leaves the tree whole.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:3c2d1e6a89e1c18d6bf7a11c70f74bc3f21a043b9c731590fb3ec4cc63605a19",
-            "locator": {
-              "end": 195,
+              "end": 146,
               "kind": "line_range",
-              "start": 176
+              "start": 122
             }
           },
           "kind": "test"
         }
       ]
     },
-    "27": {
-      "note": "Afresh at a followed intent marker; its return brings no kept family back.",
+    "50": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every row when a selected subject is refused, and another row reads from there', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:1e95c9459752e0ee4725a24ce0fd42e96419be5a1e01049b6485dab89a6d02b4",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:439ba93592ccc5d43bf2fccedceb28bdb1075a96625519a2db5aa9ddb7437ecb",
             "locator": {
-              "end": 240,
+              "end": 165,
               "kind": "line_range",
-              "start": 211
+              "start": 147
             }
           },
           "kind": "test"
         }
       ]
     },
-    "28": {
-      "note": "The late catalogue selects its first family with both outline families present and no kept tags.",
+    "51": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('starts afresh at the offer to open the task context after a refusal', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:11412d256f6877516862d96855544934e3120bc20436a60b21e3a3eca7756945",
             "locator": {
-              "kind": "file"
+              "end": 182,
+              "kind": "line_range",
+              "start": 166
             }
           },
           "kind": "test"
         }
       ]
     },
-    "29": {
-      "note": "An answer without family context keeps the families and states the subject.",
+    "52": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every row when the read of a selected subject fails', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:2aab269f30e0be4dd43e1bdbd07c400fd197f7bfdbebf7f8bfe6b8b803e94fed",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:04de69003142845862320404a104d2a661ed92049fc7efd3caad94f796eebf9f",
             "locator": {
-              "end": 303,
+              "end": 280,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "53": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('starts afresh at a followed intent marker, and its return does not bring the kept family back', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:b9f42d71f8c638103ba717b5d2616621d175035135ab8642949759fa01256503",
+            "locator": {
+              "end": 311,
               "kind": "line_range",
               "start": 281
             }
@@ -374,270 +316,187 @@
         }
       ]
     },
-    "30": {
-      "note": "Order/view, Worklist and filtered comparison destinations/Back preserve families/tags and issue no subject review read.",
+    "54": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with nothing selected, reads no subject, and a late catalogue selects nothing', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:23e5f0d91d677337ca439171e9db555d0cd4e1da3fd028b4f2a815a3532ec3b3",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:08326cbba16f1e0a374ed4c29d9f473d3a8225bca0ebc1fbe6f7a997975f25b7",
             "locator": {
-              "kind": "file"
+              "end": 340,
+              "kind": "line_range",
+              "start": 312
             }
           },
           "kind": "test"
         }
       ]
     },
-    "31": {
-      "note": "A refresh brings the selected row into view once its answer is shown, without moving focus.",
+    "55": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the families and states the subject when the answer composes no family context', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:8576d8e3f1aaccdeebaf3f16bf92076f52513f32149bb8c8bad8aa30ffc999e4",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:4259ded97fbcf8e0788f28eb7fa24017fe4d1ed356494ada9ca07f84dcf1cbe6",
             "locator": {
-              "end": 438,
+              "end": 365,
               "kind": "line_range",
-              "start": 427
+              "start": 341
             }
           },
           "kind": "test"
         }
       ]
     },
-    "32": {
-      "note": "Forced order: a refresh asked before the previous answer's effects have run waits for its own answer.",
+    "56": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the walked tree at the actions rule 9 says change nothing', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:87829305c546168e2f9899b12b4ec76e677100ae2bf07439ed2acfbd65da4113",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:7e1b7df8495c86be69610ac700ee4d26f5b67711069f1ed49d6c5231503feda0",
             "locator": {
-              "end": 473,
+              "end": 422,
               "kind": "line_range",
-              "start": 440
+              "start": 366
             }
           },
           "kind": "test"
         }
       ]
     },
-    "33": {
-      "note": "A refresh whose read fails leaves no scroll request behind.",
+    "57": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([true, false])(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:97cbbe07dfc1c9c252a391f55a6f9061441936dd557ffb21f8fd75fd6e80a850",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:df3bfa917b6970e8ce7ae06da30e62a8a0181af7156c5eecc3d1e9bc8a0d46d9",
             "locator": {
-              "end": 496,
+              "end": 467,
               "kind": "line_range",
-              "start": 475
+              "start": 423
             }
           },
           "kind": "test"
         }
       ]
     },
-    "34": {
-      "note": "The retry of a failed refresh is the refresh again: the row is brought into view when it is answered.",
+    "58": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not move a stacked reader who scrolled and moved focus while the answer was pending', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:4085c65744d83e46119a23bf57b1bca072371c9b4ae85c091273b47cf3437414",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:0fa2aa1e1f174d5ea05abb198ca50732f597a30e80805caec7dbb5352b527204",
             "locator": {
-              "end": 545,
+              "end": 503,
               "kind": "line_range",
-              "start": 498
+              "start": 468
             }
           },
           "kind": "test"
         }
       ]
     },
-    "35": {
-      "note": "A refresh asked in the turn that shows a failed read keeps its request.",
+    "59": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('brings the selected row into view once the answer of a refresh is shown, without moving focus', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:30d085aadb13e7fc6cfd9ade5939e3e69e829c1fe547a4934e143092d18e53b4",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:18f3cafa63c1fb45e7ee734a0c9789ef0ffb94169d62e597fb4548f1d65c76ac",
             "locator": {
-              "end": 558,
+              "end": 516,
               "kind": "line_range",
-              "start": 547
+              "start": 504
             }
           },
           "kind": "test"
         }
       ]
     },
-    "36": {
-      "note": "A retry made in the turn that shows the failed refresh is the refresh again.",
+    "60": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('waits for the answer of a refresh asked before the effects of the previous answer have run', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:3400243c8aa6a86d3ba016ff1deb6f458d03a9a1a2816bcbf4011bf8806434e1",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:8c59a31aea11ec4d9b18ede6ab906da2b286aef1a347694c94dad9fe9b8b2860",
             "locator": {
-              "end": 569,
+              "end": 554,
               "kind": "line_range",
-              "start": 560
+              "start": 517
             }
           },
           "kind": "test"
         }
       ]
     },
-    "37": {
-      "note": "The refresh and retry handlers these cases pin.",
+    "61": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('forgets the scroll a refresh asked for when its read fails, so a later page of the subject leaves the rail alone', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:b1e2582858feba72e341ac7b6245f296b2a0e1fe5571b9ce2efa10538a48745c",
             "locator": {
-              "kind": "symbol",
-              "name": "useRefreshReview"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "The selection that decides keeping or starting afresh.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectSelection"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "One layout-parametrized declaration exercises true and false viewport matches. Click, cached K and same-row reselect each assert an empty scroll-call list; the case also preserves focus, request-count, workspace and outline checks. It does not measure geometry.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-            "content": "sha256:9397cdb59d072dfe38cf041d292c358545095867ddb6c936e0bb43b9d06e7c63",
-            "locator": {
-              "end": 446,
+              "end": 579,
               "kind": "line_range",
-              "start": 408
+              "start": 555
             }
           },
           "kind": "test"
         }
       ]
     },
-    "40": {
-      "note": "The retained pending-answer case moves focus to the family filter before releasing the answer, then asserts that focus remains there, no scrolling occurs and both families remain.\n\nAnchor: inclusive source ranges",
+    "62": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('brings the selected row into view when the retry of a failed refresh is answered', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-            "content": "sha256:4292e8f2a404d780e00cb3001dcbf259e735f0695a7f5372298d2305aee6e379",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:33a8803e067b631dc8dede25bec6b6993dead4f521ccdc9e50f170ffb949de4d",
             "locator": {
-              "end": 479,
+              "end": 628,
               "kind": "line_range",
-              "start": 448
+              "start": 580
             }
           },
           "kind": "test"
         }
       ]
     },
-    "41": {
-      "note": "The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait.  Anchor: `SUBJECT_HOLD_MS`",
+    "63": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('brings the selected row into view after a refresh asked in the turn that shows a failed read', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:033ca03337fb0c0bd519373ce1c97e4812f42348e1214bba6beda1a3a8f5930f",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:b24df0d4e19aa90275011f89931ef514f4ffbcc0690129d6bc7d2a350832d259",
             "locator": {
-              "end": 285,
+              "end": 641,
               "kind": "line_range",
-              "start": 242
+              "start": 629
             }
           },
           "kind": "test"
         }
       ]
     },
-    "42": {
-      "note": "Tree row resolution in the mounted rail",
+    "64": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('brings the selected row into view when the retry is made in the turn that shows the failed refresh', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:0d3fdef193990b45efef6aa48d1dbed2332860cc088b6b9a7353e59c1dedc901",
+            "blob": "92945263856d1e5cc925310ffb376bfb2972bf06",
+            "content": "sha256:8a9dcab81b66b30ce60e80e768e00dc7d0b45ff70ab8302a1af255b6705d9e64",
             "locator": {
-              "end": 55,
+              "end": 651,
               "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "43": {
-      "note": "Per-comparison tree routes for lane, file and cards",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:95cf331c02188201538ba4449fe0a4db65424e02c61bf09a7422b7747dc8921e",
-            "locator": {
-              "end": 207,
-              "kind": "line_range",
-              "start": 189
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "44": {
-      "note": "Failed-refresh turn helper for scroll expectations",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:4ed6f48a69cf0ea3774a4cd340af306300f8be355e80cbc91ce016a6f5f805dd",
-            "locator": {
-              "end": 600,
-              "kind": "line_range",
-              "start": 578
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "45": {
-      "note": "Failed-refresh turn helper for scroll expectations",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e943313d29b73489d0d75e00fc9c29aac57f5e3b",
-            "content": "sha256:700cb9c17699d47a9240ac55876b0d9fb7650a8d2ac00a81fc6f202f14ea3666",
-            "locator": {
-              "end": 589,
-              "kind": "line_range",
-              "start": 573
+              "start": 642
             }
           },
           "kind": "test"

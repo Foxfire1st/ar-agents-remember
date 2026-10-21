@@ -1,13 +1,50 @@
 {
   "path": "dashboard/src/panels/file-viewer/FileViewer.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+        "content": "sha256:b163046c7b1bcd6d1b28fc0d8edaa933f8e5d44155c74ce61b2ca5db4a741c97",
+        "locator": {
+          "kind": "symbol",
+          "name": "FileViewerImpl"
+        }
+      },
+      "id": "RLZ-6XBP0S",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Puts Explorer sidebar first in the external toolbar, binds its expanded state to the outer explorer panel and hides that mounted panel plus its resize handle together. The code/onboarding trees stay inside the hidden panel; the DualPane remains its sibling.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+        "content": "sha256:b163046c7b1bcd6d1b28fc0d8edaa933f8e5d44155c74ce61b2ca5db4a741c97",
+        "locator": {
+          "kind": "symbol",
+          "name": "FileViewerImpl"
+        }
+      },
+      "id": "RLZ-YE96EQ",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The File Viewer explorer uses files/left and passes that same state to its control and hidden panel.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
             "content": "sha256:791c8c3e29f6b010546e12bfc0932c791256b73eed84ce7b4085dae0294889fd",
             "locator": {
               "kind": "symbol",
@@ -59,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",
@@ -71,7 +108,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
             "locator": {
               "kind": "symbol",
@@ -83,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
             "locator": {
               "kind": "symbol",
@@ -95,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
             "locator": {
               "kind": "symbol",
@@ -107,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:7f0b42eb80272b73f6e4ceef8790cab1991706ca24f1d8fe0cf84f6183dc0c85",
             "locator": {
               "end": 121,
@@ -120,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
             "locator": {
               "end": 131,
@@ -133,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
             "locator": {
               "end": 141,
@@ -146,7 +183,7 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:d172ffd91a44e4b0855c9e5359ede731c468dd64bfc04ad9ef9d0c05ff518631",
             "locator": {
               "end": 93,
@@ -195,6 +232,40 @@
         {
           "kind": "unresolved",
           "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-107"
+        }
+      ]
+    },
+    "7": {
+      "note": "The page owns files-left visibility and publishes only its active repository for tray context.\n\nAnchor: \"const [repo, setRepo] = useState<string>(\"\");\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:9a29dd3d3f283feddc0611bd2e2aaa94c3e96f5195168ce96458c294136006c1",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Explorer remains mounted when hidden; its external toggle and code target stay in the page.\n\nAnchor: \"{/* MIK-R89 v2 rule 8: the explorer's shared toggle, first on the line above it. */}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:c7fdc3daf8d97fab823f97fe21b9bd8df2c8e50c9e0a94b680decac306da941a",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 270
+            }
+          },
+          "kind": "code"
         }
       ]
     }

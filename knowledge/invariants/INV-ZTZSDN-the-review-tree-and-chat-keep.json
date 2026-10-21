@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The reviewed default widths, independent tree/chat class keys, shared handle setters and shell/overlay placement must agree. Adjacent hidden-panel and frame-lifetime obligations cannot prevent a resize overwriting another class/rail or an overlay reverting to an unrelated width. Tree/keyboard/pointer proof limits are explicitly retained."
+  },
+  "applicability": "The review page tree and task-chat rail numeric widths and their existing shared resize handles, in wide/narrow viewport classes and grid/overlay/narrow chat placement.",
+  "conditions": [
+    "Above1600px the default tree/chat widths are340px/500px with14px gutter; at-or-below1600px defaults are292px/420px with12px gutter. A finite saved numeric value for that rail/class replaces its default.",
+    "Tree and chat store separate wide/narrow numeric values under cockpit.review.tree-w.{wide,narrow} and cockpit.review.chat-w.{wide,narrow}; these do not reuse cockpit.rail-left-w or cockpit.rail-right-w.",
+    "The class-specific width setter is passed to the named shared RailResizeHandle. Requested pointer and ArrowLeft/ArrowRight resizing is rounded and bounded220..560px; arrow changes are24px mirrored by side. The stored read itself is not newly clamped.",
+    "Below1440px the open chat uses its active-class width in absolute overlay placement, and at40rem or narrower uses that width with a viewport max-width in fixed placement. Placement does not allocate another width key or reset the chosen class value.",
+    "At40rem and narrower the shared resize handle is absent and the review grid stacks. A hidden tree has a zero layout track without overwriting its class value; a closed or overlying chat has a zero shell grid track and retains the active gutter."
+  ],
+  "exclusions": [
+    "The separate shared-control policy owns hidden-side width release, reachable overlay controls and grid-track visibility; this record adds the numeric class/preference/resize contract rather than replacing RP16.",
+    "INV-Z385RTQS owns Changes only/Full context preference and split/unified switching by reading content width; this record does not promise exact measured reading-column widths or diff geometry.",
+    "Operations numeric rail preferences, Knowledge/File Viewer/notes panel autosave sizes, host-native sidebar widths, visibility open-state persistence and frame continuity.",
+    "Shared resize bounds apply to requested handle changes; finite persisted values are not claimed to be range-clamped on read. Numeric preference storage failure recovery is outside this width policy."
+  ],
+  "id": "INV-ZTZSDN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R89@v2 rules1 (Columns/Rails),11 (Widths) and accepted W26 width classes/gutters; canonical L89 task and its approved packet govern, with immutable Worker entries at zero-based ordinals 3,31,107,123,152. Producer dispositions remain verbatim in the companion helper review; this is a Curator supplemental projection, not replacement producer data.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; captured patch sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Static full relevant function bodies and named test cases read; no CLI, tests, browser run, geometry acceptance or D417 re-evaluation performed."
+      ],
+      "path": "authoring-wave6.final-input.json"
+    },
+    "handoffEntry": "RP18_WIDTH",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review tree and chat keep separate resizable widths per viewport class; their saved class widths survive chat placement changes between grid and overlays.",
+  "status": "proposed",
+  "supersedes": []
+}

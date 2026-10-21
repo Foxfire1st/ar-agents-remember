@@ -1,17 +1,55 @@
 {
   "path": "dashboard/src/cockpit/layout.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+        "content": "sha256:3d15947ebbf929b983b9236fe4fa89a602f8b608c77643e0214b6337c0b939f2",
+        "locator": {
+          "kind": "symbol",
+          "name": "RailResizeHandle"
+        }
+      },
+      "id": "RLZ-KHCGK8",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Pointer movement grows toward each rail side; Left/Right keys mirror by side in24px steps, and no resize handle is rendered at40rem and narrower.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+        "content": "sha256:f69310d7d4dafec9f46101fae0d9582ff848672efc299c26d8500689a8bd76d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "clampRail"
+        }
+      },
+      "id": "RLZ-Q862MS",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Rounds each requested handle resize and clamps it to220..560; this applies to resize requests, not arbitrary stored reads.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Narrow shell scroll/width/row/rail rules are explicit media overrides.",
+      "note": "Narrow shell scrolling and stack heights exclude the review page.\n\nAnchor: \"export const shell = css({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:c688a9d5c0ad3d4db07f8f6744f1c7420309636a4a1a0130efdf84e274954380",
             "locator": {
-              "kind": "symbol",
-              "name": "shell"
+              "end": 33,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"
@@ -23,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
             "content": "sha256:9ae39934e802581d4d4d10a61c55ac5f752ad913b4119f0c8cedde7298f75c7d",
             "locator": {
               "kind": "symbol",
@@ -35,15 +73,28 @@
       ]
     },
     "3": {
-      "note": "Resizing is bounded, directional and keyboard reachable only above the narrow breakpoint.",
+      "note": "Resizing remains bounded and directional, with distinct optional names for review handles.\n\nAnchor: \"export const RailResizeHandle = memo(function RailResizeHandle({\"; \"function clampRail(n: number): number {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:57b6e0955bdd931e0912dea3ddb4860de9ce6d3865ae0015fc20c6803f24052d",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:3d15947ebbf929b983b9236fe4fa89a602f8b608c77643e0214b6337c0b939f2",
             "locator": {
-              "kind": "symbol",
-              "name": "RailResizeHandle"
+              "end": 264,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:f69310d7d4dafec9f46101fae0d9582ff848672efc299c26d8500689a8bd76d2",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 200
             }
           },
           "kind": "code"
@@ -51,15 +102,40 @@
       ]
     },
     "4": {
-      "note": "Narrow takeover is fixed; matchMedia state has listener cleanup.",
+      "note": "Media-query changes have listener cleanup; narrow takeover styling remains a separate recipe.\n\nAnchor: \"export function useMediaQuery(query: string): boolean {\"; \"export function useNarrowCockpit(): boolean {\"; \"export const takeoverBody = css({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:0c7a1807a5bf82abf778ac65823886185e7f7304787eb7a5ffe351a58c4f64b6",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:8afee12ae4361de08a0e8810a948e0a9098e44d142d459cf85a433b1c324f59b",
             "locator": {
-              "kind": "symbol",
-              "name": "useNarrowCockpit"
+              "end": 337,
+              "kind": "line_range",
+              "start": 328
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:b6a85f7ed0089a6f14cb44ed1ad18d88ed0c584ecd8e4d579604fb49b0f8dcf3",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:473d12aa52e55e5988d86b0a406eff38adf7a8918e0356012f66c81d4b5942b5",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 282
             }
           },
           "kind": "code"
@@ -67,17 +143,88 @@
       ]
     },
     "5": {
-      "note": "Cockpit actually chooses the narrow one-column grid.",
+      "note": "Cockpit selects its Operations/review tracks and narrow one-column grid.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "80f2861ffd1ec3af036f58f9a79957bd54adec46",
-            "content": "sha256:70e8d83aa83ab966759e61e6a62573af256331175301b31e5099a03df567c5e7",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
             "locator": {
-              "kind": "symbol",
-              "name": "RailedBody"
+              "end": 693,
+              "kind": "line_range",
+              "start": 682
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Sidebar IDs and strip styling connect the shared Operations controls to retained rails.\n\nAnchor: \"export const LEFT_RAIL_ID =\"; \"export const RIGHT_RAIL_ID =\"; \"export const sidebarStrip = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:80d3cde99e077ef828d7423ccb0fe6bfde687dbf8180ec2fea7e5fa22912b4fa",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:efdc7e4b7ba47ad80ea213fe4b983e9bea8097c1d7630003160f44490fe70324",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:e0baae10dec96d15ba7cbea0f294034f88298954dd64ec07fd39c3868a765856",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The review chat surface and close-toggle line have their own styling without owning placement geometry.\n\nAnchor: \"export const reviewChatColumn = css({\"; \"export const reviewChatClose = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:dd0f997cc954e5f2dd672ae7fe242b40088ce3988b276697883574680052ebcd",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:51e7b3f0520d6a3444b0bbc84332b850a68dfcac42f9735d2d7f313758863010",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            }
           },
           "kind": "code"
         }

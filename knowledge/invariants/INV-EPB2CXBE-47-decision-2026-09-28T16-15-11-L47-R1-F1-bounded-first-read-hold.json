@@ -21,6 +21,6 @@
   "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "F1 (medium): the first-read hold must be bounded; a stalled or slow catalogue may not block the task-context review or source explorer, which base showed immediately.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

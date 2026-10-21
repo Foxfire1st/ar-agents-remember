@@ -2,27 +2,23 @@
 
 ## Governing Overview
 
-[Owning route overview](../overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-The tree-review cases consume the retained L37 comparison-5 captures and assert three members, twelve cards, revision identities, a statement-diff marker, proof identity and excerpt kind, selected-member-first grouping and worklist item-kind equality. The fixture refuses source-content reads; these assertions do not compare exact source bytes or statement operands.
+Replay the retained comparison-5 family and invariant answers through the mounted review page, with page-owned changed cards and a separate subject worklist.
 
 ## Code Commentary
 
-The tree-review cases consume the retained L37 comparison-5 captures and assert three members, twelve cards, revision identities, a statement-diff marker, proof identity and excerpt kind, selected-member-first grouping and worklist item-kind equality. The fixture refuses source-content reads; these assertions do not compare exact source bytes or statement operands. The dataset fallback case is removed. Successful playback of this historical full-tree fixture is not current producer acceptance.
+The converted family opens from its captured Git-tree review with a measured source count and no inline inventory. Opening its touched member retains the statement diff, family identity and that member’s own changed realization/proof cards. Raw before/after revision identities remain reachable in closed Technical details.
 
-### Declared Assertions
+The opening card read names the comparison and distinct changed invariant identities. The page renders the three changed entry IDs asserted by the fixture, their change/rationale/excerpt fields and proof identity; unchanged entries remain compact location rows until their group opens. This does not preserve the former twelve-card or selected-member-first rendering claim.
 
-- `it('renders a converted leaf family review from its trees and opens the touched member', async () => {`
-- `it('shows the current family as focused cards with changed and unchanged expressions', async () => {`
-- `it('takes no planning mark from a leaf-wide read of another comparison (review R2-3)', async () => {`
-
-This is a declaration inventory, not a collected parametrized-case total or execution result.
+The subject worklist and full worklist expose the captured item kinds, without patch markup. A leaf-wide answer naming another comparison is reported as mismatched; card voices do not acquire planned/unplanned labels from it.
 
 ### Evidence Boundary
 
-The source declares these checks. This card does not attest that pytest/Vitest, a native host, a real browser or an installed producer ran on this candidate. Controlled or captured inputs qualify only the operations named above.
+These are source-inspected mounted checks with the inputs and replacements named here. This analysis did not execute them, recapture backend output, measure a real browser, or reopen the passed code candidate or D417 closures. Declaration counts and DOM assertions are not execution receipts. Retained historical full-tree playback establishes only the declared captured route/DOM behavior. It does not validate current producer acceptance, exact source bytes, exact statement operands or a source-content success path.
 
 ## Prior Fixture Account — Historical Only
 
@@ -32,7 +28,7 @@ The following account describes the earlier fixtures and assertion scope. Its pr
 >
 > ## Governing Overview
 >
-> [dashboard/src/panels route overview](../overview.md)
+> [dashboard/src/panels route overview](overview.md)
 >
 > ## Purpose
 >
@@ -110,5 +106,4 @@ The following account describes the earlier fixtures and assertion scope. Its pr
 
 ## Evidence
 
-
-- The tree-review cases consume the retained L37 comparison-5 captures and assert three members, twelve cards, revision identities, a statement-diff marker, proof identity and excerpt kind, selected-member-first grouping and worklist item-kind equality. The fixture refuses source-content reads; these assertions do not compare exact source bytes or statement operands. The dataset fallback case is removed. Successful playback of this historical full-tree fixture is not current producer acceptance. [11]
+- Retained comparison-5 route replay, changed cards, closed revision provenance, worklist identities and comparison mismatch. [12]

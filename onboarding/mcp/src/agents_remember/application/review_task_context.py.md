@@ -2,46 +2,27 @@
 
 ## Governing Overview
 
-[application route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Compose the task-only review from its already resolved candidate, supplied source inventory and observed paths. No knowledge subject or operand pair is selected, and no judgment about an unnamed record is invented. Knowledge-side limitations remain visible beside the independently supplied source inventory.
+Compose the task-only review from its resolved candidate and supplied source inventory without selecting a knowledge record, inventing an operand pair or judging an unnamed record.
 
 ## Code Commentary
 
-### Current entry and pane shape
+task_context_review checks require_current_candidate_identity at entry, before receipt/attribution reads; a moved candidate returns the existing refusal. It asks the receipt question before pair_attribution and again afterward when no earlier refusal exists. Knowledge-half/receipt limitations feed pane reasons and declared limitations rather than automatically removing the independently supplied source review.
 
-`task_context_review` now accepts resolved/request/inventory/observed, not the removed ReviewRecordInputs bundle. It calls `require_current_candidate_identity` at entry, before receipt/attribution reads; a moved candidate returns the existing refused result. This is not an additional identity check after all remaining reads.
+The response has comparison=None, unresolved Before/After knowledge sides and task_context selection, supplied source/attribution, judgment unavailable, family no_subject_selected and an empty addressed-record meaning-effects population. not_compared and submission(stale=False) express no selected binding, not source-liveness measurement or a transaction waiver. External-Git movement is separately descriptive.
 
-The receipt question precedes `pair_attribution` and is asked again afterward when no prior refusal was returned. Knowledge unreadability/receipt failures feed the pane reason and declared limitations rather than automatically withdrawing the supplied source review. This is the named branch policy, not an assertion that arbitrary called code cannot raise.
+The family reason, not_compared status sentence and live unreadable/absent/ordinary task-context reasons now direct readers to All changes, the linked change-set page, for the complete bound source inventory. The source pane still carries the supplied data; only its presentation destination wording changes here.
 
-The payload carries comparison=None, two unresolved knowledge sides with task_context selection detail, the supplied source pane, and a judgment pane explicitly unavailable because no subject was selected (or carrying the existing knowledge-unavailability reason). It does not compose the former signal/assessment/applicability collections or evidence bundle. Those deleted arguments, fields and helpers are not aliases of the current judgment pane.
+task_context_detail preserves actual priority: knowledge-unavailable detail, reopened closed-leaf intent detail, supplied unreadable-half/action, then missing-half or ordinary no-selection. _task_context_pane repeats the reason on unresolved sides, never empty known statements.
 
-Family context is explicitly no_subject_selected, not a measured no-family zero. Meaning effects contain no addressed records. Staleness is not_compared and submission is built with stale=False; this does not measure unrelated source liveness or waive a transaction gate. The optional external-Git boundary is still called separately and remains descriptive.
+pair_attribution binds each actual side independently and delegates the observed-path partition. Unavailable native tree sides keep their reason; partial indexes retain positive mappings with index_incomplete_detail. Namespace refusal leaves After unavailable while Before may bind from its own readable identity. Existing dataset-named identity/open-side adapters catch named storage/I/O/value/APSW failures; they do not recreate a canonical store.
 
-### Reason and attribution owners
+## Invariants And Boundaries
 
-`task_context_detail` follows its actual branch priority: knowledge-unavailability detail, reopened/closed-leaf intent detail, supplied unreadable-half detail/action, then the missing-half question or the ordinary no-selection sentence. An absent half, unreadable scope and no selected operand are not interchangeable facts. `_task_context_pane` repeats that reason on unresolved Before/After sides, not empty known statements.
-
-`pair_attribution` binds each actual side independently, then delegates partitioning to review_attribution with the selected-subject value supplied by its caller. `_bound_pair_side` retains knowledge/tree unavailability and labels a partial index through index_incomplete_detail while preserving a readable side's bound context. No comparison or new negative knowledge conclusion is manufactured from a missing side.
-
-On namespace refusal, the After side carries the refusal while the Before side may bind from the identity disclosed by its own readable bytes. `_pair_side` and `_side_from_own_bytes` use the existing identity/open-side readers and their named storage/I/O/value/APSW error catches. These dataset-named adapters are existing boundaries, not permission to recreate a canonical database or substitute current-store contents.
-
-The Source inventory was supplied by the caller; this module adds attribution and limitations rather than measuring a different source pair. It does not own Reviewer assessment collection, semantic acceptance, current-build approval or publication authority.
-
-## Evidence
-
-No domain documentation source is configured. The complete419-line current source and actual BASE diff were read. The current account replaces operative old record-bundle/channel references; the complete predecessor remains historical below.
-
-- The entry recheck precedes receipt/attribution reads and the actual payload has no selected comparison or old record bundle. [18]
-- No-subject family/meaning/currentness states, descriptive Git movement and limitations are explicit. [19]
-- Unreadability limitations and unresolved task-context panes retain their actual reason. [20]
-- The actual reason priority keeps unavailable, recorded, unreadable, absent and unselected facts distinct. [21]
-- Pair attribution binds independent sides before delegating the observed-path partition. [22]
-- Partial/unavailable native tree sides retain their own labeled attribution context. [23]
-- Namespace failure leaves the After side unavailable while independently binding Before where readable. [24]
-- Existing identity/open-side adapters carry their named failure states rather than manufacturing knowledge. [25]
+The caller supplies one measured inventory/observation and this owner adds attribution and limitations. No selection, new negative knowledge conclusion, old record bundle or retired assessment/evidence/applicability channel is manufactured. The check at entry is not an additional identity recheck after all reads; named failure policy is not a promise arbitrary delegated code cannot raise. Historic predecessors below remain explicitly superseded.
 
 ## Historical predecessor account
 
@@ -357,3 +338,11 @@ to what this entry reads.
 claim cell was re-worded and no stamp was advanced beyond the honest basis below.
 
 </details>
+
+## Evidence
+
+- The entry recheck precedes receipt/attribution and the no-subject response retains required empty/unavailable states. [26]
+- All changes is named as the inventory destination in the no-family/currentness reasons. [27]
+- Unresolved pane reasons preserve unavailable, historical, unreadable, absent and ordinary priority. [28]
+- Independent attribution retains partial/unavailable side facts. [29]
+- Namespace failure and existing identity readers retain actual per-side failure policies. [30]

@@ -7,9 +7,9 @@
   },
   "applicability": "Row selection, traversal and keyboard in the tree.",
   "conditions": [
-    "Family rows open family reviews; member rows open member reviews under that family (no roster page).",
-    "Every row is an in-tree selection (walk keeps, selection removes nothing); j/k move across real changes skipping unknown; arrows move focus, Enter/Space select.",
-    "Catalogue rows, all-invariant list and roster continuation no longer exist in the tree."
+    "Family/member rows select the canonical subject under its family and keep the walked context.",
+    "j/k use the rule13 block identity: drawn changed subject blocks then lane hunks, one stop per shared drawn region; folded groups and unchanged/unknown locations are not stops.",
+    "An end message leaves the selection unchanged; traversal never requests a roster page."
   ],
   "exclusions": [
     "MIK-R39 rules 8-10 catalogue controls inside the tree."
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Outline selection preserves the walked tree and keyboard traversal skips unknown and unchanged stops.",
+  "statement": "Outline selection preserves the walked tree. j/k traverse the reading column's drawn changed blocks in display order, while tree arrows move focus and Enter/Space select rows.",
   "status": "proposed",
   "supersedes": []
 }

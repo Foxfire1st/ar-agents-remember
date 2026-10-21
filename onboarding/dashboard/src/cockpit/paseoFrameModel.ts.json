@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
-        "content": "sha256:ad81a09d985914228bbf587779a52f9dc515cceda9dd4578bb3dfbc294173e8b",
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
+        "locator": {
+          "kind": "symbol",
+          "name": "showingMessage"
+        }
+      },
+      "id": "RLZ-05H447",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Requires an explicit null or nonempty agent ID so a missing showing field cannot masquerade as known absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:43e6d6aad1bba4bf89c4634edcf2c0db751e6e161ba038727684a31cad51b8d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerMessage"
+        }
+      },
+      "id": "RLZ-19V6Z1",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Accepts only finite composer coordinates with nonnegative height and positive frame height.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
         "locator": {
           "kind": "symbol",
           "name": "DASHBOARD_ABILITIES"
@@ -21,7 +57,45 @@
     },
     {
       "anchor": {
-        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:40dda96c0b649f667147bc27f83b992879940d576a4821ed348114e3f75659b8",
+        "locator": {
+          "end": 77,
+          "kind": "line_range",
+          "start": 76
+        }
+      },
+      "id": "RLZ-96RKPW",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the pick capability shared by the negotiated frame and dashboard sides.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
+        "locator": {
+          "end": 310,
+          "kind": "line_range",
+          "start": 309
+        }
+      },
+      "id": "RLZ-AMH2C3",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Routes an explicit showing report through the nullable-agent parser.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
         "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +113,25 @@
     },
     {
       "anchor": {
-        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:6162ae3ea7ad8c3107ef2e6c6292faa1e68b9f31a653c5bed148fdcd25069316",
+        "locator": {
+          "kind": "symbol",
+          "name": "parseTrayMessage"
+        }
+      },
+      "id": "RLZ-FBA9S0",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Dispatches only validated tray pick/notice/composer messages from the parser.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -57,7 +149,25 @@
     },
     {
       "anchor": {
-        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickMessage"
+        }
+      },
+      "id": "RLZ-PDYNAX",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Admits only nonblank text and agent identity with a parseable recorded message time.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
         "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
         "locator": {
           "kind": "symbol",
@@ -75,7 +185,44 @@
     },
     {
       "anchor": {
-        "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:2e0366f5314a0a04ca074d1e65436fc19b01b8b707f615000571258645514312",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 78
+        }
+      },
+      "id": "RLZ-SEFC7X",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the showing capability so a reported native displayed chat can inform the default.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "content": "sha256:c1c90a49534d9aa915c04bbf13e89c4669174f9dd85d0239d1d239f56628d2fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "PLUGIN_ABILITIES_USED"
+        }
+      },
+      "id": "RLZ-TX3R66",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps pick inside the qualified ability set used for embedded URL/control readiness.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -94,15 +241,33 @@
   ],
   "references": {
     "1": {
-      "note": "Only a non-rejected native hosted execution supplies the agent target.",
+      "note": "Non-rejected native execution fields supply frame targets.\n\nAnchor: \"export function paseoAgentTarget(execution: unknown): PaseoAgentTarget \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
             "content": "sha256:669841be78c2a5ecf5421ab6ce6cb9b30eca4bfc4fbbbb7d7f97c6cd64be29a7",
             "locator": {
-              "kind": "symbol",
-              "name": "paseoAgentTarget"
+              "end": 128,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The dashboard's advertised abilities include pick and showing.\n\nAnchor: \"export const DASHBOARD_ABILITIES = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
             }
           },
           "kind": "code"
@@ -110,15 +275,16 @@
       ]
     },
     "2": {
-      "note": "Only source-tagged supported control message shapes are normalized.",
+      "note": "Only supported source-tagged forms are normalized.\n\nAnchor: \"export function parsePluginMessage(data: unknown): PaseoPluginMessage \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
             "content": "sha256:8d2aec01684df053ee1abc0019cb6f73d88301a4337bf7f916e54d4f0c8199b4",
             "locator": {
-              "kind": "symbol",
-              "name": "parsePluginMessage"
+              "end": 231,
+              "kind": "line_range",
+              "start": 212
             }
           },
           "kind": "code"
@@ -126,15 +292,16 @@
       ]
     },
     "3": {
-      "note": "Missing capability declarations retain message opening; only an explicit lack of open-agent disables it.",
+      "note": "Explicit lack of open-agent differs from an absent capability list.\n\nAnchor: \"export function pluginOpensAgents(capabilities: PluginAbilities): boolean {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
             "content": "sha256:8ea7bd9b358ffd8a9887c51af0f31003c7776625a43cd650f717aadf8daaa107",
             "locator": {
-              "kind": "symbol",
-              "name": "pluginOpensAgents"
+              "end": 241,
+              "kind": "line_range",
+              "start": 239
             }
           },
           "kind": "code"
@@ -142,15 +309,16 @@
       ]
     },
     "4": {
-      "note": "A deficient plugin is named with the provision command and any early-drawing boundary.",
+      "note": "Plugin notices name missing abilities and provisioning.\n\nAnchor: \"export function pluginNoticeText(capabilities: PluginAbilities, command: string): string \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
             "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
             "locator": {
-              "kind": "symbol",
-              "name": "pluginNoticeText"
+              "end": 257,
+              "kind": "line_range",
+              "start": 247
             }
           },
           "kind": "code"
@@ -158,15 +326,84 @@
       ]
     },
     "5": {
-      "note": "Late requests remain waiting rather than being described as a dead channel.",
+      "note": "Request text retains host/drawing/older wait distinctions and lateness.\n\nAnchor: \"export function requestWaitText(request: PaseoOpenRequest \\| null): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c6c434ae53082c1366ef26450c3c1bd6eb11162a",
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
             "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
             "locator": {
-              "kind": "symbol",
-              "name": "requestWaitText"
+              "end": 299,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Descriptor and route handling validate the serving origin and encode native identities.\n\nAnchor: \"function availableFrame(answer: Record<string, unknown>): PaseoFrameDescriptor {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:9f7be3d850cb25222381d7d04f3abb345ec4f13122fc7b18bc066ca908f95a7c",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Pick text, optional message identity and required message time are validated together.\n\nAnchor: \"function pickMessage(message: Record<string, unknown>): PaseoTrayMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Composer coordinates must be finite with valid heights.\n\nAnchor: \"function composerMessage(message: Record<string, unknown>): PaseoTrayMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:43e6d6aad1bba4bf89c4634edcf2c0db751e6e161ba038727684a31cad51b8d5",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 349
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Explicit null shown chat differs from an absent agent field.\n\nAnchor: \"function showingMessage(message: Record<string, unknown>): PaseoPluginMessage \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 357
             }
           },
           "kind": "code"

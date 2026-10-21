@@ -2,17 +2,51 @@
   "path": "dashboard/src/panels/review/FamilyGuarantees.retainedBranch.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Deliberately synthetic equal-wording/distinct-revision control retains identical_text branch for both TreeComparisonScope values; independently uses raw same-revision capture as unchanged_revision. Do not fabricate a native metadata-only capture or treat tree=false here as a surviving dataset transport.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([false, true])('keeps distinct family revisions with equal wording distinct (tree=%s)', (tree) => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d91df4d2ac15e5fb34ebefe40d3ce5f37e0386d",
-            "content": "sha256:0e24960e40d1550e1b7881ec1c498fa417c34ba6b2aedbbb4ab42fd9053dce05",
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:c4bb6ede88faee45c9e3c6db04836f3a62ee84e102738675f56d14c864b68c29",
             "locator": {
-              "end": 91,
+              "end": 80,
               "kind": "line_range",
-              "start": 1
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains the current raw same-revision control as unchanged revision, not identical-text', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:f41f21eb2afd3b25cad5d1fa583b4c95f0d078a745ac111e4134af0e2684cd61",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a changed guarantee in a fit diff pane', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56baefd452e639894e635624c2a27340962ceb87",
+            "content": "sha256:5414210b3b5f23142cd48fdb0417ceaa68496b50d7ac7c5c1478f211935ca91b",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 96
             }
           },
           "kind": "test"

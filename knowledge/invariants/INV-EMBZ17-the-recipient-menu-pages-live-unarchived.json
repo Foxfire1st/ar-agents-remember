@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Live host enumeration and current launch-record joining jointly prevent a stale receipt from becoming a selectable live recipient, with paging and incomplete-state tests."
+  },
+  "applicability": "The host-wide tray recipient inventory of existing unarchived AR seats and taskless sessions.",
+  "conditions": [
+    "One bounded host live-agent walk is joined to bounded current launch-record paths; historical receipts alone cannot create a live row.",
+    "The API pages 50 seat rows with nextOffset, completeness and detail; taskful rows name role, task and whole agent ID.",
+    "Unreadable or incomplete scans keep known rows and report incompleteness; unavailable host state is explicit rather than an empty complete inventory.",
+    "Opening the tray or its target menu requests current seats again; distinct agents with the same role/task remain distinguishable."
+  ],
+  "exclusions": [
+    "Absence from an incomplete page proves no terminal agent state.",
+    "This menu confers no lifecycle authority and starts no roles."
+  ],
+  "id": "INV-EMBZ17",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Curator synthesis at A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, change sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; MIK-R188 v1 packet; source producer rows: MIK-R188@v1 rule 7 · the seat list. Original producer inputs: role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028. Tests named only as proof anchors; this helper ran no tests."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "TRAY11",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The recipient menu pages live unarchived host agents joined to current AR launch records, retaining known seats and explicit incomplete or unavailable state when the scan cannot establish absence.",
+  "status": "proposed",
+  "supersedes": []
+}

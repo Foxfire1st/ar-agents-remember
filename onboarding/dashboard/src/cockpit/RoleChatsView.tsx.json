@@ -1,17 +1,71 @@
 {
   "path": "dashboard/src/cockpit/RoleChatsView.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
+        "content": "sha256:2a1aadcae53756baef800dffef007e25daddc856fc94f94734ce04e94eeb41c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsView"
+        }
+      },
+      "id": "RLZ-N2GAYG",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the active unbound Chats frame’s actual shown agent and never publishes a report/bound launcher as that frame.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "RoleChatsView is a current owner of the behavior described above.",
+      "note": "RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader.\n\nAnchor: \"export function RoleChatsView(props: RoleChatsViewProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6191daac657e2abab15f9c6c8f202104c6d5d53f",
-            "content": "sha256:c92f4c9d0a2a9ff30072702e53d2bbc988cec1efef1f78f8bfec48e82406e0a1",
+            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
+            "content": "sha256:2a1aadcae53756baef800dffef007e25daddc856fc94f94734ce04e94eeb41c2",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleChatsView"
+              "end": 252,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The presentation hook derives the scoped execution, frame target and launcher actions.\n\nAnchor: \"function useRoleChatsPresentation(props: RoleChatsViewProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
+            "content": "sha256:227987b1eb4ce3c55297a9c57e9b0b23271f3e9afc508ddbf3752fe75efe2df7",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An available frame uses its explicit shown-chat report, with the launcher target only before any report.\n\nAnchor: \"function shownAgent(drawn: boolean, frameChat: string \\| null \\| undefined, frameTarget: PaseoAgentTarget \\| null) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
+            "content": "sha256:d6d086372f83fa0f204358a04cc3d8845b56c43198232d3b88fb15d3a6e47b82",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 214
             }
           },
           "kind": "code"

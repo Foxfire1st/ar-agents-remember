@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/ExpressionCards.sharedRegion.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared rendering with entry-specific voices/picks\n\nAnchor: \"it('draws the triple as one card that lists each entry with its rationale and its own ⊕', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1563788774ce9013a3f3190cd82ee8d8ed58872",
+            "content": "sha256:0a26c6a32cd39492e713ec5d05a3e1f7572f7a9a163b4b34f3b6812657139520",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selection and scroll target per retained identity\n\nAnchor: \"it('is the selected card, and holds the place a selection scrolls to, for each of its entries', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1563788774ce9013a3f3190cd82ee8d8ed58872",
+            "content": "sha256:59962fe0ce9e85cb5e5ae3c0a9fc41cb8a162a54685609886038e4bf5ebf9d3f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

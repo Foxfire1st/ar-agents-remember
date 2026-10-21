@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/cockpit/frameTrayChannel.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Trusted pick admission and unsubscribe\n\nAnchor: \"it(\"hands a pick from the frame's own origin and window to the tray, and drops every other\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "content": "sha256:14a4f1dbec17b5515006dcbe2261510dab19f05dfbfc1fd41cc98a38c4f40eb4",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ready/capability/height/report lifecycle\n\nAnchor: \"it(\"tells a ready frame whose plug-in picks what the tray wants, and again on every change\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "content": "sha256:f1e5274f4d635b84c4f48464d1f1185eeac8a49bb1a8bd36d28a99a181c96fd2",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shown-chat observation without steering\n\nAnchor: \"it(\"keeps the chat the frame shows as its plug-in tells it, and never steers the frame for it\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "content": "sha256:464024f1583f08aaa4206f78cd03afec4d70cb224a15865fa627363c942bc690",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,32 +2,51 @@
   "path": "dashboard/src/panels/review/ReviewHeader.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Task identity and reviewer controls: `ReviewHeader` owns the described branch.",
+    "3": {
+      "note": "Task/title/record controls and supplied owner nodes compose one top line.\n\nAnchor: \"export function ReviewHeader({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "34a56a5c3df57d86ee06709e88089eaa3f9894a8",
-            "content": "sha256:2cc650c1e9a3b13f7176cebf742cb8cc5d2857011550babbb26bab0fe8db4686",
+            "blob": "cf03c5b1b40775fdd6dc798c1648790251465b10",
+            "content": "sha256:295dca94ccebff9fb73613cbb633d0f83dfe4096e3202e8723a882bc8913b7b7",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewHeader"
+              "end": 108,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Task identity and reviewer controls: `subjectLabel` owns the described branch.",
+    "4": {
+      "note": "Dated leaf ids shorten without changing their underlying identity.\n\nAnchor: \"// The leaf's short id, as the mockup's label names it (app.js `topline`, \"Intent review · L181\"): the\"",
       "targets": [
         {
           "anchor": {
-            "blob": "34a56a5c3df57d86ee06709e88089eaa3f9894a8",
-            "content": "sha256:9d05576749a2cac68e2eb36f928e3062f38f12ba0886506c5c346e3869e36bc2",
+            "blob": "cf03c5b1b40775fdd6dc798c1648790251465b10",
+            "content": "sha256:39c0a652125028abaebbff6ae8807b50352f744bf230e14602cebd55b24d58f2",
             "locator": {
-              "kind": "symbol",
-              "name": "subjectLabel"
+              "end": 62,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Responsive title and record styling releases width without dropping complete tooltip text.\n\nAnchor: \"// next ones; its own parts wrap inside it, so none runs past the line or under the chip (rule 11).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf03c5b1b40775fdd6dc798c1648790251465b10",
+            "content": "sha256:8d70cb5710e325c0b1c1584dbb201e1715a5963989a237bee347ea40a13de5ab",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 23
             }
           },
           "kind": "code"

@@ -8,9 +8,10 @@
   },
   "applicability": "Dashboard reads made when a leaf task is selected and when its reviewer is opened from the task entry.",
   "conditions": [
-    "The reviewer is opened with no subject from the task entry.",
-    "The subject catalogue answers inside SUBJECT_HOLD_MS (750 ms) and has a subject, so that subject is chosen and one main review read is issued; a catalogue that answers inside the bound but is genuinely empty selects no subject, so the open stays a task-context read — still one main read.",
-    "A catalogue that answers after the bound fills the navigation and selects nothing; the reader's later choice is one further read."
+    "Task entry reads no subject catalogue.",
+    "The reviewer catalogue is keyed by repository, master, leaf, history, chosen comparison number and comparison generation rather than global analytics.",
+    "An unnamed opening reads task context immediately; a late catalogue only fills navigation and does not issue a second main review.",
+    "A reader selection is its own subject read, subject to the existing retained-answer cache."
   ],
   "exclusions": [
     "Reads made by the reviewer's own refresh.",
@@ -22,9 +23,9 @@
     "legacyId": "ccbc70d7-4fc4-4af4-aba9-669b694d0c8c",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Selecting a leaf makes one summary read, no catalogue read and one committed change-set read; opening the reviewer reads the catalogue once, keyed on the comparison rather than the global analytics document, asks the review only for the subject the catalogue chose, and issues one main intent read per open — a catalogue that answers after the bounded hold fills the navigation and selects no subject on its own.",
+  "statement": "Selecting a leaf reads its summary and committed change set without a subject catalogue. Opening the reviewer reads its comparison-keyed catalogue once and one main review for the explicit target subject, or task context when none is named; a catalogue answer selects nothing.",
   "status": "proposed",
   "supersedes": []
 }

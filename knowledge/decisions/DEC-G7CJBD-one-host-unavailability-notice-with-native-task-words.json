@@ -28,8 +28,8 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -53,8 +53,8 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
-        "content": "sha256:667a8f454687242a95d5f434309424e4b5ed60ff0b57e77b831bda47a105f613",
+        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "content": "sha256:bb6e582afc821aa5f91bdc05d0140754d7a8843cb39d3134d98be6a42a661f88",
         "locator": {
           "kind": "symbol",
           "name": "RowFigure"
@@ -66,8 +66,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
-        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -87,7 +87,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

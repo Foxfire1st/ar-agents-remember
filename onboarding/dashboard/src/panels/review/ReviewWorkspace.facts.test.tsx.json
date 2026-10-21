@@ -2,46 +2,51 @@
   "path": "dashboard/src/panels/review/ReviewWorkspace.facts.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Synthetic captured-payload wiring covers complete open movement facts and marked roots, owner-state/presence matrices, retained previous-payload pending/failure/new-answer transitions, leaf-wide code/worklist wiring and unmeasured inventory distinct from open work; it is not native movement-classifier proof.\n\nAnchor: inclusive source ranges",
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"shows the next subject's movement once it answered, and keeps a subject's pending read and failure out of the chip\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
-            "content": "sha256:8ec920e429bcb7fed31e2c27557dac07518050ae661c6bdd734f8bdc6e99dfb6",
+            "blob": "dca5f4d085b788727a56d36a539e2504d26625bb",
+            "content": "sha256:0a4a3420c08841f228cbd8a64685c6a54d0f6891979b196fde6d87d3b9eb415c",
             "locator": {
-              "end": 150,
+              "end": 182,
               "kind": "line_range",
-              "start": 1
+              "start": 155
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The actual workspace retains the previous payload through pending and failed reads without showing its movement facts, then exposes only the new answer; shared helpers assert full JSON equality, root markers, no closed duplicate and separate closed identities.\n\nAnchor: inclusive source ranges",
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"wires the one leaf-wide read into the tree's code facts, a code-changed row and the Worklist row\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
-            "content": "sha256:1196e6097e0aa2ba8548a4da6c40868b6caa28ae68f80f0aa5dfcea2164e8ea2",
+            "blob": "dca5f4d085b788727a56d36a539e2504d26625bb",
+            "content": "sha256:08cb8ae319e80ab19e82bf5737bafc58563139114576039ae03714d1560bd746",
             "locator": {
-              "end": 82,
+              "end": 205,
               "kind": "line_range",
-              "start": 55
+              "start": 183
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('separates file attribution from open work and does not call an unmeasured change set empty', async () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "961aa4663b3aaed40205c5fbf093498ae6cd6fdf",
-            "content": "sha256:834bbfdcec7e108f7b333fb1ba526cf72e536c4f2ebab1323691eac7268414a0",
+            "blob": "dca5f4d085b788727a56d36a539e2504d26625bb",
+            "content": "sha256:f5d9bc28f33db01644a70702c5582bfbbe511c63e8bf1982ac6ec2adb6916014",
             "locator": {
-              "end": 131,
+              "end": 225,
               "kind": "line_range",
-              "start": 112
+              "start": 206
             }
           },
           "kind": "test"

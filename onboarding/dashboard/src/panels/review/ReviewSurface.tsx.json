@@ -3,25 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReviewPanes"
-        }
-      },
-      "id": "RLZ-1EJ1NP47",
-      "invariant": "INV-KKJYVB40",
-      "origin": {
-        "leaf": "260921-ICR-L48"
-      },
-      "rationale": "Chooses the payload the workspace renders: the answer for the subject on screen, or while that subject is pending the last admitted frame of the task context, so the workspace is never unmounted by a selection.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:be62b38034d547f4172044d6e3b3ccad1b52ce705ff283df701c8c9a7cc10ec9",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -38,25 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
-        "locator": {
-          "kind": "symbol",
-          "name": "subjectSelection"
-        }
-      },
-      "id": "RLZ-32B5MZ",
-      "invariant": "INV-NSG0D4",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Its `selectSubject` begins every selection with `beginSelection(options?.keepTree === true)`, so the walk is kept only for a selection that says it is the selection of a row of the tree.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
         "locator": {
           "kind": "symbol",
@@ -74,42 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "content": "sha256:3f7cbf91948039b26e86badbb3f08e4b4b26e7657bdac6efd229a313281588bb",
         "locator": {
           "kind": "symbol",
-          "name": "subjectSelection"
+          "name": "PageReading"
         }
       },
-      "id": "RLZ-8XHR0Q",
-      "invariant": "INV-MWCCQM",
+      "id": "RLZ-9ZEATQ",
+      "invariant": "INV-7QYXJP",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "Its `selectSubject` hands the page named in the selection's options to the read as the selection's page, so the kept family's review is asked with its cursor in the one request of the selection.",
-      "role": "propagation-persistence"
+      "rationale": "Creates the named shared Tree sidebar control with aria-controls=review-tree and passes it to ReadingColumn, beside the crumb, rather than mounting it in the tree it hides.",
+      "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
-        "locator": {
-          "kind": "symbol",
-          "name": "subjectSelection"
-        }
-      },
-      "id": "RLZ-9ZV5SCXK",
-      "invariant": "INV-MCVSM81V",
-      "origin": {
-        "leaf": "260921-ICR-L48"
-      },
-      "rationale": "Its `selectSubject` records, in the focus request it leaves, the element that had focus when the reader made the selection.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -127,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -145,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -163,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -181,44 +129,26 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
         "locator": {
           "kind": "symbol",
-          "name": "subjectSelection"
+          "name": "ReviewSurface"
         }
       },
-      "id": "RLZ-KQQ22F",
-      "invariant": "INV-9ZKYWQ",
+      "id": "RLZ-J5BPW2",
+      "invariant": "INV-7QYXJP",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "The subject-selection handler records focus intent and keeps the walked reads only when options request keepTree. The explicit offer to open task context after refusal begins with keep false and clears chosen context/page selection. The retained walkFresh cases preserve every outline row during refusal and test the task-context reset; All changes is now a comparison-viewer action whose return preserves the walk without a subject read, not a resetting subject selection.",
-      "role": "primary-authority"
+      "rationale": "Passes the same review-tree open state to ReviewGrid and the PageReading control, so the control outside the tree changes the tree track rather than creating a second toggle owner.",
+      "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
-        "locator": {
-          "kind": "symbol",
-          "name": "subjectSelection"
-        }
-      },
-      "id": "RLZ-NENP96",
-      "invariant": "INV-T1ZHP5",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
-        "leaf": "260928-MIK-L39"
-      },
-      "rationale": "Its `selectSubject` leaves the request before it begins the selection, with the element that has focus and the number of the tree intent that is current, so only a render of this selection or a later one can take it.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-        "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "content": "sha256:3edf9e0b64e9bb71824c8f0ceea77b441f9cf558a8eb5c54bb32df0e8755e37e",
         "locator": {
           "kind": "symbol",
           "name": "useSurface"
@@ -235,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -253,7 +183,25 @@
     },
     {
       "anchor": {
-        "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewSurface"
+        }
+      },
+      "id": "RLZ-X2EGWR",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The review tree uses the remembered review/left choice while the chat control remains supplied by the shell.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -270,467 +218,102 @@
     }
   ],
   "references": {
-    "32": {
-      "note": "The surface's hook: navigation, reader state, the cache, the read cycle, the coherent payload, the refresh and retry handlers and the reading status.",
+    "65": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function useSurface({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:5ff6b8d99b7c8739b2655a99253f19ec04bcf18d040d204626efac6a40a0361e",
             "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
+              "end": 639,
+              "kind": "line_range",
+              "start": 624
             }
           },
           "kind": "code"
         }
       ]
     },
-    "33": {
-      "note": "A selection leaves its focus request, numbers the tree intent with or without `keepTree`, selects the subject, and sets or clears the page request; the offer of the task context starts the tree afresh.",
+    "66": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function PageReading({ props, tree, chat, open }: { props: PageProps & { reads: Surface }; tree: ReturnType<typeof useSidebar>; chat?: ReviewChatControl; open: OpenReviewChanges }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:3e04b3ea4fbb043d73c399fab68cf7e9e353e9448e3bf3a7cc71b4ade78c6e59",
             "locator": {
-              "kind": "symbol",
-              "name": "subjectSelection"
+              "end": 769,
+              "kind": "line_range",
+              "start": 754
             }
           },
           "kind": "code"
         }
       ]
     },
-    "34": {
-      "note": "A refresh starts the walked tree afresh and asks for a scroll once its answer is shown; the request is dropped when the refresh's own read fails or is refused; the retry of that failed read is the refresh again, and the retry of any other failed read only reads again.",
+    "67": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function usePageMarkers(surface: Surface, page: ReturnType<typeof useReviewPage>) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:6d678de25c5ac8e818b0584a10aa69240890697367d8495099c1a0644807e0d7",
             "locator": {
-              "kind": "symbol",
-              "name": "useRefreshReview"
+              "end": 713,
+              "kind": "line_range",
+              "start": 698
             }
           },
           "kind": "code"
         }
       ]
     },
-    "35": {
-      "note": "The unanswered subject's status, keyed and labelled with the requested subject.",
+    "68": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function useRefreshReview(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:4e4832a7713f442038bc453d1e239a1022169ccf7f9cf999074fcb1cde5903ad",
             "locator": {
-              "kind": "symbol",
-              "name": "readingStatusOf"
+              "end": 561,
+              "kind": "line_range",
+              "start": 546
             }
           },
           "kind": "code"
         }
       ]
     },
-    "36": {
-      "note": "ReviewPanes mounts answer or retained task-context frame, owns the single comparison-bound leafTrees read and shared lane read, and supplies them to the workspace and held change-page context; technical details receive only the actual answer.",
+    "69": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"export function useReviewChangePage(current: CurrentChangeContext) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:fbc715e7787a7e4f98053e004c4fb877ec99fbe3be0903c8458946057567df3c",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
+              "end": 389,
+              "kind": "line_range",
+              "start": 374
             }
           },
           "kind": "code"
         }
       ]
     },
-    "37": {
-      "note": "The root: the reviewer zone, the identity and pending attributes, the scrollport, the engagement observer, the cache provider, and the refresh and retry handlers handed to the header and the outcome region.",
+    "70": {
+      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function PageControls({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:6b121f7487a904aeac53ec1fb387e673792fccb580695519dfbf6d016455f918",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "The separately extracted header renders back, leaf, task/subject identifiers, supplied refresh, keyboard help and the recorded-history line.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "34a56a5c3df57d86ee06709e88089eaa3f9894a8",
-            "content": "sha256:2cc650c1e9a3b13f7176cebf742cb8cc5d2857011550babbb26bab0fe8db4686",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewHeader"
-            },
-            "path": "dashboard/src/panels/review/ReviewHeader.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "The offer of the task context exists only for an intent-only refusal with no earlier offer taken.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:7ba95a490e980028e422bf3066e029dd0428cc10865cf72070ea790564bf465c",
-            "locator": {
-              "kind": "symbol",
-              "name": "insteadFor"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "40": {
-      "note": "Retry exists only for a failed read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:f2c30d47debec55b8b4d1fd43a24e7fe8efb6a6a1000ed13501721bdcfdb4f90",
-            "locator": {
-              "kind": "symbol",
-              "name": "retryFor"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "41": {
-      "note": "The page controls: picker, actions, bounds, refusal and reset.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageControls"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "42": {
-      "note": "The picker offers the walkable collections.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:91d401c4eb4926d520b2fea9ed917d256bbd09cfe588e9bcb66b5905895ead57",
-            "locator": {
-              "kind": "symbol",
-              "name": "PagePicker"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "43": {
-      "note": "A next page is offered only for a published cursor.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:2a9d5b3550cb70ec5aba6fd5a8a019706a1d4a96e59cdb4c424ba627e44d877b",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageActions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "44": {
-      "note": "The refusal of a requested page, with a first page of that collection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageRefusalBlock"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "45": {
-      "note": "The workspace state the selections write: the focus request and the tree intent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-            "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
-            "locator": {
-              "kind": "symbol",
-              "name": "useWorkspaceState"
-            },
-            "path": "dashboard/src/panels/review/workspaceState.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "46": {
-      "note": "The selection options a caller may pass.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4d59650168c6a43c0457a9f469e87e45b813292a",
-            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectionOptions"
-            },
-            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "47": {
-      "note": "Stored walk/refresh regression source; its mounted stub assertions are not a fresh execution or browser result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78ddbab29a5396b25c97cefc6eae6faed7c66c7e",
-            "content": "sha256:607cc683e16074c2598cfa396f1d4e2627751986a0f692afcdc1a76128f6b227",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "48": {
-      "note": "Stored navigation/shell regression source, retained as source evidence rather than execution or independent memory acceptance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2408f06ee5d1079e4fa0e852718dadfb4f2b4580",
-            "content": "sha256:d74d51c2702920e4dc3e4f6086b0054b2710c3ded64d2fb7addc14191b7cfde8",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "49": {
-      "note": "The extracted header labels the selected subject or task-context fallback; requested-subject failure/retry/instead routing remains with readingStatusOf and useSurface.\n\nAnchor: `subjectLabel` `readingStatusOf` `useSurface`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "34a56a5c3df57d86ee06709e88089eaa3f9894a8",
-            "content": "sha256:9d05576749a2cac68e2eb36f928e3062f38f12ba0886506c5c346e3869e36bc2",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectLabel"
-            },
-            "path": "dashboard/src/panels/review/ReviewHeader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "readingStatusOf"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "50": {
-      "note": "Refusal rendering for pages that cannot be opened",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageRefusalBlock"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "51": {
-      "note": "Refused-page extraction for paged collections",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:3c5cd7a6164ab032af1f4e555b632f830d0787a1eba0a38caac7023eac9f7cd5",
-            "locator": {
-              "kind": "symbol",
-              "name": "refusedPageOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "52": {
-      "note": "Pane assembly over the coherent payload, lane and comparison",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "53": {
-      "note": "Held comparison context accepts newly delivered lane and worklist only while `sameGeneration` accepts the pair: repository/task/comparison match and either both knowledge snapshot pairs are known and equal or both are unknown. A moved binding while the lane loads becomes an explicit comparison_context_changed failure; the old page is not silently retargeted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "54": {
-      "note": "Opening captures comparison generation, inventory, lane and only a matching tree worklist; absent recorded comparison becomes explicit refusal. Closing drops overlay state and schedules focus return; it does not itself trigger a new review read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewChangePage"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "55": {
-      "note": "What every subject selection keeps, restarts or opens",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:476ed0ab6ce7610c55491e0e93898501945429e429ce6336f035ddefc2298730",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "56": {
-      "note": "Wiring of navigation, workspace, read cycle, cache and refresh",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "57": {
-      "note": "The mounted live, non-recorded reviewer registers memory notifications on the existing stream. A change engages the selected subject before cycle invalidation/refresh and entry revalidation; watch failure invokes the cycle failure action, and registration is disposed with the surface.\n\nAnchor: `useSurface` `useReviewMemoryWatch`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
-            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewMemoryWatch"
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "58": {
-      "note": "The review surface mounts `CanvasPanel` for the comparison on screen: `pageComparison` builds that comparison from the payload's own lineage number and history, and `evidenceSelection` opens a destination the saved page asked for only when its comparison reference and number still match the shown payload, keeping the tree the reader walked and selecting no substitute record. [58]\n\nAnchor: `evidenceSelection`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:ef8fad04b7a4f5410bd839faaddbb9682e99e86608c6f09a27e52545453ae6bd",
-            "locator": {
-              "kind": "file"
+              "end": 267,
+              "kind": "line_range",
+              "start": 252
             }
           },
           "kind": "code"

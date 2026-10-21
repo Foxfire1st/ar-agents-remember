@@ -1,0 +1,51 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The forged-span and delayed-restore cases guard selecting another comparison or replacing a choice the reader has already made."
+  },
+  "applicability": "URL selection storage and reload restoration on the review page.",
+  "conditions": [
+    "Use history.replaceState for block, subject-with-family, lane-file/lane-row and hunk selections; include comparison only when an older number is shown.",
+    "Validate entries against the card read identity, subjects/family against the outline/catalogue, files against the lane and hunks against both code trees and exact classified mapped spans.",
+    "Wait for the needed owner reads; an unreadable, malformed or outside selection opens unselected with one named line.",
+    "A new explicit selection supersedes an outstanding restore, so a late answer changes neither selection nor URL and arms no landing.",
+    "A latest-comparison entry selection reads its owning invariant once; lane selections and older comparisons do not issue subject reads."
+  ],
+  "exclusions": [
+    "Guessing a selection from a catalogue answer.",
+    "Accepting a hunk solely because its path and code trees exist.",
+    "Restoring a prior read over a newer user selection."
+  ],
+  "id": "INV-WRKBDD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 128, exact id MIK-R89@v2 rule 2 · a click selects; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 147, exact id MIK-R89@v2 rule 9 · selection in the URL; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 156, exact id MIK-R89@v2 Failure and Recovery · selection outside; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 167, exact id W20; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 186, exact id P-R5; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 192, exact id D2-2; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 240, exact id L89-R1-004; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 241, exact id L89-R1-032; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 269, exact id A4-F2 · by eye: the crumb; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 3, exact id L89-R1-004; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 31, exact id L89-R1-032; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470; no new execution or code acceptance claim."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP06",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review URL records the exact current selection without adding history, restores it only against the shown comparison, and abandons a pending restore when the reader chooses something newer.",
+  "status": "proposed",
+  "supersedes": []
+}

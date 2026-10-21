@@ -63,3 +63,9 @@ No Domain Documentation source is configured for this slice.
 - A revised statement shared by two families counts once on each side without a membership-only change. [10]
 - Record-only status/version changes count as revisions; a same-guarantee member change remains membership-only. The removed partial-summary helper is not assertion evidence for this property. [11]
 - The four added test definitions check matching stored-worklist unexplained-kind counts and auxiliary-file fallbacks, damaged-side code-fact refusal, counted-change witness attribution, and parametrized answered/open/undecided verdicts. The parameter table supplies two cases rather than two additional declarations. [24]
+
+## Comparison-aware summary test port
+
+The route fixture's summary callback accepts the optional comparison-number argument before the read observer. Its counted and absent requests omit a number and select canned answers by leaf. The existing 200 counted/unavailable and 503 unwired assertions are unchanged; this callback adaptation supplies no separate numbered-comparison selection proof.
+
+- The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions. [25]

@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/tray/trayImages.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "052ee0b33602613f6ba4da70e9b3cfa324135268",
+        "content": "sha256:8f4f392cf203d49c94ba5e21ffb4183616c59c8959b2e08e57dfe016fa9a4465",
+        "locator": {
+          "kind": "symbol",
+          "name": "createImageStore"
+        }
+      },
+      "id": "RLZ-93617H",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps image blobs by digest with IndexedDB persistence and live in-memory access.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Retains pasted image bytes by digest across reload while keeping a live memory copy.\n\nAnchor: \"export function createImageStore(factory: IDBFactory \\| undefined = indexedDatabase()): TrayImageStore {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052ee0b33602613f6ba4da70e9b3cfa324135268",
+            "content": "sha256:578a93f081fa8322de5c34e80997682755000e55ee57bf8f8b3e856e39307288",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retains pasted image bytes by digest across reload while keeping a live memory copy.\n\nAnchor: \"export function base64Of(bytes: ArrayBuffer): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "052ee0b33602613f6ba4da70e9b3cfa324135268",
+            "content": "sha256:5f8b11b88049c31281590a080b6a3d63c008f2f03be967fc5600a304f4f6d25c",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

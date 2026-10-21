@@ -15,3 +15,9 @@ Message send distinguishes idle-turn start, in-flight steering, permission refus
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
+
+## Native picked payload options
+
+`test_images_and_text_attachments_go_with_the_message_only_when_given` sends one image and one text attachment through the real bridge script to the controlled native-client stub and compares the complete recorded send options. Empty lists leave only `messageId`. Missing text-attachment MIME type, a non-image MIME type and a non-list image payload each raise `invalid_bridge_payload` before any agent read or send. The case checks the script's options and refusal boundary; it does not prove that an installed chat rendered or consumed an attachment.
+
+- Native options include both payload classes; empty lists omit them; malformed payloads fail before any recorded operation. [2]

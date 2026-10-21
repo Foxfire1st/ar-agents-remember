@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
         "locator": {
-          "end": 443,
+          "end": 453,
           "kind": "line_range",
-          "start": 415
+          "start": 425
         }
       },
       "id": "RLZ-0N51EK",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:084521da53daa61c98bb15a13feb17b75e373e8a5dfdd5355ea58a509bb7fba5",
         "locator": {
-          "end": 106,
+          "end": 108,
           "kind": "line_range",
-          "start": 104
+          "start": 106
         }
       },
       "id": "RLZ-1TB49P",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
         "locator": {
-          "end": 296,
+          "end": 306,
           "kind": "line_range",
-          "start": 262
+          "start": 272
         }
       },
       "id": "RLZ-5CZ9GT",
@@ -60,7 +60,26 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:86e0fe97440c768c6eeaae08e8392cd0d4ca6d2fc4df860a85d76a618d307f7a",
+        "locator": {
+          "end": 116,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-D41GKJ",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Makes the task identity header a quiet host and mounts one named task offer only when a canonical task reference exists.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
         "locator": {
           "kind": "symbol",
@@ -78,12 +97,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
-        "content": "sha256:a3cbd097a3b3b01ac5e44dbb111b7f02613565ac84ccca32c31acc1ff80bca24",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:5f6ea0b1a4a21b102c429b90bcf9b66f71f6f2e65d1f927389a52bd7c611b504",
         "locator": {
-          "end": 110,
+          "end": 120,
           "kind": "line_range",
-          "start": 102
+          "start": 104
         }
       },
       "id": "RLZ-FND35A",
@@ -97,7 +116,7 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
         "locator": {
           "kind": "symbol",
@@ -115,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
         "locator": {
-          "end": 413,
+          "end": 423,
           "kind": "line_range",
-          "start": 402
+          "start": 412
         }
       },
       "id": "RLZ-MSWTZ4",
@@ -134,12 +153,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:572ecf3770713a5ae098e124f8bece9369774ef3736c810c6d370c92f545c43b",
         "locator": {
-          "end": 125,
+          "end": 135,
           "kind": "line_range",
-          "start": 114
+          "start": 124
         }
       },
       "id": "RLZ-NVR4JZ",
@@ -153,7 +172,7 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
         "locator": {
           "kind": "symbol",
@@ -171,12 +190,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
         "locator": {
-          "end": 296,
+          "end": 306,
           "kind": "line_range",
-          "start": 262
+          "start": 272
         }
       },
       "id": "RLZ-W8JDSE",
@@ -190,12 +209,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:d37396429351441084354d627e2eb82cf216d6d9882754ac1bfde0ae370b1c12",
         "locator": {
-          "end": 59,
+          "end": 61,
           "kind": "line_range",
-          "start": 58
+          "start": 60
         }
       },
       "id": "RLZ-WX7MVM",
@@ -209,12 +228,12 @@
     },
     {
       "anchor": {
-        "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
         "content": "sha256:27f8cf1461fcf3760aa9b7119bca9ec2d6b85571bb8b0aafbc22d6e9be139754",
         "locator": {
-          "end": 360,
+          "end": 370,
           "kind": "line_range",
-          "start": 319
+          "start": 329
         }
       },
       "id": "RLZ-ZAEPG4",
@@ -229,15 +248,16 @@
   ],
   "references": {
     "2": {
-      "note": "Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes.",
+      "note": "Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes.\n\nAnchor: \"function shownHeadNotes(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c73f5f1cf1ea97e7d3c445f1415f3fcc72afb6a8",
-            "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:db63d930162eadcfdcdf55ffb10a0785ac94ccb65459fd78b9c02e88aa57b925",
             "locator": {
-              "kind": "symbol",
-              "name": "shownHeadNotes"
+              "end": 193,
+              "kind": "line_range",
+              "start": 173
             }
           },
           "kind": "code"
@@ -245,16 +265,16 @@
       ]
     },
     "3": {
-      "note": "ObjectiveLead uses shared block spacing, opens its bounded text in place and retains the counted long-full-text own-view link.",
+      "note": "ObjectiveLead uses shared block spacing, opens its bounded text in place and retains the counted long-full-text own-view link.\n\nAnchor: \"export function ObjectiveLead(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a96a85c2db144460392ca6a02561a529e832a851",
-            "content": "sha256:0b903bbb0b6d0297b4685d6e24cba40f89090cc574932fa36915771ca273f264",
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:a0d1e3ca55e89cdd5f3e29956fb24b2bc44ceda7ac8ca717b7c381fda011309f",
             "locator": {
-              "end": 290,
+              "end": 307,
               "kind": "line_range",
-              "start": 254
+              "start": 272
             }
           },
           "kind": "code"
@@ -262,15 +282,33 @@
       ]
     },
     "4": {
-      "note": "Dependency identity remains visible, while gone and entry resolution gate task wording and navigation.",
+      "note": "Dependency identity remains visible, while gone and entry resolution gate task wording and navigation.\n\nAnchor: \"function DependencyFact(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
-            "content": "sha256:27f8cf1461fcf3760aa9b7119bca9ec2d6b85571bb8b0aafbc22d6e9be139754",
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:1d1b3c659da94f32c0e88a59874f951929fe4aa62cae38718480077ca52a8bfd",
             "locator": {
-              "kind": "symbol",
-              "name": "DependencyFact"
+              "end": 372,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical task document has one task-reference tray offer in its identity head, and no offer when the entry lacks a document reference.\n\nAnchor: \"<header className={addToTrayHost}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:413dfe0e714ca7066d3c86bfb97c69365ac356e8a42038ee706b013436348e70",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"

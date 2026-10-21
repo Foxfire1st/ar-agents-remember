@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/reading/readGate.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+        "content": "sha256:85dfee40c08fb136afd1fa2288314d580c6498279bb61772a4c55172ea7cc102",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadGate"
+        }
+      },
+      "id": "RLZ-7G7XPC",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "RP08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It queues file tasks and holds one slot for each complete task until settlement.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+        "content": "sha256:57facc224715a593158a5618ece0f8b547ec4318eecb113e1455eab4410809e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useInView"
+        }
+      },
+      "id": "RLZ-9TKKAZ",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "RP08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It combines near-view observation with the lane-opening or card-engagement stage.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Bound deferred file work to8 concurrent tasks.\n\nAnchor: \"export const READ_BATCH = 8;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:52883488621849024889d7e5cc7ce26522bc777230567d8e6ad0e6e58a8086ea",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bound deferred file work to8 concurrent tasks.\n\nAnchor: \"open(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:70eb27fc412a570bd4c1ef7ba3e86f798c8c4bd5b0cae8da66aea6db0892f999",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Bound deferred file work to8 concurrent tasks.\n\nAnchor: \"engage(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:33cd24289543fdf33293e5f4b9c7f52bea60db5d9bd9b80531c4f2813dc91d1f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

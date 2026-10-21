@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-        "content": "sha256:09455b0c17d0ab2919580013164d8c255f72bac4bc20f5c57dcfd7548c9b25c0",
+        "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+        "content": "sha256:eb3aac26e2777bb2642416f1ecbb26226f1e7847adb02e880a3036854ccc1c04",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-2BCSFV",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-ZMW639",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The refresh notice reserves a full row below the top-line controls, ellipsizes above 40rem and wraps below; its text does not consume the status chip slot.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+        "content": "sha256:22f871a57058ad06649e61e76ce62998a6579f7375e15e8a0e3417a7545d99c5",
         "locator": {
           "kind": "symbol",
           "name": "ReviewRefresh"
@@ -20,329 +39,124 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The click refreshes, then re-validates the entry.\n\nAnchor: `useRevalidateIntentEntry`; \"revalidateEntry();\"",
+    "17": {
+      "note": "The refresh action revalidates the entry and exposes a conditional, source-bound generation notice.\n\nAnchor: \"export function ReviewRefresh({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
-            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
+            "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+            "content": "sha256:22f871a57058ad06649e61e76ce62998a6579f7375e15e8a0e3417a7545d99c5",
             "locator": {
-              "end": 94,
+              "end": 115,
               "kind": "line_range",
-              "start": 49
+              "start": 67
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "**The case that measures the whole refresh path through the real surface and client: the read carries the displayed identity, the notice names both digests, the panes hold the current comparison, and the sentence is asserted to agree with the pane's own `data-comparison`.**\n\nAnchor: \"re-reads the same question carrying the binding identity on screen, and names what moved\"",
+    "18": {
+      "note": "Only a reviewed carried comparison with a shown digest can make a current/superseded claim.\n\nAnchor: \"// answered with, and the phase of the read that carried it. `null` means no claim may be made;\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:01f0aeae64983845dffb862e71bb6008217d1bf6c163ab19201961e6638a4d02",
+            "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+            "content": "sha256:1ff055998da41aacb48d898d9b8b6684e9e5955165a16410070f8cc9eb8f5cf3",
             "locator": {
-              "end": 623,
+              "end": 148,
               "kind": "line_range",
-              "start": 579
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "**The case that pins the phase gate: a failed refresh keeps the labelled old comparison and its error and renders no generation claim at all.**\n\nAnchor: \"keeps the labelled old comparison and its error when the refresh fails\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:5acd976324e27e7fa0b67bb913e4266dbb3212819a44e4f3989d58a4ba143df3",
-            "locator": {
-              "end": 656,
-              "kind": "line_range",
-              "start": 629
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "The submission disclosure carries the server staleness and submission boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:a3470f6c9d68054c9ddec40d1221bcbf44faa639fdb985532999415afed9f422",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubmissionBlock"
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Refresh control with the generation sentence",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:09455b0c17d0ab2919580013164d8c255f72bac4bc20f5c57dcfd7548c9b25c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRefresh"
+              "start": 117
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "19": {
+      "note": "The notice takes its own responsive row and preserves the full tooltip sentence.\n\nAnchor: \"// Above 40rem it is one line ending in an ellipsis, with the whole notice in its title; at 40rem and\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:bbcddebb4571ac4a7221e09140e1e733ed409708c88e976b4040f7a8d0f7167f",
+            "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+            "content": "sha256:dec4dc7fcb9570fd636041a6213020952eafdbe330f9e70c78abd669507e4741",
             "locator": {
               "end": 65,
               "kind": "line_range",
-              "start": 47
+              "start": 50
             }
           },
           "kind": "code"
         }
       ]
     },
-    "14": {
-      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
+    "20": {
+      "note": "The caller supplies refresh, read phase and actual shown/carried identities.\n\nAnchor: \"<div className={reviewBody} data-review-body inert={change.changePage !== null} style={{ visibility: change.changePage ? 'hidden' : undefined }}>\"",
       "targets": [
         {
           "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:49a1389ba50f20e562325ca75f3cebaf05d9101c356bce3de14ff0f192300310",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:6a021fa2ec8b4a63c5e295cada08b537e2c7c62640cb7a1216462d38af232e39",
             "locator": {
-              "end": 67,
+              "end": 874,
               "kind": "line_range",
-              "start": 58
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
-            "content": "sha256:d1caed502ba2ed4bcf3899889b8c6614d7fdd8a6f33ce4e2a8d30c90a176f1e9",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 43
-            },
-            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The refresh control invokes the separate intent-entry revalidation callback as well as onRefresh; revalidation increments the task entry’s generation rather than carrying the review’s previous identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "701f0ed34d661ec7a976642ac4b7713502d1cb46",
-            "content": "sha256:942284b737c288d710402e1bed4baab4d3936b8050ee7033576a029af7a35a41",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "**The module's own statement of what a refresh is — the two possible answers and never a blend — that a failed refresh keeps the old generation, and what it deliberately is not (no polling loop, no dataset choice, the identity belongs to one question).**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
-            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRefresh"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
-            "locator": {
-              "kind": "symbol",
-              "name": "generationOf"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:ac8f80b71eb762968bd1af20273afec1ac7bc915f5c1981cde18ee4f6614f2b7",
-            "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The module's two imports: the payload type it reads its digests from and the read state whose phase gates the claim.\n\nAnchor: `ReviewPayload`; `ReviewRead`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:d933e0737b671228dd5d2f8345a77f8b1b5d91b8215c4899c6301f32bce8d4c4",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 34
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The two states a rendered claim may have, with \"no claim\" expressed as `null` rather than as a third state — a surface that has not been re-read has measured nothing.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:3f0f55024440f6a0589d875ebc3dea380813705b28ddc021555d0c14154ff77f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewGenerationState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:2b4f9311188d4363d201539da51a11c66570ec0ca58943db218b11a6d3a9573d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewGeneration"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:1dac12a2fe1b8e3b38da9b0e4d2d3882d7a1f6522b7baaa174b11e47d202aaf5",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 40
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The control: the reader's own refresh button with its observable busy state, and the conditional notice carrying the state and both digests as data attributes.**\n\nAnchor: `review-refresh`; `review-generation-notice`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b75dc4600fc8ed399cc0ccaf319ef4110246f091",
-            "content": "sha256:9d9b2f5be1a91836f53343561c2574a168c6f99ea485c674d96be89fc4267154",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRefresh"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The sentence, chosen by the state, with each clause a fact the answer published — and the first fix round's correction, which made it say which generation the panes below hold.**\n\nAnchor: \"the candidate's comparison moved\"; \"the comparison below is still the candidate's current one\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:10e8445a7e39e796d738b1857f267c73dc665510c7e1e17cc6736e3cded75fb7",
-            "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "**The one derivation of a claim: the phase gate first, then the carried identity, then the payload the surface renders, and the state decided by comparing the two digests.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
-            "locator": {
-              "kind": "symbol",
-              "name": "generationOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "**The reason the phase gate exists — a read that never reached the server has answered nothing, so a failure renders no \"still current\" claim beside its own error — and the reason both digests come from the rendered payload.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:d51cff487d0e0dc18d18dc1aa29aaafd775a8205d3cdc3d13238465dbf325d98",
-            "locator": {
-              "kind": "symbol",
-              "name": "generationOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The surface supplies refresh, loading state and the displayed generation to the shared control.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
+              "start": 865
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The controlled outcome test declares same-question carry and DOM/generation agreement.\n\nAnchor: \"it(\"re-reads the same question carrying the binding identity on screen, and names what moved\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:7c1a4b7d7b16752ca3b47c3a73c6f6acf662b325c9a3a6d66e214480b55d6532",
+            "locator": {
+              "end": 641,
+              "kind": "line_range",
+              "start": 595
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The failed-refresh case retains the old label and suppresses a generation claim.\n\nAnchor: \"it(\"keeps the labelled old comparison and its error when the refresh fails\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:e75494f50c9f6e45983057d87d0d76b62a29a0be6dce29c66a0d0c55f57e8726",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 643
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Entry revalidation is local context with a no-op default.\n\nAnchor: \"const NO_REVALIDATION: EntryRevalidation = { generation: 0, revalidate: () => undefined };\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:2f758d6119d3357e35b52dba0d94fd68cd3abdb2ff23c83ac98078b52dbda4cf",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
           },
           "kind": "code"
         }

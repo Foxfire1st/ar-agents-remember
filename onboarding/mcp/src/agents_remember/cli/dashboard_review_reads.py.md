@@ -2,56 +2,33 @@
 
 ## Governing Overview
 
-[governing overview](overview.md)
+[Owning route overview](../../../overview.md)
 
 ## Purpose
 
-Bind the exact inputs a recorded comparison's answers are a function of, so the reviewer's three
-recorded reads — intent, entries and trees — can be served again unchanged while every one of those
-inputs still holds, and computed every time when they do not. (The summary read is served by
-`IntentSummaryCache`, not here.) A live comparison has no record to bind and passes straight through.
+Bind recorded intent, catalogue and tree-view answers to their exact question and retained input closure, while returning fresh failed reads without keeping them.
 
 ## Code Commentary
 
-### What a kept answer is a function of
+recorded_answer_sources accepts a valid leaf address and reads the leaf enclosure. Its dependencies are contract bytes, comparison/generation directory listings, worklist bytes or absent path, and existing code/memory object stores. It neither authorizes arbitrary paths nor substitutes a live HEAD.
 
-`recorded_answer_sources` resolves the leaf's own record and returns the `ReadInput` set a recorded
-answer depends on; `_sources_of` names them: the record's bytes, the comparison and generation
-directories its generation lives in, the worklist, and the object-store census of the trees it reads.
-`_reads_from_its_record` separates a recorded comparison from a live one, which is what keeps a live
-view out of the cache: it is a function of a working tree and belongs to nobody's record.
+Before reuse, _recorded_sides deduplicates all four repository/tree pairs across retained records. _trees_still_readable traverses their closures with missing-object reporting, then _object_bodies_readable consumes exact batch bodies, validating identity/length/newline framing and complete output. A stable object census cannot mask a removed or unreadable descendant.
 
-### The object dependency is checked, not counted
+Recorded intent uses the full serialized request key and may reuse that recorded question while the enclosure remains live. Ordinary intent requests produce fresh answers. Entry catalogues include optional comparison number in the key, but retain the closed-enclosure rule; tree keys include every query field and ordinary working-view queries produce fresh answers. Explicit recorded/numbered tree questions still pass the closed-enclosure check before reuse.
 
-`_recorded_sides` names every recorded comparison's four sides — code base, code candidate, memory base
-and memory candidate — deduplicated across the leaf's records, and `_trees_still_readable` proves
-each of them still entirely present: one `rev-list --objects --no-object-names --missing=print` over
-all of those trees fails if the traversal fails or prints any object as missing (`?`), and
-`_object_bodies_readable` then makes Git consume every one of those bodies through a single
-`cat-file --batch`, checking each header and length against the request so an object lost between the
-traversal and the read is caught. An equal count of objects is not equal availability — one removed
-tree and one added blob leave the census the same size — so a missing or unreadable tree produces the
-fresh answer instead of the kept one.
+The common _answer path requires the proper leaf record, the applicable closed-enclosure condition, readable recorded closures and the same observed input set before delegating to the app-owned RecordedAnswerReuse. A failed condition calls the same producer fresh rather than serving an older inventory.
 
-### Composition, not a second implementation
-
-`RecordedReviewAnswers.intent`, `.entries` and `.trees` key each read by the question it asks
-(`_tree_key` for a tree view) and hand the sources plus a `produce` callable to
-`RecordedAnswerReuse.answer`. The callable is the shipped composition the route used before this
-module existed, so a kept answer and a fresh one cannot disagree about what a read means.
+_keepable_tree_view rejects typed tree responses with any unavailable-history side, and card-memory failure when the after knowledge side is available. These describe transient read/index failures over readable recorded inputs and must be retried next time. Missing entry_memory or available memory can be kept; legacy-unavailable remains an immutable record fact. Non-ReviewTreesResult values are admitted by this predicate. Summary caching belongs to IntentSummaryCache.
 
 ## Invariants And Boundaries
 
-- A recorded answer is keyed by its record, its directories, its worklist and its objects; nothing a
-  reader's open does to a working tree enters the key.
-- A kept answer is byte-identical to a fresh computation of the same inputs, and is never served
-  after one of those inputs changed or became unreadable.
-- A live comparison is never kept here.
-- This module reads the leaf's contract and Git objects; it writes no record and authorizes no path.
+Working-view answers are computed fresh. Recorded question keys and dependency validation govern reuse, not acceptance or file writes. A failed read cannot become permanent merely because its record inputs stayed unchanged; an unavailable legacy state is distinct from such a failure.
 
 ## Evidence
 
-- The recorded routes' inputs are the record, its generation directories, the worklist and the object census, and a live comparison binds none of them. [1]
-- A kept answer is served only while every recorded tree can still be read, so a removed tree yields the fresh answer rather than the kept inventory. [2]
-- The four recorded trees one record holds are named once, for the reuse check. [3]
-- Intent, entries and the tree view each pass their exact question and the shipped composition to one reuse store. [4]
+- Valid leaf addressing supplies exact contract/directory/worklist/store dependencies. [5]
+- Recorded closures and object bodies are checked rather than inferred from counts. [6]
+- Intent, numbered entries and tree questions keep their own recorded/closed rules. [7]
+- The common path validates record/closure before reuse. [8]
+- Transient index/card-memory failures are returned but not retained. [9]
+- Every query selector participates in the tree key. [10]

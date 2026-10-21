@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4f110e18729cb5eb968c422bb9425f6727beec0c",
+        "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+        "content": "sha256:b0594c2ba80a95f7bdb521bacf985f1693d82aedf3ed7dc1c4de9ba4ab5019cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "names an unread source when the read carries no writer"
+        }
+      },
+      "facet": "A mounted moved/unjudged family selection whose answer omits writer attribution shows the explicit carried-in source-not-read chip.",
+      "id": "PRF-0YC2GM",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6be07f74d08341a324005819d5c5db63d9315686",
         "content": "sha256:edde97fc97a0a1655cbe462d075a4cbfe8eda3106fa3dd77d69fdadb237ad36d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4f110e18729cb5eb968c422bb9425f6727beec0c",
+        "blob": "6be07f74d08341a324005819d5c5db63d9315686",
         "content": "sha256:9a1399bd14884ed8cd1674c6a0b77d96b502f4ac60eae4784482468c2f6a4a28",
         "locator": {
           "kind": "symbol",
@@ -34,21 +51,497 @@
         "handoffEntry": "L57-M1-F37-disclosure-grouping",
         "leaf": "260928-MIK-L57"
       }
+    },
+    {
+      "anchor": {
+        "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+        "content": "sha256:7547d11a19a273484143cda3a621402b3eaa0f86ff6e7526ebc8e9a956b2a7a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows no chip for a revision the reviewed task wrote, nor a writer"
+        }
+      },
+      "facet": "A mounted family selection with moved/unjudged state and an after writer equal to the reviewed leaf draws no source chip or normal writer line.",
+      "id": "PRF-TREMJD",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      }
     }
   ],
   "realizes": [],
   "references": {
-    "56": {
-      "note": "Selector-keyed fixture routing and direct FamilyReviewCenter controls distinguish bounded, uncarried, one-sided and measured-empty contexts; compare exact word-diff operands and judgment facts; reject a foreign walk; retain admitted continuation state; and deduplicate source expressions without losing memberships. Omission probes and panel-local geometry are synthetic, not native producer or real-390px browser measurements.",
+    "57": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('renders the real family, its authored guarantee and full member statements', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1d694abf8b1bb2812182ba799d21362646c4f33c",
-            "content": "sha256:3db444ee294aafe2410f0f4352fc1fe69437549b5222f93b2103537d9a833fe3",
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:8084c716ae9d57cf9a09acac7cd6a22b5a219e2c138562b16522ebf1d033f586",
             "locator": {
-              "end": 595,
+              "end": 240,
               "kind": "line_range",
-              "start": 1
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws changed and unchanged guarantees according to their actual revision pairs', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:2a5940ef3b31282d374cabef6eb9dbbdd0980048550c4ac05502e7bc9415f820",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 241
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reads a member owner, retains its family and keeps the five independent facts distinct', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:65f5a7af9e1eb0f5c2e9898f3fb7f9361b3d92d7fa6c238764aabbf23f4833a7",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "60": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps All changes and the complete source population independent of family selection', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:cf64dc6650ef97c82531c408f71dfc52f7ed72f32758606b074ac54e7887fe4e",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "61": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('sends the published family cursor and rejects a response from another walk', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:b0daa160dc5664ccc5f1a47d8126a7a6104cf1230e4242a5582471f92d99fcfa",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with its meta line, guarantee diff, steps and judgment, then its members, then its roster', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:07a98214091f857af37daf46420ae1c0065094192a503f3a6d6a6a5813fddc8c",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows a partial family read as one short chip that continues the roster walk', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:e8db721657f9893180186be9d09a6dc9ca6cc3e87ed3dba365f040f3b0a70a45",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "64": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(CARRIED)('names a change the reviewed task did not write by its source: %s', async (_, writer, text) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:36e7d6aa4d09fbb2c56be077c952139bebb5e000f6233e3a1f0ba08ca4ee42f8",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "65": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows no chip for a revision the reviewed task wrote, nor a writer', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:cd338a5bbf6dae925de3113c6fbda2141f44e806740621dbb88258b14e1ff7e3",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 415
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "66": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names an unread source when the read carries no writer', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:f5d7e0394d1594389d94ce32021b753e12dcf3e6e21507f6117cb05b80d6d9e3",
+            "locator": {
+              "end": 436,
+              "kind": "line_range",
+              "start": 427
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "67": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks the selection and traverses the intact tree by keyboard', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:3f6c3768e69266b5afa6884821b6fdf23e4cc8c69416c1db9a0b176609820142",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 437
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "68": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('filters by the actual captured label without restating comparison totals', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:468e2f970e553d719b12c8540f3e8f81718b960dfe4e33f2134cfdfff3ec075f",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 450
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "69": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states the bounded roster as the part of the measured rows it carried, never zero', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:9035bbcba63771916dfc849aa6ed6a43e8605573370ac5639192ca3767dbd736",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 466
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "70": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not call a deliberately uncarried bounded roster a measured zero (synthetic omission probe)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:f41f951d63475ada1f16fa08c7c1ca0b743023c48a5d4a581d2221e259934b95",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 481
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('says measured zero only for the genuinely empty scratch-authored family capture', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:48de3829f1c95a3361ba6af2503fba8d77fb27fb87b2b32b9ef5d2905a890122",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 497
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "72": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('heads a bounded family projection partial, states owner totals, and wires its own cursor control', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:3fd99a3c35309dcd3310bac2e6b6d2aae4ba9e7ce2ddc7246e58cd056076e8a1",
+            "locator": {
+              "end": 532,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states genuinely uncarried member content without inventing a one-sided statement', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:d3cd7f9f3488a097071c25d1b9d70305644ce9fa5aa7cf17f4d2bc46a757cd5d",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('uses the real owner comparison rather than treating an uncarried roster operand as absent', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:dbd817645a9990bbc422d5dff0c42c83abfa800c655c8f233982069e328dfe00",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains a bounded before-only revision without claiming the invariant was removed', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:3171126026adf0ca55af4a186fb98e308439bec482b87f4a08b47f8c555362f5",
+            "locator": {
+              "end": 573,
+              "kind": "line_range",
+              "start": 557
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "76": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('prints the shared empty-roster sentence once in the reading path, never again in the tree', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:62a918531a01502b5919c41bfb259eb731bb540e3c72b969f8caa9c016123996",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 574
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "77": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states a final bounded page as completing its walk, not as the whole selection', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:6abaf5879e7a77bdaaf58ec8ccc351891f24a03799772d0e26a7fad829ee9a8c",
+            "locator": {
+              "end": 602,
+              "kind": "line_range",
+              "start": 589
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "78": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps reader state across two admitted same-subject continuation requests', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:fac5846187d9cd65bb24b9ef61d318d52e71cdf88d2f4ad207021dffc498074c",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "79": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('deduplicates real changed family expressions without losing the recorded membership occurrences', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:99ce3c3e6b6d0962b0dee9cea3fd79831fcf5deae44818174e150f3663dcc158",
+            "locator": {
+              "end": 649,
+              "kind": "line_range",
+              "start": 635
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "80": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states the actual added-family side as not recorded, not unreadable or a measured empty family', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:a4d90cbf00e3812924cd42a8d3bae7f9468f931099b9711dd1acbdb2ed38f148",
+            "locator": {
+              "end": 660,
+              "kind": "line_range",
+              "start": 650
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "81": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('renders deliberately omitted family context as unavailable, never as a measured zero', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:1748f8cad7fd5506b55bc27ee469b2110a8d1a89fe885ae521a7b9f9a2e8c19a",
+            "locator": {
+              "end": 674,
+              "kind": "line_range",
+              "start": 661
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('labels whole roster selections as whole, not as continued final pages', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:752ce25195e55771f5f89fc7556e9630c5927408c2a23ffe25e631f7a19668ff",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "83": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps a whole family view at the disclosure cap with every judgment and proof identifier listed', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:ca8efb04ef6ce5abc639c02e7be19a485d53c7d97e991b51f07f2ddf17336429",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 686
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "84": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('holds that disclosure count for a subject with far more rows and proofs than the capture', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6be07f74d08341a324005819d5c5db63d9315686",
+            "content": "sha256:9a1399bd14884ed8cd1674c6a0b77d96b502f4ac60eae4784482468c2f6a4a28",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 726
             }
           },
           "kind": "test"

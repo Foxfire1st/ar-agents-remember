@@ -4,16 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The recovery fixtures require unanswered application ping before URL fallback and preserve explicit Retry.",
+      "note": "The recovery fixtures require unanswered application ping before URL fallback and preserve explicit Retry.\n\nAnchor: \"it('keeps the frame, shows the banner after an unanswered ping, and shows executions by URL'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca45e4c6f4042166e7aa64e2533045f8d3fb919",
-            "content": "sha256:834e2ffeb08cbeec2775ef400bc47838eb444337056a81a7cdfa2f7b59332dca",
+            "blob": "d43f042a9f42a93ef942e2c8d530fa032c938e07",
+            "content": "sha256:6f237a21b66b03e4db3ef5e9e7efeb307850f3776758957215732b59317dfd04",
             "locator": {
-              "end": 562,
+              "end": 546,
               "kind": "line_range",
-              "start": 462
+              "start": 449
             }
           },
           "kind": "test"
@@ -21,14 +21,16 @@
       ]
     },
     "2": {
-      "note": "The no-second-load case pins the settle behavior.",
+      "note": "The no-second-load case pins the settle behavior.\n\nAnchor: \"it('after Retry without the channel, the frame that names the agent is not loaded a second time'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
-            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "blob": "d43f042a9f42a93ef942e2c8d530fa032c938e07",
+            "content": "sha256:8a98f51393806173dd8609eda51e2bb3bbab5ff9b92767e6ebb0226f7b43e161",
             "locator": {
-              "kind": "file"
+              "end": 563,
+              "kind": "line_range",
+              "start": 548
             }
           },
           "kind": "test"
@@ -36,14 +38,33 @@
       ]
     },
     "3": {
-      "note": "The workspace cases move by message without reload.",
+      "note": "The workspace cases move by message without reload.\n\nAnchor: \"it('moves across workspaces by message, without reloading the frame'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "591dbf41db6c3a7b91ba72ef9279d4c5de774d8c",
-            "content": "sha256:f2fe6f80cbda9a54efa83f931a51372c13e8dbe2a2e0b2205a506fd9536c487f",
+            "blob": "d43f042a9f42a93ef942e2c8d530fa032c938e07",
+            "content": "sha256:1a88b0f3902ea8a29a3562101c54b03161fc23daf80e52510dce782185d2b957",
             "locator": {
-              "kind": "file"
+              "end": 646,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Opt-in hidden preload reads the descriptor once, names no agent in the initial URL and activates by message in the same frame generation.\n\nAnchor: \"it('preloads a hidden pane without loading an agent, and shows the agent by message (MIK-R89 v2 rule 12)'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d43f042a9f42a93ef942e2c8d530fa032c938e07",
+            "content": "sha256:ab6bd18b5dd368e9f54f5c6a18b68c2420f5c59e96747c793ba6fb73963f9f2c",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 569
             }
           },
           "kind": "test"

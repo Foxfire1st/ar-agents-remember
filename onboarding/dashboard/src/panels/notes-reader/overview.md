@@ -14,6 +14,8 @@
 
 The screen shares the File Viewer's `DualPane` content primitive and the rail-and-pane layout pattern used by the Change-Set Viewer. Notes and requirements have selection rails; reports and the whole decision log use the content area without a rail.
 
+The common reader header shows the shared left-sidebar toggle only for a target with a rail. Its Notes/Requirements label follows the artifact kind. One `notes` left-side state controls the mounted rail panel and its resize handle together, leaving the toggle in the header outside the hidden rail. Reports and the whole decision log draw no rail toggle.
+
 ## Hot Path Summary
 
 The whole decision log shares the task-page authored row, newest-first recorded-time ordering and oldest-based authored numbering. Product records contribute to neither authored counts nor numbers; a muted counted end disclosure retains them unnumbered. Exact/prefix text provenance remains classification, not an impossibility guarantee against authored collisions.
@@ -59,3 +61,5 @@ The current source-backed Notes Reader integration is recorded by the repository
 - TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
 
 - The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]
+
+- ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. [9]

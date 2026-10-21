@@ -2,17 +2,34 @@
   "path": "dashboard/src/panels/review/ReviewSurface.originRepair.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Native fixture origins are shown on both family/invariant sides without disclosure at 390/1280 synthetic widths; separate explicitly synthetic distinct origins preserve side-local task/leaf-wave/handoff. Width stubs are not real viewport acceptance.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`keeps the supplied native ${kind} origins in the closed Technical details at ${width}px`, async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "fad916c6909a64d4d912f7ebb5dc67a5285bd9d6",
-            "content": "sha256:a2ff53ef01b6efd6de23cf0e8cc093afbf22a41e7434c808d95c387eeedadc48",
+            "blob": "69c30d37ad5c24e1e5689b8d844ceec768de0ae5",
+            "content": "sha256:d269988114a896ccbe689bee18a6126bb1bed61ea8a0f2284ca49a03c5441d1b",
             "locator": {
-              "end": 74,
+              "end": 72,
               "kind": "line_range",
-              "start": 1
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps distinct family task, leaf/wave and hand-off entries on their own sides (synthetic origin control)', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c30d37ad5c24e1e5689b8d844ceec768de0ae5",
+            "content": "sha256:0c5055dc9910d3c42309c2a8eff93e53185a6868c713d42755071e673d8d97f0",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 73
             }
           },
           "kind": "test"

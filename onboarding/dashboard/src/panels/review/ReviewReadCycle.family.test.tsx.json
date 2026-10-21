@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
+        "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
         "locator": {
-          "end": 448,
+          "end": 459,
           "kind": "line_range",
           "start": 371
         }
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-        "content": "sha256:126fa092d9830301e641e6f5f715499819fe93a5bf09503fe21fb7db42fa3425",
+        "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+        "content": "sha256:a0997f148080b1c9ab1fe2e676aa06a49f30cc7f394d970a334f367e16570cce",
         "locator": {
-          "end": 716,
+          "end": 690,
           "kind": "line_range",
-          "start": 586
+          "start": 592
         }
       },
       "id": "RLZ-BJ6TQM",
@@ -36,15 +36,15 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
+      "rationale": "The captured continuation witness preserves statement/judgment/sibling/focus and reaches late realization addresses in MemberDetails; removed Full file/layout controls are intentionally absent.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
+        "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
         "locator": {
-          "end": 448,
+          "end": 459,
           "kind": "line_range",
           "start": 371
         }
@@ -60,10 +60,10 @@
     },
     {
       "anchor": {
-        "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-        "content": "sha256:9f329d387ced54f0f9735ec8246777be49c922b4572a98cba1b10ad55e6e61f1",
+        "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
         "locator": {
-          "end": 448,
+          "end": 459,
           "kind": "line_range",
           "start": 371
         }
@@ -79,214 +79,15 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The current header identifies captured page-size-4 tree-route bodies and the receipt. Historical full-tree bytes isolate worklist chrome and do not qualify the current full-tree producer refusal.\n\nAnchor: inclusive source ranges",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains exact content and claim identities while before and after walks advance independently', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-            "content": "sha256:ea01daab4888a4d05dc547b4b54611912b13b7f34b4325d517f820ae37e2c339",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:072b4af86e8a0398e5ea1578ff1e734c77a5cfdcc37db8ff730154bc76567049",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "Captured outline families and members",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:4e62f773ff04213634df97c852575afd59789a9ce555bef01b74d03f5bb54cb2",
-            "locator": {
-              "kind": "symbol",
-              "name": "capturedOutline"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:964f7da5b884052a2605d488dfb2962313a95690dd5a2c3586698bce5c11989c",
-            "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 59
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Complete-inventory expectation helper",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:27fc0524b0ad4afae9f7010495647393c8c192375dff91d74ea2e34847c897f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "expectCompleteInventory"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:4643b13e8bd86b0e5b5263ddeedc2cf185203931f30c60445f5bf953c476eccf",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 94
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Cycle mount helper with cache and fetch",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2ae3228d95fe14e38b22d533e394945dd0e4a3e547b9ac06a933b8e54fbad027",
-            "locator": {
-              "kind": "symbol",
-              "name": "mountCycle"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:fac8d8504b6dd01cd4d5c84c6d33038ce4bbbfb7ba7b882bc0e09e8e29431d53",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 124
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Family centre mount with roster continuation",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:42915066a00f8a15aa04b06f5b50d80817cbdce071a32cc0e45c29b603166e7e",
-            "locator": {
-              "kind": "symbol",
-              "name": "mountFamilyCenter"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:eb54c0ef854162431002da3b4020bffded4930372ce63e458216c49b5753ae80",
-            "locator": {
-              "end": 397,
-              "kind": "line_range",
-              "start": 381
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Late-path rendering beside preserved selection\n\nAnchor: `latePaths`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The harness uses the captured HTTP bodies and existing read cycle, with its own fresh read cache.  Anchor: `new ReviewReadCache()`\n\nAnchor: `mountCycle`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:2d94c7791587676bcdede7e6cd96af137b57b7b0fe9227cbfce9fca9c88cfa9c",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Independent walks retain exact content and claim identities; knowledge and judgment equal the supplied response values, and inventory equals the initial complete inventory.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-            "content": "sha256:39219cdf89bae92cb61ec0e1e1e5ae8bf720334859f994f1722dc27cf362acc9",
-            "locator": {
-              "end": 264,
+              "end": 265,
               "kind": "line_range",
               "start": 225
             }
@@ -295,117 +96,105 @@
         }
       ]
     },
-    "4": {
-      "note": "Failed admission retains the coherent display and failure details.  Anchor: \"retains the coherent display and fails a rejected continuation, including a structured page refusal\"",
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains the coherent display and fails a rejected continuation, including a structured page refusal', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:edf57e3bc6a4399c180ff907fc47043d8159e849fa724c0a31d99b8a19ba5c42",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:88a5131486e31577734e4d8810fd2c9bc2c724fcc238743995df1003e2aa897d",
             "locator": {
-              "end": 216,
+              "end": 335,
               "kind": "line_range",
-              "start": 148
+              "start": 266
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Unadvertised cursors are checked without weakening whole-review refusal.  Anchor: \"fails an unadvertised request cursor while preserving whole-review refusal semantics\"",
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('fails an unadvertised request cursor while preserving whole-review refusal semantics', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:6b9b2a008cc421a9e5795d361be804994358860cb9e6569d5c6a2b50b40ffc12",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:db3fe31130976acf2daf5f4c5ddc2d46c406deba3668240a4c173c56b12542f3",
             "locator": {
-              "end": 251,
+              "end": 370,
               "kind": "line_range",
-              "start": 218
+              "start": 336
             }
           },
           "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "The family-detail branch states loaded, complete and unavailable scope.  Anchor: \"states loaded claim scope in family details for a content-only page, completed walk and unavailable side\"",
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['wrong subject', 'conflicting content', 'page refusal'])(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:b367f7cbb4662b26ea1f1cea56588ff655ae447d3e05d71a3363c90bee9287d9",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:37b67f2c7812b3be4a6eb2cd58c0331a0bc0485c0f2348852a3dc90cfc5363ce",
             "locator": {
-              "end": 413,
+              "end": 476,
               "kind": "line_range",
-              "start": 355
+              "start": 371
             }
           },
           "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "Refresh, changed questions and late responses cannot reuse old context.  Anchor: \"resets accumulated context on refresh, subject and history changes and drops late continuations\"",
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states loaded claim scope in family details for a content-only page, completed walk and unavailable side', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47fa86a1eacef954577cd6675e58dc30d0c13f41",
-            "content": "sha256:5fafc4595a5f80de501757f28c25ebe92909a3df74ef56588f870c9fb6ade1f6",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:8ca603063b614878b6964a46f2382b2139a4a31c3c6f6313c129c86f5c932d18",
             "locator": {
-              "end": 468,
+              "end": 536,
               "kind": "line_range",
-              "start": 415
+              "start": 477
             }
           },
           "kind": "test"
         }
       ]
     },
-    "8": {
-      "note": "The mounted journey selects the captured family's after revision and preserves revision IDs, judgment, siblings, focus, inline layout and expanded expression as roster continuations expose later claims and source paths.\n\nAnchor: inclusive source ranges",
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('resets accumulated context on refresh, subject and history changes and drops late continuations', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3bfe136ea869b3b6b4b87962e3f114d193cc23db",
-            "content": "sha256:126fa092d9830301e641e6f5f715499819fe93a5bf09503fe21fb7db42fa3425",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:bb443b8d71a1f821b84cfcb2bcd7bfea46999c51e5f750e57eec0d12a1c4e7c4",
             "locator": {
-              "end": 716,
+              "end": 593,
               "kind": "line_range",
-              "start": 586
+              "start": 537
             }
           },
           "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "The production owner admits or rejects continuation before retaining data: the read cycle decides when (`familyContinuationRead`), and since L48 the merge it applies lives in `familyWalkMerge.ts`.",
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps selected intent, judgment, siblings and focus while later roster claims become reachable', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
+            "blob": "fd594962563652df4d17cadc31041ed1341518ea",
+            "content": "sha256:11a1513c705f0323de5ac0b97e1cd081c5c005ffdab1eb4e972d234c2aedc64a",
             "locator": {
-              "kind": "symbol",
-              "name": "familyContinuationRead"
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+              "end": 690,
+              "kind": "line_range",
+              "start": 594
+            }
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
-            "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
-            "locator": {
-              "kind": "symbol",
-              "name": "mergeFamilyContinuation"
-            },
-            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

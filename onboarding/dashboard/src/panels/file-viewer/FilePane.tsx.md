@@ -17,9 +17,9 @@ code, with the cited lines marked.
 
 ### Logic
 
-Props are `{ content, language, firstLine? = 1, fit? = false, marks?, highlightedLines? }`.
+Props are `{ content, language, firstLine? = 1, fit? = false, marks?, highlightedLines?, trayLines? }`.
 **`firstLine` and `fit`** (MIK-L31, focused expression cards) number the gutter from the excerpt's
-first line in its file and let the editor size to its content instead of full height. **`marks`**
+first line in its file and let the editor grow to its content without an inner scroll box or height cap; the fitted review reading column owns scrolling.  **`marks`**
 (MIK-L34) draws the reviewer's per-hunk intent markers; omitted, no mark gutter exists. **`highlightedLines`**
 (MIK-R79) takes a one-based inclusive `[first, last]` pair on the file's own numbering; the pane adds a
 `citationHighlight` decoration over those lines (`cm-citedLine`, `data-located`, `data-line`) and
@@ -28,7 +28,7 @@ changes nothing.
 
 A `ref` points at the host div; an effect awaits `langExtension(language)` (the `@codemirror/lang-*`
 packs are code-split, so a language is loaded only when first opened), guarded by a `disposed` flag
-against a late resolve after teardown. The extension set is the marks gutter, `numberedFrom(firstLine)`,
+against a late resolve after teardown. The extension set is the marks gutter, `numberedFrom(firstLine)`, an optional trayLineGutter when repository, scope and path are all supplied,
 `EditorState.readOnly.of(true)`, `EditorView.editable.of(false)`, `EditorView.lineWrapping`,
 `codeTheme`, the resolved language when one exists and the citation highlight when asked. Cleanup sets
 `disposed`, calls `drawn(null)` and destroys the view. The effect deps include `highlightedLines`, so a
@@ -52,6 +52,8 @@ the file's own line numbers.
 
 No additional work is asserted by this card.
 
+`trayLines` supplies a repository/scope/path target. The File Viewer passes it through DualPane; absent or incomplete identity supplies no tray gutter, so other callers retain their existing pane. The effect tracks those three primitive target values and rebuilds if the target changes. FilePane delegates line collection to the gutter; it creates no chat or message body.
+
 ## Evidence
 
 ### Docs References
@@ -72,3 +74,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The File Viewer-only optional tray target enables the line gutter; other panes omit it. [16]
+- Fitted review source grows into the reading column without an inner scroller. [17]

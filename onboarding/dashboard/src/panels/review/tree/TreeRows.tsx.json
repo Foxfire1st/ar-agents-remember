@@ -1,0 +1,131 @@
+{
+  "path": "dashboard/src/panels/review/tree/TreeRows.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-60GFP7",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-propagation",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "Uses the row own recorded effect labels in the accessible name and its displayed reason, except Memory currentness explicitly names currentness.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:5eadbc861e67d6f41beadc3766671016ea09612be1c67555076f5ba6297b7a24",
+        "locator": {
+          "kind": "symbol",
+          "name": "CountsReason"
+        }
+      },
+      "id": "RLZ-6SP7DC",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The tree recognizes a signed count suffix, keeps both signs/numbers as text and applies the existing mint/alarm style owners; non-count reasons retain their original text.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-D0892J",
+      "invariant": "INV-PKFP2R",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 2",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "OutlineNode was replaced by the new family/subject/location/group row functions; add FamilyRow/LocationRow/GroupRows if the writer admits separate precise realizations.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectRow"
+        }
+      },
+      "id": "RLZ-K8M23Z",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "Keeps the eligible recorded effect sequence in the compact row accessible name while the shared model owns its change/traversal facts.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function FamilyRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+            "content": "sha256:f68743484863d361cb21f777e875d36b6dc75487ee8d645b812d8d84f47fc806",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function SubjectRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+            "content": "sha256:93193c50bd95366f9440368621ed27a3f67125c98eca5fba27909c4d2fffd5ae",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Render accessible one-line family, invariant, changed-location and group rows.\n\nAnchor: \"export function LocationRow({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+            "content": "sha256:9a39952fc97cacc558d0b4d3d6efc81ce3627dc6dc9dff59e21ee72b86c2e804",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

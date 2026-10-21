@@ -6,10 +6,14 @@
 
 ## Purpose
 
-The wire vocabulary of **one inventory entry opened into its actual content** (ICR-R03@v1). The
-review's Source pane lists changes; this module is the shape of what one of those rows expands *into* —
-both bound endpoints' content, the generation they were read at, the measurement that bounded the
-path, and why the path was opened at all (`admission`).
+The retained backend vocabulary of one path's actual content at both requested endpoints (ICR-R03@v1): the side states and bytes, requested generation, path-bound measurement and admission. A4-F5 removes the dashboard SourceContent renderer and source-content client, while these models, the application reader and serving endpoint remain. Their presence does not imply the removed Full file UI still runs.
+
+The earlier UI introduction is preserved as historical context:
+
+> The wire vocabulary of **one inventory entry opened into its actual content** (ICR-R03@v1). The
+> review's Source pane lists changes; this module is the shape of what one of those rows expands *into* —
+> both bound endpoints' content, the generation they were read at, the measurement that bounded the
+> path, and why the path was opened at all (`admission`).
 
 It is a separate module from `models/knowledge/review.py` for two reasons the module's own docstring
 states: it answers a different question (not "what did this task change" but "what exactly do these two
@@ -128,13 +132,24 @@ methods are the only logic: this module computes nothing.
   `requested_generation`, so unchanged context can never be presented as a change or vice versa.
 - **One outcome per result.** A content result carries no refusal and a refused result carries no
   expansion; the two can never be mixed.
-- **This module is vocabulary only.** It selects nothing, ranks nothing, reads nothing and writes
-  nothing; the reader is `application/review_source_content.py` and the renderer is
-  `dashboard/src/panels/review/SourceContent.tsx`.
+- **This module is vocabulary only.** It selects nothing, ranks nothing, reads nothing and writes nothing. The reader remains application/review_source_content.py; the serving endpoint carries these values. The former dashboard SourceContent renderer is retired.
+
+The prior consumer boundary is preserved as history:
+
+> - **This module is vocabulary only.** It selects nothing, ranks nothing, reads nothing and writes
+>   nothing; the reader is `application/review_source_content.py` and the renderer is
+>   `dashboard/src/panels/review/SourceContent.tsx`.
 
 ### Todos
 
 None recorded.
+
+## Source-content transition and retained historical references
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. (historical reference 16)
+> - **The renderer that decides from `state` and never from text: both-present draws the shipped diff, otherwise each textual side is drawn as content beside a note that no diff is claimed.** (historical reference 17)
 
 ## Evidence
 
@@ -147,10 +162,12 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-Every claim on this card is checkable in the shipped candidate: the module's own docstring and two
-validators, the base vocabulary it extends, the read that fills these values in
-`application/review_source_content.py`, the route and client that carry them, and the renderer that
-decides from `state` rather than from text.
+Current contract statements are grounded in this module's validators, its shared base vocabulary, the application reader and the retained serving endpoint. The previous client/renderer evidence describes the removed frontend source epoch; it is not a current consumer or execution claim.
+
+> Every claim on this card is checkable in the shipped candidate: the module's own docstring and two
+> validators, the base vocabulary it extends, the read that fills these values in
+> `application/review_source_content.py`, the route and client that carry them, and the renderer that
+> decides from `state` rather than from text.
 
 - **The module's own statement of why the vocabulary is separate from the review payload and of the three structural prohibitions it carries.** [1]
 - The published surface: the request, the result, the expansion, the side, and the three closed literal sets. [2]
@@ -167,8 +184,6 @@ decides from `state` rather than from text.
 - The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. [13]
 - **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** [14]
 - The transport that accepts this request and serializes this result: the third review route, the selector value and the port type. [15]
-- The client mirror of this vocabulary, which keeps an omitted field absent rather than defaulted. [16]
-- **The renderer that decides from `state` and never from text: both-present draws the shipped diff, otherwise each textual side is drawn as content beside a note that no diff is claimed.** [17]
 - **The cases that hold the vocabulary to its own prohibitions over real objects: each non-text kind, a stated bounded expansion, the requested generation served after the branch advanced, and the two admitted measurements.** [18]
 
 ### Cross-Repo References
@@ -177,3 +192,7 @@ No cross-repository behavior is implemented in this file. It declares value shap
 namespace's review and carries no identity that ranges beyond the repository the request names.
 
 No meaningful cross-repo references found.
+
+
+- The retained serving request parser and serializer carry this backend vocabulary; the former dashboard wire mirror is retired. [16]
+- Current model validators preserve per-side text/state constraints, attributed-unchanged admission and one content-or-refusal outcome; the former state-decided SourceContent rendering is historical. [17]

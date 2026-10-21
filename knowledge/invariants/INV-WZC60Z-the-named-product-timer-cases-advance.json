@@ -29,6 +29,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The named product-timer cases advance the fake clock and assert boundary effects instead of racing real timers.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

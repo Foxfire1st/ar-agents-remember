@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The captured shared-region proof detects duplicate card/row rendering and loss of an individual entry identity, both of which would misstate what was reviewed."
+  },
+  "applicability": "Changed card-read entries rendered by the review page change-set model, within one comparison.",
+  "conditions": [
+    "An entry identity names entry id, after side when recorded else before side, named path, resolved mapped range when available and all four comparison trees.",
+    "A code-without-invariant hunk identity names its path, mapped before/after spans and the two code trees.",
+    "A shared region requires the same entry kind and both sides to name the same path/range or absent-file region; unresolved/unreadable sides do not merge.",
+    "The first location draws the shared entries; others retain identity keys as aliases and draw no duplicate row/card. Counts remain by entry, not drawn card.",
+    "A subject with multiple family occurrences draws its blocks at the first occurrence only."
+  ],
+  "exclusions": [
+    "Coalescing merely equal paths with distinct mapped regions.",
+    "Replacing per-entry identities or authored rationales with the identity of the first entry.",
+    "Claiming every family occurrence is a separate drawn block.",
+    "Recorded-source-expression grouping by path and recorded source identity, owned by INV-XX178P3W; that route is not the review page's mapped-region drawing."
+  ],
+  "id": "INV-G869AQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 41, exact id MIK-R89@v2 rule 13 · block identity; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 90, exact id W1; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 205, exact id L89-R1-017; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 16, exact id L89-R1-017; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "INV-XX178P3W owns recorded source-expression grouping; this entry owns comparison-local mapped-region drawing only.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; original captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0.",
+        "Exact source item judgments and original producer data remain separate in review-page-analysis/hunk-judgments.batch3.json; no execution or acceptance claim.",
+        "Covered persisted worklist items: sha256:ce4bff20a0b2598f17aa04f7841486a6981b7896505e2d2a70f110d6058d3cfa"
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP02",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Changed entries at one shared region draw one tree location and one code card, while every entry keeps its distinct comparison-bound identity, authored line and entry-based accounting.",
+  "status": "proposed",
+  "supersedes": []
+}

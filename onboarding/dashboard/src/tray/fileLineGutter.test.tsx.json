@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/tray/fileLineGutter.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks scoped line/range picking through the File Viewer gutter.\n\nAnchor: \"it('takes one line per click; shift-click extends the range from the last clicked line', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a63a36718c20d1ed774cfe31b7b5aef5700b00",
+            "content": "sha256:70772a714492f5749ac3b5443834c8c5b7a922c2697ce2ecbe7c285f75fa5ae9",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks scoped line/range picking through the File Viewer gutter.\n\nAnchor: \"it('reaches the line ⊕ by keyboard: one named tab stop that takes a line or a range, and keeps its focus', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a63a36718c20d1ed774cfe31b7b5aef5700b00",
+            "content": "sha256:550ccbfc5aef6461e8fd51422e6b95a89b7636614a708c75d2e97df97b17240c",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks scoped line/range picking through the File Viewer gutter.\n\nAnchor: \"it('draws the gutter in the File Viewer’s pane only, and a click on it takes the line', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a63a36718c20d1ed774cfe31b7b5aef5700b00",
+            "content": "sha256:77026a4719abedbd8a0e0d6d4562931bbe2819b52d443a5e0c1bb069e4dc1c10",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,63 +2,30 @@
 
 ## Governing Overview
 
-[application route overview](../overview.md)
+[Owning route overview](../overview.md)
 
 ## Purpose
 
-**The two record kinds whose state is read off the code (MIK-R118, MIK-R124 rule 3).** A weakness is read
-as it was written and its anchor is observed at the read's own code tree: `current` when the recorded
-content still stands at the symbol, `stale` when it moved or the symbol no longer resolves, `unverifiable`
-when no tree could be resolved, with the reason named. A dependent's staleness is derived on every read
-and never stored: a link has moved when an anchor link's content no longer stands, when a whole-file
-link's blob differs, when the file is gone, or when a record link's stored revision differs from the one
-recorded. A document is stale when at least one link moved, current when none did, and unverifiable when a
-link cannot be observed at all. No read writes, and no byte of a record changes when its document becomes
-stale.
+Read weakness anchors and derive dependent movement at the selected code tree, while sharing one open-weakness count over an already-open knowledge index.
 
 ## Code Commentary
 
-### Logic
+weakness_list reads valid typed records in id order, filters folder/kind/open state and optionally observes anchors through the shared currentness owner. A stale anchor remains a readable marked row. Observations are cached within the read; invalid records are skipped as validator findings. open_weakness_counts now delegates to open_weakness_counts_in, which counts only open records with a path at the supplied index and omits zero-count paths.
 
-- **`weakness_list`** filters by folder, by kind and by open state, and each row names the id, the file,
-  the kind, the sentence, the state and, where it has one, the measurement and the closure. With
-  `include_closed` unset only open weaknesses are returned.
-- **`open_weakness_counts`** is the one line a card's read adds: how many open weaknesses sit on each file.
-- **`dependent_movement`** is the single derivation, shared by a mounted read and by a landing: it walks
-  the links in recorded order, skips the ones that still stand, and keeps the moved ones with what was
-  recorded and what was observed. A record link moves in the memory tree, so its row says that no code
-  commit made the change.
-- **`_moving_commit` and `_anchor_moving_commit`** attribute the movement to the commit that made it. A
-  commit that edits an unrelated constant in the same file is not the mover of an anchor whose bytes it
-  left alone, and a commit that deleted the file is named as the mover rather than described as an
-  uncommitted change. A hash is named only when that commit's recorded value is the value this read
-  observed; otherwise the row says the change is uncommitted or comes from another line.
-- **`_selected_commit`** accepts a tree's own commit, or HEAD only when HEAD's whole tree is the selected
-  tree. A captured dirty tree, or a historical tree without its commit, is not attributed through later
-  history.
-- **`dependent_list`** returns all dependents, those under a folder of documents, the stale ones, or those
-  that stand on a named code path, with each moved link and its attribution.
-- **`dependent_counts`** is the card line for the other direction: how many documents stand on each file.
+dependent_movement walks recorded links in order: record revision mismatch/missing record, whole-file blob change/absence or anchor-content movement produces a moved row. Any moved link gives stale, including any additional unverifiable rows; only unverifiable links with none moved gives unverifiable, otherwise current. This state is derived and never stored.
 
-### Conventions
+File attribution names the newest path commit only when its value matches the observed blob/absence, including deletion. Anchor attribution follows bounded newest-first path commits and requires the observed anchor transition, so an unrelated constant edit is not called the mover. Selected commit provenance is exact, or HEAD only when its whole tree matches; dirty/unpaired/historical trees without that provenance do not borrow later HEAD history. Unknown attribution names its reason.
 
-- Observations are cached per anchor within one read, so a file with many rows does not resolve the same
-  anchor twice.
-- A record its own model cannot read is the validator's finding, not a row: the list skips it rather than
-  failing the read.
+dependent_list supports folder, stale-only and standing-on-code filters and emits each moved link. dependent_counts counts documents per distinct anchor/file path. Record-link movement is a memory revision fact, not a code commit. dependent_state_at returns absent for no dependent, unverifiable for invalid/read-failed data and otherwise the derived state.
 
-### Invariants And Boundaries
+## Invariants And Boundaries
 
-- **A stale anchor is marked, never refused.** A weakness whose code moved stays a readable row.
-- **Staleness is derived and not stored.** No function in this module writes, and the record file is
-  byte-identical before and after a document becomes stale.
-- **A card's read carries a count, never the text.** The weakness sentence and the document's text stay
-  out of the card line.
-
-### Todos
-
-- None.
+No function writes a record or stores derived staleness. Card counts carry quantities, not weakness sentences or dependent text. The new index-taking helper performs the same validated open-record count as the ordinary selection reader and lets focused cards reuse the bound after index already open.
 
 ## Evidence
 
-- The two record kinds' rows and the derived state are read through the existing knowledge read tool.
+- Weakness lists and the shared open-index count retain validation/filtering and omit zero paths. [1]
+- Mixed moved/unverifiable links follow explicit stale-first precedence. [2]
+- Attribution checks the observed file/anchor transition rather than unrelated path edits. [3]
+- Only exact committed provenance can select history for attribution. [4]
+- Dependent filters, per-path counts and single-record failure labels remain derived. [5]

@@ -1,0 +1,274 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:10a588fad28195b8338358d32fac328564a96e0949c4ede80fe87d2fdaf33a3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewGrid"
+        }
+      },
+      "id": "RLZ-1EJ1NP47",
+      "invariant": "INV-KKJYVB40",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "ReviewPanes was replaced by the mounted ReviewGrid.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:8e958b03ff4723089b081dc7b4493053f63608e8cd1287dfa6fd5256466f4ba7",
+        "locator": {
+          "kind": "symbol",
+          "name": "grid"
+        }
+      },
+      "id": "RLZ-3TK8H9",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Uses a visible14px column gap,12px at-or-below1600px, and a one-column stacked layout at40rem.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:10a588fad28195b8338358d32fac328564a96e0949c4ede80fe87d2fdaf33a3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewGrid"
+        }
+      },
+      "id": "RLZ-43VH1H",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It keeps the mounted tree in a CSS-sized track and stacks it only at40rem.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:10a588fad28195b8338358d32fac328564a96e0949c4ede80fe87d2fdaf33a3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewGrid"
+        }
+      },
+      "id": "RLZ-CSVNKK",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Assigns the chosen tree width when shown and wires the named shared left resize handle to that class setter; hiding does not replace the stored value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:87690df0624452d919c5c6acbf4ed0180047b945bec09194c9e34d72b6dfa5e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "REVIEW_TREE_WIDTH_KEYS"
+        }
+      },
+      "id": "RLZ-D95VPV",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Defines separate persisted tree keys for wide and narrow width classes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:9d4ad5bff98a4235fd157aa5d55cf6f60ae47582fee601bd5f66447863710587",
+        "locator": {
+          "kind": "symbol",
+          "name": "NARROW_CLASS"
+        }
+      },
+      "id": "RLZ-ER5GJK",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Chooses the at-or-below1600px tree class, rather than deriving class from chat placement.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:f2abd97ee57d477d54729fee334707ed254a6d3deb2747135ac332a7733517b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTreeWidth"
+        }
+      },
+      "id": "RLZ-G0HS8H",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps both tree class states through usePersistedNumber and selects the matching width/setter.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:db8c5db8fef69a697ca0cf67adefcd7f71fb06e8b0f6a83c06b0a8889441deac",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeColumn"
+        }
+      },
+      "id": "RLZ-H0K643",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Its clipping stays non-scrolling and only the stacked width has the45dvh tree cap.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:5c201614d0a269878a554cb56d9cb7bacd8a6969c62f1b327c2381228660c88b",
+        "locator": {
+          "kind": "symbol",
+          "name": "REVIEW_TREE_WIDTH_DEFAULTS"
+        }
+      },
+      "id": "RLZ-HFM6S7",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Defines tree defaults 340px wide and292px narrow, used only when the respective numeric preference is absent/non-finite.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:8e958b03ff4723089b081dc7b4493053f63608e8cd1287dfa6fd5256466f4ba7",
+        "locator": {
+          "kind": "symbol",
+          "name": "grid"
+        }
+      },
+      "id": "RLZ-K3SH3S",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Binds the tree track to the ReviewGrid width variable beside minmax(0,1fr) reading content; the responsive40rem grid stacks. This is track release, not another numeric-width preference.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:10a588fad28195b8338358d32fac328564a96e0949c4ede80fe87d2fdaf33a3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewGrid"
+        }
+      },
+      "id": "RLZ-Q95FT7",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Changes the shown tree track variable to0px while keeping the tree node mounted and aria-hidden, and draws its resize handle only while open. The reading column remains the adjacent grid child.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:db8c5db8fef69a697ca0cf67adefcd7f71fb06e8b0f6a83c06b0a8889441deac",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeColumn"
+        }
+      },
+      "id": "RLZ-YH1ZPN",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Uses visibility:hidden for the closed tree and display:none at40rem and narrower, with no closed-tree border; closing does not unmount its contents.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own tree/reading grid, persistent tree width per wide/narrow class, retained hidden tree and bracket shortcuts.\n\nAnchor: \"export const reviewRoot = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+            "content": "sha256:3f6c705feaaa4a2421d5982fde03951f77f5e74a48769706cf9a84c89edfbcf5",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own tree/reading grid, persistent tree width per wide/narrow class, retained hidden tree and bracket shortcuts.\n\nAnchor: \"const grid = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+            "content": "sha256:3d40aa7dfc7ea5af81d938626551f3d0dbe465461605482848d245d27b7f876d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own tree/reading grid, persistent tree width per wide/narrow class, retained hidden tree and bracket shortcuts.\n\nAnchor: \"const treeColumn = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+            "content": "sha256:709540ed434cca14b9855d96573080496734356eef32d6058d21e109ddbe5960",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

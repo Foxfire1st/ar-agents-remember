@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/review/tree/treeStyles.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+        "content": "sha256:14eba404ad24300a67c9c822073d2165dc2225ddf8f02f7aebf70980ff3dea10",
+        "locator": {
+          "kind": "symbol",
+          "name": "scroller"
+        }
+      },
+      "id": "RLZ-YKZVYB",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The inner tree scroller takes flex/CSS height, contains overscroll and applies its 45dvh cap only in the stacked max-width 40rem rule.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own tree CSS height/scroller, one-line rows, responsive control fitting, pinned block, count colors and popup shape.\n\nAnchor: \"export const aside = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "content": "sha256:a995cd1baa17fcb718bf47a991e68998f9dcb416b95a706ac4ddc1de1d14835f",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own tree CSS height/scroller, one-line rows, responsive control fitting, pinned block, count colors and popup shape.\n\nAnchor: \"export const head = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "content": "sha256:32638777d39f72a4ecb214525d6e7d112b65a4199ef9c5990ef19292c38121cb",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own tree CSS height/scroller, one-line rows, responsive control fitting, pinned block, count colors and popup shape.\n\nAnchor: \"export const tools = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "content": "sha256:aaff09d75e80bac78b75f74118e3f5e53cfa3e6a2769526a7344e57cf35ad120",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

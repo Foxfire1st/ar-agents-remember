@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
-        "content": "sha256:71a73986f79d0da400e995914726e4496c3190010cab35b7eddb72c05295ae51",
+        "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+        "content": "sha256:941aca961d2d96df42e6170ff7e6d45814074b25c567290660e1f1a706af973c",
         "locator": {
-          "end": 62,
+          "end": 93,
           "kind": "line_range",
-          "start": 49
+          "start": 55
         }
       },
       "id": "RLZ-GJM2AWPM",
@@ -18,105 +18,75 @@
       },
       "rationale": "The registered summary route delegates to IntentSummaryCache: body-bearing counted, partial and unavailable typed answers use HTTP 200; a matching conditional validation returns an empty 304 with ETag for retained bytes. A process without the summary port returns the named 503 refusal. Transport validation errors are not claimed to be enumerated by these typed-result cases.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+        "content": "sha256:e5db558067e98cb79b734c259437e580dfe96660c8b1d672efbe97659832afc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_review_summary_route"
+        }
+      },
+      "id": "RLZ-ZC5XSH",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The summary route forwards the selected number, preserving typed 200 unavailable responses even for a negative recorded-comparison query.",
+      "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "The transport uses the task-context summary port and the shared conditional cache.",
+    "7": {
+      "note": "Wired/default/numbered transport and negative-number response preserve typed status behavior.\n\nAnchor: \"def register_review_summary_route(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
-            "content": "sha256:fe724a53bbaf6d3da25cb3b4cf8fe9fcd13d56d20177acb751d9f1b060e17648",
+            "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+            "content": "sha256:e5db558067e98cb79b734c259437e580dfe96660c8b1d672efbe97659832afc9",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The unwired answer: named, and never a zero.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
-            "content": "sha256:e605b27e3db38513a69c151e95f55bb108a57a684869c3beebd0ad1301207e7d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_UNWIRED_SUMMARY"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The route delegates typed-body or conditional-304 responses, with 503 when unwired.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22ca6abf716d87dd794857b061fe128d03769c93",
-            "content": "sha256:71a73986f79d0da400e995914726e4496c3190010cab35b7eddb72c05295ae51",
-            "locator": {
-              "kind": "symbol",
-              "name": "register_review_summary_route"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "App composition registers the collaborator summary port with the app-owned change-set cache.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "09d3ce0fe82e391b5934a045de836ddd1097568b",
-            "content": "sha256:0aadabdd32bf3d4edd45a0bde956923ad169d3f55eb28a41355216e7f8a6a6a1",
-            "locator": {
-              "end": 181,
+              "end": 72,
               "kind": "line_range",
-              "start": 172
-            },
-            "path": "mcp/src/agents_remember/serving/app.py"
+              "start": 55
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "The optional collaborator slot the route reads.",
+    "8": {
+      "note": "Negative numbers become a named unavailable comparison answer with no count.\n\nAnchor: \"def _negative_comparison(repo: str, master: str, leaf: str, comparison: int) -> dict[str, Any]:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
-            "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
+            "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+            "content": "sha256:aec8ced4afe9ba4f92850647755206e7cce7fdb3b803d827c7dc19db9aac9e38",
             "locator": {
-              "kind": "symbol",
-              "name": "review_intent_summary"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_common.py"
+              "end": 93,
+              "kind": "line_range",
+              "start": 75
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "The fixture checks counted and unavailable bodies as 200, and the unwired process as 503; it is not a separate partial-state or conditional-304 test.",
+    "9": {
+      "note": "Unwired is a named process-level failure rather than zero counts.\n\nAnchor: \"KNOWLEDGE_REVIEW_SUMMARY_ROUTE = \"/api/review/intent/summary\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b37687afc7aa7645e881bebbea3d0488461f99bb",
-            "content": "sha256:245ba3f5761cd3669b5ad22b755d749d3b4d6b4adeddee4c233d2885e04a4eda",
+            "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+            "content": "sha256:4185ac43cfba9d11ccc39c509ccc51da3ada610dfb08c54c4fd91e8e192b68b1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_route_answers_every_typed_state_in_the_body"
-            },
-            "path": "mcp/tests/test_review_intent_summary.py"
+              "end": 52,
+              "kind": "line_range",
+              "start": 41
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     }

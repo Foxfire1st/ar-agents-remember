@@ -6,10 +6,14 @@
 
 ## Purpose
 
-The one owner of the question a reviewer asks *after* the review has listed what a task changed:
-**what does each of the two bound objects actually hold at this path**. The review's Source pane lists
-changes; this module is what one of those rows opens into, and it answers from the two tree ids the
-listing published and from nothing else.
+The retained backend owner of the question **what does each of the two bound objects hold at this path**. Its caller supplies the exact tree pair and task context; the reader admits the path and returns typed content or refusal. A4-F5 removes the dashboard SourceContent consumer and card Full file expansion, while the application reader, request/result models and registered source-content endpoint remain. The current comparison viewer is a separate range-based path, not a new renderer of this API value.
+
+The original UI introduction is preserved as historical context:
+
+> The one owner of the question a reviewer asks *after* the review has listed what a task changed:
+> **what does each of the two bound objects actually hold at this path**. The review's Source pane lists
+> changes; this module is what one of those rows opens into, and it answers from the two tree ids the
+> listing published and from nothing else.
 
 Three properties are the reason the module exists rather than living inside the review adapter:
 
@@ -150,9 +154,17 @@ Nothing here writes a file, holds state, or selects a record.
 
 ### Todos
 
-None recorded. A live-browser end-to-end scenario against a started server is not measured here (the
-route is exercised through the real `TestClient` composition and the pane at the real `ReviewSurface`
-with `fetch` stubbed); it is named as a boundary rather than a deferred implementation item.
+The original verification boundary below refers to the source-content UI epoch. A4-F5 removes that pane and its fetch-stubbed cases; this update reads retained API source and executes no tests or browser.
+
+> None recorded. A live-browser end-to-end scenario against a started server is not measured here (the
+> route is exercised through the real `TestClient` composition and the pane at the real `ReviewSurface`
+> with `fetch` stubbed); it is named as a boundary rather than a deferred implementation item.
+
+## Source-content transition and retained historical references
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. (historical reference 32)
 
 ## Evidence
 
@@ -183,7 +195,6 @@ that measure it against real repositories.
 - The third port the composition root supplies, and the wiring that gives it the real owner. [28]
 - The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. [29]
 - **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** [30]
-- The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements. [32]
 
 ### Cross-Repo References
 
@@ -219,3 +230,6 @@ No meaningful cross-repo references found.
 - **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
 - The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. [26]
 - **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
+
+
+- The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer. [32]

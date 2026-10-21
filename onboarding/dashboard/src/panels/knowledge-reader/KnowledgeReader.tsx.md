@@ -22,6 +22,7 @@ cited code. The page is one of the four product views and its state survives a t
   `ReaderOutline`). The phone and mid-width layouts hide panes through `data-browsing` and
   `data-picker`; "Browse" and "Document" swap the tree and the document at 40rem and narrower, while
   the 40.001–70rem band swaps the aside for the document picker.
+- **The shared sidebar controls.** The document column holds the shared tree toggle at its left edge and the outline toggle at its right edge. `useReaderSidebars` owns `knowledge` left/right state. Hiding a panel and its resize handle uses the shared sidebar properties while the tree stays mounted with its repo/commit key. The tree toggle is hidden at 40rem and below, where Browse owns tree navigation; the aside toggle is hidden at 70rem and below. A citation opened in the local aside first shows that aside, including when the developer had hidden it. The existing narrow-screen code navigation remains a page navigation.
 - **The address and the answer.** `useReaderNavigation` owns the hash and the Back history;
   `useAddressAnswer` reads the address's own view and ignores an answer whose hash moved on
   (`ViewPane` shows it only when its hash still matches; a transport failure is named "The reader
@@ -78,11 +79,7 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The full-width shell with a resizable tree, document and aside. [12]
 - One selection-local records acquisition is created here and shared with the tree and toolbar. [13]
-- The address's own view is read and a late answer is hidden. [14]
-- A single cited target opens beside the text, or as its own page at 70rem and below. [15]
-- The outline and cited code share the aside. [16]
 - The tree receives the shared records loader. [17]
 - The outline that navigates the document's chapters. [18]
 - The cited code pane that renders the File Viewer's code primitive. [19]
@@ -90,3 +87,12 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The full-width shell with a resizable tree, document and aside. [12]
+- The address's own view is read and a late answer is hidden. [14]
+- A single cited target opens beside the text, or as its own page at 70rem and below. [15]
+- The outline and cited code share the aside. [16]
+- Knowledge uses the shared left/right sidebar state; opening a citation explicitly opens the aside before setting that citation. [20]
+- The tree and its handle receive the shared hidden-panel properties without unmounting KnowledgeTree. [21]
+- The tree and outline toggles stand in the document column outside their panels. [22]
+- Responsive rules hide the tree toggle at 40rem and below and the aside toggle at 70rem and below. [23]

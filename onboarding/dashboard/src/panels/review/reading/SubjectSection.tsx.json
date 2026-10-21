@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/reading/SubjectSection.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+        "content": "sha256:4d5974c05ada1df2e49c6ab1c030097c0d7cc37b3e218139c585c9853150f643",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyHeadingLine"
+        }
+      },
+      "id": "RLZ-1T64K8",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The family heading is a quiet host for its own named comparison-bound family offer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+        "content": "sha256:4faa7b9d407e264dcff0fd2d5106f35e22b482d4f78575d629b2b15f263e1772",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubjectSection"
+        }
+      },
+      "id": "RLZ-VXHGN6",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The first drawn invariant section is its own quiet host for the comparison-bound named invariant offer; repeated-location pointers do not add another section offer.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render invariant sections and family headings from shared order.\n\nAnchor: \"function EffectBadges({ effects }: { effects: string[] }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:5416288ae13bfd375f99b8904da3e1731546036401bbce684d34a343c475b35e",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Render invariant sections and family headings from shared order.\n\nAnchor: \"function Blocks({ node }: { node: SubjectNode }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:80b292a827e61b1605a9548a40fe5767a7f8a04e5f6e08b030d0b0bc2d48a32f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Render invariant sections and family headings from shared order.\n\nAnchor: \"function locationFacts(node: SubjectNode): LocationFacts \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:cb4e5f5eb02a4d5fb4f60f9ca58b3e94cfe01799e88c786727335a1216c2e2ca",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

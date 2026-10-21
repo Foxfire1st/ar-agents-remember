@@ -20,6 +20,8 @@ The preserved table above is descriptive metadata, outside the operative promise
 
 ## Construction
 
+- `SidebarToggle.tsx` supplies the shared native sidebar button, per-page/per-side `useSidebar` visibility state, and props that hide a resizable panel and handle in place. The button takes its accessible name, expanded state, controlled element and optional key hint from the caller; its icon marks the panel side and fills that band while open. By default the hook remembers each page/side choice under `cockpit.sidebar.<page>.<side>`; callers can choose unremembered state and an explicit initial value. Hiding leaves the panel and handle mounted, removes them from layout and makes the panel inaccessible. Callers place the button outside the panel they hide and own page integration. The local test source checks native click/Enter/Space activation, accessible state and independent remembered/unremembered choices.
+
 - `Panel.tsx` supplies a self-scrolling box with no top padding and a sticky header band, so rows scroll under the header. It accepts `title` or a custom `head`, plus a sizing `className`. Its opt-in `fill` variant changes the self-scrolling block into a bounded flex column with hidden overflow. Engine Room uses this variant for its internal layout.
 - `ModeBar.tsx` wraps React Aria's `ToggleButtonGroup` with single selection and no empty selection. Its source documents roving focus and arrow-key navigation. Panda selected/focus conditions style its shared `viewTabButton` class; spacing narrows below 40rem.
 - `viewTabLook.ts` supplies shared metrics and presentation for `viewTabButton`, `launcherButton`, `launcherSelect` and `launcherChip`; `columnTabButton` carries the same authority at compact Operations scale. Start adopts the selected-tab look and Refresh the unselected look. Selectors preserve source letter case and draw an arrow; callers supply full-value and provenance hover text. These recipes do not resolve launch choices, permission or control availability.
@@ -63,3 +65,8 @@ Test descriptions above report assertions present in source, not test execution 
 
 - Eligible large Markdown uses shared retained syntax, clones before later transforms, and opts out for short text or supplied component overrides. [11]
 - Cache assertion source checks parse-once across view remounts, transform isolation and the returned view's fresh requirement callback, not execution acceptance. [12]
+
+- Shared sidebar state uses independent page/side keys and optional persistence. [13]
+- Hidden panel and handle props preserve mounted state while leaving layout and reachability. [14]
+- The shared native button exposes supplied sidebar identity and expanded state with a side-aware icon. [15]
+- Local assertion source covers activation, accessible state and remembered or unremembered visibility. [16]

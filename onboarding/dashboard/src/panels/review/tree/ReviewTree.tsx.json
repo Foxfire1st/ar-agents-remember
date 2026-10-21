@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/tree/ReviewTree.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+        "content": "sha256:c2e2650376c6071852f8436f00d49f577dfc79074d661a5fed8056cf9eea5ba1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTree"
+        }
+      },
+      "id": "RLZ-JPGQT0",
+      "invariant": "INV-WR2WAJ",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 4",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It composes the shared-model subject, changed-location and group rows above the pinned Worklist/lane block in one sidebar scroller.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+        "content": "sha256:c2e2650376c6071852f8436f00d49f577dfc79074d661a5fed8056cf9eea5ba1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTree"
+        }
+      },
+      "id": "RLZ-QS7G44",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The navigation renderer moved out of FamilyTree.tsx.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Render shared model, controls, subject/location/group rows, pinned worklist/lane and lane files.\n\nAnchor: \"function headCounts(model: ChangeSetModel, files: ReviewTreeProps['changedFiles']): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:9905bfbfa25cbd8871dd9fe5145efa0daf37e6cfdd1b22dad354a24cd33eea7d",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Render shared model, controls, subject/location/group rows, pinned worklist/lane and lane files.\n\nAnchor: \"function ViewSwitch({ view, enabled, onView }: { view: TreeView; enabled: boolean; onView: (view: TreeView) => void }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:544d8887f501bdae72e9e618bf4725b21291b0d64d60265e862e47b043498a12",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Render shared model, controls, subject/location/group rows, pinned worklist/lane and lane files.\n\nAnchor: \"function selectionRowKey(model: ChangeSetModel, selection: ReviewSelection \\| null): string \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:76abd08bd705ebd34083f7ccd6fed337cb1736ffe8138ff6864578b4b130f9d2",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

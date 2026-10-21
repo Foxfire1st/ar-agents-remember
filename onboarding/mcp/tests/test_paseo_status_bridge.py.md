@@ -17,3 +17,10 @@ The real Node bridge script also runs against a scripted daemon client that enfo
 
 - The scoped current source carries the module/document behavior described above. [1]
 - The real Node bridge script also runs against a scripted daemon client that enforces 200-entry listing pages. Cases pin complete pagination, archived-ID filtering, the ten-page bound and `hasMore` without a next cursor. A tree-reader composition proves missing IDs from an incomplete census stay `agents: null`, while a completed listing resolves the recorded live/archived agents. This is native-script/controlled-client evidence, not installed-host consumption. [2]
+
+## Developer seats use the completed listing
+
+The recorded-agent case also composes `seat_list` over the same paged native-script fixture: a complete listing includes the Manager on page two and returns `complete: true`; a cursorless truncated listing returns no seats and `complete: false`. This extends the controlled census evidence to the developer's recipient list without turning an unreached agent into a proven absent one. It remains controlled-client evidence, with no installed-host consumption asserted.
+
+- The same complete/incomplete census is applied to the document tree and developer seat list. [3]
+- The scripted native listing retains its page and termination bounds. [4]

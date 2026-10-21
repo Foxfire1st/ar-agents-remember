@@ -2,28 +2,30 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Pin exact native intent-summary HTTP reuse, typed refusal freshness and bounded dependency observation.
+Declare exact native intent-summary HTTP reuse, refusal freshness, consumed-input invalidation and finite dependency/age/size bounds over controlled Git and converted-memory fixtures.
 
 ## Code Commentary
 
-Real Git/converted-memory fixtures call the composed summary route and compare responses to the native reader. Unchanged conditional reads skip Git and recomputation; code, memory, index, HEAD and comparison-record changes invalidate. Missing/restored objects keep the native unavailable/count semantics, including restoration racing a refusal read. Derived index timestamp-only touches reuse while changed bytes reopen. Unreadable observations stay uncached; dependency/result histories are bounded and unrelated master notes are not walked. A deliberately slow summary port cannot serialize task/file/master reads. These are in-process fixture assertions, not a live aggregate latency benchmark.
+The composed TestClient route compares counted/unavailable bodies with the native summary. Conditional304 avoids recounting and computational Git children; _reads deliberately excludes working-view status and object-store count-objects freshness checks. Code edits with restored timestamps, memory edits, real-index changes, HEAD and comparison-record edits invalidate before settling.
 
+Closed-record object loss and later restoration retain the owner refusal/count semantics. Timestamp-only index touches reuse; changed index bytes reopen; unobservable index reads require native production each time. Refused live/closed reads can settle, while restoration during an unavailable production must not bind that refusal to the restored object. The wrapper now intercepts summarize_review, the current supplied-resolver seam.
 
-## Current Behavior
+Dependency/value histories stay bounded at the configured capacity, and unchanged summary inputs do not scan40 versus4000 unrelated note files. A deliberately held summary reader permits task, file-diff and master HTTP reads to complete on another worker. Shared named hang guards and finally release protect that controlled concurrency assertion.
 
-the suite now filters the freshness-only Git children (`_reads`: the status and `count-objects` children are not summary computation) and exercises the unknown-status refusal path: a refused summary may be served again from its retained proof while a counted summary may not. The existing counted/unavailable, derived-index, object-loss and blocked-port cases remain. This supersedes the unqualified 'zero Git' phrasing in the earlier account: a working view's status child and the object census are freshness checks, not a summary recomputation.
+A movable clock checks native reproduction beyond the default age, input invalidation inside the age and recomputation after the admission table evicts an old key. Injected readers now take the optional comparison argument; the eviction assertion names the four-part repo/master/leaf/None key. The cases do not separately compare two numbered summaries or authenticate their record resolution.
+
+## Invariants And Boundaries
+
+These are declared in-process fixtures, not a native fleet latency/CPU result or fresh execution. Zero computational Git is narrower than no Git at all. Real Git commands and fixture memory edits occur only when these tests run; this card performs neither. Numbered port-shape accommodation alone does not prove distinct recorded comparisons were read.
 
 ## Evidence
 
-- Exact native counted bytes and ETag 304 reuse do not recount or spawn repeat Git. [1]
-- Native code/memory/index/HEAD/record inputs invalidate and then settle. [2]
-- Derived-index timestamp and content changes are distinguished. [3]
-- Unobservable index inputs fall back to native reads every time. [4]
-- Dependency manifests and retained values share a finite bound. [5]
-- Unchanged refusals revalidate without Git and restored objects regain counted native answers. [6]
-- A restoration during refusal composition cannot bind that refusal to new inputs. [7]
-- A blocked summary fixture does not block task/file/master HTTP reads. [8]
+- Freshness-only children are excluded; counted/conditional and input-invalidating cases retain native equality. [9]
+- Index/object/address/refusal checks keep native unavailable versus counted facts. [10]
+- Unrelated note populations are not walked and restoration during summarize_review cannot settle the prior refusal. [11]
+- A blocked numbered-shape reader permits unrelated changeset requests. [12]
+- Clock, changed-input and admission-eviction cases retain bounded reuse with a four-part summary key. [13]

@@ -1,0 +1,31 @@
+# dashboard/src/panels/review/changeSetOrder.ts
+
+## Governing Overview
+
+[Route overview](overview.md)
+
+## Purpose
+
+Build the pure ordered change-set model shared by the review tree and reading column.
+
+## Code Commentary
+
+### Logic
+
+The model combines supplied outline/catalogue facts, leaf-wide code/currentness and card entries. Subjects are invariants nested under family headings; a multi-family invariant renders its locations only at its first displayed occurrence. Without an outline the applied view is All.
+
+Priority orders by recorded effect, change kind, changed-entry count and span, then id. Authored preserves outline order; currentness ranks the least current supplied subject/entry state; memory sorts rank the highest entry value and retain the requested sort while unavailable values apply Priority with a reason.
+
+Location nodes use exact block identities, role order, resolved span and excerpt line counts. Complete excerpts get bounded line-diff counts; unavailable/truncated text retains a range/state. Changed entries sharing kind and resolved regions on both sides share one drawn row/card/keyboard stop while retaining entry identities and entry-based counts.
+
+Changed keeps real changes and explicitly selected/walked context. filterTree matches family/id/title/effect or path/symbol/role only in the tree; folded-location matches retain their subject/group row. Lane rows match their path or Code without invariant.
+
+### Invariants And Boundaries
+
+This module has no fetch or React state and creates no intent judgment. Counts remain undefined until card reads answer; shared drawing does not merge entry identity or turn missing text into an empty side.
+
+## Evidence
+
+- Exact locations, shared-region drawing and deterministic ranking [1]
+- One model/view/order for both consumers [2]
+- Tree-only matching and reachable folded groups [3]

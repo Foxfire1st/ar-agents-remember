@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
         "locator": {
-          "end": 533,
+          "end": 721,
           "kind": "line_range",
-          "start": 478
+          "start": 720
+        }
+      },
+      "id": "RLZ-0S1X9J",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the selected page repository without fabricating a task binding or recipient, so downstream taskless filing can use the current repository context.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+        "locator": {
+          "end": 604,
+          "kind": "line_range",
+          "start": 538
         }
       },
       "id": "RLZ-1Q53AD",
@@ -22,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
         "locator": {
-          "end": 533,
+          "end": 604,
           "kind": "line_range",
-          "start": 478
+          "start": 538
         }
       },
       "id": "RLZ-405M48",
@@ -41,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
         "locator": {
           "kind": "symbol",
           "name": "MainLayers"
@@ -59,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
         "locator": {
           "kind": "symbol",
@@ -77,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
         "locator": {
           "kind": "symbol",
           "name": "RightRail"
@@ -95,7 +114,7 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:4d69d5707af5dc8db9b35ba6946016a988176734a494c6a82ffa851172be7d90",
         "locator": {
           "kind": "symbol",
@@ -113,7 +132,79 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+        "locator": {
+          "kind": "symbol",
+          "name": "railedColumns"
+        }
+      },
+      "id": "RLZ-97RX3X",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Derives actual shell tracks from Operations sidebar visibility and review chat placement; closed/overlay review chat has a zero track, and the 40rem shell is one column.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownPage"
+        }
+      },
+      "id": "RLZ-AT1CK7",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY02-shown-page-provenance",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names Review, File Viewer, Operations or the selected dashboard page label for panel passage provenance. This names current context; it does not collect a highlight or replace the explicit-add requirement.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+        "locator": {
+          "kind": "symbol",
+          "name": "shellFlags"
+        }
+      },
+      "id": "RLZ-AYAH1W",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Classifies a review as the Operations railed-page slot rather than a change-set takeover; keeping it out of takeover preserves the existing right-rail parent. This is classification support, not a new full-bleed or unrelated page-retention guarantee.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetTakeover"
+        }
+      },
+      "id": "RLZ-C54BJW",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The takeover now renders only ChangeSetViewer; the removed ReviewSurface path is supplied by the stable railed-page slot. This is the negative composition boundary supporting the one retained right-rail frame.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
         "locator": {
           "kind": "symbol",
@@ -131,12 +222,68 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+        "locator": {
+          "kind": "symbol",
+          "name": "railedColumns"
+        }
+      },
+      "id": "RLZ-D87A3M",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies the active width only to an open in-grid chat track and preserves its currentclass gutter; overlay and closed chat keep a zero track, separately from the Operations rail widths.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:f5685a93fc47e8be2d40b204967d123c4fa6f0c648271341ede69102a53a9ade",
+        "locator": {
+          "end": 643,
+          "kind": "line_range",
+          "start": 630
+        }
+      },
+      "id": "RLZ-DYQR7W",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Operations left rail remains mounted but hidden for full-bleed, review, or a closed left sidebar; MainLayers receives the two independent Operations sidebar states and hides its ordinary content while review occupies the page. The reviewed Operations control/layout state is propagated rather than reset.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:0c420cbb272cc6ea3eab256c4dd1592d377976fabb01e243e2732f69639c18b6",
+        "locator": {
+          "end": 672,
+          "kind": "line_range",
+          "start": 639
+        }
+      },
+      "id": "RLZ-EYJNC3",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-VMREN3-Cockpit-composition",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "MainLayers remains in its original position and is hidden while review is shown; the optional ReviewMain has an explicit null slot immediately before the unkeyed RightRail. RightRail receives Operations visibility and optional review-column state without being reparented or replaced.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
         "locator": {
-          "end": 176,
+          "end": 205,
           "kind": "line_range",
-          "start": 172
+          "start": 201
         }
       },
       "id": "RLZ-FZBMHD",
@@ -150,12 +297,12 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:8159a9f1af02644e3f7b7d0d71e053f914a2d8f225331e632e26ef0ce230396c",
         "locator": {
-          "end": 711,
+          "end": 829,
           "kind": "line_range",
-          "start": 697
+          "start": 815
         }
       },
       "id": "RLZ-GKR34V",
@@ -169,8 +316,44 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:ba05633139a8b3dc98955101d18b2859622ea3fe4f67c24606c01c44826fec50",
+        "locator": {
+          "kind": "symbol",
+          "name": "OperationsSidebarStrip"
+        }
+      },
+      "id": "RLZ-J78MSW",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps the Operations task-list toggle first and the River/chat toggle last on the main-column strip outside both hidden rails.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+        "locator": {
+          "kind": "symbol",
+          "name": "useCockpitShellState"
+        }
+      },
+      "id": "RLZ-JF8VR8",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Operations allocates distinct left and right shared states and hands only the shown review target to its separate review-chat state.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
         "locator": {
           "kind": "symbol",
           "name": "RightRail"
@@ -182,17 +365,17 @@
         "handoffEntry": "MIK-R122@v1 rules 2-3",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "RightRail is the one place that swapped river/chat by mount; its keepalive wrapper is what now preserves the frame element across the toggle.",
+      "rationale": "RightRail keeps one stable DocumentChat child while choosing Operations or review visibility, width and task props; toggles hide wrappers instead of removing or reparenting that child.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:40c2c67ff64a4d59bb8db430c39479f1d6bd0cb50090804414990136514daf45",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:d0dbca1576d0a6314f779cae4b7b5a0da6e7471dd7d691c5107a08d4eca6227f",
         "locator": {
-          "end": 402,
+          "end": 417,
           "kind": "line_range",
-          "start": 371
+          "start": 383
         }
       },
       "id": "RLZ-PPNW5M",
@@ -206,12 +389,50 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:f913c27a9192b5b9bd42ffe35c97ac624638ef212709341fc2bd14bedef097f6",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:330ca28f4169c431e3e762656113684377b0215fb3ecce84c1a579c9f11dbca2",
         "locator": {
-          "end": 453,
+          "end": 621,
           "kind": "line_range",
-          "start": 438
+          "start": 621
+        }
+      },
+      "id": "RLZ-PYHCH0",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies the current railedColumns result to the body grid; the authority function alone does not apply sidebar width release to the rendered layout.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:a4b49076008fcec7c66bd4d05cb617f69004fb8380dcb26b49ceed7187d4177d",
+        "locator": {
+          "end": 618,
+          "kind": "line_range",
+          "start": 615
+        }
+      },
+      "id": "RLZ-T3RK9S",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-RP09-review-shell-marker",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Marks only the shown review body as data-page=review. The existing shell rule at layout.tsx lines24–29 excludes that marker from Operations stacked rail/viewport heights, so the review uses its own narrow main-page scroll owner rather than inheriting Operations minimum heights.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:3d1a54800deb66cb3c5974783e6b722fd495214278bd1c08cf2636e239cb7e7a",
+        "locator": {
+          "end": 487,
+          "kind": "line_range",
+          "start": 476
         }
       },
       "id": "RLZ-VF6VZ5",
@@ -225,12 +446,30 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownPage"
+        }
+      },
+      "id": "RLZ-WZSWBY",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY09-shown-page-repository",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Supplies the review repository or Operations task repository as the current filing context for taskless developer messages; File Viewer leaves repository ownership to its own page, and unrelated pages supply null. This is context propagation support, not the filing transaction authority.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
         "content": "sha256:64cc963d7185772de2377f6df8b25f628adb638073399e4636cafdaf23f475c9",
         "locator": {
-          "end": 725,
+          "end": 843,
           "kind": "line_range",
-          "start": 720
+          "start": 838
         }
       },
       "id": "RLZ-XT3RN1",
@@ -244,8 +483,27 @@
     },
     {
       "anchor": {
-        "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-        "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:47f36edd7a691ac43233b2b9bb6bc8fb27fd185458575546938c4d3ea69c1335",
+        "locator": {
+          "end": 721,
+          "kind": "line_range",
+          "start": 720
+        }
+      },
+      "id": "RLZ-Y70RFK",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY02-shown-page-provenance",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the current page label and repository to the tray context consumed by the panel-selection offer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+        "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -262,12 +520,97 @@
     }
   ],
   "references": {
+    "100": {
+      "note": "Independent Operations sidebar toggles outside DetailPanel.\n\nAnchor: \"function OperationsSidebarStrip({ left, right }: { left: SidebarState; right: SidebarState }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:ba05633139a8b3dc98955101d18b2859622ea3fe4f67c24606c01c44826fec50",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 515
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Review column shares the right rail and DocumentChat wrapper.\n\nAnchor: \"export function RightRail(props: RightRailProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 454
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Operations/sidebar and review/chat column sizing.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 682
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Shown page/repository provenance values.\n\nAnchor: \"function shownPage(state: CockpitShellState): { page: string; repository: string \\| null \\| undefined } {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:38f4a63184b4908af3f66cae1db063a2dd2f1c9f54e949e16b7147b66bf1cfb0",
+            "locator": {
+              "end": 704,
+              "kind": "line_range",
+              "start": 698
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Tray button outside the view group and layer outside railed body.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 706
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "32": {
       "note": "The product bar and its order are one list.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -279,26 +622,28 @@
       ]
     },
     "33": {
-      "note": "The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.\n\nAnchor: `CockpitShell` `useCockpitShellState`",
+      "note": "The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"; \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "end": 756,
+              "kind": "line_range",
+              "start": 706
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 243,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"
@@ -306,15 +651,16 @@
       ]
     },
     "34": {
-      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.",
+      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.\n\nAnchor: \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
             }
           },
           "kind": "code"
@@ -322,15 +668,16 @@
       ]
     },
     "35": {
-      "note": "Full-bleed is derived for the product and retained machine-map views.",
+      "note": "Full-bleed is derived for the product and retained machine-map views.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 243,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"
@@ -338,15 +685,16 @@
       ]
     },
     "36": {
-      "note": "A page outside the bar mounts only through an injected view.",
+      "note": "A page outside the bar mounts only through an injected view.\n\nAnchor: \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
             }
           },
           "kind": "code"
@@ -358,7 +706,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
             "locator": {
               "kind": "symbol",
@@ -386,31 +734,33 @@
       ]
     },
     "39": {
-      "note": "The Knowledge reader the retained layer mounts.",
+      "note": "The Knowledge reader the retained layer mounts.\n\nAnchor: \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
-            "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
+            }
           },
           "kind": "code"
         }
       ]
     },
     "64": {
-      "note": "The provider around the shell, shown only for Operations with no takeover.",
+      "note": "The revalidation provider is shown only for ordinary Operations outside takeover and review.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "end": 756,
+              "kind": "line_range",
+              "start": 706
             }
           },
           "kind": "code"
@@ -418,27 +768,16 @@
       ]
     },
     "65": {
-      "note": "The imported bodyGrid declares railed versus full-bleed columns; RailedBody applies saved widths only on a wide railed view and uses one column when the live narrow-layout hook matches.\n\nAnchor: `bodyGrid` `RailedBody`",
+      "note": "RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column.\n\nAnchor: \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:9ae39934e802581d4d4d10a61c55ac5f752ad913b4119f0c8cedde7298f75c7d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
             "locator": {
-              "kind": "symbol",
-              "name": "bodyGrid"
-            },
-            "path": "dashboard/src/cockpit/layout.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
-            "locator": {
-              "kind": "symbol",
-              "name": "RailedBody"
+              "end": 693,
+              "kind": "line_range",
+              "start": 682
             }
           },
           "kind": "code"
@@ -446,15 +785,28 @@
       ]
     },
     "66": {
-      "note": "Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout.",
+      "note": "Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout.\n\nAnchor: \"const FULL_BLEED_VIEWS: ReadonlySet<CockpitView> = new Set<CockpitView>(['files', 'knowledge', 'engine', 'topology', 'chats']);\"; \"function shellFlags(view: CockpitView, changeSet: ChangeSetTarget \\| null, notesOpen: boolean) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:7d50bddd7d69bb31870ec6d78cfdc8c5f73c48264256b3b97d918a92cf5bff6a",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 167,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "code"
@@ -462,15 +814,16 @@
       ]
     },
     "67": {
-      "note": "Rail fade properties are selected by the animation permission.",
+      "note": "Rail fade properties are selected by the animation permission.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 243,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"
@@ -478,15 +831,16 @@
       ]
     },
     "68": {
-      "note": "The `chatsLayer` keep-alive class used by the Chats layer.\n\nAnchor: `chatsLayer` `MainLayers`",
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.\n\nAnchor: \"export const chatsLayer = css({\"; \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
             "content": "sha256:a718b57c94ebdab2db2252696e298395cb07ff64be08c414db4f154b56441399",
             "locator": {
-              "kind": "symbol",
-              "name": "chatsLayer"
+              "end": 280,
+              "kind": "line_range",
+              "start": 274
             },
             "path": "dashboard/src/cockpit/layout.tsx"
           },
@@ -494,11 +848,12 @@
         },
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
             }
           },
           "kind": "code"
@@ -510,7 +865,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:1d7c9e5c076b3198664d85b740ca896c119d57f87cb3528d1d4041a70f47bb63",
             "locator": {
               "kind": "symbol",
@@ -561,7 +916,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
             "locator": {
               "kind": "symbol",
@@ -573,14 +928,16 @@
       ]
     },
     "73": {
-      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.",
+      "note": "A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view.\n\nAnchor: \"export function Cockpit() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:c2dba0bd0ca0b873554bec03c99fc61d0280375361a74438758acc9dd33a6eba",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
             "locator": {
-              "kind": "file"
+              "end": 125,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
@@ -605,15 +962,16 @@
       ]
     },
     "79": {
-      "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.",
+      "note": "The frontend `Analytics` projection includes the `engineProcesses` process-map collection.\n\nAnchor: \"export interface Analytics {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e54a873b49bc2f397f95b8c8865e7b3cc06e42",
-            "content": "sha256:f3fd8d9b953873913ef26a4806484859a2b8340b498813d5633ffe3916a5f796",
+            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
+            "content": "sha256:f9a19a7892f0158c23e95cfd6ab503f54db40e03f0c9abf5756ec75ea2194a70",
             "locator": {
-              "kind": "symbol",
-              "name": "Analytics"
+              "end": 37,
+              "kind": "line_range",
+              "start": 28
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -622,15 +980,16 @@
       ]
     },
     "88": {
-      "note": "The reviewed UI contract owner `MainLayers`.",
+      "note": "The reviewed UI contract owner `MainLayers`.\n\nAnchor: \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
             }
           },
           "kind": "code"
@@ -638,15 +997,16 @@
       ]
     },
     "89": {
-      "note": "MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner.",
+      "note": "MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner.\n\nAnchor: \"function MainLayers({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
             "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
+              "end": 604,
+              "kind": "line_range",
+              "start": 538
             }
           },
           "kind": "code"
@@ -658,7 +1018,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:306832e2054f2394fcd3196d50acce4eda3ce48b61027b6db3c6995d8bb91a1b",
             "locator": {
               "kind": "symbol",
@@ -686,15 +1046,16 @@
       ]
     },
     "92": {
-      "note": "The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the River shows; the River still mounts conditionally.",
+      "note": "The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally.\n\nAnchor: \"export function RightRail(props: RightRailProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
             "locator": {
-              "kind": "symbol",
-              "name": "RightRail"
+              "end": 490,
+              "kind": "line_range",
+              "start": 454
             }
           },
           "kind": "code"
@@ -702,15 +1063,16 @@
       ]
     },
     "93": {
-      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden.",
+      "note": "The hidden chat side stays mounted but out of reach behind display:none and aria-hidden.\n\nAnchor: \"export function RightRail(props: RightRailProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f2c7b42d4bd6b9463718d09bf3b4e0aa3ee5fbe5621703a3b03f35a74f031323",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
             "locator": {
-              "kind": "symbol",
-              "name": "RightRail"
+              "end": 490,
+              "kind": "line_range",
+              "start": 454
             }
           },
           "kind": "code"
@@ -722,7 +1084,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
             "content": "sha256:4d69d5707af5dc8db9b35ba6946016a988176734a494c6a82ffa851172be7d90",
             "locator": {
               "kind": "symbol",
@@ -734,15 +1096,16 @@
       ]
     },
     "95": {
-      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.",
+      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 243,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"
@@ -750,15 +1113,16 @@
       ]
     },
     "96": {
-      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.\n\nAnchor: `CockpitShell` `startScreenWakeLock`",
+      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"; \"export function startScreenWakeLock(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:914583cacaaa8eaf18a2191473e655b54bdcd5382fcf83accfaaf27a836cfd2d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
             "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
+              "end": 756,
+              "kind": "line_range",
+              "start": 706
             }
           },
           "kind": "code"
@@ -768,8 +1132,9 @@
             "blob": "505865bf7a78f9816dc2d5544162cf9c0e92c3b0",
             "content": "sha256:4dee0d4c201a1796e31c959ca51078d0e1f8db40b32819c6ce9ecabfb47c7d89",
             "locator": {
-              "kind": "symbol",
-              "name": "startScreenWakeLock"
+              "end": 94,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "dashboard/src/data/screenWakeLock.ts"
           },
@@ -778,26 +1143,28 @@
       ]
     },
     "97": {
-      "note": "Review URL state is delegated to reviewHash: valid repo/master/leaf links choose the review takeover, history=recorded selects its durable view, and same-address hash navigation preserves the mounted reviewer subject. Hashes do not carry subject selection or choose source files.\n\nAnchor: `useCockpitShellState` `parseReviewHash` `useReviewHash`",
+      "note": "Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"; \"export function parseReviewHash(hash: string): ChangeSetTarget \\| null {\"; \"export function useReviewHash(\"; \"export function readReviewHashState(hash: string = window.location.hash): ReviewHashState {\"; \"export function writeReviewHashState(state: ReviewHashState): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
             "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "end": 243,
+              "kind": "line_range",
+              "start": 181
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "blob": "394597322107414d284df9efc597685b8dc51ac8",
             "content": "sha256:13c7ade713d8f4284ac157756841a0dea09d47d93d418749215d2fd4ef97a480",
             "locator": {
-              "kind": "symbol",
-              "name": "parseReviewHash"
+              "end": 18,
+              "kind": "line_range",
+              "start": 7
             },
             "path": "dashboard/src/cockpit/reviewHash.ts"
           },
@@ -805,11 +1172,38 @@
         },
         {
           "anchor": {
-            "blob": "41eb57199da4ee9956cf8c32e5bd87324772daec",
+            "blob": "394597322107414d284df9efc597685b8dc51ac8",
             "content": "sha256:78ce4bd646d453c3a4c1a8e3e1939aae6cd8e01e5f6cadac100736e6221f12f0",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewHash"
+              "end": 88,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "394597322107414d284df9efc597685b8dc51ac8",
+            "content": "sha256:4646613a249fadc4508b4cfbdcfcc33ede13a298ee99dcd22c0e453099ab45fd",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "394597322107414d284df9efc597685b8dc51ac8",
+            "content": "sha256:c7df7005293647e7083ff964e047d592603b7d1c8633bb3ba6b58536adc0fe23",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 45
             },
             "path": "dashboard/src/cockpit/reviewHash.ts"
           },
@@ -818,15 +1212,16 @@
       ]
     },
     "98": {
-      "note": "At at-most40rem the extracted shell layout admits vertical overflow and single-column railed content, while the change/review takeover becomes fixed to the viewport. Both the layout declaration and its actual shell/takeover call sites own this responsive boundary.\n\nAnchor: `shell` `takeoverBody` `useNarrowCockpit` `RailedBody` `ChangeSetTakeover`",
+      "note": "At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body.\n\nAnchor: \"export const shell = css({\"; \"export const takeoverBody = css({\"; \"function RailedBody({\"; \"function ChangeSetTakeover({\"; \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:c688a9d5c0ad3d4db07f8f6744f1c7420309636a4a1a0130efdf84e274954380",
             "locator": {
-              "kind": "symbol",
-              "name": "shell"
+              "end": 33,
+              "kind": "line_range",
+              "start": 8
             },
             "path": "dashboard/src/cockpit/layout.tsx"
           },
@@ -834,11 +1229,12 @@
         },
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
             "content": "sha256:473d12aa52e55e5988d86b0a406eff38adf7a8918e0356012f66c81d4b5942b5",
             "locator": {
-              "kind": "symbol",
-              "name": "takeoverBody"
+              "end": 289,
+              "kind": "line_range",
+              "start": 282
             },
             "path": "dashboard/src/cockpit/layout.tsx"
           },
@@ -846,34 +1242,53 @@
         },
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:0c7a1807a5bf82abf778ac65823886185e7f7304787eb7a5ffe351a58c4f64b6",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:8c02e170c558c96b54d23a5b1bae6ec0e977fda9de5aef1a181cb850c73ab0ab",
             "locator": {
-              "kind": "symbol",
-              "name": "useNarrowCockpit"
-            },
-            "path": "dashboard/src/cockpit/layout.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
-            "locator": {
-              "kind": "symbol",
-              "name": "RailedBody"
+              "end": 675,
+              "kind": "line_range",
+              "start": 606
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTakeover"
+              "end": 345,
+              "kind": "line_range",
+              "start": 325
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 682
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Review is explicitly excluded from takeover.\n\nAnchor: \"function shellFlags(view: CockpitView, changeSet: ChangeSetTarget \\| null, notesOpen: boolean) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "code"

@@ -1,307 +1,159 @@
 {
   "path": "mcp/src/agents_remember/application/review_tree_entries.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+        "content": "sha256:f84c2e7b3c2e890204d0da426f1263aa184ecc21ce906b8d56651948ac01a392",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unavailable"
+        }
+      },
+      "id": "RLZ-3REGQ9",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It preserves the named tree and typed failure reason while returning no invented values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+        "content": "sha256:eda7e766fff4d1c9142ad834126009604e45cd962a71261c10de10a474d81b80",
+        "locator": {
+          "kind": "symbol",
+          "name": "_after_side"
+        }
+      },
+      "id": "RLZ-5TP6PX",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It opens exactly the after knowledge database once for both entry enumeration and memory facts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+        "content": "sha256:95f542909c88f32a55a0df6f4c846272d0670efa2fb5c428d516ada325b63ed3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_values"
+        }
+      },
+      "id": "RLZ-KCYF0G",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It asks the four owner index queries at the located path and invariant and caches repeated queries within the read.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The placement cache: 8,192 answers under the observation key.",
+    "12": {
+      "note": "The focused result includes entries and explicit after-memory state from one index opening.\n\nAnchor: \"class CardEntries:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:9b5813e3239f098e603453704ab4c8f0e5f2f6f537d6624a44a1077db19fc1f7",
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:e4fd5f06df166210443e8a2e89c37b8b628da9641d30a638634bd103db6fbf64",
             "locator": {
-              "kind": "symbol",
-              "name": "PLACEMENTS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The shapes this module fills.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
-            "content": "sha256:6b189b146e70b4f70dc31d97cf5e4307f08fca8a44b505d51cbbf354ca25a8cf",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeEntrySide"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
-            "content": "sha256:3dd268f5c188ab1256b17b36153fcbf8b302ce0937377afeb9281f7febf4d51e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeEntry"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The cases: four entries located, unavailable against absent, the excerpt bound and the cache bound.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
-            "content": "sha256:8b69520899d5d6334e2b2c3297cf085f335d4ab5a94f72029832b3acb575a12f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
-            "content": "sha256:7d7524bfd1142ccac5de49c6d57c956dbddbcb7bc7808eaf8cbc174636f12c01",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
-            "content": "sha256:6c438613fe822afdc0d1abdbe58da9ed7a90f205d93e3dd7a8f0f4b682ddee4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_excerpt_longer_than_its_bound_is_a_stated_prefix"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b4d78090a1383e85d720b881411db85e13cfb162",
-            "content": "sha256:7e76473459efb330853781c401a93152ba582d3e72786a367d9e7fe87686a8b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_placement_cache_remembers_answers_only_and_stays_within_its_bound"
-            },
-            "path": "mcp/tests/test_review_git_trees.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Each entry of the named invariants on B and C, ordered by invariant, kind, path and ID.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:736ea870c6836a3226186fab94949b02ce7236e7043fe435db0a1fef4f0e607d",
-            "locator": {
-              "kind": "symbol",
-              "name": "tree_entries"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A memory side's entries, or its unreadable detail; the invariants chosen by the payload's identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:2d4de3f76a35c00332a34e32e7eedb73a8afe4501cecb6a7ced6ab9854d40ea2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_side"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:00968f570b7b2c7ee20d352cd1009260229216a3b82ff439734db3554ad09355",
-            "locator": {
-              "kind": "symbol",
-              "name": "_entries_of"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "One entry on both sides; an unchanged entry's text carried once.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:168b99f39bd9f21a03472bffff30e6328a4c29f06ae66e705f0c19cfe4225b76",
-            "locator": {
-              "kind": "symbol",
-              "name": "_entry"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:8b8c26c416e2fd2b027ed9a616ec75fcfbafb0abd6b16f45e234dbed4ddf7df1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_change"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The side's own recorded flag, authored fields and MIK-R03 state.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:6cafb283c8800f585adecd5ff73bafd38dc1f1b683a9120cd366f5a13d1abf06",
-            "locator": {
-              "kind": "symbol",
-              "name": "_located"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:046c5d14c932566fc4737463ecdc93fe73ac3dbf26d168a9387567c98eab7aa4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_authored"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:bea996ad3b4d96bf8e12c24cf67b8d260c98a85eff6610a8d9969fd5fcdc2046",
-            "locator": {
-              "kind": "symbol",
-              "name": "_currentness"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Unavailable, absent, resolved or unresolved, from the pinned tree's own blob.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:f06377ca6bcc2e1d86eecd923afdd17845776d36bacb2d2b3863ac34a2b025a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_placed"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:02def4120600510cf79a3803fa8371e9962ec80b167d82a6211caa0bea6285c1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_in_blob"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The bounded excerpt of the exact blob.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:19012196bfccf575d33dcd5acd06ca99083f2d92613b4113a09c6207e28575fc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_excerpt"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The cached resolution, and the locators refused before any read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:91820f71d74bdb2514705da9ccff947a92298d308ce6b381cda9308bea98b8a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resolve"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:f1dcea7ae4b43c5fb5c9a1a886d47fc7b1e8471de35adb49f2450951b831bc2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unsupported"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:8332bbe7d97567d27efd0211e1c78ea76690366dfb0b76bd842da2a0a2800c9a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unresolved"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The caller: a query naming invariants gets only the entries, as one focused answer (since MIK-L32 through `_focused`, beside the lane and file reads).\n\nAnchor: \"return _focused(query, trees, entries=tree_entries(trees, query.invariants))\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
-            "content": "sha256:8c8aaa41f7f372cd711ed33f978af10060820f6f2ba9107c78715e2bceef5b06",
-            "locator": {
-              "end": 170,
+              "end": 153,
               "kind": "line_range",
-              "start": 169
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Memory measurements share the after index and fail independently with a bounded unavailable reason.\n\nAnchor: \"def _unreadable(knowledge: TreeKnowledge) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:535bae96df6290a9d91611861f72947a7a865cafba5dffc93d08c89b135ca4e0",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Each card preserves own-side authored/currentness values, carries the locator symbol and derives change conservatively.\n\nAnchor: \"def _change(before: ReviewTreeEntrySide, after: ReviewTreeEntrySide) -> ReviewEntryChange:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:722dd274e2564195c9be2b7da1ee86c1fa1c190fdde55549b006f7c9719a28e1",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Pinned code placement and exact bounded excerpts keep absence/read failure distinct.\n\nAnchor: \"def _placed(entry: Entry, code: OpenedCodeTree) -> dict[str, Any]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:6277c7b49606c17e3b389278f7d95b3e8196263d35fadcbc3fb0dc303c948e30",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The observation-key cache stores answers only; unsupported locators and failed resolution keep named outcomes.\n\nAnchor: \"def _resolve(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:2ef3adcdd6aaa1205d161ded4d2a7407b49691921c0450a330f7052e7451c18d",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 344
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The placement memo is bounded at 8192 entries.\n\nAnchor: \"__all__ = [\"PLACEMENTS\", \"CardEntries\", \"tree_entries\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:5934cf67e6698e46c89ca2cb83caa1dde83edb9317721d0effad50b00e91931c",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 71
+            }
           },
           "kind": "code"
         }

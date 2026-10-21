@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/tray/SelectionOffer.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c5d1f46ae100cce280bd029fd53ae93177eb15d1",
+        "content": "sha256:febc34d62b2f4b2332c6a64ace032c8b85d2861b4bc3a30802293c27879ebaa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectionOffer"
+        }
+      },
+      "id": "RLZ-9CDJ20",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Draws the \"⊕ add\" control beside the selection.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Renders a small explicit add offer beside a dashboard text selection.\n\nAnchor: \"export function SelectionOffer() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d1f46ae100cce280bd029fd53ae93177eb15d1",
+            "content": "sha256:18c950243f4d8f8d18b6dd75ce03f1990cc682b18664f57c4b5f712c665715a2",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

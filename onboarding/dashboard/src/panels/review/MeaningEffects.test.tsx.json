@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/MeaningEffects.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Styles, complete visible step and vocabulary toggle\n\nAnchor: \"it('draws its heading as a section label and its step line and toggle as quiet parts', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c07e96bf5880a8559551cfc6b5c77b4d41d07a3",
+            "content": "sha256:390d22572db180fe107388e77d65ec04f4dd698ccd3aa46689392c76632962c9",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing-answer presentation\n\nAnchor: \"it('draws the missing-field failure under the same section label', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c07e96bf5880a8559551cfc6b5c77b4d41d07a3",
+            "content": "sha256:addd78c330a6347b843bc6e8d6e2686d7fa7a03d67575a26618039e5706515b1",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

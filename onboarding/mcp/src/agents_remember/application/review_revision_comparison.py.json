@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
         "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
         "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
         "locator": {
           "kind": "symbol",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
         "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
         "locator": {
           "kind": "symbol",
@@ -53,52 +53,54 @@
       },
       "rationale": "revision_heads is the head rule whose retained-revision meaning the decision records.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_subject_revisions"
+        }
+      },
+      "id": "RLZ-TFH8QX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Copies each selected side's display_version beside its own revision id and leaves an unselected side without a display version.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+        "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+        "locator": {
+          "kind": "symbol",
+          "name": "select_subject_revisions"
+        }
+      },
+      "id": "RLZ-Z1PBXX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-P1QKHK",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "For the selected invariant/family identity, takes before_display_version and after_display_version from the same actual side payloads that supplied before_revision_id and after_revision_id. A missing side leaves its version None. These are carried display values, not inferred chronology or an invented conversion from revision ids. Root named producer finding A3 / a subject's revision numbers, D396 and R89 rule 6 as the governing mapping evidence under assessment.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
-    "14": {
-      "note": "The selection holder carries optional selection and actual side items.\n\nAnchor: selection holder",
+    "20": {
+      "note": "Selected side ids and their own display versions are forwarded together.\n\nAnchor: \"def select_subject_revisions(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:9e50bd780a9589ccf5f69e61a32fd8950b043051c9c0e96f983b6d12ed229850",
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
             "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 20
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The retained helper sorts a supplied revision sequence without driving the current selector.\n\nAnchor: retained sorted helper",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 29
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The entry point selects the subject sides and emits empty/singleton identity tuples.\n\nAnchor: selection entry point",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:ed85ffc8e3669967e8c127ea209d3874e3a7ba72fcdb5ec6fb49af98cff3410e",
-            "locator": {
-              "end": 70,
+              "end": 72,
               "kind": "line_range",
               "start": 35
             }
@@ -107,51 +109,51 @@
         }
       ]
     },
-    "17": {
-      "note": "The four current selection states follow the actual chosen before/after IDs.\n\nAnchor: state descriptions",
+    "21": {
+      "note": "Four selection states describe the actual chosen operands.\n\nAnchor: \"def _selection_description(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
             "content": "sha256:9ba95710d586211b5f32e9dcafd51e803450ecdf18482b3259147d1bfea78441",
             "locator": {
-              "end": 94,
+              "end": 96,
               "kind": "line_range",
-              "start": 73
+              "start": 75
             }
           },
           "kind": "code"
         }
       ]
     },
-    "18": {
-      "note": "Only invariant and family seed kinds establish a reviewed identity.\n\nAnchor: identity selection",
+    "22": {
+      "note": "Identity filtering and first matching side lookup remain explicit.\n\nAnchor: \"def _selector_identity(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:d40f6ec625a2d99e24fc91e465fe308fad70e85017ad83ee94411ad1686fcfe4",
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:54654738e661e04acf5a6d66b7db44b1d08f5ad9c585da41380cd767a0df7469",
             "locator": {
-              "end": 105,
+              "end": 123,
               "kind": "line_range",
-              "start": 97
+              "start": 99
             }
           },
           "kind": "code"
         }
       ]
     },
-    "19": {
-      "note": "The first side-present matching item with a revision is selected; duplicate rejection is not implemented here.\n\nAnchor: side lookup",
+    "23": {
+      "note": "The exported helper sorts but is not used by the selector.\n\nAnchor: \"def revision_heads(population: Sequence[str]) -> tuple[str, ...]:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:82cb514fc25f5d47f59cf2a8724bfa386f7a06e9d7a20732607859a0843961d3",
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
             "locator": {
-              "end": 121,
+              "end": 32,
               "kind": "line_range",
-              "start": 108
+              "start": 29
             }
           },
           "kind": "code"

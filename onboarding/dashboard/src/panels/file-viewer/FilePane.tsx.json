@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-        "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "fitHost"
+        }
+      },
+      "id": "RLZ-CBV3EY",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-RP09-fitted-pane-scroll-owner",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Fitted review excerpts remove the former 32rem editor cap and override CodeMirror scroller overflow to visible; they grow into the review reading scroll owner rather than creating an inner scrollbox. Ordinary non-fit File Viewer panes retain the separate host style.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
         "locator": {
           "kind": "symbol",
           "name": "FilePane"
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-        "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+        "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+        "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
         "locator": {
           "kind": "symbol",
           "name": "FilePane"
@@ -96,6 +114,38 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The File Viewer-only optional tray target enables the line gutter; other panes omit it.\n\nAnchor: \"const ref = useRef<HTMLDivElement>(null);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:795309e553621c67d86ba5a648da67add70ad9c787934d2e2e027d144411f1f6",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Fitted review source grows into the reading column without an inner scroller.\n\nAnchor: `fitHost`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

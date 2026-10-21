@@ -3,27 +3,27 @@
   "proves": [
     {
       "anchor": {
-        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-        "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+        "content": "sha256:03d8941ee02bec8d4cd2ef7bb2706f36d7bac976cad3390fada15b133e77a64c",
         "locator": {
           "kind": "symbol",
-          "name": "opener"
+          "name": "keeps the first family when a member of the second is opened from its slot, and marks it under the second family"
         }
       },
-      "facet": "A member of the second family opened from the reading area's member list keeps the first family, tagged, with one review read, and `k` steps back to the family row.",
-      "id": "PRF-N88RVC",
+      "facet": "Opening a member of the second family from its reading slot makes one review read, keeps the first family tagged, and marks the member occurrence under the second family.",
+      "id": "PRF-AX1Y88",
       "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-N88RVC",
+        "leaf": "260928-MIK-L89"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-        "content": "sha256:fe15fe3d0abc74bba9bba7d320e33385fb2e67a29a89b68fb0efeafe4ba79c03",
+        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+        "content": "sha256:073ab8428c5e53c354cdea986f23f48bdffcf65b27dc9aaa7a4a821d34f67120",
         "locator": {
           "kind": "file"
         }
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-        "content": "sha256:635f1e7192dbc79f7ee1c04c40b08a6d36c0b838460208703362edb0101f126f",
+        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+        "content": "sha256:4678c7ac91ab0af30713826bc4db7f1233c1e091a8014d8ebaaa11141d3d4795",
         "locator": {
-          "end": 127,
+          "end": 133,
           "kind": "line_range",
-          "start": 96
+          "start": 95
         }
       },
       "id": "RLZ-7ZPXMR",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
+        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
         "content": "sha256:80294103366a589b11d097947595faf6dc9408f4e6ac0b743dff4857109b5d73",
         "locator": {
-          "end": 58,
+          "end": 57,
           "kind": "line_range",
-          "start": 48
+          "start": 47
         }
       },
       "id": "RLZ-XADZP7",
@@ -77,217 +77,51 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The file's statement of its data.",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps both families as the second family's own member is selected, and an explicit unknown read fails\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
-            "content": "sha256:4b608fd1ae016c15de01a2598a5d970888201f94324b777cfbebe2fa0c534777",
+            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+            "content": "sha256:90d909e67f2fe19980b54ddd0afe361052aa8921a6a38fc66cbd56f005439862",
             "locator": {
-              "end": 5,
+              "end": 139,
               "kind": "line_range",
-              "start": 1
+              "start": 100
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "The explicitly selected unknown row names the deliberately failed invariant read and remains selected after failure.",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps complete outline rows while a partial family continues in the main page', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:723e143302c98d4f6aa09f0b464bc79e51e0f3047860e4a17ff8b495dd9844a6",
+            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+            "content": "sha256:10823188980c4fa102390664a7b0488cee8e01eea7e3825e23ffd84429b2a790",
             "locator": {
-              "end": 132,
+              "end": 167,
               "kind": "line_range",
-              "start": 121
+              "start": 140
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Reading-area opener preserving the first family",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the first family when a member of the second is opened from its slot, and marks it under the second family', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+            "content": "sha256:03d8941ee02bec8d4cd2ef7bb2706f36d7bac976cad3390fada15b133e77a64c",
             "locator": {
-              "kind": "symbol",
-              "name": "opener"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The answers served by subject and by continuation, including the deliberate failure of INV-GGGGGG's read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "071edcc28b275e9a13c191a87a60e28eb8eae0cf",
-            "content": "sha256:3d4bd73377170349cf9ff41200357d6bac5cca8ba23a52dfb0ad225f1313bea7",
-            "locator": {
-              "kind": "symbol",
-              "name": "answer"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "j selects the second family’s changed member and k returns; an explicit selection of the unknown INV-GGGGGG row fails, leaves that row selected, shows the failure and preserves both families.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:bd7831ae0842a541baf15f6c50439a41617f83a2698b93cb2c235fe5314d8d11",
-            "locator": {
-              "end": 132,
+              "end": 187,
               "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "A partial family has nine complete synthetic-outline rows and no sidebar continuation; its main-page control sends the cursor in one request and keeps the same outline on subsequent family selection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:70b726d6730dbf4694c45e3e5fa806bd9b75cc58564a42ad259af44aa9966543",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 134
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "A member opened from the reading area keeps the first family, and `k` steps back.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
-            "content": "sha256:6c6c6200b603a104ef6b665e654ec03d1ef6dff16fa7c4d16a1fc9927b64c173",
-            "locator": {
-              "end": 207,
-              "kind": "line_range",
-              "start": 188
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The receipt of the store-authored bodies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
-            "content": "sha256:b6f7905bc269cc94294b145c879313832ac25e8e602370bf6a7a67b381ce023c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Subject and cursor answer selection for the store",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:dc3487a2b2a578ff8fa321b73efe216701dd30b4883de7184e94c04329bbab16",
-            "locator": {
-              "kind": "symbol",
-              "name": "selector"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:5305e06c7d37170de303878ac3e7360d343024a35e3a392437df245a3032468d",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 47
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Store view helper with row labels",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:c1b4223afcc51f4ca62c2ccfeba38a5350962aa9a2d8bc127b447acba3502cec",
-            "locator": {
-              "kind": "symbol",
-              "name": "View"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:32c0b1664ca331fc9bb74c0de52321648a1ca22b53d55562229b437d07eeafe5",
-            "locator": {
-              "end": 99,
-              "kind": "line_range",
-              "start": 91
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Family-row click helper for j journeys",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:990352ca982080ca0b1e0a170f2a58992b8516f64bc8532c915ead12e2baa27e",
-            "locator": {
-              "kind": "symbol",
-              "name": "clickFamilyRow"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "47b10780305cf686f14f09b1236a2a1efc124b75",
-            "content": "sha256:d215f191d91b038dd896b4eb584fa07b7f1dce4eccfaef339fc83676c89325ed",
-            "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 94
+              "start": 168
             }
           },
           "kind": "test"

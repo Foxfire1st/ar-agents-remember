@@ -7,8 +7,9 @@
   },
   "applicability": "Removed reviewer file lists.",
   "conditions": [
-    "SourceExplorer, UnexplainedLane, LaneFileFocus with tests; DiffLayout type; their exclusive laneFocus/reviewLane/markerNavigation helpers.",
-    "SourceContent stays for card Full file + MIK-R34 markers; no server answer loses a field."
+    "The former reviewer file-list/lane-focus modules and their exclusive helpers remain absent.",
+    "Cards keep their per-hunk intent marks on the excerpt; the review page exposes no per-card full-file expansion.",
+    "No server source-content answer field is removed by retiring the dashboard renderer."
   ],
   "exclusions": [
     "Removing inventory/lane-classification readers (marker scope, cards, details, page keep them)."
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The old SourceExplorer, UnexplainedLane and LaneFileFocus are removed while SourceContent remains the card full-file renderer.",
+  "statement": "The old SourceExplorer, UnexplainedLane, LaneFileFocus and SourceContent review renderers remain removed. Review cards render their recorded excerpts through the shared code panes, while whole files open through the existing comparison viewer.",
   "status": "proposed",
   "supersedes": []
 }

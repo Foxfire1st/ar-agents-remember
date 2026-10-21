@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+        "content": "sha256:7fd64b757e3ab181420f46a2a2ce8ffcd542101b86c3d22c78d20e9f4e968c1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "usePersistedNumber"
+        }
+      },
+      "id": "RLZ-T16F2W",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the selected numeric key, uses its default for absent/non-finite data, and writes new class width values without touching sibling keys.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "`FileViewer` persists its split/single toggle through this hook.\n\nAnchor: \"fileviewer.split\"; \"className={toggle({ on: split })} aria-pressed={split} onClick={() => setSplit(!split)}> {split ? \\\"▣ Split\\\" : \\\"▢ Single\\\"} </button>\"",

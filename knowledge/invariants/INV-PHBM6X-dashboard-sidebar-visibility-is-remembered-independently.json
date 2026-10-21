@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "One normative Rule8 state policy must agree across all enumerated dashboard pages and the review shell exception. Generic frame retention, native host sidebar isolation or shared-control layout cannot prevent one page overwriting another side or a stored open chat defeating closed-first review entry."
+  },
+  "applicability": "The dashboard-owned Operations left/right rails, Knowledge tree/right aside where present, File Viewer explorer, change-set file rail, notes/requirements rail where present, and review tree/chat sides. This is their visibility-state policy, not the native host chat-navigation sidebar.",
+  "conditions": [
+    "Each ordinary dashboard page/side reads its own cockpit.sidebar.<page>.<side> value: 1 opens and 0 closes; absent or unrecognized data uses its initial open choice. Updating that side stores only its key where localStorage permits it.",
+    "Operations, Knowledge, File Viewer, change-set, notes and the review tree use the shared remembered state; the notes/requirements rail deliberately shares page notes. The responsive absence of a pane does not invent another page/side key.",
+    "The review chat is the exception: a new mount and each different review target start closed. Its open flag is held only as the exact current target object in useReviewChat; it is not restored from or saved to cockpit.sidebar.review.right.",
+    "A failed dashboard visibility-state storage read or write leaves the shared hook usable with the current mounted choice; this limited shared-hook behavior does not assert that every other preference storage owner swallows failures.",
+    "Deliberate chat opening by its toggle or the separately owned explicit tray-full-view action is allowed. The no-persistence exception does not forbid those actions."
+  ],
+  "exclusions": [
+    "The separate shared-control policy owns reachable shared controls, hidden panels releasing width and overlay edge controls; this record adds no second visibility-to-layout guarantee.",
+    "Native Paseo sidebar storage, one-time migration, document-page storage isolation and theme provenance remain INV-7QV5CQ, INV-4S93MX, INV-YJ2H50 and INV-CJ4VN0.",
+    "Chat frame/preload/generation/task binding remain INV-VMREN3 and neighboring records; remembering visibility does not attest draft/scroll or agent creation.",
+    "Width-class numeric preferences, code-context preference, group openings, sort/view preferences, cross-tab synchronization and arbitrary pages outside the enumerated dashboard sidebars."
+  ],
+  "id": "INV-PHBM6X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R89@v2 rule8 (Memory), rule12 (Closed at first), and accepted W27 key spelling; canonical L89 task and its approved packet govern, with immutable Worker entries at zero-based ordinals 27,37,108,145. Producer dispositions remain verbatim in the companion helper review; this is a Curator supplemental projection, not replacement producer data.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; captured patch sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Static full relevant function bodies and named test cases read; no CLI, tests, browser run, geometry acceptance or D417 re-evaluation performed."
+      ],
+      "path": "authoring-wave6.final-input.json"
+    },
+    "handoffEntry": "RP17_STATE",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Dashboard sidebar visibility is remembered independently by page and side; the review chat alone starts closed for each review target and reload and keeps no stored open flag.",
+  "status": "proposed",
+  "supersedes": []
+}

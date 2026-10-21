@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/review/reading/SummaryLine.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8a73371cf8e9fde80044ac406aee4e8e3b9ce19f",
+        "content": "sha256:f474c104700117642f230ed6ef38f6613915099c87865f9e2ca7279a6037daf6",
+        "locator": {
+          "kind": "symbol",
+          "name": "SummaryLine"
+        }
+      },
+      "id": "RLZ-F8W21K",
+      "invariant": "INV-QAR0F3",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 6",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It writes the reading-column summary from model, catalogue and attribution/lane facts, retaining explicit loading and unavailable states.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Count changed records, locations/files, lane files, folded locations and active sort from the model/reads.\n\nAnchor: \"function Part({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a73371cf8e9fde80044ac406aee4e8e3b9ce19f",
+            "content": "sha256:fce28f8744be0e2ca83c95678a65435bb72eb645f280fcc6d3c648e07151b2b9",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Count changed records, locations/files, lane files, folded locations and active sort from the model/reads.\n\nAnchor: \"function invariantsCount(model: ChangeSetModel, catalogue: ReviewCatalogueRead): Count {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a73371cf8e9fde80044ac406aee4e8e3b9ce19f",
+            "content": "sha256:043a27361de243a95be875aa5cecec3515e4f567b91c88af66056519d98467c4",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Count changed records, locations/files, lane files, folded locations and active sort from the model/reads.\n\nAnchor: \"function cardCount(model: ChangeSetModel, value: number \\| undefined): Count {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a73371cf8e9fde80044ac406aee4e8e3b9ce19f",
+            "content": "sha256:4c9705620f4cf006b4a5df9bbc76cd90f439ad33ee46708017e7fdde8d2e4056",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4d526bb03923e87ba2d1c65697413930a0473713",
-        "content": "sha256:675ec68df22d17ff356edabe4f2bbb34bb1f378bf059e059ddbd930bf1a79d7c",
+        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+        "content": "sha256:46a90482e20af50fca52d61ffd7bd254c06b089fd733263ce5bdb334aa120f40",
         "locator": {
-          "end": 178,
+          "end": 191,
           "kind": "line_range",
-          "start": 166
+          "start": 178
         }
       },
       "id": "RLZ-6TQESZ",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "4d526bb03923e87ba2d1c65697413930a0473713",
-        "content": "sha256:675ec68df22d17ff356edabe4f2bbb34bb1f378bf059e059ddbd930bf1a79d7c",
+        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+        "content": "sha256:46a90482e20af50fca52d61ffd7bd254c06b089fd733263ce5bdb334aa120f40",
         "locator": {
-          "end": 178,
+          "end": 191,
           "kind": "line_range",
-          "start": 166
+          "start": 178
         }
       },
       "id": "RLZ-DZNJEW",
@@ -38,18 +38,56 @@
       },
       "rationale": "The frame wrapper carries the agentless-hidden state, so it must remove the frame from reach exactly when no agent is shown.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+        "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatView"
+        }
+      },
+      "id": "RLZ-H0GP49",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Mounts the column dock right after the frame's wrapper, outside the iframe.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+        "content": "sha256:6d902e7dce4bb1e06a0bf81afaf6003aa7bbdfa5e1120657136fd5d12e83eb57",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatImpl"
+        }
+      },
+      "id": "RLZ-NAAJEP",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the active, nonhidden bound document-chat target; this publication does not wait for a native drawn acknowledgement.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The panel composes selection state, the bound launcher and the shared frame, exposing the launch control only when a target is shown.\n\nAnchor: `DocumentChatImpl`",
+      "note": "The component composes document state, the launcher and shown-chat publication.\n\nAnchor: \"function DocumentChatImpl(props: DocumentChatProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
-            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:6d902e7dce4bb1e06a0bf81afaf6003aa7bbdfa5e1120657136fd5d12e83eb57",
             "locator": {
-              "kind": "file"
+              "end": 79,
+              "kind": "line_range",
+              "start": 37
             }
           },
           "kind": "code"
@@ -57,14 +95,16 @@
       ]
     },
     "2": {
-      "note": "Unknown selections keep the native screen visible under a holding line; unreadable answers add one-line Retry without replacing it.\n\nAnchor: `DocumentChatView`",
+      "note": "The view retains or hides the frame wrapper, forwards preload and places the document tray dock after it.\n\nAnchor: \"function DocumentChatView({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
-            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
             "locator": {
-              "kind": "file"
+              "end": 196,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "code"
@@ -72,14 +112,16 @@
       ]
     },
     "3": {
-      "note": "The exported panel is memoized so a parent re-render does not remount it.\n\nAnchor: `DocumentChat`",
+      "note": "The export is memoized.\n\nAnchor: \"export const DocumentChat = memo(DocumentChatImpl);\"",
       "targets": [
         {
           "anchor": {
-            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
-            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
             "locator": {
-              "kind": "file"
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
             }
           },
           "kind": "code"
@@ -87,14 +129,51 @@
       ]
     },
     "4": {
-      "note": "The hidden frame wrapper stays mounted behind display:none and aria-hidden.\n\nAnchor: `DocumentChatView`",
+      "note": "The hidden frame wrapper remains mounted.\n\nAnchor: \"function DocumentChatView({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "84d798e33c8ccf40811d37e9330b8bfada011a69",
-            "content": "sha256:85a3be54c55662daf44b4dd37cf013f42de3ec221d402be1678f159b06b010fb",
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
             "locator": {
-              "kind": "file"
+              "end": 196,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The state owner distinguishes documentless and unresolved review-task scopes, and gates chat reads on active visibility.\n\nAnchor: \"export function useDocumentChat({ taskDocumentRef, tasks, active, unbound }: DocumentChatProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Warmup wording preserves loaded, failed, skipped and pending meanings.\n\nAnchor: \"export function warmupAgentText(picture: WarmupAgentPicture): string \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:c2ec0d752a3c6ca4d79ee3e2ebf6a4e772399e066907256f90e6670e656d2848",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 82
             }
           },
           "kind": "code"

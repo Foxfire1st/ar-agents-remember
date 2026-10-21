@@ -7,13 +7,13 @@
   },
   "applicability": "Late source expressions in the family read cycle.",
   "conditions": [
-    "Selected intent, the current recorded judgment, siblings, focus, inline layout and explicitly open files are preserved while every captured late expression becomes reachable.",
-    "The first reachable card is explicitly collapsed/reopened so continuation preservation is real.",
-    "The current source waits for the selected revision identifiers and compares the rendered statement across the walk; it no longer independently asserts both literal statement operands as the old case did."
+    "Continuation accumulation preserves the selected statement, current recorded judgment and siblings.",
+    "The reader focus remains where the reader left it while continuations arrive.",
+    "The page card read is independent from roster accumulation; late realization addresses remain reachable in the selected member details."
   ],
   "exclusions": [
-    "Freezing text before the editor is awaited; vacuous open-state claims.",
-    "The former supporting evidence/assessment/observation collection is not retained by this contract; the current source compares the judgment pane instead. Historical W03 execution and origin evidence is not a fresh run."
+    "Per-card Full file and manually selected diff layout were removed by MIK-R89 v2 rule4; no removed workspace state is reconstructed.",
+    "Historical runs and origin evidence are not a fresh execution or independent memory verdict."
   ],
   "id": "INV-79SPV4",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Continuations preserve selected statement, the current recorded judgment, siblings, focus, inline layout and an explicitly open file while making every captured late source expression reachable.",
+  "statement": "Roster continuations retain the coherent selected statement, current recorded judgment, sibling rows and reader-owned focus while making every captured late realization claim address reachable.",
   "status": "proposed",
   "supersedes": []
 }

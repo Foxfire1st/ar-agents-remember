@@ -16,7 +16,7 @@
         "handoffEntry": "L57-M1-F37-disclosure-grouping",
         "leaf": "260928-MIK-L57"
       },
-      "rationale": "SubjectJudgment renders each group's identifiers in exactly one closed details element and draws no details around any judgment row or proof, so the view's disclosure count stays at the cap whatever the subject's row and proof counts.",
+      "rationale": "SubjectJudgment draws rows and proof content openly while grouping all judgment identifiers and all proof identifiers in one disclosure per group; the grouping does not grow with that subject’s row or proof counts.",
       "role": "enforcement"
     }
   ],

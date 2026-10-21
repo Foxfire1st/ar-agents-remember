@@ -1,12 +1,13 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Display preferences and expression inspection during one mounted review workspace.",
+  "applicability": "Code-range display and location-group state of the mounted review page.",
   "conditions": [
-    "Workspace state survives comparison-page reads and diff-layout switches.",
-    "Closing an expanded expression returns focus to its retained opener when that element is available."
+    "The code-context preference is stored under review.code-context.v1; Full context shows the whole recorded range, not a separate full-file read.",
+    "Diffs use split layout at a content width of at least 1080px and unified layout below it.",
+    "Group openings survive subject reads within the mounted page; there is no Layout selector or per-expression full-file disclosure."
   ],
   "exclusions": [
-    "These transient display choices are not persisted knowledge or durable cross-session preferences."
+    "Local group openings are not persisted knowledge or cross-session preferences."
   ],
   "id": "INV-Z385RTQS",
   "origin": {
@@ -14,9 +15,9 @@
     "legacyId": "7dc7a5d7-f06f-40ae-a3c7-b59efbd79869",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Diff layout and full-file disclosure are workspace state, with changed regions as the default and focus retained when an expression closes.",
+  "statement": "Changes only is the default recorded-range view; the one Changes only/Full context control is remembered across review openings and reloads. Diff layout follows the reading column's content width, while opened location groups remain local workspace state.",
   "status": "proposed",
   "supersedes": []
 }

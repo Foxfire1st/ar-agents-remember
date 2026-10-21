@@ -2,22 +2,27 @@
 
 ## Governing Overview
 
-[overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-The dashboard/host composition cases: the three status exit codes print both lines and start nothing, adoption and autoStart call ensure_host while dashboard stop does not, the foreground serves without waiting for the host and --sim skips it, the real background function serves before the host outcome and logs, a supervised child does not start the host again, and a discovered config path is named in normal and transition outcomes.
+Declare the dashboard/Paseo host composition assertions and the finite request-head allowance needed by a maximum-size reviewer card read.
 
 ## Code Commentary
 
-The module drives the dashboard's dispatch, the serving daemon's supervision and the real background starter through fakes.
+Status cases assert the dashboard/host lines, the0/1/3 outcomes and no host start. Adoption and auto-start call ensure_host; dashboard stop does not. Foreground and reload wiring start host preparation without awaiting it, simulation skips it, and a parent-owned child avoids a second host start.
 
-The two service-factory doubles accept the current keyword-only `leaf_agent_archive` argument. Background-host ordering is proved while the daemon start is observably held; release and completion use shared hang guards.
+The added request-head case constructs a query naming500 distinct invariant UUIDs and comparison8. It intercepts foreground/daemon-child and reload Uvicorn configuration, checks both pass the same dashboard-owned h11 incomplete-event limit, and feeds the actual request head in two pieces to h11. The default parser is expected to refuse; the configured parser must return a Request. This checks emitted configuration and parser behavior, not a live socket or every possible request shape.
+
+The actual background helper case holds the fake daemon-start runner on shared hang-guarded events, observes that the helper returned before its outcome, then releases it and checks the logged port-in-use result. The discovered-config case retains the concrete path in ordinary and transition guidance and refuses an incompatible installed version without mutation. Service-factory doubles accept keyword-only leaf_agent_archive.
+
+## Invariants And Boundaries
+
+These are source-declared tests with controlled host/runtime and Uvicorn doubles. They do not install a real host, run a paid turn, measure request latency or independently prove native network acceptance. No execution of these cases is asserted by this card.
 
 ## Evidence
 
-- The status exit codes and no-start case. [1]
-- The stop-does-not-stop case. [2]
-- The real background wiring case. [3]
-
-- Service doubles accept the exact keyword-only archive owner argument. [4]
+- Status, adoption/stop and foreground/reload/sim cases preserve host ownership and dispatch. [5]
+- The500-invariant head and two-read parser assertion exercise configured versus default finite limits. [6]
+- The real background helper returns before its controlled host outcome, then logs it. [7]
+- A supervised child avoids duplicate start and discovered settings remain explicit in guidance. [8]

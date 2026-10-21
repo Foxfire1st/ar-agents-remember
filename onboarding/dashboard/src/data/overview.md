@@ -22,9 +22,11 @@ This route owns retained dashboard projection state, task/document identity and 
 
 The route has a child review-keymap overview and separate panel/view owners. Keymaps retain browser-forbidden validation and chrome/review routing, not composer profiles or PTY interception. React consumers own rendering; Python applications and configured serving ports own canonical authority and answer classification.
 
-The bound reviewer expression-card store retains answers and shares in-flight reads across pending-center remounts, keyed on the complete comparison and invariant set. Selection prefetches a changed set in parallel with its subject answer. This is separate from the retained selected-subject/walk stores and does not mix incompatible questions or infer empty unavailable data.
+The review page’s shown-set card reader sorts and deduplicates its invariant IDs, sends chunks of at most 500, and merges chunk answers in order. Its bounded shared answer/in-flight store is keyed on complete task/comparison/chunk identity. Selection makes no card request of its own. Failed acquisitions and transient after-index memory failures remain visible per mount and are retried on Refresh or remount; stable answers and genuinely unconverted record state are retained. This is separate from selected-subject/walk storage.
 
 reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, currentness, worklist/history linkage, supplied implementation facts and realization/proof entries on both code sides. The leaf-wide result no longer carries an aggregate memory diff grouped by record/source; standalone knowledge-tree comparison is a separate owner. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
+
+Catalogue and summary readers accept an optional recorded comparison number. They transmit it to their own endpoints and include it in their local/retained question identity, preserving the separate leaf-scoped invalidation and generation guards. The summary can wait disabled until the number is known. review.ts no longer declares or exports the source-content expansion client. reviewFamily.ts additionally mirrors the selected revisions’ display versions and writer state/owners/detail.
 
 ## Invariants And Boundaries
 
@@ -58,6 +60,21 @@ directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserve
 
 the store's three `ConditionalReads` resources now own reference-counted pending fetches: a same-facts joiner receives its own wait over one fetch, a leaving owner cannot abort a live joiner, and the last waiter removes the entry before aborting. `TaskDocumentResources` uses the same waiter rule and `abortableRead.ts` supplies `abortedRead`/`isAbortedRead`/`withAbort`. The task entry's change-set bar, summary and body abort their own reads on a selection change, and an aborted read is not rendered as a failure. The capacity/byte limits and the 256/64/128 resource capacities are unchanged. Earlier sentences that describe a different-facts read as simply aborting the older controller are historical; the waiter count is now part of the contract.
 
+## Source-content transition and retained historical references
+
+A4-F5 removes SourceContent.tsx, the source-content client and its wire mirrors from data/review.ts, and the expression-card Full file path. The prior client/renderer captions below describe that earlier UI, including its shared transport decoder; they do not claim those consumers survive. The Python source-content models, application reader and serving endpoint remain separate backend API owners. Current changed-file inspection opens the existing viewer on the recorded comparison, and cards keep focused excerpts rather than their own Full file expansion.
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. (historical reference 42)
+> - **The six-member state literal and optional-text side mirror preserve the server contract. This interface is not a discriminated text/state validator and shared transport does not enforce a complete payload guarantee.** (historical reference 43)
+> - **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** (historical reference 44)
+> - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** (historical reference 45)
+> - **Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.** (historical reference 46)
+> - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** (historical reference 47)
+> - ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message. (historical reference 48)
+> - The renderer the expansion's fields feed, and its three state-decided branches. (historical reference 49)
+
 ## Evidence
 - The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries. [108]
 
@@ -79,7 +96,6 @@ the store's three `ConditionalReads` resources now own reference-counted pending
 - The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper. [24]
 - The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
 - The route's read-only client and its comparison call. [29]
-- **The entry call: the task context alone, because a selector is what it is being asked for.** [30]
 - **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
 - **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
 - The endpoint the comparison call reaches, with no path among its parameters. [33]
@@ -93,21 +109,13 @@ the store's three `ConditionalReads` resources now own reference-counted pending
 - **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
 - The payload whose comparison may be absent, and the pane that says which question was answered. [40]
 - **The request that omits the selector when there is none — the task-context entry.** [41]
-- Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. [42]
 
-- **The six-member state literal and optional-text side mirror preserve the server contract. This interface is not a discriminated text/state validator and shared transport does not enforce a complete payload guarantee.** [43]
 
-- **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** [44]
-- **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [45]
 
-- **Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.** [46]
 
-- **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** [47]
 
-- ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message. [48]
 - The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field. [109]
 
-- The renderer the expansion's fields feed, and its three state-decided branches. [49]
 - **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
 - **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
 - **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
@@ -132,7 +140,6 @@ the store's three `ConditionalReads` resources now own reference-counted pending
 - Present paging excludes records and allows only knowledge without a cursor. [87]
 - Entry catalogue refusal does not remove task-context review reachability. [88]
 - Refresh empty-string normalization is specific, rather than universal query normalization. [89]
-- Catalogue history/generation keying does not transmit those values; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined. [90]
 - Change-set refusal reasons are carried by the current decoder. [91]
 - Requirement reads forward context and a path; registered address resolution is listing-based. [92]
 - Artifact reader targets also include task reports and decisions. [93]
@@ -168,9 +175,27 @@ the store's three `ConditionalReads` resources now own reference-counted pending
 - One answer as a read state. [66]
 - The comparison a payload names; without it no tree read is made. [67]
 
-- The entries hook shares cached/in-flight card reads, suppresses unmounted retell callbacks without aborting the shared read, and returns null without a comparison or invariant set.  Anchor: `useReviewTreeEntries` [68]
 
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
 - The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
 
 - Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer. [103]
+
+- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]
+- The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid. [43]
+- The retained backend expansion carries both requested tree identities, both side values, currentness, path-bound measurement and admission. [44]
+- The retained backend content/refused envelope enforces one expansion or one refusal, never both. [45]
+- The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical. [46]
+- The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair. [47]
+- Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion. [48]
+- The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes. [49]
+
+- The card store admits stable answers and retries transient read failures instead of retaining them. [110]
+- Shown-set card reads sort and deduplicate at most500 IDs per chunk and merge in chunk order. [111]
+- The catalogue request transmits optional recorded comparison identity. [112]
+- Catalogue local keys include the optional number and forward it to the request. [113]
+- Intent summaries carry optional comparison identity and can wait until a number is known. [114]
+- The family mirror carries selected display versions and recorded writer observations. [115]
+- useChangeSetCards reads the page's shown invariant set in sorted distinct chunks of at most 500 and shares only admitted stable answers and in-flight acquisitions; inactive/unbound reads return null. [68]
+- Catalogue history/generation remain local keying inputs, while an optional comparison number is transmitted and included in the request identity; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined. [90]
+- The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector. [30]

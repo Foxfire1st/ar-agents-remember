@@ -2,81 +2,68 @@
   "path": "dashboard/src/panels/review/ReviewSurface.sealedPageRepair.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Captured family, member, trees and lane fixtures",
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F05 main attribution uses the held destination counts and states pending without another read', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "da42772e2442b4c733d288b122a19dae8391906b",
-            "content": "sha256:7824765ad33c6e8054a3743266bff6c530e93a0cb1a5b88910a0743f768bbbc4",
+            "blob": "3dde534f6d350c5e24782e66a1c43073615bb042",
+            "content": "sha256:8a6ec368db5d25dc1f5ebb8bb856eda6cd453d833761378293aa2050198df25b",
             "locator": {
-              "kind": "symbol",
-              "name": "family"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Admitted response wrapper for synthetic replies",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "da42772e2442b4c733d288b122a19dae8391906b",
-            "content": "sha256:ee1b3e63032c9a9ed16241dd87ec666452ddfb2e788d3b1d471a7f421ff12fd9",
-            "locator": {
-              "kind": "symbol",
-              "name": "response"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Tree-less family with unconverted outline for F08",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "da42772e2442b4c733d288b122a19dae8391906b",
-            "content": "sha256:22340e42277ce25264db07eae006426b910599f2d7e525a587083e4e90793c64",
-            "locator": {
-              "kind": "symbol",
-              "name": "nonTree"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Newer-comparison lane and trees held for F04",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "da42772e2442b4c733d288b122a19dae8391906b",
-            "content": "sha256:1b8e114b53c21392e28bd99d36a44333df19255c28806a5d83c27e7b50e5c2b3",
-            "locator": {
-              "end": 273,
+              "end": 53,
               "kind": "line_range",
-              "start": 1
+              "start": 35
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Synthetic linked binary and mode-only inventory for F10",
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F08 every non-tree complete-file trigger gives a named refusal without selecting an unrelated range', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "da42772e2442b4c733d288b122a19dae8391906b",
-            "content": "sha256:e94f3b3e62efc5aee13b6dd962014550a55747b542eb7423b1b34b5180bc3beb",
+            "blob": "3dde534f6d350c5e24782e66a1c43073615bb042",
+            "content": "sha256:6440c1a239adc3f678fb47328bc2ccd1d6d0485434ebe5a45271c77e5caf2332",
             "locator": {
-              "kind": "symbol",
-              "name": "data"
+              "end": 99,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F04 an opened comparison retains its lane and inventory after a held subject answers another comparison', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dde534f6d350c5e24782e66a1c43073615bb042",
+            "content": "sha256:4dab72e7956e2d91a5b4f3a9d607ba75124ffc3f79e1a71ce74b133b7e562f57",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F10 All gives linked binary and mode-only files one non-text badge without changing all-linked text or cockpit rows', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dde534f6d350c5e24782e66a1c43073615bb042",
+            "content": "sha256:e6fe14f97aabf277f06564d165713a60f28f163542b079c8bbfc9d515c193874",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 202
             }
           },
           "kind": "test"

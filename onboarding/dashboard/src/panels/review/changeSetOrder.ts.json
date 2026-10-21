@@ -1,0 +1,293 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOrder.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:ced8be66a1bf3e7048d6a4744bfe00327a2e5b07036a9e46eaf354637c90425e",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortKey"
+        }
+      },
+      "id": "RLZ-41Z1D8",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It takes the maximum entry value and then the exact Priority key.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:2aa094f748e30d58874f24ed4838937786d803275a3a6a23a9025b3655739bfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "drawnRegions"
+        }
+      },
+      "id": "RLZ-44K9BR",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It assigns one lead drawing and preserves all member keys and entries in that lead card.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:59095cc47e4a23b8617dcded8fbbf2942aee58c6a9cb31f110b9221136b00044",
+        "locator": {
+          "kind": "symbol",
+          "name": "priorityKey"
+        }
+      },
+      "id": "RLZ-9HMVKH",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It gives the explicit effect/change/count/span prefix and leaves the final stable text-id tie to orderedDrafts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:0aace7a34c9b57f5726a7af7e3989b0c589e1933477b8ffeb5f09e50e41ec049",
+        "locator": {
+          "kind": "symbol",
+          "name": "lineCounts"
+        }
+      },
+      "id": "RLZ-C9G875",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It computes the true excerpt diff or the explicit named-side range fallback.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:c857cefd5da6b6a49e2eecd46943298f4bed7eb5b349a8c35c1883b3bdd616dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "excerptLines"
+        }
+      },
+      "id": "RLZ-D8EEW4",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It returns empty only for known absent state, strips one final terminator and refuses unknown/truncated excerpts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:98a7f9811ecc421f18de1496448a99da38c10843db1190e91c417f745ea323c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "compareLocations"
+        }
+      },
+      "id": "RLZ-KFKAHA",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It independently fixes the role/span/path/id order inside every subject.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetModel"
+        }
+      },
+      "id": "RLZ-M3DSTA",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It builds the groups, first-occurrence subjects and block order that both projections consume.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:9d3438f2ca59990b50104c6278f2ea15078f1ac73bbb3ac6fbfcbc7612bfe382",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortOptions"
+        }
+      },
+      "id": "RLZ-NJJP0Q",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It marks all numeric sorts unavailable with the result-level memory reason.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:eee389a197f9417acf962617ad7f2976c6cbfa4c00005be706a1760d468b87d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectCurrentness"
+        }
+      },
+      "id": "RLZ-QTVMWK",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It takes the least current of the leaf-wide state and recorded-entry state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:5479bd93d51939ffe71a04cdeec7edb3b2146f00fbafa0401607f0cc0e435282",
+        "locator": {
+          "kind": "symbol",
+          "name": "entryCurrentness"
+        }
+      },
+      "id": "RLZ-SZ5YSV",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It ignores unrecorded sides and keeps the least current recorded side.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:9e4dbd32c623b141ec431e2f5a9b3c069bf3c1e652c5271b99887625d65aa398",
+        "locator": {
+          "kind": "symbol",
+          "name": "filterTree"
+        }
+      },
+      "id": "RLZ-X5HCD5",
+      "invariant": "INV-DEDX8T",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 9",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It applies the active-view query to family, subject and location fields and keeps the matching group for a folded location.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+        "locator": {
+          "kind": "symbol",
+          "name": "changeSetModel"
+        }
+      },
+      "id": "RLZ-XXW6ZB",
+      "invariant": "INV-27SPEH",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 5",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The shared change-set model applies Changed/All while retaining selected and walked family context; ReviewTree renders the model and persisted switch.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "content": "sha256:ced8be66a1bf3e7048d6a4744bfe00327a2e5b07036a9e46eaf354637c90425e",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortKey"
+        }
+      },
+      "id": "RLZ-YD1G13",
+      "invariant": "INV-S63HCG",
+      "origin": {
+        "handoffEntry": "RP03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It prefixes Priority with only the shown subject rank for currentness sorting.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact locations, shared-region drawing and deterministic ranking\n\nAnchor: \"function locationNode(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:85d9cdea76a7c23ca42d078bfb51deb9f01b5270e0bf8005f4f0f06556448ef4",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One model/view/order for both consumers\n\nAnchor: \"export function changeSetModel(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+            "locator": {
+              "end": 895,
+              "kind": "line_range",
+              "start": 867
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tree-only matching and reachable folded groups\n\nAnchor: \"function filteredSubject(node: SubjectNode, needle: string): FilteredSubject \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:277021ee1ef858f794daeebb02b539efcb75fecfd1a54c88a10bc272a4903c88",
+            "locator": {
+              "end": 961,
+              "kind": "line_range",
+              "start": 928
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

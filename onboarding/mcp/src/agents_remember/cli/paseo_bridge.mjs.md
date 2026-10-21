@@ -20,17 +20,16 @@ The bridge module carries native host integration loaded beside the runtime. A p
 
 The header documents `presenter-transcript` as a read of up to 200 timeline entries and `presenter-cancel` as cancellation of the named presenter. These commands remain separate from AR role execution; this header change adds no command implementation.
 
+`agent-send` validates optional image and text-attachment lists through `sendExtras` before reading the recipient or attempting delivery. Nonempty extras accompany the same native send and preserve its existing message ID and steer behavior. Absent, null or empty lists add no options. A malformed entry refuses the whole payload before recipient lookup; the bridge does not send a partial list. The attachment helper owns individual image/text schemas, while recipient state checks and delivery outcomes remain here.
+
 ## Evidence
 
 
 ## Current contract evidence
 
-- The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
-
 - The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing. [1]
-
 - `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`. [2]
-
 - A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values. [3]
-
-- The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. \[5] [5]
+- The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
+- The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. [5]
+- Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options. [6]

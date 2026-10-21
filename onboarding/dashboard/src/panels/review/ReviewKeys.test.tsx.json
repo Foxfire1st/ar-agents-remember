@@ -2,17 +2,34 @@
   "path": "dashboard/src/panels/review/ReviewKeys.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Key-reference component checks effective rebound N/k, question-mark opening outside editable/other zones, modifiers, close and listener disposal. Registry completeness belongs to commands.test.ts.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens a named key reference from a visible Keys control and shows effective bindings', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3ea6ada39c25006e4c799f93a9fe715a0b3aa46d",
-            "content": "sha256:2df668f26e31e3db55cb414d6606236f168b47768f78bcde811262e58283c69f",
+            "blob": "bcc20015755dd136237336ee669304c197c5128c",
+            "content": "sha256:13dee0397e7897450314a6d117a5ff7bf8bd586e6d0dd837385ecfa1c1b97429",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with ? outside text fields, ignores editable and other zones, and removes its listener', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc20015755dd136237336ee669304c197c5128c",
+            "content": "sha256:0d884caa313fcd19d9e8ec286cd5615529b77dc00c348a4e48cf2bae211d68af",
             "locator": {
               "end": 51,
               "kind": "line_range",
-              "start": 1
+              "start": 26
             }
           },
           "kind": "test"

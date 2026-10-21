@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
             "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
             "locator": {
-              "end": 269,
+              "end": 270,
               "kind": "line_range",
-              "start": 269
+              "start": 270
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -175,6 +175,24 @@
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle.\n\nAnchor: \"function ReaderLayout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:0feee1581c4b1c5ba393a48a119463de00ae7accda236131a17ddf7f31eaa592",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 512
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

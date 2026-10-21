@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/tray/trayShell.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks shell tray composition and review-column first-target behavior.\n\nAnchor: \"it('puts the Tray button outside the view tabs, the tray beside the one frame, and the rest outside the body', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec661a3a419488a801058c8a66d14b7f7e881d50",
+            "content": "sha256:1622d617fceceebdb2fac603ebc5705de3db0b1b2658260d6307606be3ea2bba",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks shell tray composition and review-column first-target behavior.\n\nAnchor: \"it('docks above the Chats page’s own frame, not at the corner over its message box', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec661a3a419488a801058c8a66d14b7f7e881d50",
+            "content": "sha256:bab42963964c507dd7d04c098c6208b9c4a969c86c5d9488a1b7c6ded2a93e5d",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks shell tray composition and review-column first-target behavior.\n\nAnchor: \"it('shows a pick as the line with the column closed; his open of the tray opens the column, whose chat the pick takes', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec661a3a419488a801058c8a66d14b7f7e881d50",
+            "content": "sha256:6ed2e34220fc93f7b1b7368a7aca9ef401bd38e6d92c63ff6bf05f05628c14a9",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks shell tray composition and review-column first-target behavior.\n\nAnchor: \"it('keeps his own choice of target made before the column shows its chat, and ends the wait on leaving', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec661a3a419488a801058c8a66d14b7f7e881d50",
+            "content": "sha256:bee3289f08eb9cf4129abe9a50cef82ef440d0b310274bfad4dc8c9374f9e01c",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

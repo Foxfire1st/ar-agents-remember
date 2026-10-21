@@ -3,35 +3,34 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "Surviving controls are independent presentation callbacks, not a relocated accordion.\n\nAnchor: `ExpressionControls`",
+      "note": "The current page-level Code context control selects Changes only or Full context through the persisted code-context store; the old ExpressionControls callbacks are retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "10ffea4c72932d8d494df8b6cceb9f73aeba7c9e",
-            "content": "sha256:c0f5507159c299b4c278ac376072f9c1ea78c4eb95011d541aea561cb0ad366b",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:9571e46164f011c1eff4cd8d3f2ddcba08d9fd9575c062e8b37640f921319603",
             "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 15
+              "kind": "symbol",
+              "name": "CodeContextSwitch"
             },
-            "path": "dashboard/src/panels/review/ExpressionControls.tsx"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "CenterExpressions has no retired file-view fallback.",
+      "note": "ReadingColumn renders the shared model's subject groups and lane under its page-level control; the retired file accordion is not this composition.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
             "locator": {
               "kind": "symbol",
-              "name": "CenterExpressions"
+              "name": "ReadingColumn"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
-        "content": "sha256:39bd172bc40e9441f0cfcff7e05775356deac1331196633c1741a99da17d6ac0",
+        "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+        "content": "sha256:ae69d405ed8b02d9b1dc1d11e5070acabd5cf357d17a81d60f289fe9a02b1431",
         "locator": {
           "kind": "file"
         }
@@ -21,38 +21,31 @@
   ],
   "references": {
     "1": {
-      "note": "useIntentMarkerScope returns null when comparison is undefined and otherwise returns a scope containing that comparison. IntentMarkerScope defaults to null; useMarkClassification returns none without a scope or when inactive. These implementation checks establish the no-scope boundary without asserting that a dataset review lacks a comparison.\n\nAnchor: inclusive source ranges",
+      "note": "A defined comparison creates a scope, while no scope or inactive input produces none for a pane. The pane hook has explicit no-scope/inactive behavior and uses the matching scope read.\n\nAnchor: \"export function useIntentMarkerScope(input: MarkerScopeInput): IntentMarkerScopeValue \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
-            "content": "sha256:462ae2d4435ac736e591813783fe6f120420dfa25a0e0e6fad849efd9d176ff8",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:89745fa7f2b37f6bb9a37596d8eecc34a9ca70d9b89e54b1d7b7fb85e9a917bc",
             "locator": {
-              "end": 128,
+              "end": 214,
               "kind": "line_range",
-              "start": 90
+              "start": 91
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "10": {
+      "note": "Classification uses the reading gate only while it lacks a ready cached answer; the given-classification branch is gone.\n\nAnchor: \"function gatedClassify(\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
-            "content": "sha256:6a0d9f23c6cbc42883f7cdb6366cc1442c3970557b419940b16a8838fd1f4367",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:be96bc376ff3d3e4a78dda9e4de7e18a6620d2edbc670d794c2ff07a2b0357e1",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 53
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
-            "content": "sha256:fa1ac77ab6f77f98f5ac3011920b6c41da0b2394f86a4a2c5a64ebfed16340da",
-            "locator": {
-              "end": 210,
+              "end": 214,
               "kind": "line_range",
               "start": 175
             }
@@ -62,48 +55,16 @@
       ]
     },
     "2": {
-      "note": "Where a followed marker sat, the workspace's moves, a pane's read and the scope's value.",
+      "note": "The scope types separate marker position, workspace moves, read states and scope values.\n\nAnchor: \"export interface MarkerAt {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:31583cf338b6755b57254254644ab6fc700ed4a96868807a82efce5e54cf7c14",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:3cc671c16a8397abec4c137e85df9ff0324845b6977fc0d1de3c914f389c1400",
             "locator": {
-              "kind": "symbol",
-              "name": "MarkerAt"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:353e523a7224359db48be2dd15b836ad50230bebd35739102e0b33825b83ae05",
-            "locator": {
-              "kind": "symbol",
-              "name": "MarkerMoves"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:5deac2438834e3bb94b0ee2097da50737577f18b302e40d4314293688972bed3",
-            "locator": {
-              "kind": "symbol",
-              "name": "MarkRead"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:74974bad70debd80da77d0474a3e814f00cd489bbaa7289c1c49c9d310c6edce",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntentMarkerScopeValue"
+              "end": 54,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "code"
@@ -111,15 +72,16 @@
       ]
     },
     "3": {
-      "note": "A return that never finds its mark stops waiting.",
+      "note": "An unsettled return expires after the declared 15-second return window.\n\nAnchor: \"export const RETURN_WINDOW_MS = 15_000;\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:7dd48b68d00ca06047d2cb17945ce8bab777dacd07a6cb742ed7232e6285d129",
             "locator": {
-              "kind": "symbol",
-              "name": "RETURN_WINDOW_MS"
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
@@ -127,15 +89,16 @@
       ]
     },
     "4": {
-      "note": "A partial or unmeasured inventory counts as partial (review R2).",
+      "note": "Partial or unmeasured inventories keep the partial interpretation.\n\nAnchor: \"export function markerInventory(inventory: ReviewSourceInventory): {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:22d82c3f7699dd9ae13f4299d94eb4948ed5d648081ec13e1e92d5880a6c7617",
             "locator": {
-              "kind": "symbol",
-              "name": "markerInventory"
+              "end": 76,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
@@ -143,15 +106,16 @@
       ]
     },
     "5": {
-      "note": "The scope: listed paths, origin, target and return only for the same comparison; follow, back and settle.",
+      "note": "Follow, Back and return state remain qualified by the comparison key.\n\nAnchor: \"export function useIntentMarkerScope(input: MarkerScopeInput): IntentMarkerScopeValue \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:462ae2d4435ac736e591813783fe6f120420dfa25a0e0e6fad849efd9d176ff8",
             "locator": {
-              "kind": "symbol",
-              "name": "useIntentMarkerScope"
+              "end": 129,
+              "kind": "line_range",
+              "start": 91
             }
           },
           "kind": "code"
@@ -159,15 +123,16 @@
       ]
     },
     "6": {
-      "note": "One read per listed path per scope; a failed read forgotten.",
+      "note": "Listed paths share a pending classification and ready result; failed reads are forgotten.\n\nAnchor: \"function useClassificationCache(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:bb363c45b81f4853f805e6feb89da48e7dcc7cec6b957a10f4e1226133c6daa3",
             "locator": {
-              "kind": "symbol",
-              "name": "useClassificationCache"
+              "end": 172,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "code"
@@ -175,52 +140,24 @@
       ]
     },
     "7": {
-      "note": "A pane's read: the caller's classification, `unlisted` under a partial inventory, the kept answer, or loading.",
+      "note": "Pane reads use gated shared classification, explicit unlisted states and only matching path/function answers.\n\nAnchor: \"function gatedClassify(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:fa1ac77ab6f77f98f5ac3011920b6c41da0b2394f86a4a2c5a64ebfed16340da",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:2575580fed927cb476af8fb29d37b52a228c18dabe70eab852130c74d70421ca",
             "locator": {
-              "kind": "symbol",
-              "name": "useMarkClassification"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "667f28385f40263179298fd17e129d05591551ff",
-            "content": "sha256:f97c686acb10260281e10cf902509807cc473a2078b29ca24a28c1f23a0cca1f",
-            "locator": {
-              "kind": "symbol",
-              "name": "shownRead"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The workspace that provides it.\n\nAnchor: \"<IntentMarkerScope.Provider value={markers}>\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
-            "content": "sha256:bf5024ba037b3cca73ec26937c14b01a4c83ee978736ef2b974e8c2eae3f1dad",
-            "locator": {
-              "end": 281,
+              "end": 235,
               "kind": "line_range",
-              "start": 281
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+              "start": 175
+            }
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The scope cases: one read per surface, never an unlisted path; partial and unmeasured inventories.\n\nAnchor: \"classifies a listed path once per surface, and never an unlisted one\"; \"counts an inventory that is partial, or not measured at all, as partial (review R2)\"",
+      "note": "Stored scope tests assert one listed-path classification per surface, no unlisted request and the partial-or-unmeasured inventory interpretation.\n\nAnchor: \"it('classifies a listed path once per surface, and never an unlisted one', async () => {\"",
       "targets": [
         {
           "anchor": {

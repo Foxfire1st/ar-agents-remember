@@ -1,0 +1,232 @@
+{
+  "path": "mcp/src/agents_remember/cli/developer_message_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:a92f867fdc4d64a5373faf9591de3ce0a1c9bb87c88c15b1217f39ce0d173a78",
+        "locator": {
+          "kind": "symbol",
+          "name": "MessageFiling.file_message"
+        }
+      },
+      "id": "RLZ-3WRK6F",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Files the message whole and atomically before the send.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:a713727e7982a76592f195fff495d0c180a0d371b62b226b9958caab1b9ae67e",
+        "locator": {
+          "kind": "symbol",
+          "name": "MessageFiling.save_blob"
+        }
+      },
+      "id": "RLZ-MGEV8Y",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Saves each picked image and text beside the message by SHA-256.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:bb0efbdd0cc73844858b708875decc61d9cd8e2a3ef6b6b03f40037fdfb4779d",
+        "locator": {
+          "kind": "symbol",
+          "name": "message_filing"
+        }
+      },
+      "id": "RLZ-P3WXPK",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Files under the folder's lock, and removes only the blobs it created itself when the filing fails (45e5b434, L89-R1-012).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:af3b99efbc02aaa3de19f18d5aaf8f69b23c106a3224b04457a008463e37acf8",
+        "locator": {
+          "kind": "symbol",
+          "name": "settle_held"
+        }
+      },
+      "id": "RLZ-SAACGE",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reconciles each held row against its recorded held-message end and refreshes the durable path/hash.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:e33e29b51c0cf7eb1b644a1e5cc1eaf4ea9a64640021d7c22fd141754c74c1e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_ends"
+        }
+      },
+      "id": "RLZ-SDYS46",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads terminal held IDs from the named receipt path, or the historical request file when that path is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:e89513e05af19bdee3d1203c117044dd83e8f4fbebfbe532017c4d9c01561958",
+        "locator": {
+          "kind": "symbol",
+          "name": "_settled"
+        }
+      },
+      "id": "RLZ-V0GRJ0",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Marks proven losses undelivered while preserving the complete durable message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:30d30242b3aebcf947ccec191e5f9b98734ee04d8c3ede6d36b1c75bf99c9fbf",
+        "locator": {
+          "kind": "symbol",
+          "name": "target_folder"
+        }
+      },
+      "id": "RLZ-WFGRYS",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Chooses the task's folder or the taskless agent folder.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:d57d6c9e45b36987f61d48afbdfca51e3f74805ae1dd8af0c204f020337e473c",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_sent"
+        }
+      },
+      "id": "RLZ-YVVE4C",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads a recipient's latest lines, newest first.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+        "content": "sha256:5e64d53328daf00035dfce6325a2a4c8eb8706297e5097bbe098d62b17f2289f",
+        "locator": {
+          "kind": "symbol",
+          "name": "append_sent"
+        }
+      },
+      "id": "RLZ-ZC3HE6",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Appends one line per filed send and drops old lines and recipients at the bounds.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history.\n\nAnchor: \"def target_folder(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+            "content": "sha256:ac696de528b175aa5abde3035bcbb94c03cb496c72d04810a3d4982b6e639355",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history.\n\nAnchor: \"def _save_blob(folder: Path, data: bytes, suffix: str) -> tuple[Path, str, bool]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+            "content": "sha256:ce5cf552d7b20e28664e10e5a733c87da95a502eb8bf1ae9e631471541481301",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Keeps target-scoped complete developer messages, hashed picks and bounded sent-log history.\n\nAnchor: \"(:func:`message_filing`), so no saved pick is left that no message names.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+            "content": "sha256:bb0efbdd0cc73844858b708875decc61d9cd8e2a3ef6b6b03f40037fdfb4779d",
+            "locator": {
+              "kind": "symbol",
+              "name": "message_filing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
+            "content": "sha256:092281c59bc5e22b4df5a058a70f56f6ef0f7924d01f1aab2f0f3f4d0104bbf6",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-        "content": "sha256:b1ecf852329029c7701a87f9c9754ca85174c339f7dc95e689f8bbbe31a2547b",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
         "locator": {
           "kind": "symbol",
           "name": "sendToAgent"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-        "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "content": "sha256:5a31c972387a36b488788c27daa0d79a3e71ffe29bbb71adef03bf0936a0fe72",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
         "locator": {
           "kind": "symbol",
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
+        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -165,14 +165,16 @@
   ],
   "references": {
     "1": {
-      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.",
+      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.\n\nAnchor: \"function closingText(items) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
-              "kind": "file"
+              "end": 1118,
+              "kind": "line_range",
+              "start": 1108
             }
           },
           "kind": "code"
@@ -180,14 +182,29 @@
       ]
     },
     "2": {
-      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.",
+      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.\n\nAnchor: \"const LIVE_PAGE_LIMIT = 200\"; \"const COMMANDS = {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
+            "content": "sha256:9680ca44d3e83fb4e89e64c53f89776491a4d176dd3d936e566a422fc4098387",
             "locator": {
-              "kind": "file"
+              "end": 28,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:e0b8675cd96ce4385a714394cd267bbba1a44ad39510265bb5e37af76cdee29b",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 246
             }
           },
           "kind": "code"
@@ -195,14 +212,16 @@
       ]
     },
     "3": {
-      "note": "A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values.",
+      "note": "A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values.\n\nAnchor: \"function stillLoading(entry) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:8f20824ca1a7a145e73b03e91e72398a6f2cd96399fd7b08e9f62071199336c3",
             "locator": {
-              "kind": "file"
+              "end": 420,
+              "kind": "line_range",
+              "start": 409
             }
           },
           "kind": "code"
@@ -210,14 +229,16 @@
       ]
     },
     "4": {
-      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.",
+      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.\n\nAnchor: \"const COMMANDS = {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:e0b8675cd96ce4385a714394cd267bbba1a44ad39510265bb5e37af76cdee29b",
             "locator": {
-              "kind": "file"
+              "end": 263,
+              "kind": "line_range",
+              "start": 246
             }
           },
           "kind": "code"
@@ -225,15 +246,84 @@
       ]
     },
     "5": {
-      "note": "The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. \\[5]",
+      "note": "The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it.\n\nAnchor: \"if (input.labels['ar.capability'] === 'review-presenter') {\"; \"async function presenterTranscript({ api, daemon }, input) {\"; \"async function presenterCancel({ api, daemon }, input) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9d3aaac0b29e3a14f25634f49bc75bdd33f723dd",
-            "content": "sha256:7cc333bd70aa4a1960ffbfc76827b654d6ddbfd52abc5233745df5e9692bd1ae",
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:a289f64af9267d07a84593a2b4c1f5c87f129bc6b4d1d1cd11406c41ff0f4688",
             "locator": {
-              "kind": "file"
+              "end": 638,
+              "kind": "line_range",
+              "start": 627
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:ec71c77a22d773dd031fb902d232d04a33bee8b37de03d5cd71f27ec609078bb",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 733
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:dcb9ce467f4a4802adf2e31ccb7d1c91532f30717562cd5fd573446705718723",
+            "locator": {
+              "end": 763,
+              "kind": "line_range",
+              "start": 756
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options.\n\nAnchor: \"async function sendToAgent({ api, daemon }, input) {\"; \"export function sendExtras(input) {\"; \"function listOf(input, name, check) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
+            "locator": {
+              "end": 902,
+              "kind": "line_range",
+              "start": 841
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77a42f23ffa1fbd4b6e3fb5afb2ff8292f97776",
+            "content": "sha256:b64dbf12f1d75397980d4e00a8d9cd7dd0bf4466d3565d651723d079dd0679da",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77a42f23ffa1fbd4b6e3fb5afb2ff8292f97776",
+            "content": "sha256:eb841119c142e5bdabb37b0080a5cdbc4a07988a80f88c299b0779f190953a3a",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
           },
           "kind": "code"
         }

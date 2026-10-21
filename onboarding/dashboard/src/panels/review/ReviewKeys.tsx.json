@@ -2,32 +2,34 @@
   "path": "dashboard/src/panels/review/ReviewKeys.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Reviewer key reference: `isHelpKey` owns the described branch.",
+    "5": {
+      "note": "ReviewKeys.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewKeys() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "75b7859c598d9c7f295f08986fffc0f346eedc64",
-            "content": "sha256:7964b9dddd8c16c221d982e871f5cd808d41cdabd48546f7d5eff439c1572cab",
+            "blob": "250fce57560de01c95a53957e8b53c6951b7d1de",
+            "content": "sha256:2b26c2cd878fa4fd19f1534620870497c17413c5470945757314da1c33bc3867",
             "locator": {
-              "kind": "symbol",
-              "name": "isHelpKey"
+              "end": 48,
+              "kind": "line_range",
+              "start": 33
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Reviewer key reference: `ReviewKeys` owns the described branch.",
+    "6": {
+      "note": "ReviewKeys.tsx current behavior at this source owner.\n\nAnchor: \"function isHelpKey(event: KeyboardEvent): boolean {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "75b7859c598d9c7f295f08986fffc0f346eedc64",
-            "content": "sha256:7b3d5ddc895ccfa9ed026b572b06b195be67eab2fc13cdd0a180453e10880f14",
+            "blob": "250fce57560de01c95a53957e8b53c6951b7d1de",
+            "content": "sha256:ea1c77cce16f1f5d77c31e3a55f94e605a8563384258cf9a2b8facf04a95062e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewKeys"
+              "end": 44,
+              "kind": "line_range",
+              "start": 29
             }
           },
           "kind": "code"

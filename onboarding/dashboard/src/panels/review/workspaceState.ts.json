@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-        "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+        "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+        "content": "sha256:541640dcb1db3265eeb5ae74fd74a4e330f7ef090165e171b40ecb106419f013",
         "locator": {
           "kind": "symbol",
           "name": "useWorkspaceState"
@@ -15,13 +15,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Holds diff layout, full-file disclosure and the open expression path as workspace-level state, with full-file off so changed regions show by default; it remembers the element that opened an expression, and closePath(null) returns focus to that opener.",
+      "rationale": "Keeps the mounted page opened location groups in local state through toggleGroup/openGroup, so subject reads do not reset them. The hook also keeps the Worklist flag and closes it when setChosen selects family context. The remembered code-context preference and width-derived diff layout live outside this hook; it owns no full-file disclosure, open expression path or closePath focus return.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-        "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
+        "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+        "content": "sha256:541640dcb1db3265eeb5ae74fd74a4e330f7ef090165e171b40ecb106419f013",
         "locator": {
           "kind": "symbol",
           "name": "useWorkspaceState"
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-        "content": "sha256:080398a9f01fb5bbc3d478b039e47e7c8db049671beca6a570398c4f9f4b6b62",
+        "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+        "content": "sha256:9d5b427bc976571e6e435f48b5be54517426fe46e9658c97e8ade3d49bc4c9db",
         "locator": {
           "kind": "symbol",
           "name": "FocusRequest"
@@ -56,64 +56,34 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "FocusRequest declares the originating element, numbered intent and optional scroll/answered flags; this interface alone does not enforce their consumption.",
+    "7": {
+      "note": "workspaceState.ts current behavior at this source owner.\n\nAnchor: \"export function useWorkspaceState(): WorkspaceState {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-            "content": "sha256:080398a9f01fb5bbc3d478b039e47e7c8db049671beca6a570398c4f9f4b6b62",
+            "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+            "content": "sha256:d39706a079b39032861101d2677053b5a8c9ff1b2c2eb18c1e54fd2d9209f3b1",
             "locator": {
-              "kind": "symbol",
-              "name": "FocusRequest"
+              "end": 59,
+              "kind": "line_range",
+              "start": 44
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "WorkspaceState declares local display values, callbacks, center/focus refs and tree intent; it is not server authority or persistent storage.",
+    "8": {
+      "note": "workspaceState.ts current behavior at this source owner.\n\nAnchor: \"export interface FocusRequest {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-            "content": "sha256:3612848799a3c876620a484e888082b918029fecadbdfda2914949914413a625",
+            "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+            "content": "sha256:616a8043078e973e21f2fd3559655513b2638a220d29025e7349362399105c02",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The mounted hook owns display state, numbered selection intent, initial media-query layout and focus-neutral versus focus-restoring path callbacks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-            "content": "sha256:d46469c6cf6233fc47417636e4ea1b93f6fa805add2584a21e5fdfb3ce3be4db",
-            "locator": {
-              "kind": "symbol",
-              "name": "useWorkspaceState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Revealing a selected center skips narrow screens and otherwise resets the containing review surface scroll, without moving focus here.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e00057f352f49ba21fb0c809e433cdc31c113c91",
-            "content": "sha256:b72d207856757746f99d56c3fc190e610482d89f418a5a05551ef46f8b598f2d",
-            "locator": {
-              "kind": "symbol",
-              "name": "revealCenter"
+              "end": 27,
+              "kind": "line_range",
+              "start": 12
             }
           },
           "kind": "code"

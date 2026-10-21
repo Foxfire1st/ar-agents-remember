@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/stateWords.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Family-context vocabulary\n\nAnchor: \"// The family context's state, as the slot's family lines name it.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c49a6758623ed3005d4aeb8755483dc8394d2d78",
+            "content": "sha256:a4d068750345a2ffc1e922ed62d14396697629436da20d6a0a692fefe8adb6a9",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Remainder wording and generic token spelling\n\nAnchor: \"const REMAINING_WORDS: Record<string, string> = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c49a6758623ed3005d4aeb8755483dc8394d2d78",
+            "content": "sha256:37af505b275eebcf8d9ae7c2acde35e5924c8d8cee933e4d2461b43791ce7f23",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

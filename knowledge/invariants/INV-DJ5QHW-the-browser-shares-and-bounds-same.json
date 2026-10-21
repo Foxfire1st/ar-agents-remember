@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A failed bound-index read must not become an immutable browser success that survives explicit Refresh; sharing pending work and isolating the question also prevent duplicate remount requests and cross-selection cards. Existing mounted tests directly assert those failures and recovery boundaries."
+  },
+  "applicability": "The dashboard browser module-shared card-answer/in-flight stores and useChangeSetCards consumer for a selected recorded comparison number and shown invariant chunks.",
+  "conditions": [
+    "Question identity is repository, master, leaf, comparison number and a sorted distinct invariant chunk. The completed store holds at most20 chunk answers in insertion order; sharing in-flight requests does not impose a separate concurrency cap.",
+    "Only a trees-phase answer may be retained. Any unavailable-history knowledge or code side prevents retention; unavailable entry-memory prevents retention when the after knowledge side is available.",
+    "A genuinely legacy-unavailable after knowledge side is the recorded comparison's own state and does not by itself forbid retaining its trees answer. An absent entry_memory key is not manufactured into a failed facts state.",
+    "A failed fetch, refused/unreadable body or unkeepable trees answer remains this mount's visible answer but is not put in the shared completed store. A remount or the shared intent-entry refresh generation asks for an unkept question again; a kept answer is reused.",
+    "Same-key in-flight callers share one uncancelled request. Cleanup only prevents that consumer from setting mounted seen state; a changed question shows only its own held/seen answer or loading, not a prior question's cards.",
+    "With disabled reading or no comparison number the hook returns null and issues no card read; an empty invariant set needs no card request and yields the normal empty cards result."
+  ],
+  "exclusions": [
+    "Server RecordedAnswerReuse observation stamps, dependency parity and live-vs-recorded reuse policy remain INV-YTPBCF; no browser stamp/parity or indefinite freshness check is promised.",
+    "The parent process live worklist memo remains INV-5M9WY3, separate from this browser store.",
+    "Which subjects are shown, the opening schedule and500-invariant chunk/read limit remain INV-KEJ5TN. Producing the four bound memory values remains INV-8F35XR and unavailable-value sort behavior remains INV-S81G6W.",
+    "The leaf-wide useReviewTrees busy-retry delay schedule, abort cancellation, overall request concurrency caps, freshness beyond question identity, byte limits and cross-tab persistence are outside this policy."
+  ],
+  "id": "INV-DJ5QHW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable Worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-2564d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596 ordinal0 210 L89-R1-024 fixed; accepted transient-client retry finding remains separate from ordinal0 101 W15 server predicate. Original dispositions are not rewritten.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470 over cd0e68f0410f2de2d1955ecdbee6628630631d9a; captured patch SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Complete reviewTrees.ts and reviewTrees.cards.test.ts bodies read statically; no fresh execution or browser acceptance."
+      ],
+      "path": "authoring-wave7.routes-final-input.json"
+    },
+    "handoffEntry": "RP20_CARD_CACHE",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The browser shares and bounds same-question card answers across mounts, keeps only stable trees answers, and retries transient card or memory-fact failures on remount or shared Refresh while showing their named state.",
+  "status": "proposed",
+  "supersedes": []
+}

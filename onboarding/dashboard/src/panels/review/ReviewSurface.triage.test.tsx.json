@@ -2,15 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.triage.test.tsx",
   "realizes": [],
   "references": {
-    "3": {
-      "note": "Captured bodies with a labelled synthetic outline and condition-based order/selection waits.",
+    "5": {
+      "note": "Captured semantic replies, synthetic outline adapter and invariant-granularity order comparison.\n\nAnchor: \"// tree's subjects; that walk is reading/ReviewPage.selection.test.tsx's.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6b9b5dc486fd347e9ffcbfbbd19704c664245e98",
-            "content": "sha256:9cec01459a8ab6964ca455b647a0c6231a7cd2b5e29ec76df86bdfbdf23f1346",
+            "blob": "ec79902ff5606bf93712b5c97a3dce493c0f4089",
+            "content": "sha256:591b53972d6f6de9bbd58b60284d721d166a551ed9528319657404fa888e5238",
             "locator": {
-              "end": 129,
+              "end": 160,
               "kind": "line_range",
               "start": 1
             }
@@ -19,17 +19,17 @@
         }
       ]
     },
-    "4": {
-      "note": "The mounted case compares both orders at invariant granularity and pins actual changed words, context, focus and the unchanged workspace.",
+    "6": {
+      "note": "Shared priority/authored order, synthetic weaken precedence and click-based word/focus/context preservation.\n\nAnchor: \"it(\"lists the centre's members in the tree's displayed order, under every sort\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6b9b5dc486fd347e9ffcbfbbd19704c664245e98",
-            "content": "sha256:aea0e00ffd8e0457b206efe46d220761471b6d13c07389d5808149dffb05e465",
+            "blob": "ec79902ff5606bf93712b5c97a3dce493c0f4089",
+            "content": "sha256:1f7767dd3c9e75632ca831d10274a84e6968b36ec3e9a32ad4e76b9171034ced",
             "locator": {
-              "end": 215,
+              "end": 237,
               "kind": "line_range",
-              "start": 130
+              "start": 161
             }
           },
           "kind": "test"

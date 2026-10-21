@@ -17,6 +17,6 @@
   "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Jump to selected review preserves keyboard focus while explicitly aligning the existing center scroll target at its start.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

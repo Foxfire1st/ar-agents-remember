@@ -2,24 +2,28 @@
 
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[Owning route overview](../overview.md)
 
 ## Purpose
 
-Bridge a review takeover to a shareable browser hash without putting the selected subject into browser history. The server remains responsible for resolving or refusing repository/master/leaf identities.
+Keep the review’s task address shareable while separately restoring its selected block and comparison in the current browser-history entry.
 
 ## Code Commentary
 
-`parseReviewHash` recognizes only `#review?`, requires nonempty repo/master/leaf parameters and returns a task-context ChangeSetTarget. Only `history=recorded` sets historical true. `reviewHash` writes those task identities and the optional recorded flag; selectors, comparison number, change-set file and layout are deliberately absent.
+`parseReviewHash` accepts only #review? with nonempty repository/master/leaf; history=recorded sets the historical flag. `reviewHash` serializes only those task-address fields and that flag. It does not resolve task existence, authorization, selected blocks or source data.
 
-`useReviewHash` initializes its target from the current hash. On hashchange, a newly addressed review replaces the target unless its serialized review identity equals the current review, in which case the existing object is retained. That identity check avoids resetting the mounted review for an address that says nothing new about its subject. A hash that stops naming a review clears only a current review target; an ordinary change-set target is not cleared by an unrelated hash. Review and Knowledge hashes also select Operations or Knowledge and close Notes.
+`readReviewHashState` reads the page-owned sel string and a digits-only comparison value, otherwise returning null values. `writeReviewHashState` acts only on review hashes, changes just those two fields, preserves all other parameters and existing history state, and skips an identical result. It uses replaceState, so selecting a block/comparison creates no new history entry or hashchange event.
 
-The returned setter pushStates a review hash for review targets, clears an existing review hash to pathname+search for non-review/null targets, then sets React state explicitly—pushState itself does not dispatch hashchange. Leaving through this setter does not choose a new main view. Listener cleanup belongs to the hook. Parsing establishes syntax/address presence, not existence or authorization; missing parameters return null, while unknown nonempty task identities reach the reviewer's refusal path.
+`useReviewHash` initializes from the current address and listens for hashchange. The same serialized task-review identity preserves the current target object; another addressed review replaces it. Leaving a review hash clears a current review target but does not clear an ordinary change-set target. Review and knowledge addresses select Operations or Knowledge and close Notes.
+
+The returned setter uses pushState for entering or leaving a review and updates React state explicitly. Leaving through it chooses no new product view. The hook owns listener cleanup. A complete but unknown task address still reaches the server-owned refusal path; parsing alone proves neither existence nor permission.
+
+## Invariants And Boundaries
+
+Task navigation and page-state restoration have different owners and history behavior. The page stores a formatted block selection, not a trusted source path; blockIdentity and the comparison/read owners validate its meaning. The serializer’s task identity remains stable when page-only hash parameters change.
 
 ## Evidence
 
-- Parser admits complete review task addresses and the one recorded flag. [1]
-- Serializer carries no subject or change-set page selection. [2]
-- Hash navigation preserves identical mounted review identity, switches addressed views, and cleans up. [3]
-- Setter uses pushState and explicit React target updates. [4]
-- Cockpit initializes Operations for a review hash and consumes hash-backed takeover state. [5]
+- Task identity parsing/serialization remains separate from page-owned selection. [6]
+- Selection/comparison changes preserve task params and replace the current history entry. [7]
+- The hook retains equal task targets and explicitly owns navigation state/listeners. [8]

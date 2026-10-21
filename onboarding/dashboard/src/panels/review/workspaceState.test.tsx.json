@@ -2,17 +2,34 @@
   "path": "dashboard/src/panels/review/workspaceState.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "With matchMedia stubbed true, the hook begins inline and an explicit split choice survives an ordinary rerender. A separate false stub starts split. Selecting a family leaves the fabricated common surface scrollTop unchanged. No resize, media-result transition or real-browser width measurement is performed.\n\nAnchor: complete test assertions",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens and closes a group by id, and opening an open group changes nothing', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f6c03f4d5e8d4d001386ee9de51dfbf0d5875cb7",
-            "content": "sha256:d2c49af1fb143338ca44c6fb55ac8d8608139b2efe2254d4f127a80797f02099",
+            "blob": "32505cf69634fc3c94427d656520e836604f9ea0",
+            "content": "sha256:1a7699daab31e73738440467cd30ec4c3d1250920e3545006cf6150fb63e93f7",
             "locator": {
-              "end": 33,
+              "end": 17,
               "kind": "line_range",
-              "start": 1
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('leaves the worklist view when a family position is chosen', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32505cf69634fc3c94427d656520e836604f9ea0",
+            "content": "sha256:1940ae4604ca31963ceff601ce9f435bd69df36ad70a143b0cad971e5a553162",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "test"

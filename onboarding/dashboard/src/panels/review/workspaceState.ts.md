@@ -2,23 +2,19 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Mounted review display state and selection intent.
+Hold mounted review choices for family context, query, open reading groups, worklist visibility and numbered selection-focus intent.
 
 ## Code Commentary
 
-Own chosen family/member, query, layout, full-file choice, opened path, Worklist view, center ref, focus request and numbered tree intent. Initial layout uses max-width 40rem once: inline on narrow, split above; subsequent user choice is not overridden by resize. beginSelection increments intent and carries keep. Choosing a row leaves Worklist and reveals common center only above narrow width; narrow choice does not reset page top. openFromCenter/closePath remember and restore opener focus, whereas setOpenPath is focus-neutral for marker follow/return. Choices survive rerenders while the hook owner stays mounted, not arbitrary component remounting. Subject identity/read retention belongs to callers; this local state is neither persisted nor server authority.
+`useWorkspaceState` starts with no chosen family, empty query/groups, hidden worklist and tree intent zero with keep false. setChosen also closes the worklist. toggleGroup immutably adds/removes one group; openGroup preserves the existing set when already open. Those choices survive subject reads within the mount and do not persist across review openings.
 
-## Invariants And Boundaries
-
-This is the inspected source contract, not an execution certificate. Parent and direct callers retain authority for identity, reads and state.
+`beginSelection` alone increments the tree-intent number and records explicit keep. `FocusRequest` carries the originating element, earlier intent number and optional scrollOnly/answered/failureLanded flags for ReviewWorkspace's consumption rule; the interface itself moves nothing. Code context is remembered by reading/codeContextPreference.ts and diff layout follows reading-column width through useReadingLayout. No state callback here scrolls the page.
 
 ## Evidence
 
-- FocusRequest declares the originating element, numbered intent and optional scroll/answered flags; this interface alone does not enforce their consumption. [1]
-- WorkspaceState declares local display values, callbacks, center/focus refs and tree intent; it is not server authority or persistent storage. [2]
-- The mounted hook owns display state, numbered selection intent, initial media-query layout and focus-neutral versus focus-restoring path callbacks. [3]
-- Revealing a selected center skips narrow screens and otherwise resets the containing review surface scroll, without moving focus here. [4]
+- workspaceState.ts current behavior at this source owner. [7]
+- workspaceState.ts current behavior at this source owner. [8]

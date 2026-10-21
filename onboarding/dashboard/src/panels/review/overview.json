@@ -1,0 +1,163 @@
+{
+  "path": "dashboard/src/panels/review",
+  "references": {
+    "1": {
+      "note": "One ordered model for both page consumers and view/filter boundaries\n\nAnchor: \"export function changeSetModel(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+            "locator": {
+              "end": 895,
+              "kind": "line_range",
+              "start": 867
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:dde2a678cadc3d6232a8d8e8dfe01497221ac67a3b1f72dfab9205ea38b799d1",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared reading content, notes, lane and provenance composition\n\nAnchor: \"export function ReadingColumn(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Explicit target selection without catalogue-driven selection\n\nAnchor: \"export function initialSubject(target:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:46a197313fdc891ecd9375b9304b6785329d2aa6d62239e80650465edeec561f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Opening completion opens the in-view lane path independently of engagement.\n\nAnchor: \"export function ReadingColumn(\"; \"function LaneFileBlock(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:7c483968fcc745fb2cf9770389a6eff44efe83c1d43319eb28e8b713ae1cde11",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:ba24b727893bfa3aafb89fa1b8fb7893a7455a5e299bb386980f8d529e1dcfe5",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared file gate distinguishes opened and engaged state and admits at most eight file tasks.\n\nAnchor: \"export const READ_BATCH = 8\"; \"export class ReadGate\"; \"function useStarted(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:3692a385a2536ef3e19ac875aaa23d9a7fdeb948a98e469ad5056f44aac62e0c",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A visible text lane file holds one gate slot for classification and text together.\n\nAnchor: \"function useLaneFileRead(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:8e66882c19407d6a0456586e61de4e93eb5f859589044eb37baf583e439cec90",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Mounted fixture assertions distinguish no-gesture lane reads from engagement-gated card marks; these are source assertions with stubbed visibility and transport.\n\nAnchor: \"reads a lane file in view at the first paint once the six opening reads are done, with no gesture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
+            "content": "sha256:0882d5840c3ad97beb4723b25534709c50583534e5b1461645054755ef48433f",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

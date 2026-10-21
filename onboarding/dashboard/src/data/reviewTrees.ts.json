@@ -3,8 +3,191 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "65f556826a27183db12af6615005dd85432e3a8c",
-        "content": "sha256:42f0823901d29770f566e9c1f30512a5e2f10583c142102195d1d2c5cfb8f01e",
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChangeSetCards"
+        }
+      },
+      "id": "RLZ-0QJYFN",
+      "invariant": "INV-DJ5QHW",
+      "origin": {
+        "handoffEntry": "RP20_CARD_CACHE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Uses sorted distinct chunk questions only while enabled with a comparison, reuses held answers, shows unkept failure answers in mounted seen state, retries unkept chunks after the shared generation changes and admits only the current question's answers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:642601ddb66b7139f98c56cadd6122850ff779db3daf35373c0046e18426d3c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTreeEntry"
+        }
+      },
+      "id": "RLZ-44K1E0",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-MEMORY-MIRROR",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps per-entry memory optional, so absence is not a fabricated successful or zero measurement.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:c5d398e2c3192243cae37e03e0669871747bd7d5d501a235499ca1f06d93392a",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergedMemory"
+        }
+      },
+      "id": "RLZ-5ZM8YB",
+      "invariant": "INV-S81G6W",
+      "origin": {
+        "handoffEntry": "RP05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It prevents a sort from treating values of successful chunks alone as the complete card-read facts.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
+        "locator": {
+          "kind": "symbol",
+          "name": "cardChunks"
+        }
+      },
+      "id": "RLZ-C82VX5",
+      "invariant": "INV-KEJ5TN",
+      "origin": {
+        "handoffEntry": "RP07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It deduplicates and sorts requested invariants and cuts exact chunks of at most CARD_CHUNK identities.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:1737df3b426b57989beb38442df752b6ba59001b1a5439a1bac2e3a270e49917",
+        "locator": {
+          "end": 181,
+          "kind": "line_range",
+          "start": 180
+        }
+      },
+      "id": "RLZ-CWPZ95",
+      "invariant": "INV-DEDX8T",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-FILTER-SYMBOL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries an entry side locator's actual optional symbol name, the location-filter operand consumed by the existing shared filter; it does not invent or resolve a symbol in the browser.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:4f7ef88cf00fde32f3e6ada8c6e305c55e6ba26dd9643fa619537f5443afa97c",
+        "locator": {
+          "kind": "symbol",
+          "name": "fetchCardEntries"
+        }
+      },
+      "id": "RLZ-F6XGJJ",
+      "invariant": "INV-DJ5QHW",
+      "origin": {
+        "handoffEntry": "RP20_CARD_CACHE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Shares the existing same-key in-flight promise across mounts without aborting it for one consumer; removes the in-flight slot on completion, hands every answer to the keepability gate and returns failures for the current mount to show.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:7542b756f670622abecdec2079bad7f41224088d2623e8a53db6a0a24c57e9e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "keepableCardAnswer"
+        }
+      },
+      "id": "RLZ-MJSJEM",
+      "invariant": "INV-DJ5QHW",
+      "origin": {
+        "handoffEntry": "RP20_CARD_CACHE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Rejects retention of any unavailable-history code/knowledge side and of unavailable memory facts while after knowledge is available; a genuine legacy-unavailable after side is not misclassified as a transient read failure.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:234bf9f75aa58e84bce7c172772c21161337e10321f3bee7d7ff826b376f1893",
+        "locator": {
+          "kind": "symbol",
+          "name": "keepCardAnswer"
+        }
+      },
+      "id": "RLZ-RAJR6T",
+      "invariant": "INV-DJ5QHW",
+      "origin": {
+        "handoffEntry": "RP20_CARD_CACHE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Retains only trees-phase keepable answers and evicts oldest inserted questions until at most20 completed chunk answers remain.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:4c920d19f58a576ae96be6e074a5b9bc9eb0936ff56f399f98095639f4d2b6bc",
+        "locator": {
+          "end": 203,
+          "kind": "line_range",
+          "start": 186
+        }
+      },
+      "id": "RLZ-WKPD1W",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-MEMORY-MIRROR",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries the four after-index values plus their bound path, and the independent available/unavailable memory state, bound tree, optional partial index state and reason; the TypeScript declaration computes none of them.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:2acc66665f151699ef465f98a36f1fe2292061b71b051e5fcb82016b209a75c3",
+        "locator": {
+          "end": 388,
+          "kind": "line_range",
+          "start": 379
+        }
+      },
+      "id": "RLZ-XG3D34",
+      "invariant": "INV-DJ5QHW",
+      "origin": {
+        "handoffEntry": "RP20_CARD_CACHE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Holds the browser store outside mounts, caps completed chunk answers at20 and identifies a question by repository/master/leaf, recorded comparison number and the sorted chunk; this is not the serving store's dependency stamp.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+        "content": "sha256:78742ee3c4ed1b37bf57ad676685c6a3ccab043db0a98234cd7c7060795f19a3",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTreesResult"
@@ -26,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:7bc00aeb35b184e687d4ac9c7685f3cefdda08865e0e93d6402ec305f7fe2100",
             "locator": {
               "end": 25,
@@ -59,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:82a9608d70d43fad2bc91f5b5b8d11db384f611033dcd31febcf50eec74395e0",
             "locator": {
               "kind": "symbol",
@@ -75,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:978feec7230dd633853c6e090a9ce5f9be60deb92c96b5e2f446663990e4ab4b",
             "locator": {
               "kind": "symbol",
@@ -91,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:2332d9911e48030dc495c1cf2190d1252b337b2282ee85801a638237cd3ce47d",
             "locator": {
               "kind": "symbol",
@@ -102,7 +285,7 @@
         },
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:b76432d3ae7f9b0d7859a91a19ac1d92e52dea53f533eddf531c0de11ce40624",
             "locator": {
               "kind": "symbol",
@@ -113,7 +296,7 @@
         },
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:78544ee895596d209aab7699b6cbf4232e61eed0b5b64dd890aa901450b2b1fb",
             "locator": {
               "kind": "symbol",
@@ -129,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:40b25b3f1e93401d554239d9f7d148e88756c0a8002b370b88fda13a403e942d",
             "locator": {
               "kind": "symbol",
@@ -145,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
             "locator": {
               "kind": "symbol",
@@ -161,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
             "locator": {
               "kind": "symbol",
@@ -177,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
             "locator": {
               "kind": "symbol",
@@ -189,37 +372,16 @@
       ]
     },
     "19": {
-      "note": "The entries hook reads completed trees answers or loading under its sorted-list question key; shared fetch failures/not-converted answers are not retained.\n\nAnchor: `useReviewTreeEntries`, `fetchCardEntries`, `cardsKey`",
+      "note": "Shown-set cards use sorted distinct chunks, stable answer retention and retryable per-mount failures.\n\nAnchor: \"const CARD_ANSWERS_MAX = 20;\"",
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
-            "content": "sha256:b86e32e6300e02419fd988a0d990e4d98fe8acac93757b1f7d197a273da76a5c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:a2cafc3523189a9a0225b27be029a8a1b68a24d2581bebeeea31582ed878a8a0",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewTreeEntries"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
-            "content": "sha256:33c4a770fbd86c798fbe88530b53f23514e51f57ee9330cd3cc516149edab201",
-            "locator": {
-              "kind": "symbol",
-              "name": "fetchCardEntries"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
-            "content": "sha256:0dfc1b7c8c0443277d0fd5cedc2d8d8cbc3574e69d0767787b2a4ea99a6ed053",
-            "locator": {
-              "kind": "symbol",
-              "name": "cardsKey"
+              "end": 538,
+              "kind": "line_range",
+              "start": 379
             }
           },
           "kind": "code"
@@ -231,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
             "locator": {
               "kind": "symbol",
@@ -301,7 +463,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
             "locator": {
               "kind": "symbol",
@@ -317,7 +479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
             "locator": {
               "kind": "symbol",
@@ -333,7 +495,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:1936933a837673c335db5ee3febae45ef000c9cd1d1c0f52959a111770bee635",
             "locator": {
               "kind": "symbol",
@@ -344,7 +506,7 @@
         },
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:f83d7716e331a0e9c28176825b66e68281e4885ba02d865a38941ae2e65bdcc5",
             "locator": {
               "kind": "symbol",
@@ -355,11 +517,28 @@
         },
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
             "content": "sha256:9e9f16e87566d5bc8a67c441d298f108808140e078dbf37a52bf0f37624034de",
             "locator": {
               "kind": "symbol",
               "name": "ReviewCodeChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Entry symbols and supplied memory values retain their optional and unavailable states.\n\nAnchor: \"export interface ReviewEntryMemory {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:df22f04e556eb4466c11c8b496880d91c98697679cefb843a837c9235bfe3c39",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 177
             }
           },
           "kind": "code"

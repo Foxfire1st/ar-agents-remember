@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5b6aebcc1cf7f6d7db96c96d85ce14a901d65688",
+        "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
         "content": "sha256:da90beecb6e8227cdf3e0580e0e8d6bce4b1510f4ecfcc582ffce813df66b68d",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "handoffEntry": "L81-R1-F17",
         "leaf": "260928-MIK-L81"
       }
+    },
+    {
+      "anchor": {
+        "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+        "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+        }
+      },
+      "facet": "With unconverted knowledge, the task-context staleness sentence names All changes, contains no second sentence, and no payload text names the removed Source pane; the source inventory remains complete.",
+      "id": "PRF-XJ7PEW",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
     }
   ],
   "realizes": [],
@@ -26,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
             "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
             "locator": {
               "kind": "symbol",
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
             "content": "sha256:54fc393d744a4cb0001e63d4d16307e8a1de3530bc8e255dc5a9731a72a551a0",
             "locator": {
               "kind": "symbol",
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
             "content": "sha256:564140faa47e724db0dd9192e84cf504d73c80c27791a19f1e9cb654eb79b75d",
             "locator": {
               "kind": "symbol",
@@ -74,11 +91,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
             "content": "sha256:bd833bff981ce44b5d48d4023459bf29448eca3d87d21cab1d828c8044005eb6",
             "locator": {
               "kind": "symbol",
               "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Task-context returned wording names All changes and retains truthful unresolved/currentness/inventory states.\n\nAnchor: \"def test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+            "locator": {
+              "end": 737,
+              "kind": "line_range",
+              "start": 699
             }
           },
           "kind": "test"

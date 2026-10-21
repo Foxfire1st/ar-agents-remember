@@ -2,20 +2,25 @@
 
 ## Governing Overview
 
-[Owning route](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Render backend-recorded meaning judgments as a compact tree badge and an always-visible reading-area block, with keyboard-operable vocabulary explanations.
+Display the selected record's owner-supplied successive meaning-effect judgments, their reasons and label explanations without inferring a net effect.
 
 ## Code Commentary
 
-The badge joins step labels in attempt order; more than three use first, ellipsis and last. It shrinks within the one-line navigation rail rather than widening the page. The reading block retains every step, its attempt and own revision, reason, closed/open status and row identifier; a disclosure may hold the full row/history path, never the Recorded steps block itself. Legacy family omissions render both unrecorded labels and the fixed historical sentence.
+`meaningBadgeText` preserves the label sequence, abbreviating more than three labels to first/ellipsis/last; MeaningBadge appears only for a steps answer and shrinks with ellipsis inside the one-line row. `meaningFor` joins by the exact record identity.
 
-The explanations toggle is a native button. No label or overall effect is computed from record text. Missing meaning_effects is a current-response failure on selected and unselected/source-only branches; a present empty collection is valid. An uncovered record renders nothing, rather than retaining a previous subject’s steps.
+`RecordedStepsBlock` keeps all steps in supplied order, including attempt, own revision or its unrecorded label, effect, row identifier, authored reason and history-open/closed state. A legacy family step lacking its effect or own revision names the missing value; a missing effect also retains the fixed pre-required-label sentence. Multiple steps are labelled successive judgments. Row/history identifiers have their own disclosure; steps and reasons stay visible. A non-steps answer distinguishes none from the supplied unavailable detail. The native explanation button exposes all effect-label explanations.
+
+A missing meaning_effects field renders failure, including unselected/source-only and unidentified-member branches through MeaningFieldGuard. A present empty field is valid, and a present field that does not cover the requested record renders nothing. The renderer changes no history row, disposition or effect.
 
 ## Evidence
 
-- Badge text preserves the sequence while abbreviating long step lists. [1]
-- The complete step block distinguishes recorded steps, readable absence and unavailable reasons. [2]
-- Unselected branches reject a missing required field without rejecting an empty one. [3]
+- MeaningEffects.tsx current behavior at this source owner. [10]
+- MeaningEffects.tsx current behavior at this source owner. [11]
+- MeaningEffects.tsx current behavior at this source owner. [12]
+- MeaningEffects.tsx current behavior at this source owner. [13]
+- MeaningEffects.tsx current behavior at this source owner. [14]
+- MeaningEffects.tsx current behavior at this source owner. [15]

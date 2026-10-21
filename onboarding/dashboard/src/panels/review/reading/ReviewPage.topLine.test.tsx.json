@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.topLine.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:ce996142045de09a494d15a34fa1ce5023f9da881d75d5bdfbccbb3b44edcc18",
+        "locator": {
+          "kind": "symbol",
+          "name": "puts a refresh's generation notice on its own row under the controls, so the chip keeps its place"
+        }
+      },
+      "facet": "A changed refresh binding retains the chip element/class and places the full generation notice in a wrapping 100-percent basis row with ellipsis/title and the narrow wrapping override.",
+      "id": "PRF-5WBYDK",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:8156314f578e4c0bb708e0f9fd0fb7e02c8b6687f1812efe170ada3a3b70c5a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "holds the comparison's and the ⊕'s places from the first paint, so the chip keeps its own"
+        }
+      },
+      "facet": "During held opening reads, the comparison label and add slot have the reserved CSS classes, and chip/anchor/button/label/slot identities and classes survive answer.",
+      "id": "PRF-AH9HQY",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:6764764169a2febf95a51481025ee73938b98de6edb7f15be4ce6d9b3781d0a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the task context's state when a subject's read fails, and states the failure in its slot"
+        }
+      },
+      "facet": "A selected-subject fetch failure appears in the subject section while branch status remains not measured and the chip contains neither unavailable nor reading.",
+      "id": "PRF-D3PG4W",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:45ab22288f30979a968e1dfb487e0a301dca853d7e53bbd6c12a5aa1f6bcec02",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows an older number read-only, with that number on its reads, and reads no subject there"
+        }
+      },
+      "facet": "The selector lists 8 through 1; choosing 7 sends entries, summary and trees reads only at 7, includes card and lane reads, writes comparison=7 and makes no subject read on later subject selection.",
+      "id": "PRF-FZA3MM",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:6d36d01de0d92bfd22bebb24ffd9218d9cdfeb022f82b09f2b042207bdd83598",
+        "locator": {
+          "kind": "symbol",
+          "name": "says what the owners measured, in their own first sentence"
+        }
+      },
+      "facet": "The pure chip model exposes the four owner rows, distinguishes not-measured/warning/current/read-failure/loading tones, and truncates measured owner or failure wording to its first sentence.",
+      "id": "PRF-J66MX8",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:5d8a8ded92bb69ff4ac36754c3abeb81657e2b285e39e487f57d88fa47ef9698",
+        "locator": {
+          "kind": "symbol",
+          "name": "reads #k's own file list under an older comparison and labels the latest's records"
+        }
+      },
+      "facet": "A file injected only into comparison 7 becomes its lane file and classified hunk at 7; Technical details says comparison 7 while separately labeling movement/limitations of latest 8.",
+      "id": "PRF-SF3GGM",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "content": "sha256:d0d618b475e5242a09baededc2036860ee611a83d7c8f71e87601bbece6b95a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows reading… in its own place during the task context's read, and opens its four-row popover"
+        }
+      },
+      "facet": "A held task-context read keeps the same chip element/class across loading and answer; clicking it opens four rows with a nonempty reason.",
+      "id": "PRF-Z0XF9H",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Status facts, stable chip/control slots, generation notice and subject-failure separation.\n\nAnchor: \"describe('the status chip (rule 6)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+            "content": "sha256:6ccfe3d0e4d68a9b15aa74de1eb214cfabbc57358e330c518f5c74c09022a7d4",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Older-number reads, code-context persistence and the mocked content-width threshold.\n\nAnchor: \"describe('the comparison selector (rule 10)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+            "content": "sha256:ec5852191fd5c7f1d39ab9520195ddd3765b08d3ac8bcecd7c2707cb91aa28c5",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Comparison labels/times, shell inset declarations and status-popover structure.\n\nAnchor: \"// D401: the top line compared with the mockup by eye (styles.css `.shell`, `.topline`, `.menu`,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+            "content": "sha256:27e3df7a2f0d13c3dc826b8792cff315b352bc7b2fc2293511a7f82cf3985f70",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

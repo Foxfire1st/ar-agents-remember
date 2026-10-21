@@ -210,6 +210,15 @@ The current account and renewed source evidence govern; prose reference markers 
 >   belong to **R25 (assembled acceptance) with R24 (usable review navigation) and R17 (coherent live
 >   refresh)**.
 
+## Source-content transition and retained historical references
+
+A4-F5 deletes SourceContent.tsx and SourceContentRefusal.test.tsx. Their earlier consumer and three fetch-stubbed expansion cases are preserved below as historical source descriptions, without claiming a current expansion renderer or a newly executed server capture. ReviewProblemBlock remains the common failure renderer; the current lane file reader calls it and the retained mounted-surface cases cover their own route-result and retry branches.
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - SourceContent consumes the shared problem renderer for transported failures. (historical reference 14)
+> - Stored expansion cases stub fetch and assert transported failure fields and explicit retry; historical route-capture provenance is not a fresh server read. (historical reference 16)
+
 ## Evidence
 
 ### Docs References
@@ -224,9 +233,7 @@ source; requirement/provenance names are not fresh runtime evidence.
 - **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** [11]
 - The outcome region evaluates shown-empty and retained-nonempty notes from supplied props and suppresses outer pending/problem lines when the workspace owns them; normal caller coherence is not arbitrary-prop validation. [12]
 - The surface wires the outcome region to the target-bound read and appropriate retry/source actions. [13]
-- SourceContent consumes the shared problem renderer for transported failures. [14]
 - Stored mounted/coherent-region cases assert phase distinctions and retained-empty/real labels; seeded capture responses and their case results are not fresh execution. [15]
-- Stored expansion cases stub fetch and assert transported failure fields and explicit retry; historical route-capture provenance is not a fresh server read. [16]
 - The problem block exposes owner fields and explicit missing-field sentences as open review content, with eligibility-bound retry/source actions. [18]
 - The component imports transport projections from the public review entry. [2]
 - The retained-generation renderer words the actual supplied old payload; the region chooses whether to show it. [20]
@@ -241,3 +248,7 @@ source; requirement/provenance names are not fresh runtime evidence.
 ### Cross-Repo References
 
 No new cross-repository boundary is introduced by these presentation helpers.
+
+
+- Current lane file-diff failures consume the shared ReviewProblemBlock with the failed file named as subject; the removed SourceContent consumer belongs to the prior source epoch. [14]
+- Surviving mounted-surface cases stub fetch and assert unavailable/validation/authority fields and explicit network retry; the removed expansion cases remain historical evidence, not current execution. [16]

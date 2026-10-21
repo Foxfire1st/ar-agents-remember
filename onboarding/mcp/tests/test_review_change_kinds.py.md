@@ -86,3 +86,9 @@ No cross-repo boundary is crossed by this file.
 - Corrupt invariant records produce unknown outline facts; a corrupt family names cannot read FAM-F00001; dataset and missing-index cases are unavailable. [10]
 - The final classified leaf facts agree with walked-family implementation, proof and unresolved-range facts. Unreadable code facts are unavailable rather than an empty successful result. [11]
 - Worklist states match public gate verdicts and name the answering history row. Six held-input variants fail closed with reasons; matching readable held inputs match ordinary evaluation. [12]
+
+## Catalogue comparison field
+
+The index-only outline case now includes `comparison` in the exact serialized field sequence checked after excluding `outline`. The forbidden source, roster and per-subject readers remain in place, and catalogue equality, totals, authored membership order and meaning-only facts remain asserted. This extra field-name assertion does not independently validate a numbered comparison's resolved value.
+
+- The index-only outline preserves exact catalogue fields including comparison. [13]

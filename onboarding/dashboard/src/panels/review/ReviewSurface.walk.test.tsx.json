@@ -3,78 +3,78 @@
   "proves": [
     {
       "anchor": {
-        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
-        "content": "sha256:1250e08e19ae0d854b0f1853162b9473cdb4c74b0881c3e0879acd5d3b2d76a7",
+        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+        "content": "sha256:aab102df7208354b314d047ca117cf6e6017d5d98832d53530d0a1d734437d98",
         "locator": {
           "kind": "symbol",
-          "name": "tags a kept family, counts it apart, describes the subject context only and reads one answer"
+          "name": "lists the seven changes first, selects each and the second family by its row with one read each, and keeps the first family"
         }
       },
-      "facet": "The kept family's tag is visible and is its row's accessible description naming the subject it was last read for; the selected subject's own family has none. No family scope line or family-context details are rendered, and the reading area shows nothing of the kept family.",
-      "id": "PRF-M20D7Q",
-      "invariant": "INV-NSG0D4",
-      "origin": {
-        "handoffEntry": "L57-M1-facet-PRF-62MDSP-replacement",
-        "leaf": "260928-MIK-L57"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
-        "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
-        "locator": {
-          "kind": "symbol",
-          "name": "workspace"
-        }
-      },
-      "facet": "Each `j` onto a subject not yet read makes one review request. The press at the end of the tree and every `k` back through the changes passed make none.",
-      "id": "PRF-NKDEG9",
+      "facet": "Each explicit row selection of the seven unread changed members and the second family makes one review read; with no reading-column block, j at the end retains the selection and makes none.",
+      "id": "PRF-0GRZ05",
       "invariant": "INV-BS5PFE",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-NKDEG9",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
-        "content": "sha256:a5d9054a3b17ea9562d64c9a4b0a82f205d28200b959041bc00a3db21bfb0cfe",
+        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+        "content": "sha256:7c687bcb3d4d285828a8c7faad1eaa739abfa05df2494a3cdff8d057a51adf09",
         "locator": {
           "kind": "symbol",
-          "name": "sharedRow"
+          "name": "tags a kept family, describes the subject it was read for, and reads one answer for the selected family"
         }
       },
-      "facet": "A click on the second family's row opens its review and keeps the first family whole and tagged. The visible previous-change control then selects the shared member under the first family, as a key step does.",
-      "id": "PRF-XA7SCW",
+      "facet": "The kept tag sits on its family row with last-read subject title; the row owns its accessible description. The selected subject slot contains only its family review, provenance retains its read label and no kept tag enters the reading column.",
+      "id": "PRF-66HWVV",
       "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-M20D7Q",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
-        "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
+        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+        "content": "sha256:cf3ed80bb91f3691dc9bb1e0a6b0f26331dadc8f9d77bc9fb9b458f6e5374a33",
         "locator": {
           "kind": "symbol",
-          "name": "workspace"
+          "name": "keeps the first family when its second family is clicked, and its shared member row selects it under the first family"
         }
       },
-      "facet": "From the first family's own row seven presses of `j` select its seven changes. The seventh is a member of two families and brings the second family. An eighth press selects the second family's row, and the first family stays whole, with all 24 member rows, tagged as kept and last read for the shared member. `k` then returns through every change passed, and the workspace is the same node throughout.",
-      "id": "PRF-XA9YEH",
+      "facet": "Clicking the second family retains the complete first family; clicking its shared member row then selects that first-family occurrence.",
+      "id": "PRF-DXMS0V",
       "invariant": "INV-NSG0D4",
       "origin": {
-        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
-        "leaf": "260928-MIK-L39"
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-XA7SCW",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+        "content": "sha256:aab102df7208354b314d047ca117cf6e6017d5d98832d53530d0a1d734437d98",
+        "locator": {
+          "kind": "symbol",
+          "name": "lists the seven changes first, selects each and the second family by its row with one read each, and keeps the first family"
+        }
+      },
+      "facet": "Clicking the seven changed member rows and the second family retains the first family with 24 distinct member subjects and a kept tag, allows its shared occurrence to be selected again and preserves the workspace node.",
+      "id": "PRF-FFCQGB",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-REQUEST-PROOF-PRF-XA9YEH",
+        "leaf": "260928-MIK-L89"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "72ef64962e7d8cf125a630aa69be9c89ae748ac8",
-        "content": "sha256:db538509d7f210db73e2d01bd814fa756a59c358262b6ac1c85169c1acddd101",
+        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+        "content": "sha256:28d565a286635f2640d475aa328b92d6980b3e1810df06d7c0f8faba91b8c734",
         "locator": {
           "kind": "file"
         }
@@ -90,15 +90,15 @@
     }
   ],
   "references": {
-    "10": {
-      "note": "By key: seven changes, the second family, the kept first family, the end messages, the way back, and the review requests of each press.",
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists the seven changes first, selects each and the second family by its row with one read each, and keeps the first family', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:eae23dcc141c64dbe04c3d92db987db0db096895b9d0abc864642b813906c835",
+            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+            "content": "sha256:7a51f1fce66abab062a1c2a80e8fa1fbbab04e7b35e9f69a7978c65022311202",
             "locator": {
-              "end": 90,
+              "end": 91,
               "kind": "line_range",
               "start": 43
             }
@@ -107,218 +107,68 @@
         }
       ]
     },
-    "11": {
-      "note": "By click: the first family is kept, and the previous-change control reaches the shared member.",
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the first family when its second family is clicked, and its shared member row selects it under the first family', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:41d141d6b3c9a39da5377cd4be5888796b692dcc494efbe9362be248e9ad1183",
+            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+            "content": "sha256:d1703f79e397ecd8a5888d3345778e094194a242ce41a61c3d7a6b5adea56814",
             "locator": {
-              "end": 138,
+              "end": 121,
               "kind": "line_range",
-              "start": 107
+              "start": 92
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "The tag and its accessible description, the scope line, the context details and the reading area.",
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('tags a kept family, describes the subject it was read for, and reads one answer for the selected family', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-            "content": "sha256:3e96308c145c2052a91d8856e82897243cd32753a4e33392e350ebb4a1c43b58",
+            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+            "content": "sha256:f19a8dde463f3bea7865f03c052928eea4c0514e1faf2ed1cdb90c8a8d7c2a52",
             "locator": {
-              "end": 166,
+              "end": 152,
               "kind": "line_range",
-              "start": 139
+              "start": 122
             }
           },
           "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "A catalogue row for every family the tree shows while one is kept, and the way back to one family.",
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps one outline row for every family and selecting one does not reset the walk', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:8ff9ac5fddb428d2aed99911d0f76f955a3946a92fd0ef9af119fed91ef680d0",
+            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+            "content": "sha256:391c11d5d3a6a7b634b8ee2f9601969c991858abaf69ba1e9d44c13a8018444d",
             "locator": {
-              "end": 193,
+              "end": 167,
               "kind": "line_range",
-              "start": 169
+              "start": 153
             }
           },
           "kind": "test"
         }
       ]
     },
-    "14": {
-      "note": "A filter hides kept families with the others and restores them.",
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lets a filter hide kept families with the others and restores them when it is cleared', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-            "content": "sha256:75b76befaf5a4f725fec2e591d8085b0c9e90913421fb57347e31829b01f12fb",
+            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
+            "content": "sha256:8e32121c965441752c7dd405be868b5f766b476248281ad6633d43a5da3d0459",
             "locator": {
-              "end": 212,
+              "end": 185,
               "kind": "line_range",
-              "start": 194
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "\"No later change\" is dropped when a held answer brings a later change, after one, three and five further presses.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:ce66640c6d469cd74ef629bb75b35c9c0df0ca25d4730d94578df8a1d3c08a24",
-            "locator": {
-              "end": 259,
-              "kind": "line_range",
-              "start": 215
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "\"No later change\" is dropped when the filter that hid the later family is cleared.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
-            "content": "sha256:f397af1a279fcc77acbf59c0d7d9707cf754afea371dcf9a852c4951ffd471bb",
-            "locator": {
-              "end": 280,
-              "kind": "line_range",
-              "start": 261
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The message does not come back when the tree shows the same rows again.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-            "content": "sha256:2859ce1e40ef5529582016129752c7cbb07928d1c291dd20bffdf10cd50fe42b",
-            "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 281
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "The world and the step helper the cases use.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
-            "content": "sha256:6be806fd968a7192cffac40bd14fe358a8d1c697c0c4137e5cf6e12d0d613b23",
-            "locator": {
-              "kind": "symbol",
-              "name": "step"
-            },
-            "path": "dashboard/src/panels/review/walk.test-utils.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Accessible description extraction for selected rows",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-            "content": "sha256:c6c9a6390b5222283e62ee39d3dbaad19c57243675d54f6c3ea07324428833cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "descriptionOf"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "Shared-member row resolution across families",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-            "content": "sha256:a5d9054a3b17ea9562d64c9a4b0a82f205d28200b959041bc00a3db21bfb0cfe",
-            "locator": {
-              "kind": "symbol",
-              "name": "sharedRow"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "Kept-family row with tag and apart counts",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-            "content": "sha256:ba3ea367c32f35930a9505d8c61557a96ea53269cc5a0b8e9fd7630fde276dc6",
-            "locator": {
-              "kind": "symbol",
-              "name": "keptRow"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "22": {
-      "note": "Filter field journeys hiding kept families\n\nAnchor: `filter`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d0ade55777d022632b8de4cfdf32b219a1c7261",
-            "content": "sha256:75f0c59cf468b0d933369d781e4e318d90a6ee08f99b2b240e45a1e6eb846d5b",
-            "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 172
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The file's statement of its data and of what its cases pin.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33733dedbf46e8e4767ea854f6b545ba419a0be7",
-            "content": "sha256:5f59156124922fe8e79aca7a720577705bbb330ac8ddb4c5be40e58fb9c5dde9",
-            "locator": {
-              "end": 9,
-              "kind": "line_range",
-              "start": 1
+              "start": 168
             }
           },
           "kind": "test"

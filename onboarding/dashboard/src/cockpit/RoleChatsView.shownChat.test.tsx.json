@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/cockpit/RoleChatsView.shownChat.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Observed default target without steering\n\nAnchor: \"it(\"follows Paseo's own list from A to B, so a fresh tray's first object pick goes to B\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4faa854e65b00fb38a5415596ca430c96f0c5acc",
+            "content": "sha256:1b4c9a6f019d3b33e595bd563470c1ac406e1ae9eec6ded30a83d886d7519574",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Showing capability, null and origin boundaries\n\nAnchor: \"it(\"follows Paseo's own list from A to B in its compact layout, where no selection is published, and a frame on no chat gives no default\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4faa854e65b00fb38a5415596ca430c96f0c5acc",
+            "content": "sha256:284e5bd2f57b13d70bde38dd97233b3a4642fb4a1a5ddb52786a714725236a79",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unavailable display supplies no default\n\nAnchor: \"it('names no shown chat while the column shows a placeholder, so the first object pick has no default', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4faa854e65b00fb38a5415596ca430c96f0c5acc",
+            "content": "sha256:77d3a1a69ac6d946cecbdc5578fd36f83a3ac9dc38eb20e323fc9085f0719a24",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

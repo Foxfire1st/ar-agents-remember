@@ -1,47 +1,125 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/revision_selection.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:27264d6af048561e960f825daa1b69d6114c9cd422b99d6649a30a01cf60f180",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewRevisionSelection"
+        }
+      },
+      "id": "RLZ-56S6N4",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries the two optional display-version fields independently of the selected revision identities.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:4b3a294f1a60fa6077f8b2af09857e35a35660d300e24cf6c3a5b2e6864e0fc3",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 70
+        }
+      },
+      "id": "RLZ-DVEK2E",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries before_writer and after_writer independently and leaves them optional where no side or no attribution read exists.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+        "content": "sha256:e94bb00461088798cdfdab88c9d2b17f20c5ea8dc277a2b4828ec0169e3cca0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewRevisionWriter"
+        }
+      },
+      "id": "RLZ-JBRA2Q",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries recorded/introduced/not_recorded/unavailable with explanatory detail and requires owners exactly for the two states that name a writer.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The current module and value describe a projected record pair, not multi-head lineage or unforgeable input provenance.\n\nAnchor: Current ownership and value",
+    "11": {
+      "note": "Writer states and owner-presence validation keep recorded/introduced distinct from missing/unavailable evidence.\n\nAnchor: \"class ReviewRevisionWriter(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:1028dbc06402a5ac3ddaeb49767a73d02017db106bd079de8cb3ba54da5819f6",
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:63ae37da425c02aa698d2856a6160fcfb1a016c209745de0db4afd339e8a8f85",
             "locator": {
-              "end": 5,
+              "end": 51,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:1e1aa0171d4e2e47153eed53e61550742c4bff40b8062c7321e3722fc4c06614",
-            "locator": {
-              "end": 71,
-              "kind": "line_range",
-              "start": 24
+              "start": 25
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The current subject-specific producer constructs empty/singleton lists and explicit state/statement from projected side items; sorting is not multi-head lineage selection.\n\nAnchor: Producer, identity filter, side lookup and description",
+    "12": {
+      "note": "The selection includes per-side display versions and optional writer fields.\n\nAnchor: \"class ReviewRevisionSelection(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "67d78df305463c86edbf04b1de4baf9b2b37f11f",
-            "content": "sha256:2ffd6ff748f2e5c993fc1820e0e26bd6d4889450f6a8b0cd2b175aacfebcc4fb",
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:e2f47e34fedc97127a111557ad3a6ac1f92193c4514423205be90c17f8482226",
             "locator": {
-              "end": 121,
+              "end": 73,
               "kind": "line_range",
-              "start": 29
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Pair/head/retained validators constrain supplied membership and state, not provenance.\n\nAnchor: \"def _require_the_state_to_match_the_pair(self) -> ReviewRevisionSelection:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f27f4c12c4031cc291e393cd73c4fa5c22b506d",
+            "content": "sha256:9e84c87a92e2e485bd571baff0973acd196d23b25256e6bc702f56a5be5f1e37",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The producer forwards each selected record’s display version without changing selection policy.\n\nAnchor: \"def select_subject_revisions(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:ddc186e79fa30557756920a1e33f181944dd1f534edf540aafcd1385b3ce9ffa",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
           },
@@ -49,170 +127,17 @@
         }
       ]
     },
-    "2": {
-      "note": "The public exports remain the model and its state union.",
+    "15": {
+      "note": "The pane’s guard is one-directional: selection implies subject_selected.\n\nAnchor: \"def _require_the_selection_state_to_state_itself(self) -> ReviewKnowledgePane:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:2e771ab1912acb38611a12784be33b4679dfcd08438b08555279bb2b88cebc78",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The closed state vocabulary is compared, unresolved, added and removed; ambiguous is no longer admitted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:177b73af5f8bfb2a23efc8a5b450eee79012bc166644d63714091597afe876f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "RevisionSelectionState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The value records subject kind/identity, optional pair, side lists and bounded statement; tuples have no singleton-size validator.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:1e1aa0171d4e2e47153eed53e61550742c4bff40b8062c7321e3722fc4c06614",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRevisionSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The declared state requires the exact presence pattern of the before/after pair, with unresolved carrying neither.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:19118967de3e7fe5d4c72c8b0d5a13be323301438a72e462b44e3aec6ef397a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_the_state_to_match_the_pair"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "A non-None selection must belong to its declared side heads; this is membership consistency, not source authentication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:4dcc35e6984bb6fac6a3dbadf494f2555c2ea81df6295b28412890c16cde32ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_the_pair_to_come_from_the_heads"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Every declared head must belong to the declared retained set; no lineage traversal or provenance check is performed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce9297d93e2e12ddbd46a3b00289f9e9edcfb18c",
-            "content": "sha256:3eb31aa98cc6aede39fe891032f70197449965b6b7c8f4dab4145fca329f8d2b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_the_heads_to_come_from_the_retained"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The value reuses reference/prose bounds and the frozen extra-forbidden base model, not new per-item tuple bounds.\n\nAnchor: Shared constants and base model",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
-            "locator": {
-              "end": 24,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
-            "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 26
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/base.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The pane field and one-direction guard allow selection only for subject_selected, without requiring every compared path seed to carry one.\n\nAnchor: Pane field and actual implication",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
-            "content": "sha256:cbdcd572a23fc6e8182083d61d637275f0c46f2d864a4038af40681f7900f8cd",
-            "locator": {
-              "end": 490,
-              "kind": "line_range",
-              "start": 490
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a9fbebf751c8e0ce26280a3c2bd35bfe3302c8f",
-            "content": "sha256:7595d5578633490dde3d9ef4ee22d542536d440bd20bce0c720bea95db8535dc",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:253b97f3e842da38a667c67abd4d93a506a19b785e7740f29d8d0445889a8c70",
             "locator": {
               "end": 516,
               "kind": "line_range",
-              "start": 505
+              "start": 490
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },

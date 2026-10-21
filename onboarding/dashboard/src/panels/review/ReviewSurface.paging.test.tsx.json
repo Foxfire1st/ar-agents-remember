@@ -2,494 +2,136 @@
   "path": "dashboard/src/panels/review/ReviewSurface.paging.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The mounted cases use the shipped ReviewSurface and review client with fetch stubbed; useReviewCatalogue is additionally isolated for comparison-focused cases.\n\nAnchor: `source range`; `catalogue-isolation mock`",
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states the bounds and scope of a page and offers the one action that reaches the rest', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:381d852d703420e5dc1c6d0e1e05ba854410c492ca64f371779bd514922a4714",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:628e2f708388cd86200e087a4df2b38b2e2aff74efc153b561f542cebafb5019",
             "locator": {
-              "end": 19,
+              "end": 191,
               "kind": "line_range",
-              "start": 1
+              "start": 162
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('advances with the cursor the server published, and keeps the same collection', async () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "2e30b0d01499068dab71e69e6b1a1b9c1a0bba82",
-            "content": "sha256:368bab4d96eb968def464a3260cd6bca114d77c60c03698e68eb6de6cd4c8907",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:2fc985862b27f1aff1de57be345967b5b70a6ceb9d4f2fdef25aa41c8c2a18c6",
             "locator": {
-              "end": 40,
+              "end": 238,
               "kind": "line_range",
-              "start": 23
+              "start": 192
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "The bounds sentence distinguishes walk from selection totals on the surviving knowledge collection.\n\nAnchor: `\"keeps the two collections' totals apart in the sentence the reader sees\"`",
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('offers no next action for a page that published no cursor, whatever it reported', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:ecb78e4f9f8a2d44c82ba1c3858a63c2ff20214e5653b626895a42a3cce32547",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:ac8607af9e3741aadaa42d7fe319b9597ddc5d843535c388d3d73628d1f4b087",
             "locator": {
-              "end": 478,
+              "end": 278,
               "kind": "line_range",
-              "start": 423
+              "start": 239
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Despite its historical test title, the closing case supplies a null page, asserts whole-review bounds and absent paging controls, and requires selector parameters with no pageOf parameter.\n\nAnchor: inclusive source ranges",
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('asks for a named collection deliberately, and states a reset as its own action', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
-            "content": "sha256:6157879d4e69f1fc234f9dfb731b335122141607cb25a62c80025a69826bfc46",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:6bf637ffd83804aacea8fb7537f8e1b2b4070ee2717313a7092c6aade457a50a",
             "locator": {
-              "end": 484,
+              "end": 326,
               "kind": "line_range",
-              "start": 470
+              "start": 279
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "**The one normaliser of the two spellings of \"no page\", and the bounds sentence built from the page's own basis.**\n\nAnchor: `no-page normalization commentary`",
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('cannot ask for the retired records collection: the control is gone and no such request goes out', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:ba9404485b9553ae10fbc626769c89e4905c87b8b7815be8ca89dee4edfe9193",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:4cde9c8dc1f08041c4f3b4e35a0bfe663abfa52dd25cab6ea037878b3b53c465",
             "locator": {
-              "kind": "symbol",
-              "name": "carriedPage"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:1bc93ec2aa754520f5f25dfbf6cadf9f669f187690c3f5e285d81e20adf9d80c",
-            "locator": {
-              "kind": "symbol",
-              "name": "pageBounds"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:c5f6e09edb1e2efe890f143d8771728a4b635865ee12988169c7401278ab21e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "continuationOf"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:d7581a9d53df0f7ee677d165b939bdafbff8b871f4d97680c9d23cb72c7795b7",
-            "locator": {
-              "kind": "symbol",
-              "name": "RESET_GLOSS"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:c29392af4253d38c9c3c3272b34eba1e8e7298d530489c655b9aa79095ade662",
-            "locator": {
-              "end": 667,
+              "end": 356,
               "kind": "line_range",
-              "start": 665
-            },
-            "path": "dashboard/src/data/review.ts"
+              "start": 327
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "The page contract on the client, including the basis field and the separate refusal.",
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('words a reset from its refusal code, so a foreign cursor is not called a moved comparison', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:5914fc8a18d58bf6922fd66e05c3fba4785e902766db400dc530b97d7d310c3a",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:6033018dd805981b3f9fb5c776738f642fe3bc596c52dde4f8863c7e72cf7e2a",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewCollectionPage"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The control the cases drive: the page picker, the actions, the bounds line and the refusal block.**\n\nAnchor: `source range`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageControls"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:91d401c4eb4926d520b2fea9ed917d256bbd09cfe588e9bcb66b5905895ead57",
-            "locator": {
-              "kind": "symbol",
-              "name": "PagePicker"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:2a9d5b3550cb70ec5aba6fd5a8a019706a1d4a96e59cdb4c424ba627e44d877b",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageActions"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:feb4607bd9459c5ee54351ddb51dab10d02c93e116d1b7a6f1de61ab2fe2d354",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageBoundsLine"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
-            "locator": {
-              "kind": "symbol",
-              "name": "PageRefusalBlock"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:257ebb17000fabcfd3b824896f7f330035ede91ada0b168e2916f9c12b7e12a8",
-            "locator": {
-              "end": 358,
+              "end": 425,
               "kind": "line_range",
-              "start": 301
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+              "start": 357
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "15": {
-      "note": "The read target key includes page position, making a page change a distinct read.",
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the two collections' totals apart in the sentence the reader sees\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:117e670e837b9de2802a465e0bd16d1c35336207fd0129cee08c34fd218c170c",
             "locator": {
-              "kind": "symbol",
-              "name": "targetKeyOf"
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The published page shape these bodies have: the surface's own page value and its two refusal codes.\n\nAnchor: `comparison_page_reset; comparison_page_unreadable`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1bd78065571accddd20722fd3a76b2ab334e70a8",
-            "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewCollectionPage"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a8aca318ce4a99648858f4f2c0ad3fad21eb0bf8",
-            "content": "sha256:ab44340be711b4cfc5f1209e3260bb96b3015e9e40435d757688b38ebb615490",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRefusalCode"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_refusal.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "RECORDS_CURSOR is an opaque fixture literal reused as the continuation of the second knowledge page; it does not demonstrate a records-page journey.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
-            "content": "sha256:2965fc13ad6c61e1e597782f07863fd676b38987a1381fb1e6ab0894cff81b95",
-            "locator": {
-              "end": 52,
+              "end": 482,
               "kind": "line_range",
-              "start": 51
+              "start": 426
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the whole review reachable and carries the selector through a paged request', async () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
-            "content": "sha256:dd655e3f39e9f9a2d767acaefc2e86c722ab6eda59e2ffba1a8cdc008cd4b5be",
+            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "content": "sha256:98406568ee438db34f6a24ab6e6b38faae8750956aa93ba1db0f56049afa0f14",
             "locator": {
-              "end": 204,
+              "end": 498,
               "kind": "line_range",
-              "start": 196
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "payloadWith returns a typed synthetic ReviewPayload, including judgment and a nullable page.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
-            "content": "sha256:7abfb051ab218611d3e3514ac1383729742dd2f24a8879e9278897900f772b13",
-            "locator": {
-              "kind": "symbol",
-              "name": "payloadWith"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "Typed fetch signature for paged requests",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:7093b003ea2230ba077c3d0caeb802289e849a3dbd440ea68a5305b604f4c49c",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 140
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The paging fixtures retain KNOWLEDGE_CURSOR and RECORDS_CURSOR as opaque strings; no client-side cursor decoding is asserted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:3f4d85cdc2cb981306e2f3d9eb859197043e21a8ca6ba52e06e8adc7598d6220",
-            "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_CURSOR"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:2965fc13ad6c61e1e597782f07863fd676b38987a1381fb1e6ab0894cff81b95",
-            "locator": {
-              "kind": "symbol",
-              "name": "RECORDS_CURSOR"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "mountSubject supplies repository, master, leaf and invariant selector props without an initial page selection; cases use it for both paging and whole-review checks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a65b10d5205ab4719c82ba19837e8d7f258d185",
-            "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
-            "locator": {
-              "kind": "symbol",
-              "name": "mountSubject"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "The stubbed published-shape case distinguishes foreign-cursor reset wording from a moved comparison; it does not test an automatic repair journey.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:0fcc6346e7a66691d7f2069a3a65cf916fbb38c53b273f1711cacf4acdef5bfa",
-            "locator": {
-              "end": 421,
-              "kind": "line_range",
-              "start": 354
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The bounds, the scope and the one action that reaches the rest.**\n\nAnchor: `'states the bounds and scope of a page and offers the one action that reaches the rest'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:673a05a249a1701fa41b5a41c6ce7c099ac3e5d520564a7125c5ca74b2084e0c",
-            "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 160
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "**The advancing case: the second request carries the cursor the server published, and the bounds move.**\n\nAnchor: `'advances with the cursor the server published, and keeps the same collection'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:a4218c07da23c6fe10e1de439d18bce5f1c60aee7e0be824542622f072f4b683",
-            "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 190
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "**No next action for a body that published no cursor, whatever it reported.**\n\nAnchor: `'offers no next action for a page that published no cursor, whatever it reported'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:43c1fbc5f74eab15f5ab8bde1fa161462082158704415480a04c16f34f0d97e2",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 236
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "A named collection asked for deliberately, and a reset stated as its own action.\n\nAnchor: `'asks for a named collection deliberately, and states a reset as its own action'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:0e00012c0876985a4f895bcbb81675c62396980b4550396efaaa26ae67f45d9d",
-            "locator": {
-              "end": 322,
-              "kind": "line_range",
-              "start": 276
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The retired records page earns no request and renders no refusal: records left with the review matrix (MIK-R74 rule 1).\n\nAnchor: `'cannot ask for the retired records collection: the control is gone and no such request goes out'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:7861401d6372ee5f60c68b13c5776c38874972dd5ba4a32f460721d0ac140012",
-            "locator": {
-              "end": 352,
-              "kind": "line_range",
-              "start": 324
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "**A reset worded from its refusal code, so a foreign cursor is not called a moved comparison.**\n\nAnchor: `'words a reset from its refusal code, so a foreign cursor is not called a moved comparison'`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ade5802102cec795f0b6911aee8134b1f2e244fa",
-            "content": "sha256:0fcc6346e7a66691d7f2069a3a65cf916fbb38c53b273f1711cacf4acdef5bfa",
-            "locator": {
-              "end": 421,
-              "kind": "line_range",
-              "start": 354
+              "start": 483
             }
           },
           "kind": "test"

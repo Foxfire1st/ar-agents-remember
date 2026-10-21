@@ -2,17 +2,85 @@
   "path": "dashboard/src/panels/review/SubjectJudgment.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Explicit synthetic component judgment rows/proofs preserve visible reasons/facets, attempts/coverage, history-unavailable proof display, missing-required-field failure, legacy family missing effect, and statement-side origin. Not native producer acceptance.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows judgment rows and proofs without hiding their text in disclosures', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "defeee17b536fc273194c09f1d47d6d7b1bd4f00",
-            "content": "sha256:81c186fa2bdcda2f5f5b6a6941af27eedac4544b8bc6fb1b1cde45b828612d51",
+            "blob": "3d22f8cc13254d7293761ab968b0cc793717547f",
+            "content": "sha256:d1e20c6018f204f485ba042d9d17153224ce1c54e8dff36beffccee08e10fedc",
             "locator": {
-              "end": 86,
+              "end": 46,
               "kind": "line_range",
-              "start": 1
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps proofs visible when judgment history is unavailable', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d22f8cc13254d7293761ab968b0cc793717547f",
+            "content": "sha256:b4ceef8c7cb5f4b768d2a1ae87de74a4ebd873eb86432288781badf42a0422d2",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reports a missing current-build field as a failed read, not no judgment', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d22f8cc13254d7293761ab968b0cc793717547f",
+            "content": "sha256:d64e79118f2e1a5667f2ff3146011b60460335998ee50e1f6a0cc8c6444bbea1",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names the missing effect of an older changed family row', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d22f8cc13254d7293761ab968b0cc793717547f",
+            "content": "sha256:4ad679d3b2e3a4aa2063c0055070efbc5c69d13a31b818439da513e8032661e9",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the record origin and its hand-off entry out of the statement', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d22f8cc13254d7293761ab968b0cc793717547f",
+            "content": "sha256:f8a21809514bf6236b4c0da329f0cd98e49da6c3cdee42b58a3344bfc03a70ab",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 80
             }
           },
           "kind": "test"

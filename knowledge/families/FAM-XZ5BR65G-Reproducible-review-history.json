@@ -1,27 +1,29 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Historical review uses the exact retained comparison and explicitly names what it can reproduce: recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Comparison-bound curator generations preserve authored judgments and availability, and reconstruction is labelled. No current dataset, mutable pointer or favorable empty channel replaces unavailable history.",
+  "guarantee": "Historical review uses the exact retained comparison and explicitly names what it can reproduce. A chosen recorded number binds outline, summary, cards and file facts to that number; latest-only subject judgments and canvas payloads remain labelled as latest instead of being presented as historical. Recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Immutable curator generations retain their admitted authored evidence and availability through the integrity owner, without restoring retired current Reviewer collections. Reconstruction is labelled. No current dataset, mutable pointer or favorable empty channel replaces unavailable history.",
   "id": "FAM-XZ5BR65G",
   "members": [
     "INV-453ZPCZ5",
     "INV-53MJW8V0",
-    "INV-7W11WKKN",
     "INV-8Q6DZTDB",
     "INV-9NCBGQSY",
     "INV-S26EBC8P",
-    "INV-VXA7SZ0Z"
+    "INV-VXA7SZ0Z",
+    "INV-HAJ9SH"
   ],
   "origin": {
     "leaf": "260921-ICR-L46",
     "legacyId": "b5e4aaf8-cd20-45bc-b5a2-b485f7983ca5",
     "task": "260921-ICR"
   },
-  "revision": 6,
+  "revision": 7,
   "routes": [
     "dashboard/src/panels/review",
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/models/lifecycles",
-    "mcp/src/agents_remember/worktrees/integration/closeout"
+    "mcp/src/agents_remember/worktrees/integration/closeout",
+    "mcp/src/agents_remember/serving",
+    "dashboard/src/data"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

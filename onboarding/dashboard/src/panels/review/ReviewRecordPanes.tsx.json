@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+        "blob": "49343b438babb334380943fd5a5b14179143b0fe",
         "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
         "locator": {
           "kind": "symbol",
@@ -18,313 +18,54 @@
       },
       "rationale": "fieldValue preserves the distinct meanings of an unrecorded field and a recorded empty value in visible record facts.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-        "content": "sha256:6037b94949b8bff55e7342d1365aa1cfb96513d41e136d1653cbab8064d2ca65",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReviewTechnicalDetails"
-        }
-      },
-      "id": "RLZ-7V0Z0QCY",
-      "invariant": "INV-8VQR13WX",
-      "origin": {
-        "leaf": "260921-ICR-L48"
-      },
-      "rationale": "Keeps technical details mounted but renders comparison, selected knowledge revisions, source expansion, judgment identifiers and submission dispositions only for the current subject payload; pending/unavailable subjects show no previous-subject records.",
-      "role": "presentation"
     }
   ],
   "references": {
-    "1": {
-      "note": "**The module's own statement of why it exists and that the disclosure stays mounted while another subject is pending or unavailable.**\n\nAnchor: \"WHY THIS IS ITS OWN MODULE\"",
+    "19": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"function RecordFacts({ payload }: { payload: ReviewPayload }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:1eebd64e25e6924e5328a0a1b25db61f8ccf52b536cf9ddfd2e34c84acce1a03",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:dafbaf06a2c7ba15d05763341e800fb9e91cd34e5e7c3c63ae18a8aea2b1f435",
             "locator": {
-              "end": 9,
+              "end": 48,
               "kind": "line_range",
-              "start": 1
+              "start": 33
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "**The disclosure: always mounted; records only for an answer, else one pending or unavailable line; the lane read passed to the source pane.**\n\nAnchor: \"export function ReviewTechnicalDetails({\"; `review-details-pending`; `review-details-unavailable`; `gridTemplateColumns`; \"<SourcePane payload={payload} laneRead={laneRead} />\"",
+    "20": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewMainFacts({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:6a5347d0c09e52065e973d6ebde57fc66767090d8172374532c6b3009a1cc11b",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:bf52f9b33195b63616b5006e27abe35de4a20302846e38daceeaaaabc23c02e6",
             "locator": {
-              "end": 475,
+              "end": 76,
               "kind": "line_range",
-              "start": 424
+              "start": 61
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "The surface hands it the answer alone, and the one lane read.\n\nAnchor: \"<ReviewTechnicalDetails\"; `unanswered`",
+    "21": {
+      "note": "ReviewRecordPanes.tsx current behavior at this source owner.\n\nAnchor: \"export function ReviewRecordIdentities({ payload }: { payload: ReviewPayload }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:9d2e6b29ce2d63d04b9caf805a3d02edbf67b8190ad0f3c885d2dd527b373eaf",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:0b40f91f58544b9818561162437d7c81e26d74766cba6f476e150e1b6aa89b1a",
             "locator": {
-              "end": 368,
-              "kind": "line_range",
-              "start": 359
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "RecordFacts filters authoredFields out of knowledge.field_changes, renders other transitions through fieldValue, and combines only knowledge.unresolved and source.unresolved. It conditionally displays these references as reason content. Detection signals and legacy evidence/link unresolved collections are no longer read.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:3796b25874f83f669b5d0842d529fa188c2280aa43493e818e673f79bd0510d7",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 32
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "ReviewMainFacts renders RecordFacts and maps source.remaining through laneCountText using laneAttributionFacts(laneRead), or an explicit unknown state without a read. A nullish helper result retains payload value/reason wording. The paragraph is always marked as lane attribution. Non-current staleness keeps its existing test IDs; the submission block now says Read-only review with reason and next action. The optional All changes button invokes the supplied callback.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:8b9b8599730a5dd94caaebd0d7b60551bad13034dd2de7ec6f342984f18a5fd8",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 57
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "ReviewTechnicalDetails keeps pending/unavailable text and supplied paging outside the always-mounted provenance disclosure. A present payload gates comparison/policy, retained revision groups, expansion reference/command, JudgmentIdentifiers and accepted dispositions with the publication-approval disclaimer. Its optional laneRead type member remains unused. JudgmentIdentifiers prints each judgment row's row_id/history_path and each proof's id, labels empty lists none returned, and explicitly labels an absent judgment pane as not supplied; it does not render judgment outcomes or legacy evidence/observation/assessment IDs.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:6037b94949b8bff55e7342d1365aa1cfb96513d41e136d1653cbab8064d2ca65",
-            "locator": {
-              "end": 174,
+              "end": 132,
               "kind": "line_range",
               "start": 117
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:e498fd5981458be19f1e05a61579ef3e699d5a96df1b4e8a0afd323452bfa265",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 105
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Undefined and recorded-empty field values have distinct explicit labels while other text passes through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-            "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
-            "locator": {
-              "kind": "symbol",
-              "name": "fieldValue"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The pane helper's two load-bearing declarations.\n\nAnchor: \"minWidth: 0\"; \"overflowWrap\"; `data-pane`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
-            "locator": {
-              "kind": "symbol",
-              "name": "pane"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The attribution labels, displayed never computed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:938a7d9be8a83c0ef8a4dec6a90fa32fd5830bc24c9051260894fbc4b59565ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "applicabilityNote"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:ece684394c69ad646ad99dc52aacfcde6ff7b91f2bf7a42d1739264792cb4df5",
-            "locator": {
-              "kind": "symbol",
-              "name": "contextList"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:448a9ce9bf8955d74631de209b69389f86863bfb8ae00b358f162b65e429fc1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "applicabilityCounts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Absent vs recorded-empty field values.\n\nAnchor: \"(absent)\"; \"(recorded empty)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "925e08b5934b2a010386a90042979862fdc83e68",
-            "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
-            "locator": {
-              "kind": "symbol",
-              "name": "fieldValue"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The knowledge pane delegates statements to `KnowledgeStatements`.\n\nAnchor: `KnowledgeStatements`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
-            "content": "sha256:ffdf01a96b75a577dd0a4006ab295850c28fe3a47147332ad17c10a3d07a844c",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgePane"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The landed count text, and the lane's two lists or its pending or unknown line (MIK-L32).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:1fa30d9255c077261a2d7819f144401c9a1e103669af05b9ad082ed98cecc7f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "landedCountText"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:be3e969eac31fc99b358f443b3761e6abe85456e618b486d912beeacfedd05a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "LaneAttributionLists"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The source pane points at the explorer rather than listing a second inventory; on a tree comparison its attribution counts and lists come from the lane (review F1).\n\nAnchor: \"function SourcePane({\"; `review-source-explorer-pointer`; \"const lane = laneRead ? laneAttributionFacts(laneRead) : null;\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:2f005095456a8e0ce63128044bd2a9ba39cd64f0900461ea2b385b3d74ffe154",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 270
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The evidence pane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:d2dc8426c812d02df83b31c99969ee74c6e68c795814d77ea447b2eeccfbcb1b",
-            "locator": {
-              "kind": "symbol",
-              "name": "EvidencePane"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The submission block: staleness, the unmeasured line, no control.\n\nAnchor: `review-staleness-unmeasured`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:a3470f6c9d68054c9ddec40d1221bcbf44faa639fdb985532999415afed9f422",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubmissionBlock"
             }
           },
           "kind": "code"

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "196cde85317b71ad019bb7d1f67ada28a96298c7",
-        "content": "sha256:8299e745668553275bac69b234ee69d544b954b32bdf6a94f88459c5810d3fe2",
+        "blob": "c45f7e3c357998a5481c5e626830d026a5e088f9",
+        "content": "sha256:46a390fb75bbc95e0c6cd6afe11c6eb9ae2ac05dc583c042e43acab477a1af24",
         "locator": {
-          "end": 146,
+          "end": 148,
           "kind": "line_range",
-          "start": 59
+          "start": 33
         }
       },
       "id": "RLZ-F9DWNZ",
@@ -17,87 +17,39 @@
         "handoffEntry": "OR-R033-D1.a/fixed",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "The ten mounted cases pin the reveal for failed and refused reads by click and by key to the stacked layout, and pin the moved-focus exception.",
+      "rationale": "The existing mounted failure/refusal test guard includes its subject-row/section selectors, 40rem viewport shim and eight-case tree/column activation matrix, then asserts requested-subject labeling, one settled heading landing, eligible row focus and retained shell. The held-read cases assert reader scrolling and moved focus disarm the automatic movement. These are controlled jsdom declarations and call observations, not a browser geometry measurement.",
       "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "The genuine refused answer: the real route asked for an invariant selector absent from the comparison, HTTP 400.",
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(cases)(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6f5fbd9110a7e67eab1ba0efa110478516fbaf9d",
-            "content": "sha256:a07bc47b4dd357992dae6580e4d3a1a70755554567118a3ae920c88cea38677b",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/walkUnavailable.refused.captured.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The receipt of that capture: route, parameters, status, hash and size, and that it is replayed, not authored.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b37bd852277898ab399dd3dec436b52bacd01251",
-            "content": "sha256:3d10b851c1833bb8b819f1a93150576118dceb9bd2cd3f7386757ab4ad792671",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/walkUnavailable.capture-provenance.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The eight reveal cases enumerate failed/refused × click/key × stacked/wide.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "196cde85317b71ad019bb7d1f67ada28a96298c7",
-            "content": "sha256:1218994265f07bf90ed6be59323a5b27450029c854167af8fd46b10bd101f810",
-            "locator": {
-              "kind": "symbol",
-              "name": "cases"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "A failed or refused in-tree selection reveals the status only on the stacked layout, keeps the mark and both families, and makes one read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
-            "content": "sha256:e09e5293080bfabff7e90b0fdfec0066f22a65f28a9164c96ac96898036b522b",
+            "blob": "c45f7e3c357998a5481c5e626830d026a5e088f9",
+            "content": "sha256:277e7b5c1adec2cccf54f90f67aeaaf18b53f6ccea1355e9e2d80cc235ad903a",
             "locator": {
               "end": 100,
               "kind": "line_range",
-              "start": 60
+              "start": 65
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "A reader who moved focus while the read was on its way keeps it: no scroll, mark and families stay.",
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['failed', 'refused'])(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
-            "content": "sha256:a42245e7c880d59cae7417440a1cc6cf5795c62e954d6f20bc158308942e7d37",
+            "blob": "c45f7e3c357998a5481c5e626830d026a5e088f9",
+            "content": "sha256:a18a77d6c49d414722f94e4907e148072351d26884d5746f0f29561b06b1952c",
             "locator": {
               "end": 148,
               "kind": "line_range",
-              "start": 102
+              "start": 101
             }
           },
           "kind": "test"

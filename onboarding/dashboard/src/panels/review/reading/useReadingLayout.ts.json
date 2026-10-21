@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/useReadingLayout.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Derive diff mode from measured reading content width.\n\nAnchor: \"export const SIDE_BY_SIDE_MIN_PX = 1080;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:2fb261e27510e4b59b2a38d658f980b3d5408064a2d5cf8486e7e6d34a107353",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Derive diff mode from measured reading content width.\n\nAnchor: \"export function contentWidth(node: HTMLElement): number {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:70d08dd72441f6e6c0cbed5fc04605168b37ae423010da562803539f835c61bf",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Derive diff mode from measured reading content width.\n\nAnchor: \"export function layoutForWidth(width: number): DiffMode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:ac166d3cd583dc9d7a3a1cffea12ed1dca3d5fd3d408838130fd0aba0f17ae2d",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

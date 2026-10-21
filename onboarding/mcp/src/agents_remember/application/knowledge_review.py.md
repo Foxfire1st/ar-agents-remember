@@ -2,42 +2,31 @@
 
 ## Governing Overview
 
-[application route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Composes a review from the canonical task’s resolved code/memory endpoints. The current route calls the source, knowledge comparison, family, meaning-history and recorded-judgment owners; it neither collects the retired supporting-record bundle nor stores a composed answer. The source inventory is independent of selecting an invariant or family.
+Compose the source, knowledge, family, meaning-history and recorded-judgment owners over one resolved task comparison, and enumerate the exact ordinary or numbered comparison catalogue.
 
 ## Code Commentary
 
-### Request resolution and entry catalogue
+read_knowledge_review resolves and delegates. read_complete_knowledge_review nests the request-local digest, Git-object, tree-observation, shared-blob and capture-baseline owners, resolves once and passes that resolution directly to compose_review. Neither collects the retired supporting-record bundle or stores a composed answer; these scopes do not promise every delegated read executes once.
 
-`read_knowledge_review` resolves and delegates, returning a typed refusal immediately on resolution failure. The production complete-read port enters the explicit request-local digest, Git-object, tree-observation, shared-blob and capture-baseline owners, resolves once and calls `compose_review(resolved, request)`. It no longer calls `review_records_of`. These scopes are not a new global answer cache or a promise that every underlying operation runs once.
+The ordinary catalogue resolves with its recorded flag; list_comparison_review_entries resolves the explicit retained comparison number, even on a live leaf, or the ordinary leaf resolution when number is None. Both call _entries_of: resolve refusals and pair preflight come first, catalogue enumeration may turn KnowledgeStorageError into the existing unreadable-candidate refusal, and the answer attaches outline, actual kind totals and the tree record number when trees exist. Separate HTTP requests still resolve independently.
 
-The catalogue is its own request and its own resolution, not a permanently shared snapshot across HTTP reads. It checks the pair before asking the catalogue owner for recorded identities and attaches `read_review_outline(resolved)` and totals. An index record becoming unreadable between preflight and enumeration earns the existing refusal, not a traceback.
+compose_review measures source inventory before selector branching. No selector delegates to task_context_review. A subject checks closed-leaf/pair refusals, compares the held sides and can reset a moved comparison cursor to its first page. Its explicit candidate-identity recheck occurs after comparison and before movement, selected revisions, relationships, family, meaning, judgment and origin reads; retained comments do not make that a last-after-every-read check.
 
-### Source-first composition and exact order
+The adapter delegates identity, managed/raw movement and staleness, then obtains selected revisions from the comparison items. with_revision_writers enriches those selected revisions from each side database, passing the explicit legacy/unavailable detail when there is no tree comparison. That is ownership projection, not a new head-selection rule or a claim that this leaf wrote every displayed revision. The selected value then reaches revision_selection in the knowledge pane.
 
-`compose_review` measures the source inventory before branching. No selector delegates to `task_context_review`, which keeps source review and explicit reasons without comparing a knowledge operand. A subject request checks historical/pair refusals, performs its comparison, and can reset a moved comparison cursor to that comparison’s first page.
+Relationships are traversed once for this answer. Family context receives the already-resolved namespace, databases, roots/tree ids, selector, recorded movements and bounded page size; only a family_members request passes its continuation. Family change kinds are attached for a tree comparison. No removed applicability pass or review matrix is run.
 
-The subject path’s explicit `require_current_candidate_identity` check is **after comparison but before** movement, selected-revision, relationship, family, meaning, judgment and origin projections. It is not a final recheck after every read; retained comments saying so are not the operative order. A moved input at that check is refused rather than substituted.
+Knowledge and family-roster pages retain their respective owner results. The retired records collection earns comparison_page_unreadable with no page or invented zero counts. Meaning effects use the held after index and deduplicated addressed-record/family/member identities returned by this response; the before index is only identity fallback for after-absent or retired UUIDs. A path selector invents no knowledge identity.
 
-The adapter delegates staleness/movement interpretation and selected revisions to their existing owners. It traverses relationships once for the response and passes the pair, selector, recorded movements and bounded page size to family context. It does not run the removed owner-record applicability classifier.
-
-### Current payload, judgment and continuation
-
-The knowledge pane carries selected statements/conditions, each tree’s origin projection, identity/revision groups and mechanical field changes. An unresolved selection renders its reason rather than choosing a winner. `judgment=review_judgment(resolved, request.selector)` replaces the old evidence/assessment composition; the old `ReviewRecordInputs`, `EMPTY_REVIEW_RECORDS`, signals, assessment displays and applicability fields are not current adapter inputs or outputs.
-
-Meaning effects are requested from the held after index for the addressed record and family/member identities returned by this response. The subject helper deduplicates exact record/kind pairs across before/after family context; it invents no knowledge identity for a path selector. The baseline database is passed for identity fallback, not as the history source.
-
-Knowledge and family-roster continuations remain their owners’ pages. A request naming the retired records collection receives `comparison_page_unreadable` with no records page or invented zero counts. A task-context response states no compared operand, unavailable judgment, no selected family and an empty covered meaning-subject set; those are named scope states, not a favorable assessment.
+The knowledge pane renders selected statements/conditions, per-tree origins, revision groups, mechanical field changes and the enriched revision selection. An unresolved selection renders its reason rather than a chosen winner. Judgment, source, family, meaning, currentness, movements and stated comparison/inventory/closed-leaf/unavailable limits form the payload; no evidence/assessment/signals bundle is restored. Exact comparison namespace, sides, budgets, cursors and incomplete-side facts are forwarded to their owners.
 
 ## Invariants And Boundaries
 
-- Each entry resolves the requested canonical task; it accepts no caller-selected memory path. Separate requests can observe different candidates and must use their returned identities.
-- The adapter forwards exact comparison sides, namespace, budgets, cursors and incomplete-side facts; it does not mint comparison/family cursors or infer a complete collection from a bounded page.
-- Currentness, source availability, recorded judgment and a review grade are not interchangeable. Composition writes no judgment or stored review answer.
-- Old docstrings about a complete record collection, record/matrix cursors and an after-every-read recheck remain in the checked-in source. The current call graph and ordering above deliberately do not repeat those historical promises.
+Each entry accepts canonical task context and a record number where declared, never a caller memory root. Catalogues enumerate recorded identities without comparing each subject to earn a row. Currentness, source availability, ownership, recorded judgment and semantic approval are distinct. The adapter writes no judgment or stored answer, mints no comparison/family cursor and claims no complete collection from a bounded page. Historical prior accounts below remain superseded rather than current implementation or suite evidence.
 
 <details>
 <summary>Historical prior card, including earlier repair accounts — not the current contract or current evidence</summary>
@@ -619,19 +608,11 @@ adapter.
 
 ## Evidence
 
-No Domain Documentation entries are configured in this memory’s source registry; this account is grounded in the actual repository source. The registry itself is not cited as evidence. The prior account above is retained for history, not as a current suite result or implementation promise.
-
-- The standalone and complete reads resolve canonical task context; the complete route nests request-local memoization owners and passes its sole resolution directly to composition, with no record collector. [52]
-- Catalogue requests resolve independently, preflight the pair, enumerate through the catalogue owner and attach its outline with labelled totals; a moved unreadable record becomes a typed refusal. [53]
-- Source inventory is measured before selector branching; subject composition handles historical/pair refusals, comparison cursor reset and the explicit candidate-identity recheck before later projections. [54]
-- The adapter delegates comparison identity, managed/raw movement and staleness, then selected revisions and the relationship union; it adds no owner-record applicability pass. [55]
-- Family context uses the already-resolved pair, recorded movements, selector and bounded page size; only a family-roster request passes that continuation. [56]
-- Knowledge and family pages keep their owners; the removed records collection receives a refusal with no invented page. [57]
-- Meaning effects use the held after index and returned selected/family/member subjects, deduplicated across both context sides; the baseline database is passed for identity fallback. [58]
-- The current payload carries a judgment projection instead of an evidence/assessment bundle, plus source, family, meaning, staleness, movements and stated limits. [59]
-- Selected statement/condition sides and tree-specific origin projections form the knowledge pane; unresolved selection states no winner, and retired assessment/signal/applicability fields are absent from this constructor. [60]
-- The comparison delegates exact sides, namespace, budget, continuation and incomplete-side facts to the shared diff owner; this adapter does not mint a cursor. [61]
-- Comparison limits, omission counts, side-absence codes and inventory limits are carried as declared facts. [62]
-- The task-context owner preserves source review without a compared knowledge operand, states unavailable judgment/no selected family, and does not fabricate a measured-empty assessment collection. [63]
-- The finite public exports retain resolution/request/composition/catalogue/read operations but no record-bundle constant/type or record-collector reexport. [64]
-- The production dashboard review port delegates to read_complete_knowledge_review rather than separately resolving supporting records. [65]
+- Standalone and complete reads resolve canonical task context; the complete route nests existing request-local memo scopes. [66]
+- Ordinary and numbered catalogue requests share one preflight/enumeration path and label the answered tree number. [67]
+- Source inventory precedes selection; the subject comparison recheck precedes the later projections. [68]
+- Selected revisions receive their own side-specific writer projection before relationships/family composition. [69]
+- Owned family/knowledge pages and after-index meaning effects retain their declared scope. [70]
+- The payload keeps judgment, owner projections and declared limitations without restoring old record bundles. [71]
+- The exact sides, namespace, budget and continuation reach the existing comparison operation. [72]
+- The knowledge pane carries enriched revision_selection and renders unresolved selection without a winner. [73]

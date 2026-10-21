@@ -3,15 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "serve logs requests, prioritizes non-nullish custom tree replies, supplies the captured leaf-wide answer only for unscoped /trees requests, refuses other unanswered tree/source-content requests, and clones answers.",
+      "note": "The fetch stub logs requests, clones answers and fails unexpected or transport-error replies; bodyFor owns route selection.\n\nAnchor: \"function bodyFor(world: Served, url: URL): unknown {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
-            "content": "sha256:4afa37ab0ff4132b3d4f59b8598ddf7825232f84a85f7f4ab1b0a281e483243e",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:bc0903f96b749688bea992990cfc7fd04e38b7d5e64901fd950c5f5edf8c4d07",
             "locator": {
-              "kind": "symbol",
-              "name": "serve"
+              "end": 90,
+              "kind": "line_range",
+              "start": 63
             }
           },
           "kind": "code"
@@ -19,14 +20,16 @@
       ]
     },
     "10": {
-      "note": "The receipt of the real-data bodies.",
+      "note": "The stored public-route capture receipt names raw response provenance and fixture limitations; it is historical producer evidence, not a fresh run of this candidate.\n\nAnchor: \"\"schema\": \"l57-current-public-route-captures/v1\",\"",
       "targets": [
         {
           "anchor": {
-            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
-            "content": "sha256:f666af1ec604dd72d206ab5c0018a7e75462a7cd3c21f4f56cd849464cf017fd",
+            "blob": "a04acc4e58011221660f5082b0958d857a1260d0",
+            "content": "sha256:d3f293a89da16cff32eea118d73fc50419e773f2d7dd41f2890192cd9f6caa20",
             "locator": {
-              "kind": "file"
+              "end": 349,
+              "kind": "line_range",
+              "start": 2
             },
             "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
           },
@@ -35,15 +38,16 @@
       ]
     },
     "11": {
-      "note": "The fetch stub preserves custom tree-answer priority, adds the unscoped leaf-wide captured reply, retains scoped/source-content refusal, and preserves request logging, cloning and unexpected-review failures.",
+      "note": "bodyFor preserves non-nullish custom tree priority and unscoped captured leaf-wide fallback; serve keeps logging, cloning and failure behavior.\n\nAnchor: \"function bodyFor(world: Served, url: URL): unknown {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
-            "content": "sha256:4afa37ab0ff4132b3d4f59b8598ddf7825232f84a85f7f4ab1b0a281e483243e",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:bc0903f96b749688bea992990cfc7fd04e38b7d5e64901fd950c5f5edf8c4d07",
             "locator": {
-              "kind": "symbol",
-              "name": "serve"
+              "end": 90,
+              "kind": "line_range",
+              "start": 63
             }
           },
           "kind": "code"
@@ -51,28 +55,16 @@
       ]
     },
     "12": {
-      "note": "The default real-data world includes the captured leaf-wide tree reply alongside the catalogue, task and review bodies; preserve the existing CHANGES target.\n\nAnchor: inclusive source ranges",
+      "note": "Default world inputs keep the captured entries, leaf-wide trees, task and seven changed-member sequence.\n\nAnchor: \"const entries = captured<unknown>('walkReal.entries.captured.json');\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
-            "content": "sha256:25709f89efcdedae3b6f5bc40610828f6d1581b60a1469716cb9dc0d0546f555",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:cc6307cec3648fcf274767d7b24fd8625611aea66ab0376a257d9716b2a2cb97",
             "locator": {
-              "end": 132,
+              "end": 167,
               "kind": "line_range",
-              "start": 130
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b048f7cdd6883468efddb91df6536399a749ee3d",
-            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
-            "locator": {
-              "end": 142,
-              "kind": "line_range",
-              "start": 134
+              "start": 144
             }
           },
           "kind": "code"
@@ -80,27 +72,16 @@
       ]
     },
     "13": {
-      "note": "Per-test world with triage order and tree view reset",
+      "note": "Reset order is now priority and tree view remains all.\n\nAnchor: \"export function serveWorld() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:152aabb0ef7544d509c4f5ee38c71f6f08fc1aa857078792554ab4ba19f59265",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:5bbb49b4289f25776d0aceccdf74ff8e2c2d3367a969726a196c350c2ec36372",
             "locator": {
-              "kind": "symbol",
-              "name": "serveWorld"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:7bfd52518d89ca2bbbdac01f36afe60a43742292a6b0de0b20107ef299de41ec",
-            "locator": {
-              "end": 223,
+              "end": 250,
               "kind": "line_range",
-              "start": 209
+              "start": 235
             }
           },
           "kind": "code"
@@ -108,27 +89,16 @@
       ]
     },
     "14": {
-      "note": "Suite installation with timeout and cleanup",
+      "note": "Suite installation has setup and cleanup, with no locally declared timeout.\n\nAnchor: \"export function installWorld() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
             "content": "sha256:fd76d28bd54ed848a69ffc14ec34d4be85e6714a0f48bfe2d398553d64e85319",
             "locator": {
-              "kind": "symbol",
-              "name": "installWorld"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:5b7f03e313f34ad497e087b103f10eba04c0c985bb5294b117b0f470061142a4",
-            "locator": {
-              "end": 234,
+              "end": 258,
               "kind": "line_range",
-              "start": 226
+              "start": 252
             }
           },
           "kind": "code"
@@ -136,27 +106,16 @@
       ]
     },
     "15": {
-      "note": "Mounted-surface readers of the tree",
+      "note": "The selected-node reader targets the new review-tree mount and current aria-current nodes.\n\nAnchor: \"export function selectedNode(view: RenderResult): HTMLElement \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:1c8780ae59c81648a13ade5d35f18f358420b4340a02893c6ef1119baa7736e4",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:1243ba85e7dda7c6ce967bd5d56fe2b4294f6c7ffaa578bb437f17dffb60d127",
             "locator": {
-              "kind": "symbol",
-              "name": "selectedNode"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:67a862bd3830221f217050adf1aaf0e56853012ea2f55748931412b09beb9d99",
-            "locator": {
-              "end": 100,
+              "end": 116,
               "kind": "line_range",
-              "start": 94
+              "start": 110
             }
           },
           "kind": "code"
@@ -164,27 +123,67 @@
       ]
     },
     "16": {
-      "note": "Single presses with asserted request counts",
+      "note": "Single later presses retain asserted selected-review request counts.\n\nAnchor: \"const bound = new WeakSet<View>();\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:d531fa9db9564f6c91c5efb8549f059367051d96118fc2f4991ad6f7b9d9f015",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:b0b1856c5bc56fcbf9d6047c05f0acd072d9b932d6a8cef1191ffa55cfb0c5f1",
             "locator": {
-              "kind": "symbol",
-              "name": "step"
+              "end": 289,
+              "kind": "line_range",
+              "start": 267
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "17": {
+      "note": "The summary route returns an explicitly unavailable response, never fabricated measured-zero summary counts.\n\nAnchor: \"const REFUSED = {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "e70824e3c32b3e86eda516a55f32bea2a0e4370b",
-            "content": "sha256:99fcc614a2537f7f726cf56587e4adc14f9a25612a47b0e0fa7d37bc0d1cb1c5",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:08a4db293516a1a3847a7e3994d499694aeda8a42e5b4a0696633e8bb5a2832d",
             "locator": {
-              "end": 266,
+              "end": 72,
               "kind": "line_range",
-              "start": 250
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Opening a helper journey supplies its selected kind/id explicitly from that captured body.\n\nAnchor: \"export function open(subject: ReviewResult) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:078aa3aa3a9aef82989e0eacfb4df38d8cbe2961f9b51e51abe17f6aeb14bca8",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Member selection uses invariant IDs and the selected subject has its own review-subject-slot.\n\nAnchor: \"const labelBySubject = new Map(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:e9133d6498f0a6bc5974ef3a678f8b6f57a77287525370da576af37d93ffbdb8",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 169
             }
           },
           "kind": "code"
@@ -192,15 +191,16 @@
       ]
     },
     "2": {
-      "note": "The real-data world: the changes in `j` order and the bodies by subject.",
+      "note": "The retained changed-member sequence and captured subject bodies feed the default world.\n\nAnchor: \"export const CHANGES = [\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:10a92566fce786c71b7e7ee6d3f73be57c94798c55cac2a311a243e06026dbb2",
             "locator": {
-              "kind": "symbol",
-              "name": "CHANGES"
+              "end": 167,
+              "kind": "line_range",
+              "start": 148
             }
           },
           "kind": "code"
@@ -208,15 +208,16 @@
       ]
     },
     "3": {
-      "note": "The mutable world of the test in progress.",
+      "note": "The per-test world retains mutable answer, tree and entries plus the request log.\n\nAnchor: \"export const world: {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:84477af6f975e96704150559056871c6c5bbac06e7b47f4cce54d4fd95500bbd",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:03dc31ced1e1a67913d065d651e382442563e6e9d0eab17ff63fa898a1b0fc6f",
             "locator": {
-              "kind": "symbol",
-              "name": "world"
+              "end": 231,
+              "kind": "line_range",
+              "start": 221
             }
           },
           "kind": "code"
@@ -224,15 +225,16 @@
       ]
     },
     "4": {
-      "note": "Serving the world to one test, with the triage order and a clean preference store.",
+      "note": "World setup clears preferences and resets priority order, all view and served responses.\n\nAnchor: \"export function serveWorld() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:487b8bef45e18975dcef63d04e3a65e26ec7f3e975f50ad067073f1aa09a916d",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:5bbb49b4289f25776d0aceccdf74ff8e2c2d3367a969726a196c350c2ec36372",
             "locator": {
-              "kind": "symbol",
-              "name": "serveWorld"
+              "end": 250,
+              "kind": "line_range",
+              "start": 235
             }
           },
           "kind": "code"
@@ -240,15 +242,16 @@
       ]
     },
     "5": {
-      "note": "Serving the world to every test of a file and cleaning up the mounted view and transport stub.",
+      "note": "Per-file installation resets before each test and cleans up the mounted view and global stub afterward.\n\nAnchor: \"export function installWorld() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
             "content": "sha256:fd76d28bd54ed848a69ffc14ec34d4be85e6714a0f48bfe2d398553d64e85319",
             "locator": {
-              "kind": "symbol",
-              "name": "installWorld"
+              "end": 258,
+              "kind": "line_range",
+              "start": 252
             }
           },
           "kind": "code"
@@ -256,15 +259,16 @@
       ]
     },
     "6": {
-      "note": "The one selected node, as the reader sees it.",
+      "note": "Exactly one current tree node is read from review-tree, not the removed review-family-tree mount.\n\nAnchor: \"export function selectedNode(view: RenderResult): HTMLElement \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:1c8780ae59c81648a13ade5d35f18f358420b4340a02893c6ef1119baa7736e4",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:1243ba85e7dda7c6ce967bd5d56fe2b4294f6c7ffaa578bb437f17dffb60d127",
             "locator": {
-              "kind": "symbol",
-              "name": "selectedNode"
+              "end": 116,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
@@ -272,15 +276,16 @@
       ]
     },
     "7": {
-      "note": "Settled: no pending read, a selected node, focus on it.",
+      "note": "Settling waits for a nonpending selected response and then focus on its selected tree node.\n\nAnchor: \"export async function settled(view: View) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
             "content": "sha256:680efdf1f6fc96a824e9dc64ff7f9362e1d607e18d71dfc2744f4425a0fc5dac",
             "locator": {
-              "kind": "symbol",
-              "name": "settled"
+              "end": 264,
+              "kind": "line_range",
+              "start": 260
             }
           },
           "kind": "code"
@@ -288,15 +293,16 @@
       ]
     },
     "8": {
-      "note": "One key press, its effect, and the review requests it made.",
+      "note": "A key press waits for its selection/status effect and exact selected-review request delta.\n\nAnchor: \"const bound = new WeakSet<View>();\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
-            "content": "sha256:d531fa9db9564f6c91c5efb8549f059367051d96118fc2f4991ad6f7b9d9f015",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
+            "content": "sha256:b0b1856c5bc56fcbf9d6047c05f0acd072d9b932d6a8cef1191ffa55cfb0c5f1",
             "locator": {
-              "kind": "symbol",
-              "name": "step"
+              "end": 289,
+              "kind": "line_range",
+              "start": 267
             }
           },
           "kind": "code"
@@ -304,15 +310,16 @@
       ]
     },
     "9": {
-      "note": "The click on the second family's row after both families are shown in the expected order.",
+      "note": "The second-family helper waits for order, opens the second family and awaits its review.\n\nAnchor: \"export async function clickedSecondFamily(view: View, shown = [R6R_ID, HBJ_ID]) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "blob": "6981735ee30d3562c1482cfdc9cc0c2d71831029",
             "content": "sha256:41f2ddd1ac2116979450e34bd8de2c162efc1d2e577552486cd9608c400c7d22",
             "locator": {
-              "kind": "symbol",
-              "name": "clickedSecondFamily"
+              "end": 301,
+              "kind": "line_range",
+              "start": 294
             }
           },
           "kind": "code"

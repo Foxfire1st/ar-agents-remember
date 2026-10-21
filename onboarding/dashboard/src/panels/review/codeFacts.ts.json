@@ -2,96 +2,68 @@
   "path": "dashboard/src/panels/review/codeFacts.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Matching leaf-wide code facts without prefetch: `matchingTreeRead` owns the described branch.",
+    "11": {
+      "note": "codeFacts.ts current behavior at this source owner.\n\nAnchor: \"export function codeChangesCount(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:f0723ce21bfe8503275bd8a18e130fda8b8cad35648e882cd8b3b971ae540711",
+            "blob": "c0eddea667ec7dad01ebeeeb15f5729b3213ef1e",
+            "content": "sha256:0230428d3e952a2018f2bf717cc8be78e07036c567359a8f838ca02dd0420cdc",
             "locator": {
-              "kind": "symbol",
-              "name": "matchingTreeRead"
+              "end": 46,
+              "kind": "line_range",
+              "start": 31
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Matching leaf-wide code facts without prefetch: `codeFacts` owns the described branch.",
+    "12": {
+      "note": "codeFacts.ts current behavior at this source owner.\n\nAnchor: \"export class CodeFactsScrollAnchor extends Component<\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:a360060b4b0d237bc9e1b05b597a131ae2dd5f59b90561bb71ac2ec6a75ccd45",
+            "blob": "c0eddea667ec7dad01ebeeeb15f5729b3213ef1e",
+            "content": "sha256:e1f2e7e8fb47d5622981c2f460b87dcbdf4327167f02fc72c0f1458a19551c8f",
             "locator": {
-              "kind": "symbol",
-              "name": "codeFacts"
+              "end": 85,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Matching leaf-wide code facts without prefetch: `codeChangesCount` owns the described branch.",
+    "13": {
+      "note": "codeFacts.ts current behavior at this source owner.\n\nAnchor: \"export function useCodeFactsNotice(count: number \\| undefined, comparison?: number): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:ec0b0e6df571e1df7449e21997766d268b89c8d457ab903e2f23d5829343196d",
+            "blob": "c0eddea667ec7dad01ebeeeb15f5729b3213ef1e",
+            "content": "sha256:802a1e8651982146a39ad6fd3cc82214b622f438acd305470003685ab974b9bc",
             "locator": {
-              "kind": "symbol",
-              "name": "codeChangesCount"
+              "end": 123,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Matching leaf-wide code facts without prefetch: `codeChangesSummary` owns the described branch.",
+    "14": {
+      "note": "codeFacts.ts current behavior at this source owner.\n\nAnchor: \"export function codeFactsNoticeText(count: number): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:b5f06f1ce63799ed900620a6aa0f065e0308397204d5a36be662d19929e93ddf",
+            "blob": "c0eddea667ec7dad01ebeeeb15f5729b3213ef1e",
+            "content": "sha256:8b6185488e5c734afbcc7b920624e6b908374bdca3162094289e108f0b8db84a",
             "locator": {
-              "kind": "symbol",
-              "name": "codeChangesSummary"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Matching leaf-wide code facts without prefetch: `CodeFactsScrollAnchor` owns the described branch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:f274dab8902eaa4694b6b48b4d9b898bf87c5c7d05da3e4d294e3f65627d2355",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeFactsScrollAnchor"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Matching leaf-wide code facts without prefetch: `useCodeFactsNotice` owns the described branch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cf6d30a7d118ee16b5c90266535475a08063a88c",
-            "content": "sha256:ee22685ecc7773d71acd210ca0ce8c61232afe4c0b66753942329ae29061fdcf",
-            "locator": {
-              "kind": "symbol",
-              "name": "useCodeFactsNotice"
+              "end": 121,
+              "kind": "line_range",
+              "start": 106
             }
           },
           "kind": "code"

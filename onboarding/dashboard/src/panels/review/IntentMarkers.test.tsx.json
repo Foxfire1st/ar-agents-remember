@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-        "content": "sha256:43a8f0c64444314d593ccc446e491d11d32560595538deab4afc4c9f65110ded",
+        "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+        "content": "sha256:bd578e836bba33c442aac5cb4630de24c97ee7c1b5688202662191ecc3faf68b",
         "locator": {
           "kind": "file"
         }
@@ -20,274 +20,272 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The real bodies, the transport and the scope stand-in.  Anchor: \"hunkMarkers.classifier.captured.json\"\n\nAnchor: `scopeOf`; `expansionOf`",
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"marks each owner hunk on the owner's side lines, a deletion in the before editor\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:ef91d6a43ead9f144b70f27ccc4caa080b0a62e1b98153faf63ad2f1d32f1af0",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "Hunk-order helpers for mark assertions\n\nAnchor: `inHunkOrder`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Shown-mark extraction from the rendered diff\n\nAnchor: `shownMarks`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Unchanged-file classifier for no-mark shapes  Anchor: `classify`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:66fe426fe761380ca8905a6ec1800c71506150b2cb2b48d6af8066197b851ffb",
-            "locator": {
-              "end": 336,
+              "end": 168,
               "kind": "line_range",
-              "start": 322
+              "start": 143
             }
           },
           "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "Removes the no-tree/dataset branch of a combined no-mark case; unchanged-file no-read and other-content cases remain. Old card phrase nothing outside a tree comparison must be retired as current test coverage; no equivalent test relocation is established.",
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks every hunk on an after line inline, the deletion below its removed lines', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:27bf452ef979e996ab8b82cbe1ec821fbc53bdfacb91d02d8f7973f8ad2dbf67",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:41f2055d9998885d1f0f9951e3f1571116203ad0cefbccc1355c62859835efad",
             "locator": {
-              "end": 345,
+              "end": 177,
               "kind": "line_range",
-              "start": 310
+              "start": 169
             }
           },
           "kind": "test"
         }
       ]
     },
-    "14": {
-      "note": "Three excerpt branches crossed with ready/unavailable outcomes verify pending text, no premature marks, state transition and one classification request.\n\nAnchor: \"shows marks loading in the $excerpt excerpt until $outcome (R57 rule 5)\"",
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists a hunk’s intents with their family occurrences and follows one to its position', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:959a0cd5107f30f89432d9bac268ae2b3fa6fd7676a9a73c095b977fd13d0c0c",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:eb951163c53783fbf0b46ecac6d077c710fa9f1b7042761297030c1214e08f21",
             "locator": {
-              "end": 661,
+              "end": 219,
               "kind": "line_range",
-              "start": 592
+              "start": 178
             }
           },
           "kind": "test"
         }
       ]
     },
-    "15": {
-      "note": "A genuinely unchanged file never requests classification or renders a state note, distinct from an unchanged-range excerpt of a changed file.\n\nAnchor: \"never reads, nor speaks for, an unchanged file\"",
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists a proof entry as a test with its facet, apart from the intents', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:43e9a3ab03cc371a909dd9ae83b2dafcdfd7eb6058b7f733a5e7e865bb374fef",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:b03fb28da4372512631f93dc38b3e6344f009f6e82de577106499eeeaf073ee1",
             "locator": {
-              "end": 704,
+              "end": 235,
               "kind": "line_range",
-              "start": 689
+              "start": 220
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "A full diff's marks, lists, follow, proofs and the unread side.  Anchor: \"marks each owner hunk on the owner's side lines, a deletion in the before editor\"; \"lists a proof entry as a test with its facet, apart from the intents\"",
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the readable side's marks and names the unread side's changed lines unknown\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:c40a8ced1814d59fbb2ea9d1d461f5f045cea465acb8991585f5ba6995a30d72",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:48098ca419d665901b00be44f738a1361fe48ae557d16a6cfb741b343cb3c200",
             "locator": {
-              "end": 297,
+              "end": 256,
               "kind": "line_range",
-              "start": 184
+              "start": 236
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Files without per-hunk marks, the partial inventory and past-text notes.  Anchor: \"gives a confirmed-unregistered file one file-level unexplained mark\"; \"says why a changed file a partial inventory does not list carries no marks\"",
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('gives a confirmed-unregistered file one file-level unexplained mark', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7e775f21a69fae07b5fd2d5b4c7b061e4e6864039a2b8b0e428110105399f631",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:27f8f1b5872077ff6bf2c4463955c5dbee69b70330e0560148a9852049a4e9cb",
             "locator": {
-              "end": 395,
+              "end": 267,
               "kind": "line_range",
-              "start": 299
+              "start": 257
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The return: list, view and focus; the hold never against the reader.  Anchor: \"reopens its list, brings its hunk into view and focuses it\"; \"keeps the returned mark focused while the pane settles, never against the reader\"",
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"gives a file one attribution-unknown note when neither side's knowledge is readable\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:1cf616942e5f3118aa0842043c36e24a3d4e0b6503876c687d0bb4d5a2e22b1c",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:6ffb08d0a5b48143f59447ecb98eafe4be28292b0cd0952f1e90aa0abf3aa7c9",
             "locator": {
-              "end": 435,
+              "end": 276,
               "kind": "line_range",
-              "start": 390
+              "start": 268
             }
           },
           "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file.  Anchor: \"reopens the card a marker was followed from, not the first card of its path\"; \"never reads, nor speaks for, an unchanged file's card\"",
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks nothing for other content on either side, and says why', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:a16579aec42ce41c8289573111f9ecd97705531b42ad65b82c8fd97c610ebfcf",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:93fe15229020121976ac3cd30dad7fa17bece1618b4a7a38b1c18e7748674253",
             "locator": {
-              "end": 649,
+              "end": 288,
               "kind": "line_range",
-              "start": 569
+              "start": 277
             }
           },
           "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read.  Anchor: `advanceTimersToNextFrame`",
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('says why a changed file a partial inventory does not list carries no marks', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:3050d8e1460cc290f242be6ff3680cb26eae0a26f8184bf9f1717082b2cf8662",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:13a512fcc4943bd4f84f9c69783b2e19061d1bd5af72aa90e31cfa6583f417e8",
             "locator": {
-              "end": 429,
+              "end": 311,
               "kind": "line_range",
-              "start": 411
+              "start": 289
             }
           },
           "kind": "test"
         }
       ]
     },
-    "8": {
-      "note": "Per-side expansion builder for mark scenarios",
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reopens its list, brings its hunk into view and focuses it', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:f3515568b9d53ebb47adf4290e67c76022ac0abcb115db5242877ecb889410cb",
             "locator": {
-              "kind": "symbol",
-              "name": "expansionOf"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:e139c9bbed7638c4129d1289bc17863368ae600c41281499ff311ac1fb5425c2",
-            "locator": {
-              "end": 79,
+              "end": 326,
               "kind": "line_range",
-              "start": 63
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
-            "locator": {
-              "kind": "file"
+              "start": 312
             }
           },
           "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "Scope builder for files under test",
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the returned mark focused while the pane settles, never against the reader', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:7d8f453defaddd42126ca6ae7c519f23bca4de9e1d8323e513c372ea93a9c0b5",
             "locator": {
-              "kind": "symbol",
-              "name": "scopeOf"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:860bfc785f553c060d346ff19fdd0ee68696daaaec01539461cdef6b27232037",
-            "locator": {
-              "end": 124,
+              "end": 344,
               "kind": "line_range",
-              "start": 108
+              "start": 327
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not reopen a pane the marker was not followed from', async () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "ea129e8f199e4f0d0303667f94bd0ab13a681fcd",
-            "content": "sha256:7c744619f2c8bce3ccd0d30b01e6cce311dae4bd28e81480343726fa20c68184",
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:a99ded80ca200529c6b1a079a893f00fbfdd3213790113fc6a7b304806e226cc",
             "locator": {
-              "kind": "file"
+              "end": 482,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:14f60ade850db174fe4d0a5a5cbdf4417e6d914f1f57cd11fe844b9e92bcc32e",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('places no mark when either drawn side is other content, though the other matches', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:c0d9407216ddce3be3014c01f9f161bcda42d1c83c103ffa2168f8d3c7955c9f",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 495
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"never reads, nor speaks for, an unchanged file's card\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:16237e6cfa6b2b996407489b7d951f7e5db6dd8421e3ed70c0b5c081887434f1",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('places no mark on a drawn side of other content, and says why', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:5e33f701e62eada22a4a5d67883acea827429385e39bafc344049e020a6f8705",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 526
             }
           },
           "kind": "test"

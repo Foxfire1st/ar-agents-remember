@@ -2,30 +2,459 @@
   "path": "dashboard/src/panels/review/canvas/CanvasPanel.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "A saved-first read starts nothing.\n\nAnchor: None",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('disables the control and names why when the launch is refused', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "af2dab5cd88624ce27ffb882b6df010b5e80ca13",
-            "content": "sha256:e1fa00069937aa4e2ce7392442a9862e699da5c51d7d2248cd531884ad8f4776",
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:292b6a1ede71b5d1ef9301762f652a094a4d216f48604d58fc76f285d5757e90",
             "locator": {
-              "kind": "file"
+              "end": 282,
+              "kind": "line_range",
+              "start": 266
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The explicit start is issued once.\n\nAnchor: None",
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('revokes the channel and shows the saved page when the frame navigates', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "af2dab5cd88624ce27ffb882b6df010b5e80ca13",
-            "content": "sha256:e1fa00069937aa4e2ce7392442a9862e699da5c51d7d2248cd531884ad8f4776",
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:0ef28e8112846be42397dfdcd7b0647a302c9bcc3247c24399db0217b1b41e36",
             "locator": {
-              "kind": "file"
+              "end": 302,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('revokes a document that departs before the iframe first loads', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:b9570fe1e8d0c1f1445f097b515ccf9ab6a860376bbd049fd1f9f37f76aadd22",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('disposes the channel when the panel is hidden because no comparison is shown', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:47978b33620b811c809e8ef54d581c4e451f425e984700299c862e8ae87c4837",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('drops the old page and channel when the review target is replaced', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:fd1d2fe20fea78bc20486bb36e2ea86c05e19073a9e50016a606bf408096850d",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks the retained revision stale and regenerates from it for the new comparison', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:f51f3d6d97adc13abc5faa70806400d9df117c29441725e2e3c076d8a53d935d",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 360
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names a recovery state instead of an empty page when retained assets are gone', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:0113c5b5b6928537bb0dd8613189a97fc67455b4d86511bc80136daac5f10be4",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`drops ${burst} oversized messages without one request`, async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:3fef8ec07a6cfa3e909d935a664728cdecd8290a787f8c962da61662cee61f36",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('still forwards one message inside the ceiling', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:1b45697a1e4b0a73d401b8a9f0aa5c7ee785280240da463a5b0211b05782b71c",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 465
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens the exact selector of the comparison on screen', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:d7baee3c8b619fd70f0a20492743d821a4ba2ece92dec4d03f867a1ba9414075",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 493
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('ignores an evidence answer that lands after the channel was replaced', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:d82ce00cce5802861bec7b64f9f17b4e80fd1119be08b0e1e9b94a462be78d19",
+            "locator": {
+              "end": 545,
+              "kind": "line_range",
+              "start": 512
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('refuses a destination of another comparison and opens nothing', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:26a155ba95846b2e4e35c39e1dbe347258262fa0cc3ef15ca59bfe1b123ca204",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 546
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('positive control: a ready page opens one channel and unmount revokes it', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:335a7f5394ca7a97f52416b1681706b9fa95b80c59997a88dd3b8ce96cacc155",
+            "locator": {
+              "end": 595,
+              "kind": "line_range",
+              "start": 586
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('replacing the review target revokes the old channel and opens a new one', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:b7ae6a54937f8fe30e3dc7166e8c49104436d84ee524561f608dcdb6b982c1e2",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 596
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('replacing the ready revision rotates the channel while the page stays ready', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:04a0a8fedc7c8ad1b003d01c36d4418a3beb404f7b86390033fe110cf6c58ff5",
+            "locator": {
+              "end": 617,
+              "kind": "line_range",
+              "start": 607
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('revokes a channel the host allocated after the panel was disposed', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:28af300a9ab779dc401398ba8a4cf12cfe5fcf89197fd30a86c7fe9222c0ff03",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 618
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('ignores a late answer for a previous scope', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:159658ef27c62ff4cf5187a1d0be165441f4770818d5cc1008faceefcf477b8f",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 636
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('holds the last comparison while the surface reads and replaces it when it moves', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:0a62f6a2937edf8f2c7e2cd971fbb9723615eb03d7d8eb57b84ce340a6d4b7cb",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 664
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`does no JSON traversal for ${burst} large, deep or wide bodies`, async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:b44c0794d0fc355055eebb5d00bf57bae36c578717314596a2cd3be7a7bc4728",
+            "locator": {
+              "end": 705,
+              "kind": "line_range",
+              "start": 681
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`inspects and serializes no body after four requests are in flight (${burst} more)`, async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:d4db81ef073b2fc4c30f2a61effd5a45c4b3d3a4b5a1b3d55d74849c726e4d36",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 706
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps one page lineage when the comparison number moves', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:24d04f51ce0d8d2f61ad4657dd38e0c637951287898b0a2bfd25e02846569433",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('judges the saved page against the comparison on screen, including a historical read', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:cd1ce3f57ae8c9b25bc14fc48741c0926e9c14d38aa676a932b52717084083f5",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names the full identity of an exact destination and refuses a foreign one', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:9fc9d9ee6c88b1f46291b89b5cbf297a85c3bfe96da5974a3d2f279e2b711e1b",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows an empty page and starts nothing on open', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:b760607b20517c37271cac685ed1f0182c8eeeb3a198797aa2569d91255660ea",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows the saved page in the host sandbox and reports the scripts value it names', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:a0a389dd2d2974a04c517aa3d9db60abd305dd000bf2f05c48cec3bf9de70916",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reports scripts disabled when that is the value the host names', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:095968dc47568777208392ffceca121d0902bc8eeafaebcd2e355d4eeda4426e",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 234
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('starts one explicit generation for the comparison on screen', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c565e8a48844e6b168908bb6674a3c2371fcc4b9",
+            "content": "sha256:90b4d30a30fc747ee0b1552ee5c1912649fbc539034aa12f5cd401a35a851c7b",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 243
             }
           },
           "kind": "test"

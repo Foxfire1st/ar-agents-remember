@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/readerLine.test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "ColumnLayout supplies ordered-block geometry, held rooms and rounded/clamped scroll dimensions.\n\nAnchor: \"export const COLUMN_TOP = 100;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0191f72645a096d22c5272dbbf259c8f81a4bdd7",
+            "content": "sha256:27c2c743ad2d8eab679c40e2c8a6e5e3a6f0e9ff6c791517c9b6e2fdb8682966",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Scroll, clock, frame-sampling and anchored-column helpers drive controlled observations.\n\nAnchor: \"export function mockLayout(extra: [string, Height][] = []): ColumnLayout {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0191f72645a096d22c5272dbbf259c8f81a4bdd7",
+            "content": "sha256:0b9568cf8286fda4d11b34cdbf1fe6f35cb15bef9f80b8f9c2a870f5047652ff",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Editor document-line lookup and growable spacer support editor-specific cases.\n\nAnchor: \"export function testBlock(testid: string): HTMLElement {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0191f72645a096d22c5272dbbf259c8f81a4bdd7",
+            "content": "sha256:444d0d1cc93b4bebb50d96e9645681fc04493a6f84583ca1a3d0c38edbf2029c",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

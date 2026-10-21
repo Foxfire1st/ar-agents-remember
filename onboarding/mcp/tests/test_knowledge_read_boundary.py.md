@@ -49,3 +49,9 @@ values; the summary/projection owners carry those separate contracts.
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]
 
 - Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression. [15]
+
+## Comparison-aware summary callback
+
+The dashboard GET fixture supplies the summary reader's optional comparison-number argument as `_number`. The exercised requests omit a number, and the callback ignores it while reading the same placed snapshots. This adapts the route seam while retaining the full before/after filing oracle; it does not independently prove numbered-comparison selection or add a new writelessness population.
+
+- The summary port accepts `_number`; all three GETs retain the before/after oracle. [17]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
         "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
         "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-        "content": "sha256:1bb786f40ea6fb174005970fdfc3794f4871c1d5d99ca1689c7c23250e56d8fb",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:fdc196cb19a7c70584c0b801040b63442ef16756771ab468b9eb70694dcc0b3b",
         "locator": {
           "kind": "symbol",
           "name": "catalogueGroups"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-        "content": "sha256:00943742cde6b7ac228adc1d4851d30ef95f3cb98b3c8b4494b5eaf6caee1f78",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:6bcb8092a7dfb48e27330e128175271baa3645cc39fe32450d562c10b2421f09",
         "locator": {
           "kind": "symbol",
           "name": "outlineGroups"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
         "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
         "locator": {
           "kind": "symbol",
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-        "content": "sha256:0a0026a77956468bbd9f3bfc6f207085c0d111917ac645d6064146bbedfff714",
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:791ae8cdfdcf77cf20b6623da26682eaa80cf9f18f561af5d1f7e812a4eebed7",
         "locator": {
           "kind": "symbol",
           "name": "outlineMember"
@@ -108,422 +108,92 @@
       },
       "rationale": "A member outline row receives the member-specific meaning join, not the family’s judgment.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:337ba80dab213fb248cd6b26bc7665661fb136a4418411f59e6df99a84523be0",
+        "locator": {
+          "end": 169,
+          "kind": "line_range",
+          "start": 169
+        }
+      },
+      "id": "RLZ-QWMT0G",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-ZEB6H9",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The member helper applies recorded change weight for every active sort except Authored; Authored alone keeps the supplied order without that priority weight.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+        "content": "sha256:5fea8733c57c751d5c17cd298929b2dd88f842a447f600c037ffc65304fa3324",
+        "locator": {
+          "end": 305,
+          "kind": "line_range",
+          "start": 292
+        }
+      },
+      "id": "RLZ-T3D6WD",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-NSG0D4",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The retained walked roster can supply a missing compact member label after the explicit outline/catalogue label; it contributes an admitted walked fact to the shared model rather than changing the selected subject or inventing a roster member.",
+      "role": "support"
     }
   ],
   "references": {
-    "1": {
-      "note": "The module's statement: pure functions over the delivered facts; a dataset entry is left as landed.\n\nAnchor: \"Pure functions over the delivered facts\"; \"here decides a fact\"",
+    "24": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"export function memberChanges(entry: ReviewFamilyContextEntry): Map<string, ReviewMemberChange> {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:199d2eaaf45f7d8bbdc6e01b02d3abaecbc2195736171c397fb431d73032740e",
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:f48cc6f159b3c1a61e7564bc14a61282dac9a5e995f0b933183acabfe4a580da",
             "locator": {
-              "end": 4,
+              "end": 203,
               "kind": "line_range",
-              "start": 1
+              "start": 69
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "Real-change predicate excluding unknown and unchanged",
+    "25": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"export function outlineGroups(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:bb8b3fd922eccaa236360315caffc1024db94b0eb7c18f996aabb638b0ea39dd",
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:c420556c483fcff972c5fd101b339539f7c8070914f7f195a8b7610f451c5a86",
             "locator": {
-              "kind": "symbol",
-              "name": "realChange"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Drawn groups from outline, walked facts and catalogue",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
-            "content": "sha256:c64474e7c48b7362b9cd54e3cc6f44e35f050800313d748f7e13e8763f1f8672",
-            "locator": {
-              "kind": "symbol",
-              "name": "outlineGroups"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Walked-fact and membership overlay with precedence",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:ba3849529427f59c598d4a4d52c7d70e8ad666aa9672991634fdc51a903906cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "memberBadge"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Triage sort weights for outline badges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:ed9e585504b5367554df53855e6984b3d69f2b480b6339284a557417342e09a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "badgeWeight"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Opening row on the first real change",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:33359ff3913befe7af2dba06efc84781f6c270cb84b1766e6f111d069059a567",
-            "locator": {
-              "kind": "symbol",
-              "name": "firstOutlineChange"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Summary counts of changed families and invariants",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:3e56699d92e48c8c527f56c66fd2413e916edaa226cf45510f3af960bd0202a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "outlineCounts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "OutlineRow also carries the delivered meaning state and ordered labels.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:5917f98bf29aaf0d482c53e02c3da74df2153be2c488db6d5d7871863197ed80",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "These pure helpers project outline grouping, ordering, primary badges, counts and member facts. outlineGroups optionally accepts an invariant-ID code-change map; undefined uses walked facts, while a supplied map or null replaces that fact source. memberBadge preserves real or unknown outline changes, then considers established implementation, membership and unknown implementation in that order. Semantic roster ordering remains separate from compact sidebar ordering. OutlineRow carries recorded meaning state and labels separately from its badge. memberMeaning selects the exact member's family occurrence meaning when defined, otherwise the invariant entry's meaning, never the family's labels. Meaning adds no change kind, sorting weight, count or computed net effect. A catalogue-only listing remains unbadged; outlineCounts and firstOutlineChange do not pass the optional code map.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:bfb8963ed0fcab46bfffa7fb36f453543a051fa10a4a84d28fc311d9e9b0dad1",
-            "locator": {
-              "end": 403,
+              "end": 355,
               "kind": "line_range",
-              "start": 1
+              "start": 340
             }
           },
           "kind": "code"
         }
       ]
     },
-    "18": {
-      "note": "The module projects delivered facts. Missing member facts read unknown through occurrenceKind; familyTriage still returns undefined without change_kinds. The former missing-facts early returns in orderFamilies and orderMemberRows are removed; this is not a blanket guarantee that dataset rows retain their original order.\n\nAnchor: inclusive source ranges",
+    "26": {
+      "note": "changeTriage.ts current behavior at this source owner.\n\nAnchor: \"function unknownImplementation(fact: ReviewMemberChange \\| ReviewCodeChange \\| undefined): boolean {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:d468b58cdc4781433b2802cbd66d15ed0680538cc1d6d20be3239f440bac504c",
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:7f96b29a523f36f53510c1e9862887eeeaffda3d227aae3223b8c2f30ea09d80",
             "locator": {
-              "end": 80,
+              "end": 425,
               "kind": "line_range",
-              "start": 75
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:c5a228733b24ee7ca8880db8d02ec4a2ee4d6e766e9e9d17df2dbe512783c1ad",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 91
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:10573284b6e7f3e7e06448aa4021abb5d9c2173212a0988700d12c42e63b3ace",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 142
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:160d1823b57e146488c2e999ecd517fd0bb6a9c098c5fdf64b2ef6e90f14935e",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 156
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "outlineGroups builds family/member groups from an admitted outline, tracks listed invariants, appends unlisted invariants, applies authored or badge-weight order and aggregates real member changes under unchanged families. Without an outlined state it returns identity-only catalogue groups. Its optional code map is passed to both family members and unlisted invariant rows; undefined retains walked facts, whereas a map or null replaces that source.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:00943742cde6b7ac228adc1d4851d30ef95f3cb98b3c8b4494b5eaf6caee1f78",
-            "locator": {
-              "end": 374,
-              "kind": "line_range",
-              "start": 322
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:0a0026a77956468bbd9f3bfc6f207085c0d111917ac645d6064146bbedfff714",
-            "locator": {
-              "end": 315,
-              "kind": "line_range",
-              "start": 289
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Precedence and sort weight, the labels and the accessible meanings.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:91226cb48158f75abd6bed1dd97f3d0492039ec83c3994d5e7d3af2443436ce8",
-            "locator": {
-              "kind": "symbol",
-              "name": "CHANGE_WEIGHT"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:8051511d88d2a9d7473ef2f6f9a0dc5f22bb82c6e87c4d4591dc494f675e4a85",
-            "locator": {
-              "kind": "symbol",
-              "name": "CHANGE_LABEL"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:0d16541a9c15811aacbf114d94f168aefd7f21e548c3013289068de034a60b1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "CHANGE_MEANING"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "memberBadge preserves a real outline change or an unknown outline badge first; otherwise established implementation yields code changed, then joined/left membership wins, then unknownImplementation yields unknown, otherwise the original badge remains. unknownImplementation recognizes implementation unknown and, on facts carrying primary, primary unknown. This accepts walked-member or code-change facts and does not infer recorded meaning.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:ea8ed2719c7ec65af7f238bf6c73c2fcdc029d4e966e9fa74401683eae89d21a",
-            "locator": {
-              "end": 265,
-              "kind": "line_range",
-              "start": 255
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:d062b0ba1c7be5a207cdf14811836fa2a826ded81d7d2b645eb984c11fc96cdb",
-            "locator": {
-              "end": 254,
-              "kind": "line_range",
-              "start": 249
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "An undescribed returned member reads unknown.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:d468b58cdc4781433b2802cbd66d15ed0680538cc1d6d20be3239f440bac504c",
-            "locator": {
-              "kind": "symbol",
-              "name": "occurrenceKind"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A family's counts, partial and scoped state and weight (item 8; review R1 F2).\n\nAnchor: \"A total the server could not read never lets the returned members pass for the whole family.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:70873f42f0a38448afbed7e1b469ab45d7f1f426e7837c186f4f27b8f5894250",
-            "locator": {
-              "kind": "symbol",
-              "name": "familyTriage"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The breakdown text, never the intent count.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:9de5945ee7c73ec46edd1a96588dcdcec7d9406da8ebd404e64848b32977dedf",
-            "locator": {
-              "kind": "symbol",
-              "name": "breakdownText"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Families and member rows ordered, siblings kept, one occurrence's rows together.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:9436ab5f4df9a143bb65caef3be77dc6190f79d09c451e4781aadc5a1879b387",
-            "locator": {
-              "kind": "symbol",
-              "name": "orderFamilies"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:35406d4d2b813e6cd12d4e1c012c40d64e8273010dfe1edb9955766d468d84d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "orderMemberRows"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The union of two deliveries across a roster walk.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:ee64c2bf4972913abb3f3618ae1734e9cbb14259ba9782ab8f1828e33c324513",
-            "locator": {
-              "kind": "symbol",
-              "name": "mergeChangeKinds"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The centre's member list follows the tree's order.\n\nAnchor: \"const distinct = orderMemberRows(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "401279764e9f59409054becaec08871155df7fcf",
-            "content": "sha256:5e8e308dbbaa2289b957d593152f696b8df7163595618a6aed13e6e9bde2f43b",
-            "locator": {
-              "end": 640,
-              "kind": "line_range",
-              "start": 640
-            },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Row badge vocabulary with aggregate counts",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:249922bfb94020359b3300bc1872e1c19a7fdca49e6f072a62c839e84149dcdd",
-            "locator": {
-              "kind": "symbol",
-              "name": "OutlineBadge"
+              "start": 252
             }
           },
           "kind": "code"

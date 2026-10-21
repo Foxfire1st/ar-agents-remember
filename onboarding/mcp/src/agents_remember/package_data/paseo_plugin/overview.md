@@ -26,7 +26,13 @@ A line carries the ended turn's own last line of agent text, shortened to 300 ch
 
 A Worker, Reviewer or Curator that stops without handing off is sent back to its work instead: after every silent end the plugin waits 60 seconds, then — if the seat is out of a turn, unarchived and owing no permission — sends the seat one message naming its role and task, quoting the ended turn's own last line and asking it to go on, or sends its parent the counted line from the third silent end in a row. A turn start inside the wait cancels the send and the end is not counted; a hand-off or a turn begun by another agent's message resets the run. Other roles are unchanged. Every message, marked line, cancelled wait, skipped send and left-alone end the current generation emits is offered to the plugin's own `turn-ends.jsonl`, turned over at 2 MiB to one archive, with a failed write named once in `turn-ends.error.json`; an obsolete intake outcome and a generation-boundary send add no row, a sink without `PASEO_HOME` writes nothing, and `host-activity.json` keeps its bytes. The plugin's cleanup drops pending and in-flight waits and clears the runs, so a reload starts afresh.
 
+The client also carries the tray channel. `index.client.tsx` keeps supported theme/screen/RPC wiring separate from the pinned DOM adapters under `client/`. The bridge negotiates `pick` and `showing` with the trusted parent: `showing` reports the chat actually displayed, independently of a pending navigation request, and names no agent for missing/load-failed or ambiguous chat identity. Tray chat highlights can copy through the host copy handler and offer a non-modal Add control; only clicking Add posts a pick. Each pick carries the displayed agent, message ID and time from that row's own recorded timeline data. A row without recorded time is refused in place, and unreadable adapter structure produces a named notice rather than invented provenance. The same channel observes the message-box rectangle for an external tray dock and reserves finite tray-height padding in the chat scroll root; missing composer measurement is named, and teardown disconnects observers and releases the reservation. These pinned DOM/React-property adapters are explicit unsupported host seams; source declarations and local tests do not establish live-host acceptance.
+
 ## Load-Bearing Files
+
+- `index.client.tsx`: supported contribution wiring and the explicit boundary to unsupported client adapters.
+- `client/bridge.ts`: trusted parent control, displayed-chat reporting and negotiated tray channel lifetime.
+- `client/pick.ts`: chat highlight offers and exact row provenance, message-box measurements and reserved tray space.
 
 - `index.server.ts`: embed and host-activity RPCs, independent event owners and unload publication.
 - `server/host_activity.ts`: bound, boot-qualified host activity and atomic publication.
@@ -47,3 +53,11 @@ A Worker, Reviewer or Curator that stops without handing off is sent back to its
 - Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible. [2]
 - Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented. [4]
 - Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn. [5]
+
+- Supported client contributions remain separate from explicitly pinned DOM adapters. [6]
+- The displayed chat is observed independently and published only to a dashboard that negotiates showing. [7]
+- Trusted parent messages negotiate and control the tray channel, with complete teardown. [8]
+- Message time comes from the exact row record; offer activation preserves the highlight and focus. [9]
+- Only explicit Add posts a timed pick; unrecorded time and unreadable structure remain named. [10]
+- Composer measurement names absence and owns observer lifetime. [11]
+- Negotiated tray space is bounded by the frame and released at teardown. [12]

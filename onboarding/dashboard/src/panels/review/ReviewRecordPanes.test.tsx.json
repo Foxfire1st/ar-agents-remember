@@ -2,17 +2,68 @@
   "path": "dashboard/src/panels/review/ReviewRecordPanes.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Synthetic current-shape panes test visible unresolved/read-only/field facts and attribution measurement wording; technical details retain row/proof IDs/history path, not retired authored/evidence channels. Missing paging/current details stay explicitly unavailable.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('renders current-shape main facts, unresolved reads and read-only state without retired branches', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4e68f87cf16ab2154b780db250f81cffd7b3ce9e",
-            "content": "sha256:75d44d6422f9c7842f83f490cad1d37b55bcb7061b32e6063565cb4f1dbfa0a9",
+            "blob": "2e7fd26ebbd017a54672814e3971a1df410236e8",
+            "content": "sha256:ef3aec8a3eab508d4c385ad12fbd9655df9cf44e5c622dbad249b0afb2861c48",
             "locator": {
-              "end": 161,
+              "end": 99,
               "kind": "line_range",
-              "start": 1
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names attribution counts even before a lane read exists and explains an unmeasured change set', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e7fd26ebbd017a54672814e3971a1df410236e8",
+            "content": "sha256:0463fd025bda80895a42bd061bea8f4cb39e69b7c9e317ef54e0b8f75e35a897",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names changed fields and remaining counts in words', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e7fd26ebbd017a54672814e3971a1df410236e8",
+            "content": "sha256:8973711b0ab80ab26eeeea90a11a168f301b056513dcdb085f18a30b59cca38a",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps only current judgment/proof identifiers and provenance in the record identities', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e7fd26ebbd017a54672814e3971a1df410236e8",
+            "content": "sha256:9152d69d42cd410dbb4ffa3cfb5a0c827c5f0e15d60f4d556a445a76d14a6318",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "test"

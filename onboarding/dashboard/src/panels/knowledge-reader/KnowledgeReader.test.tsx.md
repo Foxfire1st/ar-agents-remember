@@ -30,6 +30,8 @@ the O1 shared records acquisition.
   shared list through delay, branches, rerenders and Back, a failed list named without retry or
   gating, and old answers cleared on commit/repository change with late selections ignored.
 
+- The wide/phone citation case now starts with `cockpit.sidebar.knowledge.right` set to `0`. It checks the aside is initially hidden, clicks a reference marker, then checks the aside becomes visible and the right toggle reports `aria-expanded="true"`, with the same prose node, scroll position and path hash. It clears local storage before the phone leg. These are mounted DOM assertions with stubbed media state, not a browser layout measurement or a new claim about all sidebar integrations.
+
 ### Conventions
 
 - Vitest + Testing Library; the served answers are scratch-authored. `fetch` is stubbed, and the suite also sets a `matchMedia` stub, synthesized tree presence/coverage values and constructed hidden-pane zero conditions; it renders no real browser.
@@ -73,3 +75,4 @@ No cross-repo boundary is crossed by this file.
 - Commit and repository changes clear prior record answers; delivered late selections cannot replace the current selection. [10]
 - captured is imported from readerTestSupport, then used to serve record bodies here; it is not a declaration in this file. [11]
 - Imported heldTree replies and locally held record replies are delivered in async act before negative stale-answer and duplicate-acquisition assertions. [12]
+- The wide-citation case begins with the aside hidden through its stored sidebar value, then checks the aside and right toggle reopen while prose identity, scroll position and path address remain unchanged. [13]

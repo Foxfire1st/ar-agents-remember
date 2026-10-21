@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:3f1936de1758643ca02914d8e3193deeda73f6f0acbe73a19611841e03a56d0a",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:3429c69cabae1586257f3c9c98077fffabfd6eef2f26aaf46c82f0e5b88e41e9",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:661368a3cf6ed4ce6c8e75505db313c219b6552b9d1da59a765e9fff99858ca6",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
         "locator": {
           "kind": "symbol",
@@ -129,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
           "name": "onMessage"
@@ -147,12 +147,12 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:56f04fe8bdd8388ef84a5ba075d99ac4c2a5bf0cd8555e11f47a8d2fdfd7c38a",
         "locator": {
-          "end": 183,
+          "end": 199,
           "kind": "line_range",
-          "start": 149
+          "start": 165
         }
       },
       "id": "RLZ-AZSTHT",
@@ -166,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -184,7 +184,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
         "locator": {
           "kind": "symbol",
@@ -202,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:76fc68a456a1df0374ec97cc800e4fad06c45a6d77ce836f49ee6fa2f938c172",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.onShown"
@@ -220,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:53b6ec06563901ef163ca5daab429fe212b9d0d9872e0d3453439c0a10e5825c",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl.onReady"
@@ -238,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
         "locator": {
           "kind": "symbol",
@@ -256,8 +256,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:e02bcb241a27463766dc9eba7c876777f42cdccd9a73556e62d01547f1725c3a",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:ee4c2bd20126b9f34b0a73bac442ef7394a40c1a138102a0579bf8def9ec28c8",
         "locator": {
           "kind": "symbol",
           "name": "onMessage"
@@ -274,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
         "locator": {
           "kind": "symbol",
@@ -292,12 +292,12 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
         "locator": {
-          "end": 453,
+          "end": 520,
           "kind": "line_range",
-          "start": 73
+          "start": 75
         }
       },
       "id": "RLZ-SFPH0W",
@@ -311,8 +311,8 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-        "content": "sha256:66ee31d73bce2a90d98ca0024b96fb3e996242eafa5385dc58d75e1ab4f670f1",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+        "content": "sha256:92cbd86891412ef52c23ed651bdef1d930c9b29abf77fd92319b43fcf114f79e",
         "locator": {
           "kind": "symbol",
           "name": "PaseoFrameControl"
@@ -329,7 +329,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
         "locator": {
           "kind": "symbol",
@@ -347,7 +347,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
         "locator": {
           "kind": "symbol",
@@ -365,7 +365,7 @@
     },
     {
       "anchor": {
-        "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+        "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
         "content": "sha256:c71a996880db63f28f763e0bbccda87ee98927f306160713ca8e2e795bfbb76b",
         "locator": {
           "kind": "symbol",
@@ -384,15 +384,50 @@
   ],
   "references": {
     "1": {
-      "note": "A ready change switches immediately; a change during a load's readiness wait is held, while unavailable changes use the trailing settle window.",
+      "note": "Ready changes message immediately; readiness-held changes and unavailable trailing settlement differ.\n\nAnchor: \"display(scope: string, target: PaseoAgentTarget \\| null): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:4989d6a12e83a2bcc3fd3d3a0712ecc59b36562db9c375a4251dae6c7f5fcfa9",
             "locator": {
-              "kind": "symbol",
-              "name": "display"
+              "end": 187,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Tray attachment is replaced on readiness and cleared on stop.\n\nAnchor: \"private linkTray(capabilities: PluginAbilities): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:0056c576f8d01a30aa092a98dc330a6e072b6780418b1d58b6a37fe8faa07621",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Native showing reports and bounded older selection inference publish the frame's chat independently.\n\nAnchor: \"private followSelection(agentIds: string[]): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:cbef9622e24b8e78204dff90ec919b400c9fc8c45686bd084bb912bf24d98046",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 354
             }
           },
           "kind": "code"
@@ -400,15 +435,16 @@
       ]
     },
     "2": {
-      "note": "Readiness ends the load wait and sends the latest held target through the negotiated channel.",
+      "note": "Ready capability negotiation attaches tray reporting and sends the latest held target.\n\nAnchor: \"private onReady(capabilities: PluginAbilities): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-            "content": "sha256:53b6ec06563901ef163ca5daab429fe212b9d0d9872e0d3453439c0a10e5825c",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:39ef2562efa6da62b3d2f194a66508f8b1fe282d549ab926b2036f16239ff672",
             "locator": {
-              "kind": "symbol",
-              "name": "onReady"
+              "end": 281,
+              "kind": "line_range",
+              "start": 263
             }
           },
           "kind": "code"
@@ -416,15 +452,16 @@
       ]
     },
     "3": {
-      "note": "URL loading is allowed only while unavailable and outside an outstanding load-readiness wait.",
+      "note": "URL loading remains bounded by unavailable state and outstanding readiness.\n\nAnchor: \"private sync(): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:bc721665060d6db230bb7350061f28d1cfc39044b0b8c380bb04e73b7e243edb",
             "locator": {
-              "kind": "symbol",
-              "name": "sync"
+              "end": 389,
+              "kind": "line_range",
+              "start": 381
             }
           },
           "kind": "code"
@@ -432,15 +469,16 @@
       ]
     },
     "4": {
-      "note": "A document load raises generation once and then awaits its own readiness.",
+      "note": "One load produces one generation and its own readiness wait.\n\nAnchor: \"private load(wanted: PaseoAgentTarget \\| null): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:a9089b8a548ba7ecff412d14754d31cfc3b50787e51d0de078db71c81149a5cf",
             "locator": {
-              "kind": "symbol",
-              "name": "load"
+              "end": 418,
+              "kind": "line_range",
+              "start": 408
             }
           },
           "kind": "code"
@@ -448,15 +486,16 @@
       ]
     },
     "5": {
-      "note": "Only the configured frame origin and actual iframe window supply control messages.",
+      "note": "All accepted control and tray messages require exact frame origin and window.\n\nAnchor: \"receive(event: MessageEvent): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
             "locator": {
-              "kind": "symbol",
-              "name": "receive"
+              "end": 209,
+              "kind": "line_range",
+              "start": 202
             }
           },
           "kind": "code"
@@ -464,15 +503,16 @@
       ]
     },
     "6": {
-      "note": "A missing readiness report asks a ping before control is unavailable.",
+      "note": "Missing readiness probes before unavailable control.\n\nAnchor: \"private awaitReady(): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:421457bcb42cd6bdb13cb9f9eae3b76927955324849767e00264f7f448734ade",
             "locator": {
-              "kind": "symbol",
-              "name": "awaitReady"
+              "end": 447,
+              "kind": "line_range",
+              "start": 433
             }
           },
           "kind": "code"
@@ -480,15 +520,16 @@
       ]
     },
     "7": {
-      "note": "A late request is probed, not automatically reloaded.",
+      "note": "A late answered request stays pending without resending its open.\n\nAnchor: \"private probe(): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
             "content": "sha256:3652e0509fb6b267a048ef84202ea5ebf881a1a1d3b6e021f252bb008b7834cc",
             "locator": {
-              "kind": "symbol",
-              "name": "probe"
+              "end": 464,
+              "kind": "line_range",
+              "start": 453
             }
           },
           "kind": "code"
@@ -496,15 +537,33 @@
       ]
     },
     "8": {
-      "note": "Drawing and the application's own failed-load pane both settle only the pending agent.",
+      "note": "Only the pending agent settles on drawn chat or the native load-failed pane.\n\nAnchor: \"private onShown(agentId: string \\| undefined, drawn: boolean): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "544012e9af8e00c13cb558c0885e93e23ee2c4f4",
-            "content": "sha256:76fc68a456a1df0374ec97cc800e4fad06c45a6d77ce836f49ee6fa2f938c172",
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:6c92851230026aa4cb5ae12b811a46e6d5282cdb818e5bc8d77b5a13885e977b",
             "locator": {
-              "kind": "symbol",
-              "name": "onShown"
+              "end": 343,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Startup distinguishes ordinary document load from hidden preload.\n\nAnchor: \"start(available: AvailablePaseoFrame, afterRetry: boolean, preload = false): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:d0445a449567c2c1d2541969be3506e2780b12b62d1d58ae09351be2a865f354",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "code"

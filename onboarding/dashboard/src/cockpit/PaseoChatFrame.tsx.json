@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
-        "content": "sha256:79f34ed58dd92c91af020d7039e307055979452894c760ead07b9b4c2a865403",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
         "locator": {
-          "end": 269,
-          "kind": "line_range",
-          "start": 242
+          "kind": "symbol",
+          "name": "useFrameDescriptor"
         }
       },
       "id": "RLZ-4H5EAG",
@@ -17,17 +16,17 @@
         "handoffEntry": "MIK-R122@v1 rules 2-3",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "useFrameDescriptor latches creation on first actual showing; ordinary selection switches never rebuild it, while the fallback load, Retry and host return still replace the frame.",
+      "rationale": "useFrameDescriptor latches creation on first activation or an admitted review preload, then retains the descriptor across ordinary selection and visibility changes; hidden starts pass preload to the controller instead of an agent address.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
-        "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "content": "sha256:b68240496590f3598d4de16c0c54728a3f9e199e083e1a873e007b6273d6a002",
         "locator": {
-          "end": 295,
+          "end": 309,
           "kind": "line_range",
-          "start": 271
+          "start": 285
         }
       },
       "id": "RLZ-6CV9KK",
@@ -41,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
-        "content": "sha256:2ad23f2eb1c29f04a4941d7688b8a638864629088b1aacf4aa37eebb091bed6c",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "content": "sha256:b68240496590f3598d4de16c0c54728a3f9e199e083e1a873e007b6273d6a002",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -59,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
         "locator": {
-          "end": 337,
+          "end": 351,
           "kind": "line_range",
-          "start": 337
+          "start": 351
         }
       },
       "id": "RLZ-93GQVS",
@@ -78,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
         "locator": {
           "kind": "symbol",
@@ -96,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
         "locator": {
           "kind": "symbol",
@@ -114,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
         "locator": {
           "kind": "symbol",
@@ -132,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
         "locator": {
           "kind": "symbol",
@@ -150,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
         "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
         "locator": {
           "kind": "symbol",
@@ -169,15 +168,16 @@
   ],
   "references": {
     "1": {
-      "note": "One stable controller dispatches selection changes before paint and consumes only its trusted frame messages.",
+      "note": "The stable controller dispatches known target changes before paint and receives frame messages.\n\nAnchor: \"function useFrameController({ scope, target, page }: PaseoChatFrameProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
             "content": "sha256:c7a4fc61095f067877f1ac5bed4772b8fd71b9f6819e2309ac3f81bea6e76879",
             "locator": {
-              "kind": "symbol",
-              "name": "useFrameController"
+              "end": 217,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "code"
@@ -185,15 +185,16 @@
       ]
     },
     "2": {
-      "note": "The descriptor is fetched on first activation and explicit Retry, not selection changes.",
+      "note": "First activation, opt-in preload and Retry own descriptor reads; hidden startup names no agent.\n\nAnchor: \"function useFrameDescriptor(active: boolean, preload: boolean, controller: PaseoFrameControl) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
-            "content": "sha256:b3a0c76585b428404e446e554d337f430aa650dec09450eb3f926f09719185a6",
+            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+            "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
             "locator": {
-              "kind": "symbol",
-              "name": "useFrameDescriptor"
+              "end": 283,
+              "kind": "line_range",
+              "start": 254
             }
           },
           "kind": "code"
@@ -201,15 +202,16 @@
       ]
     },
     "3": {
-      "note": "Generation alone keys the iframe; held input is inert, pointer-disabled and blurred, with a bottom-edge waiting line.",
+      "note": "Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert.\n\nAnchor: \"function EmbeddedFrame(props: EmbeddedFrameProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
             "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
             "locator": {
-              "kind": "symbol",
-              "name": "EmbeddedFrame"
+              "end": 388,
+              "kind": "line_range",
+              "start": 332
             }
           },
           "kind": "code"
@@ -217,15 +219,16 @@
       ]
     },
     "4": {
-      "note": "On-chat or shown confirms selected-screen input ownership; an unanswered request remains visibly waiting.",
+      "note": "The selected screen's shown/on-chat/loaded state determines input reachability and its waiting line.\n\nAnchor: \"function frameWait(showing: PaseoFrameShowing, agentId: string \\| undefined, page: PaseoChatFrameProps[\"",
       "targets": [
         {
           "anchor": {
-            "blob": "36db0aaa90c6f74f1438c57a8ccbd5308a5645ae",
+            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
             "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
             "locator": {
-              "kind": "symbol",
-              "name": "frameWait"
+              "end": 243,
+              "kind": "line_range",
+              "start": 236
             }
           },
           "kind": "code"

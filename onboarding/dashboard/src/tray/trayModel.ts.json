@@ -1,0 +1,131 @@
+{
+  "path": "dashboard/src/tray/trayModel.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+        "content": "sha256:38aea010e364a6a4b14ffb9078c5314556966e20f32c458fc520e6a2fb808a99",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuseOnSend"
+        }
+      },
+      "id": "RLZ-6JV2ZK",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses a message over a bound by name before Send.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+        "content": "sha256:17b2432545f6042c68b1ed39f92b06a64a69c810cf3c06e60f66f55cc08bb5a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "defaultTargetFor"
+        }
+      },
+      "id": "RLZ-D392S9",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Chooses the default from the first pick: the pick's chat, else the shown chat, else none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+        "content": "sha256:cbc31f746ac6ba82f5ee1e39ec5fffda529adb5bc275a3d43254d51ceaba317b",
+        "locator": {
+          "kind": "symbol",
+          "name": "provenanceLine"
+        }
+      },
+      "id": "RLZ-F43YBV",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes \"from <role> · HH:MM\" on the chip, never \"time unknown\".",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+        "content": "sha256:6cf0b96de95b306ded0077feb1ff2228b32c425f157a047504ccc8bb3893e895",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuseOnEntry"
+        }
+      },
+      "id": "RLZ-M46VS7",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses a pick over a bound by name before it enters the tray.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Provides collection byte accounting, limit checks, target default and readable pick summaries.\n\nAnchor: \"export function pickBytes(input: TrayPickInput, note = ''): number {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+            "content": "sha256:f6b285aac22ea2a41799107fdd3e77153c667d6b7e2a0086699c229949d8469d",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provides collection byte accounting, limit checks, target default and readable pick summaries.\n\nAnchor: \"export function messageBytes(picks: readonly TrayPick[], text: string): number {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+            "content": "sha256:f223a73ac5e4f11ec2db095b5bbfe88fbec8b7ce86a0d1feaef8945059f706e7",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provides collection byte accounting, limit checks, target default and readable pick summaries.\n\nAnchor: \"export function imageTypeRefusal(title: string, type: string): string \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2672ca963f936be7c890c055efdbc5fe3591d3da",
+            "content": "sha256:6a8fe632120a221f8f961c649f0b8b8cfd76e5d0a920275b44123670687bc539",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -6,20 +6,30 @@
 
 ## Purpose
 
-Own the cockpit's Panda shell recipes and rail-resize interaction separately from view/task routing. This extraction keeps shell marker classes usable by Cockpit while adding a narrow layout; importing these styles does not itself mount a page or choose its columns.
+Own cockpit shell recipes, shared sidebar/column styling and rail resizing separately from view and task routing.
 
 ## Code Commentary
 
-Above 40rem the shell remains a 100vh hidden-overflow flex column. At 40rem and narrower it permits vertical shell scrolling, constrains width, wraps title/status content and gives a non-fullbleed body three rows, 24rem rails and a viewport with a 28rem minimum height. Cockpit's RailedBody—not bodyGrid's desktop recipe—actually selects a single column at that width. `takeoverBody` is a separate fixed/inset/z-index style consumed by the review/change-set takeover. Do not infer that Notes uses it.
+Above 40rem the shell is a 100vh hidden-overflow flex column. At 40rem and narrower it permits vertical scrolling, constrains width and wraps title/status content. The three stacked body rows, 24rem rails and 28rem minimum viewport apply only to a non-fullbleed body outside the review page. Review is expressly excluded from those stack heights. Cockpit chooses its actual column tracks. [1] [2] [5]
 
-`RailResizeHandle` clamps rounded widths to 220–560 pixels. Left and right drag directions are opposite; ArrowLeft/ArrowRight nudge by 24 pixels with the corresponding side orientation. Pointer listeners are removed on pointerup. `useNarrowCockpit` reads matchMedia initially, subscribes to changes and cleans up its listener; the handle returns null when narrow. Width persistence belongs to Cockpit's persisted-number hooks, so temporarily omitting the handle or using one column does not erase saved widths.
+`RailResizeHandle` clamps rounded width to 220–560 pixels. Opposite left/right drag directions and 24px arrow-key nudges use the same bounded width. Pointer listeners end on pointerup; the memoized handle is omitted at the narrow breakpoint. Optional label/test IDs distinguish review handles from retained Operations handles. Saved-width persistence remains in the caller. [3]
 
-`viewport` and `rail` still hide their own overflow and delegate internal scrolling; the narrow shell is the outer vertical scroller. `chatsLayer` supplies only layout for retained children: actual keep-alive mounting/visibility belongs to Cockpit. The top-bar brand comment's never-wrap wording describes the desktop base only; its explicit media override permits narrow wrapping. No source style proves a measured browser overflow result.
+The shared left/right rail IDs are the targets of sidebar `aria-controls`; the review chat column reuses the right ID. `sidebarStrip` aligns Operations' toggles at the document edges. `reviewChatColumn` supplies a bordered surface and `reviewChatClose` its own toggle line; placement and width calculations remain with the review layout owners.
+
+`useMediaQuery` owns the initial match and one change subscription with cleanup for the supplied query. `useNarrowCockpit` delegates the 40rem query. `takeoverBody` supplies fixed/inset/z-index styling at that width; the ordinary change-set takeover consumes it, while review is in the railed body. [4] [5]
+
+## Invariants And Boundaries
+
+The viewport and rails hide their own overflow and leave internal scrolling to their panels. The narrow shell is the outer vertical scroller. The Chats layer supplies layout, while actual retained mounting and active visibility belong to Cockpit. Desktop never-wrap styling has an explicit narrow override. Styles and comments alone do not establish measured browser overflow.
 
 ## Evidence
 
-- Narrow shell scroll/width/row/rail rules are explicit media overrides. [1]
+
 - Grid base keeps desktop variants; the caller selects responsive columns. [2]
-- Resizing is bounded, directional and keyboard reachable only above the narrow breakpoint. [3]
-- Narrow takeover is fixed; matchMedia state has listener cleanup. [4]
-- Cockpit actually chooses the narrow one-column grid. [5]
+
+- Narrow shell scrolling and stack heights exclude the review page. [1]
+- Resizing remains bounded and directional, with distinct optional names for review handles. [3]
+- Media-query changes have listener cleanup; narrow takeover styling remains a separate recipe. [4]
+- Cockpit selects its Operations/review tracks and narrow one-column grid. [5]
+- Sidebar IDs and strip styling connect the shared Operations controls to retained rails. [6]
+- The review chat surface and close-toggle line have their own styling without owning placement geometry. [7]

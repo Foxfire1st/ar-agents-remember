@@ -2,17 +2,85 @@
   "path": "dashboard/src/panels/review/KnowledgeStatements.test.tsx",
   "realizes": [],
   "references": {
-    "19": {
-      "note": "Direct synthetic KnowledgeStatements controls check full added and removed statements, two present operands and named absent versus unresolved sides. The former ReviewSurface/client transport journey, binary fixture, field-row and no-subject cases are removed, not relocated or proved by this smaller suite.",
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the full added statement beside its named absence', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7f2d946c1268b25f315a17f941b59eb3bee95f1c",
-            "content": "sha256:010f0b92fc3ae97bc6b7ca3dc2e9250d6a98b841ad4f1276a88efb86acb41888",
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:daea05fa445725a8054f118cf386b54fc2cf826be2f8cf8790d5853ac0c7c54e",
             "locator": {
-              "end": 44,
+              "end": 20,
               "kind": "line_range",
-              "start": 1
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the full removed statement beside its named absence', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:d295bd01b260b63fec3dff05c4f2ef3669f5fb238e48246dc9a36e899bdabe33",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps both present statements', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:d6004cb9fa8124c521bfa4f02c452548978bb803e02dbe2e6a930fe303128a65",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps available prose with the unreadable sides reason, without claiming a diff', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:dd6121c3e2f7702349ca2d95f10ff7a7e5f6e596faa553965648b32cdb7be86b",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([absent('Known absent'), unresolved('Unreadable file')])('names $state distinctly when neither side is present', (side) => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260d7c2a75a75150a56ab0c840a253df4f94ff68",
+            "content": "sha256:1334753c0e29eeceed9c85e3472982ae27b133e3b1726f3c7ac336ff6eb40526",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "test"

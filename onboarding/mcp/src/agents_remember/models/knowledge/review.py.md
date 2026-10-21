@@ -2,58 +2,29 @@
 
 ## Governing Overview
 
-[models route overview](../overview.md)
+[Owning route overview](../overview.md)
 
 ## Purpose
 
-Tree-review response vocabulary: task-addressed candidate identity; knowledge, source and required
-judgment/proof panes; family context and recorded meaning effects; pagination, staleness and refusal.
-It declares no storage record or publication authority. Source/refusal/movement values have their
-actual dedicated owners and surviving re-exports, not copied compatibility channels.
+Define task-addressed tree-review responses, their required knowledge/source/judgment panes, family/meaning context, catalogue, pagination, currentness and typed refusal without owning storage or publication.
 
 ## Code Commentary
 
-ReviewSideContent permits text exactly for present and forbids text for absent/unresolved. The
-removed binary side-state literal does not remove binary file-content classification in the source
-owner. A request can name a subject or task context; a continuation must name its collection, while
-a named collection without continuation is its first page. Candidate identity contains task
-addresses, not a caller-provided filesystem path.
+ReviewSideContent carries text exactly for present, never absent/unresolved. ReviewSurfaceRequest names task, optional subject, optional recorded history, previous binding digest and paging fields; continuation requires its collection. Candidate identity has task addresses rather than caller filesystem paths. The default surface-version string adds no version validator. Subject vocabulary remains invariant/family and the three pane names are knowledge/source/judgment.
 
-ComparisonIdentity keeps supplied knowledge selector and both snapshot digests together when
-knowledge was compared, and none when it was not. Optional code-tree fields remain supplied values;
-these checks do not authenticate a root or cryptographic measurement. The default surface-version
-string adds no version validator.
+ComparisonIdentity requires selector/both snapshot digests together when knowledge_compared and none otherwise; supplied code-tree fields do not authenticate a root or measurement. ReviewKnowledgePane keeps raw per-side Origin, statements, conditions, revision groups, mechanical field changes and selection state. A task-context reason is present exactly for task_context. A carried revision selection implies subject_selected, not conversely.
 
-The knowledge pane carries statement sides, optional raw per-side Origin, conditions, revision
-groups, mechanical fields and selection state. A carried revision selection implies subject_selected,
-not conversely. Origin is not reconstructed from a statement or caller filename. Retired reviewer
-assessment, signal, applicability and evidence collections are absent; the independently used
-coherence assessment model is not thereby deleted.
+KnowledgeReviewPayload requires knowledge, source, judgment, family context and meaning_effects. Stale is equivalent to disabled_stale; comparison absence is equivalent to not_compared; compared knowledge agrees with subject_selected. Page and page_refusal cannot coexist, but these guards do not prove every request got a page. Proposed dispositions must be among the three declared authority values. Required judgment/meaning fields do not restore removed signal/assessment/evidence/applicability channels or supply a semantic verdict.
 
-The extracted source owner separates whole-pair inventory from selected locations and supplied
-attribution. State is measured/unavailable with a separate partial flag, not a third enum. List-length
-and absence checks do not authenticate measurements or uniqueness. Absent counts need reasons;
-roles/identities remain supplied facts, not filename guesses.
+ReviewCollectionPage checks declared returned+remaining=total, continuation exactly when remaining, reset refusal exactly for reset, and continued_from exactly for continued. Its total_basis distinguishes whole selection from remaining walk. Revision groups keep selected counts per side and field changes carry recorded values, not meaning effects.
 
-KnowledgeReviewPayload requires knowledge, source, judgment, family context and meaning_effects.
-A current answer lacking judgment is invalid, not a default old evidence pane. Rows/proofs and
-recorded meaning steps keep their own source/state semantics, not a net effect or guarantee grade.
-Family context, sync and external Git movement retain their actual owners and absence dimensions.
+ReviewEntry lists recorded kind/id/label/presence without a source path, display version, ranking or per-subject comparison count. ReviewEntryListResult keeps totals/outline and now optional nonnegative comparison identifying its tree comparison. The producer normally leaves it absent for no-tree/refusal answers; no added validator enforces that absence. Existing guards reject refusal entries/nonzero totals, totals that do not sum kind totals and totals below the returned page; they do not prove uniqueness or complete population.
 
-Payload guards couple stale with disabled_stale, comparison absence with not_compared, and compared
-knowledge with subject_selected. They forbid simultaneous page and page_refusal, not independently
-prove every request got a complete page. Page guards check declared sums, continuation/remainder,
-reset and continued-from states. Catalogue result rejects entries/totals beside refusal and totals
-smaller than the page; it does not itself authenticate a whole unique population. Result state and
-payload/refusal presence must agree.
+Source/refusal/relationship/staleness/movement vocabulary retains dedicated owners and surviving re-exports. Whole-pair inventory differs from selected source locations and attribution; absent counts keep reasons. Binary file classification remains in its source owner although binary is not a statement-side state. KnowledgeReviewResult enforces exactly payload for review or refusal for refused.
 
 ## Invariants And Boundaries
 
-Read-only structural vocabulary is not a generated semantic decision or submission control.
-none_is_approval is a boolean default, not a Literal-True guard. The frozen extra-forbid base does
-not configure strict coercion rejection despite older prose. Removed channel/test promises remain
-historical only. Surviving missing-side, currentness, source-file and revision-selection properties
-retain current witnesses rather than being dropped with retired neighbors.
+Structural frozen extra-forbid values authenticate neither source measurements nor authored intent. Strict coercion rejection is not configured by that base. none_is_approval remains a boolean default in its separate owner, not a Literal-True submission control. Rows, proofs and meaning steps retain recorded-source semantics rather than generated sufficiency/net-effect claims. Historical predecessors below remain explicitly superseded.
 
 <details>
 <summary>Historical prior account — retained, not the current contract</summary>
@@ -598,55 +569,8 @@ admits the spelling in its own vocabulary so a malformed value is a typed 400 ra
 
 ## Evidence
 
-No Domain Documentation entries are configured. Current models/owners and stored assertions were
-inspected, not executed. Injected overload, child scripts and schema/source checks are not fresh
-producer, runtime, CODE or whole-MEMORY acceptance.
-
-- Current tree-review values keep statements, source facts, history judgments and proofs separately owned. [35]
-- The actual review_refusal owner declares the re-exported refusal union; a literal declaration is not a produced execution result. [36]
-- The three proposed dispositions. [37]
-- The three paged collections. [38]
-- A side carries text exactly when present. [39]
-- The request and its cursor rule. [40]
-- The comparison identity and its all-or-nothing knowledge half. [41]
-- The typed refusal. [42]
-- One page and its four consistency rules. [43]
-- A count is a value or a reason. [45]
-- Knowledge pane carries statements, raw per-side origin, conditions and selection facts; its revision-selection implication is one-way. [46]
-- The inventory and its count rules. [47]
-- The source pane. [48]
-- Payload requires knowledge/source/judgment, family context and meaning effects with structural page, identity/staleness and submission checks. [50]
-- The review result is a payload or a refusal. [51]
-- The entry list and its totals. [52]
-- The stored overload adapter test injects WorklistOverloaded and checks reviewer_busy/retry/no memo; it is not a natural-overload execution witness. [53]
-- The stored changing-input test controls child scripts and checks bounded recomputation and inputs_changing; it is not executed here. [54]
-- Current payload guards structural agreement and required panes, not the removed assessment/evidence collections. [55]
-- Current exports retain judgment and source/relationship/refusal types, not retired record-channel classes. [56]
-- Current declarations keep default version, three pane names, proposed dispositions, subject kind/presence and the three non-binary side states separate from the refusal union. [57]
-- Relationship values are re-exported; their movement owner carries recorded sides, pairing and gaps. [58]
-- The shared shape that makes an unresolved reference a displayed fact rather than a dropped or anonymous one. [59]
-- **The missing-side rule as a constructor check: text exactly when `present`, in both directions.** [60]
-- The one request shape: a task context plus one of the read operation's own declared seeds, with no display version, instant or "latest" flag representable. [61]
-- Candidate is task-addressed, not a caller filesystem path; comparison identity carries supplied snapshot/selector/code facts. [62]
-- Revision-group counts and mechanical field changes retain separate shapes; neither is a generated meaning effect. [63]
-- Six source-count names remain declared; absent values require reasons and present values forbid not-applicable reasons. [67]
-- Source locations preserve supplied role/rationale, identity, side, counterpart and movement; the DTO does not infer roles or establish live currentness. [68]
-- Optional revision selection and its one-way guard survive; the old assessment collections and agreement guard do not. [69]
-- A carried revision_selection requires subject_selected, not conversely; raw origin stays separate from the selected statement. [70]
-- Inventory guards list-length and unavailable/partial/unrepresentable combinations; this is not authentication of measured facts. [71]
-- Extracted source pane keeps whole-pair inventory beside supplied selected locations, relationship union, counts, expansion and attribution. [72]
-- Stale requires a labelled previous comparison; not_compared and not-measured are not current. [74]
-- Submission has unavailable/disabled_stale metadata and a none_is_approval boolean default, not a Literal-True guard or publication control. [75]
-- **The whole payload and its stale/submission coupling, which refuses either direction of disagreement.** [76]
-- Typed refusal carries input/recovery fields; review result couples its state with the permitted payload/refusal outcome. [77]
-- Catalogue entry carries kind/identity/label/presence, not a per-subject comparison count or filesystem selector. [78]
-- Entry result rejects refusal entries/totals and totals below its page; it does not independently authenticate a complete unique catalogue. [79]
-- Declared reviewable subject kinds are invariant and family; broader seed resolution has its own owner. [80]
-- Shared model base is frozen/extra-forbid; strict coercion rejection is not configured there, and shared bounds keep their own definitions. [83]
-- Stored schema-walk case checks the named forbidden property set, not semantic truth of every text field; no fresh execution. [84]
-- Stored export/source case checks no kind/schema/table exports and no SQL create/insert text; no fresh execution. [85]
-- Surviving missing-side case rejects absent text and a present side without text; the removed unassessed-review case is not an invented replacement. [86]
-- Staleness, submission and complete-tree sync movement retain their dedicated model owner and re-exports; static fields are not new measured movement. [88]
-- Required meaning_effects carries its separately owned recorded-step model, not an inferred net effect. [89]
-- This module owns structural tree-review responses, not storage, root resolution, measurement authentication or authored semantic verdicts. [90]
-- Judgment is required on the current payload; the pane separates rows/none/unavailable history state from its independent proof tuple, rather than defaulting a missing old evidence channel. [91]
+- Request, statement sides and task identity keep no-selection/missing-text distinct. [92]
+- Knowledge comparison digests are all present or all absent; pages keep declared arithmetic and cursor states. [93]
+- Raw origin and revision selection retain the one-direction selection guard. [94]
+- Required panes and payload guards retain structural agreement without semantic approval. [95]
+- Results keep typed outcomes and catalogue arithmetic, now with optional nonnegative comparison. [96]

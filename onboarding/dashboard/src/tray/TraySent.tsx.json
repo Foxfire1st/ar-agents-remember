@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/tray/TraySent.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+        "content": "sha256:5470e8388badd3c4288d67a8f9caee21d8e449734c0b39b7135dc855e2682ff3",
+        "locator": {
+          "kind": "symbol",
+          "name": "TraySentLog"
+        }
+      },
+      "id": "RLZ-5ZHCY5",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Shows each target's log from the tray.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+        "content": "sha256:d1c5bf9db88c53758178826a5f6b960db5982e1fda3b824db7740a5dbef8f6a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SentEntry"
+        }
+      },
+      "id": "RLZ-D0AWM0",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Lists a send's exact pick ids, its message file and its full SHA-256 (L89-R1-011).",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Makes per-target send and sent-log outcomes readable.\n\nAnchor: \"export function TrayOutcome({ outcome }: { outcome: TraySendOutcome }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+            "content": "sha256:9a4406f097a4638f7d3375f31f025d685194c071eeaf1d2eb8620952e1f0469f",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Makes per-target send and sent-log outcomes readable.\n\nAnchor: \"export function outcomeSummary(outcome: TraySendOutcome, name: (agentId: string) => ChatName): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+            "content": "sha256:aa9ff29d4cf0283f43e9cda5f601928703a88a9d0c746a11062e854e26086450",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Makes per-target send and sent-log outcomes readable.\n\nAnchor: \"export function TrayOutcomeLine({ outcome }: { outcome: TraySendOutcome }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+            "content": "sha256:0af4004ebfacfc525e93117faa6f6e835a4d5a2a651c7083102139386c83f23d",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

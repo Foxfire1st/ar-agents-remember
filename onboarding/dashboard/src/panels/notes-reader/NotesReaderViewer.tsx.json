@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "content": "sha256:dec9d2e660a284ea675c025163e79ca1992ad913b062723aa5d4a2a5f28a51d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderLayout"
+        }
+      },
+      "id": "RLZ-7FD4W4",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Notes and requirements rails share the notes/left page choice; a rail-free view draws no rail control.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
         "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
         "locator": {
-          "end": 309,
+          "end": 310,
           "kind": "line_range",
-          "start": 275
+          "start": 276
         }
       },
       "id": "RLZ-87M1SJ",
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
         "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
         "content": "sha256:016ca306847ee42c005234e3ce8edab2b4d2d087da80acf92c20b936452d31c8",
         "locator": {
           "kind": "symbol",
@@ -58,7 +76,25 @@
     },
     {
       "anchor": {
-        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+        "content": "sha256:dec9d2e660a284ea675c025163e79ca1992ad913b062723aa5d4a2a5f28a51d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderLayout"
+        }
+      },
+      "id": "RLZ-VCTC13",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Notes/requirements draw the shared toggle only with a rail, outside its mounted panel, hiding panel and resize handle together.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
         "content": "sha256:705b2cffeb7744a6a1bfc01483dd597de62a64a2cea7abc3d20cf5703d6d4da6",
         "locator": {
           "kind": "symbol",
@@ -76,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+        "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
         "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
         "locator": {
           "kind": "symbol",
@@ -95,28 +131,28 @@
   ],
   "references": {
     "1": {
-      "note": "NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals.",
+      "note": "NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals.\n\nAnchor: \"function noteAsFileContent(\"; \"function NotePane(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
-            "content": "sha256:d669bc11390d00fe214d281ff05f8f92381ea4e037af0d31b153eeeeb66328bb",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:242d5d9a853a0599218d3250df9ae7dfb460933c33dbcdc61ab5723915c84360",
             "locator": {
-              "end": 157,
+              "end": 153,
               "kind": "line_range",
-              "start": 140
+              "start": 141
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
-            "content": "sha256:6e9b16f481236482f390d17f6479eeb17eb02b58100a72e0fc5f3d455390c374",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:0eb01c6320d2fb8f4cb61415ed14b30b4faec2858761393ab23608ffd37c1425",
             "locator": {
-              "end": 273,
+              "end": 275,
               "kind": "line_range",
-              "start": 242
+              "start": 243
             }
           },
           "kind": "code"
@@ -124,15 +160,33 @@
       ]
     },
     "10": {
-      "note": "The notes-target reader retains the same note and keyed tree lifetime.",
+      "note": "The notes-target reader retains the same note and keyed tree lifetime.\n\nAnchor: \"function NotesTargetReader(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
-            "content": "sha256:1c8a885a5a575dc91c787070f78d71f7d5e4c69fb6b5bd6dc3bc960045ecb093",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:e66ee7fddb28334f50e7b745bee55b5678abc7311c968c73efd3ed21686e5341",
             "locator": {
-              "kind": "symbol",
-              "name": "NotesTargetReader"
+              "end": 396,
+              "kind": "line_range",
+              "start": 368
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists.\n\nAnchor: \"function ReaderLayout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:0feee1581c4b1c5ba393a48a119463de00ae7accda236131a17ddf7f31eaa592",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 512
             }
           },
           "kind": "code"
@@ -144,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
             "content": "sha256:28187cd63e1c4f01e1b28b9932d829ac691d9bb591c50b4f84900278f04ed417",
             "locator": {
               "kind": "symbol",
@@ -316,24 +370,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd0a6137939cff324d796bf39dbe7fb82e853738",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
             "content": "sha256:59cd5cd2fba59592665967dc457104ccf81f33854f7ccf82754d9a45cd0a187f",
             "locator": {
-              "end": 309,
+              "end": 310,
               "kind": "line_range",
-              "start": 275
+              "start": 276
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
+            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
             "content": "sha256:114e1d6e62e9b9a0d449c4bbc4329658044705427a0a722ad0ce7e7bb4d876c8",
             "locator": {
-              "end": 278,
+              "end": 284,
               "kind": "line_range",
-              "start": 213
+              "start": 219
             },
             "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
           },
@@ -341,12 +395,12 @@
         },
         {
           "anchor": {
-            "blob": "b764267a2ef673d3946c46be1260203ea22d0bc2",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:db0be40cafa62166f0623b27f322a5773da5eda7ede00cb85560db2a258c9032",
             "locator": {
-              "end": 603,
+              "end": 606,
               "kind": "line_range",
-              "start": 595
+              "start": 598
             },
             "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
           },

@@ -7,14 +7,15 @@
 ## Purpose
 
 The client adapter of the reviewer's tree view, `GET /api/review/trees`. It declares the types of the
-answer, builds the request, turns an answer into a read state, and provides the two React hooks that read
-the leaf-wide view and the entries of one selection. Declared contract fields use snake_case; open facts/rows remain opaque maps rather than a runtime key validator.
+answer, builds the request, turns an answer into a read state, and provides the React hooks that read
+the leaf-wide view and the cards of the page’s shown invariant set. Declared contract fields use snake_case; open facts/rows remain opaque maps rather than a runtime key validator.
 
 `data/reviewTrees.ts` is the tree-view adapter for one leaf: the four-tree comparison, knowledge-side states, per-side currentness, worklist gate verdicts/witnesses, leaf-wide implementation facts, and focused card entries. In W03 it no longer carries the memory-tree knowledge diff; changed knowledge files are read on the change-set page instead.
 ## Code Commentary
 
-Completed expression-card answers are held in a module-shared store capped at20; in-flight requests are shared by question but have no independent concurrency cap here. Keys include repository/master/leaf, comparison and the sorted supplied invariant sequence (duplicates are not removed). A remount of that same sequence joins or reuses instead of refetching; a changed invariant set is prefetched beside subject selection rather than after the subject answer. This does not replace the selected-subject cache, mix incompatible comparisons or turn unavailable data into an empty list.
+The page reads cards for its shown invariant set through `useChangeSetCards`, independently of subject selection. IDs are sorted and deduplicated, cut into at most 500 invariants per request, and merged in chunk order. The module-shared completed store is capped at 20 chunk answers; in-flight questions are shared without a separate concurrency cap. Keys include repository/master/leaf, comparison and the sorted chunk. A new question shows loading instead of another set’s answer.
 
+Only keepable trees answers enter that store. `unavailable-history` on a knowledge or code side, or unavailable entry-memory values with a readable after knowledge side, makes the answer transient. This mount shows it; remount or the shared Refresh generation asks for it again. A kept successful answer is reused, and a genuinely unconverted side is retained as the record’s own answer. One chunk’s unavailable memory state makes the merged memory values unavailable, preserving its first reason.
 
 ### Types
 
@@ -67,14 +68,11 @@ Completed expression-card answers are held in a module-shared store capped at20;
   latest. For a new question key it reports `loading` until an answer for that key is stored, including
   initial busy retries. A previously stored same-key answer can remain during a later effect run; the
   hook does not clear it merely to start a read. Failures become `unavailable` only when applied. With `enabled` false it makes no request and returns `null`.
-- `useReviewTreeEntries(repo, master, leaf, comparison, invariants)` reads the entries of one selection
-  from the comparison the review payload names, joining a shared un-aborted request; cleanup suppresses only this mount’s retell. It returns `null` without
-  a comparison number or without invariants. Only a `trees`-phase answer enters the completed-answer
-  store; failures and not-converted results are returned by the shared fetch but are not retained here.
-  The entries hook reads that store or `loading`, not a durable failure state, and a remount can retry.
-  This differs from the leaf-wide hook, which stores its applied unavailable/not-converted phases.
+- `useChangeSetCards(repo, master, leaf, comparison, invariants, enabled)` returns null while disabled or without a comparison number. An empty invariant set is a cards answer with no entries and a null comparison, requiring no card request. The hook shares uncancelled chunk acquisitions; cleanup suppresses updates to an unmounted consumer. Failed reads remain visible to the mount while retrying; kept answers remain reusable. This differs from the leaf-wide hook’s aborting acquisition.
 
-The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, record/source groupings, the `knowledge_diff` field on `ReviewTreesResult`) was the Git diff of the two memory trees grouped by record and source path with per-file patches. That earlier removal is historical, not a claim that the current full answer is byte-identical. This leaf adds optional item verdicts and leaf-wide implementation facts to the declared mirror. A static TypeScript comparison of full BASE/candidate output, with comments/types erased, yields identical emitted JavaScript; that does not erase the wire-shape additions or claim runtime/test acceptance. `reviewTrees` addressing (recorded number vs live, focused card/lane/file reads), the busy-retry discipline (`TRANSIENT_CODES`, `BUSY_DELAYS_MS`) and the `ReviewTreesRead` phases are unchanged.
+The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, record/source groupings, the `knowledge_diff` field on `ReviewTreesResult`) was the Git diff of the two memory trees grouped by record and source path with per-file patches. That earlier removal is historical, not a claim that the current full answer is byte-identical. This leaf adds optional item verdicts and leaf-wide implementation facts to the declared mirror. The earlier emitted-JavaScript equality observation applied to its historical comparison, not this changed implementation; the card reader now has different executable behavior. `reviewTrees` task/number addressing, the busy-retry discipline (`TRANSIENT_CODES`, `BUSY_DELAYS_MS`) and the `ReviewTreesRead` phases are retained; the page-card hook composes its separate `ChangeSetCardsRead` phases.
+Each `ReviewTreeEntrySide` can carry its locator’s `symbol`. A card entry can carry the four supplied after-index memory values (`invariants_at_path`, `incoming_links`, `without_proof`, `open_weaknesses`) and their path. The card result’s `entry_memory` states available or unavailable, names its tree, and may name partial index state or a reason. This adapter carries those facts; it does not compute the four values.
+
 ## Evidence
 
 - A superseded read is aborted and only the newer answer is shown. [21]
@@ -101,7 +99,6 @@ The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, recor
 
 - The comparison a payload names. [18]
 
-- The entries hook reads completed trees answers or loading under its sorted-list question key; shared fetch failures/not-converted answers are not retained. [19]
 
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [20]
 
@@ -110,3 +107,6 @@ The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, recor
 - The trees / not-converted / unavailable phases are unchanged [26]
 
 - The declared item verdict and implementation-fact shapes preserve answered/open/undecided and facts/unavailable without a favourable missing-data default. [27]
+
+- Shown-set cards use sorted distinct chunks, stable answer retention and retryable per-mount failures. [19]
+- Entry symbols and supplied memory values retain their optional and unavailable states. [28]

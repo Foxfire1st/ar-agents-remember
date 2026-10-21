@@ -1,14 +1,49 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+        "content": "sha256:9e6b46b980425d17f1157dbce130deccf55560c24e120c64860b5bc7570706b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "makes the review's main the stacked page's one scroller, under the column's sticky head"
+        }
+      },
+      "facet": "Mounting through the real ReviewMain wrapper, the test-local class-declaration model identifies main as the reading head's nearest scroll container at 40rem and below, with hidden/auto overflow; the reading column has clip/visible overflow and no scroll container, and the intervening elements have no inline overflow. Above 40rem that model identifies the reading column as the nearest scroll container. This demonstrates the declared scroll-owner structure, not measured wheel, touch, sticky-position or reachability behavior in a browser.",
+      "id": "PRF-H5CDYP",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-W6-PROOF-INV-811GC5",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+        "content": "sha256:b9b33555636c5f3004eb63147c61ea0a670b8d3bb9bf1ed668fd35b1ae282cbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the root still and makes the reading column the page scroller"
+        }
+      },
+      "facet": "With the surface mounted, the root declares full height, zero minimum height and hidden overflow above 40rem, and auto height with visible overflow at 40rem and below. The named reading-column scroller declares vertical auto and horizontal hidden overflow, switching its vertical overflow to visible in the narrow rule; the root has no inline overflowY. This checks rendered class declarations, not browser wheel, touch or geometry behavior.",
+      "id": "PRF-SHNJCD",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "L89-W6-PROOF-INV-811GC5",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-        "content": "sha256:cd2f0d45024624856536b2df642d6cf52ca6e7d507ec1f1b123d01330d428e4f",
+        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+        "content": "sha256:817ca51a2584717c41bfbcf80bbff328da952586677739e71f84fa1d17e43418",
         "locator": {
-          "end": 172,
-          "kind": "line_range",
-          "start": 153
+          "kind": "symbol",
+          "name": "lets every column shrink and wrap its long identities"
         }
       },
       "id": "RLZ-HNY7R7",
@@ -17,17 +52,17 @@
         "handoffEntry": "MIK-R86@v1 preservation W03 pane shrink-wrap",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "The ported shrink-wrap case asserting zero-minimum widths and inherited wrapping.",
+      "rationale": "The mounted layout-B declaration pin checks root inherited anywhere wrapping and zero minimum width of workspace/tree/reading columns; it performs no geometry measurement.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-        "content": "sha256:c0e28ea82896f1a4a7c418c06b9d00517822fbf8a255ce209f982520f32dd1fc",
+        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+        "content": "sha256:a873311b1a6fd80268d4bb351b1b96ea44337f688de70fc6a248af06d33874f1",
         "locator": {
-          "end": 190,
+          "end": 270,
           "kind": "line_range",
-          "start": 173
+          "start": 219
         }
       },
       "id": "RLZ-SG0RRV",
@@ -41,281 +76,88 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "**The fixture: a complete payload whose `comparison.reference` is one unbreakable sixty-character token — the measured 539 px culprit — with the digest-shaped fields alongside it.**",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the root still and makes the reading column the page scroller\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:b8373543f829bdf02db32a7990f18e14e6fb87b41739aa1f669739ede1c5de6b",
+            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "content": "sha256:4c30579907b999c40a4435bc09861b1f2929bc9e778bc7c61929537f316abab8",
             "locator": {
-              "kind": "symbol",
-              "name": "payload"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "10": {
-      "note": "The shared client whose read this module mounts through, and whose decode the fixture satisfies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "549d07c35309c25062a49eb856d3689a5a9c9b5f",
-            "content": "sha256:9624cf94c71075e6f6e98ec6e957d2057507ac25f87b466d7d11c0ed15d7adb2",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewPayload"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:24dfc2460ed59293a278a004057a152a127a02ccc656e876a2149eb953464178",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewResult"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Complete payload with the unbreakable reference token",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9225fa87be8dfbd26700f8620014dc2bba87434d",
-            "content": "sha256:e5098754580075d9ac90d9661f08ae5062d64191645eeeae0e021744202482d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "payload"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:d888b71a45b5448099bc8936e7632ab4ac9bbc49028932e3ec3d4ce6e2f42c8f",
-            "locator": {
-              "end": 62,
+              "end": 198,
               "kind": "line_range",
-              "start": 46
+              "start": 183
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "Admitted review wrapper served to the mount",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"lets every column shrink and wrap its long identities\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:7d027d4f3671fb4c0a222d6868638c7574a6e5f231d6c092937b7ac89e7e9d19",
+            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "content": "sha256:6dc99d0b6e284e7df01b2dc42b1e1f144933ed1c6163d24db4f1a4dac5eebaf1",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewed"
+              "end": 217,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "Mount through the real surface and fetch boundary",
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"stacks the grid at 40rem, wraps the top line there and keeps identities in the disclosure\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:7cc59c3b1d7f5f91cacdfb75ac5001582af4eb7f4ee61015da1b2b9350683380",
+            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "content": "sha256:16997c1a029e3d441ebe63d9fc2441fca0eb150c6eb168f4f5f9148040ab04e4",
             "locator": {
-              "kind": "symbol",
-              "name": "mount"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:f92a786d949a4bb1cb9d5fcffdc1daa888e6e68135c171b7ea858d0c6dd5a6ff",
-            "locator": {
-              "end": 128,
+              "end": 235,
               "kind": "line_range",
-              "start": 110
+              "start": 218
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The constructed ReviewResult and real mount wait for the surface and disclosure; fetch and the catalogue hook are isolated, and layout assertions do not measure geometry.\n\nAnchor: current fixture and renderer owners",
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"leaves the tree's controls their own look and the tree no sideways scroll\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:3cd1c159a6b2bc875ecf884170f33dc75b536cc1abad9b60cd201a129e7f9a7e",
+            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "content": "sha256:92b03f164ce8fb489ab594a423ebf4d8c35edcacefb72def74dce9d42393169d",
             "locator": {
-              "end": 40,
+              "end": 250,
               "kind": "line_range",
-              "start": 32
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:7d027d4f3671fb4c0a222d6868638c7574a6e5f231d6c092937b7ac89e7e9d19",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 105
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:7cc59c3b1d7f5f91cacdfb75ac5001582af4eb7f4ee61015da1b2b9350683380",
-            "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 112
+              "start": 236
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "The teardown cleans the mounted tree and restores stubbed globals.\n\nAnchor: \"afterEach(() => {\"",
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"makes the review's main the stacked page's one scroller, under the column's sticky head\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:9d9a37e62c532687cef01eddb22b605ddc65f2eaaa05c0af1cc48dbfc8321264",
+            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "content": "sha256:a7b7e7c58d836ce79128fe4736132db1c5e6b7bba40c072e39a4b68a60244840",
             "locator": {
-              "end": 136,
+              "end": 270,
               "kind": "line_range",
-              "start": 133
+              "start": 251
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The tolerated serialisations of a numeric zero, and why the assertion is on the length rather than on `\"0px\"`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:dacb0ed08c45cd5c3cf841d13b11037582ad438414d4fe33dd08721e3ded2fa0",
-            "locator": {
-              "kind": "symbol",
-              "name": "isZeroLength"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The own-root scrollport case checks the reviewer height and vertical overflow boundary.\n\nAnchor: \"gives the reviewer its own vertical scrollport on its own root\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:c8c60cfcb165008f3277486f5360a47c2be22266a654267cefe3041805d5090b",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Case 2 asserts exactly three reading-area nodes, their min-width-zero atomic classes, inherited anywhere wrapping without local resets, and the scope's fixture reference.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:1eb0185c5945baca9310e5ca48ad39733d7c2f379a91cc84da1a6155aa276d20",
-            "locator": {
-              "end": 170,
-              "kind": "line_range",
-              "start": 153
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Case 3 checks provenance details and reference text, workspace wide/narrow grid classes, header wrapping and surface/scope wrapping classes. It does not assert the old disclosure-grid inline style.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4ce3145d1f1cf591ddd92aa834ca1c37cf66271f",
-            "content": "sha256:33f300264cb8704bc6fbefa112ff89ecf0c3d0fbb5c4e294f9cce8dd88a8f67f",
-            "locator": {
-              "end": 189,
-              "kind": "line_range",
-              "start": 172
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48).\n\nAnchor: \"const pane = (title: string, children: React.ReactNode) =>\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 32
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The pane helper's own declaration, which the pin's first case depends on (moved unchanged into `ReviewRecordPanes.tsx` by L48).\n\nAnchor: \"const pane = (title: string, children: React.ReactNode) =>\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2cdf2ffa4da4b20abca610d35e2747c10c1d86",
-            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 32
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
-          },
-          "kind": "code"
         }
       ]
     }

@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/tray/pickBuilders.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+        "content": "sha256:a42ec406764387b4a45e4c659ea2b8e42da557f3c34f5ea67135c67a5aecfa9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "the task ⊕ in the document head > sits once in the head and takes the task by its document reference; a second click adds nothing"
+        }
+      },
+      "facet": "The mounted task head has exactly one named task offer, its first click stores that task document reference, its wording/name changes to ✓ in tray, and its second click leaves one pick. This proves task-head collection and taken state, not browser hover/focus cascade or every host.",
+      "id": "PRF-TA6CQY",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks structured identity for all seven L89 reference forms and the document-head task add control.\n\nAnchor: \"it('names an invariant and a family by id, revision and memory tree', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+            "content": "sha256:2d9362faefebb61a1decd418666b02e140c4b5c4dd536360fdd0b7ffab545437",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks structured identity for all seven L89 reference forms and the document-head task add control.\n\nAnchor: \"it('names a review block by its rule-13 identity, the comparison and its pin ref, without its text', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+            "content": "sha256:e17d970e22063c0e8caea67663d72897040b5d320d56ccc7897256fc5b0cae37",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks structured identity for all seven L89 reference forms and the document-head task add control.\n\nAnchor: \"it('names code without an invariant by file, or by hunk span', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+            "content": "sha256:4ea5117da99fb4dac3bce03b37081c4c9d4d7c36a1cbd887ba211d1d8e86545b",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks structured identity for all seven L89 reference forms and the document-head task add control.\n\nAnchor: \"it('names a task document, file lines and a change set', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+            "content": "sha256:4aab80dadd53ad6a6c46cefcb0bb22ef1c40cd6f45c86cead7f55a7fd780a2be",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks structured identity for all seven L89 reference forms and the document-head task add control.\n\nAnchor: \"it('sits once in the head and takes the task by its document reference; a second click adds nothing', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeb9c6b10b80717e29b03cb1b59c48a54e99faad",
+            "content": "sha256:7b96d38f61a9f42ef7ff6610106f9a5bd2944bd62a6ea2c97350a4c5c3495afe",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

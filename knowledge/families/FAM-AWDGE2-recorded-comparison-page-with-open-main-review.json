@@ -5,7 +5,7 @@
     ],
     "justification": "Comparison page, open main page and own worklist view only together end the four-file-list pattern: the page without filters re-lists, the main page without disclosure discipline re-hides reasons, and the worklist under every subject re-adds 870 lines per review. The failure-continuation members keep the same coherent rendering under adverse reads."
   },
-  "guarantee": "Changed files are read in the change-set viewer on the comparison's own recorded trees with lane filters, per-row badges and a return that restores the reader's place; the main page keeps everything a reviewer needs to judge a change open with at most twenty disclosures per view; the leaf's worklist is a view of its own with one line per item; the leaf-wide view carries no knowledge diff.",
+  "guarantee": "The review reads the chosen comparison’s own recorded trees and keeps its changed subject blocks and Code without invariant files/hunks reachable in the reading column. Desktop tree and reading content have separate scroll owners; at forty rem and narrower the stacked main page owns vertical content scrolling, and review cards fit content without internal scroll boxes. Required changed code, supplied wording and abnormal states remain in their own visible reading roots. Long condition, exclusion, rationale and proof-facet lines may ellipsize independently while retaining their word marks or state and opening their complete content in place; selectable authored entry voices are never replaced by a shared lead voice. Native disclosures remain limited to the admitted counted unchanged/not-comparable groups, unchanged code stretches and identifiers/normal provenance. Cards have no separate Full file or SourceContent view. Whole-file actions reuse the existing comparison viewer with exact lane filters, native badges and a Back/Escape return that preserves mounted inspection state; a missing recorded range is named and requests no substitute. An added text file in that lane with a known absent before side and more than thirty after lines shows its first thirty, counts no extra line for a final newline, states the true remaining line count and opens that same path in its lane-matching comparison filter; shorter added files remain complete and other change kinds keep their own presentation. Subject continuations retain their bound statement, owner judgment and delivered context with explicit failure. The leaf worklist remains its own open fact view, and the leaf-wide response carries no aggregate knowledge diff.",
   "id": "FAM-AWDGE2",
   "members": [
     "INV-31006K",
@@ -33,7 +33,11 @@
     "INV-5RTVBT",
     "INV-9HMJ13",
     "INV-CC4HSS",
-    "INV-TEDBFZ"
+    "INV-TEDBFZ",
+    "INV-811GC5",
+    "INV-6S9JG5",
+    "INV-1SHA9Y",
+    "INV-K2NVKC"
   ],
   "origin": {
     "handoff": {
@@ -43,14 +47,16 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/panels/changeset",
     "dashboard/src/panels/review",
     "dashboard/src/data",
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/serving",
-    "mcp/src/agents_remember/models/knowledge"
+    "mcp/src/agents_remember/models/knowledge",
+    "dashboard/src/cockpit",
+    "dashboard/src/panels/file-viewer"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

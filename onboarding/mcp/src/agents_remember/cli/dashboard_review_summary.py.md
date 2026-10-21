@@ -2,20 +2,26 @@
 
 ## Governing Overview
 
-[Area overview](../../../overview.md)
+[Owning route overview](../../../overview.md)
 
 ## Purpose
 
-Bind native review-summary dependency observations at dashboard composition, without moving selection authority into serving.
+Bind native review-summary resolution and dependency observations at dashboard composition without giving serving layers selection authority.
 
 ## Code Commentary
 
-The port pairs initial selection observations with dependencies reported by native comparison resolution. Initial inputs include enclosure-directory selection, the recorded contract, that enclosure’s `knowledge-worklist.json`, and applicable repositories/worktrees; absent paths remain observations. Invalid review context follows no invalid path. Resolved inputs include code/memory repositories, comparison records and database content. The callback observes native baseline captures; memoization here is scoped to a read, not global admission. ContentRead tracks database bytes rather than derived-index timestamps. This composition owns dependency wiring, not counts, path authority or an atomic workspace snapshot.
+The port asks one question by repository/master/leaf and optional comparison number. Invalid task context follows no invalid path. Initial observations include enclosure-directory selection, its recorded contract and knowledge worklist, the applicable code/memory repositories and existing or absent worktrees. A numbered request additionally observes the comparison directory even when the leaf is live. When the contract has no existing code worktree, observations also include retained comparison-generation selection.
 
-The explicit worklist path is an added initial dependency. Regenerating that native worklist can invalidate summary reuse even while the task selector and contract stay fixed. It is an input observation, not proof the file is present or a new semantic authority.
+`_resolved` reports the actual code/memory repositories, comparison record and database bytes consumed by native resolution. ContentRead tracks database contents rather than derived-index use timestamps. Missing paths remain explicit observations.
+
+`review_intent_summary_port` binds resolve_review_comparison to the exact number and invokes summarize_review under a request-scoped capture-baseline memo. The observer receives the dependencies of that resolved comparison before counting. Recreating the stored worklist or the numbered-record population can invalidate reuse.
+
+## Invariants And Boundaries
+
+This composition owns dependency wiring, not intent-count semantics, path authorization or an atomic whole-workspace snapshot. The serving port cannot replace a missing recorded comparison with a live candidate.
 
 ## Evidence
 
-- Initial selection, contract, worklist-path and applicable repository/worktree observations preserve explicit absence. [1]
-- Resolved repository/record/database inputs use content observations for derived-index bytes. [2]
-- Config-bound native reading and capture observation remain request-scoped dependency wiring. [3]
+- Initial observations include record-directory selection for numbered reads and preserve absence. [4]
+- Resolved repositories, record and database contents are additional inputs. [5]
+- One numbered/default resolver is composed with native summary and capture observation. [6]

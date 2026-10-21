@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:e0b54be0d4a73b25300008c6bc63f18d525a32122da5c25012426974a2581476",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:43e781cd70db5dd7af87d8387c7e2f2a5ed4f2b3b95198411684225bfba0d35a",
         "locator": {
-          "end": 958,
-          "kind": "line_range",
-          "start": 772
+          "kind": "symbol",
+          "name": "FamilyMemberContext"
         }
       },
       "id": "RLZ-1PT6BEVC",
@@ -16,16 +15,16 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "The center builds one focused expressions element and carries the selected family entry into CenterExpressions, which supplies cardScope(entry) to ExpressionCards or states that a measured tree comparison is required. ReviewCenterBody and SelectedCenter propagate onRosterNext to member/family/unavailable-member paths. The old dataset ReviewExpressions/linksIncomplete branch is removed, not preserved by this carrier.",
+      "rationale": "Use the surviving exact family roster/context bound rather than a large shifted center dispatch range.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:ac7527b346f65bf4501f58177628cd648ffaac83d0c2d6297c6b44dc9a4b2aea",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:913d39b55cd6ce67a7218a0d3c95d476d2cfb1bc09a9793952956fd975531045",
         "locator": {
           "kind": "symbol",
-          "name": "displayedMemberRanks"
+          "name": "inModelOrder"
         }
       },
       "id": "RLZ-52661X",
@@ -34,16 +33,16 @@
         "handoffEntry": "MIK-L154 center follows tree order",
         "leaf": "260928-MIK-L154"
       },
-      "rationale": "displayedMemberRanks takes positions from the center's own outlineGroups call, which omits the code-fact map the sidebar supplies; changeTriage uses that map to assign badges and sort, so a member's center rank can differ from the sidebar's.",
+      "rationale": "Ranks each member by the invariant identity order provided by the page change-set model; members absent from that order follow stably. FamilyDetails supplies its current family model order.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:d4f22731cfa1e5407d957305bc4a5a8b8a476d18a1cebb878ff4069f66dc79bf",
         "locator": {
           "kind": "symbol",
-          "name": "orderedCenterMembers"
+          "name": "FamilyDetails"
         }
       },
       "id": "RLZ-JJ82KX",
@@ -52,16 +51,16 @@
         "handoffEntry": "MIK-L154 center follows tree order",
         "leaf": "260928-MIK-L154"
       },
-      "rationale": "orderedCenterMembers retains each distinct revision while ordering by the ranks the center itself displays when available and using the previous semantic order otherwise; those ranks are not necessarily the sidebar's.",
+      "rationale": "Builds distinct member revisions using the retained outline/entry order and then applies the current ReadingContext family-member order, so the page list follows its single model while other readers retain the outline path.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:342de7ee0b0ac20377882f8fab5e007c11318857593e649b26183a57f436013e",
         "locator": {
           "kind": "symbol",
-          "name": "MemberCenter"
+          "name": "SelectedCenter"
         }
       },
       "id": "RLZ-KPXX9Y7G",
@@ -69,34 +68,16 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Renders the same member reading path whether or not a family entry exists: without one it drops only the guarantee comparison and roster continuation, while the selected intent statement, the bound source expressions and the subject evidence still render. The header comes from memberContextLabel, which says 'No recorded family' only for the backend's no_family_recorded state and 'Family context unavailable' otherwise.",
+      "rationale": "Routes every selected invariant through MemberContent and MemberDetails even when no family entry exists; optional family context is omitted without inventing membership.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:feb5db552449af49bcf9db44a9f719ea45a7d58b6daf7c188c829ea4ab4a4784",
         "locator": {
           "kind": "symbol",
-          "name": "CenterExpressions"
-        }
-      },
-      "id": "RLZ-MF5CT6",
-      "invariant": "INV-DYDMDD",
-      "origin": {
-        "handoffEntry": "MIK-R86@v1 rule 17",
-        "leaf": "260928-MIK-L86"
-      },
-      "rationale": "It keeps the cards Full file callback on the card state, while the surrounding non-card path actions use the comparison page.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
-        "locator": {
-          "kind": "symbol",
-          "name": "MemberCenter"
+          "name": "MemberDetails"
         }
       },
       "id": "RLZ-NF0112J4",
@@ -104,13 +85,13 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Lays out the selected member’s optional family guarantee comparison, selected intent and bound expressions in one main-page section. Statement, membership, realization claims and attributed paths are open resolution content, not a disclosure; evidence and selected-record knowledge follow them, with roster continuation in the main page when a family context exists.",
+      "rationale": "Keeps the selected member optional family guarantee, loaded realization/membership context and subject knowledge as open main-page detail after its code.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:0adf96fb18bd0e3727a0566a99fd2df88c11ea5758e20be9b8da788e7c684cae",
         "locator": {
           "kind": "symbol",
           "name": "UnselectedCenter"
@@ -127,11 +108,11 @@
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-        "content": "sha256:07050a4346c16a617b9cc82bf3c217ff2b6553a0f5e76bcdbeb92864f725ab99",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+        "content": "sha256:9227f3e20934ff85ef4e0dd17475c5b2301b14aac1f3fbc7a3f7beb149c8e014",
         "locator": {
           "kind": "symbol",
-          "name": "FamilyCenter"
+          "name": "FamilyContent"
         }
       },
       "id": "RLZ-SNB6VM",
@@ -140,12 +121,12 @@
         "handoffEntry": "L43-C-recorded-effect-consumer-closures",
         "leaf": "260928-MIK-L43"
       },
-      "rationale": "The family center joins recorded steps to the selected family beside its own guarantee comparison.",
+      "rationale": "Places MeaningBlock for this family immediately after the same family guarantee comparison and before its judgment.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
         "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
         "locator": {
           "kind": "symbol",
@@ -163,7 +144,7 @@
     },
     {
       "anchor": {
-        "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+        "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
         "content": "sha256:7d311ac9e82ffae01ff0c6f68952199ccd7a9b40288d55b0e58098878a7ea502",
         "locator": {
           "kind": "symbol",
@@ -181,342 +162,85 @@
     }
   ],
   "references": {
-    "12": {
-      "note": "Guarantee comparison is delegated to its surviving extracted owner.\n\nAnchor: current source extent",
+    "41": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function SelectedCenter({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
-            "content": "sha256:deab132b40316eafd0463e17d08d7a8f2ea90b9b05f09f258dab1aabf86a58f3",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:ebd91dd9e62dfbee0b1ab07747becc921486fcc761480780a0761af952bb3b17",
             "locator": {
-              "end": 115,
+              "end": 873,
               "kind": "line_range",
-              "start": 33
-            },
-            "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Unselected source/intent content with a meaning-field guard.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
-            "locator": {
-              "end": 181,
-              "kind": "line_range",
-              "start": 152
+              "start": 858
             }
           },
           "kind": "code"
         }
       ]
     },
-    "14": {
-      "note": "The roster partial label uses complete pages, exact row totals and recorded member content.\n\nAnchor: current source extent",
+    "42": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"export type CenterPart = 'whole' \\| 'content' \\| 'after-code';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:213f9df01bcaec61c984b00cbdcffffc910aaf9274175d8cccf67254ecd7d816",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:24e7e4c1c2e08cba96162694f62ceea2b44264b011d5a0f8713660d0d441d907",
             "locator": {
-              "end": 360,
+              "end": 533,
               "kind": "line_range",
-              "start": 351
+              "start": 497
             }
           },
           "kind": "code"
         }
       ]
     },
-    "15": {
-      "note": "The family center composes origins, guarantee, semantic steps, member context, expressions and judgment.\n\nAnchor: current source extent",
+    "43": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function membersComplete(entry: ReviewFamilyContextEntry): boolean {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:07050a4346c16a617b9cc82bf3c217ff2b6553a0f5e76bcdbeb92864f725ab99",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:7bb6daa8b6f8d6f892975264d08a3387dd0e6b51add96c11f5c2d2abd5a83c9b",
             "locator": {
-              "end": 567,
+              "end": 586,
               "kind": "line_range",
-              "start": 488
+              "start": 347
             }
           },
           "kind": "code"
         }
       ]
     },
-    "16": {
-      "note": "Independent selected revision, membership and attribution facts do not manufacture a judgment.\n\nAnchor: current source extent",
+    "44": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function RealizationClaims({ member }: { member: ReviewFamilyMember }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:b8cf71a4d731f3a27acb8b545bb1c473f5eef049b4596b861414826ee761bba0",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:e39f4aff2b3e5d7221efc2f4c06591210be022ba332b73fe30aa39ba61fa9905",
             "locator": {
-              "end": 618,
+              "end": 345,
               "kind": "line_range",
-              "start": 569
+              "start": 56
             }
           },
           "kind": "code"
         }
       ]
     },
-    "17": {
-      "note": "Member center preserves its own subject, statement, expressions, resolution and judgment/proof context.\n\nAnchor: current source extent",
+    "45": {
+      "note": "FamilyReviewCenter.tsx current behavior at this source owner.\n\nAnchor: \"function IndependentFacts({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:72358f90b79519250e37fe248747c5bc73abe8e9f3f13d08c483891d64ea4dd2",
             "locator": {
-              "end": 705,
+              "end": 1018,
               "kind": "line_range",
-              "start": 629
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The wrapper supplies the wording-diff scope.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:82b12541db763fd15594100311f1562bf38d7501c303868451a6ab6f555d06c5",
-            "locator": {
-              "end": 770,
-              "kind": "line_range",
-              "start": 764
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Composition and four branch selection preserve expressions and onRosterNext propagation.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:3795cee6009d2a0c670fb0d2d36aee1964597fa206f5c88956067f1d3dbcea3e",
-            "locator": {
-              "end": 870,
-              "kind": "line_range",
-              "start": 772
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "Planning uses only the supplied ready leaf-wide read of the displayed comparison number.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
-            "locator": {
-              "end": 878,
-              "kind": "line_range",
-              "start": 874
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "Focused tree entries or an explicit measured-comparison-required sentence, not a dataset accordion.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
-            "locator": {
-              "end": 958,
-              "kind": "line_range",
-              "start": 920
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "Sorted loaded family keys, with a selected-invariant fallback when the family contributes no key.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:86f8040ee912c7ed4105291d597a105a4f3dd4ed97255e2230faadd3d22cfc0f",
-            "locator": {
-              "end": 975,
-              "kind": "line_range",
-              "start": 965
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "Selection returns entry, selected member row and listed paths, not the retired members/linksIncomplete props.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:3780e56e76fa52503395ea3d212d11ff55440a708a73e480ca2848f6c6155def",
-            "locator": {
-              "end": 987,
-              "kind": "line_range",
-              "start": 977
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Authored guarantee rendering lives in FamilyGuarantees; same wording and one-sided/comparison states are not run evidence.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
-            "content": "sha256:aa95963e120743ee205db2b64702e56a9f3537480a7f8b90a699d7d872465294",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 9
-            },
-            "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "One carried expression excerpt shows roles, side resolutions, occurrences and source identities.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:faef715c94226048b5b745c58260017be12348faad48f1af8f9cf054dc14fce6",
-            "locator": {
-              "end": 283,
-              "kind": "line_range",
-              "start": 229
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The member renderer retains its canonical subject and side context.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:f0062d28f1bcc54e81bb6638608c13d06067b7af42e3914ebd10a44f635f8af7",
-            "locator": {
-              "end": 705,
-              "kind": "line_range",
-              "start": 629
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "Card read assembly carries bounded cardScope and the selected seed.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
-            "locator": {
-              "end": 958,
-              "kind": "line_range",
-              "start": 920
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "Canonical family/member MeaningBlock and no-subject/unidentified-member guards are composed separately.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:d9f7ee719c82ae10eddea22af37dc5af94bb53b8c11d41dc1009f0e0ec70f146",
-            "locator": {
-              "end": 1001,
-              "kind": "line_range",
-              "start": 152
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "Distinct member revisions use displayed outline positions or the carried ordering fallback.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:4adf74cc900f03be6a115eec973db03ee4572d19d3f4d14077901de3802a33a4",
-            "locator": {
-              "end": 486,
-              "kind": "line_range",
-              "start": 471
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "Member statements use the extracted pairing renderer while bounded counts and roster continuation remain here.\n\nAnchor: current delegation",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:43e781cd70db5dd7af87d8387c7e2f2a5ed4f2b3b95198411684225bfba0d35a",
-            "locator": {
-              "end": 445,
-              "kind": "line_range",
-              "start": 383
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "The family judgment delegates the actual canonical family subject.\n\nAnchor: current judgment delegation",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:8198f71c1bec77e6c29507898d6ba311051dcadd719f4622c60e946e03a3c415",
-            "locator": {
-              "end": 1001,
-              "kind": "line_range",
-              "start": 989
+              "start": 588
             }
           },
           "kind": "code"

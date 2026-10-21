@@ -2,17 +2,51 @@
   "path": "dashboard/src/panels/review/treeScroll.test.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Pure synthetic geometry tests panel fitting/upper/lower selected-row reveal and sticky traversal clearance, no ancestor scrollIntoView or changed outer surface scroll. Does not claim actual browser layout.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('scrolls only the tree scroller enough to reveal its selected row, and writes no height', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f9252d09124574803182f4ceff1e17d9a24c6c07",
-            "content": "sha256:e04ea92f521c5a3ea2ce9377f5a774787da6ff490db7b85f01afedb5c91f0307",
+            "blob": "d5d0777edcb9b6ab0b56f19eb484c3d245c23d91",
+            "content": "sha256:80905720faffb9e79ee88caff56d038c5635d368990fef44af8fcd6db4487ee4",
             "locator": {
-              "end": 65,
+              "end": 31,
               "kind": "line_range",
-              "start": 1
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reveals an upper row at the scroller top and leaves a visible row where it is', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5d0777edcb9b6ab0b56f19eb484c3d245c23d91",
+            "content": "sha256:ed2c212a9f94d10aead7ae4ec8f01802aecf3fb0432779c5c5ef80efe939c37c",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reveals a row above the pinned Worklist and lane rows rather than behind them', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5d0777edcb9b6ab0b56f19eb484c3d245c23d91",
+            "content": "sha256:bf86a8c858137dff5e8c0bd6983bfcb5f69bdf20ada6a645e8045b282c38bbfc",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "test"

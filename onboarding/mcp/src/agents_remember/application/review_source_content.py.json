@@ -546,7 +546,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
             "content": "sha256:8604670d9976c4ec7e3f0bfa5eec624e3dda197e611a93fde7ad74f2f4a106cb",
             "locator": {
               "kind": "symbol",
@@ -558,7 +558,7 @@
         },
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
             "content": "sha256:3d8e168ee22f6c9b451bd06933d55854d834167bcdea2bdbd6bf330c58e50111",
             "locator": {
               "kind": "symbol",
@@ -570,7 +570,7 @@
         },
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
             "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
             "locator": {
               "kind": "symbol",
@@ -582,7 +582,7 @@
         },
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
             "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
             "locator": {
               "kind": "symbol",
@@ -594,7 +594,7 @@
         },
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
             "content": "sha256:58bbd1bd83463b3bdce0a3636d2c658ec14ac1ad090f5848d7ce54ab00c8c1f1",
             "locator": {
               "kind": "symbol",
@@ -624,7 +624,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
+            "blob": "fde90ecb48a28342e237be9bf947aff7d0bf4a62",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -636,7 +636,7 @@
         },
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
+            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -698,7 +698,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:b7b74dfeab97a8844c6757cbe0567dacf80054cf52aec6e4d0bf44ab1729f738",
             "locator": {
               "kind": "symbol",
@@ -710,7 +710,7 @@
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:5dbfccf1824171ea2aa0c5ead1b0d15a42e072c32843faeb0ef93ffafa175c39",
             "locator": {
               "kind": "symbol",
@@ -722,7 +722,7 @@
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:b00603c408e29956e98ec23f7cd58fe4e3b049fe1832fe9cb3506f0937e3cf49",
             "locator": {
               "kind": "symbol",
@@ -734,7 +734,7 @@
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:50c1fac1f10c62d093fca91bed2ba4f1329841ed5910c658bb8df0265958f031",
             "locator": {
               "kind": "symbol",
@@ -746,7 +746,7 @@
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:0e581199eea5c895d4d7b0a5b02504cdbac0f5d97d67fe45ea95ad989d09cf5c",
             "locator": {
               "kind": "symbol",
@@ -758,7 +758,7 @@
         },
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
             "content": "sha256:601d97ed28f97e42ea4b6b5909e9837bb19c2d8ff6f09e626f87dddc761b0ee7",
             "locator": {
               "kind": "symbol",
@@ -836,41 +836,40 @@
       ]
     },
     "32": {
-      "note": "The renderer that consumes this value: the shipped `DiffPane` when both sides are text, each side's own state line and content otherwise, the refusal block, and the generation/path-bound statements.",
+      "note": "The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer.",
       "targets": [
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:80c602650fbe4d18212c300d5b20ea986bab9d8f666fd0f5ef6ddc9897a00f99",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:77a7088874866476b25a8429f1a0317bbd80d260a770575eaa17227ad73fdeb8",
             "locator": {
               "kind": "symbol",
-              "name": "SourceContent"
+              "name": "source_content_request_from_query"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "mcp/src/agents_remember/serving/review.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9408212dc6bbb8b39c81e874b707478b36dd6319",
-            "content": "sha256:b84fd31944c3c27d5bc513725f1bf10f9e0660fd1009f5d4b8300735f0ad354b",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
             "locator": {
               "kind": "symbol",
-              "name": "Sides"
+              "name": "_source_content_response"
             },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+            "path": "mcp/src/agents_remember/serving/review.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:434a0d861518953aa331a027354ef83829fc8cd7a658175b94c02ae4cc3a6177",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:ebb5f7773a87fded477bec63545ebd293f8b42fc91309cf6768a7b61a2436f74",
             "locator": {
               "kind": "symbol",
-              "name": "refusalBlock"
-            },
-            "path": "dashboard/src/panels/review/SourceContent.tsx"
+              "name": "_content"
+            }
           },
           "kind": "code"
         }

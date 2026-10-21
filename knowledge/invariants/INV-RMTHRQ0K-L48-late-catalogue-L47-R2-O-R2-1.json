@@ -24,6 +24,6 @@
   "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "After the bounded unnamed-entry wait, an engaged reader keeps their selected subject, view and focus when the catalogue answers, while an unengaged reader follows initialSubject only for a catalogue that answers inside that wait; a catalogue answering later fills the navigation and selects no subject, and a named subject always wins.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

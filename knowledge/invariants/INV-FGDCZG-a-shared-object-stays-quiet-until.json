@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The shared hover/focus/membership contract spans one common control and independent task/review/nested-object hosts. Keeping the host rules and mounted surfaces coherent prevents quietness or nested isolation from depending on unrelated reference-identity or send-transaction promises."
+  },
+  "applicability": "Shared AddToTray reference-object controls mounted inside addToTrayHost on the intent-review invariant/family/block/entry, Code without invariant file/hunk, comparison change-set and canonical task-document surfaces inspected at A4-F5.",
+  "conditions": [
+    "An idle control is quiet while its own host is neither hovered nor focused; hover or focus-within of that host reveals it. A nested idle host still hides its own control when only its outer host is active.",
+    "The native button is named for its object. Keyboard focus exposes its focus style; an already collected object remains named, displays ✓ in tray and ignores further collection clicks.",
+    "A first collection delegates at most one reference to the store under current admission bounds. Store membership uses the exact object key; refusal leaves the offer uncollected rather than promising a successful add.",
+    "A task header supplies one offer only with its canonical document reference; review subjects/blocks/change sets supply offers only when their required comparison/pick identity exists."
+  ],
+  "exclusions": [
+    "Standalone AddToTray controls outside addToTrayHost intentionally remain visible; this quiet-host policy does not require an invisible standalone control.",
+    "The File Viewer line gutter is its own pointer/keyboard control and is not this shared AddToTray component.",
+    "Reserved lane rows use hidden replicas for sizing, not active collection offers; the Knowledge page and ordinary Operations task rows receive no new object offers.",
+    "This does not change exact reference snapshot identity, copy/selection preservation, recipient choice, message filing or send settlement.",
+    "CSS-selector fixture inspection is not a fresh real-browser cascade or host visual acceptance."
+  ],
+  "id": "INV-FGDCZG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Explicit Curator-owned supplemental projection, separate from unchanged Worker280 and Reviewer54 producer lists; A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470. Complete changed bodies and the three source diffs were read. Static inspection only; no code/test run, writer, AR operation, quality check or memory/Git write by this helper. Authority: MIK-R188@v1 rule1 Look/Clicks and D366; exact Worker clause “MIK-R188@v1 rule 1 · the ⊕ control”; accepted Worker and Reviewer finding L89-R1-027. Original producer fields and their historical dispositions remain unchanged. This separately admits the quiet-control meaning missing from the current TRAY01 identity statement; TRAY01 is not amended."
+      ],
+      "path": "authoring-wave7.routes-final-input.json"
+    },
+    "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A shared object ⊕ stays quiet until its own host is hovered or focused, carries an accessible name, and becomes “✓ in tray” after collection without collecting the same object twice.",
+  "status": "proposed",
+  "supersedes": []
+}

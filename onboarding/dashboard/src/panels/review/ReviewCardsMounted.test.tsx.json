@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/ReviewCardsMounted.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Exercise the mounted ReviewCardsMounted owner and its delivered read/selection states.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the opening card read the only one, and says when it failed', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3d6b562a8b7ea4916150c0fa5804007b01c85277",
-            "content": "sha256:acc76612cb728edb484067d0e7f9d69371b8029d682359d2ede83abac3547259",
+            "blob": "6520f6afc106f95674a81987fae43a45edbac402",
+            "content": "sha256:cab3b7af0f85fab2b8bc60cf95733bdf31d7d1d2a568788aa79f4acbf2560013",
             "locator": {
-              "kind": "file"
+              "end": 110,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "test"

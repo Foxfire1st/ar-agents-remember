@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/blockIdentity.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+        "content": "sha256:c47c7777e584b5e71f28b91f75eb5c03358cc7575827eddbb2b107a9b398a2aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "blockIdentityOf"
+        }
+      },
+      "id": "RLZ-CTSSFZ",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It constructs the complete four-tree entry identity from the actual named side.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+        "content": "sha256:9f6078f8772035c073bceecde521cb39f876cc945554b55ea2eab02a13068d58",
+        "locator": {
+          "kind": "symbol",
+          "name": "hunkIdentityOf"
+        }
+      },
+      "id": "RLZ-VYHK3F",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It binds a lane hunk to both mapped spans and the code pair.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Exact recorded-side and tree identity\n\nAnchor: \"// side whose memory tree could not be read (`recorded` undefined) is not known to record it, so the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "content": "sha256:e60e6a0c212a82a80fe5188bee3df57fa2d091ca6608f79f0f0fce6eda84b604",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stable equality key\n\nAnchor: \"export function blockKey(identity: ReviewBlockIdentity): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "content": "sha256:a0062a4bd5172be97a71ae5a466d0f1d085f6b5395fa5b9f7d9cc0db120597b3",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "URL payload checks and explicit comparison membership\n\nAnchor: \"export function formatSelection(selection: EncodedSelection): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "content": "sha256:5f5ce4ce6e6cc0aaeef4d53cc517f3e396fea78a366b502812a0819126c38451",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

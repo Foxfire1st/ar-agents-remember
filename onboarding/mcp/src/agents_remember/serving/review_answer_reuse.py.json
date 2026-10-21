@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
-        "content": "sha256:ab387bfde2d6606d70b4df517a83b938ee4d8139b9671cf5afacd4b33f7968c9",
+        "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
+        "content": "sha256:d218940ce11f79e01b8463bd34f61ee5e4e5c0d5e4008724cdf653bcf26fab70",
         "locator": {
           "kind": "symbol",
           "name": "RecordedAnswerReuse"
@@ -21,64 +21,51 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "A kept answer is returned only while every observed input carries the stamp it had at production.",
+    "5": {
+      "note": "Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations.\n\nAnchor: \"def answer[T](\"",
       "targets": [
         {
           "anchor": {
-            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
-            "content": "sha256:e19d72dfe2a5741636a7b76c78d6902bde67846440d68e25cba77cfd7188bb97",
+            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
+            "content": "sha256:51d7c306608fe4e3baa88c61de2c13f2f02d770880bee8689faf43eb670fe476",
             "locator": {
-              "kind": "symbol",
-              "name": "answer"
+              "end": 83,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "An answer is kept only when the observations before and after its computation agree, so a value composed while its inputs moved is dropped.",
+    "6": {
+      "note": "Every supplied input must be readable and match its admitted stamp.\n\nAnchor: \"def _fresh(self, key: tuple[object, ...], sources: tuple[ReadInput, ...]) -> _Kept \\| None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
-            "content": "sha256:e19d72dfe2a5741636a7b76c78d6902bde67846440d68e25cba77cfd7188bb97",
+            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
+            "content": "sha256:c8f8e53113367e828dd97a5b7366f22f7b56e56ddd9a6d01e869e303c7184f71",
             "locator": {
-              "kind": "symbol",
-              "name": "answer"
+              "end": 115,
+              "kind": "line_range",
+              "start": 92
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The age bound drops every answer past it.",
+    "7": {
+      "note": "LRU capacity and finite age bound stored answers.\n\nAnchor: \"def _keep(self, key: tuple[object, ...], kept: _Kept) -> None:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
-            "content": "sha256:e1a955bd7f72d597f41b1ace49f3fb13c7c95bedb5ccae95a696a2ede49afe2b",
+            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
+            "content": "sha256:c21cecd57e6bd1065df053a3f11fd269aa69d734425baf39104b6c99714be190",
             "locator": {
-              "kind": "symbol",
-              "name": "_expire"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The size bound evicts the least recently used answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "710a83fae3a7e55dfb9b97899015b5ea6c9593e3",
-            "content": "sha256:98f0791be324596a1e687017b65f8c801610f88fa3bd7cbca8eb121467df2175",
-            "locator": {
-              "kind": "symbol",
-              "name": "_keep"
+              "end": 133,
+              "kind": "line_range",
+              "start": 117
             }
           },
           "kind": "code"

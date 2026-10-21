@@ -2,32 +2,23 @@
 
 ## Governing Overview
 
-[application route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Select the recorded revision of one invariant or family on each supplied comparison side. The current text-record path has a pair, an addition, a removal or no selected record; it no longer implements retained-population multi-head ambiguity or intermediate-revision selection.
+Select one invariant/family’s own recorded before/after revisions and forward each side’s display version.
 
 ## Code Commentary
 
-`SubjectRevisionSelection` is a frozen holder for the optional selection and the two source items. `select_subject_revisions` first derives an invariant/family identity from the supplied seed. An absent or unsupported selector returns an empty holder without a selection.
+SubjectRevisionSelection remains a frozen holder for optional selection and actual source items. Unsupported or absent selectors return no selected identity. `_side_item` takes the first matching kind/id item with a non-None revision on that side; arbitrary duplicate/conflicting caller items are not rejected independently.
 
-For each side, `_side_item` uses the **first** supplied item whose kind/record identity match and whose relevant side has a non-None revision identity. These predicates select the subject, not a collection-wide default. The function does not independently reject duplicate/conflicting matching items; do not retain the old unconditional claim that stream position can never affect arbitrary inputs. The normal upstream text-record projection is the intended input shape, not uniqueness enforced here.
+Each selected side supplies both its revision id and its own display_version. The output’s head/retained lists are empty or singleton, equal per side. Both ids produce compared, only after added, only before removed and neither unresolved, with a statement naming the actual operands.
 
-The selected before/after IDs produce empty or singleton heads and retained tuples, with heads equal to retained on each side. `_selection_description` emits `compared` when both IDs exist, `added` with only After, `removed` with only Before, and `unresolved` with neither. The statement names exactly those operands; no `ambiguous` branch, population classifier, authored successor graph or historical-revision winner is computed here.
+revision_heads still sorts a supplied sequence deterministically; this selection path does not call it, open snapshots, traverse lineage or offer intermediate historical revisions. Its names do not revive the removed multi-head policy.
 
-`revision_heads` remains an exported sorted-tuple helper. The current selection entry point does not call it; a helper’s name/docstring does not restore the removed head-selection algorithm. The module reads the supplied values without opening snapshots, stores or graph tables. Source selection and revision-state semantics are changes from actual BASE, not an equivalent forwarding refactor.
+## Invariants And Boundaries
 
-## Evidence
-
-No domain documentation source is configured. The current actual source proves these local boundaries; no new test or MEMORY grade is claimed.
-
-- The selection holder carries optional selection and actual side items. [14]
-- The retained helper sorts a supplied revision sequence without driving the current selector. [15]
-- The entry point selects the subject sides and emits empty/singleton identity tuples. [16]
-- The four current selection states follow the actual chosen before/after IDs. [17]
-- Only invariant and family seed kinds establish a reviewed identity. [18]
-- The first side-present matching item with a revision is selected; duplicate rejection is not implemented here. [19]
+Selection uses subject identity, not a collection-wide default, but stream position can affect arbitrary duplicate inputs because the local lookup chooses first. Display versions are forwarded values, not inferred revision chronology or source-authenticity proof.
 
 ## Historical predecessor account
 
@@ -172,3 +163,10 @@ repository's candidate and carries no identity that ranges beyond the repository
 comparison was opened under.
 
 No meaningful cross-repo references found.
+
+## Evidence
+
+- Selected side ids and their own display versions are forwarded together. [20]
+- Four selection states describe the actual chosen operands. [21]
+- Identity filtering and first matching side lookup remain explicit. [22]
+- The exported helper sorts but is not used by the selector. [23]

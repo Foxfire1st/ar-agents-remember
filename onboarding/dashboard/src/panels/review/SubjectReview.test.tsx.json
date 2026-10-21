@@ -2,17 +2,34 @@
   "path": "dashboard/src/panels/review/SubjectReview.test.tsx",
   "realizes": [],
   "references": {
-    "7": {
-      "note": "Selected-owner revision IDs and reconstructed statement text are checked against retained native captures, as are judgment rows. Confirmed no-family reading orders statements, expression cards and the none judgment. Removed assessment-concern, ambiguity and observation journeys are not relabelled as judgment coverage.",
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('compares an authored successor through the family member route using both authoritative revision IDs and statements', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3fb7b8c0c30e7da9610860c41f75d735a1b2a176",
-            "content": "sha256:32914c4c5db6b6b0c3b450b5cc7ac8dfd564351b307671b289a4f166463bdc92",
+            "blob": "e7ec2d7508bb493ae4b9558c181316d3535db163",
+            "content": "sha256:c9c436d325fbd4452ae0ca49db892976664174d83f5aea5b87667b0a91c0e519",
             "locator": {
-              "end": 170,
+              "end": 151,
               "kind": "line_range",
-              "start": 1
+              "start": 99
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps confirmed no-family intent and judgment in pane order', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7ec2d7508bb493ae4b9558c181316d3535db163",
+            "content": "sha256:e4cec0b6aaad57e88613fc40ace5cffd6b6cf0443348e727e5adba4e7f80b74b",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "test"

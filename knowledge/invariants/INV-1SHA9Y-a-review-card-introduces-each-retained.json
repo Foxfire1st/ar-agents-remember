@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The per-voice and selection proofs guard omission or substitution of an individual entry rationale while keeping copied authored text stable."
+  },
+  "applicability": "Entry introductions of the review page code cards, including cards drawing several entries.",
+  "conditions": [
+    "A line names the entry id, its authored rationale or facet, invariant, role/facet label and available planning mark; missing authored text is a named gap.",
+    "Added/retired/revised badges remain beside the line; a revised entry keeps its earlier rationale as its own Before line.",
+    "A click orEnter/Space opens only that line in place; completing a text selection does not toggle it.",
+    "Resolved duplicate range lines may be visually hidden for screen readers only when the excerpt supplies both resolved ranges; unresolved side reasons remain visible."
+  ],
+  "exclusions": [
+    "Inventing rationale/facet text for a missing author field.",
+    "Collapsing multiple entry voices to a single lead rationale.",
+    "Using boxed native buttons that prevent the introduction text from being selected."
+  ],
+  "id": "INV-1SHA9Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 261, exact id L89-R1-046; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 266, exact id A4-F2 · by eye: the card introduction's lines; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 45, exact id L89-R1-046; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; original captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0.",
+        "Exact source item judgments and original producer data remain separate in review-page-analysis/hunk-judgments.batch3.json; no execution or acceptance claim.",
+        "Covered persisted worklist items: sha256:06b912076ebd96602496544a81838013c06b4017a10dbe8c93d70e400aea587e, sha256:b75a91863b050f19973d974a7247b345bfcaf7dffb7eb18c47fee53cd16a7461, sha256:9fd8106fe125d589449d6e7e069716673acd44b0554169b3ce57282250ac195e, sha256:e01112c2108158b9c57019c66b0f982bb7e486612240989f85a3608ffb4f3fc9, sha256:023c971858dbe08a01c7e10f4aa93558f75419bb9cd3feefbad321e2a10386d6, sha256:6b315c1625903ff3998a21f1974709660aa0bb24ae4408c27847800542ea3ca5, sha256:b3568579d0c9015097450132b3bfab4b2e2d45dc2b66599343034525d4db6e5e"
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP13",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A review card introduces each retained entry with its own authored rationale or proof facet on an independently expandable text-selectable line, keeping state badges and any earlier rationale visible.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,45 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74192819229079d194a84478be3c684f21eb11d1",
-        "content": "sha256:d991f74fb9f9bc2c121b65ffde8bde1f4c6f9dbd6b40d34e5f42114b697b4d9e",
+        "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+        "content": "sha256:64f2db09bbc5c883ad0c6556fae4be637cff7ec73a4d4f7d5f43c8a558939f0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewIntentSummaryPort"
+        }
+      },
+      "id": "RLZ-3Z9TNH",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Both the native-input callable and native-summary callable receive the comparison number, with the observer after that key. The serving cache forwards that same key to both. This carries explicit numbered-comparison selection through dependency observation and computation instead of dropping the number at the port boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+        "content": "sha256:871f7f3a7d09f2445d28c504d508fcd471bd3da0f3a449489b1d748d9b4b7e3d",
+        "locator": {
+          "end": 27,
+          "kind": "line_range",
+          "start": 25
+        }
+      },
+      "id": "RLZ-SSTYDB",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the summary question as repository, master, leaf and comparison number (None means ordinary leaf resolution). IntentSummaryCache._response actually constructs and uses this four-part key for native inputs, read and retained-answer identity, so two numbered comparisons cannot share one question key. Root must verify locator admission for this Python type alias before writing an entry.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+        "content": "sha256:9f75644b41981e5c6c3935e162331dbdc7ad295d63fac56d449f7fc2d9093183",
         "locator": {
           "kind": "symbol",
           "name": "IntentSummaryCache"
@@ -21,49 +58,51 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Configurable dependency-observing port.",
+    "4": {
+      "note": "The port and key include optional recorded comparison identity.\n\nAnchor: \"# One summary question: repository, master, leaf, and the recorded comparison number it names, or\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
-            "content": "sha256:3e399cf9a15a5f7224ee449429bfb6b9d6829d98683a0b85970cdc2c87dfef93",
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:3673a4fcc670b1d29dd934fb40702607f8134cf3dfede8df720e91c22eb44651",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewIntentSummaryPort"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Native production, additional dependencies and retention condition.\n\nAnchor: `IntentSummaryCache._response`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
-            "content": "sha256:ee14b27c733ca6bf2cc28c613c21dc5b13b5659032e952675c8d529b433b7cf1",
-            "locator": {
-              "end": 79,
+              "end": 47,
               "kind": "line_range",
-              "start": 41
+              "start": 23
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Conditional response owner and retained-key diagnostic.",
+    "5": {
+      "note": "The clock independently controls age windows and the admission table stays bounded.\n\nAnchor: \"class IntentSummaryCache:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6e8fa34f998fd0681f5e3bb76d461b442e5b65dd",
-            "content": "sha256:fb5374411c5c1d4d9c49e626e327d47090a4a3fc27df425650961dc1151cc9e9",
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:ca97b29365f2d32714e3292da9213d766b767c3381f76e5fa7451cca75401c99",
             "locator": {
-              "kind": "symbol",
-              "name": "IntentSummaryCache"
+              "end": 84,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Production and reuse preserve the exact question, additional dependencies and refusal-only unknown-status retention.\n\nAnchor: \"def response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:fc89f0ebf42d69ed14a91a0976b7b9d6c874f99037b1fc184127fffe64dc6092",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "code"

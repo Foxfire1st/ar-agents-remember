@@ -7,17 +7,15 @@
     ],
     "justification": "A held `j` can outrun the answer that brings the next family. \"No later change in this tree\" then stands beside a later change and tells the reader the walk is over when it is not. A status cleared by an update made while rendering comes back, because React can apply a queued status after that render. The rule is realized in the traversal hook and in the tree component, and a case on the hook alone and mounted cases guard it."
   },
-  "applicability": "Select/end status for j/k and the previous/next real-change controls over the compact outline.",
+  "applicability": "The j/k block traversal status of the review page.",
   "conditions": [
-    "The status key consists of displayed order, All/Changed view and each shown row's family, selector and badge sequence.",
-    "The old message is gated out on the first render of a different key and cleared at commit; no state is updated while rendering.",
-    "Repeating the same message for the same key is a no-op; each new move may create its own status.",
-    "A select clears status; an end says no earlier/later change. The status appears beside the compact outline."
+    "The status key is the ordered key sequence of actual drawn block stops, including lane hunk stops.",
+    "The first render with a different stop key gates out the old status and a layout effect clears it; rendering updates no status state.",
+    "Repeating the same message for the same stop key is a no-op; a selected stop clears the status, and an end retains the selection."
   ],
   "exclusions": [
-    "No continuation-stop status or returned-roster-count identity.",
-    "The wording of end messages and the set of real-change stops remain separate contracts.",
-    "The retired rowsShown presentation and held-answer test are not current proof."
+    "Tree-only filter/view changes that preserve the same actual stops do not promise status invalidation.",
+    "Continuation groups are places rather than traversal stops."
   ],
   "id": "INV-CK3PTB",
   "origin": {
@@ -31,9 +29,9 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The message of the last traversal move is shown only beside the rows the tree showed when it was said: once the tree has shown other rows the message is dropped and does not return when the tree shows the same rows again.",
+  "statement": "A traversal end message is shown only for the ordered drawn block stops it described; once different stops have been shown it is cleared and does not return when the same stops return.",
   "status": "proposed",
   "supersedes": []
 }

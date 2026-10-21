@@ -18,3 +18,9 @@ Current public endpoint cases use the converted World/source_world fixture and t
 - Leaf contract with real source branch, worktree and memory plan [23]
 - Live candidate binds recorded base and captured tree [24]
 - Rendered review publishes endpoints across the whole candidate [25]
+
+## Task-context status explanation
+
+The no-knowledge task-context case additionally checks the returned staleness statement names `All changes` and contains no `. ` sentence break, and that the serialized payload contains no `Source pane` wording. It still requires `not_compared`, an unresolved task-context statement, unavailable judgment, the complete measured source inventory and a named subject-read refusal. These are returned-text and HTTP assertions over the controlled enclosure; they do not measure the browser's status-chip layout or click target.
+
+- Task-context returned wording names All changes and retains truthful unresolved/currentness/inventory states. [26]

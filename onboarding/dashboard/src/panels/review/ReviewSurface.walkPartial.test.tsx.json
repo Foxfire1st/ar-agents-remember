@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-        "content": "sha256:ff427dd95b2772c27b4d14a5a83ec80b9109172d7ecf2d5a96482e5b791c5e52",
+        "blob": "190d28d3d5badabbfef2654c6e1f955c1769324e",
+        "content": "sha256:f3f61ed2809611f3ed9a7e401db23b26bc8cd789a3c74a5abd3aa515755fee8e",
         "locator": {
           "kind": "file"
         }
@@ -21,153 +21,20 @@
     }
   ],
   "references": {
-    "10": {
-      "note": "Continued-page fixture for the partial family",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows complete outline rows for a partial read and keeps continuation in the main page', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-            "content": "sha256:3beaddff3dc97a22caa74d3be192c26f7824dff6b1fecb52d8ce31ebfdf7eb82",
-            "locator": {
-              "kind": "symbol",
-              "name": "PAGE"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Held previous world for the partial journey",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-            "content": "sha256:9b1c45f65c325e0eeec7abe21ad2d9d746638c8959d4bc758f36317e2d5090ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "previous"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "Main-page continuation control with its cursor",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-            "content": "sha256:7f5e7ef61827635d3f4b6dcb80d8f2a8c854c5b17ad724a9df79207c706bc3c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "control"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Continuation request carrying family and cursor",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-            "content": "sha256:9ef769dfbd9cb7dd5f61cc57fde1f709c53e1b9ac59c50e0abb94bef6401ccc8",
-            "locator": {
-              "kind": "symbol",
-              "name": "request"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The file's statement of its data.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f551e3387ce7c217fc7e10d1fc784a34c79058d1",
-            "content": "sha256:1f418dd1d23d508ba7494afd9d6b168ab60a5a713b665d5733e34cc4cd42e579",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The paged body and the continued page replace the world's answers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
-            "content": "sha256:b7e92e537708a0317e678c0b4062786af5ae1cb2481c0928a6600722c18419b2",
-            "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 30
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "A partial family keeps all 24 synthetic-outline rows; continuation is a main-page control that sends the unchanged family cursor in one review read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac38a5b8e05f1421fbd9f7c3390f18ecdcdd5685",
+            "blob": "190d28d3d5badabbfef2654c6e1f955c1769324e",
             "content": "sha256:972ac664b13a253c8b16ef5ec3c37426f2ad19aa9ca6851d2f680e5f6fa81b6e",
             "locator": {
-              "end": 65,
+              "end": 61,
               "kind": "line_range",
-              "start": 41
+              "start": 37
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "\"No earlier change\" is dropped when the order control lists the other family before the selection.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
-            "content": "sha256:3e318590d8a900a71ae8ca7e1129b95aa6139e66fa6880694a1a8c91e95f2b10",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 96
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The receipt of the two partial bodies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
-            "content": "sha256:c709b3300cdfed5e098ec5b3b9f042f6bfe0bad4103b40a7a2bc412b3652a707",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 217
-            },
-            "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
-          },
-          "kind": "code"
         }
       ]
     }

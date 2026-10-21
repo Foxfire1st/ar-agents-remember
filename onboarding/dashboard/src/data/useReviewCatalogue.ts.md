@@ -16,9 +16,8 @@ changed-intent summary (`data/reviewIntentSummary.ts`) and reads no catalogue.
 ### Logic
 
 `useReviewCatalogue(comparison)` takes a `ReviewCatalogueKey` — `repo`, `master`, `leaf`, optional
-`history` and optional `generation` — and calls `intentReviewEntries` for the task context. Its key is the
-**comparison's identity alone**: `comparisonKey` = `repo/master/leaf/<history ?? "live">`, and the read
-key adds `generation ?? 0`. So the catalogue is read once when the reviewer opens, again when that identity
+`history`, optional `generation` and optional `comparison` — and calls `intentReviewEntries` for the task context and that comparison number. Its key is the
+**comparison's identity**: `comparisonKey` = `repo/master/leaf/<history ?? "live">`, followed by `#<comparison>` when a number is supplied, and the read key adds `generation ?? 0`. So the catalogue is read once when the reviewer opens, again when that identity
 moves (the navigation bumps `generation` when a refresh reached a different compared snapshot pair,
 ICR-R17) or when the reader calls `refresh`, and **never** because an unrelated part of the workspace was
 republished (the former `facts`/`stale` inputs tied to the global analytics document are removed).
@@ -59,9 +58,7 @@ The named constructs own this behavior; reads and validation use their existing 
 
 - Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity. [1]
 - The read state, now without the analytics `facts`/`stale` fields. [2]
-- The comparison key: task context, record and generation. [3]
 - The answer mapping. [4]
-- The hook: keyed read, sequence guard, refresh. [5]
 - Its caller, which bumps the generation on a new snapshot pair. [6]
 
 ### Cross-Repo References
@@ -73,3 +70,6 @@ No additional cross-repository evidence is required.
 - The server's outline is lifted onto the read [8]
 - A moved comparison clears entries and outline together [9]
 - Stored and observed generations are reconciled [10]
+
+- The comparison key: task context, record and generation. [3]
+- The hook: keyed read, sequence guard, refresh. [5]

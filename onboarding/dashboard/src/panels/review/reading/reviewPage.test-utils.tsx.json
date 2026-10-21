@@ -1,0 +1,69 @@
+{
+  "path": "dashboard/src/panels/review/reading/reviewPage.test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Captured inputs, moved subject/task answers and deliberately composed summary/tree/lane routes.\n\nAnchor: \"const task = captured<ReviewResult>('l86.task.captured.json');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c85e963a438dce600bd67006ecfed768cd74ed",
+            "content": "sha256:85015596a790880a42cba57be5c1c538a2d65c4dff4d30bc874e8ad428ede23b",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Recorded/held fetch transport and controlled IntersectionObserver implementations.\n\nAnchor: \"export const isSelectionRead = (url: URL) => url.pathname === '/api/review/intent' && url.searchParams.has('selectorId');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c85e963a438dce600bd67006ecfed768cd74ed",
+            "content": "sha256:bd6fd1b508a2fbf2aab46eb7427795a571709b8577ccd67c77b14eb856656302",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Answer adapters, gesture dispatch and ReviewSurface rendering.\n\nAnchor: \"// The added lane file's text, in place of the composed one (call after `servePage`).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c85e963a438dce600bd67006ecfed768cd74ed",
+            "content": "sha256:49e54d2cec9f0e459025181159d80d5e7ef8d2d1c9e45e28f0c994117a30732b",
+            "locator": {
+              "kind": "symbol",
+              "name": "servePage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0c85e963a438dce600bd67006ecfed768cd74ed",
+            "content": "sha256:c72c97d69053540433137e284889096f3997c2f9950b14e906cb87da38e30d5f",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

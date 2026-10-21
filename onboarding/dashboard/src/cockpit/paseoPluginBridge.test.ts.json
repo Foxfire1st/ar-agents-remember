@@ -1,14 +1,50 @@
 {
   "path": "dashboard/src/cockpit/paseoPluginBridge.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+        "content": "sha256:6e3711f8b1ea29d65c8fb1710fb04778e713bc3c700c336269ec7040dd05206f",
+        "locator": {
+          "kind": "symbol",
+          "name": "the control channel inside the frame > tells a dashboard that reads it which chat the compact layout shows as Paseo's own list moves it, and none on a screen without one"
+        }
+      },
+      "facet": "With the compact DOM/storage fixture and fake clock, no advertised showing capability produces no report or timer; negotiated showing reports stored focused chat live then other, suppresses duplicate reports, reports null for not-found/terminal screens, and makes no openScreen call. This proves the bridge context report only, not tray default choice or actual host rendering.",
+      "id": "PRF-6QJG1B",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY07-native-showing-proofs",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+        "content": "sha256:8f2fe8738bec3fd24b71037ef8b3f51bfb299d10382ab4c5a7e169bb6a24c9d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "the control channel inside the frame > tells the chat the wide strip shows, and the focused one of split panes"
+        }
+      },
+      "facet": "With mocked visible native tabs and stored focus, negotiated showing reports live first and then other as focus changes among two visible panes. This is the published-chat context consumed by the tray; it does not prove first-pick selection, host navigation, real split geometry or native delivery.",
+      "id": "PRF-A75SEZ",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-TRAY07-native-showing-proofs",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "8e40aeb5a30d6888a30ec24c4759243aad0fded2",
+        "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
         "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
         "locator": {
-          "end": 96,
+          "end": 97,
           "kind": "line_range",
-          "start": 84
+          "start": 85
         }
       },
       "id": "RLZ-HT5WNG",
@@ -23,14 +59,67 @@
   ],
   "references": {
     "1": {
-      "note": "The extracted suite retains channel/native-display safety and checks capability-gated on-chat and native failure completion.",
+      "note": "The extracted suite retains channel/native-display safety and checks capability-gated on-chat and native failure completion.\n\nAnchor: \"it(\"reports ready to the listed parent only, leaves native navigation visible, and stops cleanly\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8e40aeb5a30d6888a30ec24c4759243aad0fded2",
-            "content": "sha256:8f58160e521058ed28a3ed8ff9ae39de9e80f2b512d81842a90a554268bfb345",
+            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "content": "sha256:9decb38393f068dd1586140f04380fabc9b10b8eaddac5e277150b4ea4e04d3c",
             "locator": {
-              "kind": "file"
+              "end": 390,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Showing is opt-in, follows compact native focus, suppresses duplicate reports, reports null for non-chat screens and navigates nothing.\n\nAnchor: \"it(\"tells a dashboard that reads it which chat the compact layout shows as Paseo's own list moves it, and none on a screen without one\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "content": "sha256:6e3711f8b1ea29d65c8fb1710fb04778e713bc3c700c336269ec7040dd05206f",
+            "locator": {
+              "end": 617,
+              "kind": "line_range",
+              "start": 569
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The wide and split-pane showing fixture follows the stored focus among visible chats.\n\nAnchor: \"it(\"tells the chat the wide strip shows, and the focused one of split panes\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "content": "sha256:8f2fe8738bec3fd24b71037ef8b3f51bfb299d10382ab4c5a7e169bb6a24c9d8",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 619
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The compact DOM fixture retains its explicit 0.11.1 source pin.\n\nAnchor: \"chat. Pinned @getpaseo/server 0.11.1.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7b2ab571682fedc9dadefc31980f86cffc8e5c0",
+            "content": "sha256:a56815f0a8c202461de117e7754f6b15d7a48107d3ea6c0f8a61f7f086efcf80",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 85
             }
           },
           "kind": "test"

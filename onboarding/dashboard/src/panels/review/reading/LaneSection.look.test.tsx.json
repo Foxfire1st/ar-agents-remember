@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/LaneSection.look.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The mounted case checks heading/file labels, shared-selector exclusion and quiet control classes.\n\nAnchor: \"// The review's shared control look (ReviewLayout.tsx `reviewRoot`), read back from its class as\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b48f89504901c29ae520a104d8d6554f04c718c7",
+            "content": "sha256:5bd8088605c5410ea2187de1964308e908a28e61daf1ee4a031c8491fba0d6ec",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

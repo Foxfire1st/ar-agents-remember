@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.readerLine.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Held subject/card reads retain the next settled block across success and failure.\n\nAnchor: \"// Holds the subject's read and the card read until released; a released read may be answered with\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
+            "content": "sha256:c7305a7724fc8658cb757487cee0ecfbc0abe3023ff36c6eb107e773f8025ed2",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fractional/clamp corrections, sticky-head clearance, lane reservations and ready/skeleton height holds.\n\nAnchor: \"it('keeps the line within 1 px of its target through many fractional corrections', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
+            "content": "sha256:2d3ffc8a4a2cb9a383f8dfe5ba9b696a115d446c19137c4283be721f0d0dfdbb",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Node replacement, vanished/surviving-line spacers, excerpt/marks continuity and selected-slot skeleton.\n\nAnchor: \"it('keeps the line when a card excerpt across the column's top is rebuilt while the cards above shrink', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
+            "content": "sha256:a0343c585176b39a93ebd6de62e83537141500a6d75f7ba3c0f18f1b4327c845",
+            "locator": {
+              "end": 1127,
+              "kind": "line_range",
+              "start": 642
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

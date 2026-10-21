@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/reading/useChangeSet.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+        "content": "sha256:b5602bcfe25b2c9ab4633b39119b29037d0623a6a58ef2c426b28559fb45bf95",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChangeSet"
+        }
+      },
+      "id": "RLZ-51X57X",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It passes the shown number to summary, leaf trees, lane and card-set reads.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+        "content": "sha256:b5602bcfe25b2c9ab4633b39119b29037d0623a6a58ef2c426b28559fb45bf95",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChangeSet"
+        }
+      },
+      "id": "RLZ-FVRT7W",
+      "invariant": "INV-KEJ5TN",
+      "origin": {
+        "handoffEntry": "RP07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It computes asked without selection, schedules cards after read-4 settlement and shares the result with the page model.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"function useComparisonNumbers(frame: ReviewPayload \\| null, chosen: number \\| null) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:df2f1fbdf577595721b8fc656c122bd51877b5fcfb79a5e12f48d4106642dad9",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"function modelCards(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:2fa8f8891918d69ab78edbdff956a7ed4609c3fa528586d7a253f17688f222b3",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"export function useChangeSet(input: ChangeSetInput): ChangeSetReads {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:b5602bcfe25b2c9ab4633b39119b29037d0623a6a58ef2c426b28559fb45bf95",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

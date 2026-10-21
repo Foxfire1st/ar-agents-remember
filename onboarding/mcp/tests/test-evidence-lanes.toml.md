@@ -184,3 +184,10 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 ## The MIK-R118/R124 mark suite
 
 `mcp/tests/test_mik_r118_r124_marks.py` is declared once in `unit-regression`, in canonical order between `test_memory_scope_task_derivation.py` and `test_mik_r173_card_row_binds_every_copy.py`. The module covers the two record kinds and their writer rules, the staleness a dependent's links derive, the two worklist kinds and the count a landing answers with; it appears in no other lane. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.
+
+## Developer-message regression membership
+
+`mcp/tests/test_developer_messages.py` is selected once in `unit-regression`, beside the dashboard-host and developer-question modules. This adds one module membership and changes no lane identity or case-budget policy. The declaration supplies selection metadata; it establishes neither invocation nor pass.
+
+- Developer-message tests are selected once in the existing unit-regression lane. [862]
+- The seven lane identities remain declared; this is membership, not execution. [863]

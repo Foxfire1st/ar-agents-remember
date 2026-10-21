@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-        "content": "sha256:d16b4cdb7b0fee169c37e4e749dde18f13f3c8f0a2b6f235e75fa7bd77c97309",
+        "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+        "content": "sha256:d1c876ef7ca57377dcfbf78ecc416053e6fe0322b3d1d6085bd1a31c57c75910",
+        "locator": {
+          "kind": "symbol",
+          "name": "ListPassage"
+        }
+      },
+      "id": "RLZ-2HN4T6",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It keeps the open set by individual row index and renders every item.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+        "content": "sha256:695141d49f61f65649eb7fed0cf4843a02742aacf0d524f1e873551b6bb0a576",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangedItem"
+        }
+      },
+      "id": "RLZ-36HC49",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It renders paired word marks on that line while retaining the existing rewrite/layout behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+        "content": "sha256:44c7ca6227ae8c7184ae08bd065c56b15a8eb7193fe6b29b0f6fc025be4e85b2",
         "locator": {
           "kind": "file"
         }
@@ -17,20 +53,38 @@
       },
       "rationale": "Distinguishes structured list fields from joined reported text and keeps the latter intact instead of guessing item boundaries.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+        "content": "sha256:2a1a0665f12e251e46799865b16ff006a775d7a415c34df4eea0acb5af5c8353",
+        "locator": {
+          "kind": "symbol",
+          "name": "ItemLine"
+        }
+      },
+      "id": "RLZ-KQ3MAY",
+      "invariant": "INV-6S9JG5",
+      "origin": {
+        "handoffEntry": "RP12",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It provides one named focusable line with independent click/Enter/Space expansion.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "19": {
-      "note": "Supplied tree-comparison context and payload-token wiring.\n\nAnchor: scope wiring",
+      "note": "The supplied comparison scope and payload-token wiring remain explicit.\n\nAnchor: \"const TreeComparison = createContext(false);\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:69b7ffab8194495d9a0a2db8677bc18d7601652a9fea09f9d2f3b44418555f5f",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:992a72aa9e9c85a596cb126045a256af787ba4340ab06191266fa1cc1621a56e",
             "locator": {
-              "end": 169,
+              "end": 221,
               "kind": "line_range",
-              "start": 147
+              "start": 201
             }
           },
           "kind": "code"
@@ -38,16 +92,16 @@
       ]
     },
     "20": {
-      "note": "Browser-local layout control delegates the selected preference.\n\nAnchor: layout control",
+      "note": "The layout control delegates to the browser-local wording preference.\n\nAnchor: \"function ProseLayoutControl() {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
             "content": "sha256:4ecfb27eb7cafab8fcd64d59826a7a19772e703499e529cc82915e4e712f2837",
             "locator": {
-              "end": 194,
+              "end": 246,
               "kind": "line_range",
-              "start": 171
+              "start": 223
             }
           },
           "kind": "code"
@@ -55,16 +109,16 @@
       ]
     },
     "21": {
-      "note": "Removal/addition and whitespace announcements are rendered with semantic marks.\n\nAnchor: mark body",
+      "note": "Semantic removal/addition marks retain hidden announcements and whitespace descriptions.\n\nAnchor: \"function Mark({ part }: { part: DiffPart }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:3673b70acabeb6e819454801d74dafc5c1bde6dda8ef85397387dbbeb08b1273",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:e165385bc3a8725044ff35d865710ee8498618a83b396fd9200dd70489bf255d",
             "locator": {
-              "end": 216,
+              "end": 268,
               "kind": "line_range",
-              "start": 196
+              "start": 251
             }
           },
           "kind": "code"
@@ -72,16 +126,16 @@
       ]
     },
     "22": {
-      "note": "Same runs and side-filtered Before/After prose preserve the supplied parts.\n\nAnchor: prose drawing",
+      "note": "Prose draws same runs literally and filters the before/after sides from supplied parts.\n\nAnchor: \"function Prose({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
             "content": "sha256:100449d04517c8718b92c721575da5c8b5bfca25ace7e818837afe8503a4f6db",
             "locator": {
-              "end": 261,
+              "end": 313,
               "kind": "line_range",
-              "start": 218
+              "start": 270
             }
           },
           "kind": "code"
@@ -89,16 +143,16 @@
       ]
     },
     "23": {
-      "note": "Whitespace-only output includes the after text and both exact whitespace-visible texts.\n\nAnchor: whitespace output",
+      "note": "Whitespace-only prose keeps after text and both exact whitespace-visible values.\n\nAnchor: \"function WhitespaceOnly({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
             "content": "sha256:58a5b95ce6abd73850b79c3bbd6dfe3fc53ad867cb2e914b7b1e594f0d28b5a4",
             "locator": {
-              "end": 293,
+              "end": 345,
               "kind": "line_range",
-              "start": 263
+              "start": 315
             }
           },
           "kind": "code"
@@ -106,16 +160,16 @@
       ]
     },
     "24": {
-      "note": "Prepared or memoized text diffs flow into local layout, rewrite and coarse rendering.\n\nAnchor: text-passage pipeline",
+      "note": "Prepared or memoized diffs feed ordinary prose layout and a text-pair-local inline override. Ordinary prose passages render rewrite reason, coarse note and chosen inline/side-by-side layout.\n\nAnchor: \"function rewriteReason(diff: WordsDiff): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:48d7c9df4d77b0210830cf9a973d39d35508b6c9273226c5254d845fc7c18876",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:c0c392a5b4e2d93ba8e4a729c6ecf5850f7968f1d556fa133582a5b47b74521b",
             "locator": {
-              "end": 374,
+              "end": 538,
               "kind": "line_range",
-              "start": 305
+              "start": 349
             }
           },
           "kind": "code"
@@ -123,16 +177,16 @@
       ]
     },
     "25": {
-      "note": "Prepared list rows, fallback notes and described-by links are rendered together.\n\nAnchor: list drawing",
+      "note": "Each prepared list row has its own open index, line control and applicable fallback description.\n\nAnchor: \"function ListItem({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:c17cb52b545ff3065fb28fe010f97ff0a033bf7e839f3e9638855f5c810700ed",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:bdae85b1b609e2a0739baf1c9beec5829427c2560b458f3a98a897241538322d",
             "locator": {
-              "end": 450,
+              "end": 657,
               "kind": "line_range",
-              "start": 376
+              "start": 584
             }
           },
           "kind": "code"
@@ -140,16 +194,16 @@
       ]
     },
     "26": {
-      "note": "One-sided statements distinguish known absence from supplied non-present states.\n\nAnchor: one-sided statement boundary",
+      "note": "One-sided statement labels distinguish actual absence from unavailable or other supplied states.\n\nAnchor: \"function OneSidedLine({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:c50eec3036162fa9ee9793bd567a0bf0a5a444e1841894d3232ec159ee88536d",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:cb481d87b166d67994f5ffcba078b2674ac519658490c4bc22b09611b062bad3",
             "locator": {
-              "end": 515,
+              "end": 721,
               "kind": "line_range",
-              "start": 452
+              "start": 660
             }
           },
           "kind": "code"
@@ -157,16 +211,16 @@
       ]
     },
     "27": {
-      "note": "Projected lists and string/remaining field branches consume the actual supplied shapes.\n\nAnchor: field drawing",
+      "note": "Projected lists remain joined reported values; ordinary arrays and text use their respective rendering branches.\n\nAnchor: \"function ListFieldBody({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:c95454c5e30d73af0751d6c078a9414ef957d5226faaa60eb887aee9588d80a2",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:38cc7f2a852d0f24cf75359ab4c7fc577541822eb32b4e0abf07224160dffe75",
             "locator": {
-              "end": 588,
+              "end": 795,
               "kind": "line_range",
-              "start": 524
+              "start": 734
             }
           },
           "kind": "code"
@@ -174,16 +228,16 @@
       ]
     },
     "28": {
-      "note": "Present-side checks and shared prepared-map layout/drawing belong to the statement renderer.\n\nAnchor: statement composition",
+      "note": "Statement rendering shares prepared values and keeps its supplied header beside eligible layout control.\n\nAnchor: \"function StatementText({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:1df446ae86757d4c138d2035f6bf80d4a428854d28ee9cce3dc73cbc16b0606d",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:46f91fb04deadc353013d2396ee132584e78ff406d5030aa56fc315191791f2a",
             "locator": {
-              "end": 692,
+              "end": 915,
               "kind": "line_range",
-              "start": 590
+              "start": 797
             }
           },
           "kind": "code"
@@ -191,16 +245,16 @@
       ]
     },
     "29": {
-      "note": "Guarantee text comparison and the current one-argument fact helper compare supplied text.\n\nAnchor: guarantee facts",
+      "note": "Guarantee changes and facts compare supplied text, including differing text at the same revision.\n\nAnchor: \"export function guaranteeTextChange(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:fdedc60ef2b83349e20692f5cb9a2a7cfee8da30726de557b40ba29e155a1be1",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:ee172bc6e8757f250cf9d927ddfa771dafead06b010dd394cb1fa11394dd1339",
             "locator": {
-              "end": 713,
+              "end": 937,
               "kind": "line_range",
-              "start": 694
+              "start": 921
             }
           },
           "kind": "code"
@@ -208,16 +262,16 @@
       ]
     },
     "30": {
-      "note": "Changed guarantees preserve revision metadata and word-passage layout controls.\n\nAnchor: changed-guarantee body",
+      "note": "The guarantee body retains compact revision metadata and its passage, without the removed Revision records disclosure.\n\nAnchor: \"export function GuaranteeTextChange({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:c11e8a5989fd8013243e196062c1a958d95f2714ea5f2bcddc70fb1e111909e1",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:f16cd210a3e4c6d969f2b54eee67a649cc92054c81787721e65e7896c6f0e0b2",
             "locator": {
-              "end": 753,
+              "end": 973,
               "kind": "line_range",
-              "start": 715
+              "start": 941
             }
           },
           "kind": "code"
@@ -225,16 +279,16 @@
       ]
     },
     "31": {
-      "note": "Only not_recorded gives the known-absent one-sided guarantee label.\n\nAnchor: one-sided guarantee label",
+      "note": "Only not_recorded gives a known-absent one-sided guarantee label.\n\nAnchor: \"export function OneSidedGuaranteeLabel({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:2ee51c80ab79a0db3d9f3f6bbfe7fabb820fb245b2ec2ed37f7e6f17c0b93aaa",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:710c9e065d524bdb802c0d99171e61d87a7150c001aaaf3dc62bd74cfb0ee3c2",
             "locator": {
-              "end": 780,
+              "end": 1000,
               "kind": "line_range",
-              "start": 755
+              "start": 976
             }
           },
           "kind": "code"
@@ -242,18 +296,86 @@
       ]
     },
     "32": {
-      "note": "Shared preparation aligns nonprojected arrays and prepares changed-pair diffs for both layout and drawing.\n\nAnchor: shared preparation",
+      "note": "Shared preparation aligns only nonprojected arrays and prepares changed-pair diffs once for both layout eligibility and drawing.\n\nAnchor: \"export function preparePassage(\"",
       "targets": [
         {
           "anchor": {
             "blob": "070aae7f888e8aece3db0fb18d68b10adcfb6ed1",
-            "content": "sha256:2c7a29353e881ad02007f28383871866b4fa3183abcd3b1c7dc5b86df5f069a2",
+            "content": "sha256:d644f91b0be249d3d436b6ebcb8495f9cdcfaad8df3c2dc21a5950dbeb83c383",
             "locator": {
-              "end": 34,
+              "end": 29,
               "kind": "line_range",
-              "start": 1
+              "start": 8
             },
             "path": "dashboard/src/panels/review/intent-passage/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "List-item lines retain before/after wording, rewrite reasons and the local open-row inline offer.\n\nAnchor: \"function LinePassage({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:d9cf11289bec16d93a05194395f7991c9810ea7588141c3b14b36f3a3e09f9e0",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Each list item opens by click, Enter or Space, with its complete text retained and exposed by expansion.\n\nAnchor: \"function ItemContent({ row }: { row: Exclude<PreparedListRow, { kind: 'changed' }> }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:b11af7eae208b9bed0b42ad0287e7c34441c1c4d5fd4f8843b1697ad5a7c790c",
+            "locator": {
+              "end": 581,
+              "kind": "line_range",
+              "start": 541
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Closed item lines ellipsize; opened lines and their side-by-side halves wrap, while rewrite reasons retain accessible full text.\n\nAnchor: \"const items = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:19104887ba7740c7ee80c709f693b5083288a8465a8d68daae897e955e1723b5",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Prose typography uses the supplied mockup metrics.\n\nAnchor: \"const prose = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:88029f44445907b3d3b06c02090b27cf0bf4d6e85323c120bee44d0d07894709",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 69
+            }
           },
           "kind": "code"
         }

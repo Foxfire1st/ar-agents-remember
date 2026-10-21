@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/tray/AddToTray.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+        "content": "sha256:5bf533c539bbda6e655c199901bf9a8db2f5119da8d8e1a68cafcd66e2a0be54",
+        "locator": {
+          "kind": "symbol",
+          "name": "addToTrayHost"
+        }
+      },
+      "id": "RLZ-CGYDJH",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The common host rules hide only idle controls, reveal them on hover/focus-within, and give an unhovered/unfocused nested host a more-specific hide rule so an outer host does not expose unrelated nested idle controls.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+        "content": "sha256:a9f90d32cdfd298281653362dd611d89d27c1d1e2da9297651d239122b2942dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "AddToTray"
+        }
+      },
+      "id": "RLZ-NX7N4T",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Prevents its `mousedown` default, so a ⊕ click keeps the selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+        "content": "sha256:a9f90d32cdfd298281653362dd611d89d27c1d1e2da9297651d239122b2942dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "AddToTray"
+        }
+      },
+      "id": "RLZ-WBRCTF",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The named native button reflects membership in data-add-to-tray, visible wording and aria-disabled; it delegates a click only when the object is not already present and keeps a visible focus style.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Provides one quiet accessible object add control.\n\nAnchor: \"// `addToTrayHost` shows it on hover and focus-within. Without that parent the control stays visible.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:5bf533c539bbda6e655c199901bf9a8db2f5119da8d8e1a68cafcd66e2a0be54",
+            "locator": {
+              "kind": "symbol",
+              "name": "addToTrayHost"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provides one quiet accessible object add control.\n\nAnchor: \"export function AddToTray({ pick, label, testId }: AddToTrayProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:3594b7fcce7607ab60833020b9d4df474d0f35e5197bb11c5989f93fb2c4e6ba",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

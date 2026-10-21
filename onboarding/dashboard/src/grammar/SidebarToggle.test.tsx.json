@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/grammar/SidebarToggle.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+        "content": "sha256:f3b1d7d55fea4453dc4ce21d8a59140f4d6e6ef39ef87b9155d8c3876d79257c",
+        "locator": {
+          "kind": "symbol",
+          "name": "names its sidebar, says whether it is shown, and toggles by click, Enter and Space"
+        }
+      },
+      "facet": "The shared native control exposes the sidebar name, expanded state and controlled id, invokes its owner by click/Enter/Space, and changes its Hide/Show title with the supplied state.",
+      "id": "PRF-HNW234",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+        "content": "sha256:a271db3984cd8e180c92aaebeb660366d5f76605aa3094a81d03caab193aec45",
+        "locator": {
+          "kind": "symbol",
+          "name": "remembers each page and side under its own key, and the review chat side not at all"
+        }
+      },
+      "facet": "The shared hook opens by default, stores knowledge/left=0 independently of knowledge/right, restores the left choice on a new mount, and an explicitly unremembered review/right hook starts closed, opens in memory and writes no key. The actual review-chat owner is checked separately.",
+      "id": "PRF-TJC9G9",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Button accessibility and activation\n\nAnchor: \"it('names its sidebar, says whether it is shown, and toggles by click, Enter and Space', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+            "content": "sha256:f3b1d7d55fea4453dc4ce21d8a59140f4d6e6ef39ef87b9155d8c3876d79257c",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Independent persistence and review exception\n\nAnchor: \"it('remembers each page and side under its own key, and the review chat side not at all', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+            "content": "sha256:a271db3984cd8e180c92aaebeb660366d5f76605aa3094a81d03caab193aec45",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,141 +2,22 @@
 
 ## Governing Overview
 
-[overview.md](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Render the server-selected subject's statement, independently supplied before/after origin and exact
-side wording in the main reading area. Re-export the current separate SubjectJudgment owner; do not
-revive local SubjectEvidence, AssessmentAbsence or Applicability channels.
+Render only the server-selected subject's statement comparison, using that subject's exact revision selection and side-specific authored wording.
 
 ## Code Commentary
 
-selectedRevision requires matching record kind and canonical ID. If it fails, SelectedStatement
-explicitly claims no supplied statement comparison. For a matching selection, authoredSides searches
-each side's own recorded member rows by exact revision ID, then uses that side's pane/field fallback.
-Comparison field rows are restricted to the selected revision IDs. Joined exclusions remain projected,
-not inferred as an independently carried list. revisionLabels keeps a single revision's display
-version together and does not make distinct versions identical.
+`selectedRevision` admits revision_selection only when record kind and identity match the requested subject. Without it, SelectedStatement states that no comparison was supplied. `authoredSides` first looks for each selected revision in that side's own recorded member rows; otherwise it uses the knowledge pane's statement/conditions and only field-change rows keyed to the selected revisions. Projected exclusions remain marked, and a missing field stays uncarried.
 
-The current path always uses textFirstComparison: a same-revision record can still have changed
-words. There is no useTreeComparison/dataset alternative and no current ambiguous wire-state variant.
-Compared/added/removed selections delegate to IntentStatementBody; unresolved selections show explicit
-per-side states with no diff. The delegated current owner handles changed fields, unchanged prose and
-labelled addition/removal, replacing the removed local ChangedFields/StatementBody/OneSidedStatement.
+`textFirstComparison` examines those actual authored words, including a same revision whose text differs. Compared/added/removed selections delegate to IntentStatementBody; ambiguous or unresolved selection states show explicit operand states without inventing a diff. Statement labels identify which authored fields changed, one-sided recording, unchanged wording or missing fields. Display labels use carried revision display versions, never raw revision IDs as a replacement; two distinct revisions are not labelled as one.
 
-Origin displays the supplied task, optional leaf/wave/handoff entry, handoff path and evidence text
-for each side. It neither reconstructs/authenticates that origin nor renders every field of ReviewOrigin
-(for example legacyId is not printed). Statement revision identities remain a compact disclosure.
-
-SubjectJudgment is a separate current module, re-exported here. It requires matching selected subject,
-shows judgment/proof content and reasons openly and keeps compact identities separate. It is not an
-equivalent implementation of the removed multi-channel observation/assessment/applicability model.
-
-## Invariants And Boundaries
-
-Roster context does not choose the authoritative subject or let another record's fields become its
-statement. Client matching is not a new server selection or semantic acceptance. Old dataset paths,
-ambiguous-state cases, authored-assessment claims and mutation/run results below retain their original
-source epoch only; they are not current executable branches or refreshed grades.
-
-## Historical source-epoch explanation — preserved, superseded where different
-
-Earlier useful explanation and observations remain below with inert prose reference markers. Current
-wire vocabulary, owners, fixture kind and delegation above supersede contradictory old claims.
-
-> ## Purpose
->
-> Render statements and evidence for the server-selected subject in the central review, including an invariant with confirmed no-family context.
->
-> ## Code Commentary
->
-> ### Logic
->
-> selectedRevision checks the payload's revision_selection against the requested subject kind and identity. SelectedStatement uses those exact before/after revisions and the owner's statement operands; unchanged, distinct successor, one-sided, ambiguous and unresolved states remain different. KnowledgeStatements renders the actual available operands using the chosen diff layout.
->
-> SubjectEvidence requires that same selected-subject match before rendering the read owner's observations, assessments and evidence claims. Records keep their authored disposition, currentness, applicability and provenance. Candidate-level execution is labelled as input rather than subject judgment. AssessmentAbsence distinguishes an unreadable/unmeasured channel from no returned authored judgment, while unrelated context records remain attributed to their own subjects.
->
-> **Decluttered statements (MIK-R31 rule 3, the 13:40 decision; MIK-L31).** `SelectedStatement` takes the
-> selected subject's member rows (`members`, from the centre's `subjectRows`) and `authoredSides` builds each
-> revision's authored wording: from the member row of that exact revision when the page carried it (statement,
-> applicability, conditions, exclusions), else from the knowledge pane (statement, conditions) plus the comparison's
-> own `field_changes`; a field neither carries stays uncarried. `wordingComparison` (`statementWording.ts`) then
-> decides, and `statementLabel` prints: "Statement unchanged · same recorded revision" for one revision, **"Wording
-> unchanged · revision a → b"** only when every authored field is identical, "Changed conditions · revision a → b"
-> (the changed fields named, with `ChangedFields` listing each non-statement field's before and after), or
-> "Statement revised · … not carried here" when a field could not be compared. The revision labels are the display
-> versions when both are carried and differ, else the revisions' own short identities, so two revisions never read as
-> one. `StatementBody` shows the prose once only when the statement did not change and **both** sides are present
-> (review F5); otherwise `KnowledgeStatements` keeps each side's own state line. An added or removed statement
-> (`OneSidedStatement`) is labelled prose ("Added statement · recorded on the after side only"), not a split code
-> editor. These rules apply to dataset reviews too, as rule 3 intends (review F8).
->
-> **Word-level intent diff on a tree comparison (MIK-R35, MIK-L35).** `SelectedStatement` reads the tree-comparison
-> scope (`useTreeComparison`, set by `FamilyReviewCenter`). On a tree comparison the decision is
-> `textFirstComparison` (`statementWording.ts`): the fields decide, and "Statement unchanged · same recorded revision"
-> is said only of one revision whose carried fields do not differ, because a text record's revision increments only
-> when its meaning changes (MIK-R21). One revision whose text differs reads **"Changed statement · revision r2 → r2 ·
-> the same revision on both sides; its text differs"** (`sameRevisionNote`; ruling Q1, 2026-09-30T11:53:13). For a
-> compared, added or removed selection the body is `IntentStatementBody` (`IntentWordDiff.tsx`): one word-diffed
-> passage per changed field. Ambiguous and unresolved selections keep the landed "no statement diff" body. A dataset
-> review keeps `wordingComparison` and the landed `StatementBody` (ruling Q3).
->
-> **Each side's text from its own row (review R1 F1, ruled 2026-09-30T12:16:39).** `members` is `MemberSides`
-> (`{ before, after }`, built by `FamilyReviewCenter.subjectRows` from each side's own roster), and `authoredSides`
-> looks up the before row only among the before rows and the after row only among the after rows, so one revision's
-> two texts are never both read from one side's row. A side with no recorded row of its own falls back to the pane
-> (statement, conditions) and to the comparison's `field_changes` **filtered to the selected before and after revision
-> ids** (`item_id`): the page's field rows also report other records' changes, and those are never this subject's
-> (ruling Q4, applied on tree and dataset reviews alike). When a side had no row and the `exclusions` field row
-> answered, the list is `projected` (the joined report), which the renderer shows as reported rather than aligning.
-> `revisionLabels` prints the display versions when both are carried and differ, **one revision's own version on both
-> sides** (it is one number, whichever side carried it), else the revisions' short identities, so two revisions never
-> read as one.
->
-> ### Conventions
->
-> The browser renders the existing server revision selection and record-channel fields. It does not select a latest head or derive an assessment from a roster row.
->
-> ### Invariants And Boundaries
->
-> A family-selected payload cannot establish a member's assessment absence. A roster row identifies navigation/context; it is not the authoritative statement comparison. Missing selected-subject data makes no before/after or unassessed claim. Ambiguous revision selection is not reduced to a first/last guess. A confirmed no-family invariant retains its statement, expressions and own evidence.
->
-> **Candidate invariant (not ingested): each side's text comes only from that side's own row, or from its pane or
-> filtered field rows** (MIK-L35; review R1 F1 and ruling Q4). Realized by `authoredSides` over `MemberSides` and the
-> `selected.includes(change.item_id)` filter; proved by the three F1 probe cases and the Q4 case of
-> `IntentWordDiff.test.tsx` (the mutations G1, G2, R1 and R2 fail them). On a tree comparison no statement label calls a
-> changed text unchanged: `textFirstComparison` lets the bytes decide even at the same revision (the candidate
-> invariant recorded on `IntentWordDiff.tsx.md`). For datasets the per-side lookup renders as before in every
-> realistic configuration (the reviewer's R2 differential: 8 of 9 configurations byte-identical, the ninth needs an
-> unrealistic roster).
->
-> ### Todos
->
-> No additional work is asserted by this card.
+The label is passed into the wording renderer beside its layout control. Record origin and revision identifiers belong to Technical details. This module re-exports SubjectJudgment while keeping that owner's exact subject matching and outcome/proof rendering separate.
 
 ## Evidence
 
-### Docs References
-
-No configured Domain Documentation source was available. Repository implementation and stored case
-declarations below are static witnesses, not fresh execution grades.
-
-### Repo-Internal References
-
-- `selectedRevision` binds the central account to the supplied subject read. [1]
-- Changed non-statement field passages are implemented by FieldBody and its list owner after removal of local ChangedFields. [11]
-- SelectedStatement checks its supplied revision selection before deriving side wording and displaying the statement. [12]
-- The selected subject now always uses textFirstComparison and IntentStatementBody for admitted compared/added/removed selections; there is no dataset alternative path. [2]
-- The state, the label, and the same-revision note for one revision whose text differs (ruling Q1). [3]
-- Each side's authored wording from that side's own member row, else the pane and the field rows filtered to the selected revisions (F1, Q4), with the projected exclusions marked. [4]
-- The revision labels: one revision's own version on both sides, two revisions never as one. [5]
-- Changed authored fields, unchanged statement prose and one-sided labelled statements live in the delegated intent renderer, not removed local bodies. [6]
-- The current intent body and stored selected-field isolation case are complementary source witnesses, not fresh execution. [7]
-- The stored wording component cases describe field-sensitive text labels and one-sided rendering, not a current dataset mode or test grade. [8]
-- Origin renders only supplied task, optional leaf/wave/handoff entry, handoff path and evidence strings; no legacyId rendering or origin authentication is implied. [15]
-- The module re-exports the separate SubjectJudgment owner, which requires a matching selected subject and renders current judgment/proofs openly instead of the removed evidence/assessment branches. [16]
-
-### Cross-Repo References
-
-No new cross-repository behavior or authority is introduced.
+- SubjectReview.tsx current behavior at this source owner. [20]
+- SubjectReview.tsx current behavior at this source owner. [21]
+- SubjectReview.tsx current behavior at this source owner. [22]

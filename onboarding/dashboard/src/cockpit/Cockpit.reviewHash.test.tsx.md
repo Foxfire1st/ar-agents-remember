@@ -6,23 +6,22 @@
 
 ## Purpose
 
-Document the assertion and fixture obligations declared by this test source.
+Declare startup, refusal and browser-history checks for the cockpit’s addressed review page.
 
 ## Code Commentary
 
-Adds recorded startup hash/refusal and real browser-history API playback in jsdom; selected-subject query changes do not replace the mounted surface or add an intent read, and Back closes a nested change-set page and restores Knowledge. Fixtures and fetch routing are explicit, not native browser acceptance.
+The recorded startup case gives the shell an unknown complete task address, checks recorded-history request identity and the dedicated review refusal, then leaves through Back to Operations with the hash cleared.
 
-### Declared Assertions
+The history case uses captured l86 task/catalogue/subject/tree/change-set inputs and a controlled fetch router. It deliberately refuses cards outside this hash/back journey instead of answering them with an unrelated family capture. An extra selectorId query key preserves the mounted surface and adds no intent read. The tree’s All changes action opens the nested change-set page, and browser Back removes both surfaces and restores the prior Knowledge address/view.
 
-- `it('opens a recorded review link at startup and shows the existing refusal for unknown targets', async () => {`
-- `it('browser Back closes the review including its open change-set page, without putting selection in the hash', async () => {`
+The file resets the store, global stubs, DOM and history after each case. Its two declared it blocks are not a collected parametrized-case total.
 
-This is a declaration inventory, not a collected parametrized-case total or execution result.
+## Invariants And Boundaries
 
-### Evidence Boundary
-
-The source declares these checks. This card does not attest that pytest/Vitest, a native host, a real browser or an installed producer ran on this candidate. Controlled or captured inputs qualify only the operations named above.
+These are controlled jsdom and captured-fixture assertions. The source does not establish fresh Vitest execution, native browser geometry, plugin behavior or acceptance of the captured families’ unrelated card requests.
 
 ## Evidence
 
-- Adds recorded startup hash/refusal and real browser-history API playback in jsdom; selected-subject query changes do not replace the mounted surface or add an intent read, and Back closes a nested change-set page and restores Knowledge. Fixtures and fetch routing are explicit, not native browser acceptance. [1]
+- Recorded startup addresses the correct review refusal and leaves through Back. [2]
+- The fetch router explicitly refuses out-of-scope card requests rather than substituting captures. [3]
+- An extra selector key retains the surface; tree All changes and browser Back restore the prior Knowledge view. [4]

@@ -5,15 +5,20 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: l86-browser/browser-results.json: rail has zero details"
   },
-  "applicability": "The sidebar's complete contents, top to bottom.",
+  "applicability": "The complete intent-review sidebar, from its heading through the lane's file rows.",
   "conditions": [
-    "Heading, summary line, controls, open tree rows, and the four destination rows (Unexplained/Unknown/All with file counts; Worklist with item count).",
-    "No details element anywhere in the sidebar; members always drawn beneath families.",
-    "Order is MIK-R33 rule 4 with unknown weighing as unchanged; authored order is the outline's."
+    "The heading carries the leaf's changed-invariant and changed-file counts plus the one All changes link.",
+    "One controls line holds the filter, Changed/All switch and one Sort control.",
+    "Shown families and Without a family hold one-line subject rows; a subject's changed locations and at most two counted group rows follow it.",
+    "A group row opens and scrolls to its unchanged or not-comparable group in the reading column; it expands nothing inside the tree.",
+    "The pinned block puts Worklist with its item count immediately above Code without invariant with its file count, and the lane's file rows follow in the same scroller.",
+    "The former Unexplained changes, Unknown attribution and All changes destination rows are removed; the lane's Full page links retain the appropriate change-set filters.",
+    "The tree and reading column use the same active sort; no previous/next change controls remain in the tree."
   ],
   "exclusions": [
-    "File lists, diffs, patches (change-set page).",
-    "Closable family rows."
+    "The old four-destination sidebar format and its separate summary line.",
+    "Disclosure-driven expansion of family or location contents inside the tree; only the two admitted group-row actions refer to folded contents in the reading column.",
+    "Full guarantee/statement bodies, detailed record-step reasons, code diffs and patches inside the sidebar."
   ],
   "id": "INV-WR2WAJ",
   "origin": {
@@ -27,9 +32,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The sidebar contains navigation controls, open tree rows and four destinations, with no disclosure or separate file list.",
+  "statement": "The sidebar shows the Change set heading and controls, then subjects with changed locations and group rows, followed by pinned Worklist and Code without invariant navigation.",
   "status": "proposed",
   "supersedes": []
 }

@@ -2,41 +2,26 @@
 
 ## Governing Overview
 
-[governing overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Keep a recorded comparison's reviewer answers for as long as the exact inputs they are a function of
-hold, and serve them unchanged — the same bytes a fresh computation of the same inputs produces. The
-store is bounded in size and age, and it never serves an answer whose inputs it could not read.
+Keep recorded-comparison answers only while their exact observed inputs, age/size bounds and caller admission predicate permit reuse.
 
 ## Code Commentary
 
-### Three rules bound what may be served
+A hit requires every supplied input to retain its original readable stamp. A changed or unreadable input drops the kept answer. Fresh production is admitted only when complete observations taken before and after it agree.
 
-A hit is served only when every observed input still carries the stamp it had when the answer was
-computed; one unreadable input is a miss, never an agreement. At most `capacity` answers are kept,
-least recently used first out, and none is served after `max_age_seconds`. A value is kept only when
-one observation of its inputs taken before the computation equals one taken after it, so an answer
-composed while its inputs moved is never kept.
+The optional `keep` predicate can refuse fresh values even with stable inputs. A refused value is returned once and not stored, so an answer naming a failed read is recomputed on the next request. Omitting keep admits every value that meets the observation constraints.
 
-### Concurrency and lifetime
-
-`answer` runs the producing read with no lock held, so one slow read never delays another's answer;
-`_fresh` decides the hit, `_keep` records it and `_expire` drops what the age bound no longer allows.
-The default bounds are 64 answers and 900 seconds, and both are owned here rather than by a caller.
+The default capacity is 64 answers and age is 900 seconds; callers can configure both. Kept and returned values are deep-copied. Producing reads run outside the lock, so concurrent misses can compute twice; lock-protected bookkeeping maintains LRU eviction, expiry and diagnostic retained count.
 
 ## Invariants And Boundaries
 
-- The key is the exact question; the sources are the exact inputs, each with its own stamp.
-- A changed or unreadable input invalidates the kept answer; nothing is served on doubt.
-- The bounds are size and age, and an answer never outlives either.
-- This store writes no file and reads no working tree of its own; its sources are supplied by the
-  composition that owns them.
+The caller supplies the exact question key and input set. This store writes no file and chooses no working tree or selection policy of its own. Stable stamps do not override an explicit caller refusal to retain a failed answer.
 
 ## Evidence
 
-- A kept answer is returned only while every observed input carries the stamp it had at production. [1]
-- An answer is kept only when the observations before and after its computation agree, so a value composed while its inputs moved is dropped. [2]
-- The age bound drops every answer past it. [3]
-- The size bound evicts the least recently used answer. [4]
+- Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations. [5]
+- Every supplied input must be readable and match its admitted stamp. [6]
+- LRU capacity and finite age bound stored answers. [7]

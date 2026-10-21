@@ -18,6 +18,106 @@
         }
       ]
     },
+    "10": {
+      "note": "Only explicit Add posts a timed pick; unrecorded time and unreadable structure remain named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:6101e92db31bfdb2302b3ee4c96e3cc841ced597e99c35c077ab467a09d53ea2",
+            "locator": {
+              "kind": "symbol",
+              "name": "add"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:436e7b0290022308c4dbed94e2d3966ae22ae075e6b330d50e4ea62973d5d522",
+            "locator": {
+              "kind": "symbol",
+              "name": "offerFor"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:abef4dff8c6cbe348e99aa05aef34ac8ef93f08baf22ba8595061c003419b137",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMouseUp"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Composer measurement names absence and owns observer lifetime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:8e5a16b1c3b1b47ae976b0e87b687b1ec519d054ba7fcc70758c51096796eb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "startComposerWatch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:563942a7fb63daec9b18964da99e5af0af8e95f938ef089e350703e56d26f27e",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Negotiated tray space is bounded by the frame and released at teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
+            "locator": {
+              "kind": "symbol",
+              "name": "reserveSpace"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "startTrayChannel"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible.",
       "targets": [
@@ -81,6 +181,110 @@
               "name": "registerParentWakeEvents"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Supported client contributions remain separate from explicitly pinned DOM adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb0a1183ff365554872c1161dac94f3ae921401",
+            "content": "sha256:63f9553a6aebbe56eb3ff37576b0426d198157245e0b5cbcba931f64545ee0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "contribute"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The displayed chat is observed independently and published only to a dashboard that negotiates showing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:e5d6cc8e118f10b0d34fde8973aa85a7c25baaa598cc4acbd4ac3f21b0c62efb",
+            "locator": {
+              "kind": "symbol",
+              "name": "visibleChatAgent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:08902861afaa618046609c51e92aad23b689d2f5214eb26d324970841437575e",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownChat"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:8464eedf48c97b38b9e0bdccb1f461507055ead867f1cd2c707179aa52c1c587",
+            "locator": {
+              "kind": "symbol",
+              "name": "tellShowing"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Trusted parent messages negotiate and control the tray channel, with complete teardown.\n\nAnchor: `startTrayChannel`; `tray.stop`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:bec48ec9607ca04734850349f0868cbe3b587013436ed99a63b2c644aa8ff969",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Message time comes from the exact row record; offer activation preserves the highlight and focus.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowTime"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
+            "locator": {
+              "kind": "symbol",
+              "name": "offerControl"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
           },
           "kind": "code"
         }

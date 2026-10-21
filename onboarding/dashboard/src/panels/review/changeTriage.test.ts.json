@@ -2,68 +2,221 @@
   "path": "dashboard/src/panels/review/changeTriage.test.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The suite's statement and its bodies.\n\nAnchor: \"These tests\"; \"check that the tree orders, counts and merges the delivered facts and never decides one.\"",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists changes first by weight then authored position, keeping every sibling', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
-            "content": "sha256:e4f92cf43f0daa3e9ecc3a80ee8a1ff72553fb02662af20960a03d02312227c3",
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:a84b4b953c76164d7eac7903130c3e34b9ca58b517ab6940dd8cf69c90e0165b",
             "locator": {
-              "end": 26,
+              "end": 137,
               "kind": "line_range",
-              "start": 1
+              "start": 122
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Family triage: counts, partial and scoped breakdowns, the guarantee's weight.\n\nAnchor: \"scopes a partial page to the members it returned and names the total\"; \"scopes a complete-looking family whose total is unknown (SYNTHETIC: no total)\"",
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"switches to pure authored order: the family record's members list\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "002cca1f3e142b9788cc8047f3020ea95c1b82f8",
-            "content": "sha256:0568a697b1ee2dd051ceef97d5b64ba05b4288670a5ceb8983ae9b82b045fe67",
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:0c119865afdf290ec2d18ae7b6358049a91091bd9a2f0d253cca663458f90c8e",
             "locator": {
-              "end": 118,
+              "end": 152,
               "kind": "line_range",
-              "start": 35
+              "start": 138
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Four tree-order declarations cover sibling-preserving change order, authored order, family weights and partial-family ordering. The dataset-review/no-change-facts case is absent from the candidate.\n\nAnchor: inclusive source ranges",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('orders families by their highest member or guarantee weight, then context order', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7468a2348451c01f4997b87c9bcb6ca158a24a84",
-            "content": "sha256:8f8f1cbc36a1d89b3debf5b5bd391f3b7d025a8ec8f65eccc9e9a4cc1550dd53",
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:cb590edb159485bc4be9584b77caac6dbf311b044be7e8fb72e8329748c9a9c8",
             "locator": {
-              "end": 201,
+              "end": 180,
               "kind": "line_range",
-              "start": 120
+              "start": 153
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The two roster-walk cases retain returned member facts and union deliveries with newer family facts.\n\nAnchor: inclusive source ranges",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('sorts a partial family above a complete unchanged one (SYNTHETIC facts)', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7468a2348451c01f4997b87c9bcb6ca158a24a84",
-            "content": "sha256:dc91a9e18dfdf03e0650519db4aae359998e34b255aad789364008970e0304d3",
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:d75dc18fa263954676ff24ba337f0432d472ee9758eeb28f11f512ca653a59e6",
             "locator": {
-              "end": 238,
+              "end": 204,
               "kind": "line_range",
-              "start": 203
+              "start": 181
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the facts of every member the walk has returned', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:566eb043c0488c13037663c95e5fab94c91cc56c76174de93d5ff4ac1ee7597b",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('unions two deliveries and applies the newer family facts', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:63fefaa309bd920a7252c268e204d4ea3a71541d5f3ef2da041f5ce2926623f6",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names a catalogue row by its label, keeping its selector id as the key', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:c1d54cb66f092a4b86f6e3ef597b879d053b9a2e4d3ecd9990ac911ae31babda",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"names an outline family's unlisted member by the catalogue's label\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:6a2cbeecc9ae06ee565f7b44d0ee8f4a4cc53c809bc4cad909fdfb7183698ec6",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('counts the returned member occurrences by their delivered primary kind', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:9701ef2d7cfcdd1e8b8979c03481d39882380a1dd24c67cc32ee9b0be20bce9d",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('scopes a partial page to the members it returned and names the total', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:6b7fd861890811f0b74085a45ceffa2d3ada49e1498059b639766ec0cacb9974",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('scopes a complete-looking family whose total is unknown (SYNTHETIC: no total)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:2880967e84cd20f958a307c569e85957c4b42f22609e2abe1094a3de55b4c8ac",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('weighs a family by its own guarantee (SYNTHETIC: every member unchanged)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:d30b00c806d542eb33a459316553b66bf4b790a9462bdc3e409b628c639942d6",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('says the total is unknown rather than inventing one', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57f4b768caf5c5f9eaf8f5c282c4ca3583b8cb67",
+            "content": "sha256:cad5b9494b00977abacc1711dca14f9c123bb48028b728384b947a7e2952c8cb",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "test"

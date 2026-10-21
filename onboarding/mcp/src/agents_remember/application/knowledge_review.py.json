@@ -4,7 +4,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:26af7a939d7eefb5efb6cafbbc57be43492f53f8da59144bbe1ba88aa533d6c7",
+        "locator": {
+          "end": 415,
+          "kind": "line_range",
+          "start": 399
+        }
+      },
+      "id": "RLZ-314GKJ",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Adds selected-side writers after selecting the subject revision pair, using baseline/candidate indexes and the explicit legacy detail; this adapter does not reimplement writer selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
         "content": "sha256:c9f60b55137151c68c4b16a7d7a289eac2b9fc71771703b94cbb213d2b9ffb5a",
         "locator": {
           "kind": "symbol",
@@ -22,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-        "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
         "locator": {
           "kind": "symbol",
           "name": "compose_review"
@@ -40,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
         "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
         "locator": {
           "kind": "symbol",
@@ -58,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-        "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
         "locator": {
           "kind": "symbol",
           "name": "compose_review"
@@ -76,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-        "content": "sha256:9aab83a43c586477131ed5c1c7de0b2e799bfc4416af17893f8422a95d94541a",
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
         "locator": {
           "kind": "file"
         }
@@ -93,265 +112,137 @@
     }
   ],
   "references": {
-    "52": {
-      "note": "The standalone and complete reads resolve canonical task context; the complete route nests request-local memoization owners and passes its sole resolution directly to composition, with no record collector.\n\nAnchor: current body/order",
+    "66": {
+      "note": "Standalone and complete reads resolve canonical task context; the complete route nests existing request-local memo scopes.\n\nAnchor: \"def read_knowledge_review(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
             "content": "sha256:43801d3833ea30d6878997fb1b84f4bd56b5931c646f54adeeaf6e8bf6c4b255",
             "locator": {
-              "end": 188,
+              "end": 191,
               "kind": "line_range",
-              "start": 131
+              "start": 134
             }
           },
           "kind": "code"
         }
       ]
     },
-    "53": {
-      "note": "Catalogue requests resolve independently, preflight the pair, enumerate through the catalogue owner and attach its outline with labelled totals; a moved unreadable record becomes a typed refusal.\n\nAnchor: current body/order",
+    "67": {
+      "note": "Ordinary and numbered catalogue requests share one preflight/enumeration path and label the answered tree number.\n\nAnchor: \"def list_knowledge_review_entries(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:118c8508b855518a2e16d89ecfb0a229bb5e94b6603a169a4dcc3f5e5db015f3",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:f7e576cf972dfcae44c048110b66f7fe33550a9afc1316334d95470b06a2cd71",
             "locator": {
-              "end": 267,
+              "end": 296,
               "kind": "line_range",
-              "start": 191
+              "start": 194
             }
           },
           "kind": "code"
         }
       ]
     },
-    "54": {
-      "note": "Source inventory is measured before selector branching; subject composition handles historical/pair refusals, comparison cursor reset and the explicit candidate-identity recheck before later projections.\n\nAnchor: current body/order",
+    "68": {
+      "note": "Source inventory precedes selection; the subject comparison recheck precedes the later projections.\n\nAnchor: \"def compose_review(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:3c79fb87e1e62b9fc02d71bedbaed3ed832f11dda2fb9e886365da4597472398",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:6760a824284344f5ee35bdc3323b94b646324817c9067634f4cad524e29618b2",
             "locator": {
-              "end": 344,
+              "end": 374,
               "kind": "line_range",
-              "start": 296
+              "start": 299
             }
           },
           "kind": "code"
         }
       ]
     },
-    "55": {
-      "note": "The adapter delegates comparison identity, managed/raw movement and staleness, then selected revisions and the relationship union; it adds no owner-record applicability pass.\n\nAnchor: current body/order",
+    "69": {
+      "note": "Selected revisions receive their own side-specific writer projection before relationships/family composition.\n\nAnchor: \"# own union items, and the pane renders it: the adapter resolves, calls and assembles, and\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:be0fde2ee023f736f79d7a2f4d3e062d3766578fd2ef0c4410b9ca5a14eba8f6",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:e54d08b8bea10ac49dd8fcf1b9206f8277e4e043e4fd602de1edc0a27edf5af1",
             "locator": {
-              "end": 391,
+              "end": 445,
               "kind": "line_range",
-              "start": 346
+              "start": 400
             }
           },
           "kind": "code"
         }
       ]
     },
-    "56": {
-      "note": "Family context uses the already-resolved pair, recorded movements, selector and bounded page size; only a family-roster request passes that continuation.\n\nAnchor: current body/order",
+    "70": {
+      "note": "Owned family/knowledge pages and after-index meaning effects retain their declared scope.\n\nAnchor: \"# naming that collection without a cursor addressed no single walk -- it is a set of per-family\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:98df2a42ecfa2d750c18066da51922979ba733b86bb9546797191e8a4e108686",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:c60e199db981cea239f84e23d1a567a1945f5b6554b25c6e1c7c8d724c9360a6",
             "locator": {
-              "end": 412,
+              "end": 486,
               "kind": "line_range",
-              "start": 397
+              "start": 447
             }
           },
           "kind": "code"
         }
       ]
     },
-    "57": {
-      "note": "Knowledge and family pages keep their owners; the removed records collection receives a refusal with no invented page.\n\nAnchor: current body/order",
+    "71": {
+      "note": "The payload keeps judgment, owner projections and declared limitations without restoring old record bundles.\n\nAnchor: \"# A requested page the owner could not serve is stated as the refusal it is: a page value\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:42edce9c2f7b05033e9bb33bc0cbca086a3c23b71eda3be07fce64236b3abb33",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:fd6910b35ab3b97f9bf902d7e37a230c9b88e3ef49fab7af3365792d57be43cd",
             "locator": {
-              "end": 430,
+              "end": 539,
               "kind": "line_range",
-              "start": 417
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:f10c78f9703e90d2a627c2c36e1a62925c9dc36f91ad74805818177cdf2a5cd3",
-            "locator": {
-              "end": 612,
-              "kind": "line_range",
-              "start": 561
+              "start": 487
             }
           },
           "kind": "code"
         }
       ]
     },
-    "58": {
-      "note": "Meaning effects use the held after index and returned selected/family/member subjects, deduplicated across both context sides; the baseline database is passed for identity fallback.\n\nAnchor: current body/order",
+    "72": {
+      "note": "The exact sides, namespace, budget and continuation reach the existing comparison operation.\n\nAnchor: \"def _compare_scope(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:36d2dff11a30691e99b0458e59ba1656cb3c163245ef94babe402383c00ef6da",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:9b56bb2c6804135910137df3171e4fe397652f031cbef2e5943693f7a23df13d",
             "locator": {
-              "end": 447,
+              "end": 759,
               "kind": "line_range",
-              "start": 437
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
-            "locator": {
-              "end": 527,
-              "kind": "line_range",
-              "start": 492
+              "start": 705
             }
           },
           "kind": "code"
         }
       ]
     },
-    "59": {
-      "note": "The current payload carries a judgment projection instead of an evidence/assessment bundle, plus source, family, meaning, staleness, movements and stated limits.\n\nAnchor: current body/order",
+    "73": {
+      "note": "The knowledge pane carries enriched revision_selection and renders unresolved selection without a winner.\n\nAnchor: \"def _knowledge_pane(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:544bdd86d3e9a193932d8a574288b32ffa9fd753100da271c6b981bb2bcedfdc",
-            "locator": {
-              "end": 489,
-              "kind": "line_range",
-              "start": 448
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "60": {
-      "note": "Selected statement/condition sides and tree-specific origin projections form the knowledge pane; unresolved selection states no winner, and retired assessment/signal/applicability fields are absent from this constructor.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
             "content": "sha256:2bf1601e7a0bed7d02d3cd47441a097fc17d71bb6dcc97a08bd3d090cf0e08b4",
             "locator": {
-              "end": 839,
+              "end": 878,
               "kind": "line_range",
-              "start": 783
+              "start": 822
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "61": {
-      "note": "The comparison delegates exact sides, namespace, budget, continuation and incomplete-side facts to the shared diff owner; this adapter does not mint a cursor.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:c21b677e59680297e294ebbfa029492b91d845f945d1ec2760d2c801905e34f6",
-            "locator": {
-              "end": 720,
-              "kind": "line_range",
-              "start": 636
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "62": {
-      "note": "Comparison limits, omission counts, side-absence codes and inventory limits are carried as declared facts.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
-            "locator": {
-              "end": 780,
-              "kind": "line_range",
-              "start": 757
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "63": {
-      "note": "The task-context owner preserves source review without a compared knowledge operand, states unavailable judgment/no selected family, and does not fabricate a measured-empty assessment collection.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:48edad60b732f6133cf448177947d10d53d3162ca244a6c606355fa84679ec76",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "mcp/src/agents_remember/application/review_task_context.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "64": {
-      "note": "The finite public exports retain resolution/request/composition/catalogue/read operations but no record-bundle constant/type or record-collector reexport.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:02dd2718d7c002e626ef8f0aef8d39b6889b78b72debb1bf097689e98e6b945e",
-            "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 120
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "65": {
-      "note": "The production dashboard review port delegates to read_complete_knowledge_review rather than separately resolving supporting records.\n\nAnchor: current body/order",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
-            "content": "sha256:60ab7aac99c95135096a93d4487463d1e559bb3dcb714421db17e7d0e760d120",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 149
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }

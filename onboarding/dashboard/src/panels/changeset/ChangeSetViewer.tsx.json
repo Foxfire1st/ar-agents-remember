@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-        "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:afd812289d9346c54374fd2414f7fad7759ff57442ca8ccdfaffaf3b4072579b",
         "locator": {
           "kind": "symbol",
           "name": "ChangeSetWorkspace"
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-        "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:40ea2b493e8e3e4a5f17977e4007c8c34b5b4218b16a453a1f466a6218464e7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetViewer"
+        }
+      },
+      "id": "RLZ-9AWGJ1",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The change-set file rail uses changeset/left and passes that same state to its control and workspace.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:afd812289d9346c54374fd2414f7fad7759ff57442ca8ccdfaffaf3b4072579b",
         "locator": {
           "kind": "symbol",
           "name": "ChangeSetWorkspace"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-        "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-        "content": "sha256:470c7de8ed7712675ccc1ee21753f5f01bda5dac02be179571b97c71e0e39997",
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
         "locator": {
           "kind": "file"
         }
@@ -73,8 +91,44 @@
     },
     {
       "anchor": {
-        "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-        "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:afd812289d9346c54374fd2414f7fad7759ff57442ca8ccdfaffaf3b4072579b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetWorkspace"
+        }
+      },
+      "id": "RLZ-RSM517",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies sidebarPanelProps and sidebarHandleProps to the file-list panel/handle, retaining the main diff and optional partner panels. Above its narrow breakpoint the group is horizontal; narrow uses the same hide operation on the vertically stacked list.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:40ea2b493e8e3e4a5f17977e4007c8c34b5b4218b16a453a1f466a6218464e7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangeSetViewer"
+        }
+      },
+      "id": "RLZ-SW77YD",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Puts the shared Changed files sidebar toggle in the external header, passing the same open state to ChangeSetWorkspace; this control is not inside the file-list panel.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+        "content": "sha256:40ea2b493e8e3e4a5f17977e4007c8c34b5b4218b16a453a1f466a6218464e7e",
         "locator": {
           "kind": "symbol",
           "name": "ChangeSetViewer"
@@ -96,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:2483d3fbde82839cf85de813de5f40baa7e75b7d44450d34c47daf71777dfaf1",
             "locator": {
               "kind": "symbol",
@@ -107,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c6208c52420c00fd01116c624f4c0f7c2fcd40e08144a300a64385f7d4fc2978",
             "locator": {
               "kind": "symbol",
@@ -180,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:96caa1bb9c703d0907f42fce68e51f3d0b92dac60b81b175d92472e23c9dc768",
             "locator": {
               "kind": "symbol",
@@ -192,7 +246,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:bbce21b1cf31263372bdf0805a8a3ee41e0796fc4f9d95fab50def4d1d247b59",
             "locator": {
               "kind": "symbol",
@@ -208,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
             "locator": {
               "kind": "symbol",
@@ -219,7 +273,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:7d1d44000c4a1587d1ccd6270f1d3618f19ee67ca1067203bde20001585b2424",
             "locator": {
               "kind": "symbol",
@@ -235,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
             "locator": {
               "kind": "symbol",
@@ -262,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:cf43fee00e16b78d7ea5f392865ee87d6e0cd886d93c65ac825449aa77144cc2",
             "locator": {
               "kind": "symbol",
@@ -278,7 +332,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
             "locator": {
               "kind": "symbol",
@@ -368,7 +422,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:2483d3fbde82839cf85de813de5f40baa7e75b7d44450d34c47daf71777dfaf1",
             "locator": {
               "kind": "symbol",
@@ -379,7 +433,7 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:96caa1bb9c703d0907f42fce68e51f3d0b92dac60b81b175d92472e23c9dc768",
             "locator": {
               "kind": "symbol",
@@ -396,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -412,7 +466,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:da90d684d135d426185a9d5b993a65374e59168e9404178fad45488984e420a3",
             "locator": {
               "kind": "symbol",
@@ -423,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:35ef29daaaa65e6822669c6c30993e82853488ce26864fe60f897edf8a1a998d",
             "locator": {
               "kind": "symbol",
@@ -434,7 +488,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c27bb80c4a6f9e89adbe34eca635c499102cdead03c0c0e59ae699a078de13cc",
             "locator": {
               "kind": "symbol",
@@ -445,7 +499,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:6d8330e6cf80e5d8e96de9cc84e3b85c449db7ffc877a4fa87d22820ade56349",
             "locator": {
               "kind": "symbol",
@@ -506,7 +560,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:3adafdc77488d2aa4ba5641890a19041497b13ec21130bc4d8173aac6ddd83bd",
             "locator": {
               "kind": "symbol",
@@ -522,7 +576,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:8e3dc14b56c971b106e75dff7e72407f165fa28801829cf68d27165906c1a86d",
             "locator": {
               "kind": "symbol",
@@ -550,11 +604,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:080be2e5600ac8b7a9949ade0f6ce6cc8585a729473058f3684659ba7aac78a8",
             "locator": {
               "kind": "symbol",
               "name": "useWorkingChangesetPoll"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The shared changed-file rail toggle controls mounted visibility.\n\nAnchor: \"// The changed-file list's shared toggle hid it (MIK-R89 v2 rule 8): it stays mounted, out of\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:e2af302b61d32963dca5369c5cd4c589c7ea54cda44699f3d7fed29c4c6d9821",
+            "locator": {
+              "end": 752,
+              "kind": "line_range",
+              "start": 700
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The header retains the shared sidebar toggle while the changed-file rail is hidden.\n\nAnchor: \"const rail = useSidebar('changeset', 'left');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:fa73da94e2bce2a086f793ff9a6b7be8e59362a87466ed38a5e63a1cf24c465b",
+            "locator": {
+              "end": 1036,
+              "kind": "line_range",
+              "start": 1013
             }
           },
           "kind": "code"
@@ -566,7 +654,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:f940c17ebba2966bd9522c41df54f75bbc477ed5585bf4107e7cea082c96b027",
             "locator": {
               "kind": "symbol",
@@ -577,7 +665,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -593,7 +681,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:de97b09bf077e170d0fe5fb0d988cd854779fd3f5ae6cbf2e38f438628e859c6",
             "locator": {
               "kind": "symbol",
@@ -604,7 +692,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:2f219116e804e8824fe2db735a2565dcafba8aa6bc45afdac7fd2ad31aba0ea3",
             "locator": {
               "kind": "symbol",
@@ -620,7 +708,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:2483d3fbde82839cf85de813de5f40baa7e75b7d44450d34c47daf71777dfaf1",
             "locator": {
               "kind": "symbol",
@@ -631,7 +719,7 @@
         },
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:ceb70fcc398df510fd323bfc265183451ca0fbdac12b4d52a7258ef237d52e01",
             "locator": {
               "kind": "symbol",
@@ -680,7 +768,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
             "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
             "locator": {
               "kind": "symbol",
@@ -708,7 +796,7 @@
         },
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
             "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
             "locator": {
               "kind": "symbol",

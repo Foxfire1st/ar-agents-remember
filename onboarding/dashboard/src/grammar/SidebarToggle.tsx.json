@@ -1,0 +1,149 @@
+{
+  "path": "dashboard/src/grammar/SidebarToggle.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+        "content": "sha256:8008b51e5e6bde95003b2dced8908986e23dbd13bb8e4ac561d4eab73d5fcfe7",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSidebar"
+        }
+      },
+      "id": "RLZ-03DKE8",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads and writes each remembered side under its own key and keeps an unremembered choice in mounted state only; failed storage preserves that mounted choice.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+        "content": "sha256:809122a7e20f9531f7fcc8300a6c87d3cb25221e0e745acd52ed23ed48bd09eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "sidebarHandleProps"
+        }
+      },
+      "id": "RLZ-10Z4FW",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Hides and disables the hidden sidebar's resize handle as well.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+        "content": "sha256:5f28c53827723bfb872e35bb22501f7b5afcbde7ca58bf77d9dbcd19d440ba35",
+        "locator": {
+          "kind": "symbol",
+          "name": "SidebarToggle"
+        }
+      },
+      "id": "RLZ-5R944R",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The one named native toggle exposes its current expanded state and activates the owning page/side without being mounted inside the hidden panel.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+        "content": "sha256:2a996d4ae1a4fec70f96b26dd952717b2ed8896cf2ca3af5347ccde8c290721f",
+        "locator": {
+          "kind": "symbol",
+          "name": "sidebarPanelProps"
+        }
+      },
+      "id": "RLZ-KWB85J",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Hides a resizable sidebar in place and removes it from interaction with display:none, aria-hidden and inert, leaving the main panel its flex share.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+        "content": "sha256:0dbb21f019aea950c7fda0e89a710b698f228c2e6c63ccf5eeac7fc8a2ef802b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sidebarKey"
+        }
+      },
+      "id": "RLZ-MBSTQ9",
+      "invariant": "INV-PHBM6X",
+      "origin": {
+        "handoffEntry": "RP17_STATE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names exactly one dashboard page-and-side storage key, cockpit.sidebar.<page>.<side>.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Per-page/side visibility and persistence policy\n\nAnchor: \"export function useSidebar(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:8008b51e5e6bde95003b2dced8908986e23dbd13bb8e4ac561d4eab73d5fcfe7",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Hide in place and remove reachability\n\nAnchor: \"export function sidebarPanelProps(open: boolean) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:0c9c708770e90301e95c8acc364a3972d8fcf6083b308d366ed2494babf68249",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native accessible button and side-aware icon\n\nAnchor: \"export function SidebarToggle({ side, open, onToggle, name, controls, keyHint, testId }: SidebarToggleProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:5f28c53827723bfb872e35bb22501f7b5afcbde7ca58bf77d9dbcd19d440ba35",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

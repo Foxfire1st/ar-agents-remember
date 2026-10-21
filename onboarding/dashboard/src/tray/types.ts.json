@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/tray/types.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines tray object identity, collection entries, developer-send payloads and truthful server results.\n\nAnchor: \"export interface ComparisonRef {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fe585357073050e352921a14827d2388547986f",
+            "content": "sha256:eabe6c552e08c65bfb5476e951ab3f7f414af230ea2bb884e80fe30142514dc7",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines tray object identity, collection entries, developer-send payloads and truthful server results.\n\nAnchor: \"export type TrayReference =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fe585357073050e352921a14827d2388547986f",
+            "content": "sha256:0da1567941256ab9fa7626737370d79927318d2fe9d110d52e15d1dc4e07e17d",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines tray object identity, collection entries, developer-send payloads and truthful server results.\n\nAnchor: \"export type TextProvenance =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fe585357073050e352921a14827d2388547986f",
+            "content": "sha256:f74dad167cf8becdb7124431bef262e8e6c7fae8cad6ee4c1840dcd349e53e65",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -51,7 +51,7 @@ independently of the fixture's own files.
 
 **The routes are wired the way the composition root wires them.** `_served` builds a bare
 `FastAPI` app and calls `register_review_routes` with the three real owners — `read_knowledge_review`,
-`list_knowledge_review_entries` and `read_review_source_content` — so `_listed_inventory` is
+`list_comparison_review_entries` and `read_review_source_content` — so `_listed_inventory` is
 the browser's own listing and `_expand` is the browser's own expansion, refusals included
 (`_status` is attached to the body so a refusal's status and its code are asserted together).
 `_expansion` is the one place the *listed* generation is carried into the expansion, which is
@@ -172,3 +172,10 @@ No meaningful cross-repo references found.
 
 - The subprocess helper returns bytes or None; its wrappers respectively require and decode UTF-8 text, or decode an ASCII object identity with None preserved. [3]
 - Mode-only content keeps identical bytes and object identity; a type change opens the before regular file and after symlink by their respective kinds. [13]
+
+## Comparison-aware entry composition
+
+`_served` supplies `list_comparison_review_entries` through a four-argument callback and forwards its optional comparison number. The twenty content cases retain their existing live inventory and explicit before/after code-tree queries. This binding change does not add an assertion that a numbered entry catalogue selects a historical comparison; the generation/content/path/refusal assertions remain the cases described above.
+
+- The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
+- The content request still names the listed before/after tree ids. [24]

@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/tray/selectionOffer.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+        "content": "sha256:0c5e382581116e2e215e5088e839f43ee94040891322adbf285874791d41faa5",
+        "locator": {
+          "kind": "symbol",
+          "name": "a highlight in a dashboard panel > copies on highlight when the preference is on, and not when it is off; editable fields are left alone"
+        }
+      },
+      "facet": "The handler requests native copy only with the saved preference on; editable selections produce neither copy nor offer.",
+      "id": "PRF-FRH783",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+        "content": "sha256:7e8f23cca9cbb430645f57270508b514e2dca5755bf2aed50039a0a310bd26aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "a highlight in a dashboard panel > survives opening the tray: the selection stays and nothing clears it"
+        }
+      },
+      "facet": "Opening the tray prevents mousedown default, retains the same noncollapsed text selection, and calls no removeAllRanges during collection.",
+      "id": "PRF-JCYRB1",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+        "content": "sha256:27179ec85af4c47a39ce6fdc85abeecf70208263c9d0f58ec31bb26f67269de6",
+        "locator": {
+          "kind": "symbol",
+          "name": "a highlight in a dashboard panel > shows \"⊕ add\" after the drag ends, and only its click makes a text pick"
+        }
+      },
+      "facet": "Mouseup creates the offer with no picks; mousedown is prevented and clicking creates exactly the panel-provenance passage while the selection remains.",
+      "id": "PRF-PWX176",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks that dashboard highlight offers and explicit clicks collect while selection/copy survive.\n\nAnchor: \"it('shows \"⊕ add\" after the drag ends, and only its click makes a text pick', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+            "content": "sha256:456714ead2ed05e8b3288fa2e0e0b8b9e2a08ae06c70ee944bd91c6b45f41a69",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks that dashboard highlight offers and explicit clicks collect while selection/copy survive.\n\nAnchor: \"it('copies on highlight when the preference is on, and not when it is off; editable fields are left alone', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+            "content": "sha256:03ecf1c5aca6bcea84419c743c9225f4573273e7e73db65752f3fac81c0b7bda",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks that dashboard highlight offers and explicit clicks collect while selection/copy survive.\n\nAnchor: \"it('survives opening the tray: the selection stays and nothing clears it', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+            "content": "sha256:540a8d9bf6059e62a755a8f68797d1600e997977084d1b127c762f4713e3a571",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks that dashboard highlight offers and explicit clicks collect while selection/copy survive.\n\nAnchor: \"it('has no code path that calls removeAllRanges()', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a5673d3387fa5ef08ee51945f7797d310f2bea9",
+            "content": "sha256:8062431a6a3ebf2e596a8858b05438e7ac802605dd68980b25153c4964420d8c",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

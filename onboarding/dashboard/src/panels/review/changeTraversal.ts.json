@@ -3,11 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-        "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:94909db2268850939697da82d2835fb4575e9e3872ec69c1aa7bafe86ec31131",
         "locator": {
           "kind": "symbol",
-          "name": "itemsOf"
+          "name": "blockStops"
         }
       },
       "id": "RLZ-13TWQ0",
@@ -16,16 +16,35 @@
         "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Lists only the rendered [data-tree-node] rows in displayed order, with each occurrence and a real-change predicate that excludes unknown and unchanged. It does not list roster continuation controls or inspect unreturned-member counts.",
+      "rationale": "itemsOf was replaced by the block order, with no roster page requests.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-        "content": "sha256:f0e076fa7a23de01535d871d1215c1a03c393d658377c8edf80e124d7b088d0c",
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:e4c1fc36fb3c77ef8a0155e69031553a940dc5e90bf298f2f5b45ed5c772e35f",
+        "locator": {
+          "end": 184,
+          "kind": "line_range",
+          "start": 183
+        }
+      },
+      "id": "RLZ-1QHDR8",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:f4ab47f0d3f392e7b126ad27412113c8248675e4b42082b83834da809afde80f",
         "locator": {
           "kind": "symbol",
-          "name": "useChangeTraversal"
+          "name": "useBlockTraversal"
         }
       },
       "id": "RLZ-2BR4MX",
@@ -34,13 +53,32 @@
         "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Binds the move status to the identity of the shown rows through useStatusFor. A selection clears the status; an end reports no earlier/later change and preserves the selection. Shown order/view/row changes invalidate the old status; no continuation-stop message exists.",
+      "rationale": "Binds traversal end status to the ordered drawn block-stop keys through useStatusFor; changed stops clear the old message permanently.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-        "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:dca5b20d5d68933b3851f8697cf6e01d4c77068d17e108edb168705069bc570b",
+        "locator": {
+          "end": 85,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-359W5T",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:020df093944af44b7a4766a6e0f2527a3950544d597775f2310669a9fe241645",
         "locator": {
           "kind": "symbol",
           "name": "useStatusFor"
@@ -52,16 +90,72 @@
         "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Stores the status together with the rows the committed tree showed when the move was made, and gives it out only while the rows it is called with are those rows. A layout effect drops the stored status in the commit that shows other rows, so it cannot return with the same rows later. Setting the same status for the same rows keeps the state object, and nothing is updated during a render.",
+      "rationale": "Stores status with the committed ordered block-stop key, returns it only for that same key, and clears it in a layout effect when the key changes. Repeated identical status is a no-op; the render updates no status state.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-        "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:33c8ef3ce1937bb26e9faeff8bce604713149db8c8d5ba844f4090f6039535a5",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 98
+        }
+      },
+      "id": "RLZ-5990VN",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:e670e0f495b16a67b3d64aef8721c90207ec898274b5ec24eec5d342046e19f5",
+        "locator": {
+          "end": 158,
+          "kind": "line_range",
+          "start": 158
+        }
+      },
+      "id": "RLZ-D30MFE",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:94909db2268850939697da82d2835fb4575e9e3872ec69c1aa7bafe86ec31131",
         "locator": {
           "kind": "symbol",
-          "name": "forward"
+          "name": "blockStops"
+        }
+      },
+      "id": "RLZ-HT081Q",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F03",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It orders each family/subject place around the drawn changed-block stops and does not duplicate blocks for later family occurrences.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "nextStop"
         }
       },
       "id": "RLZ-W9PW0P",
@@ -70,16 +164,16 @@
         "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Chooses the next real-change row after the current position and skips the current occurrence; if none exists it returns end. Traversal selects/focuses a row, never a roster-continuation stop or automatic page read.",
+      "rationale": "forward was replaced by nextStop; no page action exists in its output.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-        "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
         "locator": {
           "kind": "symbol",
-          "name": "nextChange"
+          "name": "nextStop"
         }
       },
       "id": "RLZ-WYVRS8",
@@ -88,310 +182,93 @@
         "handoffEntry": "MIK-R86@v1 rule 8",
         "leaf": "260928-MIK-L86"
       },
-      "rationale": "It traverses the displayed tree positions using their primary change attribute and skips unknown or unchanged positions.",
+      "rationale": "The old nextChange row traversal is replaced by typed block traversal.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:ac9214ff9b27da431944b4910b97c80d789d8423e4b78ee4bc20049955a12cdf",
+        "locator": {
+          "end": 156,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-Z1W56N",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
     }
   ],
   "references": {
-    "11": {
-      "note": "The module enumerates shown real-change rows, excludes unknown/unchanged and retains end messages/keymap ownership without roster stops.",
+    "32": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function blockStops(model: Pick<ChangeSetModel, 'groups'>): TraversalStop[] {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:dc8b7fbb2a75c9c9d8acdce68166e84f0fc282eee0090d1da28b2dba641ece3c",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:3d492fd51100c1ce788ac9bcdd146f1d3f0ee19150b5416dee8beff495e5d9d7",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Items, their occurrence and whether each stops.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "itemsOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Where the reader is.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:4bbcfc2c5fe239de6ecdd4f67d8b4da125ac7bc0084e08c2990bf8e69f6fc0e9",
-            "locator": {
-              "kind": "symbol",
-              "name": "positionOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The forward walk selects the next shown real-change occurrence, or returns end; no continuation control is a traversal stop.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
-            "locator": {
-              "kind": "symbol",
-              "name": "forward"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The backward walk, which lands on an occurrence's first row and skips continuation controls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:8884165522d318114539358008538be4ee5b9df988d06bd69e6b2a09bd5ffee1",
-            "locator": {
-              "kind": "symbol",
-              "name": "backward"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The next stop and the polite messages.\n\nAnchor: `nextChange`, `outcomeMessage`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
-            "locator": {
-              "kind": "symbol",
-              "name": "nextChange"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
-            "locator": {
-              "kind": "symbol",
-              "name": "outcomeMessage"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "The status is kept with the rows it was said for, given out only beside those rows, and dropped in the commit that shows other rows.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "useStatusFor"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "A move focuses without native scrolling, reveals the row inside its own tree panel and then selects; endpoint status triggers a post-layout reveal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:f0e076fa7a23de01535d871d1215c1a03c393d658377c8edf80e124d7b088d0c",
-            "locator": {
-              "kind": "symbol",
-              "name": "useChangeTraversal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The reviewer's zone on the surface root.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:5015e81fe173e5d258dbf2360945c12fba1b1ac2b21b0f9715d99d0fdf6f9a02",
-            "locator": {
-              "end": 797,
+              "end": 105,
               "kind": "line_range",
-              "start": 795
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+              "start": 90
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "20": {
-      "note": "The tree keys traversal status by order, view and each shown row's family, selector and badge.",
+    "33": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function laneStops(hunks: readonly ReviewBlockIdentity[], paths?: readonly string[]): TraversalStop[] {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:9efa7084bd765e9c065b2b6f4a951b90eadf513d9836950bd31408602d1622ee",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:223da9df71196d6e203d3bbf3a320db6fc95ffaa3f45a889673fc8b051801951",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyTree"
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:a0c9e6be10161e3832e834cc7ce3d2ceefce34b7e1e44d43c8bdece194c2da0d",
-            "locator": {
-              "end": 473,
+              "end": 115,
               "kind": "line_range",
-              "start": 468
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+              "start": 100
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "21": {
-      "note": "The hook's own case: no render shows a status beside other rows, and it does not come back with the same rows.",
+    "34": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function nextStop(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
-            "content": "sha256:cd563d65bc005c41f17c64263079ca73ed6ff05a99f877b9c80e096f1a60cfb4",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
             "locator": {
-              "end": 45,
+              "end": 178,
               "kind": "line_range",
-              "start": 28
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "Rendered-row stops excluding unknown and unchanged",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "itemsOf"
+              "start": 163
             }
           },
           "kind": "code"
         }
       ]
     },
-    "25": {
-      "note": "Forward and backward steps over occurrences\n\nAnchor: `forward`, `backward`",
+    "35": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function useBlockTraversal({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:7130f52a0b62856ae1670706ac5dadc2579465d01cd989fd4ba70ebabdf79bff",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:31f3c1f0dcf739e64718a41f513387c4b462fbaa28bb64485423118f29ccd295",
             "locator": {
-              "kind": "symbol",
-              "name": "forward"
+              "end": 227,
+              "kind": "line_range",
+              "start": 212
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:8884165522d318114539358008538be4ee5b9df988d06bd69e6b2a09bd5ffee1",
-            "locator": {
-              "kind": "symbol",
-              "name": "backward"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Stayed-selection messages at either end",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
-            "locator": {
-              "kind": "symbol",
-              "name": "outcomeMessage"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The shared reveal helper uses the nearest tree panel and visible viewport/surface/sticky-control bounds, not ancestor page scrolling.\n\nAnchor: `revealTreeRow`, `visiblePanelBounds`, `belowControls`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:5f23b5f5fd122c3432fbe553a3d2800a19b251c70a0adf99bfe63be71cb51aba",
-            "locator": {
-              "kind": "symbol",
-              "name": "revealTreeRow"
-            },
-            "path": "dashboard/src/panels/review/treeScroll.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:f89bfb5be3573d597a86ff833297a19d5d71f04801ca909a8045e705d8ef7e99",
-            "locator": {
-              "kind": "symbol",
-              "name": "visiblePanelBounds"
-            },
-            "path": "dashboard/src/panels/review/treeScroll.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:13b44ba6452322328c78f9d509e11a12fa09fd1e50b2d7196cdd9017ba4d5395",
-            "locator": {
-              "kind": "symbol",
-              "name": "belowControls"
-            },
-            "path": "dashboard/src/panels/review/treeScroll.ts"
           },
           "kind": "code"
         }

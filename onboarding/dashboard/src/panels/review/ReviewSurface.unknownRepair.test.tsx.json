@@ -2,17 +2,17 @@
   "path": "dashboard/src/panels/review/ReviewSurface.unknownRepair.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Synthetic unknown change facts over native answers test exact curation explanation in tree tooltip and visible selected reason for family/invariant, not classifier derivation; no change-page is opened.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(`shows the exact curation explanation in the unknown tree tooltip and beside the selected ${kind} reason`, async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "140869ab60bb3fb5b1d8f0b4cd875b501204d18c",
-            "content": "sha256:f2bfecb178fab9e18a85b7678e178e72f6c697f837aacca81e97e6be495c44bd",
+            "blob": "14e4f274742d535c6b8b4b383adab0ff6335b697",
+            "content": "sha256:0107732e20b5706b94f2f67f7af8362a554b747705106dc487cab47414a65133",
             "locator": {
-              "end": 63,
+              "end": 64,
               "kind": "line_range",
-              "start": 1
+              "start": 23
             }
           },
           "kind": "test"

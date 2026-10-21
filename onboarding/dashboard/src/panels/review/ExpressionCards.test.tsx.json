@@ -3,120 +3,426 @@
   "proves": [
     {
       "anchor": {
-        "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-        "content": "sha256:2fecdb2bcfe09b6f98a4c34b4a19aa1916055f247c576eadb79ffff02b99063f",
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:0abcddbf7010caf3e1012f2cac425ad2c71a925fccb93dc98c38f5cffd744588",
         "locator": {
           "kind": "symbol",
-          "name": "says a bounded roster's cards cover only the loaded members and points to the walk (F2)"
+          "name": "starts the diff just below the introduction, keeping a side without a region on screen"
         }
       },
-      "facet": "The current F2 case uses the truncated and complete captured rosters, requires a bounded loaded count and recorded maximum total, constructs disjoint sides whose identity union exceeds that total while displayed loaded count stays clamped, omits a complete scope, and renders the loaded population plus roster-walk direction. This is the asserted bounded-roster facet, not a new execution or the other describe-group cases.",
-      "id": "PRF-3MBVRP",
-      "invariant": "INV-VPX81HXV",
+      "facet": "Both resolved region labels are screen-reader-only beside their excerpt, while an unresolved side reason remains visually present.",
+      "id": "PRF-2RTR7G",
+      "invariant": "INV-1SHA9Y",
       "origin": {
-        "handoffEntry": "CUR-L57-R57-7-current-case-proofs",
-        "leaf": "260928-MIK-L57"
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
       }
     },
     {
       "anchor": {
-        "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-        "content": "sha256:d55bd38c3874c12d58397f2634fddb982ddf9e972265e05e1332424b55d29c08",
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:09d2d833c8a6d7f6adb5a4f7a2d88693cf0a1ba19dce6c221d5eab2cb3ea2d8d",
         "locator": {
           "kind": "symbol",
-          "name": "names the incomplete side when all members of the widest side are loaded"
+          "name": "introduces each entry in one line that opens in place, its states visible and its earlier rationale a line of its own"
         }
       },
-      "facet": "At equal loaded/total counts the current case still renders the named after-side missing-content reason without a load-the-rest claim; an empty after member list retains an incomplete-side notice and an unreadable after side renders its actual detail. This is the complementary partial/unavailable-content facet, not execution acceptance.",
-      "id": "PRF-6984YM",
-      "invariant": "INV-VPX81HXV",
+      "facet": "The entry line contains its exact authored rationale and metadata, with revised/added badges outside cut text and an independent Before line; opening either line preserves the other's expansion state.",
+      "id": "PRF-3YHY8R",
+      "invariant": "INV-1SHA9Y",
       "origin": {
-        "handoffEntry": "CUR-L57-R57-7-current-case-proofs",
-        "leaf": "260928-MIK-L57"
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:6296a4749a4dc32a974b3b73d5a78398588449926378c7d18ed8330d3e5c1cff",
+        "locator": {
+          "kind": "symbol",
+          "name": "names a missing rationale as a gap and never writes text of its own"
+        }
+      },
+      "facet": "Removing both recorded rationales shows the exact named missing-rationale message without an invented rationale node.",
+      "id": "PRF-744N2C",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:1245d2a50f1a35cbf765a6368c0d6241704da708f02b8872269a947b4b284284",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws the introduction as plain lines whose text can be selected, opening on a click or a key"
+        }
+      },
+      "facet": "Rationale and Before lines are focusable non-native-button text; Enter/Space toggle the focused line, and a click completing a text selection does not toggle that line.",
+      "id": "PRF-NYKCA5",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:7ad32074173e05694be03e5653723680372b01c0ac0a5f18c84191f0f6f80831",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws the head counts in mint and alarm red, each with its sign, and no changed-range badge"
+        }
+      },
+      "facet": "The card head retains the + and minus count text in mint and alarm classes, with no obsolete changed-range badge.",
+      "id": "PRF-TF2Q3J",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+        "content": "sha256:5db50fda696f6aa3a10849d86866dfcc7451ad6710fad6244385708d10448628",
+        "locator": {
+          "kind": "symbol",
+          "name": "gives a proof entry its facet in place of a role and a rationale"
+        }
+      },
+      "facet": "A proof card renders its exact recorded facet, proof label and added-in-leaf state instead of realization rationale text.",
+      "id": "PRF-YZ1VDW",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
       }
     }
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The real bodies the entries start from.  Anchor: \"const cardsBody = captured<ReviewTreesResult>('gitTrees.cards.captured.json');\"; \"captured<ReviewResult>('gitTrees.family.captured.json')\"",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('gives a proof entry its facet in place of a role and a rationale', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:cde89a1608a8303626581c13dcacb8a5664ea4f8bf7730f265d8f77cf68ee7ff",
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:3b4d66288ee2276ca20b1d6cb881a91f56c499cb865693a8ca5a7b12548bc275",
             "locator": {
-              "end": 23,
+              "end": 136,
               "kind": "line_range",
-              "start": 22
+              "start": 123
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Each card state.  Anchor: \"draws a changed range as its real diff and an unchanged range once, labelled unchanged\"; \"shows an unresolved side with its reason and never a guessed range or a diff\"; \"labels an unavailable side unavailable, distinct from a file absent on that side\"; \"names a missing rationale as a gap and never writes text of its own\"; \"gives a proof entry its facet in place of a role and a rationale\"",
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps two entries at the same path and range as two cards, each with its own rationale', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:244c600948a537039b5b397645a53a90dde69d23544bd184183c8f1daee06223",
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:e9440f83f1c6e23eb2dc12ca9b258707b04411ab0928429d17d8173ad365a03a",
             "locator": {
-              "end": 163,
+              "end": 151,
               "kind": "line_range",
-              "start": 68
+              "start": 137
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Grouping by (path, range) and the family order.  Anchor: \"grouping by (path, range)\"",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('offers no Full file of its own (rule 4)', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:a1e1a5adcd1c0135c1ab2c992adb8d84510cd9929c3dd2d0add0a96626641f50",
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:2ed06812d2bb64d5d8e0fe255c795f9e86d40aac21a30c20a0576ee62583e955",
             "locator": {
-              "end": 209,
+              "end": 167,
               "kind": "line_range",
-              "start": 165
+              "start": 152
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The F1, F2 (with R2-5) and F4 cases.  Anchor: \"opens one full file, in the card that asked, with one read (F1)\"; \"cover only the loaded members and points to the walk (F2)\"; \"marks an entry that is not current on its side with its MIK-R03 state (F4)\"",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws exactly the lines of its range, never an empty row after the last one', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "01f07667086e4d24c1208330ea6e80af08dc8020",
-            "content": "sha256:a763e2dfc613b2f1c345cd2c3546c1ee61ac256ce9da447fe01240a8545e6075",
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:15ad446bf0143c661d22c3ed4460f541244ece29b0b578fc20e9527816ad43b0",
             "locator": {
-              "end": 283,
+              "end": 181,
               "kind": "line_range",
-              "start": 211
+              "start": 168
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "F2 uses separate bounded and complete captures, checks the disjoint-member union against the widest-side total, and distinguishes incomplete after content even when loaded equals total: identify the unread, missing or unreadable side without offering a false load-the-rest action.",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks an entry that is not current on its side with its MIK-R03 state (F4)', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:efff8f13ac7010572ee6439f2b506399b65a647dd543d099f351964f4f7421f1",
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:d50478f610ad9506cb2901443d46498a7e9fe33fd7d3ef2b29d1d57933cb6414",
             "locator": {
-              "end": 297,
+              "end": 206,
               "kind": "line_range",
-              "start": 238
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the head counts in mint and alarm red, each with its sign, and no changed-range badge', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:30f399f2d69ae1a2f5b13c815c8188bcf6748f108d9655385fed729bb10d3840",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"draws every card head's counts coloured on the page\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:ea61a65a77f35141aedb49866495c79ffb630bbb3eb2d318d97209b259623f30",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('introduces each entry in one line that opens in place, its states visible and its earlier rationale a line of its own', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:25315ab5fb4caa7b3b2ffcaa2c9f4cd618ad3f2aebc99718d5e5416b4e807797",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the introduction as plain lines whose text can be selected, opening on a click or a key', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:5df90e1d5caf6fd013d8af7e6647f9f44dc1ea8f1b1766d42904885c5d5f6e32",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 290
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('starts the diff just below the introduction, keeping a side without a region on screen', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:ea35a5fb659e9872cc76ed94e28e1183d21263748acc60f3c044fc34be0bc4f0",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('bands the changed rows red and green with their markers, side by side', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:6763e6c2c17dfe2ec5ae723002dc9fe252b9893ab0ea3934620296709706e57f",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"colours a removed row's text alarm red in both views, and only on the review page\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:cfe5967c10b3f37f689e8f1f19010161c164a7018476e6ac5a4838f77d5443bf",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 386
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('bands a removed row red with its marker in the unified diff', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:f875cf494734b96c4e2d3d2198008a39ff02610c9e4a980b73ed6198bdc8113c",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 399
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps a side-by-side pane\\'s two editors, their lines, gutters and spacers', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:3098856612588eb340033d719944c0b0890f6175e365824da645ffe308a89ac4",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps a unified pane's line numbers beside its lines\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:c7009d8972a4e902c7d78484593552a5116cf43642cf29971ad5890d76187b93",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 461
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws a changed range as its real diff and an unchanged range once, labelled unchanged', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:7802ff5968654163dd52379333de50233b3d95599dfb8effbdf035f4f59c0f8a",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows an unresolved side with its reason and never a guessed range or a diff', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:70ad090eca2370ead83f4dea36600a2bfdcabff62dd659f2ae32ebd769a9b28a",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('labels an unavailable side unavailable, distinct from a file absent on that side', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:995561a44ac4736bb39d43149604588c269337c02208385db10e9616956f5548",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names a missing rationale as a gap and never writes text of its own', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8da0668c11e2f4aac8417fa0db464239179b2af6",
+            "content": "sha256:703a74af02b289df587d2501ca6452b92735c651823da1f290ec094bb4288dc8",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 111
             }
           },
           "kind": "test"

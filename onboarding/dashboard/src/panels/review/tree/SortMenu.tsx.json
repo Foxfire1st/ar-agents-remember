@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/tree/SortMenu.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"function SortItem({ option, chosen }: { option: SortOption; chosen: boolean }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
+            "content": "sha256:ef9c2938102b4e9b70b43a359cea164410ba06903deeca9ad876c6e32c070f04",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"function memoryHint(sorts: readonly SortOption[]): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
+            "content": "sha256:bf49041d7a4fcec887e96ec3d01c717bad7dc649faac1703314b7666de34413d",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"export function SortMenu({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
+            "content": "sha256:e1069e21be8df10a4259122c0b105e31aeca5c06bc1189e75b34b2fcfc341609",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

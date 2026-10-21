@@ -19,6 +19,8 @@ _app_lifespan compacts the workspace river, primes the projector and starts proj
 
 The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works/paused/unknown activity and contributing eventAt. Declared lists, documented-subTask master precedence and unambiguous commanded-master relations determine membership independently of worktree bindings. Only an absent subTask master uses list fallback; its present contrary or unresolvable master remains explicit and unbound. Other listed document kinds retain list placement under identity/cycle guards without own-master validation by that path. The same producer reports distinct list/record disagreements once per master rather than dropping contrary facts. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
 
+The read-only catalogue and changed-intent summary routes accept an optional recorded comparison number and forward it through their typed ports. Catalogue negative numbers receive 400; summary negative numbers produce the typed unavailable result without inventing counts. The summary cache includes that number in its question key, so different numbered comparisons cannot reuse each other's answer. `RecordedAnswerReuse.answer` also accepts an explicit keep predicate: a freshly produced value rejected by it is returned but never retained, while ordinary input-observation and age/capacity bounds remain with that cache owner. These transport additions select no arbitrary tree and confer no review or acceptance authority.
+
 ## Construction And Ownership
 
 Configured McpRuntimeConfig and admitted roots feed the dashboard; untrusted request values do not install arbitrary host roots. Compilation, task authority, canonical knowledge comparison, native role launch and independent acceptance remain with their actual owners. Serving capsule_delivery is an immutable copied value, not a harness-specific carrier/protocol planner.
@@ -167,7 +169,6 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - **The comparison route's handler over its injected port.**  Anchor: "def api_review_intent(" [29]
 
 
-- **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.**  Anchor: "def api_review_intent_entries(" [30]
 
 
 - **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: "def api_review_intent_source_content(" [31]
@@ -298,3 +299,10 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
 - The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. [140]
+
+- The catalogue handler admits optional comparison, refuses negative values and forwards all four port arguments. [141]
+- The summary handler forwards optional comparison and names a negative number as unavailable. [142]
+- Summary ports and cache keys include exact optional comparison identity. [143]
+- The summary reader keys retention by the numbered question and current age window. [144]
+- The native recorded-answer cache returns predicate-rejected values without retaining them. [145]
+- The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list. [30]

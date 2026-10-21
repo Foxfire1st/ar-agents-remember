@@ -2,60 +2,27 @@
 
 ## Governing Overview
 
-[application route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Compose the review/trees answer for the selected four-tree comparison: a leaf-wide currentness/worklist/code-facts view, or the requested focused invariant entries, lane or changed file. The standalone aggregate memory-diff helper remains public for other consumers but is not invoked by this leaf-wide path.
+Compose the selected four-tree comparison as a leaf-wide currentness/worklist/code-facts view or exactly the requested cards, lane or changed-file answer, without embedding the standalone aggregate diff.
 
 ## Code Commentary
 
-### Comparison selection and focused reads
+read_review_trees scopes immutable Git lookups and shared blob reads to one request. _comparison uses ordinary candidate resolution without a number; a numbered leaf-wide query may use the matching current resolution, while another number or a focused numbered query reopens the recorded comparison through its own leaf contract. Missing/legacy operands keep their named refusal or not-converted policy.
 
-`read_review_trees` scopes immutable Git lookups and shared blob reads for one request, then delegates. Without a number, comparison selection uses the existing candidate resolver; a numbered leaf-wide query can reuse its matching live resolution, while other numbered/focused questions reopen the retained comparison through the recorded leaf contract. Missing contract and unresolved/legacy inputs retain their actual refusal policy, not a substitute current store.
+Dispatch order is file, lane, named invariants, then leaf-wide. The focused cards call now returns CardEntries: _focused forwards entries and entry_memory together. Lane/file answers and the leaf-wide answer leave entry_memory absent. Focused answers retain their comparison and side identities, with no leaf-wide excerpt population.
 
-Dispatch order is file, lane, named invariants, then leaf-wide view. Focused answers retain comparison/sides and their requested entry, lane or file payload, not all leaf-wide excerpts. `snake_keys` rewrites identifier-shaped mapping keys recursively while preserving path/ID keys.
+The leaf-wide view projects per-side currentness, worklist and code-change facts. Its two-attempt memo loop returns matching kept parts, computes otherwise, retries once when consumed inputs moved and refuses inputs_changing after another move. WorklistProcessError propagates its own code/action without an in-process fallback. Reads replay even on failure. Retention requires readable knowledge sides, a settled worklist, no delivered undecided verdict and non-null facts-state code changes.
 
-### Live and recorded worklist ownership
+The isolated child owns both live and recorded worklist reads over supplied trees. Live work requires base commits and a complete live document must bind the four trees; recorded operands can use tree fallbacks. The wrapper validates code facts and typed item verdicts, reports computed/persisted/absent source, and projects item/history/linkage keys through snake_keys. _bound remains the shared worklist_bound predicate. Currentness/history owners remain extracted imports, not a second local implementation.
 
-`_worklist_view` constructs candidate/base operands from the supplied comparison and passes `trees` to `isolated_leaf_worklist` for both live and recorded paths. Live work requires captured base commits. Recorded operands may use tree fallbacks, and the child reads the persisted worklist for non-live supplied trees rather than recomputing it; moving that read into the child is not an unchanged local read location.
+The standalone knowledge_tree_diff API remains separate. It reads raw NUL-delimited exact paths, one aggregate patch and batched blobs, groups record/source/history/other changes and bounds patch text. Patch headers match exact paths under both Git quoting spellings; type changes take two sections. A failed patch retries the identical batch once and stays incomplete; failed blob batching falls back per blob and stays incomplete. These completeness facts do not control the leaf-wide memo. Identifier-shaped camelCase keys are projected recursively while path/id keys remain intact.
 
-The wrapper returns the document plus optional `_review` adjuncts. Code-change facts are model-validated, and may be present beside a worklist-absent view. A complete live document with mismatching pairing refuses. Otherwise the view contains projected items/history/linkage plus typed `item_states` supplied by that adjunct; this composer does not invent a second gate predicate. The declared source is computed for live and persisted for recorded, with absent used when no document state exists.
+## Invariants And Boundaries
 
-Currentness and governing history have moved to `review_tree_state`; this module imports/reexports `side_currentness` and imports history under its private alias. The history owner follows each item subject and `facts.row`, keeping each owner's latest attempt. `_bound` delegates to `worklist_bound`, whose actual current comparison checks include the memory-base tree as well as its commit. Do not call that stronger predicate a token-identical move of the old local body.
-
-### Kept parts and failure
-
-`_view` projects worklist and code-change facts alongside currentness. `_compute_leaf_parts` records/replays consumed reads even on failure, creates `LeafViewParts(worklist, worklist.code_changes)`, and admits settling only with readable knowledge sides, a settled worklist result, no delivered undecided item state, and non-null code changes in facts state. These are caller checks; constructing the dataclass does not enforce them.
-
-`_leaf_wide_parts` returns a matching kept value, otherwise computes under the current memo key. An unmoved, settled result with a key is offered to `remember`, whose observation checks remain separate. A moved input retries once with a fresh key; a second move returns inputs_changing. A WorklistProcessError becomes its typed refusal rather than a fallback in the serving interpreter. No aggregate memory-tree diff enters those kept parts.
-
-### Separately retained aggregate diff
-
-`knowledge_tree_diff` still delegates to `_measured_tree_diff`. That independent path lists knowledge/onboarding changes, reads their aggregate patch and blobs, groups record/source/history/other changes, bounds patch text and tracks read completeness. It is not removed merely because ReviewTreesResult has no knowledge_diff field.
-
-The raw listing uses NUL-delimited paths and parsed-diff options. Patch sections are bound to exact listed paths, including C-quoted names and two-section type changes. A failed aggregate patch is retried once and remains incomplete even if retry succeeds; failed blob batching falls back per blob and also marks incompleteness. This standalone completeness does not control the leaf-wide memo.
-
-The current BASE delta adds code facts/verdicts and changes memo eligibility, recorded-read location and binding checks; it is not preservation of every other response field or memo condition. The maintained INV-2K9NMR record is explicitly narrowed to its surviving no-aggregate-diff boundary. Historical performance observations and removed-test descriptions below are not fresh execution evidence.
-
-## Evidence
-
-No domain documentation source is configured. The complete current owner and actual BASE diff were read; current delegated owners are cited directly. Prior prose is retained historically, not as a second operative contract.
-
-- Request-local lookup reuse, comparison selection and focused dispatch use the actual current path. [53]
-- The root view projects currentness, worklist and supplied code-change facts. [54]
-- Memo lookup, moved-input retry and process-refusal handling remain explicit. [55]
-- Settling checks include decided item states and supplied code-change facts; recorded reads replay in finally. [56]
-- Focused payloads and identifier-shaped key projection stay separate from the leaf-wide body. [57]
-- The public standalone diff delegates to its separately measured aggregate implementation. [58]
-- Aggregate diff groups records, sources, history and other without becoming a leaf-wide answer field. [59]
-- Exact path listing and bounded retry retain actual standalone patch completeness. [60]
-- Quoted Git paths, blob recovery and changed-entry grouping belong to the standalone diff. [61]
-- Both live and recorded worklist paths consume isolated review adjuncts, typed verdicts and the current binding owner. [62]
-- Side currentness is computed against its own code tree and serializes only non-current entries. [63]
-- The extracted history owner follows item/row subjects and latest owner attempts. [64]
-- The current pairing predicate also checks the memory-base tree. [65]
-- The child reads persisted work for recorded trees and computes live work before supplying adjunct facts. [66]
+This owner writes no review database or captured replacement comparison. Supplied typed adjuncts and memo eligibility are not independent semantic approval. No aggregate memory-tree patch enters the leaf-wide response. Historical source/performance accounts below remain provenance, including already-superseded local recorded-worklist and worklist-only-settling descriptions.
 
 ## Historical predecessor account
 
@@ -197,3 +164,12 @@ state. An unreadable side answers with the reason.
 - No review path opens a database other than the derived index. (historical reference 49)
 - The tree view answers comparison, currentness and worklist (historical reference 50)
 - The leaf-wide answer carries comparison, sides and worklist only (historical reference 51)
+
+## Evidence
+
+- Request-local reads choose one comparison and dispatch to the requested answer. [67]
+- Leaf-wide response and memo admission retain code facts, explicit retry/refusal and replayed reads. [68]
+- Only card reads forward both entries and entry_memory. [69]
+- Exact aggregate patch paths and grouping remain a separate public helper. [70]
+- Standalone patch/blob recovery retains incomplete state and literal path matching. [71]
+- The child-owned worklist keeps actual binding, source and typed adjunct facts. [72]

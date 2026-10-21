@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/leadClause.test.ts",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "Delimiter examples shorten the title, while no-break and short-lead examples stay whole.\n\nAnchor: \"it('cuts a statement at its first dash, semicolon or colon', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a55cdab075e2cde4f20c9756be64702878ab07",
+            "content": "sha256:8ea5db0b5ceb2f9ce5154ae69bc78bf94bd82130a28dcf509f7273df3f15481e",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

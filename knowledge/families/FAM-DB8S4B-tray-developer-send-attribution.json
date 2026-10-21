@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Composition identifies the exact per-target snapshot; filing keeps the complete payload before transport; settlement keeps browser state/retry targets aligned with those answers; own-held-end logging keeps later attribution truthful. No single member supplies that full custody/settlement chain. It is developer-channel scoped, so the existing role_message and native held families are dependencies rather than a substitute home."
+  },
+  "guarantee": "For one admitted tray Send snapshot to chosen existing AR recipients, each target has one separately composed developer-channel message with its complete text, notes and picked payload filed under that target’s own task or taskless identity before native delivery or hold. Browser settlement follows the per-target answer: delivered and held targets are not intentionally resent, refusals retain the captured work for the refusing target set, and picks or text added during Send survive. The bounded sent log names the same message, pick ids and file digest and follows only its own held terminal evidence; held is never called delivered and log eviction never deletes durable message or pick files.",
+  "id": "FAM-DB8S4B",
+  "members": [
+    "INV-T6DV0Q",
+    "INV-G1K3QN",
+    "INV-P7QEA9",
+    "INV-0WDKPN"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "tray-developer-send-attribution",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/tray",
+    "mcp/src/agents_remember/cli",
+    "dashboard/src/cockpit"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Attributable developer Send and recoverable picked payload"
+}

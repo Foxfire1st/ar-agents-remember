@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/SubjectSection.rule.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Separator marks/classes occur between subjects and before the lane, not above the first subject.\n\nAnchor: \"// The rule as the box declares it, under the condition given (`[&[data-ruled]]`, …).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ac7ccc83e481a71ace1d181aeafe72dc9c75a9b",
+            "content": "sha256:831fcc33b422bc19171e861a52792ebba8e1d7d742962dbd2c626f7d37b52a54",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

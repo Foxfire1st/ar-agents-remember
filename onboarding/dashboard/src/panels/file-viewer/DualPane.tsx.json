@@ -54,29 +54,16 @@
       ]
     },
     "4": {
-      "note": "The page that supplies `code` + the derived `SidecarView`.\n\nAnchor: \"export const FileViewer = memo(FileViewerImpl);\"; \"import { DualPane, type SidecarView } from \\\"./DualPane\\\";\"",
+      "note": "FileViewer passes repository and paired view state into DualPane.\n\nAnchor: \"export const FileViewer = memo(FileViewerImpl);\"",
       "targets": [
         {
           "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:68d49b2072bcefb2802fcc2ca39f4e52a689f68bece4654b9454b8327801ceda",
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:e5ffbbbe1a72332446102a5a128365d7f3f16aaba93c17f7a5d7761e4de33314",
             "locator": {
-              "end": 299,
+              "end": 306,
               "kind": "line_range",
-              "start": 299
-            },
-            "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:e22c9e39acb019f5f9ed92ce6023895a3132ff6e459daeb909031ef2f280e21d",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 22
+              "start": 294
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -96,6 +83,21 @@
               "name": "FileContent"
             },
             "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "CodeSide combines repository with the read file’s scope and path for FilePane’s optional tray gutter.\n\nAnchor: `CodeSide`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

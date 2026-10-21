@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/LaneSection.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Synthetic lane and text fixtures contain one file per bucket.\n\nAnchor: \"const PLACE = { repo: 'agents-remember', master: '260928_maintained-invariant-knowledge', leaf: '260928-MIK-L181', repository: 'agents-remember' };\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e561a4151306df22e2fca29d865a79d02520b69",
+            "content": "sha256:0b7bdc27dde3c7eda2a6317929e7696bfaa5e36cf30e95d89f97c61b4239f86f",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cap link preserves both the chosen path and a filter whose list contains it.\n\nAnchor: \"it.each([\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e561a4151306df22e2fca29d865a79d02520b69",
+            "content": "sha256:da41c9bf130c6af6bc5a34bbc86c7538dd64b844f265a4c3124ee1652562a2a5",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

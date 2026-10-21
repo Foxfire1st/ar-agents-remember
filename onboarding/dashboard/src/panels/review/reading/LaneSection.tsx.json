@@ -1,0 +1,203 @@
+{
+  "path": "dashboard/src/panels/review/reading/LaneSection.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:77b24418b3c081b903ce04e6776dd07a5b9be28b7109ed684d4ac80797cd7578",
+        "locator": {
+          "kind": "symbol",
+          "name": "filterOf"
+        }
+      },
+      "id": "RLZ-0BY8E7",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The continuation chooses unknown for attribution_unknown files and unexplained for the other lane destination.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:f4fe4d347eb2c63612143af6a54c4587457e2a8775ea58cf399b568604c5644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "LaneFileBlock"
+        }
+      },
+      "id": "RLZ-1E380R",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The Code without invariant file is a quiet host with its named file offer; its real hunk rows nest inside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:4003526a1c8a3341e8aebd792f4f1a82a392c775f5a34bcc6c83bf0cc5c0258b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useLaneFileRead"
+        }
+      },
+      "id": "RLZ-2XS910",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "RP08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It places the pair of classification/text promises in one admitted file task.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:41279d3dba638d7e09e8e377292eb2454365519f2c87e3a58606724ae36ef71b",
+        "locator": {
+          "kind": "symbol",
+          "name": "linesOf"
+        }
+      },
+      "id": "RLZ-5CM2TA",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A terminal newline does not introduce one extra counted line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:9428d39f3c8fe2fc639d91a15b59f3cd7a4345541dd6ceb05cf4d5df41c84a88",
+        "locator": {
+          "kind": "symbol",
+          "name": "cappedSides"
+        }
+      },
+      "id": "RLZ-CNJFM2",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Only a known absent before side and more than 30 supplied after lines trigger truncation; the remainder is the actual count minus 30.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:eccba8aa9c34954f2224cca1f616af0f4792b13e8c9d10c1ed4cb19ef85f558a",
+        "locator": {
+          "kind": "symbol",
+          "name": "FileDiffBody"
+        }
+      },
+      "id": "RLZ-E595FD",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The pane receives the capped added text; a positive remainder renders the continuation control and passes the lane file path with its filter.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:0cd4d5090a4211fd5432663b2baecbcd6a48d45c77a0e1600e72c2e4b85df025",
+        "locator": {
+          "kind": "symbol",
+          "name": "HunkRows"
+        }
+      },
+      "id": "RLZ-X7RDDF",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Each real hunk row is its own quiet host and labels its own file/range offer, preventing another hunk from being revealed by an outer file hover.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+        "content": "sha256:1e0c087378a6661817013296daf4746a95a6ca580e2776b5d1bb6c1eb97694f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ADDED_FILE_CAP"
+        }
+      },
+      "id": "RLZ-ZAPK9M",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The lane alone fixes the added-file preview boundary at 30 lines.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Present Code without invariant after subjects with both lane buckets.\n\nAnchor: \"export function laneFiles(lane: ReviewUnexplainedLane): ReviewLaneFile[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:93646efeadb06d3f92627c9ea4acc478eccf83207394996ae77cae2aec909a25",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Present Code without invariant after subjects with both lane buckets.\n\nAnchor: \"function useLaneFileRead(place: ReviewPlace, number: number, file: ReviewLaneFile, visible: boolean): FileRead {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:8664570be7203fd44332bc8d1332f8875f3a502732f3ae97fb906b4f2f2c777b",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Present Code without invariant after subjects with both lane buckets.\n\nAnchor: \"function HeldBody({ waiting, children }: { waiting: boolean; children: React.ReactNode }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:75b5df07836c92cd6e58c99643ccbe381fb8b7e37c45e9b5de2191f6bdfe4e46",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

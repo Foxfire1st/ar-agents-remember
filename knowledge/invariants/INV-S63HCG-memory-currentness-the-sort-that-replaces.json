@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Focused tests guard the no-entry unrealized counterexample and tied-rank counterexample; the incorrect order would hide a missing realization behind apparently current entries."
+  },
+  "applicability": "The Memory currentness sort and currentness row reasons in the review page change-set model.",
+  "conditions": [
+    "Combine leaf-wide invariant states from read 4 with recorded entry-side states from read 5.",
+    "Rank stale, unverifiable, unrealized, current, then not measured; not measured applies only when neither input supplies a state.",
+    "An entry uses the least current side that records it; a subject with no entries can still be unrealized.",
+    "Equal shown-state rank ties go directly to Priority, without an additional read-4-state key."
+  ],
+  "exclusions": [
+    "Using only the current entries to conceal an unrealized invariant with no entries.",
+    "The four numeric memory sorts, which have a separate maximum-value rule.",
+    "Judging authored meaning or changing the currentness owner state."
+  ],
+  "id": "INV-S63HCG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 11, exact id MIK-R89@v2 rule 3 · Memory currentness; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 94, exact id W8; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 204, exact id L89-R1-014; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 233, exact id ruling e9b9d515; disposition retained verbatim in the review map.",
+        "Immutable reviewer producer list role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028, ordinal0 13, exact id L89-R1-014; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP03",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Memory currentness, the sort that replaces the mockup's \"Stale first\", must rank a subject by its shown currentness, the least current of its invariant's state in the leaf-wide currentness (read 4) and its locations' states (read 5), in the order stale, unverifiable, unrealized, current, then not measured, with ties in Priority's order (as amended by e9b9d515).",
+  "status": "proposed",
+  "supersedes": []
+}

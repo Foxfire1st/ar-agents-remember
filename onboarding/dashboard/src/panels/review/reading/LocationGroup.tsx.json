@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/LocationGroup.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Present only nonempty unchanged/not-comparable groups.\n\nAnchor: \"const GROUP_PREVIEW = 4;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d1abd7f8abd450ebc5c8e857774ea96914797d",
+            "content": "sha256:aa1512705ae26673b5be2c987c405e8de978caa614a734e4cbaf2a04cafefe89",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Present only nonempty unchanged/not-comparable groups.\n\nAnchor: \"const WHY: Record<GroupKind, string> = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d1abd7f8abd450ebc5c8e857774ea96914797d",
+            "content": "sha256:40929b52098f0a2fa00415f85390cea3592cb99f1cb29485111cdf4802b1e832",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Present only nonempty unchanged/not-comparable groups.\n\nAnchor: \"function rangeOf(node: LocationNode, kind: GroupKind): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69d1abd7f8abd450ebc5c8e857774ea96914797d",
+            "content": "sha256:2bc85df0a350acb8fa47f2e3f863dd104cbbee0824c34cc6856b0407a75c00eb",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

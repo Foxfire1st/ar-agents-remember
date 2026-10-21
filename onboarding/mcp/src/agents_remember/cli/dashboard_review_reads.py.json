@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c55864286e3f288751692072e8d090c3a16157ec",
-        "content": "sha256:a408590f5d283c600d2c4d9478670a9da4ce3007844408b02d01b1fc482c27bd",
+        "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+        "content": "sha256:572da25e625f013215fd44c2530b4cfe8010e7ce43aff7059a5c4651bf594774",
         "locator": {
           "kind": "symbol",
           "name": "RecordedReviewAnswers"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c55864286e3f288751692072e8d090c3a16157ec",
+        "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
         "content": "sha256:20466a26a624e5e4337de836d952ff93952718130ac6b47139c68aeec9bf1c4e",
         "locator": {
           "kind": "symbol",
@@ -39,64 +39,102 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The recorded routes' inputs are the record, its generation directories, the worklist and the object census, and a live comparison binds none of them.",
+    "10": {
+      "note": "Every query selector participates in the tree key.\n\nAnchor: \"def _tree_key(query: ReviewTreesQuery) -> tuple[object, ...]:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c55864286e3f288751692072e8d090c3a16157ec",
-            "content": "sha256:0105135ae4aa8e43019e4e328ac58bf8206dfb739b3c3436336f643ea357e7bd",
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:6e20f5a3c0356f5fa160ec2e31f57e73e32e7b7476715f599d6f96eb6f545903",
             "locator": {
-              "kind": "symbol",
-              "name": "recorded_answer_sources"
+              "end": 302,
+              "kind": "line_range",
+              "start": 289
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "A kept answer is served only while every recorded tree can still be read, so a removed tree yields the fresh answer rather than the kept inventory.",
+    "5": {
+      "note": "Valid leaf addressing supplies exact contract/directory/worklist/store dependencies.\n\nAnchor: \"def recorded_answer_sources(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c55864286e3f288751692072e8d090c3a16157ec",
-            "content": "sha256:20466a26a624e5e4337de836d952ff93952718130ac6b47139c68aeec9bf1c4e",
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:0ef34ec74ce670b384943f0e9807dbbc6879e106a120541c4771149f3f3dc631",
             "locator": {
-              "kind": "symbol",
-              "name": "_trees_still_readable"
+              "end": 87,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The four recorded trees one record holds are named once, for the reuse check.",
+    "6": {
+      "note": "Recorded closures and object bodies are checked rather than inferred from counts.\n\nAnchor: \"def _recorded_sides(task_root: Path, leaf_id: str) -> tuple[tuple[Path, str], ...]:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c55864286e3f288751692072e8d090c3a16157ec",
-            "content": "sha256:510a5716c04f97b41182e6c72c3394c6d734183b84745ca07a3030e0fcfed393",
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:4d8bbee51088d4eadfe0bd5ef90c3053d0f71d704150df99d93a2aad487e1cf3",
             "locator": {
-              "kind": "symbol",
-              "name": "_recorded_sides"
+              "end": 163,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Intent, entries and the tree view each pass their exact question and the shipped composition to one reuse store.",
+    "7": {
+      "note": "Intent, numbered entries and tree questions keep their own recorded/closed rules.\n\nAnchor: \"class RecordedReviewAnswers:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c55864286e3f288751692072e8d090c3a16157ec",
-            "content": "sha256:a408590f5d283c600d2c4d9478670a9da4ce3007844408b02d01b1fc482c27bd",
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:97f583da1def2720298be7d9a99e381d4c8b17abb622fdbc6e78fbeaaa436c03",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordedReviewAnswers"
+              "end": 240,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The common path validates record/closure before reuse.\n\nAnchor: \"def _answer[T](\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:bf2684f9a3445204749dfdc1a0abbe66ac0a8aa37445af178a506741cbcd6a5b",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Transient index/card-memory failures are returned but not retained.\n\nAnchor: \"def _keepable_tree_view(value: object) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2719d34207a114f1510f475739f1c08074e1a09d",
+            "content": "sha256:073e396da65095b7c9f909135a6ce8a01db73fd6028c7b7d0f9626ca7b9fea83",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 266
             }
           },
           "kind": "code"

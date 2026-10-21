@@ -46,15 +46,17 @@ A working leaf refresh starts its timer without requiring an initial successful 
 
 The server explicitly returns an unrecorded state when a leaf's committed code endpoint has not been recorded. The counters control displays that state. The viewer's main-pane decision checks file-list lengths, without reading `state` or `stateDetail`; consequently an unrecorded response with empty lists reaches its measured-empty wording. The intended distinction between an unrecorded range and a measured empty range remains visible here as an implementation discrepancy.
 
+The changed-file rail uses shared `changeset` left-sidebar visibility and a header toggle outside the rail. Hidden panel and handle props keep the rail mounted while removing it from layout and reachability; the same state controls the stacked list on narrow comparison layouts. This visibility state is separate from each diff column's persisted presentation flags.
+
 ### Diff columns and shared editor construction
 
 `ChangeSetPane` maps its persisted flags to three source views: collapsed change-set diff; full-file diff with highlighting; and full-file with highlighting off, which uses `FilePane` on the after-content. Split⇄inline selects the diff layout. Each column supplies its own `keyPrefix`, so view flags persist independently across file switches and reloads. Markdown-language files also offer a rendered toggle that uses the shared `Markdown` component in a scrollable container; it renders after-content, or before-content when the after text is empty.
 
 `DiffPane` builds a read-only CodeMirror merge pane imperatively in an effect. `splitView` creates a `MergeView` with before and after editors; `inlineView` creates a single after editor with `unifiedMergeView`. Both use the shared theme and lazy language extension, read-only/non-editable state and line wrapping, with no revert or accept/reject controls. The asynchronous language resolution has a disposed guard, and teardown destroys the constructed view.
 
-The shared host styles draw changed text as dark muted green addition rectangles and red deletion rectangles rather than thin underlines. `firstLine` supplies each side's file-relative numbering through `numberedFrom`; absent values start at line 1. `fit` selects a content-sized host whose split merge view has a 32rem maximum height. The reviewer's `ChangedExcerpt` passes file line origins, `fit` and `collapse={false}`. LaneFileFocus and its lane windows are absent from current source. `ChangeSetPane` remains the comparison viewer's unmarked diff owner.
+The normal host styles draw changed text as dark muted green addition rectangles and red deletion rectangles. `firstLine` supplies each side's file-relative numbering through `numberedFrom`; absent values start at line 1. The fitted review-page host instead grows to its content, leaves its editor/merge scrollers overflow-visible and has no internal maximum-height box. ChangedExcerpt passes file line origins, fit, marks and the page's collapse setting. LaneFileFocus and its lane windows remain retired. ChangeSetPane remains the comparison viewer's unmarked diff owner.
 
-The optional `marks` prop connects `DiffPane` to `useMarkedPane`. Each builder places its side's marks gutter first, and the shared hook supplies no gutter extension for an unmarked side. The builders call `drawn` once their editors exist; the hook expands collapsed runs holding marks. Teardown calls `drawn(null)`, placement participates in the effect dependencies, and the portals render after the host. Card Full file through `SourceContent` and expression-card excerpts pass marks; `ChangeSetPane` does not. Lane windows and SourceExplorer are retired owners.
+The optional marks prop connects DiffPane to useMarkedPane. Each builder places its side's marks gutter first and reports its drawn editors; teardown reports drawn(null). Non-fitted panes rebuild on placement changes, while fitted review panes reconfigure mark-gutter compartments in place. Expression-card excerpts pass marks; ChangeSetPane remains unmarked. The former card Full file path through SourceContent, lane windows and SourceExplorer are retired owners.
 
 ### Review entry and takeover dispatch
 
@@ -88,6 +90,18 @@ The preserved route metadata below is descriptive metadata, outside the operativ
 ## Comparison filters and delivered witnesses
 
 ReviewFilters and reviewChangeSet own explicit All/unexplained/unknown filtering over the held answer, including unavailable and zero states; they do not classify hunks again. The single row-badge map can combine delivered lane, inventory and worklist witnesses without guessing a governing row from a reason. Main-file request sequencing does not imply the same cancellation/sequence guarantee for partner or lazy requests. Working polling concerns the list and active main diff, schedules after their settlement, and does not refresh the partner column. Source/static regression inspection is not a browser/server execution grade.
+
+## Source-content transition and retained historical references
+
+The earlier account below belongs to the pre-A4-F5 fitted-pane and Full file implementation. Its former 32rem box, hard-coded collapse=false call and SourceContent consumer were replaced by the current page excerpts and same-editor mark update path.
+
+> The shared host styles draw changed text as dark muted green addition rectangles and red deletion rectangles rather than thin underlines. `firstLine` supplies each side's file-relative numbering through `numberedFrom`; absent values start at line 1. `fit` selects a content-sized host whose split merge view has a 32rem maximum height. The reviewer's `ChangedExcerpt` passes file line origins, `fit` and `collapse={false}`. LaneFileFocus and its lane windows are absent from current source. `ChangeSetPane` remains the comparison viewer's unmarked diff owner.
+
+> The optional `marks` prop connects `DiffPane` to `useMarkedPane`. Each builder places its side's marks gutter first, and the shared hook supplies no gutter extension for an unmarked side. The builders call `drawn` once their editors exist; the hook expands collapsed runs holding marks. Teardown calls `drawn(null)`, placement participates in the effect dependencies, and the portals render after the host. Card Full file through `SourceContent` and expression-card excerpts pass marks; `ChangeSetPane` does not. Lane windows and SourceExplorer are retired owners.
+
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
+
+> - Card Full file and expression excerpts pass marks; the former lane-window owner is retired. (historical reference 34)
 
 ## Evidence
 - The optional marks and the marked pane. [1]
@@ -124,7 +138,6 @@ ReviewFilters and reviewChangeSet own explicit All/unexplained/unknown filtering
 - Shared numbering, theme and language construction. [31]
 - No-mark gutters, collapsed-run expansion and marked-pane construction. [32]
 - Diff highlight styling, fitting and effect teardown. [33]
-- Card Full file and expression excerpts pass marks; the former lane-window owner is retired. [34]
 - The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
 - Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]
 - Master generation digest, selection and currentness use declared or pinned endpoint pairs. [37]
@@ -145,3 +158,9 @@ ReviewFilters and reviewChangeSet own explicit All/unexplained/unknown filtering
 - The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
 
 - The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [49]
+
+
+- Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired. [34]
+
+- The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation. [50]
+- The header toggle owns changeset-left visibility outside the changed-file rail. [51]

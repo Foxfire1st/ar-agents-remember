@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:0c210fde76a737b61d56d4e1f7d6a076440583bd52b1d601bc51233ed6d1801e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:9bc70399bb3fa2000398f77e31afd915567eb6516e030d4eabe29e9e9bdfed2f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:82ae7dcdff6d1f33e7366b41b208c46e8d27b667e8a65082e04d936eb7780b2f",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:49fd36b2c6f71f21c8300a3aa062d6bf34b95850175b783044fd3036b8581e2f",
         "locator": {
           "kind": "symbol",
@@ -75,24 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-        "content": "sha256:9c2cd627690533a90529995dd7d1e0fd9081fbabb1e4735b55bc538d7f18b93e",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+        "content": "sha256:8755b80d8465581765724387ca7e73723a2336a345f063f93159df00416233e9",
         "locator": {
-          "kind": "symbol",
-          "name": "ReviewSourceExpansion"
+          "end": 68,
+          "kind": "line_range",
+          "start": 67
         }
       },
-      "id": "RLZ-CHCMPQ0Y",
-      "invariant": "INV-T23G8ZJM",
+      "id": "RLZ-CCTR6D",
+      "invariant": "INV-MRHE25",
       "origin": {
-        "leaf": "260921-ICR-L46"
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "Is the dashboard client's mirror of the served expansion: it declares the required admission and admission_detail fields and widens status to accept 'unchanged', so the client type carries why each path was opened as the server states it.",
-      "role": "presentation"
+      "rationale": "Reexports the same writer type/state for the browser consumers; it introduces no second attribution algorithm.",
+      "role": "support"
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:3a187c6f2eb85d992131cdabacc3e09ee6d40e3f302d54b0d1bcdc880173ba57",
         "locator": {
           "kind": "symbol",
@@ -110,7 +112,44 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+        "content": "sha256:a85422ea9b6dca488ece6899ff5a2fb7db69a98885d4a98a52fd028ffe638daa",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewEntryListResult"
+        }
+      },
+      "id": "RLZ-QPCBSA",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-NUMBERED-CATALOGUE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries the optional comparison number echoed by a numbered outline answer without defaulting an absent value.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+        "content": "sha256:4e1ee73de20992582c31315124b8ba3dc5116748b405b58a5c0912b0ce7c9a06",
+        "locator": {
+          "end": 673,
+          "kind": "line_range",
+          "start": 656
+        }
+      },
+      "id": "RLZ-S225FJ",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-NUMBERED-CATALOGUE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Accepts the chosen comparison number in the catalogue request and sends it only when supplied; it preserves the entries endpoint while the obsolete source-content client is removed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:fe6c1012a4dbd67ab19719cea2fd1b28d39c36dfc6fa845988714be1f881155f",
         "locator": {
           "kind": "symbol",
@@ -128,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:ebfd18bdebc3b1cff37dca4992ecab40f4f03326a7d3f2531973450f74ef7241",
         "locator": {
           "kind": "symbol",
@@ -146,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+        "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
         "content": "sha256:06f8008c7a34e3547d8089d7ca56174b9bebf704d9f650e0d5b0a6c711e95202",
         "locator": {
           "kind": "symbol",
@@ -198,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:e0c6d7ae4cc6bada526606247c8d0ff85f1a4c36d249ab39da3e7493a41237c3",
             "locator": {
               "kind": "symbol",
@@ -209,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
             "locator": {
               "kind": "symbol",
@@ -225,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:08e94a652154142c66e17a77c6c4669003277e989a182b6057c4c9aee6b610ed",
             "locator": {
               "kind": "symbol",
@@ -241,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:f070fdc46e2aa0deac025a209506dd142cf571ba112e0f7b285934b77abe1814",
             "locator": {
               "kind": "symbol",
@@ -257,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:0d1fc3fb34c2a83ac997a203c89912e95c91fddf442d21f980b500da2b9f12c1",
             "locator": {
               "kind": "symbol",
@@ -268,7 +307,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:22bd854a6e5e5c2d71ac82bc9711dd56df005551f785fb87033e8c465fb9d5ab",
             "locator": {
               "kind": "symbol",
@@ -284,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:ebfd18bdebc3b1cff37dca4992ecab40f4f03326a7d3f2531973450f74ef7241",
             "locator": {
               "kind": "symbol",
@@ -295,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:d9771cfc764ef8c1ce8e4242749764030b0ea3450a75d95a9ff2120683266d53",
             "locator": {
               "kind": "symbol",
@@ -306,7 +345,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:96c7f14d6cc7dd947035c3e4933da81fb24b700bab9046a7da17013d3833ff31",
             "locator": {
               "kind": "symbol",
@@ -322,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
               "kind": "symbol",
@@ -338,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -350,15 +389,14 @@
       ]
     },
     "18": {
-      "note": "**The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.**",
+      "note": "**The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.**\n\nAnchor: `ReviewEntryListResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:c9253b13261646568dc6302f93387f1714e8780bcb4fa463d91b0b00b30da481",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewEntryListResult"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -366,15 +404,14 @@
       ]
     },
     "19": {
-      "note": "**The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.**",
+      "note": "The catalogue request takes task context and an optional recorded comparison number, with no source path.\n\nAnchor: `intentReviewEntries`",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:6e5aed5f9e75c36249c3ac82fc41b73ad452b2e93138e25f06cab45c61f75fc2",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -382,102 +419,16 @@
       ]
     },
     "2": {
-      "note": "Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here.",
+      "note": "Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here.\n\nAnchor: \"export type ReviewSideState = 'present' \\| 'absent' \\| 'unresolved';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:710b588de447e83b3e45c4e3b3b385a5b0f731922a10477b667700c71b4afacb",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:d9df03a1f5f90f39de107f71b77771a227a0195b799b8e4a32cfab132db5ca1a",
             "locator": {
-              "end": 71,
+              "end": 75,
               "kind": "line_range",
               "start": 35
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.**\n\nAnchor: `ReviewSourceSideState` `ReviewSourceSide`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:b39e7eed0a61eb599bc7207972784cb8ac9914aa98592ac56f0cbb44e6de98f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceSideState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:75319702001c25b9863f52aece77d448458d187ed5fff17846d210bc1cde33d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceSide"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The expansion value: both sides, both generation ids, the three-member currentness, `path_bound` naming which measured change set bounded the path, and `admission` naming why it was opened (a changed path, or unchanged context a recorded realization of the same comparison links).**\n\nAnchor: `ReviewSourceAdmission` `ReviewSourceExpansion`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:928a2645b02a98648d5ff8daf0819e5338b8ea47ac8c2cfadd1001f86609d7ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceAdmission"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:9c2cd627690533a90529995dd7d1e0fd9081fbabb1e4735b55bc538d7f18b93e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceExpansion"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "**The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:4a247e2cada95ca1583ecf85a92090c4b3c5d8ad3d8b2a9461877f3cbfeb522d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceContentResult"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "**The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:2e85080d0afdf4756e5a5ec38c385a70d81dfef4fd10255d5cee102791c487cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewSourceContent"
             }
           },
           "kind": "code"
@@ -530,7 +481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
             "locator": {
               "kind": "symbol",
@@ -543,26 +494,14 @@
       ]
     },
     "26": {
-      "note": "The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts.\n\nAnchor: `intentReview` `reviewSourceContent`",
+      "note": "The task/subject comparison request uses the common typed-result decoder.\n\nAnchor: `intentReview`",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReview"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:2e85080d0afdf4756e5a5ec38c385a70d81dfef4fd10255d5cee102791c487cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewSourceContent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -591,7 +530,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:37b39a5a0556c9351695d5ea82ebf193692dac70b83a111ca6b69bfc2cbcf5de",
             "locator": {
               "kind": "symbol",
@@ -607,7 +546,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:3a187c6f2eb85d992131cdabacc3e09ee6d40e3f302d54b0d1bcdc880173ba57",
             "locator": {
               "kind": "symbol",
@@ -618,7 +557,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:fe6c1012a4dbd67ab19719cea2fd1b28d39c36dfc6fa845988714be1f881155f",
             "locator": {
               "kind": "symbol",
@@ -629,7 +568,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:729f0d6e7108bd5e77178bd2f63b05aa806923c561d34d238fb75e033bbbd7b3",
             "locator": {
               "kind": "symbol",
@@ -645,7 +584,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:33f708fd4d656e409534675385b0852b6dd13f8268116b5dd02e023c5dcaf5a0",
             "locator": {
               "kind": "symbol",
@@ -656,7 +595,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:39dc1f7b307c794e298de46302fabacdb07adf94785f41b810227e34743622f7",
             "locator": {
               "kind": "symbol",
@@ -668,15 +607,14 @@
       ]
     },
     "30": {
-      "note": "The catalogue answer optionally carries the outline",
+      "note": "The catalogue answer optionally carries the outline\n\nAnchor: `ReviewEntryListResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:c9253b13261646568dc6302f93387f1714e8780bcb4fa463d91b0b00b30da481",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewEntryListResult"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -684,15 +622,14 @@
       ]
     },
     "31": {
-      "note": "Catalogue reads need no new endpoint",
+      "note": "Catalogue reads need no new endpoint\n\nAnchor: `intentReviewEntries`",
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:6e5aed5f9e75c36249c3ac82fc41b73ad452b2e93138e25f06cab45c61f75fc2",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -734,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:ebfd18bdebc3b1cff37dca4992ecab40f4f03326a7d3f2531973450f74ef7241",
             "locator": {
               "kind": "symbol",
@@ -745,7 +682,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:7b11d02d31e47cbcd8dbdf5b8f7383262e0edd4d0e2681bb4cdd754b109346e7",
             "locator": {
               "kind": "symbol",
@@ -756,7 +693,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:9ae896a10dad7d4c5f4f7cab603a529c3c5e41269f3c6d22f6128aae1e8f54dd",
             "locator": {
               "kind": "symbol",
@@ -808,7 +745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:dfe9f255a9428d0c5cd6076a77be5615934cd566078199b7fccd09c1a005b982",
             "locator": {
               "kind": "symbol",
@@ -824,7 +761,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:3d54922b35241ac4274b64244f96d19effc2d5a3c879eac28844fc50170f6328",
             "locator": {
               "kind": "symbol",
@@ -840,7 +777,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:0bb46dfc79f98f38cdaf1486167f00a530de97ac372327ef2a46db9bbde2cbfc",
             "locator": {
               "kind": "symbol",
@@ -851,7 +788,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
             "locator": {
               "kind": "symbol",
@@ -867,7 +804,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:ac836817ab2e2d1a56644e5bc92d3ddd61fa3767ac5831c5e6f496c60202772d",
             "locator": {
               "kind": "symbol",
@@ -878,7 +815,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:d20e1fcfc8b0b5ff0e73031f20d364ea59b9c6f22f3acaea4b252f1e1b9e0b23",
             "locator": {
               "kind": "symbol",

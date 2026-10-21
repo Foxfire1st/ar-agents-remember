@@ -1,49 +1,37 @@
 {
   "path": "dashboard/src/panels/review/treeScroll.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38a030d1313af8f432cc6dad4314f5b26c64cb5f",
+        "content": "sha256:36ff0b933f310f73e4d1bf8a7c30caa5b1286d8002da59814b69089491d790ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "revealTreeRow"
+        }
+      },
+      "id": "RLZ-ETYY4W",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Local reveal accounts for pinned rows by changing only this tree scroller's scrollTop; it writes no element height or style.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "Reveal a row within its tree panel only: `revealTreeRow` owns the described branch.",
+    "5": {
+      "note": "treeScroll.ts current behavior at this source owner.\n\nAnchor: \"export function revealTreeRow(row: HTMLElement \\| null): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:5f23b5f5fd122c3432fbe553a3d2800a19b251c70a0adf99bfe63be71cb51aba",
+            "blob": "38a030d1313af8f432cc6dad4314f5b26c64cb5f",
+            "content": "sha256:36ff0b933f310f73e4d1bf8a7c30caa5b1286d8002da59814b69089491d790ac",
             "locator": {
-              "kind": "symbol",
-              "name": "revealTreeRow"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Reveal a row within its tree panel only: `visiblePanelBounds` owns the described branch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:f89bfb5be3573d597a86ff833297a19d5d71f04801ca909a8045e705d8ef7e99",
-            "locator": {
-              "kind": "symbol",
-              "name": "visiblePanelBounds"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Reveal a row within its tree panel only: `belowControls` owns the described branch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06c68c5736d977ee55d747de48a6a9e726f98d3a",
-            "content": "sha256:13b44ba6452322328c78f9d509e11a12fa09fd1e50b2d7196cdd9017ba4d5395",
-            "locator": {
-              "kind": "symbol",
-              "name": "belowControls"
+              "end": 22,
+              "kind": "line_range",
+              "start": 9
             }
           },
           "kind": "code"

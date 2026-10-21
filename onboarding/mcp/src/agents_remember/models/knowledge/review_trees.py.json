@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-        "content": "sha256:cccf2a597cc5b612f6a16d723422d9d5efe1dc2763f65cfd3ecd5042ad694408",
+        "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+        "content": "sha256:5b3f496bb5cef6a139febc045678f0255fdc6c2ab28b094de72b7088d7a11691",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTreesResult"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-        "content": "sha256:51bf8c8794f10e76379ea260b715ce3361ccd07ed178bcf74d0b2975295d9132",
+        "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+        "content": "sha256:4afb490f4b206bbdfddb03bca54a50248910e9195c7b0ae474559ca9541912e8",
         "locator": {
           "kind": "file"
         }
@@ -39,344 +39,85 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The comparison schema and dedicated review-ref namespace.\n\nAnchor: Declared schema and namespace",
+    "18": {
+      "note": "Schema, review-pin namespace and side/conversion addresses remain distinct.\n\nAnchor: \"# and ``refs/remotes``, so nothing fetches, pushes or merges it, and the task's archive hook finds\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:a19b3ca0e6b2c6af8c517dca36dd5870f4edad608c4746c0164411f0a61bed21",
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:06c7d109aaa47a1083ad40fcf47176f144572afbbda323c050043d37549339d1",
             "locator": {
-              "end": 61,
+              "end": 102,
               "kind": "line_range",
-              "start": 59
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:2f62a5c917806fe40620e9b32005587071ebbb1886104dfd9fbcf74681e26c35",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
+              "start": 60
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The reopened-code-side carrier remains available, independently of standalone diff shapes.",
+    "19": {
+      "note": "Comparison identity excludes number, timestamp and pin spelling.\n\nAnchor: \"class ReviewTreeComparisonRecord(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:8838c0fb16d0e562d4080e71afd72346e0ac599a45794ad2dd225d983aaf09f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewCodeSide"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The result keeps per-side currentness beside its side descriptors.\n\nAnchor: Currentness field",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:62ba30ab50724ad717438f6e985f14fa186397db7f1e7753423d3de325549a41",
-            "locator": {
-              "end": 264,
-              "kind": "line_range",
-              "start": 260
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The result retains the worklist and separately adds the public code-facts projection.\n\nAnchor: Worklist and code-facts fields",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:7c3525622b9e51672431eae13edd225741b2add38f96cba6d882e622150cee88",
-            "locator": {
-              "end": 264,
-              "kind": "line_range",
-              "start": 262
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The shared standalone diff carriers remain public exports.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:2c942c845ac527fff827cfab67bb8af07d53337b2903752c214f68df9bf47e71",
-            "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Shared standalone file/record/source/tree diff definitions survive; they do not imply an embedded leaf-wide patch field.\n\nAnchor: Surviving standalone carriers",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:2f0448f4585b661e282ad3ae6b3b8fba9dca669f68de1fd128a82b0c26992d89",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 172
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The root result has no knowledge_diff field at BASE or current source; its added field is code_changes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:cccf2a597cc5b612f6a16d723422d9d5efe1dc2763f65cfd3ecd5042ad694408",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesResult"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The actual worklist owner validates child review parts, projects document keys and rejects a complete live result bound to another comparison.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
-            "locator": {
-              "kind": "symbol",
-              "name": "_worklist_view"
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Gate verdict and implementation-fact DTOs retain different states and optional evidence/reason fields; neither is a review approval.\n\nAnchor: Distinct typed fact vocabularies",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ea2ffcb7c07d58606cea05ee5da0c01a2332bfa",
-            "content": "sha256:c64e220fb593d3e07664c81609e8e2d77e626cdb3fee4d6f7888d4ce44b0c25c",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/item_verdict.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f1e04c7bb37a468ff564ab753d928c669da7a6b3",
-            "content": "sha256:e7c482be1688948325c7c17f5be05e68b80a711ce4caa18b24c9876137b29dfe",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review_code_changes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The side state vocabulary distinguishes available, unavailable-history and legacy-unavailable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:ee54d581ae8731d3f9ce726eae755963edd74269774512544fa0f90d23bc278e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeSideState"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A side names repository/tree and optional commit/ref; this declaration does not enforce exclusive presence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:3d59bf0fdb6e3f04d75721629efe403c7222c3a5151245986b16b07ddcca65dc",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeSide"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Conversion context records its source commit, format version, anchoring code commit and resulting tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:c07cbecb4b7303a2c327b1cfb73948fcd886208b72137ff5c2cef0232c35e257",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewConvertedBase"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Comparison identity uses task, leaf, repository/tree pairs and converted base rather than timestamp, number or commit/ref spelling.\n\nAnchor: Record and comparison key",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
             "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
             "locator": {
-              "end": 144,
+              "end": 145,
               "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:e32a8305211d7ee2e35798c44388058f70130a3de40bff740426d61c97e4115c",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 126
+              "start": 105
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "Knowledge sides carry index state/problems; reopened code sides distinguish available from unavailable history.\n\nAnchor: Knowledge and code side declarations",
+    "20": {
+      "note": "Knowledge and code sides retain explicit availability and partial-index evidence.\n\nAnchor: \"class ReviewKnowledgeSide(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:03cfc854f89014328a346fc9af50e1281e13375b690066c2398ef4139921fd0e",
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:f3359c91b81f415315f67ff238aee9fad9a56d1da031e51ee25bc9ca09035736",
             "locator": {
-              "end": 160,
+              "end": 170,
               "kind": "line_range",
-              "start": 147
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:8838c0fb16d0e562d4080e71afd72346e0ac599a45794ad2dd225d983aaf09f0",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 163
+              "start": 148
             }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "Standalone memory-diff carriers group file changes by record/source and retain history/other populations.\n\nAnchor: Standalone diff declarations",
+    "21": {
+      "note": "The internal worklist code facts are excluded while the public response keeps its own payloads.\n\nAnchor: \"class ReviewWorklistView(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:2f0448f4585b661e282ad3ae6b3b8fba9dca669f68de1fd128a82b0c26992d89",
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:3da5d933d24f255471214337c8030484688dd07b0046968c69192e84b361919c",
             "locator": {
-              "end": 217,
+              "end": 288,
               "kind": "line_range",
-              "start": 172
+              "start": 221
             }
           },
           "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "The worklist carries documents, bound/source metadata, typed gate verdicts and an excluded internal code-facts attribute.",
+    "22": {
+      "note": "A card memory read names its after tree, completeness or unavailable reason.\n\nAnchor: \"class ReviewEntryMemoryState(KnowledgeModel):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:2349c5564a4ce3caaca5ab7515c9e54bf127c705b8cb39e404ab8d4117402aff",
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:b42a3f7aea2b0db7845817dbec4eb2851c0cbf61c21de9f27de53e98bb5a3f5e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewWorklistView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The public result has route states, comparison/sides/currentness/worklist, new code facts and optional focused entry/lane/file payloads.\n\nAnchor: State vocabulary and root result",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:15c9571889a270c6939881a04e25eb1a52501d81a78004ed103f728d7d614d19",
-            "locator": {
-              "end": 242,
+              "end": 255,
               "kind": "line_range",
-              "start": 242
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a504f3e9d1406a27e6629249b02d23155d1980c",
-            "content": "sha256:cccf2a597cc5b612f6a16d723422d9d5efe1dc2763f65cfd3ecd5042ad694408",
-            "locator": {
-              "end": 270,
-              "kind": "line_range",
-              "start": 245
+              "start": 243
             }
           },
           "kind": "code"

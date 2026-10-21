@@ -37,7 +37,7 @@ and Git children do not depend on the machine. The module also exports the helpe
 - **Memo bounds.** The view memo holds at most `CAPACITY` entries at two population sizes, serves nothing
   older than `MAX_AGE_SECONDS`, never answers another key, and has no key for a recorded comparison or for
   a leaf whose memory head or parent tip cannot be read.
-- **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its ten current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed. The recorded leaf-view case reads a bound complete stored worklist as `persisted`, with the child's exact CRLF-byte identity imported into the parent. A missing worklist has source `absent`, no state or items, and an imported `ABSENT` identity; both readable outcomes retain code facts. Malformed JSON and a directory at the worklist path refuse with the observed byte or unreadable identity. None of these recorded reads enters `LEAF_VIEW_MEMO`.
+- **Retired knowledge-diff subjects:** the aggregate three-Git-question/per-file-parity and literal two-size patch-selection cases were removed from this module. Its thirteen current top-level test definitions retain resolution/capture counts, exact supplied candidate/base operands, no leaf memory-tree diff, observed task-read refusal/recovery, bounded memo reuse and freshness; no current literal aggregate patch proof is claimed. The recorded leaf-view case reads a bound complete stored worklist as `persisted`, with the child's exact CRLF-byte identity imported into the parent. A missing worklist has source `absent`, no state or items, and an imported `ABSENT` identity; both readable outcomes retain code facts. Malformed JSON and a directory at the worklist path refuse with the observed byte or unreadable identity. None of these recorded reads enters `LEAF_VIEW_MEMO`.
 - **Freshness.** A read after an edit shows the new content, also for a same-size rewrite in the second of
   the index write, and nothing composed is kept on the server.
 
@@ -68,3 +68,15 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - An explicit negative assertion forbids a diff invocation containing both comparison memory trees. [21]
 - The worklist receives the comparison's candidate trees and base commits; it performs no directory snapshot or code capture of its own. [22]
 - the recorded leaf-view declaration distinguishes persisted and absent worklists while retaining code facts, refuses malformed and unreadable inputs, checks read identities and leaves LEAF_VIEW_MEMO empty. [23]
+
+## Comparison-aware live-read adapters
+
+`Ports.entries` takes the optional comparison number; the existing warm/measured entry read passes `None`, and `_ports` supplies `None` before the summary observer. The measured capture, resolution, index and body assertions remain the same. These live-read adapter changes do not extend the budget assertion to two distinct numbered summary or entry comparisons.
+
+
+## Recorded-answer reuse and object loss
+
+Three further retained declarations cover recorded answers: identical closed-tree inputs reuse the composed tree-view body, a new comparison-directory input set composes again, and loss of a recorded root tree or descendant object invalidates the kept answer in favour of the matching cold result. The descendant parameter table exercises removal, unreadability and a truncated compressed blob whose header remains readable. These assertions already exist in the base; the optional comparison-argument adaptation did not add them.
+
+- Entry and summary adapters provide the optional comparison argument. [24]
+- The measured live entry read passes None and retains one-resolution/capture and index assertions. [25]

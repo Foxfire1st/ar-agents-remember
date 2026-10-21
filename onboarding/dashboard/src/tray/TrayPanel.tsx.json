@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/tray/TrayPanel.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+        "content": "sha256:1ccd33eede201120527a54b717847f0ddf572e2b8cd9fb9323159f7b4f805e1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayBoundsControl"
+        }
+      },
+      "id": "RLZ-1NXRR4",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Sets the bounds beside copy on highlight, with their defaults and a way back to them (e6ac7a3e).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+        "content": "sha256:b1de84290a933fcb1ffff897d317c737452e34234d349152a5d81fd0a0dc5e61",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayPanel"
+        }
+      },
+      "id": "RLZ-HJ9WN9",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the list again on every opening of the tray (P-T6).",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Renders the minimized collection line and expanded tray controls.\n\nAnchor: \"export function pastedImages(event: ClipboardEvent): File[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "content": "sha256:cf85ff8fdb1648988cbe711e283fb9dcc067ef7b6a16a6b74396f29eb4d9c92c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Renders the minimized collection line and expanded tray controls.\n\nAnchor: \"export function useTrayPaste(active: boolean): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "content": "sha256:ff035ddeda759fae75d3a419b661dda55b68601b498723f1a7c11af2a76b70a2",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Renders the minimized collection line and expanded tray controls.\n\nAnchor: \"export function sendNow(): Promise<boolean> {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "content": "sha256:d0192df7dc7371a5eab0d09df8aa444a3705c9f87b2c9f523c25c838d29eac7c",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

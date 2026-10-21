@@ -2,79 +2,29 @@
   "path": "dashboard/src/panels/review/FamilyTree.triageReal.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The suite's statement: real served answers of a scratch copy with scratch-authored knowledge edits.\n\nAnchor: \"SCRATCH-AUTHORED\"; \"blob as a curator does\"",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('uses walked implementation facts for outline badges with intent and membership precedence', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
-            "content": "sha256:f60308d7c55032afe05e515c4cc11e8259677643bda044223b5b7daff98de92c",
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
+            "content": "sha256:0f523b98c102bff3375d39ab331f3dfd46a22c7feedd5d07b7a40c2618b97955",
             "locator": {
-              "end": 23,
+              "end": 146,
               "kind": "line_range",
-              "start": 1
+              "start": 104
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The real family badged, changes first, all 24 members kept.\n\nAnchor: \"badges the real family, lists its changes first and keeps all 24 members\"; \"realization RLZ-4BD3B78H re-anchored (stale at base)\"",
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every delivered fact and every reason in the main page outside disclosures', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
-            "content": "sha256:5134fc42405062441f68829e4ddd981119156b973b4fd6bc0460100e3665ccbf",
-            "locator": {
-              "end": 126,
-              "kind": "line_range",
-              "start": 66
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "An incomplete page is not unreturned members; the shared member and the revised guarantee.\n\nAnchor: \"does not treat an incomplete roster page as unreturned members, so j never stops there\"; \"shows the shared member where it joined and the revised guarantee on its own row\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "01ab4b88b0f9a39442a8160509ba09af01f0eb9b",
-            "content": "sha256:22c9a666b255995b92e0d7d02d0230bb351867cd75521555d56ea77105dba54c",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 128
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Main-page fact harness over captured bodies",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
-            "content": "sha256:35a32e8bdb54c0531b3312ea2792dec1a01dd557a368f0ba959124a292507178",
-            "locator": {
-              "kind": "symbol",
-              "name": "MainFacts"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Every fact and reason kept outside disclosures\n\nAnchor: `review-change-why`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
             "content": "sha256:046b80b040e2511af8bda0edb67d012a4fe7b9f80121332298c0d71f96095072",
             "locator": {
               "end": 90,
@@ -86,34 +36,17 @@
         }
       ]
     },
-    "6": {
-      "note": "Guarantees and membership preserved per family\n\nAnchor: `review-guarantee-change`",
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('preserves each family guarantee and occurrence membership on the main page', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
-            "content": "sha256:d9eb178dca1c6a741984691bd912e8d9c6914fad5780ad194ab091e95f88a885",
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
+            "content": "sha256:96fa99867ff5946144aab4c933f1af2dd37b979324eaed80458faeeb4df9328b",
             "locator": {
-              "end": 102,
+              "end": 103,
               "kind": "line_range",
               "start": 91
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Walked facts overlaid onto outline badges\n\nAnchor: `outlineGroups`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d89f0da6abbd0e77f67540bdfffae056ee37b2d0",
-            "content": "sha256:3ba8b82f28bd2e4e51ab93dd39f1e906e0415ff5028348523721d9543e2ee6c4",
-            "locator": {
-              "end": 146,
-              "kind": "line_range",
-              "start": 104
             }
           },
           "kind": "test"

@@ -5,14 +5,14 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: l86-browser/browser-results.json: one line rows"
   },
-  "applicability": "Every family/invariant row of the reviewer's navigation tree, 390-2000 px wide.",
+  "applicability": "Every row of the reviewer's navigation tree, including family, invariant, location and group rows.",
   "conditions": [
-    "The row shows title (ellipsis) + one change badge; family rows may add kept, and eligible changed record rows may add their own compact recorded-effect sequence.",
+    "A row shows its name cut with an ellipsis and one reason; a family may also carry kept. Family/member accessible names retain the title and change facts; location names retain path, range, role and reason.",
     "Invariant titles are identifier + 120-char summary; hyphenated titles render hyphens as spaces.",
     "The tooltip holds the whole title; the accessible name is title + change badge + the eligible recorded-effect sequence."
   ],
   "exclusions": [
-    "Guarantee/statement texts, reasons and marks (main page, rule 10).",
+    "Complete guarantee/statement texts, authored rationales and recorded reasons belong in the reading column; a tree row carries only its one sort-dependent reason.",
     "Wrapped or multi-line rows."
   ],
   "id": "INV-PKFP2R",
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Each family and invariant row stays one text line, with an ellipsis and a whole-title tooltip.",
   "status": "proposed",

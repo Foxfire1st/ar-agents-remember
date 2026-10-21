@@ -5,14 +5,15 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx and FamilyTree.triageReal.test.tsx"
   },
-  "applicability": "Badge assignment on every outline row.",
+  "applicability": "Primary change-kind classification of family/invariant outline rows, distinct from the active sort's displayed reason and from location/group rows.",
   "conditions": [
-    "One primary change-kind badge per row. An unknown intent classification remains unknown instead of borrowing an established implementation or membership label; otherwise real intent wins, then established implementation, joined/left membership, unknown implementation and unchanged. The unchanged numeric sort weights order intent, implementation, membership, unknown and unchanged; MIK-R43 separately permits ordered recorded-effect labels only on added, removed or changed rows with steps.",
+    "One primary change-kind classification is retained per family/invariant row. Unknown intent remains unknown instead of borrowing an established implementation or membership label; otherwise real intent wins, then established implementation, joined/left membership, unknown implementation and unchanged. Recorded effect labels remain a separate fact. The active sort may display another admitted reason instead of that primary badge.",
     "Family N-changed badge only when the family record is unchanged and N members carry real change.",
-    "Meaning rides the word + one-sentence tooltip, never color alone."
+    "Meaning rides the word + one-sentence tooltip, never color alone.",
+    "The new location and group rows use the active sort's one reason; that reason and any grade are not a new primary change-kind judgment."
   ],
   "exclusions": [
-    "Other secondary marks and reasons belong to the main page; the separately permitted compact recorded-effect badge is not a new precedence fact.",
+    "Complete record reasons, rationales and other authored texts belong in the reading column; the tree carries the active sort's one reason. Recorded effects and currentness do not become new primary change-kind facts.",
     "Code-changed without an admitted implementation fact for the displayed comparison. Leaf-wide measured code facts no longer require first walking the family; an unavailable/unknown intent is not overridden by that narrower fact."
   ],
   "id": "INV-W09GQM",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "One plain-word badge carries the precedence of the established intent, code and membership facts.",
+  "statement": "Established intent, code and membership facts retain their primary change-kind precedence. The active sort determines the tree row's one plain-word reason without replacing that classification.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "ZoneChord carries chord/label/commandId/zones, and REVIEW_CHORDS supplies only review j/k traversal.",
+      "note": "ZoneChord carries chord/label/commandId/zones, and REVIEW_CHORDS supplies only review j/k traversal.\n\nAnchor: \"export interface ZoneChord {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "fb072988f4d010aefbc0e48f8b26e635dccc39fa",
-            "content": "sha256:39987843bce9aa784ffab24e0691a45d4459f409a1d96b56eafb90e4d2103721",
+            "blob": "cfaec6dbfc8f9cbb70c5c68c92188b9a81199d96",
+            "content": "sha256:742d9bf1abb2b3512178f8c373cc482f891e12d2851671a6734c2750972ddc87",
             "locator": {
-              "kind": "file"
+              "end": 34,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -18,15 +20,14 @@
       ]
     },
     "5": {
-      "note": "The reviewer's `j`/`k` table, `review` zone only (MIK-L33).\n\nAnchor: \"review.nextChange\"",
+      "note": "The reviewer's `j`/`k` table, `review` zone only (MIK-L33).\n\nAnchor: `REVIEW_CHORDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "fb072988f4d010aefbc0e48f8b26e635dccc39fa",
-            "content": "sha256:7b6babf31461b35df086e7500fe3b4dcfc25b75ec224f13259985aa0fef5a8ca",
+            "blob": "cfaec6dbfc8f9cbb70c5c68c92188b9a81199d96",
+            "content": "sha256:742d9bf1abb2b3512178f8c373cc482f891e12d2851671a6734c2750972ddc87",
             "locator": {
-              "kind": "symbol",
-              "name": "REVIEW_CHORDS"
+              "kind": "file"
             }
           },
           "kind": "code"

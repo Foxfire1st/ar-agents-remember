@@ -6,17 +6,21 @@
 
 ## Purpose
 
-Production dashboard chrome, product-view and takeover selection over the shared server projections. The product bar remains Chats, Operations, Knowledge and File Viewer. Other retained view implementations can be mounted by an injected view but have no bar entry; static imports do not prove exclusion from a production bundle.
+Production dashboard chrome, retained product layers and the review page's shared chat rail. The product bar remains Chats, Operations, Knowledge and File Viewer; the Tray button sits beside that group. Other retained views have no bar entry and can be mounted by an injected view; static imports alone do not establish production bundle exclusion.
 
 ## Code Commentary
 
-`Cockpit` wires shared state/events and ready hydration. `CockpitShell` owns presentation state, wake-lock lifetime, the revalidation provider and takeover dispatch. A knowledge-reader URL selects Knowledge; a valid review URL overrides the ordinary Chats/default view with Operations and its review takeover. `useReviewHash` owns that URL state: it requires repo/master/leaf, carries only the recorded-history flag, preserves the current mounted reviewer for the same review address, and leaves subject selection to that reviewer. It does not authenticate or select a source dataset/path.
+`Cockpit` connects shared state/events and ready hydration. `CockpitShell` owns presentation, wake-lock lifetime, the revalidation provider and page dispatch. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash using replaceState, without replacing that base target. [72] [97]
 
-`ChangeSetTakeover` forwards optional subject/history into ReviewSurface, otherwise the existing viewer and leaf-retarget callback. Notes/requirements/decisions/report readers retain their own target-kind dispatch and hidden-not-unmounted state. Operations, File Viewer, Knowledge and Role chats use retained layers; hidden does not imply every child owner is active or fetching. Rails remain mounted behind full-bleed views; the right chat wrapper stays unkeyed while Event River mounts conditionally. These are component retention boundaries, not proof of all native iframe generations or measured view-switch latency.
+Operations, File Viewer, Knowledge and Role chats retain their layers. Entering the review hides the ordinary main layers and Operations task tree; it renders `ReviewMain` in a stable slot immediately before the existing right rail. Leaving review restores the ordinary main layers. Operations exposes independent left/right sidebar toggles outside the memoized detail panel. Hidden child owners receive active predicates separately from component retention. [88] [89]
 
-Styles and resize/narrow hooks now live in layout.tsx. Wide railed content uses saved widths; narrow railed content uses one column. The at-most40rem shell admits vertical scrolling and wraps narrow chrome, so the older unconditional overflow-hidden/fixed-bars promise is not current at every width. Change/review takeover uses the extracted fixed viewport rule on that narrow boundary. Desktop body/rail/viewport ownership remains distinct; actual call sites consume these classes.
+The right rail has one unkeyed chat wrapper for Operations and review. Operations retains the River/Chat switch and conditionally mounts Event River. Review supplies its task, open state and width to that same rail, uses chat only, and forwards closed-column preload. The shared DocumentChat remains in its wrapper across that transition; the rail gains neither a new frame wrapper nor a key. Component retention and active predicates remain separate from native iframe generations and view-switch timing. [92] [93]
 
-TopBar consumes served counts and the ordered queue, displays waiting only when nonzero, and labels unavailable host activity instead of guessing works/paused. Serving build mismatch is a diagnostic tooltip, not a shell reload action. EffectsToggle updates the local effects flag/storage; the shared animation gate and boot flag remain separate owners. Shared tasks and engine-process stable-empty fallback are different projections. Old comment-only/file-size/performance accounts below are retained history, not this leaf's complete delta or fresh measurement.
+Wide Operations columns use saved widths and give a hidden sidebar's width to the document. The review grid has its reading track plus the open in-grid chat width, or a zero-width chat track and the review gutter when closed or overlaid. At at-most40rem the railed body is one column. Extracted shell styles still own narrow vertical scrolling and wrapped chrome. Only the ordinary change-set takeover consumes the fixed takeover body here. [65] [98]
+
+The shell publishes the shown page and repository for tray provenance and filing scope: Review names its repository, Operations names the viewed document's repository, and File Viewer leaves repository publication to its own owner. The Tray button is outside the four-view tab group, and the page-wide tray layer is outside the railed body.
+
+TopBar consumes served counts and ordered queue state, shows waiting only when nonzero, and names unavailable host activity. Serving build mismatch is a diagnostic tooltip. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94] [95]
 
 ## Preserved earlier explanation
 
@@ -329,37 +333,63 @@ No configured domain documentation; source owners support this current account.
 ### Repo-Internal References
 
 - The product bar and its order are one list. [32]
-- The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection. [33]
-- Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
-- Full-bleed is derived for the product and retained machine-map views. [35]
-- A page outside the bar mounts only through an injected view. [36]
+
+
+
+
 - The layer wrapper that hides without unmounting. [37]
 - The mode-bar primitive that renders the product entries. [38]
-- The Knowledge reader the retained layer mounts. [39]
-- The provider around the shell, shown only for Operations with no takeover. [64]
-- The imported bodyGrid declares railed versus full-bleed columns; RailedBody applies saved widths only on a wide railed view and uses one column when the live narrow-layout hook matches. [65]
-- Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
-- Rail fade properties are selected by the animation permission. [67]
-- The `chatsLayer` keep-alive class used by the Chats layer. [68]
+
+
+
+
+
+
 - `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. [69]
 - The boot-time effects flag it persists to. [70]
 - The honest-motion gate the rail transition + the toggle drive. [71]
 - Cockpit wires connectState and one connectEvents raw Event River consumer, plus the ready hydration marker; no seat-event reconciler. [72]
-- A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
+
 - The reader's hash parser. [75]
-- The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
-- The reviewed UI contract owner `MainLayers`. [88]
-- MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner. [89]
+
+
+
 - The reviewed UI contract owner `ViewLayer`. [90]
 - Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result. [91]
-- The right rail keeps the chat side mounted in an unkeyed stable wrapper and hides it when the River shows; the River still mounts conditionally. [92]
-- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
+
+
 - The header uses shared labels for served taskCounts, omits works/paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
-- Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]
-- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
-- Review URL state is delegated to reviewHash: valid repo/master/leaf links choose the review takeover, history=recorded selects its durable view, and same-address hash navigation preserves the mounted reviewer subject. Hashes do not carry subject selection or choose source files. [97]
-- At at-most40rem the extracted shell layout admits vertical overflow and single-column railed content, while the change/review takeover becomes fixed to the viewport. Both the layout declaration and its actual shell/takeover call sites own this responsive boundary. [98]
+
+
+
 
 ### Cross-Repo References
 
 No separate cross-repository implementation claim.
+
+- The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection. [33]
+- Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
+- Full-bleed is derived for the product and retained machine-map views. [35]
+- A page outside the bar mounts only through an injected view. [36]
+- The Knowledge reader the retained layer mounts. [39]
+- The revalidation provider is shown only for ordinary Operations outside takeover and review. [64]
+- RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
+- Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
+- Rail fade properties are selected by the animation permission. [67]
+- The `chatsLayer` keep-alive class used by the Chats layer. [68]
+- A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
+- The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
+- The reviewed UI contract owner `MainLayers`. [88]
+- MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner. [89]
+- The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally. [92]
+- The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
+- Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]
+- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
+- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries. [97]
+- At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
+- Review is explicitly excluded from takeover. [99]
+- Independent Operations sidebar toggles outside DetailPanel. [100]
+- Review column shares the right rail and DocumentChat wrapper. [101]
+- Operations/sidebar and review/chat column sizing. [102]
+- Shown page/repository provenance values. [103]
+- Tray button outside the view group and layer outside railed body. [104]

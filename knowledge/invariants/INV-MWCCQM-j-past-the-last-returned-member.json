@@ -10,7 +10,7 @@
   "conditions": [
     "Same-revision family-side reads merge returned members and keep the furthest published cursor.",
     "The main-page continuation control requests the cursor published for its current selected subject; the handler can select a kept family with its retained cursor, but the compact sidebar renders no kept-family continuation control.",
-    "Forward traversal selects the next rendered real-change occurrence or returns end; neither selection nor traversal automatically reads a roster page."
+    "Forward and backward traversal select the next or previous drawn changed block in display order or return end; neither selection nor traversal automatically reads a roster page."
   ],
   "exclusions": [
     "No j-stop, control-focus, polite-family-stop or next-j promise for a partial kept family in the sidebar.",
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
   "statement": "Within one walked family-side revision, folding roster reads retains every returned member and the furthest page position. Roster continuation is an explicit subject-bound page request; change-traversal keys never request a roster page.",
   "status": "proposed",

@@ -31,12 +31,12 @@
       ]
     },
     "109": {
-      "note": "**Historical family assembly, superseded: the current FamilyCenter branch renders guarantee/meaning/member context, expressions, a separate realization-resolution collection, evidence and subject worklist. No shared explorer is mounted in this assembly; the collection is no longer a third-part-before-explorer layout.**  Anchor: `FamilyCenter`; `FamilyMemberContext`; `FamilyExpressionExcerpts`; `carriedMembership`",
+      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
             "locator": {
               "kind": "file"
             },
@@ -46,39 +46,10 @@
         },
         {
           "anchor": {
-            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
-            "content": "sha256:4a0b94406a0ab63a23994e72a8ee5bb2dfa15ed0f7c766020d2b03d07312e5fc",
+            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "content": "sha256:908cdb7cacff5af136079aa9c9ddea390943197d0a965b37f28158aee997919d",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/familyExpressions.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
-            "content": "sha256:b70dccf9ff1ec35871d0171e55f36f615d082d0aad0bd7aece699a5202e3372d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/SubjectWorklistIdentity.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Unexplained and Unknown rail destinations open comparison-bound change-set pages filtered by the held lane answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:ae60df0c329316293597aaa109b9a539015c2f2ea58d8925554a591c4a6690ad",
-            "locator": {
-              "end": 721,
-              "kind": "line_range",
-              "start": 682
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -86,40 +57,39 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:64567a9191da8b5a9c6bc9761bbfda3d2249c432bd853a14aa1a9c046efbf83e",
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:0fd5bc9e9436412a045a38efb66a171fc94d706088b06f01f7915cdaa33a2e42",
             "locator": {
-              "end": 543,
-              "kind": "line_range",
-              "start": 497
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters.\n\nAnchor: `LaneSection`; `laneFiles`; `FullPageLinks`; `useReviewChangePage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "end": 599,
-              "kind": "line_range",
-              "start": 575
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
-            "content": "sha256:8f3e0039e93677f278439502d52836c055a85f56991e752542716197cc7fd4da",
-            "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 26
-            },
-            "path": "dashboard/src/panels/changeset/reviewChangeSet.ts"
           },
           "kind": "code"
         }
@@ -200,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
             "content": "sha256:0630fafb57fc6fe33a5e90dd0b661d3007d27148a673975c0c30f78c2c912f4f",
             "locator": {
-              "end": 91,
+              "end": 90,
               "kind": "line_range",
-              "start": 87
+              "start": 86
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -213,12 +183,12 @@
         },
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
             "content": "sha256:05cb40c48b5f19ebb952580eccc58e766449bbd338175675c5dd0c5ec46b33c0",
             "locator": {
-              "end": 300,
+              "end": 296,
               "kind": "line_range",
-              "start": 289
+              "start": 285
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
           },
@@ -413,49 +383,114 @@
       ]
     },
     "122": {
-      "note": "The panel, the notice, or nothing.",
+      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
       "targets": [
         {
           "anchor": {
-            "blob": "c8a125a74b9d7014d7b984a5bf3da22343fdba2f",
-            "content": "sha256:18f55d6fbfab265117bafa7d2ba64ca5f86a622e35ae8f08f36aed7b811f0d54",
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledgePanel"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "content": "sha256:908cdb7cacff5af136079aa9c9ddea390943197d0a965b37f28158aee997919d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:0fd5bc9e9436412a045a38efb66a171fc94d706088b06f01f7915cdaa33a2e42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "123": {
-      "note": "Planning marks only from a leaf-wide read of the same comparison.\n\nAnchor: `pinnedWorklist`",
+      "note": "ReadingContext passes only the matching leaf-wide worklist to page cards and selected semantic content.\n\nAnchor: `WorklistView`; `useReadingValue`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:f02e30ccc289171d6807851f5a79fb22f12b777197f7f8aff1a7235aa204ac7a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "124": {
-      "note": "The body passes the knowledge panel to the family, member and unselected centres.\n\nAnchor: `ReviewCenterBody`",
+      "note": "PageReading places WorklistView in the reading-column replacement slot; selected semantic details retain their own subject worklist.\n\nAnchor: `WorklistView`; `useReadingValue`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:f02e30ccc289171d6807851f5a79fb22f12b777197f7f8aff1a7235aa204ac7a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
@@ -496,29 +531,27 @@
       ]
     },
     "127": {
-      "note": "The surface owns the one comparison-bound leafTrees read; the workspace receives and shares it rather than fetching again.\n\nAnchor: `ReviewPanes` `WorkspaceBody`",
+      "note": "useChangeSet owns leaf-wide trees, shown-invariant cards, summary and lane; one model feeds both columns.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:021447ba8554ce486b53fda52a49f88633c43397e077d132146167824e8f7d33",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:2079af31ec39adf62165a9a860d1fdd6c112b36e3008104cc0825dd92227127c",
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:126194d523f8005ef9d403bb8a382a112570d4dcd9dae17b8110074eff73c2fe",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceBody"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
           },
           "kind": "code"
         }
@@ -561,34 +594,54 @@
       ]
     },
     "13": {
-      "note": "The one lane read handed to the workspace and the details.",
+      "note": "useChangeSet supplies one comparison-scoped lane read to page content and held comparison-page facts.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:021447ba8554ce486b53fda52a49f88633c43397e077d132146167824e8f7d33",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:126194d523f8005ef9d403bb8a382a112570d4dcd9dae17b8110074eff73c2fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
           },
           "kind": "code"
         }
       ]
     },
     "130": {
-      "note": "The cockpit mounts the reviewer for a change-set target that carries a review, with its optional subject and history view.",
+      "note": "Operations’ ReviewMain mounts the optional-subject/history reviewer beside the stable shared task chat.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTakeover"
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
           },
           "kind": "code"
         }
@@ -612,17 +665,27 @@
       ]
     },
     "132": {
-      "note": "The workspace is mounted over the answer or the frame, and the records only over an answer.",
+      "note": "Page structure persists over an admitted frame; TechnicalDetails labels subject records from shown answers only.\n\nAnchor: `ReviewSurface`; `PageReading`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
@@ -662,7 +725,7 @@
         },
         {
           "anchor": {
-            "blob": "07826420000445ac2a933cfea990adcb4ec951b6",
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
             "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
             "locator": {
               "kind": "symbol",
@@ -708,74 +771,103 @@
       ]
     },
     "137": {
-      "note": "The reading-area column is one node whose content alone is swapped.\n\nAnchor: `WorkspaceCenter`",
+      "note": "ReadingColumn is the persistent reading scrollport with page-level notes, summary, subject sections, lane, canvas and details.\n\nAnchor: `ReviewSurface`; `PageReading`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "138": {
-      "note": "The weights of the change kinds and the two orders, which only reorder.",
+      "note": "changeSetModel applies the shared sort to subjects/locations without inventing semantic or source facts.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "dcdfc2afd22582bf272d997fb8a964748eb602b2",
-            "content": "sha256:91226cb48158f75abd6bed1dd97f3d0492039ec83c3994d5e7d3af2443436ce8",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
-              "kind": "symbol",
-              "name": "CHANGE_WEIGHT"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/changeTriage.ts"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:9436ab5f4df9a143bb65caef3be77dc6190f79d09c451e4781aadc5a1879b387",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "orderFamilies"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/changeTriage.ts"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
-            "content": "sha256:35406d4d2b813e6cd12d4e1c012c40d64e8273010dfe1edb9955766d468d84d0",
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
             "locator": {
-              "kind": "symbol",
-              "name": "orderMemberRows"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/changeTriage.ts"
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "139": {
-      "note": "The order preference and its storage key.",
+      "note": "One Sort uses review.tree-order.v1; Priority defaults and legacy triage maps to Priority.\n\nAnchor: `sortOf`; `SortMenu`; `changeSetModel`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1e442b7382604253a52720fffe0a9aff95ff246",
-            "content": "sha256:3e81e8b4c04481f32cb6d8344fab5645df090a95cb6c910947c3f0c622172f34",
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:63cfc9bfeba823a3a5591e85e816bf0d8e5a67b6a94a422bf63805a0f637b93d",
             "locator": {
-              "kind": "symbol",
-              "name": "TREE_ORDER_KEY"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/triageOrderPreference.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
+            "content": "sha256:f33c6ca4dcd90e151a27c53af182c0e74fb1078f28ac673fda19c61f28ab2db7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/SortMenu.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
           },
           "kind": "code"
         }
@@ -799,68 +891,30 @@
       ]
     },
     "140": {
-      "note": "Traversal selects displayed tree nodes with real-change primary facts and reports its ends; partial-roster continuation buttons are not traversal stops.",
+      "note": "Traversal follows displayed changed blocks then loaded lane hunks and excludes continuation controls.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
       "targets": [
         {
           "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:6fe520444a058ae2686dbbe9b10e1720a255b57b3b7f1a2267174a886f81adc2",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
             "locator": {
-              "kind": "symbol",
-              "name": "nextChange"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:c69741528186ee674d3d64972cc1721e98a24a98f10492061fc228c2543d438a",
-            "locator": {
-              "kind": "symbol",
-              "name": "outcomeMessage"
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:27f0da7229df6d1083e6f0d81ec04a3d06ffef905a735430b6cd6537314f97b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "itemsOf"
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdb8a1ad32c4b7e0f25e5c8b8f3819addd8094",
-            "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "RosterNext"
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "141": {
-      "note": "A step focuses and clicks the stop, and the chords are bound on the reviewer's zone only when the tree has change facts.",
+      "note": "useBlockTraversal selects through the page owner and binds the reviewer-zone commands only while the overlay is closed.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
       "targets": [
         {
           "anchor": {
-            "blob": "422af74afc1f13f1a92ba91451b83632760e6750",
-            "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
             "locator": {
-              "kind": "symbol",
-              "name": "useChangeTraversal"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
           },
@@ -869,15 +923,14 @@
       ]
     },
     "142": {
-      "note": "The end message is given out only beside the rows it was said for and is dropped in the commit that shows other rows.",
+      "note": "Traversal end status is scoped to the committed stop identities.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
       "targets": [
         {
           "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
             "locator": {
-              "kind": "symbol",
-              "name": "useStatusFor"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
           },
@@ -886,17 +939,27 @@
       ]
     },
     "143": {
-      "note": "The tree draws the walked families, hands the traversal the rows it shows, and mounts the triage bar only with change facts.",
+      "note": "ReviewTree renders the shared model, tree-only filter, Changed/All view and one Sort.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:10347e662af003c0ea00321d0472c5ec5b7d578b27dd7ce62cce1751492453f8",
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyTree"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
           },
           "kind": "code"
         }
@@ -920,33 +983,65 @@
       ]
     },
     "145": {
-      "note": "The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree.\n\nAnchor: `useWalkedSelection`",
+      "note": "useReviewPage advances the walk and supplies one selection/model to the tree and reading column.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "146": {
-      "note": "Every selection numbers the tree intent, keeping only with `keepTree`.",
+      "note": "Every page selection advances tree intent; ordinary in-page selections keep the walk while explicit outside callers reset it.\n\nAnchor: `useReviewSelection`; `readSubjectOf`; `restoreSelection`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
-            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:4da79f954b96ecf6b8d2e16a30c5454b972ab9e78d789d4510fabc338d7939fc",
             "locator": {
-              "kind": "symbol",
-              "name": "subjectSelection"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+            "content": "sha256:f667ccb00ef4ae8bd8c362196955c746cbf319d0864d6fe0a2ee0ea29e03d09c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/selectionRestore.ts"
           },
           "kind": "code"
         }
@@ -957,7 +1052,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
             "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
             "locator": {
               "kind": "symbol",
@@ -970,46 +1065,76 @@
       ]
     },
     "148": {
-      "note": "The catalogue lists a row for every family the tree shows while one is kept.",
+      "note": "Kept families feed the shared change-set model; ReviewNavigation no longer mounts a separate family catalogue control.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
-            "content": "sha256:0c33f4ff9cc589138ae44e6d02cf8d3b6f851239b6b87f359d3b3a0a9c62a0aa",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
-              "kind": "symbol",
-              "name": "CatalogueFamilies"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "149": {
-      "note": "The kept tag and the scope line that counts kept families apart.",
+      "note": "Previously read kept families retain admitted semantic context under the shared page model.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:9696390232abc85cd8670a533cbd44ab2e1e63d54d8d8a1c8c4214b7332969c3",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
-              "kind": "symbol",
-              "name": "keptMarks"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:9ed6a43496d5cae2bdd3fc5e3144e956c5aa677bb391585b1ade50978e29e3ee",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "filterScope"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
@@ -1060,51 +1185,14 @@
       ]
     },
     "150": {
-      "note": "Layout-effect request ordering, local pending/answered kept-tree reveal and moved-focus guards remain distinct from stacked unavailable-status reveal.\n\nAnchor: `useSelectionFocus` `revealPendingRead` `focusSelectedRead` `revealUnavailableRead`",
+      "note": "Selection focus lands locally on the tree after the relevant answer, preserves moved focus and keeps failed/refused requests for retry.\n\nAnchor: `useSelectionFocus`; `landFocus`; `landFailureFocus`",
       "targets": [
         {
           "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:434cc9f781d38a581f02a33e2f1e038a30819d588dec8248ec44d7e75460ec57",
+            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "content": "sha256:908cdb7cacff5af136079aa9c9ddea390943197d0a965b37f28158aee997919d",
             "locator": {
-              "kind": "symbol",
-              "name": "useSelectionFocus"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:38564d73f230f06d1a3838afb207ee2ffefdf65aecbece0c29f8021e535527a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "revealPendingRead"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:bfecd9d90d38a444c1ae0c145344d0b2bbe40cfc515a01916c3cc3e8cca81b8b",
-            "locator": {
-              "kind": "symbol",
-              "name": "focusSelectedRead"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "revealUnavailableRead"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -1117,7 +1205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
             "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
             "locator": {
               "kind": "symbol",
@@ -1204,12 +1292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
             "content": "sha256:643ed2a287df06a3ba45376e20d8f1e58b959f502a6dd9b6f3045249707876fc",
             "locator": {
-              "end": 167,
+              "end": 219,
               "kind": "line_range",
-              "start": 155
+              "start": 207
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
@@ -1230,12 +1318,12 @@
         },
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
             "content": "sha256:6ccddff8a0b1e85bf09094a9705187e7b23f6fe425eb3d913f2c4261557dc69a",
             "locator": {
-              "end": 704,
+              "end": 928,
               "kind": "line_range",
-              "start": 694
+              "start": 918
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
           },
@@ -1244,32 +1332,65 @@
       ]
     },
     "160": {
-      "note": "The reviewer adds a compact recorded-effect badge to eligible changed outline rows while keeping navigation one line.",
+      "note": "The page’s subject content renders recorded effect facts while compact tree rows keep their own single-line presentation.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
-            "content": "sha256:d27c81524c281e807541c69cd0778dc537271bfaffa16aed85ee3e660f51cbf0",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "161": {
-      "note": "The compact navigation keeps its own row facts and optional recorded-label badge; semantic record content lives in the main page.",
+      "note": "ReviewTree’s compact rows are navigation over the shared model; semantic records remain in reading subject slots.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
-            "content": "sha256:8ded825875bfedd801447b50e987fc206df7354c9c481272427c68837586bacd",
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
           },
           "kind": "code"
         }
@@ -1397,7 +1518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
             "content": "sha256:c9eb0d4a01f9a8fb6d480d81cfff589f1ac1aa2f03cc1dcbc478d85e7c203d70",
             "locator": {
               "kind": "symbol",
@@ -1454,36 +1575,65 @@
       ]
     },
     "168": {
-      "note": "Workspace can use the admitted frame while records receive only shown answers; comparison navigation retains the reviewer underneath",
+      "note": "Reading page context remains mounted while selected answer status changes; the comparison overlay retains the hidden inert page underneath.\n\nAnchor: `ReviewSurface`; `PageReading`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:9ab9f74edf97c7df68650669072f65c479c69f10bef99e4e255be1e3e82d8df7",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 328
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "169": {
-      "note": "Review root owns its vertical scrollport and keyboard zone",
+      "note": "ReviewSurface owns the keyboard zone; ReadingColumn or stacked ReviewMain owns vertical scrolling.\n\nAnchor: `reviewRoot`; `ReviewGrid`; `readingColumn`; `stackedPage`",
       "targets": [
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:7a9ad6f652bfff7d042059713e2870665cab7e3ea15cb1bdb2f4e009662ad39a",
+            "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+            "content": "sha256:9d41481d6897db661410ed7aee888a84c5f3b3d1885d830478c46bec178e5827",
             "locator": {
-              "end": 869,
-              "kind": "line_range",
-              "start": 849
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
           },
           "kind": "code"
         }
@@ -1494,7 +1644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
             "content": "sha256:d3c490352e9734ae3f080556180deffac25a61d7b32beea705546c4cb827ca07",
             "locator": {
               "kind": "symbol",
@@ -1585,29 +1735,14 @@
       ]
     },
     "173": {
-      "note": "Traversal selects shown real changes, excludes unknown/unchanged rows and has no continuation stop",
+      "note": "Block traversal excludes unknown/unchanged blocks and admits loaded lane hunks in file order.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
       "targets": [
         {
           "anchor": {
-            "blob": "8af58177d688c1f75043eababc9e64be492d706a",
-            "content": "sha256:e9a7f246cbe7d8894e4bfc21c5b19bd039c2e72be4a890f427ee82a706811426",
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
             "locator": {
-              "end": 89,
-              "kind": "line_range",
-              "start": 34
-            },
-            "path": "dashboard/src/panels/review/changeTraversal.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3f4f48e8b7fc8fbe3e202d423976d38219d30c6b",
-            "content": "sha256:cd7e177a7fb3506b7a7321cf524d7f7f394bcea08de63d60093d2cfbcf6da2f0",
-            "locator": {
-              "end": 143,
-              "kind": "line_range",
-              "start": 120
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/changeTraversal.ts"
           },
@@ -1620,12 +1755,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682ee6b7ec8192ca5c30b68570db7d4e9c72ea0c",
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
             "content": "sha256:bb363c45b81f4853f805e6feb89da48e7dcc7cec6b957a10f4e1226133c6daa3",
             "locator": {
-              "end": 171,
+              "end": 172,
               "kind": "line_range",
-              "start": 132
+              "start": 133
             },
             "path": "dashboard/src/panels/review/intentMarkerScope.ts"
           },
@@ -1652,16 +1787,25 @@
       ]
     },
     "176": {
-      "note": "Marker follow/return restores subject, family, worklist and pane state through ordinary navigation",
+      "note": "Marker Back restores subject, family selection and worklist, then returns focus to the origin marker.\n\nAnchor: `usePageMarkers`; `workspaceMarkerMoves`; `restore`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:24ed4c5e03e45cdf789745a727e89daed71c191a340d9cbcf888a0bc066a1ff6",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 25
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/markerNavigation.ts"
           },
@@ -1745,73 +1889,65 @@
       ]
     },
     "179": {
-      "note": "Planning marks require matching comparison; subject worklist rendering joins canonical identity and states unavailable reads",
+      "note": "Page cards and selected subject worklist content require the same comparison’s matching leaf-wide worklist.\n\nAnchor: `WorklistView`; `useReadingValue`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:d8f42d11e082320756a83770282272124bac049f705ab784ee01ef626270824a",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "end": 877,
-              "kind": "line_range",
-              "start": 873
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8afe7fd5f94829d01d23900528da865527e4996d",
-            "content": "sha256:3867541953ac02a2d88aeb4ae05d5865d4c742246241170684b418471facba1e",
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:f02e30ccc289171d6807851f5a79fb22f12b777197f7f8aff1a7235aa204ac7a",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 7
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/SubjectWorklistIdentity.tsx"
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
-            "content": "sha256:a64d218634c7e8ed8710f5ed39ea372d0e4e7e9de440422639941960b74cf26d",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
             "locator": {
-              "end": 301,
-              "kind": "line_range",
-              "start": 265
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "18": {
-      "note": "The rail's labels compare bytes on a tree comparison; with MIK-L33's change facts the badges state a text change and the labels do not repeat it.",
+      "note": "Compact tree row labels and reasons come from the shared model, preserving one line and complete accessible names.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
       "targets": [
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:ba89b949afbe2fdeb4eb5f25e3535fcd427f5a67f49bf0d6c8d8f8beca948166",
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
             "locator": {
-              "kind": "symbol",
-              "name": "guaranteesOf"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
-            "content": "sha256:5d08e213c66a4624d876e1248ba5094de548192ad1845f452d54dfd81708244d",
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
             "locator": {
-              "kind": "symbol",
-              "name": "memberSideTag"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
           },
           "kind": "code"
         }
@@ -1940,12 +2076,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
             "content": "sha256:5a5e0e903072994f510b114c542da97ffafb8c2e6d05b94737fc43189d883a1d",
             "locator": {
-              "end": 154,
+              "end": 178,
               "kind": "line_range",
-              "start": 138
+              "start": 162
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
           },
@@ -1953,12 +2089,12 @@
         },
         {
           "anchor": {
-            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
             "content": "sha256:d36d8d7e23873bec770345a588bcf9514b192f509a2763bddb4f559068bb6775",
             "locator": {
-              "end": 226,
+              "end": 250,
               "kind": "line_range",
-              "start": 210
+              "start": 234
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
           },
@@ -1966,12 +2102,12 @@
         },
         {
           "anchor": {
-            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
             "content": "sha256:6ca6b4911b0746e998f9fd54cc5a69ce200b8f2031fc9a6e601105f332eba506",
             "locator": {
-              "end": 330,
+              "end": 386,
               "kind": "line_range",
-              "start": 324
+              "start": 380
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
           },
@@ -2135,53 +2271,27 @@
       ]
     },
     "196": {
-      "note": "The same comparison-bound leafTrees feeds code summary, compact tree, worklist and matching change-page enrichment; active live memory input invalidates stale whole-review answers.\n\nAnchor: `ReviewPanes` `useHeldPageLane` `WorkspaceRail` `useReviewMemoryWatch`",
+      "note": "useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
       "targets": [
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:1ed5da5ede7f48725e74c2a3ea1173d75721a93a9528babd41cbe4811d09581c",
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:021447ba8554ce486b53fda52a49f88633c43397e077d132146167824e8f7d33",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPanes"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "24598572b515687b4e415de48aa409de53d81d1f",
-            "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:126194d523f8005ef9d403bb8a382a112570d4dcd9dae17b8110074eff73c2fe",
             "locator": {
-              "kind": "symbol",
-              "name": "useHeldPageLane"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:6fa06a8d3a51a5fa120b205e072280e2e8fb64127826802b8ce7710b71d7483f",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceRail"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
-            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewMemoryWatch"
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
           },
           "kind": "code"
         }
@@ -2221,16 +2331,410 @@
         }
       ]
     },
-    "24": {
-      "note": "The card component.",
+    "199": {
+      "note": "Current composition owners for the review page account.\n\nAnchor: `ReviewSurface`; `PageReading`; `ReadingColumn`",
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:fa21f246455f59e138d85312669de856e2c29e6e4f2becf4a03a19c876353610",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
-              "kind": "symbol",
-              "name": "ExpressionCards"
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "200": {
+      "note": "Current shell owners for the review page account.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "201": {
+      "note": "Current navigation owners for the review page account.\n\nAnchor: `useReviewNavigation`; `initialSubject`; `useReviewPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:444a1a2b6f518385b374f4c9f6bb0df8a6cc2a8e1735572a370ae58e2d24d2f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "content": "sha256:e130583090bf679f916f28c9017752d26e9d3bdb849b519b1b565683098a6353",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "202": {
+      "note": "Current reads owners for the review page account.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:021447ba8554ce486b53fda52a49f88633c43397e077d132146167824e8f7d33",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:126194d523f8005ef9d403bb8a382a112570d4dcd9dae17b8110074eff73c2fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "203": {
+      "note": "Current selection owners for the review page account.\n\nAnchor: `useReviewSelection`; `readSubjectOf`; `restoreSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:4da79f954b96ecf6b8d2e16a30c5454b972ab9e78d789d4510fabc338d7939fc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+            "content": "sha256:f667ccb00ef4ae8bd8c362196955c746cbf319d0864d6fe0a2ee0ea29e03d09c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/selectionRestore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "204": {
+      "note": "Current chat owners for the review page account.\n\nAnchor: `RightRail`; `RailedBody`; `reviewRailView`; `useReviewChat`; `reviewChatTask`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "content": "sha256:45bc1bb6ca70fd9c8e730710c34fa22f33fbb377fba1d0f9074156b775a3886f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "205": {
+      "note": "Current tray owners for the review page account.\n\nAnchor: `CockpitShell`; `TrayLayer`; `TrayButton`; `useTrayOpensColumn`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+            "content": "sha256:306a113f5872d414179c145f75244ab78209007275b7e8214433f76a304962f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayLayer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:7dd2f5f5ffe124ac6f7017abdcb7732fd48aad7492fb7e94b0da99d0511865d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayButton.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "content": "sha256:45bc1bb6ca70fd9c8e730710c34fa22f33fbb377fba1d0f9074156b775a3886f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "206": {
+      "note": "Current watch owners for the review page account.\n\nAnchor: `useSurface`; `useReviewMemoryWatch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "content": "sha256:2ea3d598d5cc9f48e02e9f7e78816d46ecbe3ba71d87f0bac3cb237647164acc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "207": {
+      "note": "Current cache owners for the review page account.\n\nAnchor: `ReviewReadCache`; `sameGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:e4f17ea6c1b0ddd03a06af59f71ec8ae7e0d0c04bc605c9e079911862d5fb773",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "208": {
+      "note": "Current model owners for the review page account.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "209": {
+      "note": "Current markers owners for the review page account.\n\nAnchor: `usePageMarkers`; `workspaceMarkerMoves`; `restore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "210": {
+      "note": "Current tree owners for the review page account.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "211": {
+      "note": "Current family owners for the review page account.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "content": "sha256:908cdb7cacff5af136079aa9c9ddea390943197d0a965b37f28158aee997919d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fc80928e7801493db07f8f13ef6bd614d108ef36",
+            "content": "sha256:0fd5bc9e9436412a045a38efb66a171fc94d706088b06f01f7915cdaa33a2e42",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "212": {
+      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -2238,58 +2742,488 @@
         },
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:af3c50e0862a220b112c7a64e4bbf055d60c318a3ec9c8732378c2d91211a8a6",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "213": {
+      "note": "Current lane owners for the review page account.\n\nAnchor: `LaneSection`; `laneFiles`; `FullPageLinks`; `useReviewChangePage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "214": {
+      "note": "Current details owners for the review page account.\n\nAnchor: `TechnicalDetails`; `PageDetails`; `ReviewRecordIdentities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:a87433a26cf3510092e00849078ba9b03ea8058542e4660d188f0e4313c7c9f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "215": {
+      "note": "Current sort owners for the review page account.\n\nAnchor: `sortOf`; `SortMenu`; `changeSetModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:63cfc9bfeba823a3a5591e85e816bf0d8e5a67b6a94a422bf63805a0f637b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/triageOrderPreference.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
+            "content": "sha256:f33c6ca4dcd90e151a27c53af182c0e74fb1078f28ac673fda19c61f28ab2db7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/SortMenu.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "216": {
+      "note": "Current traversal owners for the review page account.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "217": {
+      "note": "Current worklist owners for the review page account.\n\nAnchor: `WorklistView`; `useReadingValue`; `ReadingColumn`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:f02e30ccc289171d6807851f5a79fb22f12b777197f7f8aff1a7235aa204ac7a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "218": {
+      "note": "Current layout owners for the review page account.\n\nAnchor: `reviewRoot`; `ReviewGrid`; `readingColumn`; `stackedPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+            "content": "sha256:9d41481d6897db661410ed7aee888a84c5f3b3d1885d830478c46bec178e5827",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "219": {
+      "note": "Current focus owners for the review page account.\n\nAnchor: `useSelectionFocus`; `landFocus`; `landFailureFocus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "content": "sha256:908cdb7cacff5af136079aa9c9ddea390943197d0a965b37f28158aee997919d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "220": {
+      "note": "The task document head offers one canonical-reference task pick only when that reference exists.\n\nAnchor: `taskPick`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:413dfe0e714ca7066d3c86bfb97c69365ac356e8a42038ee706b013436348e70",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "221": {
+      "note": "A locally opened citation shows the Knowledge aside before selecting its citation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:8c5a8b8358d36b143cfdc6bd660a11c69dfbd914437d4ce02b5cb4416504bcd9",
             "locator": {
               "kind": "symbol",
-              "name": "ReadyCards"
+              "name": "useReaderSidebars"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "222": {
+      "note": "The Knowledge document column provides shared tree and outline toggles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:501a689b00155ee81f79e3329cc3f85e8383092c650e910f01e3bd13e2fd5be3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSidebarToggles"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "223": {
+      "note": "Knowledge sidebar toggles follow the responsive tree and aside layouts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:416ed283ec762019ac71404ff63e72642cbcafda009bfb2b712b9930eede9615",
+            "locator": {
+              "kind": "symbol",
+              "name": "toggleLine"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:f07ba411128550531d953d5945a702e3ef1151efa896e1558cd8f5bcee7ed84f",
+            "locator": {
+              "kind": "symbol",
+              "name": "asideToggle"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "224": {
+      "note": "The Knowledge toggles stay in the document column while the aside and its resize handle are hidden in place.\n\nAnchor: `sidebarHandleProps`; `sidebarPanelProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:501a689b00155ee81f79e3329cc3f85e8383092c650e910f01e3bd13e2fd5be3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSidebarToggles"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:24ed24874e2e2f89d0127e11f7702aac6768fd60095bff0682493b2055dbb1ab",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 480
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "225": {
+      "note": "The mounted citation case checks recovery from a hidden aside while retaining the same prose node, scroll position and path address.\n\nAnchor: \"opens wide citations beside unchanged prose, and phone citations as a page with Browse navigation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:6b6df921134cf9a495857cd2e79a5c282fae89e53ce6d87e898c4325ae79e819",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "Grouping by (path, range) and the bounded-roster scope.",
+      "note": "changeSetModel groups shared regions and gives one order to tree and reading content.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:fbf3cc7b5dc1c06a4c921d58929d900fc92c4a60fc6a3d15d57ae400e16b1ab7",
+            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
             "locator": {
-              "kind": "symbol",
-              "name": "cardKey"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/focusedCards.ts"
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "aabdb0205910ea625a61e6f59e5b711182c48afa",
-            "content": "sha256:e147f3e2f54b176f022c7cd49657a45093bc4f086de34e4d7d63a1fc0dac8e0b",
+            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
+            "content": "sha256:422bc42d742a2050a4cb2951e750b88ec8f9d61520cdfc3aab73aa4083a97c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "cardScope"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/review/focusedCards.ts"
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
+            "content": "sha256:a0dfab0e66fbb07f3db5b39e9ed3b63300a70d389defc155fc738b5d9bead04a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "26": {
-      "note": "Cards for a tree comparison, marks only from the same comparison.\n\nAnchor: `pinnedWorklist`; `CenterExpressions`",
+      "note": "Page card reads are tree-comparison-bound; worklist marks use the matching leaf-wide comparison.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed5174dfa793a45df76051be0a6b5db69f61af51",
-            "content": "sha256:b0577cc0078831899435364e101aea4a96ba759398c451ae758dfc8c54a01500",
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:021447ba8554ce486b53fda52a49f88633c43397e077d132146167824e8f7d33",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "content": "sha256:126194d523f8005ef9d403bb8a382a112570d4dcd9dae17b8110074eff73c2fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
           },
           "kind": "code"
         }
@@ -2596,7 +3530,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90d785f9ffab30355ae51cdb804b79c0ab4d53c7",
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
             "content": "sha256:6631beca27475d00c2de617584c9d10c8fde865ef86233e58b6fff24b8e69d4f",
             "locator": {
               "kind": "symbol",
@@ -2608,7 +3542,7 @@
         },
         {
           "anchor": {
-            "blob": "90d785f9ffab30355ae51cdb804b79c0ab4d53c7",
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
             "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
             "locator": {
               "kind": "symbol",
@@ -2853,7 +3787,7 @@
         },
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -2915,16 +3849,27 @@
       ]
     },
     "8": {
-      "note": "The scope provided around the landed workspace body.\n\nAnchor: `ReviewWorkspace`",
+      "note": "ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content.\n\nAnchor: `usePageMarkers`; `workspaceMarkerMoves`; `restore`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:85e8f85fdd213d5e874adb7b5dc3587aef3ccac7d42c8c39bf0594c4ddd675bc",
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
             "locator": {
               "kind": "file"
             },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
           },
           "kind": "code"
         }

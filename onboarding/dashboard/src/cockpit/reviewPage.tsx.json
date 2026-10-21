@@ -1,0 +1,149 @@
+{
+  "path": "dashboard/src/cockpit/reviewPage.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+        "content": "sha256:ed9951429449e38544ef4aa2b6daddd82ca954f1a923967a86e12fe86b560de4",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewChatClose"
+        }
+      },
+      "id": "RLZ-0286EV",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The overlying chat brings a shared close toggle at its own edge, so its overlay does not strand the covered page control.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+        "content": "sha256:75b0feebaf3ae72283b3ce3f7c491fc08beb96c7b174f5bd908417e251359840",
+        "locator": {
+          "kind": "symbol",
+          "name": "columnPlacement"
+        }
+      },
+      "id": "RLZ-5FBFS3",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "An overlay is absolute and a narrow chat is fixed with a viewport max-width; neither consumes a nonzero shell grid track.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+        "content": "sha256:6718a77219bc58d0ab45fed6d3040023e8e10632c3e5820d0c1a48082cac762e",
+        "locator": {
+          "kind": "symbol",
+          "name": "reviewRailView"
+        }
+      },
+      "id": "RLZ-6A5BVQ",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Passes the active width and setter to the existing right rail with the distinct Resize the chat column handle label.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+        "content": "sha256:75b0feebaf3ae72283b3ce3f7c491fc08beb96c7b174f5bd908417e251359840",
+        "locator": {
+          "kind": "symbol",
+          "name": "columnPlacement"
+        }
+      },
+      "id": "RLZ-T5SNSJ",
+      "invariant": "INV-ZTZSDN",
+      "origin": {
+        "handoffEntry": "RP18_WIDTH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Grid, absolute overlay and fixed narrow placements use the same active width; narrow rendering also has its viewport max-width.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+        "content": "sha256:5079cbe4de3e07780a4fee63729e31475f7b3918689372d5e29a8472a95a1004",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewMain"
+        }
+      },
+      "id": "RLZ-YWX7EV",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Its stackedPage rule provides the narrow main scroll owner instead of clipping content after the first screen.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Target forwarding and main-slot composition\n\nAnchor: \"export function ReviewMain({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:4fa73af3538d61661ba016cc4cc48652a097b107825fb4ef9285711c782eaf2a",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preload and in-place rail placement\n\nAnchor: \"export function reviewRailView(fullBleed: boolean, column: ReviewChatColumn) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:768e6ccecafa27d7394b92c978e404037e87c23ac2ae916fc4147120bfdeb221",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reachable overlay close control\n\nAnchor: \"export function ReviewChatClose({ column }: { column: ReviewChatColumn \\| null }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
+            "content": "sha256:ed9951429449e38544ef4aa2b6daddd82ca954f1a923967a86e12fe86b560de4",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

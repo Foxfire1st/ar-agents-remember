@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-        "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+        "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+        "content": "sha256:240a3732e6007a087ba6b5ccd0a3795ca012561bf92f20f77faa684077b54e53",
         "locator": {
           "kind": "symbol",
           "name": "resolve_committed_leaf_review"
@@ -22,8 +22,26 @@
     },
     {
       "anchor": {
-        "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-        "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+        "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+        "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_review_comparison"
+        }
+      },
+      "id": "RLZ-7JS6XC",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It resolves a provided number through the exact recorded leaf contract on both live and landed leaves.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+        "content": "sha256:240a3732e6007a087ba6b5ccd0a3795ca012561bf92f20f77faa684077b54e53",
         "locator": {
           "kind": "symbol",
           "name": "resolve_committed_leaf_review"
@@ -36,133 +54,89 @@
       },
       "rationale": "Resolves a closed leaf from durable records, never from a worktree. It reads the leaf's recorded enclosure contract first. It then tries the recorded tree comparison: a leaf that recorded one reopens from its tree ids, and a leaf that recorded none proceeds to comparison-generation reopening with no converted/unconverted guard, then to the bare source range when no generation was published; an ambiguous or unreadable generation is refused rather than replaced. On a converted official line a leaf that recorded only a dataset comparison keeps its code sides and reports its knowledge sides legacy-unavailable, with no database read; legacy resolution uses the retained manifest's source sides.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+        "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_review_comparison"
+        }
+      },
+      "id": "RLZ-AV8VJT",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "An explicit number reopens that comparison from the recorded leaf contract even for a live leaf; no current-worktree capture or legacy-generation substitution occurs on this path. None retains ordinary resolution. Invalid context, absent enclosure and absent recorded number return named refusals.",
+      "role": "primary-authority"
     }
   ],
   "references": {
-    "28": {
-      "note": "`resolve_committed_leaf_review` owns the current boundary described above.",
+    "36": {
+      "note": "A supplied number reopens only its tree record and refuses a missing enclosure/number.\n\nAnchor: \"def resolve_review_comparison(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:630794be4e63a8e89fa46725a1ae3590bf6886c6e41893112ad90d00cafd66d6",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
+              "end": 95,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "code"
         }
       ]
     },
-    "29": {
-      "note": "`ClosedLeafReview` owns the current boundary described above.",
+    "37": {
+      "note": "Committed/default versus explicit legacy-generation reopening keeps retained identities.\n\nAnchor: \"def resolve_committed_leaf_review(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:240a3732e6007a087ba6b5ccd0a3795ca012561bf92f20f77faa684077b54e53",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Historical limitations and dataset refusal preserve missing canonical sides.\n\nAnchor: \"def closed_leaf_limitations(resolved: ReviewCandidateResolution) -> tuple[str, ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:e49dedefaa5093abefceb3b791bed84b18eec155b0bec9cef3d4bbdc28ae744e",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The closed-leaf holder exposes the actual reopened generation and state.\n\nAnchor: \"class ClosedLeafReview:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
             "content": "sha256:c3824a2a639e614e4efc6428d9f941e4d910132be8e607bab8f6b7570cc84a1c",
             "locator": {
-              "kind": "symbol",
-              "name": "ClosedLeafReview"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "`closed_leaf_limitations` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:e6d90d7bba88cf9a818d0bd8aae35b186c667a7fdabec0fc2ef82822786194c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "closed_leaf_limitations"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "31": {
-      "note": "**The value this resolution is composed into, and the field that carries the record rather than a live capture.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "**The single entry point: the closed-enclosure branch that delegates here, with the one local import this leaf's diff suppresses and the reason it is local.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "**The reopen owner's answer this module reads rather than restates: the manifest, the per-channel states and the refusal an ambiguous or unreadable record earns.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
-            "content": "sha256:80fcc2f8bc2ab0548e861e26c7ecbb17bf19cad275e89cec1a4a6ca25f4c1a8d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ComparisonReopen"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "**The case module that measures the whole chain through the real composition and the real HTTP route.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "03ddfd4d7cfa1d7d40eb93badc9bc3282806f94c",
-            "content": "sha256:6b0c898d00655e49fbc5cada3d22143be3f12de967a3d039a0fe4dbb383f8850",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
-            },
-            "path": "mcp/tests/test_historical_committed_leaf_review.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "35": {
-      "note": "An explicit generation is resolved through the same committed-leaf owner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_committed_leaf_review"
+              "end": 56,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "code"

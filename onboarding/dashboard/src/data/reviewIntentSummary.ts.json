@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
-        "content": "sha256:961196f88ab60f8db3410c75d9603dfb10c9ebf352d899d8895c81e5330cb057",
+        "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+        "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
+        "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
         "content": "sha256:f5cda33a04f44fa1cf3806eb26dd2aea42ba7dc422de549adfa34e80a86b72c9",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
-        "content": "sha256:5e6c027382da765e8f98e280560f870951e615875d86950443b3173c400cbb9b",
+        "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+        "content": "sha256:f10a5068b1d1409adc09525b4af0bf8f0459f4254c4e3d20d4c5abb459b6283e",
         "locator": {
           "kind": "symbol",
           "name": "useIntentReviewSummary"
@@ -54,12 +54,12 @@
     },
     {
       "anchor": {
-        "blob": "5f323cafc543fc6177a811ebe5514517f71cb035",
-        "content": "sha256:9c5dc394f4d396f1c671cafc417e22c266bbd3d4c558fbbbbf568eaade165b72",
+        "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+        "content": "sha256:a6b6b6d3f0a7710e45c292212fcfb9b9427d93e4cb2f07eb3bb98858f79a69c9",
         "locator": {
-          "end": 140,
+          "end": 154,
           "kind": "line_range",
-          "start": 104
+          "start": 112
         }
       },
       "id": "RLZ-YNCHSBQT",
@@ -73,14 +73,14 @@
   ],
   "references": {
     "1": {
-      "note": "The component counts and result wire shape retain authored intent, optional attribution and optional stored-open facts.\n\nAnchor: Current implementation",
+      "note": "The component counts and result wire shape retain authored intent, optional attribution and optional stored-open facts.\n\nAnchor: \"export interface ReviewIntentSummaryResult {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-            "content": "sha256:f5f89709b8a21456508cc0f10038bbd247352ac865e9fb90132f179a332a4fe1",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:c1506a720a1421c5eff331dd7d065bef4af9c7e9a305c1b2ac1d880acbcd3008",
             "locator": {
-              "end": 60,
+              "end": 64,
               "kind": "line_range",
               "start": 40
             }
@@ -90,16 +90,14 @@
       ]
     },
     "2": {
-      "note": "The store-owned hook loads and peeks under the same task/facts key and drops superseded mounted completions.\n\nAnchor: Current implementation",
+      "note": "The store-owned hook loads and peeks under the same task/facts key and drops superseded mounted completions.\n\nAnchor: `useIntentReviewSummary`",
       "targets": [
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-            "content": "sha256:08e5aa23021b6bc47bd93b00794cae5bcc77cb996fbb2a48347dea65c3c4391e",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
             "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 104
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -111,12 +109,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
             "content": "sha256:df8044be5c2eb9474ae910ca0b23e95d22be15de5d45d1553d05cd791a91ea71",
             "locator": {
-              "end": 98,
+              "end": 107,
               "kind": "line_range",
-              "start": 67
+              "start": 76
             }
           },
           "kind": "code"
@@ -124,16 +122,14 @@
       ]
     },
     "4": {
-      "note": "Same-key retained fallback and mounted/sequence checks belong to the hook, not a second count computation.\n\nAnchor: Current implementation",
+      "note": "Same-key retained fallback and mounted/sequence checks belong to the hook, not a second count computation.\n\nAnchor: `useIntentReviewSummary`",
       "targets": [
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-            "content": "sha256:c782c72a2d0ab7fb80ecf2ff0483cbbb78809df8ec573c70645e46ebda2753a0",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
             "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 110
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -145,24 +141,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
             "content": "sha256:1665d46bf89699101c854bd144dc26cccb14c9a8dd68d59bca513cbbf8657232",
             "locator": {
-              "end": 59,
+              "end": 60,
               "kind": "line_range",
-              "start": 58
+              "start": 59
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
             "content": "sha256:8429ef3583d0e275f2382e2d1189484c292e3334a3812ac3e34849d49002de6b",
             "locator": {
-              "end": 98,
+              "end": 107,
               "kind": "line_range",
-              "start": 84
+              "start": 93
             }
           },
           "kind": "code"

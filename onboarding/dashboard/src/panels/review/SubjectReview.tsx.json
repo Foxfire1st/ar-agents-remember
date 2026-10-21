@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-        "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:91c499995e5329b4d1c254b1f0cf706211a7f51bc6cc0325c40bd8cb30f9741e",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 146
+        }
+      },
+      "id": "RLZ-1Y624V",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:38918e14ac52f996ea75a7e5f0e4ec30be23035d2e7b6c6c635a8dfe99eb2177",
         "locator": {
           "kind": "symbol",
           "name": "SelectedStatement"
@@ -17,308 +36,169 @@
       },
       "rationale": "Draws the statement comparison only from knowledge.revision_selection when its record kind and id match the selected subject, and otherwise states that no comparison was supplied. Ambiguous or unresolved selections show the per-side states with no diff, so no before/after pair is inferred.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:4ac656886ae885cbf6a9639d15772125434c854d682cb21a9aa379856bd5b6a5",
+        "locator": {
+          "end": 64,
+          "kind": "line_range",
+          "start": 63
+        }
+      },
+      "id": "RLZ-4QS97T",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:9734e49753862f0d4cfc8e8b3bf0682e8fb313f9c84811215a0c36d8af2783a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "revisionLabels"
+        }
+      },
+      "id": "RLZ-HGEXKX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A changed pair is labelled only when both carried versions exist and differ; a single selected revision may use its one actual version on both sides.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:26da62ea2d75e1f7221e888f3fa4144b8229c9612d9b0a6d00b2749d31d90d0e",
+        "locator": {
+          "end": 143,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-JMCHD1",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:a96bd5fb27bfe861fdb43300ac459bec7940b1786d3bc5c0b760a881da26baea",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-QQ049X",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:1e3904cb3b382d2b47f7b93939c3c2514a4c0882d9d404552a441c65378a5fb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownVersion"
+        }
+      },
+      "id": "RLZ-RJ8PQ1",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Takes the exact matched member version or the side's carried version, supplying no substitute version.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:7a2e3a7a5ce812b5faa7ae75db27313e712fa47a13de4b83e14206b6f2f38567",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-Z52XW2",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
     }
   ],
   "references": {
-    "1": {
-      "note": "`selectedRevision` binds the central account to the supplied subject read.",
+    "20": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"function authoredSides(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:93ba36887ee80833163a648b56e614539a4a6bc2fcafac5f57baba4ac72716a7",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:2d9477def81f4e00c097d072bd05cf198b65262849c73d51cf3700e559d22a5e",
             "locator": {
-              "kind": "symbol",
-              "name": "selectedRevision"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Changed non-statement field passages are implemented by FieldBody and its list owner after removal of local ChangedFields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:b4b7d4507f895004b17b9f83bb77e9fca4548674ddcb9da2a76d3e0412bce011",
-            "locator": {
-              "kind": "symbol",
-              "name": "FieldBody"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:4592b5842baace35916e0c0215dc1aae908da8d7e736c96b55730128e40b4554",
-            "locator": {
-              "kind": "symbol",
-              "name": "ListFieldBody"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "SelectedStatement checks its supplied revision selection before deriving side wording and displaying the statement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectedStatement"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Origin renders only supplied task, optional leaf/wave/handoff entry, handoff path and evidence strings; no legacyId rendering or origin authentication is implied.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:98684e677e93e1686ba96d73c7b38be191a0d0bd807838cf1261d18d81fe8a9a",
-            "locator": {
-              "kind": "symbol",
-              "name": "Origin"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The module re-exports the separate SubjectJudgment owner, which requires a matching selected subject and renders current judgment/proofs openly instead of the removed evidence/assessment branches.\n\nAnchor: exact source span",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
-            "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubjectJudgment"
-            },
-            "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:b966f4c72eec0efddfc60d9a1b32c20913df0179cd0e63c5c728d7615b9daf93",
-            "locator": {
-              "end": 228,
+              "end": 102,
               "kind": "line_range",
-              "start": 228
+              "start": 87
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The selected subject now always uses textFirstComparison and IntentStatementBody for admitted compared/added/removed selections; there is no dataset alternative path.",
+    "21": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"export function SelectedStatement({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:9d0f6b367513f1faca4467b0222f6ed63037b52f2fadbe44a5ad5efbbc5d65f1",
             "locator": {
-              "kind": "symbol",
-              "name": "SelectedStatement"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The state, the label, and the same-revision note for one revision whose text differs (ruling Q1).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:1a0ff3610b504718f3a7383568ab13b477e45789b1d1b9be66c96a79efd6e299",
-            "locator": {
-              "kind": "symbol",
-              "name": "statementState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:1c82e41b30ca5aa7079aa4e16d9b620c2cf46b566b99dd9ca7accbaf7ef455d5",
-            "locator": {
-              "kind": "symbol",
-              "name": "statementLabel"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:480d3247349146214494831e0ac268d1bab05dd036d3ab940e421efca6dbb3ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "sameRevisionNote"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Each side's authored wording from that side's own member row, else the pane and the field rows filtered to the selected revisions (F1, Q4), with the projected exclusions marked.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:d3c490352e9734ae3f080556180deffac25a61d7b32beea705546c4cb827ca07",
-            "locator": {
-              "kind": "symbol",
-              "name": "MemberSides"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:c8d63ae4f7302a3fd00e6665121abf1cd4bf0c8df2a49afa62c6da16664f1d9a",
-            "locator": {
-              "kind": "symbol",
-              "name": "authoredSides"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The revision labels: one revision's own version on both sides, two revisions never as one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:87163ed01259467c71e1ad747dc94c27c1de50b485dbcca7747291f791d63e07",
-            "locator": {
-              "kind": "symbol",
-              "name": "revisionLabels"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Changed authored fields, unchanged statement prose and one-sided labelled statements live in the delegated intent renderer, not removed local bodies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:2e8d7346b2b02511605a3ba9709a7f09869fe310241fe3de7ecbdb6b70260058",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntentStatementBody"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:b4b7d4507f895004b17b9f83bb77e9fca4548674ddcb9da2a76d3e0412bce011",
-            "locator": {
-              "kind": "symbol",
-              "name": "FieldBody"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:c4301e022188d792abbac0430bfd75ec5eb84ea095629a27ebe33d7ba51866ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "StatementText"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:dbed028f02956b852d2d74ff50f821297df6edc7855c75c969e2a5580784ec67",
-            "locator": {
-              "kind": "symbol",
-              "name": "OneSidedStatement"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The current intent body and stored selected-field isolation case are complementary source witnesses, not fresh execution.\n\nAnchor: `reads only the selected revisions' field rows`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:2e8d7346b2b02511605a3ba9709a7f09869fe310241fe3de7ecbdb6b70260058",
-            "locator": {
-              "kind": "symbol",
-              "name": "IntentStatementBody"
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "70e7ef18587c0635f9968ddc3fdf159b04f5f6fb",
-            "content": "sha256:158c10c48f9315cf191a4d007a7405de8136e7cb7d7f00be42a3c548bff8a542",
-            "locator": {
-              "end": 267,
+              "end": 175,
               "kind": "line_range",
-              "start": 238
-            },
-            "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx"
+              "start": 160
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "The stored wording component cases describe field-sensitive text labels and one-sided rendering, not a current dataset mode or test grade.\n\nAnchor: whole file",
+    "22": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"import type { ReviewSubject } from './ReviewNavigation';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cb1c42c74a23b9615f66c6e0f0032de15ad8e008",
-            "content": "sha256:4be26b19188c376c5de20093bb2e4430bd0e6aebf87b29ed605ba58239751cc5",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
             "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/panels/review/statementWording.test.tsx"
+              "end": 224,
+              "kind": "line_range",
+              "start": 1
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     }

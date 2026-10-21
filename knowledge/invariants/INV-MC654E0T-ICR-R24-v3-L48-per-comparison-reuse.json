@@ -1,17 +1,15 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Whole-subject review answers and changed-file content answers read by one mounted review surface.",
+  "applicability": "Whole-subject review answers read by one mounted review surface.",
   "conditions": [
-    "The answer was admitted, is whole (not a page) and carried no refresh identity; content answers are kept only when state is content with an expansion.",
-    "Both stores are bounded LRU (24 reviews, 32 content answers) and live only as long as the mounted surface.",
-    "Whole-review reuse additionally requires no explicit review-input invalidation since admission; memoryChanged advances inputEpoch, clears the review store and requests a refresh.",
-    "Source-content reuse remains separately keyed to its exact source request; invalidateReviews does not itself clear that store."
+    "The answer was admitted, is whole rather than a page, and carried no refresh identity.",
+    "The review store is bounded LRU at 24 answers and lives only as long as the mounted surface.",
+    "Whole-review reuse requires no explicit review-input invalidation since admission; memoryChanged advances inputEpoch, clears the review store and requests a refresh."
   ],
   "exclusions": [
     "Paged and roster-continuation reads, which stay owned by the read cycle.",
     "Refusals and failures, which are always asked again.",
     "Re-validating a moved live candidate on return; the reader's refresh re-asks (O-R1-1, by design).",
-    "Content rendered outside a review surface, which has no cache.",
     "The former unconditional no-request promise for a same-tree pair after explicit memory-input invalidation; an old input epoch is not a reusable answer."
   ],
   "id": "INV-MC654E0T",
@@ -20,9 +18,9 @@
     "legacyId": "5db7b64f-00ad-4eae-b593-94a3e26a3fca",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Within an unchanged retained comparison generation and review-input epoch, admitted whole-subject reviews and opened file content are reused on return. Refresh re-asks; explicit memory-input invalidation clears review reuse and rejects old-epoch completions, while a changed comparison generation clears both bounded surface-owned stores. Refusals and failures are not retained.",
+  "statement": "Within an unchanged retained comparison generation and review-input epoch, admitted whole-subject reviews are reused on return. Refresh re-asks; explicit memory-input invalidation clears review reuse and rejects old-epoch completions, while a changed comparison generation clears the bounded surface-owned review store. Refusals and failures are not retained.",
   "status": "proposed",
   "supersedes": []
 }

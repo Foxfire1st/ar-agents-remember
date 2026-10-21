@@ -95,6 +95,98 @@
         }
       ]
     },
+    "13": {
+      "note": "Shared sidebar state uses independent page/side keys and optional persistence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:0dbb21f019aea950c7fda0e89a710b698f228c2e6c63ccf5eeac7fc8a2ef802b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarKey"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:8008b51e5e6bde95003b2dced8908986e23dbd13bb8e4ac561d4eab73d5fcfe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSidebar"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Hidden panel and handle props preserve mounted state while leaving layout and reachability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:2a996d4ae1a4fec70f96b26dd952717b2ed8896cf2ca3af5347ccde8c290721f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarPanelProps"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:809122a7e20f9531f7fcc8300a6c87d3cb25221e0e745acd52ed23ed48bd09eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "sidebarHandleProps"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The shared native button exposes supplied sidebar identity and expanded state with a side-aware icon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+            "content": "sha256:5f28c53827723bfb872e35bb22501f7b5afcbde7ca58bf77d9dbcd19d440ba35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SidebarToggle"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Local assertion source covers activation, accessible state and remembered or unremembered visibility.\n\nAnchor: `sidebarKey`; `useSidebar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eed7754afd2294da2ba93cb6992cbc0a1f4d02e3",
+            "content": "sha256:1de55df441930d3ae3a8d7fa2bf91017d04768efca79533e586e7df3b59c8c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "onToggle"
+            },
+            "path": "dashboard/src/grammar/SidebarToggle.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The React Aria condition reconciliation (data-hovered/-focused).\n\nAnchor: `[data-hovered]`",
       "targets": [
@@ -118,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
             "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
             "locator": {
               "kind": "symbol",
@@ -176,7 +268,7 @@
         },
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
             "content": "sha256:dd55d08ef804af44cbb330442d1401ec6e37afd5e55b9b8eb9969cf751223fed",
             "locator": {
               "kind": "symbol",

@@ -2,108 +2,33 @@
 
 ## Governing Overview
 
-[MCP overview](../../../overview.md)
+[Owning route overview](../../../overview.md)
 
 ## Purpose
 
-Dashboard CLI and configuration-bound composition root. `run` declares its process role, resolves
-trusted settings and chooses daemon supervision, dev reload, or foreground live/sim serving.
-Serving receives application-ranked read callables rather than importing those owners. This adapter
-is neither a review-result cache nor a semantic acceptance authority.
-
-## Complete-review collaborator wiring
-
-`review_port` forwards to `read_complete_knowledge_review(config, request)`. Shared resolution and
-current record collections belong to that application owner. The retained broad docstring still
-names retired detection/verification/evidence channels: it is historical commentary, not today's
-payload contract. Tree, entry-list, source-content, summary and knowledge-reader reads retain separate
-ports; a tree answer no longer carries the retired aggregate knowledge diff.
+Run dashboard supervision or live/reload/sim serving and bind configuration-scoped application readers, native role-launch and developer-tray routes.
 
 ## Code Commentary
 
-### Composition (`serving_collaborators`)
+serving_collaborators is the rank boundary: complete review, numbered entry catalogue, source content, summary, tree and knowledge reader are injected application callables. It creates one app-local ReviewerWorklistProcesses, supplies tree reads and its shutdown, and wraps recorded intent/catalogue/tree questions in RecordedReviewAnswers. The application owners define their payloads; retained all-owner-record and knowledge-diff docstrings do not restore retired channels.
 
-The root creates one `ReviewerWorklistProcesses` per composed app, supplies it to tree reads and
-injects its `shutdown` for lifespan cleanup. It also supplies complete review, entry-list,
-source-content, config-bound summary, knowledge-reader, config-bound native role-launch routes and
-host-activity reconciliation. `create_app` registers extra routes before static mounting. No capsule
-compiler, terminal-catalog registrar or operator-inbox execution registrar is bound here.
+review_entries_port now takes optional number and calls list_comparison_review_entries with that exact selector through the reuse owner. api_routes registers native role launch, then developer chat/tray seat/send/sent-pick routes, supplying the same admitted leaf-memory resolver for review references. This is composition, not a second developer-delivery implementation.
 
-### Exact live memory-root admission
+_review_memory_root requires valid simple repo/master/leaf names, an external leaf under the matching coordination/task enclosure and an existing canonical non-symlink memory directory below its group, distinct from code/group roots and outside provider-runtime. It performs no Git capture/index read and rejection is None. This admission does not authenticate every descendant or authorize a mutation.
 
-The added `review_memory_root=partial(_review_memory_root, config)` resolves a root for the live review
-watcher; it does not compute a worklist or read knowledge. Repo/master/leaf selectors must be nonempty,
-contain neither slash form and not start with a dot. `recorded_leaf_contract` selects a readable,
-non-abandoned matching contract; this adapter additionally requires leaf kind, external memory mode,
-this coordination/task authority and an enclosure under that task.
+run declares the process dashboard role, loads explicit settings or trusted discovery, binds archive-aware worktree services and chooses daemon/status/stop, reload or foreground serving. Config/discovery failures print and return1. Process roles are declared at entry points, including the spawned _dev_app factory, not create_app; they do not replace unconditional durable-log locking.
 
-The memory root must be an existing directory, already equal its resolved path, not be a symlink,
-differ from the code root and worktree-group root, lie below that resolved group and contain no
-`provider-runtime` path component. The code root must also be a directory. Rejection returns `None`,
-not an empty index or measured-zero knowledge answer. The helper performs no Git capture or index
-read. Root admission does not authenticate every descendant, prove artifact currentness or authorize
-mutations.
+Foreground and reload Uvicorn calls now request h11_max_incomplete_event_size=64*1024 as well as the existing3-second graceful window. The finite request-head allowance supports the up-to500-invariant card query named in the source rationale. This is explicit configuration, not a fresh network/runtime/version measurement or a whole-process shutdown guarantee.
 
-### Serving modes (`run`)
+Reload carries config/interval/explicit heartbeat through AR_DASHBOARD_DEV_* and uses an import-string factory; reload+sim is refused. Live apps receive interval/heartbeat. Sim uses interval plus ProjectionReplay, retains SimSetup for the server lifetime and cleans its temporary root in finally. Shared composition is not byte-equivalence proof.
 
-- Resolve `args.config or discover_config()` through shared `load_config`; settings/discovery errors
-  print their error and return `1`. Explicit settings are not replaced by discovery.
-- Daemon/status/stop dispatch to recorded dashboard supervision and reject sim/reload. Status probes
-  the dashboard, prints best-effort background diagnostics when alive, then observes host status;
-  it returns `1` for dashboard-down, otherwise `0` for host-ready or `3` for host-not-ready.
-  Diagnostic failure prints unavailable without changing this policy. Stop targets the recorded
-  dashboard process only and returns `0`. Ensure prints dashboard and host outcomes, returning `1`
-  for a failed dashboard action and otherwise `0`/`3` by host readiness.
-- Reload supplies the import-string `_dev_app` factory, carrying config/interval and an explicitly
-  supplied heartbeat through `AR_DASHBOARD_DEV_*`. The spawned factory declares its own dashboard
-  role and binds archive-aware worktree services. Reload plus sim is rejected.
-- Foreground `_build_app` uses the same collaborator root. Live serving carries interval/heartbeat;
-  sim carries interval and `ProjectionReplay(now=sim.clock.now, before_tick=sim.feeder.feed)`.
-  The returned SimSetup retains its temporary root until `run` cleans it after serving. Shared
-  composition is not proof of equal live/sim payload bytes or indistinguishable UI states.
-- Both Uvicorn calls request `timeout_graceful_shutdown=3` for endless SSE responses. That setting
-  is not a freshly measured total process/lifespan shutdown bound.
-- Live foreground/reload paths start host readiness on a daemon thread when not parent-owned; sim
-  does not. Status observes rather than ensures; dashboard stop is not a host-stop operation.
+Daemon/status/stop reject sim/reload. Status probes dashboard, prints best-effort diagnostics without changing exit policy and observes host: dashboard-down1, otherwise host-ready0 or host-down3. Stop targets dashboard only. Ensure delegates dashboard supervision and installed-host readiness without installing/upgrading a host. Foreground/reload starts host readiness on a daemon thread unless parent-owned; sim does not.
 
-### Arguments
-
-The parser declares config, host (default `127.0.0.1`), port, interval (default1.0), heartbeat, reload,
-sim/speed, mutually exclusive daemon/status/stop, no-access-log and the suppressed parent-owner flag.
-Loopback is a default, not authentication: another host can be supplied, and help warns against exposure.
-
-### Role Runtime and Scope
-
-`run` and `_dev_app` stamp process roles, not `create_app`. Advisory shared-store writer/compaction
-selection differs from unconditional log locking. Both dashboard entry paths bind default worktree
-services with `LeafAgentArchive(config)` after resolving config and before composition.
+Parser defaults remain loopback host, config-driven port, interval1.0 and optional heartbeat, with sim/speed, no-access-log and mutually exclusive control flags. Loopback is a default, not authentication. Native role routes and archive services do not themselves accept/commit/finalize a task.
 
 ## Invariants And Boundaries
 
-A missing watch root, an unavailable port, a read-only data answer and a semantic verdict are different
-facts. Stored discovery/latency assertions are not fresh tests, latency acceptance or a MEMORY grade.
-The source comment's Uvicorn0.49.0 startup refusal is a retained historical version-specific observation,
-not a fresh check of today's installed version.
-
-## Leaf agent archive binding (MIK-R76)
-
-Archive-aware services are bound by `run` and `_dev_app`; this composition does not itself finalize,
-abandon, archive or commit a task.
-
-## 260718-CHATS-L5I Current Delta
-
-The historical shutdown intent is retained as a requested three-second graceful window for endless
-SSE responses. No new signal/runtime observation was performed in this curation pass.
-
-## 260821-CLIVE Task-Execution Registration Wiring
-
-Native role-launch routes remain injected beside retained review/reader ports. Deleted execution
-registrars and capsule-launch/compiler wiring are not restored by an available field declaration.
-
-## 260928-MIK-L96 The host in dashboard supervision
-
-Status/stop/ensure and the background readiness worker are distinguished above. CLI stop calls no host
-termination; a diagnostic failure cannot change status supervision.
+Configuration identity, admitted watch/reference roots, read availability, delivery and semantic approval remain distinct. Recorded questions may be reused only through their owner rules and exact inputs; working-view reads stay fresh. Historical compiler/terminal/execution registration, port ordinals, latency and installed-version observations below are not current registration or fresh evidence.
 
 ## Historical composition accounts — superseded, not current contracts
 
@@ -265,52 +190,10 @@ current complete-review, tree and reader semantics; these quotations do not over
 
 ## Evidence
 
-- Frozen implementation of serving_collaborators supporting the stated file behavior. [22]
-- Frozen implementation of _dev_app supporting the stated file behavior. [23]
-- Frozen implementation of run supporting the stated file behavior. [24]
-- The command-line arguments. [25]
-- The entry: role, settings, daemon commands, reload, foreground, and the fixture's cleanup. [26]
-- The reload server passes its configuration through the environment. [27]
-- The live app and the replayed fixture are both composed through serving_collaborators. [28]
-- The daemon commands. [29]
-- The process owner that the composition creates. [30]
-- The stored leaf-wide latency case exercises this composition and asserts source capture/worklist reuse; this is not fresh execution or a latency grade. [31]
-- The CLI requests a three-second Uvicorn graceful window and injects current registrar collaborators; the timeout alone is not a measured whole-process shutdown bound. [32]
-- The composition: one worklist process owner per app, the ports, and the owner's shutdown. [33]
-- The reload worker's factory declares the process role and composes the same collaborators. [34]
-- The status/stop/daemon dispatch with host handling. [35]
-- The background host-start worker. [36]
-- Host status is observed by the host-supervision owner; CLI status prints its answer without invoking host ensure. [37]
-- The actual serving collaborator calls the complete-review owner. [38]
-- The deferred import of the reader. [39]
-- The reader port, bound on the collaborator record beside the reviewer ports. [40]
-- The reader entry point delegates to the knowledge-reader owner and this CLI supplies its config-bound caller. [41]
-- The tree port forwards its query with the app-local worklist process owner; fifth-port is a historical ordinal, not a current census. [42]
-- The module imports the summary adapter and binds its returned port to this configuration. [43]
-- The umbrella dispatcher that registers this subcommand. [44]
-- Explicit settings precede trusted discovery; discovery and load failures return the CLI settings-error path. [45]
-- The daemon-control branch delegates supervision to the daemon owner with requested endpoint and cadence, separately from foreground/reload serving. [46]
-- The watcher owner defines the default heartbeat and ChangePacer; the CLI imports and passes cadence rather than implementing a watcher. [47]
-- The parser declares interval/heartbeat, which reload parent/worker, live-app and daemon calls carry; sim constructs interval-only cadence. [48]
-- The serving factory accepts ProjectionReplay; the CLI sim path supplies now/before_tick through that value, not obsolete direct factory keywords. [50]
-- The sim builder/speed parser construct temporary replay state; the CLI keeps SimSetup alive until foreground server cleanup. [51]
-- McpRuntimeConfig/load_config is the shared runtime-settings contract used by this CLI settings adapter. [52]
-- Role declaration selects advisory writer/compaction ownership, not unconditional per-log locking; the durable-store owner defines both boundaries. [53]
-- The MCP process declares its role in its actual main entry point, not an in-process app factory. [54]
-- Frozen implementation of serving_collaborators supporting the stated file behavior. [55]
-- Frozen implementation of _dev_app supporting the stated file behavior. [56]
-- Frozen implementation of run supporting the stated file behavior. [57]
-- Every create_app call in this CLI obtains collaborators from its config-bound composition root in the reload factory or live/sim builder. [59]
-- The source-content closure forwards the supplied request with this config; third-port is a historical ordinal, not a current census. [61]
-- Stored discovery cases cover convention precedence, nearest directory, malformed entries and missing config; they are not a fresh test run. [62]
-- The live memory-root resolver rejects unsafe selectors and roots, admits the addressed external leaf contract under this authority and is bound into the app without Git capture or index reads. [63]
-- The shared collaborator record exposes the injected memory-root and retained read/route ports; this CLI binds no capsule-compiler port. [64]
-
-## 260928-MIK-L177 Recorded Reads Are Kept By Their Exact Inputs
-
-The reviewer's task-context `intent`, its `entries` and its tree view now pass through
-`RecordedReviewAnswers` — the composition root wires `dashboard_review_reads.RecordedReviewAnswers`
-over `serving.review_answer_reuse.RecordedAnswerReuse` — so a recorded comparison's answers are served
-again unchanged while the record, its directories, the worklist and the objects it names all hold, and
-a live comparison is computed on every read. The read bodies themselves are unchanged: the kept
-answer is produced by the same call the route used before.
+- The finite64KiB incomplete-header allowance is an explicit serving constant. [65]
+- The root admits only the matching canonical external live-leaf memory directory. [66]
+- Numbered catalogue questions and developer-tray routes use configuration-scoped owners. [67]
+- Reload workers declare their own role and bind archive-aware services. [68]
+- Foreground serving passes the finite header limit and cleans sim state. [69]
+- Reload passes the same header/shutdown settings through its factory path. [70]
+- Live/sim composition and supervision retain separate ownership and outcomes. [71]

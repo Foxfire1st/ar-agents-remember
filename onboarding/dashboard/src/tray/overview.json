@@ -1,0 +1,209 @@
+{
+  "path": "dashboard/src/tray",
+  "references": {
+    "1": {
+      "note": "Collection admission, first-target choice and snapshot settlement\n\nAnchor: \"export function createTrayStore(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:2f1888275cfc246ea544eb3ec2cb06ea71af261318f3a8d6f06c43a8d8103df3",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact structured reference identity\n\nAnchor: \"export function pickKey(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dba185c8cbf4473f02cc57303c14e00e392e68ca",
+            "content": "sha256:4b0408bf22855e1ad2a49289da015df4fac3569eddfbf2869f5770b1af6fe010",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/tray/pickKey.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-target developer send and explicit outcome parsing\n\nAnchor: \"export async function sendTray(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
+            "content": "sha256:013cad38175eb47a01d33e695708b8f47e9e584b7d1a81b3309436ef2be41195",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One dock outside the retained frame\n\nAnchor: \"export function TrayColumnDock(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+            "content": "sha256:0b71a0fd7d92b0027bbdf1b51e2b283181380c968161c89c21f29e4b573cd5d8",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "dashboard/src/tray/TrayDock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. [5]\n\nAnchor: `export const addToTrayHost = css`; `export function AddToTray`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:aeb98d225a692f2719b900cbb006c938be487be5635bbd623a59808afa279653",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/tray/AddToTray.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:0aa9312ae95d54d658fc0a283adc69f3f43361c49b2059781d4d3b2afe4575f6",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/tray/AddToTray.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "First-pick defaults consume published context: the document column’s active bound target, and the drawn Chats frame’s reported chat or its target before the first report. [6]\n\nAnchor: `const target = defaultTargetFor`; `export function usePublishShownChat`; `return frameChat === undefined ?`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:af5e08351085b3c06ecb043a7cfacf7c7d77db89af71bb9d8bc5bf1e51abe8fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePublishShownChat"
+            },
+            "path": "dashboard/src/tray/shownChat.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:a1a6160c1ef554d30d5da58c536ce71036be0e3bca1a2aaee67d2d31dafef22f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "content": "sha256:6865a025f482e9d7b06c01bf5fcd58212dca1307150ccb8587ca71aa40dbe658",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
+            "content": "sha256:b6fe80e733deba2ab8932e8b23efaeb2a5a0a02f24c3e8f3f8bae4baa3060146",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. [7]\n\nAnchor: `function useTrayOpensColumn`; `const undecided = kept.length === 0 && !state.targetsChosen;`; `function targetActions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "content": "sha256:a1f01c07a14499804c1f08f4368ffc7749b58d33c651426b87315cad698c225d",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:1e63ad59d68c06b85c3813db52b9781a6fc0ac39e62c01eac0a3958b3e31512e",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:e32ed289baa1a80f63a6cb4220cfe7e4aa4fd38c89115e82ee0a3c036e5e4fa9",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -7,7 +7,8 @@
   },
   "applicability": "Tree behavior without an outline or converted memory.",
   "conditions": [
-    "Lists catalogue families/invariants as one-line rows without badges; summary gives the reason; view is All; opens as today."
+    "Catalogue families/invariants render as plain one-line rows without change badges, with the unavailable-outline reason and All view.",
+    "The initial subject is only the target's named subject; a catalogue answer chooses none."
   ],
   "exclusions": [
     "Change badges or the Changed view without an outline."
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An unavailable outline uses the catalogue as plain one-line rows, names its reason and uses the existing initial subject choice.",
+  "statement": "An unavailable outline uses the catalogue as plain one-line rows, names its reason and uses All view. A target names the initial subject; an unnamed entry selects none.",
   "status": "proposed",
   "supersedes": []
 }

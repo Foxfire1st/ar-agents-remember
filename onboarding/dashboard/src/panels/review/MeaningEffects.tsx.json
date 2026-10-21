@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
-        "content": "sha256:7c2ad02ec4dff7bcada58ec040f3782e2714666b05bb2a007d3e5bd6ceed6aca",
+        "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+        "content": "sha256:e14998f1c85c0b891526ffc3f8c4ca848e08c708016a42f359d54e633989be17",
         "locator": {
           "kind": "symbol",
           "name": "RecordedStepsBlock"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+        "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
         "content": "sha256:9a227d032fcddc360e00fcebc2f3be7a03c28679194268fbf307e8fdaaee262c",
         "locator": {
           "kind": "symbol",
@@ -39,48 +39,102 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Badge text preserves the sequence while abbreviating long step lists.",
+    "10": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"export function meaningBadgeText(labels: readonly string[]): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
-            "content": "sha256:f6d23ba3bd6f56978cdee6e3c7ccacdfe36e1cf2ff4ee0e708f38dd520591a28",
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:f12472f5d09cce406ed4216e7e7462b1eeb27abbaf74baabef2f1899487d7fa0",
             "locator": {
-              "kind": "symbol",
-              "name": "meaningBadgeText"
+              "end": 97,
+              "kind": "line_range",
+              "start": 82
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The complete step block distinguishes recorded steps, readable absence and unavailable reasons.",
+    "11": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"const badge = css({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
-            "content": "sha256:7c2ad02ec4dff7bcada58ec040f3782e2714666b05bb2a007d3e5bd6ceed6aca",
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:88fdb67f16b3211d3c5df4a065b32742560ff83b34527bafb81550895f1a2c22",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordedStepsBlock"
+              "end": 36,
+              "kind": "line_range",
+              "start": 16
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Unselected branches reject a missing required field without rejecting an empty one.",
+    "12": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"export function RecordedStepsBlock({ answer }: { answer: RecordMeaningEffects }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
-            "content": "sha256:9a227d032fcddc360e00fcebc2f3be7a03c28679194268fbf307e8fdaaee262c",
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:cbf4ad9210945f5ddde9272ff1e049513bf3f6a32417ecfa0e1cd3e793746f5d",
             "locator": {
-              "kind": "symbol",
-              "name": "MeaningFieldGuard"
+              "end": 173,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"function StepLine({ step }: { step: RecordMeaningEffects['steps'][number] }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:92c534a3a0594833069a65703f3d8d709d1e466dd5d7f55b4b135c8e5bb5caae",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"export function MeaningFieldGuard({ payload }: { payload: ReviewPayload }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:efe431cf7c577ed25aa6b7237389c9dcc5790a061771aeee31acf5dc3bb6bc75",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "MeaningEffects.tsx current behavior at this source owner.\n\nAnchor: \"export function MeaningBlock({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:64648630161f1aa8ad476c3e28b418750498720d8ed68aebea17b651bff29166",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 205
             }
           },
           "kind": "code"

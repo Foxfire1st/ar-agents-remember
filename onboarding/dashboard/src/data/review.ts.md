@@ -6,17 +6,17 @@
 
 ## Purpose
 
-The public read-only reviewer client: same-origin task/subject, catalogue and bound-source-content GET requests, structural TypeScript wire declarations, and re-exported transport/family/judgment owners. It has no store mutation or complete runtime schema validator.
+The public read-only reviewer client: same-origin task/subject and catalogue GET requests, structural TypeScript wire declarations, and re-exported transport/family/judgment owners. It has no store mutation or complete runtime schema validator.
 
 ## Code Commentary
 
 The current ReviewPayload requires judgment, imported from reviewJudgment.ts. Recorded attempt rows and independently described proof anchors are separate arrays. ReviewKnowledgePane keeps statements, revisions, unresolved facts and optional per-side origin; retired signal, authored assessment, applicability/context and evidence-channel interfaces are not the current payload contract. Their previous explanation below is historical, not an equivalent alias for judgment.
 
-Semantic statement states are present/absent/unresolved. Physical source sides separately allow binary, symlink, submodule and unavailable. Optional text in these interfaces is an annotation, not an executable text/state constraint; server models and actual consumer guards own admission. Family context and meaning effects keep their optional-wire distinctions: omission is not known no-family or measured none. Outline rows carry their own meaning labels, independently of the selected context.
+Semantic statement states are present/absent/unresolved. Optional text in these interfaces is an annotation, not an executable text/state constraint; server models and actual consumer guards own admission. Family context and meaning effects keep their optional-wire distinctions: omission is not known no-family or measured none. Outline rows carry their own meaning labels, independently of the selected context.
 
 ReviewMovement declares common supplied movement fields; optional sync/external values retain the server's actual owner object at runtime rather than reconstructing its identities here. TypeScript structural declarations do not assert complete owner-value validation or that every field is rendered. ReviewStaleness distinguishes current/stale/not_compared/not-measured currentness; ReviewSubmission has no approving state. No field here creates semantic acceptance.
 
-intentReview sends canonical task and optional paired selector, page/history and previous binding; it names no source path. reviewQuery omits absent selector pairs and empty previous identity. intentReviewEntries requests task context and returns typed catalogue/refusal with labelled totals, not a browser-invented first row. reviewSourceContent echoes the inventory's raw path and both published code tree IDs; it resolves no replacement generation. Shared getReviewJson classifies the route body even on non-2xx; that discrimination is not complete payload schema validation.
+intentReview sends canonical task and optional paired selector, page/history and previous binding; it names no source path. reviewQuery omits absent selector pairs and empty previous identity. intentReviewEntries requests task context and an optional recorded comparison number, returning typed catalogue/refusal with labelled totals. It includes comparison only when supplied and the answer may echo that number; it neither selects a source path nor invents a first subject. Shared getReviewJson classifies the route body even on non-2xx; that discrimination is not complete payload schema validation.
 
 The wire paging union is knowledge/family_members; the offered cursor-free list contains knowledge alone. Pagination helpers keep absent/null page equivalent, require an actual positive-remainder cursor for next, and distinguish selection totals from shrinking walk totals and reset reason codes. The family/change-fact and judgment vocabularies are re-exports, not extra browser authorities. Retired numeric extents, interface counts and envelope tests below are preserved only as historical explanation.
 
@@ -460,7 +460,6 @@ No configured domain documentation; source owners support this current account.
 ### Repo-Internal References
 
 - The header states a same-origin read-only client and delegated typed-result transport. The actual shared getReviewJson owns body classification; the header is not independent runtime schema validation. [1]
-- Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here. [2]
 - Semantic side states are present, absent and unresolved; selector kinds are invariant and family. Binary belongs to physical source-side vocabulary, not semantic statement sides. [3]
 - ReviewSideContent declares state, optional text, language and detail. This structural TypeScript interface performs no runtime state/text coherence validation. [4]
 - ReviewUnresolvedReference carries field, optional recorded_reference and detail for unresolved facts; the type does not prove which consumers render each field. [5]
@@ -473,20 +472,11 @@ No configured domain documentation; source owners support this current account.
 - The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes. [15]
 - **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** [16]
 - **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** [17]
-- **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** [18]
-- **The entry request: the task context alone, because a selector is what it is being asked for, and the same same-origin default as the comparison.** [19]
-- **The six-member state literal a side may be, and the side value whose optional `text` is present only for the two textual states — so no missing or unrenderable side can arrive as an empty document.** [20]
-- **The expansion value: both sides, both generation ids, the three-member currentness, `path_bound` naming which measured change set bounded the path, and `admission` naming why it was opened (a changed path, or unchanged context a recorded realization of the same comparison links).** [21]
-- **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** [22]
-- **The source-content request: the task context, the published path and both published generation ids, read through the route's own decode because the body is this route's answer whatever the status was.** [23]
 - **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** [24]
 - The sibling taskChangeset read is a distinct client/transport boundary, not an implementation of this review client. [25]
-- The surface that consumes this client: the comparison read, and the entry expansion an openable inventory row mounts. [26]
 - **The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.** [27]
 - The outline mirror matches the server model's five changes [28]
 - The tree carries families with members and invariants with summaries [29]
-- The catalogue answer optionally carries the outline [30]
-- Catalogue reads need no new endpoint [31]
 - The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
 - The read-only public client delegates transport, re-exports the family and judgment wire owners, requires judgment in ReviewPayload, keeps optional family/meaning/movement boundaries and performs no store mutation or complete runtime schema validation. [33]
 - ReviewPayload requires the imported judgment pane. Its rows and independently current/stale/unverifiable proofs are distinct arrays; optional origin and movement structures carry supplied provenance/measurement rather than resurrecting retired envelope assessments. [34]
@@ -494,3 +484,10 @@ No configured domain documentation; source owners support this current account.
 ### Cross-Repo References
 
 No separate cross-repository implementation claim.
+
+- The task/subject comparison request uses the common typed-result decoder. [26]
+- The catalogue request takes task context and an optional recorded comparison number, with no source path. [19]
+- **The entry read's response envelope: a refused read is a typed outcome carrying its refusal and no entries, not an error to catch.** [18]
+- The catalogue answer optionally carries the outline [30]
+- Catalogue reads need no new endpoint [31]
+- Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here. [2]

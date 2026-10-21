@@ -2,354 +2,51 @@
   "path": "dashboard/src/panels/review/ChangeBadges.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Presentation consumes delivered change facts or helper counts; badge wording is not a new classifier.\n\nAnchor: exact source span",
+    "23": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"export function useMemberChange(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:a39b6f64b9ebc7c89d40a1d6d06f51000282af16233601f82276a4d837f654bb",
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:fa82ee2d35397cc1e474011a6e6a59cfd635955d127d0d640b6999a730a1982f",
             "locator": {
-              "end": 3,
+              "end": 156,
               "kind": "line_range",
-              "start": 1
+              "start": 141
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The order, previous and next controls and the polite status.",
+    "24": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"function membershipLine(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:cac7508dba66fd904c3711ec7c524cfdbb5527a9e21110439797a02c94c50d99",
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:52fa4c13df70033a8174b4f39a3d3d63246603392fe68d2604273c0ed9e7d4cd",
             "locator": {
-              "kind": "symbol",
-              "name": "TriageControls"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The compact family tree mounts the outline badge and triage controls; it does not mount the detailed member/guarantee facts.\n\nAnchor: exact source span; exact source span",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:5a70ee04c3ff400751650054686a689e4ff30ffd1b05848f6db68f69952e91dc",
-            "locator": {
-              "end": 283,
+              "end": 251,
               "kind": "line_range",
-              "start": 283
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+              "start": 174
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "25": {
+      "note": "ChangeBadges.tsx current behavior at this source owner.\n\nAnchor: \"export function GuaranteeChangeBadge({ kinds }: { kinds: ReviewFamilyChanges \\| undefined }) {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:0e000568334244d6ef3ccc7d41abfd2715fd5227ac72aaa637548ded01ced3ba",
+            "blob": "58b9ff0db23af4be37b0571352c3c0ed7e918b6c",
+            "content": "sha256:112037146e6cf9c7c4c73af813f95c4deeb565a2105540a8adbe8119e6467384",
             "locator": {
-              "end": 503,
+              "end": 324,
               "kind": "line_range",
-              "start": 503
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Row badge maps outline kinds to pill colours with meaning titles",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:533ad6c5b6073c8daba2320f4e36c2b8e3aaa2661c73746bb58a72d0f6167097",
-            "locator": {
-              "kind": "symbol",
-              "name": "OutlineChangeBadge"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Outline meanings include the by-design curation explanation on unknown; this copy does not recompute why a fact was unknown.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:2e261eff5f623f75bd55ed63d95c729bbb38701d2d7a75ca09b23701bb641c29",
-            "locator": {
-              "kind": "symbol",
-              "name": "OUTLINE_MEANING"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Marker target joined to delivered facts with ordered description",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "useMemberChange"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Membership line keeps the comparison membership reasons when the membership is unknown, and the marker's own reason only where that branch does not apply",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:7d4657e0edc60acead71332a5f0dee9cad72caa2fca430aec4dcb624a89dcf33",
-            "locator": {
-              "kind": "symbol",
-              "name": "membershipLine"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "Triage bar with order switch, traversal buttons and polite status",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:cac7508dba66fd904c3711ec7c524cfdbb5527a9e21110439797a02c94c50d99",
-            "locator": {
-              "kind": "symbol",
-              "name": "TriageControls"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "The required by-design curation sentence is appended visibly to unknown reasons and included in the outline unknown tooltip, without modifying delivered fact values.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:7b2bfda75bf701d80b9b6ea2489f0ea218a5c49d62dc5df1cf33ae896cd0c2d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "CURATION_EXPLANATION"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:9772a7b8dd5022ab47e67de4e4b9c531b7c8c7afc7ec1ba87b7085abab84ba1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "UnknownReason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:2e261eff5f623f75bd55ed63d95c729bbb38701d2d7a75ca09b23701bb641c29",
-            "locator": {
-              "kind": "symbol",
-              "name": "OUTLINE_MEANING"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The kind styles on existing tokens; an unknown is dashed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:52b35a31e42f7cafe9d4e7eeac49302863cc6d666008da042df2667ec8681b53",
-            "locator": {
-              "kind": "symbol",
-              "name": "KIND_STYLE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The sticky triage bar below the workspace's sticky way back.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:91ee7ace84534088ccedade39bdae7a79d8112e04fdb022bb65136279eaeb54b",
-            "locator": {
-              "kind": "symbol",
-              "name": "triageBar"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Marks and the complete labelled unknown reason remain visible; the removed firstOf helper no longer truncates delivered reasons.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:6aaf4cdb0fb8c09756b63ecc3c9edf95931351b82cb37216c51b41324445727e",
-            "locator": {
-              "kind": "symbol",
-              "name": "Marks"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:9772a7b8dd5022ab47e67de4e4b9c531b7c8c7afc7ec1ba87b7085abab84ba1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "UnknownReason"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A returned member without facts reads unknown and says why.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:77b1efc15989b80b251cb090f36f8c5212d47fb2d70e1aee333468af43b37ca6",
-            "locator": {
-              "kind": "symbol",
-              "name": "UNDESCRIBED_CHANGE"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The row's change state: the marker's target from L34's own check, and the description in the ruled order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:40a2c2d1b7b412a530b6e933e2d8b59329214045bb9637d056fba0d1e4828df1",
-            "locator": {
-              "kind": "symbol",
-              "name": "MemberChangeState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "useMemberChange"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The membership line and the followed marker's tag on it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:7d4657e0edc60acead71332a5f0dee9cad72caa2fca430aec4dcb624a89dcf33",
-            "locator": {
-              "kind": "symbol",
-              "name": "membershipLine"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:4ad22a99b49cf75948a92ed9456c1a4ba0b96a4e439bc3b034470376ff630181",
-            "locator": {
-              "kind": "symbol",
-              "name": "MembershipReason"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The member badge: the tagged membership line drawn first under a followed marker.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:93d8eda1213a1de2402f1eb7638141ed0a062522d28efd376343a2c95da23871",
-            "locator": {
-              "kind": "symbol",
-              "name": "MemberChangeBadge"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The family's guarantee badge and the breakdown line.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:f5b6226d71b474564a95ede2304f67d849e54b6485103914c8de57429c3f7dfa",
-            "locator": {
-              "kind": "symbol",
-              "name": "GuaranteeChangeBadge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f04ef15a794eef331f4c5784c4d1650727ba4144",
-            "content": "sha256:b057aeef247b21c01ef0257fa29b1b0e677f856307a3ad528176649c55ea252f",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyBreakdown"
+              "start": 253
             }
           },
           "kind": "code"

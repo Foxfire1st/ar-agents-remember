@@ -2,83 +2,224 @@
   "path": "dashboard/src/panels/review/hunkMarkers.test.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The six scenarios of real bodies.\n\nAnchor: \"hunkMarkers.classifier.captured.json\"",
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('carries the reason an unknown membership is not established to its target', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7c3d4f183bafc876057b43b513fd8e98da0a85f2",
-            "content": "sha256:ce5459e5fa9ae9ab616fa596389b3317ac9a6f3719d5b5909914229cf4220ea6",
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:9bd2e93ffbecdb1e1e9449503359cd5c2451c6e2be094adbc3d7a4ae71e1c047",
             "locator": {
-              "end": 32,
+              "end": 132,
               "kind": "line_range",
-              "start": 1
+              "start": 111
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Nine naming declarations cover occurrences, targets, proofs, unknown membership, supplied string reasons and absence of reasons for confirmed states, a cloned-capture verbatim-reason probe, unread-side attribution and file marks.\n\nAnchor: inclusive source ranges",
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('uses the membership reason supplied by the server verbatim', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0ebec6dd6e9a7e332249d2a3418ffbed6ac44c43",
-            "content": "sha256:426adc2b3d46a2fdeeee3d2f21aafe5d532987312474fda236481465e2b2300d",
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:43406585c55f92ee7af09e203a0c52bf11a8c2d0031a3d75447cb3330f146fad",
             "locator": {
-              "end": 174,
+              "end": 142,
               "kind": "line_range",
-              "start": 34
+              "start": 133
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Four placement declarations cover split and inline placement, mid-file deletion, neighboring hunks in windows and one-sided panes.\n\nAnchor: inclusive source ranges",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the readable side's links and names the unread side's changed lines unknown\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0ebec6dd6e9a7e332249d2a3418ffbed6ac44c43",
-            "content": "sha256:99f089e02ea1f86e0d2a132bcc5fefa536c15e1d6fedfa940927fcce745bf1eb",
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:118057ef35bcf5e2f6d01631eaf538f827951d537c6a88a754c29c473b9a8b9b",
             "locator": {
-              "end": 236,
+              "end": 159,
               "kind": "line_range",
-              "start": 176
+              "start": 143
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The model under test.",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('gives a confirmed-unregistered file, or one no side of which is readable, one file mark', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
-            "content": "sha256:6631beca27475d00c2de617584c9d10c8fde865ef86233e58b6fff24b8e69d4f",
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:50d6cd479af2dede69f64ac00b6ded983ae34cbdebff236d49395fdf81e85fa2",
             "locator": {
-              "kind": "symbol",
-              "name": "fileMarks"
-            },
-            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+              "end": 181,
+              "kind": "line_range",
+              "start": 160
+            }
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"places each mark on the owner's side lines, a deletion on the before side\", () => {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "837bccb687b5f66077b98f4fd65ccd32bf42ff53",
-            "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:4dcad3d21aaac22f11c8b45e151b88efa5b8169817ec36066468e370f6f9ad54",
             "locator": {
-              "kind": "symbol",
-              "name": "markAnchor"
-            },
-            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+              "end": 189,
+              "kind": "line_range",
+              "start": 182
+            }
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('places an inline deletion on the after line below its removed lines, or the last one', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:42a69c5fdc906f6a6df021b099daa9c34a1e550df0eb283a7c7b102ac352645f",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks every hunk a window draws, a neighbour shown as context too', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:3cf1d22f9ea5e081e1e7b154a90da13ba249b1b222e6efac41c951f6f09bdbf7",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks a one-sided pane on the side it draws', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:5efc129bca35fc8d0edc9a674aec7994b2243cc232817e419a1e81cce2341ec1",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names every intersecting invariant of a replace hunk, with each family occurrence', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:59a3505b388b25469140c85f91159501654be6e5f2eabb967f5e3350ee8a6a3f",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('selects the member row of the named family, or the invariant alone without one', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:9307c9a86d35bb3197b9b058734957d53df45135a3bdccb84226885cf6ba4eb1",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('merges one revision recorded on both sides and names an insertion-only hunk', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:d92b7363860cb17fd8111abba5476cf6b342604616942b6bf263267f3df997be",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists a proof entry as a test with its facet, never counted with realizations', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:27c96514caf99ec6e70d166a20011c2ba3fc8141187ea1ae546acf224552dbb0",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names unknown membership, with and without a family', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "daf2bbb8dc981a1305b5ba3f4e0ebce258efb7b9",
+            "content": "sha256:d7b7701f821f6b4e633c7e227782763e9468ecae0872e357f4105e0b14840c8e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
         }
       ]
     }

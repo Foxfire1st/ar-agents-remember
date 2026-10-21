@@ -49,6 +49,10 @@ direct_execution_grants owns architect admission and pre-start grant mutation/re
 
 The reviewer projection reads the reviewed owner’s history from the resolved after index, ordered by attempt-file numbers, and supplies identical record-specific labels to outline and subject responses. Baseline indexes name retired/after-absent UUIDs only; unavailable history is not no-step history. Existing composition resolves no second candidate and creates no new route, authored verdict or net-effect judgment.
 
+Catalogue and changed-intent summary reads can name one recorded tree comparison by number. `resolve_review_comparison` reopens that record even for a live leaf; an unrecorded number is refused rather than substituted with current worktree inputs. Both catalogue and summary report the tree-comparison number they answered. Selected revision display versions and writers travel with the subject selection: `review_revision_writers` reads each side's own index, names owners of changed rows at that exact revision, uses the origin for an otherwise unclaimed revision 1, and keeps unavailable history distinct from no recorded writer. It infers no writer from Git or dates.
+
+Focused tree-card reads enumerate entries and measure their memory values in the same open after-side index: distinct realizing invariants at the located after path, incoming links to the entry's invariant, lack of proof and open weaknesses at that path. `knowledge_reader/marks` supplies the shared open-weakness counter. Exact symbol-locator names travel separately from ranges. A failed or missing after-index memory read leaves the entries available without values and names why in entry_memory; a partial index remains identified as partial. Task-context explanations direct whole-change inspection to All changes, the linked change-set page, independently of subject availability.
+
 ### Application, transport and service seams
 
 MCP registrations and payload builders own protocol signatures and response validation; application entry points own typed operation composition; lower service owners perform domain operations. Serving reaches application compositions through collaborator ports because layer direction forbids importing higher-ranked application owners directly. A vocabulary is declared once by its owning model/module and imported by producers and consumers. Where a collaborator already returns a checked model or typed value, the adapter carries that value instead of validating its own dump again.
@@ -649,3 +653,14 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [493]
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [494]
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [495]
+
+- A numbered review read reopens the exact recorded comparison, with current resolution used only when no number is supplied. [499]
+- Catalogue enumeration and outline publish the number of their resolved tree comparison. [500]
+- Summary composition uses its supplied resolver and carries the resolved comparison number. [501]
+- Selected revision writers come from each side history at the exact recorded revision or its first origin. [502]
+- Selected display versions are copied from each actual selected side. [503]
+- Card measurements use the already-open after-side index and preserve named unavailable state. [504]
+- The shared open-weakness counter accepts the already-open index. [505]
+- Entry side symbol names come only from symbol locators. [506]
+- Focused card responses carry entries and their memory-state answer without changing lane or leaf-wide values. [507]
+- Task-context availability explanations direct complete source inspection to the linked All changes page. [508]

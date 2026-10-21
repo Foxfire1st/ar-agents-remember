@@ -2,22 +2,19 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Comparison-bound navigation destinations.
+Project the held lane read into Code without invariant rows and render the tree's pinned Worklist/lane destinations and lane-file rows.
 
 ## Code Commentary
 
-Render Changes without an invariant, Changes of unknown attribution, All changes and Worklist. Change-set buttons use the existing navigation context and held lane counts; loading is an ellipsis, unread/unavailable is not zero. All changes includes listed and unrepresentable paths only for a measured inventory, otherwise names the unmeasured change set. Worklist uses only a matching leaf read and worklistAnswer, displaying N open/all answered when admitted, not item count as a gate verdict. No fetch or local gate rule is introduced.
+`treeLane` distinguishes reading, unavailable and ready. For a ready lane it takes only each unexplained/unknown destination's own bucket_files prefix, leaving the additionally attributed files out, and retains that destination for every file. A file reason uses read line counts when supplied, otherwise non-text or lane hunk counts. Reading and unavailable render explicit count states rather than presenting the internal empty arrays as measured zero.
 
-## Invariants And Boundaries
-
-This is the inspected source contract, not an execution certificate. Parent and direct callers retain authority for identity, reads and state.
+`TreePinned` draws Worklist first with the supplied open-item count, then Code without invariant with its lane count. Nonempty destination buckets expose their own full-page actions. File rows follow in the same tree scroller, filtered by laneFileMatches; they show filename with full path as title/accessible identity, retain a reason, and use the tree-arrow focus owner. Selecting a file selects its lane place; a selected hunk of that path also marks the file current. The supplied callbacks own worklist selection, lane selection and opening the comparison viewer.
 
 ## Evidence
 
-- Comparison-bound navigation destinations: `laneCounts` owns the described branch. [1]
-- Comparison-bound navigation destinations: `ReviewDestinations` owns the described branch. [2]
-
+- ReviewDestinations.tsx current behavior at this source owner. [5]
+- ReviewDestinations.tsx current behavior at this source owner. [6]

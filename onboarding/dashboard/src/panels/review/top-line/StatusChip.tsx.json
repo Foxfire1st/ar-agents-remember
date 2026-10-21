@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/panels/review/top-line/StatusChip.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4dfd83258498fb0367f036ed968bd8887a7f561d",
+        "content": "sha256:d83ee5a8c7e36b6233db59d35486d575afceb319df9b2f07882ea5fe89cfba8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "StatusChip"
+        }
+      },
+      "id": "RLZ-JH1EHD",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It renders the always-mounted fixed-width chip and its owner-reason table.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4dfd83258498fb0367f036ed968bd8887a7f561d",
+        "content": "sha256:1cb9863a5bb89d31c260a6b55a21d05b05c701ef21e235a636e4e60f1e4b9f97",
+        "locator": {
+          "kind": "symbol",
+          "name": "chip"
+        }
+      },
+      "id": "RLZ-NQGS6Q",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "This CSS holds the chip width independently of its currently displayed owner state.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Fixed place and tone presentation\n\nAnchor: \"const chip = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfd83258498fb0367f036ed968bd8887a7f561d",
+            "content": "sha256:1cb9863a5bb89d31c260a6b55a21d05b05c701ef21e235a636e4e60f1e4b9f97",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Accessible button, supplied fact rows and popover anchor\n\nAnchor: \"export function StatusChip({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfd83258498fb0367f036ed968bd8887a7f561d",
+            "content": "sha256:d83ee5a8c7e36b6233db59d35486d575afceb319df9b2f07882ea5fe89cfba8e",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

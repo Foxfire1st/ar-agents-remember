@@ -16,6 +16,8 @@ The chain and primary-requirement facts are independent strip facts, not extra n
 
 The primary requirement displays its ID/version link, not another copy of its requirement text. Consumed metadata is suppressed only when the actual fact exists, preserving older-cache content. Status/type lines retain explicit preview and in-place expansion behavior.
 
+The head is the task document's tray collection surface. It adds the shared tray host class and renders one `AddToTray` beside the identity/status line only when `entry.reference` exists. `taskPick` receives that canonical reference with the entry's ID and title. This component supplies the task-document offer; it does not add collection controls to Operations rows, own deduplication, or send a message.
+
 ## Boundaries
 
 Dependencies retain their projected id/title. A served gone reference renders the literal gone marker; only a non-gone reference resolving to a canonical entry supplies shared task-state wording and navigation. A dependency without a document reference supplies no TaskStatusWord and no invented destination. The gone marker is not a second authored task stage.
@@ -24,11 +26,7 @@ DependencyFact constructs taskdoc selection keys for projected dependency paths;
 
 ## Evidence
 
-
-
-
 - Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes. [2]
-
 - ObjectiveLead uses shared block spacing, opens its bounded text in place and retains the counted long-full-text own-view link. [3]
-
 - Dependency identity remains visible, while gone and entry resolution gate task wording and navigation. [4]
+- The canonical task document has one task-reference tray offer in its identity head, and no offer when the entry lacks a document reference. [5]

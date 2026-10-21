@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/tray/chatPicks.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a53fa0217dadb5620d6cb37fb8e536e340233e1c",
+        "content": "sha256:105ba09269a470d67725e0cf391269de8e9e37acfe69d842edbca3a4e32e9e33",
+        "locator": {
+          "kind": "symbol",
+          "name": "chatPickInput"
+        }
+      },
+      "id": "RLZ-QGG221",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Turns a frame pick into a text pick with chat provenance.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Converts a trusted frame chat-text message to a tray text pick.\n\nAnchor: \"export function chatPickInput(pick: ChatPick): TrayPickInput \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53fa0217dadb5620d6cb37fb8e536e340233e1c",
+            "content": "sha256:730bf2cc4e75547426b0cc4fd22f47275b99dc16fce171510112aea127ea784d",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Converts a trusted frame chat-text message to a tray text pick.\n\nAnchor: \"export function takeChatPick(pick: ChatPick, store = trayStore): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a53fa0217dadb5620d6cb37fb8e536e340233e1c",
+            "content": "sha256:6e3ea0cdada8805f21f2fc33a81a68e137a9d4bfeb5460ceef1d0f621246a9e3",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

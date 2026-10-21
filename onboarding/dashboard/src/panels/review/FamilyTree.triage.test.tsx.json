@@ -1,151 +1,256 @@
 {
   "path": "dashboard/src/panels/review/FamilyTree.triage.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+        "content": "sha256:5c06322c1831953c67ef1f51242f4417384fd77554243385a61d33e206e501d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "draws the line counts of location and lane-file rows in mint and alarm red, signs kept"
+        }
+      },
+      "facet": "Captured location and synthetic lane-file reasons retain signed count elements in the addition/removal style classes and accessible names; a non-count reason remains ordinary text without count spans.",
+      "id": "PRF-FRZNAW",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+        "content": "sha256:35657b4b11d605593a288ffea6069fe6736391ecdfd14ae524f9aac106c7b19f",
+        "locator": {
+          "kind": "symbol",
+          "name": "reveals a selection made outside the tree by the scroller alone"
+        }
+      },
+      "facet": "With stubbed row/scroller/pinned rectangles, an outside selection changes the local tree scrollTop to 220 and adds no inline style.",
+      "id": "PRF-TP0F8H",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The suite's statement: the real tree inside a reviewer zone over the store-authored bodies.\n\nAnchor: \"The tree is the real component inside a reviewer\"",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws one-line rows with one reason, no disclosure, and persists both views', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:6caa861e4c2e86ef111a039cd6ad9072f038ffbd3de589fc3b51d6deead82df3",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:bf8b533f0b12ec5acd44ddaef8c48a452e0e42df3c881f183413ed52849767f1",
             "locator": {
-              "end": 26,
+              "end": 143,
               "kind": "line_range",
-              "start": 1
+              "start": 125
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "First-real-change opening and no-change selection\n\nAnchor: `initialSubject`",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('opens with nothing selected; a click selects its row and keeps the tree where it is', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:a497920b4bed16953c0055b673c1cc29c454dc5bcd30269adcbf9ae41056d3da",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:3aa435ef1648e9e226771b51a6e26019146977c1f090295dd81e3523daa741a3",
             "locator": {
-              "end": 151,
+              "end": 158,
               "kind": "line_range",
-              "start": 134
+              "start": 144
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Kept families, filtering and unknown-skipping traversal\n\nAnchor: `review-family-kept`",
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reveals a selection made outside the tree by the scroller alone', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:071f627e2eebee14ef95c37fa5601f77c087d93a23a971d91c98aed2755a5f2d",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:6b7c8f3eed55f08ef7eae66a720d896a123d0ca70a9b90b3aed2ff007aecfdce",
             "locator": {
-              "end": 170,
+              "end": 175,
               "kind": "line_range",
-              "start": 152
+              "start": 159
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "Catalogue-only listing and summary count states\n\nAnchor: `outlineCounts`",
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps a walked family with its kept tag in Changed', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:a7ef16cb663b8db13675913d0166c71b7fe77a4623a534a246b40495c279fbb3",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:891bb91bb5d1edbf8950f4d6c3ed33501e625ac53baf08be2b8379a776a4940c",
             "locator": {
-              "end": 219,
+              "end": 181,
               "kind": "line_range",
-              "start": 171
+              "start": 176
             }
           },
           "kind": "test"
         }
       ]
     },
-    "13": {
-      "note": "Conditional polite comparison-reset status\n\nAnchor: `review-change-status`",
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists the changed locations under a subject and opens a group in the reading column only', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:3cd36152deb9edc77588599c5b8a738a3784f7034e91e3e8c4c3a2d255b67c20",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:158447b4422b0b5604b5fbbcbb8a1ae7d7fb5d135fa0dfda2d82ff1409410ff3",
             "locator": {
-              "end": 252,
+              "end": 199,
               "kind": "line_range",
-              "start": 221
+              "start": 182
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The harness: the zone with a textarea, a contenteditable region and a terminal-zone control.\n\nAnchor: \"data-kbzone=\\\"pty\\\"\"",
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('pins the Worklist row above \"Code without invariant\", whose file rows come last, beside one All changes link', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:560bd28c90508b38ed8cfb4dc1d12306c66df4c10bb2d938883c965100b03a28",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:563e7d7832e932d44cd5111b0fd3643db92c09e80c64f4448ad7c98aec003c52",
             "locator": {
-              "kind": "symbol",
-              "name": "Harness"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Badges: kinds, marks, the shared member, the reworded revision, why unknown, one statement, undescribed members, the dataset review.\n\nAnchor: \"never calls a reworded revision unchanged: intent, noted, beside a genuinely unchanged member\"; \"states each fact once per node: the text note and the guarantee badge are not repeated\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:5ef501398e7f5874ad162e14a2b633a31c85a336b48d71051835a65cea1ba2c1",
-            "locator": {
-              "end": 283,
+              "end": 215,
               "kind": "line_range",
-              "start": 113
+              "start": 200
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Triage order and its control; triage when storage is unavailable.\n\nAnchor: \"falls back to triage order when storage is unavailable\"",
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('filters the tree and says when nothing matches', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:d41b4776424335e909dbd9627d6e49acda735d04bdab795e012395e600d856e0",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:3a7184b43112d428a9784665941ec7197c5df96bea50f6f8f24ea03cd957dfb0",
             "locator": {
-              "end": 329,
+              "end": 227,
               "kind": "line_range",
-              "start": 285
+              "start": 216
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Traversal: displayed order, ends, filter, the partial-family stop, inertness, the keymap owner.\n\nAnchor: \"visits every non-unchanged occurrence in displayed order and stays at either end\"; \"stops at the continuation control past the returned members of a partial family\"; \"is inert in text fields, contenteditable regions, the terminal zone and outside the reviewer\"",
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('finds an unchanged location by its path in All, and shows its subject and its group row', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:62d27cd6be9fa654386dce238919fa5cf97973e907e24225347fce4fc4ef8096",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:6b5214ed97b70dd0f02d923f0a11fd53020ea33d4c6a44e95f5417d674dec5e0",
             "locator": {
-              "end": 468,
+              "end": 244,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks the one row of a shared region current for a selection of any of its entries', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:c7e04b19fa22f6dec1b367509f913c58e00be127207f45d0e12e0bdda0105bbd",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('sorts from the one Sort menu, stores the choice, and shows the memory sorts unavailable with the reason', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:50e31321eda70e58add5b26a01155c3f2b4c86cfc2684d0fd14e821a2768eb4f",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('moves focus between rows, pinned rows included, with the arrow keys', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:561684199b091f7a9101894701e709b6fa56ecd8b954aedee0939be6e3892fda",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 283
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws the line counts of location and lane-file rows in mint and alarm red, signs kept', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:559b66fed9d31498c55cefa536a2b25aec7a3e434ddbd90bbb7f2692187e687d",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"draws the Sort popup with the mockup's rows, one rule and an explanatory section\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:ec773dce22ba9bffdb8cfedaa59fb16dbec95a70b78359aacc5775454113f2a5",
+            "locator": {
+              "end": 362,
               "kind": "line_range",
               "start": 331
             }
@@ -154,66 +259,68 @@
         }
       ]
     },
-    "6": {
-      "note": "One statement per fact on a member, with and without a followed marker, and L34's note on a dataset row.\n\nAnchor: \"puts a followed marker's Attribution unknown on the membership line, drawn first, described after the kind\"",
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"pins the Worklist and lane block in the one scroller, after the tree's rows\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "40a042ec8e0d4d6b1dc30082f874a348b3d2263a",
-            "content": "sha256:d535a6ada016f93d5646d21a39de924a7eeb1425c2bc532114974b01a6dadcd5",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:b4b89c34e43bdf47f5936449b593c4d1f10c77212cfc3064819c799cc361b813",
             "locator": {
-              "end": 640,
+              "end": 375,
               "kind": "line_range",
-              "start": 476
+              "start": 363
             }
           },
           "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "Representative synthetic outline supplying unchanged, unknown, joined, left, changed and added shapes; not exhaustive badge-branch proof.",
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"draws the code-facts line only for a count above 0, and speaks a 0\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ed557a3c4dfd4c82e283b2c3e00175900ae9180c",
-            "content": "sha256:fcad79eae8ada07260043dc704e2b7f13b7c4306fcfd006925ee17506644a208",
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:ddfc45c5fdf8364170e71b616dbe7e35974d1e0e1a1ebafd7346713b79750572",
             "locator": {
-              "kind": "symbol",
-              "name": "outline"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Mounted tree harness with kept-family support",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:bd6b2c4c77682e54e8c4cacab4576b966a019fd2d647478037b8be5f2304e627",
-            "locator": {
-              "kind": "symbol",
-              "name": "Harness"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Compact rows and persisted views\n\nAnchor: `review-tree-view`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c7639681b045e86348666e96ba33def7c7d6be2",
-            "content": "sha256:76a8716e16ec84b951358aade5099dbd2c54d66ea5f4d2854a304790716f7af0",
-            "locator": {
-              "end": 133,
+              "end": 389,
               "kind": "line_range",
-              "start": 109
+              "start": 376
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('draws \"Without a family\" only after a shown family', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:7c8e86c71bd2a3c9071fcef5460ce27cd424180e56713c7c29e7b9da9fbab947",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the All changes link and the Sort name while their repeats are not drawn', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9eef479437020348c6310e575a427d7188a1c37e",
+            "content": "sha256:a61ed6ece4a7bda1a576d71d517b6d0a37f2ade534772102cda48ccd41325c24",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 403
             }
           },
           "kind": "test"

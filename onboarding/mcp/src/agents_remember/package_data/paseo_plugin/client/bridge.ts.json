@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -111,12 +111,12 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:e254a7d83e9d0c46f8ca2487305e131b228a772c4f0f4d238b0d70e7073b3641",
         "locator": {
-          "end": 287,
+          "end": 301,
           "kind": "line_range",
-          "start": 286
+          "start": 300
         }
       },
       "id": "RLZ-B533QM",
@@ -130,12 +130,12 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
-          "end": 576,
+          "end": 693,
           "kind": "line_range",
-          "start": 142
+          "start": 156
         }
       },
       "id": "RLZ-C3ZC91",
@@ -149,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:08cd33668f4ccad39a12d4db29dc861c4c587a9fd356b4f28a153d0a0c3da485",
         "locator": {
           "kind": "symbol",
@@ -167,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
         "locator": {
           "kind": "symbol",
@@ -185,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -203,8 +203,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -221,8 +221,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -239,8 +239,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -257,7 +257,7 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",
@@ -275,8 +275,8 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-        "content": "sha256:de8faea407e097a2f0bf9685e463e0a01ab2ca17e4044cf711c115347344d6e3",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+        "content": "sha256:03ad0b7d322a9517452725becde2a0ffd7b5d6be0f2311c32d9e8ac550c05890",
         "locator": {
           "kind": "symbol",
           "name": "PLUGIN_ABILITIES"
@@ -293,12 +293,12 @@
     },
     {
       "anchor": {
-        "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+        "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
         "content": "sha256:4d0b85612cbb056de0c4af30dbed5e100621c7e70deb255cbc9765d2958f6974",
         "locator": {
-          "end": 22,
+          "end": 31,
           "kind": "line_range",
-          "start": 22
+          "start": 31
         }
       },
       "id": "RLZ-YP5PVQ",
@@ -313,15 +313,16 @@
   ],
   "references": {
     "1": {
-      "note": "The embed list must pair the parent's origin with this page's serving origin.",
+      "note": "The embed list pairs both origins.\n\nAnchor: \"export function isListedParent(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
             "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
             "locator": {
-              "kind": "symbol",
-              "name": "isListedParent"
+              "end": 140,
+              "kind": "line_range",
+              "start": 131
             }
           },
           "kind": "code"
@@ -329,15 +330,16 @@
       ]
     },
     "2": {
-      "note": "Inbound commands require the exact listed parent's origin and window.",
+      "note": "Inbound commands require that origin and the actual parent window.\n\nAnchor: \"export function isParentMessage(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
             "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
             "locator": {
-              "kind": "symbol",
-              "name": "isParentMessage"
+              "end": 149,
+              "kind": "line_range",
+              "start": 143
             }
           },
           "kind": "code"
@@ -345,15 +347,16 @@
       ]
     },
     "3": {
-      "note": "The bridge owns current open generations, selection intersection, display confirmation and teardown.",
+      "note": "Open generations, SDK selection intersection, Parent checks, page mode and teardown share one bridge lifetime.\n\nAnchor: \"export function installBridge(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ff4987d93eae4d0753859460c919930528520f63",
-            "content": "sha256:60216f4e71232be40f8204b615b7082c2b80e50fa5a7b80ea6bf49691cb8f57a",
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
             "locator": {
-              "kind": "symbol",
-              "name": "installBridge"
+              "end": 693,
+              "kind": "line_range",
+              "start": 156
             }
           },
           "kind": "code"
@@ -361,15 +364,16 @@
       ]
     },
     "4": {
-      "note": "Exact selected-screen identity precedes capability-gated on-chat; native failure settles as load-failed, while visible chat settles as shown.",
+      "note": "Native screen identity precedes on-chat; visible conversation or the native failure pane settles the request.\n\nAnchor: \"const confirmDisplay = () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
             "content": "sha256:2588180a98991eaeb9596655ec9be3b3c1c20562d9abbee5a85c3ec8bbe2ea40",
             "locator": {
-              "kind": "symbol",
-              "name": "confirmDisplay"
+              "end": 549,
+              "kind": "line_range",
+              "start": 528
             }
           },
           "kind": "code"
@@ -377,7 +381,7 @@
       ]
     },
     "5": {
-      "note": "Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown.",
+      "note": "Selection assertions cover unloaded, unknown, hidden, removed and reconnected SDK/DOM IDs.\n\nAnchor: \"document.body.innerHTML = '<button data-testid=\"",
       "targets": [
         {
           "anchor": {
@@ -395,7 +399,7 @@
       ]
     },
     "6": {
-      "note": "Deferred lookup is ignored after tab/relation changes; a still-visible split-pane caller can open its current parent, and missing/archived parents or root transitions do not replace the child.",
+      "note": "Parent assertions cover deferred lookups, changed visible callers/relations and unavailable parents.\n\nAnchor: \"visibleChats([\"",
       "targets": [
         {
           "anchor": {
@@ -409,6 +413,57 @@
             "path": "dashboard/src/cockpit/paseoHierarchy.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Tray control is negotiated within the trusted bridge lifetime.\n\nAnchor: \"export function installBridge(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:936b87f0c2b497e1357d975b031f4dd4acdc43e63a7caed81dd05a46f7ec8bf9",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Pick provenance reads the focused agent consistently across native layouts and plural visible selections.\n\nAnchor: \"const visibleChatAgent = (): string \\| null => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:e5d6cc8e118f10b0d34fde8973aa85a7c25baaa598cc4acbd4ac3f21b0c62efb",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 439
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Shown-chat reporting is negotiated, nullable, change-only and coalesced across DOM batches.\n\nAnchor: \"const tellShowing = () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:8464eedf48c97b38b9e0bdccb1f461507055ead867f1cd2c707179aa52c1c587",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "code"
         }
       ]
     }

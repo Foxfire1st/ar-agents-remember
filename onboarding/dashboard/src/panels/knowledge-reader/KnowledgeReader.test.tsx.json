@@ -1,10 +1,29 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+        "content": "sha256:6b6df921134cf9a495857cd2e79a5c282fae89e53ce6d87e898c4325ae79e819",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens wide citations beside unchanged prose, and phone citations as a page with Browse navigation"
+        }
+      },
+      "facet": "Starting from a user-hidden Knowledge aside, activating a reference shows that aside and sets its shared toggle expanded while the prose node and its scrollTop 180 remain; phone/Browse assertions are additional existing behavior, not a new responsive geometry proof.",
+      "id": "PRF-JAXE78",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
-        "content": "sha256:6da17a3ca99cb1fcfbb763630239844737ba51afd16694f4ee43e907c201c533",
+        "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+        "content": "sha256:7e5f5382edf3b6093e6d6a282c15b2858a653702572ed29b7e8f38010b446185",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +40,16 @@
   ],
   "references": {
     "10": {
-      "note": "Commit and repository changes clear prior record answers; delivered late selections cannot replace the current selection.\n\nAnchor: inclusive source ranges",
+      "note": "Commit and repository changes clear prior record answers; delivered late selections cannot replace the current selection.\n\nAnchor: \"it('clears old record answers on commit and repository changes and ignores late selections'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
             "content": "sha256:02de9a0b30f6fc1c3fdfcd44306a7314127bdc6344205cd8832a4650f6d9fa95",
             "locator": {
-              "end": 822,
+              "end": 829,
               "kind": "line_range",
-              "start": 776
+              "start": 783
             }
           },
           "kind": "test"
@@ -38,11 +57,11 @@
       ]
     },
     "11": {
-      "note": "captured is imported from readerTestSupport, then used to serve record bodies here; it is not a declaration in this file.\n\nAnchor: inclusive source ranges",
+      "note": "captured is imported from readerTestSupport, then used to serve record bodies here; it is not a declaration in this file.\n\nAnchor: \"import { captured, REPO\"; \"it('shares one record-list acquisition through delay, known branches, rerenders and Back'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
             "content": "sha256:b6a30279fe039caa96904c0124cd8b21dfb384a310de8882dc02b63a4f93b5bc",
             "locator": {
               "end": 7,
@@ -54,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
-            "content": "sha256:dbf903904f38ceb824f158e6eb3ce9bf062a3445d7575a41bf5a240d5bf3ee22",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:1fffca12749fafd03088b68339a3b2b50f917f8c9a84bb0a3dcbf11145d4fe8c",
             "locator": {
-              "end": 720,
+              "end": 759,
               "kind": "line_range",
-              "start": 711
+              "start": 718
             }
           },
           "kind": "test"
@@ -67,14 +86,14 @@
       ]
     },
     "12": {
-      "note": "Imported heldTree replies and locally held record replies are delivered in async act before negative stale-answer and duplicate-acquisition assertions.\n\nAnchor: inclusive source ranges",
+      "note": "Imported heldTree replies and locally held record replies are delivered in async act before negative stale-answer and duplicate-acquisition assertions.\n\nAnchor: \"it('names side reads that failed, pins a clean published view, and drops stale explorer answers'\"; \"it('shares one record-list acquisition through delay, known branches, rerenders and Back'\"; \"it('clears old record answers on commit and repository changes and ignores late selections'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
-            "content": "sha256:2a1e925953074f027a1a405ba52714e642bdb4ff49d0876a3c205ae309a6b86c",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:9c7c89c58dc508e1a43a2740da780c5232f61952ee4814a630ef8571d50aacee",
             "locator": {
-              "end": 469,
+              "end": 471,
               "kind": "line_range",
               "start": 437
             }
@@ -83,24 +102,41 @@
         },
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
             "content": "sha256:1fffca12749fafd03088b68339a3b2b50f917f8c9a84bb0a3dcbf11145d4fe8c",
             "locator": {
-              "end": 752,
+              "end": 759,
               "kind": "line_range",
-              "start": 711
+              "start": 718
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
             "content": "sha256:02de9a0b30f6fc1c3fdfcd44306a7314127bdc6344205cd8832a4650f6d9fa95",
             "locator": {
-              "end": 822,
+              "end": 829,
               "kind": "line_range",
-              "start": 776
+              "start": 783
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The wide-citation case begins with the aside hidden through its stored sidebar value, then checks the aside and right toggle reopen while prose identity, scroll position and path address remain unchanged.\n\nAnchor: \"it('opens wide citations beside unchanged prose, and phone citations as a page with Browse navigation'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:b02ac30160964b5031420b0dc0e6c1ad765d7ae38eba751817f823c73449b87c",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 556
             }
           },
           "kind": "test"
@@ -108,14 +144,14 @@
       ]
     },
     "8": {
-      "note": "The document-order, top/Back and wide/phone citation cases remain in this suite.\n\nAnchor: inclusive source ranges",
+      "note": "The document-order, top/Back and wide/phone citation cases remain in this suite.\n\nAnchor: \"it('reads prose before records and references, skips empty sections, and leads a record with its meaning'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
-            "content": "sha256:2f78720b5c361a1a06d9c40b51ea09340195940bb9c794f28846337eb8502ab9",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:31b9d2acb99fbe7f73bd8188924c6044c0eed42e38b2e9598c4175fde7972a81",
             "locator": {
-              "end": 590,
+              "end": 597,
               "kind": "line_range",
               "start": 486
             }
@@ -125,16 +161,16 @@
       ]
     },
     "9": {
-      "note": "Held record replies, branch navigation, rerenders and Back precede the single-acquisition assertion; the following case names a failed shared list without retry.\n\nAnchor: inclusive source ranges",
+      "note": "Held record replies, branch navigation, rerenders and Back precede the single-acquisition assertion; the following case names a failed shared list without retry.\n\nAnchor: \"it('shares one record-list acquisition through delay, known branches, rerenders and Back'\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d367e2f65ecee70e57338ef9340fbc9d9ca86c7b",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
             "content": "sha256:e4b6a6fb7e17cf957854f843c4ce044edc312c05475ae890d4121eae9e9e588b",
             "locator": {
-              "end": 774,
+              "end": 781,
               "kind": "line_range",
-              "start": 711
+              "start": 718
             }
           },
           "kind": "test"

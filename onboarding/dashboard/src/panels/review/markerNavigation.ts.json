@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-        "content": "sha256:17543e0eff829c6a438a2b9426243cbaaf5b05c4e573d9e900a0f947043d3850",
+        "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+        "content": "sha256:7ad9601a0c2cdc66e4b4dbc1714a7ec0ba4bf5bb8649836ab33d93b951e3978b",
         "locator": {
           "kind": "symbol",
           "name": "restore"
@@ -16,13 +16,13 @@
         "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "The return from a followed marker selects the captured subject and family context with no options, so it starts the tree afresh and brings no kept family back.",
+      "rationale": "Restores the captured subject and family context through the page-provided selection adapter. ReviewSurface supplies keepTree=false for that adapter, so marker return starts the walk afresh; restore then clears tree focus and restores worklist.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-        "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
+        "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+        "content": "sha256:bed813ca39ed279f94462c5b01d5bfdd82133a2320116077b4e5a184740a4746",
         "locator": {
           "kind": "symbol",
           "name": "openTarget"
@@ -34,13 +34,13 @@
         "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
         "leaf": "260928-MIK-L39"
       },
-      "rationale": "Following an intent marker selects the invariant with a family context and no options, so it starts the tree afresh.",
+      "rationale": "Names the followed invariant and optional family context, then calls the supplied selection adapter. ReviewSurface supplies that adapter with keepTree=false, so marker entry starts the walk afresh.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-        "content": "sha256:cbef0f774205691fa6f16d737959e5d61ec40f9baa33fa61513257ccd6e7a00e",
+        "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+        "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-        "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+        "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+        "content": "sha256:fb2474cefce50c2372e3e06131b9be54602051ac557df748fdf7407e7be1a221",
         "locator": {
           "kind": "symbol",
           "name": "workspaceMarkerMoves"
@@ -69,18 +69,18 @@
         "handoffEntry": "MIK-L154 marker return worklist",
         "leaf": "260928-MIK-L154"
       },
-      "rationale": "The workspace marker capture and restore path owns the reader position, including its worklist state, before restoring the opened path and layout.",
+      "rationale": "Captures subject, chosen family and worklist. Restore selects subject/context first, clears the tree-focus request, then sets worklist; no opened-file, layout or Full file state is captured or reconstructed.",
       "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The module's own statement: a tree position of the mounted workspace, selected the way the rail selects it.\n\nAnchor: \"selected the way the rail selects it\"",
+      "note": "Markers follow the page selection and Back restores the selected subject and worklist.\n\nAnchor: \"import type { FamilySelection } from './FamilyTree';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:4dd42bea78c55fcc09ea2533e2011287c50e3ee4efd083ca4618cc3668c65bae",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:a0c43b6d13d7e30838fec39b3a40459823211f120eb31e34cb40c94e0681b34a",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -92,15 +92,16 @@
       ]
     },
     "10": {
-      "note": "Capture/open pair built from workspace state",
+      "note": "The capture/open pair uses the required page-supplied selection adapter.\n\nAnchor: \"export function workspaceMarkerMoves(state: WorkspaceState, selection: MarkerSelection): MarkerMoves {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:fb2474cefce50c2372e3e06131b9be54602051ac557df748fdf7407e7be1a221",
             "locator": {
-              "kind": "symbol",
-              "name": "workspaceMarkerMoves"
+              "end": 37,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -108,16 +109,33 @@
       ]
     },
     "12": {
-      "note": "Restores the captured subject and chosen context, clears the selection focus request for marker return only when a navigation exists, then restores worklist, open path, diff layout and full-file mode.\n\nAnchor: `focusSelection`",
+      "note": "Return unconditionally clears the pending tree-focus request after selecting and before worklist restoration.\n\nAnchor: \"function restore(position: Position, state: WorkspaceState, selection: MarkerSelection): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:17543e0eff829c6a438a2b9426243cbaaf5b05c4e573d9e900a0f947043d3850",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:7ad9601a0c2cdc66e4b4dbc1714a7ec0ba4bf5bb8649836ab33d93b951e3978b",
             "locator": {
-              "end": 74,
+              "end": 52,
               "kind": "line_range",
-              "start": 57
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The required adapter exposes current subject/context and selection; removed path/layout/full-file state is not captured.\n\nAnchor: \"export interface MarkerSelection {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:cd02c0cac9e1c83e3a7c600918ea44bb20590f93b213051fc6863ce0866f7518",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 17
             }
           },
           "kind": "code"
@@ -125,15 +143,16 @@
       ]
     },
     "2": {
-      "note": "The captured position records a worklist boolean, not a lane destination, alongside subject, choice, path, layout and full-file state.",
+      "note": "The captured position contains only subject, chosen family and worklist state.\n\nAnchor: \"interface Position {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:692d5d47aabfe31a929e0b1dbd3913a15ee8140f4885dd2f4609c9361eb9125b",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:1011360e801540ce7d1d010386520e960528f210c07d5d61d1ad7f89a17789bf",
             "locator": {
-              "kind": "symbol",
-              "name": "Position"
+              "end": 26,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"
@@ -141,15 +160,16 @@
       ]
     },
     "3": {
-      "note": "Capture takes the current worklist boolean and returns the restore closure; open delegates to the marker target selection.",
+      "note": "Capture reads the required selection adapter and current worklist, while open delegates to the marker target.\n\nAnchor: \"export function workspaceMarkerMoves(state: WorkspaceState, selection: MarkerSelection): MarkerMoves {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:fb2474cefce50c2372e3e06131b9be54602051ac557df748fdf7407e7be1a221",
             "locator": {
-              "kind": "symbol",
-              "name": "workspaceMarkerMoves"
+              "end": 37,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -157,15 +177,16 @@
       ]
     },
     "4": {
-      "note": "Following: close the file, select the invariant with its member context.",
+      "note": "A marker target selects its invariant and named family/member context, or null family context.\n\nAnchor: \"function openTarget(target: MarkTarget, selection: MarkerSelection): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:bed813ca39ed279f94462c5b01d5bfdd82133a2320116077b4e5a184740a4746",
             "locator": {
-              "kind": "symbol",
-              "name": "openTarget"
+              "end": 44,
+              "kind": "line_range",
+              "start": 39
             }
           },
           "kind": "code"
@@ -173,88 +194,37 @@
       ]
     },
     "5": {
-      "note": "Return restores subject, worklist flag, opened path, layout and full file with selection focus cleared; no lane destination is captured.\n\nAnchor: `workspaceMarkerMoves`",
+      "note": "Restore selects subject/context, clears the tree-focus request and only then restores worklist.\n\nAnchor: \"function restore(position: Position, state: WorkspaceState, selection: MarkerSelection): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:cbef0f774205691fa6f16d737959e5d61ec40f9baa33fa61513257ccd6e7a00e",
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:7ad9601a0c2cdc66e4b4dbc1714a7ec0ba4bf5bb8649836ab33d93b951e3978b",
             "locator": {
-              "kind": "file"
+              "end": 52,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "The workspace that passes them to its scope.\n\nAnchor: \"moves: workspaceMarkerMoves(state, navigation),\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:12c29394bf9144fcad060c75b0da85c518e704f7309ae20586709d3020563dd0",
-            "locator": {
-              "end": 195,
-              "kind": "line_range",
-              "start": 195
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
-      "note": "The marker move cases follow the subject and restore setWorklist before path, layout and full-file choice. The return title retains the word lane, but its current assertion is the worklist setter.",
+      "note": "Recording-stand-in tests assert named-family and no-family adapter arguments, then subject/context restoration followed by worklist and a cleared focus request; they do not prove a direct-navigation tree reset.\n\nAnchor: \"function selection(calls: string[], state: WorkspaceState): MarkerSelection {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:d77f6f2c96c36e3b2fe8730a32aefa8ddc161adfd2e58bc84d4bbbeba36d5ccf",
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:9d37a87578d8a9fbb90a855581d095f233503f6eb558be1174801b2bb45fa9f6",
             "locator": {
-              "end": 96,
+              "end": 73,
               "kind": "line_range",
-              "start": 43
+              "start": 26
             },
             "path": "dashboard/src/panels/review/markerNavigation.test.ts"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "A follow and its return select with two arguments only, so both start the walked tree afresh.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:b5ccd4686ca7936a5c603f4d77ee83ddfc072b3680e2ea480c26459ce5b6b878",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 98
-            },
-            "path": "dashboard/src/panels/review/markerNavigation.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "The options a selection would have to pass to keep the tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectionOptions"
-            },
-            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
-          },
-          "kind": "code"
         }
       ]
     }

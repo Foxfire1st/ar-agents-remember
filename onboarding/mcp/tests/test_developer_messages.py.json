@@ -1,0 +1,553 @@
+{
+  "path": "mcp/tests/test_developer_messages.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:0bc03ae8436bd8f12804dc1ebf744c8a204f912d1e5799317bc0ad11acfb6112",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_reference_kind_has_a_written_form_that_opens_with_its_call"
+        }
+      },
+      "facet": "Checks the exact opening call for each supported reference kind and the record/code git-show lines for review blocks.",
+      "id": "PRF-19SHCS",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:69886aeea192a980ffd7b2d5d83d606871bd3e4555cb54727b02eec1d9aa7204",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_record_references_name_the_revision_the_memory_side_they_name_holds"
+        }
+      },
+      "facet": "Base, candidate and before-only record references use the revision read at their named memory tree; stale and absent revisions refuse without sending.",
+      "id": "PRF-24TYVX",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:276d064798b51ba9a01efca0a505031bab572d6f4da84eec2928d6d0f5dd4955",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_sent_picks_log_keeps_its_latest_lines_and_its_latest_recipients"
+        }
+      },
+      "facet": "A recipient log keeps only its latest 200 rows in newest-first reads; lowering the recipient bound evicts excess log files.",
+      "id": "PRF-4G0HVD",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:8835d6b14928b06f759b8ddac143bb71d43bb927e7406ca44a471601c2bb556f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_held_send_that_ends_undelivered_is_filed_and_logged_undelivered"
+        }
+      },
+      "facet": "Seat loss and later archival mark the filed message undelivered, update the log path/hash/state, and send nothing again.",
+      "id": "PRF-5MVTGV",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:ce377e43de11b83f8175d672fca8c9bf8fd7bef02520902d90402d59b9f9f2c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bounds_and_a_reused_message_id_are_refused_by_name_before_anything_is_filed"
+        }
+      },
+      "facet": "Excess pick count, decoded image bytes, message text and empty message refuse by reason without any filing or host send.",
+      "id": "PRF-90WAKS",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:74e3e4d8ed218dce14f74147f50a5c42c27da0d7db09a333ac6ead2c80ffe271",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_reference_whose_parts_name_different_objects_is_refused_before_it_is_filed"
+        }
+      },
+      "facet": "Contradictory task/leaf pins, comparison numbers, block/hunk trees, repository and memory tree refuse before message files; genuine comparison references still render.",
+      "id": "PRF-BDCA3Q",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:f6225a28e7476852623476e09abe2b12c8e26e855e284a2455524c199977e1d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_filing_that_fails_leaves_no_new_pick_and_keeps_one_another_message_names"
+        }
+      },
+      "facet": "Injected message placement failure removes a newly saved text pick, preserves a preexisting shared image, and sends nothing; retry files both picks.",
+      "id": "PRF-BETSKT",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:1ec5e3284147786a3e9db67a625074f03516777b32fcafec3ad56cfe5c4e4c49",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_chat_pick_whose_provenance_is_no_agent_id_or_no_time_is_refused_by_name"
+        }
+      },
+      "facet": "Malformed/newline agent identifiers and absent/invalid message times refuse before sending; clock and ISO time values are retained in one provenance line.",
+      "id": "PRF-ESZFTZ",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:9b0b5e9817e3472a9ff45dfc7a41c7e8ef8cf4fb773de2c1a883ae182407671f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+        }
+      },
+      "facet": "For taskful and taskless targets the message header, SHA-256, image/text files and file references match the complete delivered body.",
+      "id": "PRF-MSE7MM",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:74ecf932bb5c5aac0455bd0dd57588c208cb9a87be7f12ac02375acbf1cdad56",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_busy_target_is_held_as_text_that_names_the_message_file"
+        }
+      },
+      "facet": "The busy-target path holds text ending with the exact complete message file path/hash instead of losing context.",
+      "id": "PRF-QJC8D8",
+      "invariant": "INV-G1K3QN",
+      "origin": {
+        "handoffEntry": "TRAY09",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:7bec6ec82ad4dae2095673cc1a91d4bbb17eeb7107cb11a3a4cb4c4690b002e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_held_send_after_a_partial_drain_is_answered_by_its_own_message"
+        }
+      },
+      "facet": "A partial drain leaves a still-waiting message held and reports delivered only when that send’s own held part went out.",
+      "id": "PRF-R1TH1E",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:ceb0bdd3ac4e32f0007aa136d89aef8d77724b822e845e27b151b1d1c7e4f397",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_seat_list_joins_live_agents_with_current_records_and_pages"
+        }
+      },
+      "facet": "The API joins live recorded seats, excludes stale/unrecorded agents, pages 50 then remaining rows, and names damaged-record/incomplete-host/unavailable cases.",
+      "id": "PRF-Z3Z7DD",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:9b0b5e9817e3472a9ff45dfc7a41c7e8ef8cf4fb773de2c1a883ae182407671f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_send_to_two_targets_composes_one_message_each_in_rule_8_order"
+        }
+      },
+      "facet": "Two chosen targets each receive one body with the appropriate developer header, free text, ordered reference/text/image picks and notes, native image/text attachments, and filed path/hash.",
+      "id": "PRF-ZQHN83",
+      "invariant": "INV-T6DV0Q",
+      "origin": {
+        "handoffEntry": "TRAY08",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+        "content": "sha256:656460e7482e0315581be5943321d53d6a5232d1feeafbdce2a8ba6100ab2908",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_body_over_its_bound_is_refused_by_name_before_it_is_parsed"
+        }
+      },
+      "facet": "An over-limit streamed request is refused before parsing or creating developer-message files.",
+      "id": "PRF-ZQKVY5",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes.\n\nAnchor: \"\"\"\"MIK-R188 evidence 3: the developer's send from the tray and the host-wide seat list.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f43a0199f5faa9982a07564e9a635e28ca164d89",
+            "content": "sha256:4ad12b4b31ac7e42e9c062300ffc6cc4a22bd5860938ec490024a88a11155006",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

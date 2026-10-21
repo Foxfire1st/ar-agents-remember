@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/tray/AddToTray.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks quiet object controls in nested subject/block and file/hunk hosts.\n\nAnchor: \"it(`shows a ${outer}'s idle ⊕ and the ⊕ of the hovered or focused ${inner[0]}, never the other ${inner[1]}'s`, () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9c4d22cbbde025cbb08e4d92b59c58da9a6fc97",
+            "content": "sha256:59af47e74a74dc173a04068e847bb451d923806e71426c90d0c19eb6814b3b65",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

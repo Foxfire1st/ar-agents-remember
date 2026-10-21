@@ -23,7 +23,7 @@ derives a count from change-set line totals or from catalogue size.
   unexplained-changes lane's file-level count a tree comparison's summary carries (MIK-R32 rule 9).
   It now also carries optional `unexplained_open`, a separately supplied stored-worklist open count,
   not an authored-intent or attribution total.
-- `useIntentReviewSummary` loads `/api/review/intent/summary?repo&master&leaf` through the store-owned bounded `intentSummaries` resource and shared `decodeReviewJson` decoder.
+- `useIntentReviewSummary` loads `/api/review/intent/summary?repo&master&leaf`, including `comparison=<n>` only when one is supplied, through the store-owned bounded `intentSummaries` resource and shared `decodeReviewJson` decoder.
 - `summaryRead` maps one answer to the render state `IntentSummaryRead`: `counted`/`partial` with
   counts, or `unavailable` with a `ReviewFailure` (`reviewProblemFromRefusal` for the owner's refusal,
   `unreadableAnswer` for a body that is none of the three shapes). `counts` and `problem` are never
@@ -33,8 +33,7 @@ derives a count from change-set line totals or from catalogue size.
   `unexplainedOpen` whenever it is defined, including measured zero, on either counted/partial or
   unavailable. The main `counts` and owner `problem` remain mutually exclusive; this does not
   prohibit independent auxiliary numbers beside an unavailable authored-intent result.
-- `useIntentReviewSummary(repo, master, leaf, facts)` reads once per task context and again only when
-  `facts` moves. The render key includes repo, master, leaf and facts. Mounted/sequence checks drop superseded completions; `load` and `peek` both receive the same facts identity. A facts move shows loading until that identity has an answer, never retained old-facts counts. A thrown request becomes `unavailable` via `reviewProblemFromCause`.
+- `useIntentReviewSummary(repo, master, leaf, facts, comparison?, enabled = true)` waits while disabled, then reads for the task, facts and optional numbered comparison. The render key includes repo, master, leaf, facts and comparison (null when absent). Mounted/sequence checks drop superseded completions; `load` and `peek` both receive the same facts identity. A facts move shows loading until that identity has an answer, never retained old-facts counts. A thrown request becomes `unavailable` via `reviewProblemFromCause`.
 
 ### Conventions
 
@@ -61,7 +60,7 @@ them is a presentation choice owned by the later presentation leaves, not curren
 
 ## Current Behavior
 
-`useIntentReviewSummary` creates an `AbortController` per effect, passes its signal to the store's summary load (`:126-131`), ignores an `AbortError` instead of mapping it to `unavailable`, and aborts on cleanup (`:136-140`). The mounted/sequence guard still drops a superseded completion. This supersedes 'Mounted/sequence checks drop superseded completions' as the whole account: a task switch now ends the request, not only its late answer. The display key and facts identity are unchanged.
+`useIntentReviewSummary` creates an `AbortController` per effect, passes its signal to the store's summary load (`:126-131`), ignores an `AbortError` instead of mapping it to `unavailable`, and aborts on cleanup (`:136-140`). The mounted/sequence guard still drops a superseded completion. This supersedes 'Mounted/sequence checks drop superseded completions' as the whole account: a task switch now ends the request, not only its late answer. The facts identity remains leaf-scoped; the display key and store URL additionally distinguish the optional comparison number.
 
 ## Evidence
 
@@ -73,13 +72,10 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The component counts and result wire shape retain authored intent, optional attribution and optional stored-open facts. [1]
 
-- The store-owned hook loads and peeks under the same task/facts key and drops superseded mounted completions. [2]
 
 - The client state and mapping separate authored counts from failure while preserving defined auxiliary values on either declared answer state. [3]
 
-- Same-key retained fallback and mounted/sequence checks belong to the hook, not a second count computation. [4]
 
 - Attribution and defined unexplained_open are copied separately from authored plus/minus, including on the unavailable branch. [5]
 
@@ -92,3 +88,7 @@ No relevant domain documentation was found.
 ### Cross-Repo References
 
 No external-system boundary is implemented by this client. The cited server, consumer and store-cache owners are same-repository evidence.
+
+- The component counts and result wire shape retain authored intent, optional attribution and optional stored-open facts. [1]
+- The store-owned hook loads and peeks under the same task/facts key and drops superseded mounted completions. [2]
+- Same-key retained fallback and mounted/sequence checks belong to the hook, not a second count computation. [4]

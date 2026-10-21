@@ -70,6 +70,8 @@ selection survives back/forward.
   view renders the same banner (`notes-trunc-banner`, matching CodeSide's wording/style) ABOVE the DualPane;
   text notes keep CodeSide's own banner.
 
+The reader chrome also owns the shared `notes` left-sidebar state. When a rail is present, the header renders `SidebarToggle` after Back, naming it Requirements sidebar for requirement packets and Notes sidebar otherwise. The rail panel and its resize handle receive the shared visibility properties together. The rail remains mounted when hidden; the content pane stays outside it. Report and whole-decision-log layouts pass no rail and draw no sidebar toggle.
+
 ### Conventions
 
 Panda `css` local styles mirroring the `ChangeSetViewer` takeover chrome (screen · sticky back header ·
@@ -108,10 +110,6 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 
 
-- NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. [1]
-
-
-
 - The `FileContent` type the text path maps a note into. [2]
 
 - Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover. [4]
@@ -140,7 +138,6 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 - The whole-log pane shows authored decisions newest-first with expanded shared rows; retained product records are unnumbered in a separate counted native disclosure. [9]
 
-
-
-
+- NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. [1]
 - The notes-target reader retains the same note and keyed tree lifetime. [10]
+- The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists. [11]

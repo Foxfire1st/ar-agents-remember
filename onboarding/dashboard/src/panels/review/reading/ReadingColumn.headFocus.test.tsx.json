@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReadingColumn.headFocus.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The head contains the toggle and declares the large scroll margin on itself and descendants.\n\nAnchor: \"it('gives the sticky head and its parts a scroll area past the column's end', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b13090ea7501bc316c9ddace8ee6320c58aecfcb",
+            "content": "sha256:babf2194b83474ba4ab4d3e056b15d28ebbc57b6d96e3887ccf67b9663880f3b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

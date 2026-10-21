@@ -6,16 +6,16 @@
     ],
     "justification": "A failed or refused read leaves the same tall tree in place: without the status reveal the reader saw no statement that the read had failed and needed the Jump control, which OR-R042's ruling closed as an answered-only gap. The reveal is realized in the workspace's selection-focus effect, its ten mounted cases and the captured HTTP 400 refusal."
   },
-  "applicability": "The mounted intent reviewer's reading area after an in-tree selection on the stacked layout whose read ends failed or refused.",
+  "applicability": "Failed or refused selected-subject reads in the mounted review page.",
   "conditions": [
-    "The status reading area is scrolled into view; the selection mark stays on the requested row and the tree keeps every row.",
-    "The reveal moves no focus and leaves the selection's focus request in place, so a successful retry still lands focus as an answer does.",
-    "The reveal happens only when the selection was in-tree, the layout is stacked, and the reader has not moved focus while the read was on its way."
+    "The failure remains in the requested subject slot and the tree marks its requested row.",
+    "The page spends the armed heading landing when the read settles; the reading column scrolls itself, or at 40rem and narrower the heading is brought into the scrolling page.",
+    "A reader wheel, touch, scrolling key or column-scrollbar gesture disarms the landing.",
+    "Failure focus uses preventScroll and does not steal focus the reader moved elsewhere; the pending request remains for retry."
   ],
   "exclusions": [
-    "Wide layouts and outside selections: their surface position is unchanged.",
-    "The pending phase: the view stays where it is until the read settles.",
-    "Request counts and the reading area's content, which the read cycle and the failure block own."
+    "The pending phase does not spend the armed landing before the read settles.",
+    "Request counts and failure content remain owned by the read cycle and failure block."
   ],
   "id": "INV-BMFR2T",
   "origin": {
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "On the stacked layout an in-tree selection whose read fails or is refused scrolls the reading area that states that status into view, unless the reader moved focus while the read was on its way; it moves no focus and leaves the selection's focus request for a retry.",
+  "statement": "A selected subject read that fails or is refused reveals the subject heading once unless the reader has scrolled since selection. Failure focus lands on the requested tree row only if the reader has not moved focus, and the focus request remains for a retry.",
   "status": "proposed",
   "supersedes": []
 }

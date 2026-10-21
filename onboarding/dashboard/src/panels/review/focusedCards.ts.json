@@ -3,295 +3,56 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-        "content": "sha256:58193620a1b0cb5a190d2945411ac6098d8910f0e63e8dfbde7efc1568d286fc",
+        "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+        "content": "sha256:1dffedab0024acafdd52a1f38f95dc35d280a2836396bbd3f4aca13212194601",
         "locator": {
-          "kind": "symbol",
-          "name": "cardScope"
+          "end": 67,
+          "kind": "line_range",
+          "start": 62
         }
       },
-      "id": "RLZ-HSKQNM",
-      "invariant": "INV-VPX81HXV",
+      "id": "RLZ-TMW88G",
+      "invariant": "INV-9S9XT5",
       "origin": {
-        "handoffEntry": "L37-R2-tree-scope-notice",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-9S9XT5",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "Builds scope reasons from unread sides, incomplete/underfilled recorded pages and unrecorded member content. When a recorded side and a missing reason exist, it reports distinct loaded canonical members from the widest recorded side, clamped to its recorded membership total. This is bounded loaded context, not absence of unreturned source or a new guarantee judgment.",
-      "role": "primary-authority"
+      "rationale": "drawnText removes exactly one terminating newline before FilePane rendering so the inclusive mapped range does not acquire an invented final empty row; unreadable sides are still not made empty.",
+      "role": "support"
     }
   ],
   "references": {
-    "1": {
-      "note": "The module's own statement of grouping and order.\n\nAnchor: current source extent",
+    "14": {
+      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function cardVoice(entry: ReviewTreeEntry): CardVoice {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:9219b8606888c4395ea25994116fe09916d5cfa42a7139eb1a13a09ed2cd938f",
+            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+            "content": "sha256:d2e14b699abbaf7a96cee1210f887f4d8a8abc2d5b8392ca147fde56c0b35537",
             "locator": {
-              "end": 13,
+              "end": 49,
               "kind": "line_range",
-              "start": 1
+              "start": 34
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "Bounded/complete and disjoint-side F2 fixtures plus equal-count missing content, an underfilled side and an unreadable-side regression.\n\nAnchor: current source extent",
+    "15": {
+      "note": "focusedCards.ts current behavior at this source owner.\n\nAnchor: \"export function firstLines(card: ExpressionCard): { before: number; after: number } {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:18245f7f948876ccd0532da4d0fb938fb32cd279f7685e64eb77dc5cee93b1ed",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 239
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The current mounted family fixture asserts 12 cards with separate changed/unchanged counts and rationale-before-excerpt DOM order; this is source evidence, not a new test run.\n\nAnchor: current family fixture",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87296aefe43bea0d7da4ad364f5a8483c9226cb5",
-            "content": "sha256:0c4e2dbb42db368813bbc78fd17334966805b0c10523aad650c4d48123c381c2",
-            "locator": {
-              "end": 178,
-              "kind": "line_range",
-              "start": 131
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "A card: kind, path, change, both sides and its entries.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:9f5f8d12a132421c3fc7e52199de9742e6cf2d34957f2beae0ef56a8e278548c",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 19
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:9f993d4a9e9ee6d824d85320b979975ba8cd1a681ea8bd5527a6a4dc76a42772",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 29
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The region key; an unresolved or unavailable side keeps its own card.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:a29be764890ac93aa76651d072a0190cb1465ab0a9386753f10ebf7423108fef",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 43
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:fbf3cc7b5dc1c06a4c921d58929d900fc92c4a60fc6a3d15d57ae400e16b1ab7",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 50
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "MIK-R01 order with the seed first, and one card per key.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:db91ffc4437babcb0717fe6b186d8c7f59ed84c9a5be49557f1746796a1a74de",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 57
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:5078ba9825a797e900c6a2f06067dab078166a3f07fdae7668ad7f7928ca439f",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 68
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Unchanged excluded from the changed count.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:55125517f3a1d39db8ab9c347b5f9ad62b0eda49dfd7554f5774497be1b22b55",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 91
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Each member's voice, with `missing` for an absent rationale.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:4476595e621cae46cca3abb3f4c1e34458da221dfa7929ae41e17f777c805ced",
+            "blob": "e5dc7b90edf5b1102c9d98737b168d1589137ded",
+            "content": "sha256:e8f8b975284d88ebc27058ec475000906d6e5fb63b5f8659846b2dda96c45f2d",
             "locator": {
               "end": 111,
               "kind": "line_range",
-              "start": 103
+              "start": 58
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:931c99a2cb61e51acc1a01943f8f8bf8a2ce542855b9fa4e0b55ed2469a6c303",
-            "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 113
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Gutter starts, range labels and not-current marks.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:12e60c5009bfd67d5b097ae785fd8f47a4f1b21067a821fe556a10afcbf8cb66",
-            "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 137
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:066241bb26e5d6eb6ae029624ccaf5208c9d9d5daaf4f9f5ad2c226f269a0c16",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:1699f39a8e4730275065c49e1ff55d209a852939749b98c578dff73fdf9098bb",
-            "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 152
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Loaded scope includes explicit missing reasons, deduplicates one widest recorded side and caps its count; undefined alone does not prove full retrieval.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:39685682a66d7b2dd9f7c5d1473bf70b3c25b9726c15d2b04774960906b66a09",
-            "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 190
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5f4b08039c27279ae3a0d7cc26e36ed321fc8be",
-            "content": "sha256:58193620a1b0cb5a190d2945411ac6098d8910f0e63e8dfbde7efc1568d286fc",
-            "locator": {
-              "end": 223,
-              "kind": "line_range",
-              "start": 196
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Checked-in grouping assertions cover distinct regions, shared voices, unresolved isolation, separate change counts and seed ordering; no new execution.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:4cc23ee2ee2a26ac84d158e84ed7d5559b01a264f497675c136ab90e45e7f779",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 164
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     }

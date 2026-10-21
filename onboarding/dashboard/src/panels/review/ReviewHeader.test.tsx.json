@@ -2,17 +2,68 @@
   "path": "dashboard/src/panels/review/ReviewHeader.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Header integration checks Keys immediately beside Refresh, the displayed j/k reference, focus entry and trigger-focus return after Escape or the explicit Close button inside the dialog, visible subject identifiers/historical text and Back callback. It does not click the backdrop; these are jsdom assertions, not real-browser measurements.\n\nAnchor: complete test assertions",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('mounts visible Keys beside Refresh and restores trigger focus after closing its reference', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "7f163e422f87c453be731ae3985d59bddc3d41b7",
-            "content": "sha256:61d1fb56478f32dbdc226797b40fc70cce78940deb688a09cb272b8b06414fce",
+            "blob": "e9abf4115517b0f31bd63113de6c2e96c8377fa2",
+            "content": "sha256:af9e026da6900d83ce359c841d344aeb5bbec9d38fa20eb42b2eb3896a4f519c",
             "locator": {
-              "end": 47,
+              "end": 46,
               "kind": "line_range",
-              "start": 1
+              "start": 10
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('names the leaf when the task list holds no title', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9abf4115517b0f31bd63113de6c2e96c8377fa2",
+            "content": "sha256:25f9688f59c6dcaf8d81e02ae0bbc1a32b90e54c7384150eb5bcd8947209c6e1",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every part of the top line inside the line at 40rem', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9abf4115517b0f31bd63113de6c2e96c8377fa2",
+            "content": "sha256:7b0486a1115fad131d0ce35774334ffa57f99a6eb16b9fff51d48700c814e3c4",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"names the leaf by its short id, so the title fits, and lets a record label give way first\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9abf4115517b0f31bd63113de6c2e96c8377fa2",
+            "content": "sha256:74ac8fc1d3d8641d4e901944d81ed0a2eb3723a441bd83ebee3eb1fe654c8e7b",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 86
             }
           },
           "kind": "test"

@@ -7,8 +7,8 @@
   },
   "applicability": "The dashboard's older contextual session panel and the modules, styles, tests and highlight branch that existed only for it.",
   "conditions": [
-    "RailChat.tsx, RailChat.test.tsx and railChatSelection.ts remain absent. R113 also removes HighlightComposer, LeafAttachPicker, SessionComposer, Terminal and the old panels/session-cockpit tree; no claim that those L95-era shared surfaces still exist is carried forward.",
-    "The surviving RightRail keeps EventRiver and the selected document host chat; its current symbol content is identical across the A6 base/candidate, and no AR highlight composer remains mounted.",
+    "R113-retired RailChat, HighlightComposer, LeafAttachPicker, SessionComposer, Terminal and old session-cockpit files remain absent; this does not forbid the new reference tray's admitted highlight/dock/send surfaces.",
+    "The surviving RightRail keeps EventRiver and one host-owned DocumentChat; the tray docks beside its frame without rebuilding the retired AR session plane.",
     "The dated certificate exception is identified by its unchanged line content, not the historical whole-file hash or line146: | No composer paste path | The canonical Chats cockpit, RailChat and HighlightComposer use `SessionComposer`/`submitSessionText`; production call-site search finds no paste/injection caller. Legacy data-layer paste helpers and their historical tests remain defined but unreachable, matching the accepted L5 boundary. Raw xterm keystrokes remain terminal input by design. |"
   ],
   "exclusions": [
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L95",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The obsolete rail panel, its sole selection helper, tests and exclusive direct-highlight target remain removed; R113 also retires the shared AR session/composer/highlight surfaces, while Event River and the rail switch to the host-owned document chat remain.",
+  "statement": "The obsolete RailChat panel and its exclusive old session/composer/highlight modules remain removed. The host-owned document chat and Event River survive, and the new reference tray owns highlight picks, its dock and developer-message sends.",
   "status": "proposed",
   "supersedes": []
 }

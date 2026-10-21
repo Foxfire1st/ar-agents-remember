@@ -1,0 +1,130 @@
+{
+  "path": "dashboard/src/panels/review/reading/pageParts.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
+        "locator": {
+          "kind": "symbol",
+          "name": "taskContextRead"
+        }
+      },
+      "id": "RLZ-6017FF",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It keeps subject-read failures from overwriting retained task-context status.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
+        "locator": {
+          "kind": "symbol",
+          "name": "openMember"
+        }
+      },
+      "id": "RLZ-PEMTZ4PE",
+      "invariant": "INV-YVVW1XCN",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "chooseSubject was removed; main roster member selection is precisely here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
+        "locator": {
+          "kind": "symbol",
+          "name": "openMember"
+        }
+      },
+      "id": "RLZ-RRPZV9",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Canonical main-roster member selection keeps family context here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "content": "sha256:b7a5210e19e50272797ceba1af4bd3fff780d56ee139e77963b6aee6dc45047d",
+        "locator": {
+          "kind": "symbol",
+          "name": "PageTree"
+        }
+      },
+      "id": "RLZ-TMVXZ7",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Walk notice and subject context are carried by page tree/slot owners.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Wire page model into tree, context, subject slot, notes and top-line controls.\n\nAnchor: \"export function useTaskTitle(repo: string, master: string, leaf: string): string \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:6ad54b0bae7bb6eeb5dc19b82fcebe6342209b394f2d02125ecd7578065eb13f",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Wire page model into tree, context, subject slot, notes and top-line controls.\n\nAnchor: \"function PageSlot({ props, layout }: { props: PageProps; layout: DiffMode }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:3aba50fc521352f552d843d345db681d166818f0e52facd0d4e24bc476b15392",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Wire page model into tree, context, subject slot, notes and top-line controls.\n\nAnchor: \"export function useReadingValue(props: PageProps, layout: DiffMode): ReadingContextValue {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:d9f0d6621d61819980503291b33086b933271a033e88fe2f45a355ceece43304",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

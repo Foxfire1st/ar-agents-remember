@@ -70,6 +70,40 @@
         }
       ]
     },
+    "13": {
+      "note": "Folds expose native keyboard-equivalent expansion.\n\nAnchor: \"function markFolds(view: EditorView): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:cd8d378e9bafbb3b0d5b71fd83b2c40f9556dc9c7b8530b382b03df7a79ba3d9",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Fitted mark updates reconfigure dedicated gutter compartments without destroying current editors.\n\nAnchor: \"const marking = useRef({ gutterFor, drawn });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:ea0ca735ca678565ec649deaf6b730c4447737a0d8ad3688e8817cc7911252a5",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The shared CodeMirror theme (chrome + syntax `HighlightStyle`).",
       "targets": [
@@ -147,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
             "content": "sha256:2e140469085b64bca69a16e98ba3eb780a2f97abf09fd8bccf83739da71c83a0",
             "locator": {
               "kind": "symbol",
@@ -159,28 +193,16 @@
       ]
     },
     "6": {
-      "note": "The optional `marks` prop, the marked pane, and the teardown that tells it the editors are gone.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"; \"drawn(null);\"",
+      "note": "Fitted panes reconfigure marks in existing editors; content changes and ordinary mark changes rebuild with guarded teardown.\n\nAnchor: \"export function DiffPane({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:963636f838a021db3e4d2aef8df3e8216a722f3f5a51d8ddd7f705c06c7d03b8",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
             "locator": {
-              "end": 148,
+              "end": 342,
               "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:9c7428217d70869daec7a6dc1317aa3ab302c088ee304cfca396bb51e5408ebd",
-            "locator": {
-              "end": 192,
-              "kind": "line_range",
-              "start": 179
+              "start": 247
             }
           },
           "kind": "code"
@@ -205,15 +227,14 @@
       ]
     },
     "8": {
-      "note": "The content-sized host an expression card uses (MIK-L31).",
+      "note": "The content-sized host an expression card uses (MIK-L31).\n\nAnchor: `fitHost`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:6f1675bccb6158f8bc5b35b471847f9ae0477a2731275a8d91bb06999abf54e7",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
             "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
+              "kind": "file"
             }
           },
           "kind": "code"

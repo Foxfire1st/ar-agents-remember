@@ -2,17 +2,119 @@
   "path": "dashboard/src/panels/review/SubjectJudgment.captured.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Seven immutable native capture playbacks assert exact judgment attempts/rows, history/proof IDs confined to identifier disclosures, every visible reason/facet/detail, none/no-impact distinctions and missing-path/content-mismatch stale versus unreadable-history unavailable/current-proof. Source-epoch/faulted scratch inputs are disclosed; not fresh capture or test execution.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native family history keeps assigned and changed attempts with its current member proof', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b011605dd41f15eb1bf45aa7646f633b57e05ec8",
-            "content": "sha256:d1b2519dbaaa454037db58ce9dd3950761e7eb8e69142c1c577692d72c73915f",
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:cf7a5ec2877a48e9ceaeec706eac87b3f0f691d979a9612d53b539a6eeb026ce",
             "locator": {
-              "end": 198,
+              "end": 103,
               "kind": "line_range",
-              "start": 1
+              "start": 83
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native invariant history preserves weaken then clarify and structured because references', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:dcaba311c0e9406ef1e79bf33aa73aac37bdfb0267238ea1ba39484e321ef158",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native missing-path input keeps judgments and renders the proof as stale, not unverifiable', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:4d1c6b76f926b461f2b5a8bc11092401741be3e66e2203f41084f6800364ee71",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native no-impact history remains authored judgment even when the selected revision is unchanged', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:598caa7f85289653f4cdf2e3adb23e1ffe39bd393adc15382a8dd6a314bffbf9",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native measured no-judgment read stays none with neither rows nor proofs', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:96e4594357665ff2d87e060d5029e58d63c97f25c948352d2485e49d7571e32c",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native changed-range input keeps judgments and names the stale proof content mismatch', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:c5b55c68ab4774e68d915ee579d452c675999bef0147b9faa1b16cc1e311b2fe",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('native unreadable-history input alerts unavailable while its independently current proof remains visible', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "693ea5f542d3acda3b67c5df7070de5b75cc088d",
+            "content": "sha256:8ab9fb9151cc194858cae1aa90b53153da279099730010c523705dd41cae6269",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "test"

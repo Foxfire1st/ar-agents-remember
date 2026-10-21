@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/readingStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Own reading visual primitives, one DOM block-stop attribute and skeleton/held-content styles.\n\nAnchor: \"export const subjectBox = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fec0a4c4f2cfcd97480eed9b09e1590f2a574480",
+            "content": "sha256:a457268eddcc231c113ce639ff102dadd6832d9d3e4967eb5d6d44f9e0cd0e3d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own reading visual primitives, one DOM block-stop attribute and skeleton/held-content styles.\n\nAnchor: \"export const badge = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fec0a4c4f2cfcd97480eed9b09e1590f2a574480",
+            "content": "sha256:edb2f80fef539715e3db183e20b275d4de7b56b10dd3658db783dbfaa4bc518b",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own reading visual primitives, one DOM block-stop attribute and skeleton/held-content styles.\n\nAnchor: \"export const groupRow = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fec0a4c4f2cfcd97480eed9b09e1590f2a574480",
+            "content": "sha256:48b8ab004e931f60717be52acfb82ecba4107f26aee6a2ed51cbfa46cadf0a7e",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

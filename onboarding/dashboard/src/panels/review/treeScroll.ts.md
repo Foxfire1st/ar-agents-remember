@@ -2,23 +2,18 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Reveal a row within its tree panel only.
+Reveal a selected row by changing only the nearest tree panel's scrollTop, accounting for its pinned bottom rows.
 
 ## Code Commentary
 
-Find the closest data-review-tree-panel; missing row/panel is a no-op. Reset its max-height before measuring viewport changes, clip the bottom to window and review-surface bounds, constrain a clipped scrollport, and move its visible top below sticky triage controls. Adjust only that panel.scrollTop until the selected row fits. No ancestor scrollIntoView, focus move or selection occurs here. This keeps j/k reveal local rather than sending the page to its top.
+`revealTreeRow` finds the nearest data-review-tree-panel scroller, measures it and the selected row, and adjusts scrollTop only when the row is above or below its visible bounds. If the pinned Worklist/lane block follows the row and does not contain it, its top limits the row's visible bottom. Rows inside or after that block use the panel bottom. Missing row/panel is a no-op.
 
-## Invariants And Boundaries
-
-This is the inspected source contract, not an execution certificate. Parent and direct callers retain authority for identity, reads and state.
+The helper changes no height/style, focus, selection or ancestor scroll coordinate. CSS owns the scroller's height and the caller owns focus eligibility.
 
 ## Evidence
 
-- Reveal a row within its tree panel only: `revealTreeRow` owns the described branch. [1]
-- Reveal a row within its tree panel only: `visiblePanelBounds` owns the described branch. [2]
-- Reveal a row within its tree panel only: `belowControls` owns the described branch. [3]
-
+- treeScroll.ts current behavior at this source owner. [5]

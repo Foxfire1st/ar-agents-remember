@@ -10,7 +10,7 @@ Exercise the mounted reviewTrees.cards owner and its delivered read/selection st
 
 ## Code Commentary
 
-The focused cases check sends no second request when the same set remounts through pending and answer; starts a changed set before its hook mounts, beside the subject request; never shows an old answer under a new question. No second product state or installation acceptance is introduced.
+The cases mount `useChangeSetCards` against deferred fetches and check shared pending/completed answers across remounts, order-insensitive sets, 500-ID chunk sizing, no old answer under a new question, a failed chunk retried after remount, and unavailable memory values retried by Refresh. Successful recovered values are reused; a genuinely unconverted after side remains cacheable. No second product state or installation acceptance is introduced.
 
 ## Boundaries
 

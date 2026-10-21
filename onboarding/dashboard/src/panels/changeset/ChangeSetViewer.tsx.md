@@ -244,6 +244,8 @@ normalized. Current evidence is in the one section after this historical account
 > - The cockpit re-target that keeps a leaf opened from the net in the same takeover. (historical reference 16)
 > - The delivered cases: per-leaf counters, opening a landed leaf and a working leaf from the rail, the named refusal, and the named measured-empty. (historical reference 17)
 
+The changed-file rail uses the shared `useSidebar("changeset", "left")` state. Its header toggle stays outside the rail; hiding applies the shared panel/handle props without unmounting the rail, so the main diff can take the available layout space and the saved rail sizes remain available when shown again. The same open state hides the stacked list on a narrow comparison layout.
+
 ## Evidence
 
 ### Docs References
@@ -278,3 +280,6 @@ declarations support the scoped account, not fresh execution acceptance.
 - The comparison entry/filter effect opens the matching initial file, or clears the selection when there is none. [22]
 - A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. [23]
 - Eligible working leaf polls schedule the next refresh after both list/open-file requests settle; no explicit initial-load dependency or fixed wall-clock cadence is enforced. [24]
+
+- The shared changed-file rail toggle controls mounted visibility. [25]
+- The header retains the shared sidebar toggle while the changed-file rail is hidden. [26]

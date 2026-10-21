@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.order.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "febb668664353045d951aa203a07a660d7483d50",
+        "content": "sha256:9a924df59002bc88ddb592d5409639c387441bbafd129a2ad4eb7e263ef64ed8",
+        "locator": {
+          "kind": "symbol",
+          "name": "is one tree row and one card, which a URL naming any of its entries selects"
+        }
+      },
+      "facet": "A URL naming the captured triple's second entry selects the one shared card and tree row, each retaining the triple IDs.",
+      "id": "PRF-GJTJZ7",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "febb668664353045d951aa203a07a660d7483d50",
+        "content": "sha256:c5736844e6a22df94504864098ba8a82b57c4eb521f7b23be78a523073224989",
+        "locator": {
+          "kind": "symbol",
+          "name": "is one j/k stop"
+        }
+      },
+      "facet": "Two successive j selections move from the shared triple to the next distinct card, without stopping at its other entry aliases.",
+      "id": "PRF-ZJVXXE",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Synthetic currentness drives identical tree and column order.\n\nAnchor: \"// Read 4 (the leaf-wide trees answer) with a synthetic currentness (call after `servePage`): the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "febb668664353045d951aa203a07a660d7483d50",
+            "content": "sha256:ac648c2563f48a37657433077b0eb78a383831eff225c890fb9748b832790158",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "One tested alias selects the three-entry region and traversal counts it once.\n\nAnchor: \"describe('the region three entries share', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "febb668664353045d951aa203a07a660d7483d50",
+            "content": "sha256:aee0a96d6464bfff6fc7651ef7acc4ac5338f8cd5f6b6deff2f8d92081e970f4",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Backward traversal starts from the empty subject's displayed place.\n\nAnchor: \"describe('the keys from a subject without changed blocks', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "febb668664353045d951aa203a07a660d7483d50",
+            "content": "sha256:c773e60c3cc8e6512dea29e6260649a07d62e0fb85552e0e33da8216c7971da8",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

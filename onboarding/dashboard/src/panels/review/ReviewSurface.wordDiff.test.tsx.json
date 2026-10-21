@@ -2,17 +2,34 @@
   "path": "dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx",
   "realizes": [],
   "references": {
-    "11": {
-      "note": "Retained L37 successor operands drive four changed passages and their revision/text labels; the same-revision adversarial metadata remains explicitly synthetic. Dataset rendering and its dataset-only same-revision control are removed rather than silently counted as tree-review coverage.",
+    "12": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"word-diffs a tree review's member statement and family guarantee in the center\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "fe8ddfaa7f44a19bd45e32a145610153a336ebc5",
-            "content": "sha256:16d06e2c8a27754a1049bfb2bd35d4ee6cd25ed9fd373df8d1ba9437e53b3f58",
+            "blob": "9b74578ddee88e6a8a7df19cfcb92fca01161cd4",
+            "content": "sha256:37a2911d5d8b06669f3fa0cb532079fc209ad7d6a5cd11a110262a007292bbb4",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b74578ddee88e6a8a7df19cfcb92fca01161cd4",
+            "content": "sha256:3b31e0b26af02df1e3d5bb21cb24275b4ea98ccfd4dcbc552c26e4c7a5e2a004",
             "locator": {
               "end": 130,
               "kind": "line_range",
-              "start": 1
+              "start": 117
             }
           },
           "kind": "test"

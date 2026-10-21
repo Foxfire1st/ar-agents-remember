@@ -2,49 +2,19 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-**The family tree's order choice (MIK-R33, ICR-R32@v1 rule 8): triage order by default, or pure authored order.** A
-browser-local UI preference (`review.tree-order.v1`) in the house persisted-store idiom (vanilla zustand seeded from
-localStorage, as `intentDiffPreference.ts`); no server state is added.
+Remember the page's one Sort choice in browser-local state, defaulting to Priority when no recognized stored value is available.
 
 ## Code Commentary
 
-### Logic
+`sortOf` maps the earlier triage spelling to priority, accepts members of REVIEW_SORTS and uses priority for anything else. The existing review.tree-order.v1 key preserves that stored choice; authored remains an admitted sort. `readTreeOrder` also returns priority when storage is absent or throws.
 
-- `readTreeOrder` returns `authored` only for that stored value; any other value, absent storage or a throwing storage
-  gives `triage`.
-- `treeOrderStore.setOrder` writes the value (a storage failure is swallowed, so the control still works for the page's
-  lifetime) and updates the store; `useTreeOrder` subscribes the tree, the controls and the centre.
-
-### Conventions
-
-47 lines; the key is versioned.
-
-### Invariants And Boundaries
-
-If storage is unavailable, triage order applies (rule 8); nothing here is review state.
-
-### Todos
-
-No additional work is asserted by this card.
+The vanilla store is seeded once from browser storage. setOrder attempts to persist the chosen ReviewSort and always updates live page state, even when storage fails; useTreeOrder subscribes to that value. This is a display preference, not a server review or durable knowledge state.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The module's statement: browser-local, triage by default, no server state. [1]
-- The key and the read that falls back to triage. [2]
-- The store and its hook. [3]
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
+- triageOrderPreference.ts current behavior at this source owner. [6]
+- triageOrderPreference.ts current behavior at this source owner. [7]

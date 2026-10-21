@@ -5,7 +5,7 @@
     ],
     "justification": "Context retention, comparison isolation, latest focus, stacked reveal, status currency and no-extra-read behavior must agree across walk folding, navigation and workspace. The joint obligation no longer promises a keyboard continuation stop or unconditional traversal of all returned roster members."
   },
-  "guarantee": "Within one mounted comparison, explicit in-tree selection retains already-read family context without extra reads and keeps the latest-selection focus/reveal obligations. Navigation traverses visible real outline changes; end status belongs to its displayed row key. Partial roster continuation is explicit main-page pagination, not a sidebar keyboard stop. Outside subject selection and review refresh reset retained context; comparison-viewer open/return does not.",
+  "guarantee": "Within one mounted comparison, in-page selection retains already-read family and member context without extra walk reads. The shared change-set model supplies displayed order; j/k traverse drawn changed blocks and lane hunks, not duplicate family occurrences or roster continuations, and an end message belongs only to its ordered stop set. A selection leaves a latest-intent focus request and one reading destination: moved focus is respected, reader scrolling disarms the reading landing, eligible tree focus prevents native scrolling, and tree reveal stays local. Failed or refused selected reads land once and retain focus eligibility for Retry; failed refresh drops its own scroll-only request. Explicit outside selection, incompatible comparison and refresh retain their reset rules, while recorded comparison-viewer open/return preserves the mounted inspection state. Partial roster continuation remains an explicit subject-bound page request.",
   "id": "FAM-68H10P",
   "members": [
     "INV-NSG0D4",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/panels/review"
   ],

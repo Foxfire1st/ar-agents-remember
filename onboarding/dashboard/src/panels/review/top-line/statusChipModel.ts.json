@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/review/top-line/statusChipModel.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bbf1199c8d07a5c6ab39aed383e2b379b699313d",
+        "content": "sha256:a71fbd95056e27e9115f5605d4dc275b8f90e4ca20092fb20938bd36b3bb8ef5",
+        "locator": {
+          "kind": "symbol",
+          "name": "chipFacts"
+        }
+      },
+      "id": "RLZ-8MHFGF",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It preserves the four owner rows and chooses explicit task-read or measured owner state.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "State wording, explicit measurement absence and supplied-date time formatting\n\nAnchor: \"function movementValue(movement: ReviewMovement \\| null \\| undefined): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf1199c8d07a5c6ab39aed383e2b379b699313d",
+            "content": "sha256:2da963e7daacd4239fddbd051e0307647bd2b343ed2e01f8dcf905cb0041697f",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Warning/measurement precedence and owner prose\n\nAnchor: \"function warningTone(payload: ChipInput['payload'], movements: ReviewMovement[]): Tone \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf1199c8d07a5c6ab39aed383e2b379b699313d",
+            "content": "sha256:f35cee9b31565c8601e473ab317ced165846761805daf4a2329b9947477ef87a",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Four rows plus loading/failure priority\n\nAnchor: \"export function chipFacts(input: ChipInput): ChipFacts {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbf1199c8d07a5c6ab39aed383e2b379b699313d",
+            "content": "sha256:a71fbd95056e27e9115f5605d4dc275b8f90e4ca20092fb20938bd36b3bb8ef5",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

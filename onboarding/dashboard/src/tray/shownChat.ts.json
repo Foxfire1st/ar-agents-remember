@@ -1,0 +1,101 @@
+{
+  "path": "dashboard/src/tray/shownChat.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+        "content": "sha256:af5e08351085b3c06ecb043a7cfacf7c7d77db89af71bb9d8bc5bf1e51abe8fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "usePublishShownChat"
+        }
+      },
+      "id": "RLZ-XY7TKW",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the chat a column shows, which object picks default to.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stores published chat, page and repository values without verifying native drawing.\n\nAnchor: `export const shownStore = createStore<ShownState>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:a61ca072f3f221ccc1529a5be8b1a37b0a7800ce45d0db83d11939e923cefd04",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A column publishes its chat and clears only its own contribution on cleanup.\n\nAnchor: `export function setShownChat`; `export function usePublishShownChat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:a65703111ba66443bb4fa20447e2e32242d8375f762dc4b4d339896e2cb6bbc1",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:03496d2569e8009f8917d069e57455aaf8b8f010afafb43d112ff71916580c2e",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Page/repository publication retains an existing repository for undefined input and lets the visible File Viewer name its own repository.\n\nAnchor: `const nextRepository = repository === undefined ? current.repository : repository;`; `export function usePublishShownPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:0eaa2d6bb6eb4a9468df3739ac5ae8391377b1c5d9be63924d10eafdff298861",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:49a27a9967df92ebb65fb12690f70b9f5eb33cc0650de12eb7f2a25ff4d16e7b",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

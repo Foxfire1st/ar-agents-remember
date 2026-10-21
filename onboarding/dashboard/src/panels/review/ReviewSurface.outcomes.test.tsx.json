@@ -2,15 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module mounts the real comparison surface/client over recorded bodies and DOM assertions, with fetch stubbed and an explicit catalogue-hook mock; historical header wording is not a claim that only fetch is isolated.\n\nAnchor: current fixture and renderer owners",
+    "28": {
+      "note": "Real mounted surface/client/transport with explicit empty-catalogue mock and recorded/reduced fixture boundaries.\n\nAnchor: \"// test itself passed: every case asserts what the rendered DOM contains.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:fa9a322209dd345b9b66fab1da952df0793c98cfcdfed2acd799d4f536c93f66",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:0ba46ce2b5b1a06ba8f95e74bc6f6b20f76f2022c34c0e6a3964f3f138c9fe36",
             "locator": {
-              "end": 41,
+              "end": 254,
               "kind": "line_range",
               "start": 1
             }
@@ -19,615 +19,51 @@
         }
       ]
     },
-    "10": {
-      "note": "**The conforming example the packet names, mounted: a never-initialized refusal with its reason, offending input and next action.**\n\nAnchor: \"shows a never-initialized refusal with its reason, offending input and next action\"",
+    "29": {
+      "note": "New-target failure and sectionless answer/staleness remain labelled and visible at the reading-column head.\n\nAnchor: \"it(\"never renders a previous target's comparison under a new target's header\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:079b12ac32ea0203b07cde32fcfcae4644cd6687dd8f522fd94d1a1b27c0436e",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:fb2e454c5a7f06a170ba1276d2ee8de43c20926084ecf680099aecdb40320f18",
             "locator": {
-              "end": 286,
+              "end": 476,
               "kind": "line_range",
-              "start": 269
+              "start": 418
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "**Source inspection stays reachable when only intent is unavailable, as a second question the reader asks.**\n\nAnchor: \"keeps source inspection reachable when only intent is unavailable, on request\"",
+    "30": {
+      "note": "Known-empty and retained real-generation region claims remain mutually coherent.\n\nAnchor: \"// per target); the region is where the rule lives, so the region is where it is pinned.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:2527ed3d8bf0d24ad4e0221011527fd95c437e7bafe7aec5159a2422c270cb85",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:9c8230dcd819e6bff2f962db85319e03d626e8394073820f8905c8df8e435951",
             "locator": {
-              "end": 313,
+              "end": 540,
               "kind": "line_range",
-              "start": 284
+              "start": 478
             }
           },
           "kind": "test"
         }
       ]
     },
-    "12": {
-      "note": "**Known empty said for a measured empty answer and never for a failure.**\n\nAnchor: \"says known empty for a measured empty answer and never for a failure\"",
+    "31": {
+      "note": "Exact intent-review URL counts, target-bound carried identity, refresh/race isolation and not-measured boundary.\n\nAnchor: \"const isReviewRead = (url: unknown) => new URL(String(url), \"http://localhost\").pathname === \"/api/review/intent\";\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:c783f0b53db5be6ed1272b7250f69f360f05482e0dba13ef30a94d7c88fd3569",
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:6fd41bcdbb622624e263f631125f0435a3bf1581e42a88f8238f5fd13b45cc92",
             "locator": {
-              "end": 325,
+              "end": 948,
               "kind": "line_range",
-              "start": 314
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "**The three distinct failure states asserted apart in sequence.**\n\nAnchor: \"keeps the unavailable-adapter, validation and authority states apart\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:5ee66bbc490749bba5b2b25064f4f059b40264ac1dad4bfc00d1cd205561ea04",
-            "locator": {
-              "end": 356,
-              "kind": "line_range",
-              "start": 326
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The retry offered for a network failure, and the retry rendering the answer.**\n\nAnchor: \"offers an explicit retry for a network failure, and the retry renders the answer\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:797897af98ccacaf6b3d9cde97bb89681276cb7e22efb0470c9bf10fb1197187",
-            "locator": {
-              "end": 378,
-              "kind": "line_range",
-              "start": 359
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "A subject-level refusal distinct under its own code.\n\nAnchor: \"keeps a subject-level refusal distinct, under its own code\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:ec20f0e4d2bcfbe9a56f8bacef84e5ee6e2a38c6696dc7e08e340062716e4161",
-            "locator": {
-              "end": 402,
-              "kind": "line_range",
-              "start": 377
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "**An answer whose state this client does not admit is named, never rendered as a review.**\n\nAnchor: \"names an answer whose state it does not admit, instead of rendering it as a review\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:498aefe2c52870ae9962fde0121300205b5d200c73376e2883091a52239722e1",
-            "locator": {
-              "end": 424,
-              "kind": "line_range",
-              "start": 413
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The cross-target prohibition, mounted: nothing read for one subject may appear under another's header.**\n\nAnchor: \"never renders a previous target's comparison under a new target's header\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:6572b8d561a4a4f3603becaec6515314b91b0af5fa491028d5f9bec6b11414db",
-            "locator": {
-              "end": 465,
-              "kind": "line_range",
-              "start": 424
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The region-level rule and its stated reachability reason, with the three constructions the three cases share.**\n\nAnchor: `failure`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:0730c5c8da5b48b083bc0d0a7a9a06c601b100b17c2ecdad60064e2c087f2af9",
-            "locator": {
-              "kind": "symbol",
-              "name": "region"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:44551480cd57a32d4be92109a7a40181c12b135f9fe89665d2bab5106d696977",
-            "locator": {
-              "kind": "symbol",
-              "name": "statements"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:bcc0b3911339dc8c61883575693f2724cd848f5f7ad68e0414d04ea4a2d0fd65",
-            "locator": {
-              "end": 480,
-              "kind": "line_range",
-              "start": 476
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "19": {
-      "note": "**The three region cases: retained known-empty stated once and never denied, retained real labelled with no emptiness denied, and a written review printing neither.**\n\nAnchor: \"states a retained known-empty once, as the measured result it is, and never denies it\"; \"labels a retained real comparison and denies no emptiness for it\"; \"says nothing of either kind for a written review, and only known-empty for an empty answer\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:5627cbf09a335ed4eabf093b75d2f5ea89bf9373d259f73fc3b99fe45b94ef10",
-            "locator": {
-              "end": 530,
-              "kind": "line_range",
-              "start": 498
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The real component, the real region and the real types under test.\n\nAnchor: `ReviewOutcomeRegion`; `ReviewSurface`; `ReviewRead`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:9a0165bafd5469cac3407ebe4db277d270a8410f4e52c53ef0a2037348c40255",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The surface the cases mount, and the one region that decides the notes they assert.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
-            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewOutcomeRegion"
-            },
-            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
-            "content": "sha256:ab37f08206cb5ee172bbb0ed87c04ec48903c65f201e826908524033e1c24d23",
-            "locator": {
-              "kind": "symbol",
-              "name": "shownPayload"
-            },
-            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
-            "content": "sha256:6014a0b080dc2952cde2d5e3999084456efd418c2b8d1aa07a8f50344ec97695",
-            "locator": {
-              "kind": "symbol",
-              "name": "knownEmpty"
-            },
-            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52421fd8c85c1d68fe261ca9e829757796226adf",
-            "content": "sha256:916fd039f071b6feee0dbdcb157074632aba2d86a1da3e1d2713543395c25e48",
-            "locator": {
-              "kind": "symbol",
-              "name": "RetainedGenerationNote"
-            },
-            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The real surface composes the target-bound read and retained comparison that these cases exercise.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSurface"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "Dataset-absent refusal fixture with reason and next action",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:d62f4223093c0e0b640602874dc72e4d7b56dcab3e5018f1116bb93adaf227be",
-            "locator": {
-              "kind": "symbol",
-              "name": "DATASET_ABSENT"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "Inventory refusal detail for source inspection",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:aa781ce7efe97b87a1bd72f75fff19ac6a655cec3c4ebb417e18b575d3df1b67",
-            "locator": {
-              "kind": "symbol",
-              "name": "INVENTORY_DETAIL"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "24": {
-      "note": "Task-context payload for intent-only journeys",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cec5caaad77cc5f8706ecb6859b2ff53ab119ffd",
-            "content": "sha256:bca1784422fb376d2c120170056d44ce154a1e0e26305b3266316822f859f6b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskContextPayload"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:35c95c0827114c43bb8d664de3e7d6195e9c41a6de55e1c001db2c195ff63ebd",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "Per-subject serving world with fetch capture",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:59fab15a76c33e6c1203ebc902e7845325c82bb313031ededc04b1781a4002ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "Subject mount helper through the real surface",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
-            "locator": {
-              "kind": "symbol",
-              "name": "mountSubject"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "Alongside its DOM checks the module asserts observed client request counts and URL selector parameters; source inspection is not a new run.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
-            "content": "sha256:198bd368c96c23d3beb82b3e2560ac341364be9e2646615c654379040c8bb7a1",
-            "locator": {
-              "end": 300,
-              "kind": "line_range",
-              "start": 285
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b75c43b7d10a9525efafb600788e6299f99a2fb9",
-            "content": "sha256:f3ccb0eb96a2be2df3888020fc9da7de7d3a4fec37fb7bf98c5fbfac0558858e",
-            "locator": {
-              "end": 586,
-              "kind": "line_range",
-              "start": 580
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The measured refusal bodies, each carrying the digest of the run that produced it, and the reduced task-context fixture labelled as reduced.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:d62f4223093c0e0b640602874dc72e4d7b56dcab3e5018f1116bb93adaf227be",
-            "locator": {
-              "kind": "symbol",
-              "name": "DATASET_ABSENT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:d257daadb2c090c9070fb7db4a8d51ecb7cdd6b8692bd5ca9ad7d104c95ffa21",
-            "locator": {
-              "kind": "symbol",
-              "name": "BAD_REQUEST"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:15404da34476145a96dace540907fcc0150b9f3f2758e0fd1afefc4d1178ac45",
-            "locator": {
-              "kind": "symbol",
-              "name": "UNWIRED"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:ec45439a49c45d8a3c3ae8fc6e55141b30b588afe2806744b742f6220ff6ad15",
-            "locator": {
-              "kind": "symbol",
-              "name": "BAD_PATH"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:aa781ce7efe97b87a1bd72f75fff19ac6a655cec3c4ebb417e18b575d3df1b67",
-            "locator": {
-              "kind": "symbol",
-              "name": "INVENTORY_DETAIL"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "**The two payload builders: the task-context answer, and the measured empty one that is the only route to the known-empty statement.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e6ee0abfb8a942010dadb27c554387b248eb8fd4",
-            "content": "sha256:bca1784422fb376d2c120170056d44ce154a1e0e26305b3266316822f859f6b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "taskContextPayload"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:53c52de8b0ebeefa58bd732e39cb24dba5065533b386a66a95bc070c5ce929b7",
-            "locator": {
-              "kind": "symbol",
-              "name": "emptyPayload"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "A successful answer wrapped the way the route wraps one.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:615f6406b23a072a12ba5836639cb6f53c84933c6f5e94186b41c515215cf4d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewed"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "**The two stubs: a response-shaped object and the global `fetch` that serves it, so the status, body and decode all travel the real path.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:548a61addc4aac3a6829c6024261f7e7d293861c074d4b53f3d0dbe0cdb6a9f2",
-            "locator": {
-              "kind": "symbol",
-              "name": "response"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:59fab15a76c33e6c1203ebc902e7845325c82bb313031ededc04b1781a4002ae",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The two calling conventions the surface really has: the task context and one recorded subject.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:21892904105ff6b80a690bd0203f89b198701adefaf53c0cdbd9770f4199e288",
-            "locator": {
-              "kind": "symbol",
-              "name": "mount"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:77bfb61bab6e2ccd00825e85dc41aa9480d1f0a44076c8b63e52bc617f3ff52e",
-            "locator": {
-              "kind": "symbol",
-              "name": "mountSubject"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The cleanup and global-fetch restore between cases.\n\nAnchor: `afterEach`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:9a0165bafd5469cac3407ebe4db277d270a8410f4e52c53ef0a2037348c40255",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:6ac59c3711dc9ca20026196e4b9eaff2b0312224d6f24239ad7775871129d7c6",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 249
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "**The in-flight state rendered as itself before any answer arrives.**\n\nAnchor: \"shows the read as in flight before any answer arrives\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4190152010c7774139c24b4c0fd6469d34985bb5",
-            "content": "sha256:5a15db796d8349f500a7a29634a4986a5add2f6b6734718b5d41e78e4a59affe",
-            "locator": {
-              "end": 268,
-              "kind": "line_range",
-              "start": 254
+              "start": 582
             }
           },
           "kind": "test"

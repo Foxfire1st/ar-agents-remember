@@ -5,12 +5,13 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.navigationTree.test.tsx Full file regression; l86-browser/markers.mjs"
   },
-  "applicability": "Other ways to a file.",
+  "applicability": "Whole-file access from the review page.",
   "conditions": [
-    "All-changed-files links and the subject-less main page open the page under All; path links for card-absent files open at that file; OpenedFile source-changes block removed; cards/excerpts/Full file unchanged."
+    "The one All changes link is in the tree; subject paths open that viewer at the named path.",
+    "Review cards keep only their excerpts and the one page-level Changes only/Full context choice."
   ],
   "exclusions": [
-    "Routing card Full file through the page."
+    "A per-card Full file route or duplicated All changes link."
   ],
   "id": "INV-DYDMDD",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "All-files and non-card path links open the comparison page while card Full file retains its source content and intent markers.",
+  "statement": "All changes and non-card path links open the comparison viewer on the chosen comparison; cards have no separate Full file control or whole-file source-content view.",
   "status": "proposed",
   "supersedes": []
 }

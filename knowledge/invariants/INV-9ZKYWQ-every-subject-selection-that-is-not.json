@@ -9,7 +9,7 @@
   },
   "applicability": "The family tree of the mounted intent reviewer and every way a subject is selected in it.",
   "conditions": [
-    "Subject selection defaults to outside unless its current caller passes keepTree; compact outline rows and main-page member selection request retention.",
+    "In-page tree, member, group and traversal selections retain the walked tree. The page selection defaults keepTree true; target changes, URL restores, comparison switches, marker entry/return and explicit task-context resets pass false.",
     "Marker entry/return, the offer to open task context after refusal and initial subject selection follow their actual outside-selection handlers.",
     "Reset drops retained reads, not the complete comparison index outline. Pending selection retains a frame until its own answer arrives.",
     "Compatibility uses the read cache's code-tree/knowledge-snapshot generation test; incompatible context is not folded into the same walk.",
@@ -32,7 +32,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Explicit in-tree subject selections preserve the retained walk: an explicit selection inside the tree keeps the tree the reader walked, a selection made elsewhere resets it, and a page-evidence destination the generated page asks for also keeps it — the Architect's ruling (d2990c9d, MIK-R39/D36) makes that intended behaviour rather than a deviation, so returning to the page finds the review where it was.",
   "status": "proposed",

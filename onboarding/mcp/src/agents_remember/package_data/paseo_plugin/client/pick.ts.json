@@ -1,0 +1,185 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
+        "locator": {
+          "kind": "symbol",
+          "name": "reserveSpace"
+        }
+      },
+      "id": "RLZ-A7XW88",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reserves the requested tray height above the native composer and releases it at zero.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:afff91f623e840c99aef924d797af612f1a751c8be7cbe64cc54f3c7422828e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "startPickOffer"
+        }
+      },
+      "id": "RLZ-CGMW9Z",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the selected visible row and refuses absent recorded time before posting a pick.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:fa43086634ca2ea322f9c1b004b56a78666d91ab4d5176a499407345cbd45242",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuseOffer"
+        }
+      },
+      "id": "RLZ-DAZZ3T",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses in place a row the host has not recorded yet: \"not added: no message time\".",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
+        "locator": {
+          "kind": "symbol",
+          "name": "offerControl"
+        }
+      },
+      "id": "RLZ-GYGJB2",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Swallows the in-chat offer's `mousedown`, so the chat's selection and focus stay.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowTime"
+        }
+      },
+      "id": "RLZ-NMFN45",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the picked row's time from its own record, with no request (3f386a82).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:8e5a16b1c3b1b47ae976b0e87b687b1ec519d054ba7fcc70758c51096796eb9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "startComposerWatch"
+        }
+      },
+      "id": "RLZ-R49V9D",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "TRAY05",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reports the message-box rectangle and a named unavailable state through the negotiated channel.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "startTrayChannel"
+        }
+      },
+      "id": "RLZ-ZJHCYB",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Applies negotiated copy-on-highlight preference to frame picking without owning native editing.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Provides the negotiated iframe tray text-pick and native-composer geometry adapter.\n\nAnchor: \"export const PICK_ABILITY = \"pick\";\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:d95e9ee2d0ee557fd520e85dcad8ae8e991216c62d742834a69f84ce33d7c5dd",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provides the negotiated iframe tray text-pick and native-composer geometry adapter.\n\nAnchor: \"function rowTime(row: any): { time: string \\| null } \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:b0b799cfb0a47580c4a2a044745300fb458dbf6abbde69dce413aa194196e6af",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provides the negotiated iframe tray text-pick and native-composer geometry adapter.\n\nAnchor: \"function startPickOffer(page: PluginPage, post: Post, visibleAgent: () => string \\| null) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:2df5b15f4f4a109e861478a3c2330d34707f0861cd02ea2c670320f7853f76b4",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

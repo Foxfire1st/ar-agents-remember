@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/tree/treeStyles.test.ts",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Scroller cap and responsive control/heading declarations.\n\nAnchor: \"it('caps the tree's scroller at 45dvh only on the stacked layout', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dadd5aa5adb9093e7fbb6f37652513d9cc155680",
+            "content": "sha256:f36bb22776617811ee37a7488fc41df352b97071a6eb82bd2b366906e766aba5",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Signed count colours, pinned block and Sort popup declarations.\n\nAnchor: \"// MIK-R89 v2 rule 1 as amended by 719ade09 (mockup styles.css:95-96): a row's line counts draw '+a'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dadd5aa5adb9093e7fbb6f37652513d9cc155680",
+            "content": "sha256:3e51fe2a9a769e26dcaeace9d7e2aefe668279ac5edb3945cddcf1460723840e",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

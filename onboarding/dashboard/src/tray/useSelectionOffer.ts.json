@@ -1,0 +1,149 @@
+{
+  "path": "dashboard/src/tray/useSelectionOffer.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+        "content": "sha256:d6ccbc74f7ac86eca5c167bcdaf98893f44b738c587f2f32802922fe571c6768",
+        "locator": {
+          "kind": "symbol",
+          "name": "copyHighlight"
+        }
+      },
+      "id": "RLZ-0K44Z4",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Requests native copy without replacing its failure semantics.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+        "content": "sha256:4fde5c6ffbd415c9ed64d2c76af63f2b2fcbdd0a3b80b7404e2edf58e99074bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionOffer"
+        }
+      },
+      "id": "RLZ-32GJT5",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the selection on `mouseup` and offers it; only `take` adds the passage pick.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+        "content": "sha256:4fde5c6ffbd415c9ed64d2c76af63f2b2fcbdd0a3b80b7404e2edf58e99074bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionOffer"
+        }
+      },
+      "id": "RLZ-AHXMRB",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps the offer through presses that keep the selection and clears nothing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+        "content": "sha256:f3de79002ed9c50de31c96647f748043cd879dcfc43e519f71554afa1d78adf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "passagePick"
+        }
+      },
+      "id": "RLZ-G0KH1N",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Builds the text pick with its panel provenance.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+        "content": "sha256:8d64de8497741589d706c7b6da631518ba62549966de9ffa1aa1a793afe7f3f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "readPanelSelection"
+        }
+      },
+      "id": "RLZ-NVMZVQ",
+      "invariant": "INV-E2PVM0",
+      "origin": {
+        "handoffEntry": "TRAY02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads a panel selection and leaves editable fields, the tray and frames alone.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Observes dashboard panel selections without taking focus or changing copy.\n\nAnchor: \"export function readPanelSelection(selection: Selection \\| null): SelectionSnapshot \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+            "content": "sha256:e10855f3a517e825ecf208edc2c34012ab63b6896662b0ce7597d626e7098690",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Observes dashboard panel selections without taking focus or changing copy.\n\nAnchor: \"export function passagePick(snapshot: SelectionSnapshot): TrayPickInput {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+            "content": "sha256:1a55109db27e35a5def38255064b0f231a894f240c034f6d2cd763bb8d2656ef",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Observes dashboard panel selections without taking focus or changing copy.\n\nAnchor: \"function copyHighlight(): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52cbd547b8d852d9e29507f315679aa8e0ccb829",
+            "content": "sha256:8844e0788e26655970e5af3fb15575971ba1baa1ed7316f05d0d320253ebd827",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

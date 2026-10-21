@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
-        "content": "sha256:20c01977ae9a74dd90bb2401ea02de9d3ed947d48bf6fc1ce859bf4517aa8e44",
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:bc4d0888e435e9412816d2158dea2f09c2a6262c7d464565fe995d5925eb7c29",
         "locator": {
-          "end": 91,
+          "kind": "symbol",
+          "name": "unboundPresentation"
+        }
+      },
+      "id": "RLZ-3S76GB",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Distinguishes pending review task hold from known-missing review task hide, with no launcher or frame control for either unbound state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
+        "locator": {
+          "end": 129,
           "kind": "line_range",
-          "start": 19
+          "start": 59
         }
       },
       "id": "RLZ-5WD4V8",
@@ -22,12 +40,49 @@
     },
     {
       "anchor": {
-        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
-        "content": "sha256:20c01977ae9a74dd90bb2401ea02de9d3ed947d48bf6fc1ce859bf4517aa8e44",
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:5c780de67ef43ca8a00d67b878a885910f44c620134079dba2d3f5de5aadbcc4",
         "locator": {
-          "end": 91,
+          "end": 101,
           "kind": "line_range",
-          "start": 19
+          "start": 74
+        }
+      },
+      "id": "RLZ-9VV65Z",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Chat reads require active plus at least one admissible binding role; unbound state suppresses known-chat reads, target selection and ordinary chat presentation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:9ab04d15abe1c77840f49eb8a0bd3debbcab0cbca1862cbe333d6e2b4013bbd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentScope"
+        }
+      },
+      "id": "RLZ-FV05QS",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Separates pending/unknown review task scope from JSON null documentless scope, so cached or launched Architect state cannot stand in for the review task.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
+        "locator": {
+          "end": 129,
+          "kind": "line_range",
+          "start": 59
         }
       },
       "id": "RLZ-G8BE9E",
@@ -41,12 +96,30 @@
     },
     {
       "anchor": {
-        "blob": "e10c0513a02460538da5326cc65d4e2cf6bb592c",
-        "content": "sha256:a1f2d83f63814a214c478a8afcac253189b0aa9be4193f5bc33998139584816e",
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:bd5aa48145ec388bfef1d3fed70bc83dba9eb574925730b41a5c366a9b6184f0",
         "locator": {
-          "end": 178,
+          "kind": "symbol",
+          "name": "documentBinding"
+        }
+      },
+      "id": "RLZ-GB5RER",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "GY49SV-review-unbound",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "An unbound review receives roles:[] and its own problem state instead of the documentless Projects Architect binding.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
+        "locator": {
+          "end": 233,
           "kind": "line_range",
-          "start": 163
+          "start": 217
         }
       },
       "id": "RLZ-VZXF7A",
@@ -61,14 +134,16 @@
   ],
   "references": {
     "1": {
-      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.  Anchor: `useDocumentChat`",
+      "note": "The hook keeps document binding/request scope together and gates chat reads on active admitted roles.\n\nAnchor: \"export function useDocumentChat({ taskDocumentRef, tasks, active, unbound }: DocumentChatProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
-            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "kind": "file"
+              "end": 129,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "code"
@@ -76,14 +151,16 @@
       ]
     },
     "2": {
-      "note": "A dispatch receipt is adopted only for the live scope with an exact agent and request id.\n\nAnchor: `launchedRequest`",
+      "note": "A dispatch receipt is adopted only for the live scope with an exact agent and request ID.\n\nAnchor: \"function launchedRequest(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
-            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:dfaa478a0dd535fd1e766aa2129b1bdbb1dce74e370ba86c87a1f8f63e7d0893",
             "locator": {
-              "kind": "file"
+              "end": 182,
+              "kind": "line_range",
+              "start": 174
             }
           },
           "kind": "code"
@@ -91,14 +168,16 @@
       ]
     },
     "3": {
-      "note": "The displayed agent is the launched request's agent or the newest live record, never a stale document's.\n\nAnchor: `displayedAgent`",
+      "note": "The displayed agent follows the exact launched request or canonical document choice.\n\nAnchor: \"function displayedAgent(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
-            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:8093e749dc79d7fe9a65dec179be5a04014fe62c886dce396a8e69ce9391b000",
             "locator": {
-              "kind": "file"
+              "end": 190,
+              "kind": "line_range",
+              "start": 184
             }
           },
           "kind": "code"
@@ -106,14 +185,16 @@
       ]
     },
     "4": {
-      "note": "Only a known agentless selection hides the retained frame; unknown agent knowledge keeps it shown and held.\n\nAnchor: `chatPresentation`",
+      "note": "Ordinary unknown knowledge keeps the retained frame shown and held; known no-chat hides it.\n\nAnchor: \"function chatPresentation(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
-            "content": "sha256:d491f7562201332301232cef21e0c10bb63a60f66c0ce4a3cf51905a4d61b082",
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
             "locator": {
-              "kind": "file"
+              "end": 233,
+              "kind": "line_range",
+              "start": 217
             }
           },
           "kind": "code"
@@ -121,16 +202,91 @@
       ]
     },
     "5": {
-      "note": "The current source implements this file’s stated Investigator boundary.",
+      "note": "An explicit Investigator launch refreshes rather than replacing the coordinator's primary chat.\n\nAnchor: \"export function useDocumentChat({ taskDocumentRef, tasks, active, unbound }: DocumentChatProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "d12967351c90a70a1acf6f48589bd232b6648817",
-            "content": "sha256:cc1c51b2dbc10b8e7c787191bcfc54df787d6e0386addd68fcf20be5e7903058",
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "end": 111,
+              "end": 129,
               "kind": "line_range",
-              "start": 1
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unbound review scope binds no role or chat target and is distinct from a documentless Projects Architect scope.\n\nAnchor: \"function documentBinding(\"; \"function documentScope(ref: TaskDocumentRef \\| undefined, unbound: DocumentChatUnbound \\| null \\| undefined) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:bd5aa48145ec388bfef1d3fed70bc83dba9eb574925730b41a5c366a9b6184f0",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:9ab04d15abe1c77840f49eb8a0bd3debbcab0cbca1862cbe333d6e2b4013bbd1",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Pending unbound task discovery holds the retained screen; a known missing task hides it, with no launcher.\n\nAnchor: \"function unboundPresentation(available: boolean, unbound: DocumentChatUnbound) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:bc4d0888e435e9412816d2158dea2f09c2a6262c7d464565fe995d5925eb7c29",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Preload starts the descriptor while hidden but does not activate chat reads.\n\nAnchor: \"export interface DocumentChatProps {\"; \"export function useDocumentChat({ taskDocumentRef, tasks, active, unbound }: DocumentChatProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:ac214d3065e22c7f277333136790811a5c6512ac443d96c588afe25d5b27ff4d",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "code"

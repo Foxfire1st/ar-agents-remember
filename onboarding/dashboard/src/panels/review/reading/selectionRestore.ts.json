@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/panels/review/reading/selectionRestore.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+        "content": "sha256:fff49a00e0911e1338e5aba24cc6fa06872b89eecb73008f35f41daafd6dffda",
+        "locator": {
+          "kind": "symbol",
+          "name": "restoreHunk"
+        }
+      },
+      "id": "RLZ-3893M6",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It waits for classification and compares both exact mapped spans before admitting a hunk.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+        "content": "sha256:35f234fc02daf8d12b2597da4bf8f3cd4d076f5adbf540544f7b073b7cd29a71",
+        "locator": {
+          "kind": "symbol",
+          "name": "restoreSelection"
+        }
+      },
+      "id": "RLZ-6FPGMP",
+      "invariant": "INV-WRKBDD",
+      "origin": {
+        "handoffEntry": "RP06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It dispatches each encoded form to the owner-fact validation needed for that form.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Encode/decode admitted subject/family, lane or complete block/hunk identities.\n\nAnchor: \"export function encodeSelection(selection: ReviewSelection \\| null): string \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+            "content": "sha256:4f3c07adc5748a4492ceda865fcedb5c97a30b4c9e86bcbd05fa620b84f26d2c",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Encode/decode admitted subject/family, lane or complete block/hunk identities.\n\nAnchor: \"function restoreSubject(subject: ReviewSubjectRef, family: string \\| undefined, facts: RestoreFacts): Restored {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+            "content": "sha256:164a429268bf942142a5b15dff49f042521d4c2f7c6d4ff55bd520c6c354262b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Encode/decode admitted subject/family, lane or complete block/hunk identities.\n\nAnchor: \"function restoreBlock(block: BlockIdentity, facts: RestoreFacts): Restored {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5831d8f0097804835a4f8cfbe74c0731c526b3a",
+            "content": "sha256:18eb29f0512a7d196b85e3299c20f581cfb59db7147dbd2793537c27159726f6",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

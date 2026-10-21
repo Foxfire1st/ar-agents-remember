@@ -2,15 +2,17 @@
   "path": "dashboard/src/panels/review/ReviewSurface.memberCards.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Exercise the mounted ReviewSurface.memberCards owner and its delivered read/selection states.",
+    "2": {
+      "note": "Mounted member/other-family pending and answered reads retain exactly the opening cards request.\n\nAnchor: \"import { afterEach, expect, it, vi } from 'vitest';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9f4d5ce586b192ddab32754763c342785b050c36",
-            "content": "sha256:d2501c75a414c50730eeae88939f36cded6f3144d797974d61f113f740d72ce1",
+            "blob": "6171c32dda7088426b5e0f0bc99bcb48b7bf1013",
+            "content": "sha256:a84594ed6a0ca8532f05d8aece7be58032bffc73afe1e4c989b0ee61916647d2",
             "locator": {
-              "kind": "file"
+              "end": 174,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

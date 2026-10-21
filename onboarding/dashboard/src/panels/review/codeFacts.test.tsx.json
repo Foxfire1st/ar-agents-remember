@@ -2,17 +2,68 @@
   "path": "dashboard/src/panels/review/codeFacts.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Synthetic leaf facts assert code-only rows only under known unchanged meaning, no unknown relabeling, late-facts row/count/announcement/traversal without selection/focus/scroll movement, and comparison-bound loading/unavailable summary. Native scroll anchoring is simulated in DOM, not browser acceptance.",
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not relabel unknown recorded meaning as a code-only change', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "741b423a4d0af8b33358c18813ad1976e8ac92f4",
-            "content": "sha256:9fe7319552650d227617a3e5ed7a8567ef57edae44fb6b496964966dff2dc361",
+            "blob": "8c66e752002b1f6f500fb517292670a2130cb467",
+            "content": "sha256:18f54deae35a5f1e92c4041b41adb89f7498c8eede14db15a38350a3f09b9839",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('preserves the real ancestor scroll container across native anchoring on facts arrival', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c66e752002b1f6f500fb517292670a2130cb467",
+            "content": "sha256:86b552f5bffa1b6d33482469e8667fd0224e6c70d52f35e7f3ab51df94c62428",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('adds an unread member without moving the selected node, focus or scroll; read 5 then asks for it', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c66e752002b1f6f500fb517292670a2130cb467",
+            "content": "sha256:3d9c7aac2a89cdc5b0bf04dbda0c4365e176e34b4a01c36d81eebbac66f9c819",
             "locator": {
               "end": 162,
               "kind": "line_range",
-              "start": 1
+              "start": 109
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not use facts of another comparison and distinguishes missing and unavailable', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c66e752002b1f6f500fb517292670a2130cb467",
+            "content": "sha256:e318941f2a4d5d7ef315be8615dc6574aa22b6efae5f1607be17652299d2b2a7",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 163
             }
           },
           "kind": "test"

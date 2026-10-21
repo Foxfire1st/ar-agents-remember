@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0ec3c000f583557123360ae1567dc504935c010d",
-        "content": "sha256:25b5205ee1d0b5d5a82376ae1810ecd1264b84bbfdd8776974bdebf5665d74bb",
+        "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+        "content": "sha256:616aae437334392d95f4ffea033720ca35c3474e74e44949eb0b5e462d9741f4",
         "locator": {
           "kind": "symbol",
           "name": "test_a_kept_summary_answer_expires_and_is_then_produced_again"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "0ec3c000f583557123360ae1567dc504935c010d",
-        "content": "sha256:6a1f42e0b5b4522eb73f17d3eee36d2476c82444690e7d47fcf08077cf79d4d6",
+        "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+        "content": "sha256:df0e58faa8dda66fa6028faba778e3299ab515fdb084ed979704d3b306332569",
         "locator": {
           "kind": "symbol",
           "name": "test_a_bounded_admission_table_cannot_resurrect_an_over_age_answer"
@@ -38,128 +38,85 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Exact native counted bytes and ETag 304 reuse do not recount or spawn repeat Git.",
+    "10": {
+      "note": "Index/object/address/refusal checks keep native unavailable versus counted facts.\n\nAnchor: \"def test_closed_native_record_and_lost_object_keep_the_owners_refusal(world):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:62af6d0a43774b87332fa3fb4b3e1919762014c4a240df483a99f47aaedd7c44",
+            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "content": "sha256:9e712d5e7f447afc64291ceb6d4a1fdd91704e8463d7d9e08ea772008d63d091",
             "locator": {
-              "kind": "symbol",
-              "name": "test_native_counted_bytes_and_conditional_return_use_zero_git"
+              "end": 259,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Native code/memory/index/HEAD/record inputs invalidate and then settle.",
+    "11": {
+      "note": "Unrelated note populations are not walked and restoration during summarize_review cannot settle the prior refusal.\n\nAnchor: \"def test_unchanged_intent_inputs_do_not_walk_unrelated_master_files(world, monkeypatch):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:45d57dd35b218895fec25419013e088605fd9bc5b772e0fdcf15a464d3251aea",
+            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "content": "sha256:e71a2a1f72b088211ca0ecc96ac0b4e461312c48e0218d23771b6cbd76ccf257",
             "locator": {
-              "kind": "symbol",
-              "name": "test_native_input_changes_invalidate_then_settle_without_more_git"
+              "end": 309,
+              "kind": "line_range",
+              "start": 262
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Derived-index timestamp and content changes are distinguished.",
+    "12": {
+      "note": "A blocked numbered-shape reader permits unrelated changeset requests.\n\nAnchor: \"def test_slow_intent_does_not_serialize_other_reads(world, route, extra):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:111bb7ca4221cdfd4d982141c2478a576ba61e4d45e3ae74a4696292b438eecb",
+            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "content": "sha256:73c2ed4e8921d02bd8d4d235ea600ba50cb8e5b2a149a6dd8c20c05f44d02b17",
             "locator": {
-              "kind": "symbol",
-              "name": "test_derived_index_timestamp_touch_reuses_but_changed_bytes_are_reopened"
+              "end": 353,
+              "kind": "line_range",
+              "start": 312
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Unobservable index inputs fall back to native reads every time.",
+    "13": {
+      "note": "Clock, changed-input and admission-eviction cases retain bounded reuse with a four-part summary key.\n\nAnchor: \"class _Elapsed:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:7e2cd553df5b9f20d1e68d7a3d3668d6f8dc9500cc4d5bf4c9648788959464d0",
+            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "content": "sha256:25d75dc02120a5b5ee78c6b39edf1691e9e1851f8787842deb8e3cb247e79809",
             "locator": {
-              "kind": "symbol",
-              "name": "test_unreadable_index_observation_uses_native_read_each_time"
+              "end": 491,
+              "kind": "line_range",
+              "start": 356
             }
           },
           "kind": "test"
         }
       ]
     },
-    "5": {
-      "note": "Dependency manifests and retained values share a finite bound.",
+    "9": {
+      "note": "Freshness-only children are excluded; counted/conditional and input-invalidating cases retain native equality.\n\nAnchor: \"def _reads(children):\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:1acbeb545692c358a9ceb920790f16d959a0c298f85fb503f9446a8a7297d5b7",
+            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "content": "sha256:cc580df8bdbeca93b173840f57054ef61e56e40a328730a9089afcefad1e7ca4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_dependency_manifest_and_values_remain_bounded_over_growing_histories"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Unchanged refusals revalidate without Git and restored objects regain counted native answers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:bf7b4f7cedd3eacb76794ec8896a05c522124bde6afba346abd878dcb2f296da",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_first_refused_revalidation_is_free_and_restored_objects_are_seen"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "A restoration during refusal composition cannot bind that refusal to new inputs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:a11870588db9e0f85c71b26bfb3320ae0a539fe3e9f3b1ee806e413031018797",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_object_restored_after_native_refusal_is_not_adopted_as_the_refusals_input"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "A blocked summary fixture does not block task/file/master HTTP reads.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8b6883ccbf30ebd54724e39a4d71f1370e0fe49",
-            "content": "sha256:1574024665af18a0c3ec70433811a3f843986f4b7fef938a7a7044971b1d44ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_slow_intent_does_not_serialize_other_reads"
+              "end": 138,
+              "kind": "line_range",
+              "start": 67
             }
           },
           "kind": "test"

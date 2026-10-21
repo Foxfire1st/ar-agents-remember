@@ -2,184 +2,33 @@
 
 ## Governing Overview
 
-[tests route overview](overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-Recorded tree comparisons survive cleanup, restart and later landings; historical JSON retains source without reopening canonical knowledge.
-
-The module carries the intake defect as its subject: a cleaned leaf's Intent Review answered
-`candidate_not_live` because the history route required `contract.code_worktree.exists()`. Eight cases
-exercise the historical-read boundaries below; these are source assertions, not a fresh run:
-
-- a leaf frozen while it was live, its worktree group removed exactly as cleanup removes it, serves
-  **byte for byte the same** recorded comparison — the served bytes are compared, not a summary of them;
-- a **fresh interpreter** reconstructs the same comparison from the coordination root and the record
-  alone, so "reopen after a process restart" is measured rather than simulated;
-- a **later task** landing on the repository and on the leaf's protected branch changes neither the
-  bytes nor the provenance of the recorded comparison, and its content never enters the inventory;
-- a **pre-feature leaf** — source history, no intent generation ever recorded — exposes its recorded
-  source range and states that absence explicitly, as a typed absence and not as missing content;
-- a **recorded range the repository cannot resolve** answers `candidate_unresolved` with the restore
-  action rather than the intake defect's `candidate_not_live` (this leaf's F2 fix);
-- retained code and memory objects removed directly by the case produce `unavailable-history`,
-  an unavailable source inventory and an unresolved knowledge statement; the named-subject route
-  refuses as `candidate_dataset_absent`, and the later task's content is not substituted. This
-  case supplies no record-owned deletion statement;
-- a closed leaf that recorded **neither** a comparison nor a landed commit is still refused by name,
-  which is the one state in which `candidate_not_live` is the honest answer.
-
-The first test additionally reads selector-free task context before cleanup and through both default
-and recorded closed reads. It retains the exact inventory and tree limitation, task_context knowledge
-and no comparison; that is distinct from its subject-selected byte-equality check.
+Declare that recorded comparisons retain exact answers across cleanup, interpreter restart and later source history, including each numbered catalogue/summary own content and explicit legacy or lost-object limits.
 
 ## Code Commentary
 
+A fresh converted-tree world per case supplies the actual serving collaborators/routes. The original recorded subject read is compared byte-for-byte after deleting its live group, for both explicit recorded and default reads. The same case separately preserves selector-free inventory/tree limitations and task_context/no comparison through cleanup; it does not turn source inspection into a knowledge comparison.
 
-### Logic
+The restart leg writes the four configuration roots, route and params, then invokes sys.executable with a child app composed from those roots. Its PYTHONPATH prepends candidate mcp/src but retains inherited entries. Status bytes and served body are compared with the prior recorded answer: a fresh interpreter is tested, not a fully source-only environment or native daemon restart.
 
-The real served route returns the same recorded comparison after worktree-group cleanup and in a fresh process, and excludes a later landing. [9] [10] [11]
+A later real commit on the fixture code repository must not enter recorded inventory or alter the binding/body. Pre-feature landed source remains measured with legacy-unavailable unresolved knowledge; catalogue refusal names the unavailable knowledge. Historical JSON with two not-selected halves reopens typed absence while the test forbids every APSW Connection.
 
-Pre-feature source ranges remain readable with legacy-unavailable knowledge. Historical JSON that selected no intent half retains not-selected metadata while a case forbids all APSW opens. Missing recorded commits are candidate_unresolved; lost retained source/memory objects are unavailable-history without substitution. A cleaned leaf holding no comparison/range is candidate_not_live. [12] [13] [14] [16] [17]
+A pruned recorded commit earns candidate_unresolved and restore guidance. Deliberately pruned retained code/memory objects instead preserve unavailable-history, unavailable inventory and unresolved statements; a named subject earns candidate_dataset_absent. No later content substitutes, and no record-owned deletion statement is supplied. A cleaned leaf with neither comparison nor landed range retains candidate_not_live.
 
-### Invariants And Boundaries
+The added numbered case creates record1 with an intent revision and record2 withdrawing it, while leaving the code edit. Production catalogue/summary composition must echo1/2/latest2, retain changed versus unchanged outlines and distinguish added1 versus0. Unrecorded9 gives catalogue404 candidate_unresolved; summary9/-1 stays unavailable200 with no counts or comparison number. After group cleanup, repeated numbered catalogues retain their separate outlines rather than sharing one kept answer.
 
-- Historical identities never rebind to current branches or memory.
-- Typed absence, retired legacy knowledge and lost objects are separate facts.
+## Invariants And Boundaries
 
-### Logic
-
-**The restart leg is a child interpreter, not a second client.** `_served_in_a_new_process` writes a
-descriptor of the four configuration roots, the route and the params, then runs `_CHILD_SERVE` in a
-child `sys.executable` whose `PYTHONPATH` prepends `mcp/src` to a copy of the inherited value
-(inherited search-path entries stay visible to the child, so this is a fresh interpreter and not
-source-only import-path isolation); the child builds the app from the
-coordination root alone, calls the production port and writes its status and bytes out for the parent to
-compare. Nothing but the inherited process environment is shared with the parent beyond the coordination
-root, which is what makes "a fresh process reconstructs the same comparison" a measurement rather than a
-claim about the same object graph.
-
-**The later-task leg lands real history and then measures contamination rather than assuming it.**
-The case then compares the served bytes with the frozen read and asserts the later task's
-path is absent from the inventory, the comparison binding is unchanged and the declared limitations are
-stable.
-
-A case that asserted only the machine-readable state would have passed
-while the human-readable sentence still told the reader the wrong fact, which is exactly what the fix
-round corrected.
-
-### Conventions
-
-`pytestmark = pytest.mark.evidence_unit` places the module in the ordinary unit lane, and
-`mcp/tests/test-evidence-lanes.toml` registers it there (a bare TOML key, so it is named as a quoted
-anchor rather than as an identifier). `mcp/tests/evidence-lifecycle.toml` currently lists seven
-`consumer_scope = "exact"` consumer records for this module: the user-settings guard, anchor-fixture
-models, diff-scope support, the Node fixture lockfile, row-codec support, row-writer support and read-scope support.
-These are registered dependencies, not evidence of new runtime acceptance. Helper names are private and single-purpose, the child source is one module-level constant so
-the child and the parent cannot drift,
-
-### Invariants And Boundaries
-
-- **Only served bytes and owner-produced values are asserted.** No case builds the payload it then
-  checks, and the byte comparisons read the response body.
-- **The enclosure is one per case.** `closed_fixture` builds a fresh fixture under the case's own
-  `tmp_path`, so no case observes another's worktree, record or removed worktree group.
-
-- **A fresh process is a fresh interpreter.** The restart leg shares no state with the parent, so the
-  record-only resolution is measured rather than re-entered.
-
-- **Browser acceptance is not claimed here.** The packet's real-browser boundary belongs to
-  `ICR-R25@v1`, and the mounted-surface cases for this leaf live in the dashboard's own module.
-
-### Todos
-
-None recorded.
+The nine declared functions assert controlled Git/converted-memory and in-process route behavior; source descriptions, lane/consumer registrations and historical receipts are not a fresh test run. The restart child inherits its environment. Destructive Git/object operations belong to disposable fixtures when run, never the inspected leaf checkout. Browser geometry, paid turns and whole-memory acceptance are outside this module.
 
 ## Evidence
 
-
-### Repo-Internal References
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Current limitations are generated by the exact tree and historical owners. [18]
-
-
-
-
-### Cross-Repo References
-
-No cross-repository contract is established by this file.
-
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-No configured domain documentation could be checked.
-
-### Repo-Internal References
-
-Every claim on this card is checkable in the shipped candidate: the module's own docstring and cases,
-the R01 enclosure fixture it extends, the R11 owners it drives for freezing and reclaiming, and the two
-registration files that admit it to a lane and derive its consumer rows. Three details a reader should
-carry: the module is **evidence_unit** and its lane row is what the collection gate reads before the
-module may run at all; the seven current consumer rows are `exact`-scoped, so any additional fixture dependency
-must be registered rather than inferred; and the later-task and reclaimed-object legs mutate real Git
-state inside the case's own fixture repository, never the source checkout.
-
-
-
-- **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** [35]
-
-### Cross-Repo References
-
-No cross-repository behavior is exercised by this module. Its enclosure is one repository's own leaf
-worktree with an external memory half, and every case reads that repository's own records.
-
-No meaningful cross-repo references found.
-
-- Cleanup preserves exact recorded bytes. [9]
-- Fresh-process reconstruction. [10]
-- Later task isolation. [11]
-- Pre-feature source and legacy-unavailable knowledge. [12]
-- Typed historical absence opens no canonical database. [13]
-- Lost recorded range refuses as unresolved. [14]
-- Lost recorded objects remain unavailable. [16]
-- Unrecorded cleaned leaf remains not live. [17]
-- The exact-scope consumer row for this module in the shared diff-scope case support. [19]
-- The current shared diff-scope support artifact declares this test module as an exact consumer. [20]
-- The route every case drives, and the lane the module belongs to. [21]
-- **The child that reopens the same comparison in an interpreter sharing no state with the parent.** [22]
-- **The R01 enclosure fixture this module extends, one fresh enclosure per case.** [23]
-- **The production composition the cases read through: the real route, the real collaborators, the real record loader.** [24]
-- **The restart leg: a descriptor of the four roots alone, a child interpreter, and the served bytes written out for the parent to compare.** [25]
-- **The byte-for-byte case: the live frozen read and the cleaned read served as bytes and compared.** [26]
-- **The restart case: the same bytes from a fresh interpreter that knows only the coordination root.** [27]
-- **The contamination case: bytes, binding and provenance unchanged after a later task lands, and the later path absent from the inventory.** [28]
-- **The pre-feature case: the recorded source range exposed with the absence of an intent generation stated as a typed absence.** [29]
-- **The F2 case: a recorded range the repository cannot resolve is `candidate_unresolved`, not the intake defect's code.** [30]
-
-- Lost retained code and memory objects produce unavailable-history, unavailable source inventory and an unresolved knowledge statement. The named-subject request refuses as candidate_dataset_absent and later-task content is absent; this case supplies no record-owned deletion statement. [31]
-
-- **The one state in which the intake defect's code is still the honest answer.** [32]
-- The exact-scope consumer row for this module in the shared diff-scope case support.  Anchor: `test_historical_committed_leaf_review` [33]
-- **The later-task leg: a real commit on the repository, and the leaf's protected source branch really moved to it.** [34]
-
-- The first source case preserves selector-free task-context inventory and tree provenance across cleanup without inventing a comparison, while retaining separate subject-byte equality assertions. [36]
-- The lane selects this module once and seven exact-scope lifecycle artifact records name it; these are registrations, not executed evidence. [37]
+- The fresh child uses the actual serving composition and explicit configuration descriptor, with inherited import paths visible. [38]
+- Recorded selected bytes and selector-free task-context facts survive cleanup independently. [39]
+- A fresh interpreter and later fixture commit retain exact recorded answers. [40]
+- Legacy source/typed absence and lost range retain distinct measured/unavailable/refused facts. [41]
+- Lost retained objects are unavailable without substitution; a never-recorded cleaned leaf stays not live. [42]
+- Numbered reads preserve their own outline/counts, unavailable-number limits and separate retained catalogue answers. [43]

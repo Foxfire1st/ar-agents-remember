@@ -2,15 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx",
   "realizes": [],
   "references": {
-    "11": {
-      "note": "The tree-review cases consume the retained L37 comparison-5 captures and assert three members, twelve cards, revision identities, a statement-diff marker, proof identity and excerpt kind, selected-member-first grouping and worklist item-kind equality. The fixture refuses source-content reads; these assertions do not compare exact source bytes or statement operands. The dataset fallback case is removed. Successful playback of this historical full-tree fixture is not current producer acceptance.\n\nAnchor: complete source-refusal fixture and stored assertions",
+    "12": {
+      "note": "Retained comparison-5 route replay, changed cards, closed revision provenance, worklist identities and comparison mismatch.\n\nAnchor: \"import { afterEach, expect, it, vi } from 'vitest';\"",
       "targets": [
         {
           "anchor": {
-            "blob": "87296aefe43bea0d7da4ad364f5a8483c9226cb5",
-            "content": "sha256:73ee3ab18dffbbefa82c1551593c712c2886166d9769eb9898dcc8dc6b37d5c5",
+            "blob": "9343a3f669a330bc7320fdba672afc33fd1814bd",
+            "content": "sha256:f12f368a8ab7a922a68cca92ad3906b85a636e3cce551dd89b96d7b345a2eda8",
             "locator": {
-              "end": 218,
+              "end": 229,
               "kind": "line_range",
               "start": 1
             }

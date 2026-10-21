@@ -3,29 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-        "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
+        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "content": "sha256:e92a16d1538a0708965cb759f314f7fb7eaa707fa670607d54db81471fc9d62a",
         "locator": {
-          "kind": "symbol",
-          "name": "ReviewScopeHeader"
+          "end": 25,
+          "kind": "line_range",
+          "start": 22
         }
       },
-      "id": "RLZ-8D95SD",
-      "invariant": "INV-P4Z520",
+      "id": "RLZ-71EG4V",
+      "invariant": "INV-8VQR13WX",
       "origin": {
-        "handoffEntry": "CUR-L57-open-movement-facts-parent-carrier",
-        "leaf": "260928-MIK-L57"
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-8VQR13WX",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "The actual parent mounts ReviewMovementStatus and ReviewMovementFacts as open siblings before ScopeMetadata. Both receive the current selected-read status, so the owner-state/full-facts renderers decide their own pending/unavailable behavior outside the default-closed provenance container. This is the open-composition carrier of the existing disclosure obligation, not a claim that this parent independently audits all descendant markup or proves a runtime/browser result.",
-      "role": "presentation"
+      "rationale": "The removed selected-family scope wall is replaced with a label derived only from task-level source inventory, including unavailable/partial state; it introduces no previous-subject family identity into a pending heading.",
+      "role": "support"
     },
     {
       "anchor": {
-        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-        "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
+        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "content": "sha256:67d6f77e31044befdc1619c35cca72bd6fb302f210315fde508aca61ae72023d",
         "locator": {
           "kind": "symbol",
-          "name": "subjectScopeOf"
+          "name": "ScopeRecords"
         }
       },
       "id": "RLZ-90HFC6S9",
@@ -33,13 +34,13 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Replaces the subject-bound comparison identity, currentness and family-context lines with a being-read statement while a subject is pending.",
+      "rationale": "Suppresses the subject-bound comparison identity when the requested subject is pending or unavailable while retaining task-level inventory facts.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-        "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
+        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "content": "sha256:fb6d1e740673cd18ca9ec8fd819cdcbc30c196f4644c9dd62aa689f74fc8d622",
         "locator": {
           "kind": "symbol",
           "name": "recordLabelOf"
@@ -55,179 +56,68 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The module distinguishes task inventory/code trees from selected-subject comparison/currentness/family lines.\n\nAnchor: inclusive source ranges",
+    "10": {
+      "note": "Task inventory/trees and guarded comparison identity render without a self-owned disclosure.\n\nAnchor: \"export function ScopeRecords({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:44bf2f9af9651af1e53d050e53533be174e933449f938458bd7e276372308cec",
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:75e0cfaeed19e1f58e7d3b37d606ab64467dcb592238d1a02bfe24f62171f7b9",
             "locator": {
-              "end": 4,
+              "end": 62,
               "kind": "line_range",
-              "start": 1
+              "start": 28
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The header retains its record/inventory/test IDs and mounts the joint movement state and complete guarded facts openly, outside the metadata container.",
+    "11": {
+      "note": "Inventory partial/unavailable labels and internal comparison descriptions retain their distinct states.\n\nAnchor: \"function inventoryLabel(payload: Pick<ReviewPayload, 'source'>): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:d9ae0aa56abd621ed1b869eb7b7695821e02f66372be92f83a51882722b1a114",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewScopeHeader"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a6b1d97a9f545bf2bdc1a19893821d020d32657",
-            "content": "sha256:877e8c24f0131d2a59b299d0d52e44eb8497c8b9fb2badd2e5eb54bd15c67bcc",
-            "locator": {
-              "end": 30,
+              "end": 26,
               "kind": "line_range",
-              "start": 18
-            },
-            "path": "dashboard/src/panels/review/ReviewMovement.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Selected-subject scope lines become pending or unavailable statements rather than claiming the previous answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectScopeOf"
+              "start": 22
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Reconstructed recorded endpoints take precedence over recorded/live task labels.",
+    "12": {
+      "note": "Comparison fallback text is derived from supplied read status and comparison.\n\nAnchor: \"function comparisonOf(payload: ReviewPayload, status: SubjectReadState): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:8d71f9d9f641be02058948dcfe0a4819baa6c88e1e8922da220560d666945edd",
             "locator": {
-              "kind": "symbol",
-              "name": "recordLabelOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The actual workspace maps its ReadingStatus to pending/unavailable/null and passes that status to the header mount.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:bbbf079bba4de16315bb6eb957925a285ebfb2c41dba6eb9127855f331712cc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "readingState"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9013d5e76d160ec2c25d2edc99c11f391ffecb83",
-            "content": "sha256:2ec5f4180c2c3d602a86b2c2a921948b47865ce99f620f6c16df49210b700284",
-            "locator": {
-              "end": 311,
+              "end": 71,
               "kind": "line_range",
-              "start": 303
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The header renders record label, inventory and scope while ScopeMetadata separately retains comparison identities/trees/command; the answered metadata container alone is default-closed provenance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:5d43d13647af4a54d408949329010e2c38b9ecf9977415b875b7f6aa57dd0277",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewScopeHeader"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:dde4010c28079a3cbe9020ca274208e78cb6038fab169a2415721eba1eb1e392",
-            "locator": {
-              "kind": "symbol",
-              "name": "ScopeMetadata"
+              "start": 64
             }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "FamilyScope remains marked open content and withholds a previous payload limitation while the subject has no answer.",
+    "9": {
+      "note": "Reconstruction labels take precedence and a live review receives no record label.\n\nAnchor: \"export function recordLabelOf(payload: Pick<ReviewPayload, 'limitations'> \\| null, history?: 'recorded'): string \\| null {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:a24eec38d512c60b98f99a1bea0ce2c56695a52812c42af76a00e3098eac22c7",
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:b9aeabca2c92396b6cca0c1211bce8421f4cbc97c30f549a4cf801ea79c021fd",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyScope"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Selected-subject comparison/currentness/family derivation is payload display with explicit pending/failure guards, not a catalogue read or movement measurement.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "subjectScopeOf"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4283eb12ab754b846590815abd4567d69b342c97",
-            "content": "sha256:41e513c35c21278661f45a1dd81223e90b4287c2cbe5504e48e10bf2b1d32a63",
-            "locator": {
-              "end": 134,
+              "end": 20,
               "kind": "line_range",
-              "start": 131
+              "start": 14
             }
           },
           "kind": "code"

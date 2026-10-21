@@ -2,26 +2,21 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-Matching leaf-wide code facts without prefetch.
+Admit already-read leaf-wide code facts only for the shown comparison, count unchanged invariant records whose implementation changed and preserve local scroll on count enrichment.
 
 ## Code Commentary
 
-matchingTreeRead admits a trees result only if any requested comparison number matches. codeFacts returns an invariant-key map only for state facts; absent/unavailable never becomes an empty successful map. codeChangesCount counts unique outlined unchanged invariants with established implementation, not changed records or family occurrences twice. Summary states ellipsis, unavailable or C code changes. CodeFactsScrollAnchor snapshots list and ancestor positions before same-comparison count changes and restores them after mutation, without focus/selection. useCodeFactsNotice announces each comparison/count key through its caller. No requests, storage, roster or subject prefetch occur.
+`matchingTreeRead` requires a trees answer and, when a comparison number is supplied, an equal delivered number. `codeFacts` accepts only a facts state, otherwise null. `codeChangesCount` requires an admitted outline and code map and counts distinct unchanged outline invariant IDs with established implementation facts. It is not a count of changed source files or all code changes. Summary text preserves reading/unavailable state.
 
-## Invariants And Boundaries
-
-This is the inspected source contract, not an execution certificate. Parent and direct callers retain authority for identity, reads and state.
+`CodeFactsScrollAnchor` snapshots the nearest tree scroller and root ancestors before a same-comparison count update, then restores those scroll coordinates after mutation. `useCodeFactsNotice` keys its sentence by comparison/count and never selects or focuses a row. Zero explicitly says no invariant changed only in its code; it does not say that no code changed. This module issues no fetch and infers no implementation fact.
 
 ## Evidence
 
-- Matching leaf-wide code facts without prefetch: `matchingTreeRead` owns the described branch. [1]
-- Matching leaf-wide code facts without prefetch: `codeFacts` owns the described branch. [2]
-- Matching leaf-wide code facts without prefetch: `codeChangesCount` owns the described branch. [3]
-- Matching leaf-wide code facts without prefetch: `codeChangesSummary` owns the described branch. [4]
-- Matching leaf-wide code facts without prefetch: `CodeFactsScrollAnchor` owns the described branch. [5]
-- Matching leaf-wide code facts without prefetch: `useCodeFactsNotice` owns the described branch. [6]
-
+- codeFacts.ts current behavior at this source owner. [11]
+- codeFacts.ts current behavior at this source owner. [12]
+- codeFacts.ts current behavior at this source owner. [13]
+- codeFacts.ts current behavior at this source owner. [14]

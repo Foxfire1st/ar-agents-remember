@@ -2,58 +2,25 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[Owning route overview](overview.md)
 
 ## Purpose
 
-`j` in the mounted reviewer (requirement MIK-R33), over the served bodies of the store-authored comparison (`triage.family`, `triage.memberA`, `triage.memberH` and `triage.entries`; receipt `triage.capture-provenance.json`). `ReviewSurface` is the real component and only `fetch` is stubbed. The old entries capture is joined to a labelled synthetic outline over the captured family context: only index fields are synthesized, and semantic change facts remain the walked ones. All view makes the complete roster available for the order comparison. The tree and center are compared at invariant granularity, not by confusing invariant selectors with member revision IDs.
+Check shared tree/reading member order and click-based member selection over captured family/subject replies with an explicit synthetic outline.
 
 ## Code Commentary
 
-### The case
+Only catalogue index fields are synthesized; the comparison resolves center member revisions to canonical invariant identities through the captured family. Tree and center order match under the two exercised orders, priority and authored.
 
-- The reviewer opens on the family. The center's member list follows the tree's displayed order, in triage order and, after one click on the order control, in authored order; a second click returns to triage order.
-- The family's row is focused and `j` is pressed. The member review of the next change is read, as a click would read it; its row is marked `aria-current` and has focus; the workspace is the same DOM node; and the family context remains under the member review. The family breakdown is asserted before leaving the family review, where it now belongs. The selected A words are pinned through the word-diff DOM: shared stem and both removed/added fragments, not the revision label alone.
-- A second `j` selects the following change, again with the mark and focus on its row and the same workspace node.
+A labelled synthetic control makes the first member added with no effect and the last changed with a weaken effect. Priority places the later weakening member first, and the center follows exactly that same model order instead of sorting independently by change weight.
 
-### How the case stays stable on a loaded machine
+In authored order, explicit member-row clicks select A then H. The A reading pins the changed-statement revision label, common wording and removed/added fragments; both selections retain current-row focus and the identical workspace DOM node. The selected-member metadata retains the family name and revision 1 → 2. This case sends no j/k keypress.
 
-- Async conditions use the shared Testing Library guard; the Vitest configuration owns the test and hook hang guards. The case still waits for the displayed order and selection conditions rather than elapsed time.
-- After each click on the order control the case waits until the control's `data-order` shows that click's order (`authored`, then `triage`), because the control computes the next order from the one it shows.
-- The first `j` is pressed again until the selection moves, because the keymap's binding is a passive effect and a press made before it has run is ignored, as in a browser.
+### Evidence Boundary
 
-### Logic
-
-- A `j` move selects the next change's subject exactly as a click does (the member review read for that subject) and
-  keeps the family context, the focus on the moved-to node and the mounted workspace node (ICR-R32 rule 6, ICR-L48).
-- The centre's member list follows the tree's displayed order, in triage and in authored order (review R1 note;
-  `FamilyReviewCenter.FamilyCenter`).
-
-### Conventions
-
-Vitest with Testing Library. Requests for the tree view and for source content get a typed refusal, because they are outside this check; a review request for a subject without a body throws.
-
-### Invariants And Boundaries
-
-Selection moves keep family context, focus and the mounted workspace.
-
-### Todos
-
-No additional work is asserted by this card.
+These are source-inspected mounted checks with the inputs and replacements named here. This analysis did not execute them, recapture backend output, measure a real browser, or reopen the passed code candidate or D417 closures. Declaration counts and DOM assertions are not execution receipts. The source does not prove reading-block j/k behavior, browser geometry or a new capture. Its first case’s every-sort title refers to the two explicit loop values; no third order is claimed.
 
 ## Evidence
 
-- Captured bodies with a labelled synthetic outline and condition-based order/selection waits. [3]
-- The mounted case compares both orders at invariant granularity and pins actual changed words, context, focus and the unchanged workspace. [4]
-
-### Docs References
-
-No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
+- Captured semantic replies, synthetic outline adapter and invariant-granularity order comparison. [5]
+- Shared priority/authored order, synthetic weaken precedence and click-based word/focus/context preservation. [6]

@@ -1,0 +1,366 @@
+{
+  "path": "dashboard/src/tray/TrayPanel.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+        "content": "sha256:aaf79107caf3a5f794d6774801287de83422a87d74c556d0627a381708e9c264",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray > reads the live seats again each time the panel or the target menu opens"
+        }
+      },
+      "facet": "Opening the panel again or reopening its target menu issues fresh seat reads.",
+      "id": "PRF-9J6ZYD",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+        "content": "sha256:b7b800f3b57bca74b0f439afbacbe57d170f3eabc6766a46edf0399ccfe6b248",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray > tells apart two agents of one role and task on every target row and in the chosen target"
+        }
+      },
+      "facet": "Equal role/task rows and the chosen-target label include distinct agent tags.",
+      "id": "PRF-EA2557",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+        "content": "sha256:ecd4c04c1e7178ec4b43110ba2db6cbe71f10c2868efece5668796d9c20ec5bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray > shows in the sent log the exact pick ids of each send, with its time, target and message file digest"
+        }
+      },
+      "facet": "The displayed sent entry includes exact pick IDs, time, target, message path and full digest.",
+      "id": "PRF-M3QTH0",
+      "invariant": "INV-0WDKPN",
+      "origin": {
+        "handoffEntry": "TRAY12",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('opens empty from \"Tray (0)\", with Send disabled until there is something and somewhere to send', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:8cc95d80e5d79a3c5df1893772c0713e901e798c5905cc80323d329338f76c98",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('lists the targets as the mockup does: a dot on the chosen chat, its identity on one line, the agent tag whole', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:489e0e43c4941e32e230dcebe86f127f29f9b926b53e3667c4cc95fd888fcf41",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 349
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('draws the target popup whole beside the \"to:\" button and inside the window, and keeps it there as the page moves', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:ec75a74e1e9a529e934669672e8d21712253dfa8d644281b71f5756c7b34a4f2",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 373
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('tells apart two agents of one role and task on every target row and in the chosen target', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:19dae35be46584c9f18c70e4b7aca1d6d66b68956febb1108a5660d8b781e203",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 429
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('takes a chat passage from the frame channel with its provenance and makes that chat the default target', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:5e4ac2934932c09b5afa18163303ce346210d55105dde2401945af8a1c95c17e",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('defaults an object pick to the shown chat; with no chat shown, Send stays disabled', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:502a063d4196d9f62e980bc133b3faebc69169a6a749e59e5e0d1989bb695747",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('reads the live seats again each time the panel or the target menu opens', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:2f7bfb4ab0bd05e3b468ba267aaa15788db64c4fcb6cea06e34c431d5ee47e92",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 501
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('names a default target by its seat row once the seat list arrives; an unlisted one says why it shows its id', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:85aba2025469da73211bd3abcb31a34ddd9ac88331102a38e6917a3d00583d3f",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 522
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('sends from a page without a repository and shows every refusal by name', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:e27e19f257ec804b9a5d0a01a7e1b92445dba3f6c5cf1b04cd0afba8e719755d",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('sends to several chosen chats and shows a held target as held', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:5984a1a2abd73a7950872293b2866e0322437a4c84035dc8ad9293f2c9ae9559",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('takes a pasted PNG as an image pick while it is open', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:e33bfbbc41f33fdd50af4562765b171217cb22760fa2d64cf87561c53ab95798",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('refuses a pasted image of a type the server does not take, by name, before it enters', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:79ac0b86e4d9022080b776b59105902f8dea1a5b7153b57112ed9fc371aa3b9b",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('adds, edits and removes a note, sets it by a quick intent, and removes the pick', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:44dfc01a4a091f2dd6684f654bf7ee36dbad2a1a7a3e46c06743ce082920617e",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it(\"places a chip's quick intents in a row just outside it: below, or above where the tray has no room below or the chip below is in use\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:164d5ea77ff650e923ef0d7237f77816ca1497ec5d1e3673e238d4e80f70514b",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it(\"shows a chip's quick intents outside it, off the id, the × and the focused control of each chip in use, and moves no chip\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:c7447c1ec5de105c63d851434d822c901fb7abf66b63e7f19ddd80c347c9a6e9",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('sets the bounds beside copy on highlight: the defaults, a lower bound that refuses by name, and back to the defaults', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:e6bec6e8256e437ab56695957ce62a962fbf6057bf43a6c412604089b8acc747",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('shows in the sent log the exact pick ids of each send, with its time, target and message file digest', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:0991682b348c366f2c8d5f53e756f1aa007cb0f7c3449f0cbeb4ec141ee6545d",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks complete tray controls, notes, image admission, target popup, provenance and send outcomes.\n\nAnchor: \"it('gives the one-message line a line of its own above Send, and names the target by role and task on one line', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "413c0292a2f28228f15dc436d64fa3a46655bfcc",
+            "content": "sha256:0f198f30b77957b35c0a6520da953b39febbbaa3f5c652c7513da43b18e57d03",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

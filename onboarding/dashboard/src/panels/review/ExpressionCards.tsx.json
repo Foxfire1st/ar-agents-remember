@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-        "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:be61958be267fb70d427a19057ca7719b5197ad1f150c3eaa7af66bf22b91117",
         "locator": {
           "kind": "symbol",
           "name": "CardCurrentness"
@@ -21,8 +21,155 @@
     },
     {
       "anchor": {
-        "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-        "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:0edd5c34513c78143390dd7a8fb2aa8f91fc8e8558b77abe66360e2a3cb9233c",
+        "locator": {
+          "end": 389,
+          "kind": "line_range",
+          "start": 335
+        }
+      },
+      "id": "RLZ-1YFFX9",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Voice renders each entry own line, visible added/retired/revised badges and an independent Before rationale, including distinct voices inside one shared card.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:03998840260997b5be1e2170ec878cb70a7693fa34183e1a650b89de4d9366b8",
+        "locator": {
+          "end": 591,
+          "kind": "line_range",
+          "start": 584
+        }
+      },
+      "id": "RLZ-252S4J",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-9S9XT5",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "drawnText removes exactly one terminating newline before FilePane rendering so the inclusive mapped range does not acquire an invented final empty row; unreadable sides are still not made empty.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:7dcc0d900ac723b1fbbc041b2066cbf35199c89c8d27444c2572502004504e68",
+        "locator": {
+          "kind": "symbol",
+          "name": "BlockHead"
+        }
+      },
+      "id": "RLZ-32ZXR7",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Passes the page model's known added/removed counts to LineCounts in the drawn block heading; it does not recompute them from a span.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:dc4d454e029f0eeb5dce1d24b30cd8dc95ca1cfb78beaef3765323fe7c03c497",
+        "locator": {
+          "kind": "symbol",
+          "name": "Voice"
+        }
+      },
+      "id": "RLZ-33SYJ4",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A shared entry voice receiving an offer becomes its own nested host, so the owning voice controls quietness independently of the containing block.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:05bfbb4eedd4c446a200b4a8c85425de3b2cd0bbfe8a0cc2cd59c04cc6a26ad9",
+        "locator": {
+          "end": 316,
+          "kind": "line_range",
+          "start": 311
+        }
+      },
+      "id": "RLZ-5AQV96",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Click and Enter/Space toggle only this authored line; selectedIn prevents the click ending a text selection from toggling it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:ffef1079679f1048fc2f15c60ecadea514bbc95309203e94546fa6a6824c8dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "LineCounts"
+        }
+      },
+      "id": "RLZ-5NEMYT",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "RP14",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It retains signs while presenting added and removed counts in separate theme colors.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:f40930d9d570557ad02137fae070a6bf9a8ae168c60ede9b2ba9b5382a995788",
+        "locator": {
+          "kind": "symbol",
+          "name": "selectedIn"
+        }
+      },
+      "id": "RLZ-736BJY",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It prevents a click finishing a text selection from changing the line expansion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangedExcerpt"
+        }
+      },
+      "id": "RLZ-809PBW",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It supplies fit to the diff so the page owns the scroll rather than the excerpt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:be61958be267fb70d427a19057ca7719b5197ad1f150c3eaa7af66bf22b91117",
         "locator": {
           "kind": "symbol",
           "name": "CardCurrentness"
@@ -39,532 +186,588 @@
     },
     {
       "anchor": {
-        "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-        "content": "sha256:9c488c85bfdc894c5be594878df6304aa523c3f6da137c6acccd1d2c0604a950",
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:8d773053179468de1dd41095acc07bfd420ab696468e0e0ff66543119737d724",
         "locator": {
-          "kind": "symbol",
-          "name": "EntryIdentifiers"
+          "end": 128,
+          "kind": "line_range",
+          "start": 86
         }
       },
-      "id": "RLZ-DB9HX0",
-      "invariant": "INV-9VPYCZ",
+      "id": "RLZ-9MH0AM",
+      "invariant": "INV-1SHA9Y",
       "origin": {
-        "handoffEntry": "L86-CODE-R1-F07",
-        "leaf": "260928-MIK-L86"
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "It consolidates the selected entries once outside the card repetition.",
+      "rationale": "The voice line is selectable plain text with independent ellipsis/expanded styling and separate visible state and earlier-rationale rows.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-        "content": "sha256:a46906d25c48c92b0b335d2812d390ae0887fb38ef3954354517c5674bed4042",
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:4940faee5bf5200e193fcaf22017adfcf2785d30cf93d8fe3ad270e33519bcf0",
         "locator": {
-          "kind": "symbol",
-          "name": "ScopeLine"
+          "end": 751,
+          "kind": "line_range",
+          "start": 701
         }
       },
-      "id": "RLZ-QQMRX6",
-      "invariant": "INV-VPX81HXV",
+      "id": "RLZ-ARY7X6",
+      "invariant": "INV-G869AQ",
       "origin": {
-        "handoffEntry": "L37-R2-tree-scope-notice",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-G869AQ",
+        "leaf": "260928-MIK-L89"
       },
-      "rationale": "Renders loaded/total member scope and supplied missing reasons above the cards. Below the recorded total it explicitly points to the family's next-page roster control and excludes unreturned locations from the loaded count; at equal counts with missing content it instead says the cards do not cover that named missing content.",
+      "rationale": "ReviewBlockCard draws only lead locations with nonempty draws, while BlockCard retains every drawn entry identity/voice and all selection aliases in the one shared card.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:a7da701aea43dc36738522cb0a6a2a6eb8bb419ff1337d0faef320d071ffd063",
+        "locator": {
+          "end": 287,
+          "kind": "line_range",
+          "start": 265
+        }
+      },
+      "id": "RLZ-BQQ5V8",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "voiceMeta and voiceState preserve each entry own invariant/role/planning and added/retired status; OneLine gives that individual authored line its own disclosure state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:08b556cb56d62d82ce938db3b41a9bb5e16a9012e11d46cc56882403f2a117b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "BlockCard"
+        }
+      },
+      "id": "RLZ-E7CSTZ",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Each drawn block is a host; single-entry blocks use their heading offer and shared blocks pass one offer to each entry voice.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:590fd85aba4fc941f2c4d592b62c1ac63cbc7cc703e3f9dc0160783dd3a81f7a",
+        "locator": {
+          "end": 652,
+          "kind": "line_range",
+          "start": 636
+        }
+      },
+      "id": "RLZ-EBEFQS",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-9S9XT5",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "drawnText removes exactly one terminating newline before FilePane rendering so the inclusive mapped range does not acquire an invented final empty row; unreadable sides are still not made empty.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:fa554860650b5623132e863cf7b47c5645bdcc7d9646e7b083191d89c401f1a8",
+        "locator": {
+          "end": 599,
+          "kind": "line_range",
+          "start": 597
+        }
+      },
+      "id": "RLZ-EY2M1Q",
+      "invariant": "INV-Z385RTQS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-Z385RTQS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "ChangedExcerpt uses the page-owned collapse choice for Changes only versus Full context; it draws the supplied recorded excerpt rather than opening a whole file.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:609e73aa334f17aae64dcdbc48d2011532832af811925c7d7f8850532afc125b",
+        "locator": {
+          "end": 579,
+          "kind": "line_range",
+          "start": 579
+        }
+      },
+      "id": "RLZ-G3G2D2",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-FZ473E",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The excerpt receives the block near-view admission and passes visible into useExcerptMarking; card marks therefore share the page scheduling gate rather than starting for every rendered card.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:0078a7a72aa9ef0e6fbd8b4d43c3aae21642e6c329ac73e00fee42399774f5fd",
+        "locator": {
+          "end": 206,
+          "kind": "line_range",
+          "start": 206
+        }
+      },
+      "id": "RLZ-KM543M",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Only the duplicate resolved side-range line is screen-reader-only; unresolved side reasons remain visible and the excerpt still carries both resolved ranges.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:7dcc0d900ac723b1fbbc041b2066cbf35199c89c8d27444c2572502004504e68",
+        "locator": {
+          "kind": "symbol",
+          "name": "BlockHead"
+        }
+      },
+      "id": "RLZ-KWJHNW",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Mounts the one named block offer in the header only for a single-entry card.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:a8a7b144cac2d6abbe3508ff4fe54717c34dbe186bfe04b2f43aa2fecba23d21",
+        "locator": {
+          "end": 322,
+          "kind": "line_range",
+          "start": 319
+        }
+      },
+      "id": "RLZ-M7YHTP",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "VoiceLine names the exact entry and its supplied rationale or proof facet, with an explicit missing-authored-text gap instead of invented text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:fa47a67b8231277e36fe8983dc4aefd47aba33a79bce0f8800c018838df01fcd",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 208
+        }
+      },
+      "id": "RLZ-N9VAAE",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-1SHA9Y",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Only the duplicate resolved side-range line is screen-reader-only; unresolved side reasons remain visible and the excerpt still carries both resolved ranges.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:07df041b0acc1cfd6023f81ce897543c1033a0defeb5d884abec2c49ec56d346",
+        "locator": {
+          "kind": "symbol",
+          "name": "blockTrayPick"
+        }
+      },
+      "id": "RLZ-P4AXNM",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Builds the block reference from the drawn node's full comparison, entry, side and path identity before collection; the server independently validates its parts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:6af3a02b43106494a076daf750eaeeb762369f56999f6f8224037f9c56190b8f",
+        "locator": {
+          "end": 601,
+          "kind": "line_range",
+          "start": 601
+        }
+      },
+      "id": "RLZ-P4ZWJ7",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-FZ473E",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The excerpt receives the block near-view admission and passes visible into useExcerptMarking; card marks therefore share the page scheduling gate rather than starting for every rendered card.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:dc4d454e029f0eeb5dce1d24b30cd8dc95ca1cfb78beaef3765323fe7c03c497",
+        "locator": {
+          "kind": "symbol",
+          "name": "Voice"
+        }
+      },
+      "id": "RLZ-PBJ7BN",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It renders each entry voice, own state badges and the independent earlier-rationale line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:6c9070ca55c849bbfab5b93bd58fbf424fc76e6cc6534c7396318f4382d2bc10",
+        "locator": {
+          "kind": "symbol",
+          "name": "OneLine"
+        }
+      },
+      "id": "RLZ-PPQ7E0",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It makes the line independently keyboard-expandable while keeping ordinary text selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:d02f5609f324705416984fe4494030edb922740c712965520e61bf61deb95555",
+        "locator": {
+          "kind": "symbol",
+          "name": "VoiceLine"
+        }
+      },
+      "id": "RLZ-PQGHXD",
+      "invariant": "INV-1SHA9Y",
+      "origin": {
+        "handoffEntry": "RP13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It preserves each authored rationale/facet and names a missing field instead of supplying prose.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:4537079243322d3189ea71e89d85daadfcd515735912307b34e14566a116920a",
+        "locator": {
+          "end": 625,
+          "kind": "line_range",
+          "start": 607
+        }
+      },
+      "id": "RLZ-R815RX",
+      "invariant": "INV-Z385RTQS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-Z385RTQS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "ChangedExcerpt uses the page-owned collapse choice for Changes only versus Full context; it draws the supplied recorded excerpt rather than opening a whole file.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:3f165073d6a46bf56b4bcc8185d979c13663c24b8f8b9ae4f3b08d5833e146df",
+        "locator": {
+          "end": 660,
+          "kind": "line_range",
+          "start": 659
+        }
+      },
+      "id": "RLZ-RBJ4QD",
+      "invariant": "INV-DYDMDD",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-DYDMDD",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The selected-card Full file/duplicate inventory actions and SourceContent consumer are removed. The current card draws a model location and the whole-file route remains the separate recorded-comparison viewer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:fca814f88f98616fb8691bddfb22afed2dc44e979fc815d2399fcb92f004465e",
+        "locator": {
+          "end": 146,
+          "kind": "line_range",
+          "start": 146
+        }
+      },
+      "id": "RLZ-SEXEDF",
+      "invariant": "INV-Z385RTQS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-Z385-COLLAPSE-CONTRACT",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The block-card input contract receives the page-owned collapse flag. SubjectSection.Blocks forwards reading.collapse through this property; BlockCard passes it to Excerpt without owning a separate Full file or Layout control. This declaration supports the shared recorded-range context choice; it does not prove persistence, the default, or width-derived layout.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:9b8129749a106586af90bd2947b0dd942a8180ee47f9b2d71bba0ba738305b1d",
+        "locator": {
+          "end": 576,
+          "kind": "line_range",
+          "start": 576
+        }
+      },
+      "id": "RLZ-SFNWY8",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-FZ473E",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The excerpt receives the block near-view admission and passes visible into useExcerptMarking; card marks therefore share the page scheduling gate rather than starting for every rendered card.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:7870b9d0e4af7c774a618ecbda1ba46a695218b392134519117c0e595488ed59",
+        "locator": {
+          "end": 162,
+          "kind": "line_range",
+          "start": 159
+        }
+      },
+      "id": "RLZ-TQYDW1",
+      "invariant": "INV-9S9XT5",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-9S9XT5",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The count formatter recognizes the measured +N −N form and keeps each sign in its own colored text; a nonnumeric range string retains its original span representation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:7cbec2c64f312997ec55c0a80990fd27a8da753055043df879dec188ea5792d7",
+        "locator": {
+          "end": 633,
+          "kind": "line_range",
+          "start": 632
+        }
+      },
+      "id": "RLZ-W6962R",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-FZ473E",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The excerpt receives the block near-view admission and passes visible into useExcerptMarking; card marks therefore share the page scheduling gate rather than starting for every rendered card.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:263bc9b9c809d6db32259c29447a21c69ca42c00216547fdd9c17ad55924b8e9",
+        "locator": {
+          "end": 696,
+          "kind": "line_range",
+          "start": 679
+        }
+      },
+      "id": "RLZ-Z1VCP8",
+      "invariant": "INV-DYDMDD",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-DYDMDD",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The selected-card Full file/duplicate inventory actions and SourceContent consumer are removed. The current card draws a model location and the whole-file route remains the separate recorded-comparison viewer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:08b556cb56d62d82ce938db3b41a9bb5e16a9012e11d46cc56882403f2a117b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "BlockCard"
+        }
+      },
+      "id": "RLZ-Z7NY5N",
+      "invariant": "INV-G869AQ",
+      "origin": {
+        "handoffEntry": "RP02",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It draws all per-entry voices and selection aliases inside the single model card.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+        "content": "sha256:205623b6941b9cd780c85d77e5caa248e852b139576cf87473834c5b60fd10b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "Excerpt"
+        }
+      },
+      "id": "RLZ-ZWGEY3",
+      "invariant": "INV-VPD8AJ",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 18",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "SourceContent no longer exists; Excerpt is the new precise branch that chooses unchanged/diff/separate card panes.",
       "role": "presentation"
     }
   ],
   "references": {
-    "1": {
-      "note": "The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope.\n\nAnchor: current source extent",
+    "31": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function BlockCard(props: BlockCardProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:c80cf8d393cd1a966dddece849ce12ca11d6738a08209670f1bee9717f4668f1",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:698a7d4f5ba387defc353f43f221c2dfb0c29674b9e06aee2305f7c4746703da",
             "locator": {
-              "end": 136,
+              "end": 721,
               "kind": "line_range",
-              "start": 123
+              "start": 706
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "One grouped identifiers disclosure carries the selected entries and their supplied side blobs and digests.\n\nAnchor: current source extent",
+    "32": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function voiceMeta(entry: CardEntry, role: string \\| undefined, mark?: string): string {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:9c488c85bfdc894c5be594878df6304aa523c3f6da137c6acccd1d2c0604a950",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:caa1bba37c908990c3f6127d708a10b6bed211f522a42bab7b2ae8fca584e4bd",
             "locator": {
-              "end": 260,
+              "end": 400,
               "kind": "line_range",
-              "start": 238
+              "start": 266
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "The card-owned full-file and inventory paths; the source contains no explorer OpenedFile renderer.\n\nAnchor: current source extent",
+    "33": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function sideLine(name: 'Before' \\| 'After', side: ReviewTreeEntrySide) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:eddd9ac544faa6c71b91b2b05de831905765ace54f32f11ce3e2e2bb9cb697ea",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:cb0b77932285c1bcc0709403711be507f4b8059143c37c1c0fae4224e00eeef4",
             "locator": {
-              "end": 637,
+              "end": 227,
               "kind": "line_range",
-              "start": 1
+              "start": 180
             }
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "The center caller passes measured-comparison cards or an explicit comparison-required boundary; no dataset accordion fallback.\n\nAnchor: current source extent",
+    "34": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function Excerpt(props: ExcerptProps) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ac4e85fe7aa5576fda77fc34929e7d5305f09a36",
-            "content": "sha256:b2c44821862fca385848ae70e750f2cb6c6d30919f83603d45c61f6fe57256be",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:4ea1e0ecab47e6734ad6502e0e96daa932396cfd6a12c1eba07f11a1c4a45afe",
             "locator": {
-              "end": 958,
+              "end": 663,
               "kind": "line_range",
-              "start": 920
-            },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Checked-in card fixtures assert changed versus unchanged excerpts and a named missing-rationale gap; not a fresh execution.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:3f41cda812875f8d35bcb496a89ec9ad7770ab9672220fc090186d4942f5e358",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:6296a4749a4dc32a974b3b73d5a78398588449926378c7d18ed8330d3e5c1cff",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 139
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The F1 mounted fixture stubs an HTTP-shaped Response and counts source-content requests; not a backend or Git read measurement.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "94f9cefa148c27cf96b54f68041a39d57f842a49",
-            "content": "sha256:9834833ac3909b58acea070fef1572eadba788a4f0886f65d3fc513ff1c8af90",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 211
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "Mounted card fixtures assert the exact returned card, drawn-side mark retention, other-content suppression and no unchanged-file request; not a fresh execution.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:1a7665abc6041400bec5766e45cb6bf63e1e7c76c191506ece97359f21c097a1",
-            "locator": {
-              "end": 503,
-              "kind": "line_range",
-              "start": 488
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7d070c6dc66b03cf9fa5e700048d5ed2d0882740",
-            "content": "sha256:e72435f8a2c0814880383c287309a80348fb6343a543c9155014a320d7c0b501",
-            "locator": {
-              "end": 713,
-              "kind": "line_range",
-              "start": 663
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "The read-state wrapper delegates ready entries to the card assembly owner.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:698a647b4adeaefd20ff7292d8ed050c81005d8c5d7b1677cf701d52dca7435c",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 138
+              "start": 569
             }
           },
           "kind": "code"
         }
       ]
     },
-    "17": {
-      "note": "ReadyCards owns grouping, counts, selected-card full-file state and returning-card restoration.\n\nAnchor: current source extent",
+    "35": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function CardCurrentness({ card }: { card: ExpressionCard }) {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:4ad483977ffa7147ebc1c1f57bd06a648433d23fe61e10c79e8a5758fb9fb5c3",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:e6ebaab021fdc81a4996a93487407d94b8d6dadcc898eeb949e739e0c51f31e1",
             "locator": {
-              "end": 236,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:c256e3e43a7e35e95da1531d01290bff7b73fd4fa0c9b219dbd2db1f42143c0c",
-            "locator": {
-              "end": 199,
-              "kind": "line_range",
-              "start": 181
+              "start": 229
             }
           },
           "kind": "code"
         }
       ]
     },
-    "18": {
-      "note": "One focused card with roles, voices and excerpts\n\nAnchor: current source extent",
+    "36": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"export function useExcerptMarking(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:60a4a9d3e0c2ec692a5bcc1bf71ff6a55890770a024eb45f576c8ed3355c1c41",
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:b48a00d95670bf8a5075bc1e2f8bc0729d69fde401c6094fe6972f14fdf9b9df",
             "locator": {
-              "end": 431,
+              "end": 429,
               "kind": "line_range",
-              "start": 366
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Link from a card to the full changed-file inventory\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:a53187d9b0475a8b77ae182519e2e396841a4b8982704f0584348a9f80082cc1",
-            "locator": {
-              "end": 595,
-              "kind": "line_range",
-              "start": 581
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Loading, unavailable and not-a-tree-comparison states.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:698a647b4adeaefd20ff7292d8ed050c81005d8c5d7b1677cf701d52dca7435c",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 138
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "In-card full file with markers through the shared pane\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:1dcdadd6be389471b1193b5acb990a279c302ca6cd950a578a2add5621ea07a8",
-            "locator": {
-              "end": 637,
-              "kind": "line_range",
-              "start": 598
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "Exact entry/state/side text and a separate supplied-reason sibling outside disclosures.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:b8700d2bd864a829f77927945b4a0180f05c1c69cca440613bca0f35703e2fb3",
-            "locator": {
-              "end": 364,
-              "kind": "line_range",
-              "start": 332
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "ScopeLine names actual missing reasons and distinguishes unfinished membership from missing content at equal counts.\n\nAnchor: current scope renderer",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:a46906d25c48c92b0b335d2812d390ae0887fb38ef3954354517c5674bed4042",
-            "locator": {
-              "end": 279,
-              "kind": "line_range",
-              "start": 269
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The shared controls are imported from their surviving dedicated module, not ReviewExpressions.\n\nAnchor: current control import",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:d929f3d2a64512edb20169f97796a320b9790aaecd1ad8b6bb43461d150498a9",
-            "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 17
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The counts, the scope line and one full file keyed by the card (F1).\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:4ad483977ffa7147ebc1c1f57bd06a648433d23fe61e10c79e8a5758fb9fb5c3",
-            "locator": {
-              "end": 236,
-              "kind": "line_range",
-              "start": 181
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A return to a marker followed from a card's full file reopens that card (MIK-L34).\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:932b01d473be8eb0ba8728c7ce2d4d20493b5486ccff158548a36a5b62e626d6",
-            "locator": {
-              "end": 266,
-              "kind": "line_range",
-              "start": 264
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:622715ea4ed9ef3c85e0e1e41d1d6f81e3319f64a612fb1ff1d019522cb98be1",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 184
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Side lines, one line for an unchanged same region, and the side-state texts.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:b693112743946824c9835e510dcf73e4a5835fac66be517b358180d61ea52804",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 287
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:73dca720d19c272d146f0c686f1bb011ef47131c6e15e95fee5e04d08b9c94ed",
-            "locator": {
-              "end": 312,
-              "kind": "line_range",
-              "start": 297
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:a27f4f90b504fe28479ac3ff5971dbc513d7a0b19c8ce6cff3837ad12f2c7611",
-            "locator": {
-              "end": 324,
-              "kind": "line_range",
-              "start": 315
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:6a5ff5eccdc7e6e0820b935d480c47cf96402c18d831e90ffa9847fcfe0a6f74",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 326
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "One card: header, voices, side lines, excerpt, marks, actions.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:60a4a9d3e0c2ec692a5bcc1bf71ff6a55890770a024eb45f576c8ed3355c1c41",
-            "locator": {
-              "end": 431,
-              "kind": "line_range",
-              "start": 366
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "A voice: the authored rationale or facet, or the named gap.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:50246a897668b1b1708317d10fe5e0553fcc3aeae9c5d66592031969d3c99ce1",
-            "locator": {
-              "end": 474,
-              "kind": "line_range",
-              "start": 449
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Unchanged once, changed as a diff, sides that are not both regions shown apart; each marks the owner hunks whose changed lines it draws, on the sides it draws (MIK-L34).\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f0ec90b4f33dfc875cc31a2eae53f6ecb168695c",
-            "content": "sha256:828a885565ed778f47e1fb244674416441b38cdc4fd89a48e0828bb76f17de68",
-            "locator": {
-              "end": 482,
-              "kind": "line_range",
-              "start": 476
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The excerpt marking: only the drawn sides compared, a mismatch said, an unchanged file's card never active.\n\nAnchor: current source extent",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
-            "content": "sha256:33940a1f403a827f786c6584591a2fd3c8ceb8f2992eef7c40e922e2cc6d6525",
-            "locator": {
-              "end": 523,
-              "kind": "line_range",
-              "start": 491
+              "start": 414
             },
             "path": "dashboard/src/panels/review/IntentMarkers.tsx"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "37": {
+      "note": "ExpressionCards.tsx current behavior at this source owner.\n\nAnchor: \"function keepLastDrawing(content: HTMLElement): () => void {\"",
+      "targets": [
         {
           "anchor": {
-            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
-            "content": "sha256:3564649a4d4a827324e90f65bc3fc6f6662e712301dcdfb0a96345620682d0ce",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:f6397698a835ebe695f66b56db87e73b5e59454b97f0c26858143de6ef21abce",
             "locator": {
-              "end": 486,
+              "end": 558,
               "kind": "line_range",
-              "start": 475
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+              "start": 412
+            }
           },
           "kind": "code"
         }

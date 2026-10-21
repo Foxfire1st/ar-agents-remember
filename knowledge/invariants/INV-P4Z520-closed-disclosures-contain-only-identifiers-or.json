@@ -7,8 +7,9 @@
   },
   "applicability": "Disclosure discipline in the detail view.",
   "conditions": [
-    "A disclosure stays closed by default only for identifiers or provenance classes, named via data-disclosure; never for statements, effects, diffs, rationales, reasons, open-work counts or abnormal states.",
-    "Statement/effect/diff/rationale/reason components mark data-review-content roots for the disclosure test."
+    "Identifiers and provenance may remain closed. Each subject may also keep its unchanged and not-comparable locations in two counted groups whose headings state why; opening lists locations without cards.",
+    "Inside a card only unchanged code stretches fold to their line count and expand in place; changed code lines do not fold.",
+    "Required statement, effect, changed diff, rationale, reason and abnormal-state roots stay marked for the disclosure checks."
   ],
   "exclusions": [
     "Closed disclosures for merely-long content."
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Closed disclosures contain only identifiers or normal provenance, and required review content is marked and drawn outside them.",
+  "statement": "Closed disclosures contain identifiers or normal provenance, the counted unchanged/not-comparable location groups, or unchanged code stretches. Required changed review content and abnormal states remain outside them.",
   "status": "proposed",
   "supersedes": []
 }

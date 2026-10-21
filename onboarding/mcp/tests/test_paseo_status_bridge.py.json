@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "113286d928e06819c3548f6ca5d89888bcd4c7b2",
-        "content": "sha256:53994e4b5f2adf9c97c14805810c7fee5f0dc28208c97a76d6c81cc12ed4cb13",
+        "blob": "164d85d4956aae02e6be091ca21ca3d767b6fa87",
+        "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
         "locator": {
           "kind": "symbol",
           "name": "AgentStateScriptTests.test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone"
@@ -45,6 +45,40 @@
             "content": "sha256:5934eb8f0b3b7a4e82ed7e5bfd970d5192d21449d75e4ca647f30386b8911dc9",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The same complete/incomplete census is applied to the document tree and developer seat list.\n\nAnchor: \"def test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "164d85d4956aae02e6be091ca21ca3d767b6fa87",
+            "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scripted native listing retains its page and termination bounds.\n\nAnchor: \"def test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "164d85d4956aae02e6be091ca21ca3d767b6fa87",
+            "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 351
             }
           },
           "kind": "test"

@@ -2,252 +2,96 @@
   "path": "dashboard/src/panels/review/ReviewSurface.markers.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The real bodies of comparison 2, the routing and the held leaf-wide read.\n\nAnchor: \"markerReturn.task.captured.json\"",
+    "12": {
+      "note": "Captured reply routing and explicit catalogue/initial-question adapters.\n\nAnchor: `answer`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:ba92f5f13e4d64ba4bd13a42cd3e933b7f093fc180fa0c3d337f291ed8ee0638",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
             "locator": {
-              "kind": "symbol",
-              "name": "answer"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:996a37b125649f6492a3ac5cb0c7c79eac80e546485d7e13b5cffbdd78824391",
-            "locator": {
-              "kind": "symbol",
-              "name": "serve"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:e8ba2f4b512810e88829d7c5e46af3fd78bb9ad2f84272612a1d90d1ff78b3b5",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 23
+              "kind": "file"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "Spoken announcement of the followed marker return",
+    "13": {
+      "note": "Captured reply routing and explicit catalogue/initial-question adapters.\n\nAnchor: `serve`",
       "targets": [
         {
           "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:38c3b7c1a1b2222754797bc6d71114d08a4fa72ed58dc378f16722af333dfb3e",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
             "locator": {
-              "kind": "symbol",
-              "name": "focusedAnnouncement"
+              "kind": "file"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "11": {
-      "note": "Central target content contains the native reason and excludes the no-family statement; replace the removed centerReview symbol target with the actual assertions.\n\nAnchor: inclusive source ranges",
+    "14": {
+      "note": "Excerpt hunk marks and one comparison-pinned classification of the notes file.\n\nAnchor: \"it(\"marks each card excerpt's hunks, one marker per hunk, from the one classification\", async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:1aee33e9753095ab4c3edbc40a562e6ea7f6437eb010388ec46c1934b29043e7",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:59f851ef07aba8e1bb3e8620c49f1e3146e4a20d64d922a6ffd3c19fcd418ced",
             "locator": {
-              "end": 454,
+              "end": 137,
               "kind": "line_range",
-              "start": 432
+              "start": 118
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The first case checks two hunk marks from one classification read.\n\nAnchor: inclusive source ranges",
+    "15": {
+      "note": "Occurrence selection, excerpt origin Back restoration and held-return reading-block focus.\n\nAnchor: \"it('selects the tree position a marker names, and returns to the hunk with focus on the marker', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:99a0578fab28aff07ef131afb321b2dbd249d1048dc9795958399225e5b7296c",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:5ae0fb56e3dcda402d1bef46bd57423e9c6b0137c302ac7fd1ef8ad5c9748e04",
             "locator": {
-              "end": 142,
+              "end": 258,
               "kind": "line_range",
-              "start": 124
+              "start": 139
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "The retained marker journey checks member selection, excerpt marks and Back restoration; the following held-return case checks j selecting the next measured changed row.\n\nAnchor: inclusive source ranges",
+    "16": {
+      "note": "Unreadable roster, named partial target and before-absence versus after-unknown cases.\n\nAnchor: \"const unknownLinks = unknownSet.file.file_classification.hunks[0].links;\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:c3cfe490f955052cf6e4e33217d26c9a0f6dbb7c34ab850888f783417c595adf",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:1e4f03fc60f7db56325acf3403ed1f6361534effe4bbf0820c4080ec0848c433",
             "locator": {
-              "end": 220,
+              "end": 450,
               "kind": "line_range",
-              "start": 143
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:b26e0bfd69f9d7884dfe625817d834c4361bbc20a5d27d19dea99e67a244e767",
-            "locator": {
-              "end": 262,
-              "kind": "line_range",
-              "start": 222
+              "start": 270
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Comparison 3's bodies and the focused element's announcement.\n\nAnchor: \"markerUnknown.memberUnknown.captured.json\"",
+    "17": {
+      "note": "Originating notes-card excerpt lookup replaces the removed openFullFile helper.\n\nAnchor: `openNotesCard`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:38c3b7c1a1b2222754797bc6d71114d08a4fa72ed58dc378f16722af333dfb3e",
+            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
             "locator": {
-              "kind": "symbol",
-              "name": "focusedAnnouncement"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a1ebcb9fca76b5f51ca56233abcdfcb8f35bec74",
-            "content": "sha256:03c9ac7318efc8b855630e5d62902ec4b5fdb457f3354888e8727c304cdb0710",
-            "locator": {
-              "end": 206,
-              "kind": "line_range",
-              "start": 206
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Three current unknown-world cases check source availability, a focused named partial target, and before-side absence separated from partial/unavailable after-side unknown membership.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:b7fb4a8d6757e994d9a7c9224d762946bfe6de7bde7910f2abcec60adbbc9ea6",
-            "locator": {
-              "end": 457,
-              "kind": "line_range",
-              "start": 362
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The named unknown occurrence focuses a partial target state containing its reason; it does not select a fabricated member row.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:4b1b2a01d7c3b34a62952fbc3fc57c0df226d73fea3105a5e7518c7d5bb41f2b",
-            "locator": {
-              "end": 384,
-              "kind": "line_range",
-              "start": 369
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cd4cfa3ebb17378cb5e0574b5fe84f331ef32012",
-            "content": "sha256:c54e8f4b0bfddc7a038a57295bb531afaba19866bfa325e473f730fef5c9747e",
-            "locator": {
-              "end": 414,
-              "kind": "line_range",
-              "start": 402
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "In-card Full file opening for the marked file",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:fbea8e7b48c50ddfde82be649a1347ecd5ece662fc340d754b6526d9463bfc0b",
-            "locator": {
-              "kind": "symbol",
-              "name": "openFullFile"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Per-hunk mark extraction for assertions",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:e5fd69a2b5af5647c8927da30047d6a8cdf7c6e0aa2f1289dff07ee58f17d4f6",
-            "locator": {
-              "kind": "symbol",
-              "name": "marksOf"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "Unknown-membership world with unattributed links",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:7773d679f29736f44a896d36bfa4998fffa528e7645c13da5c37c52da4c5344d",
-            "locator": {
-              "kind": "symbol",
-              "name": "serveUnknown"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "589811ed9ea144eba15514df7afe4f621eb07723",
-            "content": "sha256:a6b2aa71217f7df9bf9be8aac27736bdeb2916f64e114a592f0bd2a17316eacf",
-            "locator": {
-              "end": 253,
-              "kind": "line_range",
-              "start": 237
+              "kind": "file"
             }
           },
           "kind": "test"

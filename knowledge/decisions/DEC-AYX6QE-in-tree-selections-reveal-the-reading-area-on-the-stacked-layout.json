@@ -8,8 +8,8 @@
   },
   "alternatives": [
     {
-      "option": "An in-tree subject selection on the stacked layout reveals the start of its reading area: the answer when it arrives, and the failed or refused status once the read ends unavailable. Focus stays on the selected row, and a status reveal moves no focus and leaves the focus request for a retry.",
-      "reason": "OR-R033 required the reading area to be visible without an additional Jump, and OR-R042 ruled that the requirement reaches a failed or refused read as well as an answered one; the reveal follows the existing focus guard and the existing 60rem breakpoint.",
+      "option": "An explicit subject selection arms one landing to the subject's heading when its read settles, unless the reader has scrolled since the click. Focus and tree-local row reveal have separate owners; an eligible failed/refused selection lands focus once and retains its focus request for Retry.",
+      "reason": "OR-R033 and OR-R042 established that one activation must show the selected answer or failed/refused status without requiring a second Jump. The approved MIK-R89 v2 rule 9 now gives the reading column one landing after a selection's read, cancelled by reader scrolling; the v2 page replaces the former 60rem stacked-only implementation. This account states the installed A4-F5 behavior and makes no new page-jump acceptance claim.",
       "status": "chosen"
     },
     {
@@ -26,12 +26,13 @@
     }
   ],
   "consequences": [
-    "On the stacked layout an in-tree selection scrolls the reading-area column to its start and focuses the selected row with `preventScroll`, so one activation reads, reveals and keeps the tree.",
-    "A failed or refused read reveals its own status without moving focus and without using up the selection's focus request, so a successful retry still follows the answer path.",
-    "A reader who moved focus while the read was on its way keeps both focus and the viewport; a lane destination and an opened file, which OR-R033 leaves unchanged, still do not reveal at the stacked layout."
+    "A selection arms one reading target. Once the selected subject's read is no longer loading, the page spends that target and lands once unless the reader has disarmed it by scrolling; the tree is never scrolled by that landing owner.",
+    "Above 40rem the reading column scrolls itself; at 40rem and narrower the surrounding page scrolls and the target is brought into view. This is a source account, not a browser geometry grade.",
+    "Eligible focus lands on the target-state notice or current tree row with preventScroll. Failed/refused selection focus lands once and keeps the request for Retry; a reader who moved focus keeps that focus. This focus guard is distinct from cancellation of the reading landing by reader scrolling.",
+    "The explicit Jump control and revealUnavailableRead are removed; neither is retained as an alternative route or a current source anchor."
   ],
-  "context": "On the stacked layout (60rem and narrower) the family tree stands above the reading area, and the reading area can begin thousands of pixels below the viewport. A selection of a row the tree shows read its subject, kept the tree and moved focus onto the row, but the answer (and, for a failed or refused read, the status that stands for it) stayed out of view until the reader found the explicit Jump control. This leaf's Worker's narrow probe of 2026-10-06 measured the answer 11,849 pixels below an 844-pixel viewport. OR-R033 asked for an ordinary-meaning correction; OR-R042 closed the answered-only reading of that ruling.",
-  "decider": "orchestrator (OR-R033, recorded 2026-10-06T16:22:47+02:00, and OR-R042, recorded 2026-10-06T17:19:10+02:00, in notes/run3/ORCHESTRATOR-RULINGS.md, under the developer's one-extra-round direction D82)",
+  "context": "This decision originally addressed L39's stacked layout (60rem and narrower), with the family tree above the reading area. A row selection read its subject, kept the tree and moved focus onto the row, while the answer or failed/refused status stayed below the viewport until the reader used Jump. The L39 Worker's 2026-10-06 narrow probe measured the answer 11,849 pixels below an 844-pixel viewport. OR-R033 asked for an ordinary-meaning correction and OR-R042 closed the answered-only reading. The approved MIK-R89 v2 page now replaces that implementation: the reading column scrolls itself above the 40rem stack, and one-shot selection landing is independent of focus and tree-row reveal. Jump-only and answered-only behavior remain rejected. The earlier probe remains historical evidence; D417 excludes page-jump probing, repair and grading from L89 acceptance. On reconsideration the developer confirmed in D428 that alternative 1 stays rejected for its recorded reason: the 40rem-and-narrower stack remains, so the reconsider_when condition is not met. D428 also authorizes the reconsider_on link to follow the current ReviewLayout.tsx file. The admitted MCP raise appended ROW-W3VBZ9 and canonical task question [reconsider:DEC-AYX6QE#1 raised by 260928-MIK-L89]. The Architect recorded developer answer D428 against that exact question through task_doc put_open_question (ar-tools-2026-10-21/121333296110-task_doc-8414ae51.json), under ruling 7f0d35f6. This subsequent reconsidered revision restores status active, keeps alternative 1 rejected for its recorded reason, and preserves the current ReviewLayout.tsx reconsider_on link.",
+  "decider": "orchestrator (OR-R033 and OR-R042, 2026-10-06, notes/run3/ORCHESTRATOR-RULINGS.md, under developer D82); current behavior amended by approved MIK-R89@v2 rules9/11 subject to D417. Developer D428 (2026-10-21), recorded by Architect97e0320d against [reconsider:DEC-AYX6QE#1 raised by 260928-MIK-L89] under ruling7f0d35f6: alternative1 stays rejected for its recorded reason; reconsider_on follows dashboard/src/panels/review/reading/ReviewLayout.tsx. Canonical task_doc put_open_question log ar-tools-2026-10-21/121333296110-task_doc-8414ae51.json. Reconsideration restores active status; context/history retain the full answer and raise evidence.",
   "id": "DEC-AYX6QE",
   "links": [
     {
@@ -58,13 +59,60 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
-        "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
+        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
+        "content": "sha256:9d41481d6897db661410ed7aee888a84c5f3b3d1885d830478c46bec178e5827",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b7e544766ef682ab915c8399be82f6c310cd1d41",
+        "content": "sha256:0b7d59defe798041f3f3ab33d4559bece2cd852c2b0334baecea339381a3be09",
         "locator": {
           "kind": "symbol",
-          "name": "revealUnavailableRead"
+          "name": "useScrollOnce"
+        },
+        "path": "dashboard/src/panels/review/reading/useScrollOnce.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+        "content": "sha256:407b39602ab0cbd68a615d6e9026336bfad3221cbd3d5cc0471bb2bdf0c5ca89",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewPage"
+        },
+        "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+        "content": "sha256:db2d771507d5e9bf2351e749e04ef60b9a592d9add2eaa37fb863fcfa2879438",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionFocus"
         },
         "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R89",
+        "packet": "requirements/MIK-R89-v2-the-intent-review-page-reads-a-change-set-from-its-changes.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
       }
     }
   ],
@@ -79,7 +127,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

@@ -15,7 +15,7 @@
     "A complete readable no-step history is none; unreadable/legacy sides, incomplete indexes and invalid relevant rows are unavailable, never none.",
     "Old family rows missing both effect and own revision remain explicitly unrecorded; half-recorded rows fail.",
     "Outline and subject answers use the same projection in existing response paths; returned continuation members retain their own steps, and the worklist shows the governing row only.",
-    "The reading block is outside disclosures; the tree remains one line with compact recorded labels and accessible names, and all nine label explanations are keyboard-operable.",
+    "The reading block remains outside disclosures. Tree rows remain one line and their accessible names retain the eligible owner-recorded effect sequence; the ordinary visible reason shows that sequence with its location count, while Memory currentness shows currentness. All nine label explanations remain keyboard-operable.",
     "A current subject/task response missing meaning_effects is a failure; a present empty field is valid."
   ],
   "exclusions": [
@@ -37,7 +37,7 @@
     "leaf": "260928-MIK-L43",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Where the reviewer shows that the reviewed leaf changed the meaning of an invariant or the guarantee of a family, it also shows the effect that the leaf's curator recorded for that change.",
   "status": "proposed",

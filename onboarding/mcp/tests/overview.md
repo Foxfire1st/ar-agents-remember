@@ -53,6 +53,14 @@ Grant/dashboard, direct-leaf role/integration refusal, direct landing and no-gra
 
 Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. Mounted ReviewSurface captures cover badges, complete step fields, keyboard explanations and missing-versus-empty state. Retained capture/provenance and real-ingest family display are distinct evidence classes; registration or mounted display alone claims no new invocation or installed acceptance.
 
+### Recorded comparison and developer-send witnesses
+
+Recorded-comparison tests distinguish a requested record from the latest answer and an unrecorded number, including separate retained catalogues after cleanup. Route-admission cases refuse a negative comparison before calling the port and forward a positive number unchanged. Revision-selection cases check display versions and recorded writer/origin attribution, keeping no recorded writer distinct from an incomplete index. Focused card cases derive each entry’s four memory values from the bound after-side index, retain optional symbol names, omit those values from the lane answer and refuse cache retention after failed memory reads.
+
+`test_developer_messages.py` protects the developer’s tray send through registered HTTP routes, composition, files, the held queue and recipient/log owners with a fake native host. Its cases cover ordered native text/image delivery and SHA-addressed files, exact tree/revision references and pre-filing contradiction/provenance/bound refusals, rollback of newly saved picks, and each message’s own held, terminal or partial-drain outcome. Recipient lists distinguish complete, damaged, truncated and unavailable censuses; sent logs retain bounded recent entries and recipients, and the cross-site guard precedes the tray route. The bridge cases separately check attachment options and malformed-payload refusal, while the native-listing fixture carries completeness into the recipient list.
+
+The dashboard-host case feeds the request head for 500 invariants to the actual h11 parser over two reads and checks foreground/daemon-child and reload limit configuration. Source-endpoint cases check `All changes` wording and truthful no-knowledge inventory, without treating returned text as browser layout evidence. These are source-declared controlled cases; no test execution, installed chat consumption or live-host acceptance is asserted.
+
 ### Tool regression witnesses on current input surfaces
 
 Overflow-sensitive archive, activation and install witnesses retain the delivered outcome but
@@ -871,3 +879,11 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 - Reviewer landing wording is checked in each discovered root’s exact step-8 detail, not only raw role files/two canonical capsules. [1782]
 
 - Current Reviewer source cases distinguish required judgment/semantic side states and retained assessment count consistency from the retired reviewer envelope; latency and memory-watch modules protect their separate read/observation boundaries. No execution is asserted. [1784]
+
+- Numbered comparisons preserve their own outline/counts and retained catalogue answers; route admission refuses negative input before the port and forwards positive input unchanged. [1789]
+- Selected display versions and converted-history writer outcomes distinguish recorded/introduction, no recorded writer and unavailable history. [1790]
+- Card-entry memory values come from the bound after index; lane omission and failed-memory non-retention remain explicit. [1791]
+- Developer-send and seat-list cases use actual in-process owners with a fake native host; separate sent-log and cross-site cases protect bounded storage and the pre-route guard. [1792]
+- The controlled bridge asserts native attachment options and pre-operation invalid-payload refusal; complete versus truncated listings carry into the recipient list. [1793]
+- The request head for 500 invariants is checked against actual two-read h11 parsing and foreground/daemon-child plus reload configuration. [1794]
+- No-knowledge task-context source cases assert All changes wording, no sentence break in the statement and inventory truth without browser-layout evidence. [1795]

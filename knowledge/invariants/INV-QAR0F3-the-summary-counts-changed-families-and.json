@@ -5,13 +5,18 @@
     ],
     "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.navigationTree.test.tsx; ReviewSurface.lane.test.tsx"
   },
-  "applicability": "The one summary line in both views.",
+  "applicability": "The one summary line above the intent-review reading column in both Changed and All views.",
   "conditions": [
-    "F counts added/removed/changed/N-changed families; I counts added/removed/changed invariants once each; U/K are the two lane file totals.",
-    "Loading parts read ellipsis; unreadable parts read unavailable, never zero."
+    "The line reports changed invariant identities and their recorded effects, changed locations in distinct files, files without an invariant, folded unchanged or not-comparable locations, and the active sort.",
+    "Changed invariant identities and recorded effects come from the outline; location and folded totals come from the shown subjects in the one change-set model.",
+    "Location and folded counts count entries, including each entry sharing a drawn region; drawing one shared card does not reduce those totals.",
+    "Files without an invariant combine unexplained and unknown-attribution buckets, taken from counted summary attribution or the ready lane inventory.",
+    "A loading part reads ellipsis; an unmeasurable part names the unavailable quantity instead of displaying a numeric count."
   ],
   "exclusions": [
-    "The three retired count lines."
+    "The former family-count/U/K sidebar summary format.",
+    "Counting drawn cards instead of recorded location entries.",
+    "Treating a failed, incomplete or pending measurement as a measured zero."
   ],
   "id": "INV-QAR0F3",
   "origin": {
@@ -25,9 +30,9 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The summary counts changed families and invariant records once and states lane loading or unavailability without inventing zero.",
+  "statement": "The reading column's summary counts changed invariant identities and recorded locations from the comparison model, and names loading or unavailable totals without inventing zero.",
   "status": "proposed",
   "supersedes": []
 }

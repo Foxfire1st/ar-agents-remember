@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:4f733e1ab6cf07fee26124289daf5aab92148b2bb0c5bf7a8333e3e06e418082",
         "locator": {
           "kind": "symbol",
@@ -94,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-        "content": "sha256:717da16c1b4f7e40792a160b15678df1f23d02908151df30247ae46708770a38",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+        "content": "sha256:760ef120276d8054fabfc8dcdf82b6a8aa057a38b63cdc690c986ed28698e23e",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:b9198d9a7c6853fc912135bab8e52985a17a1a7658279c7bb618adfc3f1ceaf1",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
         "locator": {
           "kind": "symbol",
@@ -237,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:b68adbcba4f772f549b2e6e9540d15881adc327c8f53ae204ff7d4bf6d4ba0ea",
         "locator": {
           "kind": "symbol",
@@ -255,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
         "locator": {
           "kind": "symbol",
@@ -273,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
         "locator": {
           "kind": "symbol",
@@ -291,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
         "locator": {
           "kind": "symbol",
@@ -309,7 +309,7 @@
     },
     {
       "anchor": {
-        "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+        "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
         "content": "sha256:402fb9f6b031ec015b4464d0907cc5b08aea3b1ed19ba8f806c34f29ae967f3d",
         "locator": {
           "kind": "symbol",
@@ -327,243 +327,103 @@
     }
   ],
   "references": {
-    "53": {
-      "note": "Request-local lookup reuse, comparison selection and focused dispatch use the actual current path.\n\nAnchor: Current source boundary",
+    "67": {
+      "note": "Request-local reads choose one comparison and dispatch to the requested answer.\n\nAnchor: \"def read_review_trees(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:8fd377eaf44b5bf8d84306e16f43e1e2de6597cd8db6f756576fe433beae30cb",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:69f5a4d13bfd706ed64cc0bfb86332b6ed3ef3961fa4f1cf24a7b735276daab8",
             "locator": {
-              "end": 223,
+              "end": 224,
               "kind": "line_range",
-              "start": 139
+              "start": 140
             }
           },
           "kind": "code"
         }
       ]
     },
-    "54": {
-      "note": "The root view projects currentness, worklist and supplied code-change facts.\n\nAnchor: Current source boundary",
+    "68": {
+      "note": "Leaf-wide response and memo admission retain code facts, explicit retry/refusal and replayed reads.\n\nAnchor: \"def _leaf_wide_parts(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:402fb9f6b031ec015b4464d0907cc5b08aea3b1ed19ba8f806c34f29ae967f3d",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:5ca8c4504ef5e6c56a7fd8eb258f6fb46c6749444f8dd4fad01b83c70e3ca2d7",
             "locator": {
-              "end": 254,
+              "end": 335,
               "kind": "line_range",
-              "start": 226
+              "start": 227
             }
           },
           "kind": "code"
         }
       ]
     },
-    "55": {
-      "note": "Memo lookup, moved-input retry and process-refusal handling remain explicit.\n\nAnchor: Current source boundary",
+    "69": {
+      "note": "Only card reads forward both entries and entry_memory.\n\nAnchor: \"def _focused(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:9be13b25b861a5b4440a29c285e6a1a9831eb86fce5b0f96c6660030871423ce",
             "locator": {
-              "end": 304,
+              "end": 364,
               "kind": "line_range",
-              "start": 257
+              "start": 338
             }
           },
           "kind": "code"
         }
       ]
     },
-    "56": {
-      "note": "Settling checks include decided item states and supplied code-change facts; recorded reads replay in finally.\n\nAnchor: Current source boundary",
+    "70": {
+      "note": "Exact aggregate patch paths and grouping remain a separate public helper.\n\nAnchor: \"def knowledge_tree_diff(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:f273796f1fbceff80871ecc7e28510e4250b45c98b2deb59b5b6c0f22ad437b4",
             "locator": {
-              "end": 334,
+              "end": 552,
               "kind": "line_range",
-              "start": 307
+              "start": 403
             }
           },
           "kind": "code"
         }
       ]
     },
-    "57": {
-      "note": "Focused payloads and identifier-shaped key projection stay separate from the leaf-wide body.\n\nAnchor: Current source boundary",
+    "71": {
+      "note": "Standalone patch/blob recovery retains incomplete state and literal path matching.\n\nAnchor: \"def _listed_changes(repository: Path, before: str, after: str) -> list[_Listed]:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:cdce66acce9e7fe71475d4138a261b00bf6c9678337a891389fe9c49f0012948",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:4897446d9bc3759c17b6c5e8dcca223a82c7ee7f0f2728b63dabaf7d4cd71d04",
             "locator": {
-              "end": 391,
+              "end": 704,
               "kind": "line_range",
-              "start": 337
+              "start": 554
             }
           },
           "kind": "code"
         }
       ]
     },
-    "58": {
-      "note": "The public standalone diff delegates to its separately measured aggregate implementation.\n\nAnchor: Current source boundary",
+    "72": {
+      "note": "The child-owned worklist keeps actual binding, source and typed adjunct facts.\n\nAnchor: \"def _worklist_view(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:7f48d7718356a822b2097db4633d1d865ef2834efff79d0cf1ed54fdce4aa490",
-            "locator": {
-              "end": 489,
-              "kind": "line_range",
-              "start": 397
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "59": {
-      "note": "Aggregate diff groups records, sources, history and other without becoming a leaf-wide answer field.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:9e26178b34636b3baa763879ac6a2ddac715dbc46fc942de5dfd42a65398f1d6",
-            "locator": {
-              "end": 545,
-              "kind": "line_range",
-              "start": 492
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "60": {
-      "note": "Exact path listing and bounded retry retain actual standalone patch completeness.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:242ecc140f76bd6e00bf8f3d88e2d82c3bdaf652b24342404cda6c2b889a8ba7",
-            "locator": {
-              "end": 653,
-              "kind": "line_range",
-              "start": 548
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "61": {
-      "note": "Quoted Git paths, blob recovery and changed-entry grouping belong to the standalone diff.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
-            "content": "sha256:0de6bdffdb86fcfc954c11cbbfe97257ab0a0dc9e93b16e5c8a469a5a3730d61",
-            "locator": {
-              "end": 767,
-              "kind": "line_range",
-              "start": 669
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "62": {
-      "note": "Both live and recorded worklist paths consume isolated review adjuncts, typed verdicts and the current binding owner.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "35d4cf1464edc9940c6fbd299f919ad2c959405b",
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
             "content": "sha256:8b0685038c2fa00a0e3c54f186f2ea3def7b3e96d9a20877bd14f8adecf35dec",
             "locator": {
-              "end": 845,
+              "end": 851,
               "kind": "line_range",
-              "start": 776
+              "start": 782
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "63": {
-      "note": "Side currentness is computed against its own code tree and serializes only non-current entries.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
-            "content": "sha256:ea6442c4bc3d22d0bbc2140ec45ef2d14072d7e1f939aefbe22c6a694895be5d",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 15
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "64": {
-      "note": "The extracted history owner follows item/row subjects and latest owner attempts.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
-            "content": "sha256:5de4528c9df8c0582d6ba84e5e4d4041b710d386cdd284c5b3c74a4d1188787b",
-            "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 47
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "65": {
-      "note": "The current pairing predicate also checks the memory-base tree.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
-            "content": "sha256:dc17ff4f228913616c50052cb3e2d5e3bbb5703bf4dc4b0de9bbcbade080f097",
-            "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "66": {
-      "note": "The child reads persisted work for recorded trees and computes live work before supplying adjunct facts.\n\nAnchor: Current source boundary",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
-            "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py"
           },
           "kind": "code"
         }

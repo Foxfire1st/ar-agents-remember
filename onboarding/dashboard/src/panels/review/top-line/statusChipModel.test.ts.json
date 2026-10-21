@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/top-line/statusChipModel.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two exact formatting cases\n\nAnchor: \"it(\"writes a time of the current year without its year, and another year's with it\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b175ec3f8a4efce5640b06baf4588687eb18d7ff",
+            "content": "sha256:9f4fc29bfb2de00c8080ff5416189dfaf31c35e099b89cc22f1b2c0b1121d7ee",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

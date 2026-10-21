@@ -202,6 +202,8 @@ None recorded. The vocabulary is complete for the two comparisons it owns; any r
 a bounded roster belongs to `FamilyTree.tsx` and `FamilyReviewCenter.tsx`, which read these values
 rather than extend them.
 
+The selected revision value additionally carries optional `before_display_version`/`after_display_version` and optional `before_writer`/`after_writer`. `ReviewRevisionWriter` keeps `recorded`, `introduced`, `not_recorded` and `unavailable` distinct, with `owners` and `detail`; omitted side facts stay omitted. These declarations carry server-selected facts and choose no writer or revision in the browser.
+
 ## Evidence
 
 ### Docs References
@@ -294,3 +296,5 @@ mirrors a server module of the *same* repository across the client/server proces
 one association it carries is an in-repository contract rather than a cross-repo dependency.
 
 No meaningful cross-repo references found.
+
+- Selected revisions carry owner-supplied display versions and writer facts without browser defaulting. [35]

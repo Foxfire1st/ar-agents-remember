@@ -1,0 +1,112 @@
+{
+  "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7d93eb292cff4db200e775504be284256f58938e",
+        "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+        "locator": {
+          "kind": "symbol",
+          "name": "TechnicalDetails"
+        }
+      },
+      "id": "RLZ-7V0Z0QCY",
+      "invariant": "INV-8VQR13WX",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Displays selected-subject provenance/record identities only from the shown answer; a pending/unavailable different question cannot supply previous-subject identities.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7d93eb292cff4db200e775504be284256f58938e",
+        "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+        "locator": {
+          "kind": "symbol",
+          "name": "TechnicalDetails"
+        }
+      },
+      "id": "RLZ-8D95SD",
+      "invariant": "INV-P4Z520",
+      "origin": {
+        "handoffEntry": "CUR-L57-open-movement-facts-parent-carrier",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "ReviewScopeHeader was replaced by the provenance-only Technical details owner; record label/scope facts now have separate exports.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7d93eb292cff4db200e775504be284256f58938e",
+        "content": "sha256:cd5bb3288816b8f31b0002698ab7e56ff91a4d66dce9bbecb1ebf6ac998a8a45",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryIdentifiers"
+        }
+      },
+      "id": "RLZ-DB9HX0",
+      "invariant": "INV-9VPYCZ",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F07",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Lists all entries supplied by the page card read once, with each before/after blob and content digest, inside the single Technical details provenance fold.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside.\n\nAnchor: \"function EntryIdentifiers({ entries }: { entries: readonly ReviewTreeEntry[] }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:ad06a357be2b07fbb938957495b22a5510eda9e0e594927435f6cbcaf9ec2696",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside.\n\nAnchor: \"function introducedBy(origin: ReviewOrigin): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:951b70d1ef813370253aba5743ff7bdc3cb3b6d9da032925054bdbca712955a9",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside.\n\nAnchor: \"function Origins({ payload }: { payload: ReviewPayload }) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:211dfae1967d70807d9c1bdeedab21e5c7970461d5d62cd3e6b6d6c2dbcf1708",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,139 +1,53 @@
 {
   "path": "dashboard/src/panels/review/markerNavigation.test.ts",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-        "content": "sha256:61bd22bc54b223cbcea84d6aaae59dadeea422e3dbf5260f056065298c111db1",
-        "locator": {
-          "end": 111,
-          "kind": "line_range",
-          "start": 102
-        }
-      },
-      "facet": "A follow and its return each call the navigation's `onSelect` once, with a subject and a family context and no options, so neither keeps the tree.",
-      "id": "PRF-4B1CFZ",
-      "invariant": "INV-9ZKYWQ",
-      "origin": {
-        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
-        "leaf": "260928-MIK-L39"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [],
   "references": {
-    "10": {
-      "note": "The moves under test.",
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"selects the invariant's own review at its member row of the named family\", () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
-            "content": "sha256:5adb0563f1b308eae62564e17c9af2d1dd5c34bd0a2d6a34ad45ae90c259c166",
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:66750c5f20a939b758e9882c4fe39cd491fccdad0208b954771b18b5f7c839ec",
             "locator": {
-              "kind": "symbol",
-              "name": "workspaceMarkerMoves"
-            },
-            "path": "dashboard/src/panels/review/markerNavigation.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The options a selection would have to pass to keep the tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
-            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectionOptions"
-            },
-            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The recorded return restores the worklist boolean after the subject before file, layout and full-file state.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:4b007cefd05bc996d27d4332e6168bda0ae95d6260b94eb55183ffe3033aaab0",
-            "locator": {
-              "end": 96,
+              "end": 47,
               "kind": "line_range",
-              "start": 70
+              "start": 34
             }
           },
           "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "The recording stand-ins.",
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('selects the invariant alone when no family records it', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:ae6985b84901fcb2f05899ea0873038ff9b3c000d0912a00dc44e8cb5c726c27",
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:cc64a6d67136b2af356e2151bfcccd55c1680cf5df6d6280ac3678cf9d96aeeb",
             "locator": {
-              "kind": "symbol",
-              "name": "workspace"
+              "end": 60,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "Following a marker.",
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('restores the subject, then the worklist view', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:cece3952bb4f21aad1fbbc247a2ee371a006f0bccbdc9ab1d635f7f28d54516d",
             "locator": {
-              "end": 112,
+              "end": 73,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The return.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A follow and its return select with two arguments only, so both start the walked tree afresh.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4e402266494a293cc591f724beca9bdb773ccf27",
-            "content": "sha256:75577974bc2337a2d0e1d98160d802a223bcee4cda9553186c3c564ea41ba78a",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 1
+              "start": 61
             }
           },
           "kind": "test"

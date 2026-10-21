@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Panel and plugin controls jointly preserve the developer’s selection, with direct selection/focus/copy-call assertions guarding this collection boundary."
+  },
+  "applicability": "Panel/chat selection offers and the tray’s collection/open controls, with explicit text editing outside the collection action.",
+  "conditions": [
+    "Offer/add/open mousedown prevents the default focus transfer; adding does not clear the browser selection.",
+    "Copy on highlight defaults on and is kept per browser origin; disabling it suppresses the native copy request.",
+    "The native copy call’s failure is ignored and does not replace clipboard content or prevent offering the pick."
+  ],
+  "exclusions": [
+    "Intentional focus for note or message editing is not a collection control action.",
+    "The tests exercise copy calls and selection logic, not a real OS clipboard guarantee."
+  ],
+  "id": "INV-8TZW5X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Curator synthesis at A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, change sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; MIK-R188 v1 packet; source producer rows: MIK-R188@v1 rule 4 · non-modal; MIK-R188@v1 rule 4 · copy on highlight. Original producer inputs: role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028. Tests named only as proof anchors; this helper ran no tests."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "TRAY04",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Collection controls preserve the highlighted selection and focus, while copy on highlight follows the dashboard preference and leaves native copy refusal intact.",
+  "status": "proposed",
+  "supersedes": []
+}

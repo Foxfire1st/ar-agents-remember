@@ -9,7 +9,7 @@ A configured Step up action stays in the shared wrapping launcher and sends cano
 
 The dashboard is the operator-facing React cockpit for server-composed task, lifecycle, enclosure, observer and native-host evidence. Its browser layer presents that evidence and requests explicitly owned operations; it does not become lifecycle, candidate-selection, certification, recovery, commit or integration authority.
 
-The current product bar is Chats, Operations, Knowledge and File Viewer. Chats is the default; a valid knowledge-reader address selects Knowledge and a valid review address selects Operations with its review takeover. Injected retained views have no product-bar entry and establish no fresh mounted evidence.
+The current product bar is Chats, Operations, Knowledge and File Viewer. Chats is the default; a valid knowledge-reader address selects Knowledge, while a valid review address selects the review page within Operations. Injected retained views have no product-bar entry and establish no fresh mounted evidence.
 
 Current Chats mounts the native Role Chats pane and embedded Paseo chat. The host owns chat navigation. The dashboard owns the role-launch controls, task/workspace/request addressing and report presentation around that frame. The older FEUI/CHATS structured-conversation architecture remains important inherited intent and child-route history; it is not the present shell's full-page Chats composition.
 
@@ -21,15 +21,15 @@ Operations consumes one server-composed TaskEntry forest: authored task status s
 
 TaskSummary supplies revision-qualified prose, optional nonGoals, acceptance, completedAt and forward/reverse dependency references, with optional cycle-marked graph views. The producer generates the core schema and TypeScript/served tail; dev and manual snapshot values illustrate shape, not native derivation, task completion or host execution.
 
-Start at cockpit/Cockpit.tsx for shared inputs, retained layers and takeover dispatch; cockpit/layout.tsx owns responsive styles and cockpit/reviewHash.ts owns review URL state. The narrow shell can scroll vertically while the change/review takeover is fixed; the older universal fixed-bars/hidden-overflow account is not a promise at every width. Retained readers and native chat still own activation and their own data.
+Start at cockpit/Cockpit.tsx for shared inputs, retained layers and the Operations review slot; cockpit/layout.tsx owns responsive shell styles, cockpit/reviewPage.tsx positions the review and shared chat column, and cockpit/reviewHash.ts owns the review address. Above 40rem the reading column scrolls inside the review grid; at 40rem and below the review main covers the screen and scrolls the stacked tree and reading content. Retained readers and native chat keep their own activation and data owners.
 
 For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model and launcher children, then `PaseoChatFrame.tsx` and its frame controller. The native Paseo role route retains canonical scope and exact request identity through RoleChatsPane composition, roleChatControls actions/storage, roleChatOptionsLoader adoption and RoleChatsView presentation. The shared RoleLauncher composes local controls with pure readiness/display and selection-repair owners; model/effort/tier and converted-memory/publication authorities remain separate. The launcher separates canonical document scope, options scope and exact execution request identity. Saved request receipts are matched by UUID rather than substituted by another execution with the same role. Result/report, Retry, Revive and restore remain tied to the selected request. Backend capacity and host execution remain backend responsibilities; a local receipt or missing browser guard is not evidence about the entire launch call path. The literal public MCP roster now contains 41 names: the 40-name successor after dispatch_agent removal plus the mounted knowledge_write this leaf adds, compared with 39 at 8d2e7547, which added role_start_set and retire_child; this source count establishes no execution result.
 
 For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The shared artifact takeover selects `notes-reader`, `requirements-reader`, `decisions-reader` or `report-reader` from the artifact kind; these are takeover markers, not additional product-bar modes.
 
-For change sets and Intent Review, start at `panels/detail-panel/changeSetBar.tsx`, `intentReviewEntry.tsx` and the existing change-set takeover. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets, and an always-present task-context Intent Review entry. Liveness selects live versus recorded review identity. The review entry's counts are changed-intent counts from the comparison summary, not changed-line counts or catalogue size.
+For change sets and Intent Review, start at panels/detail-panel/changeSetBar.tsx and intentReviewEntry.tsx, then follow the separate ChangeSetTakeover or Operations ReviewMain composition. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets and an always-present task-context review entry. Liveness selects live versus recorded review identity; review counts measure changed intent, not changed lines or catalogue size.
 
-The current card inventory link opens the existing change-set page for all changed files; measured inventory count and unavailable/unmeasured state remain distinct, and non-text file badges use the supplied inventory rather than Engine Room fixtures.
+The tree heading has the review page’s one All changes link, opening the comparison-bound ChangeSetViewer. Its changed-file count distinguishes a measured count from pending or unavailable measurement; non-text badges come from the supplied comparison inventory. Whole-file inspection also remains available through path links.
 
 For projection contract changes, follow the producer schema and projection generator before generated TypeScript/schema or the manual snapshot. TaskEntry stage/activity/eventAt is the shared task-status input. The distinct enclosure lifecycle-operation envelope retains version, identity, component bindings, worker/approval/recommended-action facts and optional meaningful revision/task intent for operation diagnostics and recovery; those fields are not a second task activity clock or browser-created authority.
 
@@ -41,19 +41,21 @@ The task reader presents one track-and-knob Direct execution switch only on a pl
 
 `Cockpit` wires live inputs and chooses the hash-derived initial view. `CockpitShell` owns the screen wake-lock driver and shell state/actions. Removed AR session catalog/reconciliation feeds supply no current driver. Shell state owns navigation, selected native task-entry context, rail preference and widths, and artifact/change-set takeover targets.
 
-Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment explicitly distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set takeover takes screen precedence. Change-set/review takeovers are conditionally mounted through their common target. Retention claims must therefore be scoped to the layer that actually owns them.
+Operations, File Viewer, Knowledge and Role Chats are mounted layers whose visibility changes. The File Viewer comment distinguishes retained reader state from its deferred boot catalog read. Notes are mounted after first opening and remain hidden after Back, preserving their listing and open note; a change-set target takes screen precedence. The review page mounts conditionally in the railed grid beside the existing right rail, with the Operations content hidden underneath. Retention claims belong to the layer that owns them.
 
 The shell's main viewport deliberately hides overflow: panels own their scrollports. This is a composition obligation, not proof that every possible injected panel is scrollable. Rails likewise delegate scrolling to their panel children. Memoized layers, stable callbacks and identity-stable store slices express the intent to avoid reconciling entire retained surfaces on each navigation change; old timing measurements do not certify present performance.
 
 The task list fills the left rail; attention lives behind its header bell in a bounded overlay rather than a sibling height-consuming block. Compact grouping, bell and Clear all controls share viewTabLook authority. These presentation changes retain existing action and identity contracts.
 
-Operations' right rail selects Event River or the selected task's native document chat. The removed contextual RailChat path is not the current owner. There is no shell-mounted HighlightComposer. Native tasks come from `s.tasks` as a memoized `Object.values` array; the stable empty-array fallback belongs to `analytics?.engineProcesses`, not a second task-document collection.
+Operations’ right rail selects Event River or the selected task’s native document chat. During review the same right rail presents only that review task’s chat, preloaded while its column is closed; its frame stays in the same mounted position. The review target resolves its task through the shared task map and names pending or missing task identity. The page-wide TrayLayer is mounted by the shell, and its Tray button sits beside the four view tabs. Native tasks still come from `s.tasks` as memoized `Object.values`; the stable empty-array fallback belongs to `analytics?.engineProcesses`.
 
 ### Native Chats and execution identity
 
 `RoleChatsPane` retains launch selection, scoped options, execution receipts, request restoration and report state. It checks current document/request scope before accepting execution results. Request-addressed roles distinguish a saved unresolved request from an accepted receipt, preserve retry payloads and withhold Start/Revive when the saved request has no receipt. Options reads are activated by a complete visible selection, can be aborted, and handle the backend's launch-in-progress answer with a bounded delayed reread. This scoped reread must not be confused with the historical prohibition on background retry loops for serving-build identity.
 
 The embedded frame obtains its descriptor from the backend, distinguishes not-configured, unreachable, origin-not-listed and backend failures, and offers explicit Retry. Its controller follows receipt-derived agent/workspace identity and retains the frame while the pane is hidden. The inherited native-route policy keeps the host's own list as navigation, the launcher strip limited to controls and its failure presentation, and requested model/effort/service-tier intent distinct from observed host values. The inherited Parent-control contract follows the current native child's SDK parent/workspace relation only while the live front value is known; that plugin-side relation was not independently re-adjudicated here.
+
+A hidden review preload starts the client on an agent-free URL; preload is opt-in, and other panes keep first-activation startup. The controller checks the configured origin and actual frame window before parsing tray picks or composer measurements. Picks require message-time provenance; unavailable reads retain a named reason, and relinking or stopping releases the previous tray subscription. The [tray route](tray/overview.md) owns collection, default recipients and sending; the frame channel adds no role-start or navigation action.
 
 Sprint provenance remains an inherited cross-dashboard identity requirement: `spawnRepo`/`spawnSprint` must not collapse equal role names from different sprints, command groups are sprint-specific, and unbound legacy rows stay isolated. Current native execution scope and older session-flow provenance are related responsibilities, not interchangeable implementations.
 
@@ -79,15 +81,15 @@ The master viewer and bar both request `includeLeaves: true`. A landed/non-worki
 
 A counter read distinguishes loading, refusal/unreadable/unanswered failure, unrecorded committed endpoints, measured empty and measured counts. An unrecorded live-leaf committed range withholds its total: `+0 −0` would falsely present an unmeasured range as a zero measurement. Named refusal details carry the owner's code, its reason and the echoed repo/scope identifier where the route supplies one; the change-set client decodes no next-action field. The viewer likewise names refusal and explicitly distinguishes a change set measured empty in both code and memory halves from the pick-a-file backdrop. Unknown leaf, invalid mode and enclosure scope remain inherited distinct route refusals; they were not newly exercised here.
 
-Intent Review is a variant of `ChangeSetTarget`. Presence of its `review` field selects the reviewer; an empty object is a task-context review, not absence of the variant. The takeover dispatch mounts ReviewSurface instead of ChangeSetViewer and forwards optional selector and recorded-history identity. Within the reviewer, All/Unexplained/Unknown changes actions separately mount ChangeSetViewer on the recorded comparison over the retained review. Card Full file and the retained dataset expression view still use bound SourceContent. The browser addresses the record it was given; the server resolves the candidate/comparison.
+Intent Review is a variant of `ChangeSetTarget`: presence of `review`, including `{}`, selects task-context review. The shell renders ReviewMain in Operations’ railed grid and forwards an optional subject and recorded-history identity to ReviewSurface. The review’s tree and path links open a separate comparison-bound ChangeSetViewer over the retained, inert review body. The tree owns All changes; card excerpts use the page’s Changes only / Full context control rather than a SourceContent or per-card Full file surface. The server resolves candidate/comparison identity.
 
-The task entry reads the comparison summary, never the subject catalogue. Summary availability labels the control and does not gate navigation. Every leaf has the review control: live leaves use `{}`, closed leaves use `{ historical: true }`. Working change sets alone remain live-gated. The reviewer owns catalogue loading, subject choice and explicit comparison refresh. Added/removed intent revisions, partial/unresolved intent, and unexplained/unknown attribution are separate facts. Unavailable knowledge prints a named state without counts; partial counts stay marked partial. Attribution partial/unknown has its own disclosure, and zero attribution, pending reads and dataset comparisons do not invent an unexplained count.
+The task entry reads the comparison summary, never the subject catalogue. Summary availability labels the control and does not gate navigation. Every leaf has the review control: live leaves use `{}`, closed leaves use `{ historical: true }`; working change sets remain live-gated. The reviewer loads its own catalogue and change-set reads and opens unselected unless a target or validated URL names a selection. Added/removed intent revisions, partial/unresolved intent and unexplained/unknown attribution remain separate facts; unavailable or partial knowledge and attribution keep their named states without invented counts.
 
 Review transport has its own body-first decoder. It reads JSON regardless of HTTP status and returns bodies carrying a string `state`; caller-side admission determines which states are understood. A non-route body is unreadable, and no HTTP response is a network failure. Refusal conversion preserves published facts. This is deliberately distinct from the other clients' throw-on-non-2xx semantics and is not a generic validation of every returned field.
 
-The review cycle keys task, subject, page and live/recorded history. Sequence/cleanup and memory-input epoch checks exclude old answers, including from the compatible unshown whole-task exception. Refresh carries the displayed digest only for its exact question/read. An active live reviewer registers memory notifications on the existing stream, engages the current subject, invalidates whole-review cache and refreshes; it does not open a second poller. Family continuation remains separately admitted. This source account is not browser or semantic acceptance.
+The review cycle keys task, subject, page and live/recorded history. Sequence/cleanup and memory-input epoch checks exclude old answers, including the compatible unshown whole-task exception. Refresh carries the displayed digest only for its exact question/read. Active live-review memory notifications use the existing stream to invalidate whole-review answers and revalidate; no subject-engagement hold remains. Family continuation keeps its own identity/cursor admission.
 
-The reviewer owns its scrollport and narrow-width wrapping. Current source retains token-based amber washes, path `overflow-wrap: anywhere`, minimum-width reductions and a scrollable ReviewSurface root. Token-resolved `oklch` remains intentional: removal of hand-copied amber literals never meant that computed styles must contain no `oklch`. The inherited narrow-jump and chosen-in-this-column wording intent remains useful; earlier placement and layout measurements are historical witnesses rather than current coordinates.
+The review root clips overflow above 40rem; its tree has a local scroller and ReadingColumn owns the reading scrollport. At 40rem and below ReviewMain scrolls the stacked page while ReadingColumn uses visible vertical overflow. Minimum widths and wrapping remain bounded, and amber washes use token-based oklab mixes. Earlier narrow-layout measurements retain their historical scope; current source supplies no new browser or page-jump acceptance.
 
 ### Development and verification support
 
@@ -100,13 +102,13 @@ Engine Room currently composes enclosures, their process map/stack, boot timelin
 
 ### Native selection and source-owner qualifications
 
-Chats mounts one persistent RoleChats/Paseo iframe; Operations retains its own one-frame document-chat surface. The host's list, not a dashboard list of chats, owns navigation. View/result reads retain the frame. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. An unknown lookup keeps the application's current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the retained frame behind its bound launcher. The role-launch selectors and document-chat bindings resolve the shared entries' ordered children and canonical references; they do not reconstruct hierarchy from a second task-document/series catalogue.
+Chats mounts one persistent RoleChats/Paseo iframe. Operations and the review page share the retained right-rail document-chat frame; the review supplies its own task reference and closed-column preloading. The host’s list owns native navigation. On Operations a known selection switches by trusted ar.open with the click; bounded tree preknowledge is refreshed by one batch while pane and tab are visible, and a fresh document answer corrects it. Unknown lookup keeps the application’s current screen visible and inert under one waiting line. Only a confirmed agentless selection hides the frame behind its bound launcher. Role-launch selectors and document-chat bindings use shared entries’ ordered children and canonical references.
 
 A slow host or native drawing answer remains waiting while the application answers pings. Recovery URL loads require application-ping silence, explicit Retry or a returned host; a plugin explicitly unable to open agents keeps its separate URL-only path. With the current plugin, input belongs to the selected native screen once on-chat is reported, the waiting line stays through drawing, and the application's own failed-load pane/Retry ends that wait without dashboard-invented failure prose. A less capable older plugin still switches and its notice names provisioning and any early-answer limitation. Draft/scroll preservation is only the host's native behavior, not an extra dashboard promise.
 
 The plugin's Parent action retains the live selected-source/relation checks. Canonical selection, exact launched-request identity, dynamic model/effort/tier validation and observed host values remain their existing owners; chat cache and display messages acquire no task acceptance or launch authority.
 
-The dashboard frontend is the operator-facing React cockpit. Product views are native Chats, Operations, Knowledge and File Viewer, with notes/change-set/review takeovers; task detail is the Operations layer's persistent panel, not a takeover. Retained internal/dev layouts project observer and provider evidence; the terminal-catalog and adapter/control owners are not in the pinned source, and a retained layout does not add a product-bar entry.
+The dashboard frontend is the operator-facing React cockpit. Product views are native Chats, Operations, Knowledge and File Viewer. Notes and change sets have focused takeovers; the review page lives within Operations beside its shared task chat. Task detail remains the Operations layer’s persistent panel. Retained internal/dev layouts project observer and provider evidence; terminal-catalog and adapter/control owners are absent, and injected layouts add no product-bar entry.
 
 - [data overview](data/overview.md) — retained projection state, task/document identity and the
   review, change-set, file and knowledge transports, with their authority boundaries.
@@ -121,7 +123,7 @@ The terminal catalog and adapter/control routes are not registered in the pinned
 
 The current product Chats layer mounts `RoleChatsPane` in `MainLayers`, backed by the shared native `PaseoChatFrame`, and stays mounted while other dashboard views are shown. The host's own chat list and screen, not the retained controlled-session cockpit or `ConversationSurface`, own this product destination. Operations has its separate retained document-chat frame; neither route promises an additional dashboard conversation-history database.
 
-The product bar contains Chats, Operations, Knowledge and File Viewer. Notes Reader, Change-Set Viewer and review are focused takeovers with their own owners; task detail is the Operations layer's persistent panel, not a takeover. Engine Room, Memory, Topology and Hangar have no product-bar entry; retained layouts can be exercised through injected initialView or dev/test composition. Their existing internal overviews are not an additional production destination.
+The product bar contains Chats, Operations, Knowledge and File Viewer, with the separate Tray button beside its tabs. Notes Reader and Change-Set Viewer have focused takeovers; the review page is an Operations surface with its own tree and reading column beside the shared task-chat rail. Engine Room, Memory, Topology and Hangar have no product-bar entry and remain available through injected initialView or dev/test composition.
 
 - Chats is the opening view and there is exactly one full-page Chats destination; Operations is a product destination (260928-MIK-L79).
 - The shell owns its wake lock and navigation state; native host/reader owners supply their respective data.
@@ -138,7 +140,7 @@ The product bar contains Chats, Operations, Knowledge and File Viewer. Notes Rea
 - Missing transport, capability, history or measurement facts remain explicit. Unknown, unavailable, unrecorded, measured-empty and refused are different states.
 - Review subject availability and summary counts do not gate the task-context entry. Liveness selects its record; the browser does not choose the candidate.
 - Review refresh claims belong to the exact question/read/comparison they describe. Displayed failures and retained coherent generations must not relabel an old answer as a new subject's answer.
-- The shell delegates scrolling to panels. Narrow-layout source repairs do not establish fresh viewport measurements.
+- The shell delegates scrolling to its panels; the review uses ReadingColumn above 40rem and its stacked ReviewMain at narrower widths. Styling establishes no fresh viewport measurement.
 - Generated producer contract, manually sampled coverage, runtime schema refinements, static fixture restrictions and execution verification remain distinct evidence classes.
 
 ## Historical And Verification Limits
@@ -185,8 +187,7 @@ The live-leaf "committed" change-set read used to swallow its own refusal detail
 **The review surface's raw colour literal is gone (B1), and the claim is stated in the form that is
 true.** `panels/review/FamilyTree.tsx` carried the only two raw literals — `oklch(0.82 0.16 75 / 0.08)`
 and `… / 0.16`, `--amber`'s channels copied by hand — and B1 replaced them with an `AMBER_WASH(percent)` helper
-stating `color-mix(in oklab, var(--amber) N%, transparent)`. The present file retains the 8%/16%
-colour-mix declarations inline rather than that named helper. The interpolation space is the reason it
+stating `color-mix(in oklab, var(--amber) N%, transparent)`. Current `FamilyTree.tsx` retains the roster-next 8% hover mix; the tree’s 8% hover and 16% selected-row mixes now live in `tree/treeStyles.ts`.  The interpolation space is the reason it
 matters: an `oklch` mix interpolates the **hue**, which is how the accepted page's own selected row first
 came out visibly teal. **What is false as worded, and must not be repeated:** *"zero `oklch` users remain
 in the review surface"* — the dashboard's own tokens are defined in `oklch` (`styles/tokens.css:8-23`) and
@@ -239,9 +240,9 @@ selector, and its review branch now records that fact in a comment. `panels/chan
 widened `ChangeSetTarget.review` to carry an optional selector, where the field's **presence** still marks
 a review target and an empty object is the task context. The client (`data/review.ts`) and the review
 panel (`panels/review/ReviewSurface.tsx`) carry the rest: the inventory's wire types, an optional
-comparison identity and the then-introduced inventory-state renderer. The current ReviewPanes/ReviewWorkspace composition below supersedes that renderer; this is an L2 history account, not a current three-state inventory caption.
+comparison identity and the then-introduced inventory-state renderer. The current ReviewSurface/ReadingColumn composition below supersedes that renderer;  this is an L2 history account, not a current three-state inventory caption.
 
-The current review surface delegates its displayed payload to `ReviewWorkspace` and keeps comparison-bound changed-file navigation distinct from technical details. The former all-three-inventory-states caption is not a statement of this later renderer.
+The review surface owns the read cycle and composes ReviewGrid with the tree and ReadingColumn. One change-set model supplies the displayed subject order and code locations to both columns; selected semantic content comes from ReviewWorkspace’s SelectedSlot and FamilyReviewCenter. TechnicalDetails is a closed disclosure at the reading column’s end. Comparison-bound changed-file navigation remains a separate overlay.
 
 ## Retained Route And Coverage Metadata
 
@@ -260,9 +261,9 @@ Source account retained from the parked claim (anchor currency not renewed here)
 - [State and authority architecture](data/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
 - [Panel composition](panels/overview.md) — companion documentation, not a code-anchor or fresh execution witness.
 
-- ReviewPanes delegates comparison-bound review presentation to ReviewWorkspace and keeps changed-file navigation bound to its shown payload; the distinct EngineRoom dev scenario group is declaration/history evidence, not mounted provider visualization.
+- ReviewSurface composes the comparison-bound ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. The distinct EngineRoom dev scenario group remains declaration/history evidence, not mounted provider visualization.
 
-Source account retained from the parked claim (anchor currency not renewed here): `dashboard/src/panels/review/ReviewSurface.tsx:328-392`; `dashboard/src/dev/scenarios.ts:43-119`.
+Current review ownership is anchored by ReviewSurface/PageReading; the separate EngineRoom source account remains retained from the parked claim, with anchor currency not renewed here:  `dashboard/src/dev/scenarios.ts:43-119`.
 
 
 ## Current Behavior
@@ -290,21 +291,16 @@ the task entry's page reads now end with the task they belong to. The change-set
 - Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern. [13]
 - JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off. [14]
 - Public lifecycle recovery commits contain only real code and memory outputs. [15]
-- The target variant that turns the existing takeover into a review. [18]
-
-- At the Cockpit target dispatch, presence of the review field mounts ReviewSurface instead of ChangeSetViewer, and an empty object is the task-context entry. Within that reviewer, a separate comparison-bound changed-files overlay can mount ChangeSetViewer.  Anchor: "never mounted for one, so no change-set" [19]
 
 
-- The root review target mounts ReviewSurface. Historical ICR-L3 inline inventory openers addressed an entry's content; current InventoryLink opens All changed files on the comparison-bound change-set page, while card Full file remains bound SourceContent.  Anchor: `ReviewSurface` [21]
 
-- **The reviewer entry: offered for every leaf; since `260921-ICR-L47` it carries no subject (the reviewer chooses one) and shows the comparison's changed-intent counts.** [22]
+
 
 - **The shared liveness predicate gates Working and selects live versus recorded Intent Review identity; it does not gate Intent Review availability.** [23]
 
 - The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 - **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
 - **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
-- **The takeover branch that mounts the surface for a target with or without a selector.** [27]
 - **The client's inventory types and the request that omits the selector when there is none.** [28]
 - The case that measures the browser half: no subject offered, and the target is still a review. [30]
 - **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** [31]
@@ -335,8 +331,6 @@ the task entry's page reads now end with the task they belong to. The change-set
 - Engine Room's present body composes enclosure map, stack, boot and diagnostics [59]
 
 - The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract. [60]
-- Cockpit review dispatch and comparison-page overlay have separate owners; card Full file remains bound source content. [61]
-- Review inventory navigation displays the measured listed total or unmeasured state; change-set badges derive non-text identity from the supplied inventory. [64]
 - Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime. [63]
 
 - Historical session State/phase vocabulary and lifecycle-state Metrics buckets, superseded by TaskEntry stage/activity and TaskCounts. [12]
@@ -355,7 +349,33 @@ the task entry's page reads now end with the task they belong to. The change-set
 - A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority. [72]
 
 - The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
-- The actual takeover dispatch selects intent-review versus changeset from target.review and forwards optional subject/history. [20]
-- The common takeover forwards optional selector and live/recorded review history; its URL owner carries task/history, not subject selection. [45]
 - Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. [51]
 - Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. [74]
+
+- Current shell owners for the review page account. [75]
+- Current layout owners for the review page account. [76]
+- Current tree owners for the review page account. [77]
+- Current source owners for the review page account. [78]
+- Current chat owners for the review page account. [79]
+- Current tray owners for the review page account. [80]
+- Current lane owners for the review page account. [81]
+- Current navigation owners for the review page account. [82]
+- Current selection owners for the review page account. [83]
+- Current watch owners for the review page account. [84]
+- Current cache owners for the review page account. [85]
+- Current wash owners for the review page account. [86]
+- Current composition owners for the review page account. [87]
+- Current model owners for the review page account. [88]
+- Current details owners for the review page account. [89]
+- Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target. [18]
+- ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer. [19]
+- Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover. [20]
+- The tree owns one All changes link; card ranges use the page-wide context control and path links reach comparison-bound files. [21]
+- Every leaf’s entry opens task context and shows changed-intent counts; the reviewer opens unselected unless explicitly addressed. [22]
+- ReviewMain mounts ReviewSurface for a target with or without a selector. [27]
+- The review target keeps task/history identity; the page also restores validated selection and older-comparison state from sel/comparison URL keys. [45]
+- Operations review composition and its retained comparison-page overlay have separate owners; whole-file inspection uses comparison viewer links. [61]
+- The tree’s All changes count names measured/pending/unavailable totals; non-text inventory remains a comparison-viewer fact. [64]
+
+- Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility. \[90] [90]
+- The frame controller validates origin/window, then the model admits typed tray provenance/geometry and the ready-bound subscription is released on relink or stop. \[91] [91]

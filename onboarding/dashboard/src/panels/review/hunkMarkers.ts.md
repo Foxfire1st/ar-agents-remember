@@ -2,103 +2,22 @@
 
 ## Governing Overview
 
-[dashboard/src/panels route overview](../overview.md)
+[review route overview](overview.md)
 
 ## Purpose
 
-**The pure model of MIK-R34's per-hunk intent markers: what each hunk of a changed text file names, and where its
-mark sits in a drawn diff.** Nothing here classifies. Every hunk, class, link and family occurrence is MIK-R32's one
-per-file classification (`data/reviewLane.ts`, served by the tree view route); these functions only group what it
-names and place each hunk's mark on the side line numbers it names. The mark's line never comes from the renderer's
-own change regions, from context lines, or from any name or text in the file, so two owner hunks drawn in one
-displayed region keep two marks (ICR-R34 rule 1).
+Project the owner's file/hunk classification into marker labels, linked entry occurrences and placement within the source window actually drawn.
 
 ## Code Commentary
 
-### Logic
+`fileMarks` produces a file-level marker for confirmed-unregistered/wholly unreadable files and otherwise one per owner hunk. `hunkMark` retains realization and proof entries separately, plus unknown lines including a linked hunk's unread changed side. It does not classify a hunk by client-side range intersection.
 
-- **One file, one kind of marking (`fileMarks`).** A confirmed-unregistered file (bucket `unexplained`) carries one
-  file-level `unexplained` mark with the owner's reason, and so does a file neither side of which has readable
-  knowledge (`attribution_unknown`, each side's detail); ICR-R34 rule 4 and the Failure rule. Otherwise every owner
-  hunk gets its own `HunkMark` (`hunkMark`).
-- **What a hunk names (`hunkMark`, `markEntries`).** Realization links and proof links are grouped apart, one
-  `MarkEntry` per kind and invariant key in the owner's order, with its facets, entry ids and revisions: proofs are
-  listed as tests and never counted with realizations (the MIK-R34 substitution). Each entry's family occurrences
-  (`addOccurrence`) are keyed by membership state, family key and revision key and merged across the sides that
-  record the same revision in the same state (`sides`).
-- **The target an occurrence opens (`MarkTarget`).** The invariant (display id and key), and, when a family records
-  it, the family key with the member revision key; its membership `state`; and for `membership_unknown` a `reason`.
-  A family is reached only through a member occurrence, never on its own (ICR-R34 rule 2).
-- **Why a membership is unknown (`addOccurrence`).** A new occurrence target directly receives `family.reason`; the client no longer reconstructs membership wording from file-side availability. An existing occurrence key only gains a side and retains its first target. The response DTO now carries an optional occurrence reason. On the server, `_occurrences` supplies a reason from the occurrence's own side for family-less unknown membership; `_occurrence` uses the other side for a named unknown membership. `_membership_reason` bounds the explanation. Historically this client reconstructed the sentence under ruling Q3 and review R1 N1; `unknownReason` and that reconstruction are removed.
-- **Unknown lines on a linked hunk (`unreadChangedSides`; ruling Q2).** The owner links a hunk through its readable
-  side and names the unread side's availability on the file, not on the hunk; a linked hunk that changes lines on an
-  unread side lists them as attribution unknown. This is the one fact derived on the client, and it is the owner's
-  own side availability applied to the owner's own spans, not intersection arithmetic.
-- **Labels.** `markLabel`: `unexplained` or `attribution unknown` for those classes; one entry's short label
-  (`INV-9BH2BNCT`, `INV-2TQGXFAX · test`); otherwise a compact count (`2 intents`, `1 intent · 1 test`,
-  `1 intent · unknown`). `compactLabel` (review R1 F2): `2`, `1+1t`, `1t`, `1?`, `!` for unexplained, `?` for
-  attribution unknown. `occurrenceLabel`: `No recorded family` only for `confirmed_no_family`, `Attribution unknown`
-  for a family-less unknown occurrence, else `FAM-… rN · member`, `before-only`, `removed or reassigned in after` or
-  `membership unknown`. `sidesLabel`, `hunkKey` (`before.start:before.count:after.start:after.count`).
-- **Placement (`markAnchor`).** On the first changed after line the pane draws; for a hunk that changes no drawn
-  after line, on its first drawn removed line: in a side-by-side diff on the before side, inline on the after line
-  just below the removed lines (the owner names the line they follow), clamped to the drawn after window; `null` when
-  the pane draws none of the hunk's changed lines. `firstDrawn` intersects a changed span only with the lines the
-  pane draws (`PaneWindow`, `SideWindow`; `wholeSide` for a whole text), which is placement, not attribution.
+`markEntries` groups by kind and invariant and `addOccurrence` merges only an identical membership/family/revision occurrence across sides. Every new target copies the supplied family.reason verbatim; unknown membership without a family is distinct from a named family occurrence. Full and compact labels count those retained entries/occurrences and keep before/after side labels.
 
-### Conventions
-
-- Pure functions over the served types of `data/reviewLane.ts`; no React, no fetch, no state.
-- Every label a reader sees for a hunk or an occurrence is composed here, so the gutter, the list and the tests read
-  one vocabulary.
-
-### Invariants And Boundaries
-
-- **Candidate invariant (not ingested): every intent marker comes from L32's per-file classification response, and
-  the client never intersects recorded ranges itself.** Realized by `fileMarks`, `hunkMark`, `markEntries` and
-  `addOccurrence`, which only group and label the owner's hunks, links and occurrences, and by `markAnchor`, which
-  places on the owner's side lines and intersects only with the lines a pane draws; the one client-derived fact
-  (ruling Q2) applies the owner's side availability. Current `hunkMarkers.test.ts` contains assertions for grouping, membership labels, supplied reasons, separate proof counts, unread-side lines and placement over the named scenario fixtures, including a mutation that replaces the server reason and expects that exact value at the target. These assertions were inspected statically, not executed here.
-
-  Historical prior execution/capture account, not a new result:
-
-  ```text
-  Proved by `hunkMarkers.test.ts` over six real captured scenarios
-  of L32's lane fixture world (`hunkMarkers.classifier.captured.json`) and the mutations M1–M7 and N1 of the worker's
-  sets, all caught; the reviewer confirmed there is no second classifier (review R1, rule 5).
-  ```
-- **Part of the candidate invariant "unknown membership is always distinguishable from confirmed no-family"**
-  (recorded on `MarkerTargetState.tsx.md`): a target carries its `state` and `reason`, and `occurrenceLabel` never
-  reads an unknown membership as `No recorded family`.
-- Proof and realization entries are never merged into one count.
-
-### Todos
-
-- The former unknown-membership-reason TODO is resolved: `addOccurrence` now carries the response's `family.reason` directly.
+`markAnchor` finds the first changed line actually inside a drawn side window, preferring an after line and otherwise a removed before line. In unified layout a deletion's marker lands below its removed lines with its inline-after position clamped to the drawn window. A hunk with no drawn changed line has no gutter placement. Placement consumes supplied hunk spans and rendered windows and creates no new attribution.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The module's own statement: nothing here classifies; marks sit on the owner's side lines only. [1]
-- The target an occurrence opens, carrying its membership state and reason. [2]
-- An occurrence, an entry (realization or proof), an unknown line, a hunk's mark with its label and compact text, and a file's marks. [3]
-- One file-level mark for a confirmed-unregistered or wholly unreadable file; otherwise one mark per owner hunk. [4]
-- A hunk's realizations and proofs apart, and its unknown lines, including a linked hunk's unread side (ruling Q2). [5]
-- One entry per kind and invariant; occurrences merged across sides; each with its target. [6]
-- The gutter label, the compact phone label (review R1 F2) and the occurrence label. [8]
-- Placement on the owner's side lines within the drawn window; an inline deletion below its removed lines. [9]
-- The owner's response these functions read. [10]
-- The cases over the six real scenarios. [11]
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
-
-- addOccurrence keys by membership state, family key and invariant revision key. An existing occurrence only merges its side; a new target copies family.reason without reconstructing or filtering it. ReviewLaneFamilyOccurrence declares optional reason. The server generates unknown-membership reasons from the own side for family-less occurrences and the other side for named occurrences, using bounded _membership_reason. Current tests assert fixture-reason propagation and an exact substituted reason; they were not executed. [7]
+- hunkMarkers.ts current behavior at this source owner. [15]
+- hunkMarkers.ts current behavior at this source owner. [16]
+- hunkMarkers.ts current behavior at this source owner. [17]
