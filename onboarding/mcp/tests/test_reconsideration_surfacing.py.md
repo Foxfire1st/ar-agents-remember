@@ -223,3 +223,9 @@ The following complete predecessor retains useful explanations, old observations
 > - Without a successor the same changed target still raises. [25]
 >
 > - An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion. [26]
+
+## Current account — the split refusal pins
+
+The re-authored refusal pins split into the three routes the writer now names: an unmappable target asks for `repoint` with its reason or a raise, a link the leaf re-authored asks to restore its base target or raise, and the cases that keep working say to recompute the worklist. A `still_rejected` row may carry `repoint`.
+
+- The surfacing pins hold the unmappable refusal's advice — `repoint` with its reason, or `raise` — and no longer the old re-author-the-target text. [30]

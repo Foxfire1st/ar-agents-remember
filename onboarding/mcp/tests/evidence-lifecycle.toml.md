@@ -881,7 +881,7 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 - Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]
 
 
-- The current parsed inventory declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [271]
+- The current parsed inventory declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [311]
 
 
 - The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved. [297]
@@ -900,3 +900,13 @@ The source-owned regeneration adds `mcp/tests/test_mik_r177_gate_groups_identica
 ## MIK-R118/R124 mark-suite consumers
 
 The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. The artifact and contract populations are unchanged at 13 contracts and 76 artifacts, and every non-consumer field, replacement node, category, scope, guard and limit is preserved; only those `consumers` lists grow, in canonical order. This is consumer reachability, not an execution claim.
+
+## Current account — this leaf's lifecycle rows
+
+The lifecycle registry gains the leaf's new evidence files: the case-extent tests, the writer's line-range proof tests, the re-point and recovery tests, the command-raise and real-layout tests, and the moved curator-instruction wording tests each carry their lane and lifecycle row, so a later run reads them as this repository's registered evidence rather than unregistered additions.
+
+
+
+- Existing artifact consumer lists take this leaf's modules, the list holding the moved curator-instruction module among them. [313]
+
+- The unit-regression lane names the re-point and recovery modules where its order puts them. [314]

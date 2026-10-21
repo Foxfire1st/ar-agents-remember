@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
-        "content": "sha256:9130df728070c27cdb6fe55530ad76ab6b2d12af706ad128ba66c3305429f6cc",
+        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
         "locator": {
           "kind": "symbol",
           "name": "refusal"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
-        "content": "sha256:2366165651ae4a3eb3c9b2fec297299a6d79a645b7b31c372431043f3bc1b66a",
+        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
         "locator": {
           "kind": "symbol",
           "name": "case_names"
@@ -39,11 +39,48 @@
     },
     {
       "anchor": {
-        "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
-        "content": "sha256:70c72c71b8626b08a4bfd6028916453c559f971f11a3ae1f9bb22e8928dcd742",
+        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "content": "sha256:5952f6096541f54daa7e5f3606b7a6c96416c1507776f5d7fe931b8e6f208a2b",
+        "locator": {
+          "end": 292,
+          "kind": "line_range",
+          "start": 262
+        }
+      },
+      "id": "RLZ-K557YT",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The refusal a name-based proof meets is written here, and the range remedy it offers is built beside it, so the reason and the route sit in one text; the offer is exact only where a modifier or a computed title explains the miss.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "content": "sha256:7f425a0ce67ac1f9bbca2f92e82da642e0b41ad6cbad614f6ae300326f85c255",
         "locator": {
           "kind": "symbol",
-          "name": "_title"
+          "name": "case_names"
+        }
+      },
+      "id": "RLZ-MQZSKS",
+      "invariant": "INV-WK39V1",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 3",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "Only a plain-string it/test title is a definition, and this function is where that judgement is made, so it is the place the name-based route is either open or closed.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+        "content": "sha256:7e508e2016831235b383860fa15a3124446da0847ba4c3600466b872f5d728b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "title_of"
         }
       },
       "id": "RLZ-TERZMS",
@@ -52,20 +89,69 @@
         "handoffEntry": "L54-curator-MIK-R54-v1-rule-9-actual-guards",
         "leaf": "260928-MIK-L54"
       },
-      "rationale": "The semantic first noncomment argument must be a plain string; escapes decode and UTF-16 pairs combine without losing lone units.",
+      "rationale": "The semantic first non-comment argument must be a plain string; escapes decode and UTF-16 pairs combine without losing lone units.",
       "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "Extracts plain-string JavaScript/TypeScript test titles for citation definitions and explains unsupported proof targets. Filename eligibility is the separate .test./.spec. predicate. Ambiguous or unsupported titles are not silently repaired into unique symbol proofs; source extraction is not test execution.",
+    "2": {
+      "note": "One extent rule serves every citation here, so a case's lines are measured as every other extent is.",
       "targets": [
         {
           "anchor": {
-            "blob": "be126bd9425f1f3ccb96635960fb086727ed249d",
-            "content": "sha256:93c91bce282bd5a35b4b17b7a82e0f6855b65e2220d41ededa7bb37b38a5e603",
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:d3785bb47603cc433dc59d4866eea3b644e8a2243cc67acd2d52f0bd4c1a2e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "span_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Modifiers are read by name on the case and on every enclosing suite, so `.skipIf` and `.runIf` are reported as themselves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:6e81674097f2894be2a2942854e035da6c4b9c7066501ca445145bf2444e0fd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "blocking_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Extracts plain-string JavaScript/TypeScript test titles for citation definitions and explains unsupported proof targets. Filename eligibility is the separate .test./.spec. predicate. Ambiguous or unsupported titles are not silently repaired into unique symbol proofs, a case that does not run is refused with no range offer, and source extraction is not test execution.\n\nAnchor: `title_of`, `refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:cb178eeebefe35be51f3ec1e36d59f24666a909d2fea181a920c29d1baac25bb",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The refusal offers the exact lines where a modifier or a computed title explains the miss, and otherwise names the ambiguity with an `S`/`E` placeholder range for the curator to fill; a case that does not run gets no offer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "116f5734ffc67bc3a0562f76cd9608a80db7ffb4",
+            "content": "sha256:0829b81aa35335c0b35c946d40a2a7dc71809de9ddfa398560cf893b68e6b434",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 262
             }
           },
           "kind": "test"

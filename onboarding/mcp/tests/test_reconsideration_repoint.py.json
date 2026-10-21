@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_reconsideration_repoint.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "26c670be25ba72aef9ca22a6ca4e2633e5878b6a",
+        "content": "sha256:1bfa2171e3b9b8edb4eb7e2a3678112985b7a62e87d077489acfc7f9404d61ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_repoint_answers_an_earlier_refresh_that_no_longer_stands"
+        }
+      },
+      "facet": "A re-point answers an item that fired because an earlier refresh no longer stands.",
+      "id": "PRF-4YDTQB",
+      "invariant": "INV-J7YKSB",
+      "origin": {
+        "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+        "content": "sha256:347d55f7a991f9b8c0ddb95cdb7b8ef25f3fceea0a959828a02f6287765bd271",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_rerun_of_the_same_repoint_writes_the_same_bytes_and_bumps_nothing"
+        }
+      },
+      "facet": "A rerun of the same re-point writes the same bytes and bumps no revision.",
+      "id": "PRF-9EDT96",
+      "invariant": "INV-J7YKSB",
+      "origin": {
+        "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+        "content": "sha256:d9c5b071314c5d74d5ab08defd7c5c1e070e8371d51d4a40be6203456966d471",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_still_rejected_row_repoints_the_link_whose_code_is_gone"
+        }
+      },
+      "facet": "A still_rejected row re-points the fired link whose code the leaf removed and the row records both targets.",
+      "id": "PRF-MNHMHB",
+      "invariant": "INV-J7YKSB",
+      "origin": {
+        "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+        "content": "sha256:715dd57b7360458ab195ac04f79975d4954be4deb43d3852f4e6bfc4ba593516",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_the_named_link_is_repointed_and_the_other_fires_as_today"
+        }
+      },
+      "facet": "Only the link a row names is re-pointed; the other fired link is refreshed as today.",
+      "id": "PRF-S30WP8",
+      "invariant": "INV-054R7P",
+      "origin": {
+        "handoffEntry": "the-curators-reconsideration-judgment-is-never-automated",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A `still_rejected` row re-points the fired link, bumps the revision once, records both targets with content, and satisfies the item",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+            "content": "sha256:d9c5b071314c5d74d5ab08defd7c5c1e070e8371d51d4a40be6203456966d471",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_still_rejected_row_repoints_the_link_whose_code_is_gone"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stored row refuses a re-point on a raise, a target without `path`, and a link named twice",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+            "content": "sha256:51129d46740de8c0e9fce7d40c3a2fdd9a59d0c4f1f7b8cbb4fec4a9f20d0d06",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stored_shape_refuses_a_repoint_on_a_raise_or_without_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

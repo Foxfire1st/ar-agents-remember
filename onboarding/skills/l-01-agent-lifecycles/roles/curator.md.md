@@ -180,3 +180,9 @@ Reviewer records the separate memory lane, leaving code state intact. Method rel
 - Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [24]
 
 - Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review. [25]
+
+## Current account — the authoring routes
+
+The role's authoring routes now name the mounted `knowledge_write` beside the leaf command: it runs the same writer with the same arguments, and the taskless bootstrap route follows; no other route writes knowledge. The commit word is spelled both ways (`--commit`, `commit: true`), and the sentence that said no MCP tool writes knowledge is gone, because the mounted writer is one.
+
+- The curator's authoring routes name the mounted `knowledge_write` beside the leaf command, and say no other route writes knowledge. [26]

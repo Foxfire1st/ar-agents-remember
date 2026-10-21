@@ -62,7 +62,9 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
   to the common fields. Attach and author need no row of this kind. See the L10 section below.
 - `ReconsiderationRow` (kind `reconsideration`, owner MIK-R14; subject `reconsider:<DEC-ID>#<alternative index>`,
   the `RECONSIDER_SUBJECT_PATTERN` of `reconsideration.py`): the curator's answer to a reconsideration candidate,
-  `still_rejected` or `raise`, with its `reason` and nothing beyond the common fields. See the L14 section below.
+  `still_rejected` or `raise`, with its `reason`; on `still_rejected` only, an optional `repoint` list of
+  `{link, before, after}` names each fired link once, and any other extra member is refused. See the L14
+  section below.
 - `MembershipRow` (MIK-R53, `membership:<INV>`): `no_family`, invariant candidate revision and
   unique `considered` family IDs (possibly empty); separate from invariant/family judgment rows.
 - `RecordRow` (MIK-R53): decision, incident, assumption, limitation, failure-mode, scenario, diagnostic,
@@ -193,8 +195,8 @@ MIK-R10 among the landed kinds.
 `reconsideration_candidate` worklist item: its subject is the item's, `reconsider:<DEC-ID>#<alternative index>`
 (the pattern comes from `models/knowledge_files/reconsideration.py`, so the row, the item and the gate's predicate
 share one spelling); its disposition is `still_rejected` (the rejection holds, and `reason` says why) or `raise`
-(the alternative goes to the developer); it carries the common fields only, and extra members are refused by the
-model. The model checks shape only: what the subject names, the decision's `under_reconsideration` status, the
+(the alternative goes to the developer); it carries the common fields and, on `still_rejected` only, an optional `repoint` list (one entry per
+fired link, each named once); any other extra member is refused by the model. The model checks shape only: what the subject names, the decision's `under_reconsideration` status, the
 task-document question and the link refresh are the writer's (`knowledge_writer/reconsideration.py`,
 `authoring._reconsideration_row`). The curator never reverses a decision. The historical module
 outline names MIK-R14's `reconsider:…`; the current registry also contains the two R53 kinds.
@@ -272,3 +274,9 @@ No cross-repo boundary is crossed by this file.
 - The onboarding row: `updated`/`no_impact`, unique source paths, required updated binding and moved markers. [21]
 - Eight registered kinds and subject dispatch, including MIK-R53 membership and decision/facet record rows. [22]
 - Current source delta inspected statically: Replace stale single-disposition/six-kind model and captions, add source-blob shape, membership/record models and per-winning-file closure provenance, while preserving frozen history, covers and FamilyRow compatibility. [39]
+
+## Current account — the reconsideration row's re-point
+
+`ReconsiderationRow` gains one optional field, `repoint`, a nonempty list of `Repoint` items (`{link, before, after}`). A validator refuses it on any disposition but `still_rejected` — a raise leaves the links as they are — and refuses a list that names one link twice. Both ends of a re-point name their path, because the row is read apart from any sidecar.
+
+- A `still_rejected` reconsideration row may carry the re-points whose code moved, and no other disposition may. [41]

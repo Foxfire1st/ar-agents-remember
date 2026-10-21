@@ -19,12 +19,28 @@
         }
       ]
     },
+    "12": {
+      "note": "The unsupported-form cases assert the reason and that the offered remedy is a line range only where a range reaches the case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
+            "content": "sha256:7d46b77d233482fc6348b25715ca3c6322968f72f53ea18df37ffda6c2e72c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_case_forms_explain_the_reason_and_offer_line_ranges"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "4": {
       "note": "A decorated definition is stamped from its first decorator.",
       "targets": [
         {
           "anchor": {
-            "blob": "aacea580918345852779de1066a8a25f5cd01b9a",
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
             "content": "sha256:0435779fc48cdc8c723e0aae3f3dd34bc000dcde8d4c579d87cd072356010f75",
             "locator": {
               "kind": "symbol",
@@ -40,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacea580918345852779de1066a8a25f5cd01b9a",
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
             "content": "sha256:7d15d6d9058dbada4455f7ee96d382d0a7a6c72f3208ce94eb95903b762f1bd7",
             "locator": {
               "kind": "symbol",
@@ -56,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacea580918345852779de1066a8a25f5cd01b9a",
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
             "content": "sha256:ccaa779876ece1b6ef11d0c530e0244ccbfa05f6e099a4aae30ac2a1b6798ac9",
             "locator": {
               "kind": "symbol",
@@ -72,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacea580918345852779de1066a8a25f5cd01b9a",
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
             "content": "sha256:87fa112b9de5431a9dd25a46c26b035796f453363b358bf0735e160688a2f53f",
             "locator": {
               "kind": "symbol",
@@ -88,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacea580918345852779de1066a8a25f5cd01b9a",
+            "blob": "bee9db13f5bd8fe68d7e98deb0704663998efc1d",
             "content": "sha256:02ef2acc0c260f4e26a226eac70a167919b03ca4dbc82712c3dcb165df825b1d",
             "locator": {
               "kind": "symbol",

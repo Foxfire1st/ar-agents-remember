@@ -150,3 +150,9 @@ Inherited reference 4 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+## Current account — OM-5, what a re-point and a reconsidered revision judge
+
+OM-5 asks the reviewer to judge a `repoint` as a judgment: the new target is the code the alternative's `reconsider_when` is about, and the row's reason says against that code why the condition is not met, with a reason that leaves the question open finding that the row should have been a `raise`. A reconsidered revision written after a raise is judged against the developer's recorded answer: the alternative's status matches it, a link re-pointed in `records` names the code the condition is about, and the `changed` row cites the answer.
+
+- OM-5 makes each re-point and each reconsidered revision after a raise a judged obligation the reviewer checks against the code and the recorded answer. [5]

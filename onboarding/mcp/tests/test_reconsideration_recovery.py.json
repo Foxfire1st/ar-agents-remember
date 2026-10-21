@@ -1,0 +1,92 @@
+{
+  "path": "mcp/tests/test_reconsideration_recovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
+        "content": "sha256:e28e5b22c458d8a9734cf23ebd3ac2788511f1b445c54ee4884d7ce5ce1a8669",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it"
+        }
+      },
+      "facet": "A fired link opens the item and the gate keeps it open until a Curator row answers it.",
+      "id": "PRF-AT190E",
+      "invariant": "INV-054R7P",
+      "origin": {
+        "handoffEntry": "the-curators-reconsideration-judgment-is-never-automated",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
+        "content": "sha256:54c02a8a07744a59b20665565bdf34db967790dbbf1642bba353c0c2a22088a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_refresh_refusals_advice_names_a_route_that_works"
+        }
+      },
+      "facet": "Holds the refresh refusal's text and the unchanged bytes; the recompute route it names is taken by the sibling re-point tests and the raise route is proven for a task-owned leaf in the command suite.",
+      "id": "PRF-TT2HV9",
+      "invariant": "INV-ZG887T",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 7",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+        "content": "sha256:6646ed03e923979a9d3d61edea40e00cb9f99b7eaf97bf963a6522dba1684b7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_re_authored_refusals_advice_restores_the_link_and_admits"
+        }
+      },
+      "facet": "Following the re-authored refusal's advice restores the link and the row is admitted.",
+      "id": "PRF-VFBJVX",
+      "invariant": "INV-ZG887T",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 7",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A removed symbol opens the item, an empty hand-off answers nothing, and a judged row with `repoint` closes it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
+            "content": "sha256:e28e5b22c458d8a9734cf23ebd3ac2788511f1b445c54ee4884d7ce5ce1a8669",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-authored refusal's advice — restoring the base target byte for byte — admits the row it refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+            "content": "sha256:6646ed03e923979a9d3d61edea40e00cb9f99b7eaf97bf963a6522dba1684b7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_re_authored_refusals_advice_restores_the_link_and_admits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

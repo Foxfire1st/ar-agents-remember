@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_writer_command_layouts.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "64f031f0276562614d4b0c792ae756b4385acd96",
+        "content": "sha256:83c561d9802874c68047f61e75f7cb4be612bc45399a54ef50648e1491dce04c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_real_command_writes_from_a_linked_checkout"
+        }
+      },
+      "facet": "The real command from a linked worktree refuses the raise batch whole and writes the ordinary row alone.",
+      "id": "PRF-1546ZX",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+        "content": "sha256:d5862bc790526124922f1509aca2fcf217e7d8571c3d3f74fa55da1ac57c963a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_real_command_refuses_from_a_primary_checkout"
+        }
+      },
+      "facet": "The real command from a primary checkout refuses through its checkout guard and writes nothing.",
+      "id": "PRF-PAMJHR",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A real primary checkout refuses the whole batch with the guard clause and leaves memory and task bytes unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+            "content": "sha256:d5862bc790526124922f1509aca2fcf217e7d8571c3d3f74fa55da1ac57c963a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_real_command_refuses_from_a_primary_checkout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64f031f0276562614d4b0c792ae756b4385acd96",
+            "content": "sha256:83c561d9802874c68047f61e75f7cb4be612bc45399a54ef50648e1491dce04c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_real_command_writes_from_a_linked_checkout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,12 +1,14 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Every authored write of knowledge through the two admitted command lines.",
+  "applicability": "Every authored write of knowledge through the two admitted command lines or the mounted knowledge_write tool.",
   "conditions": [
-    "The memory tree holds the conversion marker; a tree without it is refused with the central conversion message."
+    "The memory tree holds the conversion marker; a tree without it is refused with the central conversion message.",
+    "The mounted knowledge_write runs the same leaf, crossing and wave functions as the command, under the same contract, authorization reference and refusals, and only commit writes."
   ],
   "exclusions": [
     "The mechanical writers (conversion, crossing sync, formatter) and the closeout routes, which set flags rather than author knowledge.",
-    "The mounted MCP tool surface, which exposes no authoring writer."
+    "A mounted tool that publishes a canonical dataset, of which there is none.",
+    "Knowledge authored outside a write: reading, comparison and the derived index."
   ],
   "id": "INV-1XKX9ERN",
   "origin": {
@@ -21,9 +23,9 @@
     "legacyId": "bad62dd0-d67f-4efc-a733-c78eebc6a6b0",
     "task": "260921-ICR"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-invariant/v1",
-  "statement": "Every authored knowledge write uses the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer at the resolved repository or leaf memory root. An unconverted root refuses as legacy-format with conversion guidance: crossing sync from a converted source, otherwise first conversion. Mounted MCP tools expose no authoring writer and publish no canonical dataset.",
+  "statement": "Every authored knowledge write uses the single converted file writer at the resolved repository or leaf memory root, through the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command or the mounted knowledge_write, which runs the same functions (INV-AG8G8C). An unconverted root refuses as legacy-format with conversion guidance: crossing sync from a converted source, otherwise first conversion. No mounted tool publishes a canonical dataset.",
   "status": "proposed",
   "supersedes": []
 }

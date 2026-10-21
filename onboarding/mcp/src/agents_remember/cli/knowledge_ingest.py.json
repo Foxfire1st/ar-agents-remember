@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
         "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+        "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+        "locator": {
+          "kind": "symbol",
+          "name": "add_arguments"
+        }
+      },
+      "id": "RLZ-3Y7B39",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The removed option is removed here, so a curator cannot be sent to a flag that no longer parses.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
         "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
         "locator": {
           "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
             "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
             "locator": {
               "kind": "symbol",
@@ -76,11 +94,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
             "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
             "locator": {
               "kind": "symbol",
               "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The command's parser declares no settings option, so a curator cannot be sent to a flag no route reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
             }
           },
           "kind": "code"

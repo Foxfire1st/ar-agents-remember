@@ -13,3 +13,10 @@ Grouped uncovered equal changes bind every source blob; covered/card-bearing pat
 ## Evidence
 
 - New step-2 worklist/target/proof/link repair detail plus same-ID target rationale/role correction. [1]
+
+## Current account — the compressed worklist detail
+
+The file is compressed within its word budget: it says skipped and todo cases prove nothing while a parameterized or computed case is proved by its whole extent as a `line_range`, and one pointer sends the reader to the hand-off template's file-writer sections for the exact proof, `repoint` and raise-route forms. Several paragraphs are re-flowed, and no pin's words changed.
+
+
+- The worklist detail names the line-range proof and the template's exact forms without raising its word budget. [3]

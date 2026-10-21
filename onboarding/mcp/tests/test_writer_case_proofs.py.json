@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_writer_case_proofs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+        "content": "sha256:d3bcb000ffce2b786a663b6dcf9adbec8d71214b3398f501fd677f859f33e0ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_computed_title_evidence_stays_unresolvable_and_the_proof_is_written"
+        }
+      },
+      "facet": "A computed-title case pairs with no title, so its evidence stays unresolvable while the proof itself is written.",
+      "id": "PRF-B0M940",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rules 1, 5",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+        "content": "sha256:799326b157fbeb4df83ce24311c1a568e5473a44d9312407395369a2fe1bae9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
+        }
+      },
+      "facet": "Writes a line-range anchor with the candidate blob and content and reports the paired evidence proof_written.",
+      "id": "PRF-SQH15R",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rules 1, 5",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A line-range proof stores a `line_range` anchor with the case's blob content and reports the paired evidence `proof_written`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec342983392707f378d77b513e5027ba88cef07e",
+            "content": "sha256:a7407bb7c6d5ff61cca69bd327b77e4e5ff324aea2c906a39ea84cd58b247835",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A computed title's evidence stays `unresolvable` while its proof is written and listed",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+            "content": "sha256:d3bcb000ffce2b786a663b6dcf9adbec8d71214b3398f501fd677f859f33e0ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_computed_title_evidence_stays_unresolvable_and_the_proof_is_written"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

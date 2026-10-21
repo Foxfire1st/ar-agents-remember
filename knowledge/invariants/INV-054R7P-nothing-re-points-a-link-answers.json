@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two registered cases pin the open item, its closure by an authored row and the untouched second link. An automatic re-point or closure would take the developer's question out of the one seat that asked it, which is the behaviour D430 preserves."
+  },
+  "applicability": "Every fired reconsider_on link of a decision, in any leaf whose change made its target move.",
+  "conditions": [
+    "A re-point's target comes only from a hand-off row a curator wrote.",
+    "A fired link reaches the Curator's worklist as a reconsideration_candidate item and blocks closeout until a row answers it.",
+    "raise is admitted wherever it is today."
+  ],
+  "exclusions": [
+    "The writer's own refresh of a fired link that still maps to C, which is no judgment about the condition.",
+    "A successor decision, which carries its own links."
+  ],
+  "id": "INV-054R7P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reconsideration_recovery.py::test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it and mcp/tests/test_reconsideration_repoint.py::test_only_the_named_link_is_repointed_and_the_other_fires_as_today, passed 2026-10-21; the unchanged gate and worklist suites also pass"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "the-curators-reconsideration-judgment-is-never-automated",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Nothing re-points a link, answers a reconsideration item or writes a rejection on its own: a re-point exists only because a curator wrote one in a hand-off row, and a fired link with no row still reaches the worklist and blocks closeout.",
+  "status": "proposed",
+  "supersedes": []
+}

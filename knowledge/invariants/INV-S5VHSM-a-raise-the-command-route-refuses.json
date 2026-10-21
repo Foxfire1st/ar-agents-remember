@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Five registered cases pin the four clauses, the removed flag, the mounted texts and the two real layouts, and the obligation spans the route value, the remedy text, the CLI's settings discovery and the removed argument. Advice that sends a curator to a flag no route reads costs it the whole batch and still publishes nothing."
+  },
+  "applicability": "A raise row the agents-remember knowledge-ingest leaf command cannot publish because it cannot reach the leaf's task document.",
+  "conditions": [
+    "The refusal names one fixed clause for the cause met: no trusted settings at or above the working directory, the checkout guard, an unreadable settings file, or settings for another coordination root.",
+    "The text names the mounted knowledge_write with absolute contractPath and handoffPath, the handoffName and the authorizationRef, and asks for a preview then commit: true.",
+    "The whole batch is refused: nothing is written and no question is published.",
+    "--config is not an option: the parser refuses it and no route reads it."
+  ],
+  "exclusions": [
+    "The mounted route's own texts, which are unchanged.",
+    "An installed copy, which has no checkout, and the mounted route: both publish as today.",
+    "Acceptance of the write: the refusal names a route, it does not publish the raise."
+  ],
+  "id": "INV-S5VHSM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_writer_command_raise.py (7 tests), all passed 2026-10-21; the removal landing ran pytest --collect-only over the whole test tree with 0 errors; evidence-A5/layout-observations.json records the five layout tests' codes 1/1/0 and their effects"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A raise the command route refuses names the one mounted knowledge_write that writes it, with the absolute contract and hand-off paths, the hand-off name and the authorization reference, and the dead --config is gone from the command.",
+  "status": "proposed",
+  "supersedes": []
+}

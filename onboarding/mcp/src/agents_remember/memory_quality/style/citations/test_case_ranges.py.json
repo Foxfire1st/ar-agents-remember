@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+        "content": "sha256:dadb4ee177e4631c3e6624cae4d9b9bf89657139e81327943b08bcb04f816646",
+        "locator": {
+          "kind": "symbol",
+          "name": "case_at"
+        }
+      },
+      "id": "RLZ-7PRHCX",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "This is where a range is admitted or refused: it reads the one case whose extent the range is, so 'proved by its lines' and 'a case that does not run is no extent' are decided at this call and nowhere else.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A file that is no test file is refused with the name form to use instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:470669f1aa445bd0d3962a4505edc8cc8fc21a038d75af84de3e51de7952a514",
+            "locator": {
+              "kind": "symbol",
+              "name": "not_a_case_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The range is admitted only for the case whose extent equals it exactly, and refused otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:dadb4ee177e4631c3e6624cae4d9b9bf89657139e81327943b08bcb04f816646",
+            "locator": {
+              "kind": "symbol",
+              "name": "case_at"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A case whose own modifier, or an enclosing suite's, stops it from running is refused with that modifier named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:96d8d1982108f13520f6c8a21787115be29488314b9effc813d14937cfe3c236",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A case a name reaches is refused as a definition, with the `path::title` to write instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:f280b8db1110aab22c03788bfe4d8be998002308899d5fe9b3e04a28051d46ab",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An admitted case reports its extent fields and the titles its evidence pairs with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:7234d1c2638a9ee97c8ae16c8622f075cf4972f423550141db1eb6043aa9e2da",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A range that is no case's extent names the extents it overlaps, or says none overlaps it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:e14ce2cd53aeeaeb16d7f0ebacc747356a510206b8fee99008303a6775b8f8d6",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The refusal sentence names the lines, the path and one reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:298bf2ac883755e15263b9e47100748bd575a6b86a068714e254ba71981f5c08",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Only the outermost call rooted at it or test, holding its own body, is a case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8cb6c14f708f9f545ca4827e9fb456b7a3bf51ae",
+            "content": "sha256:c5b30b0b888a3e012e009ae83c43cda9418d5cb9f268e51de6c62e7691d85d63",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

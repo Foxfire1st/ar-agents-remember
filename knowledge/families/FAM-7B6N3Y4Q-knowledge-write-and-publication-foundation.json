@@ -1,6 +1,11 @@
 {
-  "admission": "legacy-unassessed",
-  "guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no canonical dataset is published. Mechanical conversion, crossing merge, formatting and closeout flags are outside this authoring guarantee.",
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The members together promise that every authoring route runs one writer on one resolved root and that no reader can disagree about which text is canonical; no member promises that alone, because a route, a root resolution and a refusal each cover only one half."
+  },
+  "guarantee": "Authored knowledge writes use the admitted leaf knowledge-ingest or taskless knowledge-bootstrap command, or the mounted knowledge_write which runs the same writer with the same arguments, and the single converted file writer. Writer admission and ordinary readers resolve the same repository or leaf memory root, whose text files are canonical. An unconverted root is refused and no mounted tool publishes a canonical dataset.",
   "id": "FAM-7B6N3Y4Q",
   "members": [
     "INV-1XKX9ERN",
@@ -12,7 +17,7 @@
     "legacyId": "23ce40dc-51de-4eda-926c-25a2948f8e00",
     "task": "260921-ICR"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",

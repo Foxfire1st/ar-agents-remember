@@ -3,11 +3,11 @@
   "proves": [
     {
       "anchor": {
-        "blob": "16f0a1b9e5a8b891ea7d06e2ad723e2dfd1bdb5a",
-        "content": "sha256:c970b58998004d54af95bd75b6dff146720a334ca2776967f9b69ccde89e4d19",
+        "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+        "content": "sha256:3ad54d7979c01dd2e317c523c1f2571ef6836568d4408e5f8d34698deaf65b4f",
         "locator": {
           "kind": "symbol",
-          "name": "test_unsupported_test_title_names_why_and_line_range"
+          "name": "test_unsupported_test_title_names_why_and_may_offer_a_line_range"
         }
       },
       "facet": "Source-defined regression check; not executed by Curator: Unsupported test-title syntax names the reason and line_range remedy.",
@@ -30,6 +30,22 @@
             "content": "sha256:f20ec973b62db1edac6967680e2d34587fca209ac5657d0c48745b00cc5433b7",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case pins the reason and the conditional range remedy the writer's refusal now gives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a47f685838be75554f034d52522abfee9d9cc521",
+            "content": "sha256:3ad54d7979c01dd2e317c523c1f2571ef6836568d4408e5f8d34698deaf65b4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_test_title_names_why_and_may_offer_a_line_range"
             }
           },
           "kind": "test"

@@ -5,10 +5,12 @@
     ],
     "justification": "Prevent redundant copy judgments and history-row workarounds that leave the actual literal target or design rationale unresolved."
   },
-  "applicability": "Curator instructions for grouped uncovered judgments, reconsideration repair and removed record-link targets.",
+  "applicability": "Curator instructions for grouped uncovered judgments, reconsideration repair and removed record-link targets, and the raise route those instructions name.",
   "conditions": [
-    "The representative row binds every grouped candidate path/blob; equal declared generated copies and divergent/ordinary paths retain their distinct ruled treatment.",
-    "Stale reconsideration needs recomputation/currentness recovery and a broken non-reconsideration link needs a literal record-link repair, not a history-row workaround.",
+    "The representative row binds every grouped candidate path and blob; equal declared generated copies and divergent or ordinary paths retain their distinct ruled treatment.",
+    "A stale reconsideration needs recomputation or a re-point whose reason says why the condition is not met, and a removed link target is answered by repoint or by raise, never by a refusal that points at itself.",
+    "A broken non-reconsideration link needs a literal record-link repair, not a history-row workaround.",
+    "A raise the command cannot publish names the mounted knowledge_write with the contract and hand-off paths, the hand-off name and the authorization reference.",
     "Continuing by-design choices retain the actual rejected alternative and reason as decisions; no omission is treated as future work."
   ],
   "exclusions": [
@@ -26,9 +28,9 @@
     "leaf": "260928-MIK-L54",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Curator instructions must describe grouped judgments, reconsideration recovery and link-target obligations, and curation must record the continuing by-design choices without inventing alternatives.",
+  "statement": "Curator instructions must describe grouped uncovered judgments, the re-point or raise that recovers a removed link target, and the route that publishes a raise the command refuses, and curation must record the continuing by-design choices without inventing alternatives.",
   "status": "proposed",
   "supersedes": []
 }

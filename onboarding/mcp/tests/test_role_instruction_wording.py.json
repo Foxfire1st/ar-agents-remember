@@ -3,76 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "end": 303,
-          "kind": "line_range",
-          "start": 233
-        }
-      },
-      "facet": "The Manager and Orchestrator decision lists, the three durable files and the four developer-needed categories with the once-only final report are present at the candidate.",
-      "id": "PRF-0DCHVF",
-      "invariant": "INV-NFV5VJ",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
-        }
-      },
-      "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
-      "id": "PRF-0E0V75",
-      "invariant": "INV-A6GAKX",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "The coordination leaf-repair sentence and the Architect's delegated-versus-direct repair and evidence sentences are present at the candidate.",
-      "id": "PRF-0TFF0B",
-      "invariant": "INV-5KBX7C",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "Each Architect, Manager, Orchestrator, planning, coordination and router sentence that states the one-agent default and the two developer choices is present at the candidate.",
-      "id": "PRF-0YJ58R",
-      "invariant": "INV-A6GAKX",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
         "locator": {
           "kind": "symbol",
@@ -89,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:4b198cf4afbc62422b01831badf05d3c18e915c9bfc1ce1755d3a36e58759c8c",
         "locator": {
           "kind": "symbol",
@@ -106,41 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "The second-master instruction, the existing-Manager reuse, the durable reporting-recipient record and the developer-answer relay are present at the candidate.",
-      "id": "PRF-4FX9HW",
-      "invariant": "INV-683GA3",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "The pinned clause list requires the Architect Boundaries paragraph with the freedom, its custody limit and the kept landing-step sentence, and the same clause reports a sub-failure when the old prohibition is restored (evidence/wording-fail-before.txt).",
-      "id": "PRF-5448EZ",
-      "invariant": "INV-P2WRNQ",
-      "origin": {
-        "handoffEntry": "MIK-R184@v1/A1/CODE-R1",
-        "leaf": "260928-MIK-L182"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -157,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:dbe83380a7200a4eda70ee23ad653d9b1ab76db30abdbf0fd4452d79a118cdb4",
         "locator": {
           "kind": "symbol",
@@ -174,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:6226c934dd387226043c02ed9f9b1ac2978d7bd1cbd79876bfaf4c9d5eabf3f4",
         "locator": {
           "kind": "symbol",
@@ -191,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
         "locator": {
           "kind": "symbol",
@@ -208,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:3a4fcfcf386028407291d5f0c448789a2d80ca16bbde2e6fdb930a126ad61926",
         "locator": {
           "kind": "symbol",
@@ -225,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:19766f5e8996140d49cc72fc26f07f745850e5f39bc5eb292b8001ac4d6cc98c",
         "locator": {
           "kind": "symbol",
@@ -242,24 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "Requires the delivered curator text to state the full-intake worklist duty that remains after D92 replaced the fixed fan-out policy.",
-      "id": "PRF-D682YJ",
-      "invariant": "INV-208SQT",
-      "origin": {
-        "handoffEntry": "R99-curator-worklist",
-        "leaf": "260928-MIK-L99"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:6226c934dd387226043c02ed9f9b1ac2978d7bd1cbd79876bfaf4c9d5eabf3f4",
         "locator": {
           "kind": "symbol",
@@ -276,25 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "end": 303,
-          "kind": "line_range",
-          "start": 233
-        }
-      },
-      "facet": "The wording case requires non-leaf checks to be assigned to Investigator by the actual permitted coordinating role; a forbidden start is routed to the known parent/reporting recipient, and a parentless role reports in its own chat without inventing an Architect. This is source-clause coverage, not a runtime role-start result or a fourteen-tool census.",
-      "id": "PRF-EP4JYF",
-      "invariant": "INV-NC6F6V",
-      "origin": {
-        "handoffEntry": "L112-current-coordinating-investigator-proof",
-        "leaf": "260928-MIK-L112"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
         "locator": {
           "kind": "symbol",
@@ -311,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -328,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -345,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -362,24 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
-        "content": "sha256:83e497ba18994d97c7f5bbeee8ef549b1f783b55552217b933fa80b07095b463",
-        "locator": {
-          "kind": "symbol",
-          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
-        }
-      },
-      "facet": "The Architect's answer-first sentence and the role-agent message reading are present at the candidate.",
-      "id": "PRF-RFP8Q1",
-      "invariant": "INV-PEVJ6G",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
-        "leaf": "260928-MIK-L72"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -396,7 +241,7 @@
     },
     {
       "anchor": {
-        "blob": "186dcf05f4e5e23d4b29a391c089bc88eecf0849",
+        "blob": "3b5193512f0b66e5ba722fb0a6c0252239058682",
         "content": "sha256:df47bdff9257a7bace097a48ace79209330369a264e36f8762bf727046b289a3",
         "locator": {
           "kind": "symbol",
@@ -426,6 +271,56 @@
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The Architect's flat-mode closeout gates and its kept clause stay pinned here after the coordination clauses moved out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21b2a68429cfcbfe76bae6757c5d7e4131e20ec4",
+            "content": "sha256:28aac27c230d76a939bdc2c1e3dee09453f6a7cb32fee0323483570048cf9c17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The remaining census pins the router, the seven role files and their eight operations in delivered order",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21b2a68429cfcbfe76bae6757c5d7e4131e20ec4",
+            "content": "sha256:953595d8980b691210b92b2ee9684a2e4eff20c97b85823a7649f4c3d35ebab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surfaces_are_the_router_seven_roles_and_their_eight_operations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Protected Manager text separates automatic stage publication, explicit correction and organizational completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
+            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/tests/test_curator_instruction_wording.py"
           },
           "kind": "test"
         }
@@ -514,22 +409,6 @@
         }
       ]
     },
-    "7": {
-      "note": "Protected Manager text separates automatic stage publication, explicit correction and organizational completion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "617c98c197bf851803ba817088bde99686819c28",
-            "content": "sha256:d57f1a5d086776b858d75d15a311b4a3093a69382915cb319500ac1d1bd4bd19",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_current_coordination_and_curator_rules"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "8": {
       "note": "Uses capsule_wording to read each relocated facet on its real role/stage/detail surface and apply nonvacuous deletion controls. Curator short forms retain independent writer/admission/foundation/whole-worklist/output boundaries; exact Git code-and-two-memory-tree comparison is checked in the delivered handoff. Reviewer parentless wording is role-specific. Writer syntax moves to declared writer/intake details while inline operation assertions retain no-bypass, selected-root, report/refusal/readback/coherence duties.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
@@ -552,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+            "blob": "21b2a68429cfcbfe76bae6757c5d7e4131e20ec4",
             "content": "sha256:8cdd4bef411ef7643acefbaa4ff0ecc3307640ba485748ecd65d269c8dfa4be1",
             "locator": {
               "kind": "symbol",

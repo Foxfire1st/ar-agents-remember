@@ -36,8 +36,9 @@ authorization reference, the worklist checks or the refusals: the tool can do no
 
 ### Conventions
 
-- One `WriteSubmission` (`contract`/`target`, `authorization`, `commit`, `crossing`, settings) is the whole
-  request; the report is the whole answer.
+- One `WriteSubmission` (`document`, `handoff_path`, `authorization_ref`, `commit`) is the whole request; the
+  settings loader, the contract path and the hand-off label travel in the route value beside it, and the report
+  is the whole answer.
 - Refusals are returned as typed refusals or strings with their own reason, never as exceptions across the
   route boundary.
 
@@ -71,3 +72,11 @@ worklist and are evidenced where those own them.
 ### Cross-Repo References
 
 None: one memory worktree, named by the contract the caller supplies.
+
+## Current account — the mounted settings or the command's own route
+
+`LeafQuestions` no longer carries an argparse namespace or a settings callback: it takes the mounted server's `config`, or a `CommandRoute` the command line builds. `_open` hands each to its own half — `_mounted` keeps the existing root comparison and text, `_command` asks the route's loader and, when it answers a clause instead of settings, refuses with the mounted `knowledge_write` call that can publish the same hand-off — and both build the task-document port in `_task_doc`. `leaf_write_report` passes `command` instead of `settings`; the contract guard, the worklist checks and the writer are unchanged, so both routes still refuse under the same conditions.
+
+- The raise question's port is built from the mounted settings or from the command's own route, and only the command half's refusal names another route. [1]
+- A command route whose loader answers a clause is refused with the mounted `knowledge_write` call, and a loaded settings root that differs keeps its own refusal. [2]
+- One leaf write runs the same guard, worklist checks and writer for the command and the mounted tool, differing only in the route that supplies the question port. [3]

@@ -29,7 +29,7 @@ L109 registers test_context_packet_slim.py, test_knowledge_diff_report.py and te
 
 The recorded-meaning-effect regression module is selected in unit-regression. Its entry uses the same canonical ordering and exactly-one-lane rules as the existing suite; adding that membership certifies no invocation, timing or product acceptance.
 
-The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. `test_citation_document_transaction.py` is instead declared in `integration`. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
+The source-declared `unit-regression` population includes held/native-retirement/set-start, comparison/coherence-file/takeover, shaped answer-row and uv-minimum bootstrap suites. A historical lane list of this card's earlier epoch also declared `test_citation_document_transaction.py` in `integration`; that module is absent from the current tree and from every current lane, and this account is not a current membership. `test_paseo_role_agents.py`, `test_role_message_files.py` and `test_role_message_wording.py` are explicitly registered in `unit-regression`, in the list's canonical order. Source declarations, not prior prose, control those memberships. None of this establishes test execution.
 
 `mcp/tests/test_knowledge_overview_order.py` is registered in `unit-regression`. The current catalog also selects `mcp/tests/test_mik_r53_judgment_rows.py`, `mcp/tests/test_mik_r53_onboarding_gate.py` and `mcp/tests/test_mik_r53_report_only_rules.py` in that lane. These memberships add no lane, population ceiling or evidence-execution claim; the lifecycle catalog independently lists the shared artifacts its source reaches.
 
@@ -77,7 +77,7 @@ The new clean-sync door module is added to the unit-regression file population. 
 
 `test_review_evidence_packet.py`, `test_review_evidence_residuals.py` and `test_review_frame_store.py` are selected in `unit-regression`. Membership selects the population; it certifies no invocation, timing or pass.
 
-## Evidence
+## Evidence (retained rows)
 
 - The three review-evidence and frame suites are registered once in unit-regression. [860]
 
@@ -134,7 +134,9 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 
-- The current source declares lane membership, including the three MIK-R53 modules in unit-regression; citation-document transaction is integration. Membership does not establish invocation or PASS. [844]
+
+- The current source declares lane membership, including the three MIK-R53 modules in unit-regression. Membership does not establish invocation or PASS. [866]
+
 
 - The three R53 modules remain declared in unit-regression; they already exist in this leaf’s base and are not L59 additions. Membership proves no invocation or PASS. [848]
 
@@ -175,13 +177,13 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 `test_changeset_cancellation.py` is selected once in `unit-regression`, in canonical order beside `test_changeset_cache.py`. The seven lane identities and every other membership set are unchanged; this is selection, not an invocation or a pass.
 
-## The MIK-R177 gate-group module
+## The gate-group module
 
 `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` is registered once in `unit-regression`, in the list's canonical order. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.
 
 - The lane adds the thirteen canvas case files as one affected-cadence member set, so the generated page's host and presenter are protected by named cases in the declared lane rather than by an unlaned module. \[861] [861]
 
-## The MIK-R118/R124 mark suite
+## The mark-suite module
 
 `mcp/tests/test_mik_r118_r124_marks.py` is declared once in `unit-regression`, in canonical order between `test_memory_scope_task_derivation.py` and `test_mik_r173_card_row_binds_every_copy.py`. The module covers the two record kinds and their writer rules, the staleness a dependent's links derive, the two worklist kinds and the count a landing answers with; it appears in no other lane. The membership adds no lane, population ceiling or case-budget change and certifies no invocation; selection is catalog membership only.
 
@@ -191,3 +193,16 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 - Developer-message tests are selected once in the existing unit-regression lane. [862]
 - The seven lane identities remain declared; this is membership, not execution. [863]
+
+## New-test lane registration
+
+The seven new modules are each selected once in `unit-regression`, in the list's canonical order beside their neighbours: `test_curator_instruction_wording.py` after the curator-coherence modules, `test_memory_case_ranges.py` after `test_memory_branch_authority.py`, `test_reconsideration_recovery.py` and `test_reconsideration_repoint.py` after `test_reader_timeline_spill.py`, and `test_writer_case_proofs.py`, `test_writer_command_layouts.py` and `test_writer_command_raise.py` before `test_writer_correction_history.py`. The registration adds no lane identity, population ceiling or case-budget change: the seven identities of the `[files]` table stand as they are, and every other membership set is unchanged. Membership is the catalog's own selection, so it certifies no invocation, timing or pass.
+
+## Evidence Scope
+
+This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.
+
+## Evidence
+
+- The seven new test modules are each selected once in `unit-regression`, in canonical order beside their neighbours [864]
+- The registration adds no lane identity or case-budget change, and every other membership set is unchanged [865]

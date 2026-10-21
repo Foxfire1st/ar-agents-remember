@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "41b02f411570ff669ba735f2cb3a1e1af53d1a4c",
-        "content": "sha256:68ee900f8c0c7b302a039a834b04bdd957d9df79ea186f5d8ab6a2da1c08e897",
+        "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+        "content": "sha256:4eab549c53312b7b079fc4578037f1da236dfa3714448183c95b8d394b1eaa6b",
         "locator": {
           "kind": "symbol",
           "name": "Authoring"
@@ -18,6 +18,24 @@
       },
       "rationale": "The weakness and dependent writes live here: the record is built from the producer's fields, the anchor and every link value are resolved against the admitted code snapshot, and the confirmation records the task, role and commit of the write.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+        "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_proof"
+        }
+      },
+      "id": "RLZ-VV6ANV",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rules 1, 5",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The proof is resolved and stored here, so this is where a range becomes a line_range anchor and where the evidence pairs with the case's own title.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -179,12 +197,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:fee521803ddef20678e3aeaac0e262945fb2c78b482eacbeca598716fae9403f",
             "locator": {
-              "end": 300,
+              "end": 362,
               "kind": "line_range",
-              "start": 300
+              "start": 362
             }
           },
           "kind": "code"
@@ -196,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:07c0a6f52da4aec57d535f03e3d11f53164cb8942f4fa90a4a3cffd6e9ed6d40",
             "locator": {
               "kind": "symbol",
@@ -278,12 +296,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:edd926493d0834ce5adb30157679d0e72aec3cc0fcaf72709e5456f61c5ef908",
             "locator": {
-              "end": 122,
+              "end": 179,
               "kind": "line_range",
-              "start": 117
+              "start": 174
             }
           },
           "kind": "code"
@@ -382,7 +400,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
             "locator": {
               "kind": "symbol",
@@ -399,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:350d2957762385ebe74fef43f68bcf4a9773658bef4946ef9ca505b8cec89c68",
             "locator": {
               "kind": "symbol",
@@ -496,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:82eb6e68a7d23678c22c1c9d04f73b0dea3b1a423372980d365572d6fee6c236",
             "locator": {
               "kind": "symbol",
@@ -528,7 +546,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:f716245a6fd1349f069b43c806505951201ce697ba6e608804ed0c0685e12ab3",
             "locator": {
               "kind": "symbol",
@@ -544,7 +562,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:53926f4e827946ff962bfa59a403c211b9e15765120e3732b82d57cbcd9fa2ee",
             "locator": {
               "kind": "symbol",
@@ -560,7 +578,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
             "locator": {
               "kind": "symbol",
@@ -669,7 +687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
             "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
             "locator": {
               "kind": "symbol",
@@ -686,7 +704,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
             "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
             "locator": {
               "kind": "symbol",
@@ -703,7 +721,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:070caafa05f32c7929b17938986cf96b2317d410d469068981009f39ad5306a0",
             "locator": {
               "kind": "symbol",
@@ -834,7 +852,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
             "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
             "locator": {
               "kind": "symbol",
@@ -866,24 +884,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:6e722756638b56a34885e3fbe24d3c68b4e4973174047c137b111a5570fc342d",
             "locator": {
-              "end": 131,
+              "end": 188,
               "kind": "line_range",
-              "start": 127
+              "start": 184
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:3040085f9900e3c91b05a835afae7056e3350310bf601251aed804a8c1bda8ac",
             "locator": {
-              "end": 135,
+              "end": 192,
               "kind": "line_range",
-              "start": 132
+              "start": 189
             }
           },
           "kind": "code"
@@ -916,12 +934,12 @@
         },
         {
           "anchor": {
-            "blob": "1383451e6102e01df27008e884aab7c74077cae3",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
             "content": "sha256:f304cfb8993dc26152957766d985a128c5fe71eb367b3039d6de996ba6aa7e9d",
             "locator": {
-              "end": 492,
+              "end": 509,
               "kind": "line_range",
-              "start": 489
+              "start": 506
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -929,12 +947,12 @@
         },
         {
           "anchor": {
-            "blob": "1383451e6102e01df27008e884aab7c74077cae3",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
             "content": "sha256:301101d6e241cc5442f4cf8613a7bbea68c8a54a96db6e5e2ee83ae1bf89523d",
             "locator": {
-              "end": 249,
+              "end": 267,
               "kind": "line_range",
-              "start": 243
+              "start": 261
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
           },
@@ -942,31 +960,14 @@
         },
         {
           "anchor": {
-            "blob": "1383451e6102e01df27008e884aab7c74077cae3",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
             "content": "sha256:1fe9a871942bf023371cd910843be102113e8bc75638f1a980ec68e6cd969518",
             "locator": {
-              "end": 252,
+              "end": 270,
               "kind": "line_range",
-              "start": 250
+              "start": 268
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "54": {
-      "note": "Handle assignment and refresh restoration precede ordered entry processing, records and rows. [54]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
-            "content": "sha256:3b00ae6f6f1d19bffe68a0523643949a43b2fa0d098d47333c89d88cf55a5734",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 133
-            }
           },
           "kind": "code"
         }
@@ -977,29 +978,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:f4a2c39596c4fd9719c0cc0fc8295b81b9e1343ade289004b20c9f67d1d640a9",
             "locator": {
-              "end": 242,
+              "end": 304,
               "kind": "line_range",
-              "start": 235
+              "start": 297
             }
           },
           "kind": "code"
         }
       ]
     },
-    "56": {
-      "note": "Decision updates remap links before anchored link resolution. [56]",
+    "57": {
+      "note": "A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
-            "content": "sha256:8b352707425fcbdd11a9916f41fb3f456b4d49d335404bb4e4b313ce2415a777",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:a4c41d3c98ce6a56172c053956a57f3597e2120040c6efbda688f3669e299cf0",
             "locator": {
-              "end": 405,
-              "kind": "line_range",
-              "start": 373
+              "kind": "symbol",
+              "name": "_write_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "333c2741b97530348b0d5cad29ef3aa73e06a7c6",
+            "content": "sha256:6923ac27076f3f3a29d5565dc5b7035bf59ab2ee41ab4b5f795ba838a8fa3acf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proof_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "333c2741b97530348b0d5cad29ef3aa73e06a7c6",
+            "content": "sha256:10e4a489f748cbe58f7de77232db414cc21a7bbe3c4f1fed7b3d916ff2b66e00",
+            "locator": {
+              "kind": "symbol",
+              "name": "Authoring"
             }
           },
           "kind": "code"
@@ -1011,11 +1043,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:298b0c2b84e265e2f9e1e1fbe602c5578ef7453d6e8109d3bbb60f4ddb604d3e",
             "locator": {
               "kind": "symbol",
               "name": "DecisionResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Handle assignment and refresh restoration precede ordered entry processing, records and rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:38ca3be541cb75c6f2d59bee3553cd37ccf9b3155570310fbc6c3c2b284d6760",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Decision updates remap links before anchored link resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
+            "content": "sha256:3ab56441d4990b3ed0d2eb0b64bce808b3ce2edc95615c6c8a0bc8e697e1d9e0",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 435
             }
           },
           "kind": "code"
@@ -1027,12 +1093,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b98871bd86a72995a64838fca071ff36e494bf",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
             "locator": {
-              "end": 116,
+              "end": 173,
               "kind": "line_range",
-              "start": 116
+              "start": 173
             }
           },
           "kind": "code"

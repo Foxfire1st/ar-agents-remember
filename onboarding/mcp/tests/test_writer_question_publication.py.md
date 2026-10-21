@@ -24,3 +24,9 @@ No test execution, CODE/MEMORY grade, new producer capability or landing is clai
 
 
 - Describes keyed reconsideration-question publication through the native task-document owner and its rollback/concurrency boundaries. Do not conflate refused question publication (no own append/replacement) with the explicit later memory-write-failure exception. Thread/event and injected-failure fixtures protect named opportunities, not universal timing or transaction acceptance, and none is executed by reading this card. [1]
+
+## Current account — the command route drives the question port
+
+The root-mismatch case now drives the command's own `CommandRoute` (its `command_settings` loader) instead of a `Namespace(config=...)` and a monkeypatched `load_config`; the publication, batch, retry and concurrency cases still build `TaskDocOpenQuestions` through `setup_port` and pass that port to the writer. The behaviour they pin is unchanged: a keyed batch validates every key before replacing any, an intervening question survives, and a loaded root that differs from the contract refuses before publication.
+
+- A loaded coordination root that differs from the contract refuses the raise before any question is published, through the command's own route value. [2]

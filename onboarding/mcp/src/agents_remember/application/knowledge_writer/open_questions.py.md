@@ -51,7 +51,7 @@ can be reached (no MCP authority settings): every question is refused with that 
 ### Todos
 
 The former whole-list `set_field` lost-update limit is removed by the keyed task-owner publication; it is
-not deferred work. The separate installed `--config` real-raise demonstration belongs to L36. No installed
+not deferred work. No route reads `--config`: the command resolves its own trusted settings and, when it cannot, refuses the raise with the mounted `knowledge_write` call that can publish it (MIK-R194 rule 9). No installed
 execution is inferred from this source contract or the adapter's tests.
 
 ## Evidence

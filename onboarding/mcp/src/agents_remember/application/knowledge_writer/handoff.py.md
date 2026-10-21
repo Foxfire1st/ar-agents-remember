@@ -203,3 +203,10 @@ No cross-repo boundary is crossed: the writer reads the paired code worktree and
 worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
+
+## Current account — the range test reference and the repoint row key
+
+A proof's `test` may now be `{path, locator: {kind: "line_range", start, end}}`, read into `TestRangeReference`; any other locator kind is refused with the form to write. A row may carry `repoint`, read into `RepointRequest` items: the 0-based linked position, the path and the locator, with a duplicate link refused as a shape problem. Both are shape only: the writer decides whether the range is one case and whether the re-point is admitted.
+
+- A test reference may name a case by its lines, and only a line-range locator says where a case sits. [29]
+- A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]

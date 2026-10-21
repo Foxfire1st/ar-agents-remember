@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
             "content": "sha256:23008fc2ad62d86f657422efc766520d04840dd2ec873f925834bbc63d8f4080",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
             "content": "sha256:23008fc2ad62d86f657422efc766520d04840dd2ec873f925834bbc63d8f4080",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
             "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
               "kind": "symbol",
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",
@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
             "content": "sha256:6d72a03b51c229fc0032ede7d0676b5f68afcd6b9e47ae30601f6b28cfaed5e5",
             "locator": {
-              "end": 371,
+              "end": 468,
               "kind": "line_range",
-              "start": 371
+              "start": 468
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
             "content": "sha256:7ef8818ed136feabb30a06d57bf8d5985f6904f995f7e6dd608245b4dfe42713",
             "locator": {
               "kind": "symbol",

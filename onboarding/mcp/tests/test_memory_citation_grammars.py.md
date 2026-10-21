@@ -12,7 +12,7 @@ Language-aware declaration resolution for citation repair.
 
 ### Logic
 
-`TestCaseDefinitionTests` adds plain test/spec title extraction across the supported JavaScript-family extensions. Nested describe titles bind qualified names and unique bare case names; a non-test filename does not acquire those case definitions. Plain-string escapes decode, UTF-16 pairs agree with scalar titles, lone units remain represented, and duplicate occurrences remain ambiguous even on one line. Comment extras do not replace the semantic first argument: computed/nonstring first arguments do not borrow a later string. Unsupported skip/todo/each/computed forms refuse with a reason and `line_range` alternative. These added source cases do not claim a parser run or support for the refused forms.
+`TestCaseDefinitionTests` adds plain test/spec title extraction across the supported JavaScript-family extensions. Nested describe titles bind qualified names and unique bare case names; a non-test filename does not acquire those case definitions. Plain-string escapes decode, UTF-16 pairs agree with scalar titles, lone units remain represented, and duplicate occurrences remain ambiguous even on one line. Comment extras do not replace the semantic first argument: computed/nonstring first arguments do not borrow a later string. Unsupported forms refuse with a reason: skip, todo, skipIf, runIf and fails cases get no range offer, while each, for and computed-title forms are offered a `line_range`. These added source cases do not claim a parser run or support for the refused forms.
 
 Current tests derive named declaration spans from grammars.bindings. Python decorator/class/member and TypeScript/TSX/JavaScript binding cases remain. Removed pure-move repair, URL quote matching and pooled-interface repair fixtures are historical, not current runtime-repair guarantees.
 
@@ -54,3 +54,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+## Current account — the range-refusal pins
+
+The supported-case pins now assert the changed texts: the symbol refusal offers the exact `line_range`, the modifiers are read by name, and a form that runs and that no name reaches is offered its extent while a form that does not run is offered none.
+
+- The unsupported-form cases assert the reason and that the offered remedy is a line range only where a range reaches the case. [12]

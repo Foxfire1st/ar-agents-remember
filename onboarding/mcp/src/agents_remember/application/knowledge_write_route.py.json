@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8edf1fd52b71a129b4edb48be215ec86443b3d9f",
-        "content": "sha256:677b8341ac7bd7d9cef35f9b6079b2489657321b13d2523a3c37584fec4deed6",
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+        "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
         "locator": {
           "kind": "symbol",
           "name": "LeafQuestions._open"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "8edf1fd52b71a129b4edb48be215ec86443b3d9f",
-        "content": "sha256:ec18815cbe04b35747c833f7f6dfd9ed5394ac01945d7ab9939879dbf616f779",
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+        "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
         "locator": {
           "kind": "symbol",
           "name": "leaf_write_report"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8edf1fd52b71a129b4edb48be215ec86443b3d9f",
+        "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
         "content": "sha256:f2d33b0a8d65e2b5cb81516998f3280a3eb04dfa627971261b56bd36633d0f8f",
         "locator": {
           "kind": "symbol",
@@ -56,6 +56,55 @@
       "role": "enforcement"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "The raise question's port is built from the mounted settings or from the command's own route, and only the command half's refusal names another route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:2105ef345d9479c31408dee38a5ba1f1a03b627d81fdd3e6e7e8a00228bd4682",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A command route whose loader answers a clause is refused with the mounted `knowledge_write` call, and a loaded settings root that differs keeps its own refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:ae24b893172283fbc98e8fd3f76b9c9387a5d6f7c85b71a7f8cf3aa8e6ba3389",
+            "locator": {
+              "kind": "symbol",
+              "name": "_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One leaf write runs the same guard, worklist checks and writer for the command and the mounted tool, differing only in the route that supplies the question port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+            "content": "sha256:4939767aced256f099dd7694079880510d556e4bd949f9526b61adcb5a6a7531",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+        "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
         "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "This construct enforces the base decision's suppression under the evaluation's base-and-candidate supersession context rather than making the Curator reopen an already superseded alternative.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+        "content": "sha256:1d7ff8f9c6792b6170a43cd7dc93ca3f94987150fedb08c532066986765c1d6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Repoint"
+        }
+      },
+      "id": "RLZ-V0TQVV",
+      "invariant": "INV-J7YKSB",
+      "origin": {
+        "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The stored shape of a re-point, so a record that carries one is validated where every other reconsideration shape is.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:6290b0977c99f47e93cb497d2d8377f3650d0c1260a05ae3c2b964b794cfa1d8",
             "locator": {
               "end": 24,
@@ -43,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:712bb410527b2cbc91df02a7c2fb2ebd60d3703f3bfaa17fa011c2b130ea508d",
             "locator": {
               "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
             "locator": {
               "kind": "symbol",
@@ -77,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:a74ed3998baca1be473bbfcfc4f34ac6bc10ab987f4a9d44310faea235464b80",
             "locator": {
               "kind": "symbol",
@@ -94,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:9d3d211848ee1ac49b9825d9df092c32e27308e87f85e7039c8a39c79e340018",
             "locator": {
               "kind": "symbol",
@@ -111,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:adee2d6b45036cf05c1527ff6b89e010db6c60e4b9515527b8b2f9bfd15baff0",
             "locator": {
               "kind": "symbol",
@@ -128,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
               "kind": "symbol",
@@ -162,12 +180,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e883bd37ccb740eeb9d913a85c9fe6d886b0fcaf",
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
             "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
             "locator": {
-              "end": 544,
+              "end": 591,
               "kind": "line_range",
-              "start": 535
+              "start": 582
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
           },
@@ -209,24 +227,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:62ab274a326ba3736040aa9354defc555a7dd2c8740a3b7083ed1fb72ce7f0b2",
             "locator": {
-              "end": 147,
+              "end": 194,
               "kind": "line_range",
-              "start": 122
+              "start": 169
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:a6deb7e2202307c1936975602764d16cb045e3a277a7161b650f53ccbe39b44a",
             "locator": {
-              "end": 119,
+              "end": 131,
               "kind": "line_range",
-              "start": 103
+              "start": 115
             }
           },
           "kind": "code"
@@ -238,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:05bd514fbcca6164283757265a8ff61999faddc9c67bafef1b95066c41e69f7b",
             "locator": {
               "kind": "symbol",
@@ -249,11 +267,70 @@
         },
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:97b4c305f0392ed5ed4249d01b0892816bd1b9ca47219fb16aa51b34b3c5695d",
             "locator": {
               "kind": "symbol",
               "name": "RECONSIDER_DISPOSITIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A stored re-point names the link it answers, the target it stood at and the target it now names, each with its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:1d7ff8f9c6792b6170a43cd7dc93ca3f94987150fedb08c532066986765c1d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Repoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A re-point list names each link once, so one item judges one link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:3bf6bde09bccd726bcd7626b4d14c2d922e465fd36a0bd9cc88cde61b34ec231",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_unique_repoints"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The seven triggers, and the three a `still_rejected` answer refreshes.\n\nAnchor: `TRIGGERS`, `REFRESHED_TRIGGERS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:67ced8e9e9e6d9767026ff5c10c999a7a6d938af5a3b8df5aeb2721bd603c122",
+            "locator": {
+              "kind": "symbol",
+              "name": "TRIGGERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFRESHED_TRIGGERS"
             }
           },
           "kind": "code"
@@ -265,38 +342,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:f6458876ed595a509c8ca1931e5c7b3c6af522ba3dbbd94805ed8c56ab31b9c8",
             "locator": {
               "kind": "symbol",
               "name": "TRIGGERING_DISPOSITIONS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The five triggers, and the three a `still_rejected` answer refreshes.\n\nAnchor: `TRIGGERS`, `REFRESHED_TRIGGERS`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
-            "content": "sha256:e527b260e6e1f9d7a7daf0201957aa93445603e501e44f2021f495a7e785c963",
-            "locator": {
-              "kind": "symbol",
-              "name": "TRIGGERS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
-            "content": "sha256:5d3869691ae424644e5501cd5d97bb3edc87d7ba9594e60481332392eff2d77a",
-            "locator": {
-              "kind": "symbol",
-              "name": "REFRESHED_TRIGGERS"
             }
           },
           "kind": "code"
@@ -308,7 +358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:0006ceaecb6230c1bedf879110bab18aa9f67954ade5ca569b765ce680e475eb",
             "locator": {
               "kind": "symbol",
@@ -324,7 +374,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:2a4a6589d3fb13673301999bb2e4ae5de4d47a10baa1f5a7af30f683fe5fcffc",
             "locator": {
               "kind": "symbol",
@@ -335,7 +385,7 @@
         },
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:8b29952a1b68f643cb6e2c441557da6a49b9ddb3d67db073b9c2bde9eec80bd1",
             "locator": {
               "kind": "symbol",
@@ -351,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac73da0869463cfecc8ee90a3e36848505a9a56c",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
             "content": "sha256:47ee4ad4b205d31da33eef5debffd1255006c7d7019dd107977236cf5921209a",
             "locator": {
               "kind": "symbol",

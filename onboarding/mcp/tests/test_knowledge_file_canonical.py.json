@@ -100,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
             "content": "sha256:c2b868ff7b3c127af17a9eafe16d29a248a9090946dbe072ef1bbecb9d0cd5b3",
             "locator": {
-              "end": 125,
+              "end": 138,
               "kind": "line_range",
-              "start": 121
+              "start": 134
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

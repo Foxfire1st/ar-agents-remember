@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
             "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
             "locator": {
               "kind": "symbol",
@@ -171,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
             "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
         },
         {
           "anchor": {
-            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
             "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
             "locator": {
               "kind": "symbol",
@@ -355,7 +355,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:f928cbbfb2240d0932d09326ec13526415cea995f68a076fe7bffb7c85464756",
             "locator": {
               "kind": "symbol",
@@ -2030,22 +2030,6 @@
         }
       ]
     },
-    "224": {
-      "note": "Historical baseline-argument account; references and targets remain for custody. Current knowledge-ingest declares contract, hand-off list, authorization, commit/json, crossing and config arguments and dispatches the admitted converted file writer. The baseline-placement argument and route are retired.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:615bf78069fa475150b6e1a26192d23229c02fe5c7a9a7db1b60992adcac73a0",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "228": {
       "note": "The transaction seam that routes the conflict and narrows the agent's list.",
       "targets": [
@@ -3448,7 +3432,7 @@
         },
         {
           "anchor": {
-            "blob": "26d0863739ecfde71b4476e27fc37676e28a6f0b",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
             "content": "sha256:23dfd8ed108bc3d03ae7f96897fd0d906f00d098127d0e14edabb5cf0ffa5c95",
             "locator": {
               "kind": "symbol",
@@ -3465,7 +3449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41b02f411570ff669ba735f2cb3a1e1af53d1a4c",
+            "blob": "26e24ad345fcd041e170c653e207a2e7837f40c3",
             "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
             "locator": {
               "kind": "symbol",
@@ -4218,7 +4202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26d0863739ecfde71b4476e27fc37676e28a6f0b",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
             "content": "sha256:5002592f62323f531a413309e656754812f63dae539270ff037a2240252bafb6",
             "locator": {
               "kind": "symbol",
@@ -5380,7 +5364,7 @@
         },
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
             "content": "sha256:6109a34b42564f2cdf678eae2e30aa3027d414fbba3392d43eced1bb2f04a385",
             "locator": {
               "kind": "symbol",
@@ -6945,7 +6929,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
             "content": "sha256:94faa1563c10e6343d3d6c6e42a0e0fbb9391b0d69f01053b55512d6073c1d4f",
             "locator": {
               "kind": "symbol",
@@ -8098,12 +8082,12 @@
         },
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
             "content": "sha256:853733543314f6d28a8ebdaf5289fa227b18f89eb240c7fde7a75753304b7964",
             "locator": {
-              "end": 883,
+              "end": 897,
               "kind": "line_range",
-              "start": 725
+              "start": 739
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -8777,6 +8761,24 @@
               "name": "task_context_detail"
             },
             "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "509": {
+      "note": "Historical baseline-argument account; references and targets remain for custody. Current knowledge-ingest declares contract, hand-off list, authorization, commit/json and crossing arguments, with no settings option, and dispatches the admitted converted file writer. The baseline-placement argument and route are retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:3920962cc78158d5ba87d700b691a08752f2dc553dcdf522b6e401dd4c3c5c86",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
           "kind": "code"
         }

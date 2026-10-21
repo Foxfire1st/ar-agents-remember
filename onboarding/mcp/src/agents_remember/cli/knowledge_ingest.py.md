@@ -12,7 +12,7 @@ Contract-addressed CLI entry for curator knowledge-file writing.
 
 ### Logic
 
-add_arguments requires contract, list and authorization-ref. commit writes knowledge files; absent commit plans/validates and writes nothing. json emits the report, config supplies task-question authority when needed, and crossing selects master-line conflict history. Candidate-directory, baseline, expected-destination and publication options were removed. [1]
+add_arguments requires contract, list and authorization-ref. commit writes knowledge files; absent commit plans/validates and writes nothing. json emits the report, and crossing selects master-line conflict history; the parser declares no settings option, so a raise it cannot publish names the mounted `knowledge_write` route. Candidate-directory, baseline, expected-destination and publication options were removed. [1]
 
 run loads the contract once, dispatches crossing to run_crossing_write, converted memory to run_leaf_write, and refuses unconverted memory with the conversion route. [2]
 
@@ -46,3 +46,9 @@ they are in `memory_citations.py` and `memory_backfill.py`: `add_arguments` owns
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
+
+## Current account — the removed settings option
+
+The command no longer accepts `--config`: the parser does not declare it, and the usage line names only `--contract`, `--list`, `--crossing`, `--authorization-ref`, `--commit` and `--json`. A raise's question is reached through settings the command discovers itself, or the refusal names the mounted `knowledge_write` call that can publish it.
+
+- The command's parser declares no settings option, so a curator cannot be sent to a flag no route reads. [34]

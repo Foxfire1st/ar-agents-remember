@@ -1,0 +1,143 @@
+{
+  "path": "mcp/tests/test_memory_case_ranges.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:19f171f8385aa7395f27d9956e0fa3e3fc60313d2f3c11a98b91ffc51d9a8893",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_case_that_runs_and_that_no_name_reaches_is_admitted"
+        }
+      },
+      "facet": "Every case that runs and that no name reaches is admitted by its own extent.",
+      "id": "PRF-9P13MX",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:b29790627708be593242db38ead622b3756dd21220ef3c56308db2241041282c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_parameterised_case_is_admitted_by_its_whole_extent"
+        }
+      },
+      "facet": "An it.each case is admitted only by its whole extent, and the inner call is no case.",
+      "id": "PRF-G5NZ04",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:2d040fcac88e04d29331fa91d793251e0022e77195acba3e938b5e7e7ccbc564",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_inner_call_of_a_parameterised_case_is_no_case"
+        }
+      },
+      "facet": "The inner it.each([...]) call of a parameterised case is no case of its own.",
+      "id": "PRF-GEXNR5",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "643d3010c1fc3af542650e4ea271f1c2019d4cc4",
+        "content": "sha256:3520149758545390c4194dae0e5c571f76dca7107d2a0932454a4318d083ddfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_case_that_does_not_run_is_refused_with_its_real_modifier"
+        }
+      },
+      "facet": "A skipped, todo, conditional or failing case is refused, and the refusal names its real modifier.",
+      "id": "PRF-NDQVWB",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:e326d9ca980b1eff3d5e4d8ca2d8f7d7a4b5644557225eccb364fbd5315eb9b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_symbol_refusal_offers_the_exact_lines_and_reads_modifiers_by_name"
+        }
+      },
+      "facet": "The name-based refusal offers the exact lines and reports .skipIf and .runIf by their own name.",
+      "id": "PRF-P7BBPS",
+      "invariant": "INV-WK39V1",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 3",
+        "leaf": "260928-MIK-L186"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:5ef1147849e09f73fcee8934d9f991b771e4e7ddaae1f53afecb4958eb97450e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_blocked_case_is_never_offered_a_range"
+        }
+      },
+      "facet": "A case that does not run is offered no line range, so the refusal never sends an author to a route that cannot work.",
+      "id": "PRF-PJ6MF3",
+      "invariant": "INV-WK39V1",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 3",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every running form that no name reaches is admitted by its whole extent, and a twice-bound title resolves to two extents that are no definition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+            "content": "sha256:19f171f8385aa7395f27d9956e0fa3e3fc60313d2f3c11a98b91ffc51d9a8893",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_case_that_runs_and_that_no_name_reaches_is_admitted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each blocking modifier is refused with its own name and text, on the case and on an enclosing suite",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "643d3010c1fc3af542650e4ea271f1c2019d4cc4",
+            "content": "sha256:3520149758545390c4194dae0e5c571f76dca7107d2a0932454a4318d083ddfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_case_that_does_not_run_is_refused_with_its_real_modifier"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

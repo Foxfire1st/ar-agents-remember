@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
         "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
-        "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
         "locator": {
           "kind": "symbol",
           "name": "checkout_cli_location"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
-        "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
         "locator": {
           "kind": "symbol",
           "name": "checkout_cli_location"
@@ -54,130 +54,65 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Runtime config asks this checkout policy before selecting the synthetic leaf configuration.\n\nAnchor: \"checkout_coordination.checkout_cli_location()\"",
+    "4": {
+      "note": "`require_linked` holds the guard's whole decision: no location is not refused, a primary location raises `CheckoutCoordinationError`, and a linked location is returned.",
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
-            "content": "sha256:54a79636e129aa494b4e3bb62293781a0d666d88ba0ba575abc8ca09c55ae4f0",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:b103cf69f1e4c4133dd9f152378a447e6b50830fd5271ea27383b718b993a2ad",
             "locator": {
               "kind": "symbol",
-              "name": "_checkout_runtime_config"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 748,
-              "kind": "line_range",
-              "start": 748
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:b6e52c7036534b668cfa45a73e7eae23e712068a1e70031f51f6091b6fe28c0f",
-            "locator": {
-              "end": 876,
-              "kind": "line_range",
-              "start": 847
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:1106a905cad686bc3debd52204b677bf61deca30e9c7183e9f2059a025179ef7",
-            "locator": {
-              "end": 835,
-              "kind": "line_range",
-              "start": 835
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+              "name": "require_linked"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard.\n\nAnchor: actual current supporting source",
+    "5": {
+      "note": "`checkout_cli_location` keeps the declared-mode bypass and then delegates the decision to `require_linked` over the resolved checkout, so behaviour is unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
-            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
             "locator": {
-              "end": 263,
-              "kind": "line_range",
-              "start": 225
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
-            "content": "sha256:e1d718a6ded42e98065391834cadac19262c3129198696927e3e3d48deecd580",
-            "locator": {
-              "end": 353,
-              "kind": "line_range",
-              "start": 351
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
-            "content": "sha256:91f641457703ec5caa68ca3d04518070c53c3a51614b2498ef646661328de14a",
-            "locator": {
-              "end": 358,
-              "kind": "line_range",
-              "start": 356
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services.",
+    "6": {
+      "note": "The location still comes from the imported package path: a `.git` file is a linked worktree, a `.git` directory the primary checkout.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
-            "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:49d1835236d20dbfff1bf879130a5eb247a6eff0566baa122659fbbf18c2e616",
             "locator": {
               "kind": "symbol",
-              "name": "main"
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
+              "name": "resolve_checkout_location"
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "7": {
+      "note": "`require_durable_write_target` permits exactly two durable targets — the disposable coordination root and the enclosure `reports/` root — and the lock paths call it before a parent or lockfile exists.",
+      "targets": [
         {
           "anchor": {
-            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
-            "content": "sha256:0d412c968f7f0d8b4f299f22bb677b0f77b1d0e3df51044c71614832a4e57924",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
             "locator": {
               "kind": "symbol",
-              "name": "begin_pytest_process"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+              "name": "require_durable_write_target"
+            }
           },
           "kind": "code"
         }

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
         "locator": {
           "end": 41,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:bd1d755a46d1af72e7027ad39b71d342bd5c445a49ef05d7d1241d08ac652f1c",
         "locator": {
           "end": 97,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
-        "content": "sha256:edc0f1b1d327bd5bc0981f6d93803d470a7c249c9ea1c189edc51b9ccda90915",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "content": "sha256:6234ee03e6d37fec1895595e6fb7a4440ebf34660139c5a1f56f321a7cade932",
         "locator": {
           "kind": "file"
         }
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:dce6de74aa6e4b74150b9ae10a0c3d4050977d115b024366046974cab6815853",
         "locator": {
           "end": 97,
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 112,
+          "end": 111,
           "kind": "line_range",
-          "start": 112
+          "start": 111
         }
       },
       "id": "RLZ-DT71R6",
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
           "end": 67,
@@ -115,12 +115,31 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "content": "sha256:c210f1cd4085c85d6bab67a1d67d489d2fba9caa74519af1ca26ec369cbf750c",
+        "locator": {
+          "end": 109,
+          "kind": "line_range",
+          "start": 108
+        }
+      },
+      "id": "RLZ-J4K6S5",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 10",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The role text a Curator acts on: these lines list the authoring routes and say no other route writes knowledge, so they are the authority a curator reads before writing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 112,
+          "end": 111,
           "kind": "line_range",
-          "start": 112
+          "start": 111
         }
       },
       "id": "RLZ-JFZ5WP",
@@ -134,7 +153,7 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
         "locator": {
           "end": 41,
@@ -153,12 +172,12 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "end": 158,
+          "end": 157,
           "kind": "line_range",
-          "start": 156
+          "start": 155
         }
       },
       "id": "RLZ-Q70RTA",
@@ -172,12 +191,12 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
         "locator": {
-          "end": 139,
+          "end": 138,
           "kind": "line_range",
-          "start": 127
+          "start": 126
         }
       },
       "id": "RLZ-SHXSR1",
@@ -191,12 +210,12 @@
     },
     {
       "anchor": {
-        "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
         "content": "sha256:aa81672e23992d4fd756542776e03d5436baa4531f4332b8ecd35de051835f92",
         "locator": {
-          "end": 125,
+          "end": 124,
           "kind": "line_range",
-          "start": 117
+          "start": 116
         }
       },
       "id": "RLZ-V1AKR1",
@@ -375,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
             "content": "sha256:88406221712eeded31a9816ef129f48f6a693432619933c9688aa0a3eaa8f978",
             "locator": {
               "end": 47,
@@ -545,6 +564,23 @@
         }
       ]
     },
+    "26": {
+      "note": "The curator's authoring routes name the mounted `knowledge_write` beside the leaf command, and say no other route writes knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "content": "sha256:c210f1cd4085c85d6bab67a1d67d489d2fba9caa74519af1ca26ec369cbf750c",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The curator’s prohibited writes and source-stamp boundary.\n\nAnchor: `## What you must not do`",
       "targets": [
@@ -635,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "26d0863739ecfde71b4476e27fc37676e28a6f0b",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",

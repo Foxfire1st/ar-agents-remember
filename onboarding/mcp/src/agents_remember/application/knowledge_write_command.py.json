@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_write_command.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+        "content": "sha256:0a682a032a3451bbf5c84b4a72c3c94979d829f0b26a4fe5d28d417836df7419",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounted_route"
+        }
+      },
+      "id": "RLZ-62T4RP",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The fixed remedy text is built here, so this is the single place the command's raise refusal can name the route that works.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+        "content": "sha256:10aab3547f46f304e4afbbac613cedc01d472b61f316d52a4ff7ab8efe5c6c82",
+        "locator": {
+          "kind": "symbol",
+          "name": "CommandRoute"
+        }
+      },
+      "id": "RLZ-83W2B2",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "What the command knows about its own hand-off and authorization, so the remedy names real paths rather than a placeholder.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "`CommandRoute` is a frozen dataclass holding the settings loader and the hand-off path, hand-off label, contract path and authorization reference the mounted call repeats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:10aab3547f46f304e4afbbac613cedc01d472b61f316d52a4ff7ab8efe5c6c82",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommandRoute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal names one clause, then the mounted `knowledge_write` call with contractPath, handoffPath, handoffName, authorizationRef and \"preview, then commit: true\", and mentions no settings option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:0a682a032a3451bbf5c84b4a72c3c94979d829f0b26a4fe5d28d417836df7419",
+            "locator": {
+              "kind": "symbol",
+              "name": "mounted_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`checked_guard` answers `None` when the guard admits the run and the fixed clause when it raises, embedding no exception text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`discovered_settings` sorts the causes in the order met — no trusted settings at or above the working directory, the guard, an unloadable settings file, else the loaded settings — and leaves the other-root comparison to the caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:4ebda96a846be0189ac7e4a511de99d1843e4ec9a5ec48568ed863e81f50f838",
+            "locator": {
+              "kind": "symbol",
+              "name": "discovered_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The command-line route's own value, its sorted causes and the remedy sentence live in this module and are what a refusal emits; `mcp/src/agents_remember/cli/knowledge_write_route.py` keeps its own copy of the guard constant.\n\nAnchor: `discovered_settings`, `checked_guard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:4ebda96a846be0189ac7e4a511de99d1843e4ec9a5ec48568ed863e81f50f838",
+            "locator": {
+              "kind": "symbol",
+              "name": "discovered_settings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The guard's clause is a module constant here, so the same sentence reaches a refusal whichever cause met it, and the CLI module's own constant is a copy this module does not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+            "content": "sha256:1464503be33a81003dcb598870266362431695d54a8a86303c6cd47e209d46b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

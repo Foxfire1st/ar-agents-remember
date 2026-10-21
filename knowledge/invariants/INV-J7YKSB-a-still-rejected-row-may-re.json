@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Three registered cases pin the admission, the rerun and the earlier-refresh answer, and the judgment spans the writer's pure function, its row authoring and the stored shape. Without it a curator whose code moved is refused twice by advice that points at itself and has no route to say where the code now lives."
+  },
+  "applicability": "A still_rejected reconsideration row whose fired reconsider_on link names code the leaf removed or moved, at the leaf's code candidate.",
+  "conditions": [
+    "repoint is a list of {link, path, locator}; link is the 0-based position of a fired reconsider_on link of the answered alternative, named once.",
+    "An anchor or anchor_stale item needs a fired base target with no image at C and the leaf's link still the base target or already this same re-point; a link that still maps is refreshed as today and a re-point on it is refused.",
+    "The new path and locator resolve at C through the code snapshot, with the blob and content C holds.",
+    "For anchor and anchor_stale, the leaf's current link is the base target, or already names this same re-point so a rerun writes the same bytes; for refresh_not_current, the row names that item in items and the current link is the earlier refresh the item fired on, or this same re-point.",
+    "The row records before and after with their paths, and the decision's revision goes up once in the leaf."
+  ],
+  "exclusions": [
+    "A raise: it leaves the links as they are and asks the developer where the code lives.",
+    "relation and alternative, which a re-point never changes.",
+    "Requirement links, which are re-pointed by version as today.",
+    "Undoing a re-point: if the removed code returns, the re-point stands."
+  ],
+  "id": "INV-J7YKSB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reconsideration_repoint.py (10 tests), all passed 2026-10-21, on real Git trees made by the leaf test support"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A still_rejected row may re-point a fired link the leaf's change took out from under it, naming the old target, the new one and the reason: an anchor or anchor_stale item needs a fired base target with no image at C and the link still at its base target or already that same re-point, and a refresh_not_current item needs the row to name it and the link to hold the earlier refresh or this same re-point.",
+  "status": "proposed",
+  "supersedes": []
+}

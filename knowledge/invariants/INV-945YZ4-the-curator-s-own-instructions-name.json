@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "One census case asserts the Curator role text's own route clauses — the mounted knowledge_write among the authoring routes, and the sentence that no other route writes knowledge — and a second asserts the role's writer admission by reference to its operation. A role text that denies the route it is told to use sends each curator pass back to a command that refuses its raise."
+  },
+  "applicability": "The Curator's compiled role text as a curator seat reads it: roles/curator.md and the operation text it names.",
+  "conditions": [
+    "The role text lists knowledge-ingest, the mounted knowledge_write which runs the same writer with the same arguments, and the taskless bootstrap route, then says no other route writes knowledge.",
+    "The commit spelling names both --commit and commit: true."
+  ],
+  "exclusions": [
+    "The capsules' word budgets, which do not grow.",
+    "Other roles' texts, which this leaf does not own."
+  ],
+  "id": "INV-945YZ4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_curator_instruction_wording.py and mcp/tests/test_role_capsule_budgets.py, both passed 2026-10-21; the capsules still compile at 3698 / 3142 / 2458 words and no capsule grew"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "MIK-R194@v1 rule 10",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Curator's own instructions name the mounted knowledge_write among the routes that author knowledge, and say that no other route writes it.",
+  "status": "proposed",
+  "supersedes": []
+}

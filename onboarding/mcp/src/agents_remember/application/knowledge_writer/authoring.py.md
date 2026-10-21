@@ -29,9 +29,21 @@ A record request with `remove: true` removes the stored record file and its Mark
 - A weakness records its anchored place at C, and a closure keeps the anchor it was recorded at.
 - Every dependent write is a confirmation of the task's tip, refused without this task's attribution and judgment.
 
-- Handle assignment and refresh restoration precede ordered entry processing, records and rows. \[54] [54]
+
+
+
+- Handle assignment and refresh restoration precede ordered entry processing, records and rows. [60]
+
+
+
 - Origin/evidence and decision alternatives delegate to their explicit owners. \[55] [55]
-- Decision updates remap links before anchored link resolution. \[56] [56]
+
+
+
+- Decision updates remap links before anchored link resolution. [61]
+
+
+
 
 ## Inherited source-epoch account (non-operative)
 
@@ -365,3 +377,11 @@ The following complete predecessor retains useful explanations, old observations
 > No cross-repo boundary is crossed by this file.
 >
 > - Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]
+
+## Current account — the range proof and the re-point row
+
+`_write_proof` now returns the report text and the evidence references its proof pairs with: a `path::name` proof resolves its symbol as before, and a range proof is resolved by `_proof_locator` through `case_proof.range_proof`, which admits the lines only for one case that runs and that no name reaches. The paired titles are then reported through `case_proof.proven_tests`, so evidence that names the case's own title reads `proof_written`. The authoring class is now `Authoring(RepointRowAuthoring)`, so a `still_rejected` row may carry the re-point that `repoint.py` judges; nothing else about the entry, proof or row order changed.
+
+- A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome. [57]
+- A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. [58]
+- The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]

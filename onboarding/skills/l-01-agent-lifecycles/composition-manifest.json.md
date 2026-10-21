@@ -232,7 +232,9 @@ The manifest exposes canonical Investigator among the seven native roles, reques
 ## Refreshed current evidence
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
-- The role registry in canonical order and the two routing conditions, with the non-role launcher declared separately. [2]
+
+- The role registry in canonical order and the two routing conditions, with the non-role launcher declared separately. [32]
+
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
 - The role registry itself and the two role entries that show the per-seat shape. [5]
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
@@ -488,3 +490,9 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [29]
 
 - Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [30]
+
+## Current account — the curator's requested tool list
+
+The curator role's `tools` list requests `knowledge_write` beside `knowledge_read`. The list requests tools: it is checked against the published tool roster and enters the seal digest, so it records what the role may reach and grants nothing by itself. The mounted `knowledge_write` runs the same leaf writer with the same arguments as `knowledge-ingest`, which is why the curator's role text may name it as an authoring route.
+
+- The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]

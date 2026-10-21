@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+        "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
+        "locator": {
+          "end": 68,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-SYBPB2",
+      "invariant": "INV-CKJ6AZ",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 6 — the re-point judgment criterion",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The standing criterion a curation pass is checked against: OM-5 asks the reviewer to judge each re-point's target and reason, which is the instruction side of the re-point obligation this record states.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Current body claims are checked against shipped code under OM-1.",
       "targets": [
         {
           "anchor": {
-            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
             "content": "sha256:7610f5d7d6a039667279c36815e7e1748d5f82831101ccf0947d9fa778fd1fb9",
             "locator": {
               "end": 24,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6fba92b668ee785a1f5bc3d50d6868efc7bb45d",
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
             "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
             "locator": {
               "end": 36,
@@ -62,6 +82,23 @@
             "content": "sha256:2a027331d6f2f0e578122e31164a727cd21690ce9e5c9ff952f8412d2f23f32d",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "OM-5 makes each re-point and each reconsidered revision after a raise a judged obligation the reviewer checks against the code and the recorded answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 51
             }
           },
           "kind": "code"

@@ -1,14 +1,48 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_write_route.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+        "content": "sha256:e1c12799c981fc2ab1ad4a8b7d653e61b9909d9fbac8763def4974eb074e4303",
+        "locator": {
+          "kind": "symbol",
+          "name": "command_settings"
+        }
+      },
+      "id": "RLZ-CQX7A6",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The command's settings are discovered here without an escape hatch, so the four causes are all it can meet and each maps to one clause.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "17": {
-      "note": "`run_leaf_write` owns the current boundary described above.",
+    "36": {
+      "note": "The adapter declares no settings option and imports no `require_config_path`: a caller cannot pass the authority a `raise` would need.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ff293540604ee769a7f545fdcb04d064dc22ca5",
-            "content": "sha256:762bedcfa33c21a7d3ab12f1388230b4f7a87d636294ad507755d89baebcecf7",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:33eb4259f1dfc5a821acd3c34d1aadf64da274e8087a33af926776ee50a0207d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "`run_leaf_write` builds the command route from `command_settings`, the hand-off list's resolved absolute path, the recorded label, the contract's resolved absolute path and the authorization reference, and passes the same label as the submission's hand-off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:b14ab972d1ae2deeae394903120b0286f3014e94b8a489b939aac1c9ba2d98cc",
             "locator": {
               "kind": "symbol",
               "name": "run_leaf_write"
@@ -18,306 +52,48 @@
         }
       ]
     },
-    "18": {
-      "note": "`run_wave_write` owns the current boundary described above.",
+    "38": {
+      "note": "`command_settings` delegates to `knowledge_write_command.discovered_settings` with this command's discover, guard and load moves plus the unreadable error family, returning settings or one fixed clause.",
       "targets": [
         {
           "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:e3c94617fa4d9490b39fc29a41e5813e626c107cc0bb036b680fd0004cfa4b05",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:e1c12799c981fc2ab1ad4a8b7d653e61b9909d9fbac8763def4974eb074e4303",
+            "locator": {
+              "kind": "symbol",
+              "name": "command_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The guard's clause is also spelled in this module; the clause a refusal receives is the one the command module returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:26765ab04026d19a589e2e9dc9c69864c4d5714b126be687d76f116f49cbd1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHECKOUT_GUARD_CLAUSE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The wave route writes a taskless wave and takes no route, so a bootstrap reads no settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:5ab8986a0bfedab21027a3581be5a3b7cd8f8b4efe079e48080822e967fb4d8e",
             "locator": {
               "kind": "symbol",
               "name": "run_wave_write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "`run_crossing_write` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:c81455329dc01ef30d6eaaea0fe16cf16a2f4a8c788b42b0e725cfa5bbfc00e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_crossing_write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "`unconverted_write_refusal` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0f9054d27768902f84d64135847cb6dfb947d0fb",
-            "content": "sha256:16a90515e2350f87fed74ae30c5f12fcd8055e9268c69c554104cc4721528c52",
-            "locator": {
-              "kind": "symbol",
-              "name": "unconverted_write_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The layout-marker test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
-            "locator": {
-              "kind": "symbol",
-              "name": "is_converted"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The write refusal for an unconverted leaf tree: rule 9 when its official line is converted, else the cutover lock.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0f9054d27768902f84d64135847cb6dfb947d0fb",
-            "content": "sha256:16a90515e2350f87fed74ae30c5f12fcd8055e9268c69c554104cc4721528c52",
-            "locator": {
-              "kind": "symbol",
-              "name": "unconverted_write_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "The owner from the contract and `task.json`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:d4f4b98251aa354744e3ee82c0ff6886e9d7e5ec6ffaa9ac29ff181febdcf80f",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_owner"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The task owner's decision resolver for the leaf (MIK-R11).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:3a021993eccc5e40819cd6621e55eb6f19ad750ac8656e4511b65fb04f8b5c11",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_decisions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ff293540604ee769a7f545fdcb04d064dc22ca5",
-            "content": "sha256:762bedcfa33c21a7d3ab12f1388230b4f7a87d636294ad507755d89baebcecf7",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_leaf_write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "The lazy port: settings read only when a `raise` needs them, from `--config` or discovery; unavailable settings refuse the `raise`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
-            "content": "sha256:ba5e55ff859440dfa035baff7bfc129e3373e37939dd4f611f432a91901dbafc",
-            "locator": {
-              "kind": "symbol",
-              "name": "LeafQuestions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The wave route.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:e3c94617fa4d9490b39fc29a41e5813e626c107cc0bb036b680fd0004cfa4b05",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_wave_write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The ingest dispatch on the loaded contract.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "run"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "The bootstrap dispatch on the admitted memory root.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-            "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_run"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "30": {
-      "note": "Planning writes nothing; unconverted memory is not this route.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
-            "content": "sha256:ec8a1d3dc66ec9c2792c2151fb4a7a86b2391fe4840f4062350c71ca1c0cb72c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_planning_run_writes_nothing_and_unconverted_memory_is_not_this_route"
-            },
-            "path": "mcp/tests/test_knowledge_writer.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "31": {
-      "note": "Blank authorization refused and recorded.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
-            "content": "sha256:11dc3a88c8fa488611ccf6d5105d86c3618ce4343795b3856cef139a88e35ec1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_leaf_file_route_refuses_a_blank_authorization_and_reports_it"
-            },
-            "path": "mcp/tests/test_knowledge_writer.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "32": {
-      "note": "The crossing owner's route: the sync's memory worktree, the series' code work branch as C.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:c81455329dc01ef30d6eaaea0fe16cf16a2f4a8c788b42b0e725cfa5bbfc00e5",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_crossing_write"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "Which worktree holds the open crossing history file, or why the run is refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:cb3a38d645b8c3a5daa0cc926f9700da20728e70a2235232c6c223fea0e97af2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_crossing_memory_root"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "Leaf writer request binds the independently resolved paired memory base.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "14d13d9d5b69ad58a42bb4e0f5f630509388e1f4",
-            "content": "sha256:71f620c30e85cc3553f8a15f81c47a2c082c40ba0cc7734162b8d17ccc5b4616",
-            "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 206
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "Leaf writes preflight the persisted worklist; lazy question forwarding uses batched publication and same-coordination-root authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:b7040d40ce7afbe718a0132d7511326467d0d43ff88de05963658fcb9cde2aa8",
-            "locator": {
-              "end": 277,
-              "kind": "line_range",
-              "start": 237
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:26440d3c3c08d67cf71f1995971aee84e961e2299efc09de1ffacb6c63051882",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 167
             }
           },
           "kind": "code"

@@ -18,6 +18,23 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "The worklist detail names the line-range proof and the template's exact forms without raising its word budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+            "content": "sha256:4dab11b6ca285e23163736301f9835fb129a6fb0bd8cfc96bb16cab447d1246d",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

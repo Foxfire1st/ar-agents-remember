@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:c505791bb2ec46a640c4985ecb40eacd57c968ca109f4afba94bef7df9318883",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:d86784400b4e517a756a4981dd0f2dc9c26fceca88faf2b966d6387c599bb099",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -88,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -149,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:3a2190534ac8787ef1861a8fbcc06aa82fe16d7be39df7d73cf1c7b0628335ad",
             "locator": {
               "kind": "symbol",
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:b93fa02f62d656d00b070beff442565448cab3a3f67bfd226e4fca4458e2bee2",
             "locator": {
               "kind": "symbol",
@@ -210,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18b00324c21fe7cacbf912ef639a6ed62d30ed09",
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:8fe120d7bb051aba2c92f4910cbb0b9d7d9c0c348620cb4b3dc916fa5b941bc2",
             "locator": {
               "kind": "symbol",
@@ -226,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f218812583b779dcd6173f4ea7714de1ad26bba",
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
             "content": "sha256:6eb103c9adf088b7abdaba12fa109e0f524f026fe6bf1494f32570981972150f",
             "locator": {
-              "end": 155,
+              "end": 151,
               "kind": "line_range",
-              "start": 155
+              "start": 151
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

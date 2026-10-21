@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Three registered cases pin the branch remedies: the re-authored refusal's advice is followed to an admitted row, the still-maps refusal's advice is followed to one, and the refresh refusal is held with its unchanged bytes while the recompute route it names is taken by the sibling re-point tests and the raise route is proven for a task-owned leaf."
+  },
+  "applicability": "The refusal texts of a reconsideration link whose target moved, was re-authored in the leaf, or no longer stands at the code candidate.",
+  "conditions": [
+    "The unmappable refusal names repoint with the reason, or raise when the reconsider-when condition may be met.",
+    "A link re-authored in the leaf keeps 'restore its base target in `records`, or `raise`'.",
+    "A target whose earlier refresh no longer stands, and an item whose code changed after the worklist was computed, keep 'recompute the worklist', because a recompute gives a new item.",
+    "A link whose fired base target still maps to C is refreshed as today, and its re-point refusal says to remove the repoint."
+  ],
+  "exclusions": [
+    "The requirement-version refusals, which are unchanged."
+  ],
+  "id": "INV-ZG887T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reconsideration_recovery.py (5 tests) and mcp/tests/test_reconsideration_repoint.py::test_a_link_re_authored_in_the_leaf_is_refused_with_the_way_out, passed 2026-10-21"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "MIK-R194@v1 rule 7",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A refusal that tells a curator to repair the row must name a repair that can work, so an unmappable link is told to re-point to where the code lives, with the reason, or to raise, a link re-authored in the leaf is told to restore its base target or raise, and only a target whose earlier refresh no longer stands, or whose code changed after the worklist, is told to recompute the worklist.",
+  "status": "proposed",
+  "supersedes": []
+}

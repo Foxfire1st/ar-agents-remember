@@ -43,7 +43,7 @@ neither row changes an alternative, its status or the chosen option.
     fresh manifest read); an item with no packet refuses the row ("the manifest entry names no file");
   - `anchor` / `anchor_stale`: `carry.mapped_anchor` maps a `line_range` through the zero-context diff from the
     link's recorded blob, or re-binds a symbol, at C (F1); an anchor that cannot be mapped refuses the row, naming
-    `links.<i>` and asking to re-author the link in `records` first.
+    `links.<i>` and asking for a `repoint` to where the code now lives, with the reason, or a `raise` when the reconsider-when condition may be met.
 - **The K_B target the item fired on** (`_fired_target`, review R3-1): the base record's link at the fired position
   (`MemoryState.base_record`, which is memory `HEAD`, so K_B until the leaf commits memory) when its
   `link_target_key` still equals the fired target; else, for an anchor, the K_B anchor the facts carry
@@ -76,8 +76,9 @@ neither row changes an alternative, its status or the chosen option.
 
 ### Invariants And Boundaries
 
-- **`still_rejected` refreshes only the fired link, to the judged state mapped through the diff, and refuses a link
-  that was re-authored or cannot be mapped.** Candidate invariant. Realized by the `REFRESHED_TRIGGERS` filter,
+- **`still_rejected` refreshes only the fired link, to the judged state mapped through the diff; an unmappable
+  link is refused with `repoint` naming where the code now lives and the reason, or a `raise`, and a link
+  re-authored in the leaf with restore-its-base-target-in-`records` or a `raise`.** Candidate invariant. Realized by the `REFRESHED_TRIGGERS` filter,
   `_at`, `_fired_target`, `_link_state` and `_refreshed_target` over `mapped_anchor`; proved by
   `test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links` (a carried range stays byte-identical;
   a touched one maps to lines 19–20), `test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link`,
@@ -172,3 +173,10 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the task document is reached only through the `OpenQuestions` port.
 
 No cross-repo boundary is crossed by this file.
+
+## Current account — the refusals that no longer loop
+
+A link whose base target has no image at C is a new `UNMAPPABLE` state: its refusal says to `repoint` the link to where the code now lives, with the reason, or to `raise` when the condition may be met. The re-authored cases keep the prefix "the link was re-authored" and add "restore its base target in `records`, or `raise`". The stale-item and wrong-alternative refusals keep "recompute the worklist", because there a recompute gives a new item. A `still_rejected` row that does not re-point an item fired on an earlier refresh that no longer stands is written as today, and the writer's note names `repoint`.
+
+- A link whose base target has no image at C is refused with the re-point or raise that can clear it, not with a recompute that cannot. [31]
+- The re-authored refusal keeps its prefix and names restoring the base target or a raise. [32]

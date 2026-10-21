@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Two registered cases pin the remedies and the modifier-by-name reading. A false remedy costs the curator the whole refused batch and sends it to a route that cannot work, which is the failure the leaf removes."
+  },
+  "applicability": "The refusal a name-based proof meets for a JavaScript or TypeScript test case, and the remedy that refusal offers.",
+  "conditions": [
+    "A .skipIf or .runIf case is reported with that modifier, not as .skip.",
+    "A case that runs and that no name reaches is offered its exact line_range.",
+    "A case that does not run is offered no line range."
+  ],
+  "exclusions": [
+    "A symbol refusal in a language the extractor does not parse, which cites a line range or the file instead."
+  ],
+  "id": "INV-WK39V1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_case_ranges.py::test_the_symbol_refusal_offers_the_exact_lines_and_reads_modifiers_by_name, passed 2026-10-21"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "MIK-R194@v1 rule 3",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A proof's refusal names the real modifier or the real title form, and offers a line_range only where a range reaches the case, so an author is never told to use a route that cannot work.",
+  "status": "proposed",
+  "supersedes": []
+}

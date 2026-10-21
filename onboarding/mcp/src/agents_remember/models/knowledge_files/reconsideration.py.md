@@ -106,7 +106,9 @@ No cross-repo boundary is crossed by this file.
 
 - The history-row dispositions that count as a change of the row's subject. [3]
 
-- The five triggers, and the three a `still_rejected` answer refreshes. [4]
+
+- The seven triggers, and the three a `still_rejected` answer refreshes. [22]
+
 
 - The subject pattern over the shared decision ID pattern. [5]
 
@@ -147,3 +149,10 @@ checked leaf repair to the serving build.
 - An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility. [18]
 
 - Supersession, stale refresh and ordinary row satisfaction have explicit priority in the pure predicate. [19]
+
+## Current account — the stored re-point
+
+The module now stores a re-point. `RepointAnchor` is one end of it: `path` is required, because the row is read apart from any sidecar, with the locator, blob and content. `Repoint` is `{link, before, after}` where `link` is the 0-based fired position, and `require_unique_repoints` refuses a list that names one link twice. The subject, trigger and open/satisfied rules are unchanged.
+
+- A stored re-point names the link it answers, the target it stood at and the target it now names, each with its path. [20]
+- A re-point list names each link once, so one item judges one link. [21]

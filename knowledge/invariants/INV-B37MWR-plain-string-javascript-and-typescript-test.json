@@ -3,18 +3,19 @@
     "criteria": [
       "prevents_costly_mistake"
     ],
-    "justification": "Text occurrences, duplicate same-line names and undecodable unchanged blobs can otherwise look like unique/current proof definitions. Definition-aware occurrence preservation and honest refusal prevent false evidence while retaining a precise line-range alternative."
+    "justification": "Text occurrences, duplicate same-line names and undecodable unchanged blobs can otherwise look like unique/current proof definitions, and an unsupported title form can otherwise cost a curator the whole proof. Definition-aware occurrence preservation, honest refusal and a precise line-range alternative prevent false evidence."
   },
-  "applicability": "Citation/proof-symbol resolution in JavaScript-family test/spec source files and currentness observation of symbol anchors.",
+  "applicability": "A proof or a citation definition in a JavaScript or TypeScript .test. or .spec. file at the leaf's code candidate: a plain-string case title, an unsupported title form, an undecodable symbol, or a case no path::name reaches.",
   "conditions": [
-    "Plain it/test string titles bind nested describe-qualified names and bare titles; bare resolution is admitted only when its actual occurrence is unique, including duplicate occurrences on one line.",
-    "The semantic first argument ignores comment extras; plain JavaScript escapes and valid UTF-16 pairs decode while lone units remain represented. Non-test filenames do not gain test-case definitions.",
-    "Skipped, todo, each and computed title forms are not promoted to symbol definitions; the test-case diagnostic names unsupported forms and offers line_range recovery.",
-    "A non-UTF8 symbol source is unverifiable before the unchanged-blob fast path, names the path/UTF-8 reason and does not masquerade as a failed blob read."
+    "A title resolves only from a literal it/test call whose semantic first argument is a plain string; escapes decode and UTF-16 pairs combine while lone surrogate units stay represented.",
+    "A bare title bound by more than one call, and an occurrence inside a comment or a non-title argument, is not a unique definition.",
+    "An undecodable symbol is unverifiable rather than resolved.",
+    "The proof's test carries the case's path and a line_range locator, the anchor records the candidate blob and the content identity of the located bytes, and the evidence pairs with the case's own plain title, bare or behind its plain-titled enclosing describe titles.",
+    "Only a case that runs is offered a range; a skipped, todo or otherwise blocking case is refused with its modifier and offered none."
   ],
   "exclusions": [
-    "This adds no support for computed/parameterized/skipped/todo proof symbols, no fallback uniqueness from deduplicated same-line case spans and no arbitrary JavaScript execution.",
-    "The scope is source-defined extraction and classification; no parser suite, execution witness or first-class proof acceptance is inferred."
+    "The admission of the range as one running case, which the case-extent check decides.",
+    "A case whose own title is computed: it pairs with no evidence, and the proof is still written."
   ],
   "id": "INV-B37MWR",
   "origin": {
@@ -30,9 +31,9 @@
     "leaf": "260928-MIK-L54",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Plain-string JavaScript and TypeScript test-case titles resolve as proof symbols with unique bare-title support, unsupported title forms are named with a line-range remedy, and invalid UTF-8 symbols are unverifiable.",
+  "statement": "Plain-string JavaScript and TypeScript test-case titles resolve as proof symbols with unique bare-title support; invalid UTF-8 symbols are unverifiable; and a case that no name reaches is proved by the exact lines it occupies, while a case that does not run is proved by no range at all.",
   "status": "proposed",
   "supersedes": []
 }

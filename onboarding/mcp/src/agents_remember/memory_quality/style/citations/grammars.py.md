@@ -84,3 +84,10 @@ The following complete predecessor retains useful explanations, old observations
 > - Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
 > - Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds.. [14]
 > - Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
+
+## Current account — the case-extent entry
+
+`test_case_range(path, lines, start, end, reaches)` is the grammar's one new entry beside `test_case_refusal`: it parses the candidate bytes and answers the one case a range is, or the refusal naming why the lines are no case. The caller passes its own resolver, so a range is admitted only where no name really reaches the case. `_span` now delegates to `test_cases.span_of`, so every extent in this module is measured by one rule, and `test_case_refusal` passes the path through.
+
+- The one new grammar entry answers the case a range is or why the lines are none, using the caller's name resolver. [18]
+- Every extent in this module is measured by the case module's one rule. [19]

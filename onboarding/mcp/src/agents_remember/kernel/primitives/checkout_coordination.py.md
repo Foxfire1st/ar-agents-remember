@@ -31,10 +31,17 @@ authority state.
 `lifecycle-operation`, or `test`). `declare_lifecycle_operation_process` is the
 narrow declaration for the detached task worker: it admits live coordination authority
 needed to claim its durable operation and finalize the task edge without assigning the
-long-lived `mcp` or `dashboard` daemon writer role. `checkout_cli_location` returns no special context for one of those declared
-modes or for an installed wheel. An undeclared linked checkout receives its leaf
-location; an undeclared primary checkout raises `CheckoutCoordinationError` because it
-has no disposable leaf enclosure.
+long-lived `mcp` or `dashboard` daemon writer role.
+
+`require_linked(location)` is the guard's whole decision, factored out so one rule serves both callers: no
+location returns `None` (the policy does not apply), a `primary` location raises
+`CheckoutCoordinationError` because it has no disposable leaf enclosure, and a `linked` location returns the
+location. `checkout_cli_location` keeps the declared-mode bypass — one of the declared modes, or an installed
+wheel, is outside checkout CLI mode and gets no special context — and then hands `resolve_checkout_location()`
+to `require_linked`. The split moved the refusal text and the kind check unchanged; an undeclared linked
+checkout still receives its leaf location and an undeclared primary checkout is still refused with the same
+sentence. A caller that already holds the location, or a test that builds a real primary or linked layout,
+now runs that same rule instead of a second copy of it.
 
 `require_durable_write_target` resolves the candidate and permits exactly two
 task-local descendants: the disposable coordination root for inbox/gate/lifecycle
@@ -50,7 +57,7 @@ The host Dagger registry is a separate resource owner. Its lock mechanics use `k
 
 ### Conventions
 
-Resolve the imported package location and actual execution declaration; caller cwd and ambient role-like values are not authority.
+Resolve the imported package location and actual execution declaration; caller cwd and ambient role-like values are not authority. A refusal is raised only from `require_linked`, so a new caller cannot decide the guard differently.
 
 ### Invariants And Boundaries
 
@@ -66,6 +73,8 @@ Resolve the imported package location and actual execution declaration; caller c
 - Only the detached plane-owned lifecycle worker declares `lifecycle-operation`.
   The mode does not claim MCP/dashboard daemon ownership and is not a general checkout
   CLI escape hatch.
+- The guard's decision is one rule: the declared-mode bypass selects which callers are outside the guard, and
+  `require_linked` alone decides what a location may do.
 - This protects supported Agents Remember paths from accidental writes. Arbitrary
   hostile Python or shell filesystem access remains outside an in-process policy.
 
@@ -73,25 +82,13 @@ Resolve the imported package location and actual execution declaration; caller c
 
 None identified in this bounded containment review.
 
+## Evidence Scope
+
+This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.
+
 ## Evidence
 
-### Docs References
-
-No external Domain Documentation source is configured.
-
-No configured domain documentation source.
-
-### Repo-Internal References
-
-- Runtime config asks this checkout policy before selecting the synthetic leaf configuration. [1]
-
-- Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. [2]
-
-- MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. [3]
-
-
-### Cross-Repo References
-
-No separate cross-repository implementation dependency governs this policy.
-
-No cross-repository evidence is required.
+- `require_linked` holds the guard's whole decision: no location is not refused, a primary location raises `CheckoutCoordinationError`, and a linked location is returned. [4]
+- `checkout_cli_location` keeps the declared-mode bypass and then delegates the decision to `require_linked` over the resolved checkout, so behaviour is unchanged. [5]
+- The location still comes from the imported package path: a `.git` file is a linked worktree, a `.git` directory the primary checkout. [6]
+- `require_durable_write_target` permits exactly two durable targets — the disposable coordination root and the enclosure `reports/` root — and the lock paths call it before a parent or lockfile exists. [7]
