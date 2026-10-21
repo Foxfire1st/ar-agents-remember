@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+        "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
         "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+        "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
         "content": "sha256:a65a05a8019b67b8070acda0cab30c5dff2f84b10f0cdaa8a3269b85e773ac42",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+        "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
         "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
+            "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
             "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
             "locator": {
               "kind": "symbol",
@@ -87,16 +87,14 @@
       ]
     },
     "3": {
-      "note": "The controlled fixture patches both facade-local and retained delivery-module bridge/resolve/topology names, plus held-store and retirement bridge callers. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.",
+      "note": "The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e006b3303818553be37843dc6619a766ad1e8735",
-            "content": "sha256:8f8a002c39f53798dc8cc18f7e29187cbe2dac149b2b579d0be08bd3947eefde",
+            "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
+            "content": "sha256:6529e6adf12712dca3416213983a697bd1f3106582fbb94485fed48f050c8ed4",
             "locator": {
-              "end": 1127,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"

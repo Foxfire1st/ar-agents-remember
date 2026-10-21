@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the generated mirrors jointly guarantee that a role-launch behavior change reaches every surface a user or agent reads, with mirrors derived and retired text staying retired."
+    "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the generated mirrors jointly guarantee that whatever a role-launch change touches, the surface that states it carries it in the same change, with mirrors derived and retired text staying retired."
   },
-  "guarantee": "Role-launch behavior changes propagate to the dashboard launcher in its own file, the settings reference in its own file and every shipped skill mirror through the existing public generator, with all three surfaces updated by the same change; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "guarantee": "Each role-launch surface carries the change that reaches it, and every affected surface is updated by the same change: the dashboard launcher (INV-63Z0MN) carries a change to launch choices, the settings reference (INV-DKN3CG) carries a change to an accepted settings key, and every shipped skill mirror (INV-NNQR91) is regenerated through the existing public generator from the canonical role, operation and onboarding text. A change to one surface's own subject does not oblige the others; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
   "id": "FAM-GDXSJG",
   "members": [
     "INV-63Z0MN",
@@ -20,7 +20,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/cockpit",
     "docs",

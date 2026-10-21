@@ -6,9 +6,9 @@
 
 ## Purpose and current source account
 
-GivenToAgentExpectations independently derives expected handover, first-message, tool-server binding, sandbox write-avoidance values and recovery note from the launch fixture, then checks what the dispatch route gave each role. It shares assertions across launch-related suites and models no live harness.
+GivenToAgentExpectations derives expected handover, tool-server binding, sandbox write-avoidance values and recovery note from the launch fixture, then checks what the dispatch route gave each role. Its first-message expectation is not independent of production: it imports role_handover_artifacts.artifact_line, so the line's formatting is the production formatting and only the data it names is derived here. It shares assertions across launch-related suites and models no live harness.
 
-The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` still independently derives what a dispatch gives an agent. Launch/status/document-chat suites share the fake, not a live harness or production host.
+The module additionally owns `FakeRuntime`, its catalog/server constants, recorded launch-call set, the RequestId protocol its projections read a request through, and handover_object/planned_handover, which build the complete hand-over and its file reference the projection names. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent. Launch/status/document-chat suites share the fake, not a live harness or production host.
 
 ## Current scoped contract
 
@@ -24,7 +24,9 @@ The module holds no tests and makes no product claim. `FakeRuntime._agent_has_me
 
 ## Current contract evidence
 
-- The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` still independently derives what a dispatch gives an agent. Launch/status/document-chat suites share the fake, not a live harness or production host. [2]
+
+- The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host. [2]
+
 
 
 - FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain. [3]

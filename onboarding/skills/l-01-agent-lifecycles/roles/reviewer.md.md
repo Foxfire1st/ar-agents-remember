@@ -97,8 +97,7 @@ Canonical lifecycle doctrine owns canonical skill content; generated copies are 
 outputs. Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed without one of the two
 authorized invalidation paths.
-One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat.
-
+One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat. The role text names hand-over values by their dotted path, `documents[0].taskDocReadArgs` and `workspace.memoryRoot`, and carries no bare nested name.
 
 ## CCR-R12@v5 Transaction Boundary
 

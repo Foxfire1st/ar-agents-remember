@@ -3,26 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-        "content": "sha256:8f388258dd27b4c67e47f903f6d0f19c2461e31ff5f7285f5c28ee8b6950c031",
-        "locator": {
-          "kind": "symbol",
-          "name": "_canonical"
-        }
-      },
-      "id": "RLZ-461FCZ",
-      "invariant": "INV-X9GE8J",
-      "origin": {
-        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Resolves folder only so links at artifact name are refused as nonregular.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-        "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
+        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+        "content": "sha256:4d158d7807677ce446035b0b40d8495340ce484326df1d3ba8aa9092da0e1810",
         "locator": {
           "kind": "symbol",
           "name": "write_handover_artifact"
@@ -39,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-        "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
+        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+        "content": "sha256:dbdcdb6ae268dfb4b540af3751a7ca161c6a211dd870fd1d914ba783c1090c9f",
         "locator": {
           "kind": "symbol",
           "name": "restore_handover_artifact"
@@ -57,25 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-        "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
-        "locator": {
-          "kind": "symbol",
-          "name": "_write_once"
-        }
-      },
-      "id": "RLZ-CBVRYX",
-      "invariant": "INV-X9GE8J",
-      "origin": {
-        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Publishes finished mode-0444 bytes by hard link and refuses conflicting content.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
         "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
         "locator": {
           "kind": "symbol",
@@ -90,6 +54,23 @@
       },
       "rationale": "Publishes each selected detail under its content-bound adjacent artifact path.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+        "content": "sha256:468cf5d69e9e32e595bc71baf3a59fda94f6496a954745fe729b3d206492f5bf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MXZRHV",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-x9ge8j",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The module composes the whole artifact line in artifact_line: the one line before the message that names the text file and, when the reference carries a complete hand-over, that second file too — calling handover_file_line for the path/digest fragment and keeping the legacy one-file line for a receipt without it. It also writes and restores the text artifact itself. It does not format the second file's path and digest; that fragment is role_handover_file.handover_file_line.",
+      "role": "unclassified"
     }
   ],
   "references": {

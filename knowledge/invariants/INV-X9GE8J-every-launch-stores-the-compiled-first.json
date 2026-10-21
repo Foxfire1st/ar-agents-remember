@@ -6,10 +6,13 @@
     ],
     "justification": "Immutable atomic creation prevents a resumed role reading an assignment silently rewritten under the original launch identity."
   },
-  "applicability": "Creating the first-assignment artifact for a role launch.",
-  "conditions": [],
+  "applicability": "Creating the first-assignment files for a role launch.",
+  "conditions": [
+    "The complete object is UTF-8 with a one-space indent and a final newline, and the projection's values equal the file's values at the same keys.",
+    "The receipt stores the complete file's path, canonical path, digest, size and its text."
+  ],
   "exclusions": [
-    "Lost-artifact reconstruction belongs to saved-message retry contract."
+    "Lost-artifact reconstruction belongs to the saved-message retry contract."
   ],
   "id": "INV-X9GE8J",
   "origin": {
@@ -23,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every launch stores the compiled first message once as a plain-text handover artifact `<report path without its suffix>.handover.txt` of at most 1,048,576 bytes, created read-only (mode 0444) by a hard link of a finished temporary file: an existing file is reused only when it holds the same bytes, different content is refused and nothing changes, and a link at the artifact's own name is never followed.",
+  "statement": "Every launch stores the compiled first message once as a plain-text hand-over artifact `<report path without its suffix>.handover.txt` and the complete hand-over object once as `<report path without its suffix>.handover.json`, each at most 1,048,576 bytes and created read-only (mode 0444) by a hard link of a finished temporary file: an existing file is reused only when it holds the same bytes, different content is refused and nothing changes, and a link at the file's own name is never followed. Both files are preflighted as one pair before either is written, and both exist before the start is sent.",
   "status": "proposed",
   "supersedes": []
 }

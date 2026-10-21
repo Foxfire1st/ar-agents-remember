@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/cli/immutable_artifact.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file is published by hard link of a finished temporary file and reused only on equal bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+            "content": "sha256:81c4fd68064214b78843b11ca4a07803e20ef6963f0ca4ac3403807210007d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_once"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refusal is decided without writing, so a caller can leave every target as it was.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+            "content": "sha256:3f06232851a4b0ca17edf362a0f340672e316bda4fd93fe90b7ec06c37bae824",
+            "locator": {
+              "kind": "symbol",
+              "name": "preflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An existing file is compared with the expected bytes exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+            "content": "sha256:236a926498f82dac8be3db3752aa8da887202320a85866f668ceb11a10670b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "holds_exactly"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A link at the artifact's own name is never followed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bd945c58e535cd8a19c801e8f5c645ad20bf40e",
+            "content": "sha256:47fc2a3b92c9d4b95bbd39d9cc9db97003896134cde3517967890420e3776c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

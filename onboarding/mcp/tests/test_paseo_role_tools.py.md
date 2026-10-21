@@ -12,7 +12,9 @@ The controlled fixture patches facade-local bridge/resolve/topology names, plus 
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 
+
 - The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance. [3]
+
 
 
 ## Governing Overview

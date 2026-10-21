@@ -10,7 +10,7 @@ Persists and verifies the immutable compiled first assignment, its admitted inst
 
 ## Code Commentary
 
-write_handover_artifact publishes bounded mode-0444 bytes atomically and reuses only exact content. first_message prepends the path/digest recovery line. restore_handover_artifact checks saved reference/message and reached canonical file, reconstructing only missing exact bytes. A symlink at the artifact name is never followed.
+write_handover_artifact publishes bounded mode-0444 bytes atomically and reuses only exact content. first_message prepends the path/digest recovery line. restore_handover_artifact checks saved reference/message and reached canonical file, reconstructing only missing exact bytes. A symlink at the artifact name is never followed. The complete hand-over is now a second file: its rendering, planning, write-once publication and restore live in `role_handover_file.py`, which this module calls, and the artifact line names both files.
 
 ## Current Contract — Scoped Launch And Settings Changes
 

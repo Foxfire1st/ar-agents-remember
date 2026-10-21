@@ -38,6 +38,12 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 Historical producer-custody note (not an L88 verdict): the pre-successor CUR-C04 source concatenated the baseline rather than composing notes, and the then-moving producer inserted composed instructions without that card independently admitting its successor. Current L88 source composes frozen detail pointers before user notes; source inspection here supplies no new CODE PASS, MEMORY verdict or host-actual witness.
 
+## Current account — the preparer's own boundary (MIK-R193)
+
+The preparer assembles a launch: it resolves the selection, writes the task-document copies and the folder set, compiles the hand-over object, and calls `role_brief_message.brief_prompt` to compose the first message and the complete hand-over's content. It publishes neither hand-over file — `role_launch_routes` calls `role_handover_publication.publish_handover_files` before the start is sent — and it sends nothing. Assembling the message's text is no longer here; what stays is the launch's inputs, the shared direction constant and the call that builds.
+
+The same module carries the one instruction every role's first message repeats about dividing work, as `SPLIT_WORK_DIRECTION`: inside its own assignment a role splits independent work across helpers — its harness's sub-agents — from the start, and helpers have no cap; another role's work goes to the role-start tool, never to a helper; working through independent parts in series is the exception and names its reason (a gate, a shared-file one-writer dependency, a ruling, or a harness without sub-agents); the role stays the single writer of its stage's records and verifies every helper's part; and its report says how it split the work, or why it could not be split. It states a corpus requirement rather than a new record of its own. The direction stands once in the outer first message, before the AR-tools and first-read paragraphs and before the capsule that follows them, and `test_role_first_message.py` asserts that placement and its once-only count directly; the text itself is the `SPLIT_WORK_DIRECTION` constant defined in this module and passed to the brief builder at `direction=SPLIT_WORK_DIRECTION`.
+
 ## Grant-backed leaf preparation and revival
 
 > **Retained historical source account — superseded by the current contract:**

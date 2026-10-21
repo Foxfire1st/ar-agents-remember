@@ -116,8 +116,7 @@ Worker still implements the approved leaf only, leaves code uncommitted, uses me
 
 After its own build/evidence part is complete, Worker marks only matching task steps done through task_doc on agents-remember-task with set_step/id/note. Without matching steps it reports that and sets nothing; incomplete, blocked, progress and escalation reports never mark unfinished work done. This narrow bookkeeping instruction does not authorize review/curation steps, task status or acceptance.
 
-If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required final-byte focused tests/lint/types and truthful blocked evidence remain unchanged.
-
+If the same check or finding remains failing after three repairs of its own, Worker stops repairing, records what was tried/fails and tells Manager, who decides step-up or another response. This local stop is not an automatic failed-review-round counter and names no model. Required final-byte focused tests/lint/types and truthful blocked evidence remain unchanged. The role text names hand-over values by their dotted path, `documents[0].taskDocReadArgs` and `workspace.memoryRoot`, so a reader looks where the projection actually carries them.
 
 ## Direct repair and source-owned sync
 

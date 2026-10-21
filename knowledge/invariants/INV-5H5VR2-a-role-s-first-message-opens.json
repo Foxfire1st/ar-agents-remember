@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The line is composed in one module and the pair is published in another, so a launch could name a file it never wrote; the first-message matrix reads the sent line and both files back on every harness."
+  },
+  "applicability": "Every role launch whose first message is sent to a host agent.",
+  "conditions": [
+    "The line names the text artifact and the complete hand-over by absolute path and digest.",
+    "Both files exist before the message is sent; neither is written afterwards except by the restore of a saved launch."
+  ],
+  "exclusions": [
+    "A launch prepared before the second file existed, whose saved message keeps the one-file line."
+  ],
+  "id": "INV-5H5VR2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_first_message.py (artifact line, projection and pair checks across five harnesses); mcp/tests/test_paseo_agent_tools.py test_a_conflicting_complete_handover_refuses_before_the_text_is_created"
+      ],
+      "path": "l185-ingest-1.json"
+    },
+    "handoffEntry": "L185-R193-1-artifact-line",
+    "leaf": "260928-MIK-L185",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role's first message opens with an artifact line naming both the hand-over text file and the complete hand-over JSON file by absolute path and digest, and both files are written before the message is sent.",
+  "status": "proposed",
+  "supersedes": []
+}

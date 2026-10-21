@@ -8,7 +8,8 @@
   "applicability": "Handover preparation for any role a parent started through the native role launcher.",
   "conditions": [
     "The launch has a parent: the developerQuestions value routes every developer question to the parent's agent id with role_message, says what is held back and recommended, and never uses the own-chat sentence.",
-    "The role is Worker, Reviewer or Curator: ownerRelation also names the direct sibling seat routes in leafSeats.roleMessageArguments and sends no routine result to the parent."
+    "The role is Worker, Reviewer or Curator: ownerRelation also names the direct sibling seat routes in leafSeats.roleMessageArguments and sends no routine result to the parent.",
+    "The projection carries the parent route, the developer-question route and the leaf peer routes; their meaning is unchanged by where they stand."
   ],
   "exclusions": [
     "Unrelated Worker, Reviewer and Curator handover text and tool requests remain unchanged.",
@@ -27,9 +28,9 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Every parented role handover routes developer questions to its actual parent ID; parented leaf roles route work directly to the named peer seats and only above-leaf occasions to the parent. Parentless/dashboard handover behavior remains preserved, except the expressly approved Investigator concern wording and Architect/Orchestrator/Manager Investigator delegation edits; derived source and capsule seals follow those admitted source changes.",
+  "statement": "Every parented role handover routes developer questions to its actual parent ID; parented leaf roles route work directly to the named peer seats and only above-leaf occasions to the parent. Those routes stand in the hand-over projection the first message carries — `host.parent`, `host.developerQuestions` and `leafSeats` — and not only in the complete hand-over file. Parentless/dashboard handover behavior remains preserved, except the expressly approved Investigator concern wording and Architect/Orchestrator/Manager Investigator delegation edits; derived source and capsule seals follow those admitted source changes.",
   "status": "proposed",
   "supersedes": []
 }

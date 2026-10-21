@@ -36,7 +36,7 @@ The instruction owns the selected curation workflow, full quality check and cohe
 
 Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
 
-- Raw clean curation and the independent second-reader fact-check have separate obligations. [2]
+- Raw clean curation and the independent second-reader fact-check have separate obligations. [2] The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.
 
 ## Current composition and authoring contract
 

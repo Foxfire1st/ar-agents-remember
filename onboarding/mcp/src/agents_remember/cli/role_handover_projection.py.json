@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_projection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+        "content": "sha256:a1fa73e7ba7d398e81097b6a20f47d9f1be0d8ba0ec19baa218f8bc994aad39f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G40F37",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "MIK-R193@v1",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "Defines and measures the emitted role projection rather than a synthetic audit substitute.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The projected fields are defined once, in the order the message states them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "content": "sha256:8c8b039704da49294d04bfce2b0a1aa12c5245dd5e0b5cb46da89805bfa070f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTION_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection keeps permitted fields, drops absent and null ones, and names the complete file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The first-read paragraph carries the sentences said nowhere else and names the file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "content": "sha256:aa7d6530dca53d71b93bfe7b02fbd76841b79ddad205c2829e68b30cb557a867",
+            "locator": {
+              "kind": "symbol",
+              "name": "first_read_paragraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The projection is counted with the vendored vocabulary as it stands in the message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "content": "sha256:d30a565cdbd79a8c5a85bcb828f5c99ca0b1f305e171909967bfc11141c4391e",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

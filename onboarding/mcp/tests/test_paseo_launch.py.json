@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
-          "end": 991,
+          "end": 995,
           "kind": "line_range",
-          "start": 951
+          "start": 955
         }
       },
       "facet": "Interrupts between receipt and call and checks retry retains one agent identity.",
@@ -38,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
-          "end": 737,
+          "end": 741,
           "kind": "line_range",
-          "start": 686
+          "start": 690
         }
       },
       "facet": "The shared dispatch case checks the existing-child argv/request and same-enclosure reuse for Worker then Reviewer dispatch; it does not call a separate role_start entry point or establish native launch proof.",
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -73,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
-        "content": "sha256:0d18b8e9ea4ec158848fe67930673bdabc230ec691d3c2bc0bbeedfb216bae65",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "content": "sha256:dc39973ad6cc6c8bcaee9721a1b19304787f6ab454f8e7d5742d20131a430d64",
         "locator": {
           "end": 599,
           "kind": "line_range",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
         "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:274997cf278cde1e5c28fc2d05cd73b78a3219085dc7bb579eb8dcb4ac08c09c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:47560c27a0b34781cde6ba234f500155afcf4dae466a0bc502641cbbf8222cdc",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,24 @@
     },
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
+        "content": "sha256:0a4a98a396b0087db9179de5e40966daddd5979bf089f96b4938807c1f488a3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T4SZ1K",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The start answer's kept shape names handoverFilePath beside handoverArtifactPath; these are the field names every answer that carries them is measured against.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:93646618e32c968257ef1f5ffe4afbd82e81bbd477a1c10daaad783096376da8",
         "locator": {
           "kind": "symbol",
@@ -93,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "72eb3bf450d12e38de9fdbb8d59d1285bc4192ec",
+        "blob": "e7e287c3dc19a859efa58586d1c442a12ef6ec66",
         "content": "sha256:d9d6a2973a94509b76cf42d4ee79b64677d590f9f7de0709c5198c96a8f70e41",
         "locator": {
           "end": 80,

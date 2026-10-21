@@ -7,9 +7,12 @@
     "justification": "Verifying reached artifact before replay prevents altered file or report link substituting another first assignment."
   },
   "applicability": "Unresolved saved launch with receipt and artifact reference.",
-  "conditions": [],
+  "conditions": [
+    "Every refusal is decided before either file is written, so a refused retry leaves both as they were."
+  ],
   "exclusions": [
-    "New compilation or request is not an answer to this saved unresolved launch."
+    "A new compilation or request is not an answer to this saved unresolved launch.",
+    "Successor and step-up starts compile a new hand-over and write new files."
   ],
   "id": "INV-87JRHY",
   "origin": {
@@ -23,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A saved first message is sent only after its artifact was checked: an artifact that holds the message is left untouched, a lost one is written again from the saved message alone (read-only, and only at the place the reference's own path leads to), and a changed artifact, a saved message that does not match its reference, or a path that no longer leads to the recorded file refuses the retry with a text that says what to put right, with receipt and file untouched.",
+  "statement": "A saved first message is sent only after both of its files were checked: files that hold the saved text are left untouched, a lost file is written again from the receipt's own text alone (read-only, and only at the place its reference's own path leads to), and a changed file, a saved text that does not match its reference, a saved message that does not name the recorded complete hand-over, or a path that no longer leads to the recorded file refuses the retry with a refusal that says what to put right, with receipt and files untouched. A receipt that records no complete hand-over is restored by the text file's rules alone.",
   "status": "proposed",
   "supersedes": []
 }

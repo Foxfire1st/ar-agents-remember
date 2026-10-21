@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_restore.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+        "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverFileRefusal"
+        }
+      },
+      "id": "RLZ-D9M7FQ",
+      "invariant": "INV-8AQ8DT",
+      "origin": {
+        "handoffEntry": "L185-R193-3-refusal-is-valueerror",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The refusal type is the contract between three callers: the held opener, the retry route and the restore path. It is defined once here for that reason.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every refusal of a saved launch's files is one ValueError the held opener and the retry route both recognise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+            "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverFileRefusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The saved launch's files are restored together, checked before the first write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+            "content": "sha256:623d4d569148bb33b3e3399d6c61118e137ee642b467b5602aff535015858c74",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_launch_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A receipt without the second file's reference reports none rather than inventing one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+            "content": "sha256:d67762585df2cf1dc6ba7938db75c7e86dad4fce2dd862956f3e30d2abc93589",
+            "locator": {
+              "kind": "symbol",
+              "name": "saved_handover_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

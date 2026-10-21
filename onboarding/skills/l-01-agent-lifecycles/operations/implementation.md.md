@@ -15,7 +15,7 @@ The Worker's build contract: implement the leaf's primary requirement in the cod
 
 ## Code Commentary
 
-One report at the canonical task path records change, files, evidence, exact checks and open limitations. The freeze handover also carries the leaf Requirement Attempt Journal records appended before review handoff; it is factual, never a review brief. Sealed findings return as a new freeze to the same Reviewer. The candidate stays uncommitted; the seat starts no role, repairs no transaction authority, and stages nothing. A hand-over counts only on a reply or report naming its exact object; busy refusals are recorded, retried, and reported once more.
+One report at the canonical task path records change, files, evidence, exact checks and open limitations. The freeze handover also carries the leaf Requirement Attempt Journal records appended before review handoff; it is factual, never a review brief. Sealed findings return as a new freeze to the same Reviewer. The candidate stays uncommitted; the seat starts no role, repairs no transaction authority, and stages nothing. A hand-over counts only on a reply or report naming its exact object; busy refusals are recorded, retried, and reported once more. The operation carries no Messages section: that passage has one home in `roles/worker.md`, whose capsule compiles it for the Worker.
 
 ## Current composition and authoring contract
 

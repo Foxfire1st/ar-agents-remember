@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` still independently derives what a dispatch gives an agent. Launch/status/document-chat suites share the fake, not a live harness or production host.",
+      "note": "The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host.",
       "targets": [
         {
           "anchor": {
-            "blob": "5f8fc624f3102d64627bf7227f2062fc5676f4f2",
-            "content": "sha256:6e13435845d1e33f4cd08c6fdf85b06d7b42723d83de6b0dfdb55cb622920c06",
+            "blob": "185077f1b3a1c9f751070722507da6387397ae80",
+            "content": "sha256:a689d11ae31092c91c00a9ae1e97656c6e94b2904af28b221ea51ee6489d8177",
             "locator": {
               "kind": "file"
             }

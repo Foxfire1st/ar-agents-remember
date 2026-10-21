@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Build the role-start tool’s internal answer from its exact durable receipt.
+Build the role-start tool’s internal answer from its exact durable receipt. The start answer names the complete hand-over's path beside the text artifact's.
 
 ## Governing Overview
 

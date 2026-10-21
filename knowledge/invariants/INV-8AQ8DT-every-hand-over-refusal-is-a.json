@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A refusal type only the retry route catches would escape the held opener and leave it claiming a delivery it never made; the held-seat case exercises the opener on a real refusal and would fail on any other type."
+  },
+  "applicability": "Every refusal a hand-over write or restore raises to a caller.",
+  "conditions": [
+    "A held seat's opener answers cannot-open and releases its delivery claim rather than reporting a delivery it did not make.",
+    "The retry route answers 409 for the same refusal."
+  ],
+  "exclusions": [
+    "Harness or host failures, which are not hand-over refusals."
+  ],
+  "id": "INV-8AQ8DT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_agent_tools.py held-seat retry and release cases"
+      ],
+      "path": "l185-ingest-1.json"
+    },
+    "handoffEntry": "L185-R193-3-refusal-is-valueerror",
+    "leaf": "260928-MIK-L185",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every hand-over refusal is a ValueError, so a held seat's opener answers cannot-open and releases its delivery claim while the retry route answers 409.",
+  "status": "proposed",
+  "supersedes": []
+}

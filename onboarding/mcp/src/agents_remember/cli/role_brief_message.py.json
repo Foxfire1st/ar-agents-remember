@@ -1,0 +1,86 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_brief_message.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+        "content": "sha256:fd77869720451152883208bbc8d7e70b85ccebbf8909cf1d18b24a2d25599433",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GKX7T9",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "MIK-R193@v1",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "Owns assembly of the once-only shared opening, first-read instructions and bounded role message.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The message is assembled in one fixed order and each part stands once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "content": "sha256:d682fec14d370a47ea5ba4e06a50e6366ad7f9937227203df3f78739289193b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "brief_prompt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The optional shared block is written only when the compilation carries non-empty text.\n\nAnchor: `shared_block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "content": "sha256:a9af34c98c62049e3b6986b5dfdc8518eddb51a7a4b2f2ea179937bffdef062e",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parts of one message are carried together rather than as separate arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "content": "sha256:39ffcb74027a5e0dfbce72f3af075023d94fe19a0d673d76712fc91d3cadb4e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BriefParts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5afd69406b3cd0b91707240fdeca1842bf62f314",
+            "content": "sha256:24243f3304fed2fe78bab0b292aa348b2aeb79fe185b698b3519816b93c6004d",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -61,7 +61,7 @@ both success and failure.
 
 ### Todos
 
-None recorded.
+None recorded. The compilation outcome carries `shared_block`, the slot a later leaf fills; empty or absent text writes no block.
 
 ## Evidence
 

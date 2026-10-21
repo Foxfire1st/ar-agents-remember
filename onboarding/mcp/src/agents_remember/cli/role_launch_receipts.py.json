@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:f0d882fa36fd738c83a36932b1de094cad0e96e69832602a77b24138a1c689c4",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:6be910daf4fe700b9505242274bf0f7b7ab451e415ca9f39bb8a1b9c8f4d5ab8",
         "locator": {
           "kind": "symbol",
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -165,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -219,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:6e1e9914f4cc0d0fbe3a0f34fc74430708e260aa16b1b528ff2fca05686bbe4f",
         "locator": {
           "kind": "symbol",
@@ -237,8 +237,25 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-        "content": "sha256:60b0a18c662d3085df362bfa4222460a4715f1dc3cfd134e7970ad2c13be5641",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:ffc20e2dec30f1f93866504618b82b39b2d8712089bfca060d1420d0aec5117f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SA35BD",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-87jrhy",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "A retry restores a lost file from the receipt's own text and refuses a changed, moved or unnamed file before either is written; that check is the record's realization and it lives here.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
+        "content": "sha256:7a9557ef2b745716432e6d9d01020b09af0fd70d0f7439f8a49da8b9467ba548",
         "locator": {
           "kind": "symbol",
           "name": "_execute_prepared_launch"
@@ -255,12 +272,12 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:2980ed72f696b5c2250df1bff2f2769ad6eaf90ff1f71e62571e5b8f13539d1b",
         "locator": {
-          "end": 789,
+          "end": 795,
           "kind": "line_range",
-          "start": 760
+          "start": 766
         }
       },
       "id": "RLZ-VYFJX1",
@@ -274,7 +291,7 @@
     },
     {
       "anchor": {
-        "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
+        "blob": "e9c70170273adb869a20f49d2a6b0aef92fe392a",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "23cad3e93bd4ae6dd5fd1da5cea6f23b895f31f7",
+        "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
         "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,23 @@
       },
       "rationale": "ToolAnswerRow defines the data available to all row validators: fields, non-empty uses, counter-measured case payloads and the owning leaf.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
+        "content": "sha256:e6d3291cb569f8c3c672416459815aed297355d7866816e2b9880f5c67ad69fc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KCWHVJ",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "This support states the expected answer-row shape a comparison reads, so the complete hand-over's path field appears here as the expectation. The line itself is composed in production: artifact_line writes the whole line and handover_file_line formats the second file's path and digest fragment. Nothing in this module composes either.",
+      "role": "unclassified"
     }
   ],
   "references": {

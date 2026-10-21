@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:c91655741efadd40220b7f41f50ca6925d6875a173a05a62367738ae0ac9b53a",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,41 @@
     },
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+        "content": "sha256:7f9fa0052b9d97cf4b34df0a748c3f79106c43f384a04fceded525fdaab0156e",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverArtifactOnTheRouteTests.test_a_held_seat_that_cannot_restore_its_object_returns_cannot_open"
+        }
+      },
+      "facet": "proves the held opener answers cannot-open on a refusal instead of reporting a delivery it did not make",
+      "id": "PRF-F234X2",
+      "invariant": "INV-8AQ8DT",
+      "origin": {
+        "handoffEntry": "L185-R193-3-refusal-is-valueerror",
+        "leaf": "260928-MIK-L185"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+        "content": "sha256:e069f4775b3698f8caeb615b680db358e71d142e2d193ff92c18643764405107",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverArtifactOnTheRouteTests.test_a_conflicting_complete_handover_refuses_before_the_text_is_created"
+        }
+      },
+      "facet": "proves a conflicting complete hand-over is refused before the text artifact is created",
+      "id": "PRF-FH53T4",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-R193-1-artifact-line",
+        "leaf": "260928-MIK-L185"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
         "locator": {
           "kind": "symbol",
@@ -71,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
         "locator": {
           "kind": "symbol",
@@ -88,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+        "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
         "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
         "locator": {
           "kind": "symbol",

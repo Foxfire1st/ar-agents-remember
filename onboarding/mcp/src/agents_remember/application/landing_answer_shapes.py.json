@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10e80994747dd8b8873e7e5d71328c4f96d1fd2d",
+        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
         "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "10e80994747dd8b8873e7e5d71328c4f96d1fd2d",
+        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+        "content": "sha256:150d70b8b6f06c2af1e852b0e3a7aba60bc9c94ef338e1215086313c7a1ac802",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AZR741",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The role-start success shape defines the fields an answer may carry, so the complete hand-over's path field is declared here and every answer that carries it is built from this shape.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
         "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "10e80994747dd8b8873e7e5d71328c4f96d1fd2d",
+        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "10e80994747dd8b8873e7e5d71328c4f96d1fd2d",
+        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",

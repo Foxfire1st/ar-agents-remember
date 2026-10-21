@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "01d5a745b9137e7c934b5816b52838cc7f451b34",
-        "content": "sha256:5233c096af17da3001c262864dc33762284224da0b9387b61e2d24ff0c8c2832",
+        "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+        "content": "sha256:285e91b3db243ea3b745da102237f8906833f5013480077f994298b21107a13a",
         "locator": {
           "end": 692,
           "kind": "line_range",
@@ -19,6 +19,23 @@
       },
       "rationale": "This registry is the decision-backed current capsule budget contract with all 38 cells recomputed.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
+        "content": "sha256:f039f3c902d82094d1345c528ec665e05acc9835adf0e8ee4bc7a71fe26d78a3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J2031X",
+      "invariant": "INV-JKD5DE",
+      "origin": {
+        "handoffEntry": "L185-R193-4-legal-maximum-budgets",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The registry is the record the guard reads; the measured maxima and their capped budgets live here and nowhere else.",
+      "role": "unclassified"
     }
   ],
   "references": {

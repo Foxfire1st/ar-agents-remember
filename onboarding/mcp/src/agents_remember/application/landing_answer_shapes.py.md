@@ -16,7 +16,7 @@ Redundant contract echoes are removed only from copied answer mappings. Preview 
 
 A successful role start retains the agent ID, handover location and a meaningful warning. A successful role message retains outcome/status/taken, adds the recipient ID only for role addressing, and keeps a host cancellation warning. A waited reply additionally carries text and actionable wait detail; an oversized reply is fitted to keep its beginning. Refused role operations retain their producer refusal shape.
 
-Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and supplied code/memory review states plus reviewKind on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained.
+Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and supplied code/memory review states plus reviewKind on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained. The role-start success shape carries `handoverFilePath` beside `handoverArtifactPath`.
 
 ## Boundaries
 

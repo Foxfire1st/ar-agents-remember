@@ -10,7 +10,7 @@ Pure launch-instruction request/result vocabulary: exactly capsule or refused. C
 
 ## Code Commentary
 
-LAUNCH_OPERATION is orientation. LaunchCapsuleRequest holds role, workspace and optional canonical task reference; its explicit project-task flag permits the upper application owner to assess a real sprint/master binding without inventing a taskless identity. LaunchCapsule holds the generic delivery or named refusal, and is_refusal/explain report that outcome. refused_launch_capsule constructs the fail-closed value. This type does not decide which parentless roles may start and does not itself call the host.
+LAUNCH_OPERATION is orientation. LaunchCapsuleRequest holds role, workspace and optional canonical task reference; its explicit project-task flag permits the upper application owner to assess a real sprint/master binding without inventing a taskless identity. LaunchCapsule holds the generic delivery or named refusal, and is_refusal/explain report that outcome. refused_launch_capsule constructs the fail-closed value. This type does not decide which parentless roles may start and does not itself call the host. The launch capsule carries the compilation's shared block through to the message builder.
 
 ## Evidence boundary
 

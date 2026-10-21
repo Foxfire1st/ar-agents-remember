@@ -10,7 +10,7 @@ The decision-backed registry of all 38 role, operation and launcher capsule budg
 
 ## Code Commentary
 
-Size is whitespace-split words of `render_instructions()`, task data and seals excluded. Growth, a new role and a new operation are each a decision recorded in the same change as the raised or added budget. The budget test fails when a capsule exceeds its budget, lacks one, or the registry names a capsule the manifest no longer yields.
+Size is whitespace-split words of `render_instructions()`, task data and seals excluded. Growth, a new role and a new operation are each a decision recorded in the same change as the raised or added budget. The budget test fails when a capsule exceeds its budget, lacks one, or the registry names a capsule the manifest no longer yields. The registry also records a `handover` budget for each role a start operation launches: the size is that role's largest legal projection and the budget is the smaller of ceil(size x 11 / 10) and 3,300 tokens.
 
 ## Current composition and authoring contract
 

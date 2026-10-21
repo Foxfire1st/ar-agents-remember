@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The registry and the guard that reads it can drift apart, and a projection that outgrows its recorded size would silently cost every turn of a seat's life; the guard fails on an over-budget projection and the measurement keeps its raw rows."
+  },
+  "applicability": "The `handover` section of `skills/l-01-agent-lifecycles/capsule-budgets.json` and every role it names.",
+  "conditions": [
+    "Each recorded size is the largest projection that role can have, measured over both parentless entry values and every caller the code admits.",
+    "Each budget is the smaller of ceil(size x 11 / 10) and 3,300 tokens.",
+    "Each row keeps the raw payload and the exact counted text."
+  ],
+  "exclusions": [
+    "The capsule and step-detail word budgets, which their own record states.",
+    "A later role text change, which is measured again by whichever leaf lands second."
+  ],
+  "id": "INV-JKD5DE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "handover-budget-rows.json (69e608ce…) in the Worker's report folder holds the eight winning rows with raw payloads; nine generated copies compared same, 0 DIFF; guarded by test_role_capsule_budgets and the rule-7 matrix"
+      ],
+      "path": "l185-ingest-1.json"
+    },
+    "handoffEntry": "L185-R193-4-legal-maximum-budgets",
+    "leaf": "260928-MIK-L185",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The recorded hand-over size of each role is the largest projection that role can have, measured over both parentless entry values and every caller the code admits for it, with each row retaining the raw payload and the exact counted text.",
+  "status": "proposed",
+  "supersedes": []
+}

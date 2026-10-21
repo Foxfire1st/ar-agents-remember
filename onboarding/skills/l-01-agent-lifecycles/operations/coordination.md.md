@@ -24,7 +24,7 @@ The coordination operation instruction.
 
 ## Code Commentary
 
-The instruction owns the manager-side coordination transaction the lifecycle uses.
+The instruction owns the manager-side coordination transaction the lifecycle uses. The seat-list sentence names the sibling routes a role's own seat list gives for the role addressed, because three of that document's readers carry no `leafSeats` in their hand-over.
 
 ## Current composition and authoring contract
 

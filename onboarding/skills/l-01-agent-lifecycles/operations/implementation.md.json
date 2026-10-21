@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
         "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
         "locator": {
           "end": 10,
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
         "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
         "locator": {
-          "end": 26,
+          "end": 22,
           "kind": "line_range",
-          "start": 20
+          "start": 16
         }
       },
       "id": "RLZ-3QTBC5",
@@ -41,12 +41,29 @@
     },
     {
       "anchor": {
-        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+        "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-75F34B",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-zvd184",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The operation no longer repeats the Messages passage: it keeps one home in roles/worker.md, which is what the clause's 'nothing said twice' requires of the corpus.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
         "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
         "locator": {
-          "end": 26,
+          "end": 22,
           "kind": "line_range",
-          "start": 20
+          "start": 16
         }
       },
       "id": "RLZ-7KXE63",
@@ -60,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
         "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
         "locator": {
           "end": 10,

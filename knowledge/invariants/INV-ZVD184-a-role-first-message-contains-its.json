@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The brief assembly, the projection and the publication sit in three modules that can drift apart, and each promise fails silently on its own; the first-message matrix builds every combination from the code and fails on a broken projection, an over-budget one, a repeat, or a name it cannot reach."
+  },
+  "applicability": "Every role a start operation launches, on every harness and in every kind of start: parentless, parented above a leaf, parented leaf seat, seat set, held seat opening, successor, step-up and the restore of a saved launch.",
+  "conditions": [
+    "The projection's field list is defined once in code and the tests derive from it.",
+    "The projection stays within the token budget its role records, counted with the vendored vocabulary on the compact JSON as it stands in the message.",
+    "The projection's route values are the ones the role reads before its first tool call."
+  ],
+  "exclusions": [
+    "Messages after the first.",
+    "A harness's own additions to a session.",
+    "The capsule's own word budget, which its record states."
+  ],
+  "id": "INV-ZVD184",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/aac4a724-05d2-51de-bbfb-348a6e27892f/L185-A4-fix-verification-verdict.md; L185-R4-reviewer-record.md; L185-A4-fix-dispositions.json; retained A2 routes plus evidence/a4 raw runs and owner-ruling qualifications"
+      ],
+      "path": "l185-ingest-1.json"
+    },
+    "handoffEntry": "MIK-R193@v1",
+    "leaf": "260928-MIK-L185",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role first message contains its once-only immediate instructions and bounded reachable handover projection while the complete canonical handover is published immutably for later reads.",
+  "status": "proposed",
+  "supersedes": []
+}
