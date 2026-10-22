@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
         "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
-        "content": "sha256:407b39602ab0cbd68a615d6e9026336bfad3221cbd3d5cc0471bb2bdf0c5ca89",
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+        "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
         "locator": {
           "kind": "symbol",
           "name": "useReviewPage"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
-        "content": "sha256:407b39602ab0cbd68a615d6e9026336bfad3221cbd3d5cc0471bb2bdf0c5ca89",
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+        "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
         "locator": {
           "kind": "symbol",
           "name": "useReviewPage"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
         "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+        "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewPage"
+        }
+      },
+      "id": "RLZ-RBKYAX",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The page's comparison choice clears the explicit number when it names the resolved comparison, which keeps one meaning of 'shown' for the note, the selector and the subject reads.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
         "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
         "locator": {
           "kind": "symbol",
@@ -98,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
             "content": "sha256:194e15e58192f4ab1cae428ab3d1b191d2e7a84f4c908fa0d4daca0dbc000404",
             "locator": {
-              "end": 70,
+              "end": 73,
               "kind": "line_range",
-              "start": 63
+              "start": 66
             }
           },
           "kind": "code"
@@ -115,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
             "content": "sha256:d40851271be1a946bdf872c9c7a24392c0e43536bdf9aa706eb58b637eb77722",
             "locator": {
-              "end": 93,
+              "end": 96,
               "kind": "line_range",
-              "start": 76
+              "start": 79
             }
           },
           "kind": "code"
@@ -132,12 +150,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
             "content": "sha256:461954e288e39104878ba80d8c499fa06a83d5fa45ec31203469c9886988c47d",
             "locator": {
-              "end": 118,
+              "end": 121,
               "kind": "line_range",
-              "start": 115
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Choosing the resolved comparison clears the explicit number, so one meaning of \"shown\" serves the note, the selector and the subject reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:f3a2b0979c3461ee70d75dd286e38daa78463c497061f64fc29a910d2325b813",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The delivered action leaves the recorded frame and clears the chosen number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:6ee2d54092ac4e3156a5eb680b312b75df66c08fdfb6edcb00c0b123f7b4f3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseDelivered"
             }
           },
           "kind": "code"

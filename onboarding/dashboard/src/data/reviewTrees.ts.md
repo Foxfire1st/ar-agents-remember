@@ -73,6 +73,16 @@ Only keepable trees answers enter that store. `unavailable-history` on a knowled
 The deleted `ReviewKnowledgeTreeDiff` family (`ReviewKnowledgeFileChange`, record/source groupings, the `knowledge_diff` field on `ReviewTreesResult`) was the Git diff of the two memory trees grouped by record and source path with per-file patches. That earlier removal is historical, not a claim that the current full answer is byte-identical. This leaf adds optional item verdicts and leaf-wide implementation facts to the declared mirror. The earlier emitted-JavaScript equality observation applied to its historical comparison, not this changed implementation; the card reader now has different executable behavior. `reviewTrees` task/number addressing, the busy-retry discipline (`TRANSIENT_CODES`, `BUSY_DELAYS_MS`) and the `ReviewTreesRead` phases are retained; the page-card hook composes its separate `ChangeSetCardsRead` phases.
 Each `ReviewTreeEntrySide` can carry its locator’s `symbol`. A card entry can carry the four supplied after-index memory values (`invariants_at_path`, `incoming_links`, `without_proof`, `open_weaknesses`) and their path. The card result’s `entry_memory` states available or unavailable, names its tree, and may name partial index state or a reason. This adapter carries those facts; it does not compute the four values.
 
+### The delivered comparison and the highest recorded number (MIK-R195)
+
+`ReviewTreesResult` adds two optional facts beside the comparison it resolved: `latest`, the leaf's highest
+recorded comparison number, which is the comparison menu's list, and `delivered`, a `ReviewDeliveredComparison`
+naming the pair the leaf delivered and whether the comparison on screen is that pair. `delivered.state` is
+`delivered`, `differs` or `unavailable`; `statement` is the page's one line; `comparison` is the number whose four
+trees are the delivered pair; `shown` is the number on screen; and the tree and commit fields are that pair's
+identities. `detail` names what failed when the delivery could not be established. Carrying these facts reviews
+nothing and grants no acceptance of that pair.
+
 ## Evidence
 
 - A superseded read is aborted and only the newer answer is shown. [21]
@@ -110,3 +120,6 @@ Each `ReviewTreeEntrySide` can carry its locator’s `symbol`. A card entry can 
 
 - Shown-set cards use sorted distinct chunks, stable answer retention and retryable per-mount failures. [19]
 - Entry symbols and supplied memory values retain their optional and unavailable states. [28]
+
+- The answer carries the highest recorded number, separate from the comparison it resolved. [29]
+- The delivered notice value names the pair and its trees without becoming a review. [30]

@@ -12,14 +12,18 @@ Keep raw movement/comparison/limitations and identifiers as one provenance discl
 
 ### Logic
 
-Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. Origin means introduced by, not revision writer. Only selected admitted subject adds subject provenance; older shown comparison labels latest movement correctly. Entry list names each side's supplied blob/content.
+Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. Origin means introduced by, not revision writer. Only a selected admitted subject adds subject provenance; an older shown comparison labels the resolved comparison's movement correctly, because `latest` is now the comparison the page resolved. Entry list names each side's supplied blob/content.
+
+`delivered` is a supplied fact line: `DeliveredFacts` lists the delivered pair's exact trees and its number, or states that the delivery could not be established, beside the shown comparison rather than in place of it.
 
 ### Invariants And Boundaries
 
-This file consumes comparison and owner state; it does not author knowledge or decide task acceptance.
+This file consumes comparison and owner state; it does not author knowledge or decide task acceptance. The delivered facts grant no review of that pair.
 
 ## Evidence
 
 - Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. [1]
 - Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. [2]
 - Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. [3]
+
+- The delivered pair's identities are one supplied fact line inside the existing disclosure. [4]

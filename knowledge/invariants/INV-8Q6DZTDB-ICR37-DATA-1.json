@@ -1,13 +1,14 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Historical review of a closed leaf with no previously published comparison generation.",
+  "applicability": "Review of a leaf whose enclosure records a delivery: its closeout or its integration reached a completed or checkpointed state, so the delivery's code and memory endpoints are the records the enclosure holds.",
   "conditions": [
-    "The recorded enclosure identifies exact source and memory commit endpoints.",
-    "A canonical dataset operand that is no longer available stays an explicit unavailable operand rather than being replaced."
+    "The enclosure records which commit its successful landing produced and which memory content commit its closeout published.",
+    "A recorded commit is a full commit id that the repository its record names holds as a commit; only then is its tree derived."
   ],
   "exclusions": [
-    "A current database, branch tip, sibling generation or invented empty dataset as a substitute for an unavailable operand.",
-    "An existing ambiguous or unreadable frozen generation is not eligible for reconstruction."
+    "The last numbered review record, today's source-line tip, a branch name or a sibling's pair as a delivered endpoint.",
+    "The landing record's memory cell standing for the closeout's memory content commit.",
+    "A current database or an invented empty memory side replacing an operand the delivery records cannot establish."
   ],
   "id": "INV-8Q6DZTDB",
   "origin": {
@@ -15,9 +16,9 @@
     "legacyId": "f724cf8f-699b-47bf-883c-b70780d84676",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "A closed leaf without a frozen review compares only its exact recorded source and memory endpoints; missing operands remain explicit.",
+  "statement": "A closed leaf's review establishes its delivered sides — the recorded code and memory bases, the commit its successful landing produced and the closeout's memory content commit — from the enclosure's own delivery records, and refuses by name any side it cannot establish as that exact commit and tree; a missing or unestablishable operand is never replaced.",
   "status": "proposed",
   "supersedes": []
 }

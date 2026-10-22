@@ -1,8 +1,9 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Historical review resolution after canonical knowledge database retirement.",
+  "applicability": "Historical review resolution after canonical knowledge database retirement, when the reader selects a recorded comparison rather than the delivered default a landed leaf opens.",
   "conditions": [
-    "The retained record identifies its comparison format and exact source endpoints."
+    "The retained record identifies its comparison format and exact source endpoints.",
+    "A numbered read reopens the record it names and records nothing for it."
   ],
   "exclusions": [
     "Reopening an unconverted canonical dataset or borrowing today's knowledge to stand for an unavailable operand."
@@ -13,7 +14,7 @@
     "legacyId": "cc02559f-d96a-4656-b1a6-53a0797cf303",
     "task": "260921-ICR"
   },
-  "revision": 5,
+  "revision": 6,
   "schema": "ar-invariant/v1",
   "statement": "A historical review reopens a recorded tree comparison from its recorded tree ids. A closed leaf that recorded only a canonical dataset comparison preserves its exact source sides and reports its retired knowledge operands as legacy-unavailable without opening their databases.",
   "status": "proposed",

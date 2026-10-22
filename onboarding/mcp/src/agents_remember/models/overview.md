@@ -15,7 +15,7 @@ Knowledge is text in Git after MIK-R26. `knowledge_files/` owns the record, onbo
 
 ## Hot Path Summary
 
-MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
+MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existence, card location/state/counts and per-row limitations/refusals; `NamedRecord` identifies actionable records and exact heading or explicit title fallback. `ReadArFilesResponse` carries call-local overview locations and code/memory observation state, not source/card/overview bodies or `published_intent`. `SlimContextPacket` is the version-3 agent roots/task/actions/build/pair shape beside the retained full `ContextPacketV2` builder contract. Knowledge-read rows carry text ID/kind/state/location with selection provenance; diff answers carry compared trees, counts, bounded decision records and whole-report location. The review models carry the resolved four-tree comparison, the leaf's highest recorded comparison number and the delivered notice value, which names the pair a landed leaf delivered and whether the comparison on screen is that pair; carrying them reviews nothing. `resolve_context` is removed from the public roster/response route, and all four L109 reads have final answer bounds, not interim rows.
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
@@ -246,14 +246,14 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The worktree model declares the contract-cell vocabulary aliases (moved from worktrees by 260731-EFA-L9) with `MemoryMode` imported from kernel. [83]
 - The worktree model declares the phase/next-operation/next-tool vocabulary (moved from guidance by L9). [84]
 - Guidance consumes the phase/next-operation/next-tool aliases declared by the wire model through one grouped import. [85]
-- The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import. [86]
+- The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`). [86]
 - Direct landing returns cache observations separately from commits. [87]
 - Public message transport names only code and memory. [88]
 - None [89]
 - Strict lifecycle operation record/projection. [90]
 - Queue candidate projection. [91]
 - The served knowledge vocabulary as an explicit re-export list — re-cited against the working tree, which the graph half extended. [94]
-- The frozen base and the refusal to rewrite a non-canonical identifier. [95]
+- The frozen base and the refusal to rewrite a non-canonical identifier: `normalized_uuid` strips and lowercases the text, then refuses any spelling that is not the canonical lowercase UUID form (`models/knowledge/base.py:95-109`). [95]
 - The invariant identity and revision aggregate, including the display-label-versus-identity separation. [96]
 - The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
 - The provenance envelope and its normalized-UTC requirement. [98]
@@ -296,7 +296,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **The comparison's own cursor and its two functions, deliberately not the read's decoder.** [189]
 - **The one operation this leaf added, and the unchanged code union.** [190]
 - **The node that measures the absent verdict over the serialized response, and the node that holds the two change statements apart.** [191]
-- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation. [192]
+- The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:613-676`). [192]
 - The two operations the route write layer added, so a route refusal names a route operation. [193] [195]
 - The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. [194] [196]
 
@@ -377,8 +377,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The one spelling of a link target, and the gate's predicate. [65]
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
-- Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
-- Full and public registries separate retained internal builders from public responses, including native retirement and set start. [295]
+- Current single literal PUBLIC_TOOLS contains 41 public names (including knowledge_write) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
+- One current tool-response registry: `TOOL_RESPONSE_MODELS` holds 41 public names, including `knowledge_write` and excluding `dispatch_agent` (`models/tools/tool_registry.py:80`). The former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. [295]
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
 - L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
@@ -440,3 +440,5 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Revision writer owner-presence validation is separate from exact selected IDs and display versions. [329]
 - Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
 - Focused card memory availability carries the after tree and explicit index state or reason. [331]
+
+- The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]

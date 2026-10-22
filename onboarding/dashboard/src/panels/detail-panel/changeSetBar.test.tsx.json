@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+        "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
         "content": "sha256:09faebd052447eb518b0a7bbaccf6a843306822f4faffe3baaa7ca231e2c86d7",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases.",
+      "note": "The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
-            "content": "sha256:6c93174cf1289a05a66b6674d14e64d2ce9684a121c824eb1279c451d082e987",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+            "content": "sha256:b65edf356648a3b01d323b907afbc7cfa0dd9679b31996739bf214add5cc2548",
             "locator": {
-              "end": 139,
+              "end": 125,
               "kind": "line_range",
               "start": 84
             }
@@ -38,24 +38,24 @@
         },
         {
           "anchor": {
-            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
             "content": "sha256:3b1b07821ea930a93820d03fbdfeb02ad50363ab8204f6df1cf4bf3798e12a7f",
             "locator": {
-              "end": 367,
+              "end": 368,
               "kind": "line_range",
-              "start": 275
+              "start": 276
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
             "content": "sha256:2e9cc8ff936192a98c7a33b611b1de7b9357f79c2d06b6a8fa3e9fe80be910a0",
             "locator": {
-              "end": 459,
+              "end": 460,
               "kind": "line_range",
-              "start": 409
+              "start": 410
             }
           },
           "kind": "test"

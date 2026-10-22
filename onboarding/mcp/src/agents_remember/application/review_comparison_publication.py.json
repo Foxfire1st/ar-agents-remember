@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+        "content": "sha256:d11705b93cb40c5fd0f65087ffe58cac745dada383ec9a25c5765dcc0c23dc7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "publication_refusal"
+        }
+      },
+      "id": "RLZ-0P6C2D",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "L187-Z2",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Names the case where a number went to another pair, so a lost race is a retryable refusal rather than a silent overwrite under a number that means something else.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+        "content": "sha256:6a047a7e14b75500fb7b8d842060842877b5b9d19e6f23d7202bb86f49855efc",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_comparison_record"
+        }
+      },
+      "id": "RLZ-ZVJHJH",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "L187-Z2",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The file system's create is the publication decision: the record's bytes are linked into place once, so a second writer publishes nothing and no later write can replace bytes a reader already answered with.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The record is published by an exclusive link of a private temporary file, so a later writer publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:6a047a7e14b75500fb7b8d842060842877b5b9d19e6f23d7202bb86f49855efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_comparison_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A directory entry is flushed where the platform has a directory handle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:27c224985ce8943adcac8c73183d60421ae75f77da9a5ff53c23efcf1839f7d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fsync_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A number taken by another pair is a named retryable refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:d11705b93cb40c5fd0f65087ffe58cac745dada383ec9a25c5765dcc0c23dc7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

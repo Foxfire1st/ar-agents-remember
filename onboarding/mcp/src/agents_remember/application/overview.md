@@ -39,6 +39,8 @@ Contract-scoped memory quality measures the admitted pair, publishes its full ch
 
 A current review binds code B/C and memory K_B/K_C as four trees. Source inventory, selected knowledge, judgment/proof projection, attribution, family context, staleness and focused expressions have separate owners. Retained comparison records and pins provide exact historical operands; unavailable trees are reported rather than replaced by today's tip. Final-output and managed-sync records measure completed operations against retained comparisons and cannot gate the transactions they describe.
 
+`review_delivered_comparison` establishes the pair a landed leaf delivered from the enclosure's own delivery records — the recorded bases, the successful landing's commit and the closeout's memory content commit — and refuses by name any side it cannot establish as that exact commit and tree. A closed leaf's default read asks it first; the recorded read asks the leaf's published comparison instead, so an explicit historical selection is a different fact from the delivered default. The comparison owner publishes a new record through `review_comparison_publication`, whose create-only link makes a lost race answer the winner or refuse rather than replace bytes a reader already holds. The notice the page states comes from the same resolver: `delivered` for the delivered pair, `differs` with the delivered trees otherwise, and `unavailable` when the enclosure's delivery cannot be established.
+
 Ordinary operations guarded for converted knowledge refuse legacy memory using central conversion guidance. The current `read_ar_files` naming route instead reports `memoryState=unconverted` and names no card or knowledge body. Startup/context exposes format and first-conversion facts without fabricating them from unreadable probes.
 
 ## Construction And Ownership
@@ -51,7 +53,7 @@ The reviewer projection reads the reviewed owner’s history from the resolved a
 
 Catalogue and changed-intent summary reads can name one recorded tree comparison by number. `resolve_review_comparison` reopens that record even for a live leaf; an unrecorded number is refused rather than substituted with current worktree inputs. Both catalogue and summary report the tree-comparison number they answered. Selected revision display versions and writers travel with the subject selection: `review_revision_writers` reads each side's own index, names owners of changed rows at that exact revision, uses the origin for an otherwise unclaimed revision 1, and keeps unavailable history distinct from no recorded writer. It infers no writer from Git or dates.
 
-Focused tree-card reads enumerate entries and measure their memory values in the same open after-side index: distinct realizing invariants at the located after path, incoming links to the entry's invariant, lack of proof and open weaknesses at that path. `knowledge_reader/marks` supplies the shared open-weakness counter. Exact symbol-locator names travel separately from ranges. A failed or missing after-index memory read leaves the entries available without values and names why in entry_memory; a partial index remains identified as partial. Task-context explanations direct whole-change inspection to All changes, the linked change-set page, independently of subject availability.
+Focused tree-card reads enumerate entries and measure their memory values in the same open after-side index: distinct realizing invariants at the located after path, incoming links to the entry's invariant, lack of proof and open weaknesses at that path. `knowledge_reader/marks` supplies the shared open-weakness counter. Exact symbol-locator names travel separately from ranges. A failure inside `_memory_values` (`review_tree_entries.py:160-190`) leaves the enumerated entries available without values and names why in `entry_memory`; that fallback covers the value read only — the index construction and the enumeration before it (`:149-150`) are outside it — and a partial index remains identified as partial. Task-context explanations direct whole-change inspection to All changes, the linked change-set page, independently of subject availability.
 
 ### Application, transport and service seams
 
@@ -155,7 +157,7 @@ Authority remains canonical configuration/task/contract authority, not caller-se
 
 The inherited L74 read boundary covers read tools, dashboard GETs, status, previews and dry runs. It prohibits changes to local branches, HEAD, working-tree files, the real index, task documents and requirement packets. Named permissions are runtime cache files; recorded comparison reports/captured objects/review pins; closeout-preview enclosure worklists/quality reports/judged objects; the call-diagnostic records each completed call writes, namely the daily tool-answer line and detail files and the workspace River event; and explicitly requested configured-upstream freshness fetch effects inside Git state, including fetched objects, remote-tracking refs/reflogs, FETCH_HEAD, followed tags and Git housekeeping. No freshness argument means no fetch. Other refs/tags and unrelated directories are outside these permissions. Unrecorded captures use disposable storage; inability to preserve a reader owner's boundary refuses rather than choosing another write location. This is an inherited cross-owner contract, not a newly executed audit of all reads.
 
-Memory-quality checklist readiness is not code certification or a universal acceptance verdict. Diagnostic drift and without-proof rows do not become curator actionability. Governing-overview findings enter gated repair findings while observations remain separate; the summary stays outside the closed certification-check catalog. Official and leaf comparison provenance cannot be interchanged. Converted commit validation/worklist gating is narrower and more specific than the withdrawn historical universal that ordinary transaction paths automatically run every suite, coherence check or independent review.
+Memory-quality checklist readiness is not code certification or a universal acceptance verdict. Diagnostic drift and without-proof rows do not become curator actionability. Governing-overview findings become repair findings only when their kind refuses — an advisory kind, the weakness kind included, is reported by the gate and blocks nothing (`knowledge_gate/gate.py:584-620`, `memory_quality/controller.py:840-861`) — while observations remain separate; the summary stays outside the closed certification-check catalog. Official and leaf comparison provenance cannot be interchanged. Converted commit validation/worklist gating is narrower and more specific than the withdrawn historical universal that ordinary transaction paths automatically run every suite, coherence check or independent review.
 
 Task authoring publishes canonical truth and invalidates semantic/readiness projections through its owners, without taking permission from activation or queue state. Per-contract activation, exact source synchronization and retained conflict recovery remain distinct from task prose. Structural dispatch keeps its seat transaction and correlation evidence inside admitted owners. Ordinary messaging is replacement-aware; the initial brief is the exact-pinned exception. Failed briefing permits retirement only when the matching generation is positively proved unbriefed; missing, unreadable or contradictory evidence refuses reconciliation. Pause is a stop-only operation; checkpoint is an explicitly chosen unfinished-line publication and does not retire completed seats. PR landing records remote-delivered commits through the shared landing writer and requires reachability; optional memory landing does not waive later carryover/cleanup checks. These inherited boundaries are preserved without claiming new execution evidence for every route.
 
@@ -214,7 +216,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The admission order and the three refusals; since MIK-L31 a proof link admits and the undetermined remedy names the cause. [10]
 - The comparison binding and the exact per-half link query. [11]
 
-- Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: With no explicit generation_id, closed-leaf resolution first reopens retained four-tree comparisons. Otherwise it still reads a retained legacy generation manifest, preserving its recorded source/evidence with canonical knowledge unavailable; a leaf with no comparison manifest falls back to recorded committed ranges. No new canonical dataset generation is authored. Historical account: The closed-leaf resolution the record now feeds: the generation path first, the recorded source range only when no generation exists. [17]
+- Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: with no explicit `generation_id`, a closed leaf's read resolves the delivered default first (`review_committed_leaf.py:156-165`), and a leaf that records no delivery keeps the recorded default; a delivery the enclosure claims and the read cannot establish is answered by the delivered resolution's own refusal, never by that default. [17]
 
 - **The traversal's own statement of the union, the author-only pairing, the ruling and the unresolved-and-never-denied rule.** [18]
 
@@ -225,7 +227,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - Historical predecessor/successor-line account; references and targets retained for custody. Current boundary: Every retained revision in the selected population is a head, sorted for rendering. Two nonempty sides compare only when each has a unique head; a known-empty side remains one-sided, and multiple heads remain explicitly ambiguous. No predecessor/successor-line traversal narrows the population. Historical account: **The reach: the head rule called from ICR-R07, the whole-line read, and the owner chosen by the kind of revision.** [21]
 
 - The plural text-route owner reads each declared route and its exact snapshot state. [22]
-- The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved. [23] [417]
+- **The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:298`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:337,358,382,538`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.** [23] [417]
 - **The adapter's one call, and the pane that composes the traversal's own address view.** [24]
 - **The new catalogue owner: both snapshots' identity tables, per-row presence, no comparison, no silent drops.** [25]
 - **The adapter's delegation: the entry half resolves, calls the catalogue, fills the totals and assembles — the per-subject helpers deleted.** [26]
@@ -245,7 +247,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - **The comparison's reader over its own two open snapshots, and the adapter's verbatim carry.** [55]
 - The pane that reads the partition instead of recomputing it, with every count scoped or reasoned. [57] [420]
 - **The keystone record: the manifest, the layout under the one durable root, the deletion record, the re-derived id and the directory-name agreement.** [58]
-- **The two deletion owners: the record written before the deletion, the measured digest, and the refusal that removes nothing.** [64]
+- **The two deletion owners differ in order: the code-pin release writes the history record before it deletes the retained object (`review_comparison_reclamation.py:103-119`), while the snapshot discard measures and removes the artifact during the deletion's construction and writes its record afterwards (`:196-208`); both carry the measured digest, and a refused verification removes nothing.** [64]
 - **The read-back: one state per channel (four of them since ICR-R21@v1), `unavailable_channels()`, and the live pin measurement leading the release history.** [65]
 - **The one durable-root owner the layout asks instead of restating `<task_root>/notes/reports`.** [66]
 - **The two typed failures this route's deletion and retention boundaries raise.** [67]
@@ -283,7 +285,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 
 - Historical baseline-admission read account; references and targets remain for custody. The retained selected_input_unavailable_refusal constructs a named refusal and restoration action and performs no baseline read. [96]
 
-- The capsule operation's four refusal-capable steps, each returning a value rather than raising. [99] [423]
+- The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-60`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`). [99] [423]
 - The seat is derived from the task document and the declared role is validated against it. [100]
 - Discovery is separated from delivery: the listing carries no body and one read is re-checked. [101]
 - The served tree is the packaged runtime skills copy, and a corpus travels with its origin. [102]
@@ -293,7 +295,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances. [104] [424]
 - The free agent's named absence and its own content address; the only producer of a taskless admitted-facts value. [106]
 - D13's dual repair: the root read out of the named contract, and the same root carried onto the projection request. [107]
-- The seat-addressed routing rule and its address type, for a caller with no task document. [108] [426]
+- The seat-addressed routing rule for a caller with no task document: `compile_launch_capsule` dispatches to `_compile_free_agent` (`role_capsules/launch.py:511`), which builds `CapsuleSeatAddress` and calls `routed_admission_for` (`:533-537`); `_compile_without_task_enclosure` (`:412`) is the different path that receives an admitted task document or refuses its missing enclosure. [108] [426]
 - The declared exports that make the new names this route's public surface. [109]
 - The registered MCP boundary the repair had to make usable, and the case that fails if the declared schema loses the field the resolution depends on. [110]
 
@@ -369,7 +371,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - Historical canonical-publication authority/absence account; references and targets retained for custody. Current boundary: published_intent_block still resolves converted-memory tree/index selection and returns named unavailable states. The old _absence_state and _authority_mismatch helpers are absent; an unconverted root is refused as legacy-format rather than selecting a canonical publication database. Historical account: **The named states the route answers with, and the guard that makes "never silently select another repository" a verified fact.** [431]
 
 - **The shipped read the new route delegates to, reused unchanged by this leaf.** [241]
-- Historical pre-L109 attach-point and removed published_intent-field anchors. The current read_ar_files_tool returns names/locations only and ReadArFilesResponse has no published_intent field; the obsolete field anchor is retained as history, not a surviving wire capability. [242]
+- The current `read_ar_files` attach points (MIK-R109 rule 1): `application/read_files.py` opens by denying body and continuation delivery, and `models/read_files.py` declares `ReadArFilesResponse` with no `published_intent` field. The removed field is retained as history, not as a current anchor. [242]
 - Historical pre-L109 test anchors for the older published-intent/legacy-format route. Current test_unconverted_memory_names_no_card and repeated-call controls instead demonstrate no card for unconverted memory and no per-session delivery state; the old anchors are not current mounted-route promises or fresh execution evidence. [243]
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
 - The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
@@ -666,3 +668,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - Entry side symbol names come only from symbol locators. [506]
 - Focused card responses carry entries and their memory-state answer without changing lane or leaf-wide values. [507]
 - Task-context availability explanations direct complete source inspection to the linked All changes page. [508]
+
+- The delivered resolver establishes the four sides a leaf delivered from its enclosure's delivery records and refuses any side it cannot establish. [512]
+- A closed leaf's default read asks the delivered pair first, while the recorded read addresses the published comparison. [510]
+- The comparison owner publishes a record through a create-only link, so a lost race answers the winner or refuses. [511]

@@ -7,9 +7,10 @@
 ## Purpose
 
 Protects capsule delivery from production launch points to the recorded consumer boundary,
-with internal compilation rather than a restored public compiler tool. Socket-bearing fixture
-worlds build under pytest's `tmp_path` rather than a selected short root; the production
-Unix-domain path limit remains enforced. No provider turn or live process acceptance is implied.
+with internal compilation rather than a restored public compiler tool. The capsule-launch world builds under pytest's `tmp_path`
+(`:122`) rather than a selected short root, and the socket-bearing support builds on a temporary directory of its own
+(`pnt_sandbox_test_support.py:231-232`); this card does not establish a production Unix-domain path limit, and the port
+claim's abstract socket name carries no filesystem path. No provider turn or live process acceptance is implied.
 
 ## Current operative account — MIK-R112
 

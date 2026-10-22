@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/useReviewHistory.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+        "content": "sha256:375c994d1b3e5166ad21b4baa5f98e8515797d5d27e31987072b9e7cc1ab0665",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewHistory"
+        }
+      },
+      "id": "RLZ-RJ06YV",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Holds the recorded frame as state the page can leave; a fixed target prop could not return a closed leaf to its own default.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "State seeded from the target's history token and re-seeded only when that token differs from the seeded one, so an equal token preserves the frame the page cleared through `leaveHistory` (`useReviewHistory.ts:15-25`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+            "content": "sha256:375c994d1b3e5166ad21b4baa5f98e8515797d5d27e31987072b9e7cc1ab0665",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHistory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The page can leave the recorded frame, returning to its own default.\n\nAnchor: `const leaveHistory = useCallback(() => setHistory(undefined), []);`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+            "content": "sha256:1e412aed2d27c2400a6b9d25b7be2f09c6e09f00e968b1c8dfccf21b951d94db",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

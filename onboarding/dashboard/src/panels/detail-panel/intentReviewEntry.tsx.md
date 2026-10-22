@@ -25,9 +25,11 @@ changed file's attribution is unknown (K shown even when 0).
 
 - `IntentReviewEntry({ repo, master, leaf, live, facts, onOpen })` calls
   `useIntentReviewSummary(repo, master, leaf, facts)` and renders a button (`data-testid="open-intent-review"`,
-  `data-intent-state` = the read phase) whose click opens `{ repo, master, leaf, review: live ? {} : { historical: true } }`
-  — always the task-context review, bound to the live candidate or to the leaf's recorded comparison
-  (ICR-R12). The summary is a label on the control and never a gate on it.
+  `data-intent-state` = the read phase) whose click opens `{ repo, master, leaf, review: {} }` for a live and a
+  closed leaf alike — the page's own default, which on a landed leaf is the comparison it delivered rather than
+  its last numbered record (MIK-R195). The entry used to ask every closed leaf for `review: { historical: true }`,
+  which named the recorded comparison and left no delivered link able to escape it. The summary is a label on the
+  control and never a gate on it.
 - `IntentCounts` renders inside the button: `…` while loading; for `unavailable`, `briefProblem`'s word
   with `data-review-state` (the shared token) and `data-review-code`; for `counted`/`partial`,
   `+{added} −{removed}` (`data-added`/`data-removed`) plus `partial` when partial.
@@ -90,8 +92,11 @@ No meaningful cross-repo references found.
 - IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate. [2]
 - IntentDetails places the actual refusal or unresolved-subject explanation beside the control rather than fabricating revision counts. [3]
 - Attribution uses 'without an invariant' plus a separate unknown count, preserves partial/unavailable/zero-zero suppression, and retains its own detail block. [4]
-- IntentReviewEntry retains one task-context summary control, live/historical targeting and the recorded label; it now also mounts the independent open-work span. [5]
+- IntentReviewEntry retains one task-context summary control, which supplies `review: {}` for a live and a closed leaf alike — liveness reaches only the `(recorded)` label — and keeps no history request of its own; it now also mounts the independent open-work span. [5]
 - Stored assertion bodies keep revision and attribution elements separate, use the current without-an-invariant wording, exercise partial/unknown/zero cases and assert one summary request; these are source assertions, not a new run. [6]
 - LeafEntries mounts the control; DocChangeSetBar derives its facts from leaf lifecycle facts plus the shared revalidation generation. [7]
 - Stored refusal/compact-entry cases retain one control, task-context open and no false revision counts while preserving the actual refusal explanation; these are not fresh execution. [8]
 - OpenWorkCount suppresses loading/undefined values, renders a separate open/all-answered span otherwise and follows supplied optional unexplainedOpen even on a refused intent answer; it is not a MEMORY acceptance grade. [9]
+
+- A closed leaf's entry opens the page's own default, so a landed leaf reaches the comparison it delivered rather than its last recorded number; the summary read, the count label and the one-control shape are unchanged. [10]
+- The leaf-wide view names the leaf's highest recorded number and the delivered notice beside the comparison it resolved. [11]

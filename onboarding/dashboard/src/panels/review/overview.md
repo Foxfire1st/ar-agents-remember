@@ -10,11 +10,13 @@ The intent reviewer reads one leaf comparison as a page of changed intent and re
 
 ## Hot Path Summary
 
-Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the task's retained chat column outside this route.
+Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the task's retained chat column outside this route. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair.
 
 ## Construction And Ownership
 
 The opening reads summary, review context, outline/catalogue, leaf-wide trees, the shown subjects' cards and the lane. The shown invariant population controls card-read chunks. A requested older comparison carries its number through the relevant readers and is read-only. An unavailable measurement remains unavailable rather than becoming zero.
+
+The record the page reads is state the surface can leave. A target may ask for the leaf's recorded comparison, and the delivered action clears that frame so the page returns to its own default. The comparison menu lists every recorded number, carries the delivered pair as its own row and marks which number holds it, while the mismatch line and the delivered identities sit in the page's existing note and technical-details parts. Following the delivered link changes the comparison through the page's own selection and starts no model and no role.
 
 One sort orders both consumers. Changed retains real changes and selected or walked context; All exposes the catalogue. The tree-only filter matches family and subject identity/title/effect and location path/symbol/role. A multi-family invariant draws its locations at its first displayed occurrence. Entries sharing a recorded region draw one card and traversal stop while retaining distinct identities and entry-based counts.
 
@@ -41,3 +43,6 @@ Server readers own immutable comparison operands, currentness, recorded effects,
 - The shared file gate distinguishes opened and engaged state and admits at most eight file tasks. [6]
 - A visible text lane file holds one gate slot for classification and text together. [7]
 - Mounted fixture assertions distinguish no-gesture lane reads from engagement-gated card marks; these are source assertions with stubbed visibility and transport. [8]
+
+- A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number. [9]
+- The mismatch line and the delivered identities reuse the page's existing note and technical-details parts. [10]

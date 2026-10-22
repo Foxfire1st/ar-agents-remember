@@ -1552,14 +1552,14 @@
       ]
     },
     "192": {
-      "note": "The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation.\n\nAnchor: \"test_a_truncated_comparison_cannot_be_presented_as_a_complete_one\"; \"test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction\"",
+      "note": "The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:613-676`). |  | Anchor: \"test_a_truncated_comparison_cannot_be_presented_as_a_complete_one\"; \"test_a_comparison_that_declares_a_limit_it_did_not_establish_fails_construction\"",
       "targets": [
         {
           "anchor": {
             "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
-            "content": "sha256:ff5a180781daa6da3f31375bea7079f5a33eb6b21e4a2290ebd7b63e45dea1a9",
+            "content": "sha256:3424fe4b79082c078c58fcc991222d62e1997b968dca5d418c4f2cbf66eecdb2",
             "locator": {
-              "end": 637,
+              "end": 676,
               "kind": "line_range",
               "start": 576
             },
@@ -3643,7 +3643,7 @@
       ]
     },
     "294": {
-      "note": "Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance.",
+      "note": "Current single literal PUBLIC_TOOLS contains 41 public names (including knowledge_write) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance.",
       "targets": [
         {
           "anchor": {
@@ -3660,39 +3660,15 @@
       ]
     },
     "295": {
-      "note": "Full and public registries separate retained internal builders from public responses, including native retirement and set start.",
+      "note": "One current tool-response registry: `TOOL_RESPONSE_MODELS` holds 41 public names, including `knowledge_write` and excluding `dispatch_agent` (`models/tools/tool_registry.py:80`). The former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc22fb278e01285021dd85c135b22af4beb75da4",
-            "content": "sha256:8e83dbc63e773b9de93381ac53e394a364b2dd07d0fc48752ee419f40a1b78fd",
+            "blob": "f22561c4fc8fe67d3b83091f44dd37e323124fbd",
+            "content": "sha256:661f10b3dd41e44793a65660317c229fe0fa0eb17c1ee0645b8a675d0a6595f6",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -4023,11 +3999,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
-            "content": "sha256:3d59bf0fdb6e3f04d75721629efe403c7222c3a5151245986b16b07ddcca65dc",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "content": "sha256:9e41f14bb4bcdeda7bef2d40a16e916854a931d67159dc4426564379142f8d67",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeSide"
+              "end": 145,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -4609,7 +4586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:b42a3f7aea2b0db7845817dbec4eb2851c0cbf61c21de9f27de53e98bb5a3f5e",
             "locator": {
               "kind": "symbol",
@@ -4621,11 +4598,28 @@
         },
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:f34601dea49ddb99b3e1ffddabe477113529f3c5c68237fc016759a2395b7e97",
             "locator": {
               "kind": "symbol",
               "name": "entry_memory"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "332": {
+      "note": "The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "content": "sha256:a98a0c19a485b04ecc5a2f51fdc9f384962b0b5037e03682f4602e2d699225c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDeliveredComparison"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -5015,7 +5009,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:2f62a5c917806fe40620e9b32005587071ebbb1886104dfd9fbcf74681e26c35",
             "locator": {
               "kind": "symbol",
@@ -5027,7 +5021,7 @@
         },
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
             "locator": {
               "kind": "symbol",
@@ -5296,12 +5290,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:0bc12e1afa454ce7e016fc38be00221c346568e1447eb209462b1186fd6fbbe6",
             "locator": {
-              "end": 282,
+              "end": 317,
               "kind": "line_range",
-              "start": 282
+              "start": 317
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -5408,12 +5402,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
             "content": "sha256:e9e625f5c87cd7fbf9f3ebc9f1bfb407d67c29859f1e9a1fe4b36322a2c37ed4",
             "locator": {
-              "end": 287,
+              "end": 322,
               "kind": "line_range",
-              "start": 286
+              "start": 321
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -6098,12 +6092,12 @@
       ]
     },
     "86": {
-      "note": "The drift-status vocabulary and `DriftSummaryPacket` that `drift.py` and `memory.py` import.",
+      "note": "The drift-status vocabulary `DriftStatus`, declared in `models/drift.py`, and the `DriftSummaryPacket` that imports it (`memory_quality/integrity/onboarding_drift_check/models.py`).",
       "targets": [
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
-            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
+            "content": "sha256:2c37f03052e83372cccb360bdefa6ee9f68c2a6e4a72b6a96404fa76d0c78b52",
             "locator": {
               "kind": "symbol",
               "name": "DriftSummaryPacket"
@@ -6272,7 +6266,7 @@
       ]
     },
     "95": {
-      "note": "The frozen base and the refusal to rewrite a non-canonical identifier.",
+      "note": "The frozen base and the refusal to rewrite a non-canonical identifier: `normalized_uuid` strips and lowercases the text, then refuses any spelling that is not the canonical lowercase UUID form (`models/knowledge/base.py:95-109`).",
       "targets": [
         {
           "anchor": {

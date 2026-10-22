@@ -22,7 +22,7 @@ Ordinary masters now compose Now then the shared derived Order and ready-next ro
 
 Operations selects a projected task/document and mounts its reader. Task prose and references can open registered requirement packets through TaskRequirementLinks. TaskNotes shows a Notes root-folder count, references and recorded role-start reports without constructing a notes-tree total. TaskArtifactReaderTarget currently distinguishes notes, requirements, task-report and decisions. DecisionPreview shows the five newest authored decisions, excluding product-written records from that preview; an omitted-entry link opens the complete log and names the authored decision count. The shared artifact reader owns the corresponding takeover and transport.
 
-A leaf's Intent review control opens task context without requiring a returned subject. Its resolved task/worktree facts select the live or recorded target; it gates the working change-set action, not the intent-review entry. The entry reads changed-intent summary counts, with a separate attribution count, rather than borrowing source-line totals. Pending, partial, unavailable, refused and unrecorded states remain distinct from measured zero. Summary revalidation follows the leaf's own facts and the entry generation; the inherited policy does not promise live delivery while an unchanged detail panel remains open.
+A leaf's Intent review control opens task context without requiring a returned subject. Its resolved task/worktree facts label the entry as recorded rather than changing which record it opens: the entry supplies `review: {}` for a live and a closed leaf alike, and liveness gates the working change-set action, not the intent-review entry. The entry reads changed-intent summary counts, with a separate attribution count, rather than borrowing source-line totals. Pending, partial, unavailable, refused and unrecorded states remain distinct from measured zero. Summary revalidation follows the leaf's own facts and the entry generation; the inherited policy does not promise live delivery while an unchanged detail panel remains open.
 
 The cockpit mounts ReviewSurface through ReviewMain inside Operations’ railed grid for a target carrying review context, with optional family/invariant selector and history. Its tree and ReadingColumn share one comparison-bound change-set model; the page opens unselected unless explicitly addressed. Pending or unavailable subject reads retain the page structure while the selected slot names the requested state. TechnicalDetails receives only the subject’s current answer as that subject’s records.
 
@@ -290,9 +290,9 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict. [163]
 
-- The intent entry always opens task-context review; liveness selects the live or recorded target, while summary state labels rather than gates the button. [59]
+- The intent entry always opens task-context review, supplying `review: {}` for a live and a closed leaf alike; liveness reaches only the `(recorded)` label, while summary state labels rather than gates the button. [59]
 - The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue. [60]
-- `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness selects live versus recorded entry context, not catalogue-subject admission. [61]
+- `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission. [61]
 - The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
 - Artifact reader includes task reports and whole decision logs [165]
 - Decision preview excludes product records and limits authored entries to five [166]
@@ -307,7 +307,7 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 - Network-only retry and intent-only source alternative remain explicit [181]
 - The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable [182]
-- Current intent entry uses liveness to choose recorded target rather than hide entry [183]
+- Current intent entry uses liveness for the `(recorded)` label rather than to hide the entry or to choose a different record [183]
 - Master change-set read includes leaves and carries published generation [184]
 - Collapse hook has one stored key set and toggle API [185]
 - Knowledge reads bind to address; reader shares records and responsive citation navigation [186]
@@ -322,7 +322,7 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 - The conforming example on real data. [27]
 - The one case: the landed workspace over a converted leaf's trees. [28]
 - The hand-kept snapshot payload provides the generated timestamp. [57]
-- **The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.** [112]
+- **The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.** [112]
 
 
 - Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]

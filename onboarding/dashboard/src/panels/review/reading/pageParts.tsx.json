@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
         "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+        "content": "sha256:a5e77e65d72157fa4d74996f119e7e3b15757413715ba7ad31529d8318265e29",
+        "locator": {
+          "kind": "symbol",
+          "name": "PageNotes"
+        }
+      },
+      "id": "RLZ-KEXXNY",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Places the line in the page's existing reserved note area, so the notice adds no surface and no layout of its own.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
         "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
         "locator": {
           "kind": "symbol",
@@ -38,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
         "content": "sha256:eaf48e0a5934a787487743ebcfa38daf8c61219b4466ce3edfda7296e8f8ae74",
         "locator": {
           "kind": "symbol",
@@ -56,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+        "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
         "content": "sha256:b7a5210e19e50272797ceba1af4bd3fff780d56ee139e77963b6aee6dc45047d",
         "locator": {
           "kind": "symbol",
@@ -79,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
             "content": "sha256:6ad54b0bae7bb6eeb5dc19b82fcebe6342209b394f2d02125ecd7578065eb13f",
             "locator": {
-              "end": 55,
+              "end": 56,
               "kind": "line_range",
-              "start": 47
+              "start": 48
             }
           },
           "kind": "code"
@@ -92,16 +110,16 @@
       ]
     },
     "2": {
-      "note": "Wire page model into tree, context, subject slot, notes and top-line controls.\n\nAnchor: \"function PageSlot({ props, layout }: { props: PageProps; layout: DiffMode }) {\"",
+      "note": "Wire page model into tree, context, subject slot, notes and top-line controls.\n\nAnchor: `function PageSlot({ props, layout }: { props: PageProps; layout: DiffMode }) {`",
       "targets": [
         {
           "anchor": {
-            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
-            "content": "sha256:3aba50fc521352f552d843d345db681d166818f0e52facd0d4e24bc476b15392",
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "content": "sha256:888853bdb34f2ef8eb2d42a1809f3e4d8c3e1580566847c78d825f5840144eb7",
             "locator": {
-              "end": 120,
+              "end": 118,
               "kind": "line_range",
-              "start": 96
+              "start": 97
             }
           },
           "kind": "code"
@@ -113,12 +131,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
             "content": "sha256:d9f0d6621d61819980503291b33086b933271a033e88fe2f45a355ceece43304",
             "locator": {
-              "end": 158,
+              "end": 159,
               "kind": "line_range",
-              "start": 129
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The delivered line sits in the page's existing note area, from the page's own delivered value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "content": "sha256:a5e77e65d72157fa4d74996f119e7e3b15757413715ba7ad31529d8318265e29",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageNotes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "content": "sha256:a2d9769aa3efb98d1f8008b3eb03b1a78cc58a86a8fe571aac05743531c12842",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 240
             }
           },
           "kind": "code"

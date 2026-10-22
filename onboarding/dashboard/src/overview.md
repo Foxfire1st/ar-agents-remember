@@ -27,7 +27,7 @@ For native role execution, follow `cockpit/RoleChats.tsx`, the role-launch model
 
 For task artifacts, start at `data/taskArtifacts.ts` and the cockpit's notes/requirements takeover. The shared artifact takeover selects `notes-reader`, `requirements-reader`, `decisions-reader` or `report-reader` from the artifact kind; these are takeover markers, not additional product-bar modes.
 
-For change sets and Intent Review, start at panels/detail-panel/changeSetBar.tsx and intentReviewEntry.tsx, then follow the separate ChangeSetTakeover or Operations ReviewMain composition. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets and an always-present task-context review entry. Liveness selects live versus recorded review identity; review counts measure changed intent, not changed lines or catalogue size.
+For change sets and Intent Review, start at panels/detail-panel/changeSetBar.tsx and intentReviewEntry.tsx, then follow the separate ChangeSetTakeover or Operations ReviewMain composition. Masters request their series net with the per-leaf breakdown. Leaves expose committed change sets, live-only working change sets and an always-present task-context review entry. Liveness labels the review entry's recorded context rather than selecting which record it opens; review counts measure changed intent, not changed lines or catalogue size.
 
 The tree heading has the review page’s one All changes link, opening the comparison-bound ChangeSetViewer. Its changed-file count distinguishes a measured count from pending or unavailable measurement; non-text badges come from the supplied comparison inventory. Whole-file inspection also remains available through path links.
 
@@ -83,7 +83,7 @@ A counter read distinguishes loading, refusal/unreadable/unanswered failure, unr
 
 Intent Review is a variant of `ChangeSetTarget`: presence of `review`, including `{}`, selects task-context review. The shell renders ReviewMain in Operations’ railed grid and forwards an optional subject and recorded-history identity to ReviewSurface. The review’s tree and path links open a separate comparison-bound ChangeSetViewer over the retained, inert review body. The tree owns All changes; card excerpts use the page’s Changes only / Full context control rather than a SourceContent or per-card Full file surface. The server resolves candidate/comparison identity.
 
-The task entry reads the comparison summary, never the subject catalogue. Summary availability labels the control and does not gate navigation. Every leaf has the review control: live leaves use `{}`, closed leaves use `{ historical: true }`; working change sets remain live-gated. The reviewer loads its own catalogue and change-set reads and opens unselected unless a target or validated URL names a selection. Added/removed intent revisions, partial/unresolved intent and unexplained/unknown attribution remain separate facts; unavailable or partial knowledge and attribution keep their named states without invented counts.
+The task entry reads the comparison summary, never the subject catalogue. Summary availability labels the control and does not gate navigation. Every leaf has the review control: the entry supplies `review: {}` for a live and a closed leaf alike (`intentReviewEntry.tsx:169`) and liveness reaches only the `(recorded)` label (`:179`); working change sets remain live-gated. The reviewer loads its own catalogue and change-set reads and opens unselected unless a target or validated URL names a selection. Added/removed intent revisions, partial/unresolved intent and unexplained/unknown attribution remain separate facts; unavailable or partial knowledge and attribution keep their named states without invented counts.
 
 Review transport has its own body-first decoder. It reads JSON regardless of HTTP status and returns bodies carrying a string `state`; caller-side admission determines which states are understood. A non-route body is unreadable, and no HTTP response is a network failure. Refusal conversion preserves published facts. This is deliberately distinct from the other clients' throw-on-non-2xx semantics and is not a generic validation of every returned field.
 
@@ -138,7 +138,7 @@ The product bar contains Chats, Operations, Knowledge and File Viewer, with the 
 - Reliable submission and withdrawal are retained requirements of the removed hosted-session transport — request/epoch identity, no blind resend, no manufactured authoritative success — with no current dashboard implementer. User submissions, agent bus messages, lifecycle/control commands and adapter-interaction answers remain distinct paths; agent communication must not collide with operator paste/input.
 - Inherited structured-session presentation keeps inspectors supplementary, diagnostics read-only and default-off, PTYs mounted across focus/transient handoffs, and ended rows from acquiring live sockets. These are scoped hosted-session responsibilities, not a claim that the current native Chats frame renders the old structured stage.
 - Missing transport, capability, history or measurement facts remain explicit. Unknown, unavailable, unrecorded, measured-empty and refused are different states.
-- Review subject availability and summary counts do not gate the task-context entry. Liveness selects its record; the browser does not choose the candidate.
+- Review subject availability and summary counts do not gate the task-context entry. Liveness does not select the record — the entry supplies `review: {}` for a live and a closed leaf alike, and the page's own default/delivered resolution, not liveness, chooses it; the browser does not choose the candidate.
 - Review refresh claims belong to the exact question/read/comparison they describe. Displayed failures and retained coherent generations must not relabel an old answer as a new subject's answer.
 - The shell delegates scrolling to its panels; the review uses ReadingColumn above 40rem and its stacked ReviewMain at narrower widths. Styling establishes no fresh viewport measurement.
 - Generated producer contract, manually sampled coverage, runtime schema refinements, static fixture restrictions and execution verification remain distinct evidence classes.
@@ -296,7 +296,7 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 
 
-- **The shared liveness predicate gates Working and selects live versus recorded Intent Review identity; it does not gate Intent Review availability.** [23]
+- **The shared liveness predicate gates Working and labels the Intent Review `(recorded)` for a closed leaf; it selects no different review record and does not gate Intent Review availability.** [23]
 
 - The shared catalogue hook takes repository/task context and calls the existing subject catalogue client. [24]
 - **The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.** [25]
@@ -318,7 +318,7 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - Native execution results are scoped by document and request identity [46]
 - Frame descriptor activation and explicit retry are separate from retained frame identity [47]
-- Every leaf's review entry selects live or recorded identity independently of summary availability [48]
+- Every leaf's review entry opens the page's own default comparison — the live candidate for a live leaf, the delivered recorded pair for a closed one — independently of summary availability [48]
 - Intent and attribution counts have separate partial/unavailable treatment [49]
 - Review transport reads route-state bodies irrespective of HTTP status [50]
 

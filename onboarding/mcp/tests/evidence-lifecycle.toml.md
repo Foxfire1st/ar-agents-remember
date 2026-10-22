@@ -15,6 +15,10 @@ This section supersedes contrary earlier prose only for these changed seams; ret
 
 
 
+## Consumer declarations for the delivered-comparison module
+
+`test_review_delivered_comparison.py` is now named by the canonical user-settings guard's consumer list and by the portable Node-lockfile fixture's consumer list, which are the two source-derived lists the evidence-lifecycle validator checks for a new governed module. The change is those two entries only: contract rows, artifact identities, lane assignment and every non-consumer field remain as they were, and the run reports PASS over the governed artifacts. Membership establishes dependency reachability; it does not establish that the module ran.
+
 ## Governing Overview
 
 [mcp/tests route overview](overview.md)
@@ -349,7 +353,7 @@ The admitted lifecycle replacement, landed upstream of L74, replaced the earlier
 
 ## Shared support settings guard
 
-The permanent _user_settings_guard.py artifact declares the shared settings-path refusal and the support-write scanner replacement test. The world, structural-seat and Paseo-runtime support call the guard before settings-parent creation or mutation, including Paseo unlink. With an available account database it compares the real account settings path; otherwise it compares the earliest observed/import-time home, not a proven process-start home. A moved configuration is allowed by the source and asserted by the moved-folder case. The world may create disposable fixture repositories before reaching the settings refusal. Neither metadata nor assertions are an invocation or acceptance result.
+The permanent _user_settings_guard.py artifact declares the shared settings-path refusal and the support-write scanner replacement test. The world (`tool_entry_point_world.py:451`), the canvas-host/presenter support (`canvas_host_test_support.py:209`) and the Paseo-runtime support (`paseo_runtime_test_support.py:94`) call the guard before settings-parent creation or mutation, including Paseo unlink. With an available account database it compares the real account settings path; otherwise it compares the earliest observed/import-time home, not a proven process-start home. A moved configuration is allowed by the source and asserted by the moved-folder case. The world may create disposable fixture repositories before reaching the settings refusal. Neither metadata nor assertions are an invocation or acceptance result.
 
 
 
@@ -729,7 +733,7 @@ Historical L112 post-L74 intake preserved the parked W03 comparison prose and or
 ## Current contract evidence
 
 
-The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance. The complete source block is included in the grouped role-agent/role-message declaration evidence [267].
+The existing `paseo_launch_test_support.py` shared-support row now describes the hand-written stateful `FakeRuntime` and catalog as well as independently derived launch expectations. Its rationale explains shared launch/status/document-chat use and extraction for the file-size rail. The same permanent in-process artifact and `paseo-launch-given-to-agent-cases` replacement contract remain; these declarations establish ownership/reachability, never execution or acceptance. The launch block itself is the artifact row at TOML 2678-2716; the grouped role-agent/role-message declaration evidence [267] carries the settings guard, the context-packet fixture and row-codec support, not that block.
 
 
 
@@ -881,7 +885,7 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 - Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]
 
 
-- The current parsed inventory declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [311]
+- The current parsed inventory declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [311] [271]
 
 
 - The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved. [297]

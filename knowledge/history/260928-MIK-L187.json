@@ -1,0 +1,3596 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L187",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+            "content": "sha256:b974dd009144da8a90f70f2279b585246e0ddaa9039cec04968674b766460f5a",
+            "locator": {
+              "end": 1829,
+              "kind": "line_range",
+              "start": 1829
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1836,
+              "kind": "line_range",
+              "start": 1836
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+            "content": "sha256:7ec665580d0849a744a6faf629d9fd2535acb3fc495955840825563451912a91",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 368
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "content": "sha256:b5dcbe353b74fecbe99d922961ca12bc08068532affba89c85e27c810c573ded",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-9QPBZK"
+        },
+        {
+          "after": {
+            "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+            "content": "sha256:7a573258a6648b098d84024d6799d6e96e3fabe7a46b099ec42eb718ff983dc3",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 464
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 470
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+            "content": "sha256:04c215804dc40f745c28a7b9da9d84b3b312919a0b439fbc89fa1a5653f37ea2",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 950
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 956,
+              "kind": "line_range",
+              "start": 956
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+            "content": "sha256:e8ed7d52c8b0eb9c4a9253bf51db254bf05412a2fa5b1a05d9ae7840d6fd844a",
+            "locator": {
+              "end": 2012,
+              "kind": "line_range",
+              "start": 2012
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 2021,
+              "kind": "line_range",
+              "start": 2021
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+            "content": "sha256:b86d9d982ba2dc8dd852977c51f319a7c3e5a583d165586c3712c860e071ee50",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0J42EV",
+      "items": [
+        "sha256:c667e19a7ae74fd8311442f2802ee37e72803d42a6546b1962573f1732edcc46"
+      ],
+      "reason": "The two evidence catalogues gain the delivered-comparison module as a consumer of the rows they already declare. The lane, artifact and consumer inventory this invariant governs keeps its identity and membership rules; the added module names the leaf's own test, not a new governed artifact or contract.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0M4M4N",
+      "items": [
+        "sha256:09b24b120c98796f042ce9255f8e1c55ff470acd50391dc1fbac631be21e2556"
+      ],
+      "reason": "A closed leaf's numbered read no longer resolves the default first, and the leaf-wide view names the highest recorded number and the delivered notice.",
+      "sources": [
+        {
+          "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+          "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_knowledge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2CEAK0",
+      "items": [
+        "sha256:4bc68163642dee9a729263620db8650dd9a34008d8d4d9ee56d3fdb2a9f8e374",
+        "sha256:52e8288a50f54499d9a7c42b7ab2f4a890ec24c28a298b1a855c33834b497a08"
+      ],
+      "reason": "The page hands its delivered action to the comparison menu beside the plain number chooser, so the menu's delivered row leaves a recorded frame while a numbered row keeps it. It is the wiring of the selector's two callbacks and states no invariant.",
+      "subject": "hunk:sha256:4bc68163642dee9a729263620db8650dd9a34008d8d4d9ee56d3fdb2a9f8e374"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2D0YK2",
+      "items": [
+        "sha256:8a6a07a8b785b28d19537c9b7f0f1a47e3df9165ce9e451da77f4bb3990c56b8"
+      ],
+      "reason": "Passes one supplied delivered fact line into the existing disclosure; the delivered-notice entry realizes this construct.",
+      "subject": "hunk:sha256:8a6a07a8b785b28d19537c9b7f0f1a47e3df9165ce9e451da77f4bb3990c56b8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-7N70C8T7"
+        },
+        {
+          "after": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "before": {
+            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "id": "RLZ-DDY3VDR2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2QXXFW",
+      "items": [
+        "sha256:8e20898f2e753103d98b696a6b02c7088e6795e2928a85850e75cf652e153844"
+      ],
+      "reason": "The task entry opens the page's own default on a closed leaf instead of asking for the recorded frame. The entry's summary read, count label and one-control shape are unchanged.",
+      "revision": 4,
+      "subject": "INV-T0EWDB7H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:7ad9601a0c2cdc66e4b4dbc1714a7ec0ba4bf5bb8649836ab33d93b951e3978b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "before": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:7ad9601a0c2cdc66e4b4dbc1714a7ec0ba4bf5bb8649836ab33d93b951e3978b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "id": "RLZ-0N3G27"
+        },
+        {
+          "after": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionOptions"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionOptions"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-25K6A1"
+        },
+        {
+          "after": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-2A31AF"
+        },
+        {
+          "after": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:bed813ca39ed279f94462c5b01d5bfdd82133a2320116077b4e5a184740a4746",
+            "locator": {
+              "kind": "symbol",
+              "name": "openTarget"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "before": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:bed813ca39ed279f94462c5b01d5bfdd82133a2320116077b4e5a184740a4746",
+            "locator": {
+              "kind": "symbol",
+              "name": "openTarget"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "id": "RLZ-5VBQHW"
+        },
+        {
+          "after": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "before": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "id": "RLZ-AVHNJD"
+        },
+        {
+          "after": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewPage"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "before": {
+            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "content": "sha256:407b39602ab0cbd68a615d6e9026336bfad3221cbd3d5cc0471bb2bdf0c5ca89",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewPage"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "id": "RLZ-BGQZ8S"
+        },
+        {
+          "after": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonGenerationOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "before": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonGenerationOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "id": "RLZ-DNK5ZP"
+        },
+        {
+          "after": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-FRKWFP"
+        },
+        {
+          "after": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "absorb"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "before": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "absorb"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "id": "RLZ-G92QCK"
+        },
+        {
+          "after": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewSelection"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "before": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:e52edec43ebaad6bfd2e6ff398cb60c0c285ccf1fc2465d7f12177e206d864a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewSelection"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "id": "RLZ-KQQ22F"
+        },
+        {
+          "after": {
+            "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+            "content": "sha256:541640dcb1db3265eeb5ae74fd74a4e330f7ef090165e171b40ecb106419f013",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
+          },
+          "before": {
+            "blob": "2d27a4f0994a6e406bd5c7087d9f44a3e5db77de",
+            "content": "sha256:541640dcb1db3265eeb5ae74fd74a4e330f7ef090165e171b40ecb106419f013",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/workspaceState.ts"
+          },
+          "id": "RLZ-MGGXSY"
+        },
+        {
+          "after": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:a3f03581486d3c0910316c3ba2d00dcbf119aa443e8173a4d43f8ef0ea7fce1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "content": "sha256:3edf9e0b64e9bb71824c8f0ceea77b441f9cf558a8eb5c54bb32df0e8755e37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-PCQKA3"
+        },
+        {
+          "after": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebase"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "before": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebase"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "id": "RLZ-ZPH7PP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3BV9GH",
+      "items": [
+        "sha256:f5ddf2df126b75b2c6c30f36e7c02c26d0db6ad9ce4cfd49e8346c7f40689056"
+      ],
+      "reason": "The surface holds its record frame as state that the delivered action can leave, and the page's comparison choice is expressed against the resolved comparison. Walk scope, marker movement and the reset of lane facts are unchanged.",
+      "revision": 4,
+      "subject": "INV-9ZKYWQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3KA9MZ",
+      "items": [
+        "sha256:1de411e6f4abd84f007f16df83aea21c238c5a55f2c6a84b921f8c2d66b82150"
+      ],
+      "reason": "Expresses the page's comparison choice against the resolved comparison and adds the delivered action; the selection entry realizes this construct.",
+      "subject": "hunk:sha256:1de411e6f4abd84f007f16df83aea21c238c5a55f2c6a84b921f8c2d66b82150"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3NKWBA",
+      "items": [
+        "sha256:1d2a554c4d67006637eb6ac290f9b6ba5cce1064e106c89d745099cb3d029eb4"
+      ],
+      "reason": "New card: the record frame is state seeded from the target that the page can leave.",
+      "sources": [
+        {
+          "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+          "path": "dashboard/src/panels/review/useReviewHistory.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/useReviewHistory.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3Z78J8",
+      "items": [
+        "sha256:1fb988bb7b6f94ef3a6d6b611027c96605fd3d8918d943bd396c41b88bb6c2b5"
+      ],
+      "reason": "New card: the module measures the landed page's default, the delivered link leaving the recorded frame, and the unavailable notice line.",
+      "sources": [
+        {
+          "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+          "path": "dashboard/src/panels/review/DeliveredDefault.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/DeliveredDefault.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+            "content": "sha256:4f7d84eff947853190237d381df06bfddc8790c32f8810e9774f967adca5ebd8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:a9d362f7266e9528f93b05eac8f4003cf009e417273dd0977f3d97f8d8e38688",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+            "content": "sha256:f637b9d5064d750dfb3fbe41b9c73127ea205bdc7d6653dd48c0fbc4a570281e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "content": "sha256:082e4fbbe4e244bd0e0647558cea9a4d26fe6addae855b383f86920140298b2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4N0PMZ",
+      "items": [
+        "sha256:38610f1fe00360d089dbc5056064e6137777aff0ef26424ae3d9a4acdb4587b8"
+      ],
+      "reason": "Both governed catalogs gain one consumer entry naming the new delivered-comparison test module. The catalogs' own subject and their source-derived lists are unchanged.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-21SDZECS",
+          "revision": 2
+        },
+        {
+          "id": "INV-2E8MG43K",
+          "revision": 2
+        },
+        {
+          "id": "INV-49H32B3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-53F058MT",
+          "revision": 4
+        },
+        {
+          "id": "INV-555EHWM8",
+          "revision": 2
+        },
+        {
+          "id": "INV-8VQR13WX",
+          "revision": 1
+        },
+        {
+          "id": "INV-BR5MTSTY",
+          "revision": 2
+        },
+        {
+          "id": "INV-DYDMDD",
+          "revision": 2
+        },
+        {
+          "id": "INV-H8EM1VJR",
+          "revision": 3
+        },
+        {
+          "id": "INV-J1DFZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-KKJYVB40",
+          "revision": 2
+        },
+        {
+          "id": "INV-MC654E0T",
+          "revision": 3
+        },
+        {
+          "id": "INV-MCVSM81V",
+          "revision": 4
+        },
+        {
+          "id": "INV-RT13RESK",
+          "revision": 3
+        },
+        {
+          "id": "INV-VPX81HXV",
+          "revision": 3
+        },
+        {
+          "id": "INV-W5CTZJGD",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQZ2WFCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX178P3W",
+          "revision": 2
+        },
+        {
+          "id": "INV-YVVW1XCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z385RTQS",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZS9ZS878",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZY0YMXMQ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-5C3YZV",
+      "items": [
+        "sha256:26868110a1c4446857bdbabc17ae88db6ee71c8dbe94575a2f1cbec63a79576e"
+      ],
+      "reason": "Coherent intent and source review is unchanged: the same comparison binds intent and source, now opened at the pair the leaf delivered rather than the last record.",
+      "revision": 8,
+      "subject": "FAM-R6R095RW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:6deabdb2f5186f865bde9fe961078af112af94670506384a38de1de1f782c13e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:760ef120276d8054fabfc8dcdf82b6a8aa057a38b63cdc690c986ed28698e23e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-9YB1ER"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5YWKJ6",
+      "items": [
+        "sha256:b869759bfd069d998accbf4e02958405807c94697183d00595b16a13abd224f9"
+      ],
+      "reason": "The module gains the delivered notice and the highest recorded number in its view, and a closed leaf's numbered read no longer resolves the default first. Its own subject (one comparison's leaf-wide view, cards, lane or file answer) is unchanged.",
+      "revision": 1,
+      "subject": "INV-5FC4T6"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-6XWA0M",
+      "items": [
+        "sha256:e1e855aa3431cf16134ddbf274ddca67a16e59ca66fa21ce3a638877039c7db8"
+      ],
+      "reason": "The link fired because the decision's reconsider_on anchor is the whole review_tree_knowledge.py file and this leaf edited that file. The change is the closed-leaf numbered-read routing and the two view fields; it does not touch the first-view composition or memo, the index-build owner or the validator parse owner the condition names, and it adds no performance or memory measurement. The chosen cut therefore still stands and the rejected wider shared-cache implementation stays unexamined on its own grounds.",
+      "subject": "reconsider:DEC-H24NXK#1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6YV3ZZ",
+      "items": [
+        "sha256:77b69ded7d18ac06c61261142f1d2b8ebf8542b94600b76b9ab6f0979d4f752a"
+      ],
+      "reason": "Separates the resolved comparison from the shown and highest numbers and states an unreadable delivery; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:77b69ded7d18ac06c61261142f1d2b8ebf8542b94600b76b9ab6f0979d4f752a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-71FTA2",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The catalog gains the delivered-comparison module in the two source-derived consumer lists, and the card states that scope.",
+      "sources": [
+        {
+          "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-783N8X",
+      "items": [
+        "sha256:8db9ecccfa52e379581bf93ae86da19413d21c65ba6554bb28d906ca496bce47"
+      ],
+      "reason": "The module now opens a landed leaf on the pair it delivered and keeps an explicitly recorded read separate; the card accounts for both and for the leaf that records no delivery.",
+      "sources": [
+        {
+          "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+          "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_committed_leaf.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-19P897",
+          "revision": 1
+        },
+        {
+          "id": "INV-BBPPS5",
+          "revision": 2
+        },
+        {
+          "id": "INV-HHZP57",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKBCZ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2HVKA",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-7BRCPA",
+      "items": [
+        "sha256:e54c32ea217a3058a154bdf88c2539fef5cf149637055ce00502350e68093f5b"
+      ],
+      "reason": "The joint guarantee already promises that a comparison several readers open at once is recorded once; the clarified member states the create-only publication that now carries it across processes, and the guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-TYKA3T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7DJ1PN",
+      "items": [
+        "sha256:a62ddd6b261de51369790298dc3e597667f8aaf1cfc5d42eab8a9f08c1e17365"
+      ],
+      "reason": "The numbering owner publishes through the create-only publication call and answers the winning record or a named refusal; the card's recording account follows that.",
+      "sources": [
+        {
+          "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_tree_comparison.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7HMQM1",
+      "items": [
+        "sha256:ce7132a62e890ffac60bc4b42a3d014df3e5697e15eafe1093e6061f06aaf9b0"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:ce7132a62e890ffac60bc4b42a3d014df3e5697e15eafe1093e6061f06aaf9b0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+            "content": "sha256:877eec42625c21af57bfc37301437aa1f202139f770eacb9b0286559dc3521e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "a default frame with no recorded history opens the older delivered #7"
+            },
+            "path": "dashboard/src/panels/review/DeliveredDefault.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-1B89T0"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:d393b9a7bbe7c453d6b78cc4ded434675a2da38b188153fc616629a4a0f7eac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exact_delivered_record_older_than_the_last_record_is_reused"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-FNNKDT"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:b1e5e269d127d7a5c0de15864f5962463f7f873b455f5546b228e595c0ea11d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_matching_last_record_is_the_delivered_default_and_keeps_its_number"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q6HMDG"
+        },
+        {
+          "after": {
+            "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+            "content": "sha256:0429b3716612581a5a4e0ae22dc675fede4331292f4686470026476696589c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "the delivered link leaves the recorded frame the task entry opened"
+            },
+            "path": "dashboard/src/panels/review/DeliveredDefault.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-QKRT60"
+        },
+        {
+          "after": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:a06a0577c507ae8ea0c05c51868869bb79ddc0b5cae302aa4c9d68840ca2d62a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCatalogueKey"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "before": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:a06a0577c507ae8ea0c05c51868869bb79ddc0b5cae302aa4c9d68840ca2d62a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCatalogueKey"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "id": "RLZ-1FTB4X"
+        },
+        {
+          "after": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "before": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status_for"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "id": "RLZ-1NKG97"
+        },
+        {
+          "after": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "before": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "id": "RLZ-2W3B3Z"
+        },
+        {
+          "after": {
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:64f2db09bbc5c883ad0c6556fae4be637cff7ec73a4d4f7d5f43c8a558939f0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryPort"
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "before": {
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:64f2db09bbc5c883ad0c6556fae4be637cff7ec73a4d4f7d5f43c8a558939f0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewIntentSummaryPort"
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "id": "RLZ-3Z9TNH"
+        },
+        {
+          "after": {
+            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "content": "sha256:108a1b0a310efe5b204092f03a972b635823b7aa04052babc62fab349a8ccfc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSet"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "before": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:b5602bcfe25b2c9ab4633b39119b29037d0623a6a58ef2c426b28559fb45bf95",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSet"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "id": "RLZ-51X57X"
+        },
+        {
+          "after": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-5A8ZP1"
+        },
+        {
+          "after": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "id": "RLZ-7JS6XC"
+        },
+        {
+          "after": {
+            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useComparisonNumbers"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-8JH0EX"
+        },
+        {
+          "after": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "id": "RLZ-AV8VJT"
+        },
+        {
+          "after": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:222322dbd439e8caeb43c5a2954c7c57f47b0033c5ea26c0647c13ee42493f09",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "before": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:222322dbd439e8caeb43c5a2954c7c57f47b0033c5ea26c0647c13ee42493f09",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_routes"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "id": "RLZ-CKET10"
+        },
+        {
+          "after": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:c1c9516d139dfef6b33105f649863706136a9f1b577e003c8a028670b3e2f097",
+            "locator": {
+              "kind": "symbol",
+              "name": "readSubjectOf"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "before": {
+            "blob": "258cff00a099c47959540190b805d35455941118",
+            "content": "sha256:c1c9516d139dfef6b33105f649863706136a9f1b577e003c8a028670b3e2f097",
+            "locator": {
+              "kind": "symbol",
+              "name": "readSubjectOf"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "id": "RLZ-GDJKVZ"
+        },
+        {
+          "after": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:0ba0ee6b7c3e95ed4a58dd6e0b6e4511b260085df47035b260b61752f7d7e86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeliveredOption"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-H40RCV"
+        },
+        {
+          "after": {
+            "blob": "1e87d0a39c00f0f34c2be2952a0f05e7f5c56550",
+            "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_intent_summary.py"
+          },
+          "before": {
+            "blob": "1e87d0a39c00f0f34c2be2952a0f05e7f5c56550",
+            "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_intent_summary.py"
+          },
+          "id": "RLZ-KVP1FE"
+        },
+        {
+          "after": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a85422ea9b6dca488ece6899ff5a2fb7db69a98885d4a98a52fd028ffe638daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a85422ea9b6dca488ece6899ff5a2fb7db69a98885d4a98a52fd028ffe638daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "id": "RLZ-QPCBSA"
+        },
+        {
+          "after": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewPage"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RBKYAX"
+        },
+        {
+          "after": {
+            "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+            "content": "sha256:375c994d1b3e5166ad21b4baa5f98e8515797d5d27e31987072b9e7cc1ab0665",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewHistory"
+            },
+            "path": "dashboard/src/panels/review/useReviewHistory.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RJ06YV"
+        },
+        {
+          "after": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:4e1ee73de20992582c31315124b8ba3dc5116748b405b58a5c0912b0ce7c9a06",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:4e1ee73de20992582c31315124b8ba3dc5116748b405b58a5c0912b0ce7c9a06",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "id": "RLZ-S225FJ"
+        },
+        {
+          "after": {
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:871f7f3a7d09f2445d28c504d508fcd471bd3da0f3a449489b1d748d9b4b7e3d",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "before": {
+            "blob": "2faf5a178e7e1f812cb33bc5f10c2c0b117b01d3",
+            "content": "sha256:871f7f3a7d09f2445d28c504d508fcd471bd3da0f3a449489b1d748d9b4b7e3d",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/serving/intent_summary_cache.py"
+          },
+          "id": "RLZ-SSTYDB"
+        },
+        {
+          "after": {
+            "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+            "content": "sha256:e5db558067e98cb79b734c259437e580dfe96660c8b1d672efbe97659832afc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_summary_route"
+            },
+            "path": "mcp/src/agents_remember/serving/review_summary.py"
+          },
+          "before": {
+            "blob": "53fef9e98295f628642519ba27bfd72091dca339",
+            "content": "sha256:e5db558067e98cb79b734c259437e580dfe96660c8b1d672efbe97659832afc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_summary_route"
+            },
+            "path": "mcp/src/agents_remember/serving/review_summary.py"
+          },
+          "id": "RLZ-ZC5XSH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8153T0",
+      "items": [
+        "sha256:02cdfc26dd0ada017d8ad244765f0a5d2597440b9e796298b617f5beb2c8ffc8"
+      ],
+      "reason": "The record's selector default changes from the latest recorded number to the comparison the leaf delivered, and the older-comparison state now means 'not the resolved comparison' rather than 'not the highest number'. The recorded number still governs outline, summary, cards and file facts read-only, and the prohibition on a latest subject judgment standing in for a historical read is kept; the menu's delivered row and the resolved/latest split are stated as the page's own parts of that selection. Its conditions now state the two boundaries the code applies: a leaf that records no delivery keeps its recorded comparison as the default, and a delivery it claims but cannot establish is a named refusal rather than that default.",
+      "revision": 2,
+      "subject": "INV-HAJ9SH"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R195",
+          "packet": "requirements/MIK-R195-v1-a-landed-leafs-intent-review-shows-what-the-leaf-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:68aaac867b1b4f9aee3a27a70c6a33005e427bb403b23c2a8a9e73eff85a97c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivery_git_cannot_produce_is_named_and_never_replaced"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-4D6YD9"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:f79f1df5052309a94518482ff3a868d7160f36d14657f9514936cb957bb223b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_required_conversion_that_fails_is_refused_not_read_as_an_empty_base"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-989JJX"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:2811d0b8fe3b91f118136bae07aa92bb0fccbaafb3a402c8f52804a8c97f3d15",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_without_its_memory_cell_refuses_and_publishes_nothing"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-N30H9P"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:f1dcbbcf373b481dff097b44050ae2671a43ed9c82b942595b10ce5751ba2a22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_replayed_landing_is_the_delivered_code_candidate"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-NMVSPA"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:3934b52becb16f9316f66b29439505806cbea540ebadc448c18601b042dbd20b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_delivery_opens_the_legacy_unavailable_review"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-P1W9XA"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:bf1a20ed171f8e66c544c9fbb76138ec538dc51480cc57ff54f938f780ab7269",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_tree_id_is_not_a_delivered_commit"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-RSZ7V4"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:20edf994d5649c7a7776d275fae1fca021ea259f40963c71cd0918ef9a6b86fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_landed_leaf_opens_the_pair_it_delivered_and_keeps_its_earlier_record"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZC3ET9"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:a16b930f457960fb86bf87a4435af605f902376b245b628af3058f99ef1bd1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conversion_of"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-6QEZ9W"
+        },
+        {
+          "after": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:240a3732e6007a087ba6b5ccd0a3795ca012561bf92f20f77faa684077b54e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "id": "RLZ-72VV42"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:381a016762ebfc2c3760757229c2927425719c33df20575dd26c1ae3e6551213",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_code"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-G6FF9F"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:f69a6e3627884a1c56bd35f4dfccd92ccafb79794d01c9c49c9b8d66ac288342",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_side"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K3HRQX"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:aa4b8fd4e5363478376fc7fbb24d2bc7f5e9a13ce54ae3fd798ea0304e909657",
+            "locator": {
+              "kind": "symbol",
+              "name": "_delivered_memory"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Q6DCK6"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:4acf44896273e1b9e47e35e16f82fe81838838726f62b6c22ff99dfd8c5a935d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_kind"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SMXFPZ"
+        },
+        {
+          "after": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:f452c079018cafb6c9a24772f964f97e7af34657d716a65a66585d7a85b36b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_pair"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WHGBCM"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-8AKPCG",
+      "items": [
+        "sha256:62be72be721693e397aecd82d37e6d85901a31f725e23d016911d80df5eac92f"
+      ],
+      "reason": "The record now names the four sides a delivery is established from — the recorded bases, the successful landing's commit and the closeout's memory content commit — and it applies to a leaf that already holds a frozen review, which the earlier statement excluded by scoping itself to a leaf without one. The refusal of an unestablishable side is kept, and a commit cell must name a commit the repository holds before its tree is used. The landed code record is preferred over the closeout's code cell so a replayed landing is not silently replaced, and the memory side is the closeout's cell only. The applicability now names the records that make an enclosure record a delivery (a completed or checkpointed closeout or integration), which is the condition the read applies before any delivered side is resolved.",
+      "revision": 4,
+      "subject": "INV-8Q6DZTDB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8BK4D3",
+      "items": [
+        "sha256:4d3e3f0d8a24d39d25acddd7b2e3a7a538997005c27d71d807d7bd2a255463fc"
+      ],
+      "reason": "The menu carries the delivered pair as its own row and labels each recorded number delivered, latest or read-only.",
+      "sources": [
+        {
+          "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+          "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-115RDW8H",
+          "revision": 4
+        },
+        {
+          "id": "INV-74578B97",
+          "revision": 3
+        },
+        {
+          "id": "INV-8BYGSPZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-8FWJM8RR",
+          "revision": 3
+        },
+        {
+          "id": "INV-EZ8QKFX6",
+          "revision": 3
+        },
+        {
+          "id": "INV-R93S8Y30",
+          "revision": 3
+        },
+        {
+          "id": "INV-SVZY1FHR",
+          "revision": 2
+        },
+        {
+          "id": "INV-T0EWDB7H",
+          "revision": 4
+        },
+        {
+          "id": "INV-TH4KXFTX",
+          "revision": 3
+        },
+        {
+          "id": "INV-WCEGX72X",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-8CNJ78",
+      "items": [
+        "sha256:ad34e0ee66d446b8baf131ec503edcba9a33271413a09af0244cfa88dde81f57"
+      ],
+      "reason": "The honest changed-intent entry's guarantee is unchanged; the entry now opens the comparison the leaf delivered and keeps the same summary read and count.",
+      "revision": 4,
+      "subject": "FAM-WEF4M4H1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+            "content": "sha256:c771863139869267d7f0579d9c3f9fd868830e1aeb302612b3be81521fcfbe52",
+            "locator": {
+              "kind": "symbol",
+              "name": "TechnicalDetails"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "before": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+            "locator": {
+              "kind": "symbol",
+              "name": "TechnicalDetails"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "id": "RLZ-8D95SD"
+        },
+        {
+          "after": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "before": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "id": "RLZ-DT74AZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8GGBMJ",
+      "items": [
+        "sha256:242c7316742fee62603d5aaf1ab21835260444c3dbc1b3b6b0e907869c2373cc"
+      ],
+      "reason": "Technical details gains the delivered-pair fact line and receives the resolved comparison as its latest figure. Which records it lists for the shown comparison is unchanged.",
+      "revision": 2,
+      "subject": "INV-P4Z520"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8MZ62M",
+      "items": [
+        "sha256:6391a8a57cf4f779fa64a884abe7fd5555a3f0f700029e1f1d71452bd6d2bcfc"
+      ],
+      "reason": "The surface holds its record frame as state the delivered action can leave, and page details receive the resolved comparison and the delivered value; the card states both.",
+      "sources": [
+        {
+          "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+          "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/ReviewSurface.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-92KR2P",
+      "items": [
+        "sha256:f078cfcf7cc4cd40cd1de8beadc4cb1978ee0acb37a18ccbbe94e581581280eb"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:f078cfcf7cc4cd40cd1de8beadc4cb1978ee0acb37a18ccbbe94e581581280eb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9FA3SF",
+      "items": [
+        "sha256:4e3f8473e4ed1372fd5f46ee444a83e28d56d26d5150acd90590fe8168b78557",
+        "sha256:57e5f7fd3111e06bb40faf2d4e81d9e1d7652b140a255e21bab3408c704183e9",
+        "sha256:7df1d79107517003f4f07cc8a1db4298e87d0662098ae4980360a9f980980de0",
+        "sha256:a3c0bd4939e4de9697d2bf25aaa75fb3f15b9cb86c1ead5079f5f31e92b871d5",
+        "sha256:b5d1cb964ed0192f552aaf143a0d642566da34516e2a5b1157c69f812e856081"
+      ],
+      "reason": "Both closed-leaf cases now assert the entry's own default target, so the card's account of the Intent review cases matches what the suite measures.",
+      "sources": [
+        {
+          "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9H5WYF",
+      "items": [
+        "sha256:71a3a2ede55b5ac77c25c28c7b4ebaf360d2648986d448fa639725e30701aa1f"
+      ],
+      "reason": "The entry opens the page's own default for a live and a closed leaf alike; the card's targeting account follows that and keeps the summary read and count label as they were.",
+      "sources": [
+        {
+          "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+          "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R195",
+          "packet": "requirements/MIK-R195-v1-a-landed-leafs-intent-review-shows-what-the-leaf-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-A3WBCK",
+      "items": [
+        "sha256:f01b8036090ade7e7d93e782d08dbb0c9f372240bf18e528a20f09aa5be129f1"
+      ],
+      "reason": "The decision's own meaning is unchanged: the same option stays chosen, the same alternatives, reasons, reconsider conditions and consequences stand, and the leaf adds no evidence about the wider shared-cache implementation the rejected alternative would restore. What changed is its reconsideration link: the trigger fired because the file the rejected alternative is reconsidered on changed in this leaf, and answering the trigger re-pointed that link to the current anchor of the same file so the same condition is not raised again. No option was reversed and no constraint was relaxed.",
+      "revision": 4,
+      "subject": "DEC-H24NXK"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ABQTT9",
+      "items": [
+        "sha256:fe44f7b616e82dcdedf8f61c359ccbab5cc6a598378b3a8f9d801f1e54cae272"
+      ],
+      "reason": "The route gains the delivered-comparison resolver, the create-only record publication and the notice, stated beside the review composition it already described.",
+      "sources": [
+        {
+          "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+          "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+        },
+        {
+          "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+          "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+        },
+        {
+          "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+          "path": "mcp/src/agents_remember/application/review_comparison_publication.py"
+        },
+        {
+          "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+          "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+        },
+        {
+          "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+          "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+        },
+        {
+          "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+          "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ATCMWZ",
+      "items": [
+        "sha256:c4e47592ab76d54fed2b3ec1ff625f84859add702b530f0d5970e080911a2d0b"
+      ],
+      "reason": "The trees answer now carries the leaf's highest recorded number and the delivered notice, and the card states both without turning them into a review of that pair.",
+      "sources": [
+        {
+          "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+          "path": "dashboard/src/data/reviewTrees.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/reviewTrees.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B6BPG1",
+      "items": [
+        "sha256:0a4e2b5d5b6b3b1893cb938f77c23a2ab95bf18d22fe4936a5458a1072b54709"
+      ],
+      "reason": "Passes one supplied delivered fact line into the existing disclosure; the delivered-notice entry realizes this construct.",
+      "subject": "hunk:sha256:0a4e2b5d5b6b3b1893cb938f77c23a2ab95bf18d22fe4936a5458a1072b54709"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "before": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "id": "RLZ-3EFTEY"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:a7db6ac6cfbff0fd2c3285cca5f92872aa5519ee0d57dc5ab1da7fae316f5fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worklist_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-4DBN10"
+        },
+        {
+          "after": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_inputs"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "before": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_inputs"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "id": "RLZ-B1HDWP"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_wide_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_wide_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-BA531Z"
+        },
+        {
+          "after": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "before": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "id": "RLZ-BKB2F1"
+        },
+        {
+          "after": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "before": {
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember"
+            },
+            "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py"
+          },
+          "id": "RLZ-JT0DJ4"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compute_leaf_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:80b3d9a19d8c34fbead3b756608e86b81c271de432a59f0b805a8c228e6882b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compute_leaf_parts"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-TKD181"
+        },
+        {
+          "after": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_failed_observation"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "before": {
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_failed_observation"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "id": "RLZ-YRJNST"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:260f363d37a83573eca269d6286e31718fe05af30e0c7e02ffe79af751c1b718",
+            "locator": {
+              "kind": "symbol",
+              "name": "_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:402fb9f6b031ec015b4464d0907cc5b08aea3b1ed19ba8f806c34f29ae967f3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-ZXPVGB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BYJM6D",
+      "items": [
+        "sha256:e8c9ebb283c73c27aa282f1e9a334262c705e2a05e9986b66071bc04089f9766"
+      ],
+      "reason": "The leaf-wide view gains two fields on its answer. The view memo's key, its eligibility, its recheck of consumed inputs and its replay are untouched.",
+      "revision": 3,
+      "subject": "INV-5M9WY3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CBNAFZ",
+      "items": [
+        "sha256:d67a59ee47b3d5e5f458e3ef5944ade342cfab4a3cdc6db89f84eed4b30e5489"
+      ],
+      "reason": "New card: the module's landed-leaf cases, the production answers they assert and the isolated fixtures they use.",
+      "sources": [
+        {
+          "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+          "path": "mcp/tests/test_review_delivered_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_delivered_comparison.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CS3SRT",
+      "items": [
+        "sha256:b44bba381c187fd0744427755009ccee721720674a280b92d86247124a323f33"
+      ],
+      "reason": "Adds the delivered line and delivered facts to the existing header module; the delivered-notice entry realizes this construct.",
+      "subject": "hunk:sha256:b44bba381c187fd0744427755009ccee721720674a280b92d86247124a323f33"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D4JEBW",
+      "items": [
+        "sha256:7fe0dda098ebcca5cda4d8357b226ed597eb7b7c56703c22f861cc615767dd36"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:7fe0dda098ebcca5cda4d8357b226ed597eb7b7c56703c22f861cc615767dd36"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D991CY",
+      "items": [
+        "sha256:a2916029d436b89903d49914e65029e3551bdd909508297a5baad4c5440a5c16"
+      ],
+      "reason": "Adds the delivered-notice and highest-number types to the trees answer mirror; the entry over that answer already carries this change.",
+      "subject": "hunk:sha256:a2916029d436b89903d49914e65029e3551bdd909508297a5baad4c5440a5c16"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1SHA9Y",
+          "revision": 1
+        },
+        {
+          "id": "INV-2K9NMR",
+          "revision": 2
+        },
+        {
+          "id": "INV-31006K",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GFK5N",
+          "revision": 1
+        },
+        {
+          "id": "INV-58S9SG",
+          "revision": 1
+        },
+        {
+          "id": "INV-5RTVBT",
+          "revision": 1
+        },
+        {
+          "id": "INV-6S9JG5",
+          "revision": 1
+        },
+        {
+          "id": "INV-75Y48P",
+          "revision": 1
+        },
+        {
+          "id": "INV-79SPV4",
+          "revision": 3
+        },
+        {
+          "id": "INV-811GC5",
+          "revision": 1
+        },
+        {
+          "id": "INV-9HMJ13",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VPYCZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-A9V761",
+          "revision": 1
+        },
+        {
+          "id": "INV-CC4HSS",
+          "revision": 1
+        },
+        {
+          "id": "INV-DYDMDD",
+          "revision": 2
+        },
+        {
+          "id": "INV-EF52CQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-HC2KB7",
+          "revision": 2
+        },
+        {
+          "id": "INV-J1DFZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-K2NVKC",
+          "revision": 1
+        },
+        {
+          "id": "INV-KBXRZC",
+          "revision": 2
+        },
+        {
+          "id": "INV-NGZMXY",
+          "revision": 1
+        },
+        {
+          "id": "INV-P4Z520",
+          "revision": 2
+        },
+        {
+          "id": "INV-S545PW",
+          "revision": 3
+        },
+        {
+          "id": "INV-STW97J",
+          "revision": 1
+        },
+        {
+          "id": "INV-TEDBFZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-VFT6GP",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPD8AJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-VQFVF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZZEZY",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z938DS",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-D9WQHW",
+      "items": [
+        "sha256:bff3b18a10967b3a999c5499c1a10a3c759c5361088e683ecc28b98e6afea2ed"
+      ],
+      "reason": "The recorded-comparison page's guarantee is unchanged; the delivered notice and default are expressed inside the members that already carry the page's described facts.",
+      "revision": 2,
+      "subject": "FAM-AWDGE2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DAHJCV",
+      "items": [
+        "sha256:bca520cf9dd4def5c288fed5346c3dc3b9c1bb87da93e8ff98b46a4eafc842b4"
+      ],
+      "reason": "Renders the delivered line in the reserved note area and names the resolved comparison in the older-comparison note; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:bca520cf9dd4def5c288fed5346c3dc3b9c1bb87da93e8ff98b46a4eafc842b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DJPETJ",
+      "items": [
+        "sha256:b19f2988a69309ddefa18beb4b5d9215f74ca11fc2d493d8d2907af4ed57e6ca"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:b19f2988a69309ddefa18beb4b5d9215f74ca11fc2d493d8d2907af4ed57e6ca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DY4F3Y",
+      "items": [
+        "sha256:696c0945da311ef54a7670255432dddf6250915157ee1be2ec221fccc7465e58"
+      ],
+      "reason": "Separates the resolved comparison from the shown and highest numbers and states an unreadable delivery; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:696c0945da311ef54a7670255432dddf6250915157ee1be2ec221fccc7465e58"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E5DMQE",
+      "items": [
+        "sha256:dc7e92e08cbb263199ea64e8eee9294cce30d877e6b8685be1b75e17c5aefa40"
+      ],
+      "reason": "The panels overview's statement about liveness was corrected: the entry supplies review: {} for a live and a closed leaf alike, and liveness reaches only the (recorded) label rather than selecting which record the entry opens. The four body statements and five note lines that said liveness selects the live or recorded target were re-worded accordingly.",
+      "sources": [
+        {
+          "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+        },
+        {
+          "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+          "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E5TTHW",
+      "items": [
+        "sha256:384d9695db69b87f56e684a16ac935b6b029eab8da30ab13735c0733fa4502d2"
+      ],
+      "reason": "Adds the delivered line and delivered facts to the existing header module; the delivered-notice entry realizes this construct.",
+      "subject": "hunk:sha256:384d9695db69b87f56e684a16ac935b6b029eab8da30ab13735c0733fa4502d2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E85T55",
+      "items": [
+        "sha256:3fec80722111c094e5da4cdf556d7e8e9593a43f84ec980b4309c24f0befdd08"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:3fec80722111c094e5da4cdf556d7e8e9593a43f84ec980b4309c24f0befdd08"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardChunks"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "before": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardChunks"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "id": "RLZ-C82VX5"
+        },
+        {
+          "after": {
+            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "content": "sha256:108a1b0a310efe5b204092f03a972b635823b7aa04052babc62fab349a8ccfc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSet"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "before": {
+            "blob": "1349a90696201916e8f46e3442f0572688e6e3ba",
+            "content": "sha256:b5602bcfe25b2c9ab4633b39119b29037d0623a6a58ef2c426b28559fb45bf95",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSet"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "id": "RLZ-FVRT7W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E8H0RC",
+      "items": [
+        "sha256:26f0b66c82f5323d199de1d65bbe8de95c1d36ede52b4e67f378b39532e63b90"
+      ],
+      "reason": "The change-set model reads the resolved comparison for its default and forwards the delivered notice. The card chunks it composes are unchanged.",
+      "revision": 1,
+      "subject": "INV-KEJ5TN"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskContextRead"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "before": {
+            "blob": "8377f145a603232dbc8326cd93cd0eef526cfdfc",
+            "content": "sha256:76009f326b62cc502df11074456f6af43e6389d990eba1c9de41e8f992f35150",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskContextRead"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "id": "RLZ-6017FF"
+        },
+        {
+          "after": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:8283a3a364fb574b74252b49cc25b42fba4b3e9881fb94bc07fff1fa4a8a6784",
+            "locator": {
+              "kind": "symbol",
+              "name": "addSlot"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "before": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:8283a3a364fb574b74252b49cc25b42fba4b3e9881fb94bc07fff1fa4a8a6784",
+            "locator": {
+              "kind": "symbol",
+              "name": "addSlot"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "id": "RLZ-PTHDAG"
+        },
+        {
+          "after": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "before": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "id": "RLZ-Q1YCQD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EEBE7F",
+      "items": [
+        "sha256:9d6b5a9bbdde2e5a909459f3c9758d13798ee1cbb951df5c2c85af7a8bdd6959"
+      ],
+      "reason": "The comparison menu gains the delivered row and a resolved comparison to compare the shown number against. The menu's add-to-tray pick and group order are unchanged.",
+      "revision": 1,
+      "subject": "INV-ZMW639"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ENS5CA",
+      "items": [
+        "sha256:8f18a792aa096ff19e7c431b045bd9d824769acdc15d2b3b3512641d84d1e16a"
+      ],
+      "reason": "The review models gain the delivered notice value and the highest recorded number, stated where the overview already describes the review wire shapes.",
+      "sources": [
+        {
+          "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+          "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F326YN",
+      "items": [
+        "sha256:c046f4f9ad9469c363f493594675284343dadfd53bbe4125b31bc5f33fc6af1c"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:c046f4f9ad9469c363f493594675284343dadfd53bbe4125b31bc5f33fc6af1c"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-453ZPCZ5",
+          "revision": 2
+        },
+        {
+          "id": "INV-53MJW8V0",
+          "revision": 3
+        },
+        {
+          "id": "INV-8Q6DZTDB",
+          "revision": 4
+        },
+        {
+          "id": "INV-9NCBGQSY",
+          "revision": 6
+        },
+        {
+          "id": "INV-HAJ9SH",
+          "revision": 2
+        },
+        {
+          "id": "INV-NW4H6C",
+          "revision": 1
+        },
+        {
+          "id": "INV-S26EBC8P",
+          "revision": 3
+        },
+        {
+          "id": "INV-VXA7SZ0Z",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-FDC0F9",
+      "items": [
+        "sha256:bc34dd3f6db155b5fa0222e5ec883472b1c4b2a21472197f93f5bd2c4fdf622f",
+        "sha256:c304d8502266572d8c35a9f4eac690e0ebefd4af6837f37e1a2f4e035d50d3cb"
+      ],
+      "reason": "The joint guarantee now opens with what a landed leaf's review shows: the pair its enclosure records as delivered, with history — any comparison other than the delivered pair — shown only when it is chosen, and the delivered pair opening by default whatever number holds it. The delivered notice's member is added because saying which pair is on screen is what makes that opening promise checkable by a reader. The route dashboard/src/panels/detail-panel is added because the task entry that now opens that default lives there, and every member's realizations lie under a route of this family. Exact recorded numbers, trees and bytes, labelled reconstruction and legacy-unavailable knowledge keep their previous place in the guarantee; every member was examined at its current revision, and no other route was added or moved. The guarantee's opening now says the leaf records a delivery, which is the condition the resolver applies, rather than promising a delivered default for every landed leaf.",
+      "revision": 8,
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GM3C21",
+      "items": [
+        "sha256:2cb2264831ce07814cbdae48ff01d9b0955a35a6e7a2ae40819dac58943535c9"
+      ],
+      "reason": "The route's meaning changed: a landed leaf's review opens the delivered pair, the record frame is state the page can leave, and the mismatch line lives in the page's existing parts.",
+      "sources": [
+        {
+          "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+          "path": "dashboard/src/panels/review/DeliveredComparison.test.tsx"
+        },
+        {
+          "blob": "4e0203b1b289e2015cbec3215cae35ea52faeea7",
+          "path": "dashboard/src/panels/review/DeliveredDefault.test.tsx"
+        },
+        {
+          "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+          "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+        },
+        {
+          "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+          "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+        },
+        {
+          "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+          "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+        },
+        {
+          "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+          "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+        },
+        {
+          "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+          "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+        },
+        {
+          "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+          "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+        },
+        {
+          "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+          "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+        },
+        {
+          "blob": "9e054a89e8da052d7591b1b8c6c538c06275a787",
+          "path": "dashboard/src/panels/review/useReviewHistory.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GMGWDH",
+      "items": [
+        "sha256:ae8588912bebb78bb9d7036b50e5baafea682d04d14980a89cf56f17d042af9f"
+      ],
+      "reason": "Holds the record frame as state and passes the resolved comparison and delivered value to the page details; the selection entry realizes this construct.",
+      "subject": "hunk:sha256:ae8588912bebb78bb9d7036b50e5baafea682d04d14980a89cf56f17d042af9f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H7EB0N",
+      "items": [
+        "sha256:64ba6ea23d4d9b15116780090ece1546208edad253ce3d1c825ba98868c11a8b"
+      ],
+      "reason": "New card: the module publishes a comparison record by an exclusive create, so a lost race publishes nothing.",
+      "sources": [
+        {
+          "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+          "path": "mcp/src/agents_remember/application/review_comparison_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_comparison_publication.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:f4ab47f0d3f392e7b126ad27412113c8248675e4b42082b83834da809afde80f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useBlockTraversal"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "before": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:f4ab47f0d3f392e7b126ad27412113c8248675e4b42082b83834da809afde80f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useBlockTraversal"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "id": "RLZ-2BR4MX"
+        },
+        {
+          "after": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:020df093944af44b7a4766a6e0f2527a3950544d597775f2310669a9fe241645",
+            "locator": {
+              "kind": "symbol",
+              "name": "useStatusFor"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "before": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:020df093944af44b7a4766a6e0f2527a3950544d597775f2310669a9fe241645",
+            "locator": {
+              "kind": "symbol",
+              "name": "useStatusFor"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "id": "RLZ-3CW82B"
+        },
+        {
+          "after": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:209c0bd1cc6d977cee66f4cf337dde00d59532b14fd792d63561f4fdcfdc3c76",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewPage"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "before": {
+            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
+            "content": "sha256:407b39602ab0cbd68a615d6e9026336bfad3221cbd3d5cc0471bb2bdf0c5ca89",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewPage"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "id": "RLZ-85HWGR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-J064MG",
+      "items": [
+        "sha256:45e1e38afef168c768d028afd1bbb844dbff2ca9ba5ac4799c5ef01d7f4fe6b5"
+      ],
+      "reason": "The page's choice function now takes the resolved comparison as its default and also accepts clearing the choice. Traversal status ownership and the stops that carry it are unchanged.",
+      "revision": 3,
+      "subject": "INV-CK3PTB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J7GCMN",
+      "items": [
+        "sha256:a29d6b3ba73851e775e52b0d7dcd55cf8df7984df3fa167a0a1cd9c66911b485"
+      ],
+      "reason": "The page's comparison choice is expressed against the resolved comparison, and the delivered action clears the choice after leaving the recorded frame.",
+      "sources": [
+        {
+          "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+          "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/reading/useReviewPage.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JZ5SAA",
+      "items": [
+        "sha256:a9a04e16fe344fb9d61a672d0412b743be7eb2ad269467f7426e6fe30b54bf9f"
+      ],
+      "reason": "Renders the delivered line in the reserved note area and names the resolved comparison in the older-comparison note; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:a9a04e16fe344fb9d61a672d0412b743be7eb2ad269467f7426e6fe30b54bf9f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-K4C1HY",
+      "items": [
+        "sha256:5b6b33759cd78b12ccf1c7639e566dfe8b6861298e06701b67036b1857abc8ef"
+      ],
+      "reason": "The recorded-comparison witness account now names the landed case the delivered-comparison module measures.",
+      "sources": [
+        {
+          "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+          "path": "mcp/tests/test_review_delivered_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R195",
+          "packet": "requirements/MIK-R195-v1-a-landed-leafs-intent-review-shows-what-the-leaf-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:645bd3ec5faa5e5f472c2d9addf1e65d59702d3ec8cbbc3e262d16ac88f9a8a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_loses_its_number_to_another_pair_is_refused"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-4AXKVE"
+        },
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:a9e25bbbd221b85f7579d4534d05f4f26ec200fa88a9d2ea4d1bb7d175689929",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publishing_a_record_never_replaces_one_that_exists"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-X1DAWD"
+        },
+        {
+          "after": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:d11705b93cb40c5fd0f65087ffe58cac745dada383ec9a25c5765dcc0c23dc7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publication_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_publication.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0P6C2D"
+        },
+        {
+          "after": {
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+            "content": "sha256:277fc4cc3d8d25a34722a471ea0905ed5fa8a8d5ea03712b4c0ca84dc5fd9a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:277fc4cc3d8d25a34722a471ea0905ed5fa8a8d5ea03712b4c0ca84dc5fd9a25",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-34NP4B"
+        },
+        {
+          "after": {
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-9ZHMCX"
+        },
+        {
+          "after": {
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+            "content": "sha256:aff4906f1005c53b57a0d5bc89454b70e3a3ba0aa9c8f401d0ebe0d63db713e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:aff4906f1005c53b57a0d5bc89454b70e3a3ba0aa9c8f401d0ebe0d63db713e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-W2H9EX"
+        },
+        {
+          "after": {
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+            "content": "sha256:f6307d51c0f2980a03d907f4f1cde33f79d73d3b34221e24419a54f56710bec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:0f5a02032bd057765954215f43ab2554833a51162f92fcda2cbac5627e18630b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-W6SNEZ"
+        },
+        {
+          "after": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:6a047a7e14b75500fb7b8d842060842877b5b9d19e6f23d7202bb86f49855efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_comparison_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_publication.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZVJHJH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-KNXZM6",
+      "items": [
+        "sha256:a5b028057756a7e2fad96cc54f4c8144b044618c8d110f18a97986254382e93c"
+      ],
+      "reason": "The record's applicability now names the delivered pair a landed leaf's comparison may be recorded as, alongside a live leaf's captured candidate, and its conditions state that the record's own name is created exactly once, so a writer that loses the race answers the winning record or refuses by name. The turn-taking pin rules it already stated are unchanged.",
+      "revision": 2,
+      "subject": "INV-Z2HVKA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KVD2VC",
+      "items": [
+        "sha256:cc8ea9d0475f285204b375d63e59fa278bb5b96d3febb2004d19868f1c86d4d4"
+      ],
+      "reason": "This route describes isolation, evidence-catalog and wording infrastructure and the behaviour of its owners. This leaf added one consumer entry in each catalog and one fixture capability; the area's meaning and its owners are unchanged.",
+      "sources": [
+        {
+          "blob": "289356c1b5090d8b4072c464fcdce335da01e402",
+          "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KY0XTT",
+      "items": [
+        "sha256:a1a88fdbd6735e3c4e3149ba02f748a63e1dbf1f551b21920135a38313a34d28"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:a1a88fdbd6735e3c4e3149ba02f748a63e1dbf1f551b21920135a38313a34d28"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-9ZKYWQ",
+          "revision": 4
+        },
+        {
+          "id": "INV-BMFR2T",
+          "revision": 2
+        },
+        {
+          "id": "INV-BS5PFE",
+          "revision": 2
+        },
+        {
+          "id": "INV-CK3PTB",
+          "revision": 3
+        },
+        {
+          "id": "INV-MWCCQM",
+          "revision": 3
+        },
+        {
+          "id": "INV-NSG0D4",
+          "revision": 3
+        },
+        {
+          "id": "INV-QZC5AZ",
+          "revision": 4
+        },
+        {
+          "id": "INV-T1ZHP5",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-MMY1XX",
+      "items": [
+        "sha256:a04d3ce643d87f73e1d5a78ec3eb3cb74f898c76f07e253ada784d0b0dac5fb7"
+      ],
+      "reason": "The walked family tree's guarantee is unchanged; the comparison menu gained a row inside an existing member and that member was examined at its current revision.",
+      "revision": 3,
+      "subject": "FAM-68H10P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N78K5Q",
+      "items": [
+        "sha256:eef61de9d9645cbc1623ab625e99f8d697dc370bdadd7fbc5a14e40665db9548"
+      ],
+      "reason": "Adds the delivered row and the delivered/latest/read-only labels to the existing menu; the selection and delivered-notice entries realize this construct.",
+      "subject": "hunk:sha256:eef61de9d9645cbc1623ab625e99f8d697dc370bdadd7fbc5a14e40665db9548"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "77ba4fa92c559eb6e7c3a5f95028e0b2563af2fc",
+            "content": "sha256:626fdf1de7dc33cb5b0dfa1a32f99b507f21ca9b19a8f13f077dcfd0bcc76ed1",
+            "locator": {
+              "end": 2730,
+              "kind": "line_range",
+              "start": 2730
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "1435671a186f06d0b0f425f8f10cf87304bab84d",
+            "content": "sha256:5de1f247d1863d8bccc61be24e00d01530da95a636000ff36bd5ac3ae5b59b83",
+            "locator": {
+              "end": 2746,
+              "kind": "line_range",
+              "start": 2746
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-A31DQW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NJ12HR",
+      "items": [
+        "sha256:61ab0d1fcc71201f18b5f543482423e18e97b83b6dd150cf037cfbfcae73e5c6"
+      ],
+      "reason": "The catalogue row this invariant governs keeps its declaration; the module the leaf adds is named beside the existing consumers of the same artifact, and no owned artifact, contract or consumer rule changes. Realizations outside this leaf's routes were not examined and are not covered here.",
+      "revision": 1,
+      "subject": "INV-0TCWT9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NK8KRG",
+      "items": [
+        "sha256:a6a59066935e3a89e6dfca3d623cb703edaa599cba481a21374b86a58d90de85"
+      ],
+      "reason": "Separates the resolved comparison from the shown and highest numbers and states an unreadable delivery; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:a6a59066935e3a89e6dfca3d623cb703edaa599cba481a21374b86a58d90de85"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+            "content": "sha256:e92a16d1538a0708965cb759f314f7fb7eaa707fa670607d54db81471fc9d62a",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+          },
+          "before": {
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:e92a16d1538a0708965cb759f314f7fb7eaa707fa670607d54db81471fc9d62a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+          },
+          "id": "RLZ-71EG4V"
+        },
+        {
+          "after": {
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+            "content": "sha256:c771863139869267d7f0579d9c3f9fd868830e1aeb302612b3be81521fcfbe52",
+            "locator": {
+              "kind": "symbol",
+              "name": "TechnicalDetails"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "before": {
+            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+            "locator": {
+              "kind": "symbol",
+              "name": "TechnicalDetails"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "id": "RLZ-7V0Z0QCY"
+        },
+        {
+          "after": {
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+            "content": "sha256:67d6f77e31044befdc1619c35cca72bd6fb302f210315fde508aca61ae72023d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeRecords"
+            },
+            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+          },
+          "before": {
+            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "content": "sha256:67d6f77e31044befdc1619c35cca72bd6fb302f210315fde508aca61ae72023d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeRecords"
+            },
+            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+          },
+          "id": "RLZ-90HFC6S9"
+        },
+        {
+          "after": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "readOnScreen"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "before": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "readOnScreen"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "id": "RLZ-EP3KN5E7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NZE2PN",
+      "items": [
+        "sha256:66fcd5a5e416d8efaee57dc3e66ac5ef563f2fbf333776a2d174348744e38b1d"
+      ],
+      "reason": "Technical details gains one supplied fact line for the delivered pair between the frame's scope records and the subject provenance. The mounted-surface retention and pending-slot behaviour it owns is unchanged.",
+      "revision": 1,
+      "subject": "INV-8VQR13WX"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R195",
+          "packet": "requirements/MIK-R195-v1-a-landed-leafs-intent-review-shows-what-the-leaf-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1d3f873c597686628bed4fa60e1249550cfedcbc",
+            "content": "sha256:981ba93a882a4d99feef68122f4856511849397c8962ff4de7bf683b0a578932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_numbered_leaf_wide_read_records_no_comparison"
+            },
+            "path": "mcp/tests/test_review_delivered_comparison.py"
+          },
+          "before": "absent",
+          "id": "PRF-WRJV91"
+        },
+        {
+          "after": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:356f37c15bc41b561ecc863a38aa1c8e2cf9fa725c4d701c680dfc38c4fe4c90",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_recorded_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2DJ2Q8"
+        },
+        {
+          "after": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": {
+            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "content": "sha256:240a3732e6007a087ba6b5ccd0a3795ca012561bf92f20f77faa684077b54e53",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "id": "RLZ-8S8VDEJ3"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:b83ce0555a54df8f9b3e1c7d49cc93b45d1c0385285421b21fc82bdf31ad0aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_live"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Y2P2YE"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-PCBFXN",
+      "items": [
+        "sha256:026b1f043d60beed1813e33f2032f4bbf5206383623c7f167dfb3bb24e116113"
+      ],
+      "reason": "The record states which selection reopens history: the reader's own choice of a recorded comparison, distinct from the delivered default a landed leaf now opens. Its exact recorded tree identities and the canonical-dataset legacy-unavailable rule are unchanged, and the numbered read is stated to record nothing.",
+      "revision": 6,
+      "subject": "INV-9NCBGQSY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q6HJE1",
+      "items": [
+        "sha256:57120db289f7ee2982078104be3cd2e0c6993ac4c87f9d46510e1b802c979186"
+      ],
+      "reason": "The models gain the delivered-comparison value and the leaf-wide answer's highest recorded number, stated as carriers rather than as a review.",
+      "sources": [
+        {
+          "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+          "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/knowledge/review_trees.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QF4RY4",
+      "items": [
+        "sha256:df16b21e382f1fcaae5cf6f73ea7d006e55a092173e3f27805c789281aead4ec"
+      ],
+      "reason": "Renders the delivered line in the reserved note area and names the resolved comparison in the older-comparison note; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:df16b21e382f1fcaae5cf6f73ea7d006e55a092173e3f27805c789281aead4ec"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QZBHXC",
+      "items": [
+        "sha256:893222ff0d0b24e092241438b5ddd2a55c8c3b72e16efb44d7a3d773039f1388"
+      ],
+      "reason": "The disclosure now carries the delivered-pair fact line and receives the resolved comparison as its latest figure.",
+      "sources": [
+        {
+          "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+          "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R9PJA5",
+      "items": [
+        "sha256:ab7e43b3577532cca23a3994c69ab1a2c155996ac69b61031a9455ef246e9e68"
+      ],
+      "reason": "New card: the delivered pair, its comparison and the notice, with the refusals that replace no operand.",
+      "sources": [
+        {
+          "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+          "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_delivered_comparison.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RNYAZX",
+      "items": [
+        "sha256:6a940f137ea7a1bba9c35b85da4b97afe1b99fa1149e802951948f1c04b4535b"
+      ],
+      "reason": "Passes one supplied delivered fact line into the existing disclosure; the delivered-notice entry realizes this construct.",
+      "subject": "hunk:sha256:6a940f137ea7a1bba9c35b85da4b97afe1b99fa1149e802951948f1c04b4535b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:08e0849315ec773c9bb78b7819bfb8660701cc99de5aa6b2258c355a972dfa06",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "before": {
+            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "content": "sha256:856564a960ef04352062097e477b4d61fac7a79ad277df76382439e3774903c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "id": "RLZ-8NM20F"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RVGVHC",
+      "items": [
+        "sha256:0df58dbcf3a6a3501c930d8cc15d6f621e1ea9eeda9d00872347191d19efcdef"
+      ],
+      "reason": "A closed leaf's default read now asks the delivered resolution first and falls back to the leaf's own record. The candidate resolver's live resolution, legacy path and refusals are unchanged.",
+      "revision": 1,
+      "subject": "INV-W8WBTB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RX18C9",
+      "items": [
+        "sha256:ec0987b4d01fe734ae5c48c9740199243f969a396f53f8e55c896dd930af9559"
+      ],
+      "reason": "The model now separates the resolved comparison, the shown number and the highest recorded number, and states an unreadable delivery explicitly.",
+      "sources": [
+        {
+          "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+          "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/reading/useChangeSet.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SAAEGR",
+      "items": [
+        "sha256:a6b32f0a94d944ec69f89dc061cbf7f07858ef8d86d9eac4342e7ac3e0b21511"
+      ],
+      "reason": "The trees answer now carries the highest recorded number and the delivered notice, which the overview's reviewTrees.ts account states.",
+      "sources": [
+        {
+          "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+          "path": "dashboard/src/data/reviewTrees.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SMHQE0",
+      "items": [
+        "sha256:2c6e5c1bf5267abf5f687ec8ae5fb77e9b404035872789010358cb8330af3ab0"
+      ],
+      "reason": "Renders the delivered line in the reserved note area and names the resolved comparison in the older-comparison note; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:2c6e5c1bf5267abf5f687ec8ae5fb77e9b404035872789010358cb8330af3ab0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0HBKP9",
+          "revision": 1
+        },
+        {
+          "id": "INV-2172NS",
+          "revision": 1
+        },
+        {
+          "id": "INV-5M9WY3",
+          "revision": 3
+        },
+        {
+          "id": "INV-61Y147",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-7MH0BR",
+          "revision": 2
+        },
+        {
+          "id": "INV-9MF6HZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-EKE1RV",
+          "revision": 1
+        },
+        {
+          "id": "INV-N3M9G4",
+          "revision": 3
+        },
+        {
+          "id": "INV-TY4BR7",
+          "revision": 1
+        },
+        {
+          "id": "INV-W8WBTB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SNDHGA",
+      "items": [
+        "sha256:9e9816300ada145cb5b804ebfe00697ebdb72288bfccd7fc383b2e4159d56e67"
+      ],
+      "reason": "The family's joint guarantee is unchanged; its member revisions moved only where they moved through the same code and each was examined at its current revision.",
+      "revision": 2,
+      "subject": "FAM-4ZNEN9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SX2P9M",
+      "items": [
+        "sha256:1516fece7a17eecde8556601079243678889c76f3de951e063fbee3c8019894b"
+      ],
+      "reason": "Separates the resolved comparison from the shown and highest numbers and states an unreadable delivery; the delivered-notice and selection entries realize this construct.",
+      "subject": "hunk:sha256:1516fece7a17eecde8556601079243678889c76f3de951e063fbee3c8019894b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T96GB5",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The lane catalog selects the delivered-comparison module once in unit-regression, and the card states that scope.",
+      "sources": [
+        {
+          "blob": "bf39b836dc02bbf3e10f5f383e70575988e68c18",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TJ7TC1",
+      "items": [
+        "sha256:5b8ba80838e6928f7b04d5524503d57004280f8049c510edc8ed59bbf110cca9"
+      ],
+      "reason": "The notes area renders the delivered line, and the older-comparison note names the comparison the page resolved.",
+      "sources": [
+        {
+          "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+          "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/reading/pageParts.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TWWNHS",
+      "items": [
+        "sha256:c2afaa0a97cf42877ba8be362a37eea2b9dbf77f261f1c419488f0696d12e5ea"
+      ],
+      "reason": "The card now accounts for the delivered line and the delivered facts it renders, with their states and the absence of a delivered control for an unavailable delivery.",
+      "sources": [
+        {
+          "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+          "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/ReviewScopeHeader.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "content": "sha256:9cb1258001d5f85078ab0c9e55d3e2fc39fa8722296f8a10fc97a3507454f652",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "before": {
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:5b3f496bb5cef6a139febc045678f0255fdc6c2ab28b094de72b7088d7a11691",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "id": "RLZ-6Q7GD9"
+        },
+        {
+          "after": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_trees"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "before": {
+            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_trees"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "id": "RLZ-VCDPT7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TZC5HS",
+      "items": [
+        "sha256:7d687c9215fe2f25cec09d1e2ccda5d7ea2d294a1467988d969c84ab11c20a4a"
+      ],
+      "reason": "The review model gains the leaf's highest recorded number and the delivered notice beside the comparison it already carried. The leaf-wide currentness/worklist facts, their binding and their refusal states are unchanged.",
+      "revision": 2,
+      "subject": "INV-2K9NMR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V6YJT0",
+      "items": [
+        "sha256:93b3104902d8e6889d626eb380ca4f27bc598ccb492c960a783229ab97115aba"
+      ],
+      "reason": "Holds the record frame as state and passes the resolved comparison and delivered value to the page details; the selection entry realizes this construct.",
+      "subject": "hunk:sha256:93b3104902d8e6889d626eb380ca4f27bc598ccb492c960a783229ab97115aba"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W0PSGD",
+      "items": [
+        "sha256:10342a36f10760dbaa9c32689b15bd3db323a27c4af75524f2518272d479bdea"
+      ],
+      "reason": "New card: the module renders the delivered line, the delivered facts and the comparison menu directly over a supplied delivered value.",
+      "sources": [
+        {
+          "blob": "d8db97aaf00c8567bd968250119cd77426b4b2f7",
+          "path": "dashboard/src/panels/review/DeliveredComparison.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/review/DeliveredComparison.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W7QE4D",
+      "items": [
+        "sha256:52e8288a50f54499d9a7c42b7ab2f4a890ec24c28a298b1a855c33834b497a08"
+      ],
+      "reason": "The selector requires the delivered callback from its caller and closes the menu before asking for the delivered view, so a future single-chooser wiring cannot route the delivered row back through a number. It adds no invariant of its own.",
+      "subject": "hunk:sha256:52e8288a50f54499d9a7c42b7ab2f4a890ec24c28a298b1a855c33834b497a08"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WA7PSJ",
+      "items": [
+        "sha256:111f9f75290197d59479eeed679a267af49a36269636f095a94fbe1f3cf48633",
+        "sha256:4f20f527a1a77ff756c583276fb603e2dae6fc24b06334426f28c4a09f3f2e14",
+        "sha256:51c50ffa874c7b3d0db4b0e673682decf36480d60991e60d989d564232bdc937",
+        "sha256:6770fcfcab5b781f7b0cee7b81848c74f7b8d364930d9579902338dca3e79846",
+        "sha256:ee563924900445a2c490c15b77f7d3badeca6271d4d5677e28ec012004d16753"
+      ],
+      "reason": "The fixture enclosure now takes closeout and integration cells, so a test can write a landed leaf's delivery records without hand-writing the contract.",
+      "sources": [
+        {
+          "blob": "289356c1b5090d8b4072c464fcdce335da01e402",
+          "path": "mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/review_git_trees.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WY4E3B",
+      "items": [
+        "sha256:fc36bd8d7ab750322acc16df5decc484daa2b2b5ec98e7f7d0081b21fc6bf3fc"
+      ],
+      "reason": "Routes a closed leaf's default read to the delivered resolution and separates the recorded read; the delivered-operand and historical-selection entries realize this construct.",
+      "subject": "hunk:sha256:fc36bd8d7ab750322acc16df5decc484daa2b2b5ec98e7f7d0081b21fc6bf3fc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XBZMPS",
+      "items": [
+        "sha256:1ea7ed8cbf0034a0d8b25af7e4ccf6b0e51b12d5b8173c222282f185b7001273"
+      ],
+      "reason": "The recorded selector now chooses between the delivered default and the leaf's published comparison, and the card states which read addresses which record.",
+      "sources": [
+        {
+          "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+          "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/review_candidate_resolution.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YM61P2",
+      "items": [
+        "sha256:1eaa5eb053d913fb477381e9f11b19cc22d261e2e557db01e7fd0032fc8fb369"
+      ],
+      "reason": "Routes a closed leaf's default read to the delivered resolution and separates the recorded read; the delivered-operand and historical-selection entries realize this construct.",
+      "subject": "hunk:sha256:1eaa5eb053d913fb477381e9f11b19cc22d261e2e557db01e7fd0032fc8fb369"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
+            "content": "sha256:fe3b5b48b3af8588ea6b9202f706d47d045673b297bce9ffbad093eb33490999",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "before": {
+            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "content": "sha256:7d4f673d42a40e736cf7ce6f0956fcd6332da2e62c130eb85317fbaa23fe5789",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "id": "RLZ-A9Z2XZ"
+        },
+        {
+          "after": {
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "before": {
+            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "id": "RLZ-KEYCH7"
+        },
+        {
+          "after": {
+            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "content": "sha256:dd7f1cff0e46f839c58f630ce0ff91e467fd2de84f6302f20b27f60b11643127",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "before": {
+            "blob": "3a97fce9af36a81499987c6f1e134ec1651b89a5",
+            "content": "sha256:4afb490f4b206bbdfddb03bca54a50248910e9195c7b0ae474559ca9541912e8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "id": "RLZ-ZHZJNK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YMJ7M4",
+      "items": [
+        "sha256:4c6998046d575db3e22aa1de7e3ad2ce76d1b758b5d53318c55b952c20e79e3b"
+      ],
+      "reason": "The comparison owner publishes records through the new create-only publication call, and the shared models gain the delivered-comparison value. The owner's capture, pinning, numbering, reopen and refusal meanings are unchanged.",
+      "revision": 3,
+      "subject": "INV-YJZKYC"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "before": {
+            "blob": "161e3ab3234c7f5943287d1d192ac027cb6d2947",
+            "content": "sha256:55fba21786b39f2519cceebbe46e09beec6a7e80e45c4c753d35a27aada00855",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSelector"
+            },
+            "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx"
+          },
+          "id": "RLZ-6DBQ2Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZD97DJ",
+      "items": [
+        "sha256:06fc1c216eb075a416f9c90310dbe9f288b4cd2f9d6bb6b2c35b96df3a35aa90"
+      ],
+      "reason": "The comparison menu gains the delivered row and marks the number that holds the delivered pair instead of calling the highest number 'latest'. Its list construction, tray pick and button remain its own.",
+      "revision": 1,
+      "subject": "INV-FGDCZG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectWorklistItems"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "before": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:0f7cc9ff6ccc6bb302ee5f060c61e6cd8bb4b05eca5fc67ac52269f941b5fe57",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectWorklistItems"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "id": "RLZ-4NWQ1Q"
+        },
+        {
+          "after": {
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:ed54ac56eb988dd01cf0f482fc7d5b1acab4ab550d0e3619cacadb737503fc2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "before": {
+            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "content": "sha256:78742ee3c4ed1b37bf57ad676685c6a3ccab043db0a98234cd7c7060795f19a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "id": "RLZ-YEGQZR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZW14ZD",
+      "items": [
+        "sha256:bad081a2babc82e7e04195fec81bad40f0795ffbd1b6966cee32a8d7cf104944"
+      ],
+      "reason": "The browser copy of the trees answer gains the optional latest number and delivered notice. Which invariants a subject's worklist names, and how those rows are read, is unchanged.",
+      "revision": 1,
+      "subject": "INV-4GFK5N"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

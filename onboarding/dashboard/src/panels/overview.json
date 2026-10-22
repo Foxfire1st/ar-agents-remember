@@ -166,7 +166,7 @@
       ]
     },
     "112": {
-      "note": "**The two hoisted owners the member attribution and the family collection share, so the two readers cannot drift.**",
+      "note": "**The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.**",
       "targets": [
         {
           "anchor": {
@@ -1769,7 +1769,7 @@
       ]
     },
     "175": {
-      "note": "Excerpt marker loading intentionally renders no note",
+      "note": "Excerpt marker loading renders its own state paragraph: `data-marks-state=\"loading\"` with `intent marks loading…` when an excerpt is drawn and `reading this file's intent marks…` otherwise (`IntentMarkers.tsx:516-519`), beside the `unavailable` paragraph (`:520-524`) and the not-placed paragraph (`:525-529`); the quiet case is the placed state, which returns no paragraph at all (`:531`).",
       "targets": [
         {
           "anchor": {
@@ -2006,7 +2006,7 @@
       ]
     },
     "183": {
-      "note": "Current intent entry uses liveness to choose recorded target rather than hide entry",
+      "note": "Current intent entry uses liveness for the (recorded) label rather than to hide the entry or to choose a different record",
       "targets": [
         {
           "anchor": {
@@ -2271,7 +2271,7 @@
       ]
     },
     "196": {
-      "note": "useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation.\n\nAnchor: `useChangeSet`; `modelCards`; `ReadGate`",
+      "note": "useChangeSet shares one leaf-wide comparison with model/cards/worklist; `ReviewSurface.tsx:625-648` wires the active live memory invalidation, which the shared read and readGate extents do not carry.",
       "targets": [
         {
           "anchor": {
@@ -2292,6 +2292,19 @@
               "kind": "file"
             },
             "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:c387ab359409cfaf2096c4557bd4e792002595d18f6fbbe3c62ef452bffc39a3",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -3675,7 +3688,7 @@
       ]
     },
     "59": {
-      "note": "The intent entry always opens task-context review; liveness selects the live or recorded target, while summary state labels rather than gates the button.",
+      "note": "The intent entry always opens task-context review: the entry supplies `review: {}` for a live and a closed leaf alike (`intentReviewEntry.tsx:169`) and liveness reaches only the `(recorded)` label (`:179`), while summary state labels rather than gates the button. The change-set bar's leading comment (`changeSetBar.tsx:2-4`) still describes the former liveness-addressed request; it is retained as the older historical branch and does not establish this caption.",
       "targets": [
         {
           "anchor": {
@@ -3692,8 +3705,8 @@
         },
         {
           "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ce3b000d26bd4be73eb864376b3fca819fd12f789a501d754072678d4a1af0bc",
             "locator": {
               "end": 179,
               "kind": "line_range",
@@ -3753,7 +3766,7 @@
       ]
     },
     "61": {
-      "note": "`DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness selects live versus recorded entry context, not catalogue-subject admission.",
+      "note": "`DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission.",
       "targets": [
         {
           "anchor": {
@@ -3835,12 +3848,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:4dd45319d504e435e90b3725ad32226213bb54dc2a0ad5d29c657e2b01bd9e12",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:bf3ec7f3c01ae1f7384ae7b8cfdc4655080e9c50b672d5c18f2479b54788567b",
             "locator": {
-              "end": 14,
+              "end": 92,
               "kind": "line_range",
-              "start": 13
+              "start": 82
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:c65433bd642dda98e9c77bd951ba37766063af78555f10310e185aea170b2a71",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 104
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

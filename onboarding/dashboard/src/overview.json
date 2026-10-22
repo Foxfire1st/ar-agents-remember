@@ -363,7 +363,7 @@
       ]
     },
     "23": {
-      "note": "**The shared liveness predicate gates Working and selects live versus recorded Intent Review identity; it does not gate Intent Review availability.**",
+      "note": "**The shared liveness predicate gates Working and labels the Intent Review (recorded) for a closed leaf; it selects no different review record and does not gate Intent Review availability.**",
       "targets": [
         {
           "anchor": {
@@ -545,16 +545,16 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:375ccd5f6520bb1734ca52952104d022be18e0e243a0f656eb0dbf257c790977",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+            "content": "sha256:980e9fca0fbab6ff35a66abca12f05ac8c3b34d8ef76d6725d5b396e8380e9b6",
             "locator": {
-              "end": 12,
+              "end": 460,
               "kind": "line_range",
-              "start": 11
+              "start": 442
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
@@ -929,12 +929,12 @@
       ]
     },
     "48": {
-      "note": "Every leaf's review entry selects live or recorded identity independently of summary availability\n\nAnchor: IntentReviewEntry",
+      "note": "Every leaf's review entry opens the page's own default comparison independently of summary availability: the entry supplies `review: {}` for a live and a closed leaf alike (`intentReviewEntry.tsx:169`) and liveness reaches only the `(recorded)` label (`:179`). Anchor: IntentReviewEntry",
       "targets": [
         {
           "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:c4eeb2f3ed8b12d26a8d19faaca6f97968a8b673bc9bd021a00141f34312a0ef",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ce3b000d26bd4be73eb864376b3fca819fd12f789a501d754072678d4a1af0bc",
             "locator": {
               "end": 179,
               "kind": "line_range",
@@ -1510,7 +1510,7 @@
       ]
     },
     "72": {
-      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports only observed model/source, with unreported mode/features explicit. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
+      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and names the model the step-up carries — `execution.stepUp.model`, else `host default` — with `execution.stepUp.source` in the chip's title (`StepUpControl.tsx:14-21`); the configured step-up itself asks for a model and a harness (`roleLaunchModel.ts:68`), so the receipt is not a promise that only observed model/source is reported. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
       "targets": [
         {
           "anchor": {

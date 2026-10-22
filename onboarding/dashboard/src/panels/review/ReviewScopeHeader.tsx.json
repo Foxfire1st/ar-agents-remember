@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+        "content": "sha256:4bbe7f61b6178e6d6b4357639e9686c29c7621e3fcfceef917a967e35779995d",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeliveredLine"
+        }
+      },
+      "id": "RLZ-6M1S2X",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Renders that statement in the page's existing note style with the delivered control, and renders nothing for a matching pair.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0161f8ba1127f8440875400314beb48615f998fa",
         "content": "sha256:e92a16d1538a0708965cb759f314f7fb7eaa707fa670607d54db81471fc9d62a",
         "locator": {
-          "end": 25,
+          "end": 93,
           "kind": "line_range",
-          "start": 22
+          "start": 90
         }
       },
       "id": "RLZ-71EG4V",
@@ -22,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "blob": "0161f8ba1127f8440875400314beb48615f998fa",
         "content": "sha256:67d6f77e31044befdc1619c35cca72bd6fb302f210315fde508aca61ae72023d",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+        "blob": "0161f8ba1127f8440875400314beb48615f998fa",
         "content": "sha256:fb6d1e740673cd18ca9ec8fd819cdcbc30c196f4644c9dd62aa689f74fc8d622",
         "locator": {
           "kind": "symbol",
@@ -53,6 +71,24 @@
       },
       "rationale": "Returns 'Reconstructed from recorded endpoints' whenever the payload's limitations carry history:reconstructed-recorded-endpoints, and only otherwise the recorded or live comparison label, so a reconstruction is never titled as a recorded task comparison.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+        "content": "sha256:947b28434e7b32f611dc993dd9ab3a7c958492b6f00af9f774917ef78e2d89e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeliveredFacts"
+        }
+      },
+      "id": "RLZ-S2S558",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Lists the delivered pair's exact identities inside the existing technical details, which is where the page says which comparison a reader is looking at.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -61,12 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
             "content": "sha256:75e0cfaeed19e1f58e7d3b37d606ab64467dcb592238d1a02bfe24f62171f7b9",
             "locator": {
-              "end": 62,
+              "end": 130,
               "kind": "line_range",
-              "start": 28
+              "start": 96
             }
           },
           "kind": "code"
@@ -78,12 +114,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
             "content": "sha256:d9ae0aa56abd621ed1b869eb7b7695821e02f66372be92f83a51882722b1a114",
             "locator": {
-              "end": 26,
+              "end": 94,
               "kind": "line_range",
-              "start": 22
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+            "content": "sha256:8d71f9d9f641be02058948dcfe0a4819baa6c88e1e8922da220560d666945edd",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 132
             }
           },
           "kind": "code"
@@ -95,12 +143,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
             "content": "sha256:8d71f9d9f641be02058948dcfe0a4819baa6c88e1e8922da220560d666945edd",
             "locator": {
-              "end": 71,
+              "end": 139,
               "kind": "line_range",
-              "start": 64
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The mismatch line states the shown pair, offers the delivered control only where a pair was established, and states nothing for a matching pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+            "content": "sha256:4bbe7f61b6178e6d6b4357639e9686c29c7621e3fcfceef917a967e35779995d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeliveredLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The delivered identities are listed as facts, or named unavailable, in the existing technical details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
+            "content": "sha256:947b28434e7b32f611dc993dd9ab3a7c958492b6f00af9f774917ef78e2d89e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeliveredFacts"
             }
           },
           "kind": "code"
@@ -112,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd9ce9143bee993aa66096dfe1ff9f8a899f970b",
+            "blob": "0161f8ba1127f8440875400314beb48615f998fa",
             "content": "sha256:b9aeabca2c92396b6cca0c1211bce8421f4cbc97c30f549a4cf801ea79c021fd",
             "locator": {
-              "end": 20,
+              "end": 88,
               "kind": "line_range",
-              "start": 14
+              "start": 82
             }
           },
           "kind": "code"

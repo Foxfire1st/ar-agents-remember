@@ -34,6 +34,8 @@ L47-R1-F4 fix restored this assertion).
 
 **One case was added for the bound generation.** `opens the series view bound to the generation the net published` stubs the master net with its four endpoints and asserts the entry carries those pins into the viewer target, so the view and its expansions read the listed generation rather than re-resolving the live tip. cit:(["opens the series view bound to the generation the net published"], dashboard/src/panels/detail-panel/changeSetBar.test.tsx:236-303)
 
+**Both closed-leaf cases now expect the page's own default (MIK-R195).** `offers the Intent review for a closed leaf, bound to the comparison it delivered` and `keeps the closed leaf's Intent review when its knowledge is unavailable` assert that the entry's target is `review: {}` rather than `review: { historical: true }`. The entry no longer names the recorded comparison for a landed leaf, because the page's default is the pair that leaf delivered and the mismatch line's link could not otherwise leave the recorded frame.
+
 *(The L9 complete-catalogue case, `offers every catalogue row for review, not just the first`, was removed by
 `260921-ICR-L47`: the entry no longer offers a picker; the reviewer's own catalogue owns traversal of every
 subject.)*
@@ -77,7 +79,7 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf opens its recorded comparison (even when knowledge is unavailable) and explicitly has no review-subject picker; a live leaf opens review: {} for task-context review and leaves subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases. [1]
+- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases. [1]
 
 ### Cross-Repo References
 

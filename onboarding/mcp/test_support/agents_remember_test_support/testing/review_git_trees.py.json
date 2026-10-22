@@ -7,10 +7,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bb89b7a62d7a5d2ace7d7d4059221d7eaee1879",
-            "content": "sha256:8ccc29a3951ed322180adb3a8d085315322dc92d3bb3d4762e7dd1ef384c044f",
+            "blob": "289356c1b5090d8b4072c464fcdce335da01e402",
+            "content": "sha256:6419d862590aefb569c20bf13c40c1344ec957dc5b362fb9d293f84f28611cbc",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture enclosure takes closeout and integration cells, always writes a closeout status, and points a landed leaf at `removed-code`/`removed-memory` addresses instead of live worktrees; the calling test removes the directories itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "289356c1b5090d8b4072c464fcdce335da01e402",
+            "content": "sha256:b4675f64957d0c0fddf266bdaf7ff9f4ca235a2aa8fb1834b57f67fbaa865b1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract"
             }
           },
           "kind": "code"

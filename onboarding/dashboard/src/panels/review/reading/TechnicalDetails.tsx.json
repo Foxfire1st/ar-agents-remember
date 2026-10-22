@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d93eb292cff4db200e775504be284256f58938e",
-        "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+        "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+        "content": "sha256:c771863139869267d7f0579d9c3f9fd868830e1aeb302612b3be81521fcfbe52",
         "locator": {
           "kind": "symbol",
           "name": "TechnicalDetails"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "7d93eb292cff4db200e775504be284256f58938e",
-        "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+        "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+        "content": "sha256:c771863139869267d7f0579d9c3f9fd868830e1aeb302612b3be81521fcfbe52",
         "locator": {
           "kind": "symbol",
           "name": "TechnicalDetails"
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "7d93eb292cff4db200e775504be284256f58938e",
+        "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
         "content": "sha256:cd5bb3288816b8f31b0002698ab7e56ff91a4d66dce9bbecb1ebf6ac998a8a45",
         "locator": {
           "kind": "symbol",
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
             "content": "sha256:ad06a357be2b07fbb938957495b22a5510eda9e0e594927435f6cbcaf9ec2696",
             "locator": {
-              "end": 89,
+              "end": 92,
               "kind": "line_range",
-              "start": 64
+              "start": 67
             }
           },
           "kind": "code"
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
             "content": "sha256:951b70d1ef813370253aba5743ff7bdc3cb3b6d9da032925054bdbca712955a9",
             "locator": {
-              "end": 97,
+              "end": 100,
               "kind": "line_range",
-              "start": 90
+              "start": 93
             }
           },
           "kind": "code"
@@ -95,12 +95,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d93eb292cff4db200e775504be284256f58938e",
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
             "content": "sha256:211dfae1967d70807d9c1bdeedab21e5c7970461d5d62cd3e6b6d6c2dbcf1708",
             "locator": {
-              "end": 125,
+              "end": 128,
               "kind": "line_range",
-              "start": 112
+              "start": 115
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The delivered pair's identities are one supplied fact line inside the existing disclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+            "content": "sha256:c771863139869267d7f0579d9c3f9fd868830e1aeb302612b3be81521fcfbe52",
+            "locator": {
+              "kind": "symbol",
+              "name": "TechnicalDetails"
             }
           },
           "kind": "code"

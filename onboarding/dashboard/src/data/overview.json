@@ -262,7 +262,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:7542b756f670622abecdec2079bad7f41224088d2623e8a53db6a0a24c57e9e3",
             "locator": {
               "kind": "symbol",
@@ -274,7 +274,7 @@
         },
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:4f7ef88cf00fde32f3e6ada8c6e305c55e6ba26dd9643fa619537f5443afa97c",
             "locator": {
               "kind": "symbol",
@@ -291,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:f445d9876c6071b239be4d7baaa1ca91615b50dfec52f16a97fff7f744d85b9a",
             "locator": {
               "kind": "symbol",
@@ -303,7 +303,7 @@
         },
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
             "locator": {
               "kind": "symbol",
@@ -315,7 +315,7 @@
         },
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:1fa61188476acdc749083ae4484280cf9e83be41d2f261379406300997118881",
             "locator": {
               "kind": "symbol",
@@ -327,7 +327,7 @@
         },
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
             "locator": {
               "kind": "symbol",
@@ -426,6 +426,23 @@
               "name": "ReviewRevisionSelection"
             },
             "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
+      "note": "The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:ed54ac56eb988dd01cf0f482fc7d5b1acab4ab550d0e3619cacadb737503fc2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
           },
           "kind": "code"
         }
@@ -819,25 +836,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:635f83e1846e80f411f85c2a423cd281c202bef22c70570e321628d2ed70182c",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
-              "end": 9,
+              "end": 460,
               "kind": "line_range",
-              "start": 1
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:65c65313e55df1d75b591708ce6650e9eeb983dad33936e16bc6717594f1c485",
-            "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 1
+              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1092,7 +1096,7 @@
         },
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
@@ -1230,7 +1234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
@@ -1242,7 +1246,7 @@
         },
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
             "locator": {
               "kind": "symbol",
@@ -1418,11 +1422,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:0964d98f645d8891118069099c77829089e6d41f01623e58f508b2d26e0f2ca7",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:137525d41889415ab9ccb0afdfa3865247a8fc7ad6da62a549ee88672da90b15",
             "locator": {
-              "kind": "symbol",
-              "name": "REVIEW_WALKABLE_COLLECTIONS"
+              "end": 105,
+              "kind": "line_range",
+              "start": 99
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1554,12 +1559,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
             "locator": {
-              "end": 287,
+              "end": 312,
               "kind": "line_range",
-              "start": 285
+              "start": 310
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1620,7 +1625,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
             "locator": {
               "kind": "symbol",
@@ -1632,12 +1637,12 @@
         },
         {
           "anchor": {
-            "blob": "3d4902e35923d20c8082e951c2f7144d654eda92",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
             "content": "sha256:97b943f987f48d6f3bcd3e2317f8e39915d089afbcbd56419ad0a90dd0db3d4c",
             "locator": {
-              "end": 537,
+              "end": 562,
               "kind": "line_range",
-              "start": 449
+              "start": 474
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1691,18 +1696,18 @@
       ]
     },
     "70": {
-      "note": "The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number.",
+      "note": "The change-set read requests the page's own comparison — `chosen ?? resolved`, the number the page chose else the default the frame's limitations name (`useChangeSet.ts:120-124`) — and enables the leaf-wide trees read on that number (`:129`); a chosen number other than the resolved default is marked older rather than replacing the frame.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6e6176a796c53b8cfd06b6449808ca7b8711db8",
-            "content": "sha256:2f495efb354d10d5f5498f9662d5c94e6797f7f3065cdee835995a6ce2c9f8cb",
+            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "content": "sha256:cc5ab4a8a269511378ecac5eba5242334569f29a632c237ae9a1bff71b3cfee0",
             "locator": {
-              "end": 487,
+              "end": 131,
               "kind": "line_range",
-              "start": 481
+              "start": 117
             },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
           },
           "kind": "code"
         }

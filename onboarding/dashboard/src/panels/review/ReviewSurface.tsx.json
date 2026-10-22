@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:3f7cbf91948039b26e86badbb3f08e4b4b26e7657bdac6efd229a313281588bb",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
         "locator": {
           "kind": "symbol",
@@ -147,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-        "content": "sha256:3edf9e0b64e9bb71824c8f0ceea77b441f9cf558a8eb5c54bb32df0e8755e37e",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "content": "sha256:a3f03581486d3c0910316c3ba2d00dcbf119aa443e8173a4d43f8ef0ea7fce1f",
         "locator": {
           "kind": "symbol",
           "name": "useSurface"
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
         "locator": {
           "kind": "symbol",
@@ -201,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -223,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-            "content": "sha256:5ff6b8d99b7c8739b2655a99253f19ec04bcf18d040d204626efac6a40a0361e",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:a3f03581486d3c0910316c3ba2d00dcbf119aa443e8173a4d43f8ef0ea7fce1f",
             "locator": {
-              "end": 639,
+              "end": 680,
               "kind": "line_range",
-              "start": 624
+              "start": 625
             }
           },
           "kind": "code"
@@ -240,12 +240,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:3e04b3ea4fbb043d73c399fab68cf7e9e353e9448e3bf3a7cc71b4ade78c6e59",
             "locator": {
-              "end": 769,
+              "end": 774,
               "kind": "line_range",
-              "start": 754
+              "start": 759
             }
           },
           "kind": "code"
@@ -257,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:6d678de25c5ac8e818b0584a10aa69240890697367d8495099c1a0644807e0d7",
             "locator": {
-              "end": 713,
+              "end": 717,
               "kind": "line_range",
-              "start": 698
+              "start": 702
             }
           },
           "kind": "code"
@@ -274,12 +274,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:4e4832a7713f442038bc453d1e239a1022169ccf7f9cf999074fcb1cde5903ad",
             "locator": {
-              "end": 561,
+              "end": 562,
               "kind": "line_range",
-              "start": 546
+              "start": 547
             }
           },
           "kind": "code"
@@ -291,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:fbc715e7787a7e4f98053e004c4fb877ec99fbe3be0903c8458946057567df3c",
             "locator": {
-              "end": 389,
+              "end": 390,
               "kind": "line_range",
-              "start": 374
+              "start": 375
             }
           },
           "kind": "code"
@@ -308,12 +308,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
             "content": "sha256:6b121f7487a904aeac53ec1fb387e673792fccb580695519dfbf6d016455f918",
             "locator": {
-              "end": 267,
+              "end": 268,
               "kind": "line_range",
-              "start": 252
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "The record frame is state the surface can leave, and the delivered action uses that.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:a3f03581486d3c0910316c3ba2d00dcbf119aa443e8173a4d43f8ef0ea7fce1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Page details receive the resolved comparison and the delivered value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:ab53debd7600b192c2e83005b8c27f4e18f26863ca0b508d872c4e87c208657b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageDetails"
             }
           },
           "kind": "code"

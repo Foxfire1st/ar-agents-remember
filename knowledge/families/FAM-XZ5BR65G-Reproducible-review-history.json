@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Historical review uses the exact retained comparison and explicitly names what it can reproduce. A chosen recorded number binds outline, summary, cards and file facts to that number; latest-only subject judgments and canvas payloads remain labelled as latest instead of being presented as historical. Recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Immutable curator generations retain their admitted authored evidence and availability through the integrity owner, without restoring retired current Reviewer collections. Reconstruction is labelled. No current dataset, mutable pointer or favorable empty channel replaces unavailable history.",
+  "guarantee": "A landed leaf that records a delivery opens the pair its enclosure records as delivered, and history is history: a comparison other than that pair is shown only when it is chosen, at its own number, four trees and bytes, and the delivered pair opens by default whatever number holds it. A chosen recorded number binds outline, summary, cards and file facts to that number; subject judgments are read on the comparison the page resolved and a historical view states that limitation. A comparison that is not the delivered pair says so once and offers the delivered view. Recorded tree comparisons retain their code and memory tree ids, while canonical-dataset history preserves exact source sides and marks knowledge legacy-unavailable. Immutable curator generations retain their admitted authored evidence and availability through the integrity owner, without restoring retired current Reviewer collections. Reconstruction is labelled. No current dataset, mutable pointer, latest record or favorable empty channel replaces unavailable history or stands in for a delivery.",
   "id": "FAM-XZ5BR65G",
   "members": [
     "INV-453ZPCZ5",
@@ -9,16 +9,18 @@
     "INV-9NCBGQSY",
     "INV-S26EBC8P",
     "INV-VXA7SZ0Z",
-    "INV-HAJ9SH"
+    "INV-HAJ9SH",
+    "INV-NW4H6C"
   ],
   "origin": {
     "leaf": "260921-ICR-L46",
     "legacyId": "b5e4aaf8-cd20-45bc-b5a2-b485f7983ca5",
     "task": "260921-ICR"
   },
-  "revision": 7,
+  "revision": 8,
   "routes": [
     "dashboard/src/panels/review",
+    "dashboard/src/panels/detail-panel",
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/models/lifecycles",
     "mcp/src/agents_remember/worktrees/integration/closeout",

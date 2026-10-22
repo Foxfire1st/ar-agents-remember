@@ -48,9 +48,13 @@ Both sides may share the existing index-cache owner, but cache construction rema
 - `_recorded` reuses the latest record when it has the same four trees (`same_trees`), creating a pin
   again when it has gone. Otherwise the new number is one more than the highest recorded number and the
   highest existing ref number, the candidates are pinned, and only then is
-  `notes/reports/review-comparisons/<leaf>/<n>.json` written atomically. If a record file with that
-  number exists after pinning and it is the latest record with the same trees, that record is returned
-  and nothing is written.
+  `notes/reports/review-comparisons/<leaf>/<n>.json` published through
+  `review_comparison_publication.publish_comparison_record`, which links a private temporary file into
+  place so the create itself decides the winner (MIK-R195 F05). A call that loses that race publishes
+  nothing: it returns the winning record when that record holds the same four trees, and otherwise
+  `publication_refusal` names the number that went to another pair. The former
+  `is_file()`-then-`atomic_write_bytes` pair could replace the bytes of a record an earlier reader had
+  already answered with.
 - `_pin` pins each candidate that has a ref. `_create_pin` makes one pin with
   `update-ref <ref> <tree> <zero>`, which only creates:
   - a ref that already names this tree is success, and it is not counted as created by this call;
@@ -108,3 +112,5 @@ Both sides may share the existing index-cache owner, but cache construction rema
 produced, so `recheck_memory_candidate` proves movement from that census rather than a walk. The four
 tree identities, the pins and the record are unchanged; only the proof that the memory worktree did
 not move while the comparison was composed became cheaper, not weaker.
+
+- The record is published by an exclusive create, so a lost race answers the winning record or refuses by name instead of replacing bytes a reader already holds. [45]

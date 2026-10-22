@@ -931,7 +931,7 @@
       ]
     },
     "17": {
-      "note": "Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: With no explicit generation_id, closed-leaf resolution first reopens retained four-tree comparisons. Otherwise it still reads a retained legacy generation manifest, preserving its recorded source/evidence with canonical knowledge unavailable; a leaf with no comparison manifest falls back to recorded committed ranges. No new canonical dataset generation is authored. Historical account: The closed-leaf resolution the record now feeds: the generation path first, the recorded source range only when no generation exists.",
+      "note": "Historical canonical-dataset generation account; references and targets retained for custody. Current boundary: with no explicit `generation_id`, a closed leaf's read resolves the delivered default first (`review_committed_leaf.py:156-165`), and a leaf that records no delivery keeps the recorded default; a delivery the enclosure claims and the read cannot establish is answered by the delivered resolution's own refusal, never by that default.",
       "targets": [
         {
           "anchor": {
@@ -1859,12 +1859,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
-            "content": "sha256:23a207f233860951045ab43bf436abe060c9a7d188445b704ef21104aae27e3e",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:775cd78f3fea41ef5fb579676e86def3e113861be6db16cf4fc664e6bca4db95",
             "locator": {
-              "end": 211,
+              "end": 160,
               "kind": "line_range",
-              "start": 211
+              "start": 151
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -2110,7 +2110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:42e0df7ca27f44850654f14960c48998c456f1322a8ffd1bb6389e912e2ecfe8",
             "locator": {
               "end": 28,
@@ -2140,7 +2140,7 @@
         },
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
             "locator": {
               "kind": "symbol",
@@ -2174,7 +2174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:de50cfc9953fa37050355e720edbd8db5b1da17e46885bc80b09ce707a4ee694",
             "locator": {
               "kind": "symbol",
@@ -2215,7 +2215,7 @@
         },
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:54760985fe298df2564471a2a5d88d3ae26c50cd98714347b95ecfe75a987d7f",
             "locator": {
               "kind": "symbol",
@@ -2227,7 +2227,7 @@
         },
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:3d666b1f8a9f03bb8c9e6b44bae0931f22fe1efb8d4296bb988ab868265f4190",
             "locator": {
               "kind": "symbol",
@@ -2404,12 +2404,12 @@
       ]
     },
     "242": {
-      "note": "Historical pre-L109 attach-point and removed published_intent-field anchors. The current read_ar_files_tool returns names/locations only and ReadArFilesResponse has no published_intent field; the obsolete field anchor is retained as history, not a surviving wire capability.",
+      "note": "The current `read_ar_files` attach points (MIK-R109 rule 1): `application/read_files.py` opens by denying body and continuation delivery, and `models/read_files.py` declares `ReadArFilesResponse` with no `published_intent` field. The removed field is retained as history, not as a current anchor.",
       "targets": [
         {
           "anchor": {
-            "blob": "54abae80d1e32eaea261f41f78d5c4ca7599beb9",
-            "content": "sha256:a46b018c88db1772cf34323b1514e25ebdbc9fd8622e2b8470b23c37b57cd5e9",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
             "locator": {
               "kind": "file"
             },
@@ -2419,8 +2419,8 @@
         },
         {
           "anchor": {
-            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
-            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
               "kind": "file"
             },
@@ -4551,7 +4551,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:5c6a4532e5e103cadf907bc05e730ae5677a8947c046d2101c577e69d9d1e506",
             "locator": {
               "kind": "symbol",
@@ -4563,7 +4563,7 @@
         },
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
             "locator": {
               "kind": "symbol",
@@ -4575,7 +4575,7 @@
         },
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:277fc4cc3d8d25a34722a471ea0905ed5fa8a8d5ea03712b4c0ca84dc5fd9a25",
             "locator": {
               "kind": "symbol",
@@ -4592,7 +4592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:7913348d998fe98645a4557b35b36af6ba4e4d22d6a6207e93a1c70c971f8829",
             "locator": {
               "kind": "symbol",
@@ -4609,7 +4609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:0775a3adfb2086247f3c50d5bfe4c2b070b9b516519dc2b186f3a3a3802bdee3",
             "locator": {
               "kind": "symbol",
@@ -4621,7 +4621,7 @@
         },
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:a91f76394218b2571e524c7fd3b7a1766a4be8816de72018cea12565513d626b",
             "locator": {
               "kind": "symbol",
@@ -4638,7 +4638,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:3a6ddbbc61d044349950737be174604849a574fb10fb1cfe137b3b3c814dc17d",
             "locator": {
               "kind": "symbol",
@@ -4684,7 +4684,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
             "locator": {
               "kind": "symbol",
@@ -5066,7 +5066,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:dc0ec326b53c9081e2c7254de6fc1c598dcfa41fe0795d2d0d41243cab2c3146",
             "locator": {
               "kind": "symbol",
@@ -5639,12 +5639,12 @@
         },
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:1e32b4f7d6e0505c6703c7eb9bc2594a9d5347aa06c788346abc914e65a43d05",
             "locator": {
-              "end": 382,
+              "end": 406,
               "kind": "line_range",
-              "start": 368
+              "start": 392
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -6392,7 +6392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11251451c02a953756580c9b12b6653586cac635",
+            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
             "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
             "locator": {
               "kind": "symbol",
@@ -6443,7 +6443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:4d5f3d4404e73b9a2d98a1d32fdf620ec0e979658e3cb027771e1b082675ec4f",
             "locator": {
               "kind": "symbol",
@@ -6811,7 +6811,7 @@
       ]
     },
     "417": {
-      "note": "**The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.**",
+      "note": "**The labelled Git inference measured on recorded repository identities: `external_git_movement` (`review_external_git_movement.py:298`) reaches `external_git_movement_for_contract` → `_measure_contract` → `_measure_generation` → `_findings` (`:337,358,382,538`) and measures the ancestry of recorded addresses, not similarity rename pairs; the rename command `--find-renames`, its three states and the sentence that it is not proof the invariant moved live in `review_rename_inference.py:43-45`.**",
       "targets": [
         {
           "anchor": {
@@ -6822,6 +6822,19 @@
               "name": "external_git_movement"
             },
             "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdf90e2dcf1740f5d915c212e7b629f58e366b8f",
+            "content": "sha256:8df3ee114a18d3ceb5b388d13d1d9a013e1a93c5bf1e7ffc14118a4f24cf04a9",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/application/review_rename_inference.py"
           },
           "kind": "code"
         }
@@ -6891,17 +6904,30 @@
       ]
     },
     "423": {
-      "note": "The capsule operation's four refusal-capable steps, each returning a value rather than raising.",
+      "note": "The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-60`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).",
       "targets": [
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "content": "sha256:e4fdff738940c68991aa3591e58c918b197e6266e6c3393dc764f1345a560769",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },
           "kind": "code"
         }
@@ -6925,8 +6951,20 @@
       ]
     },
     "426": {
-      "note": "The seat-addressed routing rule and its address type, for a caller with no task document.",
+      "note": "The seat-addressed routing rule for a caller with no task document: `compile_launch_capsule` dispatches to `_compile_free_agent` (`role_capsules/launch.py:511`), which builds `CapsuleSeatAddress` and calls `routed_admission_for` (`:533-537`); `_compile_without_task_enclosure` (`:412`) is the different path that receives an admitted task document or refuses its missing enclosure.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:97692a9c4a3eba03f75e11f1b8816467759e84007f553b1c53377406ca457b8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_free_agent"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
@@ -7207,7 +7245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:a53365169e8b39dedcd16ca6e961a4b554d97d4ab9eb7faca09bd628cc34ec8e",
             "locator": {
               "kind": "symbol",
@@ -8516,7 +8554,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e53c8ebeaa904ea32bc77bf2cadb5a4e22b6e1d",
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
             "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
             "locator": {
               "kind": "symbol",
@@ -8737,7 +8775,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a2d2954dc7ad1166f6879dc3702b55cbb855e47",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
             "content": "sha256:9be13b25b861a5b4440a29c285e6a1a9831eb86fce5b0f96c6660030871423ce",
             "locator": {
               "kind": "symbol",
@@ -8809,6 +8847,71 @@
               "start": 92
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "510": {
+      "note": "A closed leaf's default read asks the delivered pair first, while the recorded read addresses the published comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:28b71e646801e989a0b272fc60c425cd9183a9f71867a80132a8846390d57f4f",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:356f37c15bc41b561ecc863a38aa1c8e2cf9fa725c4d701c680dfc38c4fe4c90",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "511": {
+      "note": "The comparison owner publishes a record through a create-only link, so a lost race answers the winner or refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648bd1aa5257ab3adce66ce1f1abc6f475ac27b8",
+            "content": "sha256:6a047a7e14b75500fb7b8d842060842877b5b9d19e6f23d7202bb86f49855efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_comparison_record"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "512": {
+      "note": "The delivered resolver establishes the four sides a leaf delivered from its enclosure's delivery records and refuses any side it cannot establish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:f452c079018cafb6c9a24772f964f97e7af34657d716a65a66585d7a85b36b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_pair"
+            },
+            "path": "mcp/src/agents_remember/application/review_delivered_comparison.py"
           },
           "kind": "code"
         }
@@ -8930,7 +9033,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
             "locator": {
               "kind": "symbol",
@@ -8942,7 +9045,7 @@
         },
         {
           "anchor": {
-            "blob": "45c52090040c1c184b65f00ab835c76855f6480d",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
             "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
             "locator": {
               "kind": "symbol",
@@ -9065,7 +9168,7 @@
       ]
     },
     "64": {
-      "note": "**The two deletion owners: the record written before the deletion, the measured digest, and the refusal that removes nothing.**",
+      "note": "**The two deletion owners differ in order: the code-pin release writes the history record before it deletes the retained object (`review_comparison_reclamation.py:103-119`), while the snapshot discard measures and removes the artifact during the deletion's construction and writes its record afterwards (`:196-208`); both carry the measured digest, and a refused verification removes nothing.**",
       "targets": [
         {
           "anchor": {

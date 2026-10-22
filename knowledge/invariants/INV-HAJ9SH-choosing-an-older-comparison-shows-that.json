@@ -8,15 +8,17 @@
   },
   "applicability": "Numbered review-page comparison selection and backend entries/summary resolution for live or landed leaves.",
   "conditions": [
-    "List1 through latest from the trees answer; choosing another number clears selection and binds subsequent comparison reads to that number.",
-    "Numbered entries/summary reopen the leaf contract recorded trees rather than capture current worktrees or substitute a legacy generation.",
-    "Historical outline, card/lane/file facts, markers and traversal use the shown number; subject statements/judgments are latest-only and historical mode states that limitation without issuing a subject read.",
-    "The canvas remains bound to latest and Technical details labels when its raw payload is latest rather than pretending it is the older shown number.",
+    "A leaf whose enclosure records no delivery keeps its recorded comparison as the default, and a delivery the enclosure claims but the read cannot establish is a named refusal rather than that default.",
+    "List1 through latest from the trees answer; choosing a number other than the resolved one clears selection and shows that number read-only.",
+    "Numbered entries/summary reopen the leaf contract's recorded trees rather than capture current worktrees or substitute a legacy generation.",
+    "Historical outline, card/lane/file facts, markers and traversal use the shown number; subject statements/judgments are read on the comparison the page resolved and historical mode states that limitation without issuing a subject read.",
+    "The comparison menu carries the delivered pair as its own row and marks the number that holds it, and the number on screen is kept apart from the highest recorded number.",
+    "The canvas remains bound to the resolved comparison and Technical details labels when its raw payload is the comparison the page resolved rather than pretending it is the older shown number.",
     "Negative entries comparison is 400 bad-request and a missing recorded number is 404 candidate_unresolved; summary keeps its 200 typed-unavailable response convention."
   ],
   "exclusions": [
-    "An unrecorded number silently falling back to latest.",
-    "Showing latest source-file facts as historical.",
+    "An unrecorded number silently falling back to the resolved or delivered comparison.",
+    "Showing the resolved comparison's source-file facts as historical.",
     "Promising that canvas revisions or authored subject reads are replayed historically.",
     "Browser card-answer retention and retry have a separate policy; recorded-serving reuse remains owned by INV-YTPBCF. The live parent worklist memo remains INV-5M9WY3."
   ],
@@ -43,9 +45,9 @@
     "leaf": "260928-MIK-L89",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Choosing an older comparison shows that recorded number read-only across outline, summary, cards and file facts, and reads no latest subject judgment in its place.",
+  "statement": "A landed leaf's review opens the comparison it delivered by default, and choosing another recorded number shows that number read-only across outline, summary, cards and file facts without reading a latest subject judgment in its place.",
   "status": "proposed",
   "supersedes": []
 }

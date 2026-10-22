@@ -19,6 +19,37 @@
         }
       ]
     },
+    "10": {
+      "note": "The mismatch line and the delivered identities reuse the page's existing note and technical-details parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "content": "sha256:4eec5afda1d2df049434fd1e1e6f45416180d24ee65c38527af925c5a49311dc",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 242
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+            "content": "sha256:26a6c1ff415a072ed2b68244c048d039981183434836f09ea02f65e0a67eecb9",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
       "targets": [
@@ -155,6 +186,23 @@
             "path": "dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "content": "sha256:108a1b0a310efe5b204092f03a972b635823b7aa04052babc62fab349a8ccfc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeSet"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
         }
       ]
     }

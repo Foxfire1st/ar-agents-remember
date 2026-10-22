@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
-        "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
+        "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+        "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReviewEntry"
+        }
+      },
+      "id": "RLZ-5A8ZP1",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The task entry asks for the page's default on a landed leaf, so the entry and the page agree on which comparison a review of that leaf opens.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+        "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
         "locator": {
           "kind": "symbol",
           "name": "IntentReviewEntry"
@@ -25,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:6e8ac5418ae5e6e7cf8523783226c6c09c7a9f1033308ab0ed2dfd7cf7991bf3",
             "locator": {
               "end": 24,
@@ -37,12 +55,45 @@
         }
       ]
     },
+    "10": {
+      "note": "A closed leaf's entry opens the page's own default, so a landed leaf reaches the comparison it delivered rather than its last recorded number; the summary read, the count label and the one-control shape are unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The leaf-wide view names the leaf's highest recorded number and the delivered notice beside the comparison it resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:260f363d37a83573eca269d6286e31718fe05af30e0c7e02ffe79af751c1b718",
+            "locator": {
+              "kind": "symbol",
+              "name": "_view"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate.",
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:d90e0701c32b94f95b08c778b49acac7a630ddfa39f11574d3447cf9435fff4d",
             "locator": {
               "kind": "symbol",
@@ -58,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:77fecd1eeae9453b3270ad60809bfccbb6821eb2243395c6e790efc6a8e89146",
             "locator": {
               "kind": "symbol",
@@ -74,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:ee3d0e19d4489a43379f96fd41b7314f5c9bb708b17cb268857684244f3dd9e7",
             "locator": {
               "kind": "symbol",
@@ -85,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:74b86a2d5cf6499dc5873623d25167273233ce65b9e3dd4b84cfbceeb88aac6b",
             "locator": {
               "kind": "symbol",
@@ -96,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:9eaedccc6ca06590a5d2f9d74aff66c235196a10c5aab2cd8da4b9763ea0cc25",
             "locator": {
               "kind": "symbol",
@@ -112,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
-            "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
             "locator": {
               "kind": "symbol",
               "name": "IntentReviewEntry"
@@ -146,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -158,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
             "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
             "locator": {
               "kind": "symbol",
@@ -206,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
             "content": "sha256:ddc7236c8af1b6ef56df4db5a4b399ad6deeb329f3054bef5d6135177e7e880f",
             "locator": {
               "kind": "symbol",
@@ -217,8 +268,8 @@
         },
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
-            "content": "sha256:1d8cc4caad0b328ac6d93a4d95887feb3eaa9322bfbd30d515319ea256d87f02",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
             "locator": {
               "kind": "symbol",
               "name": "IntentReviewEntry"
@@ -228,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
             "content": "sha256:df8044be5c2eb9474ae910ca0b23e95d22be15de5d45d1553d05cd791a91ea71",
             "locator": {
-              "end": 98,
+              "end": 107,
               "kind": "line_range",
-              "start": 67
+              "start": 76
             },
             "path": "dashboard/src/data/reviewIntentSummary.ts"
           },

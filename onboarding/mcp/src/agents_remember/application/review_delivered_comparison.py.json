@@ -1,0 +1,329 @@
+{
+  "path": "mcp/src/agents_remember/application/review_delivered_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:a16b930f457960fb86bf87a4435af605f902376b245b628af3058f99ef1bd1ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "_conversion_of"
+        }
+      },
+      "id": "RLZ-6QEZ9W",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Converts an unconverted recorded base through the shipped owner and refuses by name when it cannot, so the before side is the same knowledge the leaf's live review read and never a raw tree indexed as empty.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:bd16039fcd5782be3208a07c44c9cac740d487b8027c7aff0c708f024f97bafe",
+        "locator": {
+          "kind": "symbol",
+          "name": "_statement"
+        }
+      },
+      "id": "RLZ-AVVXVD",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The one sentence names the shown number and the delivered identities and says nothing about whether the earlier record's own count or statement was right.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:381a016762ebfc2c3760757229c2927425719c33df20575dd26c1ae3e6551213",
+        "locator": {
+          "kind": "symbol",
+          "name": "_landed_code"
+        }
+      },
+      "id": "RLZ-G6FF9F",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Separates the successful landing record from the closeout, so a replayed landing's commit stays the code candidate and the closeout commit answers only where no landing happened.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:f69a6e3627884a1c56bd35f4dfccd92ccafb79794d01c9c49c9b8d66ac288342",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolved_side"
+        }
+      },
+      "id": "RLZ-K3HRQX",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Resolves one endpoint to its exact commit and tree and returns the refusal that names the side and the record cell, which is what makes an unestablishable delivery a named state rather than a fallback.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:a57b32ddd2734fb3c6d816e6be0830395b424e1d4d1c9fb34b7cfaff1c8905ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "delivered_notice"
+        }
+      },
+      "id": "RLZ-KY39B3",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Decides the notice from the shown record and the established pair only: it writes nothing, so stating a mismatch never records, reviews or accepts a comparison.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:aa4b8fd4e5363478376fc7fbb24d2bc7f5e9a13ce54ae3fd798ea0304e909657",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delivered_memory"
+        }
+      },
+      "id": "RLZ-Q6DCK6",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Reads the closeout's memory content cell and nothing else, which is what keeps the landing record's memory cell from standing in for a delivery the closeout never named.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:4acf44896273e1b9e47e35e16f82fe81838838726f62b6c22ff99dfd8c5a935d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_object_kind"
+        }
+      },
+      "id": "RLZ-SMXFPZ",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Asks the repository what kind of object a recorded id is, so a tree or blob id can no longer pass as the commit a delivery record names.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+        "content": "sha256:f452c079018cafb6c9a24772f964f97e7af34657d716a65a66585d7a85b36b9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "delivered_pair"
+        }
+      },
+      "id": "RLZ-WHGBCM",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "L187-8Q6",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The one construction of the delivered pair: it reads the four enclosure cells and resolves each endpoint in the repository its record names, so no other route can compose a delivered comparison from different inputs or from today's tip.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The delivered pair is the four enclosure cells, each resolved to its exact commit and tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:f452c079018cafb6c9a24772f964f97e7af34657d716a65a66585d7a85b36b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one line names the shown number and the delivered trees, and no verdict about a historical count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:bd16039fcd5782be3208a07c44c9cac740d487b8027c7aff0c708f024f97bafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The highest recorded number is a separate fact from the resolved comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:26da21c163ec4546abd38138354822785e42cd46c6d635f74e7e6af37eb4549f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_latest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The code candidate is the successful landing's commit; the closeout's code cell answers only where no landing happened.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:381a016762ebfc2c3760757229c2927425719c33df20575dd26c1ae3e6551213",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_code"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The memory candidate is the closeout's memory content cell, and only it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:aa4b8fd4e5363478376fc7fbb24d2bc7f5e9a13ce54ae3fd798ea0304e909657",
+            "locator": {
+              "kind": "symbol",
+              "name": "_delivered_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A commit cell must be a full commit id the repository holds as a commit before its tree is derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:f69a6e3627884a1c56bd35f4dfccd92ccafb79794d01c9c49c9b8d66ac288342",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repository's object kind decides commit versus tree or blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:4acf44896273e1b9e47e35e16f82fe81838838726f62b6c22ff99dfd8c5a935d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unconverted recorded base is converted through the shipped owner or refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:a16b930f457960fb86bf87a4435af605f902376b245b628af3058f99ef1bd1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_conversion_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "An exact record is reused at its own number; a pair no record holds is recorded by the numbering owner.\n\nAnchor: `def _comparison_of(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:6774f027a54e4db18598c59187c8a1bfdad6f25563d38da2797d797ddf5a91a3",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The default resolution is the delivered pair, or the source-only legacy review for unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:71c8a812aaf44e8e0a8f18292587042d424677bff0bca1929368ff49b725d180",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_default"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The notice answers delivered, differs or unavailable and names the delivered identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24657d3bbe1f4bf43f8efa89404c7ae1ea68a7f",
+            "content": "sha256:a57b32ddd2734fb3c6d816e6be0830395b424e1d4d1c9fb34b7cfaff1c8905ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivered_notice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
