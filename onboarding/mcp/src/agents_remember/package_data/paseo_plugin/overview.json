@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:6101e92db31bfdb2302b3ee4c96e3cc841ced597e99c35c077ab467a09d53ea2",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:436e7b0290022308c4dbed94e2d3966ae22ae075e6b330d50e4ea62973d5d522",
             "locator": {
               "kind": "symbol",
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:abef4dff8c6cbe348e99aa05aef34ac8ef93f08baf22ba8595061c003419b137",
             "locator": {
               "kind": "symbol",
@@ -60,28 +60,15 @@
       ]
     },
     "11": {
-      "note": "Composer measurement names absence and owns observer lifetime.",
+      "note": "Composer measurement carries the box's own left and width beside its vertical edge, names absence and owns the lifetime of its resize and class/style observers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
-            "content": "sha256:8e5a16b1c3b1b47ae976b0e87b687b1ec519d054ba7fcc70758c51096796eb9c",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "content": "sha256:6c63ea94de4295a218b77ed7327a34a1aeca806711ff73bfdf60b66bf0fc4a03",
             "locator": {
               "kind": "symbol",
               "name": "startComposerWatch"
-            },
-            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
-            "content": "sha256:563942a7fb63daec9b18964da99e5af0af8e95f938ef089e350703e56d26f27e",
-            "locator": {
-              "end": 415,
-              "kind": "line_range",
-              "start": 310
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
           },
@@ -94,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
             "locator": {
               "kind": "symbol",
@@ -106,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
             "locator": {
               "kind": "symbol",
@@ -266,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
             "locator": {
               "kind": "symbol",
@@ -278,7 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
             "locator": {
               "kind": "symbol",

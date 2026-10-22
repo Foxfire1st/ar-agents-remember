@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
-        "content": "sha256:9498cc1578a0827965cb2e0f4cc925145d91bdcb94f7de646688e33365b185c2",
+        "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+        "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
         "locator": {
           "kind": "symbol",
           "name": "dockPlacement"
@@ -16,12 +16,12 @@
         "handoffEntry": "TRAY05",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "Places the tray's bottom edge just above the box's top edge in the frame's coordinates.",
+      "rationale": "Places the tray's bottom edge just above the box's top edge, and its left and width at the box's own extent translated out of the frame's coordinates into the anchor's, reducing to the frame-wide placement when no extent was reported.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+        "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
         "content": "sha256:56296dbfdee2c346e0d7730f73799b321e4abb83cc9e0c1ebf68a0b4dfc4e5f6",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+        "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
         "content": "sha256:4a7bb0b812c4194ea62c765e44851c391e39453d0edd53c21b8f394f7687291a",
         "locator": {
           "kind": "symbol",
@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
             "content": "sha256:b3dcf4ec1e02bad7e4eef33ffb03187fb6bcf94a1e0632de288f305472505069",
             "locator": {
-              "end": 50,
+              "end": 53,
               "kind": "line_range",
-              "start": 38
+              "start": 41
             }
           },
           "kind": "code"
@@ -75,16 +75,15 @@
       ]
     },
     "2": {
-      "note": "Places the same tray outside an active chat frame or at the page corner.\n\nAnchor: \"export function dockPlacement(anchor: DOMRect, frame: DOMRect \\| null, composer: ComposerEdge \\| undefined): DockPlacement \\| null {\"",
+      "note": "Places the same tray outside an active chat frame or at the page corner.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
-            "content": "sha256:26453e512c63c7a54b2e4d00fd9aa7a1dea66a191a0d879b17cb5e308d8cb3e3",
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+            "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
             "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 71
+              "kind": "symbol",
+              "name": "dockPlacement"
             }
           },
           "kind": "code"
@@ -96,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
             "content": "sha256:5c3dd82c3971dbf09d544e97d1da832eb37c7a81ee01a47aceaf4f2c51e031ca",
             "locator": {
-              "end": 128,
+              "end": 137,
               "kind": "line_range",
-              "start": 116
+              "start": 125
             }
           },
           "kind": "code"

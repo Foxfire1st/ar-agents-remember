@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "content": "sha256:09f0736df247bbca52be9847da4ea3cc0d99a894ec46c5f1bea832f9b6fde873",
+        "locator": {
+          "kind": "symbol",
+          "name": "visibleBox"
+        }
+      },
+      "id": "RLZ-064WWG",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L189-S3NMAZ-EXT",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "visibleBox is the one read of the message box's rectangle, so the posted left and width come from the same measurement as the posted top and height rather than from a second read that could drift from it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:f56ab9bb0a4067aa503cdcaa10862cd2931ee59a3354c7cf0e16f551f255f084",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:afff91f623e840c99aef924d797af612f1a751c8be7cbe64cc54f3c7422828e1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:fa43086634ca2ea322f9c1b004b56a78666d91ab4d5176a499407345cbd45242",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:8628024d1aff76df50770b9136303e811785ba7f667f49fbdaf9fc0ff534150f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "content": "sha256:b5791cd36c73641197c59957fd947b441fc31b98d4f62af72f1e2f547342d141",
+        "locator": {
+          "kind": "symbol",
+          "name": "attach"
+        }
+      },
+      "id": "RLZ-K444R0",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L189-S3NMAZ-EXT",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "attach observes the box and its ancestor chain and watches class and style on the same nodes, so a layout move that resizes nothing re-runs the unchanged measurement instead of leaving the stored rectangle stale.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:f0e375bfa45b12a2adb3cac90576d8031c19acf238bc1e105206bb1ab2d9ca43",
         "locator": {
           "kind": "symbol",
@@ -93,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
-        "content": "sha256:8e5a16b1c3b1b47ae976b0e87b687b1ec519d054ba7fcc70758c51096796eb9c",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+        "content": "sha256:6c63ea94de4295a218b77ed7327a34a1aeca806711ff73bfdf60b66bf0fc4a03",
         "locator": {
           "kind": "symbol",
           "name": "startComposerWatch"
@@ -106,12 +142,12 @@
         "handoffEntry": "TRAY05",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "Reports the message-box rectangle and a named unavailable state through the negotiated channel.",
+      "rationale": "Reports the message-box rectangle with its own left and width through the negotiated channel, re-measuring on a frame resize, on the box growing, and on a container or class change that moves or resizes it.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+        "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
         "content": "sha256:834a5496bfe416e5310c6dce0ead479e8b0d5d408e098ce2518462c1f7c543f8",
         "locator": {
           "kind": "symbol",
@@ -134,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:d95e9ee2d0ee557fd520e85dcad8ae8e991216c62d742834a69f84ce33d7c5dd",
             "locator": {
-              "end": 75,
+              "end": 79,
               "kind": "line_range",
-              "start": 63
+              "start": 67
             }
           },
           "kind": "code"
@@ -151,12 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:b0b799cfb0a47580c4a2a044745300fb458dbf6abbde69dce413aa194196e6af",
             "locator": {
-              "end": 154,
+              "end": 174,
               "kind": "line_range",
-              "start": 142
+              "start": 162
             }
           },
           "kind": "code"
@@ -168,12 +204,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
             "content": "sha256:2df5b15f4f4a109e861478a3c2330d34707f0861cd02ea2c670320f7853f76b4",
             "locator": {
-              "end": 215,
+              "end": 235,
               "kind": "line_range",
-              "start": 203
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The composer post carries the box's own left and width from one measurement, and re-measures on a frame resize and on a container or class/style change that moves or resizes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "content": "sha256:2f9e99a7710b5a005624e191bc94c33716458df50ce6d692a47fcdfb077d3e16",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 374
             }
           },
           "kind": "code"

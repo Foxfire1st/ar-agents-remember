@@ -1,5 +1,58 @@
 {
   "path": "dashboard/src/cockpit/frameTrayChannel.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+        "content": "sha256:5ed9ba66c5659d1d6863a4d414f028eb3b73acc9e2b94df22d9d0e66a3517c0f",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray's part of the frame channel > drops a partial, non-finite or non-positive pair and keeps the vertical edge"
+        }
+      },
+      "facet": "Eight unusable pairs - one side only, zero, negative, NaN, infinite, a string and null - each store the vertical-only measured edge, so a rejected extent never rejects the report.",
+      "id": "PRF-029Z9M",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+        "content": "sha256:419be6ca47ca917a53a2a319d104bcb5d34bb3e1f5d5abf67097218d4896d96f",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray's part of the frame channel > takes the box's own left and width as a pair"
+        }
+      },
+      "facet": "An accepted finite pair with a positive width reaches the stored measured edge unchanged: left 240 and width 620 as posted.",
+      "id": "PRF-NNZDVR",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+        "content": "sha256:db77ce820e640dea99fc7567f474f9601a24261220cb4d185ef1d5da17c44b65",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray's part of the frame channel > keeps a composer message without the pair valid"
+        }
+      },
+      "facet": "A composer message that carries only the vertical edge parses and stores as a measured box, which is the older plug-in's admissible shape.",
+      "id": "PRF-W5S7FY",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
             "content": "sha256:14a4f1dbec17b5515006dcbe2261510dab19f05dfbfc1fd41cc98a38c4f40eb4",
             "locator": {
               "end": 106,
@@ -24,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
             "content": "sha256:f1e5274f4d635b84c4f48464d1f1185eeac8a49bb1a8bd36d28a99a181c96fd2",
             "locator": {
               "end": 171,
@@ -41,12 +94,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34499e47e382811ce2273447e5d68b79c5bda0f1",
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
             "content": "sha256:464024f1583f08aaa4206f78cd03afec4d70cb224a15865fa627363c942bc690",
             "locator": {
-              "end": 243,
+              "end": 287,
               "kind": "line_range",
-              "start": 190
+              "start": 234
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Three cases hold the box's horizontal extent: an accepted pair reaches the stored measured edge, eight partial, non-finite or non-positive pairs each store the vertical-only edge, and a composer message that carries no pair stays valid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+            "content": "sha256:f9071ca377874eff723fe088e7ac338db2d1188cda30411cb2f69e1e372f00c8",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 173
             }
           },
           "kind": "test"

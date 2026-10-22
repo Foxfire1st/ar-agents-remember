@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Checks single-dock geometry, reserved height and minimized/full/closed transitions.
+Checks single-dock geometry, including the message box's own column, reserved height and minimized/full/closed transitions.
 
 ## Code Commentary
 
 ### Logic
 
-Supplied composer/frame boxes produce the exact above-box placement, measured reservation and bounded height; unavailable composer yields one notice below frame; new picks show only attached counter; explicit expansion and minimization remain stable; close preserves pill; outcomes/refusals remain readable.
+Supplied composer/frame boxes produce the exact above-box placement, measured reservation and bounded height; the placement takes the message box's own left and width with the frame only as their origin and leaves the width unclamped, while a composer edge without the pair keeps the frame-wide left and width; unavailable composer yields one notice below frame; new picks show only attached counter; explicit expansion and minimization remain stable; close preserves pill; outcomes/refusals remain readable.
 
 Mocked getBoundingClientRect and frameTrayStore, with class assertions for min-height,38vh pick scrolling and overscroll containment.
 
@@ -31,3 +31,5 @@ Rectangles and CSS classes are fixture inputs; no browser pixel measurement is n
 - Checks single-dock geometry, reserved height and minimized/full/closed transitions. [7]
 - Checks single-dock geometry, reserved height and minimized/full/closed transitions. [8]
 - Checks single-dock geometry, reserved height and minimized/full/closed transitions. [9]
+
+- Three geometry cases pin the box's own column: the exact box-origin formula with an unclamped width, the drawn dock inside a frame wider than its chat, and the frame-wide fallback when no extent is reported. [10]

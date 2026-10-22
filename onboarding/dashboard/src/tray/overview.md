@@ -18,7 +18,7 @@ pickKey deduplicates the exact kind, comparison/tree/side/path/range/revision id
 
 Metadata, notes, text and targets persist per browser origin; image bytes use digest-keyed IndexedDB with a live memory copy. A storage failure leaves live content and a visible non-persistence warning. Preferences set copy-on-highlight and positive count/image/message bounds locally. The backend enforces its own independent request and decoded-byte limits.
 
-The dock is outside the existing iframe and follows its native composer measurements while reserving its drawn height. Unreadable composer geometry has the named below-frame placement. Without a visible chat dock it uses the page corner. New picks show the minimized Attached counter unless the tray is already expanded. The expanded pick list has bounded scrolling while the message and Send remain visible; close retains the collection behind its edge pill.
+The dock is outside the existing iframe and follows its native composer measurements while reserving its drawn height. When a composer report carries the message box's own left and width, the column dock takes that left and width for itself — the frame supplies only the origin — with no minimum and no clamp; a report without the pair keeps the frame-wide placement. In Operations, where the frame is the column, that is a measured inset: the retained case puts the tray that spanned the 300 px column at the box's left 16 and width 268, 16 px in from each side and 32 px narrower, at both 1920 and 1440. Unreadable composer geometry has the named below-frame placement. Without a visible chat dock it uses the page corner. New picks show the minimized Attached counter unless the tray is already expanded. The expanded pick list has bounded scrolling while the message and Send remain visible; close retains the collection behind its edge pill.
 
 On a review page with its chat column closed, a pick reveals only the minimized tray line and leaves the column closed. Explicitly opening the full tray opens that column. Its first pick can wait for the column’s published chat; choosing targets, removing the last pick without an explicit target choice or leaving the review ends the wait.
 
@@ -39,7 +39,7 @@ The tray neither navigates the host chat nor creates a role. Native origin/windo
 - Collection admission, first-target choice and snapshot settlement [1]
 - Exact structured reference identity [2]
 - Per-target developer send and explicit outcome parsing [3]
-- One dock outside the retained frame [4]
+- One dock outside the retained frame, its column placement at the message box's own left and width. [4]
 
 - A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. \[5] [5]
 - First-pick defaults consume published context: the document column’s active bound target, and the drawn Chats frame’s reported chat or its target before the first report. \[6] [6]

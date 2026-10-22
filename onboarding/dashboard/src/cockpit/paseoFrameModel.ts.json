@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
-        "content": "sha256:43e6d6aad1bba4bf89c4634edcf2c0db751e6e161ba038727684a31cad51b8d5",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
         "locator": {
           "kind": "symbol",
           "name": "composerMessage"
@@ -34,12 +34,12 @@
         "handoffEntry": "TRAY05",
         "leaf": "260928-MIK-L89"
       },
-      "rationale": "Accepts only finite composer coordinates with nonnegative height and positive frame height.",
+      "rationale": "Accepts only finite composer coordinates with nonnegative height and positive frame height, and folds in the box's horizontal pair only when both values are finite with a positive width, so a rejected pair leaves the vertical report valid.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
         "locator": {
           "kind": "symbol",
@@ -57,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:40dda96c0b649f667147bc27f83b992879940d576a4821ed348114e3f75659b8",
         "locator": {
-          "end": 77,
+          "end": 85,
           "kind": "line_range",
-          "start": 76
+          "start": 84
         }
       },
       "id": "RLZ-96RKPW",
@@ -76,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:7a64ac88decc3c9e450cb482085016238268b19976923fa36443060f1c10b4a7",
         "locator": {
-          "end": 310,
+          "end": 318,
           "kind": "line_range",
-          "start": 309
+          "start": 317
         }
       },
       "id": "RLZ-AMH2C3",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:6162ae3ea7ad8c3107ef2e6c6292faa1e68b9f31a653c5bed148fdcd25069316",
         "locator": {
           "kind": "symbol",
@@ -131,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -149,7 +149,25 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerExtent"
+        }
+      },
+      "id": "RLZ-PD3N8H",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "composerExtent is the validator that admits the pair only when both values are finite numbers and the width is positive, and returns null otherwise so the vertical fields are kept.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
         "locator": {
           "kind": "symbol",
@@ -167,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
         "locator": {
           "kind": "symbol",
@@ -185,12 +203,30 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerMessage"
+        }
+      },
+      "id": "RLZ-RCFA1N",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "composerMessage parses an untrusted plug-in message into that union, keeping the vertical edge and folding in the pair only when the validator accepts it.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:2e0366f5314a0a04ca074d1e65436fc19b01b8b707f615000571258645514312",
         "locator": {
-          "end": 79,
+          "end": 87,
           "kind": "line_range",
-          "start": 78
+          "start": 86
         }
       },
       "id": "RLZ-SEFC7X",
@@ -204,7 +240,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:c1c90a49534d9aa915c04bbf13e89c4669174f9dd85d0239d1d239f56628d2fe",
         "locator": {
           "kind": "symbol",
@@ -222,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
         "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
         "locator": {
           "kind": "symbol",
@@ -237,6 +273,24 @@
       },
       "rationale": "Builds the notice from the abilities the plug-in named, with the provisioning command the backend names.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:2ee34efaa0f82e3aa50898bf8803895d8fcd697a552723d1aa63af921e4a691c",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoComposerMessage"
+        }
+      },
+      "id": "RLZ-ZDCFK5",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "PaseoComposerMessage is the declared shape of what a plug-in may post, so the optional pair is stated once there and every consumer reads the same union.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -245,12 +299,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:669841be78c2a5ecf5421ab6ce6cb9b30eca4bfc4fbbbb7d7f97c6cd64be29a7",
             "locator": {
-              "end": 128,
+              "end": 136,
               "kind": "line_range",
-              "start": 118
+              "start": 126
             }
           },
           "kind": "code"
@@ -262,12 +316,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:24c8cab64e535bdd9550bd443fac480dfcddae8bae2766711ff5e98e77a82189",
             "locator": {
-              "end": 83,
+              "end": 91,
               "kind": "line_range",
-              "start": 83
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The box's left and width are admitted only together, as finite numbers with a positive width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
             }
           },
           "kind": "code"
@@ -279,12 +349,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:8d2aec01684df053ee1abc0019cb6f73d88301a4337bf7f916e54d4f0c8199b4",
             "locator": {
-              "end": 231,
+              "end": 239,
               "kind": "line_range",
-              "start": 212
+              "start": 220
             }
           },
           "kind": "code"
@@ -296,12 +366,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:8ea7bd9b358ffd8a9887c51af0f31003c7776625a43cd650f717aadf8daaa107",
             "locator": {
-              "end": 241,
+              "end": 249,
               "kind": "line_range",
-              "start": 239
+              "start": 247
             }
           },
           "kind": "code"
@@ -313,12 +383,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:56b0b7e88e9c0d15728f0b0115958de4a185e7acdf50c912af2e7ce7587d3237",
             "locator": {
-              "end": 257,
+              "end": 265,
               "kind": "line_range",
-              "start": 247
+              "start": 255
             }
           },
           "kind": "code"
@@ -330,12 +400,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:e7954b64c15fec99e263a00e0c5be08f987a06c34a5794598e2180bd6a0363e4",
             "locator": {
-              "end": 299,
+              "end": 307,
               "kind": "line_range",
-              "start": 294
+              "start": 302
             }
           },
           "kind": "code"
@@ -347,12 +417,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:9f7be3d850cb25222381d7d04f3abb345ec4f13122fc7b18bc066ca908f95a7c",
             "locator": {
-              "end": 156,
+              "end": 164,
               "kind": "line_range",
-              "start": 140
+              "start": 148
             }
           },
           "kind": "code"
@@ -364,12 +434,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:5b96a13bb48b563e5093e6ddfa22de511dafcdcd4e32378a49061b59668f81a5",
             "locator": {
-              "end": 347,
+              "end": 355,
               "kind": "line_range",
-              "start": 338
+              "start": 346
             }
           },
           "kind": "code"
@@ -377,16 +447,15 @@
       ]
     },
     "8": {
-      "note": "Composer coordinates must be finite with valid heights.\n\nAnchor: \"function composerMessage(message: Record<string, unknown>): PaseoTrayMessage \\| null {\"",
+      "note": "Composer coordinates must be finite with valid heights.",
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
-            "content": "sha256:43e6d6aad1bba4bf89c4634edcf2c0db751e6e161ba038727684a31cad51b8d5",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
             "locator": {
-              "end": 354,
-              "kind": "line_range",
-              "start": 349
+              "kind": "symbol",
+              "name": "composerMessage"
             }
           },
           "kind": "code"
@@ -398,12 +467,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
             "content": "sha256:c7fd8bc2835d2f17ef0cbaaa877cdc5ed5e25562155fc76e4ee0383921acd319",
             "locator": {
-              "end": 359,
+              "end": 381,
               "kind": "line_range",
-              "start": 357
+              "start": 379
             }
           },
           "kind": "code"

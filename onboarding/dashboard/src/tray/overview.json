@@ -56,16 +56,15 @@
       ]
     },
     "4": {
-      "note": "One dock outside the retained frame\n\nAnchor: \"export function TrayColumnDock(\"",
+      "note": "One dock outside the retained frame, its column placement at the message box's own left and width.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
-            "content": "sha256:0b71a0fd7d92b0027bbdf1b51e2b283181380c968161c89c21f29e4b573cd5d8",
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+            "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
             "locator": {
-              "end": 230,
-              "kind": "line_range",
-              "start": 167
+              "kind": "symbol",
+              "name": "dockPlacement"
             },
             "path": "dashboard/src/tray/TrayDock.tsx"
           },

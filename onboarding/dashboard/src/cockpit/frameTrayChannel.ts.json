@@ -1,35 +1,73 @@
 {
   "path": "dashboard/src/cockpit/frameTrayChannel.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+        "content": "sha256:3b6fa921342cc91ee24eb1dda5136a9071b43f615343894924c65199452c8d56",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComposerEdge"
+        }
+      },
+      "id": "RLZ-NRWTA4",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "ComposerEdge is what the tray stores, so the optional extent is represented there as an alternative shape rather than as nullable numbers a consumer could mistake for zero.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+        "content": "sha256:cbf53649960b02fbda8c14fccc9bfd75bee2404be494956bffac936f94bd4a47",
+        "locator": {
+          "kind": "symbol",
+          "name": "measuredComposer"
+        }
+      },
+      "id": "RLZ-P0Z0HK",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "measuredComposer turns one accepted message into the stored edge, adding left and width only when the message carries them, which is what keeps an older plug-in's message valid.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+        "content": "sha256:93e356ddad88a6bd0dd6710fd367a858ab7c0427f772f6bdd8d435502b480162",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerExtent"
+        }
+      },
+      "id": "RLZ-ZZKHYV",
+      "invariant": "INV-71MV12",
+      "origin": {
+        "handoffEntry": "MIK-R197@v1 rule 2",
+        "leaf": "260928-MIK-L189"
+      },
+      "rationale": "the channel's own composerExtent reads the stored edge back out for the dock, so the dock never re-derives whether a pair was present.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Normalized height and listener lifecycle\n\nAnchor: \"export function setTraySpace(page: FramePage, height: number): void {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "611e2ec005116baf2e45f00a95ed3a49fec795aa",
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
             "content": "sha256:e6ce807e9219030242c3d87128e1a4c5a4be0491fad5955d3d4d4f565b6011c4",
             "locator": {
-              "end": 101,
+              "end": 104,
               "kind": "line_range",
-              "start": 84
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Per-page incoming state and pick dispatch\n\nAnchor: \"export function clearFrameTray(page: FramePage): void {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "611e2ec005116baf2e45f00a95ed3a49fec795aa",
-            "content": "sha256:b7f6033de68a900d14f886e52cb7250f5eae0aebf1c4e22182267b8ef6199cfa",
-            "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 129
+              "start": 87
             }
           },
           "kind": "code"
@@ -41,12 +79,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e2ec005116baf2e45f00a95ed3a49fec795aa",
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
             "content": "sha256:05dcf0a42b2f9627d629d8e98455e6a5cea3689f95da2f40cc908e1b2d094246",
             "locator": {
-              "end": 200,
+              "end": 221,
               "kind": "line_range",
-              "start": 176
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Per-page incoming state and pick dispatch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+            "content": "sha256:7a6a5bdccef75b9c289cd7a3ad415ad5d83dce7c5a6736a83a6bcdf3d557b692",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 129
             }
           },
           "kind": "code"

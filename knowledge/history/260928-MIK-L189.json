@@ -1,0 +1,590 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L189",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-04CKAP",
+      "items": [
+        "sha256:7cea8971d37f5e27809f1223e49e46db587ea6007e0f157dc237aa14d9e7cbe1",
+        "sha256:88e5b5fe31bf9df19b3be1200e880dd4899d2b36da026611def4aac0d0ba7904"
+      ],
+      "reason": "The card names the three added geometry cases and a numbered evidence line now cites them.",
+      "sources": [
+        {
+          "blob": "2a5d7b06be72c6ab4427e5466fb54caedb81cfd6",
+          "path": "dashboard/src/tray/TrayDock.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/TrayDock.test.tsx"
+    },
+    {
+      "considered": [
+        "FAM-DB8S4B",
+        "FAM-JY9AN3"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-0PC7D3",
+      "items": [
+        "sha256:59a8c7dcd1249b7028aa85905779238ee63a293acfb2250152375c8a8b14e3fa"
+      ],
+      "reason": "The composer report's pair policy stands alone. FAM-DB8S4B promises attributable per-target Send custody and settlement after a pick exists; accepting a measured rectangle neither files nor sends anything. FAM-JY9AN3 promises that the selected document's chat appears or the pane names its problem; it owns the document frame's visibility, not the shape of a tray measurement. No family's joint guarantee needs this member, so it joins none and the dock's own rule stays standalone as INV-S3NMAZ's membership row already records.",
+      "revision": 1,
+      "subject": "membership:INV-71MV12"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-24YJXS",
+      "items": [
+        "sha256:64409d8c4d4a635afb89e2f779507321f15434debe5d76b4d308975ad8dc450f"
+      ],
+      "reason": "The route overview now states the Chats frame's own sidebar and terminal pane, and that in Operations the frame is the column while the message box can sit inset inside it - the retained measured case puts the box at left 16 and width 268 in a 300 px column at 1920 and 1440 - so the tray that spanned the column now takes the box's 268 px. A numbered evidence line now cites the pair admission. In this cut the frame-controller claim was split from the model claim it used to sit on: reference 91 now carries the model's provenance-and-geometry block at 318-378, and the controller's three claims stand as their own references, so no settled claim rests on a span the change moved.",
+      "sources": [
+        {
+          "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+          "path": "dashboard/src/cockpit/frameTrayChannel.test.ts"
+        },
+        {
+          "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+          "path": "dashboard/src/cockpit/frameTrayChannel.ts"
+        },
+        {
+          "blob": "0b222683100abd582daa85755533e41d9728ce83",
+          "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+        },
+        {
+          "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+          "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-626FX0",
+      "items": [
+        "sha256:153dec9fc4dd590ad1e0f5a38bf763b5ca0203b1ba5ebd180e204417df73b373"
+      ],
+      "reason": "The route overview now states that the composer report carries the box's horizontal extent beside its vertical edge, that the observation covers the box's containers and their class/style changes, and that the scroll-root reservation is unchanged.",
+      "sources": [
+        {
+          "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6HC9KE",
+      "items": [
+        "sha256:393ea7668680695d0e2243318f4aaed7351416191af2647765ef49b0e2b29e0b"
+      ],
+      "reason": "Three lines of the doc block over the model's tray channel types were rewrapped and the heading gained MIK-R197, naming the pick provenance and the composer geometry it now also covers. Documentation only: the optional pair's own lines are the separate hunk answered by its own row.",
+      "subject": "hunk:sha256:393ea7668680695d0e2243318f4aaed7351416191af2647765ef49b0e2b29e0b"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7P9WNC",
+      "items": [
+        "sha256:5ef5537e35eee9bded702222f7afeffb17ff22630f595e09d51c154623d29ec5",
+        "sha256:8e9871216e7dbda40dbcab64f162dc78ae6d33a990d51e2f139295b9813e89d7",
+        "sha256:a92f4660c3a0ab9f7fb3e6e082da61fefaa556c41897d7c4e3a46a76d46dd38a",
+        "sha256:e254828ecac66ccbb52b349962233f014a267cf5dc7403b65c25863b164c1cb0"
+      ],
+      "reason": "The card states the two measured edge shapes and that receiveFrameTray stores left and width only when the parsed message carries both; its per-page-state evidence now spans the state block and the dispatch.",
+      "sources": [
+        {
+          "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+          "path": "dashboard/src/cockpit/frameTrayChannel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/frameTrayChannel.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BE2HG6",
+      "items": [
+        "sha256:4b42cfdac9d7066930f6b44873d4dfc70c6dc7143b6ca1132e05dd2ef6c4d83d"
+      ],
+      "reason": "The added line imports composerExtent from the frame channel. An import carries no behaviour.",
+      "subject": "hunk:sha256:4b42cfdac9d7066930f6b44873d4dfc70c6dc7143b6ca1132e05dd2ef6c4d83d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CSZ1ZG",
+      "items": [
+        "sha256:2a77e09acd5e0a227c78a1365d5d86b5070ca8864b27400f53ae81cb1e530a0c"
+      ],
+      "reason": "The message box paragraph of the module header was rewritten to say the posted rectangle carries the horizontal extent, is measured from one box and is re-posted when the layout moves it. Documentation over behaviour that INV-S3NMAZ realizes at visibleBox and attach.",
+      "subject": "hunk:sha256:2a77e09acd5e0a227c78a1365d5d86b5070ca8864b27400f53ae81cb1e530a0c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EG8R02",
+      "items": [
+        "sha256:11f832fc8b5bc08bf08095dc8801e80caad9c2ff886f8882c454d324b2d7646a"
+      ],
+      "reason": "The card names the three added extent cases, and a numbered evidence line now cites them.",
+      "sources": [
+        {
+          "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+          "path": "dashboard/src/cockpit/frameTrayChannel.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/frameTrayChannel.test.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R197",
+          "packet": "requirements/MIK-R197-v1-the-tray-docks-over-the-chats-own-column-in-every-chat-layout.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2a5d7b06be72c6ab4427e5466fb54caedb81cfd6",
+            "content": "sha256:14ad9070eeacefbd4a6941faf3fa90d0d97d3d71f7be728a4b99d59acac4bf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray dock > keeps today’s frame-wide placement when the plug-in reports no extent"
+            },
+            "path": "dashboard/src/tray/TrayDock.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-3CAE6K"
+        },
+        {
+          "after": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:2652e89299d479172d5582b3de348303a0a95e29456222fd5c253be22e2e6fb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "the message box and the tray's space > reports the box's own left and width beside Paseo's sidebar and terminal, and posts again when only they change"
+            },
+            "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-437HHH"
+        },
+        {
+          "after": {
+            "blob": "2a5d7b06be72c6ab4427e5466fb54caedb81cfd6",
+            "content": "sha256:de82426b5febe40b6881d559003348e46e2b89ffa41ba6319b9b5c86c517801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray dock > takes the message box’s own left and width, with the frame only as their origin"
+            },
+            "path": "dashboard/src/tray/TrayDock.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-5FXY2G"
+        },
+        {
+          "after": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:bd9350653b6b44bf9c5884b20fbd3abc6d0aa37637210e76c8e0cb59b84f4258",
+            "locator": {
+              "kind": "symbol",
+              "name": "the message box and the tray's space > reserves the tray's height on the chat's scroll root alone, in a split layout"
+            },
+            "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-FT7QFD"
+        },
+        {
+          "after": {
+            "blob": "2a5d7b06be72c6ab4427e5466fb54caedb81cfd6",
+            "content": "sha256:fc2e5e086be0d1a8f6cab8e0b853fca3479fa44fda1dbbbd43f7d161d35d40d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray dock > docks over the box’s own column in a layout whose frame is wider than its chat"
+            },
+            "path": "dashboard/src/tray/TrayDock.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-QBMA6D"
+        },
+        {
+          "after": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:91df952762ccc0535c7f38041f997314bfe2fcdc44c18469568f4466b6847446",
+            "locator": {
+              "kind": "symbol",
+              "name": "the message box and the tray's space > reports the box's new position when the layout moves it without resizing it"
+            },
+            "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-YJGS0Y"
+        },
+        {
+          "after": {
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "content": "sha256:09f0736df247bbca52be9847da4ea3cc0d99a894ec46c5f1bea832f9b6fde873",
+            "locator": {
+              "kind": "symbol",
+              "name": "visibleBox"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-064WWG"
+        },
+        {
+          "after": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": {
+            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
+            "content": "sha256:43e6d6aad1bba4bf89c4634edcf2c0db751e6e161ba038727684a31cad51b8d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-19V6Z1"
+        },
+        {
+          "after": {
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+            "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "dockPlacement"
+            },
+            "path": "dashboard/src/tray/TrayDock.tsx"
+          },
+          "before": {
+            "blob": "ee4a8beb931dd4e877d909331de62f4e7d42d942",
+            "content": "sha256:9498cc1578a0827965cb2e0f4cc925145d91bdcb94f7de646688e33365b185c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "dockPlacement"
+            },
+            "path": "dashboard/src/tray/TrayDock.tsx"
+          },
+          "id": "RLZ-3V0JY7"
+        },
+        {
+          "after": {
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "content": "sha256:b5791cd36c73641197c59957fd947b441fc31b98d4f62af72f1e2f547342d141",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-K444R0"
+        },
+        {
+          "after": {
+            "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+            "content": "sha256:6c63ea94de4295a218b77ed7327a34a1aeca806711ff73bfdf60b66bf0fc4a03",
+            "locator": {
+              "kind": "symbol",
+              "name": "startComposerWatch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "before": {
+            "blob": "b3ba6dd65c2e75dfcc5e04e516991b0b90c27ed2",
+            "content": "sha256:8e5a16b1c3b1b47ae976b0e87b687b1ec519d054ba7fcc70758c51096796eb9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "startComposerWatch"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+          },
+          "id": "RLZ-R49V9D"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-HVP0E8",
+      "items": [
+        "sha256:f60262ebc2f6e80e7e60c5052eaece9c48180a91e9a6b314c4059299627fca7d"
+      ],
+      "reason": "Revision 2 strengthens this invariant rather than extending its scope: it adds one condition naming the horizontal half of the promise the statement already made - when a composer report carries the box's own left and width, the tray takes that extent, with the frame only the origin of the measurement, no minimum and no clamp, and the frame-wide placement only when no extent is reported. The leaf's code already satisfied it; no invariant stated it, so a reader could have re-introduced a clamp without contradicting the invariant set. No other condition, exclusion or the statement itself changed. The row records this invariant's entries as they stand after the round in which the realizations were re-anchored once and the proofs were left as they were.",
+      "revision": 2,
+      "subject": "INV-S3NMAZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JSJBJ2",
+      "items": [
+        "sha256:73654aafbd93db51311c650e4ade884ce18793ef95cc060dc6e349783f0e89e6"
+      ],
+      "reason": "The route overview now states the box-own-column placement with no clamp, the frame-wide fallback, and the measured Operations inset; its dock evidence is anchored on dockPlacement.",
+      "sources": [
+        {
+          "blob": "2a5d7b06be72c6ab4427e5466fb54caedb81cfd6",
+          "path": "dashboard/src/tray/TrayDock.test.tsx"
+        },
+        {
+          "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+          "path": "dashboard/src/tray/TrayDock.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+            "content": "sha256:5ed9ba66c5659d1d6863a4d414f028eb3b73acc9e2b94df22d9d0e66a3517c0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray's part of the frame channel > drops a partial, non-finite or non-positive pair and keeps the vertical edge"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-029Z9M"
+        },
+        {
+          "after": {
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+            "content": "sha256:419be6ca47ca917a53a2a319d104bcb5d34bb3e1f5d5abf67097218d4896d96f",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray's part of the frame channel > takes the box's own left and width as a pair"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-NNZDVR"
+        },
+        {
+          "after": {
+            "blob": "4961af411d6289042b5c27ab97824ca70933533e",
+            "content": "sha256:db77ce820e640dea99fc7567f474f9601a24261220cb4d185ef1d5da17c44b65",
+            "locator": {
+              "kind": "symbol",
+              "name": "the tray's part of the frame channel > keeps a composer message without the pair valid"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-W5S7FY"
+        },
+        {
+          "after": {
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+            "content": "sha256:3b6fa921342cc91ee24eb1dda5136a9071b43f615343894924c65199452c8d56",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComposerEdge"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-NRWTA4"
+        },
+        {
+          "after": {
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+            "content": "sha256:cbf53649960b02fbda8c14fccc9bfd75bee2404be494956bffac936f94bd4a47",
+            "locator": {
+              "kind": "symbol",
+              "name": "measuredComposer"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-P0Z0HK"
+        },
+        {
+          "after": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-PD3N8H"
+        },
+        {
+          "after": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:f6f9ba174570c0797e45bdd256171ac64546fa92515932ea9840bbf7d21f8d69",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RCFA1N"
+        },
+        {
+          "after": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:2ee34efaa0f82e3aa50898bf8803895d8fcd697a552723d1aa63af921e4a691c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoComposerMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ZDCFK5"
+        },
+        {
+          "after": {
+            "blob": "828fae22c138b86d52a0255a8e0e04159f289219",
+            "content": "sha256:93e356ddad88a6bd0dd6710fd367a858ab7c0427f772f6bdd8d435502b480162",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
+            },
+            "path": "dashboard/src/cockpit/frameTrayChannel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ZZKHYV"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K9KVGV",
+      "items": [],
+      "reason": "The record's scope now states the prerequisite its statement already assumed: the pair rules apply to a report whose vertical fields the parser admits, a report that fails those guards is rejected whatever its pair says, and the pair-less shape is not an older plug-in's alone because pick.ts rounds left and width, so a box narrower than half a pixel posts width 0 and is dropped. The statement, exclusions and admission are unchanged.",
+      "revision": 1,
+      "subject": "INV-71MV12"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S9EFV2",
+      "items": [
+        "sha256:f51e8cad5972c52975b9bd0a23e1f026982024298f46472b9b89d7e8538ca0b5"
+      ],
+      "reason": "The card now states the column dock's horizontal placement as the box's own extent translated into the anchor's coordinates with no minimum and no clamp, the frame-wide fallback for a report with no extent, the unchanged corner dock, and the measured Operations inset. Its placement evidence is re-anchored onto the current dockPlacement.",
+      "sources": [
+        {
+          "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+          "path": "dashboard/src/tray/TrayDock.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/tray/TrayDock.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SBY39W",
+      "items": [
+        "sha256:289a4948105f4509f8f3953c3cf1cc199852741f8231ae279d00b27b89dc96fd",
+        "sha256:6b312a9b67fc8496253e0fa5cb4734ac5b01e61c39ec6eaeda6ce43476191781",
+        "sha256:84af94bca214aab22db594e7e9c4af6f5db0587c99007d437b2bc376d00ad56e",
+        "sha256:9f8823f745f8c14c4ddc8431bad9b066adc03561e93eebcf82116903c558d77b",
+        "sha256:a1493dfcac61da145ca429b3f7b4cea67d12b01d869650020ecfe702c71d6227",
+        "sha256:a8368e5863c6e56e48778d79e73e391b966affdd54361d3a7f844c73529d5268",
+        "sha256:af89e3cfe2eaac8447509ea2f7c403d3411a1bebf5b2721c94b170c140a83c97",
+        "sha256:b82c9eceb6a1ba49e8ac2c1b54b50fa250081c97f0f4a22e5a4eaf4a63f3203d",
+        "sha256:ead719aac57359348f699ad3530c76da83faef5e5a490020ad19c1d5802b4cb0"
+      ],
+      "reason": "The card names the split-layout fixtures and the three added cases, distinguishes the fake resize observer from the environment's own class/style MutationObserver, and its composer evidence now spans the composer block at 442-555.",
+      "sources": [
+        {
+          "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+          "path": "dashboard/src/cockpit/paseoPluginPick.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginPick.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SDFR49",
+      "items": [
+        "sha256:b9aa7b6ba61d8fb0c3485d46675786d0e9f9a9e8ffee89eb36de50e9b135d7fd"
+      ],
+      "reason": "One line of the PaseoTrayMessage union now names PaseoComposerMessage instead of an inline composer member. That is type wiring with no behaviour of its own; the obligation is stated and realized on the declared type INV-71MV12 owns.",
+      "subject": "hunk:sha256:b9aa7b6ba61d8fb0c3485d46675786d0e9f9a9e8ffee89eb36de50e9b135d7fd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T2S0F7",
+      "items": [
+        "sha256:654d15565d38098e05b8217ad9295567810203d83531f52b1fb0c4740be55353"
+      ],
+      "reason": "The five added lines are dockPlacement's own comment: the box's own column, the older-host fallback and 'no minimum and no clamp'. The function below carries INV-S3NMAZ, whose realization at dockPlacement this leaf's row re-anchors and re-explains.",
+      "subject": "hunk:sha256:654d15565d38098e05b8217ad9295567810203d83531f52b1fb0c4740be55353"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V72FYT",
+      "items": [
+        "sha256:99f13619fac15c1917f23193b15eb58cee8013506d1144cc360dc53de2494038"
+      ],
+      "reason": "The file's header comment now says the tray is drawn with the box's own width and left edge rather than the frame's. Documentation over behaviour that INV-S3NMAZ realizes at dockPlacement.",
+      "subject": "hunk:sha256:99f13619fac15c1917f23193b15eb58cee8013506d1144cc360dc53de2494038"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VGP86G",
+      "items": [
+        "sha256:e6d0dfdc8a88de99c91312a5498e0f55f2b356405c7617e232e9764ed6177557"
+      ],
+      "reason": "The card states the single-measurement composer report with its own left and width, the re-post on a layout move that resizes one of the observed nodes, and the unchanged scroll-root reservation; a numbered evidence line cites the post and the observer pair.",
+      "sources": [
+        {
+          "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W31WEQ",
+      "items": [
+        "sha256:a89e7e38c70bb433607223eb7b0dead0803552f9a3baa2daf5fe4ca5d9c89808"
+      ],
+      "reason": "The card states the composer report's two admissible shapes and the pair policy with the vertical guards kept as their prerequisite, and its evidence now separates the vertical checks (reference 8, composerMessage) from the pair admission (reference 11, composerExtent).",
+      "sources": [
+        {
+          "blob": "0b222683100abd582daa85755533e41d9728ce83",
+          "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameModel.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WTXF7Z",
+      "items": [
+        "sha256:1c4a468f3a3220b20ef2ca995fe084bcff6c9d87a781cd9c0f373c25a368a911"
+      ],
+      "reason": "One line of the module header's channel listing now names the composer message's left and width. Documentation over the post that INV-S3NMAZ realizes at visibleBox and attach.",
+      "subject": "hunk:sha256:1c4a468f3a3220b20ef2ca995fe084bcff6c9d87a781cd9c0f373c25a368a911"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YZR5QW",
+      "items": [
+        "sha256:b1facf8f923cafe1e2cff005b9390630756e6d2ed872b4e7ccb4eba56f0cc515"
+      ],
+      "reason": "The added lines are the doc block over the tray channel types, stating that left and width are the box's horizontal extent inside the frame and optional as a pair. They describe the shapes declared below them, which INV-71MV12 realizes at PaseoComposerMessage and composerExtent.",
+      "subject": "hunk:sha256:b1facf8f923cafe1e2cff005b9390630756e6d2ed872b4e7ccb4eba56f0cc515"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

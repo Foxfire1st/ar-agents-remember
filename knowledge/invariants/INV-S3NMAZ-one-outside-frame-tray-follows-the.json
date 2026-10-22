@@ -11,7 +11,8 @@
     "The first visible registered column dock owns the tray; absent one, the corner dock owns it.",
     "Measured frame-relative composer geometry places the tray bottom above the composer top and reserves the height actually drawn by the pill, line or full view.",
     "The full view is bounded by available room above the message box and scrolls its list; unreadable composer geometry places the tray below the frame with the named notice.",
-    "A newly revealed collection uses its compact line unless already expanded; explicit expansion/close does not remove picks."
+    "A newly revealed collection uses its compact line unless already expanded; explicit expansion/close does not remove picks.",
+    "When the composer edge carries the box's own left and width, the tray takes that extent for its own: the left translated out of the frame's coordinates into the dock anchor's, the width unchanged, with no minimum and no clamp; a report that carries no extent keeps the frame-wide placement."
   ],
   "exclusions": [
     "No iframe move, reparent, key or reload is introduced by the dock.",
@@ -30,7 +31,7 @@
     "leaf": "260928-MIK-L89",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "One outside-frame tray follows the visible chat column and sits above its measured message box with reserved space; an unreadable box uses the named below-frame placement.",
   "status": "proposed",

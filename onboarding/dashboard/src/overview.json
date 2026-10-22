@@ -93,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
             "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
             "locator": {
               "kind": "symbol",
@@ -156,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
+            "blob": "4ebdadbe5250941261081b699793125966c459c5",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 281,
@@ -1134,12 +1134,12 @@
         },
         {
           "anchor": {
-            "blob": "585869ba5261bc9389f65705da9120a72547e8dd",
+            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 510,
+              "end": 514,
               "kind": "line_range",
-              "start": 495
+              "start": 499
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1497,7 +1497,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
             "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
               "kind": "symbol",
@@ -1558,12 +1558,12 @@
         },
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
             "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
             "locator": {
-              "end": 341,
+              "end": 413,
               "kind": "line_range",
-              "start": 263
+              "start": 335
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -2126,7 +2126,60 @@
       ]
     },
     "91": {
-      "note": "The frame controller validates origin/window, then the model admits typed tray provenance/geometry and the ready-bound subscription is released on relink or stop. [91]\n\nAnchor: `this.linkTray`; `if`; `this.trayLink?.stop`; `if`",
+      "note": "The model admits typed tray provenance and the box's geometry in one block, with the pair admission immediately after it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:afe46fbebb17933096c946f1dac0350b26f7116987b6140715d483d548627d91",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "A composer measurement may carry the box's optional left and width, which the model admits only as a pair of finite values with a positive width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "The frame controller validates the configured origin and the actual frame window before parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:e5beb601419ca737f6c746b38b07144d68e7d2f65aa03221ea6fa254f900823c",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The ready-bound subscription is released on relink or stop.",
       "targets": [
         {
           "anchor": {
@@ -2140,20 +2193,12 @@
             "path": "dashboard/src/cockpit/paseoFrameControl.ts"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
-            "content": "sha256:e5beb601419ca737f6c746b38b07144d68e7d2f65aa03221ea6fa254f900823c",
-            "locator": {
-              "end": 233,
-              "kind": "line_range",
-              "start": 201
-            },
-            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
-          },
-          "kind": "code"
-        },
+        }
+      ]
+    },
+    "95": {
+      "note": "Relinking and stopping release the previous tray subscription.",
+      "targets": [
         {
           "anchor": {
             "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
@@ -2164,19 +2209,6 @@
               "start": 283
             },
             "path": "dashboard/src/cockpit/paseoFrameControl.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "76aa8c67f375a2b3d3b39c11ec9b7b9d1f6749a1",
-            "content": "sha256:da7e87bee5585d9543689e52c7426a8d6aca20e3b69a28ecaa91c42fa5bcb25b",
-            "locator": {
-              "end": 354,
-              "kind": "line_range",
-              "start": 318
-            },
-            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
           },
           "kind": "code"
         }
