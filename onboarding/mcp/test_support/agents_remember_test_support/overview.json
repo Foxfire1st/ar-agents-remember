@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
             "content": "sha256:271d2d23357019e973438aeec81355449cae42d8c0e5c0f6ac4c79380fdf8a5e",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
             "content": "sha256:4283e2bb761c34415d2c87bf643c62017dc2090c29c30cb06d18000c9f4b60bf",
             "locator": {
               "kind": "symbol",
@@ -149,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
+            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
@@ -174,12 +174,12 @@
         },
         {
           "anchor": {
-            "blob": "56d0112612fde198e75ec5872e3e7874e16cffe8",
+            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
             "content": "sha256:8a1ec3a16709d860bee5ff85a7629913bfac5f3932ac24c1d429ebf2bf530e81",
             "locator": {
-              "end": 826,
+              "end": 816,
               "kind": "line_range",
-              "start": 810
+              "start": 800
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
@@ -266,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:3c08158a7017954bf06b4dd4ccdd5aefe17180ddc853fed7bbef05ff63e9ea7b",
             "locator": {
               "end": 284,
@@ -328,7 +328,7 @@
       ]
     },
     "3": {
-      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "note": "The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged.",
       "targets": [
         {
           "anchor": {
@@ -350,7 +350,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
             "content": "sha256:4958289f3e1dd0f91c7c27901a608eeaf04665588a5566fceb8e2374c8869770",
             "locator": {
               "end": 79,
@@ -479,7 +479,7 @@
         },
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:c98a6cb375caa7f3c6ba6d5d0148b8f14656dcb1658db5bc1a924556b9823195",
             "locator": {
               "end": 88,

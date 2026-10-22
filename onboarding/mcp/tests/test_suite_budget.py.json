@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+        "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
         "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
-        "content": "sha256:675247c2622a56b27d6edb697a411b8f3ab61aba9522d1307391c7bc2797051f",
+        "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+        "content": "sha256:faeb2c1d676d3d096f64e06b9fb3b426b83e637f72e3be180a1de767227311b3",
         "locator": {
           "end": 17,
           "kind": "line_range",
@@ -36,7 +36,7 @@
         "handoffEntry": "MIK-R146@v1 rule 3 — budget screen mirror",
         "leaf": "260928-MIK-L146"
       },
-      "rationale": "The deliberate stub mirrors the current6000 unit/1000 integration declarations; its independent equality test detects a stale second copy.",
+      "rationale": "The deliberate stub mirrors the current 10000 unit/1000 integration declarations; its independent equality test detects a stale second copy.",
       "role": "support"
     }
   ],
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
             "content": "sha256:cc3e8849bac0b8d1afbedd3d2f8f3616195f6b014305fb612e86249da44ed182",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
         },
         {
           "anchor": {
-            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
             "content": "sha256:1124446ec97f490d03a274ca6bf80efc50758754a3123d210da234cb94b5c5d4",
             "locator": {
               "end": 41,
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
             "content": "sha256:9134ae5e2ff9950b195edf03b1b5b85f02939ac565ab2a0f533db786c703e9a2",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
             "content": "sha256:69ea7da23d36e3a8de6a02e2d18474d5bfd7ee0cc075ce22192fb1651013376c",
             "locator": {
               "kind": "symbol",
@@ -118,16 +118,16 @@
       ]
     },
     "5": {
-      "note": "The current root declaration is6000unit/1000integration; the synthetic stub and guard-relative boundary cases must follow it.",
+      "note": "The current root declaration is 10,000 unit/1,000 integration; the synthetic stub and guard-relative boundary cases must follow it.\n\nAnchor: `unit_case_budget`",
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
-            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
             "locator": {
-              "end": 300,
+              "end": 321,
               "kind": "line_range",
-              "start": 299
+              "start": 320
             },
             "path": "pyproject.toml"
           },

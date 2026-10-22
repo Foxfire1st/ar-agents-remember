@@ -164,7 +164,7 @@ Paired acceptance binds configured repositories, physical worktree roots, branch
 
 Full contract-scoped curation distinguishes raw quality repairs, coherence-required and current validated coherence; preparation is not a final certificate. Before closeout, a non-author second reader checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff and important omissions; blocking findings are repaired. This role duty is not a new transaction-enforced review predicate. Historical certification owners remain separate from host-test authority and converted-knowledge admission; the broad old CCR-R12 no-prerequisite wording does not erase present knowledge-gate calls.
 
-Ordinary development supports isolated host pytest, including focused/serial investigation, without certifying authority. The root declaration is 6,000 unit and 1,000 integration cases (`pyproject.toml:299-300`). The earlier D226 4,000-to-5,000 epoch is historical; the composed D299 unit-only raise leaves integration and guard behavior unchanged. A configured ceiling is not a collected or executed population. Distinct user-operation/failure/regression protection justifies cases; unused support and duplicate matrices are not restored for coverage. Coverage is diagnostic, production CRAP 20 is a review trigger, and Radon reports do not enforce acceptance. Lint, formatting, typing, structural rules, and test failures remain enforcing; diagnostic execution errors remain visible. Certifying claims require genuine pinned Dagger admission and the existing lifecycle publication owners, exact candidate/process identity, disposable state, and credential isolation. A copied report, host pass, sync result, or use of Dagger alone is insufficient.
+Ordinary development supports isolated host pytest, including focused/serial investigation, without certifying authority. The root declaration is 10,000 unit and 1,000 integration cases (`pyproject.toml:320-321`). The earlier D226 4,000-to-5,000 epoch and L54's D299 5,000-to-6,000 raise are historical; the composed D460 unit-only raise leaves integration and guard behavior unchanged. A configured ceiling is not a collected or executed population. Distinct user-operation/failure/regression protection justifies cases; unused support and duplicate matrices are not restored for coverage. Coverage is diagnostic, production CRAP 20 is a review trigger, and Radon reports do not enforce acceptance. Lint, formatting, typing, structural rules, and test failures remain enforcing; diagnostic execution errors remain visible. Certifying claims require genuine pinned Dagger admission and the existing lifecycle publication owners, exact candidate/process identity, disposable state, and credential isolation. A copied report, host pass, sync result, or use of Dagger alone is insufficient.
 
 Finalization preserves landed reachability, carryover-before-cleanup, actual edit/ancestry protection, task work-branch scope, exact task-document resolution, and terminal blockers. Present `finalize.py` delegates document resolution/publication to `finalize_task_documents.py`; older private-owner locations are historical. The inherited master rule distinguishes completion from archival: abandoned rows do not block master completion, finalizing a master does not archive it, and explicit task retirement owns master archival. Cleanup excludes/discards only the computed memory ledger cache, preserves parent/source branches, and derives review-artifact deletion from the archived task's identity with physical confinement. Agent archival and review cleanup do not establish new historical knowledge.
 
@@ -586,7 +586,7 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - The batch blob reader. [272]
 - The task reopening tool on the registration surface. [285]
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
-- Historical D226 collected-case declaration: 5000 unit/1000 integration, superseded by the composed 6000/1000 declaration. The retained reference records that earlier policy epoch, not the current ceiling. [287]
+- Historical D226 collected-case declaration: 5000 unit/1000 integration, superseded first by the composed 6000/1000 declaration and then by D460's unit-only raise to 10,000/1,000. The retained reference records that earlier policy epoch, not the current ceiling. [287]
 - The lane row. [18]
 - The lane row. [28]
 - The lane row. [32]
@@ -612,7 +612,7 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
-- The composed declaration is 6000 unit and 1000 integration collected cases; declarations are not execution counts. [329]
+- The composed declaration is 10,000 unit and 1,000 integration collected cases; declarations are not execution counts. [329]
 
 - User alternatives select by manual/prior/threshold facts with no cross-scope choice carry. [330]
 

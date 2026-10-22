@@ -2,7 +2,7 @@
   "path": "mcp/test_support/agents_remember_test_support/code_quality",
   "references": {
     "1": {
-      "note": "Development commands, diagnostic metrics and isolation; the current policy document states 5,000/1,000 budgets.",
+      "note": "Development commands, diagnostic metrics and isolation; the current policy document states 10,000/1,000 budgets.",
       "targets": [
         {
           "anchor": {
@@ -78,7 +78,7 @@
       ]
     },
     "12": {
-      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "note": "The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged.",
       "targets": [
         {
           "anchor": {
@@ -216,12 +216,12 @@
         },
         {
           "anchor": {
-            "blob": "585869ba5261bc9389f65705da9120a72547e8dd",
+            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
             "content": "sha256:75269e93d2a941817ba14ab6e312139bef7451dc129b16e5e45f512721454678",
             "locator": {
-              "end": 327,
+              "end": 331,
               "kind": "line_range",
-              "start": 295
+              "start": 299
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -529,12 +529,12 @@
         },
         {
           "anchor": {
-            "blob": "22611db7ab69ea7703828f6cac7173f9b75fa1b8",
+            "blob": "68c82828e006330a6b208b39c50cf601fe33e196",
             "content": "sha256:ca0ba3c61f2c30f9e2eb61c29c37ab7e76c0384cf2c48824a19964705030991b",
             "locator": {
-              "end": 536,
+              "end": 546,
               "kind": "line_range",
-              "start": 523
+              "start": 533
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -649,11 +649,11 @@
       ]
     },
     "29": {
-      "note": "Root configuration declares the current 5,000/1,000 budgets.",
+      "note": "Root configuration declares the current 10,000/1,000 budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
             "locator": {
               "end": 279,
@@ -671,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "585869ba5261bc9389f65705da9120a72547e8dd",
+            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
             "content": "sha256:eba3c55cf4b81ad365144e350b08a71c116e8a889d16929011467149d0bb9d75",
             "locator": {
               "kind": "symbol",
@@ -688,7 +688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "585869ba5261bc9389f65705da9120a72547e8dd",
+            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
             "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
             "locator": {
               "kind": "symbol",

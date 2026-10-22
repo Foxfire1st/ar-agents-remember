@@ -1,0 +1,603 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L193",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0H33R6",
+      "items": [
+        "sha256:95d2da8a9b593e793edc003ef6b3cbc871a39ebf6a4010fc2c9cf02ad22340c2"
+      ],
+      "reason": "The D460 entry in the module's budget-surface comment, which names this leaf as the newest raiser and states the unit-lane move 6000 to 10000 with integration unchanged. It is the attribution the A2 repair added; INV-RBJQVS's proof carries the code obligation.",
+      "subject": "hunk:sha256:95d2da8a9b593e793edc003ef6b3cbc871a39ebf6a4010fc2c9cf02ad22340c2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2MN0QG",
+      "items": [
+        "sha256:dbe7ee138a48fc2a01ab5c51811a55e7ed459eefb3496be7f1425ec551fa568f"
+      ],
+      "reason": "The design route overview states the declared pair in its policy paragraph and in two reference lines; all three now read 10,000 unit and 1,000 integration with the 320-321 citation.",
+      "sources": [
+        {
+          "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+          "path": "docs/design/python-pytest-bootstrap.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4VBZ96",
+      "items": [
+        "sha256:5086e0646c2cfab27dd639b796569dac85ce8d7d9469389ca8ee599cdacc62da"
+      ],
+      "reason": "The contribution guide's budget sentence is a code statement of the policy (rule 3), and the repository keeps no card for that file; the root overview's route account carries no per-file budget fact, so no onboarding text depended on the 6000 wording.",
+      "sources": [
+        {
+          "blob": "66cdb7eb934b997506694ce9294209c403320f90",
+          "path": "CONTRIBUTING.md"
+        }
+      ],
+      "subject": "onboarding:CONTRIBUTING.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BVB4TN",
+      "items": [
+        "sha256:2880f95c153b33c0d20e3f5419fc0246c465ff4f16383749cc16a3c045c53ca4"
+      ],
+      "reason": "The route overview states the candidate declaration, the enforced pair and the declared budget in six places; each now reads the 10000/1000 pair with the 320-321 citation, and the older 6,000 and 5,000 pairs are marked historical.",
+      "sources": [
+        {
+          "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+          "path": "mcp/tests/test_memory_citation_agreement.py"
+        },
+        {
+          "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+          "path": "mcp/tests/test_suite_budget.py"
+        },
+        {
+          "blob": "a86a7adc9a850e0e4913976530bd22203c29b300",
+          "path": "mcp/tests/test_task_reopen_series_extension.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C0EGAA",
+      "items": [
+        "sha256:a17e81970450c363071371e969ea854dc19313df4b985cf5cb810e506ae5f2f4"
+      ],
+      "reason": "The card's ruled-constant statements now read 10,000/1,000.",
+      "sources": [
+        {
+          "blob": "a86a7adc9a850e0e4913976530bd22203c29b300",
+          "path": "mcp/tests/test_task_reopen_series_extension.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_reopen_series_extension.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R201",
+          "packet": "requirements/MIK-R201-v1-the-unit-case-budget-is-10000.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
+            "content": "sha256:fa24ac533b7e550e78735561607447b8b855e6ff0ba250b29d724e837b71403a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "id": "PRF-6B48QT"
+        },
+        {
+          "after": {
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-7NNT9Z"
+        },
+        {
+          "after": {
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "pyproject.toml"
+          },
+          "before": {
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "content": "sha256:24ec27d758db498068d6d9e1d079b1a2acc32caf4069d8ca2763ddf69b35f4b0",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "pyproject.toml"
+          },
+          "id": "RLZ-YH43T3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-CHNK07",
+      "items": [
+        "sha256:87c59346aa56cb43d79d79df473f05b95169458f6f8c8e067a0d1f020c98fb2e"
+      ],
+      "reason": "Statement restated for the declared unit rail of 10000 and applicability moved from the superseded 6000/1000 policy to the current 10000/1000 one. The realization on the unit line is re-anchored to pyproject.toml:320 against the candidate blob; the proof whose facet named 6000/1000 is removed and replaced by this entry's proof, which names 10000/1000.",
+      "revision": 3,
+      "subject": "INV-Q2VTFP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DT3W6C",
+      "items": [
+        "sha256:f584e726dfef217b2174b65e4896cb83c76306d9cc662fb00d3d0ee4c6383395"
+      ],
+      "reason": "A modification hunk in the same case, where the selector and the assertion were rewritten to the card's current opening words and to the declared pair. The invariant-bearing part of that change is carried by the INV-Z3DDAX row; this edit adds no further claim.",
+      "subject": "hunk:sha256:f584e726dfef217b2174b65e4896cb83c76306d9cc662fb00d3d0ee4c6383395"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R201",
+          "packet": "requirements/MIK-R201-v1-the-unit-case-budget-is-10000.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
+            "content": "sha256:fa24ac533b7e550e78735561607447b8b855e6ff0ba250b29d724e837b71403a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "id": "PRF-ARA2XN"
+        },
+        {
+          "after": {
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q5A79J"
+        },
+        {
+          "after": {
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 520
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": {
+            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
+            "content": "sha256:7c2028cbceeeb1711d152dcd15b0ceb341dd47368f48a8f2cb056cd24ed9d2fe",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "id": "RLZ-Z3MFC9"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-EAQ85R",
+      "items": [
+        "sha256:8e5baf28719aadc328a8d111c78784b44f516860a15b6929992c378fed556566"
+      ],
+      "reason": "The screen's statement named the 6000/1000 pair and is restated for 10000/1000; its realization moves to the declaration-pin case at its new extent and its rationale stops naming the superseded pair; the proof whose facet named 6000/1000 is replaced by this entry's proof.",
+      "revision": 3,
+      "subject": "INV-Z3DDAX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EESMXV",
+      "items": [
+        "sha256:d5561b5b25f2efc312ef28d1786f861d296ab5c88ebe955f36255d8374c1feba"
+      ],
+      "reason": "A deleted line of that case's assertions, the declaration-line check the pair assertion beside it replaced. A removal states no claim, so no invariant is realized by it; the surviving assertion is the proof INV-Z3DDAX carries.",
+      "subject": "hunk:sha256:d5561b5b25f2efc312ef28d1786f861d296ab5c88ebe955f36255d8374c1feba"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ETWVNK",
+      "items": [
+        "sha256:bd7680908c7dac9120f6d72fe36104a1ca83a6480aa47ee6cf48c3fa79c46031"
+      ],
+      "reason": "The design note's budget sentence is a code statement of the policy (rule 3) and the repository keeps no card for the file; the design route overview carries the policy account and was updated, so the file-level card needs no change.",
+      "sources": [
+        {
+          "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+          "path": "docs/design/python-pytest-bootstrap.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/python-pytest-bootstrap.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R201",
+          "packet": "requirements/MIK-R201-v1-the-unit-case-budget-is-10000.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a86a7adc9a850e0e4913976530bd22203c29b300",
+            "content": "sha256:2339248abd1341a806450d008527a393ea10dfa6cee82decb60383120897f1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesExtensionRouteTests.test_the_declared_case_rails_carry_the_developer_ruling"
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "before": {
+            "blob": "a5e6c224cb36a3d76aa05ef5581e69b146208aa5",
+            "content": "sha256:2339248abd1341a806450d008527a393ea10dfa6cee82decb60383120897f1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesExtensionRouteTests.test_the_declared_case_rails_carry_the_developer_ruling"
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "id": "PRF-RGEXBJ"
+        },
+        {
+          "after": {
+            "blob": "a86a7adc9a850e0e4913976530bd22203c29b300",
+            "content": "sha256:eb3c5c778f6f701545ba0a2f1a020c1207f9268ac88f1f42afac83fb1085dc87",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "before": {
+            "blob": "a5e6c224cb36a3d76aa05ef5581e69b146208aa5",
+            "content": "sha256:da302d89ffbddfe7726b172a6463633db3f65f4b522f8ea54b70e5c8abb549b8",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "id": "RLZ-PTRC2W"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-FBKZFM",
+      "items": [
+        "sha256:ed82259cdb383f71448075b395ae47769b491c036c4d8009d6b666eaa73404bf"
+      ],
+      "reason": "The ruled-rail statement named the 6000/1000 ruling and is restated for the ruling the code now carries, 10000/1000; the module's ruled constants moved down one line pair after the D460 naming line grew, so the realization is re-anchored and the proof is re-anchored unchanged. Evidence (INV-3NAQA6, INV-F0WP8H, INV-RBJQVS, INV-Z3DDAX — current statements and applicability: INV-RBJQVS): Full curation run of 2026-10-22 on the A2 PASS freeze (code tree 3ad46952f9cb155c27af02c0bd311eac7022a16a over 1ef442f478a118031599a90f9b547adca503d595): root pyproject.toml:320-321 read at that tree, six changed code statements read, curator-handoff-list-L193.json.",
+      "revision": 3,
+      "subject": "INV-RBJQVS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FYRWHK",
+      "items": [
+        "sha256:6d9003d8949d3c43ebfd7dfbf30365cdc8a74ccccecd02dab8c08c0dc8d10b8e"
+      ],
+      "reason": "The root overview states repository doctrine, not file facts: it carries no budget sentence, so the raise and the re-anchored references leave its text correct. pyproject.toml's own card carries the declaration and was updated.",
+      "sources": [
+        {
+          "blob": "66cdb7eb934b997506694ce9294209c403320f90",
+          "path": "CONTRIBUTING.md"
+        },
+        {
+          "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+          "path": "pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-3NAQA6",
+          "revision": 3
+        },
+        {
+          "id": "INV-F0WP8H",
+          "revision": 3
+        },
+        {
+          "id": "INV-Q2VTFP",
+          "revision": 3
+        },
+        {
+          "id": "INV-RBJQVS",
+          "revision": 3
+        },
+        {
+          "id": "INV-Z3DDAX",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-G5482C",
+      "items": [
+        "sha256:6dd1e09e371d4b121c3365a016a4f3e70783b1aa2194603927f2f8f7fa2896e1"
+      ],
+      "reason": "The family guarantee named 6000 unit and 1000 integration; the five member screens and the declaration they follow now carry 10000/1000, so the guarantee is restated for the new pair. Every member was examined at its revision in this leaf and each member's own row records what changed. Routes stay at the repository root: every member realization still lies at the root file and under mcp/tests.",
+      "revision": 3,
+      "subject": "FAM-QH2SJV"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HXXM59",
+      "items": [
+        "sha256:e15666a479b029076456d29dc75793aff427229f43b47cfb1d27ee41a31b6934"
+      ],
+      "reason": "A modification hunk in the declaration-pin case, where the pinned pair moved from the old numbers to the declared 10000/1000. That number is what the INV-Q2VTFP and INV-3NAQA6 rows state, and this edit realizes nothing beyond them.",
+      "subject": "hunk:sha256:e15666a479b029076456d29dc75793aff427229f43b47cfb1d27ee41a31b6934"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HZ1FFF",
+      "items": [],
+      "reason": "The root file's card states the declaration itself: its budget sentence, its enforced-pair line and its dated declared-pair account now read 10000 and 1000 at pyproject.toml:320-321, with L54's 6000 raise kept as history.",
+      "sources": [
+        {
+          "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+          "path": "pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:pyproject.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P1Z54B",
+      "items": [
+        "sha256:8166c520715cc5ef477485567764d168f73b1c29c799a8c75d27a762dbc1e99b"
+      ],
+      "reason": "The card's stub-pair and root-declaration statements now read 10,000/1,000.",
+      "sources": [
+        {
+          "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+          "path": "mcp/tests/test_suite_budget.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_suite_budget.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PFC398",
+      "items": [
+        "sha256:49c5e40579c0205f821604c5f27b4a98225d8bc5b51c49a5d80559d66a3b82a4"
+      ],
+      "reason": "A modification hunk in the same case carrying the remaining line of that rewrite, the pair constant the case pins. No invariant is realized here that the INV-Q2VTFP row and its proof do not already carry.",
+      "subject": "hunk:sha256:49c5e40579c0205f821604c5f27b4a98225d8bc5b51c49a5d80559d66a3b82a4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PFYM5F",
+      "items": [
+        "sha256:946b1017d3fcd4976f1d8c62598dbc8a6c10e6d791522a445b4432bba4c52f0a"
+      ],
+      "reason": "An added paragraph of docstring prose inside this module's sentence-contract case: it records what that case reads from the card and why its expectation follows the card's own words. Prose only — it realizes no invariant, and the pair the case asserts is carried by the INV-Z3DDAX row and its proof.",
+      "subject": "hunk:sha256:946b1017d3fcd4976f1d8c62598dbc8a6c10e6d791522a445b4432bba4c52f0a"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R201",
+          "packet": "requirements/MIK-R201-v1-the-unit-case-budget-is-10000.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
+            "content": "sha256:fa24ac533b7e550e78735561607447b8b855e6ff0ba250b29d724e837b71403a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "id": "PRF-5NA23T"
+        },
+        {
+          "after": {
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-VXDJ0E"
+        },
+        {
+          "after": {
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "pyproject.toml"
+          },
+          "before": {
+            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 300
+            },
+            "path": "pyproject.toml"
+          },
+          "id": "RLZ-WMQ90H"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-R1R0K9",
+      "items": [
+        "sha256:2b397680b72900e88b60e34a69eb1ff3cb24d39463c98bbecde7925ea02a2711"
+      ],
+      "reason": "Its statement (integration_case_budget = 1000) is unchanged by the raise, but its applicability named the superseded 6000/1000 policy, so it is clarified to the current pair. The realization on the integration line is re-anchored to pyproject.toml:321; the proof whose facet named 6000/1000 is replaced by this entry's proof.",
+      "revision": 3,
+      "subject": "INV-3NAQA6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R5PENR",
+      "items": [
+        "sha256:4f3912bee3de0a1e9108483177b58cef92ebef1a1194e4c3da2ea543b691b78a"
+      ],
+      "reason": "The card's declaration-pin account now reads 10,000/1,000 and cites pyproject.toml:320-321.",
+      "sources": [
+        {
+          "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+          "path": "mcp/tests/test_memory_citation_agreement.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_citation_agreement.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R91NR2",
+      "items": [
+        "sha256:eefedcf4e8444dc9c94294acd0e5ca494bc9ac656a5a4dd0dc5660ee05c34e58"
+      ],
+      "reason": "One docstring line in test_suite_budget.py whose example number follows the raise from 6000 to 10000, matching STUB_UNIT's own change in the same diff. The enforced behaviour is unchanged and INV-F0WP8H's proof of the stub pair is the obligation; the example sentence realizes nothing.",
+      "subject": "hunk:sha256:eefedcf4e8444dc9c94294acd0e5ca494bc9ac656a5a4dd0dc5660ee05c34e58"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R201",
+          "packet": "requirements/MIK-R201-v1-the-unit-case-budget-is-10000.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stub_matches_the_declared_pair"
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "before": {
+            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stub_matches_the_declared_pair"
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "id": "PRF-W4G24B"
+        },
+        {
+          "after": {
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "content": "sha256:faeb2c1d676d3d096f64e06b9fb3b426b83e637f72e3be180a1de767227311b3",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "before": {
+            "blob": "7bfd5c11a6905d21246ba66d7a28cf0e9d07d6f0",
+            "content": "sha256:675247c2622a56b27d6edb697a411b8f3ab61aba9522d1307391c7bc2797051f",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "id": "RLZ-40PJ49"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-VNACBC",
+      "items": [
+        "sha256:f5decb5bcd2d8e507f8182251367bd6483477e364685a9cc09695dafef9330f7"
+      ],
+      "reason": "The screen's statement named the 6000/1000 pair and is restated for 10000/1000; its realization on the stub constants moves with the file and its rationale now names the new pair; the proof still demonstrates the same equality and is re-anchored unchanged. Evidence (INV-3NAQA6, INV-F0WP8H, INV-RBJQVS, INV-Z3DDAX — current statements and applicability: INV-F0WP8H): Full curation run of 2026-10-22 on the A2 PASS freeze (code tree 3ad46952f9cb155c27af02c0bd311eac7022a16a over 1ef442f478a118031599a90f9b547adca503d595): root pyproject.toml:320-321 read at that tree, six changed code statements read, curator-handoff-list-L193.json.",
+      "revision": 3,
+      "subject": "INV-F0WP8H"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

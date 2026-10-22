@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+    "content": "sha256:c7a67a9dbde4f4dfa0b4336a498387fda043bb5c339047cf6a085308f0235304",
+    "locator": {
+      "kind": "symbol",
+      "name": "BudgetAgreementTests.test_the_superseded_pair_population_is_derived_from_the_tree"
+    },
+    "path": "mcp/tests/test_memory_citation_agreement.py"
+  },
+  "id": "WKN-TZWM2C",
+  "kind": "debt",
+  "measurement": {
+    "commit": "1ef442f478a118031599a90f9b547adca503d595",
+    "date": "2026-10-22",
+    "how": "pytest mcp/tests/test_memory_citation_agreement.py with AR_ONBOARDING_ROOT at memory 7989adc6: 4 failed, 22 passed, three of the four failing identically on base code 1ef442f47 (superseded-pair population derived 10, pinned 53; qualified Update History heading found none, pinned mcp/tests/overview.md:4833; live-sites pin list)",
+    "number": 3,
+    "unit": "failing cases"
+  },
+  "origin": {
+    "handoff": {
+      "path": "v4_weakness.json"
+    },
+    "handoffEntry": "citation-agreement-live-pins",
+    "leaf": "260928-MIK-L193",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L193"
+  },
+  "state": "open",
+  "statement": "Three live memory pins in the citation-agreement module are stale against the current memory tree and fail whenever AR_ONBOARDING_ROOT names it, so every live run of that module reports three failures that no change in the tree can clear."
+}

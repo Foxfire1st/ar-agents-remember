@@ -48,7 +48,7 @@ Repository-owned design descriptions live in `docs/design/python-evidence-system
 - Production coverage is diagnostic and CRAP20 is a review trigger. Lint, typing, structural rules, real test failures and malformed diagnostic inputs remain enforcing.
 - The retired causal/retry route-evidence and route-measurement machinery must not be restored as a duplicate measurement path, and removed tests must not be treated as current protection.
 
-Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:298-299` are `unit_case_budget = 5000` and `integration_case_budget = 1000`; D226 raises the unit ceiling from 4000 without changing integration or guard behavior. Readers must re-read that owner when the limits change.
+Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:320-321` are `unit_case_budget = 10000` and `integration_case_budget = 1000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and only the unit ceiling moved, with integration and guard behavior unchanged. Readers must re-read that owner when the limits change.
 
 ## File-Level Onboarding Map
 
@@ -58,7 +58,7 @@ File-level onboarding is intended to cover every current Python source below thi
 
 - Canonical POSIX-string sorting retains duplicate path entries. [2]
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [3]
+- The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [3]
 
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]

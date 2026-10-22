@@ -143,12 +143,12 @@ with a 1000/250 screen before that raise, and a matching 3000/600 pair after it;
 interface rather than literal-only source syntax addressed the named-constant reader defect.
 That dated account is not a general guarantee for every later raise or landing order.
 
-With the current ruled constants 6000/1000, the agreement method compares the declaration tuple
+With the current ruled constants 10,000/1,000, the agreement method compares the declaration tuple
 lexicographically with that ruled tuple. At or above it, the screen must equal the declaration.
 Below it, the screen must equal the fixed 1000/250 legacy pair and differ from the declaration.
 A synchronized 4000/1000 or 3000/600 pair thus enters the legacy branch and fails; the method does
 not accept every intermediate matched pair. The separate ruling method skips when either
-individual declaration is below its ruled value, otherwise requires exactly 6000/1000. Its skip
+individual declaration is below its ruled value, otherwise requires exactly 10,000/1,000. Its skip
 does not skip or qualify the agreement method. These are current assertion boundaries, not
 proof of arbitrary mixed-state publication or a whole-suite compatibility claim. [17] [18] [19]
 
@@ -177,7 +177,7 @@ proof of arbitrary mixed-state publication or a whole-suite compatibility claim.
   check is what makes that true for this module. Deleting the check, or skipping it together with the
   route, is outside what any in-repo case can prevent and is recorded as such rather than presented
   as proof.
-- The two budget figures inside the module — the ruled 6000/1000 constants and the pre-raise 1000/250
+- The two budget figures inside the module — the ruled 10,000/1,000 constants and the pre-raise 1000/250
   pair — are **this module's declared inputs and the ruling's values**, never a second copy of the
   repository's ceilings: the ceilings themselves are read from `pyproject.toml` at run time. Do not
   restate either pair here; read them there.
@@ -262,4 +262,4 @@ No cross-repository claim is made.
 
 - The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result. [26]
 
-- The current root declaration is6000unit/1000integration; the conditional ruling/screen assertions use the corresponding current threshold. [25]
+- The current root declaration is 10,000 unit/1,000 integration; the conditional ruling/screen assertions use the corresponding current threshold. [25]

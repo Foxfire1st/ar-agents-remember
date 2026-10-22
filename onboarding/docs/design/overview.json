@@ -176,16 +176,16 @@
       ]
     },
     "27": {
-      "note": "The current collected-case declaration is6000unit/1000integration; this is policy, not a collected or executed population.",
+      "note": "The current collected-case declaration is 10,000 unit/1,000 integration; this is policy, not a collected or executed population.\n\nAnchor: `unit_case_budget`",
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
-            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
             "locator": {
-              "end": 300,
+              "end": 321,
               "kind": "line_range",
-              "start": 299
+              "start": 320
             },
             "path": "pyproject.toml"
           },
@@ -287,14 +287,14 @@
       ]
     },
     "30": {
-      "note": "The bootstrap policy and current root declarations agree on6000unit/1000integration; host-versus-certifying evidence remains separate.",
+      "note": "The bootstrap policy and current root declarations agree on 10,000 unit/1,000 integration; host-versus-certifying evidence remains separate.\n\nAnchor: `# Python test policy and commands`; `unit_case_budget`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf1a1fc036d1d9cf2b7ded5184097aaf78616792",
-            "content": "sha256:0a66ddeff8bd159bc623fbe5bf83ae0ea91707dd8e73a056e7cd4f989f8f9b40",
+            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+            "content": "sha256:5546e42c633d481fa5a76d1abd807d52254893801c9d59b9e082450ad123bf2f",
             "locator": {
-              "end": 13,
+              "end": 14,
               "kind": "line_range",
               "start": 1
             },
@@ -304,12 +304,12 @@
         },
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
-            "content": "sha256:c2fab1dfc67fea847e424402e7a10e7de50462b8d521d5f1b19c6d999eb8e446",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
             "locator": {
-              "end": 300,
+              "end": 321,
               "kind": "line_range",
-              "start": 299
+              "start": 320
             },
             "path": "pyproject.toml"
           },
@@ -444,7 +444,7 @@
         },
         {
           "anchor": {
-            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
@@ -515,7 +515,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf1a1fc036d1d9cf2b7ded5184097aaf78616792",
+            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
             "content": "sha256:b09ffb5d4dc406d5da95535a47409d0b7b687f973669afecb344fa6d195387bf",
             "locator": {
               "end": 24,

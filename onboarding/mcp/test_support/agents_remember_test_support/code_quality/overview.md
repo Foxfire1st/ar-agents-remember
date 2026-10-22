@@ -56,7 +56,7 @@ Do not reconstruct the deleted host diagnostic analyzer/manifest machinery to pe
 
 Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run by default. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. These commands require a Git checkout because population enumeration uses tracked files.
 
-The root configuration and current test-policy document both declare 5,000 unit and 1,000 integration parametrized collected cases. D226 raises only the unit ceiling from 4,000; integration and guard behavior are unchanged. The earlier 1,000/150-versus-4,000/1,000 discrepancy remains a historical source-pair observation, not a present disagreement. Preserve the standing requirement to extend or consolidate distinct behavior protection before adding cases, and to justify budget growth explicitly. Do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+The root configuration and current test-policy document both declare 10,000 unit and 1,000 integration parametrized collected cases. The unit ceiling has been raised three times since D226's 4,000 — to 5,000, to 6,000 by L54 and to 10,000 by L193's D460 — and only the unit ceiling moved; integration and guard behavior are unchanged. The earlier 1,000/150-versus-4,000/1,000 discrepancy remains a historical source-pair observation, not a present disagreement. Preserve the standing requirement to extend or consolidate distinct behavior protection before adding cases, and to justify budget growth explicitly. Do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-production coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -78,9 +78,9 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 
 
-- The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged. [12]
+- The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [12]
 
-- Development commands, diagnostic metrics and isolation; the current policy document states 5,000/1,000 budgets. [1]
+- Development commands, diagnostic metrics and isolation; the current policy document states 10,000/1,000 budgets. [1]
 - Certifying publication and accepting consumers. [2]
 - Exact contract scope, the full check and curator worklist publication, including the informational without-proof list. [10]
 - Interactive catalog names missing authority without eligibility. [11]
@@ -98,7 +98,7 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 - Retry artifacts retain admitted identity, digest checks and passing-delta merge ownership. [26]
 - Child environments remove outer invocation controls through the executing caller. [27]
 - Missing causal authority fails preflight without suppressing the selected population. [28]
-- Root configuration declares the current 5,000/1,000 budgets. [29]
+- Root configuration declares the current 10,000/1,000 budgets. [29]
 
 - Projection generation validates schema vocabulary and exact supplemental definitions. [18]
 - Helper test imports, source figures, historical Git pin and conditional record availability. [25]

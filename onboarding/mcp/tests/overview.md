@@ -89,7 +89,7 @@ The five-file landing repair changes fixture admission and assertion carriers, n
 
 Three plugins are registered: pytest bootstrap, evidence lanes and database retirement. The latter is intended to catch production database access/file mutation outside its named allowed modules. `--certify` takes a separate genuine-Dagger admission path; ordinary test bootstrap supplies no lifecycle-worker or Dagger capability. The source policy distinguishes ordinary development feedback from immutable candidate-bound evidence issued by the pinned delivery graph and existing lifecycle owners.
 
-The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares6,000unit and1,000integration cases (`pyproject.toml:299-300`), with L54’s D299 unit-only5000to6000raise following the earlier D2264000to5000epoch. The guard and integration limit remain unchanged. The current Python test-policy design note agrees on6,000/1,000; older5,000/1,000and1,000/150accounts remain historical rather than live limits. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
+The root `pyproject.toml` owns test paths, default selection, four-worker file distribution, strict markers/configuration and collected-case budgets. The current candidate declares 10,000 unit and 1,000 integration cases (`pyproject.toml:320-321`), with L193's D460 unit-only 6000-to-10000 raise following L54’s D299 5000-to-6000 raise and the earlier D226 4000-to-5000 epoch. The guard and integration limit remain unchanged. The current Python test-policy design note agrees on 10,000/1,000; older 6,000/1,000, 5,000/1,000 and 1,000/150 accounts remain historical rather than live limits. This is source agreement, not fresh collection or execution. File distribution and collection refusal behavior remain their existing owners’ contracts.
 
 `test-evidence-lanes.toml` assigns the explicit base lane of every durable test module. The lane loader derives the repository test population and refuses missing/stale members, invalid categories, noncanonical lists and invalid overrides. Collection requires a Git checkout through that dependency discovery. Membership classifies selection, cost and fidelity; it is not execution or acceptance. Derive populations from the manifest instead of pinning counts in this overview.
 
@@ -183,7 +183,7 @@ Recorded-meaning regression uses `compose_review` over converted trees, exact ow
 
 `paseo_launch_test_support` owns the shared hand-written stateful runtime/catalog and fixture-derived dispatch expectations. Launch and status test classes inherit that support; the document-chat read/tree classes inherit it through `StatusTestCase`, while the first-start preparation class has its separate `RoleToolsTestCase` base. Document-chat source cases assert one-census tree discovery, unknown versus empty, corruption isolation, repeated receipt-path reads and byte budgets. `test_paseo_status_bridge` composes the production Node listing script with a controlled daemon client; `test_paseo_frame` asserts settings-bound provision-command disclosure. Catalog ownership and source assertions are not live-host or executed acceptance proof.
 
-- The enforced collected-case pair is 6000 unit/1000 integration; the earlier 5000/1000 pair is historical. The unit-only policy raise leaves the guard and integration limit unchanged.
+- The enforced collected-case pair is 10,000 unit/1,000 integration; the earlier 6,000/1,000 and 5,000/1,000 pairs are historical. The unit-only policy raise leaves the guard and integration limit unchanged.
 
 ## Invariants And Boundaries
 
@@ -199,7 +199,7 @@ Keep fixtures honest about fake inspectors, synthetic profiles, hand-built paylo
 
 The preceding proposal's statement that it read a supplied 99,909-character card at its supplied HEAD is retained as a historical inspection record, not a description of this A012 pass or a fresh execution receipt. This reconciliation reads the complete assigned overview and inspects admitted A012 source/test assertions statically, distinguishing baseline HEAD from candidate bytes. It performs no tests, builds, lint, product imports, live host/network exercise, quality acceptance, sync or publication. Existing numbered references, targets and excluded metadata remain under parent custody; preservation does not certify their currentness.
 
-The MIK-R112 pre-repair inventory, four retired ambient lifecycle raisers, 450-line/432-entry manifest and later 480-line/462-entry correction are historical snapshots. The present manifest has changed again; use its contents rather than replacing one frozen overview count with another. The earlier executable 5,000/1,000 epoch superseded the preceding 4,000/1,000 pair and dated 150/200/250/400/600 integration and 1,000/1,100/1,250/1,500/2,300/3,000 unit ceilings. The composed candidate now declares 6,000/1,000 under the unit-only D299 change; the older limits remain historical. The bootstrap policy document's prior 1,000/150 wording is retained as a historical source discrepancy; the current document agrees with the configuration. Historical collected counts, validator PASS42, registry digest, mutation-kill claims, zero/first-coverage statements and delivery/closure narratives are not new acceptance.
+The MIK-R112 pre-repair inventory, four retired ambient lifecycle raisers, 450-line/432-entry manifest and later 480-line/462-entry correction are historical snapshots. The present manifest has changed again; use its contents rather than replacing one frozen overview count with another. The earlier executable 5,000/1,000 epoch superseded the preceding 4,000/1,000 pair and dated 150/200/250/400/600 integration and 1,000/1,100/1,250/1,500/2,300/3,000 unit ceilings. The composed candidate now declares 10,000/1,000 under the unit-only D460 change, after D299's 6,000/1,000; the older limits remain historical. The bootstrap policy document's prior 1,000/150 wording is retained as a historical source discrepancy; the current document agrees with the configuration. Historical collected counts, validator PASS42, registry digest, mutation-kill claims, zero/first-coverage statements and delivery/closure narratives are not new acceptance.
 
 The original assertion that exactly six test modules lacked cards is a historical onboarding inventory, not re-audited here. The reported absence of Domain Documentation in the resolved memory root is inherited and not newly verified; no external or sibling system granted authority in this inspection. Missing historical tests are not automatically lost files: the card names intentional reduction commit `d3610903`, but individual removal provenance and inaccessible old witnesses remain unadjudicated here. Present absence of the three former curator-authoring modules does not prove the claimed automatic catalog-row retirement rule; the current canonical writer explicitly leaves retirement decisions/manual row removal to an owner.
 
@@ -227,7 +227,7 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_user_settings_guard.py:50-154`; `mcp/tests/test_user_settings_guard.py:157-365`; `mcp/tests/test-evidence-lanes.toml:4-5`; `mcp/tests/test-evidence-lanes.toml:359-359`.
 
-- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The current configured collected-case budgets are 6000 unit/1000 integration; the earlier 5000/1000 pair is historical. Neither source assertion nor policy declaration is execution evidence.
+- Candidate successor, changed-target/no-successor and unrelated-supersedes controls protect the boundary. The current configured collected-case budgets are 10,000 unit/1,000 integration; the earlier 6,000/1,000 and 5,000/1,000 pairs are historical. Neither source assertion nor policy declaration is execution evidence.
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/tests/test_reconsideration_surfacing.py:1180-1223`; `pyproject.toml:75-80`; `pyproject.toml:278-299`.
 
@@ -753,7 +753,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 - **Retained historical source account — superseded by the current route account:** Shared outline/change facts keep one definition [1713]
 
 
-- Candidate successor, unchanged/no-successor and unrelated-candidate controls remain source-defined assertions. The current collected-case declaration is6000unit/1000integration under L54D299, with unchanged guard/integration policy;5000/1000and the former1223line file account remain historical, not current or newly executed. [1714]
+- Candidate successor, unchanged/no-successor and unrelated-candidate controls remain source-defined assertions. The current collected-case declaration is 10,000 unit/1,000 integration under L193's D460, with unchanged guard/integration policy; the 6,000/1,000 and 5,000/1,000 pairs and the former 1223-line file account remain historical, not current or newly executed. [1714]
 
 
 - **Retained historical source account — superseded by the current route account:** The default options select the unit population and four workers. [1]
@@ -796,7 +796,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 - **Retained historical source account — superseded by the current route account:** Recorded-meaning regression uses compose_review over converted trees, exact owner/attempt selection, outline and continuation equality, portable L37 historical fixtures and retired/before-only UUID witnesses. [1715]
 
 
-- The current repository-root collected-case declarations are6000unit/1000integration; earlier5000/1000is preserved as a historical source epoch, not the current limit. [2]
+- The current repository-root collected-case declarations are 10,000 unit/1,000 integration; the earlier 6,000/1,000 and 5,000/1,000 pairs are preserved as historical source epochs, not the current limit. [2]
 
 
 
@@ -843,7 +843,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 - The finite STOP-delta ports assertion carriers, not production behavior: direct whole retirement results are distinguished from adapter logs; exact returned refusal/no-write controls remain; reference-owned long wording leaves compact registration; full wait-reply content replaces the obsolete fifty-character cut; the start shaped row is bounded at600; three existing completion waits use the shared named-condition helper; and fifteen catalog rows add consumers only. Both preview-driver fixes retain the two architect-qualified tip count-key parity failures assigned to L113. This is a source account of the qualified attempt14 input, not a fresh test run, full-suite green or current MEMORY acceptance. [1734]
 
 
-- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. The incoming5000/1000 design-note agreement is historical; the composed candidate and current design note declare6000/1000, while the earlier1000/150 discrepancy remains historical. The current declaration is separately supported below. [1718]
+- Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence. The incoming5000/1000 design-note agreement is historical; the composed candidate and current design note declare 10,000/1,000, while the earlier 6,000/1,000 and 1,000/150 accounts remain historical. The current declaration is separately supported below. [1718]
 
 
 
@@ -863,7 +863,7 @@ The review-evidence and frame contracts are measured by `test_review_evidence_pa
 
 
 
-- The declared collected-case budget is 6000 unit and1000 integration. [1768]
+- The declared collected-case budget is 10,000 unit and 1,000 integration. [1768]
 - The current reconsideration module imports extracted configuration support and its current fixture owners. [1769]
 - The changed-row refusal supplies the real gate worklist. [1770]
 - The relabelled changed-row control preserves its revision-refusal assertion with the admitted worklist. [1771]

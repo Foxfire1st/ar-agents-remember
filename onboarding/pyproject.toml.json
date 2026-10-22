@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+        "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
         "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
         "locator": {
-          "end": 300,
+          "end": 321,
           "kind": "line_range",
-          "start": 300
+          "start": 321
         }
       },
       "id": "RLZ-WMQ90H",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R146@v1 rule 1 — integration declaration",
         "leaf": "260928-MIK-L146"
       },
-      "rationale": "The paired rail the requirement explicitly excludes from the raise; it must read 1000 beside the moved unit line.",
+      "rationale": "The paired rail the raise leaves untouched; it must read 1000 beside the moved unit line.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
-        "content": "sha256:24ec27d758db498068d6d9e1d079b1a2acc32caf4069d8ca2763ddf69b35f4b0",
+        "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+        "content": "sha256:491f64c08426768394069607b3be0fb9b7d786a7920b9f6f8f01cd6b8d1cf425",
         "locator": {
-          "end": 299,
+          "end": 320,
           "kind": "line_range",
-          "start": 299
+          "start": 320
         }
       },
       "id": "RLZ-YH43T3",
@@ -36,7 +36,7 @@
         "handoffEntry": "MIK-R146@v1 rule 1 — unit declaration",
         "leaf": "260928-MIK-L146"
       },
-      "rationale": "This line is the single declared unit rail the guard enforces; the leaf's whole purpose is this number.",
+      "rationale": "This line is the single declared unit rail the guard enforces; D460's raise moved it to 10000 and the dated tradeoff block above it records why.",
       "role": "primary-authority"
     }
   ],
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:2792983e259ca96490c0a14b7760063dfb856f7574c85e87d1368bc18df2c9ed",
             "locator": {
               "end": 42,
@@ -63,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
               "end": 121,
@@ -75,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:81b16cca85b0b25e4e7e136558f566f01f0171aafbc8a615cab157dbcc6ef180",
             "locator": {
               "end": 250,
@@ -99,12 +99,12 @@
         },
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:dd5577851fe3fe9c37895c6012bac452dccdd62d9ae4ee4be581195e6f85d39d",
             "locator": {
-              "end": 332,
+              "end": 353,
               "kind": "line_range",
-              "start": 325
+              "start": 346
             }
           },
           "kind": "code"
@@ -112,7 +112,7 @@
       ]
     },
     "11": {
-      "note": "The enforced collected-case pair is6000unit/1000integration under L54D299; earlier5000/1000is historical, and the unchanged collection guard retains its own authority.",
+      "note": "The enforced collected-case pair is 10,000 unit/1,000 integration under L193's D460; the earlier 6,000/1,000 and 5,000/1,000 pairs are historical, and the unchanged collection guard retains its own authority.",
       "targets": [
         {
           "anchor": {
@@ -133,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:54226af6623b38088f837a8849f191ef0a6bc0cc939457fe4c3b356422afd788",
             "locator": {
               "end": 67,
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:a84fa19603d69cd6ae0f321ee068a5a6f2958752833cc5b1e2b3f2366990959c",
             "locator": {
               "end": 88,
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:1f442416c90f39b61a1a4bb12cf74370eb23b32e31060fec454ec836aa198973",
             "locator": {
               "end": 119,
@@ -184,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:8676e641465a6551e9e9cffd7faa1e6a42f9b724809813c903d7edcb52f3006f",
             "locator": {
               "end": 121,
@@ -197,7 +197,7 @@
       ]
     },
     "6": {
-      "note": "**The declared budget pair as the file now declares it — `unit_case_budget` 6000 / `integration_case_budget` 1000, the latest unit ceiling raised from5000by L54’s D299 direction, following the earlier D2264000to5000raise; the integration ceiling remains unchanged. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here.",
+      "note": "**The declared budget pair as the file now declares it — `unit_case_budget` 10000 / `integration_case_budget` 1000, the latest unit ceiling raised from 6000 to 10000 by L193's D460 direction, following L54’s D299 raise from 5000 and the earlier D226 4000-to-5000 raise; the integration ceiling remains unchanged. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here.",
       "targets": [
         {
           "anchor": {
@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:3c474735527fc75e1b5d70fe5af5f6575b5f9ed4cfce0e11f930dd6eeb1978d8",
             "locator": {
               "end": 202,
@@ -233,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:48767497e5fb0fa14513f5c759a89e3fd2492913705a6b01f3e3304c6e9f352f",
             "locator": {
               "end": 243,
@@ -250,12 +250,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af953e99eac7b81b2df5e99c648d3a83eab4bca1",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:d5bb04ae02b170c0f8e9b8906f1cc58f832a292ddc281709514a9062a0f86314",
             "locator": {
-              "end": 352,
+              "end": 373,
               "kind": "line_range",
-              "start": 352
+              "start": 373
             }
           },
           "kind": "code"
