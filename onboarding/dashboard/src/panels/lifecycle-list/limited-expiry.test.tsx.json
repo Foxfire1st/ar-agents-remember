@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/limited-expiry.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3ef7bc26e2a0f54fa8739d5323625ef895570deb",
+        "content": "sha256:97d035690fb2dcd7a779bbc6a5c9fcaf721268ab28961298c822145cf451f89d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WT4ZKW",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The expiry transition is the row's own behaviour, and this case drives it through that row's clock.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

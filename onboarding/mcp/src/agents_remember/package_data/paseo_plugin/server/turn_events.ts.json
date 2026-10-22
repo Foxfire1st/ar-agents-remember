@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+        "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
         "content": "sha256:0c52c951e3456426838b275bda41d71b489fd39594c60f82d8d57d538c6d0aa1",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
-        "content": "sha256:5301219f556446849046276f1002e92ced196a848d6e2c8854ae2618a2efb78c",
+        "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+        "content": "sha256:7260a5e019c29e6b21c2b3a53ff8165de8e12aaa708aeb7d4751083c623832ff",
         "locator": {
           "kind": "symbol",
           "name": "registerParentWakeEvents"
@@ -39,7 +39,24 @@
     },
     {
       "anchor": {
-        "blob": "1edfbbd1d56bdc07855999b8bb32d3edfce59189",
+        "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+        "content": "sha256:3ba0f0fe2d258d10aa88bcc879a80a673db2297f7c5c8f0e98b3153c53b69398",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-55H239",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Event handling is where the cost bound is kept, so the skip belongs here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
         "content": "sha256:3a81f54404a2eb7a0d1f1c86bdd394d1be61542af325e73076ffeaba09f38421",
         "locator": {
           "kind": "symbol",

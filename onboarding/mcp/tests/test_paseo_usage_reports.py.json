@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_paseo_usage_reports.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b60a4a6909a97caf890a06869709051fa4313710",
+        "content": "sha256:93de4e9b202e275edcdd31a90a0b7b2fd251a8cee22f9e7d5ab2d249901193ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q4595S",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "INV-4T6KSE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The report reader is held by these cases, which is where a shape change would surface.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

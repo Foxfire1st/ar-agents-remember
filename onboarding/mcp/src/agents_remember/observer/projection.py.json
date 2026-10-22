@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
-        "content": "sha256:b14f475c8895f5a8e8151c6d973529c14c76d661c59af8d03d9f3b389e70a1d0",
+        "blob": "32743e9637903b257d178ee9569bf60859501377",
+        "content": "sha256:a5752eecfc765a330b558c31d746226a6240ccce4d79a3fd47297da2789cbf76",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,23 @@
       },
       "rationale": "The wire schema defines the sole task entry/count surface and omits retired duplicate collections.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "32743e9637903b257d178ee9569bf60859501377",
+        "content": "sha256:a5752eecfc765a330b558c31d746226a6240ccce4d79a3fd47297da2789cbf76",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SYM996",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The observer's projection is what the dashboard receives, so the fact's presence is decided here.",
+      "role": "enforcement"
     }
   ],
   "references": {

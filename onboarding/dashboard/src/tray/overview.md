@@ -32,6 +32,8 @@ Collection controls preserve selection and ordinary copy. Highlight alone never 
 
 The tray neither navigates the host chat nor creates a role. Native origin/window trust, parser validation and bridge teardown remain the frame owners' duties. The pinned chat DOM adapter reads the selected row's recorded time and names a broken read; it does not fabricate a timestamp or page the timeline. Later asynchronous held loss is represented by the filed message and log, without automatic restoration of browser picks.
 
+**L184.** The tray's send result says held · rate limited with the time left in one compact unit, and the full view adds the exact reset with date and zone.
+
 ## Evidence
 
 - Collection admission, first-target choice and snapshot settlement [1]

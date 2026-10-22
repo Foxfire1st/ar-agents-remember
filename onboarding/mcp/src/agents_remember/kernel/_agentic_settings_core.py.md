@@ -40,6 +40,9 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 
 RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Legacy role launch/session fields remain accepted-unused; the independent tier/default facts here are not execution-argument authority. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `native_service_tier` normalizes user `fast` to `priority`, and `role_feature_values` compares the tier alias against `featureValues.service_tier` after merging. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
 
+
+**L184 — NEW-R192-EXTRA-ARGS.** Layering is decided in the core, so a new key's precedence is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 
 The module owns the `orchestration.qualityGate` family:

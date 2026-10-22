@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
+        "blob": "a27a32385550cd4ccb11100094f4bb8e3771d060",
         "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
         "locator": {
-          "end": 727,
+          "end": 927,
           "kind": "line_range",
-          "start": 712
+          "start": 912
         }
       },
       "id": "RLZ-DYXENX",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
-        "content": "sha256:610f715d3d20f0ff92f913254d1dfa3387a0b59016b261425c748a3105ec1b85",
+        "blob": "a27a32385550cd4ccb11100094f4bb8e3771d060",
+        "content": "sha256:2da4a8489ac0e2c818e8bf1b0a5221ca165ef39e41a883ed2965da4d850f4091",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
+        "blob": "a27a32385550cd4ccb11100094f4bb8e3771d060",
         "content": "sha256:c0c988e3a5aa7cfc196905181be4425b87e970b3cc912c7532f2829f9572c522",
         "locator": {
           "end": 54,
@@ -58,8 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "6f379d0f10cccd365a7cc76a93bcf9df0b47c52b",
-        "content": "sha256:610f715d3d20f0ff92f913254d1dfa3387a0b59016b261425c748a3105ec1b85",
+        "blob": "a27a32385550cd4ccb11100094f4bb8e3771d060",
+        "content": "sha256:2da4a8489ac0e2c818e8bf1b0a5221ca165ef39e41a883ed2965da4d850f4091",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZH0BJB",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This reference documents the extra-argument keys, where they are allowed and what a role entry set to false removes: presentation and support of the documented key. The runtime enforcement stays with the settings parser, the defaults assembly and the launch plan, which are separate links.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a27a32385550cd4ccb11100094f4bb8e3771d060",
+        "content": "sha256:2da4a8489ac0e2c818e8bf1b0a5221ca165ef39e41a883ed2965da4d850f4091",
         "locator": {
           "kind": "file"
         }

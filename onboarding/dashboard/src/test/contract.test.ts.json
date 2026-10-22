@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/test/contract.test.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3c823c8e55970e0c0b7c46747c492541b610c693",
+        "content": "sha256:e8154493f7b2acb9ddf93c5f22c6f79a2caf5f3607da4421ae0d7e66eef7f592",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-78S7A2",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "A hand-maintained sample guard: it reaches the rows it samples, their assignability and the vocabulary they happen to cover. Exhaustive producer/client schema parity belongs to the code generator and its stale-output check, so this case is sample reach, not schema equality.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain.",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "128bd96d97f674c0dc0508f766424159f7489418",
+        "blob": "61d4f481e3ba6249ed57a34960988f5602893271",
         "content": "sha256:a6b07b45c63823bf9788ef74b4aecc45883351cfa7eb3ddf4fb9d39e650f5d15",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "128bd96d97f674c0dc0508f766424159f7489418",
-        "content": "sha256:541866508eb5aaab01e63f9a9a359c845064db140dd95972551fa7381a98e3ef",
+        "blob": "61d4f481e3ba6249ed57a34960988f5602893271",
+        "content": "sha256:65feb6be41d28d0ef1704a4b799fda4e1b6d93b50c2da6b07abed6f627bdf003",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityInput"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "128bd96d97f674c0dc0508f766424159f7489418",
-        "content": "sha256:8e36b5a5f73eaa5dfa768b8386c86ca5d15a2e83e41252ec500ceb3e5599c407",
+        "blob": "61d4f481e3ba6249ed57a34960988f5602893271",
+        "content": "sha256:cd6884e70f791efa0a595ae5119772d23ec8e3e14ec4a95fbe2e53fdd8f98aa5",
         "locator": {
           "kind": "symbol",
           "name": "turn_ended_agents"
@@ -54,6 +54,23 @@
       },
       "rationale": "It reads the host's own activity publication and answers which agents have just ended a turn - the observation this rule rests on rather than the sending call's reply.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "61d4f481e3ba6249ed57a34960988f5602893271",
+        "content": "sha256:dc21fb57cda993d0164cddf0d314c2fd02dbd17991cf30554ef4a12207f542a8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MZV75N",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This input is where an answer is accepted, so the ordering rule is realized here.",
+      "role": "enforcement"
     }
   ],
   "references": {

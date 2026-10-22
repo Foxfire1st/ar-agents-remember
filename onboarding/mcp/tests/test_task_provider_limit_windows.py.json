@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_task_provider_limit_windows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d543d4f2bb53081c5e6f5387abb846aa598d5c06",
+        "content": "sha256:bf384415b26db66e38d5de54b633db14965ca62a420ff3db3a29452193000a33",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4RE6ZR",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The task's own windows are computed here, so the earliest-reset rule is held by this case.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

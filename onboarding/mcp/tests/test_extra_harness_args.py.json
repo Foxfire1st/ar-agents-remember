@@ -1,0 +1,77 @@
+{
+  "path": "mcp/tests/test_extra_harness_args.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4a5a21cd4a07ad1879fc801c022610e5d70adee6",
+        "content": "sha256:38f2ce09980d2bdcb72cf8ff0077c0ad54ce002b37737d442b066bbd652d099b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_confined_capability_carries_no_extra_arguments"
+        }
+      },
+      "facet": "A confined capability receives none.",
+      "id": "PRF-0RACZM",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4a5a21cd4a07ad1879fc801c022610e5d70adee6",
+        "content": "sha256:3c0cafc95d33695950507e9c77c9cedacdb8eeab205793afa21a0d533d34a617",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_harness_role_and_per_level_entries_layer_key_by_key"
+        }
+      },
+      "facet": "The loader keeps each layer's role and per-level knobs and the harness entries with their provenance; the launch-plan overlay and false-removal is asserted by the launch-plan case, not here.",
+      "id": "PRF-YH0YD6",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ab7059e0540fea54c93990a232de5562eae07d8d",
+        "content": "sha256:fa97d87b624b946a1974ef2ed53ef8231c547ddd37022c4c537ec32d04bb8fcb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1KKN1K",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The plan's two ends are asserted here, which is where the early return is held.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ab7059e0540fea54c93990a232de5562eae07d8d",
+        "content": "sha256:fa97d87b624b946a1974ef2ed53ef8231c547ddd37022c4c537ec32d04bb8fcb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YMG564",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "These cases drive the host-map read through the injected callable, which is how the test knows no upward import is needed.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

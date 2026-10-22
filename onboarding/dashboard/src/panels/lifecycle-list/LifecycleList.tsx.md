@@ -52,6 +52,9 @@ TaskStatusWord uses one shared visible clock to advance published host-event age
 
 MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, because either is an ancestor of the step dots and the browser showed the nearest one over them. The row's hover text moved onto its own cells — id, title, repository, status word and the count figure — so the rest of the row keeps it, and the figure renders only when it has a value.
 
+
+**L184 — INV-7GVWYD.** This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text. [40]

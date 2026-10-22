@@ -14,7 +14,7 @@ Parses role/default and other agentic settings sections.
 
 ## Code Commentary
 
-`_parse_harnesses` returns the built-in ID prefix followed by settings-added IDs. Entries must remain objects with known legacy execution keys, but those fields are not read or validated as execution choices. `_parse_roles` likewise admits unused legacy launch/session keys without placing them in `RoleKnobs`. The host catalog validates actual launch choices later; neither retained vocabulary nor ignored input is a native adapter fallback.
+`_parse_harnesses` returns two parts: the effective harness IDs (the built-in ID prefix followed by settings-added IDs) and each harness's `extraArgs` entries, which are handed on beside the IDs rather than folded into them. Entries must remain objects with known legacy execution keys, but those fields are not read or validated as execution choices. `_parse_roles` likewise admits unused legacy launch/session keys without placing them in `RoleKnobs`, and it admits a role's `extraArgs` only where `_require_extra_args_place` allows it: never for a confined capability, and never for a named harness that takes no extra arguments in this build. The host catalog validates actual launch choices later; neither retained vocabulary nor ignored input is a native adapter fallback.
 
 L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
@@ -38,6 +38,9 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 ### Role Runtime and Scope
 
 _parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing. `_parse_roles` now also reads optional `mode`/`notes` text and a `featureValues` map of booleans or nonempty option ids into RoleKnobs, and harness ids are shape-checked free strings while catalog validation stays at launch; the `harness_ids` parameter is gone from `_parse_roles`/`_parse_roles_per_level`.
+
+
+**L184 — NEW-R192-EXTRA-ARGS.** The section definitions are the shape a settings file is read as, so the three-value rule is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## 260731-EFA-L17/L24 Quality-Gate Parser
 

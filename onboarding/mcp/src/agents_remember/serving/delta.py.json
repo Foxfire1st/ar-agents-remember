@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/serving/delta.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+        "content": "sha256:ef9c165e04c60cc7d9b06084168979ffae01161ca75c30d6169eb6e360aa7b7d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-03WZ47",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Deltas are the only update a client sees after the first read, so the fact's removal is realized here.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "WorkspaceProjection version 2 carries native tasks and taskCounts, unbound enclosures, providers, active worktree groups, optional closeout queues, metrics and analytics; each TaskEntry has a qualified key/reference and may own worktrees. Stable diff state keys tasks by entry.key, enclosures by enclosure and providers by id; counts, active groups, metrics and analytics use whole-value comparisons. There is no lifecycles collection in this schema.",

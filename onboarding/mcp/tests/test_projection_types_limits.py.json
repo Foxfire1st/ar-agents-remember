@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_projection_types_limits.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "109c9504f0b9b972a309cb40bd8ecdc7bd8e2bb8",
+        "content": "sha256:30562336da3c8b08bf3199beec8f18eeda59a75c6a421be5fa41a52b4d15931a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TSZNW3",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "INV-4T6KSE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This case pins the checker's behaviour over the new fact.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/limited-hover-detail.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "35488bea975bfa8db7e41a9d1ed0f5f4a982b89b",
+        "content": "sha256:ce06c14093109cbb2399d6c2f393aadc3c66106013c13afda8329a9892500428",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8E8DHK",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The hover is the place the full detail is shown, so the case that asserts its contents belongs beside it.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

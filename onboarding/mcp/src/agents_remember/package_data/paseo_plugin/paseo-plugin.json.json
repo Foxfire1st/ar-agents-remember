@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
-        "content": "sha256:3bf6c23b4d7dc165fad6922f210201f947d6ed82b9f9b0c3fbb32a3c3e0dff03",
+        "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
+        "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-M4624W",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "INV-0TCWT9",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The manifest is what the host reads at load, so the requested capabilities are stated here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
+        "content": "sha256:665afae75aabd2914a0a381e4dbc851ce145f7c1cb2a4334e6e1e32ec6d9d751",
         "locator": {
           "end": 5,
           "kind": "line_range",

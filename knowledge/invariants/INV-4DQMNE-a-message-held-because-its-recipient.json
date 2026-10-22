@@ -7,15 +7,18 @@
     ],
     "justification": "The tick, the activity-record reader, the held-receipt queue and the bounded sweep together replace a queue that waited for the next message; the turn-end cases witness the exact behaviour."
   },
-  "applicability": "Every native role message the product holds because its recipient could not take it.",
+  "applicability": "Every native role message the product holds because its recipient could not take it, whether the hold is a recipient's ended turn or a provider limit.",
   "conditions": [
     "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient's turn end.",
     "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
-    "The recipient is idle without an open permission at the moment of delivery."
+    "The recipient is idle without an open permission at the moment of delivery.",
+    "The one limit check reads the limit file before the send and holds a limited recipient's message with the reason and the reset time, also when the recipient is idle.",
+    "For a limited recipient the drain pauses with outcome provider-limit before any host read, and a recipient the publication shows ended gets one host read per ended stamp; a tick that finds an agent limited delivers nothing to it in that tick, and the first sweep after the reset delivers what waits, in order, within that sweep, the 30 s bound counting from the reset."
   ],
   "exclusions": [
     "No later message is needed or sent to trigger the delivery.",
-    "The parent wake line of the host plugin is MIK-R172's, not this clause's."
+    "The parent wake line of the host plugin is MIK-R172's, not this clause's.",
+    "The presenter's send is out of scope."
   ],
   "id": "INV-4DQMNE",
   "origin": {
@@ -29,9 +32,9 @@
     "leaf": "260928-MIK-L171",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A message held because its recipient could not take it is delivered when that recipient's turn ends, by the product's own tick with no further message sent, in bounded units that never build a per-tick census.",
+  "statement": "A message held because its recipient could not take it is delivered when that recipient's turn ends, by the product's own tick with no further message sent, in bounded units that never build a per-tick census. A recipient held by a provider limit waits for the reset instead, and the answer that names a reset is the provider-limit hold's: an ordinary hold names no reset it does not have.",
   "status": "proposed",
   "supersedes": []
 }

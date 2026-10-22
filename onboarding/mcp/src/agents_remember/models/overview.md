@@ -164,6 +164,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 `knowledge/review_evidence.py`, `knowledge/review_evidence_read.py` and `knowledge/review_frame.py` declare the packet, read-receipt and frame shapes the application owners return: comparison binding and collections, finite limits and measurements, supplemental receipts, claims and coverage, frame manifest and atomic pointer, drafts, reclamation receipts, and the opening, staleness and regeneration answers. Model validation establishes the declared shape and the consistency checks it implements; it observes no execution, truth or acceptance.
 
+**L184.** The role-message answer model gains the reset time a limited recipient's hold reports.
+
 ## Evidence
 
 - The packet shapes bind one comparison and refuse an inconsistent collection or coverage count. [325]

@@ -76,6 +76,9 @@ Lifecycle event dormancy/series-retention exemptions are removed, not relocated 
 
 The recurring projection path uses projected status plus the latest landing snapshot, while explicit interactive status retains fresh landing probing. This preserves operator freshness without making remote latency part of the one-second projection tick.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** This is the one writer of the projection files, so the JSON encoding is decided here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 - **Atomic writes:** every projection file is written tmp + `os.replace`; readers

@@ -38,6 +38,9 @@ Builds the exact saved native workspace/agent launch call and classifies its res
 
 RoleLaunch carries minted identity, canonical selection, actual folder/workspace and selected provider options. tool_server_definition uses this interpreter/source/settings and exact binding; recovery_note retains artifact path/digest within its bound. The saved call keeps first message as JSON data and native parent/mode/feature inputs: model, effort, mode and feature values go to the runtime at creation, and a Claude launch carries the narrow per-tool session grant for `server_info` on its own bound server. A reply is accepted only for the minted agent and expected server/workspace; unconfirmed replies remain retryable rather than reminting.
 
+
+**L184 — NEW-R192-EXTRA-ARGS.** The launch is where a plan becomes provider options, so the separation between taken and noted arguments is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Creation inputs and read grant
 
 `build_launch_call` writes `modeId` and `featureValues` into the agent creation payload so a first edit cannot race them, and adds a Claude-only `toolPolicy` preapproving exactly the `server_info` identity reads on the agent's own bound AR server. `_created_outcome` applies observed `mode`/`modeId` and feature values from the created agent beside model/effort/tier, and `applied_to_agent` reports the grant as `assignmentReadGrant` with its exact preapprovals.

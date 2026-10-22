@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin/shared/rpc.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b4db747860e6c1a437c1648844c82abe83b1295",
+        "content": "sha256:4b77214a9d86d9b4d03a1eeb8320313cf5b61e932a1eed12dd58ac2eec600b99",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H8E3JC",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The shared contract is what both sides are written against, so the number's type is stated here.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Embed-list and explicit host-snapshot transports have separate typed empty-input responses.\n\nAnchor: RPC definitions",

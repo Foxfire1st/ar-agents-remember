@@ -26,6 +26,9 @@ Daemon/status/stop reject sim/reload. Status probes dashboard, prints best-effor
 
 Parser defaults remain loopback host, config-driven port, interval1.0 and optional heartbeat, with sim/speed, no-access-log and mutually exclusive control flags. Loopback is a default, not authentication. Native role routes and archive services do not themselves accept/commit/finalize a task.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY, NEW-R192-RULE19-PORT.** The composition root wires the refresher, so the answer the consumer compares is taken here. This is the composition root: it binds the real bridge read to the port serving declares, which is where the one permitted crossing is made. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 Configuration identity, admitted watch/reference roots, read availability, delivery and semantic approval remain distinct. Recorded questions may be reused only through their owner rules and exact inputs; working-view reads stay fresh. Historical compiler/terminal/execution registration, port ordinals, latency and installed-version observations below are not current registration or fresh evidence.

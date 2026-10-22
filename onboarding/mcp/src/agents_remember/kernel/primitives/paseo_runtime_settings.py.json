@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
         "content": "sha256:e335ed108802ff7422da8f112732d81111f2ccf7f98c01bc930b6e90eb1d94b6",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
         "content": "sha256:2dc86c36bc38733f0e2ac8553e5f083054aa2458024906ca11b90629d9e7698e",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
         "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,24 @@
     },
     {
       "anchor": {
-        "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
+        "content": "sha256:cab565c0668ef60fae815dd1d5e8ca01a4971e4dd6c90f22aa2fabc30c27b1a3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PR4WNZ",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "L184-M1-F14-settings",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The settings parser refuses `extraArgs` in that provider's configured options and in every entry extending it, so the configured-argument boundary is enforced here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
         "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
         "locator": {
           "kind": "symbol",

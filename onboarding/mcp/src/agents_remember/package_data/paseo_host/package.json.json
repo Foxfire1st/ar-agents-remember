@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4483760e1b0d1b2411325b30e595827a9c02a631",
-        "content": "sha256:326b95ab1a9d6f8f848932a94c607a7c2b80876ffa034eb14be3f2cf7b7c9a8a",
+        "blob": "e490d6b6fb2033e2e9bf424df2745a6c0a8a4f1a",
+        "content": "sha256:ec94bf620b729311fe3a8a7475dc8c9ae407ef64a9262e233486380684781df0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RFH53Y",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "INV-JS6GJ7",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The package's own version is declared here and read by the pin checker.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e490d6b6fb2033e2e9bf424df2745a6c0a8a4f1a",
+        "content": "sha256:ce3dfb382f3734da210b8ac6cfbacd7757dfef51223684dabca78e24e361c668",
         "locator": {
           "end": 3,
           "kind": "line_range",

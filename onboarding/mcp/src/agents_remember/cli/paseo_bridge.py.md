@@ -12,6 +12,9 @@ Runs one bounded JavaScript bridge command and interprets its one JSON reply.
 
 bridge_call sends prompt/payload as stdin data and stops a process at 60 seconds. _bridge_environment removes inherited PASEO/AR_PASEO values, then supplies configured URL, home server ID, pin and deadline. Missing settings/identity refuse before process start; unreadable replies, replacement-decoded output and bounded fatal lines remain named failures.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY, corrected.** This is the dynamic reply adapter, not a typed one: `bridge_call` returns an unrestricted `dict[str, Any]` decoded from the bridge's JSON reply, so a field it does not describe is still carried instead of being refused, and no strict usage DTO is declared here. The Python branch is the configuration adapter; the bounded subprocess, environment, identity and deadline guarantees above stand. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Bounded bridge calls (MIK-R76)
 
 `bridge_call` takes an optional `timeout_seconds` that defaults to the existing

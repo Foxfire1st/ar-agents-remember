@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
-        "content": "sha256:054b6c12e0675a1ed31fc8320c8320605ab76746a6ac4978c1e87293fa12e9a9",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:3cb9a1a674c803aaf71a619b8549967574da6536250065de927d8f9580925af1",
         "locator": {
           "end": 260,
           "kind": "line_range",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 303,
+          "end": 312,
           "kind": "line_range",
-          "start": 267
+          "start": 276
         }
       },
       "id": "RLZ-28QBJB",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 303,
+          "end": 312,
           "kind": "line_range",
-          "start": 267
+          "start": 276
         }
       },
       "id": "RLZ-4ZVZXW",
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
         "locator": {
           "end": 119,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
         "locator": {
           "end": 79,
@@ -98,12 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
         "locator": {
-          "end": 260,
+          "end": 269,
           "kind": "line_range",
-          "start": 208
+          "start": 217
         }
       },
       "id": "RLZ-EDFDJW",
@@ -117,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
         "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
         "locator": {
-          "end": 303,
+          "end": 312,
           "kind": "line_range",
-          "start": 267
+          "start": 276
         }
       },
       "id": "RLZ-VSG7ME",
@@ -132,6 +132,23 @@
         "leaf": "260928-MIK-L162"
       },
       "rationale": "The same preview labels sprint units as masters and ordinary-master units as tasks, keeping the complete graph one action away without separate graph done counts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:6aeeb75936904e55d854a292ae182d3ea8d0f6af521b948bfe2072306f8eb244",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZSRZ9N",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This graph is one of the named places that show one task's word, so it carries the word's two forms.",
       "role": "presentation"
     }
   ],

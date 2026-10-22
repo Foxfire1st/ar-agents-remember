@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/cli/provider_limit_hold.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ca2484932254775bcae9f9764f77832864b1332",
+        "content": "sha256:119855ee9d4a36989a4f2b3b6e19a173cd7ce3b8500ca8a6c3f75fd9a312e58b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N27ZQQ",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The one limit check every hold consults is here, so the reason and the reset are decided in one place.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

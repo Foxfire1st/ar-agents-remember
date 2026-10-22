@@ -40,7 +40,7 @@ without requiring a fictitious ledger publication sample.
 **Three seams, named in the header.**
 cit:(["the server grows a field", "the mirror declares something the server never sends", "THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)
 
-ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned retain only projection.servingBuild as KnownUnsampled; heartbeat allowances are removed.
+ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned keep `KnownUnsampled` to the paths this guard genuinely cannot sample: `projection.servingBuild` and `projection.tasks[].providerLimit`; heartbeat allowances are removed. Exhaustive producer/client schema parity is the generator's and the stale-output check's, so this file is sample reach, assignability and sampled-vocabulary coverage, not schema equality.
 
 Derived open-map/closed-union Record registries now walk native entry stage/activity, list-disagreement kind, summary and bound operations. The disagreement registry names `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; sampled-path nonvacuity and legal values remain distinct from exhaustive producer enum membership. valuesAt fans arrays; historical registry key counts are not a current quota.
 
@@ -60,7 +60,7 @@ Structural guards are type-level; sample vocabulary assertions are runtime. The 
 
 ### Invariants And Boundaries
 
-Keep asServedProjection, derived Record registries, earned servingBuild-only residue and nonzero sample reach. Do not restore removed heartbeat allowances.
+Keep asServedProjection, derived Record registries, the two earned unsampled residues (`projection.servingBuild` and `projection.tasks[].providerLimit`) and nonzero sample reach. Do not restore removed heartbeat allowances.
 A vacuous check remains a failure: absorbing-node reach and each vocabulary loop require nonzero samples before membership/reason checks. Registry keys stay typed as derived Records rather than untyped lists.
 
 ### Todos
@@ -68,6 +68,9 @@ A vacuous check remains a failure: absorbing-node reach and each vocabulary loop
 **What schema codegen closes — and what this sample guard still cannot prove.**
 
 Schema/stale-output checks own nullable-field and exhaustive vocabulary parity. A manual sample proves neither producer provenance nor nominal distinction between structurally equal models.
+
+
+**L184 — INV-XZYGEB.** This contract case is sample reach, assignability and sampled-vocabulary coverage over the hand-maintained fixture; exhaustive producer/client schema parity belongs to the code generator and its stale-output check, and `projection.tasks[].providerLimit` is one of the paths this sample guard genuinely cannot reach. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Evidence
 

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/serving/_app_common.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c0032af54da218b25ce231d176ea9eb45988ed50",
+        "content": "sha256:08826b6444861b9c8e3e08c9f4667efd46cc233b2cce4338826893f8d85e476b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N1YKT8",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Qualified: a non-JSON value here does not stop the projection tick. These functions prepare HTTP and SSE bodies, so their JSON mode keeps a served JSONResponse or an SSE frame from failing on a datetime. The stable-delta decision and the persisted write are other modules' responsibilities, and no new before/after execution result is claimed.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "12": {
       "note": "Anchor: Optional review/reader collaborators, distinct missing-port capabilities.",

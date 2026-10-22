@@ -74,6 +74,8 @@ Those retained lifecycle caches belong to the independent worktree landing chain
 
 The generated route index lists the source files of this route and their cards.
 
+**L184.** The reset register gains one row: the retained host role records of `serving.projections.host_activity` (`_ROLE_RECORDS`) are forgotten between test modules, so one module's reconciled roles cannot certify the next one's boot. That registration is all this file changes; the provider-limit fixture files and the stamped-end inputs the new cases use stay with the cases and the helpers that build them, and no fixture is constructed or executed here.
+
 ## Evidence
 
 - The ordinary bootstrap carries no certifying or external-service capability. [1]

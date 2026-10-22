@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b3fce6dbe4f9a4b57808925aa1a950395968148b",
-        "content": "sha256:5810e57b669c0bb7fb1d9f0ce8e4affa5ee7d43a1ea4b14776cc69bf93d0d9a3",
+        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+        "content": "sha256:75e42ad1c00d4b996d93f3b48b0a99a316bce0e75027910fd393ab6d8e4e4d04",
         "locator": {
           "kind": "symbol",
           "name": "provider_denied_tools"
@@ -18,6 +18,40 @@
       },
       "rationale": "Reads from the host's `config.json` the rules its provider entry denies in its options, because the host lets a list in the request take the place of the configured list.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BB4Z7C",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "L184-M1-F14-settings",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The daemon configuration read inspects the host's configured `extraArgs` for the start's record and names the harness whose map went unread; it enforces the extra-argument rule, not the usage-report rule.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G1NJXJ",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The daemon read is declared here as a port serving may call, and a failure names the harness whose map went unread — no cli import is made from this layer.",
+      "role": "enforcement"
     }
   ],
   "references": {

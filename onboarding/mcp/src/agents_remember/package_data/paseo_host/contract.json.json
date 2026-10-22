@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bb060ddecf3452831ba085f5fd4ec58536341d04",
-        "content": "sha256:69df4c3afc11dffe09049fc619f978a4653714f776271a42fec2795ebcd1df8a",
+        "blob": "d997474945166ab263904047baa35999d494ea8f",
+        "content": "sha256:0595e66a36fe0e18ba58ed3cdc877f4bc4019d297f9a4c5fea4a16bf9405571b",
         "locator": {
           "end": 3,
           "kind": "line_range",
@@ -19,6 +19,23 @@
       },
       "rationale": "The contract version field is the build's one source of the pinned host.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d997474945166ab263904047baa35999d494ea8f",
+        "content": "sha256:ed11356dababd823a1db20c18f5998d3aa8f483646e0868c69f14af069658e9f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SW9NTN",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "INV-JS6GJ7",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This file is the contract the pin checker reads, so the answer's shape is stated here.",
+      "role": "enforcement"
     }
   ],
   "references": {

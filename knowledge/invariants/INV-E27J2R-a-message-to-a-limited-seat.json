@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The obligation is asserted by its own cases and its failure would let the send-back act on a seat that is working or limited; its one realization is deliberate, so it claims no span."
+  },
+  "applicability": "Every message to a limited recipient on role_message, the developer's tray send and report_to_architect.",
+  "conditions": [
+    "The message is held with the reason and the reset time, also when the recipient is idle.",
+    "It is released by the first sweep after the reset, in order, when the recipient is ready.",
+    "An archived recipient found through the publication's ended stamp is still answered, and a closed session keeps its messages waiting."
+  ],
+  "exclusions": [
+    "The presenter's send is out of scope, because it holds no role seat.",
+    "No text matching decides the hold.",
+    "A wait call answers held at once and does not wait."
+  ],
+  "id": "INV-E27J2R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-launch/L184-S4-freeze.md; role-launch/L184-S4-evidence-index.md"
+      ],
+      "path": "writer-draft-03.json"
+    },
+    "handoffEntry": "NEW-MESSAGE-WAITS-FOR-RESET",
+    "leaf": "260928-MIK-L184",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A message to a limited seat waits for the reset and is released the moment the seat can take it.",
+  "status": "proposed",
+  "supersedes": []
+}

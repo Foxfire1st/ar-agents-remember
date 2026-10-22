@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/Topology.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d828486ee9f897b36b330d0f027e938b5aa58912",
+        "content": "sha256:a13a4941804df57805407a20395da57119e98d7250edacc75edbf68ae037da60",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SD97CZ",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This panel renders the topology label the requirement names, so it is where the no-clock form of the word has to be spelled.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The imperative renderer (refs + `.style`, no className dep).",

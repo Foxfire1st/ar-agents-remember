@@ -45,6 +45,9 @@ These interactions do not replace graph wave/readiness authority or the task-ent
 
 None.
 
+
+**L184 — INV-XZYGEB.** This view is one of the named places that show one task's word. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Repo-Internal References

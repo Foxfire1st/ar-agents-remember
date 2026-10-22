@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
         "content": "sha256:4d73bc201adcf3e1d83326ef3945271c823b12c2bea11d49fcf2b755a14eac26",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
-        "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+        "content": "sha256:fd7a7af13a9893f9c391ffae817b1c90406d2db62a740ed10806f3ee6b13fe22",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4RDRMH",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The task entry is computed here, so the rule that makes a task limited is realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+        "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
         "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
         "content": "sha256:0eb38b6e2fc63076263a6b8e0b7d2fc798a9d7220c2a0fbf0d8729eaaf73e2e5",
         "locator": {
           "kind": "symbol",
@@ -75,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
-        "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+        "content": "sha256:783b529697ba77a51d7a461d01e8d1538029804c7b26b6b2df00a5559bd61163",
         "locator": {
           "kind": "symbol",
           "name": "task_state"
@@ -93,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
-        "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+        "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
         "locator": {
           "kind": "symbol",
           "name": "build_task_entries"
@@ -111,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "d37db285155926a5393191721b105ab17f124661",
+        "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
         "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
         "locator": {
           "kind": "symbol",

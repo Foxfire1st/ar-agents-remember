@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/index.server.test.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ddd2fe1207d65c9615c55642314bcae61d571749",
+        "content": "sha256:92aeca4ecbbf7ec79e0d7e09149963ab4cd07b2e571eedf42b73b355bf4d6a4a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TEPAXC",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "These cases hold the receiving side of the number the bridge now sends.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

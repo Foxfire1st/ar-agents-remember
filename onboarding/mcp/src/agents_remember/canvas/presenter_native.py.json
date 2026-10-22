@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c7350eca2348b7149470ba253b37706ced920b5d",
-        "content": "sha256:6a910a1837a8277d55ebd9299e9abe931c7efa5cad92988aed5b7ce4f45e7a49",
+        "blob": "3fa85275fbd36a8de5100ceb6639bc9399db4fd8",
+        "content": "sha256:9e0524190ff99b0439c7d8fc0fbcefb6756b1fa0821c29fb9020ec07e420d1ba",
         "locator": {
           "kind": "symbol",
           "name": "NativePresenterHarness"
@@ -17,6 +17,23 @@
         "leaf": "260928-MIK-L104"
       },
       "rationale": "`NativePresenterHarness` is the shipped default runner and its `start` launches the confined tool server; that launch is what confines an attempt's writes, which `qualified_launch` alone does not do.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3fa85275fbd36a8de5100ceb6639bc9399db4fd8",
+        "content": "sha256:a9c3a80c1c8069df56755f9872db84b8fd2a069b1bb54bb96ca2bfc2b4e53340",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C38VS9",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The presenter's confinement check lives here, so the refusal that keeps a confined capability from receiving arguments is realized here.",
       "role": "enforcement"
     }
   ],

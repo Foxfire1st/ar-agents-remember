@@ -248,6 +248,8 @@ Route-review construction now stamps the leaf code base. The closeout door can p
 
 change-set reads now run on the route family's own bounded admission: `changeset_scheduler.py` starts eight workers and admits eight more pending jobs; a request past the cap answers 503 with `Retry-After: 1`, a disconnect answers 499 after setting the read's cancellation event, a queued abandoned job is withdrawn before it runs, and a running job releases its slot only when its worker ends. The runner's single `_wait_process` kills the Git child and its process group on the timeout or the event. Freshness is Git's own: a commit pair is keyed by ids with no observation on a hit, a working view runs `git status --porcelain=v2 -z` (and has no cache where a plain read costs no more), and the object store is Git's `count-objects -v` census; the `.git/objects` and worktree directory walks are gone. The id-keyed no-observation choice names its accepted gap: object loss and attribute changes are not observed per hit until eviction or restart. The cache's per-read maps are capacity-bounded and an abandoned read admits nothing.
 
+**L184.** The product reads the host's usage report at a stamped turn end, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port.
+
 ## Evidence
 
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]

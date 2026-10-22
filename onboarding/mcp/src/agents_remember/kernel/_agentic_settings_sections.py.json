@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
+        "blob": "d3b92b15b04467dce898722fe980347aee339810",
         "content": "sha256:8fe792103f3ae51ad17cb0291273fd233c5f79f38b58c7ea587e0f2611fc1cd9",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,23 @@
         "leaf": "260928-MIK-L98"
       },
       "rationale": "Per-file settings equivalence/refusal is owned before layering.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d3b92b15b04467dce898722fe980347aee339810",
+        "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-REP4H0",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The section definitions are the shape a settings file is read as, so the three-value rule is realized here.",
       "role": "enforcement"
     }
   ],

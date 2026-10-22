@@ -1,6 +1,24 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
+        "content": "sha256:8b959112f2e20e3c5d360b5b5cfe0934d887ad6b98cad685e2e15ff253769563",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ARRRFK",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "INV-4T6KSE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The checker's own model of the projection has to include the new fact or it cannot judge it.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The fail-closed generation error raised for an unrepresentable schema shape.",

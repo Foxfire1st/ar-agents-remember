@@ -6,13 +6,14 @@
     ],
     "justification": "Five independently consumed packaging locations must agree, or provisioning can install a host different from the contract or compile a plugin against another SDK; the installed-host transition and future-version compatibility are not inferred from these pins."
   },
-  "applicability": "The packaged build selecting Paseo0.11.1: release-owned host contract, reproducible host package tree, plugin SDK dependency and host requirement.",
+  "applicability": "The packaged build selecting Paseo 0.12.0: release-owned host contract, reproducible host package tree, plugin SDK dependency and host requirement.",
   "conditions": [
-    "The build selects the exact0.11.1 host release; package declarations and npm-written lock must agree."
+    "The build selects the exact 0.12.0 host release; package declarations and the npm-written lock agree.",
+    "The plugin's dependency and its host requirement line name the same version."
   ],
   "exclusions": [
-    "An already running older host remains observable until explicit provision; this statement does not claim the developer installation was upgraded.",
-    "The product Node release remains independently pinned; the plugin minimum range does not prove compatibility of later releases."
+    "An already running older host remains observable until explicit provision; this statement claims no developer-installation upgrade.",
+    "The product Node release remains independently pinned, and the plugin's minimum range proves no compatibility with later releases."
   ],
   "id": "INV-JS6GJ7",
   "origin": {
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L123",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The build pins the host to Paseo 0.11.1 in the host contract, the host package and its npm-written lock, the plugin dependency and the plugin host requirement.",
+  "statement": "The build pins the host to Paseo 0.12.0, with the plugin and its SDK at the same version.",
   "status": "proposed",
   "supersedes": []
 }

@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "MIK-R192 rule 6 spans the settings merge, the launch defaults and the host hand-off, each covered by tests in this candidate."
+  },
+  "applicability": "Every start and resume of a role seat through the host, from harness-level and role-level settings.",
+  "conditions": [
+    "Harness entries follow the harness the start actually uses; only a harness that takes extra command-line arguments in this build receives any.",
+    "Role entries lay over the harness entry key by key, and a role entry set to false removes the harness entry of that name; a role entry takes effect only when the start's harness is the role's settings harness, so a start on another harness, or one with no settings harness at all, takes none of them and records why.",
+    "Every argument a start takes carries its provenance (harness entry or role entry, with its key), and every entry the start does not take is recorded with its reason rather than silently dropped.",
+    "The host's own configured arguments are noted as configuration and never taken; a map that could not be read is recorded as unread, so a clean configuration file is not reported as a clean host.",
+    "The arguments are handed to the host per start, user's layer only, and reserved names are refused; a confined capability receives none.",
+    "The host keeps the arguments it was given when it created the agent and applies them again when that same agent resumes; AR supplies them at creation and does not re-send them on resume, so a resume runs on the creation arguments the host retains, and a start that takes none takes none on resume either."
+  ],
+  "exclusions": [
+    "The explainer and the presenter get none, at any start or resume.",
+    "The host leg spawns --chrome only on the developer's word, and which browser an agent uses is not AR's matter.",
+    "Settings cleanliness is bounded to what AR declares and provisions and to the confined checks AR controls; a configuration edited outside AR keeps whatever it holds, and that external drift is recorded as a residual rather than claimed controlled."
+  ],
+  "id": "INV-9DMNQS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-launch/L184-S4-freeze.md; role-launch/L184-S4-evidence-index.md"
+      ],
+      "path": "writer-draft-03.json"
+    },
+    "handoffEntry": "NEW-R192-EXTRA-ARGS",
+    "leaf": "260928-MIK-L184",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role's settings may carry extra harness arguments, laid over the harness entry key by key, with a role entry set to false removing the harness entry, and a confined capability receiving none; role entries are taken only where the start's harness is the role's own settings harness and that harness takes extra arguments in this build, and a start that does not match says so instead of taking them.",
+  "status": "proposed",
+  "supersedes": []
+}

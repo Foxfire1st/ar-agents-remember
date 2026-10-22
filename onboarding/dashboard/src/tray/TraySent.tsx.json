@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+        "blob": "92917da81f2177ada0a154e972c0bd5fa4bb2104",
+        "content": "sha256:8131adfe3577dffc3682a032317819e2de251402f01599ddf25e04033a0db46d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1H2WWX",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module writes both the summary line and each target's full answer, so both obligations are realized here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "92917da81f2177ada0a154e972c0bd5fa4bb2104",
         "content": "sha256:5470e8388badd3c4288d67a8f9caee21d8e449734c0b39b7135dc855e2682ff3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
+        "blob": "92917da81f2177ada0a154e972c0bd5fa4bb2104",
         "content": "sha256:d1c5bf9db88c53758178826a5f6b960db5982e1fda3b824db7740a5dbef8f6a3",
         "locator": {
           "kind": "symbol",

@@ -46,6 +46,8 @@ The client also carries the tray channel. `index.client.tsx` keeps supported the
 
 
 
+**L184.** The plugin subscribes once per boot to provider subagent updates, publishes the running counts, reads the limit file at the send-back and the parent gate, and states its host requirement at 0.12.0.
+
 ## Evidence
 
 - The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct. [3]

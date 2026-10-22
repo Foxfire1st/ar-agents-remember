@@ -18,6 +18,9 @@ References/reports and Notes use the entry’s exact reference repository and ta
 
 indexRows/task-groups follow served children and exact entry-key navigation. The head/objective composition is local to this reader; readerTop supplies only TaskBodyNotice. DecisionPreview remains in skeletons and is re-exported. A graph-less sprint retains its scoped queue; full graph is an Order own view. No master-less series/slice fallback remains.
 
+
+**L184 — INV-XZYGEB.** This reader is where the page's task entry arrives, so the limit fact it may show has to be passed here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Boundaries
 
 No authored document-model mutation, lifecycle acceptance or native review occurs here. The extracted directGrant owner posts Give/Revoke through its dedicated adapter; this is external-store mutation, not task JSON authoring or browser permission authority. Form-specific content follows the served summary form; no browser form fallback reconstructs task topology. Revision-keyed register/further preparation is retained in the bounded store resource only after body availability; handlers remain selection-local. Shared Panel/Markdown/token styling remains unchanged; pageStyles.ts scopes the task-page look. The worktree spine, change-set authority, requirement reader and Notes transport keep their existing owners.

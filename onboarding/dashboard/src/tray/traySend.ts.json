@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
+        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
         "content": "sha256:be5bf7e6525d1986927fbab81d7c9b2e581d3b48d1b5c4f3e31c037c96fbf210",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,24 @@
     },
     {
       "anchor": {
-        "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
+        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
+        "content": "sha256:59c5572a8739afa7299afc72d59899fc4cc06813e61f73e39dc7e8a102d2a93c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DJBF34",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This parser is where a delivery's fields arrive from the server, so the reset has to survive here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
         "content": "sha256:be5bf7e6525d1986927fbab81d7c9b2e581d3b48d1b5c4f3e31c037c96fbf210",
         "locator": {
           "kind": "symbol",

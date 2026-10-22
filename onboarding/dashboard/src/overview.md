@@ -270,6 +270,8 @@ Current review ownership is anchored by ReviewSurface/PageReading; the separate 
 
 the task entry's page reads now end with the task they belong to. The change-set bar, the changed-intent summary and the full task body each own an `AbortController` and abort on selection change/unmount; `abortableRead.ts` distinguishes an aborted read from a failure, and the stores keep a same-key live joiner alive. The mounted chat case `document-chat/newChatWhilePageReadPending.test.tsx` holds four abandoned page producers and still dispatches and binds the selected leaf's chat before any of them completes. No lifecycle or task-state authority moves into the browser.
 
+**L184.** The tray and the detail panels now show a served provider limit: its word with the time left where a display clock exists, the bare word with the exact reset in hover and accessible name where none does, and one scan in the test tree forbids computing a limit anywhere in application source.
+
 ## Evidence
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [73]

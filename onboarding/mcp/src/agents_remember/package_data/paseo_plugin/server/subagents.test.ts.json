@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "82f838444cc0ca462757b279341d307f18ba9feb",
+        "content": "sha256:8f3e9cc45872731d40d9d17dc7d7751c3a37c3cbf74038baa5609266aa886d95",
+        "locator": {
+          "kind": "symbol",
+          "name": "the parent's archive drops its subagents"
+        }
+      },
+      "facet": "An archived parent leaves no running subagent behind.",
+      "id": "PRF-HJQDSD",
+      "invariant": "INV-2ANNY5",
+      "origin": {
+        "handoffEntry": "NEW-RUNNING-SUBAGENT-IS-WORK",
+        "leaf": "260928-MIK-L184"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "82f838444cc0ca462757b279341d307f18ba9feb",
+        "content": "sha256:b01a4b35f9a8d70603596637b09cac870a5f433a0ab29714b421fa22f2a26598",
+        "locator": {
+          "kind": "symbol",
+          "name": "a running upsert and a remove change the count and the oldest start"
+        }
+      },
+      "facet": "A running subagent is counted with its start, and a remove drops it.",
+      "id": "PRF-Z4950W",
+      "invariant": "INV-2ANNY5",
+      "origin": {
+        "handoffEntry": "NEW-RUNNING-SUBAGENT-IS-WORK",
+        "leaf": "260928-MIK-L184"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82f838444cc0ca462757b279341d307f18ba9feb",
+        "content": "sha256:57d219317438b3cac402b65400adc8cd29e47f174516e0583ff30de8a2246ba4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TTD1YE",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The tracker's rules are held by these cases, which is where the generation's meaning is pinned.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

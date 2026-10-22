@@ -192,6 +192,8 @@ the detail panel's change-set bar now aborts its own counter read on a task swit
 
 MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band now orders the paused rows the host timed newest first, ahead of the paused rows it did not time, which keep the server's order; a missing time is never read as zero or as now. And a step dot shows only its own tooltip: the row line and the figure box carry no native title, the row's hover text lives on its own cells, and the tooltip keeps its id and status word whole while only the title wraps. Both are presentation facts — served order, task state and row admission are unchanged.
 
+**L184.** The task word says rate limited in place of paused when the served limit holds the task, row hovers carry each limited seat's provider, window and exact reset, and new cases pin the sidebar, the task page, the graphs and the accessible names.
+
 ## Evidence
 
 - The started band orders host-timed rows newest first and leaves untimed rows in the server's order. [197]

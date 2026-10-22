@@ -42,6 +42,9 @@ upsert `DeltaEvent` for every added or stable-changed item (in projection order)
 set of `*.removed` markers for ids gone from `current`. Sorting removals keeps the output
 deterministic (replay/sim fixtures compare byte-for-byte).
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** Deltas are the only update a client sees after the first read, so the fact's removal is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 - **Pure** — no I/O, no FastAPI import; takes already-built projections.

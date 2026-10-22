@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
+        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
         "content": "sha256:65c89a131bc3ab48c97ebad70c2c646732619fee55d08afa1415401f15574030",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
+        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
         "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "4bc611105b86702f73ca9f2e6cfecb26c86c0025",
+        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
         "content": "sha256:4025f00e938f36fcd1345aea4f2de931ec00bda6dfc95c2660355a1073af8f89",
         "locator": {
           "kind": "symbol",
@@ -53,7 +53,25 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
+        "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7FNE6M",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the consumer's own test, the one that fails on the old comparison.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Watch roots admit the activity directory, not the supervisor lease or broad host home.",

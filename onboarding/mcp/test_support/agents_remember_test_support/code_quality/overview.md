@@ -72,6 +72,8 @@ The earlier account names citation-binding tests as a worked example of literal 
 
 No lifecycle/status metadata in this overview grants execution or acceptance authority. No test execution or current task status is established by this source review; missing lifecycle authority remains an uncertainty.
 
+**L184.** The projection-type checker knows the served provider limit, including its exact reset datetimes.
+
 ## Evidence
 
 

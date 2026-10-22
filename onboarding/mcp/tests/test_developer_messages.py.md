@@ -20,6 +20,9 @@ Extends RoleToolsTestCase fake bridge; temporary Git memory commits/worktree cre
 
 Static inspection only: helper did not run fixture Git writes or tests. Fake host does not prove live renderer/permission delivery; packet browser/native evidence remains distinct.
 
+
+**L184 — INV-4DQMNE.** These cases hold the delivery answers the tray reads. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - Checks developer send composition, exact references, file-first recovery, held outcomes and bounded recipient/log routes. [1]

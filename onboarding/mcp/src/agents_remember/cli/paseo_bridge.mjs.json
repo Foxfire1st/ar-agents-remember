@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-        "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "content": "sha256:effc738471a3fdc61ce3d3a1cb0a1327cd2c5d16c8636b25c1eb5dd69d231c3d",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-        "content": "sha256:5a31c972387a36b488788c27daa0d79a3e71ffe29bbb71adef03bf0936a0fe72",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "content": "sha256:6b8f98c6e8c2093069eeac8647aa2535db431a3041d75a5fa0c8d25b084ca995",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,24 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "content": "sha256:6b8f98c6e8c2093069eeac8647aa2535db431a3041d75a5fa0c8d25b084ca995",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AM4R8J",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This bridge is the one process that takes the plugin's answer and then asks it for the list, so the number has to be carried here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -74,8 +91,8 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-        "content": "sha256:f000eeed719b211926be2db6d6de5193294a4f7c0d60fd64b24324f31258659a",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "content": "sha256:effc738471a3fdc61ce3d3a1cb0a1327cd2c5d16c8636b25c1eb5dd69d231c3d",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -92,7 +109,7 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -110,7 +127,7 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -128,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -146,7 +163,7 @@
     },
     {
       "anchor": {
-        "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",

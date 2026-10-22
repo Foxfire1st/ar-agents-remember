@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/tray/types.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ccda15a3989e7f5458620c250ea2252549b83c30",
+        "content": "sha256:024ad5edbcebb22eff8e2d8001645c36b2dc790e8551cb2352d31518623bf754",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H0MQ62",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The delivery type is what every tray consumer reads, so the reset's shape is declared here.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Defines tray object identity, collection entries, developer-send payloads and truthful server results.\n\nAnchor: \"export interface ComparisonRef {\"",

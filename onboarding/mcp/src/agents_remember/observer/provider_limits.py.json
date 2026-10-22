@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/observer/provider_limits.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f22ed2c9f536c8f86943f8d5ed9373ee7882e13b",
+        "content": "sha256:dc9b18bbfa594cbe583e58f573d2219880c653897f9f0e1cdf4d8f7c7e1e6ebe",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7MGDYE",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "INV-4T6KSE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the read side of the one limit file, placed at observer so the one status function can read a limit without an upward import; it stores nothing itself.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

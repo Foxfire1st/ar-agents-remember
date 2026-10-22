@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
         "content": "sha256:5ff6719474406bbbda3d3631e7b34975aed52bc4f967c603368c5ee52d73484d",
         "locator": {
-          "end": 417,
+          "end": 618,
           "kind": "line_range",
-          "start": 414
+          "start": 615
         }
       },
       "id": "RLZ-2YCQ8R",
@@ -22,12 +22,11 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-        "content": "sha256:122fe1c6ccc9c13929d0c2bbad24b068d96281d16a1c843001d08e3578342a15",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
+        "content": "sha256:f2ccc90ae1fbf51d56c915f447ab5d530d7049097bf043321fe76909ef9611bb",
         "locator": {
-          "end": 91,
-          "kind": "line_range",
-          "start": 69
+          "kind": "symbol",
+          "name": "taskStatusKey"
         }
       },
       "id": "RLZ-3BN5C1",
@@ -36,13 +35,13 @@
         "handoffEntry": "L168-CUR-M1-21-A013-06",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "STATUS_WORDS is the single stage/activity-to-tone/word table read by statusTone/statusLabel; taskStatusKey selects served activity or stage rather than deriving task truth.",
+      "rationale": "taskStatusKey selects the served word from the entry's own stage, activity and providerLimit: a paused task with a served limit reads limited, otherwise activity or stage. The earlier caption pointed at the table's declaration rather than the selector that derives the word.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-        "content": "sha256:8d0d106a268fd4f452dc06d91f8e80708a833c591dc1bf1ec37ac02670515a52",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
+        "content": "sha256:4cd7f6aeb706a7cb9f15b28cd4342b982bdc584cf8f1f232bb88484fbde9fd99",
         "locator": {
           "kind": "symbol",
           "name": "STATUS_WORDS"
@@ -59,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-        "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
+        "content": "sha256:50ba2324b13d627caa87ce9cea377110f794bead4ecfc7ed8e08c5336bbd0c8a",
         "locator": {
           "kind": "symbol",
           "name": "TaskStatusWord"
@@ -77,12 +76,11 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-        "content": "sha256:dc1bd7c87b3db5901dad9ef08c6a6686143d7c0329cd997b0541067d92e51126",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
+        "content": "sha256:4cd7f6aeb706a7cb9f15b28cd4342b982bdc584cf8f1f232bb88484fbde9fd99",
         "locator": {
-          "end": 103,
-          "kind": "line_range",
-          "start": 81
+          "kind": "symbol",
+          "name": "STATUS_WORDS"
         }
       },
       "id": "RLZ-A8JVG7",
@@ -91,17 +89,17 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / one word",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "The common status-key/word table presents served task stage/activity; Operations need bands are each entry own works/started/planned/terminal band, not retired lifecycle attention priority.",
+      "rationale": "STATUS_WORDS is the one stage/activity-to-tone-and-word table, holding planned, started, works, paused, the limited row, unknown, completed and aborted; statusTone and statusLabel read it, so a limited row's word and tone come from here. The earlier caption promised these rows while pointing at a range that ended at statusTone's signature.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 471,
+          "end": 672,
           "kind": "line_range",
-          "start": 452
+          "start": 653
         }
       },
       "id": "RLZ-F7T6YN",
@@ -115,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",
@@ -133,12 +131,29 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
+        "content": "sha256:c7376e161d3abaa5c33951263ff135813c10bec229c93fb8584e12295dac318e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S69Q9S",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module holds the word every place renders and the formatter the exact detail uses, so both obligations are realized here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
         "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
         "locator": {
-          "end": 471,
+          "end": 672,
           "kind": "line_range",
-          "start": 452
+          "start": 653
         }
       },
       "id": "RLZ-SB78XK",
@@ -152,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+        "blob": "bd5ab6ceb618390f546287ed5999bca290d6ff3f",
         "content": "sha256:255370dc0990d76d02e89d825196686fa95474d734c58c05e5db15cf94e84c4f",
         "locator": {
           "kind": "symbol",

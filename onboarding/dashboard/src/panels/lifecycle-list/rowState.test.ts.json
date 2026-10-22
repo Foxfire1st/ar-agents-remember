@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/rowState.test.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ca02aa4b18e46df36732b01380eed7c3d59819b3",
+        "content": "sha256:514062d73d00a0a8327d738ed86629cef4294224e60e4297898f9ce8a6b60fc2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N3A2DX",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The row state is the single reading both the word and the hover use, so its test is where that sharing is asserted.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The assertions exercise document/lifecycle truth, priority and retained hover information on synthetic row facts.",

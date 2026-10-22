@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e13145e0dc497bfd264d90ce52690d72ffd826e5",
-        "content": "sha256:c267b6d3a54fb2778dd39f9944c0c3c0568c97cddd7a18a61979bad0163983b2",
+        "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
+        "content": "sha256:dc3b92ccc5f113c811daf85fb673d96d59eddbb12dea67adca9e24c3bd1e645e",
         "locator": {
           "end": 18,
           "kind": "line_range",
@@ -19,6 +19,23 @@
       },
       "rationale": "The plugin builds against the host SDK, so its @getpaseo/plugin development dependency follows the pinned host.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
+        "content": "sha256:11335f10dbe222d6ee98423f1c713cda7261d8c39657377ae0dfa211c0d3092e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3M3903",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "INV-0TCWT9",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The package's dependencies are what the build sees, so the SDK's version is fixed here.",
+      "role": "enforcement"
     }
   ],
   "references": {

@@ -40,6 +40,9 @@ services and lock bookkeeping; undo installed wrappers together with their insta
 `end_pytest_process` restores that snapshot. `preserve_owned_mutable_state` contains an entry point
 whose contract deliberately sets process state.
 
+
+**L184 — INV-VDWN33.** Shared state that survives between cases is how a suite becomes order-dependent. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 - Each discovered state has exactly one justified treatment; constants survive deferred registration.

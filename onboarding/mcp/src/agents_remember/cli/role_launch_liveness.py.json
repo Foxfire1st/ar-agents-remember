@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
         "content": "sha256:784243a52fdd92c085e7878f22e824d1273e31ebb71ea9f786c36661821eb62c",
         "locator": {
-          "end": 459,
+          "end": 503,
           "kind": "line_range",
-          "start": 412
+          "start": 456
         }
       },
       "id": "RLZ-7CJ59T",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
         "content": "sha256:fe67014225f7601da3d42996d7f8a37bb82a036d4ce1597f9be7fda7114b34d0",
         "locator": {
-          "end": 383,
+          "end": 427,
           "kind": "line_range",
-          "start": 344
+          "start": 388
         }
       },
       "id": "RLZ-7FJJDH",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
         "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,24 @@
     },
     {
       "anchor": {
-        "blob": "aa5a2d6dbd1dfe96c4c37bb5b7fd96dd2824b0ef",
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
+        "content": "sha256:eb45fae5c4e6ce4ed9a1b1a19b785b2da5028dc1fb983e1eeee8bfacd23a41c3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KN9SG0",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "INV-ECNV2S",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module is where a seat's liveness is judged, so the word that guards a retirement is realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "df3b0ce5d1d16492dfa0900c1e6f68f10a1074ca",
         "content": "sha256:b899be83916082b41cd49fc8be07bb667884652ed0513ac4c0e662015e6c2825",
         "locator": {
           "kind": "symbol",

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:174c1ef05448d6ea07371b6c64acd9b92827c1110af971743ad21a86605352c0",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:4f503828228e8b5155e4d089003b6d36e0e6e982f2af514c693cfbbc22cdf784",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,24 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
+        "content": "sha256:3492132c47d56c5d19019f2cc36baa28d4d0216457abf9b1f4aae8084d1d6872",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-95MZBK",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
         "locator": {
           "kind": "symbol",
@@ -57,12 +74,12 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
         "locator": {
-          "end": 387,
+          "end": 400,
           "kind": "line_range",
-          "start": 381
+          "start": 394
         }
       },
       "id": "RLZ-B6TTTQ",
@@ -76,12 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
         "locator": {
-          "end": 488,
+          "end": 505,
           "kind": "line_range",
-          "start": 471
+          "start": 488
         }
       },
       "id": "RLZ-CSAQ91",
@@ -95,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
-        "content": "sha256:891a738cd6629f81ceede271daf490842d1305c3731ece3ec793400a4d449b64",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
+        "content": "sha256:3492132c47d56c5d19019f2cc36baa28d4d0216457abf9b1f4aae8084d1d6872",
         "locator": {
           "kind": "file"
         }
@@ -112,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
         "locator": {
           "kind": "symbol",
@@ -130,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
         "locator": {
           "kind": "symbol",
@@ -148,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:9351ab82f065bd3a86a80c178163cca857f254a9ff5d751a6707f3e0e380d506",
         "locator": {
           "kind": "symbol",
@@ -166,12 +183,12 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
         "locator": {
-          "end": 488,
+          "end": 505,
           "kind": "line_range",
-          "start": 471
+          "start": 488
         }
       },
       "id": "RLZ-RKKZ22",
@@ -185,12 +202,12 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
         "locator": {
-          "end": 407,
+          "end": 420,
           "kind": "line_range",
-          "start": 367
+          "start": 380
         }
       },
       "id": "RLZ-WG0RE0",
@@ -204,7 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:bb6e582afc821aa5f91bdc05d0140754d7a8843cb39d3134d98be6a42a661f88",
         "locator": {
           "kind": "symbol",
@@ -222,7 +239,7 @@
     },
     {
       "anchor": {
-        "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
+        "blob": "5c7f69145850b4c7358e01844f6fc404e2030322",
         "content": "sha256:f0b97f15953fec0a0dc80045526ba2f4ab2afd1efc0dfb96bbb4b6320d41c7a8",
         "locator": {
           "kind": "symbol",

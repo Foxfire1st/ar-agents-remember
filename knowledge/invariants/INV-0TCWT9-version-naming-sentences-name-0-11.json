@@ -6,14 +6,14 @@
     ],
     "justification": "Source comments, the plugin adapter, fixture labels and process-stop description jointly date the compatibility claims; relabeling a pin as a runtime confirmation would mislead later upgrades into trusting an unexercised display or message path."
   },
-  "applicability": "Version attribution in host/plugin source explanations and source-derived fixtures when a build moves its host pin.",
+  "applicability": "Version attribution in host and plugin source explanations and in source-derived fixtures, when a build moves its host pin.",
   "conditions": [
-    "Name the release actually examined for each claim, preserving prior confirmation dates where no repeated check exists.",
-    "Separate package/source inspection, a visible chat, recorded assertion, native-host send and actual AR message-route evidence."
+    "A sentence names the release actually examined for its claim; a confirmation repeated on the new release moves to 0.12.0, and one that was not repeated keeps its version.",
+    "Package and source inspection, a visible chat, a recorded assertion and an actual message-route observation stay distinct claims."
   ],
   "exclusions": [
-    "No MIK-R121 recorded browser-test claim on0.11.1: F02 is seen, not asserted.",
-    "F06 AR idle/in-turn message bars and denied-once proof remain not met/not shown; no current host-kink removal or model-catalog availability is inferred."
+    "No browser-test claim is recorded on 0.12.0 that the sandbox did not make.",
+    "No host-kink removal or model-catalog availability is inferred from the version move."
   ],
   "id": "INV-0TCWT9",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L123",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Version-naming sentences name 0.11.1 where the confirmation was repeated on the new release, keep the confirmation version where it was not, and describe the 0.11.1 boot-identity predicate truthfully.",
+  "statement": "A sentence that names the host version names the release actually examined for its claim: a confirmation repeated on the new release moves to 0.12.0, a confirmation that was not repeated keeps the version it was confirmed at, and every such sentence names the kind of evidence behind it.",
   "status": "proposed",
   "supersedes": []
 }

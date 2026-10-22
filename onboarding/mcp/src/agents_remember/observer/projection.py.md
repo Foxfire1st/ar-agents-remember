@@ -38,6 +38,9 @@ Reader DTOs retain canonical references, lump/segment graph nodes and legacy bar
 
 The Python schema is the source for generated TypeScript and JSON schema artifacts.
 
+
+**L184 — INV-VDWN33.** The observer's projection is what the dashboard receives, so the fact's presence is decided here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## L126 Product-Record Marking Field
 
 `TaskDecisionNode` carries `product_record: bool = False`: true when the entry

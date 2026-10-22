@@ -12,7 +12,7 @@ Generate persisted and served dashboard TypeScript contracts from the Python wir
 
 `NAMED_VOCABULARIES` now names only attention severity/lane and process fact/health vocabularies. Ordinary model interfaces emit every declared property; there is no lifecycle state partition, metrics bucket inheritance/factory or duplicate subtask-row alias. Regeneration uses the active environment's `python`.
 
-Nullable serialized properties become optional after null variants are removed. `_without_null` preserves non-null unions and annotations, retains multiple surviving alternatives, and refuses an all-null field. There is no `NULL_PRESERVING_MODELS` special case. Supported runtime refinements are `maxItems`, `maxLength`, `minLength`, `minimum` and `pattern`; they remain exact in schema and deterministic property comments. `maximum` and the retired terminal-observer-health payload are not current declarations.
+Nullable serialized properties become optional after null variants are removed. `_without_null` preserves non-null unions and annotations, retains multiple surviving alternatives, and refuses an all-null field. There is no `NULL_PRESERVING_MODELS` special case. Supported runtime refinements are `maxItems`, `maxLength`, `minLength`, `minimum`, `pattern` and `format`, each held in the exact definition set; a `format` of `date-time` keeps its date-time meaning in the generated type instead of degrading to a bare string. An unknown keyword, one the string shape cannot carry, or a definition set that differs from the exact one still fails closed. `maximum` and the retired terminal-observer-health payload are not current declarations.
 
 The served-only definition set must still equal `DEFINITION_RENAMES` exactly. A new served payload requires an explicit declaration and regeneration; unknown or shape-inapplicable schema keywords fail closed with the model/property path. Named PEP 695 local enum references and inline enum shapes each render one vocabulary; missing/external/non-enum references refuse. Generated-file drift is named by the check rather than silently accepted. These are static generator semantics, not an execution result.
 
@@ -58,6 +58,9 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 None.
 
 </details>
+
+
+**L184 — INV-4T6KSE.** The checker's own model of the projection has to include the new fact or it cannot judge it. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Evidence
 

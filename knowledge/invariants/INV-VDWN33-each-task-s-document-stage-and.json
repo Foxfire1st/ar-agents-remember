@@ -6,15 +6,17 @@
     ],
     "justification": "Future changes to host intake, task projection or task-status consumers must preserve this bounded authority: duplicate task truth, unsupported paused observations, reconstructed membership or conflicting status/age presentation produce incorrect task operations. The named current source assertions guard the specified facets; this is no fresh Curator execution grade."
   },
-  "applicability": "Native task stage, started-task host activity and its contributing event timestamp computed by task_state.",
+  "applicability": "Native task stage, started-task host activity and the contributing event timestamp computed by `task_state`, including the task's provider limit.",
   "conditions": [
     "Document planning/inProgress/abandoned/Completed normalize to planned/started/aborted/completed; non-started stage takes precedence and has no activity/event time.",
-    "An unqualified host observation gives started/unknown, not paused; in-turn or permission gives works, otherwise a complete host observation gives paused.",
-    "The latest timestamp among the working contributors, or all observed contributors when paused, supplies eventAt; display age derives from that timestamp, not a serialized elapsed-age field."
+    "An unqualified host observation gives started/unknown, not paused; a state of in-turn or permission gives works, and an agent whose state is not ended with a running subagent count above zero also gives works; otherwise a complete host observation gives paused.",
+    "For an agent that works only through subagents the contributing start is the oldest running subagent's start, and an agent in a turn keeps its turn's start; the latest timestamp among the working contributors, or all observed contributors when paused, supplies eventAt, and display age derives from that timestamp, not a serialized elapsed-age field.",
+    "A task is limited when it is started, none of its agents works, and at least one of its agents is limited; the earliest reset among them is the task's, and once the display clock passes it the word is paused again with its age."
   ],
   "exclusions": [
     "Task body hydration, dependency readiness, worktree/process phase and session records are not additional task-stage authorities.",
-    "No guaranteed timestamp when the host supplied none, and no ageSeconds field in the task-entry wire model."
+    "No guaranteed timestamp when the host supplied none, and no ageSeconds field in the task-entry wire model.",
+    "The group label and the header counts stay paused; the task counts as paused in every figure."
   ],
   "id": "INV-VDWN33",
   "origin": {
@@ -28,9 +30,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Each task's document stage and bound-host activity determine its only stage/activity/age facts, with a permission prompt counting as work.",
+  "statement": "Each task's document stage and bound-host activity determine its only stage/activity/age facts, with a permission prompt counting as work. An agent that works only through a running subagent counts as working from that subagent's oldest start, and a started task with none of its agents working and at least one of them limited takes the served limited word in place of paused.",
   "status": "proposed",
   "supersedes": []
 }

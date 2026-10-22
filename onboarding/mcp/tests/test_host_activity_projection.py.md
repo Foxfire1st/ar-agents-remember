@@ -12,6 +12,9 @@ Pin startup reconciliation and notification-only host activity intake, separate 
 
 A configured bridge snapshot must acknowledge the current publication boot before activity is known. Only registered role facts join to task identity; unrelated agents count as ignored. A new boot/dashboard requires reconciliation, failed acknowledgement stays unknown and retries only after changed publication. Idle heartbeat, periodic full-heal and degraded wakes retain known activity without rereading host publications or role records. Tests patch bridge/publication boundaries; they do not run a live hosted agent.
 
+
+**L184 — INV-VDWN33.** This is the consumer's own test, the one that fails on the old comparison. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - Watch roots admit the activity directory, not the supervisor lease or broad host home. [1]

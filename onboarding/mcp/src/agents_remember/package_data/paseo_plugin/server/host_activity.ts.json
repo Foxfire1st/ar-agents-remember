@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-        "content": "sha256:2303afd446ffa09552fc1102abbe260b4b7bca4c282ba0cd382077e61355f6c4",
+        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
+        "content": "sha256:1c9b43ee4b13d9602d57a2d649589a0a291739b7c16869f93d7f6b55472f8a9d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CE6HQ3",
+      "invariant": "INV-2ANNY5",
+      "origin": {
+        "handoffEntry": "NEW-RUNNING-SUBAGENT-IS-WORK",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The publication is written here, so both the completeness rule and the subagent facts are realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
+        "content": "sha256:5033dd1084edf3120683748514fa53b779c3a562f4a04ba8a7e1084cbe9d0a6f",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityPublisher"
@@ -18,6 +35,23 @@
       },
       "rationale": "The installed publisher folds native transitions into one replaceable host-owned activity snapshot.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
+        "content": "sha256:1c9b43ee4b13d9602d57a2d649589a0a291739b7c16869f93d7f6b55472f8a9d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FZ0D1M",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The publication is written here, so both the completeness rule and the subagent facts are realized here.",
+      "role": "enforcement"
     }
   ],
   "references": {

@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/types/projection.schema.json",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e3259bba26f3e65d9297e1aea790fb3995757e29",
+        "content": "sha256:f7afd54442842c6440c389fd548d1a35871c73a0e43c3c9df8a0c29d0cc9ca8d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-67JYPK",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The schema is the contract the client is generated and checked against, so the fact's shape is stated here.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary.\n\nAnchor: `memory`; \"memory-refresh\"; \"direct-memory-commit\"",

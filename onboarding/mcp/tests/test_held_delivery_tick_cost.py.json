@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_held_delivery_tick_cost.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce57c4e64895a47995c6c7f56b8d2146afef6c0a",
+        "content": "sha256:192e5f3c4f2701741f2e702de3b7888481b658b61646d4a67ddc070841aba39e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SQ7ZGB",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The cost bound is measured by this case, which is where a regression would show.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

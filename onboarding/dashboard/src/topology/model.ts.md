@@ -57,6 +57,9 @@ Exports remain pure model types, CONSTEL_STATUSES, RF, activeTopologyInputs and 
 
 No open file-local todos.
 
+
+**L184 — INV-XZYGEB.** This model chooses the label's text, so the no-clock departure from a countdown is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Docs References

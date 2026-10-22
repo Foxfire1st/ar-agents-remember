@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
-        "content": "sha256:c2045bd29bca43de03ba91de90d8de7595cef06ff009d0e897897288da8cee8b",
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+        "content": "sha256:18d710492a923bbcaa5e3d0faf0c2b7b32f72db104b9ccc63170f525e512e311",
         "locator": {
           "kind": "symbol",
           "name": "_held_delivery_loop"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,29 @@
     },
     {
       "anchor": {
-        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+        "content": "sha256:27819557a4ec1a7be7a8115993ec36ee83931e3db2d9506fff72a19a0a04ef53",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8MGWMB",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The lifespan consumes the collaborator it was given instead of reaching into cli, which is the edge the finding was about.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
         "content": "sha256:9ef462c0aeffef117a3c267a2028dfc1064d298dface6036341aa50be1d7a3ee",
         "locator": {
-          "end": 397,
+          "end": 420,
           "kind": "line_range",
-          "start": 337
+          "start": 360
         }
       },
       "id": "RLZ-9KM829",
@@ -58,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
-        "content": "sha256:84cb5e1d7a5aee199e8707279330a025e0f8a4e6fd1fb41c31edead474e297eb",
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+        "content": "sha256:a169f5d711ef1fb3cfa7ccbe44b5c58efb18cec1356a11bf07cbc5f8728059c9",
         "locator": {
           "kind": "symbol",
           "name": "_held_delivery_tick"
@@ -76,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "4a53276d7da469e7c756e76be23652dbf745dd56",
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",
@@ -90,6 +107,23 @@
         "leaf": "260928-MIK-L166"
       },
       "rationale": "Original landed loop remains unconditional through accounted offload, cancellation drain, interval and stop callback, with no fleet-absence gate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+        "content": "sha256:27819557a4ec1a7be7a8115993ec36ee83931e3db2d9506fff72a19a0a04ef53",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z58FSG",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The lifespan owns the refresher's lifetime, so no reaper of its own is needed.",
       "role": "enforcement"
     }
   ],

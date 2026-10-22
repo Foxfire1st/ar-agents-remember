@@ -14,6 +14,9 @@ Startup compacts the workspace river before projector prime, then starts project
 
 The serving lifetime retains the L81 shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY, NEW-R192-RULE19-PORT.** The lifespan owns the refresher's lifetime, so no reaper of its own is needed. The lifespan consumes the collaborator it was given instead of reaching into cli, which is the edge the finding was about. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Held-message delivery tick
 
 `_held_delivery_loop` runs with serving under the shared background ledger and calls `_held_delivery_tick` every `HELD_TURN_END_TICK_SECONDS` (three). Each tick reads the host's activity publication through `turn_ended_agents` and hands the agents whose turn ended to `deliver_ended_turns`, which drains only the receipts a holder named. Every `HELD_DELIVERY_SWEEP_SECONDS` (fifteen) the same tick also runs `sweep_held_messages` as the fallback for receipts no holder named. A failed tick is logged and retried on the next interval; the store keeps everything that still waits, and each tick is one accounted worker unit.

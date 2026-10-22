@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "89990ed97f0e0960816b36837bb9544946b6f361",
-        "content": "sha256:71a9ae05ecb76233d752a713c70f016d787f57a7cf265cbc076fffdef2ca2bd8",
+        "blob": "3e5a79f6497a5df93a456def4f6d419bef159bde",
+        "content": "sha256:4f8b7e5b135154c32f07473c7319a42c2fd1cbf068bfa9df03c0a3bfec7220a0",
         "locator": {
           "end": 320,
           "kind": "line_range",
@@ -19,6 +19,23 @@
       },
       "rationale": "The closed register owns treatment and reason for each source-discovered mutable state.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3e5a79f6497a5df93a456def4f6d419bef159bde",
+        "content": "sha256:5651bba282ba542970ddad0a73441f254f2414d12998fb7f9b75a1b7f110e16b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7TS022",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Shared state that survives between cases is how a suite becomes order-dependent.",
+      "role": "support"
     }
   ],
   "references": {

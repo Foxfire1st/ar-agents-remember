@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The obligation is asserted by its own cases and its failure would let the send-back act on a seat that is working or limited; its one realization is deliberate, so it claims no span."
+  },
+  "applicability": "Every task, agent row and master count the product shows for a role seat with a provider subagent, and the plugin's own publication of that activity.",
+  "conditions": [
+    "A subagent the host reports as running counts while it runs, including after its parent's turn ends.",
+    "The age of a seat that works only through subagents runs from the oldest running subagent's start.",
+    "A seat holding a running subagent is not idle for the send-back, and a running subagent makes its holder busy for a step-up, which never interrupts that holder whatever interruption word is given.",
+    "Retirement or replacement of a seat that holds a running subagent, unlike a step-up, needs the word that its work may be interrupted, and a refusal names the subagent."
+  ],
+  "exclusions": [
+    "A finished subagent keeps no activity of its own.",
+    "Timeline rows and updates for a parent outside the role record are not counted.",
+    "The presenter and the developer's tray are not task rows."
+  ],
+  "id": "INV-2ANNY5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-launch/L184-S4-freeze.md; role-launch/L184-S4-evidence-index.md"
+      ],
+      "path": "writer-draft-03.json"
+    },
+    "handoffEntry": "NEW-RUNNING-SUBAGENT-IS-WORK",
+    "leaf": "260928-MIK-L184",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A running provider subagent is work: it is counted, its age runs from when it started, and a seat that holds one is not idle.",
+  "status": "proposed",
+  "supersedes": []
+}

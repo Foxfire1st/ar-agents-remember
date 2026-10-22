@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
+        "blob": "4ebdadbe5250941261081b699793125966c459c5",
         "content": "sha256:b8e8aeb19a9db1aaff3be58de7dcb40ab4c0d47dcc5746109c9e140764475ea2",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,11 @@
     },
     {
       "anchor": {
-        "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
-        "content": "sha256:1734f75d8454a146ab72ec506fbf6ee42846d546f9551c36811962547685df43",
+        "blob": "4ebdadbe5250941261081b699793125966c459c5",
+        "content": "sha256:96d5fb10ba0ff77cddcd147392db223f01b24821e9b8fafb4249101e5e238b69",
         "locator": {
-          "end": 522,
-          "kind": "line_range",
-          "start": 505
+          "kind": "symbol",
+          "name": "TaskEntry"
         }
       },
       "id": "RLZ-8FGD85",
@@ -35,12 +34,29 @@
         "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "TaskEntry carries an optional TaskSummary whose cached steps supply the row-held major/child disclosure data.",
+      "rationale": "TaskEntry carries the optional TaskSummary (`summary?: TaskSummary`) whose cached steps supply the row-held major/child disclosure data; the earlier range ended before that field.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
+        "blob": "4ebdadbe5250941261081b699793125966c459c5",
+        "content": "sha256:9eb234eb5d08d904d06cf2a2fb01120ca0999659f5f97f9cc133778c6a06fe6a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QGQ03S",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The client type is what the dashboard reads the projection as, so the fact's shape is declared here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4ebdadbe5250941261081b699793125966c459c5",
         "content": "sha256:2a7401aeee9f844eda1d3f5894a7bbbcb6703c46f1cf1ab35521906e6aeaa9af",
         "locator": {
           "kind": "symbol",

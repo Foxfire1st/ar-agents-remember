@@ -5,11 +5,13 @@
     ],
     "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
   },
-  "applicability": "Native retirement of Worker, Reviewer or Curator by the recorded original starter.",
+  "applicability": "Native retirement of a Worker, Reviewer or Curator by the recorded original starter, and the liveness check that steps a seat up.",
   "conditions": [
     "Resolve all matching current and archived receipts before any archive effect.",
     "Require the original starter even for a repeat reporting already-retired.",
-    "An active turn requires explicit interruption permission."
+    "An active turn requires explicit interruption permission.",
+    "More than one matching record in any current/history mix is refused before any archive effect, with no host call and no disk write, so target uniqueness survives alongside starter authorization.",
+    "A seat whose publication shows a running subagent is retired or replaced only with the word that its work may be interrupted, and the refusal names the subagent; a step-up never interrupts a holder that has one."
   ],
   "exclusions": [
     "The removed hosted-seat retirement machinery.",
@@ -28,9 +30,9 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Retirement enumerates every matching current and archived record first and refuses an agent recorded more than once, in any mix, with no host call and no disk write; starter authority is verified before retirement and idempotent success.",
+  "statement": "Retirement enumerates every matching current and archived record first and refuses an agent recorded more than once, in any mix, with no host call and no disk write; starter authority is verified before retirement and idempotent success. A seat whose publication shows a running subagent is retired or replaced only with the word that its work may be interrupted, and it is busy for a step-up, which never interrupts it.",
   "status": "proposed",
   "supersedes": []
 }

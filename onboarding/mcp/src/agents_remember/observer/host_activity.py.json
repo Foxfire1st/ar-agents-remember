@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/observer/host_activity.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8056a4668539242763a031a29ca26d7b54b66caf",
+        "content": "sha256:123fa29aa0c5d07dd727cca4be243d1c87318559436c3269876c57f0e3200b83",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1TPG1E",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This reader is where the publication becomes a snapshot, so the completeness rule is realized here.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Define the shared validated host publication and default-unknown retained activity facts.",

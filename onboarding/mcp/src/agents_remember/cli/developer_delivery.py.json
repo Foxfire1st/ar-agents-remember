@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
-        "content": "sha256:28b19a833f078881777e3bbf06521ea9e3817a1baeccc7fa969ffd0ef0b1463f",
+        "blob": "75db1bc4e65a037c82c59c38a7322663634da334",
+        "content": "sha256:825e3da1f47eee99bbc9b27b936351d17507c740f9253ad22a3de0cf8c4b0083",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1PYRAZ",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Both the hold's answer and the queued branch are written here, which is where the reset was lost.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "75db1bc4e65a037c82c59c38a7322663634da334",
+        "content": "sha256:f71bb89026ecfc0f703e6bee26317c26af0dc0be9bc56860727ce315e1fa8695",
         "locator": {
           "kind": "symbol",
           "name": "_hold"
@@ -17,6 +34,23 @@
         "leaf": "260928-MIK-L89"
       },
       "rationale": "Answers a partial drain by whether this send’s own held-message ID ended.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "75db1bc4e65a037c82c59c38a7322663634da334",
+        "content": "sha256:825e3da1f47eee99bbc9b27b936351d17507c740f9253ad22a3de0cf8c4b0083",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YTMFR6",
+      "invariant": "INV-E27J2R",
+      "origin": {
+        "handoffEntry": "NEW-MESSAGE-WAITS-FOR-RESET",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "Both the hold's answer and the queued branch are written here, which is where the reset was lost.",
       "role": "enforcement"
     }
   ],

@@ -12,6 +12,9 @@ The release-owned host contract: the host package, its one exact version and the
 
 `paseo_host_contract.py` loads this file and derives the names every consumer uses; the release concordance script checks the host manifest, the complete npm lock, the plugin SDK pin and each archive against it.
 
+
+**L184 — INV-JS6GJ7.** This file is the contract the pin checker reads, so the answer's shape is stated here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 

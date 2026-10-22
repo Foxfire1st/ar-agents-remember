@@ -9,10 +9,13 @@
   "conditions": [
     "Server TaskEntry stage/activity own the word and mark; browser colour and elapsed silence do not infer state.",
     "Need ordering uses each entry own works/started/planned/terminal band.",
-    "Hover uses served entry/content/count facts without lifecycle or worktree-status reconstruction."
+    "Hover uses served entry/content/count facts without lifecycle or worktree-status reconstruction.",
+    "A limited, started task with none of its agents working shows `rate limited: <time left>` in one compact unit with paused's tone, and the hover names each limited seat with its provider, its exhausted window and the exact reset including date and time zone.",
+    "A place with no display clock shows `rate limited` and puts the reset in its hover and its accessible name."
   ],
   "exclusions": [
-    "Deriving task stage or activity from UI colour, elapsed silence or a retired lifecycle event."
+    "Deriving task stage or activity from UI colour, elapsed silence or a retired lifecycle event.",
+    "Operational severity dots, process phases, dependency readiness and verdict vocabulary are distinct domains."
   ],
   "id": "INV-7GVWYD",
   "origin": {
@@ -26,9 +29,9 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "An Operations row formats its own served task stage and started-task activity through the common status word and mark; need bands order works, other started, planned and terminal tasks. Its hover presents title, unauthored-document notice, state/stage, repository, current step, progress, host event and abandoned/discarded counts when present, not removed lifecycle/worktree reports or an unrendered scope/reference path.",
+  "statement": "An Operations row formats its own served task stage and started-task activity through the common status word and mark; need bands order works, other started, planned and terminal tasks. Its hover presents title, unauthored-document notice, state/stage, repository, current step, progress, host event and abandoned/discarded counts when present, not removed lifecycle/worktree reports or an unrendered scope/reference path A limited task keeps that same row: its word becomes `rate limited: <time left>` in one compact unit with paused's tone, and its hover retains every BASE field while adding each limited seat's provider, exhausted window and exact reset.",
   "status": "accepted",
   "supersedes": []
 }

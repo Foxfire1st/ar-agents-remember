@@ -379,6 +379,8 @@ L174 adds `test_changeset_cancellation.py` (scheduler admission, queued withdraw
 
 The review-evidence and frame contracts are measured by `test_review_evidence_packet.py`, `test_review_evidence_residuals.py` and `test_review_frame_store.py`; the sidebar's step-tooltip contract by the dashboard's `stepTitles.test.tsx`. Registration in the evidence lanes selects the population and certifies no invocation.
 
+**L184.** The suite gains cases for provider subagents, the usage report judgement, the limit file, the held-message check and drain, the layering port, extra harness arguments and the projection types.
+
 ## Evidence
 
 - The selected evidence-packet case asserts that a foreign repository with equal trees is never this comparison (`test_review_evidence_packet.py::test_f01_a_foreign_repository_with_equal_trees_is_never_this_comparison`); the packet, read, claim and prepared-address contracts are asserted by the module's other cases, not by this one. [1787]

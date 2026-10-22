@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+        "content": "sha256:8d85fd54f6dc19abff8434a19e6e9b5d6ee59eba7b8779c7b83622c099ac6529",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CC8RVF",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The graph's own test is where its two forms of the word are held.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The component forcing suite.\n\nAnchor: seeded component assertions",

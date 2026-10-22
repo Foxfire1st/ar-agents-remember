@@ -16,6 +16,9 @@ The projection stream route passes the runtime's memory-root capability to `mult
 
 The shared runtime also carries the optional background ledger. Routes, projection owners and background loops use that same account; the runtime bundle does not restore a terminal host or notifier owner.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY, boundary corrected.** A non-JSON value here would break a served response, not the projection tick: these functions prepare HTTP and SSE bodies, and their JSON mode keeps a `JSONResponse` or an SSE frame from failing on a datetime. The tick's persisted write belongs to `projection_store`, and the stable-delta decision has its own dump boundary; the earlier sentence that laid every tick's failure at this module's door was wrong. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence boundary
 
 This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.

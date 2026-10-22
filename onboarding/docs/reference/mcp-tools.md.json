@@ -38,6 +38,23 @@
       },
       "rationale": "The repaired instruction extent names this operational contract.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ac6bf6046020a044460f384b661436a7a7ce2ea5",
+        "content": "sha256:1073f6d30f8ac91c9d4ad2f061b6252f59777d96156e32859eadcf2cd8d5a643",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R4M3J6",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "L184-M1-F14-tools",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The tool reference maps the retained MCP operation families and their current request schemas; where it describes the message tool it documents the ordinary held answer, and it carries no limited-recipient reset. This is documentation of the public surface, not enforcement of the message rule.",
+      "role": "support"
     }
   ],
   "references": {

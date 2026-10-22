@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/topology/model.test.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7627e7090c13b211851e1ce36349ff387ad71c57",
+        "content": "sha256:2511ec62af1e7338055c285c13f298e31360077912b690e39b49ed4634b045e3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X34AKJ",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The topology model is where the label's text is chosen, so its test holds the no-clock form.",
+      "role": "support"
+    }
+  ],
   "references": {
     "7": {
       "note": "The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence.\n\nAnchor: \"joins a worktree provider to its enclosure when worktreeGroup formats differ (path vs basename)\"; \"parents worktree-scoped providers to their owning worktree node\"; \"falls back to the workspace core when a worktree provider has no matching group\"; \"keeps workspace-scoped providers parented to the workspace core\"; \"parents repo-scoped workspace providers to their covered repo node\"; \"keeps worktreeGroup precedence over repoId for provider parenting\"",

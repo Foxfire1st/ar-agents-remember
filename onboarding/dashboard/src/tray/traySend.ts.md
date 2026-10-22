@@ -18,6 +18,9 @@ Builds structured wire picks, reads image bytes, chooses a repository from page/
 
 Held counts as sent and is never resent. One target refusal does not stop others. Missing image, invalid answer and network errors are explicit per-target refusals.
 
+
+**L184 — INV-4DQMNE.** This parser is where a delivery's fields arrive from the server, so the reset has to survive here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - Sends one immutable collection snapshot separately to each chosen target. [1]

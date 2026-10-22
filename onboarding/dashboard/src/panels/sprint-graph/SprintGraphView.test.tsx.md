@@ -28,6 +28,9 @@ ellipsized leaf line's ch-based growth is pinned against `leafLineStyles`.
 - jsdom limitations are worked around by exporting and asserting the declarative style
   objects rather than computed layout.
 
+
+**L184 — INV-XZYGEB.** The graph's own test is where its two forms of the word are held. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Repo-Internal References

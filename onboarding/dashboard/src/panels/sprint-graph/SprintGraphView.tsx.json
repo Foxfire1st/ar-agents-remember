@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
         "content": "sha256:f21bb4ed973d6fce10ceafbb6ffbe238ef556a5b0a27eb2286f531e9856e4aa9",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
         "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
         "locator": {
-          "end": 152,
+          "end": 154,
           "kind": "line_range",
-          "start": 148
+          "start": 150
         }
       },
       "id": "RLZ-ECDCN3",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
         "content": "sha256:032ede3a6fc72c348dab59296f93f491152201d8bbdd2035af22c00e6fcf03b6",
         "locator": {
           "kind": "symbol",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
         "content": "sha256:292ca2a27e7af02425de5c78691fd924c319a23077541d8bc9d84953e38f628d",
         "locator": {
           "kind": "symbol",
@@ -76,12 +76,28 @@
     },
     {
       "anchor": {
-        "blob": "10fa9b314498732151de2f419d952921a92ebe84",
-        "content": "sha256:eb4288f2212f563aae934cb98a343593e1aa1141708a4d2479f89780a57579ee",
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
         "locator": {
-          "end": 201,
-          "kind": "line_range",
-          "start": 168
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VKR9H4",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This view is one of the named places that show one task's word.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "GraphBox"
         }
       },
       "id": "RLZ-Z1ZEK4",
@@ -90,7 +106,7 @@
         "handoffEntry": "L168-CUR-M2-21-N03",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "GraphBox resolves node.masterRef against the qualified tasks map and uses taskStatusKey/statusLabel/StatusWord for accessible and visible task state. readinessOf and the separate ready/waiting/cycle badge remain dependency facts, never a task-state fallback.",
+      "rationale": "GraphBox resolves the node's master task and renders the visible StatusWord with its until and limit, the readiness badge, and the accessible label naming the status. The earlier range ended inside the key handler, before the elements it claimed.",
       "role": "presentation"
     }
   ],

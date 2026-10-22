@@ -14,6 +14,9 @@ rowBand orders works, started, planned, terminal; tree order breaks ties, except
 
 MIK-R174 adds `rowOrder` and `hostTime`: inside the started band the rows the host timed order newest first and the rows it did not time keep the server's order; `hostTime` returns null for a missing or unparsable `eventAt`, so no row's time is invented as zero or as now. Every other band keeps the server's order, and a time still orders nothing in the shown figure.
 
+
+**L184 — INV-7GVWYD.** This module builds the row's reading, so the one-reading claim is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - A missing host time orders nothing and is never turned into zero or now. [2]

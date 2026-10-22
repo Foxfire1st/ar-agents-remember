@@ -14,6 +14,9 @@ contribute reads the list once at load, logs the entry count and registers ar.em
 
 A host-activity publisher is created from PASEO_HOME, registers its own event handlers, and supplies the explicit ar.host-activity-snapshot RPC: a full reconciliation returns the publisher boot identity. Initialization and unload-publication failures are logged; an unavailable publisher makes the RPC fail visibly. Unload marks publication incomplete. registerParentWakeEvents separately owns its tracker, host-state reads, log sink and steer sends, and returns the cleanup that stops every pending seat wait when the plugin unloads, preserving turn/permission gates without conflating wake behavior with task-state publication. Embed data remains load-time data; neither owner starts a poll.
 
+
+**L184 — INV-VDWN33.** This is the plugin's one handler for both calls, so the number crosses the boundary here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 The server does not infer parent trust, poll another registry or gain dashboard helper gate coverage.

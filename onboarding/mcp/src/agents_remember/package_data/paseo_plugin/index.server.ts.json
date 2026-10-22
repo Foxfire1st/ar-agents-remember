@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
+        "content": "sha256:7a20a4770517aeb358d7d1a02f45cbafd50b35b38a7f5b6d5e70e67225d8ce88",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4RGXR2",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the plugin's one handler for both calls, so the number crosses the boundary here.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The server entry reads the embed list at load and registers the existing embed RPC.\n\nAnchor: `23-26`",

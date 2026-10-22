@@ -12,6 +12,9 @@ The shared definitions type ar.embed-list and the explicit ar.host-activity-snap
 
 ar.embed-list takes empty input and returns string dashboardOrigin/frameBaseUrl pairs; provisioning and client origin checks remain separate. ar.host-activity-snapshot takes empty input and returns a bootId string after the server-owned reconciliation. It is an explicit startup/plugin-boot read, not a host poll or task-stage producer.
 
+
+**L184 — INV-VDWN33.** The shared contract is what both sides are written against, so the number's type is stated here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Invariants And Boundaries
 
 Schema shape is not origin authorization, independent frame permission or a secret channel.

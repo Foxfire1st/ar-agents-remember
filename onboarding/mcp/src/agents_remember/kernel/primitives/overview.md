@@ -129,6 +129,8 @@ The following route and onboarding tables are retained metadata. Their `covered`
 
 None.
 
+**L184.** The host contract's pin moves to 0.12.0, and the runtime settings read the extra harness arguments a harness entry or a role entry carries.
+
 ## Evidence
 
 - Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. [1]

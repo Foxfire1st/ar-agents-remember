@@ -12,6 +12,9 @@ Defines strict optional authority for one install prefix, home, listen endpoint,
 
 A present block must carry the five operational facts (`installPrefix`, `home`, `listen`, `providers`, `embed`) and accepts an optional `version` that never selects the release; providers/embed may be empty but cannot be malformed. The parser rejects nonabsolute paths, malformed listen/ports and unknown keys, and any provided `version` that differs from the packaged contract produces one notice rather than a refusal or a selection. Embed origins must already match the exact browser-canonical spelling; noncanonical spelling is refused, not silently normalized. Frame URLs are validated without credentials/query/fragment, and duplicate canonical origins refuse. An absent block remains None and require_paseo_runtime names no runtime configured.
 
+
+**L184 — MIK-R192 extra arguments, not a usage read.** This primitive parses the settings map and refuses `extraArgs` in the host provider's own configured options and in any entry that extends that provider; it is settings parsing and a configured-argument refusal, not a reader of the host's usage report, and nothing here decides a limit. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - Frozen implementation of parse_paseo_runtime_settings supporting the stated file behavior. [1]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
+        "blob": "0b64345ea76529f17d681fa9c125c62c1bd95fd6",
         "content": "sha256:9edc8e42d2293e3be5f6882893cebe31382040d0dcc6129a4c53c343965b347a",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
-        "content": "sha256:f734f25e437b55ff245602cc32c56e9cc4c4d21b9b2ddd24da8ab4fbe347f813",
+        "blob": "0b64345ea76529f17d681fa9c125c62c1bd95fd6",
+        "content": "sha256:a60086142f13d48e270aa9f2b241690696020acaa46c9b7b5779ad9bad22c844",
         "locator": {
           "end": 136,
           "kind": "line_range",
@@ -36,6 +36,23 @@
         "leaf": "260928-MIK-L166"
       },
       "rationale": "Constructs one shared landing refresher and binds it to the owning Projector before background startup.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b64345ea76529f17d681fa9c125c62c1bd95fd6",
+        "content": "sha256:be3a55b6db265d840fead1bcdbd1877485ef09c4f3a69f3fd9c4b2bbf9eb4d36",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Y1MRCM",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The app is the composition root, so the collaborators' wiring is realized here.",
       "role": "enforcement"
     }
   ],

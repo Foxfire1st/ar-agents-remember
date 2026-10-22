@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-        "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
+        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+        "content": "sha256:ba51f7604f2b82748550c405a260ebd6516773bf956bb736996ddea5c484d165",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0941ZP",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The resolved view is what a launch reads, so the entries and their origins are realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+        "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
         "locator": {
           "kind": "symbol",
           "name": "load_agentic_settings"
@@ -21,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
+        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
         "content": "sha256:de96f302cddeee779ff7c93fb3235cee8bbb220900f3e0bc32da5d820df43f78",
         "locator": {
           "kind": "symbol",
@@ -39,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-        "content": "sha256:6d2e567bf558abc7dc40a5c381054ca64a0584d310a366e16513a38fb7af826d",
+        "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+        "content": "sha256:0be9e9a1e1fe1bf57da33ce5b3b70802813ae8ad8b9a0f631090921b4498b4d2",
         "locator": {
           "kind": "symbol",
           "name": "_refuse_repository_role_authority"

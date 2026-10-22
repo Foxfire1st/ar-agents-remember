@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/limited.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb39a911191550438a2ac1c6e0d6079ba459dc8c",
+        "content": "sha256:2ad5261fee1c3b3185a661d20fc40fdcfb085a0198b4920c24e399406299ac77",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-935V6N",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The case pins both halves of the requirement, the word and the counting, where the sidebar renders them.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

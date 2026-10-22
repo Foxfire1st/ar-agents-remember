@@ -1,0 +1,60 @@
+{
+  "path": "mcp/tests/test_provider_limit_hold.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+        "content": "sha256:4b802679d74b2d39ff8bdb8a34c527f7f06e50826470f0c2181439e868f9df13",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_limited_recipient_costs_no_host_read"
+        }
+      },
+      "facet": "Waiting for the reset costs no host read.",
+      "id": "PRF-NHBTWC",
+      "invariant": "INV-E27J2R",
+      "origin": {
+        "handoffEntry": "NEW-MESSAGE-WAITS-FOR-RESET",
+        "leaf": "260928-MIK-L184"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "00314414a9adbfba8f1452933f039ff41c7ee0b9",
+        "content": "sha256:217b7b6ed2d97ca44f97c47fbc75e642b81d8536abac065b4b20a8bcc230aaa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"
+        }
+      },
+      "facet": "A limited recipient's message is held with the reason and the reset.",
+      "id": "PRF-RCQ0ZA",
+      "invariant": "INV-E27J2R",
+      "origin": {
+        "handoffEntry": "NEW-MESSAGE-WAITS-FOR-RESET",
+        "leaf": "260928-MIK-L184"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+        "content": "sha256:6c6724171859e2ff71a5ef7a8f025ac8e01f7093a91bcb81b6b6a56e6b24ab5b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G2ZAMP",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The one limit check is held here, where its reason and reset are decided.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

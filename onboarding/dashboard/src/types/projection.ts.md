@@ -56,6 +56,9 @@ generated file belong to other collections — `CloseoutCandidateNode.reasons` (
 
 ### Conventions
 
+
+**L184 — INV-XZYGEB.** The client type is what the dashboard reads the projection as, so the fact's shape is declared here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## L126 Product-Record Wire Flag
 
 `TaskDecisionNode` carries `product_record: boolean`: the server classifies legacy exact finalizer strings and remove/skip prefixes as product records, while the stored entry shape is unchanged. Existing finalizer-shaped records remain marked; current finalization does not emit a new decision. Authored-only preview numbering/counts exclude such records, and the whole-log page preserves them in the muted end disclosure. The type declaration itself does not call a writer or prove classification.

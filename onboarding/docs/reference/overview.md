@@ -92,6 +92,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | --- | --- |
 | sourceRoute | docs/reference |
 
+**L184.** The tool reference's held answer now has to describe the limited recipient's hold and the reset it carries.
+
 ## Evidence
 
 Inherited finding [23] retains its exact wording/target as the historical profile-required closeout account; parent adjudicates that outdated prerequisite. Current requested-certification and invariant-gated transaction are separate:

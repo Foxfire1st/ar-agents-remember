@@ -33,6 +33,9 @@ Halts to a static frame under `?effects=off`. The renderer depends on the refs, 
 canvas fills the wrap **out of flow** (no layout-feedback loop), and the `Panel` must stay **`fill`**
 for the wrap to fill its slot.
 
+
+**L184 — INV-XZYGEB.** This panel renders the topology label the requirement names, so it is where the no-clock form of the word has to be spelled. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Repo-Internal References

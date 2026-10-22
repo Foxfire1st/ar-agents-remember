@@ -78,6 +78,9 @@ no rAF loop. `EDGE` and `MUTED` are chrome, not status, so they stay outside the
 
 No open file-local todos.
 
+
+**L184 — INV-XZYGEB, ownership corrected.** This renderer paints the labels it is given, truncates them to the space available and copies the supplied detail and sub-line into the tooltip: it presents and propagates what the model hands it. The limited word, its clockless form and the choice of detail are decided in `model.ts::worktreeFields` with the shared status helpers, not here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Docs References

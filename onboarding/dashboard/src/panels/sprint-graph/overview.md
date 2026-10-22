@@ -45,6 +45,8 @@ The narrow layout preserves box grouping, wave order, and predecessor informatio
 
 Scenario reset uses the canonical dashboard-store reset rather than a second reset owner. The mounted reset proof must establish a visible matching queue before reset and verify both store and UI clearance afterward. This is dev/test scenario infrastructure; it supplies no production queue-ingestion, scheduling, or lifecycle authority.
 
+**L184.** The sprint graph's labels take the served limited word and its full detail without computing a countdown of their own.
+
 ## Evidence
 
 - The current overview reader retains its scoped CloseoutQueue independently of optional graph/Order content, including graphless sprint pages. [3]

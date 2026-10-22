@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/provider_limits.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "007dfa29166f6e6ac967273be438b067351e1c32",
+        "content": "sha256:0671dff3ef2985f44a84325936294df4b65c9a7a535781e6d04fb1062368722e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XATWX1",
+      "invariant": "INV-4T6KSE",
+      "origin": {
+        "handoffEntry": "INV-4T6KSE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module both judges one read by rule 6 and is the product's one atomic writer of provider-limits.json, so the decision and the fact's storage are realized here rather than in the observer.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

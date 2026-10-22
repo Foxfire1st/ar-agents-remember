@@ -57,9 +57,12 @@ optional hard cap for full-wrapper runs at the master integration gate; an absen
 keeps RAM and swap host-managed, unknown keys fail loud like every other orchestration
 family, and a JSON `null` at the family key is refused.
 
+
+**L184 — NEW-R192-EXTRA-ARGS.** The resolved view is what a launch reads, so the entries and their origins are realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Logic
 
-Current _parse_harnesses admits known legacy entry keys as unread execution data and returns effective IDs. It does not enforce effortFlagValues or an execution-command mapping.
+Current _parse_harnesses admits known legacy entry keys as unread execution data and now returns two parts: the effective IDs and the harness-level `extraArgs` entries, which are attached to the settings beside them. It does not enforce effortFlagValues or an execution-command mapping.
 
 > **Historical pre-current-loader account — retained, not an operative parser/consumer promise:**
 > **260714-ACPUI-L2 effort policy.** When a settings-defined non-native harness declares
@@ -187,7 +190,7 @@ The current closed role vocabulary for flat `orchestration.roles` and per-level
 canonical role. The earlier eight/nine-role descriptions are historical vocabulary observations,
 not the current allowlist or an instruction selecting a seat.
 
-Current _parse_harnesses returns built-in IDs plus settings-added IDs and validates only ID/entry/key shape. Command/argv/effort vehicle fields are accepted-unused; no _HarnessEntry, _merged_harness or effort-session-template consumer is constructed here.
+Current _parse_harnesses returns built-in IDs plus settings-added IDs together with each harness's `extraArgs` entries, and validates the entry and key shape while parsing each harness's `extraArgs` records, which the loader stores as `harness_extra_args`; a role's own `extraArgs` is checked against its named harness and its capability before it is kept, so the return is the IDs, the entries and those records, not the IDs alone. Command/argv/effort vehicle fields are accepted-unused; no _HarnessEntry, _merged_harness or effort-session-template consumer is constructed here.
 
 > **Historical pre-current-loader account — retained, not an operative parser/consumer promise:**
 > **Harness definitions (L16 registry openness).** `_parse_harnesses` (decomposed into

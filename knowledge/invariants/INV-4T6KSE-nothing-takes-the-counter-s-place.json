@@ -3,12 +3,18 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "Dashboard absence tests (master reader, cockpit) and the empty usage-read diff pin the no-replacement rule across backend and dashboard; no host or harness figure is read or shown. Admission claims guarded_by_test only: the invariant is proved by named regression tests rather than multi-file realizations."
+    "justification": "Two different claims are now kept apart: no counter and no per-agent, task, master or workspace token figure replaces the removed cost view, and AR reads the host's usage report in one place for the limit only. The preserved absence claims are held by the dashboard absence tests (master reader, cockpit) and the no-usage-figure rules; the admitted reader is held by its own cases for the report judgement, the file and the hold, so the justification no longer rests on an empty usage-read diff."
   },
-  "applicability": "Every dashboard view and every host or harness usage read: no token number per agent, task, master or workspace is shown, and AR reads no usage the host holds.",
-  "conditions": [],
+  "applicability": "Every limit the product attributes to a role seat, and every read of the host's usage report.",
+  "conditions": [
+    "The report is available, and one of its account-wide windows is exhausted with a reset in the future; a scoped window does not hold a seat.",
+    "Enabled extra usage, or a credits balance above zero, releases the seat.",
+    "One reader, one file and one answer at a time: the product writes `provider-limits.json` whole and atomically, and every other reader reads that file only.",
+    "A read happens only at a new stamped turn end; there is no timer and no periodic read."
+  ],
   "exclusions": [
-    "Single-event tokens shown as one answer's size in the Event River (MIK-R114 rule 3)."
+    "No token number per agent, task, master or workspace is shown, and no usage figure beyond rule 13's word and hover is displayed.",
+    "Chat text, error text and model names produce no limit, and no API key or login store is read."
   ],
   "id": "INV-4T6KSE",
   "origin": {
@@ -22,9 +28,9 @@
     "leaf": "260928-MIK-L115",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Nothing takes the counter's place: no token number per agent, task, master or workspace, and AR does not read the usage the host holds for an agent nor any harness usage; the document chat and host reads are untouched.",
+  "statement": "AR reads the host's usage report in one place and for the limit only: a report holds work solely on an exhausted account-wide window, and an enabled extra usage or a positive credits balance releases it.",
   "status": "proposed",
   "supersedes": []
 }

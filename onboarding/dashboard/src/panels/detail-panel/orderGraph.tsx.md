@@ -14,6 +14,9 @@ The inline block resolves graph targets through the shared task-entry map. Its n
 
 Both views share useRestHighlight and relation mappings from the graph owner. Pointer pass-through remains inert until the rest; moving to a neighbor retains the old highlight until the next rest. Keyboard focus marks at once. Reduced motion removes the fade, not the rest. Relation text omits finished predecessors/successors but does not change the authoritative graph.
 
+
+**L184 — INV-XZYGEB.** This graph is one of the named places that show one task's word, so it carries the word's two forms. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Boundaries
 
 Order targets resolve canonical references in the shared tasks map and use entry major-step/child counts. Missing targets stay inert. No front-end wave/frontier inference, native task edit, scheduler or new graph model is introduced. The all-graph view remains the existing producer projection consumer.

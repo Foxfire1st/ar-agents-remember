@@ -1,6 +1,41 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_defaults.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d5eb0caff4b596ff040134f476f2116d7d7e196f",
+        "content": "sha256:0c011baf6b6661965bdb5ea656ced15a7c919939c7c2e16f7b8d1683e2e75cf2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AX1K8P",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The plan is built here, so the unread marker's survival is decided at this one early return.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d5eb0caff4b596ff040134f476f2116d7d7e196f",
+        "content": "sha256:0c011baf6b6661965bdb5ea656ced15a7c919939c7c2e16f7b8d1683e2e75cf2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S0CK5Z",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The caller passes read_config into the host-map read, so the upward edge is replaced by an injected implementation rather than a module import.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Repository/altitude defaults and alternative projection are one per-use read.",

@@ -143,6 +143,8 @@ The task-entry producer maps planning/inProgress/abandoned/Completed to planned/
 
 The body cache records link/target and consumed task/graph/order/grant input identities, including selection directories. It serializes TaskSummary content, hashes its bytes and retains only current generations within entry/byte limits. Native change-set/summary caching has separate repository/object/configuration dependencies. Neither cache owns TaskEntry state or River retention.
 
+**L184.** The host-activity input records the reconciliation it applied, so an older answer can no longer certify a boot.
+
 ## Evidence
 
 

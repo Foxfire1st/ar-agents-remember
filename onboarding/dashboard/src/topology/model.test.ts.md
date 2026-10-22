@@ -45,6 +45,9 @@ Minimal typed enclosure/provider/native-entry fixtures inspect returned node par
 
 No open file-local todos.
 
+
+**L184 — INV-XZYGEB.** The topology model is where the label's text is chosen, so its test holds the no-clock form. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 ### Docs References

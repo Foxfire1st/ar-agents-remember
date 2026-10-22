@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
         "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,24 @@
     },
     {
       "anchor": {
-        "blob": "6f168562d7b6d92fa147b4800d9eec570f5d5fb4",
+        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
+        "content": "sha256:0e7ab8028f45c541a4a02a08880352e947c3e0ddf5b2c3cf62b173eb7a59064b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YQNH72",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The bridge is the dynamic reply adapter: bridge_call returns an unrestricted dict decoded from the bridge's JSON reply, so a field it does not describe is still carried rather than refused, and no strict usage DTO is declared. The bounded subprocess, environment, identity and deadline guarantees stand.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
         "content": "sha256:aa8dcb6e29feaabccd175832b43ed675e440773c572691ce515556b404a48581",
         "locator": {
           "kind": "symbol",

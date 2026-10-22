@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/topology/constel.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+        "content": "sha256:6c7c3436fae31a7f2b93e5d0e8488704ee2210e3b4fdcecc443ed3773e291ae6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WBN62J",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This renderer paints the labels it is given and copies the supplied detail into the tooltip: it presents the status word and detail the model hands it. The limited word, its clockless form and what the detail says are owned by model.ts and the shared status helpers, not decided here.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "`CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas.",

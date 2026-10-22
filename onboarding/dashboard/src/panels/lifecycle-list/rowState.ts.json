@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
         "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
         "locator": {
-          "end": 45,
+          "end": 50,
           "kind": "line_range",
-          "start": 42
+          "start": 47
         }
       },
       "id": "RLZ-86SP7E",
@@ -22,12 +22,11 @@
     },
     {
       "anchor": {
-        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
-        "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
+        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+        "content": "sha256:a05f7dec62e0fe21b6103d722e9aeebfc81a0627e21616b0033e1f19b4016c8f",
         "locator": {
-          "end": 69,
-          "kind": "line_range",
-          "start": 47
+          "kind": "symbol",
+          "name": "rowHover"
         }
       },
       "id": "RLZ-A2WBWC",
@@ -36,12 +35,29 @@
         "handoffEntry": "MIK-R144@v1 rule 3b / one word",
         "leaf": "260928-MIK-L144"
       },
-      "rationale": "Formats exactly the actual row hover: title, missing-authored-document notice, state/stage, repository, current step, progress with abandoned/discarded counts and host event when present. It does not render entry.scope, the full document reference path, a literal kind field, or retired lifecycle/worktree status.",
+      "rationale": "The row's hover is composed by rowHover: title, the unauthored-document notice, state and stage, repository, current step, progress with abandoned and discarded counts, the served limit lines and the host event, joined into one string. The earlier caption named this format while pointing at the helpers above the function that returns it.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
+        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+        "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NR48E4",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module builds the row's reading, so the one-reading claim is realized here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
         "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
         "locator": {
           "kind": "symbol",

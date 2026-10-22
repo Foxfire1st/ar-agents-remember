@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/projection_store.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50919334269e0705ae5ade4c20fb1ae54a3315ff",
+        "content": "sha256:dbeee68f63d680ed66485aecd429e3fcbe615865c4eb8c5850461bc7c6841758",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XPQ3EA",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the one writer of the projection files, so the JSON encoding is decided here.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The shared store-root resolver.",

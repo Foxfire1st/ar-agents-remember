@@ -16,6 +16,9 @@ Provide the shared page-block, row, in-place text, status and progress presentat
 
 Expandable rows use `opensOn`: only a direct row Enter/Space toggles it, and a click on a nested link/button or a click ending text selection is not a request to open the row. This prevents following a register link from also changing row expansion. `StepMarks` shows individual marks up to twelve states, then switches to an aggregate progress bar. Its optional cached steps payload passes one matching major-step entry to each StepDot: with a payload, pointer rest can reveal step and nested-detail text without a request. Missing payload leaves a plain mark; populations above twelve use the aggregate bar without per-step tooltips. Callers own the alignment between states, steps and served counts.
 
+
+**L184 — INV-XZYGEB.** This module holds the word every place renders and the formatter the exact detail uses, so both obligations are realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Boundaries
 
 No document classification, authoritative step state, review count or task mutation is owned here. Whole-content retrieval and Back/scroll restoration belong to the reader/view layer. Presentation thresholds are not server collection limits.

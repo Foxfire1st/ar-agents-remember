@@ -14,6 +14,9 @@ Real presenter sessions on the configured host, outside the AR role and acceptan
 - The host operations `message`, `status`, `transcript`, `resume`, `cancel` and `archive` are answered for the attempt's own session, and the receipt records what the host said.
 - `TOOL_NAMES` is the whole tool authority the author gets; no AR tool is among them.
 
+
+**L184 — NEW-R192-EXTRA-ARGS.** The presenter's confinement check lives here, so the refusal that keeps a confined capability from receiving arguments is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 - The launch has only a dedicated confined tool server. [1]

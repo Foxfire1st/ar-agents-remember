@@ -48,3 +48,5 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 - Common restoration also validates instruction details and takeover references. [6]
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
+
+**L184 — INV-1ZKP4R.** The held store is where a waiting row's fields are written and read, so the reset survives here or not at all. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

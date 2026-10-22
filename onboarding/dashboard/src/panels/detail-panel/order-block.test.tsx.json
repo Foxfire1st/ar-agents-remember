@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/detail-panel/order-block.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1b9f7ed87855e537c7a8a27f692bfc197cc4293a",
+        "content": "sha256:ea913f5ed367638b654553589d1d7f80cbd27135d27d41cfbfc6cd1829d0ac59",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-13662N",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The block is one of the places a task's word is shown, so its test holds the word's behaviour in place.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only.\n\nAnchor: seeded entry-state, graph-navigation and interaction assertions",

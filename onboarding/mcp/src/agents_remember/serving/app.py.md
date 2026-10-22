@@ -12,11 +12,14 @@ Build the dashboard FastAPI application and the long-lived runtime it owns. App 
 
 `_build_serving_runtime` resolves live-input capabilities, creates one shared background ledger, optionally creates the landing refresher, and passes those collaborators to the Projector. When landing exists it binds interest to the actual Projector subscriber predicate before returning the runtime. The runtime carries the supplied clock, build stamp, cadence, child shutdown and the **new review_memory_root** collaborator. Provider metrics storage is returned separately for the delegated lifespan owner.
 
-The actual BASE diff is exactly the added `review_memory_root=collaborators.review_memory_root` runtime argument, not an import change or a new lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
+The `review_memory_root=collaborators.review_memory_root` runtime argument is the delta of an earlier comparison, already present in this leaf's BASE: it is labelled by that original epoch and is not this comparison's change. This comparison's own app.py change is the usage-read wiring — one added `usage_read=collaborators.usage_read` argument on the same runtime construction, so the serving tick's limit write reads the host's usage report through the composition root's reader and not through a new import or lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
 
 `create_app` supplies the runtime/metrics lifespan, installs gzip and registers projection/action, files, changeset, notes, requirements, reviewer, summary, tree and knowledge-reader routes. The changeset cache returned by its registration is passed to the summary route. The optional extra-route callback runs before static mounting; static delivery is last. Missing-port refusals, action mutation rules and stream framing are route-owner contracts, not new decisions in this function.
 
 The complete previous account is retained historically, including earlier route-registration increments. This current local composition account is not a new served-process, browser, background-loop or CODE/MEMORY acceptance measurement.
+
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** The app is the composition root, so the collaborators' wiring is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
 ## Evidence
 

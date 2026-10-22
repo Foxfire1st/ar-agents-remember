@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/topology/model.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+        "content": "sha256:64893b0712c593feefb3aa3352f0408113b5a976493af4f545989706998508c1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZNBVX1",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This model chooses the label's text, so the no-clock departure from a countdown is realized here.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "5": {
       "note": "The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`.",

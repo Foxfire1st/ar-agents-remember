@@ -25,3 +25,5 @@ The held-delivery tick — the projection loop's `MAX_PROJECTION_REST_SECONDS = 
 `_no_turn_endings` now stats the file first and parses it only when its inode, size, mtime or ctime
 moved, keeping the last parsed `(agent, stamp)` pairs for at most four publication files. A missing,
 unreadable or incomplete publication answers nothing and keeps nothing for it.
+
+**L184 — INV-VDWN33.** This input is where an answer is accepted, so the ordering rule is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

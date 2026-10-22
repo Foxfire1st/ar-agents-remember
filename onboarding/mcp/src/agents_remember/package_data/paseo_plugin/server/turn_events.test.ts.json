@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
+        "blob": "d2677f95fba9979f2b05ee370b5ff98e56bd8190",
         "content": "sha256:0616580dd4de730d95ae3ead83839053dc3a45da1706feab36a9c2c75bf378ae",
         "locator": {
           "kind": "symbol",
@@ -19,7 +19,25 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d2677f95fba9979f2b05ee370b5ff98e56bd8190",
+        "content": "sha256:d1f423737130f75380d1e71a86842020365ca2c9b794effda49822c1665b6ebb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H55V5C",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The event handler's cost bound is asserted here, which is where a write for timeline traffic would show.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The contributed adapter admits a seat wake only from an exhausted host listing; incomplete walks leave the seat alone.",

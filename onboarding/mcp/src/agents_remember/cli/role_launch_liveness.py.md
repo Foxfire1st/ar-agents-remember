@@ -14,6 +14,9 @@ _refresh_execution returns unresolved/rejected launches without an agent read. _
 
 A held receipt keeps the product status `held` through an ordinary host idle reading. Only an archived or vanished holder frees that seat; an unreachable host leaves its saved held state intact. Ordinary revive and closing-mark behavior stays separate.
 
+
+**L184 — INV-ECNV2S.** This module is where a seat's liveness is judged, so the word that guards a retirement is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Current Contract — Scoped Launch And Settings Changes
 
 Same-request reconciliation checks request digest first, reconciles its task step-up decision, then re-executes starting/unknown or a rejected stepped-up receipt that still has replayRequest. Other resolved receipts continue through refresh; this adds a narrow rejected-successor retry, not a general retry for every refusal.

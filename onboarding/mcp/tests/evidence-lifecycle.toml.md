@@ -189,6 +189,9 @@ The command keeps a comment that follows a table header on its line, and comment
 directly above a table header, with that row. It refuses a comment inside a list.
 
 `mcp/tests/test_comparison_changeset.py` is currently listed on seven `consumer_scope = "exact"` artifact rows: `_user_settings_guard.py`, `anchor_fixture_models.py`, `diff_scope_test_support.py`, the repository-profile Node `package-lock.json`, `knowledge_row_codec_test_support.py`, `knowledge_rows_test_support.py` and `read_scope_test_support.py` (all beneath `mcp/tests`). Those declarations record the comparison module's artifact population, not evidence execution.
+
+**L184 — INV-1ZKP4R.** This file is the index of the lanes the suite runs. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The Node lockfile artifact declares test_leaf_handover.py and test_leaf_handover_review_rounds.py; the lane manifest places test_leaf_retirement_wording.py in unit-regression. The held catalog has no artifact row for these test modules. These are current source observations, not evidence of addition history or execution.

@@ -48,6 +48,9 @@ operation for the dashboard to wait on. The JSON Schema remains generated from t
 
 ### Conventions
 
+
+**L184 — INV-XZYGEB.** The schema is the contract the client is generated and checked against, so the fact's shape is stated here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## L126 Product-Record Wire Flag
 
 The `TaskDecisionNode` schema carries `product_record` (boolean, default false):

@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:2ac014290e03e6cef09c5d4c86328c45a3db96e9e47ee81cdd4c28e284d99354",
         "locator": {
-          "end": 405,
+          "end": 409,
           "kind": "line_range",
-          "start": 362
+          "start": 366
         }
       },
       "id": "RLZ-4SKB8D",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
-        "content": "sha256:f6f790fb75c5b7a7f43edc8953a57d7837bec0a87febda42db6eac6a29d35592",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "content": "sha256:8622fead4295a561db128f3f2e21a852b9396f6ed802e3c9dcd73849640ab3d6",
         "locator": {
           "end": 243,
           "kind": "line_range",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:b9a6cc9215f7f9530085fb0b484040ee81cd65026bb45ee98b2aba277cb3a97e",
         "locator": {
           "kind": "symbol",
@@ -59,12 +59,29 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "content": "sha256:9823d10da1160dc6fcf88f852c8fea599e434556904e8bb0c6f12e419d6b22ff",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DDMK3M",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the composition root: it binds the real bridge read to the port serving declares, which is where the one permitted crossing is made.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:c233018d6eb0b24616c32a67cf4ed520bfcb81313f598e4304bbedb695b0acae",
         "locator": {
-          "end": 175,
+          "end": 178,
           "kind": "line_range",
-          "start": 172
+          "start": 175
         }
       },
       "id": "RLZ-HM528R",
@@ -78,7 +95,24 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "content": "sha256:9823d10da1160dc6fcf88f852c8fea599e434556904e8bb0c6f12e419d6b22ff",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HPJZAR",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The composition root wires the refresher, so the answer the consumer compares is taken here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
         "locator": {
           "kind": "symbol",
@@ -96,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:970f000f9538738a71d9798bbe4e298ae76b3ba189cdb226bda54ceac12cb5c3",
         "locator": {
           "kind": "symbol",
@@ -114,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:cf33268c5297628934284c7f02155d4dd055143056526819505298ceb8fe4185",
         "locator": {
           "kind": "symbol",
@@ -132,12 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
         "locator": {
-          "end": 281,
+          "end": 285,
           "kind": "line_range",
-          "start": 247
+          "start": 251
         }
       },
       "id": "RLZ-V8EXDR",
@@ -151,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
         "content": "sha256:b9a6cc9215f7f9530085fb0b484040ee81cd65026bb45ee98b2aba277cb3a97e",
         "locator": {
           "kind": "symbol",

@@ -36,9 +36,13 @@ Always-on task and series nodes omit the full reader body, not every body-derive
 
 ## Construction And Ownership
 
+### L184 — the limit read and the running-subagent fields
+
+A new read-side module, `observer/provider_limits.py`, reads the product's one limit file at observer, so the status function needs no upward import to learn a seat's limit. The host-activity model in this route also admits the running-subagent fields: a supplied subagent count and its since-time travel with the agent facts, which is what lets a seat whose only work is a running subagent read as working rather than idle.
+
 ### One native task model
 
-TaskState separates planned/started/aborted/completed stage from optional works/paused/unknown activity and eventAt. A non-started canonical stage wins over host activity. An unavailable/incomplete host observation cannot prove paused; a complete known host may establish works from in-turn/permission agents, otherwise paused. The timestamp comes from working contributors when present, otherwise the observed agents, not a generated heartbeat or elapsed-age counter.
+TaskState separates planned/started/aborted/completed stage from optional works/paused/unknown activity and eventAt. A non-started canonical stage wins over host activity. An unavailable/incomplete host observation cannot prove paused; a complete known host may establish works from in-turn/permission agents, and also from an agent whose state is not ended while its running subagent count is above zero, whose contributing time is that subagent activity's; otherwise paused. A started task with none of its agents working and at least one of them limited carries the served limited word while every count and the grouping keep saying paused. The timestamp comes from working contributors when present, otherwise the observed agents, not a generated heartbeat or elapsed-age counter.
 
 The task-entry producer keeps repository-qualified document identity, optional document references, ordered parent/children links, authoritative step counts, summaries and exact contract bindings together. A declared file-less child can be a native entry without a document reference; consumers must not invent a document jump. Declared-parent checks and the single-parent acyclic membership guard prevent another client-side series/lifecycle hierarchy. The retained explicit orchestrates relation resolves only a unique same-repository commanded master; this is a named task-domain compatibility relation, not a broad title/filename guess.
 
@@ -225,8 +229,8 @@ The complete previous account is retained below as explicit historical provenanc
 > | Field                  | Value                                            |
 > | ---------------------- | ------------------------------------------------ |
 > | sourceRoute            | `mcp/src/agents_remember/observer/`              |
->
-> ## Evidence
+
+## Evidence
 > - Retained reference account (no fresh execution or acceptance inferred): The foundational approved design for this substrate: entities, store layout, retention, and TTL project-and-prune; current retention has evolved beyond that design. (historical reference 1)
 > - Retained reference account (no fresh execution or acceptance inferred): `Event` is the observer event model. (historical reference 2)
 > - Retained reference account (no fresh execution or acceptance inferred): `StrictResponseModel` is the shared response-model base. (historical reference 3)

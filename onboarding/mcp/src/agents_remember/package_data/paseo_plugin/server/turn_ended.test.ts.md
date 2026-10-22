@@ -13,3 +13,5 @@ The size assertion checks the source constants, not settings reload. The contrib
 ## Evidence
 
 - The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends. [1]
+
+**L184 — INV-1ZKP4R.** These cases hold the turn-end reading the publication is built from. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

@@ -3,12 +3,29 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "385aadad0691c4ce9a9618002490a53fb2e43f49",
+        "blob": "459f5b042c9fdbbf44f8cdcebec4725f8e132ce4",
+        "content": "sha256:ed355f4c6f76f7d87e918e459dcc9cd6ee00bad9b8b6a46242642ae4333045df",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FRTZHC",
+      "invariant": "INV-ECNV2S",
+      "origin": {
+        "handoffEntry": "INV-ECNV2S",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The retirement route is where the refusal is raised, so the naming of the subagent belongs here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "459f5b042c9fdbbf44f8cdcebec4725f8e132ce4",
         "content": "sha256:c4a09ad1ec544cd29b1694a272d7ed9a69e5c6ca29d912bc3aa15e8f7c5c960b",
         "locator": {
-          "end": 374,
+          "end": 390,
           "kind": "line_range",
-          "start": 336
+          "start": 352
         }
       },
       "id": "RLZ-HPM77Q",

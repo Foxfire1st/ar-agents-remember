@@ -20,6 +20,9 @@ is absent for id-addressed recipients, so the durable receipt's recorded role is
 the context variable the completed event reads. Nothing is guessed — with no role on
 receipt or call the event stays literal.
 
+
+**L184 — INV-1ZKP4R.** This module builds the tool answer a limited recipient's message returns. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## R93 refusal-remedy account — local and shared recovery owners
 
 Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, while unavailable-recipient delivery now uses the held-store owner rather than asking the sender to repeat a message that was taken as held.

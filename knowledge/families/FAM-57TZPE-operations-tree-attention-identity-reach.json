@@ -5,7 +5,7 @@
     ],
     "justification": "A compact overlay alone can hide a chosen or completed task; priority words alone can hide the inbox action, and correct identity alone cannot ensure keyboard reach. The combined owners preserve readable truth and actionable reach while the tree retains its space."
   },
-  "guarantee": "The Operations task column exposes waiting attention over, not instead of, its tree. Rows preserve served native task stage and activity through their single task-own word and actual current hover facts, without a separate lifecycle truth. Entry-own need order, terminal folds and guarded parent-arrow/typeahead navigation keep admitted targets reachable. Automatic selected-ancestor and fold reveal yields to explicit disclosure clicks and existing plain parent arrows that change state; releases last only for that selection episode, including while the list is hidden, without changing the chosen document. Fold lines gain no horizontal-arrow handler and modified chords remain browser-owned. Retired lifecycle-status/reveal and inbox-control members remain historical roster entries only: they supply no current lifecycle state, lifecycle reveal, independent inbox control or earlier composite-word band.",
+  "guarantee": "The Operations task column exposes waiting attention over, not instead of, its tree. Rows preserve served native task stage and activity through their single task-own word and actual current hover facts, without a separate lifecycle truth. A row whose task is held by a provider limit says rate limited with the time left in the place paused would take, and its hover names each limited seat, its provider, its exhausted window and the exact reset. Entry-own need order, terminal folds and guarded parent-arrow/typeahead navigation keep admitted targets reachable. Automatic selected-ancestor and fold reveal yields to explicit disclosure clicks and existing plain parent arrows that change state; releases last only for that selection episode, including while the list is hidden, without changing the chosen document. Fold lines gain no horizontal-arrow handler and modified chords remain browser-owned. Retired lifecycle-status/reveal and inbox-control members remain historical roster entries only: they supply no current lifecycle state, lifecycle reveal, independent inbox control or earlier composite-word band.",
   "id": "FAM-57TZPE",
   "members": [
     "INV-K9B8G8",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L144",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "dashboard/src/cockpit",
     "dashboard/src/panels"

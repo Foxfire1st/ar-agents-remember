@@ -46,6 +46,8 @@ The frame may ask to open something; the host decides what that is. `resolve_evi
 
 The dashboard is local and unauthenticated, which is a deployment posture and not a write authorization. `RefuseCrossOriginWrites` sits in front of every route and refuses a state-changing browser request that does not come from the dashboard's own page — `Sec-Fetch-Site` other than `same-origin`, or, when that header is absent, a foreign or `null` `Origin` — with a named 403 that never reaches a route. `RefuseForeignHosts` refuses every request, reads included, whose `Host` names another host or port, against DNS rebinding. A request carrying neither header comes from no browser page, so CLI and tool-server calls keep working.
 
+**L184.** The presenter's send stays outside the limit check by design, so this route changes nothing beyond the presenter's own outbound path.
+
 ## Evidence
 
 - One policy, hashed into the value a proof record must name, so served bytes, the proof and the runtime gate cannot drift apart. [1]

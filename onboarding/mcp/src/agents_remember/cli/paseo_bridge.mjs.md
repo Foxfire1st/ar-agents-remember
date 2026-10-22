@@ -22,6 +22,9 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 
 `agent-send` validates optional image and text-attachment lists through `sendExtras` before reading the recipient or attempting delivery. Nonempty extras accompany the same native send and preserve its existing message ID and steer behavior. Absent, null or empty lists add no options. A malformed entry refuses the whole payload before recipient lookup; the bridge does not send a partial list. The attachment helper owns individual image/text schemas, while recipient state checks and delivery outcomes remain here.
 
+
+**L184 — NEW-LIMIT-FROM-REPORT-ONLY.** This bridge is the one process that takes the plugin's answer and then asks it for the list, so the number has to be carried here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Evidence
 
 

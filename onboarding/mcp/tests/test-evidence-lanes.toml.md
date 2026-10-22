@@ -57,6 +57,9 @@ selection evidence, not an execution or acceptance claim.
 
 The landing, ownership, strict-refusal and dependency-bound suites are selected in `unit-regression`; `test_curator_coherence_closed_out.py` is in `integration`. These catalog memberships select the population and certify no invocation.
 
+
+**L184 — INV-1ZKP4R.** The lane list is what a bounded run executes. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
 ## Direct-grant case lanes
 
 The grant and developer-dashboard modules have their declared L3 lanes; direct-leaf integration-refusal, role-start and no-grant closeout-parity modules have their declared L2 lanes. These are catalog maintenance and routing facts, not case counts or a live acceptance result.

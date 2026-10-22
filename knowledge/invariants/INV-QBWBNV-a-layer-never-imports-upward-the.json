@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Rule 19 spans the port, its binding at the composition root and the serving consumer, and the layering regression asserts both halves."
+  },
+  "applicability": "Every read the serving layer makes of the host map, and the placement of the reader that answers a task's provider limit.",
+  "conditions": [
+    "The final tree reports no layering violation or cycle beyond the base's own report.",
+    "The reader of the limit file that the status function uses sits at or below observer.",
+    "The read that reaches the serving tick crosses through an injected port or an import that already exists, and adds no upward import."
+  ],
+  "exclusions": [
+    "The three inherited rank violations and the application/worktrees cycle recorded in LIM-ENMKCQ are not repaired here.",
+    "No claim that the whole layer graph is clean."
+  ],
+  "id": "INV-QBWBNV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_provider_limit_layering.py, whose docstring records the finding (L184-R1-F14) and the repair; role-launch/L184-S4-freeze.md"
+      ],
+      "path": "writer-draft-03.json"
+    },
+    "handoffEntry": "NEW-R192-RULE19-PORT",
+    "leaf": "260928-MIK-L184",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A layer never imports upward: the serving layer declares the port it needs for a read that belongs above it, the composition root binds the real implementation, and the read crosses no layer edge.",
+  "status": "proposed",
+  "supersedes": []
+}
