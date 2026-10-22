@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_step_up_recovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+        "content": "sha256:991b888d4b19beebccdf8690c2a372058ea500cfb6be0addd6b5f6996bd09979",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_saved_takeover_material_is_restored_or_refused_before_create"
+        }
+      },
+      "facet": "Restoring saved takeover material onto a symlink, a directory and a fifo is refused with the takeover's own words, and the launch makes no agent-create runtime call for it.",
+      "id": "PRF-NWMWTJ",
+      "invariant": "INV-2A102Y",
+      "origin": {
+        "handoffEntry": "MIK-R203@v1:items1-3",
+        "leaf": "260928-MIK-L195"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

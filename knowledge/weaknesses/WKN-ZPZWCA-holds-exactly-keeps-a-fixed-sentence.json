@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "f12d72cf758507afcf1a6ece1e5aee0175aa782a",
+    "content": "sha256:236a926498f82dac8be3db3752aa8da887202320a85866f668ceb11a10670b0d",
+    "locator": {
+      "kind": "symbol",
+      "name": "holds_exactly"
+    },
+    "path": "mcp/src/agents_remember/cli/immutable_artifact.py"
+  },
+  "id": "WKN-ZPZWCA",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l195-curator-handoff-3.json"
+    },
+    "handoffEntry": "holds-exactly-debt",
+    "leaf": "260928-MIK-L195",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L195"
+  },
+  "state": "open",
+  "statement": "holds_exactly answers a target that is not a regular file with the module's fixed sentence instead of the caller's refusal, so that answer names neither the target nor its remedy."
+}

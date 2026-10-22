@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The scoped current source carries the module/document behavior described above, and the projection case's prepared dictionary now carries the complete hand-over's reference and content as the builder returns them.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff138060d1ee3eee30d670345d88e315f8088dcd",
-            "content": "sha256:542392cbee2eacfa0dae41ab6f23e2a9ec54e5c2a2280bb58c05806e12cc4f40",
+            "blob": "5d1d37fe2eea3aa93dd4c0457ffae1f63ac98e1d",
+            "content": "sha256:4322e82a325f1d1162907ea64266b024d608afcbe4471a06237f1846a440ab40",
             "locator": {
               "kind": "file"
             }

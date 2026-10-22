@@ -1,0 +1,59 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Without a recorded decision the two records would either land unchecked or force a new round, and the authority to choose is the Architect's word recorded here; the same question returns for every memory record written after an intake, so the decision binds how later leaves handle it."
+  },
+  "alternatives": [
+    {
+      "option": "Give the two records a separate record-only check on the Architect's word, recorded here before the Reviewer starts.",
+      "reason": "It keeps both records inside a check while leaving the five-ID verification sealed and consuming no round (D140: a check of a repaired record alone is no review round).",
+      "reconsider_when": "The developer places such late records somewhere else, or a later ruling widens the check.",
+      "status": "chosen"
+    },
+    {
+      "option": "Fold the two records into the five-ID fix verification.",
+      "reason": "They were written after the first intake, so the round cannot absorb them, and adding IDs would re-open a list the Reviewer has sealed and is grading.",
+      "reconsider_when": "A ruling that reopens the sealed list.",
+      "status": "rejected"
+    },
+    {
+      "option": "Leave both records unchecked until a later round, and land them as they stand.",
+      "reason": "An unchecked record lands as truth; the Reviewer role requires architect or developer approval, recorded by the Manager in leaf decisions, before a memory extra is checked at all.",
+      "reconsider_when": "A developer decision that this leaf's weakness records need no check.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The check adds no ID to the five-ID verification and is not a review round; it is recorded as a separate, bounded check.",
+    "Per record it checks existence and kind, the statement against the quoted measurement (for WKN-NGKK2Q the one-run measurement verbatim, with no claim that load caused it), and says nothing about code beyond this leaf's diff.",
+    "A failed record comes back to the Curator, is repaired, and is rechecked the same way — it is never parked as an issues row, so no record that failed this check lands."
+  ],
+  "context": "The Reviewer holds five sealed IDs in fix verification for this leaf. Two memory records — WKN-ZPZWCA (the holds_exactly debt) and WKN-NGKK2Q (the cutover time weakness) — were written after its first intake and lie outside that sealed list, so its protocol routes their scope to the developer and it will not fold them into the five-ID check. The Manager's own bounded ruling was refused as not the Manager's to give, and D228 leaves questions of form to the Architect, so the Architect ruled on the developer's word and the Manager recorded it here before the check starts.",
+  "decider": "Architect ruling 78f8f61b under D228, recorded by the Manager",
+  "id": "DEC-0VENAX",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "WKN-ZPZWCA"
+    },
+    {
+      "relation": "constrains",
+      "target": "WKN-NGKK2Q"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l195-curator-handoff-5.json"
+    },
+    "handoffEntry": "two-late-records",
+    "leaf": "260928-MIK-L195",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

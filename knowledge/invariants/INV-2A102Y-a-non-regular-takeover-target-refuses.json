@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The module's fixed sentence names neither the target nor its remedy, so a seat refused there could not tell which collision it had hit nor which repair applied, and the caller's own refusal names its file and what puts it right. Nothing observed says a seat actually did retry the wrong repair; the cost is what the fixed sentence leaves open, not an observed incident."
+  },
+  "applicability": "Every preflight a role launch runs over an artifact written beside its report, before that artifact is created.",
+  "conditions": [
+    "The target path exists as a symlink, a directory or a fifo — the three cases the refusal test pins — or as another non-regular file.",
+    "The caller passes its own refusal, which names the file and what puts it right."
+  ],
+  "exclusions": [
+    "A non-regular file reached by holds_exactly, whether without preflight or through a race between preflight's lstat and that call, still gets the module's fixed sentence; that call path does not run this preflight.",
+    "A target that is absent, or that already holds exactly the expected bytes."
+  ],
+  "id": "INV-2A102Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/195_the-tips-failing-tests-pass-again-bdcee319cc-ar/role-reports/reviewer/bf9feb53-a0cb-510b-be1e-3bd699d6fe74/role-launch/260928-MIK-L195-reviewer-a3-verification.md",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/195_the-tips-failing-tests-pass-again-bdcee319cc-ar/role-reports/reviewer/bf9feb53-a0cb-510b-be1e-3bd699d6fe74/role-launch/evidence/a3-verification.json"
+      ],
+      "path": "l195-curator-handoff-1.json"
+    },
+    "handoffEntry": "MIK-R203@v1:items1-3",
+    "leaf": "260928-MIK-L195",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A non-regular takeover target refuses with the caller-supplied actionable refusal before any sibling publication or native create.",
+  "status": "proposed",
+  "supersedes": []
+}

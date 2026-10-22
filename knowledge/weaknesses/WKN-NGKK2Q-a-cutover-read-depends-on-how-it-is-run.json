@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "dbadc5eac8be8186b2473fd1362b4525c155deb4",
+    "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+    "locator": {
+      "kind": "symbol",
+      "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+    },
+    "path": "mcp/tests/test_knowledge_cutover.py"
+  },
+  "id": "WKN-NGKK2Q",
+  "kind": "time",
+  "measurement": {
+    "commit": "c9dd19fb2ff3c8ee8dfb1a9b0ce9b4be17ca00ee",
+    "date": "2026-10-22",
+    "how": "1 failed alone on the candidate copy (5.75 s) and alone on the base copy (5.57 s); passed inside candidate-6's -n=4 whole-lane run (746.60 s, 5988+ passed)",
+    "number": 1,
+    "unit": "run"
+  },
+  "origin": {
+    "handoff": {
+      "path": "l195-curator-handoff-3.json"
+    },
+    "handoffEntry": "cutover-time",
+    "leaf": "260928-MIK-L195",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L195"
+  },
+  "state": "open",
+  "statement": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory failed when it was the only test run on both the base copy and the candidate copy yet passed inside the parallel whole-lane run, so its verdict differs with how it is run while the cause remains unmeasured."
+}
