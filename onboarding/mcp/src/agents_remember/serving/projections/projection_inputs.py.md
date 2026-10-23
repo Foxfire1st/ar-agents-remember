@@ -16,7 +16,7 @@ Complete path samples refresh canonical task sources and document-consumer closu
 
 ### Logic
 
-Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY, plus the contract-scoped activation records under `controlplane` and the held-message queue under `temp`. Each pass derives permission rows from retained host facts and updates stall clocks. Native file-backed observations refresh on first look or relevant invalidation, while unfinished held and pause acquisition continues in bounded steps on the existing heartbeat; initialized, complete quiet views are retained. This adds no host read or timer. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
+Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY, plus the contract-scoped activation records under `controlplane` and the held-message queue under `temp`. Each pass derives permission rows and turn-end stamps from retained host facts, updates stall clocks, and reports the live native kinds' own occurrence ends to the dismissal owner. Native file-backed observations refresh on first look or relevant invalidation, while unfinished held and pause acquisition continues in bounded steps on the existing heartbeat; initialized, complete quiet views are retained. This adds no host read or timer. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
 `ProjectionInputState.read` refreshes invalidated domains and recomputes admission sets from their owning changes, returning the retained aggregate. `ProjectionReaders.repo_surfaces` returns exactly `(route_coverage, ledgers)` and the read unpacks those two collections; `ProjectionInputs` has no `sidecar_staleness`. Domain collections are replaced as a whole so removals reclaim retained rows on their relevant refresh. [6]
 
 The state also reuses one contract snapshot cache and the task-document payload cache rather than
@@ -39,7 +39,7 @@ sake — each bundles values that are only meaningful read against one another, 
   arguments, including attention observations where an actual read must supply proof.
 - `task_sources` and default-unknown host facts replace task_documents/series/session slots.
 
-`_read_inputs` updates task/closeout slots and first/invalidated host facts, then contract admission. Only actually read kinds supply AttentionObservation proof. Provider/setup/drift/start readers contribute completeness, existence, explicit health and fingerprints; unread/failed kinds prove no removal. Workspace reconciliation locks read/rewrite and retains last successful acknowledgements on OSError; incomplete sibling proof does not hide valid changed drift.
+`_read_inputs` updates task/closeout slots and first/invalidated host facts, then contract admission. Only actually read kinds supply AttentionObservation proof: provider/setup/drift/start readers contribute completeness, existence, explicit health and fingerprints; the two notice kinds contribute the retained-set observation; and `_observe_native_kinds` (:750-786) supplies one observation per complete live native kind, derived from the same pass that publishes or withholds the row, with the ids `native_attention_items` and `stall_occurrences` produce. Unread/failed kinds prove no removal, and a row this same pass still publishes is never reported healthy. Workspace reconciliation locks read/rewrite and retains last successful acknowledgements on OSError; incomplete sibling proof does not hide valid changed drift.
 
 `_advance_model_age` no longer carries a `# noqa: UP047` suppression — the whole gate now runs
 without exemptions.
@@ -95,3 +95,9 @@ A failed input pass sets `_task_refresh_pending`; the next read heals every non-
 
 - Projection write edge consumes this retained input state. [1]
 - The serialized worker maps watcher wakes to refresh kinds. [2]
+
+## 20261023-L190-v2 The Live Kinds Report Their Own Ends
+
+`_observe_native_kinds` (:750-786) runs immediately after the native attention read (:470-473), so the observation that reclaims an acknowledgement and the rows that publish (or withhold) its entry are one pass. It collects the ids the builders publish, then replaces the stall set with `stall_occurrences(self._native_attention, entries.tasks)` — a stall row appears only after the deadline, but its interval is live from the moment the task goes idle, and the acknowledgement names the interval.
+
+Proof is gated per kind: `permissions_complete`, `held_complete`, and `_host_activity.known` for stalls. An incomplete kind contributes no observation at all, so `AttentionDismissalStore.reconcile` keeps its records; and an id this same pass still publishes is never reported healthy, so a live cause is acknowledged out of sight and not out of existence.

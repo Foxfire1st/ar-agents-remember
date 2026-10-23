@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
-        "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+        "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+        "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "native_attention_items"
+        }
+      },
+      "id": "RLZ-6K8K8Z",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The one owner of every occurrence identity the queue publishes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+        "content": "sha256:4df52fb77bd855a2d611697f265d3744fad2abe42ebd8eed2742ffe8f62238f4",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+        "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
         "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
         "locator": {
           "kind": "symbol",
@@ -38,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
-        "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+        "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+        "content": "sha256:4df52fb77bd855a2d611697f265d3744fad2abe42ebd8eed2742ffe8f62238f4",
         "locator": {
           "kind": "file"
         }
@@ -52,6 +70,24 @@
       },
       "rationale": "Native builders implement per-prompt/per-held occurrence, settled stall exclusions and stable terminal notice details.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+        "content": "sha256:22e6ab97398213e9558009e6775d99beccf40068a681b881c02de715b6e2165c",
+        "locator": {
+          "kind": "symbol",
+          "name": "stall_occurrences"
+        }
+      },
+      "id": "RLZ-YT3DXC",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Publishes the interval-bearing stall id for every started task that is idle now, from the same eligibility owner the row builder reads.",
+      "role": "primary-authority"
     }
   ],
   "references": {},

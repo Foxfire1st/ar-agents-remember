@@ -6,13 +6,14 @@
 
 ## Purpose
 
-Pins each builder's row: identity, class, the task it opens, the settled deadline, and the ranking a mixed
-native queue takes through the real queue builder.
+Pins each builder's row: identity, class, the task it opens, the settled deadline, the dismissibility every kind
+now carries, and the newest-first ranking a mixed native queue takes through the real queue builder.
 
 ## Code Commentary
 
-The deadline cases pin no row at 899 seconds and one at 900, no row for a working or unknown task, none for a
-planned, completed or aborted stage, and the identity `task-stalled:{key}` with its task reference.
+The deadline cases pin no row at 899 seconds and one at 900 — whose id carries the interval start it was
+published under — no row for a working or unknown task, none for a planned, completed or aborted stage, and the
+identity `task-stalled:{key}:{interval start}` with its task reference.
 
 The stall-break cases are the ones that matter for the detail: the row's detail does not move while only the age
 grows, an old task event stamp never dates the interval, a paused master suppresses its started child, the same
@@ -23,6 +24,18 @@ prompt's task key against a taskless prompt's `None`, a held row naming its stor
 and a second held message as a second row. The notice and ranking cases pin a dismissible information occurrence,
 an acknowledgement hiding one occurrence while a later one stays visible, and the order a mixed native and
 operational queue takes.
+
+### 20261023-L190-v2 Identity, Dismissibility And Newest-First
+
+Three things the v1 cases asserted are now their opposite. The stall id carries the interval start, so the 899/900
+case computes its expectation from the same `_ago(idle_seconds)` stamp the facts carry (:171-178), and the
+detail-stability case holds that stamp fixed while advancing `now` — an age-only pass moves `waitSeconds` under an
+id that does not move (:194-207). The three live kinds assert `dismissible is True` (:152, :191, :317). The mixed
+native/operational queue asserts newest-first: provider alarm, then the notice, then the dated prompts, then the
+held row, then the stalled task (:359-414).
+
+The builders' caps (`MAX_PERMISSION_ITEMS`, `MAX_HELD_ITEMS`, `MAX_TERMINAL_ITEMS`) and the fixed detail sentence
+are unchanged.
 
 ## Evidence boundary
 

@@ -12,7 +12,7 @@ Provides small explicit builders for lifecycle-enclosure addressability forcing.
 
 ### Logic
 
-Builders produce exact locator, manifest, predecessor, and archive shapes while leaving scenario differences local.
+Builders produce exact locator, manifest, predecessor, and archive shapes while leaving scenario differences local. `terminalize_test_enclosure` archives an abandonment by default and, with `cleanup=True`, the `worktree_cleanup` operation a finished task leaves behind — the archive a reopen resets — while still driving the production archive/readback/receipt seam and cutting after deletion.
 
 ### Conventions
 

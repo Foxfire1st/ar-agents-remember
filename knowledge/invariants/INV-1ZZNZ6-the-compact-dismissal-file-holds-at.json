@@ -9,11 +9,13 @@
   "applicability": "The disposable current attention acknowledgement set stored in workspace/attention-dismissals.jsonl by AttentionDismissalStore.",
   "conditions": [
     "Upsert and reconcile hold the store write lock across read/fold/rewrite; itemId is the single current key.",
+    "The store holds at most 256 rows and at most 64 KiB over its exact serialized document; at either bound the oldest acknowledgement is evicted, and an evicted entry may show again.",
     "An unchanged pass means the current parsed/folded acknowledgement set and its identities do not change; duplicate normalization or first fingerprint adoption may legitimately require a write."
   ],
   "exclusions": [
     "Append-only audit or canonical task/gate/workspace event history.",
-    "Preservation of malformed or removed-kind legacy lines, or an assertion that a normalization pass is physically unchanged."
+    "Preservation of malformed or removed-kind legacy lines, or an assertion that a normalization pass is physically unchanged.",
+    "A guarantee that an acknowledgement survives saturation of the store."
   ],
   "id": "INV-1ZZNZ6",
   "origin": {
@@ -27,9 +29,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The compact dismissal file holds at most one live acknowledgement per current thing, and an unchanged pass writes nothing.",
+  "statement": "The compact dismissal file holds at most one live acknowledgement per current thing, within its named row and byte limits, evicting the oldest acknowledgement first, and an unchanged pass writes nothing.",
   "status": "proposed",
   "supersedes": []
 }

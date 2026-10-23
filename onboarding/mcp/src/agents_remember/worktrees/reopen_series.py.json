@@ -1,6 +1,82 @@
 {
   "path": "mcp/src/agents_remember/worktrees/reopen_series.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "content": "sha256:3dd4f96b7afc9c9c35585cd2c36563477260376121836cdc7d643bc963f76e0c",
+        "locator": {
+          "end": 879,
+          "kind": "line_range",
+          "start": 847
+        }
+      },
+      "id": "RLZ-1S0T4E",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "MIK-R210@v2 §3 reopen collects a finished master and proves its chain line",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Runs the collection ahead of planning and rebuilds the plan from the reloaded contract, keeping the removed-memory-mode refusal first and collecting nothing on a dry run.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "content": "sha256:2b010583b4708e1c8b0d9b86fcad61f9f672f998c4929d77bd66adae7552ea5c",
+        "locator": {
+          "end": 340,
+          "kind": "line_range",
+          "start": 323
+        }
+      },
+      "id": "RLZ-CPM4R2",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "MIK-R210@v2 §3 reopen collects a finished master and proves its chain line",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Names the commanding sprint and its recorded status, which is how a missing series source branch is told apart from a sprint that no longer owns the lane.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "content": "sha256:0fd35b3b9092dc0f7ef9930f23bea5d7aa77c32456a658a7bfc0dd2c566b62c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_series_ref_recut"
+        }
+      },
+      "id": "RLZ-GJA4YH",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Reports a master's missing source branch with its commanding sprint's status, which is what tells a moved line from an inactive sprint.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "content": "sha256:182336023165c5ea6b1582af0ee4978ffdd86a360ea4309f30e3e9eb101f9247",
+        "locator": {
+          "end": 844,
+          "kind": "line_range",
+          "start": 816
+        }
+      },
+      "id": "RLZ-ZPYW83",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "MIK-R210@v2 §3 reopen collects a finished master and proves its chain line",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Collects a completed master whose cleanup is still pending through the product's cleanup transaction before any planning, so the reopen continues against a terminal generation instead of refusing.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The file realizes its current contract at the corrected candidate.",

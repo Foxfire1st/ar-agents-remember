@@ -16,9 +16,12 @@ publish a successor enclosure.
 A restartable predecessor must have no code or memory closeout/integration outputs. The terminal proof no longer tests retired ledger output cells; exact archive, receipt, locator, and predecessor evidence still governs successor publication.
 
 Archive paths are fixed by the publication request and must be outside the old enclosure root.
-Digest, receipt, and the pre-deletion locator must match. A surviving terminal contract may advance
-only from archive-ready to the exact cleanup-completed state; restart requires a restartable
-tombstone and exact terminal predecessor identity.
+Digest, receipt, and the pre-deletion locator must match. A surviving terminal contract may advance from archive-ready to the exact
+cleanup-completed state, and, when the archived generation was a completed cleanup, to the
+reopen's own reset: the current contract equal to `_reopened_contract(archived)` is the
+sanctioned successor (`reopen-reset`), not tampering. Restart still requires a restartable
+tombstone and exact terminal predecessor identity, and the archive and receipt stay the authority
+for the generation they collected.
 
 ### Conventions
 

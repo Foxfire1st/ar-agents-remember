@@ -1,0 +1,2673 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L190",
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_permission_and_held_rows_are_one_row_each"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_permission_and_held_rows_are_one_row_each"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-1MBCTR"
+        },
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-X4Q38J"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-11ZKQM",
+      "items": [
+        "sha256:d8f39a701f1219621d04f23d78b9fe27eafcf9ba2ab9096763f602b047f5f2c6"
+      ],
+      "reason": "one row per occurrence is unchanged; the stall id gained the interval stamp, which the card now states",
+      "revision": 1,
+      "subject": "INV-XERGJ0"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1Z364N",
+      "items": [
+        "sha256:0b8850ec1a40a1e8896c736018dcb2a7537d1dba5b639a55e74239ce28ce819a",
+        "sha256:698eac537bdeffbb6bd1fd28a16c042a3bfa61232677de4f373c7cd9179033a5",
+        "sha256:76915f06d16b0dd2d712bb4f20198cb8c0975ed5933bc743b773df05f8e2303c",
+        "sha256:ba583735082cf639519592166d42fd52939f7e9c25faf3436d7ba17436ced793"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "fbf988b01f1b0ac4c7f8cd8f56609af0b8d99d05",
+          "path": "mcp/tests/test_attention_quiescence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_attention_quiescence.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-20VC9K",
+      "items": [
+        "sha256:dafff2a53db9dd0f082547a9fd46d4a82204886162d1c0102040e02ce1535388"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2KZ02H",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The catalog map still describes registration membership rather than any single consumer, which is what the final file does: add-only, with the leaf's reopen module registered beside the inherited consumers. Only the blob moved, so the card needed no prose change and the row re-binds it.",
+      "sources": [
+        {
+          "blob": "19878745f74e68b121a88be94bcdecd3fdcaa94a",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R210",
+          "packet": "requirements/MIK-R210-v2-a-task-reopens-from-its-master-and-completes-again.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-34HRER",
+      "items": [],
+      "reason": "Round 11 states two obligations the reopen wording left out: a completed master whose cleanup never ran reopens by collecting its enclosure through the product's own cleanup transaction before planning, and the closeout chain proves the oldest leaf's position on the master's line in either direction rather than one exact base. Both were refusals in the D515 sandbox (ruling 7dc3b6d2 defects (a) and (b)); the record now carries them and the entry adds their realizations and proofs.",
+      "revision": 1,
+      "subject": "INV-M3N2Y5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3H3XQ9",
+      "items": [
+        "sha256:3b0f2078ad324a0f0679233baf62f6f1c2731a9cf0422baf5d87f1965bf0cf9a"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stall_row_is_the_cause_and_every_break"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stall_row_is_the_cause_and_every_break"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-9BYZVB"
+        },
+        {
+          "after": {
+            "blob": "fbf988b01f1b0ac4c7f8cd8f56609af0b8d99d05",
+            "content": "sha256:a223b6fc61ba98fa21040f444676876c01c53f981e0602395b751f052b9741df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_quiet_minutes_emit_no_delta_and_the_threshold_emits_one"
+            },
+            "path": "mcp/tests/test_attention_quiescence.py"
+          },
+          "before": {
+            "blob": "a73abfd43b8fd4ea0259da7aaeaedf3786ea92c1",
+            "content": "sha256:437de937e5c94a61bc63c03d6bc5d26d42830aa6593184d249e6afe48ca16c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_quiet_minutes_emit_no_delta_and_the_threshold_emits_one"
+            },
+            "path": "mcp/tests/test_attention_quiescence.py"
+          },
+          "id": "PRF-WZ5KST"
+        },
+        {
+          "after": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:4df52fb77bd855a2d611697f265d3744fad2abe42ebd8eed2742ffe8f62238f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "before": {
+            "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+            "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "id": "RLZ-V2YF3Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4X5QA4",
+      "items": [
+        "sha256:059f7e54640c8e32840a1cec6a6f264683203b3c9ab144f6796033a4b2466a76"
+      ],
+      "reason": "age-only passes still parse no native store and rewrite nothing; the ordering half of the queue is a different record and the entry carries only the no-rewrite obligation",
+      "revision": 1,
+      "subject": "INV-9V3W1R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-59N724",
+      "items": [
+        "sha256:4c476b11bb8c56e1b20b2b7295a8f08eb2000ffa1e893a6fb1f935d9fd221b46"
+      ],
+      "reason": "the suppression filter lost its `dismissible` conjunct; the acknowledgement obligation is realized in this file by the queue entry that carries it, and this hunk adds no obligation of its own",
+      "subject": "hunk:sha256:4c476b11bb8c56e1b20b2b7295a8f08eb2000ffa1e893a6fb1f935d9fd221b46"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5JT0Z6",
+      "items": [
+        "sha256:25e8bc4327fc77c394bd6b9f3d22a78a8386d187dc51dc0dc2ce8d4f5102adbc",
+        "sha256:422e57e4ec1199a4760b41c978f901e9ac9bf870779baa5d5724d98e8712b0ba",
+        "sha256:58c4d6be5fb814e211f51aa30683f87c9d645a41ae7157a98182a9afcc64c586",
+        "sha256:864531a101d8e6d18c6ebca904a59d6f4dfbdd4fde5fad7613ee1a7932e241ab",
+        "sha256:e009c0d2abe49b9e7900e744b87e0cab84e316edfb35d03b8de8c070055770bb"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+          "path": "mcp/tests/test_observer_projection_attention.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_observer_projection_attention.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5MEASQ",
+      "items": [
+        "sha256:eceb48add32098858b493d11e67fb87a0defef5e86d9a08354054461d29b5644"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+          "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/projection_inputs.py"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC",
+        "FAM-RT2XDA",
+        "FAM-JSCKZX"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-5Q35YK",
+      "items": [],
+      "reason": "The reopen obligation spans reopen, the terminal-archive authority, the status projection and the role start; none of the examined families states it, so the record stands alone rather than stretching a family's joint guarantee.",
+      "revision": 1,
+      "subject": "membership:INV-M3N2Y5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5Q5KHV",
+      "items": [
+        "sha256:6243cf1b4c9054b85ac2b524223c14e3b38c1ceab3d067cbc29efefb311edb14"
+      ],
+      "reason": "Only the two case line numbers moved: the module gained a leaf-seat constant and a set-equality assertion above them, so the master's-chain case now sits at :592 and the cleanup-pending case at :632, and the card cites the measured lines rather than the earlier :584/:624. The prose about what each case proves is unchanged because the cases themselves are unchanged.",
+      "sources": [
+        {
+          "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+          "path": "mcp/tests/test_task_reopen_cycle.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_reopen_cycle.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6T234K",
+      "items": [
+        "sha256:0d54549bf7ce18bbd41f563a37e01da75570791bec0983ab032961233e1629f8",
+        "sha256:1b27c7c8f6542edfe5f59c1dde1a6c316e28c476979e77d165a886ebd5b47061",
+        "sha256:202dab8999428e363033090840f748b375ab3c2aaec8de020f75c1e236f2d3cf",
+        "sha256:2087c4af85b705e92944fd79bdd1f1706266655673a64c1934edd1450ab5d78f",
+        "sha256:2e36ec1ba7524a887442edb4f584de3289a8756b76d71ce62744531e93df0623",
+        "sha256:6a68bc5d59e8a8af4f99e449a58fae6357e496324dfd17dbb3c7a707ccccaaa9",
+        "sha256:773bc8d6e9fe6cb0c7dcbf0dd235b0c746f1d42b148fde8cc23f042210232536",
+        "sha256:798d1aee0b8f18f24061646c3a97365d41cce922216c403aeeb8313be1f96c63",
+        "sha256:953c0ab59d8f0d1dc784e0d1928a42c1893e613d461899bb7859e98c56d9e67c",
+        "sha256:c4e43d50a51c54478fc422f8c2735717a7ccc983cb80afc76e6d29bdacfb3021"
+      ],
+      "reason": "Read the round-11 change against this card and wrote it into the file: the completed-master collection through the cleanup transaction is now its own section, and the sprint-status sentence still describes `_commanding_sprint_state`. The trace rebinds the card to the current blob.",
+      "sources": [
+        {
+          "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+          "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen_series.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R210",
+          "packet": "requirements/MIK-R210-v2-a-task-reopens-from-its-master-and-completes-again.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "19878745f74e68b121a88be94bcdecd3fdcaa94a",
+            "content": "sha256:916edccdb1cfd65f0d2d6eccf2643675cba751e1055da8e9f714eebd9bda9ad0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+            "content": "sha256:f30e05f5814835973cfd34f58e348f6526bfc2b95a68852867b2982ac37b28fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "5122373e0ca0c714452cf6ce0687526a92e2aac7",
+            "content": "sha256:57ac5e18e50f4ea42d742c7208e525d1c03cb71caea4a3c40c829a3f2742f324",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+            "content": "sha256:aa13fd14c729d702cc1c8189ee3aa883d2b8900b13bff85f90a2e321939d3ab4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-741M7B",
+      "items": [
+        "sha256:4ecbd92be217d5c2b6a12d19035411e2690d2ef85c29605cc3eb2784f8d04dc8"
+      ],
+      "reason": "Re-bound at the final candidate, and this row replaces my earlier wording, which described a candidate that dropped L199's consumer rows and said this leaf removes nothing. The final catalogs are add-only: the L199 rows are present, the leaf's additions sit beside them, no consumer list holds a duplicate identity, and the L177/L180 registrations are untouched. The claim holds as written, and the drop I reported earlier is not in the landed bytes.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7MDE2S",
+      "items": [
+        "sha256:77631b4ec4bf0bdc97d8509db2a95902eb6b5c4428be8d7503e9c854edda8c2d"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+          "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/attention_dismissals.py"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 4
+        },
+        {
+          "id": "INV-AE8ZGP",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 4
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNWH01",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7VQH6A",
+      "items": [
+        "sha256:41dfb59c885afe9e3b764f04127b85e6ce4fd1fcdb86db0d347d923cd53e82ac"
+      ],
+      "reason": "MIK-R200@v2 gives the column newest-first order and makes every row dismissible once per occurrence, so the guarantee's live-cause-versus-notice distinction is now about how an occurrence also ends rather than about which row can be acknowledged.",
+      "revision": 7,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7WBGPE",
+      "items": [
+        "sha256:7a54ffe66a70b875e9358186ed83992801bcc3c3e29089c4d3d4bfe0c3cab174",
+        "sha256:7aaf9d0c4f788934daf70aebb806fae4526fe50c4385f3294087f7413ece79f2",
+        "sha256:ac239b4647f454beddbc4e85e5841d9778f8a55aa1742fa12c258b1e49b0498e"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "611d97a1b073e03553eab7a68ca9ae653670fbc8",
+          "path": "mcp/tests/task_reopen_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/task_reopen_test_support.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7XGP2A",
+      "items": [
+        "sha256:21f066b5a22ff3499e27c9e69dfbcfde5d5fcccede4620d70ed2b7abd2546cb1"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+          "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/native_attention.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "before": {
+            "blob": "b0120b88083966ab1515c0afe6183a75c563add1",
+            "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "id": "PRF-5KXTJR"
+        },
+        {
+          "after": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "the four remaining attention kinds > Clear all sends every listed item, including provider, setup and start failures"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+          },
+          "before": {
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "the four remaining attention kinds > Clear all sends every listed item, including provider, setup and start failures"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+          },
+          "id": "PRF-657JSC"
+        },
+        {
+          "after": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "the four remaining attention kinds > restores an item and reports that its click did not hold when the write fails"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+          },
+          "before": {
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "the four remaining attention kinds > restores an item and reports that its click did not hold when the write fails"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+          },
+          "id": "PRF-7WDXWS"
+        },
+        {
+          "after": {
+            "blob": "890efc977f601d145e7b7670ea9f41b04303abf7",
+            "content": "sha256:84699b9db2ba57a0b35b145934d92a74e4e6f8a0b7e27a13f3f8e4b24f48a688",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/actions.py"
+          },
+          "before": {
+            "blob": "4c7c41ca072e2b68a304b9a4569bb9b3fa4f64f7",
+            "content": "sha256:d3d68a520b5191e5dbda290a016ba5c404aac44f8f466bebb00e64c9fb0aaf66",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/actions.py"
+          },
+          "id": "RLZ-SPG550"
+        },
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:7e549212cb810dd5edcc6e04a8a78f53e0b5df6646cc34bafaf1a26e940f3fb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-Z1J7Q5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-7Y5QZ7",
+      "items": [
+        "sha256:8292a99e324fce0e07ecc2c69c2f18c1cdc5e768413c06bf5fc66381b10d674c"
+      ],
+      "reason": "MIK-R200@v2 removes the live-cause refusal: the backend and the store now accept every published kind, while an unknown item and a kind mismatch are still refused and a failed write still leaves the entry visible.",
+      "revision": 3,
+      "subject": "INV-DVQX4T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-85JQEQ",
+      "items": [
+        "sha256:2ac53ec697f042c123e4588e26b5cca7902cee6509eb38681d98d258e031770b"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "890efc977f601d145e7b7670ea9f41b04303abf7",
+          "path": "mcp/src/agents_remember/serving/actions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/actions.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8G7KNE",
+      "items": [
+        "sha256:b681f575f9cdc0d14e2b8166bed5c0d6c9d5b682e4a4560c8716f1e718bb627b"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+          "path": "mcp/src/agents_remember/observer/native_attention.py"
+        },
+        {
+          "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+          "path": "mcp/src/agents_remember/observer/projection.py"
+        },
+        {
+          "blob": "5358ff5616073b47b6512df0ba615bb582352133",
+          "path": "mcp/src/agents_remember/observer/reducer.py"
+        },
+        {
+          "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
+          "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+        },
+        {
+          "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+          "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9ETQKW",
+      "items": [
+        "sha256:04ffc8fb2cb0fdd7b693df35544770c5e99a6fcd69f72edb4bc41269692ece36",
+        "sha256:0af7b9000227c4bbce11a9a772848637a8a1cc789cfd34fc88e2f57b20078442",
+        "sha256:34aa50b1d912ea857442ef2e3cd18bc400adc2690f7b52510a8141919e75ee60",
+        "sha256:4bb3eebdca2e75d72134daa5ea58d36a47a03aea103fc326d122b855f674111f",
+        "sha256:4e86849daa9ab188b1eb9938498350d9e5a511422e0202a9c573cd7ef04d1eeb",
+        "sha256:682597bc2b71191de179f34851056cad8945ef02e1d5c684dd7016dcb4c52386",
+        "sha256:71053c2582fe1ffdc27868b361634ba7a7cb373840eb28f2eed2d7e0710d8bf3",
+        "sha256:82b7ad0055e21fc97da222e85cf7293a258c6372e73e882b5d14a6215c32c536",
+        "sha256:88aa86c3c3236d2ad331b64f05ab52afc0a1be302bd1ed79cdee2843b5b3c020",
+        "sha256:d2b8c7909863a6366f66fa7fcbe3e213fdb05cc302912c67919d07b80809a34d",
+        "sha256:db20066168e3863c0ca2d321ffde8e606d77041b84e5d221730a3700e4edb182",
+        "sha256:de43786f516831c44b4c7f95dbe9d92c024bdcd67b15037c071db3475ae969fc",
+        "sha256:e19aad6e6b6395d1502f37bd3dcf664ebd83ebb2c008f04905e2330344d76b3a",
+        "sha256:fa44ad87b191f0354eaa06dc542bab04e2537ad813d3635b6fa9b5c270dfbcdb",
+        "sha256:ff1544dea9db50895ff9a25fb64c607dc468835f25be954342f0b32e750e6613"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+          "path": "mcp/tests/test_attention_native_kinds.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_attention_native_kinds.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9RZMCM",
+      "items": [
+        "sha256:63bbf5474c166d43c12e187027345a1bcd5bc021778a61593965212f8aa6f83d",
+        "sha256:b2cfb67e03a6d4810ec54200ccf19170f3d3f57115bc37f82aaca57a41298787",
+        "sha256:d374d2880f8d3190898cb8d0a521e519a973ba16735c155bfc4be32b9daa4974",
+        "sha256:fadea4ed3d525892a03b24bfed2d59ca7b223f4d36dbef55de609180e588124b"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-ANN0B2",
+      "items": [
+        "sha256:73c5f5b005afa52310547ba6d48a2cc8312ed887d7b57f168c4c11af645f7419"
+      ],
+      "reason": "The alternative would set the notice store's creation cut from a projection pass; this leaf gives the store more kinds to hold, not a second way to order its creation against native publication, so the condition the decision names is still unmet.",
+      "subject": "reconsider:DEC-M8SZXD#1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AZET55",
+      "items": [
+        "sha256:32fc744c348867cdfb1e97b60de10a8a55c926688292290b82b58e5aa779416f",
+        "sha256:645abb4b5a2575e07bdd0020d78ff94049bba530f372b1106dd99a75d96c6507"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+          "path": "mcp/src/agents_remember/observer/native_attention.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/native_attention.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BK8Z88",
+      "items": [
+        "sha256:ad33ad3756dd521d296fd87d43b6d58176b529cf8bc0f51c5b4a9c481e3f8177"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+          "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "before": {
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "id": "RLZ-S7VV3S"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BNYEK8",
+      "items": [
+        "sha256:88686705260d389000153eb1614ca10e5d423688a3727bf8d7ca88324e3521c8"
+      ],
+      "reason": "the enclosure terminal authority keeps its obligation and gains a third accepted state; the state vocabulary lives in the new reopen invariant, not here",
+      "revision": 1,
+      "subject": "INV-SVSW7T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C531WG",
+      "items": [
+        "sha256:17413c31f4d538d2c32a6486a204d98c266da8a01ad369dc6799ef57937d02f3"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+          "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+        },
+        {
+          "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+          "path": "dashboard/src/panels/AttentionQueue.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CA1JA5",
+      "items": [
+        "sha256:8109604fc0c15eba6779061f975563fe8c0a9ea25314d13d07d56754e9be30cb",
+        "sha256:ccba63f8526689999194a53f5e8c733af1724e31a588dbd0470a660fea161112",
+        "sha256:da769e422361d74d639fcc7586440f7edd67e8c21e09426841428b0212be7ea8",
+        "sha256:de59671e49c0427203fff54572726a0310a3e8a348d7d8643125a064732c1cb8"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "0d5876215df696737cb998e26ff12722ddcf7ca6",
+          "path": "mcp/tests/test_attention_notice_store.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_attention_notice_store.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "content": "sha256:1c585483d96f4461393452020a249511a872ffeafb476048cbea52a8f59ab10c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "before": {
+            "blob": "196856d16d4d856e0626af355302a9c8c7cd0e32",
+            "content": "sha256:39a217c551c1246b07f8516616cb2d56cf2bae6473704534b7bb597f14fc7f8b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.schema.json"
+          },
+          "id": "RLZ-67JYPK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-D1XQZB",
+      "items": [
+        "sha256:7bd3cbea974f52bb06c5002e8f6caf387af9357811cca3bd6391ee59d11181f8"
+      ],
+      "reason": "the queue contract's subject is unchanged; the wire description gained the dismissal rule and the entry realigns",
+      "revision": 3,
+      "subject": "INV-XZYGEB"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E24JN3",
+      "items": [
+        "sha256:43137fa93c1b8d0dce0c4d873c47ead9aa5cedc12de27f1cdaf883298e3930ba"
+      ],
+      "reason": "The projection schema was regenerated by this leaf's contract change, so the anchor moved to new bytes; the drift debt the weakness records is neither proved nor disproved by a regeneration, and its statement stands at the new content.",
+      "revision": 1,
+      "subject": "WKN-KEBWW1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F0ZNH8",
+      "items": [
+        "sha256:93263623b3d5b148fb7ceb901d7df96e580faf42c9c00a487bf8f0d72f086f7b"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+          "path": "dashboard/src/panels/AttentionQueue.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/AttentionQueue.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F8TQBJ",
+      "items": [
+        "sha256:1398f72a17b0666ad171aad27be032c2b43e7bff1011a0ab62d9d9086550a70e",
+        "sha256:2fdb06b189a3d9754178fd439a8313e32c2b6bbb7762872fd0284763045df774",
+        "sha256:f3372e365349d99cc32f501a7f4a3390109947241a7dbc4fbe82e70309e0dfe1",
+        "sha256:fc17f318f5c392c0d5ff2934d021655de5eee7db256d7947fb834041c91a298d"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+          "path": "mcp/src/agents_remember/application/worktree_status.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/worktree_status.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FBR23J",
+      "items": [
+        "sha256:e2f84d7f2c2f546996c3a6286de6ffc83f2c85b09c14d8edea9c2695367d1827"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:9a7423396db814e1bf0610a956fac3d314320e2346fd47aabd204a1d72806578",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stall_starts_at_exactly_the_settled_deadline"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:2125343ebec548e7d0c764caa40d668eebd41564d46082c2e0bd97b110a7fd18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stall_starts_at_exactly_the_settled_deadline"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-15KD7N"
+        },
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stall_row_is_the_cause_and_every_break"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stall_row_is_the_cause_and_every_break"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-642AW9"
+        },
+        {
+          "after": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:4df52fb77bd855a2d611697f265d3744fad2abe42ebd8eed2742ffe8f62238f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "before": {
+            "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+            "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "id": "RLZ-EZRQ0Y"
+        },
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-R7ECM6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FM9Z47",
+      "items": [
+        "sha256:2d7caf89021a8a6d35623af7e4135029208320b3008d3be7cdd09465d028adcc"
+      ],
+      "reason": "the stall eligibility and interval rules are unchanged; the card was rewritten to carry dismissibility and the interval-bearing id, and the entries realign to the same symbols",
+      "revision": 1,
+      "subject": "INV-0DZX66"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FNQFD0",
+      "items": [
+        "sha256:529e8f4a9bd18f68763296e9475943424f2504b94da31f322e316420306c7025",
+        "sha256:5f23f36bf2b253d43de901aecc00c95a95c83e67bbf33f8a72b7b84e3e5ef277",
+        "sha256:a7458bc1da19de7feb84f246d93592dc630ca142bee949753476c52bc3cf9b06"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "5358ff5616073b47b6512df0ba615bb582352133",
+          "path": "mcp/src/agents_remember/observer/reducer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/reducer.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G0KK4E",
+      "items": [
+        "sha256:b12bed6e1587b4f6a172f612ae43093b481127fb50c7431e0b32c5d7365bbb89"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "content": "sha256:2b2f1bb30de42f2cd4084f86667d15540f18a46f708fa16f386e64178da9adf6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "before": {
+            "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+            "content": "sha256:f36dbb445b83121185aac7a606a53ef08447524167d1480a58e1fd16bc9ff226",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "id": "RLZ-6RPNQ9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-G68M4G",
+      "items": [
+        "sha256:ddd1035cffa22beebc7df8a8752f1652cc5f704726efa3a30f06898d85e759b3"
+      ],
+      "reason": "the projection input reader's subject is unchanged; the entries realign to the edited file",
+      "revision": 1,
+      "subject": "INV-MGGEBY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G7J50Q",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Read the change against this card: the lane lists the card states are unchanged by this leaf, so the card stands and only its bindings move.",
+      "sources": [
+        {
+          "blob": "5122373e0ca0c714452cf6ce0687526a92e2aac7",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GQ1VC6",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+          "path": "dashboard/src/types/projection.schema.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R210",
+          "packet": "requirements/MIK-R210-v2-a-task-reopens-from-its-master-and-completes-again.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5122373e0ca0c714452cf6ce0687526a92e2aac7",
+            "content": "sha256:57ac5e18e50f4ea42d742c7208e525d1c03cb71caea4a3c40c829a3f2742f324",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+            "content": "sha256:aa13fd14c729d702cc1c8189ee3aa883d2b8900b13bff85f90a2e321939d3ab4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "19878745f74e68b121a88be94bcdecd3fdcaa94a",
+            "content": "sha256:916edccdb1cfd65f0d2d6eccf2643675cba751e1055da8e9f714eebd9bda9ad0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+            "content": "sha256:f30e05f5814835973cfd34f58e348f6526bfc2b95a68852867b2982ac37b28fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H2HS6R",
+      "items": [
+        "sha256:5e978ef705a9a6206ccb71ed3e698bc23f879c063da1d29657fce083c642f0fc"
+      ],
+      "reason": "Re-bound at the final candidate. The evidence catalogs arrived add-only: base b17c1ce5's L199 consumer rows for mcp/tests/test_role_handover_locator.py and mcp/tests/test_role_locator_replay.py survive under both the user-settings guard and the node package-lock fixture, and the leaf adds its own test modules rather than replacing the inherited list. The union and per-artifact registrations this invariant names are therefore intact, no identity is duplicated inside a consumer list, and the entry's blob moved only because the file grew.",
+      "revision": 4,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H783MK",
+      "items": [
+        "sha256:1e253e5e1e2b5840cceb880e5754080f796f9623d8a5b103d57998a482493624",
+        "sha256:392c663c7eec2b2a99c74e79bd1cd84fb39fa68f9974f5eafd87810732fbc96b",
+        "sha256:4234745bdbaf13a7f280ed34e7581f223a4d8184dba0683b87ed2a3064b222f3",
+        "sha256:497a23a5049f8685fba6aafa628ba44832193b43c8300b1d648894fcbf55ba3f",
+        "sha256:600b784de0dca916f218f0b9799ea17167eb769cba9ba900f3e4b57002c90239",
+        "sha256:98c7834f43bd216b7039907d982e0eab63d5c8ddcce04a3070f5152e433a3211",
+        "sha256:d86c77496fc87cc2bb0ed251e351b57c3b47d0ba048794a50fbdb53998823436",
+        "sha256:f36ada06cae960c5a51b69cdb4cd5e48c653ab0f516c4023e86e3b880035a2e4",
+        "sha256:fbe3024560c90ad1d0d2345b921d13d2d220a890868e5076bcf8317bf2469342"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+          "path": "mcp/src/agents_remember/worktrees/reopen.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HN0CM3",
+      "items": [
+        "sha256:32cc3d2b4285b213c48344168f81b03591c14cd7d44f1b4137101549b1b91973"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+          "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+        },
+        {
+          "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+          "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-BERCC1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HQYBB9",
+      "items": [
+        "sha256:6888a0ea29b7f00b7931ab788cf5e7658a94c91531eb7993bb72fa8cd793090b"
+      ],
+      "reason": "the derived-per-pass read is unchanged; the pass gained one more derived value (turn ends) without changing this record's subject",
+      "revision": 1,
+      "subject": "INV-AYW07B"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "before": {
+            "blob": "b0120b88083966ab1515c0afe6183a75c563add1",
+            "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "id": "PRF-9724W9"
+        },
+        {
+          "after": {
+            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "content": "sha256:d7995e34054558c3b569591bd5bb5c039862414f2b015730ba2447e6b3884d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_change_does_not_write_and_failed_cleanup_retains_the_read_map"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "before": {
+            "blob": "b0120b88083966ab1515c0afe6183a75c563add1",
+            "content": "sha256:d7995e34054558c3b569591bd5bb5c039862414f2b015730ba2447e6b3884d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_change_does_not_write_and_failed_cleanup_retains_the_read_map"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "id": "PRF-YYS80T"
+        },
+        {
+          "after": {
+            "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+            "content": "sha256:585647eee2b40d0c97f74b97469a04e76c9287ca49d37c921c72dbf8e2056a90",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "before": {
+            "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
+            "content": "sha256:df926cc722b19c59341fe2accca8d76593aeea5d313c35efd984560f68529633",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "id": "RLZ-Y0E9E1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-J227RN",
+      "items": [
+        "sha256:1f2522e198d305e5efd5f00a291de83de18ee9fc4abda2fdf74fc4b55ba1d21b"
+      ],
+      "reason": "MIK-R200@v2 puts rule 10's named limits on the dismissal store: at most 256 rows and 64 KiB over the exact serialized document, evicting the oldest first, with an evicted entry allowed to show again.",
+      "revision": 2,
+      "subject": "INV-1ZZNZ6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J62W9W",
+      "items": [
+        "sha256:8ae27dcbe4dddb2da4bd562ce1df9b394997300e958c5ed50f3c29b3b40528d2"
+      ],
+      "reason": "New card for a test file this leaf adds: it records what the file pins and where, in the same shape as its neighbours.",
+      "sources": [
+        {
+          "blob": "1b0b86f07f435aab836d408c97007f3e1462d33e",
+          "path": "mcp/tests/test_attention_dismissals_v2.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_attention_dismissals_v2.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J8T7M4",
+      "items": [
+        "sha256:1a82a8f3662da5c2b37e6433908f13e5cfa6967289b365ad2c88e1c440ccf3e1"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+          "path": "dashboard/src/data/selectors.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/selectors.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-0014SR"
+        },
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:ca895ac54f66e66753638a4ffaef0f3599ce43c53ee73adacdb1190eb7f06400",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 526
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:ca895ac54f66e66753638a4ffaef0f3599ce43c53ee73adacdb1190eb7f06400",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-BE8ACJ"
+        },
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:32eace7fe62065ce2e9d1418bf9103620fe9ec6c61276290af50a3163c59ab02",
+            "locator": {
+              "end": 524,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:00b10dcb02020fedc6c0d92461aa7ff6bd742bce8d0670351efff4cd01bd02f8",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 454
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-HE8N5R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JPFAF3",
+      "items": [
+        "sha256:dc4cd2f2a0a04f9ce440bb9478ef56145431290dbb0d06a51ff07a63369d69cb"
+      ],
+      "reason": "the panel still prints the served entries and never re-sorts them; the three line-range entries were re-pinned to the same constructs at their new positions",
+      "revision": 1,
+      "subject": "INV-K9B8G8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JPMKAY",
+      "items": [
+        "sha256:d414a7ef79d8c37728b43f17afe20ebb3a461ba6e1b364920bb16da550248bf2"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+          "path": "dashboard/src/data/selectors.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JS2WRX",
+      "items": [
+        "sha256:a7697f02fa7a27bdea80a66b0672511dd2555b92a84f93fd3cbccf62344243d0"
+      ],
+      "reason": "The leaf changes the terminal authority's accepted states and a role-start parent hint; neither the one-entry/one-task-map guarantee nor the document precedence it states moves, and the member realisations in these files only realign to the candidate bytes.",
+      "revision": 3,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JVF4SZ",
+      "items": [
+        "sha256:04f453cd414460c0b31c8baa0324a6d171f5f4974eb5d3fb1bcc4be2d71c77e6",
+        "sha256:0751b2f7e79a47d74448eeba2ca868f86093b8fa501fb524a376cdf5f38e7e40",
+        "sha256:1041f4d949eec1a1e06b4a8be2ecfdb16a83986458b079a3b389d88887e8ad14",
+        "sha256:3047eedaf8db2ec2d3695bb18a0b030ffcbfd6b5988541eb35c6c0c6cada08f9",
+        "sha256:4175c5899dcddb30993d5d87c794cc2581b78bf63b7e5460ae25d78d4cbabe1b",
+        "sha256:5a7d587c50ef1f6aa4657f5a124e9fee70cb3995890a0b9ce413d0bdd4ceb993",
+        "sha256:6244840537698e2a4ad19966cd5ee9f153e0cdc2d72659e8ed5fdb47af3ba493",
+        "sha256:63553edcd957e0c9bc0c3d42869659eebfd3dd7f783a918cd2d3450c037ff0f8",
+        "sha256:72bdcaa4ecbd932ca405d705cbe995cb4d562174fb9f532a7e22c8921994ca35",
+        "sha256:798d9209309ae0583320c3d5c4f6c11cc87437d7459047cd9dab1af97b1ecf30",
+        "sha256:91306476819992ad092a63d37e0887df5a20798a35553fef01c627378b48328d",
+        "sha256:aa712dd9c3d4463482c45a12dce011a662aef63af776b0094752eb22973fa3e8",
+        "sha256:ad6984b2517f9ce2e2a45378f1f16d9268906eb2f924427e2215387dcce49b9e",
+        "sha256:fcdc48fce4f148e43f855be76e7632b063baeed8c6e7746d8c3aab2e633763c8"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+          "path": "dashboard/src/panels/AttentionQueue.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/AttentionQueue.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M9YF24",
+      "items": [
+        "sha256:234aa25d57422dee08bef08d01404bb02278a41275a2b26da8fa2245aaa79b31"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
+          "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MN18XT",
+      "items": [
+        "sha256:1aef8981c1730df95cee5efe2a4657cf8249f65005ad63cb3fd9cd79d4400701"
+      ],
+      "reason": "The overview's account of the test tree holds after the final candidate; the entries for the catalog and for the two new test modules moved blobs, so the row re-binds them without changing the prose.",
+      "sources": [
+        {
+          "blob": "19878745f74e68b121a88be94bcdecd3fdcaa94a",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "ca66ffc4b7d146c236ee332c4611a0f22e36bd45",
+          "path": "mcp/tests/lifecycle_enclosure_test_support.py"
+        },
+        {
+          "blob": "611d97a1b073e03553eab7a68ca9ae653670fbc8",
+          "path": "mcp/tests/task_reopen_test_support.py"
+        },
+        {
+          "blob": "5122373e0ca0c714452cf6ce0687526a92e2aac7",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "1b0b86f07f435aab836d408c97007f3e1462d33e",
+          "path": "mcp/tests/test_attention_dismissals_v2.py"
+        },
+        {
+          "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+          "path": "mcp/tests/test_attention_native_kinds.py"
+        },
+        {
+          "blob": "0d5876215df696737cb998e26ff12722ddcf7ca6",
+          "path": "mcp/tests/test_attention_notice_store.py"
+        },
+        {
+          "blob": "fbf988b01f1b0ac4c7f8cd8f56609af0b8d99d05",
+          "path": "mcp/tests/test_attention_quiescence.py"
+        },
+        {
+          "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+          "path": "mcp/tests/test_observer_projection_attention.py"
+        },
+        {
+          "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+          "path": "mcp/tests/test_role_document_chats.py"
+        },
+        {
+          "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+          "path": "mcp/tests/test_task_reopen_cycle.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-7MQEW5"
+        },
+        {
+          "after": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "before": {
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "id": "RLZ-DGN04K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PCZ49N",
+      "items": [
+        "sha256:16bee47dfead955154b68afa0d47d14ccef2c7ff925dc3de1b1b8542f04f38d6"
+      ],
+      "reason": "the cold-acquisition and heartbeat rule is unchanged; the read gained one derived value",
+      "revision": 1,
+      "subject": "INV-XP08W1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PG3EG8",
+      "items": [
+        "sha256:721c12b875d81ea49e9fddbab4f26d697d7f6b9329114fe00c93223c5789e293"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "890efc977f601d145e7b7670ea9f41b04303abf7",
+          "path": "mcp/src/agents_remember/serving/actions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QCD7FS",
+      "items": [
+        "sha256:00e63c390f44544050bfc1769a06b99b6f255e2029c00c0857118d9a1cb6ee5d"
+      ],
+      "reason": "The route paragraph now carries both round-11 behaviours - the collection of a completed master with cleanup pending, and the chain origin as the master's line - beside the existing reopen account, so the route matches its two changed leaves.",
+      "sources": [
+        {
+          "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+          "path": "mcp/src/agents_remember/worktrees/reopen.py"
+        },
+        {
+          "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+          "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+        },
+        {
+          "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
+          "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHK3P6",
+      "items": [
+        "sha256:700f57c930ecae368bb45639dc35847fc4075677aac06a193f940f3be37414c6"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+          "path": "mcp/src/agents_remember/observer/projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QYF8WV",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734",
+        "sha256:bde2268298265cffdd464b78d6d765e33c756d9e17e852bf37fbdcd84230d483"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R210",
+          "packet": "requirements/MIK-R210-v2-a-task-reopens-from-its-master-and-completes-again.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-EN3DAR"
+        },
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preparation_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preparation_refusal"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-XQ6503"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QYWKGQ",
+      "items": [
+        "sha256:783afb79bfa7349a9d304f0b0c483e2ea51c4e191f55b175c3d2c63123a299e0"
+      ],
+      "reason": "the refusal shape is unchanged: only a terminal generation refuses before any root is used, and a reopened generation is a different obligation carried by the new reopen invariant",
+      "revision": 1,
+      "subject": "INV-8J056T"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R3CR0D",
+      "items": [
+        "sha256:15e4859096aef83cb1cb74c9472b14b4216cb18ab899014d0deffa9b36cee34d"
+      ],
+      "reason": "The card corrected the sentence the round-11 repair made false: without a recorded sync the oldest leaf's position must lie on the master's line rather than equal the recorded base, and the refusal now names worktree_integrate/worktree_sync instead of a contract cell. This is the file's first trace row.",
+      "sources": [
+        {
+          "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
+          "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/series_closeout.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R3Q3ZY",
+      "items": [
+        "sha256:80b7adcd11c7f0ff2efd19e7c1d118b5e44d057dbf361b3e2c068cdee06940c2"
+      ],
+      "reason": "the severity rank and the dismissible fold are realized on INV-R8BBQC (RLZ-DB86WQ), which the changed row re-anchored; the hunk itself carries no obligation of its own",
+      "subject": "hunk:sha256:80b7adcd11c7f0ff2efd19e7c1d118b5e44d057dbf361b3e2c068cdee06940c2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R8GHDY",
+      "items": [
+        "sha256:ce24ff3c3f3526aa5d4184ce748f4395e64c43ccd8d9acefbdbb795688388b64"
+      ],
+      "reason": "the severity rank and the dismissible fold are realized on INV-R8BBQC (RLZ-DB86WQ), which the changed row re-anchored; the hunk itself carries no obligation of its own",
+      "subject": "hunk:sha256:ce24ff3c3f3526aa5d4184ce748f4395e64c43ccd8d9acefbdbb795688388b64"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 2
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 2
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RDZ7JF",
+      "items": [
+        "sha256:7a972ddf830b67a7fa664ae4ad2c392985433cd35ba98891a63ff8a21fb038d9"
+      ],
+      "reason": "The control strip, its wrapping and its receipt-derived step-up identification are untouched; the role-start change is the parent hint and the reopened-enclosure branch, which this family's guarantee does not state.",
+      "revision": 6,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R210",
+          "packet": "requirements/MIK-R210-v2-a-task-reopens-from-its-master-and-completes-again.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:93d705aef30844b31b62b4ef981506128c12db1e0a718675620d1877f0bc738e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstStartPreparationTests.test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FirstStartPreparationTests.test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-BMYRFF"
+        },
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-1NPDDX"
+        },
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-934BED"
+        },
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-VD54R0"
+        },
+        {
+          "after": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-Y79026"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-RVS22M",
+      "items": [
+        "sha256:b27a13b9d74c5bd727dca82fb26983b497a1e26faabf8c357aeabcc18d25332c"
+      ],
+      "reason": "This row replaces ROW-RVS22M for the final candidate. The record's statement and both conditions already say what the repair enforces - a master recording its own folder as its parent is not fed back and the enclosure nests under the sprint, while a recorded parent naming another folder is the folder used - so nothing in the record's meaning changes and its revision stands. What moves is its evidence: the proof PRF-BMYRFF keeps its test name at mcp/tests/test_role_document_chats.py:363-383 while the assertion inside now expects the sprint, and a sibling case at :385-400 pins the another-folder branch. The four realizations and the two remaining proofs are unchanged. The effect is strengthen: the record's meaning is untouched while the evidence that pins its first condition is repaired and gains the sibling case for the another-folder branch.",
+      "revision": 2,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "before": {
+            "blob": "b0120b88083966ab1515c0afe6183a75c563add1",
+            "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "id": "PRF-QDYSSD"
+        },
+        {
+          "after": {
+            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "before": {
+            "blob": "b0120b88083966ab1515c0afe6183a75c563add1",
+            "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+            },
+            "path": "mcp/tests/test_observer_projection_attention.py"
+          },
+          "id": "PRF-XTZ1D1"
+        },
+        {
+          "after": {
+            "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+            "content": "sha256:3425e7ab920fb60da5ae21e8ef50c44ce3b5105dd811b0af96ab1411ba5637e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalStore.reconcile"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "before": {
+            "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
+            "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalStore.reconcile"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "id": "RLZ-RNDG0J"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-RXFBXY",
+      "items": [
+        "sha256:9e5d127c958596814ce0be53d962e904c7c4fe3f47dc5f7d99e238ca846bf359"
+      ],
+      "reason": "MIK-R200@v2 gives the three live native causes their own end observations, so cleanup now proves an ended permission wait, held message or stall interval as well as the operational and notice occurrences; the rule that only complete evidence reclaims is unchanged.",
+      "revision": 2,
+      "subject": "INV-D9T2BC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S86N5R",
+      "items": [
+        "sha256:009e2cba30d4989d940d3e062746887a68562773365b350089f9eb5b36a285ef",
+        "sha256:8428e08bb1e0d6f03599763ef605f8d540d7219911573b09f8bc68168020d287"
+      ],
+      "reason": "The card now states the parent rule the round-11 repair enforces: a master recording its own folder as its parent is read but not fed back and the enclosure nests under the sprint, while a recorded parent naming another folder is the folder used. The old reading map's fourth bullet said the recorded parent drives preparation, which the repair makes false for the self-named case, so that bullet is replaced by two anchored findings for the two cases, both derived by the citation fixer against mcp/tests/test_role_document_chats.py.",
+      "sources": [
+        {
+          "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+          "path": "mcp/tests/test_role_document_chats.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_document_chats.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SKCVDS",
+      "items": [
+        "sha256:f1410854fb2b65856b2d052a04d2e94af5a86e99b3278f7a1ef15693317eca2b"
+      ],
+      "reason": "the replaced recorded-parent branch is realized on INV-5ATS9T (RLZ-934BED); the hunk removes the old guess and adds no obligation of its own",
+      "subject": "hunk:sha256:f1410854fb2b65856b2d052a04d2e94af5a86e99b3278f7a1ef15693317eca2b"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-1ZZNZ6",
+          "revision": 2
+        },
+        {
+          "id": "INV-D9T2BC",
+          "revision": 2
+        },
+        {
+          "id": "INV-DVQX4T",
+          "revision": 3
+        },
+        {
+          "id": "INV-QYB9GY",
+          "revision": 1
+        },
+        {
+          "id": "INV-TT5CTW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-STE86N",
+      "items": [
+        "sha256:a31f5054bf8e744d77757a5c346368301ebad1c8de8e0fbcd9120b2ef494f92e",
+        "sha256:d4d27cf61733b5117263d252303142a148fb911553a8c62f9eba6956f7ef3024"
+      ],
+      "reason": "The family gains the observation route: its new member's realizations live in the observer package, which no existing route covered, and the guarantee is the one this leaf already widened to every published kind.",
+      "revision": 2,
+      "subject": "FAM-JSCKZX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-STHRCM",
+      "items": [
+        "sha256:a6db98eaa31c34e9d19b15e35e6827f98df63bcc1d29dd4613e0b3c89350b0a9"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+          "path": "mcp/src/agents_remember/application/worktree_status.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:7e549212cb810dd5edcc6e04a8a78f53e0b5df6646cc34bafaf1a26e940f3fb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-A1GGR8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T051XS",
+      "items": [
+        "sha256:152dcaec5fb87201a896b3253f41b73b54a253f0fae2d474a44177c436360321"
+      ],
+      "reason": "the row's served-age presentation is unchanged; the entries realign to the edited file",
+      "revision": 1,
+      "subject": "INV-YNWH01"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "content": "sha256:2b2f1bb30de42f2cd4084f86667d15540f18a46f708fa16f386e64178da9adf6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "before": {
+            "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+            "content": "sha256:f36dbb445b83121185aac7a606a53ef08447524167d1480a58e1fd16bc9ff226",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "id": "RLZ-SYM996"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VASECT",
+      "items": [
+        "sha256:4859a7085e55ad202b53dde333243fd6cf292c5bba059d4ade682c5abdabf6cf"
+      ],
+      "reason": "the status projection's subject is unchanged; the reopened branch is carried by the new reopen invariant",
+      "revision": 2,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-NXTR5G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VC8TMR",
+      "items": [
+        "sha256:f61b311d4677387c3a1a460497c7e073a5c33fbe3df2f2df40fb0cd60029ae38"
+      ],
+      "reason": "the record is this leaf's own earlier revision and its subject is unchanged; the file anchor moves with the candidate bytes",
+      "revision": 1,
+      "subject": "INV-976SFG"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_permission_and_held_rows_are_one_row_each"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_permission_and_held_rows_are_one_row_each"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-6H3YX6"
+        },
+        {
+          "after": {
+            "blob": "f65af7ff00d20903a0eec3c90d5deb35b45509a1",
+            "content": "sha256:1561ca41e1b5e12fd9d340098f6f190fa67cccd8c65ce2b1171c26f157eddc18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_notices_and_ranking_across_the_one_queue"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "before": {
+            "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+            "content": "sha256:1561ca41e1b5e12fd9d340098f6f190fa67cccd8c65ce2b1171c26f157eddc18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_notices_and_ranking_across_the_one_queue"
+            },
+            "path": "mcp/tests/test_attention_native_kinds.py"
+          },
+          "id": "PRF-K01SWQ"
+        },
+        {
+          "after": {
+            "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
+            "content": "sha256:f8941daa41b23f22513cb3f2833d09285d7b1699e6ff74c44260820799818437",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_attention_queue"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "before": {
+            "blob": "b8987ff18dae5fabe696d0b2341498f11897b102",
+            "content": "sha256:312fbb0660bab289a6954d453507e439e0ca5c11b0f96c5c5eddb6cf92f40b88",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_attention_queue"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "id": "RLZ-DB86WQ"
+        },
+        {
+          "after": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueue"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": {
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueue"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "id": "RLZ-EKXY7G"
+        },
+        {
+          "after": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_attention_items"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "before": {
+            "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+            "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_attention_items"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "id": "RLZ-G9FDZT"
+        },
+        {
+          "after": {
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "content": "sha256:06396fdbff4b3fbc66f5cc8f691ed6c5b85c470d69b979f8f4f013fbca08c042",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionItem"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "before": {
+            "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+            "content": "sha256:c197976223b4579283698fbad3261edca6218870c05012164dfc8521162ef9fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionItem"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "id": "RLZ-PWEYXF"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-XJZPXB",
+      "items": [
+        "sha256:f66a9ce61125649616cf1b6d9dc5c642226b32a06b8ed904a447f56bdb98d447"
+      ],
+      "reason": "MIK-R200@v2 replaces the severity-then-longest-wait ranking with newest-first by the age an entry already carries, and makes every published row acknowledged once per occurrence instead of only a terminal notice.",
+      "revision": 2,
+      "subject": "INV-R8BBQC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XZ3TQ8",
+      "items": [
+        "sha256:7b2931f42d36b72bd4b88f8c194be13fc94be13c50717e2a3e0104a18f23e083"
+      ],
+      "reason": "read the change against this card; it states nothing the change makes untrue, so no edit was needed and the row rebinds the file's current bytes",
+      "sources": [
+        {
+          "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+          "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/controlplane/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YCG77R",
+      "items": [
+        "sha256:90e6832969a3268d4d0db5433dc37373658ca3d0eb9b36765f4bd61f1a645a94"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        },
+        {
+          "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+          "path": "dashboard/src/types/projection.schema.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YDZDPG",
+      "items": [
+        "sha256:21e68b05e9194d1e1c9803d124df5e0ab84dba517c7c3d5c1d37fef74a09f3db",
+        "sha256:38ca5d41a95034d02de8b11815013f3c108bd832e23797e3da4230b31b448727",
+        "sha256:7b4d6f70023e649e748f2adc546f9ad20863bf0a0db4726d59df84d0d35f0b2e",
+        "sha256:c94a905e7999ac32703751333268050b6bf94b3d2c61650f644e00749a5e990f",
+        "sha256:fdd3a5ab70082ef9fd1c39fb1359dd0db1f8ca702363fb17a0def42b8aa6c81d"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YFPJE8",
+      "items": [
+        "sha256:5e5efe36a2700501a4802d1b798e8c951863e4b271a5667578d8a177cafc58ec",
+        "sha256:90475160e1280d08b2f39780d2f043f881890f569223d6ffea0d72668bb7f43b",
+        "sha256:e66bb95b4ce8c64c758d941a09d74d57a8771c3d3184c922cbe79602f0562df1",
+        "sha256:f07d0e3721228cdcf87adf5044cadca7f5156ddefc3d2b9fe0a024e4cc44eaaa",
+        "sha256:f8654b70a16498510b60425c2d9ed60c212fa8336d115e27be0d3e3f2296e516"
+      ],
+      "reason": "brought the card up to date with this leaf's change",
+      "sources": [
+        {
+          "blob": "ca66ffc4b7d146c236ee332c4611a0f22e36bd45",
+          "path": "mcp/tests/lifecycle_enclosure_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/lifecycle_enclosure_test_support.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R200",
+          "packet": "requirements/MIK-R200-v2-every-attention-entry-can-be-dismissed.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "0d5876215df696737cb998e26ff12722ddcf7ca6",
+            "content": "sha256:a7ea4e30ab6703f65f7acfdb386475039629bdde958565cb6a69b3034b32baa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_store_is_unknown_never_empty"
+            },
+            "path": "mcp/tests/test_attention_notice_store.py"
+          },
+          "before": {
+            "blob": "5d6503e04f9a6fb442ab022a9c414c22355e3049",
+            "content": "sha256:a7ea4e30ab6703f65f7acfdb386475039629bdde958565cb6a69b3034b32baa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_store_is_unknown_never_empty"
+            },
+            "path": "mcp/tests/test_attention_notice_store.py"
+          },
+          "id": "PRF-WNPKWN"
+        },
+        {
+          "after": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "before": {
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "id": "RLZ-54FK1N"
+        },
+        {
+          "after": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:cf38726bb2f2728226e011954f6bafb53deb969f152680d778200162ff7ce95d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "before": {
+            "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+            "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "id": "RLZ-RYN9PC"
+        },
+        {
+          "after": {
+            "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+            "content": "sha256:40b2449de2601298a2bdd80411183dad2cc1ea0138ddf237cf5ca4cf6a24fa96",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "before": {
+            "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
+            "content": "sha256:c4c3b1ffc36e39c60d9cf56f5c97fe462171a51e538cd2a434c5296dad27abe9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "id": "RLZ-Z8520A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZR2ZYG",
+      "items": [
+        "sha256:4b4cd7e7061a5938d9cfe741137c3f04ab65f728871174ec416fabe4b2480a39"
+      ],
+      "reason": "the per-kind completeness flags and the incomplete-observation rule are unchanged; the observations gained the live kinds without weakening the rule",
+      "revision": 1,
+      "subject": "INV-KZE8P3"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

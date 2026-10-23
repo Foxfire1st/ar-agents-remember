@@ -37,7 +37,7 @@ longer part of this admission edge.
 ### Conventions
 
 Expected contract mismatches return typed startup evidence rather than exposing tracebacks.
-The three edge groups remain separate so a refusal identifies the actual mismatch. This module
+The three edge groups remain separate so a refusal identifies the actual mismatch. A master's parent is its sprint, so `parent_task_name` is deliberately not an edge: a contract written before 2026-09-29 records the master's own name there, and comparing it refused the start of every master of that vintage (`atomic-series-contract-edge-mismatch`). The field stays on the contract for the readers that resolve it — a leaf's master edge and the leaf-id lookup — and neither the comparison nor the expected/observed evidence carries it. This module
 validates existing state; it does not repair contracts or move branches.
 
 ### Invariants And Boundaries

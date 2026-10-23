@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "62bb3b853ba989308300b11d569fd459e9ab9dc7",
+        "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
+        "content": "sha256:2275990937dfa92410255670037a0b06bef7d50e493d6a803e4593388abff099",
+        "locator": {
+          "end": 677,
+          "kind": "line_range",
+          "start": 653
+        }
+      },
+      "id": "RLZ-885QVF",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "MIK-R210@v2 §3 reopen collects a finished master and proves its chain line",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Proves the oldest leaf's position lies on the master's line in either direction and refuses an off-line base naming worktree_integrate/worktree_sync rather than a contract-cell edit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
         "content": "sha256:47db652ec19b2c6f4e0b1ce68068f711fbcdc78231cb5d1722f2f848b2fd470e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "62bb3b853ba989308300b11d569fd459e9ab9dc7",
+        "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
+        "content": "sha256:d0cbf7274f9d4e2a164e01fd15618aa503584460c9008245ee883105b2165109",
+        "locator": {
+          "end": 650,
+          "kind": "line_range",
+          "start": 595
+        }
+      },
+      "id": "RLZ-AF4GAN",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "MIK-R210@v2 §3 reopen collects a finished master and proves its chain line",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The closeout chain proof uses the line rule for the oldest landed leaf instead of demanding equality with the master's recorded base.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6ac9a4f679165308823289db7016dfd31c690cd3",
         "content": "sha256:16fc544308ab645d09349c7bba5fe3555374b5a1957b65069a9c7c7a41a16cff",
         "locator": {
           "kind": "symbol",

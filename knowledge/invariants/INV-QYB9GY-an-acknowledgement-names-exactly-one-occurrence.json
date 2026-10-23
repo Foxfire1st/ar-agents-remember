@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A dismissed stall that a restart cannot recognise comes back as a duplicate, and an occurrence identity drawn from the published row rather than the interval silently hides a new stall; the builders, the publication and the reclaim path must agree, and the restart and resumed-turn cases pin it."
+  },
+  "applicability": "Every published attention entry and the acknowledgement that hides it, across reloads and service restarts.",
+  "conditions": [
+    "A stall's interval start is the latest published turn-end stamp of the task's bound agents, then the task's own event stamp, and only then the reader's watch.",
+    "An occurrence ends only on its own end observation, so a restarted reader that has not re-crossed the deadline reclaims nothing.",
+    "A new occurrence of the same cause - a second prompt, another held message, a new idle interval after a bound turn - is published under its own id."
+  ],
+  "exclusions": [
+    "A dismissal that covers future occurrences of the same cause.",
+    "An identity nobody can name again after a restart: an interval dated only by the reader's watch is not persisted."
+  ],
+  "id": "INV-QYB9GY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rule 7 names a stall occurrence by the task and the start of that idle interval; the builder derives that start from the published turn ends (falling back to the task event stamp, then the reader's watch), and the reclaim path uses the same ids. The permission, held and notice identities are unchanged from v1 and are the builders' own."
+      ],
+      "path": "L190-v2-step2commit"
+    },
+    "handoffEntry": "C1 occurrence identity",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An acknowledgement names exactly one occurrence of one attention cause: a permission entry by its agent and prompt, a held entry by its held message, a stall by the task and the start of that idle interval, and a notice by the occurrence the notice rules define; an ended occurrence is reclaimed and a new occurrence of the same cause is published again.",
+  "status": "proposed",
+  "supersedes": []
+}

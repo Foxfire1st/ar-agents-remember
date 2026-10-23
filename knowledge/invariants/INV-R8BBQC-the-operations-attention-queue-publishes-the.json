@@ -8,13 +8,14 @@
   },
   "applicability": "The single server-built attention queue, its served row contract and the Operations bell that renders it.",
   "conditions": [
-    "Each native kind has one builder beside the surviving operational builders, and one total sort ranks them all.",
-    "A live cause is a warning that clears only when its native cause ends and cannot be acknowledged; a terminal notice is an information row acknowledged once per occurrence.",
+    "Each native kind has one builder beside the surviving operational builders, and one total sort ranks them all by the age the entry already carries, youngest first, then by id; an entry without an age counts as zero.",
+    "Every published row is acknowledged once per occurrence; a live cause also clears when its native cause ends, and a terminal notice clears only when it is dismissed.",
     "A row carries the canonical task key and reference where one resolves and the actual agent where the row concerns an agent; a taskless agent's row carries no task, and an operational row located by provider, repository or enclosure alone carries no task or agent control at all."
   ],
   "exclusions": [
     "Restoring a provider input or kind that MIK-R199 removes.",
     "Client-side ordering, grouping or a second interpretation of attention facts.",
+    "Ordering by severity, or by the longest wait, so the oldest entry sits on top.",
     "Inventing a task for a taskless seat."
   ],
   "id": "INV-R8BBQC",
@@ -29,9 +30,9 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Operations attention queue publishes the five native kinds beside the operational kinds that survive provider removal, through one server-built interpretation that keeps its severity ordering and stable tie-break. Every row says whether it is an action or a notice and whether it can be acknowledged, and a row that carries a task or an agent opens that exact subject.",
+  "statement": "The Operations attention queue publishes the five native kinds beside the operational kinds that survive provider removal, through one server-built interpretation that lists the newest entry first under a stable tie-break. Every row says whether it is an action or a notice and is acknowledged once per occurrence, and a row that carries a task or an agent opens that exact subject.",
   "status": "proposed",
   "supersedes": []
 }

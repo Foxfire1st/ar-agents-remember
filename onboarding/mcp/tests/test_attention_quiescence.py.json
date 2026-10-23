@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a73abfd43b8fd4ea0259da7aaeaedf3786ea92c1",
-        "content": "sha256:437de937e5c94a61bc63c03d6bc5d26d42830aa6593184d249e6afe48ca16c26",
+        "blob": "fbf988b01f1b0ac4c7f8cd8f56609af0b8d99d05",
+        "content": "sha256:a223b6fc61ba98fa21040f444676876c01c53f981e0602395b751f052b9741df",
         "locator": {
           "kind": "symbol",
           "name": "test_quiet_minutes_emit_no_delta_and_the_threshold_emits_one"

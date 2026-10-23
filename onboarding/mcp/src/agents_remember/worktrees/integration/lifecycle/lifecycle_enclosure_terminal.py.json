@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+        "content": "sha256:6683f97489ba414cd4386011d5eb5e60c20d9c68fedbd4138885ade6718ef7f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_cleanup_contract_authority"
+        }
+      },
+      "id": "RLZ-BJ65H3",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Accepts the reopen's own reset contract as the sanctioned successor of a completed cleanup instead of reading it as tampering.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "`restartable_predecessor_contract` requires a terminal restartable contract without recorded code/memory outputs.",

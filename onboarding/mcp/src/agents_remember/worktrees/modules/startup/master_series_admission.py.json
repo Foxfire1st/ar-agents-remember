@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+        "content": "sha256:ca7f102cb6b47841f5fe5a6e47b19b5c72b95a695ded023b95675e4aea1a9da1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_same_master_task_edge"
+        }
+      },
+      "id": "RLZ-RA6KK1",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Drops the parent-name edge that refused every master of pre-2026-09-29 vintage, which is what a leaf of such a master needs to start.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Typed admission evidence and bounded refusal projection.",

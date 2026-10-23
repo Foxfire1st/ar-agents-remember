@@ -14,9 +14,11 @@ large terminal-predecessor world in every module.
 
 ### Logic
 
-The helper publishes a terminal predecessor enclosure, constructs a completed leaf branch chain,
-binds a repository-scoped runtime configuration, creates external-memory directories, and writes
-leaf/master task documents with controlled identity/status variations.
+The helper publishes a terminal predecessor enclosure as a **completed cleanup** (the archive a
+landed, cleaned-up task leaves and a reopen resets), constructs a completed leaf branch chain, binds
+a repository-scoped runtime configuration, creates external-memory directories, and writes
+leaf/master task documents with controlled identity/status variations; the leaf id it carries is
+canonical (`260698-L1`).
 
 ### Conventions
 

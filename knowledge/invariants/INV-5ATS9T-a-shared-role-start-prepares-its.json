@@ -9,10 +9,8 @@
   },
   "applicability": "Every role start whose admitted environment is a leaf enclosure: the launcher's button and an agent's role_start, and the seat-set call that prepares a leaf's three seats.",
   "conditions": [
-    "The start resolves the folder, creates the enclosure when the leaf has none, opens the host workspace and writes the handover and receipt in one operation.",
-    "Where the master has a series contract the start passes the parent name that contract records; only a master with no contract yet uses the commanding sprint's folder name, and later starts read what the first created.",
-    "A repeat with the same request id finds the first attempt's enclosure and creates no second one.",
-    "No person and no agent calls worktree_start or another preparation tool before the start."
+    "Where the master has a series contract the start passes the parent name that contract records, unless that name is the master's own folder: a contract written before 2026-09-29 records the master's own name there, and passing it back would resolve the leaf under a folder that does not exist. The commanding sprint's folder name is the answer in that case and when there is no contract yet.",
+    "the start prepares one enclosure and a repeated request reuses it rather than creating a second."
   ],
   "exclusions": [
     "worktree_start keeps its own parameters, answers and admission checks for every other caller.",
@@ -31,9 +29,9 @@
     "leaf": "260928-MIK-L95",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A shared role start prepares its leaf enclosure using the existing master contract parent and repeats the same request without a second enclosure.",
+  "statement": "A shared role start prepares its leaf enclosure using the parent the master's contract names when that name is a sprint's folder, and repeats the same request without a second enclosure.",
   "status": "proposed",
   "supersedes": []
 }

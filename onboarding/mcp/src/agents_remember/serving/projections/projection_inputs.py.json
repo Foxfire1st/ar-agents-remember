@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,26 @@
     },
     {
       "anchor": {
-        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+        "content": "sha256:789ac37fb033896703cc84871be425a5a1daa3f8ce20458947d8c49fb956a9a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProjectionInputState._observe_native_kinds"
+        }
+      },
+      "id": "RLZ-DCZ75S",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Reclaims an acknowledgement only against the ids this same pass derives, so publication and reclamation can never use two identities.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
         "locator": {
           "kind": "file"
         }

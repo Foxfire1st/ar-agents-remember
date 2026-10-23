@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:f88c7a36b735c4ba831c31cc3755333df87fa1e41e10a3a734eea140ade2e3af",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:5f44f84cb1f9bb19ce8b7d4dc694565cf13294485a5bb01fed53f2570bcc0709",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:76871f7093532bd088efb1f4f6b08975519e3fc13bd1e845407fbd19a9796cec",
         "locator": {
           "end": 128,
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:33ffc66452f075974a31466d3f9d55ed964519d201a63e071709f60693fed842",
         "locator": {
           "kind": "symbol",
@@ -72,7 +72,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
         "locator": {
           "kind": "symbol",
@@ -89,8 +89,8 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
-        "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+        "content": "sha256:93d705aef30844b31b62b4ef981506128c12db1e0a718675620d1877f0bc738e",
         "locator": {
           "kind": "symbol",
           "name": "FirstStartPreparationTests.test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
@@ -106,7 +106,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:791210b1ce55c9ded50990a81fcaf958d1bd2f8dd51ea4d8b9fbc1e43075b4cb",
         "locator": {
           "kind": "symbol",
@@ -123,7 +123,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:f1fc9efa53d92ebbf5fa43f1df134b79d5941541b0983ac47fdc0c5e2dc0d7f6",
         "locator": {
           "kind": "symbol",
@@ -140,7 +140,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:f548d04cdd4f48c3c1090948b71eb980f5abf2c7bff2e6f62b8f3caf96e79c26",
         "locator": {
           "end": 302,
@@ -158,7 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:250d07e4bd9e49aa1623cc4e86e259a388f6dbdb6eb3f4019f2eae91ee73ec9a",
         "locator": {
           "kind": "symbol",
@@ -175,7 +175,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:a0b752f1eb7712371d7530a440179fbf636ed00b86a46f91830f49bf04e21801",
         "locator": {
           "end": 87,
@@ -193,7 +193,7 @@
     },
     {
       "anchor": {
-        "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+        "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
         "content": "sha256:656903cc89621449574c592ccaee6ad356a53e1f9c6f67afebd6418076c73cfb",
         "locator": {
           "kind": "symbol",
@@ -227,6 +227,22 @@
         }
       ]
     },
+    "10": {
+      "note": "A recorded parent that names another folder is the folder the leaf's enclosure nests under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:97b94145b23c3e6e21b92ef0c3bdd5633c2425f882eb0d13d2b9f73b27d32d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_honours_a_recorded_parent_that_names_another_folder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Archival and missing-agent filtering keeps only live document agents.",
       "targets": [
@@ -248,27 +264,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
             "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
             "locator": {
               "kind": "symbol",
               "name": "test_projects_uses_last_started_live_architect_and_pages_old_archived_records"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The recorded master parent drives preparation and a repeated request reuses the enclosure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
-            "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
             }
           },
           "kind": "test"
@@ -333,6 +333,22 @@
             "content": "sha256:e3c460a4a4754ee01a5d8930850b060acdc0ef4af4cabf5023372af98f740522",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A master recording its own folder as parent is read but not fed back — the enclosure nests under the sprint — and a repeated request reuses it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:93d705aef30844b31b62b4ef981506128c12db1e0a718675620d1877f0bc738e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
             }
           },
           "kind": "test"

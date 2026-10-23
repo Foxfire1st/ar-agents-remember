@@ -13,7 +13,9 @@ store publishes, the byte and count bounds over the exact serialized document, a
 
 The occurrence cases pin one published notice per begun-and-confirmed occurrence, an exact retry adding nothing,
 a begun intent announcing nothing, the three settle verdicts, an empty store publishing nothing while a reread
-keeps what was confirmed, and the dismissal vocabulary admitting only the two terminal kinds.
+keeps what was confirmed, and the dismissal vocabulary admitting every kind this build publishes — the two
+notices, the three live native causes and the four surviving operational kinds — while refusing a retired
+spelling.
 
 The cut cases pin the baseline the store is created with: a store created over existing terminal records
 publishes none of them, a retained notice before the cut is excluded, a publication confirmed after the cut is
@@ -30,6 +32,13 @@ The state cases keep missing, empty and present distinct, an unreadable store ne
 unreadable store quarantined and created again without replay, and an acknowledged notice surviving a torn store
 while a later occurrence still arrives. The legacy cases pin a pending row persisting its native operation
 identity and a store written before the cut adopting one cut.
+
+### 20261023-L190-v2 The Vocabulary Admits Every Published Kind
+
+The case name is the claim: `_case_test_every_published_kind_can_be_acknowledged` (:286-314) builds a record for
+each of the nine published kinds, then requires `ValidationError` for three retired spellings. It pins the store's
+vocabulary rather than the backend's acceptance — the acceptance path is pinned by
+`mcp/tests/test_attention_dismissals_v2.py`.
 
 ## Evidence boundary
 

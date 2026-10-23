@@ -190,6 +190,10 @@ or null, defaulting to null — the schema mirror of the optional CCR-R15 wait c
 populate for record-bound envelopes.
 
 
+## 20261023-L190-v2 Attention Item Dismissibility Description
+
+The generated `AttentionItem.description` (`projection.schema.json:113`) now states MIK-R200@v2: every published row is dismissed once per occurrence, so `dismissible` is true for all of them; the acknowledgement hides exactly that occurrence and changes nothing at its cause; `itemClass` says only how an occurrence also ends — `action` by its native cause ending, `notice` by the bounded notice store, `operational` by observed recovery. `dismissible` stays in the published contract with `default: true` (`:163`) so a served row states its own dismissibility instead of leaving a client to infer it from the kind; a client that receives `false` from an older producer still dismisses the row. This is the Python model's docstring rendered by the generator; change `observer/projection.py:285-304` and regenerate with `scripts/sync-projection-types.py`, never this JSON.
+
 ## 260713-TES-L5 Current Delta — Regenerated AgentPickupNode Description
 
 The schema no longer declares AgentPickupNode or session lifecycle/duplicate task-document/series catalogues. Retained landing-operation envelopes and exact-current queue contracts remain independent projection evidence.

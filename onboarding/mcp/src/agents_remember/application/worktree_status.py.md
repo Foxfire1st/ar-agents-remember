@@ -149,7 +149,7 @@ The current source seams include `worktree_status_packet`. Status locates normal
 
 ## Current Landed Composition
 
-`project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows; malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and replace the plural operation list. This remains read-only.
+`project_contract_status` also owns the public status projection. A proven terminal archive projects cleanup-completed or archive-ready with exact accepted cleanup arguments and no live operation rows — and a third state for the reopen's own reset (`reopen-reset`), which projects `reopened` with `start_reopened_task`/`worktree_start`. A reopened task is not a terminal generation to clean up: its archived generation stays proven in `terminalArchive` and its worktrees are simply gone until the next start. Malformed terminal-archive evidence returns its typed refusal. Other paths resolve caller authority, project readable or unreadable lifecycle evidence, and replace the plural operation list. This remains read-only.
 
 ## 260831-LOCR-L32 The Terminal Next Move Is Enforced Downstream
 
@@ -157,7 +157,9 @@ The current source seams include `worktree_status_packet`. Status locates normal
 cit:([`_project_terminal_contract_status`], mcp/src/agents_remember/application/worktree_status.py:463-505) writes a next-move triple into the `worktree_status`
 payload: `nextAction`, `nextTool` (from `TerminalCleanupOperation`, i.e. `worktree_cleanup` or
 `worktree_abandon`) and `nextArgs` (the accepted cleanup arguments plus `contract_path` and
-`dry_run`). **That write is now typed and enforced**, at the single validation point every public tool
+`dry_run`). The reopened branch writes its own triple: `nextAction: "start_reopened_task"`, `nextTool:
+"worktree_start"` and `nextArgs` from `_start_preview_args`; a task root outside the coordination tasks
+folder gets no `nextArgs` rather than an invented one, and the tool is still the answer. **That write is now typed and enforced**, at the single validation point every public tool
 response crosses — `TOOL_RESPONSE_MODELS["worktree_status"].model_validate(payload)`.
 
 - `models/worktree.py::WorktreeCommandResponse` declares the three keys

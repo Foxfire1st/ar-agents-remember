@@ -7,9 +7,10 @@
     ],
     "justification": "A future cleanup optimization must not infer absence or recovery from an unread kind, failed ref listing or missing checkout. The two destructive owners and complete/partial/click-race/branch-without-checkout assertions guard against lost live acknowledgements and deleted current snapshots."
   },
-  "applicability": "Reconciliation of supported current acknowledgement rows and pruning of valid drift snapshots whose native repository/branch subject is demonstrably gone.",
+  "applicability": "Reconciliation of supported current acknowledgement rows for every published kind - the three live native causes through their own end observations, and the operational and notice sources - and pruning of valid drift snapshots whose native repository or branch subject is demonstrably gone.",
   "conditions": [
     "Removal needs an actual complete successful observation of the corresponding kind; missing, failed or incomplete kind reads cannot prove recovery or absence.",
+    "A live occurrence ends only on its own observation: an answered prompt, a delivered or withdrawn held message, or a bound turn that closes a stall interval; a stall's live set is the interval rather than the published row, so a reader that restarted before the deadline reclaims nothing.",
     "An acknowledgement newer than the observation read start is retained; valid UTC-aware source observations provide the comparison.",
     "Branch existence comes from a successful native branch census and complete contract/directory inputs, not absence of a snapshot or checkout; usable snapshot identities are required."
   ],
@@ -30,7 +31,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Dismissal cleanup reclaims only things or ended occurrences proved gone by a complete successful source observation.",
   "status": "proposed",

@@ -194,3 +194,7 @@ while writer constants mark records.
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]
 
 - The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence. [20]
+
+## 20261023-L190-v2 Dismissible Action Sample
+
+The sampled `permission-wait:agent-7` row now carries `dismissible: true` (`snapshot.json:52`), the value the v2 producer publishes for a live native cause; `itemClass` stays `action`, and the row's agent, prompt and held-message identities are unchanged. The fixture now samples a dismissible action row beside the operational and notice rows. Its attention rows stay in hand-authored order and are not a claim about the served newest-first order, and the sample remains a wire shape rather than proof that a dismissal is served.

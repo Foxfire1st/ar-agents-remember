@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`attention_dismissals.py` keeps the compact current acknowledgements for published provider-down, failed-setup, blocked-start and actionable-drift occurrences, and for the two terminal notice kinds `task-landed` and `task-abandoned`. The three live native causes — permission wait, held message, stalled task — have no acknowledgement document here, so a request to acknowledge one is refused rather than stored, and its occurrence ends only when its native cause does. They are disposable UI facts, not an audit or authority log. Occurrences end on proved native recovery/removal, or changed complete drift findings, not on a new clock tick or inferred session status.
+`attention_dismissals.py` keeps the bounded current acknowledgements for every published attention kind: the surviving operational kinds (provider-down, failed-setup, blocked-start, actionable-drift), the two terminal notices `task-landed` and `task-abandoned`, and — since L190 v2 — the three live native causes permission wait, held message and stalled task. One acknowledgement hides exactly one occurrence, and the kind vocabulary refuses any kind this build does not publish, so a row written by an earlier build is never read as a current one. Dismissing a live cause changes nothing at its cause: the prompt stays unanswered, the message stays held, and the task's stage and its seats stay as they are. These are disposable UI facts, not an audit or authority log. An occurrence ends when a pass observes that it ended — native recovery/removal, a changed complete drift finding, an answered prompt, a delivered or withdrawn message, a resumed bound turn — and that observation is what reclaims its record. The store's count and byte bound (`MAX_DISMISSALS = 256`, `MAX_DISMISSAL_BYTES = 64 * 1024`, oldest first) is the only other way a row leaves, and nothing here ends an occurrence on a new clock tick or an inferred session status.
 
 ## Code Commentary
 
@@ -59,12 +59,23 @@ the moment a decision depended on one of these rows.
 
 `AttentionObservation` records actual read-start, completeness, existing/healthy IDs and fingerprints. Only complete observations begun at/after the click reclaim proved recovery/removal or changed fingerprints. Unread kinds, failed enumeration, unknown health and missing fingerprints prove no end. Missing stored fingerprint adopts the first complete available one.
 
+### 20261023-L190-v2 Every Published Entry Is Acknowledged, And The Store Is Bounded
+
+MIK-R200@v2 rule 7 makes the acknowledgement the developer's, not the cause's: every published entry is dismissed once per occurrence. The kind vocabulary grows the three live native causes (`supported_kind`, :56-75), and the backend's 409 `not-dismissible` refusal is gone, so `serving/actions.py:112-117` compares kinds and accepts. A retired spelling still refuses, which is what keeps an older row from being read as a current acknowledgement.
+
+The record needs no second notion of identity: `itemId` is the occurrence identity the builder published — `permission-wait:{agent}:{prompt}`, `held-message:{recipient}:{message}`, `task-stalled:{task}:{interval start}`, and a notice's own occurrence id.
+
+Reclamation now comes from the same pass that publishes the row. `ProjectionInputState._observe_native_kinds` supplies one `AttentionObservation` per complete live kind (`serving/projections/projection_inputs.py:750-787`), and `reconcile` keeps a record whose occurrence is still in that observation's existing set, reclaiming it when the occurrence is gone, is observed healthy, or its known fingerprint changed. An incomplete observation, an unreadable publication or an unknown host supplies no observation at all, so no record of that kind is reclaimed.
+
+Rule 10's bounds are enforced on the one write path. `_bounded` (:265-279) orders rows oldest first — an unparseable stamp ranks oldest, so it leaves first — and drops them until `MAX_DISMISSALS` (:41) and `MAX_DISMISSAL_BYTES` (:44) hold over the exact document `_render` writes. An evicted record may let its entry show again; that is accepted, as for a notice, and shedding only ever removes: nothing here re-derives an occurrence from a source fact.
+
 ## Invariants And Boundaries
 
 - Disposable UI acknowledgement, never approval or mutation authority.
 - Native complete per-kind proof governs cleanup; retained projection state is not a census and unknown is not healthy.
 - Click/read-start ordering and whole read/rewrite locking preserve concurrent clicks; empty sets stay as empty files.
 - Cleanup OSError retains prior suppression; click OSError is `dismissal-not-held` HTTP 503, not success.
+- The acknowledgement set is bounded: at most `MAX_DISMISSALS` rows and `MAX_DISMISSAL_BYTES` over the written document, shedding oldest first, and an evicted record can only let an entry reappear.
 
 ## Evidence
 

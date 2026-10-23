@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/worktree_status.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+        "content": "sha256:091220bb585535ea642658ad232fd027452f9c2d7532385ae6734b4dc7c49ce1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_project_reopened_contract_status"
+        }
+      },
+      "id": "RLZ-YSVD0C",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Projects the reopened state with the start the caller should take, so the reset is observable before anyone starts a seat.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Status observes the stable sync journal before contract parsing and threads it through all result branches.",

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/reopen.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+        "content": "sha256:c9aadb43d9b043357c541d9f9f9e6532e5ace1bc4cbc7142b4a9a1a5b56147a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_reopened_result"
+        }
+      },
+      "id": "RLZ-TFKPW5",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Answers a repeated reopen on a tombstoned leaf without a write, and declines when a start has made the generation live.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "18": {
       "note": "`_plan_leaf_doc_reset` owns the current boundary described above.",
