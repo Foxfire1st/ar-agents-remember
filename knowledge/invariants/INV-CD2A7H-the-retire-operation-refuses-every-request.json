@@ -5,12 +5,13 @@
     ],
     "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/application/task_docs/task_retirement_records.py and mcp/src/agents_remember/tasks/sprint_rows.py, so the rule holds only when both places do."
   },
-  "applicability": "A retire request, fresh, dry-run, resumed or repeated, while an addressed document or any task.json of the repository's task tree cannot be read.",
+  "applicability": "A retire request, fresh, dry-run, resumed or repeated, while an addressed document or any direct task document of the repository's task root cannot be read.",
   "conditions": [
-    "The document is addressed by the request or lies in the repository's task tree outside the archive and enclosures folders."
+    "The document is addressed by the request or is a direct <task root>/<folder>/task.json outside the archive and enclosures folders."
   ],
   "exclusions": [
-    "Files outside the repository's task tree."
+    "Files outside the repository's task tree.",
+    "A task.json deeper inside a task folder, which the census never reads."
   ],
   "id": "INV-CD2A7H",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L41",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The retire operation refuses every request, fresh, dry run, resumed or repeated, while the document it is addressed to or any task.json of the repository's task tree outside 0_archive and enclosures cannot be opened, decoded or parsed, and the refusal names that file.",
+  "statement": "The retire operation refuses every request, fresh, dry run, resumed or repeated, while the document it is addressed to or any direct task document of the repository's task root outside 0_archive and enclosures cannot be opened, decoded or parsed, and the refusal names that file.",
   "status": "proposed",
   "supersedes": []
 }

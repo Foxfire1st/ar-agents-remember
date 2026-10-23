@@ -5,12 +5,13 @@
     ],
     "justification": "Guards the costly error this statement names: The fail-closed rule of the retire route covers every task.json of the repository's task tree outside 0_archive and enclosures."
   },
-  "applicability": "The fail-closed read rule of the retire route over the repository's task tree.",
+  "applicability": "The fail-closed read rule of the retire route over the repository's direct task documents.",
   "conditions": [
-    "Every task.json outside 0_archive and enclosures folders is read."
+    "Every direct <task root>/<folder>/task.json outside 0_archive and enclosures folders is read."
   ],
   "exclusions": [
-    "Archived and enclosure folders."
+    "Archived and enclosure folders.",
+    "A task.json deeper inside a task folder, which is not a task document."
   ],
   "id": "INV-6S505X",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L41",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The fail-closed rule of the retire route covers every task.json of the repository's task tree outside 0_archive and enclosures.",
+  "statement": "The fail-closed rule of the retire route covers every direct task document of the repository's task root outside 0_archive and enclosures.",
   "status": "proposed",
   "supersedes": []
 }

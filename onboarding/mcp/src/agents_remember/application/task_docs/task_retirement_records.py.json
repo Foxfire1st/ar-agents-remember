@@ -40,6 +40,24 @@
     {
       "anchor": {
         "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+        "content": "sha256:1f8e2b2ea7c74f8eaffe89a15dd79108462fd636820c40feee6d195f9ddc4313",
+        "locator": {
+          "kind": "symbol",
+          "name": "sprints_naming"
+        }
+      },
+      "id": "RLZ-G80H99",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      },
+      "rationale": "The retirement route consumes the census's unreadable population and refuses on every direct document it names, so the direct-only population decides whether a retirement can proceed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
         "content": "sha256:ff403d12362d286c0d5786b5f4240d050ae85b16e8386da09c4152acf5e7d695",
         "locator": {
           "kind": "symbol",

@@ -3,11 +3,11 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a9146a3e1b4f89a3cbef05829b6c02037676ef17",
-        "content": "sha256:b311a37ec0753d21594a888a42c4e65224f6018858d2cb34209e4fd784e238f2",
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:74cceee93973e919ff71bddd9902143d7d8cd2090ef957743230526473942181",
         "locator": {
           "kind": "symbol",
-          "name": "test_a_task_document_with_a_malformed_list_field_refuses_and_is_named"
+          "name": "test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named"
         }
       },
       "facet": "The named case demonstrates this obligation on the current candidate.",
@@ -16,6 +16,40 @@
       "origin": {
         "handoffEntry": "L41-continuation-O2",
         "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:4b5591dc0ff68ad079d10a2f1156edf38b3caadfffb271e974e5a301b6406e97",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_deep_copy_that_cannot_be_read_does_not_stop_a_retirement"
+        }
+      },
+      "facet": "A deep unreadable copy does not stop a retirement, which still archives the master.",
+      "id": "PRF-NDNJ04",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+        "content": "sha256:74cceee93973e919ff71bddd9902143d7d8cd2090ef957743230526473942181",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named"
+        }
+      },
+      "facet": "A direct document with a malformed list field still stops a retirement and is named.",
+      "id": "PRF-X22F53",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
       }
     }
   ],

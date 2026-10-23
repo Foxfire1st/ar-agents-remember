@@ -1,0 +1,430 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L200",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-0W8VTT",
+      "items": [],
+      "reason": "The card's closeout contract now states the current census rule: retirement reads exactly the direct task documents and only a direct unreadable document can refuse it. It records that the authored skill and its generated copies still carry the older any-task.json sentence and that the sentence is a dependent document awaiting regeneration by its source owner; two code references anchor the census and the retirement consumer. No other closeout statement changed.",
+      "sources": [
+        {
+          "blob": "bcce4fbd8f27efaa7c7396ed54282b2a9cfb8a78",
+          "path": "skills/c-12-closeout/SKILL.md"
+        }
+      ],
+      "subject": "onboarding:skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-30SXAA",
+      "items": [
+        "sha256:4d2f6278bb13382ea85bae57adf44c3ef19b03171496a6c22c843793d23ac460",
+        "sha256:7a9497f7b7b3c5352d4563d618dd732b88036cbeb51a3a10b84a2b0f1e70b22b",
+        "sha256:a54b3f01697ecb26d168edf58d140cc03fa4e263bd92a90aced5c621c33ca309",
+        "sha256:d5f670a413b170ada0135e890690c56cbaa80ae9dca72b312da79b9dfa151678"
+      ],
+      "reason": "The card now names SprintCensusDocumentScopeTests and what its two cases prove: only a direct task.json is counted, a deep valid copy, deep retirement row, deep unreadable file, archive/enclosures copies and a root-level file are invisible, and a symlinked task folder is not a second document.",
+      "sources": [
+        {
+          "blob": "4c65dcb86da619a894de50d3901ee6d30baa937e",
+          "path": "mcp/tests/test_task_document.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_document.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4NMV1W",
+      "items": [
+        "sha256:fd014330c894d167624b46ab4d92aa9300eba30b5451e500b7fe635da5ced699"
+      ],
+      "reason": "The route overview's retirement paragraph now says the census reads exactly the direct task documents and that a deeper task.json is not a task document; the caller policies and the rest of the route account stand.",
+      "sources": [
+        {
+          "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+          "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-609DSV",
+      "items": [
+        "sha256:00385f634a5ab47fd11ef738179003fd78fcacdaf546cb11a17890d17ec239ce"
+      ],
+      "reason": "The card's census sentence now states the direct-only population: exactly <task root>/<folder>/task.json, with the archive, enclosures, own-document and symlink exclusions, and it names each caller's unreadable-document policy and the deep file's invisibility. The malformed-list evidence line now says direct. The rest of the card stands.",
+      "sources": [
+        {
+          "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+          "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/sprint_rows.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1B87DB",
+          "revision": 1
+        },
+        {
+          "id": "INV-1DFJ7N",
+          "revision": 1
+        },
+        {
+          "id": "INV-3YSSTZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GQZ9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-5ZMMN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-6AM3V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-6Q7947",
+          "revision": 1
+        },
+        {
+          "id": "INV-6S505X",
+          "revision": 2
+        },
+        {
+          "id": "INV-8AJVN0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8MKBTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8NHCRK",
+          "revision": 1
+        },
+        {
+          "id": "INV-9YJV7Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-AK4QYH",
+          "revision": 1
+        },
+        {
+          "id": "INV-C4PDDP",
+          "revision": 2
+        },
+        {
+          "id": "INV-CC0VTQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CD2A7H",
+          "revision": 2
+        },
+        {
+          "id": "INV-DJ27N9",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-FQWZBE",
+          "revision": 1
+        },
+        {
+          "id": "INV-GCEAJJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-GYCF1R",
+          "revision": 1
+        },
+        {
+          "id": "INV-HKTN7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-JQFXCQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-K79KP8",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0ZQNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MVYAQ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRMSPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q157G2",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZJXG",
+          "revision": 1
+        },
+        {
+          "id": "INV-T7VC8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ6Z6P",
+          "revision": 1
+        },
+        {
+          "id": "INV-X1AH5G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y0S1BZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-YQY9PX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZJTNZY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7VQZMV",
+      "items": [
+        "sha256:2f80d09ec097e1abb1df0e9fa72993300ba75837765a2f2ebad2cb35eee3feeb"
+      ],
+      "reason": "The family's guarantee is unchanged: every route still decides the abandoned-row contradiction from disk, a retirement is still one operation whose records no other writer may change, and every refusal still names the file, row and action. Three members were re-scoped by MIK-R209 so the fail-closed census names only direct task documents; that narrows the population the routes see, not what the family promises about the routes that act on it. The family remains retired and no route or member was added.",
+      "revision": 1,
+      "subject": "FAM-A43781"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D3ZPCA",
+      "items": [
+        "sha256:2cd4120d252d87c384bf9680eb244077b6ff0e94133b09073ca5168c97d5acf7",
+        "sha256:e57209d3e378c0b4b55dce1d601af8ff90811d3cf5a57e369d26df8d7b9ed195"
+      ],
+      "reason": "The card now says only a direct task document can stop a retirement, changes the malformed-list case to a direct document, and names the new deep-unreadable case that does not stop a retirement.",
+      "sources": [
+        {
+          "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+          "path": "mcp/tests/test_master_retirement_refusals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_master_retirement_refusals.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H0NWPH",
+      "items": [
+        "sha256:abada30dba13a5df3429cd127be858a32bf15adcae392dd94f0cd31d7d3cb58a"
+      ],
+      "reason": "The tests overview states the route's purpose, composition and authority; the leaf adds two census-scope cases and one refusal case inside existing modules without changing that route account. The three module cards carry the change.",
+      "sources": [
+        {
+          "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+          "path": "mcp/tests/test_master_retirement_refusals.py"
+        },
+        {
+          "blob": "4c65dcb86da619a894de50d3901ee6d30baa937e",
+          "path": "mcp/tests/test_task_document.py"
+        },
+        {
+          "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
+          "path": "mcp/tests/test_untyped_sprint_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R209",
+          "packet": "requirements/MIK-R209-v1-the-sprint-census-reads-only-real-task-documents.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "before": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "id": "RLZ-9EJ7S0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-HXJBFH",
+      "items": [
+        "sha256:9cc97cfbbb8d6a83351879b069e1e6a7f3ce2139542988c40e3fb563325d37b6"
+      ],
+      "reason": "The retire operation still refuses on every direct task document it cannot open, decode or parse and still names the file; it no longer treats a deeper task.json as a candidate commander or an unreadable record. The narrowed population is the ruled MIK-R209 change, and the recorded census realization is re-anchored at the candidate. Evidence (INV-CD2A7H): MIK-R209@v1; reviewer R1 code PASS on change 4a94f3b1; the changed row re-anchors the recorded census entry at the candidate.",
+      "revision": 2,
+      "subject": "INV-CD2A7H"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SGE19F",
+      "items": [
+        "sha256:7ece6685ce07c4a816dac959fb84e5eec046dbb9a538f9493400949787809d1d",
+        "sha256:d4b0c5506c78819ca997cc264217fb0365d8e56f09e4b6bcffda62515a2b80d0",
+        "sha256:d8ddf0d7689c79447efd83d78cc39fc356c009d020f992a7b332f6fe4ae52696"
+      ],
+      "reason": "The card now names the three census-boundary integration cases: a deep sprint copy no longer refuses the master's own write, finalization proceeds, and a second direct sprint document still refuses.",
+      "sources": [
+        {
+          "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
+          "path": "mcp/tests/test_untyped_sprint_rows.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_untyped_sprint_rows.py"
+    },
+    {
+      "considered": [
+        "FAM-A43781",
+        "FAM-HBNM5A",
+        "FAM-KVC8JB",
+        "FAM-8P577R",
+        "FAM-6VTYRH",
+        "FAM-E5BHSB",
+        "FAM-4RPJEY"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-V9VFJZ",
+      "items": [
+        "sha256:d2a659b9357cc13469f05060ddfcdc03880d643e5a3dcd24860ebec912729dfd"
+      ],
+      "reason": "Seven guarantees were read for what each promises. FAM-A43781 (retired) promises that every completing or retiring route decides the abandoned-row contradiction from disk and that a retirement is one operation whose refusals name the file, row and action. FAM-HBNM5A promises one protected retirement proof and a resolvable sprint across publication, with pre-archive restoration and post-archive cleanup recovery. FAM-KVC8JB promises sprint-archive admission, bounded preview and custodial restoration. FAM-8P577R promises one derived master order across authoring and readers. FAM-6VTYRH promises canonical recurring prose fields with historical compatibility. FAM-E5BHSB promises completion truth at master completion and leaves retirement its separate contract. FAM-4RPJEY promises own-copy publication without foreign enclosure ownership. None promises which documents the sprint census reads: the new invariant's direct-only population and symlink rule are the census's own obligation, so no family takes it as a member.",
+      "revision": 1,
+      "subject": "membership:INV-SGG6XQ"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R209",
+          "packet": "requirements/MIK-R209-v1-the-sprint-census-reads-only-real-task-documents.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a05e1776b2ff5ac3143e4e0a203a0b22b1a9d0a6",
+            "content": "sha256:74cceee93973e919ff71bddd9902143d7d8cd2090ef957743230526473942181",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_direct_task_document_with_a_malformed_list_field_refuses_and_is_named"
+            },
+            "path": "mcp/tests/test_master_retirement_refusals.py"
+          },
+          "before": {
+            "blob": "a9146a3e1b4f89a3cbef05829b6c02037676ef17",
+            "content": "sha256:b311a37ec0753d21594a888a42c4e65224f6018858d2cb34209e4fd784e238f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_document_with_a_malformed_list_field_refuses_and_is_named"
+            },
+            "path": "mcp/tests/test_master_retirement_refusals.py"
+          },
+          "id": "PRF-HP04B2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-WYSAVD",
+      "items": [
+        "sha256:64d49deb2d41849a08437f09dc943bbb7f0a521b14285fe1cd7a5b04ff87e466"
+      ],
+      "reason": "The malformed-list refusal now applies to a direct task document; the old statement's inclusion of a nested document is the behavior MIK-R209 reverses. Every direct malformed document still fails closed and is named, which the renamed direct case proves; the recorded proof is re-pointed to that case. Evidence (INV-C4PDDP): MIK-R209@v1; reviewer R1 code PASS on change 4a94f3b1; the changed row re-points the recorded proof to the renamed direct-document case.",
+      "revision": 2,
+      "subject": "INV-C4PDDP"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R209",
+          "packet": "requirements/MIK-R209-v1-the-sprint-census-reads-only-real-task-documents.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "before": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "id": "RLZ-YKEBZB"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-XABC4G",
+      "items": [
+        "sha256:2951e19f6e3d7a2d167c50ed06aea7d86d640d34ae7b86b07d57f1867aa7aa59"
+      ],
+      "reason": "The fail-closed rule now covers exactly the direct task documents of the repository task root; a task.json deeper inside a task folder is not a task document and the census never reads it. The obligation is narrower, not withdrawn: every direct document outside the archive and enclosures is still read and can still refuse. The recorded census realization is re-anchored at the candidate. Evidence (INV-6S505X): MIK-R209@v1; reviewer R1 code PASS on change 4a94f3b1; the changed row re-anchors the recorded census entry at the candidate.",
+      "revision": 2,
+      "subject": "INV-6S505X"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

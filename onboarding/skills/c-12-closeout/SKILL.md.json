@@ -189,6 +189,40 @@
         }
       ]
     },
+    "13": {
+      "note": "The retirement census reads exactly the direct task documents and never a deeper `task.json`. [13]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+            "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Only a direct document that cannot be opened or parsed can refuse a retirement. [14]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+            "content": "sha256:1f8e2b2ea7c74f8eaffe89a15dd79108462fd636820c40feee6d195f9ddc4313",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprints_naming"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Closeout tool surface and contract ownership",
       "targets": [

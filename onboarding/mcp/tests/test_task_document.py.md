@@ -25,6 +25,8 @@ derived `seriesContractPath` and `enclosures[]` (see the `application/task_docs/
 card). The helper keeps every leaf operation in this module on the flow the plane allows — master
 document present, series contract not yet bootstrapped — rather than weakening the refusal. This class is shared fixture support; these helpers are not themselves application-case execution in this module.
 
+`SprintCensusDocumentScopeTests` holds the census population boundary: only `<task root>/<folder>/task.json` is a task document. Its cases prove that a deep valid copy of the sprint document, a deep retirement row, a deep unreadable file, the archive and enclosures copies, and a `task.json` at the task root are neither counted nor listed, and that a symlinked task folder is not a second task document.
+
 ### Conventions
 
 The table lists retained test definitions, not collected parametrized or subtest counts.

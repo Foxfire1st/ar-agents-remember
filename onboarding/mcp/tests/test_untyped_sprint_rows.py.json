@@ -3,7 +3,41 @@
   "proves": [
     {
       "anchor": {
-        "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+        "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
+        "content": "sha256:3f9d14db38443628f2a14ab63f2a94cb61546eeb89b3113ad9c3e9dac3fbd7fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalization_ignores_a_deep_sprint_copy"
+        }
+      },
+      "facet": "Finalization reaches would-finalize and finalizes while a deep sprint copy is present.",
+      "id": "PRF-4NDAW8",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
+        "content": "sha256:1766c2f88b34a3d7b61a4f335f26c600a470acee1e943795429c64f28e67d963",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_deep_sprint_copy_does_not_refuse_the_masters_own_write"
+        }
+      },
+      "facet": "A deep copy of the sprint document no longer gives the master a second commander, so the master's own task_doc write proceeds.",
+      "id": "PRF-5SYVGX",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
         "content": "sha256:c5fcdb8272971695d51836c757997b7c59efc672711e0865916c2cf22e13916c",
         "locator": {
           "kind": "symbol",
@@ -16,6 +50,23 @@
       "origin": {
         "handoffEntry": "L41-continuation-O3",
         "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
+        "content": "sha256:db035c28e481568311d0ab1aed3bda8874ec29b2537e104b51dacaa173301405",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_second_direct_sprint_document_still_refuses_the_masters_own_write"
+        }
+      },
+      "facet": "A second direct sprint document that names the master still refuses the master's own write with several commanding sprints.",
+      "id": "PRF-JRXFTM",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
       }
     }
   ],
@@ -56,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8fb4ae2712f0c7cce6719ab98fb6769184e627a0",
+            "blob": "b67c29544e7970ce3e8c1c483993fc40d84156ae",
             "content": "sha256:3187b249faccb749c4972dac89d2578514becb0bf81f2c9caed39a17c231fc83",
             "locator": {
               "kind": "symbol",

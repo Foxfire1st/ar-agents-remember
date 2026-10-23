@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
-        "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+        "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+        "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sprint_census"
+        }
+      },
+      "id": "RLZ-97SD1N",
+      "invariant": "INV-SGG6XQ",
+      "origin": {
+        "handoffEntry": "MIK-R209@v1",
+        "leaf": "260928-MIK-L200"
+      },
+      "rationale": "This function is the census: it enumerates exactly the direct task.json files, applies the archive, enclosures, own-document and symlink exclusions, and builds the commanding, recording and unreadable populations every caller reads.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+        "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
         "locator": {
           "kind": "symbol",
           "name": "sprint_census"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
         "content": "sha256:8413743c2030c9be7d8b9b1e742011ecc59bab81b4bf32f97bcd6e83c8cfa78c",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
-        "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+        "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
+        "content": "sha256:d88698ceb66667a0e89dd5f164124c3e82b4531ff089147f14324c055c0fe49b",
         "locator": {
           "kind": "symbol",
           "name": "sprint_census"
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "blob": "d30f455f8141827f2e8667465ad53fa062028dec",
         "content": "sha256:db84df575e13e738f19b254414263a83ad4663984aeb056baedf37f84e280e9a",
         "locator": {
           "kind": "symbol",

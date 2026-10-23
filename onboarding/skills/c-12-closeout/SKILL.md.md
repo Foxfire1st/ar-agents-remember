@@ -36,6 +36,8 @@ Authority is contextual but never assumed: developer-gated closeout previews fir
 
 Memory cannot be disabled for a task: every closeout runs under the invariant gate, and a contract on disk that carries the removed mode is abandoned and started again rather than closed out. Closeout order commits code then memory-content with code attribution trailers, refreshes the consumer ledger cache without staging it, and refuses before mutation on moved refs, conflicts, blank messages, or unreconciled pairs. Branch-direct landing stays a policy-gated counterpart for a canonical granted leaf without its own enclosure, never a direct-checkout path; legacy operation repair is explicit and bounded; worker and curator failures route back to their owners rather than becoming gates.
 
+The census behind `retire_master` reads exactly the direct `<task root>/<folder>/task.json` documents and never a deeper `task.json`, so only a direct document that cannot be opened or parsed can refuse a retirement. The authored skill and its generated copies still carry the older sentence that any `task.json` of the repository refuses a retirement; that sentence is a dependent document awaiting regeneration by its source owner (MIK-R209). This card states the current code rule, not the stale sentence.
+
 ## Granted direct verify and create
 
 Bind the canonical leaf reference and current readable grant. With code_commit, direct_landing verifies existing code; without it, create preview/apply require code_commit_message and memory_commit_message, and apply needs the previewed code candidate_tree. Direct create judges the exact code/memory pair with its mandatory census before the one code commit, then pairs memory in the accepted generation. A recoverable cut resumes that same generation; real ambiguity keeps its developer-decision path. Ordinary closeout consumes existing curation evidence and does not become a new test/review campaign. Git publication remains the owning Manager transaction, never the Curator.
@@ -65,6 +67,10 @@ Bind the canonical leaf reference and current readable grant. With code_commit, 
 
 
 - Branch-direct landing, legacy repair, failure conditions, boundaries [8]
+
+
+- The retirement census reads exactly the direct task documents and never a deeper `task.json`. \[13] [13]
+- Only a direct document that cannot be opened or parsed can refuse a retirement. \[14] [14]
 
 
 ## Current handoff boundary

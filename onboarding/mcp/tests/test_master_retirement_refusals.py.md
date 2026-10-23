@@ -12,11 +12,11 @@ _whole recognizes a taskArchive-bearing raw application result; otherwise a proj
 
 These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
 
-Refusals of the retire operation: each names its file or its action, and the action works. A request addressed to a document that cannot be read is refused by the file's name; a refusal that tells the operator to take a master out of a sprint names the edit that works on that sprint. A refused request leaves nothing behind, a directory included, and a master has one retirement record at one place.
+Refusals of the retire operation: each names its file or its action, and the action works. A request addressed to a document that cannot be read is refused by the file's name; a refusal that tells the operator to take a master out of a sprint names the edit that works on that sprint. Only a direct `<task root>/<folder>/task.json` can stop a retirement; a `task.json` deeper inside a task folder is not a task document. A refused request leaves nothing behind, a directory included, and a master has one retirement record at one place.
 
 ## Code Commentary
 
-`_carry_out_removals` performs the named edits and repeats the request. The cases cover unreadable canonical proof objects, an unreadable master document, a malformed list field, a request addressed to an unreadable document, an unreadable task folder, a master put back without a typed row, a lone master's record, several commanding sprints, an entry that names two masters, a refused first phase that leaves no directory, two retirement records, a row number already in use, and a folder recorded at both places.
+`_carry_out_removals` performs the named edits and repeats the request. The cases cover unreadable canonical proof objects, an unreadable master document, a direct document with a malformed list field, a request addressed to an unreadable document, an unreadable task folder, an unreadable deep copy that does not stop a retirement, a master put back without a typed row, a lone master's record, several commanding sprints, an entry that names two masters, a refused first phase that leaves no directory, two retirement records, a row number already in use, and a folder recorded at both places.
 
 ## Evidence
 
