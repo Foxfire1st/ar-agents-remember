@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`Cockpit.test.tsx` proves the production shell's standing contracts: the Operations detail hydration
+`Cockpit.test.tsx` proves the production shell's standing contracts on attention rows that now declare their `itemClass` and `dismissible` like any other served row: the Operations detail hydration
 and rollup, the serving-build stamp, the full-bleed/railed layout flip, rail keep-alive across view
 switches, the right-rail River/Chat toggle and its persistence, and the resizable rails.
 

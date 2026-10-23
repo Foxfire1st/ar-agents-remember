@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+        "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EZRQ0Y",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Native builders implement per-prompt/per-held occurrence, settled stall exclusions and stable terminal notice details.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+        "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "native_attention_items"
+        }
+      },
+      "id": "RLZ-G9FDZT",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The five builders live here, one per kind, and they are what puts the native rows beside the operational ones.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7e2b27bdc44fca73320ccea45358acd05ca0ad16",
+        "content": "sha256:44af824aec4750f2a123fc7b94de675edff1f84485e90db2f211a99b4464fd75",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V2YF3Y",
+      "invariant": "INV-9V3W1R",
+      "origin": {
+        "handoffEntry": "L190-R1-F12",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Native builders implement per-prompt/per-held occurrence, settled stall exclusions and stable terminal notice details.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

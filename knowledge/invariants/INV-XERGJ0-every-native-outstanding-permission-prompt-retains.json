@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The publication, the observer model, the projection reader and the builder must agree per prompt, not per agent: a sibling's resolution would otherwise take an unanswered prompt off the queue, and a fabricated identity would make a second prompt look like the first. The sibling-resolution and retention cases pin both failures."
+  },
+  "applicability": "Permission identities admitted from at most 32 sorted published prompt IDs per agent and at most 128 permission rows across the served population.",
+  "conditions": [
+    "The host serializes at most 32 sorted outstanding IDs per agent; exceeding that cap makes its publication incomplete. The input reader separately admits the first 128 rows ordered by agent ID and prompt order. Aggregate overflow can omit or displace a row without resolving it.",
+    "A row that remains admitted keeps its actual agent and prompt identity through publication, projection and resolution of a different prompt. A sibling resolution can expose a previously omitted prompt.",
+    "An unknown host observation retains the last served rows. A permission-state agent with no named prompt IDs keeps its previous per-agent rows and makes the observation incomplete. When a publication is incomplete because one agent has more than 32 native prompt IDs, the retained input keeps previously known permission rows; a later complete native observation reconciles answered or removed prompts within the separate aggregate bound."
+  ],
+  "exclusions": [
+    "Reading a permission-looking string from task or agent prose.",
+    "Fabricating an occurrence when a native identity is unknown.",
+    "Any additional permission poll, and any prompt argument or secret content.",
+    "An unlimited census or visibility guarantee beyond the per-agent and aggregate admission bounds."
+  ],
+  "id": "INV-XERGJ0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F03; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F03",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each admitted native permission-prompt row has a stable occurrence identity derived from its actual agent and prompt IDs; incomplete observations and sibling resolution preserve that identity within the admitted bounded population, without guaranteeing visibility of every outstanding native prompt.",
+  "status": "proposed",
+  "supersedes": []
+}

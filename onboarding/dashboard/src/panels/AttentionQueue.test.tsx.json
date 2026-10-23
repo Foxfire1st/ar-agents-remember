@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+        "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
         "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+        "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
         "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
         "locator": {
           "kind": "symbol",
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fea81ac6e51630ad7f1031515b2b432882154bc",
+            "blob": "b8987ff18dae5fabe696d0b2341498f11897b102",
             "content": "sha256:2f86385c2a6b0479a5f16362c7a03aa7dc50b9676692719235518453a47d7a0f",
             "locator": {
-              "end": 150,
+              "end": 166,
               "kind": "line_range",
-              "start": 150
+              "start": 166
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
           },
@@ -88,14 +88,14 @@
       ]
     },
     "4": {
-      "note": "The four-kind fixture covers provider-down, actionable-drift, failed-setup and blocked-start. Parameterized dismissal asserts immediate optimistic hiding and a request containing exactly itemId/kind for each kind; the actionable-drift failure case restores the row, reports that dismissal did not hold and clears the alert on a successful retry. No nullable lifecycle target is posted.",
+      "note": "The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, non-dismissible suppression exclusion, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
-            "content": "sha256:eb11a5af06a0021f0a6eca7d41574a75aef4fc42d53a7f9ca91b1d469e2cfbc4",
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:2a4893ca2421a160a9e142b19da1c54babb2b073fd73e272787dfc869cd3c77a",
             "locator": {
-              "end": 45,
+              "end": 92,
               "kind": "line_range",
               "start": 13
             }
@@ -104,24 +104,36 @@
         },
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
-            "content": "sha256:cc7a9b3317b667fb6ab93b78bbed24639d84a472186a9462a6dc4847a3b550fc",
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:8a6f9ad114ae544fbd0fb710e827a688d95bfa9e6467f798bcba5e3aa5def658",
             "locator": {
-              "end": 94,
+              "end": 165,
               "kind": "line_range",
-              "start": 77
+              "start": 124
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
-            "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:33d8b72dc11a5890880e34f387aec6713baf21c6177dcdcbec6d1603ca5b9a30",
             "locator": {
-              "end": 118,
+              "end": 284,
               "kind": "line_range",
-              "start": 107
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "content": "sha256:dc53b82380678d1f44a42c652a183c88b2442d88b00a8c84bc0d212c32d08a37",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 322
             }
           },
           "kind": "test"
@@ -145,24 +157,24 @@
         },
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
             "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
             "locator": {
-              "end": 105,
+              "end": 152,
               "kind": "line_range",
-              "start": 96
+              "start": 143
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
             "content": "sha256:3b9928e90564a626e19f9527bcca7e40caee31c48d1d5ebbcb23c9a8e3917d4d",
             "locator": {
-              "end": 130,
+              "end": 177,
               "kind": "line_range",
-              "start": 120
+              "start": 167
             }
           },
           "kind": "test"

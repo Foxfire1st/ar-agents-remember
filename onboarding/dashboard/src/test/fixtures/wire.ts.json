@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:8164a66d74351e8aa91df939055a98ff37e89e14c52065eca95f66fce3a8e099",
             "locator": {
               "end": 7,
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
             "locator": {
-              "end": 567,
+              "end": 573,
               "kind": "line_range",
-              "start": 558
+              "start": 564
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 322,
+              "end": 324,
               "kind": "line_range",
-              "start": 320
+              "start": 322
             }
           },
           "kind": "test"
@@ -165,20 +165,19 @@
       ]
     },
     "24": {
-      "note": "The attention-item builder takes its sample from analytics.\n\nAnchor: \"\\\"attentionQueue\\\": [\"",
+      "note": "BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained.",
       "targets": [
         {
           "anchor": {
-            "blob": "0c7de2582838ad68a1af9f3f234188bd0b9dfe13",
-            "content": "sha256:0540b78baf3fc9965d9185bf415e9788a46bef35d00c039e1328a0318a2a1349",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "content": "sha256:99664b6a2ee79b59d1a73aabb4df38819af4303335d33238c7df12db586cec3d",
             "locator": {
-              "end": 79,
+              "end": 190,
               "kind": "line_range",
-              "start": 42
-            },
-            "path": "dashboard/src/fixtures/snapshot.json"
+              "start": 182
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -218,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:f12aa16a2649f24ea9f24960bc03abaf8e55d07651f45b0da1f4036c5206585a",
             "locator": {
               "kind": "symbol",
@@ -269,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -280,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 322,
+              "end": 324,
               "kind": "line_range",
-              "start": 320
+              "start": 322
             }
           },
           "kind": "test"
@@ -344,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:f51bf451e52cbd60dab42d23a4ff11b3b155436ee93eced9600d143735f1a851",
             "locator": {
               "end": 8,
@@ -361,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:7e42a5e0e377e61378d25b8c95e783e30197562b5aa89d6979a6c9574b65fed0",
             "locator": {
               "end": 23,
@@ -378,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d27e20e29f49e1c8d21e0c3226f15dc93c290a14",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
             "locator": {
               "end": 7,
@@ -451,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
             "locator": {
-              "end": 526,
+              "end": 532,
               "kind": "line_range",
-              "start": 524
+              "start": 530
             },
             "path": "dashboard/src/test/contract.test.ts"
           },

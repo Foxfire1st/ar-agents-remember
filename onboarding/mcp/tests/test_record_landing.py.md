@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Locks the pull-request landing route and the ways it must refuse. A recording that succeeds sets the terminal integration cell; a commit that landed nowhere, an unapproved call, and a missing commit argument each fail without writing the cell. The suite stays self-contained: it builds its own series contract and Git repositories rather than importing the shared lineage fixture, so this card is owned by the module it exercises instead of inheriting that suite's transitive support closure.
+Locks the pull-request landing route and the ways it must refuse, and the terminal-notice boundary that now surrounds a final landing: `TerminalNoticeCaptureTests` asserts one landed notice for one final record and none for an exact retry or a dry run. A recording that succeeds sets the terminal integration cell; a commit that landed nowhere, an unapproved call, and a missing commit argument each fail without writing the cell. The suite stays self-contained: it builds its own series contract and Git repositories rather than importing the shared lineage fixture, so this card is owned by the module it exercises instead of inheriting that suite's transitive support closure.
 
 ## Code Commentary
 

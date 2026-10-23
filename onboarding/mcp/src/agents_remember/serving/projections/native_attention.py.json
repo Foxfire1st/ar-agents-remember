@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/native_attention.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7MQEW5",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BERCC1",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NXTR5G",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R7ECM6",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RYN9PC",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a45bd57d0b9947e6ae2f0ea6749746c1dfe6da1c",
+        "content": "sha256:1a645511a9662382bac14e8fde4795860ac09af51ce046d495c1b284d9ecc315",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X4Q38J",
+      "invariant": "INV-XERGJ0",
+      "origin": {
+        "handoffEntry": "L190-R1-F03",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Retained native acquisition protects incomplete observations, continuous idle clocks and bounded heartbeat discovery.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

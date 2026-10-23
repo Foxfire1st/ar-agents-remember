@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
-        "content": "sha256:2a1aadcae53756baef800dffef007e25daddc856fc94f94734ce04e94eeb41c2",
+        "blob": "84550a276c2350aa700370967d9509160521edc2",
+        "content": "sha256:0bc960095b82ae9c2f9dccea7802e4aa2425bbc5c4bbbf720d86973532a04a76",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5Y0T30",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The shown-chat owner accepts only actual frame reports; undefined availability cannot invent a shown subject.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "84550a276c2350aa700370967d9509160521edc2",
+        "content": "sha256:79b9c4f7e05d7510a2bbbe85ca53a13faefb2b29437a77738ad872cca309aaa6",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsView"
@@ -39,33 +56,46 @@
       ]
     },
     "2": {
-      "note": "The presentation hook derives the scoped execution, frame target and launcher actions.\n\nAnchor: \"function useRoleChatsPresentation(props: RoleChatsViewProps) {\"",
+      "note": "The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
-            "content": "sha256:227987b1eb4ce3c55297a9c57e9b0b23271f3e9afc508ddbf3752fe75efe2df7",
+            "blob": "84550a276c2350aa700370967d9509160521edc2",
+            "content": "sha256:2a3aa061c24d262ea29b16503bb3b9686d9aec885da689919493d1d6e9501ac4",
             "locator": {
-              "end": 206,
+              "end": 209,
               "kind": "line_range",
               "start": 154
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bc6bcca5d994d77343956d9c967b3c1c06b7234",
+            "content": "sha256:3e27c41b19ceffe406e2469709be423f78731e5aa5e962ee95c24564d1cf893d",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/cockpit/roleChatTarget.ts"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "An available frame uses its explicit shown-chat report, with the launcher target only before any report.\n\nAnchor: \"function shownAgent(drawn: boolean, frameChat: string \\| null \\| undefined, frameTarget: PaseoAgentTarget \\| null) {\"",
+      "note": "The Chats pane publishes only the agent ID its active, unbound frame reports showing. Until a string report arrives, and while a report takeover or bound launcher owns the surface, it publishes no shown-chat identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
-            "content": "sha256:d6d086372f83fa0f204358a04cc3d8845b56c43198232d3b88fb15d3a6e47b82",
+            "blob": "84550a276c2350aa700370967d9509160521edc2",
+            "content": "sha256:82b99de25fefeed78c7446ed82c86f3830a8800aacf91ad8f102da168e291f32",
             "locator": {
-              "end": 217,
+              "end": 236,
               "kind": "line_range",
-              "start": 214
+              "start": 212
             }
           },
           "kind": "code"

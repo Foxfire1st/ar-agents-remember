@@ -7,7 +7,10 @@
 ## Purpose
 
 Generated TypeScript mirror of the served workspace projection plus its enumerable runtime
-vocabularies. It carries canonical `TaskDocumentRef` values on native task entries/dependencies, not removed pickup/expectation DTOs, without
+vocabularies, one of which is the attention row's class: `ATTENTION_ITEM_CLASSES` (operational, action,
+notice) beside the widened `ATTENTION_LANES` (repo, worktree, agent, task), with `AttentionItem` carrying a
+required `itemClass` and `dismissible` and the optional task, agent, prompt, held-message and occurrence
+identities a row may open. It carries canonical `TaskDocumentRef` values on native task entries/dependencies, not removed pickup/expectation DTOs, without
 turning runtime session/lifecycle ids into work identity. Since 260831-CCR (commit `99dc249b`)
 it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
 digest) and attaches it optionally to the lifecycle operation projection.

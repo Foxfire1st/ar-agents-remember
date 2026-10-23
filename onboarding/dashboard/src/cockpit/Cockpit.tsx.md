@@ -10,7 +10,9 @@ Production dashboard chrome, retained product layers and the review page's share
 
 ## Code Commentary
 
-`Cockpit` connects shared state/events and ready hydration. `CockpitShell` owns presentation, wake-lock lifetime, the revalidation provider and page dispatch. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash using replaceState, without replacing that base target. [72] [97]
+`Cockpit` connects shared state/events and ready hydration. `CockpitShell` owns presentation, wake-lock lifetime, the revalidation provider and page dispatch. It also holds
+the bell's agent request (`agentChat`) and the one handler that names an exact seat and switches to the chats
+view, so no panel below it has to write the observed-chat channel. A knowledge-reader URL selects Knowledge. A valid review URL selects Operations and places the review reading column beside the same right chat rail. Ordinary change-set and notes readers retain takeover dispatch; review targets do not pass through `ChangeSetTakeover`. Base review navigation carries repository/master/leaf and recorded-history state. The mounted reviewer separately reads and writes its selection and comparison in the hash using replaceState, without replacing that base target. [72] [97]
 
 Operations, File Viewer, Knowledge and Role chats retain their layers. Entering the review hides the ordinary main layers and Operations task tree; it renders `ReviewMain` in a stable slot immediately before the existing right rail. Leaving review restores the ordinary main layers. Operations exposes independent left/right sidebar toggles outside the memoized detail panel. Hidden child owners receive active predicates separately from component retention. [88] [89]
 
@@ -380,7 +382,7 @@ No separate cross-repository implementation claim.
 - A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
 - The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
 - The reviewed UI contract owner `MainLayers`. [88]
-- MainLayers directly mounts RoleChatsPane with the shared task array and active visibility/takeover predicate; its native host transport remains a separate owner. [89]
+- MainLayers mounts the persistent RoleChatsPane with tasks and the visible/non-takeover active predicate, forwarding agentChat as openChat. RailedBody passes shell agentChat to MainLayers and openAgentChat to LeftRail; LeftRail forwards that handler to LifecycleList. Native host transport remains separately owned. [89]
 - The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally. [92]
 - The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
 - Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]

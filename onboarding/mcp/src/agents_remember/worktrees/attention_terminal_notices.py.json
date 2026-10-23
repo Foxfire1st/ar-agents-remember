@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/attention_terminal_notices.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e2d922ec52e965c8270a82d85d49dd237f0d83d",
+        "content": "sha256:91f7383fb3856225b64732b1954798aab29325928025fefc7b1e9684c59a96e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0AZGJM",
+      "invariant": "INV-6S5SQ5",
+      "origin": {
+        "handoffEntry": "L190-R1-F05",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Native terminal adapters resolve each publishing task's canonical subject at publication boundaries: the leaf for a leaf enclosure or admitted direct generation, and the master itself for an ordinary series contract; an unresolved leaf never borrows its master.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

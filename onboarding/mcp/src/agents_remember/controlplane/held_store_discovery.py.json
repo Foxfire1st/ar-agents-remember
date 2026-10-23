@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+        "content": "sha256:32509e5fcc6cd551bfc35dcf1c9481af78a7f73c16d7563638cd17f9c9410e5d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DJMVJX",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Resumable root/receipt/folder walkers bound actual directory-entry work, retained cursors and depth, including noise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+        "content": "sha256:a3c92b6eff8a71d6c0b69923d9b6af5f30c93eb78560049a025199a352adfb8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptWalk"
+        }
+      },
+      "id": "RLZ-JNDNS0",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The lazy per-directory walk yields candidate paths without any recursive glob or fleet-wide sort; skipped subtrees are never descended into.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+        "content": "sha256:415034a8c55f43eb013e6342602e6dc3461372e3d65b3a51c85645723375637b",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectoryWalk"
+        }
+      },
+      "id": "RLZ-JRXFCD",
+      "invariant": "INV-TTYYP8",
+      "origin": {
+        "handoffEntry": "L100-R100-4a-bounded-census",
+        "leaf": "260928-MIK-L100"
+      },
+      "rationale": "The resumable walk suspends between yields and reports exhaustion, so ticks share one pass without rebuilding it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

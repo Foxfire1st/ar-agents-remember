@@ -18,7 +18,7 @@ journals.
 `AtomicSeriesActivationRecord` is the one replace-in-place snapshot for a canonical series contract.
 It is `schemaVersion "2.0"` and carries `contractFingerprint` (SHA-256 of the canonical resolved
 contract path), `selectedMaster`, `contractPath`, one of `vacant|reconciling|active`, a monotonic
-revision, and selection time. The former `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` models and
+revision, selection time, and — since MIK-R200 — an optional `pausedAt` naming the explicit stop that a stall suppression reads. A vacant record without `pausedAt` is vacancy only; the stamp is what makes a pause a fact rather than an inference. The former `AtomicSeriesSourceRef` / `AtomicSeriesSourcePair` models and
 the `sourcePairFingerprint` field they fed are gone: two atomic masters commanded by one sprint derive
 the *same* protected source pair, so the source pair could not be the key. The observed vocabulary
 adds `unreadable` without making it a writable selection state. `AtomicSeriesActivationArchiveEvidence`

@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/cockpit/RoleChatsView.shownChat.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4fce9a57e6730480cdfe6482e7efb6a8e5b3b80b",
+        "content": "sha256:4eb677470be37c6c6500e0094bed9943c8e24385b894fd1a4e4e35444be9d7f1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-62N5J6",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Cold and warm frame controls preserve no-shown-before-ack and exact observed chat selection.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Observed default target without steering\n\nAnchor: \"it(\"follows Paseo's own list from A to B, so a fresh tray's first object pick goes to B\", async () => {\"",

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/style/citations/source_index_cache.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+        "content": "sha256:5948de9e1d08b7fa447479b5525f1476e9918ffe7eb838459200904696c53ffb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JFZ23B",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The existing terminal namespace guard commits native outcome before best-effort notice work and never rolls back a committed publication.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Defines the class `ManagedCacheAuthority` (lines 34-61).",

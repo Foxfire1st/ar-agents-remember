@@ -45,7 +45,9 @@ Protocols are the downward dependency boundary. Adapter implementations live abo
 - An unbound `knowledge_worklist` only means no worklist is recomputed: the completed sync's result is exactly what it was, and the recompute can never fail a completed sync.
 - An unbound service bundle is an error, not a signal to invent a default.
 - Rail population is data authority; `CertificationMemoryRailsPort` does not run Gate 5.
-- The citation terminal guard retains its publication/rollback callback boundary.
+- The citation terminal guard retains its publication/rollback callback boundary, and that boundary has a third
+member: an optional native `TerminalCommit` whose `publish()` closes the publication and whose `committed` flag
+forbids rollback.
 
 ### Todos
 

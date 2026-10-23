@@ -25,12 +25,12 @@ Completion preserves rest through max(existing floor, now + max(interval,min(dur
 
 ## Code Commentary
 
-Accepted native paths reach the projection refresh, with explicit incompleteness falling back to full reconciliation. Pending own-write effects are judged after completion; completed identity/event-kind checks do not certify unknown foreign writes. Discovery/refresher/native-child death share one reported outage/retry path. Independent full healing preempts partial traffic; only successful full publication advances its clock.
+Accepted native paths reach the projection refresh, with explicit incompleteness falling back to full reconciliation. Pending own-write effects are judged after completion; completed identity/event-kind checks do not certify unknown foreign writes. Discovery/refresher/native-child death share one reported outage/retry path. Failure origins remain separate: root-refresher loss queues ALL after child drain; native-lane failure before registration preserves ordinary HEALING without adding host activity; registered native loss queues ALL after drain. The existing registration flag, stop/drain, exception reporting, stable downSince and default thirty-second retry retain their owners. If both failure buckets are populated, the root failure is reported first. Independent full healing preempts partial traffic; only successful full publication advances its clock.
 
 
 ### Logic
 
-Existing roots cover tasks/contracts, configured host publication, workspace dismissals, drift, central provider status/setup and temporary start/tool reports. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
+Existing roots cover tasks/contracts, configured host publication, workspace dismissals, drift, central provider status/setup and temporary start/tool reports, and since MIK-R200 the `controlplane` activation records and the temporary held-message queue as well. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
 
 **Nothing under `worktrees/` is a native watch root.** The source records the reasons: about
 50k checkout directories would recreate the scan cost, and each task's `provider-runtime` can
@@ -223,3 +223,6 @@ all domains so correctness fails open to a full refresh.
 
 
 - Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline` [12]
+
+
+- After child drain, root-refresher loss or established native-watch loss reconciles all domains; pre-registration native failure keeps ordinary degraded healing. The existing outage and retry owner remains. [25]

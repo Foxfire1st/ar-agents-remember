@@ -4,7 +4,7 @@
 
 ## Contract
 
-Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient’s own workspace. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Text is limited by the message input boundary, not summarized by this module. The store is independent of hosted-seat/control-plane messaging.
+Hold only still-waiting native role messages in `.ar-product/held-messages/<recipient>.json` under the recipient’s own workspace, with the store's schema strings, file names and bounds taken from the read-side layout owner `controlplane/held_store_layout.py` so the delivery machinery and the attention reader cannot disagree about them. Admission is locked, uses atomic replacement and fsync, admits at most twenty messages and never drops an existing message to make room. Text is limited by the message input boundary, not summarized by this module. The store is independent of hosted-seat/control-plane messaging.
 
 ## Delivery and recovery
 
@@ -16,7 +16,7 @@ Stage compact terminal metadata before removing waiting text, then flush it into
 
 ## Bounded actor
 
-The serving loop calls `sweep_held_messages`. Resumable per-root walks yield at most thirty-two candidate paths and read at most thirty-two receipts per tick; drains have the same cap. Each visited directory’s names are materialized and sorted once per pass before yielding paths: that directory-listing cost is not a constant-time or elapsed-time bound. The accepted owner ruling permits this stable per-directory order, while forbidding a materialized set of all receipt paths. Root discovery is a separate glob over execution roots. History and message-binding subtrees are not descended into. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
+The serving loop calls `sweep_held_messages`. Its queued slice and receipt walks share a limit of thirty-two receipt reads and thirty-two drains per tick. Delivery synchronously enumerates all receipt roots with `receipt_roots`, then retains one resumable `ReceiptWalk` per root; this root enumeration and walk population have no sixty-four-folder cap. Each directory is read through a live `os.scandir` iterator in filesystem order, without materializing or sorting its names or all receipt paths. Each delivery walk uses the default 256-entry traversal allowance, while the attention reader supplies its remaining entry allowance explicitly; the sixty-four open/cached folder limit belongs to attention's `HeldFolderDiscovery`. History and message-binding subtrees are not descended into. `_receipt_needs_drain` checks the store even when a receipt counter is absent or zero. Product shutdown may pause delivery; durable text resumes with serving, without a sender/model turn.
 
 ## Turn-end delivery and the held-receipt queue
 
@@ -41,7 +41,7 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 
 - Terminal lines are published separately from ended text and retain failure state. [3]
 
-- Yielded receipt paths, reads and drains are capped; one directory’s names are materialized in stable order per pass. [4]
+- Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]
 
 - Validation precedes prompt construction and host launch; failures retain waiting work. [5]
 

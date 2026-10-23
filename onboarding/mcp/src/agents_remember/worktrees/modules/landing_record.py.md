@@ -31,13 +31,13 @@ The landed facts travel as one frozen record,
 cit:([`LandedIntegration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:27-33), and the
 writer is
 `record_landed_integration(contract, *, landed: LandedIntegration, checkpoint: bool = False)`
-cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:36-66).
-It does three things in one call: it records the strategy and two output commits on the contract, amends the
+cit:([`record_landed_integration`], mcp/src/agents_remember/worktrees/modules/landing_record.py:41-86).
+It does its three things in one call and, for a final landing, surrounds them with one terminal-notice occurrence: it opens an intent before the write when `checkpoint` is false, records the strategy and two output commits on the contract, amends the
 terminal status cells through `ContractCells`, writes the contract, and returns the updated contract
 so the caller can keep reporting from it
-cit:(["write_contract(contract.contract_path, updated)"], mcp/src/agents_remember/worktrees/modules/landing_record.py:65-65).
+cit:(["write_contract(contract.contract_path, updated)"], mcp/src/agents_remember/worktrees/modules/landing_record.py:79-79). A failed write discards that intent and re-raises, and a successful one confirms it, so the notice follows the native publication and never anticipates it.
 
-`checkpoint` selects *how much* landed, and it is the only difference between an unfinished master
+`checkpoint` selects *how much* landed and whether a notice occurrence exists at all — a checkpoint takes none — and it is the only difference between an unfinished master
 landed at a checkpoint and a finished one
 cit:(["ContractCells(integration_status=\"checkpointed\")", "ContractCells(integration_status=\"completed\", cleanup=\"pending\")"], mcp/src/agents_remember/worktrees/modules/landing_record.py:52-52; mcp/src/agents_remember/worktrees/modules/landing_record.py:54-54):
 a checkpoint records `checkpointed` and deliberately leaves `cleanup` alone, because nothing is

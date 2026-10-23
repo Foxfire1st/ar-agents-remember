@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
-        "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+        "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+        "content": "sha256:fd1b67a3eb2db4aa0e69c0c4d8b56495f210c9182b46723ffb7157dcb94d1979",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AJMBBK",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Abandon publication couples staged task state, final native commit receipt and best-effort notice confirmation.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+        "content": "sha256:c0072023a33fe6eb6463e8fa22fd075bba5d42c095ecdeddd8aaeafe15c8ab7a",
         "locator": {
           "kind": "symbol",
           "name": "publish_abandoned_task"
@@ -26,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
-            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:c0072023a33fe6eb6463e8fa22fd075bba5d42c095ecdeddd8aaeafe15c8ab7a",
             "locator": {
               "kind": "symbol",
               "name": "publish_abandoned_task"

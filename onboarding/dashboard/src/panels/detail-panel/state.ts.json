@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/detail-panel/state.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5e434ed6c33ca44970d70d4e8993c2b2503f6a01",
+        "content": "sha256:99e1e4223af5888627c850ceb21ec0c73e7ba4a7a0168d8ba88e01066fc317a8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-80ZFNN",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Existing unchanged navigation/delta support retains the original sealed L190-R1-F08 property; no new edit or independent invariant is claimed.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The state hook and its pure resolvers.",

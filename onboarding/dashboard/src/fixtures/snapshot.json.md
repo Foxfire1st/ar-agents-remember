@@ -70,7 +70,7 @@ The earlier formatting-only reserialization is historical, not a description of 
   once, because `AsJsonModule` accepts `never[]` as assignable to anything and `ServedOnlyPaths<never, …>`
   is `never`. `MirrorOnlyPaths` now names any path that stops being reached, so this is enforced, not
   merely asked for.
-- **Every sampled vocabulary value must be legal, and every registered path must be non-vacuous.**
+- **Every sampled vocabulary value must be legal, and every registered path must be non-vacuous.** This file is also the only place the attention row's `itemClass` vocabulary is exercised end to end: an operational row, a permission-wait action row on a taskless agent and a landed notice row, each beside the task key, agent identity and occurrence identity it opens.
   The fixture is representative rather than exhaustive. New producer enum members flow through schema
   generation and stale-output validation without forcing unrelated full-object rows into this file.
 - **Required fixture anchor rows must remain nonempty.** Shared builders require native tasks, enclosures, providers and retained engine-process/attention samples; demandServed refuses a missing anchor rather than spreading undefined.

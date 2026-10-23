@@ -10,7 +10,7 @@ Generate persisted and served dashboard TypeScript contracts from the Python wir
 
 ## Code Commentary
 
-`NAMED_VOCABULARIES` now names only attention severity/lane and process fact/health vocabularies. Ordinary model interfaces emit every declared property; there is no lifecycle state partition, metrics bucket inheritance/factory or duplicate subtask-row alias. Regeneration uses the active environment's `python`.
+`NAMED_VOCABULARIES` names the attention severity, lane and item-class vocabularies together with the process fact/health vocabularies, and the attention item class is emitted as its own `ATTENTION_ITEM_CLASSES` block. Ordinary model interfaces emit every declared property; there is no lifecycle state partition, metrics bucket inheritance/factory or duplicate subtask-row alias. Regeneration uses the active environment's `python`.
 
 Nullable serialized properties become optional after null variants are removed. `_without_null` preserves non-null unions and annotations, retains multiple surviving alternatives, and refuses an all-null field. There is no `NULL_PRESERVING_MODELS` special case. Supported runtime refinements are `maxItems`, `maxLength`, `minLength`, `minimum`, `pattern` and `format`, each held in the exact definition set; a `format` of `date-time` keeps its date-time meaning in the generated type instead of degrading to a bare string. An unknown keyword, one the string shape cannot carry, or a definition set that differs from the exact one still fails closed. `maximum` and the retired terminal-observer-health payload are not current declarations.
 

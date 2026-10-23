@@ -17,6 +17,23 @@
       },
       "rationale": "Deltas are the only update a client sees after the first read, so the fact's removal is realized here.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+        "content": "sha256:ef9c165e04c60cc7d9b06084168979ffae01161ca75c30d6169eb6e360aa7b7d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TQDSC2",
+      "invariant": "INV-9V3W1R",
+      "origin": {
+        "handoffEntry": "L190-R1-F12",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Existing unchanged navigation/delta support retains the original sealed L190-R1-F12 property; no new edit or independent invariant is claimed.",
+      "role": "enforcement"
     }
   ],
   "references": {

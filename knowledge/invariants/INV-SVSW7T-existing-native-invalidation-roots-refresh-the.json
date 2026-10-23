@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A domain classified but never watched looks wired and is not: the queue would refresh only when something else happened to wake it. The wiring cases check the roots themselves and that a store write wakes its own domain with no poll."
+  },
+  "applicability": "The watcher roots and projection domains that carry the native attention inputs.",
+  "conditions": [
+    "Held stores under workspace/.ar-product are acquired through bounded readers, while the queue, receipt and control-plane roots supply the watched invalidations that wake their domains, and each watched root maps to one projection domain.",
+    "A write to a notice or held-queue store wakes its domain without a host poll.",
+    "The archive and worktree trees are never watched by the recursive lane."
+  ],
+  "exclusions": [
+    "Any added host poll or bridge child.",
+    "Watching an unbounded tree to reach a store.",
+    "Rereading a domain whose root reported no change once its acquisition is initialized and complete."
+  ],
+  "id": "INV-SVSW7T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F10; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "L190-R1-F10",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Existing native invalidation roots refresh the new held and control-plane inputs without adding host polls.",
+  "status": "proposed",
+  "supersedes": []
+}

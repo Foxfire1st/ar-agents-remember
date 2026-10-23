@@ -30,7 +30,8 @@ The generated `LifecycleOperationProjection.phase` enum contains code and memory
 phases, with no `ledger-commit` or `direct-ledger-commit` phase. Cache refresh is not a third Git
 operation for the dashboard to wait on. The JSON Schema remains generated from the Python model.
 
-- `$defs` holds the reusable projection schema definitions.
+- `$defs` holds the reusable projection schema definitions, including the attention row's
+  `AttentionItemClass` enum and the widened `AttentionLane` members `agent` and `task`.
 - `ActionAvailability` (line 3) declares whether one action is safe, decided by the reducer, never the UI.
 - `TaskDocumentRef` is the repository-qualified task identity reused by terminal, inbox, and
   projection fields; task ownership is not encoded as a leaf-key string.

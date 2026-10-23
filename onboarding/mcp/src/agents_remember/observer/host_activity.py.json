@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8056a4668539242763a031a29ca26d7b54b66caf",
-        "content": "sha256:123fa29aa0c5d07dd727cca4be243d1c87318559436c3269876c57f0e3200b83",
+        "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
+        "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "260928-MIK-L184"
       },
       "rationale": "This reader is where the publication becomes a snapshot, so the completeness rule is realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
+        "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N7TG5B",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Validated native host facts retain agent, prompt, boot/completeness and running-subagent information.",
       "role": "enforcement"
     }
   ],

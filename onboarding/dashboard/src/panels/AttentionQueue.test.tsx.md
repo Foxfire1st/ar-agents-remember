@@ -6,17 +6,17 @@
 
 ## Purpose
 
-Attention bell/layer assertions cover provider-down, actionable-drift, failed-setup and blocked-start. All dismiss by itemId/kind; lifecycle/gate joins and restricted dismissibility are retired.
+Attention bell/layer assertions cover provider-down, actionable-drift, failed-setup and blocked-start. Dismissible rows post itemId/kind; lifecycle/gate joins stay retired, and dismissibility is a served field again — the three action kinds carry none.
 
 ## Code Commentary
 
 ### Logic
 
-Explicit served queues drive blocked-start cause/severity without joins or opener. Every kind dismisses optimistically; Clear all includes all. Failed writes restore affected rows with an alert; successful retry clears it. Empty/count/urgency, server order, Dialog and non-dismissing Escape/outside close remain. Cleanup resets DOM/store/mocks.
+Explicit served queues drive blocked-start cause/severity without joins or opener. A dismissible kind dismisses optimistically, and Clear all includes only dismissible rows: an action row sends nothing and stays visible whatever was sent for its id. Failed writes restore affected rows with an alert; successful retry clears it. Empty/count/urgency, server order, Dialog and non-dismissing Escape/outside close remain. Cleanup resets DOM/store/mocks.
 
 ### Invariants And Boundaries
 
-Seeded render and mocked writes do not prove server persistence. Severity rendering remains generic; every remaining kind is dismissible regardless of absent lifecycleId. Layer close is not dismissal.
+Seeded render and mocked writes do not prove server persistence. Severity rendering remains generic; dismissal follows the served `dismissible` flag rather than an absent lifecycleId, so a live cause is not dismissible. Layer close is not dismissal.
 
 ## Evidence
 
@@ -30,7 +30,7 @@ Seeded render and mocked writes do not prove server persistence. Severity render
 - The store `applySnapshot` path used by this fixture's projection seed. [3]
 
 
-- The four-kind fixture covers provider-down, actionable-drift, failed-setup and blocked-start. Parameterized dismissal asserts immediate optimistic hiding and a request containing exactly itemId/kind for each kind; the actionable-drift failure case restores the row, reports that dismissal did not hold and clears the alert on a successful retry. No nullable lifecycle target is posted. [4]
+- The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, non-dismissible suppression exclusion, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance. [4]
 
 
 - Clear all optimistically removes every listed provider-down, actionable-drift, failed-setup and blocked-start item, and sends each exact itemId/kind pair. The mixed-result case restores only the failed provider-down row and reports that dismissal did not hold; worktree-lane setup/start failures are included, not skipped. [5]

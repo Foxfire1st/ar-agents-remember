@@ -42,7 +42,7 @@ cit:(["the server grows a field", "the mirror declares something the server neve
 
 ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned keep `KnownUnsampled` to the paths this guard genuinely cannot sample: `projection.servingBuild` and `projection.tasks[].providerLimit`; heartbeat allowances are removed. Exhaustive producer/client schema parity is the generator's and the stale-output check's, so this file is sample reach, assignability and sampled-vocabulary coverage, not schema equality.
 
-Derived open-map/closed-union Record registries now walk native entry stage/activity, list-disagreement kind, summary and bound operations. The disagreement registry names `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; sampled-path nonvacuity and legal values remain distinct from exhaustive producer enum membership. valuesAt fans arrays; historical registry key counts are not a current quota.
+Derived open-map/closed-union Record registries now walk native entry stage/activity, list-disagreement kind, summary, bound operations and the attention row's `itemClass`. The disagreement registry names `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; sampled-path nonvacuity and legal values remain distinct from exhaustive producer enum membership. valuesAt fans arrays; historical registry key counts are not a current quota.
 
 Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. Lifecycle bucket suites/master-series pins are removed; only the edge.refusedPolarity inverted pin remains.
 

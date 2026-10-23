@@ -1,0 +1,76 @@
+{
+  "path": "mcp/tests/test_attention_native_inputs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6a4d7cbf37451eedb42506891951236103704ff9",
+        "content": "sha256:ea0c3e443766523a9f421bfc10143ed898048b4671e6961f40ce9f644e500a96",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_held_rows_come_from_the_store_and_leave_with_it"
+        }
+      },
+      "facet": "A held row reaches the queue and leaves only with its store row.",
+      "id": "PRF-JRGBP6",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a4d7cbf37451eedb42506891951236103704ff9",
+        "content": "sha256:818d0a5f3875405b1452997d9c7b9acca87a25ee2972ca21a4e7c220c5b83593",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_pass_reads_only_the_stores_its_domains_name"
+        }
+      },
+      "facet": "An age-only pass parses no native store and a controlplane refresh reads only its own.",
+      "id": "PRF-TR1QPC",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a4d7cbf37451eedb42506891951236103704ff9",
+        "content": "sha256:e0dc6287b1c4e481a1100fc91061e711dfa1b53e8f377e9637d9d2d9e89fc315",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_stall_interval_is_only_what_the_reader_watched"
+        }
+      },
+      "facet": "The accrued interval is only the time the reader actually observed.",
+      "id": "PRF-VWK5K1",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6a4d7cbf37451eedb42506891951236103704ff9",
+        "content": "sha256:c99319c789fbd12f278f8761499461305ef5afd49aad103ccabd9be865eb99da",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_permission_waits_arrive_and_never_lose_their_identity"
+        }
+      },
+      "facet": "Outstanding prompts arrive per prompt and keep their agent and prompt identity across reads.",
+      "id": "PRF-Y5V5FX",
+      "invariant": "INV-XERGJ0",
+      "origin": {
+        "handoffEntry": "L190-R1-F03",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

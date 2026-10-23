@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "32743e9637903b257d178ee9569bf60859501377",
-        "content": "sha256:a5752eecfc765a330b558c31d746226a6240ccce4d79a3fd47297da2789cbf76",
+        "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+        "content": "sha256:f36dbb445b83121185aac7a606a53ef08447524167d1480a58e1fd16bc9ff226",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,26 @@
     },
     {
       "anchor": {
-        "blob": "32743e9637903b257d178ee9569bf60859501377",
-        "content": "sha256:a5752eecfc765a330b558c31d746226a6240ccce4d79a3fd47297da2789cbf76",
+        "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+        "content": "sha256:c197976223b4579283698fbad3261edca6218870c05012164dfc8521162ef9fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionItem"
+        }
+      },
+      "id": "RLZ-PWEYXF",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The served row shape carries the class, the dismissibility and the task and agent identities a row opens.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+        "content": "sha256:f36dbb445b83121185aac7a606a53ef08447524167d1480a58e1fd16bc9ff226",
         "locator": {
           "kind": "file"
         }

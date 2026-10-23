@@ -1,0 +1,84 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The projection-pass write and zero default were rejected because either can lose retained occurrences or admit history. The persistent creation cut constrains later format changes. Its implementation orders notice creation and confirmation timestamps and sequence; native contract and journal commits occur outside the notice lock."
+  },
+  "alternatives": [
+    {
+      "option": "Take one persistent cut when the notice store is created and retain it with that store across reloads and restarts.",
+      "reason": "It bounds history and survives a restart, because the store and the cut are one durable object and no reload re-establishes them.",
+      "status": "chosen"
+    },
+    {
+      "option": "Set the cut from a projection pass, by writing the store's current sequence as the baseline on the first pass.",
+      "reason": "A pass that writes the current sequence discards notices captured before that pass, so an ordinary restart would swallow a real landing.",
+      "reconsider_when": "The store's creation can no longer be ordered against native publication, so no durable object can carry the cut.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep a zero baseline and treat the empty store's birth as the cut.",
+      "reason": "Zero is not a cut: it admits every earlier terminal record, so the store cannot tell history from an occurrence after notifications began.",
+      "reconsider_when": "The store's creation is proved to precede every native terminal publication in that coordination root, leaving no earlier record for zero to admit.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A store that is missing or unreadable is created again with a new cut and replays nothing.",
+    "Pending unacknowledged notices survive reloads and restarts as the same occurrences.",
+    "No periodic historical scan detects arrivals; the retired baseline key is tolerated on read so an existing installation's file does not become unreadable.",
+    "The notice lock orders its own creation and confirmation writes; it does not serialize native contract or journal commits. Retention remains subject to disposable-store bounds."
+  ],
+  "context": "Terminal notices must report a landing or an abandonment once, without replaying history and without losing a pending notice when the dashboard, the plug-in or the service restarts. The notice store therefore needs a cut between occurrences that are already history and occurrences after notifications began, and that cut has to survive restarts or mean nothing. The recorded ruling described its chosen option as: Take one cut when the persistent store is created, as the position in the native terminal-record publication order read inside the same lock, and store it with the store. That description is preserved here as historical ruling provenance, not as proof that the native commits share a lock. The sealed MEMORY R1 source-fidelity correction distinguishes the implemented cut: a UTC timestamp read under the notice rewrite lock and sequence 1; confirmation assigns its own timestamp and notice sequence. Native contract and journal commits happen outside that lock. The rejected alternatives and their original reconsideration conditions remain the recorded ruling, not a newly weakened trigger.",
+  "decider": "Developer, through the architect's ruling L190-RULE-6-A-CUT-TAKEN-AT-STORE-CREATION-IS-THE-BASELINE (amendment e8aedc57), answering the Reviewer's referral of the rule 6 meaning question.",
+  "id": "DEC-M8SZXD",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b3792fab2867ba1c5274cea063676f9b1de7407f",
+        "content": "sha256:83166c7dd2fa892c1257eab4096b2c26064baa2173dacea41675ef819c2ebbb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionNoticeStore"
+        },
+        "path": "mcp/src/agents_remember/controlplane/attention_notices.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-976SFG"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R200",
+        "packet": "requirements/MIK-R200-v1-the-attention-queue-reports-what-needs-the-developer.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "INV-976SFG"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "dec-baseline-cut",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

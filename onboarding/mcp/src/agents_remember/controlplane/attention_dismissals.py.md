@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`attention_dismissals.py` keeps the compact current acknowledgements for published provider-down, failed-setup, blocked-start and actionable-drift occurrences. They are disposable UI facts, not an audit or authority log. Occurrences end on proved native recovery/removal, or changed complete drift findings, not on a new clock tick or inferred session status.
+`attention_dismissals.py` keeps the compact current acknowledgements for published provider-down, failed-setup, blocked-start and actionable-drift occurrences, and for the two terminal notice kinds `task-landed` and `task-abandoned`. The three live native causes — permission wait, held message, stalled task — have no acknowledgement document here, so a request to acknowledge one is refused rather than stored, and its occurrence ends only when its native cause does. They are disposable UI facts, not an audit or authority log. Occurrences end on proved native recovery/removal, or changed complete drift findings, not on a new clock tick or inferred session status.
 
 ## Code Commentary
 

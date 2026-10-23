@@ -14,8 +14,8 @@ queue filtering unit-testable without a live browser stream.
 
 ### Logic
 
-`selectQueue` reads the server-computed `analytics.attentionQueue` and filters ids currently present in
-`DashboardState.suppressedAttentionIds`. It returns a stable shared empty array when analytics is absent,
+`selectQueue` reads the server-computed `analytics.attentionQueue` and drops a row only when that row is dismissible and its id is present in
+`DashboardState.suppressedAttentionIds`; a non-dismissible row stays visible however the local map is written. It returns a stable shared empty array when analytics is absent,
 and caches the filtered result by queue reference plus suppression-map reference so Zustand
 `useStore(selectQueue)` does not see a fresh array on every render. `hasLiveWorktree(enclosure)`
 selects physical worktree surfaces only: true when `codeWorktreeExists ||
@@ -34,7 +34,7 @@ is preserved unless this module explicitly defines a display pivot order.
 ### Invariants And Boundaries
 
 The queue is still computed server-side by the reducer. Suppression here is optimistic UI display state
-for in-flight dismiss/clear commands, not durable dismissal authority. Wait times are formatted from
+for in-flight dismiss/clear commands, not durable dismissal authority, and it applies only to a row that carries an acknowledgement: a live native cause has none, so local state cannot take it off the queue. Wait times are formatted from
 projected `waitSeconds`/`staleSeconds`; this module never calls the clock.
 
 ## Evidence
@@ -49,7 +49,7 @@ No relevant documentation found after checking live sources.
 
 - Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time. [4]
 
-- `selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids. [1]
+- selectQueue caches filtered queue arrays by queue and suppression-map identity and suppresses only dismissible rows whose ids are present in the local map. [1]
 
 - The converted drift names order with the legacy classifications, healthy first. [3]
 

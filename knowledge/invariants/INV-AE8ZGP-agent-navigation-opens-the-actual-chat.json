@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Two write paths exist — asking the frame and recording what it says — and a click that writes the recording instead of asking produces a page that misstates the chat it shows. The shell cases drive the real Cockpit and wait for the frame's answer."
+  },
+  "applicability": "The agent link of an attention row, the Chats pane and the observable chat state.",
+  "conditions": [
+    "The row asks for the exact agent it names, with the seat's role and its own document where it has one.",
+    "The shown chat is published only from the frame's own acknowledgement.",
+    "A taskless seat opens on a role-only scope and no task is invented for it."
+  ],
+  "exclusions": [
+    "Writing the observed-chat channel directly from a click.",
+    "Claiming what the frame shows before it reports it.",
+    "Dispatching a role launch from a bell row."
+  ],
+  "id": "INV-AE8ZGP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F09; shownAgent now accepts only reported frame identity; undefined/null produces no shown chat, not the requested target or available descriptor. Cold shownStore stays empty before ready/open/shown acknowledgements, then follows exact shown agent and native selection changes. Existing actual Cockpit task-bound/taskless navigation bridge and warm controls retained. Exact S5 counterexample fails at cold shownStore assertion; new candidate tests pass. Component/frame-message proof, not live Operations witness."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F09",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Agent navigation opens the actual chat target and publishes shown identity only after a real frame observation.",
+  "status": "proposed",
+  "supersedes": []
+}

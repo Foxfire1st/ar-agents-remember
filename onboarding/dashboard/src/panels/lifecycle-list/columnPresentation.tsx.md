@@ -12,7 +12,7 @@ Own the task column’s local typography/layout and controlled grouping controls
 
 The extracted styles retain bounded one-line row cells, state-tone variants, indentation, wrapping head tools and focus-visible treatments. The controlled React Aria pivot accepts only repo/phase and mounts the shared AttentionQueue; row/tree/state derivation remains with the existing data/presentation owners.
 
-TaskPivotBar renders the task count, controlled repo/phase toggles and the shared AttentionQueue without writing task state. Pivot is exported here as repo/phase; phase groups use served task stage/activity, not retired lifecycle phases. The module exports no PickupDismiss and calls no operator-inbox dismissal adapter: incoming L113 removal remains effective after the L162 extraction. The row word is task-own state, not a composite gate/chat/pickup priority. Local typography and control source alone establish no assembled narrow-column browser proof for the L162 major-step lane.
+TaskPivotBar renders the task count, controlled repo/phase toggles and the shared AttentionQueue without writing task state, and it forwards the two open handlers the queue needs — the task selection and the shell's agent request — so the mount is no longer prop-less and the pane owns no navigation of its own. Pivot is exported here as repo/phase; phase groups use served task stage/activity, not retired lifecycle phases. The module exports no PickupDismiss and calls no operator-inbox dismissal adapter: incoming L113 removal remains effective after the L162 extraction. The row word is task-own state, not a composite gate/chat/pickup priority. Local typography and control source alone establish no assembled narrow-column browser proof for the L162 major-step lane.
 
 ## Evidence
 

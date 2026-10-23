@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
         "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
         "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+        "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
         "content": "sha256:df926cc722b19c59341fe2accca8d76593aeea5d313c35efd984560f68529633",
         "locator": {
           "kind": "symbol",
@@ -54,6 +54,23 @@
       },
       "rationale": "The single locked current set folds duplicates, reclaims observed obsolete rows and skips unchanged physical rewrites.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "551961df914d53c8f5c0f12de858862c51b71e7b",
+        "content": "sha256:c4c3b1ffc36e39c60d9cf56f5c97fe462171a51e538cd2a434c5296dad27abe9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z8520A",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Compact acknowledgement ownership admits notice occurrences while protecting live causes and partial-refresh acknowledgement retention.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {

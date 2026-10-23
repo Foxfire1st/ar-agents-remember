@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_attention_notice_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5d6503e04f9a6fb442ab022a9c414c22355e3049",
+        "content": "sha256:3f45566c42d828ffda0e48ab50bbd34c794eb7593626717f3b8e7ff877f9bd38",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rule_6_whole_store_byte_and_count_bounds"
+        }
+      },
+      "facet": "The byte and count bounds hold over the exact serialization, pending intents included.",
+      "id": "PRF-QSC0X2",
+      "invariant": "INV-FYBRFQ",
+      "origin": {
+        "handoffEntry": "L190-R1-F13",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5d6503e04f9a6fb442ab022a9c414c22355e3049",
+        "content": "sha256:a7ea4e30ab6703f65f7acfdb386475039629bdde958565cb6a69b3034b32baa3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_torn_store_is_unknown_never_empty"
+        }
+      },
+      "facet": "Uninterpretable store bytes read as unknown rather than as an empty store.",
+      "id": "PRF-WNPKWN",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

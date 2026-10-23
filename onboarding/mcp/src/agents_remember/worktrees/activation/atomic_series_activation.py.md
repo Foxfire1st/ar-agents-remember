@@ -32,6 +32,8 @@ and detail, and `source_fact` publishes the `contractFingerprint` with the addre
 is not this exact contract with status `atomic-series-activation-contract-mismatch`, so another
 contract's record can never be adopted as this one's authority.
 
+`mark_atomic_series_pause` is the second, pause-only writer here: it stamps `pausedAt` on a vacant record — creating one for a master that was never selected — refuses a non-vacant record, and no-ops when the record already carries the stamp, so a stop stays idempotent and a later re-observation cannot manufacture a pause.
+
 `publish_atomic_series_selection` runs beneath repository integration authority and the store lock.
 It archives unreadable authority before replacement, is idempotent for the same contract/state, and
 otherwise advances the record revision. A malformed regular file is copied byte-for-byte with digest

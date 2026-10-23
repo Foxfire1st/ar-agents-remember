@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The predicate spans task entries, host activity, the recorded clock and the pause fact; treating an old event stamp or an unobserved gap as continuous idleness would alert on tasks that were never idle, and the two-size and reset cases pin the deadline and the reset boundaries."
+  },
+  "applicability": "Started tasks in the queue's stall builder and the observation clock the pass records for them.",
+  "conditions": [
+    "Eligible only at stage started with a complete, known host observation.",
+    "One occurrence after 900 continuous trustworthy seconds with no bound agent in a turn, where a permission wait and a running subagent both count as working.",
+    "The interval resets whenever eligibility, observation or the host's boot continuity is lost, rather than accruing across the gap."
+  ],
+  "exclusions": [
+    "A user-tunable stall threshold.",
+    "Suppression inferred from vacancy, ordinary inactivity or the observer's paused activity alone.",
+    "Back-dating an interval from a startup listing that carries no idle transition time."
+  ],
+  "id": "INV-0DZX66",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F04; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F04",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Stall eligibility accrues only900continuous trustworthy seconds and resets across eligibility, observation or boot gaps.",
+  "status": "proposed",
+  "supersedes": []
+}

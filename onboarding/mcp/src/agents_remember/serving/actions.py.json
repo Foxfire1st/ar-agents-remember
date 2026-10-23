@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
-        "content": "sha256:a3d6a621e81385f5c78c3629d4576b6f6e970004ad8b98022da0b729211f3485",
+        "blob": "4c7c41ca072e2b68a304b9a4569bb9b3fa4f64f7",
+        "content": "sha256:d3d68a520b5191e5dbda290a016ba5c404aac44f8f466bebb00e64c9fb0aaf66",
         "locator": {
           "kind": "file"
         }
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
             "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
             "locator": {
-              "end": 80,
+              "end": 82,
               "kind": "line_range",
-              "start": 67
+              "start": 69
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -74,12 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dce086086d22328f958229b966a6618d9685b303",
+            "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
             "content": "sha256:142a5e594b7a980f474f7d6a7dd3ba9db880a5e1a26d49bc44ff0a030cbaf9b7",
             "locator": {
-              "end": 234,
+              "end": 268,
               "kind": "line_range",
-              "start": 215
+              "start": 249
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -106,37 +106,16 @@
       ]
     },
     "6": {
-      "note": "Dismiss actions bypass target lookup for every published attention kind, require a nonempty itemId and an exactly matching published kind, and return HTTP 202 plus a DismissalIntent carrying the published actionable fingerprint. Missing itemId yields 400, unknown item yields 404 and kind mismatch yields 400. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 when absent/disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption.",
+      "note": "Dismiss actions bypass target lookup but require a nonempty itemId, a published dismissible row and exactly matching kind. Missing itemId yields 400, unknown item yields 404, and a published non-dismissible row yields 409 not-dismissible before kind comparison; kind mismatch yields 400. A matching dismissible row returns 202 plus a DismissalIntent carrying the published actionable fingerprint. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 if absent or disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption.",
       "targets": [
         {
           "anchor": {
-            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
-            "content": "sha256:861e8f8a0ad7723ef582c677f705c9ca0d67e0c4e7c6a25277b8c86f2c16b848",
+            "blob": "4c7c41ca072e2b68a304b9a4569bb9b3fa4f64f7",
+            "content": "sha256:562af3374710eed6c9be817f59f216a1e0f425a9fe65c03844a720e273d29241",
             "locator": {
-              "kind": "symbol",
-              "name": "evaluate_action"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
-            "content": "sha256:6298188d2ef649b023ceaa1b9999097cc84044e9ad4c1417fa6fab4d516eb401",
-            "locator": {
-              "kind": "symbol",
-              "name": "_dismiss_action_outcome"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "557abba2302ca85e5116b31bb6ebf0b630f667ab",
-            "content": "sha256:6a734e85324a7c74a84d6a2b9b193ae22cb5a7594c004353078e9c2930f3fcf2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_precomputed_action_outcome"
+              "end": 191,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"

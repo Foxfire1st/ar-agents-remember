@@ -6,15 +6,20 @@
 
 ## Purpose
 
-RoleChatsPane accepts the single served TaskEntry array and keeps canonical launcher intent, report takeover state and refresh generations, and composes the scope hook, run controls, options loader and persistent view. Stored requests and receipt actions belong to roleChatControls; the native-frame mount belongs to RoleChatsView.
+RoleChatsPane accepts the single served TaskEntry array and keeps canonical launcher intent, report takeover state and refresh generations, and composes the scope hook, run controls, options loader and persistent view.
+It also accepts the bell's agent request and holds it as `requestedChat` beside a seat-derived launcher
+selection, so a request from the task column reaches the frame without the pane drawing a chat list. Stored requests and receipt actions belong to roleChatControls; the native-frame mount belongs to RoleChatsView.
 
 ## Code Commentary
 
-The launcher is its row of controls: no execution, reply or report-path prose is rendered under them, and one failure line (a refused or unresolved start, an unreachable host, a failed options/catalog/report action, the launch lock) is the only text there. Canonical scope and request identity gate async options/results. Per-request active execution and saved retry selection survive in scoped tab storage; receipts drive frame targets and backend status/report fields. Result re-reads the execution, refreshes capabilities, steers the frame and opens the recorded report in the shared reader; the pane is hidden under the report takeover so the frame survives. Retry reuses the saved request; Revive uses the selected backend capability. Fast/provider-default disclosure keeps tier separate from effort.
+The launcher is its row of controls: no execution, reply or report-path prose is rendered under them, and one failure line (a refused or unresolved start, an unreachable host, a failed options/catalog/report action, the launch lock) is the only text there. Canonical scope and request identity gate async options/results. Per-request active execution and saved retry selection survive in scoped tab storage; receipts drive frame targets and backend status/report fields, and a named chat outranks the execution's agent
+when the frame target is resolved. Result re-reads the execution, refreshes capabilities, steers the frame and opens the recorded report in the shared reader; the pane is hidden under the report takeover so the frame survives. Retry reuses the saved request; Revive uses the selected backend capability. Fast/provider-default disclosure keeps tier separate from effort.
 
 ## Invariants And Boundaries
 
-Native tabs and launch intent are separate authorities. Unknown request state retains its actionable line, and a refused dispatch stays visible through automatic reads until an explicit successful action. Completed host status and report existence are not semantic acceptance. The dashboard draws no chat navigation of its own (MIK-R75 rules 7 to 10); the Parent pill gate belongs to the plugin, not this pane.
+Native tabs and launch intent are separate authorities. Unknown request state retains its actionable line, and a refused dispatch stays visible through automatic reads until an explicit successful action. Completed host status and report existence are not semantic acceptance. The dashboard draws no chat list of its own (MIK-R75 rules 7 to 10); a bell row instead asks the shell to name
+an exact seat, and this pane steers the frame to that seat without drawing a picker. The Parent pill gate belongs
+to the plugin, not this pane.
 
 ## Evidence
 

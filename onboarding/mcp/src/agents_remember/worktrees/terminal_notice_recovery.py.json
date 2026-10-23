@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/terminal_notice_recovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+        "content": "sha256:89b94645670b3a345a9ff80318b2f5abba2b1620bce0bb002656656c9aad3c21",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C8PPVP",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Pending settlement checks the exact native outcome/generation and same-contract archive identity; selected direct-journal unreadability stays undecided on root-bearing and legacy lookup before partial negative evidence can refute it.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Selected journal unreadability survives both direct lookup routes and prevents partial negative evidence from refuting the pending occurrence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:6fbfc0a6c1743df1777135c86fc530ee9d6f90e51a73bb6bbfb7bb0db030130a",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:fa08c9bfa1dba6155a58c249938a68de66426e99faa7e5c57b0817e73a447bee",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 353
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:f16a61b58e3fb057b3e73759621826d34adbb1c2f432f1801697f48bad5d52d6",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:3fbbd6597281b15d98a67afaa95a50104f94daa55e918db092c0593b41a1474a",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:be93cc32baf4743a38f203c636c44039b3c7eda8368d100be7109d165435ee86",
+            "locator": {
+              "end": 612,
+              "kind": "line_range",
+              "start": 585
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f71946d5cf27b814fafc426f5a446f0fcbac71",
+            "content": "sha256:9de5cc44f428b55e78c23f367d2b9f8a1b0b074e91acc880abc6d4e83cf515ee",
+            "locator": {
+              "end": 645,
+              "kind": "line_range",
+              "start": 630
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

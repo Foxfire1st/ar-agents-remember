@@ -8,7 +8,7 @@ Define the shared validated host publication and default-unknown retained activi
 
 ## Commentary
 
-Strict frozen models admit in-turn/permission/idle/ended and reject naive eventAt. Publication requires bootId, complete, agents and nonnegative ignoredEvents. OSError/validation failure returns None, not a complete empty host. Frozen task facts bind qualified keys; HostActivitySnapshot defaults unknown. These are activity facts, not stage authority.
+Strict frozen models admit in-turn/permission/idle/ended and reject naive eventAt; an agent in a permission state also carries `permissionPrompts`, the sorted ids of the native prompts still unanswered — never their arguments, and the key absent when none remains. Publication requires bootId, complete, agents and nonnegative ignoredEvents. OSError/validation failure returns None, not a complete empty host. Frozen task facts bind qualified keys; HostActivitySnapshot defaults unknown. These are activity facts, not stage authority.
 
 ## Evidence
 

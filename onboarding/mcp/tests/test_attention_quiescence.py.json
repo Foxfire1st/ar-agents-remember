@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_attention_quiescence.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a73abfd43b8fd4ea0259da7aaeaedf3786ea92c1",
+        "content": "sha256:437de937e5c94a61bc63c03d6bc5d26d42830aa6593184d249e6afe48ca16c26",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_quiet_minutes_emit_no_delta_and_the_threshold_emits_one"
+        }
+      },
+      "facet": "Quiet minutes emit nothing and the threshold crossing emits once.",
+      "id": "PRF-WZ5KST",
+      "invariant": "INV-9V3W1R",
+      "origin": {
+        "handoffEntry": "L190-R1-F12",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

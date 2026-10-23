@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines the canonical workspace projection models and re-exports the extracted task DTOs. Retained task-document projections carry structural references; removed pickup and expectation analytics DTOs are not current carriers. Runtime ids remain observation/correlation, not routing authority.
+Defines the canonical workspace projection models and re-exports the extracted task DTOs. Retained task-document projections carry structural references; removed pickup and expectation analytics DTOs are not current carriers. An attention row also states what it is and what it opens: its `itemClass` (operational, action or notice), whether it is dismissible, and the task key and reference, agent identity, prompt id, held message id or terminal occurrence id it concerns, with an `agent` lane beside the existing repo and worktree lanes. Runtime ids remain observation/correlation, not routing authority.
 
 Workspace/task/process/analytics composition remains here; task-summary, full-reader, graph and closeout DTOs live in [projection_task_documents](projection_task_documents.py.md) and are re-exported. `TaskDocumentRef` comes from its defining `models.task_document_ref` module. `TaskDependencyNode` carries qualified reference/gone display facts, not copied task status or execution permission.
 

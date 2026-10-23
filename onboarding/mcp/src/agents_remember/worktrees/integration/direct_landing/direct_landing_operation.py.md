@@ -20,8 +20,9 @@ projection, completion, input-required reporting, and unchanged-attempt reset.
 `DirectLandingRuntime` locates the canonical operation store. `progress` validates mutation
 observations and reported recovery cells, then derives the code/memory recovery projection through
 the shared closeout evidence owner. It preserves monotonic output proof and records when a real
-commit boundary was crossed. `finish` publishes completion; `require_input` records a recoverable
-interruption or a developer-decision surface.
+commit boundary was crossed. `finish` publishes completion — and one terminal-notice occurrence keyed by the leaf reference plus this
+operation's generation, begun before the completion row and confirmed after it — while `require_input`
+records a recoverable interruption or a developer-decision surface and takes no notice.
 
 direct_landing_record persists the accepted typed request and initial mutation evidence. Verify mode records its existing code output immediately; create mode records accepted exact pair/input/policy and initial mutation evidence after provisional object creation but before branch publication, then proves that one output. Full pre-code verdict results are not record fields. Admission remains by canonical leaf, grant, series roots and messages; there is no closeout-door or ledger-byte intent.
 

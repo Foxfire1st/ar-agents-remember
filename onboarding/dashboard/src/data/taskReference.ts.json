@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
+        "content": "sha256:1c93f7d0adb30363c93c029a9811bf6f228b340995c155a0606dbf5da7a2ad22",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KACQ4S",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Existing unchanged navigation/delta support retains the original sealed L190-R1-F08 property; no new edit or independent invariant is claimed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "62a20f9e70cd4f0fce12131c2c8aaa5103ee7f5b",
         "content": "sha256:63740ae6755ced323dab287e2fa2c091f82fb86eafc12de9fa50c1dab340a7a1",
         "locator": {
           "end": 7,

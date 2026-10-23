@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
         "locator": {
-          "end": 94,
+          "end": 133,
           "kind": "line_range",
-          "start": 17
+          "start": 48
         }
       },
       "id": "RLZ-6WEANN",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -76,12 +76,29 @@
     },
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
         "locator": {
-          "end": 94,
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N8BY9K",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Role-chat composition carries explicit external chat targets to the real pane.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+        "locator": {
+          "end": 133,
           "kind": "line_range",
-          "start": 17
+          "start": 48
         }
       },
       "id": "RLZ-XXYE2Y",
@@ -95,12 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "c90e6a248cffca67c3b8e045d6bf885fa4f730d9",
-        "content": "sha256:afe07bf8fcfffb222fee04139648097c27e9960a48b388d5fe9641e11fce073e",
+        "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+        "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
         "locator": {
-          "end": 94,
+          "end": 133,
           "kind": "line_range",
-          "start": 17
+          "start": 48
         }
       },
       "id": "RLZ-YGH2ER",

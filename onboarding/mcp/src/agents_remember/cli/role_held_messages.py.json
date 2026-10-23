@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:d689048c233bd9c614b78c52c0324727b53756342c2aef8d4af2b5dd444eae03",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:b32993d54b51d3cdbe19363a305d9c116177bee4877055ddc0c37a6a4a187c62",
         "locator": {
           "kind": "symbol",
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:eb280fb438737f80f512e6673551d06abef185c4477bc26bada04d554f76014e",
         "locator": {
-          "end": 1570,
+          "end": 1056,
           "kind": "line_range",
-          "start": 1555
+          "start": 1041
         }
       },
       "id": "RLZ-3FQBKH",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:1840845c59103e95fef82567c8c05000db7538c46bf821194f21667cfebdc0b7",
         "locator": {
           "kind": "symbol",
@@ -76,43 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:1dd46564395c42c457d4352a27cd99f1fa8edae44c5da8da247d88203370a26a",
-        "locator": {
-          "kind": "symbol",
-          "name": "hold_message"
-        }
-      },
-      "id": "RLZ-3Y5NN9",
-      "invariant": "INV-AMJAZT",
-      "origin": {
-        "handoffEntry": "MIK-R171@v1 rule 3",
-        "leaf": "260928-MIK-L171"
-      },
-      "rationale": "It stores the attempt's id on the held row and is idempotent for a repeated attempt id, so a retry of the same hold does not create a second message.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:51761483a7f38bf7376ee4cfe10391143e23fa588af2ec9f88af84ff449d0ed2",
-        "locator": {
-          "kind": "symbol",
-          "name": "_recount_waiting"
-        }
-      },
-      "id": "RLZ-4BH1VC",
-      "invariant": "INV-SB6HQS",
-      "origin": {
-        "handoffEntry": "MIK-R171@v1 rule 5",
-        "leaf": "260928-MIK-L171"
-      },
-      "rationale": "It recounts the waiting total from the store under its lock and keeps, with a log line, the last count when the store cannot be read, so the published count never becomes a false zero.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:f0ab63ad221fad88615e7e1e89220f57324a014f7fb591f16e2254735f703c8b",
         "locator": {
           "kind": "symbol",
@@ -130,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
         "locator": {
           "kind": "symbol",
@@ -148,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:e181d917436062eed5dd97d451ebcae6e4e55b6d16572d9ee754598fe7cc91d7",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+        "content": "sha256:8ceb3d298f16d0c77cf05fb369513138eeb768e32ec374e8d139ad944b2c21bc",
         "locator": {
           "kind": "file"
         }
@@ -165,12 +129,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:1e1457bce15f5f3c12e6e4c173d24ae6251f1b7031469a07b672298a27afbe08",
         "locator": {
-          "end": 848,
+          "end": 428,
           "kind": "line_range",
-          "start": 839
+          "start": 419
         }
       },
       "id": "RLZ-A0MBR2",
@@ -184,12 +148,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:68d7ec3cfbf19c2da8316497a477f66c751f5bbb391bdd439f973416ceb91fe5",
         "locator": {
-          "end": 702,
+          "end": 282,
           "kind": "line_range",
-          "start": 660
+          "start": 240
         }
       },
       "id": "RLZ-D3TNNK",
@@ -203,12 +167,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:eb320b19dc2840e1a33a2d43f39f86e455155f3fda7c36d95d3c42c48c5fc111",
         "locator": {
-          "end": 1180,
+          "end": 741,
           "kind": "line_range",
-          "start": 1152
+          "start": 713
         }
       },
       "id": "RLZ-EJV806",
@@ -222,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:8eec25d18387148541c8897194b740b6cbbd476cb64885562105774a07c4b91d",
         "locator": {
           "kind": "symbol",
@@ -240,30 +204,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
-        "locator": {
-          "kind": "symbol",
-          "name": "note_held_receipt"
-        }
-      },
-      "id": "RLZ-GCHN6K",
-      "invariant": "INV-4DQMNE",
-      "origin": {
-        "handoffEntry": "MIK-R171@v1 rule 1",
-        "leaf": "260928-MIK-L171"
-      },
-      "rationale": "It records the receipt on every hold, which is what gives the turn-end path a bounded set to drain without walking the store.",
-      "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
-          "end": 1492,
+          "end": 978,
           "kind": "line_range",
-          "start": 1442
+          "start": 928
         }
       },
       "id": "RLZ-HDQJ4X",
@@ -277,46 +223,8 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:607dca2f65168b719bc02c5f82af0b340dd43034cecd691752e6799305c65e44",
-        "locator": {
-          "end": 1374,
-          "kind": "line_range",
-          "start": 1348
-        }
-      },
-      "id": "RLZ-JNDNS0",
-      "invariant": "INV-TTYYP8",
-      "origin": {
-        "handoffEntry": "L100-R100-4a-bounded-census",
-        "leaf": "260928-MIK-L100"
-      },
-      "rationale": "The lazy per-directory walk yields candidate paths without any recursive glob or fleet-wide sort; skipped subtrees are never descended into.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:e0af81109d09a11c33d4d49b08811d1401bd9eeb25a69002b1bb557878cfc67b",
-        "locator": {
-          "end": 1394,
-          "kind": "line_range",
-          "start": 1360
-        }
-      },
-      "id": "RLZ-JRXFCD",
-      "invariant": "INV-TTYYP8",
-      "origin": {
-        "handoffEntry": "L100-R100-4a-bounded-census",
-        "leaf": "260928-MIK-L100"
-      },
-      "rationale": "The resumable walk suspends between yields and reports exhaustion, so ticks share one pass without rebuilding it.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
-        "content": "sha256:f40bf3b8f8c87ac8444db0cb664ee5458a68150120125b5c9f475e31fa874e03",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+        "content": "sha256:c9afd69b55ad86434fd6632bb6a481f2713473eaf4736d53ea0d997d4be257c5",
         "locator": {
           "end": 315,
           "kind": "line_range",
@@ -334,7 +242,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
         "locator": {
           "kind": "symbol",
@@ -352,7 +260,7 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:b00d07d04aecedc7880a7aca5a95badc403766093996e091785e9a6b8831c535",
         "locator": {
           "kind": "symbol",
@@ -370,12 +278,12 @@
     },
     {
       "anchor": {
-        "blob": "cfd41d694c5bf52b5cd687448e81801d7c441c1c",
+        "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
         "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
         "locator": {
-          "end": 974,
+          "end": 535,
           "kind": "line_range",
-          "start": 921
+          "start": 482
         }
       },
       "id": "RLZ-XRBVHQ",
@@ -449,27 +357,43 @@
       ]
     },
     "4": {
-      "note": "Yielded receipt paths, reads and drains are capped; one directory’s names are materialized in stable order per pass.\n\nAnchor: `_walk_candidate_paths`, `sweep_held_messages`",
+      "note": "Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
-            "content": "sha256:593d022d6af211f9f4b19e3d00fb3cfb77762307a9a2710b8ca988e1fd64c322",
+            "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+            "content": "sha256:1ff8e08ba65d590af6adee9de481a0c5dbe86b460cbbdc19091694b8052620df",
             "locator": {
-              "kind": "symbol",
-              "name": "_walk_candidate_paths"
+              "end": 978,
+              "kind": "line_range",
+              "start": 909
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "40dc59696c90511ab0a56b5166cdc99ea059475a",
-            "content": "sha256:6ed0a0a863576ae8bf9200d435a12b3d1e55d0f2e6dc860f646d33ed669fe725",
+            "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+            "content": "sha256:1822a0b77cb65b3e812c6066ea59406f230f20a2a265eb5b7bb42cd5039074f5",
             "locator": {
-              "kind": "symbol",
-              "name": "sweep_held_messages"
-            }
+              "end": 95,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+            "content": "sha256:977faf3067945fe45c490a3ef4e94cbd02e413d2a479a6996f763f077891d2ef",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_discovery.py"
           },
           "kind": "code"
         }
@@ -480,12 +404,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a6fe8b36abe6236b7ff925a4a4da4019fef0949",
+            "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
             "content": "sha256:77ad6d5c3491628e1461b97995707bd7917951f16a6b1280adf22bfc4c443e5c",
             "locator": {
-              "end": 933,
+              "end": 535,
               "kind": "line_range",
-              "start": 880
+              "start": 482
             }
           },
           "kind": "code"

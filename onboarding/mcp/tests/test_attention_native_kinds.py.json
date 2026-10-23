@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_attention_native_kinds.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:2125343ebec548e7d0c764caa40d668eebd41564d46082c2e0bd97b110a7fd18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stall_starts_at_exactly_the_settled_deadline"
+        }
+      },
+      "facet": "No row before the deadline and one at it.",
+      "id": "PRF-15KD7N",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_permission_and_held_rows_are_one_row_each"
+        }
+      },
+      "facet": "Each outstanding prompt is its own row rather than one row per agent.",
+      "id": "PRF-1MBCTR",
+      "invariant": "INV-XERGJ0",
+      "origin": {
+        "handoffEntry": "L190-R1-F03",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stall_row_is_the_cause_and_every_break"
+        }
+      },
+      "facet": "The stall row opens its task and reports idle age with stable cause detail; an old task event does not backdate its interval, and a paused ancestor suppresses the child while an unrelated pause does not.",
+      "id": "PRF-642AW9",
+      "invariant": "INV-0DZX66",
+      "origin": {
+        "handoffEntry": "L190-R1-F04",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:2c1d94421e1952cef77f698cfbb67190bf46375721f4b17fe041140aa56fb06b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_permission_and_held_rows_are_one_row_each"
+        }
+      },
+      "facet": "A live-cause row is one row per occurrence, distinct from the notice rows beside it.",
+      "id": "PRF-6H3YX6",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:63857f3e748b71661c724666789517fe2acd47499e8c5cd0e17b7b57fa9ac371",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stall_row_is_the_cause_and_every_break"
+        }
+      },
+      "facet": "The stall row's detail does not move while only the age grows.",
+      "id": "PRF-9BYZVB",
+      "invariant": "INV-9V3W1R",
+      "origin": {
+        "handoffEntry": "L190-R1-F12",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6ea7967cf6b73c6de9383a2f75267742f926f97a",
+        "content": "sha256:1561ca41e1b5e12fd9d340098f6f190fa67cccd8c65ce2b1171c26f157eddc18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_notices_and_ranking_across_the_one_queue"
+        }
+      },
+      "facet": "A mixed native and operational queue ranks as one, with the notice carrying its own class.",
+      "id": "PRF-K01SWQ",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

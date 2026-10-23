@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
-        "content": "sha256:1c9b43ee4b13d9602d57a2d649589a0a291739b7c16869f93d7f6b55472f8a9d",
+        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4VTSTZ",
+      "invariant": "INV-XERGJ0",
+      "origin": {
+        "handoffEntry": "L190-R1-F03",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The host publisher names native requested/resolved prompt IDs, serializes at most 32 per agent and marks over-cap identity sets incomplete instead of presenting omission as a native answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
-        "content": "sha256:5033dd1084edf3120683748514fa53b779c3a562f4a04ba8a7e1084cbe9d0a6f",
+        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+        "content": "sha256:7be4f5d0929f4322c0a4ff05d882687e9b1d241191174cc10430dd9e08886105",
         "locator": {
           "kind": "symbol",
           "name": "HostActivityPublisher"
@@ -38,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "a06255a83aac352960fa499b74dd5e15ccaa8cc0",
-        "content": "sha256:1c9b43ee4b13d9602d57a2d649589a0a291739b7c16869f93d7f6b55472f8a9d",
+        "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+        "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
         "locator": {
           "kind": "file"
         }
@@ -116,6 +133,47 @@
             "locator": {
               "kind": "symbol",
               "name": "createHostActivityPublisher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Per-agent overflow keeps first-32 sorted serialization but denies whole-publication completeness; omission is not native-resolution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:7429bf7c971a89a711bef8875b08d591a0179eccda5ad68d0c0152648b93aba5",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:12106014b1a9c8e85f5c88e609b9551f018668acbe6fea993a1d2a8fc4f4facd",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 452
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:5d8d1c69d056e6764d21c877c202ccf544a1ab47d28527b7e1a3dd0d159887bf",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 471
             }
           },
           "kind": "code"

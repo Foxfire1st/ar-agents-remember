@@ -6,7 +6,9 @@
 
 ## Purpose
 
-The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one state mark, one task-state word and a progress figure, with cached major-step marks for non-master document rows; full facts remain in each row's hover. It neither authors task state nor widens row admission.
+The Operations task-navigation column: a controlled React Aria ListBox with BY REPO tree and BY PHASE flat grouping, one-line rows, and the attention bell in its head. The approved presentation replaces rank chevrons, tier frames and separate gate/chat/pickup chips with one state mark, one task-state word and a progress figure, with cached major-step marks for non-master document rows; full facts remain in each row's hover. Its head supplies both routes the bell's rows need — selecting the exact task and opening the concerned
+agent's chat through the shell's `onOpenAgent` request, which asks the frame rather than recording what it shows — so a queue row can reach its subject from the column that owns the
+bell. It neither authors task state nor widens row admission.
 
 ## Code Commentary
 

@@ -12,7 +12,8 @@ Own one embedded native chat document and its separate frame, control, agent and
 
 The descriptor is fetched on first activation or an explicit preload, then on explicit Retry. Ordinary selection changes do not fetch it again. Preload is opt-in for a closed review chat column: if the pane is still hidden when the descriptor answers, the controller starts the application without naming an agent. Other panes retain first-show startup. [2]
 
-One stable controller receives a known target change in a layout effect before paint. The iframe is keyed only by load generation, so a ready message switch retains its DOM identity. The component reports whether the descriptor provides an available native frame. [1] [3]
+One stable controller receives a known target change in a layout effect before paint. The iframe is keyed only by load generation, so a ready message switch retains its DOM identity. The container
+also carries `data-scope`, the steered selection's role-and-document identity, which changes without a remount. The component reports whether the descriptor provides an available native frame. [1] [3]
 
 While the document's agent is unknown, `holding` keeps the current native screen visible but inert. Otherwise `frameWait` holds input until the selected agent is shown or on-chat, or the loaded URL already names it. On-chat releases input while the bottom-edge waiting line remains until the conversation is drawn or the native failed-load pane is reported. An older plugin may end the line earlier; its capability notice names that limit. A held focused frame is blurred, inert and pointer-disabled. [3] [4]
 
@@ -29,5 +30,5 @@ Clipboard read and write permission is limited to the configured embedded origin
 
 - The stable controller dispatches known target changes before paint and receives frame messages. [1]
 - First activation, opt-in preload and Retry own descriptor reads; hidden startup names no agent. [2]
-- Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert. [3]
+- The frame component forwards the steered selection scope into EmbeddedFrame, whose container renders data-scope. Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert. [3]
 - The selected screen's shown/on-chat/loaded state determines input reachability and its waiting line. [4]

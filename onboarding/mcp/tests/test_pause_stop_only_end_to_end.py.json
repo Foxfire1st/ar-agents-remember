@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:2405ecec6767a70047895e31891e2a49362b806421339be1cdbca28c1f70d397",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:738be54b8a3af5af636f79237bdcd805b23399242011b668b6d2f9b5c7692e27",
             "locator": {
               "kind": "symbol",
@@ -29,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:b15fea5e49d1f5c385783adb9c6a4a75c4e1e0558269d99df7776b67d6c2388b",
             "locator": {
               "kind": "symbol",
@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:6f0a439f491d32d9b6e1faee5b40a4e7317c4771b8f61083345b948789a5de0b",
             "locator": {
-              "end": 56,
+              "end": 65,
               "kind": "line_range",
-              "start": 56
+              "start": 65
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -71,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:b4810c276fe1b334406a51e065abab8c0f3c243b1d76743534606b0fc9860b87",
             "locator": {
-              "end": 57,
+              "end": 66,
               "kind": "line_range",
-              "start": 57
+              "start": 66
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -84,12 +84,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:c194e5b9e8cd6475d6332663a68f4136bb814cfa6b55e09f6c557cf80e0d0155",
             "locator": {
-              "end": 79,
+              "end": 77,
               "kind": "line_range",
-              "start": 79
+              "start": 77
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "368bcc32c8ddb16bb006a4ac3a550764e1ca783d",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 389,
+              "end": 508,
               "kind": "line_range",
-              "start": 389
+              "start": 508
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:f29e9531fb83c48ba90ef8440718dc83e54b181ad9833eab0eeb8471593d9b31",
             "locator": {
-              "end": 184,
+              "end": 280,
               "kind": "line_range",
-              "start": 177
+              "start": 273
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -133,12 +133,12 @@
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:6f0a439f491d32d9b6e1faee5b40a4e7317c4771b8f61083345b948789a5de0b",
             "locator": {
-              "end": 56,
+              "end": 65,
               "kind": "line_range",
-              "start": 56
+              "start": 65
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:b4810c276fe1b334406a51e065abab8c0f3c243b1d76743534606b0fc9860b87",
             "locator": {
-              "end": 57,
+              "end": 66,
               "kind": "line_range",
-              "start": 57
+              "start": 66
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -159,12 +159,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:c194e5b9e8cd6475d6332663a68f4136bb814cfa6b55e09f6c557cf80e0d0155",
             "locator": {
-              "end": 79,
+              "end": 77,
               "kind": "line_range",
-              "start": 79
+              "start": 77
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "368bcc32c8ddb16bb006a4ac3a550764e1ca783d",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 389,
+              "end": 508,
               "kind": "line_range",
-              "start": 389
+              "start": 508
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
+            "blob": "3f9c273c6bb95c95e3cb26e14256171326d33128",
             "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
             "locator": {
-              "end": 421,
+              "end": 916,
               "kind": "line_range",
-              "start": 421
+              "start": 916
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -230,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
             "locator": {
-              "end": 279,
+              "end": 321,
               "kind": "line_range",
-              "start": 279
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -281,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:8ac9bc8d3ea00d69ccd382664755df31885396a205815e17c82fa583093d9836",
             "locator": {
               "kind": "symbol",
@@ -292,7 +292,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:779b74483423dbbe0d5800e24682495a2000a81b03cb32aa44bfb4c2331e8aba",
             "locator": {
               "kind": "symbol",
@@ -308,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:2a3f520f2ed30f90eb1bd30fb8939c041f323c9072d8ab6a5aaaf9e4e6ba5f7c",
             "locator": {
               "kind": "symbol",
@@ -319,7 +319,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:c7c07668cb11c3a073ae9a7a85e265ee4a78e810169e890d42b47fe0af88f6fe",
             "locator": {
               "kind": "symbol",
@@ -330,7 +330,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:b8287ca7bf4e1096f8f56f846ef1c08365f8f990bce4dac0cecabfff4afa769f",
             "locator": {
               "kind": "symbol",
@@ -341,7 +341,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:13fa77f80b2c80304e6513183351313fb8a1e7973a3d2e1010ab09849b1ee470",
             "locator": {
               "kind": "symbol",
@@ -352,7 +352,7 @@
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
             "content": "sha256:c05d7747fde8eded417cbf29314a10abf934c701ccfcabf32f7f50b6f9949d42",
             "locator": {
               "kind": "symbol",
@@ -364,114 +364,26 @@
       ]
     },
     "5": {
-      "note": "The ten cases and the distinct protection each one buys. The never-selected case asserts the already-vacant SUCCESS, its explicitness (state is not `paused`, the summary names that nothing was held, the observation carries no `record`) and its inertness; before this change set it asserted the missing-selection refusal. The last three cases are the three refusal shapes: a leaf contract, an active foreign record (`…release-unreadable`) and an unreadable record (`…release-unreadable`), and a vacant foreign record (`…selected-contract-mismatch`), the one shape that reads `vacant`.",
+      "note": "The never-selected case succeeds with an explicit vacant record carrying pausedAt, exactly one activation file and unchanged remaining world, tips, documents and ledger. The other pause and refusal cases retain their separate assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:0c9a8c0acce7e5491bce9ed956132496c7fff07aa48eda90cac12f0f4686484f",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
+            "content": "sha256:6a8296b8245f5014b8f7f8a7d2a6f7fba908b839c771095d0ed3085aa29fe572",
             "locator": {
-              "kind": "symbol",
-              "name": "test_pausing_a_master_moves_no_ref_and_creates_no_commit"
+              "end": 330,
+              "kind": "line_range",
+              "start": 268
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:e69ee34bf771b29dc452dc2819fb3896059aeadb7e386cd36bb1447ea6fcb028",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
+            "content": "sha256:9e025f404d3c1f4800dac930edbecb621958a1a3b29a5d37e51e0b54c8553713",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_paused_master_hands_the_turn_back_with_no_next_call"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:90ee185c562b337e048b03b4a6111f609f04bc1f1d4c74a520d302b3fe6652a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:35908f39f23e59921028b562c2af6e81d2cfc0109195a9bd7e2c1188752a0a77",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pausing_an_already_released_master_is_idempotent"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:fdc64caf85fe2fe2fb5cb3ca76b3f9313ef2c180b4e291497a56a42ae2bfa9ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pausing_a_leaf_contract_is_refused"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:e16d848df49149016f354712e4e8e29f7dccf59c85a41603b7e913cd78625476",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pausing_one_master_leaves_the_other_masters_record_byte_identical"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:6b2ec005a344837fc18ec9982c9c05dfbe285b255377044b6562ed72bdc75ffe",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_record_this_contract_does_not_own_is_refused_not_released"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:54c74b8c611c27d6dad46d9f67999605f3cd2de26109ac8f41ffbc98c86f2e53",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unreadable_record_is_refused_not_reported_stopped"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:29badfc47c3e17c80a5c5e1b9690a3a61b492950ad43b2bde7884d937d13fdf9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_record_naming_another_master_is_refused_not_released"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d50d777888246b34651a72915f670855670dfa6e",
-            "content": "sha256:5b01a920d22696ed149c92821b41bb92b277f86876b81929001fe755302a7ddc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_resuming_a_paused_master_restores_work_with_nothing_published"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -495,7 +407,7 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:8b8219fdb3787bbffb65b31e471a996261471d5514aa292d6ff0c7000b4d2a1a",
             "locator": {
               "kind": "symbol",
@@ -520,12 +432,12 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:b35d1d20587903e0e18361916804a77c4802f7a71cc5eaf35aca266e33440ed5",
             "locator": {
-              "end": 83,
+              "end": 86,
               "kind": "line_range",
-              "start": 80
+              "start": 83
             },
             "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
           },
@@ -538,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
             "locator": {
               "kind": "symbol",
@@ -550,7 +462,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
             "locator": {
               "kind": "symbol",
@@ -562,7 +474,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
             "locator": {
               "end": 134,
@@ -575,7 +487,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:7c08e5a860b1bf82c64c5b31bda2cff218bb28404e571f30939e94e7fdb9b072",
             "locator": {
               "end": 142,
@@ -593,7 +505,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:342702da633b1b6632556ddb66c4ef0ac3ad2aa56d4e8bb6b8000e5b359ad96d",
             "locator": {
               "kind": "symbol",
@@ -605,7 +517,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:a4ba1f8ce18bfee68304a404799d09ab8d97f79da59b5049ffb2ca56db64efae",
             "locator": {
               "kind": "symbol",
@@ -622,7 +534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
             "content": "sha256:539807dba19805716c7b75ddcc1cd2a03c97791b84cfb9f88c069b60fe2e934c",
             "locator": {
               "kind": "symbol",

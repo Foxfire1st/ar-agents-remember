@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "0fd75b24ffec75526e8f2f1857ba0cb88aebe0f3",
+    "content": "sha256:d00e0ff016527511ecd092adbadf515512867bdd3182bf3ca0482e1f0e544f3e",
+    "locator": {
+      "kind": "symbol",
+      "name": "_executions_roots"
+    },
+    "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+  },
+  "id": "WKN-V8X6D3",
+  "kind": "compute",
+  "origin": {
+    "handoff": {
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "w-held-sweep",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L190"
+  },
+  "state": "open",
+  "statement": "The existing delivery sweep enumerates the task-root population before advancing its bounded receipt reads."
+}

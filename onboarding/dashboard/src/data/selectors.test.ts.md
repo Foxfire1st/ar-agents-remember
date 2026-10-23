@@ -12,7 +12,9 @@ Vitest source assertions for pure store selectors: physical-worktree existence, 
 
 ### Logic
 
-hasLiveWorktree pins either-side physical existence; fmtWait retains s/m/h/d and unknown dash. selectQueue consumes served rows, stable empty analytics and optimistic suppression. Drift segments retain converted ordering/shares with legacy names first. Removed buildTree lifecycle grouping is not coverage.
+hasLiveWorktree pins either-side physical existence; fmtWait retains s/m/h/d and unknown dash. selectQueue consumes served rows, stable empty analytics and optimistic suppression of dismissible rows only; both
+cases here build dismissible operational rows, so this suite does not itself pin the non-dismissible case — that
+assertion lives in `AttentionQueue.test.tsx`. Drift segments retain converted ordering/shares with legacy names first. Removed buildTree lifecycle grouping is not coverage.
 
 ### Conventions
 

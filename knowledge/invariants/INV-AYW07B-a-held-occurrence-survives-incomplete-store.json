@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Two owners must agree: the layout owner decides which rows a store holds and the discovery walk decides which stores and receipts are examined at all. A census built from the delivery queue would silently drop a message that is still held, and the discovery and authority cases pin the retention and the incomplete-read boundaries that prevent it."
+  },
+  "applicability": "Warm per-store held-message retention and publication within the authority reader's retained targets, admitted authority rows and served held rows.",
+  "conditions": [
+    "The delivery queue is a visit order, never a census; a store the queue does not mention is still reached through bounded discovery.",
+    "While its target and rows remain retained and admitted, a store that cannot be read whole preserves its own last complete rows rather than replacing them with a malformed subset.",
+    "The authority publishes at most its newest 256 rows and retains at most 1024 targets; the serving reader publishes only the first 128 authority rows. Overflow or target shedding can remove an occurrence without delivery or withdrawal. Authority overflow or shedding contributes incompleteness; the additional served-row slice sets no separate cap-completeness flag. Neither omission is native clearing evidence."
+  ],
+  "exclusions": [
+    "Treating an unreadable or partly enumerated store as an empty one.",
+    "Message body, attachment contents or any rendering of message text.",
+    "Producing, retrying, holding or withdrawing a message.",
+    "Unlimited retention or visibility under authority, retained-target or served-row saturation."
+  ],
+  "id": "INV-AYW07B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F02; Any incomplete warm store retains its prior rows, including a nonempty malformed subset; complete later reads remain the only clearing authority. Exact warm A+B -> valid A plus malformed sibling regression fails on before source and passes on candidate. Previous queue/rotation fixes retained."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F02",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Within the retained store and admitted authority/served populations, a warm held occurrence survives incomplete reads of its own store; complete native delivery or withdrawal evidence ends it, while bounded shedding or publication omission can remove it without proving its native end.",
+  "status": "proposed",
+  "supersedes": []
+}

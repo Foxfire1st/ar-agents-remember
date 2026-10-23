@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
         "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
         "locator": {
-          "end": 207,
+          "end": 224,
           "kind": "line_range",
-          "start": 207
+          "start": 224
         }
       },
       "id": "RLZ-0014SR",
@@ -22,12 +22,29 @@
     },
     {
       "anchor": {
-        "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
-        "content": "sha256:b0ed7e0a904a30703a43ec9869cdd587effec60486d4b63fd5c70d4284332c2e",
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+        "content": "sha256:7e549212cb810dd5edcc6e04a8a78f53e0b5df6646cc34bafaf1a26e940f3fb6",
         "locator": {
-          "end": 473,
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A1GGR8",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The existing bounded bell renders explicit action/notice semantics and honest task/agent links.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+        "content": "sha256:ca895ac54f66e66753638a4ffaef0f3599ce43c53ee73adacdb1190eb7f06400",
+        "locator": {
+          "end": 587,
           "kind": "line_range",
-          "start": 424
+          "start": 530
         }
       },
       "id": "RLZ-BE8ACJ",
@@ -41,12 +58,30 @@
     },
     {
       "anchor": {
-        "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+        "content": "sha256:32058af5806636b323dbe55b7fe2aaffbdd04a21a81faf14e33278b2dce67229",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionQueue"
+        }
+      },
+      "id": "RLZ-EKXY7G",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The bell renders those rows, with the dismissal control only on a dismissible entry and the subject links beside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
         "content": "sha256:80de5c1be2db70a68a5aaaa8c1e2d9d561b5e0dbfc4490732879fcfee8459cc4",
         "locator": {
-          "end": 199,
+          "end": 205,
           "kind": "line_range",
-          "start": 125
+          "start": 131
         }
       },
       "id": "RLZ-GDD925",
@@ -60,12 +95,12 @@
     },
     {
       "anchor": {
-        "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
-        "content": "sha256:fd4d3a35fef7ac6ed71851f3a737cc62d8d8561afff9a98c96c4e2f9a4b5b80b",
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+        "content": "sha256:00b10dcb02020fedc6c0d92461aa7ff6bd742bce8d0670351efff4cd01bd02f8",
         "locator": {
-          "end": 422,
+          "end": 529,
           "kind": "line_range",
-          "start": 357
+          "start": 454
         }
       },
       "id": "RLZ-HE8N5R",
@@ -79,8 +114,8 @@
     },
     {
       "anchor": {
-        "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
-        "content": "sha256:7b0106727a204121c498f9bc7300ffeafc57f2563e464b455087bfcdb1413690",
+        "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+        "content": "sha256:7e549212cb810dd5edcc6e04a8a78f53e0b5df6646cc34bafaf1a26e940f3fb6",
         "locator": {
           "kind": "file"
         }
@@ -118,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
             "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
             "locator": {
               "kind": "symbol",
@@ -134,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fea81ac6e51630ad7f1031515b2b432882154bc",
+            "blob": "b8987ff18dae5fabe696d0b2341498f11897b102",
             "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
             "locator": {
               "kind": "symbol",
@@ -214,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c3cb0b2fb52df6c598ce02dadd3b8c3d692d817",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
             "locator": {
               "end": 221,
@@ -228,28 +263,16 @@
       ]
     },
     "19": {
-      "note": "Current queue rows render a plain location and dismissal, with no task-opening link or callback.\n\nAnchor: actual row rendering and composition",
+      "note": "Rows render their location, render dismissal only when the served row is dismissible, and delegate available task and agent controls to SubjectLinks. A taskless agent row can offer only its agent control; a row without a subject or opening handler offers no subject control.",
       "targets": [
         {
           "anchor": {
-            "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
-            "content": "sha256:4a10511eba63a8a2dde078f6601129616ca0518b0d71aae371c807ecbfa90e6e",
+            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
+            "content": "sha256:523c0604599f77d3c06053dcdd6a96a20b2e6f71c790a5cfbbc1a18c8ac0a7f9",
             "locator": {
-              "end": 355,
+              "end": 452,
               "kind": "line_range",
-              "start": 308
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a563b9fb8bb0e0538d458ea35dfc154a0761ec68",
-            "content": "sha256:a6c98491effd4c34e21aa0e87ce32291ef1259ab7fcce81ef9f77be392417dfe",
-            "locator": {
-              "end": 409,
-              "kind": "line_range",
-              "start": 401
+              "start": 355
             }
           },
           "kind": "code"

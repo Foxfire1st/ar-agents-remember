@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/bellSubjects.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a24d049ecd181125bf5d320263bb224d6feff738",
+        "content": "sha256:a8fdb8fdfebee9b3cd47be2c017befa5ad5f13443f96637679e746383bfcc760",
+        "locator": {
+          "kind": "symbol",
+          "name": "a bell task row opens the exact canonical leaf (L190-R1-F08) > opens a terminal leaf after its enclosure was cleaned up, out of the closed fold"
+        }
+      },
+      "facet": "A landed leaf with no worktrees is revealed from the closed fold and selected.",
+      "id": "PRF-7XRGZJ",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a24d049ecd181125bf5d320263bb224d6feff738",
+        "content": "sha256:e116a9ced0e4f70dc98e5969af393403a28d5a4227b9db8c6acf5bcb68513a44",
+        "locator": {
+          "kind": "symbol",
+          "name": "a bell task row opens the exact canonical leaf (L190-R1-F08) > selects the leaf the row names, and the Operations page opens that document"
+        }
+      },
+      "facet": "The row's task link selects its own leaf in the real tree and the page opens that document.",
+      "id": "PRF-HMKWZG",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a24d049ecd181125bf5d320263bb224d6feff738",
+        "content": "sha256:67ce079df410cc93c049e5973ad4bca4773f9ec007d37521f987c7f658d21314",
+        "locator": {
+          "kind": "symbol",
+          "name": "a bell agent row opens the exact agent chat in the real Cockpit (L190-R1-F09) > opens a taskless seat through the Chats view, and the shown chat follows the frame"
+        }
+      },
+      "facet": "A taskless row opens the Chats view on a role-only scope, asks for its agent, and takes the shown chat from the frame.",
+      "id": "PRF-QCPPFM",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

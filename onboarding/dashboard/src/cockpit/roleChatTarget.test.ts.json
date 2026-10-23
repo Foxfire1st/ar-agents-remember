@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/cockpit/roleChatTarget.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6e8e6db5c3b7bfcb52b45203349198ec7aafe545",
+        "content": "sha256:bc9877a45c1693e2c26ecee6f22228666d71d78bf9d4b1956f34cd5cc0ddfdc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "carries the exact agent with its role and its own document, and invents no task"
+        }
+      },
+      "facet": "The chat request keeps a bound seat's document and carries none for a taskless seat.",
+      "id": "PRF-YCE1RN",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

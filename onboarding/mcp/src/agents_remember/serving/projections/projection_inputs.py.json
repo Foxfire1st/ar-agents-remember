@@ -1,6 +1,58 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-54FK1N",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Projection input refresh joins native domain invalidation with the existing heartbeat and task inputs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DGN04K",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Projection input refresh joins native domain invalidation with the existing heartbeat and task inputs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+        "content": "sha256:fd186e7b6ba191a832ebf11099ab3057c48b99b5b74fcb181926737cc32452db",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S7VV3S",
+      "invariant": "INV-SVSW7T",
+      "origin": {
+        "handoffEntry": "L190-R1-F10",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Projection input refresh joins native domain invalidation with the existing heartbeat and task inputs.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Projection write edge consumes this retained input state.",
@@ -67,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
             "locator": {
               "kind": "symbol",
@@ -78,7 +130,7 @@
         },
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
             "locator": {
               "kind": "symbol",
@@ -106,12 +158,12 @@
         },
         {
           "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
             "content": "sha256:080616f28cf77422a2508335a3d7e0cce09a0ba3bc4a682e7069af75dd926be4",
             "locator": {
-              "end": 65,
+              "end": 63,
               "kind": "line_range",
-              "start": 65
+              "start": 63
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -124,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:d349bda07bab0db108ad6222bf15b0ad4f82b7f28890253f6a9495223a3f275d",
             "locator": {
               "kind": "symbol",
@@ -135,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:3f93a2c5150c7a2af82c3b0eeea4d3656508e91ce278f20f119c1ab224c85f1f",
             "locator": {
               "kind": "symbol",
@@ -146,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:5e38e797f15dd310ce2493ea5e332bc00ef6c0576091ff55c18af6d90b6def3c",
             "locator": {
               "kind": "symbol",
@@ -174,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
+            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
             "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
             "locator": {
               "kind": "symbol",

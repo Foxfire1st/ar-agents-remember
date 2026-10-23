@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/attention_notices.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b3792fab2867ba1c5274cea063676f9b1de7407f",
+        "content": "sha256:fe468e993bd6d31be1c6743fe7bc76c99302c6711d1d8371a3f69cddb3e8c96d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AY89TZ",
+      "invariant": "INV-FYBRFQ",
+      "origin": {
+        "handoffEntry": "L190-R1-F13",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Bounded locked baseline, pending intent and notice state preserve native occurrence truth with explicit reclamation limits.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3792fab2867ba1c5274cea063676f9b1de7407f",
+        "content": "sha256:fe468e993bd6d31be1c6743fe7bc76c99302c6711d1d8371a3f69cddb3e8c96d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MS5B58",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Bounded locked baseline, pending intent and notice state preserve native occurrence truth with explicit reclamation limits.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3792fab2867ba1c5274cea063676f9b1de7407f",
+        "content": "sha256:fe468e993bd6d31be1c6743fe7bc76c99302c6711d1d8371a3f69cddb3e8c96d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RCPCFF",
+      "invariant": "INV-KZE8P3",
+      "origin": {
+        "handoffEntry": "L190-R1-F07",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Bounded locked baseline, pending intent and notice state preserve native occurrence truth with explicit reclamation limits.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

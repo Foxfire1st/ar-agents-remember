@@ -14,7 +14,8 @@ layers survives switches.
 
 ### Logic
 
-- Operations is injected explicitly. EngineRoom stays unbuilt; DetailPanel renders 2/2/3 across Chats/File Viewer/Operations because hide/show stops its clock. LifecycleList renders three times; the nested bell once, with no selection-callback prop. File Viewer and sidebar chat retain DOM identity through switches; sidebar ARIA remains outside this suite.
+- Operations is injected explicitly. EngineRoom stays unbuilt; DetailPanel renders 2/2/3 across Chats/File Viewer/Operations because hide/show stops its clock. LifecycleList renders three times; the nested bell once, because the handlers it takes are the shell's stable ones — the list's selection callback
+and the bell's way into a chat. File Viewer and sidebar chat retain DOM identity through switches; sidebar ARIA remains outside this suite.
 
 ### Conventions
 

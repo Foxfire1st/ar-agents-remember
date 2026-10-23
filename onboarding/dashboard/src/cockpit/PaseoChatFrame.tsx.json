@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-25DTRT",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Frame protocol issues actual open requests and reports observed chat identity rather than assuming the request succeeded.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
         "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-        "content": "sha256:b68240496590f3598d4de16c0c54728a3f9e199e083e1a873e007b6273d6a002",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:52779ed6470faab67d0ad0c3607267ef4bcdd8005fc8f14ea862cd2817feaca2",
         "locator": {
           "end": 309,
           "kind": "line_range",
@@ -40,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-        "content": "sha256:b68240496590f3598d4de16c0c54728a3f9e199e083e1a873e007b6273d6a002",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:3c5f0380ec70248470ba50eab1aa60c87ebc2bbcebb42a2e049a18dd3a8af960",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -58,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
         "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
         "locator": {
-          "end": 351,
+          "end": 355,
           "kind": "line_range",
-          "start": 351
+          "start": 355
         }
       },
       "id": "RLZ-93GQVS",
@@ -77,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -95,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
         "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
         "locator": {
           "kind": "symbol",
@@ -113,8 +130,8 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -131,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-        "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -149,7 +166,7 @@
     },
     {
       "anchor": {
-        "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
         "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
         "locator": {
           "kind": "symbol",
@@ -172,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
             "content": "sha256:c7a4fc61095f067877f1ac5bed4772b8fd71b9f6819e2309ac3f81bea6e76879",
             "locator": {
               "end": 217,
@@ -189,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
             "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
             "locator": {
               "end": 283,
@@ -202,16 +219,28 @@
       ]
     },
     "3": {
-      "note": "Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert.\n\nAnchor: \"function EmbeddedFrame(props: EmbeddedFrameProps) {\"",
+      "note": "The frame component forwards the steered selection scope into EmbeddedFrame, whose container renders data-scope. Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert.",
       "targets": [
         {
           "anchor": {
-            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
-            "content": "sha256:45f34500893e9c3646e05931c49ee3ab369faee96b4b223793e3649bdedc0c9f",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:b3dee5250129eeb0845b2f65822e5f38f8a080b73f1140db63b528d1c7cffdb6",
             "locator": {
-              "end": 388,
+              "end": 309,
               "kind": "line_range",
-              "start": 332
+              "start": 297
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 335
             }
           },
           "kind": "code"
@@ -223,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
             "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
             "locator": {
               "end": 243,

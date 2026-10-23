@@ -1,0 +1,43 @@
+{
+  "path": "mcp/tests/test_held_store_partial_rows.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "df9a1624b272fd2558d1f46ad6bba164798cf811",
+        "content": "sha256:31b3c5d19c6f1db99963a27f5bbac72d6da8d1392635b1ab28f310fd0c209964",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_partly_malformed_store_keeps_the_complete_reading_it_had"
+        }
+      },
+      "facet": "A partly malformed store keeps the rows of its last complete reading.",
+      "id": "PRF-150NZ7",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "df9a1624b272fd2558d1f46ad6bba164798cf811",
+        "content": "sha256:78f5fdef203b3d86a0635f1cb9c4867bcec9ad8dc13b65eee87792ac5564f4b7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RDMWVX",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The exact nonempty partially malformed store counterexample preserves both warm held rows until a complete read.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

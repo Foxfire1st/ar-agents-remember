@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Three owners build, join and publish one queue, and the class and subject fields are what make a row actionable rather than merely visible. A dropped kind or a row without its subject is silent in the data and visible only to the developer who needed it, which the mixed-queue and navigation cases pin."
+  },
+  "applicability": "The single server-built attention queue, its served row contract and the Operations bell that renders it.",
+  "conditions": [
+    "Each native kind has one builder beside the surviving operational builders, and one total sort ranks them all.",
+    "A live cause is a warning that clears only when its native cause ends and cannot be acknowledged; a terminal notice is an information row acknowledged once per occurrence.",
+    "A row carries the canonical task key and reference where one resolves and the actual agent where the row concerns an agent; a taskless agent's row carries no task, and an operational row located by provider, repository or enclosure alone carries no task or agent control at all."
+  ],
+  "exclusions": [
+    "Restoring a provider input or kind that MIK-R199 removes.",
+    "Client-side ordering, grouping or a second interpretation of attention facts.",
+    "Inventing a task for a taskless seat."
+  ],
+  "id": "INV-R8BBQC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_attention_native_kinds.py::test_notices_and_ranking_across_the_one_queue; ::test_permission_and_held_rows_are_one_row_each; dashboard/src/panels/lifecycle-list/bellSubjects.test.tsx"
+      ],
+      "path": "ingest-runB.json"
+    },
+    "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Operations attention queue publishes the five native kinds beside the operational kinds that survive provider removal, through one server-built interpretation that keeps its severity ordering and stable tie-break. Every row says whether it is an action or a notice and whether it can be acknowledged, and a row that carries a task or an agent opens that exact subject.",
+  "status": "proposed",
+  "supersedes": []
+}

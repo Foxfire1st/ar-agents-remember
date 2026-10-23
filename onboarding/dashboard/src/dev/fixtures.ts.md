@@ -56,7 +56,9 @@ No open file-local todos.
 
 Since 260731-EFA-L4:
 
-- **No node builder may hold its own required-field list.** Every builder delegates to
+- **No node builder may hold its own required-field list** — with one recorded exception: the gallery's four inline attention literals now spell `itemClass`/`dismissible` themselves. Duplication is what that
+exception buys: the contextual `Partial<WorkspaceProjection>` type still checks their required fields, so a mirror
+change is caught here as a type error rather than silently accepted. Every builder delegates to
   `test/fixtures/wire.ts`; a required field the mirror adds must fail to compile here rather than be
   filled in a second place.
 - Shared task/count bases and explicit overrides are fixture construction, not evidence of live counting.

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The intent outlives the process that opened it, so only the record the publishing route itself left can settle it, and the three routes leave different records. A generic cell would publish a false landing or lose a real abandonment. The proofs here take the intent, publish the record and never confirm at each route; the three-route process-cut and restart matrix is UNRUN, carried to L36, and this record does not claim it."
+  },
+  "applicability": "Settlement of an interrupted terminal-notice intent, per publishing route.",
+  "conditions": [
+    "A final landing is settled from its own integration cell, a direct landing from its operation journal and generation, and an archived abandonment from its terminal archive together with the native successful-result receipt for that exact archive generation. An admitted no-remains enclosure instead requires its explicitly typed successful-result receipt beside the retained canonical contract, bound to the exact contract path, lifecycle identity, terminal note and canonical final native-publication hash.",
+    "The journal's verdict wins; a completed cell on the same enclosure neither proves nor refutes a direct generation.",
+    "An undecided intent is kept for a later pass and is not erased for want of proof, though the store's count and whole-file byte bounds can shed a pending intent under saturation, and a shed intent is never resurrected."
+  ],
+  "exclusions": [
+    "Lifecycle prose, an authored task status, or a generic completed-cell observation as proof.",
+    "Treating a rollbackable cleanup cell or a bare archive as an abandonment.",
+    "Guessing a verdict to clear an intent."
+  ],
+  "id": "INV-976SFG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F06; Recovery no longer equates the pre-success terminal archive with committed abandonment. A bounded16KiB archive-generation-owned native outcome receipt is the guard's final commit operation, under a nonblocking reader lease; precommit failures roll back, committed outcomes cannot roll back, and notice confirmation remains best effort. Receipt validates request/contract/committed bytes. Pending pre-success archive stays undecided; committed success recovers exactly. Direct intents persist publishing contract identity and fall back from collected root to validated same-root archive journal. The exact three-subcase predecessor discriminator fails before and passes after, alongside native-guard rollback/notice-failure controls. These are disposable fixture operation-boundary proofs, not OS process-kill/live witnesses; those remain F01. No new generation-census or extra-cut demand is introduced."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F06",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Pending terminal notices settle only from exact native publication/generation truth and recover successful outcomes without false abandonment.",
+  "status": "proposed",
+  "supersedes": []
+}

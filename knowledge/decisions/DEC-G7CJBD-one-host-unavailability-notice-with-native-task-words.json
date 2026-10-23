@@ -66,8 +66,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-        "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+        "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
+        "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -87,7 +87,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

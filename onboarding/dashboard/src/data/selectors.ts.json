@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+        "blob": "2c07983d592a02414e45f8b028e564aea10ddc48",
         "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "`selectQueue` caches filtered queue arrays by source references and filters optimistic suppression ids.",
+      "note": "selectQueue caches filtered queue arrays by queue and suppression-map identity and suppresses only dismissible rows whose ids are present in the local map.",
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:93e13492ef4088c8368594cf9da93e076e02cafdd0db09ad5e78eca35bc3f159",
+            "blob": "2c07983d592a02414e45f8b028e564aea10ddc48",
+            "content": "sha256:9ae902dbea2aa1774bb3776820ac6e601780b667fa3c55cd81afce127c39f346",
             "locator": {
               "kind": "symbol",
               "name": "selectQueue"
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+            "blob": "2c07983d592a02414e45f8b028e564aea10ddc48",
             "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
             "locator": {
               "kind": "symbol",

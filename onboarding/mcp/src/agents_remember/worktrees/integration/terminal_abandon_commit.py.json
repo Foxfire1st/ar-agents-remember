@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/terminal_abandon_commit.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9da09db10b0a4a940320d6dd46436277eec443f",
+        "content": "sha256:05ff4a13ae7f53e29672cac06d8d0c7fd9634d267fa08c7f737d131d37995187",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-P812TX",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "An archive-generation-owned bounded native outcome receipt distinguishes irreversible abandon success from pre-success archive existence.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

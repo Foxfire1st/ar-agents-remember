@@ -10,7 +10,7 @@
 
 ## Code Commentary
 
-Semantically unchanged stable projections retain existing files. Worker-owned input state supplies canonical task sources and boot-reconciled host facts; subscriber publication ordering remains with Projector, not a lifecycle-log cache.
+Semantically unchanged stable projections retain existing files. Worker-owned input state supplies canonical task sources, boot-reconciled host facts and the five native attention fact collections; subscriber publication ordering remains with Projector, not a lifecycle-log cache.
 
 
 ### 260712-PTS-L2 One Contract Pass Per Tick — historical acquisition account; superseded by worker-owned domain refresh below

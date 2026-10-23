@@ -20,7 +20,7 @@ An unreachable-frame placeholder supplies no shown chat even when the launcher r
 
 ### Invariants And Boundaries
 
-These mounted, stubbed native-channel cases observe the displayed chat rather than treating a launcher receipt as the displayed agent; no tests were run for this analysis.
+These mounted, stubbed native-channel cases observe the displayed chat rather than treating a launcher receipt as the displayed agent; a fourth case pins that a requested but unacknowledged chat publishes nothing, so a request and a receipt are separated too. No tests were run for this analysis.
 
 ## Evidence
 

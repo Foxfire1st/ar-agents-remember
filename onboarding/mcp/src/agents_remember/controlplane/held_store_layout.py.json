@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/held_store_layout.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "content": "sha256:59c9eb1476fe870013236122582ee9aa1c01b8741ea299979540626b6b835b29",
+        "locator": {
+          "kind": "symbol",
+          "name": "hold_message"
+        }
+      },
+      "id": "RLZ-3Y5NN9",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It stores the attempt's id on the held row and is idempotent for a repeated attempt id, so a retry of the same hold does not create a second message.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "content": "sha256:3aac71ee590e6a7db3a5d999de81ce2fafada3d4d018020e2bae4858fcbaf019",
+        "locator": {
+          "kind": "symbol",
+          "name": "recount_waiting"
+        }
+      },
+      "id": "RLZ-4BH1VC",
+      "invariant": "INV-SB6HQS",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 5",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It recounts the waiting total from the store under its lock and keeps, with a log line, the last count when the store cannot be read, so the published count never becomes a false zero.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "content": "sha256:27ffe03bf9c089d4876d4cad2d8668ce8cacc517d2d5ba08186da7c9caf31ae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "note_held_receipt"
+        }
+      },
+      "id": "RLZ-GCHN6K",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 1",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It records the receipt on every hold, which is what gives the turn-end path a bounded set to drain without walking the store.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "content": "sha256:f5ffe8a4f996d53319d551e983b36367a833d2d978ec0800bb78b3f6f5d6175b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GEQ4R4",
+      "invariant": "INV-AYW07B",
+      "origin": {
+        "handoffEntry": "L190-R1-F02",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Bounded hold-store census retains complete warm rows across incomplete reads and clears only on complete native absence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+        "content": "sha256:f5ffe8a4f996d53319d551e983b36367a833d2d978ec0800bb78b3f6f5d6175b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VCNRER",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Bounded hold-store census retains complete warm rows across incomplete reads and clears only on complete native absence.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

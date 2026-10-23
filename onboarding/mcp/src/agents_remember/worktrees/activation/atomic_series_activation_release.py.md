@@ -6,8 +6,10 @@
 
 ## Purpose
 
-This file owns the only durable vacancy transitions for atomic-series activation, and it owns them per
-series contract. Each canonical series contract has its own activation record, so release separates
+This file owns the release side of the durable vacancy transitions for atomic-series activation, and it
+owns them per series contract. It is no longer the only writer of a vacant record: since MIK-R200,
+`mark_atomic_series_pause` in `atomic_series_activation.py` also writes one, stamped with `pausedAt`, and it
+is the only writer that creates a record for a master that was never selected. Each canonical series contract has its own activation record, so release separates
 strict explicit cancellation release from terminal cleanup release without either call path being able
 to clear a different contract's record.
 
@@ -45,7 +47,7 @@ rejects unreadable authority, and refuses a record that is absent with
 exact selection rather than silently succeeding. It then proves the record selects this contract's
 master and canonical contract path (`_record_selects_contract`); a record selecting any other
 master/contract is refused as `atomic-series-activation-selected-contract-mismatch` and left
-untouched. An exact non-vacant record is replaced with a revision-incremented vacant record. Replaying
+untouched. An exact non-vacant record is replaced with a revision-incremented vacant record, which can carry the caller's pause stamp: `release_atomic_series_selection(..., paused_at=...)` writes it through `_release_record`. Replaying
 an already-vacant exact record is idempotent.
 
 `release_terminal_atomic_series_selection_if_exact` uses the same identity proof but deliberately

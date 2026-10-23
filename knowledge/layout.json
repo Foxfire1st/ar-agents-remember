@@ -1,4 +1,9 @@
 {
   "conversion": "1",
+  "dependent_links": {
+    "file:dashboard/src/cockpit/RoleChatsView.tsx": [
+      "knowledge/dependents/DPD-99CBY7-rolechatsview-frame-target.json"
+    ]
+  },
   "schema": "ar-memory-layout/v2"
 }

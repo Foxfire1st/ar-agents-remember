@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
+            "blob": "9f6f43f81cf6508be294eac2fb6696065021ddf4",
             "content": "sha256:3cc180fc6d601a23745ec6933ad7c7daafd338e962722c609ec59a0881766bad",
             "locator": {
-              "end": 71,
+              "end": 83,
               "kind": "line_range",
-              "start": 35
+              "start": 47
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
+            "blob": "9f6f43f81cf6508be294eac2fb6696065021ddf4",
             "content": "sha256:e493780e99045f875c831f798c35ef7f8aa5281596fb9610e9333e1ca1d18bec",
             "locator": {
-              "end": 115,
+              "end": 127,
               "kind": "line_range",
-              "start": 73
+              "start": 85
             }
           },
           "kind": "test"
@@ -47,6 +47,35 @@
               "end": 144,
               "kind": "line_range",
               "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Controlled publisher assertions pin exact sibling IDs before archive and cap-induced incompleteness, followed by complete reconciliation and native removal; this file does not exercise Python retained inputs or a live host population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f6f43f81cf6508be294eac2fb6696065021ddf4",
+            "content": "sha256:1a8ccf4efd29b28c827d08fb455aee830d6b0e99a82997e971c2ae64556f323b",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9f6f43f81cf6508be294eac2fb6696065021ddf4",
+            "content": "sha256:59d639de4ee98b0d8b96f238144bdf551faade15dff76024c52d885452365294",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 223
             }
           },
           "kind": "test"

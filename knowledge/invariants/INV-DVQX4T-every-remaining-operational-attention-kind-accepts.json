@@ -7,14 +7,17 @@
     ],
     "justification": "Dismissal persistence and UI feedback are a maintained cross-boundary obligation: treating optimistic removal as successful durable acknowledgement silently loses failed clicks. Native action/queue targets and separate bulk/failure/source-defined ASGI assertions establish the bounded contract, not a Curator runtime grade."
   },
-  "applicability": "Individual and Clear-all acknowledgement controls for actionable-drift, provider-down, failed-setup and blocked-start, through the native dismissal action and current queue presentation.",
+  "applicability": "Individual and Clear-all acknowledgement for the operational kinds that survive provider removal and for the two terminal notice kinds.",
   "conditions": [
-    "Requests use the current itemId and supported kind; Clear all composes per-item requests.",
-    "Presentation may optimistically hide a pending request; an unsuccessful reply restores that item and reports that the dismissal did not hold."
+    "Requests use the current item id and a kind the dismissal store admits.",
+    "A live cause is refused rather than silently ignored.",
+    "Clear all composes per-item requests for dismissible items only.",
+    "An unsuccessful reply restores the item and reports that the acknowledgement did not hold."
   ],
   "exclusions": [
-    "Task/lifecycle/gate acceptance or dismissal of future occurrences.",
-    "An assertion that pending items are hidden only after success."
+    "Acknowledgement of a live cause.",
+    "Dismissal of future occurrences of any kind.",
+    "Hiding an unacknowledged notice in client state."
   ],
   "id": "INV-DVQX4T",
   "origin": {
@@ -28,9 +31,9 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Every remaining operational attention kind accepts individual/bulk dismissal, and a failed write leaves the item visible.",
+  "statement": "A live attention cause cannot be acknowledged away — the backend and the dismissal store's own vocabulary refuse it, beside the operational kinds that do accept acknowledgement — while a terminal notice accepts one acknowledgement for its exact occurrence and a failed write leaves it visible.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
-        "content": "sha256:99bb5a757ea89907e974b8c5c11b57e0233d64ce21f97596001a9330e73068f2",
+        "blob": "cfb83ed996bfccb5b29db390f3b9149aa66e39df",
+        "content": "sha256:7bd09f3953024b337ec0729205a0c469b5764ff0bbac18240977db681f5f210d",
         "locator": {
           "kind": "symbol",
           "name": "says host activity is unavailable only while an unknown activity is published"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+        "blob": "cfb83ed996bfccb5b29db390f3b9149aa66e39df",
         "content": "sha256:4b561673878538d3131bca4e2f8abf0dfcbd69ddae525ca3b91e69b5c3da7254",
         "locator": {
           "kind": "symbol",

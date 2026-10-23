@@ -16,7 +16,7 @@ Complete path samples refresh canonical task sources and document-consumer closu
 
 ### Logic
 
-Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
+Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY, plus the contract-scoped activation records under `controlplane` and the held-message queue under `temp`. Each pass derives permission rows from retained host facts and updates stall clocks. Native file-backed observations refresh on first look or relevant invalidation, while unfinished held and pause acquisition continues in bounded steps on the existing heartbeat; initialized, complete quiet views are retained. This adds no host read or timer. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
 `ProjectionInputState.read` refreshes invalidated domains and recomputes admission sets from their owning changes, returning the retained aggregate. `ProjectionReaders.repo_surfaces` returns exactly `(route_coverage, ledgers)` and the read unpacks those two collections; `ProjectionInputs` has no `sidecar_staleness`. Domain collections are replaced as a whole so removals reclaim retained rows on their relevant refresh. [6]
 
 The state also reuses one contract snapshot cache and the task-document payload cache rather than

@@ -12,7 +12,7 @@ Pure assembly of workspace task, worktree and analytical projections from suppli
 
 `project_workspace` enriches enclosures with exactly integrate/cleanup availability, builds Engine Room facts, then calls `build_task_entries` once with canonical task sources, worktrees and `HostActivitySnapshot`. It publishes tasks, taskCounts and unbound enclosures, providers, active worktree groups and closeout queues. Metrics carry only the ignored host-agent count; task counts are published on `taskCounts` beside the tasks, and no staleness histogram is projected.
 
-Attention and analytics remain pure over supplied facts. Authored planned/aborted/completed stages are not overridden by activity; unavailable host facts are not proof of pause or completion. There is no `project_lifecycle`, correction fold, synthetic persistent lifecycle or stale-heartbeat abandonment. Enclosure action prerequisite/refusal distinctions and landing-operation ownership survive independently.
+Attention and analytics remain pure over supplied facts: the queue is built once from the providers, the drift findings, the joined task entries, the native attention facts and the pass clock, and it appends no second interpretation of task state. Authored planned/aborted/completed stages are not overridden by activity; unavailable host facts are not proof of pause or completion. There is no `project_lifecycle`, correction fold, synthetic persistent lifecycle or stale-heartbeat abandonment. Enclosure action prerequisite/refusal distinctions and landing-operation ownership survive independently.
 
 ### Retained L56 converted-memory boundary
 

@@ -102,15 +102,15 @@ believed.
   "Nothing was published", and that `observe_atomic_series(...).state == "vacant"` with the released
   record echoed in `atomicSeriesActivation`.
 - **Refusals are inert, and the one non-refusal is inert too.** The never-selected case **succeeds**:
-  a master holding no selection is already stopped, so `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`
+  a master holding no selection is already stopped, so `test_pausing_a_master_that_was_never_selected_succeeds_and_publishes_nothing`
   asserts `ok`, `state` and `status` both `atomic-series-already-vacant`, `paused is True`,
   `atomicSeriesActivation.state == "vacant"`, and no `nextTool`/`nextArgs`/`nextOperation` at either
   level; the success is also asserted to be **explicit and unmistakable** — the state is not the
   released `"paused"`, the summary names that no selection was held and that nothing was published,
-  `nextStep` carries exactly `summary`, and the observation carries **no** `record` where a released
-  pause carries the record its own release wrote — and then asserted **inert**: no activation record
-  was created, and the branch tips, `_world()`, every task document and the ledger bytes are
-  unchanged. That is the byte-level form of "nothing was written to say so". A leaf contract refuses
+  `nextStep` carries exactly `summary`, and the observation carries a vacant `record` with `pausedAt` where a released
+  pause carries the record its own release wrote — and then asserted **inert**: exactly one activation
+  record exists, holding the pause fact and nothing else, and the branch tips, `_world()`, every task document and the ledger bytes are
+  unchanged. That is the byte-level form of "nothing else was written or moved beyond the pause fact". A leaf contract refuses
   with `pause-requires-atomic-master` and leaves the parent master's own selection untouched; a
   record this contract does not own (an **active** foreign record) refuses with
   `atomic-series-activation-release-unreadable` and is neither repaired nor released; an
@@ -156,7 +156,7 @@ No Domain Documentation source is configured for this memory root.
 - The one-world-per-case fixture: two atomic masters on one shared source pair, each with its own contract-keyed record. [2]
 - The public pause and the public select/resume route the module drives instead of inner helpers. [3]
 - The measurement composite, the branch tips, the task-document walk, and the per-contract record read that make "nothing else moved" assertable. [4]
-- The ten cases and the distinct protection each one buys. The never-selected case asserts the already-vacant SUCCESS, its explicitness (state is not `paused`, the summary names that nothing was held, the observation carries no `record`) and its inertness; before this change set it asserted the missing-selection refusal. The last three cases are the three refusal shapes: a leaf contract, an active foreign record (`…release-unreadable`) and an unreadable record (`…release-unreadable`), and a vacant foreign record (`…selected-contract-mismatch`), the one shape that reads `vacant`. [5]
+- The never-selected case succeeds with an explicit vacant record carrying pausedAt, exactly one activation file and unchanged remaining world, tips, documents and ledger. The other pause and refusal cases retain their separate assertions. [5]
 - The public operation under test and the release it performs, including the already-stopped branch the never-selected case now reaches. [6]
 - The per-contract address and the observation the cases read to prove the released state is the existing `vacant`. [7]
 - The observation's own guard the *active* foreign record meets before the release's exact-owner guard, which is why the two foreign-record cases produce different refusal statuses. [8]

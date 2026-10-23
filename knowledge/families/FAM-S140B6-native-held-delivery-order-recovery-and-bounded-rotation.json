@@ -21,9 +21,10 @@
     "leaf": "260928-MIK-L100",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
-    "mcp/src/agents_remember/cli"
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/controlplane"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

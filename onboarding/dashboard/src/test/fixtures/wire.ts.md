@@ -128,7 +128,7 @@ does not.
 
 - The wire oracle carries the hand-maintained sampled analytics payload. [21]
 The former task-document builder sampled analytics in the predecessor. Current native entries and summaries are separate; no analytics task-document catalogue or lifecycle-derived metrics builder is restored.
-- The attention-item builder takes its sample from analytics. [24]
+- BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained. [24]
 - The engine-process builder takes its sample from analytics. [25]
 
 - The provider builder takes its sample from the top-level providers array. [26]
