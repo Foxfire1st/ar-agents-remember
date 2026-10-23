@@ -1,10 +1,82 @@
 {
   "path": "mcp/tests/test_paseo_usage_reports.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+        "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "UsageReportsScriptTests.test_a_fresh_entry_is_not_refreshed"
+        }
+      },
+      "facet": "A call-time fresh scenario produces no forced report refresh.",
+      "id": "PRF-7S5T2V",
+      "invariant": "INV-AVD4EW",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 1",
+        "leaf": "260928-MIK-L197"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+        "content": "sha256:bc3ec2d9e31e6e614ea747f1b165a082f0f7cdcfb13dfe733833c6d34527a1f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "UsageReportsScriptTests.test_a_stale_leaf_entry_is_refreshed_by_report_id_alone"
+        }
+      },
+      "facet": "A deliberately stale cached entry is refreshed by report ID alone and the case checks the captured refreshedAt stamp.",
+      "id": "PRF-B8Z5GM",
+      "invariant": "INV-AVD4EW",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 1",
+        "leaf": "260928-MIK-L197"
+      }
+    }
+  ],
   "realizes": [
     {
       "anchor": {
-        "blob": "b60a4a6909a97caf890a06869709051fa4313710",
-        "content": "sha256:93de4e9b202e275edcdd31a90a0b7b2fd251a8cee22f9e7d5ab2d249901193ae",
+        "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+        "content": "sha256:2f7a8d2793fce2612a0fc4a6a23db24fca077b04ac0d8df2e8574c8481fb15d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "UsageReportsScriptTests.test_a_fresh_entry_is_not_refreshed"
+        }
+      },
+      "id": "RLZ-4C3F5H",
+      "invariant": "INV-AVD4EW",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 1",
+        "leaf": "260928-MIK-L197"
+      },
+      "rationale": "This case is the enforcement: it asserts that no forced listUsageReports call is recorded for an entry stamped fresh, which is MIK-R190 rule 7's 60-second refresh condition seen from the test side.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+        "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fresh"
+        }
+      },
+      "id": "RLZ-8J45D5",
+      "invariant": "INV-AVD4EW",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 1",
+        "leaf": "260928-MIK-L197"
+      },
+      "rationale": "The call-time stamp helpers are where the obligation lives: they produce the 'fresh' value the case hands the bridge, so taking it at call time is what makes freshness mean what the rule says instead of measuring the gap between import and execution.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+        "content": "sha256:b1645b0a0650670fae080cb2dfd2ce14968302e14f1d2fc6a67ebf48e886f954",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +91,56 @@
       "role": "support"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Scenario timestamps are sampled at call time",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+            "content": "sha256:ca86ad60e0debf2ba545a7265a0cea02a3d34343ef622ee6df62dbf20ef5e0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fresh"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+            "content": "sha256:68ab8c91a52a7cedbafe6d3a4ee6ed42414ce41543e2c591949bf1e45b0a468b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+            "content": "sha256:5747b4e2c673d92e55682f1e03f3a4043c2d459628b5886d5d6999efd2b9763a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reset"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+            "content": "sha256:8e515f4b79bb990da2fc8fd673e17fbf7fccf49b3aa4249a6530b9487b572d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

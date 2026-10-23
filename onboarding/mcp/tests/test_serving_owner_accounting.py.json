@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f2b93d56252f14c8a153aaaac03d84c2904d923b",
-        "content": "sha256:029ddf46f3adc070d22fa33909c76815d7758b1b2a1791c4d6803f893c28e24f",
+        "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+        "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
+        }
+      },
+      "facet": "The fake runtime exposes the usage port so the controlled recurring-owner cases reach their unchanged per-stage attribution and repeated-cancel assertions.",
+      "id": "PRF-65X504",
+      "invariant": "INV-85Z94Y",
+      "origin": {
+        "handoffEntry": "MIK-R206 items 2-4",
+        "leaf": "260928-MIK-L197"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+        "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
         "locator": {
           "kind": "symbol",
           "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
@@ -19,17 +36,55 @@
       }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+        "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
+        }
+      },
+      "id": "RLZ-F905SV",
+      "invariant": "INV-85Z94Y",
+      "origin": {
+        "handoffEntry": "MIK-R206 items 2-4",
+        "leaf": "260928-MIK-L197"
+      },
+      "rationale": "The case owns the obligation because its fake runtime is the only place the held owner's port set is stated; with usage_read absent the sweep raised inside the loop, the loop swallowed it, and no unit was ever accounted.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "F01/F02: exact thread CPU through the actual recurring owner callers.",
+      "note": "F01/F02: exact thread CPU through the actual recurring owner callers.\n\nAnchor: `ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel`",
       "targets": [
         {
           "anchor": {
-            "blob": "86a06a23b14a20238257b952f1bffebfac9444df",
-            "content": "sha256:0393e3fb5b0f6882a301e0fbe401c98f40190be6b976f855ed1d7117ebe40007",
+            "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+            "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
             "locator": {
-              "kind": "file"
+              "end": 246,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The controlled recurring-owner proof supplies the optional usage port\n\nAnchor: `ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+            "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 211
             }
           },
           "kind": "test"

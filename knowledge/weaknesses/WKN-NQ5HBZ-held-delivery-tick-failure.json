@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+    "content": "sha256:18d710492a923bbcaa5e3d0faf0c2b7b32f72db104b9ccc63170f525e512e311",
+    "locator": {
+      "kind": "symbol",
+      "name": "_held_delivery_loop"
+    },
+    "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+  },
+  "id": "WKN-NQ5HBZ",
+  "kind": "fault",
+  "measurement": {
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "date": "2026-10-23",
+    "how": "on base bytes the item 2-4 proof failed 3 sub-cases; each tick raised AttributeError while evaluating runtime.usage_read as an argument at _app_lifespan.py:181, which is before _to_thread_owned(:173) is entered, so no OWNER_HELD_DELIVERY unit was recorded and the only trace was the loop's own logger.exception(:184); the focused run took 53.61 s",
+    "number": 3,
+    "unit": "held-delivery ticks that failed before their accounted work began"
+  },
+  "origin": {
+    "handoff": {
+      "path": "L197-A1-curator"
+    },
+    "handoffEntry": "worker-weakness-1",
+    "leaf": "260928-MIK-L197",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928_maintained-invariant-knowledge"
+  },
+  "state": "open",
+  "statement": "The held-delivery loop catches every Exception from a tick, including one raised while the tick's arguments are evaluated and before the accounted offloaded work is entered, and only logs it, so such a tick is skipped with no accounting unit recorded and no signal reaching any caller."
+}

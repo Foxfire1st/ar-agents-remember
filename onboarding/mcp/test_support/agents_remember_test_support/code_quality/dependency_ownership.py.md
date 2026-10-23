@@ -22,6 +22,8 @@ declared empty set is distinct from an absent declaration: only observed-empty e
 `verified-repository-input-no-consumers`. Unknown inputs still retain unresolved ownership;
 empty declarations cannot hide an actual consumer.
 
+The `layers.toml` declaration names all four observed test consumers: `test_layering.py`, `test_structural_limits.py`, `test_provider_limit_layering.py` and `test_paseo_daemon_config_guard.py` under `mcp/tests/`. Adding the two provider-related consumers restores the exact declaration/observation match. The ownership oracle still refuses a mismatched set with `lifecycle-consumer-mismatch`; no refusal or test assertion is relaxed.
+
 The retired ambient-role scenario runner has no current repository-input declaration. Retained declarations are evaluated against independently observed consumers; catalog identity alone never supplies a missing selection edge.
 
 Global inputs and conftest roots deliberately invalidate the full population and are separately recorded. Otherwise observed import/literal relationships are preferred; filename matching remains a labeled heuristic. ownership_configuration_digest binds the versioned global inputs, declarations, irrelevant roots/suffixes and dashboard test patterns, so selection authority changes are visible.
@@ -54,17 +56,18 @@ No configured external domain source.
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
+
+
+
+- Observed and declared ownership, exact-empty distinction and refusals [6]
+
+- The layering declaration names all four consumers [7]
 - Transitive importer closure [2]
 - Digest binds declarations and classification authority [3]
-
-
-
 - An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason. [5]
-- Observed and declared ownership, exact-empty distinction and refusals [6]
 
 ### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 No cross-repository evidence is required.
-

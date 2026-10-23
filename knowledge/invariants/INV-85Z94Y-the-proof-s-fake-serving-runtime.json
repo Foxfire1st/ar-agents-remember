@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The fake runtime exposes the usage port so the controlled recurring-owner cases reach their unchanged per-stage attribution and repeated-cancel assertions."
+  },
+  "applicability": "The controlled recurring-owner accounting proof, including its held-delivery owner.",
+  "conditions": [
+    "The fake serving runtime supplies usage_read=None as the real runtime does.",
+    "Existing success, failure-at-stage and repeated-cancellation assertions remain."
+  ],
+  "exclusions": [
+    "No production runtime change.",
+    "No native-host or broad performance acceptance."
+  ],
+  "id": "INV-85Z94Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/items2-4-before.log 3 failed on base bytes (SUBFAILED owner='held' success, failure and cancel); evidence/items2-4-after.log 1 passed with 30 subtests passed on the candidate; the case arrived with 87992ce842079a7a4f161bd4bfcc4aed5307178b (L81) and the runtime contract usage_read with 1ef442f478a118031599a90f9b547adca503d595 (L184)"
+      ],
+      "path": "L197-A1-curator"
+    },
+    "handoffEntry": "MIK-R206 items 2-4",
+    "leaf": "260928-MIK-L197",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The proof's fake serving runtime carries usage_read with the real _ServingRuntime's None default, so the held-delivery sweep runs and every recurring owner attributes each stage and drains a repeated cancel.",
+  "status": "proposed",
+  "supersedes": []
+}

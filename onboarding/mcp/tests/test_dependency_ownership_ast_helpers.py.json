@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+        "content": "sha256:684cb64a528a0e5f81c560ac1ab49bb611da8cbf8b448ba902a77443a52c1bf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repository_inputs_reach_their_supported_consumers"
+        }
+      },
+      "facet": "The ownership graph accepts the layers.toml declaration only when it matches independently observed consumers, while unknown ownership remains incomplete.",
+      "id": "PRF-272X8D",
+      "invariant": "INV-YYFPVG",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 6",
+        "leaf": "260928-MIK-L197"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
         "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
         "locator": {
           "kind": "symbol",

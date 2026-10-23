@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A call-time fresh scenario produces no forced report refresh."
+  },
+  "applicability": "UsageReportsScriptTests scenario timestamps used to judge cached usage-report freshness.",
+  "conditions": [
+    "Each case builds its timestamps when it runs; an explicit fetched_at value is preserved.",
+    "The fresh/stale contrast uses the production 60-second threshold.",
+    "Fresh cases sample the current time; deliberately stale cases subtract five minutes; caller-supplied fetched_at stamps are preserved unchanged."
+  ],
+  "exclusions": [
+    "No production freshness-window change.",
+    "No guarantee that arbitrary execution pauses leave a timestamp fresh forever."
+  ],
+  "id": "INV-AVD4EW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/item1-controlled-age-before.log fails on base module bytes after a 70-second controlled age (the case's stamp aged past the bridge's 60-second rule); evidence/item1-controlled-age-after.log passes with the identical script on the candidate; evidence/item1-alone-after.log and evidence/item1-module-after.log pass on the final bytes; the case and the 60-second rule arrived with 1ef442f478a118031599a90f9b547adca503d595 (L184), paseo_bridge.mjs:331"
+      ],
+      "path": "L197-A1-curator"
+    },
+    "handoffEntry": "MIK-R206 item 1",
+    "leaf": "260928-MIK-L197",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A usage-report case takes its fetchedAt stamps when the case runs, so the bridge's 60-second freshness rule is judged against a stamp that is fresh at call time rather than one aged by the module's import-to-execution delay.",
+  "status": "proposed",
+  "supersedes": []
+}

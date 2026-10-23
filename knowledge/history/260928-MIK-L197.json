@@ -1,0 +1,273 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L197",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-28KW72",
+      "items": [
+        "sha256:4ab3ab21eaa0797bce226350a1f89cbed4f740522614bb04e03b4241967664e5"
+      ],
+      "reason": "The route still describes controlled behavioral proofs, usage-report protection and recurring-owner accounting. Call-time timestamps and the optional fixture port repair those proofs without changing route purpose or authority.",
+      "sources": [
+        {
+          "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        },
+        {
+          "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+          "path": "mcp/tests/test_serving_owner_accounting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4HY736",
+      "items": [
+        "sha256:aa64a36a041f81cfcfdff1b9baba2715d64d61f72a2e32c2197bcbc925ed2328"
+      ],
+      "reason": "The card now explains call-time fresh/stale/reset stamps and exact timestamp reuse; it preserves the envelope/selectors and the 60-second production rule.",
+      "sources": [
+        {
+          "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+          "path": "mcp/tests/test_paseo_usage_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_usage_reports.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+            "content": "sha256:3aeeddf72512969732de5d80058db7138200131c27537d4b65ef89921ee70d00",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
+            },
+            "path": "mcp/tests/test_serving_owner_accounting.py"
+          },
+          "before": {
+            "blob": "f2b93d56252f14c8a153aaaac03d84c2904d923b",
+            "content": "sha256:029ddf46f3adc070d22fa33909c76815d7758b1b2a1791c4d6803f893c28e24f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProductionOwnerClockTests.test_every_recurring_caller_attributes_each_stage_and_drains_repeated_cancel"
+            },
+            "path": "mcp/tests/test_serving_owner_accounting.py"
+          },
+          "id": "PRF-X8MSAG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8R0F5W",
+      "items": [
+        "sha256:1e41708fae2deecebe7647eef007bd2490dd7dee7a340fd70f2c77cd6f4319c4"
+      ],
+      "reason": "Adding the real optional usage port to the fake runtime restores the held owner proof before its first accounted stage. Executing-thread CPU, synchronous publication intervals and exact-worker cancellation drain are unchanged.",
+      "revision": 1,
+      "subject": "INV-0NSFFW"
+    },
+    {
+      "considered": [
+        "FAM-CAG581"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-EA64C6",
+      "items": [
+        "sha256:b3acf14ff9357d1a9caf37c2153c2b2ebc2df242d3080b40788fd45450ca9223"
+      ],
+      "reason": "The new obligation protects a controlled test scenario or support declaration. The examined background-work family already carries live owner-accounting behavior through INV-0NSFFW; adding this test-setup obligation would not extend its joint guarantee. No shared directory or common test anchor establishes a joint promise.",
+      "revision": 1,
+      "subject": "membership:INV-85Z94Y"
+    },
+    {
+      "considered": [
+        "FAM-CAG581"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-F2S0RQ",
+      "items": [
+        "sha256:93f09fb14a8858ad299e7cf7ce5fef2e817a536f107e16ab6b3db7372fd01fc3"
+      ],
+      "reason": "The new obligation protects a controlled test scenario or support declaration. The examined background-work family already carries live owner-accounting behavior through INV-0NSFFW; adding this test-setup obligation would not extend its joint guarantee. No shared directory or common test anchor establishes a joint promise.",
+      "revision": 1,
+      "subject": "membership:INV-AVD4EW"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J6SBEQ",
+      "items": [
+        "sha256:9a5d4163d186dc5f44312c8c34f03eec6e91890f4cec60a34fb56977ac2644ca"
+      ],
+      "reason": "The card now names all four layers.toml consumers and preserves exact declaration/observation equality and lifecycle-consumer-mismatch refusal.",
+      "sources": [
+        {
+          "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ME1VN8",
+      "items": [
+        "sha256:a2a9ba1447445824dfdcb657ad471c6066b77ea567734e2583162cd6944060cd"
+      ],
+      "reason": "The route already requires repository declarations to equal observed consumers. Naming the two omitted layers.toml consumers restores that contract without changing graph ownership, refusal or selection policy.",
+      "sources": [
+        {
+          "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+          "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/code_quality/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c8280bcf4157912589871b28f6b1f6c1b0fed592",
+            "content": "sha256:b1645b0a0650670fae080cb2dfd2ce14968302e14f1d2fc6a67ebf48e886f954",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "before": {
+            "blob": "b60a4a6909a97caf890a06869709051fa4313710",
+            "content": "sha256:93de4e9b202e275edcdd31a90a0b7b2fd251a8cee22f9e7d5ab2d249901193ae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_usage_reports.py"
+          },
+          "id": "RLZ-Q4595S"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N56PAV",
+      "items": [
+        "sha256:195a044c96c6c6f9ba565f789e0fcbaafa7a12b8493eb8f51a02f95f1b754f52"
+      ],
+      "reason": "Call-time scenario timestamps restore the freshness contrast in the existing report-reader proof; limit-only usage, one reader, account-wide exhaustion and release conditions remain unchanged.",
+      "revision": 2,
+      "subject": "INV-4T6KSE"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0NSFFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-1F0XGE",
+          "revision": 1
+        },
+        {
+          "id": "INV-3XG15P",
+          "revision": 1
+        },
+        {
+          "id": "INV-5C5086",
+          "revision": 1
+        },
+        {
+          "id": "INV-84PT5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMZ47D",
+          "revision": 1
+        },
+        {
+          "id": "INV-BY8XBH",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 3
+        },
+        {
+          "id": "INV-FKE909",
+          "revision": 2
+        },
+        {
+          "id": "INV-GDTTHF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 2
+        },
+        {
+          "id": "INV-H9TEKD",
+          "revision": 1
+        },
+        {
+          "id": "INV-RGGEX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-RJWTW8",
+          "revision": 1
+        },
+        {
+          "id": "INV-RQNDH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-S8GHB9",
+          "revision": 1
+        },
+        {
+          "id": "INV-TMY6DW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-R1Y71K",
+      "items": [
+        "sha256:76942934602dfd0c518588ff5cc58e3f50bb8847af727bd025eb9daaf4441531"
+      ],
+      "reason": "All eighteen member records and their candidate revisions were examined. Only the existing INV-0NSFFW controlled proof is touched: its fake runtime gains the optional usage port and retains every accounting/cancel assertion. The other member records and their code are unchanged by this leaf; the joint guarantee, host-healing exclusion, provider-safety independence, membership and four routes stand.",
+      "revision": 4,
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S6054T",
+      "items": [
+        "sha256:3583bceb422e41fd1971dfe1e307d84bda7a7a848850f41e463d8565a44c7e85"
+      ],
+      "reason": "The card now names usage_read=None in the controlled runtime fixture, which lets the held-delivery proof reach its unchanged accounting and cancellation assertions.",
+      "sources": [
+        {
+          "blob": "d46889ec8ffb453d6ac87478173c4ae597e71b42",
+          "path": "mcp/tests/test_serving_owner_accounting.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_owner_accounting.py"
+    },
+    {
+      "considered": [
+        "FAM-CAG581"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-X4GMCS",
+      "items": [
+        "sha256:f918c3bbbfd7cbebed39ddac5b2b06577b8a7239b800aab156484ceb16209373"
+      ],
+      "reason": "The new obligation protects a controlled test scenario or support declaration. The examined background-work family already carries live owner-accounting behavior through INV-0NSFFW; adding this test-setup obligation would not extend its joint guarantee. No shared directory or common test anchor establishes a joint promise.",
+      "revision": 1,
+      "subject": "membership:INV-YYFPVG"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

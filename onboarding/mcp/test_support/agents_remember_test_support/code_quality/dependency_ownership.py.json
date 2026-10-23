@@ -1,29 +1,36 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+        "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+        "locator": {
+          "kind": "symbol",
+          "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
+        }
+      },
+      "id": "RLZ-JEMM0K",
+      "invariant": "INV-YYFPVG",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 6",
+        "leaf": "260928-MIK-L197"
+      },
+      "rationale": "This table is the one place a repository-declared consumer set is stated, and the ownership graph refuses the declaration when it differs from the observed set, so the four consumer paths belong here and nowhere else.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "2": {
       "note": "Transitive importer closure",
       "targets": [
         {
           "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
             "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
             "locator": {
               "kind": "symbol",
               "name": "transitive_importers"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
-            "content": "sha256:835ddb514dd318c90463438db0e335f2ecb64b63e8ea016f1638993a3e54163c",
-            "locator": {
-              "end": 504,
-              "kind": "line_range",
-              "start": 484
             }
           },
           "kind": "code"
@@ -35,23 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
             "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
             "locator": {
               "kind": "symbol",
               "name": "ownership_configuration_digest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
-            "content": "sha256:65205ebf1c182e0116bf2dd3990560f7a0d725f24162e7d000348b069dfe450a",
-            "locator": {
-              "end": 576,
-              "kind": "line_range",
-              "start": 555
             }
           },
           "kind": "code"
@@ -63,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
-            "content": "sha256:3ed8dc3975f0c700c971b6ee532a73f6e6dc032981279b674466fa9534d6ccb2",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:8e4896bb264f5ef916243664350414fcfbb7b1c1d6071458a78e49b7e45fc4d4",
             "locator": {
-              "end": 301,
+              "end": 306,
               "kind": "line_range",
-              "start": 298
+              "start": 303
             }
           },
           "kind": "code"
@@ -80,11 +75,39 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7635446b4022041824be2a0a80484eaae4243d0c",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
             "content": "sha256:20fad3c44b7d355b4ca354acac3801d7580599e9c82c345e9678a0fa1431ab94",
             "locator": {
               "kind": "symbol",
               "name": "DependencyOwnershipGraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The layering declaration names all four consumers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:e86f85f2632f9f79f0760f656fe0cb21900cd24f5cc4deb71fe589aae5b47b97",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_TEST_INPUT_CONSUMERS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:9bacf89cab7c109542268500df6c0281d35a377ecc8306d2e92b25a19cb3fd0e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "code"

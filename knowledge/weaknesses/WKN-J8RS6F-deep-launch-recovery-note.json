@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+    "content": "sha256:ed28af40f94e0a6fca7712c6b4186ed7bb497ec0e9c3322cf0d1e0b4790c68d8",
+    "locator": {
+      "kind": "symbol",
+      "name": "recovery_note"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+  },
+  "id": "WKN-J8RS6F",
+  "kind": "fault",
+  "measurement": {
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "date": "2026-10-23",
+    "how": "258 failing rows at a 171-character scratch temp root against 1 at a 14-character temp root, with the same candidate tree and the same 20 skipped.",
+    "number": 258,
+    "unit": "failing ordinary-lane results"
+  },
+  "origin": {
+    "handoff": {
+      "path": "L197-A1-curator"
+    },
+    "handoffEntry": "worker-weakness-2",
+    "leaf": "260928-MIK-L197",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928_maintained-invariant-knowledge"
+  },
+  "state": "open",
+  "statement": "A role launch is refused when the handover artifact's path cannot be named inside the 600-character recovery note, so a launch from a deep enclosure never starts."
+}
