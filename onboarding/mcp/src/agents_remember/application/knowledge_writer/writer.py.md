@@ -10,7 +10,7 @@
 and 7).** It reads the hand-off document (`handoff.read_handoff`), loads the memory tree
 (`MemoryState.load`), captures the code candidate tree C (`CodeSnapshot.capture`), applies the document
 (`Authoring.run`), carries every `carried` entry forward at C (`carry_entries`, MIK-R08), checks every row of the owner's history file (`owner_history_problems`), renders each
-touched document canonically after model validation (`_render`), rebuilds the layout marker's dependent lookup, then runs the MIK-R22 validator
+touched document canonically and validates its model (`_render`), rebuilds the layout marker's dependent lookup, then runs the MIK-R22 validator
 (`validate_tree`) over the **whole resulting tree**, with the state's base: the memory worktree's `HEAD`, or
 its conversion when `HEAD` is unconverted and the candidate is converted (L37, MIK-R24 rule 7). Only then does it write, and only in a committing run.
 
@@ -18,6 +18,14 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
 
 ### Logic
 
+- **Onboarding source selection.** `_onboarding_sources` first collects every trace subject,
+  including a trace with unusable metadata. A valid trace source list stays authoritative.
+  Without a trace item for the subject, `_unexplained_onboarding_sources` unions the string
+  member paths from matching uncovered `unexplained_hunk` and `unexplained_file` items with
+  mapped facts, `onboardingTrace` and `sourceBlobs`, then sorts the paths. Covered items,
+  other kinds and other subjects contribute nothing. The selector returns paths only;
+  row authoring reads their actual candidate blobs or records `absent`. With neither source
+  of paths, a file subject keeps its own-path binding and an overview keeps its refusal.
 - `WriteRequest` carries the two roots, the `Owner`, the hand-off path as `origin.handoff.path` records it,
   the parsed document, the commit word and the `authorization` reference. The file format has no field for
   the authorization, so the report records it. Since MIK-R11 it also carries `decisions`, the task
@@ -54,8 +62,9 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   `merge_reports` has its separate sync/conversion deferral and migration debt has its own carried/new policy.
 - `_finish`: without `commit` the state is `planned` and `written`/`removed` list what *would* change; with
   it, `MemoryState.write` writes and the state is `written`.
-- `_render` validates a history document with `parse_history_document` and every other document with
-  `parse_document`, then renders `canonical_text`; a model refusal is a `Problem` per pydantic error.
+- `_render` computes canonical text, validates history documents with `parse_history_document` and other
+  documents with `parse_document`, then retains the validated bytes for publication; model validation
+  errors become individual `Problem` entries.
 - **The dependent lookup (MIK-R124).** After rendering, the writer rebuilds the layout marker's
   `dependent_links`: an index from each target a dependent stands on — `file:<path>` for a file or anchor link,
   `record:<id>` for a record link — to the dependent record files that name it. It covers the stored dependents
@@ -114,27 +123,25 @@ No configured live documentation source was available for this pass.
 
 The operation and its stages.
 
+- Trace subjects retain source authority; matching uncovered groups supply a sorted union of member paths only when no trace item exists. [26]
+
 - The refusal text for an unconverted memory tree. [1]
 
-- Read, author, check history, render, validate, then finish or refuse. [3]
-
-
-
+- Read, author, check history, render, validate, then finish or refuse. [27]
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
 
 
-- The questions reach the task document after validation and before any file. [5]
-
-
+- After validation, committing runs publish raised questions before knowledge files. [28]
 - Reconsideration items are projected by subject; committing question append returns published keys and refusals [6]
 
 
-- The carry-forward call and its report field. [7]
+- The carry-forward call and its report field. [29]
 - The carry itself. [8]
-- Planned or written. [10]
-- Model validation then canonical rendering of every touched document. [11]
+- Planned or written. [30]
+
+- Canonical text is model-validated before its bytes enter the publication set. [31]
 - The registry side of the writer-reported rules. [12]
-- A validator refusal writes nothing and names every violation. [13]
+- A duplicate-ID validator refusal reports its violation, exposes no written actions and preserves the memory tree. [32]
 - Route rules are reports in the writer and refusals at a commit route. [14]
 
 
@@ -150,9 +157,7 @@ The operation and its stages.
 - The memory tree and its base, or why the writer cannot write it. [17]
 - A crossing owner authors no entry, ruling or new record. [18]
 - The writer compares an unconverted HEAD through its converted base. [19]
-- A master line's crossing records its rows through the writer. [20]
-
-
+- A master line's crossing records its rows through the writer. [33]
 ### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
@@ -165,15 +170,15 @@ No cross-repo boundary is crossed by this file.
 - Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
 
 
-- Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named. [9]
-- The worklist's well-formed items and trace links, plus covered-source and counted-change projections passed with the paired memory base. [21]
-- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [22]
+- Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named. [34]
 
+- Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base. [35]
 
+- Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
 ## Current writer publication and refusal contract
 
 The current converted writer checks persisted leaf worklist shape and authored item applicability, admits only resolvable newly changed task links when the root is supplied, and refuses a physically stored derived superseded decision. All knowledge-file publication remains after whole-tree validation. Task question publication is a separate durable effect, reported honestly on later refusal; file rollback is verified rather than presumed. These are source observations of the candidate, not self-use of its repaired writer or an executed fault-injection grade.
 
-- Worklist and changed-link admission precede validation and file publication. [23]
+- Worklist and changed-link admission precede validation and file publication. [37]
 - File publication reports actual restoration and already-published question recovery. [24]
 - A stored derived superseded field refuses before canonical rendering. [25]

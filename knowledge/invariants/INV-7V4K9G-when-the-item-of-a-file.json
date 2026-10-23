@@ -8,15 +8,17 @@
   },
   "applicability": "Every onboarding-trace row the file writer authors for a card subject -- a file-level card or a route overview -- in a converted memory worktree.",
   "conditions": [
-    "The leaf's persisted worklist holds an onboarding_trace item naming the subject, so the row binds that item's sources with their candidate blobs, `absent` for a deleted source.",
-    "A card subject no worklist item names is a file card and binds its own path.",
-    "An item that names only the card's own path yields the same one-source row as before.",
-    "A route overview no worklist item covers is refused with the original no-worklist-item problem instead of falling back to a path."
+    "An onboarding_trace item's valid source list remains authoritative; every trace subject excludes matching unexplained groups even when that trace metadata is unusable.",
+    "Without a trace item, collect the sorted union of string member paths from sourceBlobs of matching uncovered unexplained_hunk and unexplained_file items with mapped facts, onboardingTrace and sourceBlobs.",
+    "Resolve every selected path from the candidate code snapshot, recording absent for a missing path; never copy worklist blob values into row history.",
+    "When no usable selected source entry exists, including a trace with unusable metadata that suppresses groups, a file subject binds its own path and an overview keeps its no-worklist-item refusal.",
+    "An item naming only one path retains one-source binding."
   ],
   "exclusions": [
-    "The worklist's grouping and the item contract are unchanged, and RowRequest still holds no sources field: a hand-off that supplies one is refused.",
-    "No other row kind -- invariant, family, dependency, unexplained-change, planned, reconsideration, membership or record -- takes its sources this way.",
-    "A card's row proves that the item is answered, not that the whole Python suite, an installed host or a fresh Curator execution passed."
+    "Covered unexplained items, other item kinds and other subjects contribute no member paths; malformed facts or member paths contribute no group.",
+    "The gate, grouping producer, authoring-row owner and refusal of an author-supplied sources field are unchanged.",
+    "Other row kinds do not take their sources through this selection.",
+    "A row answering its item is not whole-suite, installed-host, serving-build or acceptance evidence."
   ],
   "id": "INV-7V4K9G",
   "origin": {
@@ -30,9 +32,9 @@
     "leaf": "260928-MIK-L173",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "When the item of a file card covers a group of identical copies of its source, the knowledge writer's row for that card binds every source of the item, so that the row can answer the item.",
+  "statement": "For each onboarding subject, the knowledge writer binds its row to the source paths selected by the trace-item precedence and matching uncovered-group rules, with each blob read from the candidate.",
   "status": "proposed",
   "supersedes": []
 }

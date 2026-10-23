@@ -32,9 +32,19 @@ items are judged; it does not assert the instruction's wording. Separately, read
 six malformed group shapes and accept a complete run with an empty group map. These tests invoke
 no second gate or closeout transaction.
 
+### Writer bindings without a card
+
+The writer cases cover a subject with no trace item: several deleted members, a deleted/live
+pair and a single deleted path. They parse writer-authored history, compare its complete source
+map with actual candidate blobs or `absent`, and ask the unchanged unexplained-item predicate
+to accept each matching item. No cards or sidecars are created for these sources. The mixed
+case supplies that persisted source-set shape explicitly; it does not establish that the native
+grouping producer emits mixed candidate blobs. A separate case supplies conflicting unexplained
+metadata and confirms that an existing trace item retains source authority.
+
 ### Bounds
 
-The cases are source-level regressions over the memory-quality gate, its group reader and the worklist.
+The cases are source-level regressions over the writer, memory-quality gate, its group reader and the worklist.
 The Worker's focused runs under its freeze are its own receipts; this card is not evidence that any
 of them ran, and no case here speaks about the whole suite or an installed host.
 
@@ -53,3 +63,6 @@ The test symbols below carry the module's grouping and refusal proof at the reco
 - A complete run with an empty group map yields an empty map and no problem from the controller group reader. [5]
 
 - A single-source card is the same answered item in the worklist and the memory-quality gate. [6]
+
+- Existing trace-item sources prevail over conflicting unexplained-group metadata. [7]
+- Cardless deleted groups, a deleted/live pair and a single path bind exact candidate source maps accepted by the unchanged unexplained-item predicate. [8]

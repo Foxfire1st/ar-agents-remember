@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+        "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+        "locator": {
+          "kind": "symbol",
+          "name": "_onboarding_sources"
+        }
+      },
+      "id": "RLZ-2WC1ME",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      },
+      "rationale": "Keeps every trace subject authoritative and merges its valid source list after the group selector, preventing matching unexplained groups from replacing trace sources.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+        "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unexplained_onboarding_sources"
+        }
+      },
+      "id": "RLZ-30D86H",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      },
+      "rationale": "Selects eligible uncovered unexplained member paths, excludes trace subjects and unions paths in sorted order without copying metadata blob values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
         "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
         "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
         "locator": {
           "kind": "symbol",
@@ -39,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
         "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
         "locator": {
           "kind": "symbol",
@@ -62,43 +98,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
               "name": "UNCONVERTED"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Planned or written.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:26e3052b7f15c44dac0dd984197b2fd5b9298aba975c76ee248a8a41b4c808d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_finish"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Model validation then canonical rendering of every touched document.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:aa738a8805c97aa26db36289d1689304acef23641d3a5ab9eb555d7ba2ac1e01",
-            "locator": {
-              "kind": "symbol",
-              "name": "_render"
             }
           },
           "kind": "code"
@@ -122,29 +126,12 @@
         }
       ]
     },
-    "13": {
-      "note": "A validator refusal writes nothing and names every violation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
-            "content": "sha256:947bfd1c43d6b646e85ab303d23d565fcef79b401e87b9d7e4f82fb34be55299",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_validator_refusal_writes_nothing_and_names_every_violation"
-            },
-            "path": "mcp/tests/test_knowledge_writer.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "14": {
       "note": "Route rules are reports in the writer and refusals at a commit route.",
       "targets": [
         {
           "anchor": {
-            "blob": "43cc02abb5fcb2756a0b9757b355dbd669352a5f",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
             "content": "sha256:654b94ba75c1212248cbaf2ffa17769545593edae0d2756d9d1ac199fdaf8df8",
             "locator": {
               "kind": "symbol",
@@ -161,12 +148,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
             "locator": {
-              "end": 184,
+              "end": 186,
               "kind": "line_range",
-              "start": 137
+              "start": 139
             }
           },
           "kind": "code"
@@ -178,12 +165,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
             "locator": {
-              "end": 184,
+              "end": 186,
               "kind": "line_range",
-              "start": 137
+              "start": 139
             }
           },
           "kind": "code"
@@ -195,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
             "locator": {
               "kind": "symbol",
@@ -211,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:3dd771e602d47815062e4946dceb4f68e3ace03fc22cf93f41c8d467bc695efc",
             "locator": {
               "kind": "symbol",
@@ -244,128 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:a00ea9e16040ed4caf6ef34c7e140c76a715453ad1468673f885acdf8cd071e7",
             "locator": {
-              "end": 118,
+              "end": 120,
               "kind": "line_range",
-              "start": 81
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "A master line's crossing records its rows through the writer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
-            "content": "sha256:09e5da1f57c2822063e408a1639fa81a660d26a982d1ed628fa8a27aca1ae25c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
-            },
-            "path": "mcp/tests/test_knowledge_writer.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "21": {
-      "note": "The worklist's well-formed items and trace links, plus covered-source and counted-change projections passed with the paired memory base.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:f2bf08a6cb4481b6ff1a8f0165715e893688bf95470cd77ca7126ab28b36e1ac",
-            "locator": {
-              "end": 282,
-              "kind": "line_range",
-              "start": 270
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 151
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
-            "locator": {
-              "end": 314,
-              "kind": "line_range",
-              "start": 313
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
-            "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 389
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
-            "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 121
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 394
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "Worklist and changed-link admission precede validation and file publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:5e4cc2411ece08795df1a08360b9f5ec56e58c3d091f4d639b618cca725d2750",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 121
+              "start": 83
             }
           },
           "kind": "code"
@@ -377,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:971607dbb764dc7801b378cfa228c8e819810e24cb8d36796f08574e20dac421",
             "locator": {
-              "end": 427,
+              "end": 475,
               "kind": "line_range",
-              "start": 392
+              "start": 440
             }
           },
           "kind": "code"
@@ -394,25 +265,318 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:f0455925d2e444b461e2fa780106865fb6c325d3c27de03afc5ee85633a5223f",
             "locator": {
-              "end": 456,
+              "end": 504,
               "kind": "line_range",
-              "start": 432
+              "start": 480
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
+    "26": {
+      "note": "Trace subjects retain source authority; matching uncovered groups supply a sorted union of member paths only when no trace item exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
       "note": "Read, author, check history, render, validate, then finish or refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "9767628069daf0ebffcb667a698b794b6f794753",
-            "content": "sha256:22550dfe9d6804c0ec08618299b3fba71fa7c8590513be3c5606e41986742294",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "After validation, committing runs publish raised questions before knowledge files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_append_raised"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:ec661258f5270cd96091c64e472124fc419214f044148846d2d9430aac0ac5af",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The carry-forward call and its report field.\n\nAnchor: `carry_entries`; \"carried=carried\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:4300962fcea3139ceecdb7d63cea7c8e8491033d573fd9313f96b61178a369d8",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Planned or written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Canonical text is model-validated before its bytes enter the publication set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_render"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "A duplicate-ID validator refusal reports its violation, exposes no written actions and preserves the memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:6c7cbd73e32d6bf4ffb6c62b50cb78bdafcae2eca6040400f369d53261122034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_validator_refusal_writes_nothing_and_names_every_violation"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A master line's crossing records its rows through the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:d1cd4aa18e61cf8e9032f531fbc01e548926a54b068b8a8bacdb8294cdd8fddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named.\n\nAnchor: \"refusals, reports = _writer_split(validation)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:fbcded7d21926324d4c4a1decd4bc85781d3a8850515172b454ce5e5ba240a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_split"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:03cbe4515a6caf091de1569336529154c995bc0809b8e885a18a8c30b4be6a9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_writer_report_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:fb44cf3ce9c234fd930083dd9e00de5ce6a7dcb1de2178c09f8ff32d4fba7fbd",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base.\n\nAnchor: `worklist_shape_problem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:3c161917c7c62109eea4ce38ca164dafd73486b24419aac55ddaca7d323658c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_trace_items"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_sources"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:e2b16ed0fdad000807126f322a36355cfb9fea15ec7d27ac256858d903c8dd8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_counted"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:975785ce48b81d65bbb32a968d36a6e3edb7fbdb25eb8278c61039a975023926",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:8f7556548b74107eb9d5e2ff72f583a0542f95e2c983e87fe02a0f91ba3dd441",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:915eccdc0181ca1cff0428dfd4c5ac57bc68e6f004201a29ef0ed294d30e9d6c",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Worklist and changed-link admission precede validation and file publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
             "locator": {
               "kind": "symbol",
               "name": "write_knowledge"
@@ -427,29 +591,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:c1363b6b250cdfc8b329d17cf693db7de96277c5960578ab4174b9d9c515b2f6",
             "locator": {
-              "end": 112,
+              "end": 114,
               "kind": "line_range",
-              "start": 90
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The questions reach the task document after validation and before any file.\n\nAnchor: \"refused = _append_raised(request, authoring.raised)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:d61b7767947d57429554ecb976322af08e7d1eda5f216ede903ce3a1fa18aeca",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 92
             }
           },
           "kind": "code"
@@ -461,41 +608,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:5bbbf40b90825b25eabe42452a741017154c176841529067516e25f62091e44f",
             "locator": {
-              "end": 263,
+              "end": 276,
               "kind": "line_range",
-              "start": 257
+              "start": 270
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
             "locator": {
-              "end": 362,
+              "end": 410,
               "kind": "line_range",
-              "start": 352
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The carry-forward call and its report field.\n\nAnchor: `carry_entries`; \"carried=carried\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "373f27fe85b66dcfbd01a61751f5e85ba5597c3b",
-            "content": "sha256:3bdf8d55cb79cb63aa1f9fa69a72256bd14308be228550cda5690530f7d89afd",
-            "locator": {
-              "end": 157,
-              "kind": "line_range",
-              "start": 144
+              "start": 400
             }
           },
           "kind": "code"
@@ -514,59 +644,6 @@
               "name": "carry_entries"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/carry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:fbcded7d21926324d4c4a1decd4bc85781d3a8850515172b454ce5e5ba240a56",
-            "locator": {
-              "end": 382,
-              "kind": "line_range",
-              "start": 365
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:b35b7429993be941156840aaf87fe3a56d1da3a883974aec12dbc6dfae6ef86e",
-            "locator": {
-              "end": 153,
-              "kind": "line_range",
-              "start": 151
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:e5a927d8d89e0fce279ffd565c631e388dd36072288663dfd6af14258bf4f685",
-            "locator": {
-              "end": 314,
-              "kind": "line_range",
-              "start": 313
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
-            "content": "sha256:fd67c2417b32b350d97b8fc7090a40b8bf31e3d0da4acd71fa443b4440aa63df",
-            "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 389
-            }
           },
           "kind": "code"
         }
