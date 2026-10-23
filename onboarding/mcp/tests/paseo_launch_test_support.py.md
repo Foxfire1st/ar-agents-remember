@@ -10,6 +10,8 @@ GivenToAgentExpectations derives expected handover, tool-server binding, sandbox
 
 The module additionally owns `FakeRuntime`, its catalog/server constants, recorded launch-call set, the RequestId protocol its projections read a request through, and handover_object/planned_handover, which build the complete hand-over and its file reference the projection names. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent. Launch/status/document-chat suites share the fake, not a live harness or production host.
 
+`GivenToAgentExpectations.locator` derives the request's product-owned locator, and `artifact` reports two paths: `path` is the locator's `<request id>/<artifact name>` entry, which the recovery note and the first message name, while `canonicalPath` is the file beside the report that the launch actually writes. `watch_launch` watches `canonicalPath`. The expectations therefore describe the bounded reachable path and the stored path separately, without changing the fixture's fake-host boundary.
+
 ## Current scoped contract
 
 `FakeRuntime._agent_create` records `modeId` and a copied supplied `featureValues` map independently of the optional `service_tier` entry. It emits `serviceTier` only when that key exists, so a permission-feature-only request does not require a speed choice. This makes fake-host observation possible without claiming native application or permission behavior.

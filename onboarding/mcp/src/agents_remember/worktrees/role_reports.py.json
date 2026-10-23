@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_group_role_folders"
+        }
+      },
+      "id": "RLZ-8K7G9B",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "remove_group_role_folders collects all role artifacts before reclaiming request locators.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
-        "content": "sha256:5dfc95151742816e2c24c06371134b6d0cc32d8533947b3efe39db125a7ec43d",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
         "locator": {
           "kind": "symbol",
           "name": "remove_group_role_folders"
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
         "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
         "locator": {
           "kind": "symbol",
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d4880cb19dc0dff6c3fd42b3dbfc8a91a33da38",
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
             "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
             "locator": {
               "kind": "symbol",
@@ -150,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d4880cb19dc0dff6c3fd42b3dbfc8a91a33da38",
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
             "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
             "locator": {
               "kind": "symbol",
@@ -166,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d4880cb19dc0dff6c3fd42b3dbfc8a91a33da38",
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
             "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
             "locator": {
               "kind": "symbol",

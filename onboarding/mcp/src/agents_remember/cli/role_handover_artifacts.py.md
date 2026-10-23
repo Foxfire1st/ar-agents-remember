@@ -22,6 +22,10 @@ Unlike missing primary/takeover artifacts, missing detail snapshots are not reco
 
 Primary handover size limit, exact first-message recovery line, atomic hard-link publication and canonical-folder validation remain in force.
 
+## The published path and the canonical file
+
+`handover_artifact_reference` and `write_handover_artifact` name the artifact twice. `path` is where the agent reaches it: the request's locator directory plus the artifact's own basename when a locator is given. `canonicalPath` is the same file beside the report with every link of its folder resolved. The file is still created, reused and checked at its canonical place, with its own name, write-once mode 0444 and exact bytes; only the path the agent is given changes. `checked_handover_artifact_target` rebuilds a lost request locator at the folder the receipt recorded before it compares the reached file, and refuses a locator that leads to another folder with the refusal's remedy. `artifact_line` therefore names the locator and the digest in the first message, while the complete hand-over keeps its own sibling path.
+
 ## Evidence
 
 - Per-source deterministic detail names reuse immutable publication. [7]

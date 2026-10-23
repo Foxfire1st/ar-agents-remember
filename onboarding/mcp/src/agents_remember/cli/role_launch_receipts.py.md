@@ -33,7 +33,7 @@ saved-call replay semantics are otherwise unchanged.
 
 _execute_prepared_launch honors closing barriers, reconciles the task step-up decision before execution, restores/verifies saved artifacts, collects predecessor reports and renews step-up predecessor liveness before the native call. After publishing a nonclosing host outcome it reconciles observed choices into the same task decision; a failed acknowledgment keeps receipt facts for same-request recovery, not a second launch.
 
-_restore_launch_handover rebinds report access then validates every frozen detail, selects heldOpeningPrompt or the saved first message, and restores/verifies primary and takeover artifacts. Missing detail bytes require original snapshots, never current-corpus regeneration. A detail-free legacy composition remains permitted.
+_restore_launch_handover rebinds report access and hands the saved targets to `restore_launch_files`, which rebuilds a lost request locator, validates every frozen detail and restores or verifies the primary, takeover and complete-hand-over files before the first message is sent. Missing detail bytes require original snapshots, never current-corpus regeneration, and a receipt that records no artifact pair keeps the detail validation alone. A detail-free legacy composition remains permitted.
 
 Outcome publication and observed choice bookkeeping move to role_launch_outcome and role_launch_choices; this file keeps compatibility seams. Rejected settled empty step-up receipts retain replayRequest, while ordinary resolved launches drop it and held seats retain their opening call.
 

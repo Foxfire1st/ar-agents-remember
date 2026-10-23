@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:2d7a0ad20596b244c29a60076925cb0acf9ba4264f7eebe8ce2f3bb128deb756",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
-        "content": "sha256:e9be333954c67ceb9a6ec49c61e85555765f0816f8ab55a6879022d13dee1752",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "content": "sha256:e8340269563dbcb8c870d8a9f6bafe48c94c0aaad707d986d5cee39e3088e44a",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -74,7 +74,25 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
+        "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
+        "locator": {
+          "kind": "symbol",
+          "name": "recovery_note"
+        }
+      },
+      "id": "RLZ-8F7RC7",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §2",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "recovery_note consumes the shared artifact reference and enforces the note ceiling.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -92,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -110,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -128,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -146,7 +164,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:5af30fa7f2b0102d719cfa66cc1c67342d88fc9e8f3798687c44a876c421edd5",
         "locator": {
           "kind": "symbol",
@@ -164,7 +182,25 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
+        "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
+        "locator": {
+          "kind": "symbol",
+          "name": "recovery_note"
+        }
+      },
+      "id": "RLZ-J0PZR0",
+      "invariant": "INV-ZBKDZR",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §4",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "recovery_note owns both the 600-character limit and the explicit impossible-to-fit refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ced19ea6b174f056a8a1a08c19beae94f6b0d78ab2659cc9b98e33781f3681e4",
         "locator": {
           "kind": "symbol",
@@ -182,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -200,7 +236,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -218,7 +254,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -236,7 +272,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -254,7 +290,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:408d4f9eea48cd27a4b0d7889a30459cd3993fd4320e04226850b10885937d63",
         "locator": {
           "kind": "symbol",
@@ -272,7 +308,7 @@
     },
     {
       "anchor": {
-        "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -295,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0482315deb6222f2909773abb02b19d56146a0f5",
+            "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
             "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
               "kind": "symbol",
@@ -361,12 +397,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
+            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1065,
+              "end": 1019,
               "kind": "line_range",
-              "start": 1025
+              "start": 979
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -379,12 +415,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
-              "end": 193,
+              "end": 201,
               "kind": "line_range",
-              "start": 119
+              "start": 127
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -415,12 +451,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
             "locator": {
-              "end": 321,
+              "end": 329,
               "kind": "line_range",
-              "start": 195
+              "start": 203
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

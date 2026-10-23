@@ -1,7 +1,7 @@
 {
   "anchor": {
-    "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
-    "content": "sha256:ed28af40f94e0a6fca7712c6b4186ed7bb497ec0e9c3322cf0d1e0b4790c68d8",
+    "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
+    "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
     "locator": {
       "kind": "symbol",
       "name": "recovery_note"
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L197",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",

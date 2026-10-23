@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The limit and the shortening order are pinned by the recovery-note cases, which hold the note at 600 characters and show which references are shortened first while the locator and digest stay whole."
+  },
+  "applicability": "Every role launch's recovery note.",
+  "conditions": [
+    "The note is at most 600 characters; task references are shortened, least specific first, before the locator and the SHA-256 are touched.",
+    "A note that still cannot fit is refused before the agent starts, and the refusal names the task references and the locator as the cause while saying that the folder is not one."
+  ],
+  "exclusions": [
+    "The first message's content.",
+    "The roles' own task references and their spelling.",
+    "A deep report folder as a refusal cause."
+  ],
+  "id": "INV-ZBKDZR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_agent_tools.py::RecoveryNoteTests::test_the_limit_and_the_shortest_form_are_exact; notes/reports/worker/d71994c1-f41e-4cbf-9999-f063dae40751/evidence/focused-final.txt"
+      ],
+      "path": "L199-curator-full-pass"
+    },
+    "handoffEntry": "MIK-R208@v1 §4",
+    "leaf": "260928-MIK-L199",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The 600-character recovery-note ceiling and its impossible-to-fit refusal remain enforced before an agent starts.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
-        "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
-        "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
         "content": "sha256:b060afa6a4dedda65db379082954429dccd0aee4485c2f6f44996bac9dbd781f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
-        "content": "sha256:7de5153ec9c20c97e49c46e454d8782a7c7ca6c2d95724c0e8667dab04c6da5e",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "content": "sha256:25724a880f70ee2f23dc60405b035bdd82f5ac15d7a523ed7cbf380f5f97dd79",
         "locator": {
           "kind": "file"
         }
@@ -128,8 +128,8 @@
     },
     {
       "anchor": {
-        "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
-        "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -166,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
-              "end": 743,
+              "end": 750,
               "kind": "line_range",
-              "start": 714
+              "start": 721
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -266,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -282,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -314,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
             "content": "sha256:8ec07c6d797285a2a8d249c453cec3a08a4f0a446b639948695cf35dd3675ef1",
             "locator": {
               "kind": "symbol",
@@ -362,7 +362,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",
@@ -394,12 +394,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a97775f66a9adbc99d3663ac6ab1b585d867072",
+            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 980,
+              "end": 1019,
               "kind": "line_range",
-              "start": 940
+              "start": 979
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -446,12 +446,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
             "locator": {
-              "end": 662,
+              "end": 669,
               "kind": "line_range",
-              "start": 569
+              "start": 576
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

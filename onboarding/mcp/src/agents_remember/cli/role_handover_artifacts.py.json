@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
-        "content": "sha256:4d158d7807677ce446035b0b40d8495340ce484326df1d3ba8aa9092da0e1810",
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:2511c8d3bf48b183947659848c4bfb2c5c58b1bccb9e9e15a51c7a84eb243e1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "handover_artifact_reference"
+        }
+      },
+      "id": "RLZ-6Y2Y88",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "handover_artifact_reference publishes that same locator alongside the canonical frozen artifact.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:809735a38872fe29b581beb1b1e8882d94a9b94bda9e214e296366398b21e235",
         "locator": {
           "kind": "symbol",
           "name": "write_handover_artifact"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
         "content": "sha256:dbdcdb6ae268dfb4b540af3751a7ca161c6a211dd870fd1d914ba783c1090c9f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
         "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
-        "content": "sha256:468cf5d69e9e32e595bc71baf3a59fda94f6496a954745fe729b3d206492f5bf",
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:d0d663bcfc091bc0986e96a22e6e35d8feb333fd372356726da4595410e9fb4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "artifact_line"
+        }
+      },
+      "id": "RLZ-HQ32SR",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §2",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "artifact_line writes that reference and digest into the actual opening message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
             "content": "sha256:3c80992011479cb850362c7118da9c8d25f5d4ffbd195f2fb4bfd668a8173834",
             "locator": {
               "kind": "symbol",
@@ -160,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
             "locator": {
-              "end": 662,
+              "end": 669,
               "kind": "line_range",
-              "start": 569
+              "start": 576
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -178,12 +214,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92d47bab1d7b32e75d1b90df160b7d90df78662a",
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
             "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
-              "end": 743,
+              "end": 750,
               "kind": "line_range",
-              "start": 714
+              "start": 721
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -214,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
             "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
             "locator": {
               "kind": "symbol",
@@ -230,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
             "content": "sha256:0a4361d03a45c742cba9e1477163995b1c25d9cfd3dabb6c40d6d3351b40784d",
             "locator": {
               "kind": "symbol",

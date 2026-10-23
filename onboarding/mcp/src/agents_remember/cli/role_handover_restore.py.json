@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+        "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+        "content": "sha256:70e3935194b5215ff956ec9f8aa0fd9f6fce24b3e414e187fac1c9728edb6f98",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_launch_files"
+        }
+      },
+      "id": "RLZ-0DXGTP",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "restore_launch_files owns reconstruction and validates frozen detail bytes before restoring files or replay.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
         "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
             "content": "sha256:bcee8bfdeb5157c306ce0125368c3d579f2ae722731f62cb7e021cbb9ac1ab1e",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
+            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
             "content": "sha256:d67762585df2cf1dc6ba7938db75c7e86dad4fce2dd862956f3e30d2abc93589",
             "locator": {
               "kind": "symbol",

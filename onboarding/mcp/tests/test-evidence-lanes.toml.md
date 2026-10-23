@@ -213,3 +213,7 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 - The seven new test modules are each selected once in `unit-regression`, in canonical order beside their neighbours [864]
 - The registration adds no lane identity or case-budget change, and every other membership set is unchanged [865]
+
+## Request-locator module registration
+
+`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are each selected once in `unit-regression`, in the list's canonical order: the first between `test_role_first_message.py` and `test_role_instruction_corpus.py`, the second between `test_role_launch_routes.py` and `test_role_message_files.py`. The seven lane identities, every other membership set and the case-budget policy are unchanged. Membership is selection metadata and establishes neither invocation nor pass.

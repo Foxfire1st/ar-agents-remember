@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Ownership is settled at preparation, reused by publication, rebuilt by the saved-target check, and reclaimed by the report-collection routes; no one of those places can keep one request's alias honest across its whole life."
+  },
+  "applicability": "Every request that publishes a hand-over locator, across start, repeat, restart, resume, saved-launch restore and terminal report collection.",
+  "conditions": [
+    "A repeat of the exact request reuses the alias; a lost alias is rebuilt at the report folder its receipt records; a name that would lead to another folder is refused before any hand-over file is written.",
+    "The alias stays available, or is deterministically rebuilt, for as long as the seat can resume.",
+    "Terminal report collection removes only the alias, never the report folder, and only when it leads into the folders being reclaimed."
+  ],
+  "exclusions": [
+    "Report-folder collection, fsync, atomic replacement and failure preservation, which the report-collection contract carries.",
+    "A locator that leads outside the reclaimed folders, which is left standing and reported."
+  ],
+  "id": "INV-Q9AV3B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_locator_replay.py; notes/reports/worker/d71994c1-f41e-4cbf-9999-f063dae40751/evidence/r1-before.txt; notes/reports/worker/d71994c1-f41e-4cbf-9999-f063dae40751/evidence/r1-after-sync-approved.txt; notes/reports/worker/d71994c1-f41e-4cbf-9999-f063dae40751/evidence/focused-final.txt"
+      ],
+      "path": "L199-curator-full-pass"
+    },
+    "handoffEntry": "MIK-R208@v1 §3",
+    "leaf": "260928-MIK-L199",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A request reuses its locator, restores a deleted locator before validating frozen details, refuses collision or retarget before sending, and removes aliases only through terminal report collection.",
+  "status": "proposed",
+  "supersedes": []
+}

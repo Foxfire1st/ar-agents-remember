@@ -922,3 +922,7 @@ The existing curator-coherence and read-boundary-oracle artifact consumer lists 
 
 
 - The existing curator-coherence and read-boundary-oracle artifact lists declare test_terminal_notice_commit_recovery.py as a consumer; declarations establish dependency reachability, not execution. [315]
+
+## Request-locator consumer registration
+
+`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 13 contracts and 76 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.

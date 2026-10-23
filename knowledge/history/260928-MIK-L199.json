@@ -1,0 +1,1235 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L199",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-1CF53K",
+      "items": [
+        "sha256:36f3244df8a807f3f4aee81a4e7be5a74e0e81f7ec3d9bfbc20c07ab386246c1"
+      ],
+      "reason": "New card: the locator's link, reuse, refusal, rebuild, bounded publication and alias-only reclamation cases.",
+      "sources": [
+        {
+          "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+          "path": "mcp/tests/test_role_handover_locator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_handover_locator.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1Q1JZD",
+      "items": [
+        "sha256:b72635b87c1f7cd47ee4ceba97179fab769646ff5c4b53fdab96c38cdea8b752"
+      ],
+      "reason": "The card now separates the published locator path from the canonical artifact beside the report and states the lost-locator rebuild in the saved-target check.",
+      "sources": [
+        {
+          "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_artifacts.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-24DHEZ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card registers both new launch-test modules as consumers on the settings-guard and Node-profile artifact rows; identities, contracts and other fields are unchanged.",
+      "sources": [
+        {
+          "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2ZR9NC",
+      "items": [
+        "sha256:fe6abb6c7e0d11aac90512cc73b3986f49c28227be1196bc2c9d1e7840925ef4"
+      ],
+      "reason": "This hunk declares the request-locator helpers and the collection step's result key; the removal behavior itself is carried by the §3 realizations over the reclamation functions, so the declarations state no separate invariant.",
+      "subject": "hunk:sha256:fe6abb6c7e0d11aac90512cc73b3986f49c28227be1196bc2c9d1e7840925ef4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-33S2RK",
+      "items": [
+        "sha256:24a111588d4d55cbeaf934b1483388f8700f456bdcd7cb9082b3ec8e5e27b33e",
+        "sha256:61a0bb1b1193e037a909b16e32b3c0ff60ae731dfffc061412a6a2bb85861f09",
+        "sha256:8106ff338b14152a55ed2f235753c5c89dd2f9c3dbddc4745754bc26537062e6",
+        "sha256:95c3e2caceb569db23289218d7a27f302d04d3b45a6ce07a3c371549bad9f874",
+        "sha256:ac17e737b2cb388ba65305276579a3396eff1f1b0b06b61dac7420c75e59ee1f",
+        "sha256:bd77e48605057aaca409215728cbc587af8a09303a05db5f96ac1952de0ca8a7",
+        "sha256:c23d9ff0d3626140f57b5aee1a903ea6fb6abfa1d4ff764ab5c1ee126649f76c",
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The card now carries DeepLaunchFolderTests' shallow/deep note equality, the locator census in the short home, and the pre-start refusal of a foreign locator.",
+      "sources": [
+        {
+          "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+          "path": "mcp/tests/test_paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-45HY0V",
+      "items": [
+        "sha256:9669d0aecd0f0103f855c2d0666ed8b4f27f5177b4d62578fdf5c55062112117"
+      ],
+      "reason": "The tests overview states what the route protects and how it is composed; this leaf adds two modules and cases in existing populations and changes no route ownership or selection contract.",
+      "sources": [
+        {
+          "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "a569a78eb752e4f5841002cebc3d9783461b076b",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        },
+        {
+          "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        },
+        {
+          "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+          "path": "mcp/tests/test_paseo_launch.py"
+        },
+        {
+          "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+          "path": "mcp/tests/test_role_handover_locator.py"
+        },
+        {
+          "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+          "path": "mcp/tests/test_role_locator_replay.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-464AWX",
+      "items": [
+        "sha256:a6b9ba9a0503ac0b54e1c7c829a0d5c412e933af0e25af310b7e956db0041533"
+      ],
+      "reason": "The card moved with the module from cli/role_handover_locator.py to worktrees/role_handover_locator.py with its content unchanged: one bounded request-owned directory alias, reused by a repeat, rebuilt when lost, refused on collision and reclaimed alone.",
+      "sources": [
+        {
+          "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+          "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/role_handover_locator.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-49BJQK",
+      "items": [
+        "sha256:051e0da915057f31d77426a387a91a562e3f5b77b8629af9cedabbf7811a47d1",
+        "sha256:2b712e5f9dd37f4c5771b882c183f1652ceaa18898648de8cd82ed8b654f5bd3",
+        "sha256:395e8c62471d29da008b4c71b9673c56ca1e60642d6c24dbf8bcb298d07faca3",
+        "sha256:42ca5485e6d21cad8745c678f163e61b46e3b03fa159153573aba2f34737055b",
+        "sha256:50564bce068f70377f6126aa5dd6fefec938bf9f57a703497fe0de994f9cc135",
+        "sha256:80a3eb425142ee35394d2afb13a823750795d201cc1deb57a8dfa979ce65fae7",
+        "sha256:9012db46b29c847b56218b78e689005c433fb5724c40bf9abaeb92da48dcc70e",
+        "sha256:96af3ca81354da883f96cbb22a1ccd10c516cff7a1a449c97f73a59125fe3742",
+        "sha256:9ed15f8eff8e0cd2f830dd6a7c9620131fc0767cd75424730bf8daf2499779e7",
+        "sha256:b9b03dd51f5adb72c64e26e3fac258c57d9282cacb42851608dc873408e67ac1",
+        "sha256:bbdd139e788867021ef274211c20a333abfe22851593db76cd125a10d12bce39",
+        "sha256:e074031828fe6d9dd2db82beb767bff4ead4fb6b39d3c206db216d16d193c7ef",
+        "sha256:fb01f67037337b3dc7870e50fde23a965d2e2911baf21bb82469704cffe24853"
+      ],
+      "reason": "The card now says the hand-over cases read canonicalPath and that the locator path is the one the note and first message name.",
+      "sources": [
+        {
+          "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+          "path": "mcp/tests/test_paseo_agent_tools.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_paseo_agent_tools.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4EEQD3",
+      "items": [
+        "sha256:44cd0e8e21e9bb4cfacdf4bd9fde941a00cf1ed7fed5e8ff2fa54f14de46f964"
+      ],
+      "reason": "The card now states that publication settles the request's locator before the first file is written and refuses a retargeted name there.",
+      "sources": [
+        {
+          "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+          "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_publication.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6D06K4",
+      "items": [
+        "sha256:9e8629633870610e25a080bf951088fd3ca2952fc59f898657af3649d8fd8622"
+      ],
+      "reason": "The card now places locator rebuild and frozen-detail validation in restore_launch_files and keeps the detail-free receipt path.",
+      "sources": [
+        {
+          "blob": "978c2c9d1c07d036316e7d483a5b15ece96cedb8",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_receipts.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+            "content": "sha256:d000e185ce36c7e2711e15ad5e32b2f5241d345ab5b57f0833e5568c62ec16c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+          },
+          "before": {
+            "blob": "185c92fc0b914807833c6d68054454f3490b58a7",
+            "content": "sha256:3baf4aee000e7c52203479017cb99e7a7bc2816b1855302cfc1866bbf402740b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+          },
+          "id": "RLZ-DJ48J8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6S0584",
+      "items": [
+        "sha256:3de850ccac45c31b7b70c3aacc84f6faa27103062cf1f306b54c3da228df6fe0"
+      ],
+      "reason": "The projection, its once-only instructions and its token bounds are unchanged; publication now settles a request locator before writing the files the projection names.",
+      "revision": 1,
+      "subject": "INV-ZVD184"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 2
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-895W3P",
+      "items": [
+        "sha256:ea1b5733707ee4639fbb6c231835aff11282231cd972367d368b7b28d96f770a"
+      ],
+      "reason": "All eight members were read. The launch routes file passes the request id to hand-over publication; catalog resolution, mode and feature choices, refusal by name and server binding are unchanged.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+            "content": "sha256:f30e05f5814835973cfd34f58e348f6526bfc2b95a68852867b2982ac37b28fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "7b4e9249239565b74d953cc4c000c9c9973a19ea",
+            "content": "sha256:23e96b38614b1d31043c5e009c3ca9dfacbfcb6b0a4c2dfbf56c36e165729f3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+            "content": "sha256:aa13fd14c729d702cc1c8189ee3aa883d2b8900b13bff85f90a2e321939d3ab4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "368bcc32c8ddb16bb006a4ac3a550764e1ca783d",
+            "content": "sha256:e7bf0acba93ec31449694581d272fa5af6d52e0be9143aed16f5297026e7952b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9GVD25",
+      "items": [
+        "sha256:b82a695497e6aa0c790d26629f4e7d457e1bf8b449727ebe036b84ddb5b2d59d"
+      ],
+      "reason": "The catalogs retain every prior registration; the two new module members are additions, with no duplicate identity and no removed consumer.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A9ZPX0",
+      "items": [
+        "sha256:fb19124aa4d25b27e43f87aee7ef95ffbc53a589ab7ba545f54d863849200fea"
+      ],
+      "reason": "This hunk declares the request-locator helpers and the collection step's result key; the removal behavior itself is carried by the §3 realizations over the reclamation functions, so the declarations state no separate invariant.",
+      "subject": "hunk:sha256:fb19124aa4d25b27e43f87aee7ef95ffbc53a589ab7ba545f54d863849200fea"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ATNHFT",
+      "items": [
+        "sha256:b33a61929d0d0dff6d4a4eb642185af3165698aaeba59a67bed7dce800e55d42"
+      ],
+      "reason": "The card now states that both reclamation routes remove only the launches' locators after collection, leave foreign or outside names standing, and remove nothing when collection failed.",
+      "sources": [
+        {
+          "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/role_reports.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B9ZQ9X",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "The card now names role_report_preparation as the owner of the report path and its locator settlement; the preparer no longer keeps the report-folder constant.",
+      "sources": [
+        {
+          "blob": "cdd7fae6ffdf675bd00cce3e1ce0aa6686d91611",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+            "content": "sha256:2616e23d70560bbbad70de807e5d02c88430dd1066fda6d5e13a9afe1af0a2ce",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+            "content": "sha256:dc39973ad6cc6c8bcaee9721a1b19304787f6ab454f8e7d5742d20131a430d64",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-TZXFK2"
+        },
+        {
+          "after": {
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-8H3HVX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BF33A4",
+      "items": [
+        "sha256:2f636fb46cb20082461061dcd12af59cbe7c470bb40e7e59cc3f0f42c5d0ee1e"
+      ],
+      "reason": "The launch's agent-id mint and receipt creation are unchanged; the routes file only passes the request id to hand-over publication.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CDZKVZ",
+      "items": [
+        "sha256:20ec44f5ba417abf1b0cc54618a0171d70fe89e943cd47b42a6d424781795647"
+      ],
+      "reason": "This import supplies the frozen-detail validator that restore_launch_files now calls; the validation's obligation is carried by the restore realization of §3, so the import states no further invariant.",
+      "subject": "hunk:sha256:20ec44f5ba417abf1b0cc54618a0171d70fe89e943cd47b42a6d424781795647"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-CQ7VNN",
+      "items": [
+        "sha256:fa19e0d3d5c366d18be04fa9df78494917301c242e262c26d716a16e310caade"
+      ],
+      "reason": "The card's saved-path requirement now says the artifact's given path must resolve to the report's sibling, so a request locator is admitted rather than refused.",
+      "sources": [
+        {
+          "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instruction_details.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DRH643",
+      "items": [
+        "sha256:613814b5cccabf45aec7e3e46680066743b006ed58e81a5d59d4b3b73fa0d173"
+      ],
+      "reason": "New card: the report-path owner settles the request's locator before any report folder or frozen detail is written.",
+      "sources": [
+        {
+          "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+          "path": "mcp/src/agents_remember/cli/role_report_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_report_preparation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EBGHE3",
+      "items": [
+        "sha256:5913a7f9193ce055ee3a8dd1656dd755ef4a1975dce57bdb3f6e398a8dc94a88"
+      ],
+      "reason": "This hunk only moves the report-folder constant's import to its new owner; the read-only report routes, their recorded-path confinement and their refusals are unchanged, and the card's no_impact row carries the file.",
+      "subject": "hunk:sha256:5913a7f9193ce055ee3a8dd1656dd755ef4a1975dce57bdb3f6e398a8dc94a88"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FEWKW8",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card registers both new modules once in unit-regression in canonical order; no lane identity, membership or case-budget changes.",
+      "sources": [
+        {
+          "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXFXST",
+      "items": [
+        "sha256:ab3fbed1fb6779694bb1c89c3e523ebd1c6a90ab6681c14035943038bed89db9"
+      ],
+      "reason": "This hunk only moves the report-folder constant's import to its new owner; the read-only report routes, their recorded-path confinement and their refusals are unchanged, and the card's no_impact row carries the file.",
+      "subject": "hunk:sha256:ab3fbed1fb6779694bb1c89c3e523ebd1c6a90ab6681c14035943038bed89db9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GV5VBX",
+      "items": [
+        "sha256:839f8f9b3aea86eff0af6badaeb099ef026547a24f057d4df91260c54e4f9de3"
+      ],
+      "reason": "The read-only report routes and their recorded-path confinement are unchanged; the module only imports the report-folder constant from its new owner, so the card's account holds.",
+      "sources": [
+        {
+          "blob": "a046f40683057e476b67be664c88733001571611",
+          "path": "mcp/src/agents_remember/cli/role_report.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_report.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GV7297",
+      "items": [
+        "sha256:17be99b5062ff8a4316c80a9ae72d8a03429972f841e4c716d468e3ee53cceba",
+        "sha256:1b2f322f4dfc6abc62652fcc749ba601a7b65d51476d12a39c5ae72154f76894",
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433",
+        "sha256:8adc2576fa42515148101d560281d9cf0b4cb5139e06eb608ef92eb19e6b2810",
+        "sha256:94fa58b7dacb936d08b66dd27138b5c47387b0108dc728363fb7fe339fc54e7f",
+        "sha256:cfc9cf1caa6941eccf40ab605ecd082a9a11f39cf95e2ae45772a98c5ec847a8"
+      ],
+      "reason": "The card now says artifact() reports the locator path and the stored canonical path separately, and watch_launch reads the stored one.",
+      "sources": [
+        {
+          "blob": "a569a78eb752e4f5841002cebc3d9783461b076b",
+          "path": "mcp/tests/paseo_launch_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "content": "sha256:37dda973b7b4e6c5b0ddbc93c4e6a2c266e023a21ce47129ce72265d1703027c",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_conflicting_complete_handover_refuses_before_the_text_is_created"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+            "content": "sha256:e069f4775b3698f8caeb615b680db358e71d142e2d193ff92c18643764405107",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_conflicting_complete_handover_refuses_before_the_text_is_created"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-FH53T4"
+        },
+        {
+          "after": {
+            "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+            "content": "sha256:a93d447ec4c0540d99d759fe8b2faeea2508a1a601aba774bb99fb3361c1cdf8",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_handover_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+          },
+          "before": {
+            "blob": "185c92fc0b914807833c6d68054454f3490b58a7",
+            "content": "sha256:6b1802c7b2476786db0030699ee634e06cd31b3709c47067b1ff331b256696a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_handover_files"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+          },
+          "id": "RLZ-RWK32Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-GZPN5J",
+      "items": [
+        "sha256:99ea2c4ccdf0ab699e33bd0f110118dd4d74edd294777d7bb8d6f79ede312164"
+      ],
+      "reason": "The artifact line still names both hand-over files by absolute path and SHA-256, and both are written before the message; the text path is now the request's locator, which is absolute and opens the same bytes.",
+      "revision": 1,
+      "subject": "INV-5H5VR2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HV10ZS",
+      "items": [
+        "sha256:6a23b66ec8908b06b8396986edb557abb124c0d0bcd4293505f9ea52687a0e56"
+      ],
+      "reason": "This hunk declares the request-locator helpers and the collection step's result key; the removal behavior itself is carried by the §3 realizations over the reclamation functions, so the declarations state no separate invariant.",
+      "subject": "hunk:sha256:6a23b66ec8908b06b8396986edb557abb124c0d0bcd4293505f9ea52687a0e56"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J1WNFV",
+      "items": [
+        "sha256:c67e1f040712742cbe8dcf1d30d8b833212d28ca506abf6d9c43d32e269dcf19"
+      ],
+      "reason": "The card now states that a missing locator is rebuilt before the frozen details are validated, and that both files are restored only after those checks.",
+      "sources": [
+        {
+          "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_restore.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JN2WQM",
+      "items": [
+        "sha256:5bbb158f1ba821f48ab328504f30c59e091421d44dcb354d6f81e86493bae086"
+      ],
+      "reason": "New card: replay rebuilds only a lost locator, a collision refuses before artifact writes, and terminal cleanup reclaims aliases once.",
+      "sources": [
+        {
+          "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+          "path": "mcp/tests/test_role_locator_replay.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_locator_replay.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JP4Q6K",
+      "items": [
+        "sha256:0dbfa136776aaa767c3072b0b309761722c48102e9ab79fdeb9c8e67f1ff454a"
+      ],
+      "reason": "This import supplies the frozen-detail validator that restore_launch_files now calls; the validation's obligation is carried by the restore realization of §3, so the import states no further invariant.",
+      "subject": "hunk:sha256:0dbfa136776aaa767c3072b0b309761722c48102e9ab79fdeb9c8e67f1ff454a"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K1A5XB",
+      "items": [
+        "sha256:26286929ceddda1eeef6ef8814af4cb24758fd96177fc70903fe1e5df0bc4223"
+      ],
+      "reason": "The recorded deep-enclosure cause is removed by this leaf's code candidate: the recovery note now names the request's bounded locator, so a report folder's depth no longer overflows its 600 characters. The record's anchor moves to the current recovery_note. Its closure names the code commit that removed the cause, which this pre-closeout pass does not yet hold, so the record stays open rather than name an invented commit; the closeout's owner closes it with that commit.",
+      "revision": 2,
+      "subject": "WKN-J8RS6F"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KE8E0M",
+      "items": [
+        "sha256:ab56fb4b991cb2a44486ac0c58ce9db1323141c5f954b3bb25a31c01da61f045"
+      ],
+      "reason": "This hunk declares the request-locator helpers and the collection step's result key; the removal behavior itself is carried by the §3 realizations over the reclamation functions, so the declarations state no separate invariant.",
+      "subject": "hunk:sha256:ab56fb4b991cb2a44486ac0c58ce9db1323141c5f954b3bb25a31c01da61f045"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MM0WSX",
+      "items": [
+        "sha256:e25e87bdedbedc9a262faa79f108c7d0d1f89e139dfbee8391e8a2ad78465043"
+      ],
+      "reason": "The hunk adds the intra-package import line and re-sorts three imports in role_reports.py after the locator moved to the same package; the module's obligations and their invariants are unchanged.",
+      "subject": "hunk:sha256:e25e87bdedbedc9a262faa79f108c7d0d1f89e139dfbee8391e8a2ad78465043"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-XG75PH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MTYFA7",
+      "items": [
+        "sha256:8dcc53798602aaba83685d9d30f3a32def87568e2be6c012bcaf2e710bd57622"
+      ],
+      "reason": "Exclusive receipt creation and the two-process convergence are unchanged; the routes file only passes the request id to hand-over publication.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N4MJTC",
+      "items": [
+        "sha256:d22bd07ab1025f82052446c468df2153e31db1b415ddcdf48f8725867717330d"
+      ],
+      "reason": "New card: one bounded request-owned directory alias, reused by a repeat, rebuilt when lost, refused on collision and reclaimed alone.",
+      "sources": [
+        {
+          "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+          "path": "mcp/src/agents_remember/cli/role_handover_locator.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_locator.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_group_role_folders"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "before": {
+            "blob": "675495383cbade6539bbd0d4c006ea021a940ef1",
+            "content": "sha256:5dfc95151742816e2c24c06371134b6d0cc32d8533947b3efe39db125a7ec43d",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_group_role_folders"
+            },
+            "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+          },
+          "id": "RLZ-F76ZKS"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NYFJ89",
+      "items": [
+        "sha256:857c4dc2fb1ad9e92fe878029865cd896f4eabfbd40e8a9f178715ff95e179a1"
+      ],
+      "reason": "Report collection, fsync, atomic replacement and failure preservation are unchanged; locator removal now follows successful collection and never replaces it.",
+      "revision": 1,
+      "subject": "INV-N70HF0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P0VRHX",
+      "items": [
+        "sha256:d0c7ecfc0823a4da44a913d0b3670b2fc23042222ce81b19ca9568f0ae505146"
+      ],
+      "reason": "The worktrees overview states the route's purpose and composition; the new locator removal is a file-level step in role_reports.py whose own card carries it.",
+      "sources": [
+        {
+          "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+          "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
+        },
+        {
+          "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+          "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "250086013b70bfe136f2b26da84c46b826667a01",
+            "content": "sha256:aa13fd14c729d702cc1c8189ee3aa883d2b8900b13bff85f90a2e321939d3ab4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "368bcc32c8ddb16bb006a4ac3a550764e1ca783d",
+            "content": "sha256:e7bf0acba93ec31449694581d272fa5af6d52e0be9143aed16f5297026e7952b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "67d0e1bc2d0218b52ef218c47f94477796b83283",
+            "content": "sha256:f30e05f5814835973cfd34f58e348f6526bfc2b95a68852867b2982ac37b28fb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "7b4e9249239565b74d953cc4c000c9c9973a19ea",
+            "content": "sha256:23e96b38614b1d31043c5e009c3ca9dfacbfcb6b0a4c2dfbf56c36e165729f3a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R52CEC",
+      "items": [
+        "sha256:5f1063a78ca930f933c9a796bd1c389100195c3d4077a566fc5eb241743cea22"
+      ],
+      "reason": "The two evidence catalogs gain the two new launch-test modules as members; the turn-end rule, its route and its observed behavior are unchanged.",
+      "revision": 4,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+            "content": "sha256:805bef44bfc2b140f1dc829d72b9a9627e0293ebec326c63756f352efb2429ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_report_preparation.py"
+          },
+          "before": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:7a8cad7a4059cc95233992378766546c30d7689d21ead9faa255fc9c33ece757",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_report_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-HT65KW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-S03CZS",
+      "items": [
+        "sha256:459ed517007db1e65bdbd1814f10cc2626df021422299fb77e4dd57251e9139e"
+      ],
+      "reason": "The request-qualified report-path owner moved out of role_launch_preparation.py into role_report_preparation.py and is now named role_report_path; the invariant's statement, scope and meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-VZJRTM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "content": "sha256:16da99a2af12298407c726759b957cf42f04291b8ad24273f5d2d7afbd2fe395",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "before": {
+            "blob": "a02e919bbcb629ea05ef129f7d23e22354927a8f",
+            "content": "sha256:c91655741efadd40220b7f41f50ca6925d6875a173a05a62367738ae0ac9b53a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through"
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "id": "PRF-E4EDZV"
+        },
+        {
+          "after": {
+            "blob": "978c2c9d1c07d036316e7d483a5b15ece96cedb8",
+            "content": "sha256:678e6cfc277920634f50800ae4446bbf4c4c466132f101cf5ce2e51b5b7db722",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "31c503d298021470ced9e65f6f8df759343d1700",
+            "content": "sha256:d7a8ccd495efa39b598ed5552a8faa34876607dd26db2fd9639fb04b7d70d1d2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-SA35BD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SPQ1V3",
+      "items": [
+        "sha256:4327c1917c12bc5464b0d52e456e85dfbb38f43e108ee280416e93e907941484"
+      ],
+      "reason": "The saved-message checks, their refusals and the restore of a missing file are unchanged; a missing request locator is rebuilt before those checks, and the frozen-detail validation now runs in the same restore order.",
+      "revision": 2,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-T61JT4",
+      "items": [
+        "sha256:cb6e37c119682c6d4fa24185e0165866489b4658bbae760297628fbab37b6162"
+      ],
+      "reason": "Both members were read. The frozen detail snapshots and their validation keep their bytes and order; only the accepted artifact path may now be a request locator that resolves to the same sibling.",
+      "revision": 1,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "content": "sha256:25724a880f70ee2f23dc60405b035bdd82f5ac15d7a523ed7cbf380f5f97dd79",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:7de5153ec9c20c97e49c46e454d8782a7c7ca6c2d95724c0e8667dab04c6da5e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-WSAM04"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TBDH5J",
+      "items": [
+        "sha256:5a148393d41f8d1f2275cc212fc8ca886893727ad430d9700242cea913af94e9"
+      ],
+      "reason": "The launch routes file changed only to pass the request id into hand-over publication; mode resolution and its refusals are unchanged.",
+      "revision": 2,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8XCZY1",
+          "revision": 1
+        },
+        {
+          "id": "INV-N70HF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0DCW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z1HWDF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TZDTDQ",
+      "items": [
+        "sha256:cac40c80dac54365843110e7c22e62cfbfc98a92267e0f19d0e0332f67450863"
+      ],
+      "reason": "All four members were read at their candidate revisions. Report collection still precedes folder removal, and the new locator removal runs after collection and only on aliases that lead inside the reclaimed folders; the joint guarantee is unchanged.",
+      "revision": 1,
+      "subject": "FAM-2BRZW7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+            "content": "sha256:e8340269563dbcb8c870d8a9f6bafe48c94c0aaad707d986d5cee39e3088e44a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+            "content": "sha256:e9be333954c67ceb9a6ec49c61e85555765f0816f8ab55a6879022d13dee1752",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-2GJ47Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V3XRRV",
+      "items": [
+        "sha256:8bdede40115b4058846b9dfab7fbf64c87e2ba801d536f64bf0a37003dc7c85f"
+      ],
+      "reason": "paseo_launch.py changed only in its recovery note; role settings, their provenance and the host's retained arguments are unchanged.",
+      "revision": 1,
+      "subject": "INV-9DMNQS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WNWEZ7",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "The card now carries the recovery note's bounded-locator account: the locator and digest stay whole, task references shorten first, and a deep folder is not a refusal cause.",
+      "sources": [
+        {
+          "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XF0Y6X",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "The card now states that publication settles the request's locator before the first hand-over file exists.",
+      "sources": [
+        {
+          "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "content": "sha256:31a81d5eebc1095448432a35ed5d4c70cf904a3774dbd827570416918f82fe5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-3WT1SY"
+        },
+        {
+          "after": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:809735a38872fe29b581beb1b1e8882d94a9b94bda9e214e296366398b21e235",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+            "content": "sha256:4d158d7807677ce446035b0b40d8495340ce484326df1d3ba8aa9092da0e1810",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-70KS6M"
+        },
+        {
+          "after": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "0a738ef87e1909fbdd064952c671d72ef09844f8",
+            "content": "sha256:468cf5d69e9e32e595bc71baf3a59fda94f6496a954745fe729b3d206492f5bf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-MXZRHV"
+        },
+        {
+          "after": {
+            "blob": "cdd7fae6ffdf675bd00cce3e1ce0aa6686d91611",
+            "content": "sha256:6121c283f29571891294d2c3fa8935d7dba6d683a0ceff66543cc2e28e969eb2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "8d3f59bbf61c7dafad84e97e4dcf61dcd02b52fd",
+            "content": "sha256:fa258d45d55ab49ae278b6ce245a8f18ce42afb2c09a786655d822934f749693",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-T0T191"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y8JCNH",
+      "items": [
+        "sha256:8b12087fbcd448dc51921f9d56e8e93ab5da384a4195a2a098ad7e129525f31d"
+      ],
+      "reason": "The artifact is still stored beside the report with its own name, bytes, mode and write-once behaviour; only the path the agent is given is the request's locator.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-YSBAVY",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "All five members were read. The request-qualified report path moved to its own module and role_report.py imports the folder constant; Investigator scope, slots, listing, retry identity and report ownership are unchanged.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:9dae52b611a8ccc2196c26b91f61aa7eeb51cb0d665e50b3d4dc8fbdc5f5dca3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:636a4d62d5d5bd7dc78e7d0e719348663ab2ea3a6bf9388698ca6bb011d2060c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-K57X9H"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YWMPEQ",
+      "items": [
+        "sha256:02fa60ed744ff46e3e8680b34530d8ccbd2bdced1a59d26d5a375c752c85d4f7"
+      ],
+      "reason": "The frozen detail snapshots, their names and their validation are unchanged; _require_detail_target now compares resolved paths so the request's locator reaches the same sibling instead of being refused.",
+      "revision": 1,
+      "subject": "INV-7KDG7C"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZRG0SC",
+      "items": [
+        "sha256:f53e6d5aa318c2dc392ee1d915d335da7ec60bf58bfbfabecd73eb36e25dc154"
+      ],
+      "reason": "The mcp route overview states the package's purpose, composition and boundaries; this leaf adds one cli module and one worktrees cleanup step inside those routes without changing the route account.",
+      "sources": [
+        {
+          "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+          "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+        },
+        {
+          "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+          "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+        },
+        {
+          "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+          "path": "mcp/src/agents_remember/cli/role_handover_publication.py"
+        },
+        {
+          "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+          "path": "mcp/src/agents_remember/cli/role_handover_restore.py"
+        },
+        {
+          "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        },
+        {
+          "blob": "cdd7fae6ffdf675bd00cce3e1ce0aa6686d91611",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "978c2c9d1c07d036316e7d483a5b15ece96cedb8",
+          "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+        },
+        {
+          "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        },
+        {
+          "blob": "a046f40683057e476b67be664c88733001571611",
+          "path": "mcp/src/agents_remember/cli/role_report.py"
+        },
+        {
+          "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+          "path": "mcp/src/agents_remember/cli/role_report_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -11,6 +11,10 @@ The current source facts below replace the former operative inventory. The separ
 - agent_create_input removes only agents-remember from an eligible supplied MCP map and forwards the provider options already saved in the agent definition. The internal serverExclusion record is not a host payload key. build_launch_call constructed the supported Claude providerOptions.disallowedTools with existing host deny rules preserved.
 - serviceTier is projected into featureValues.service_tier.
 
+## Recovery note bound
+
+`recovery_note` composes the role, the task references and one `Assignment file: <locator> (SHA-256 <digest>).` line. The path it names is the launch's bounded locator — the product-owned directory alias of the report folder — so the note's length does not grow with the folder the hand-over lives in. Task references are shortened, least specific first, before the note would cross `RECOVERY_NOTE_LIMIT` (600 characters); the locator and the digest stay whole. A note that still cannot fit is refused before the agent starts, and the refusal names the task references and the locator as the cause while saying that the folder is not one.
+
 ### Source and authority bounds
 
 - Source comparison: `mcp/src/agents_remember/cli/paseo_launch.py:371-424`.

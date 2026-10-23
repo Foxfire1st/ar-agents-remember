@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_report_preparation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+        "content": "sha256:805bef44bfc2b140f1dc829d72b9a9627e0293ebec326c63756f352efb2429ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_report_path"
+        }
+      },
+      "id": "RLZ-224PDV",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "role_report_path validates the request locator before preparation writes details.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+        "content": "sha256:805bef44bfc2b140f1dc829d72b9a9627e0293ebec326c63756f352efb2429ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_report_path"
+        }
+      },
+      "id": "RLZ-HT65KW",
+      "invariant": "INV-VZJRTM",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §8",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The report owner binds a selected task’s notes and request UUID.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The report name is request-qualified and task-bound or taskless by the selected role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+            "content": "sha256:805bef44bfc2b140f1dc829d72b9a9627e0293ebec326c63756f352efb2429ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_report_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request locator is settled at the report folder before the report folder or any file is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65e5cb6c0c060e1c7a253bb5ef36616d95190ff0",
+            "content": "sha256:805bef44bfc2b140f1dc829d72b9a9627e0293ebec326c63756f352efb2429ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_report_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

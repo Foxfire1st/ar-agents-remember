@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
-          "end": 995,
+          "end": 1019,
           "kind": "line_range",
-          "start": 955
+          "start": 979
         }
       },
       "facet": "Interrupts between receipt and call and checks retry retains one agent identity.",
@@ -38,12 +38,29 @@
     },
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+        "content": "sha256:f0f9a5e4c0af53589b67b72220b5355183cdd3e1625994fa8a50537ca21ed247",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeepLaunchFolderTests.test_the_note_and_the_path_it_names_tell_the_same_at_any_depth"
+        }
+      },
+      "facet": "At a shallow and a deep report folder the note stays within 600 characters and names the same locator and SHA-256 as the first message's first line, which opens the frozen bytes.",
+      "id": "PRF-JM4M51",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §2",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
-          "end": 741,
+          "end": 760,
           "kind": "line_range",
-          "start": 690
+          "start": 709
         }
       },
       "facet": "The shared dispatch case checks the existing-child argv/request and same-enclosure reuse for Worker then Reviewer dispatch; it does not call a separate role_start entry point or establish native launch proof.",
@@ -56,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -73,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
-        "content": "sha256:dc39973ad6cc6c8bcaee9721a1b19304787f6ab454f8e7d5742d20131a430d64",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+        "content": "sha256:2616e23d70560bbbad70de807e5d02c88430dd1066fda6d5e13a9afe1af0a2ce",
         "locator": {
           "end": 599,
           "kind": "line_range",
@@ -91,7 +108,7 @@
     },
     {
       "anchor": {
-        "blob": "f7688864570af338c6298031f7782f9b75856ee4",
+        "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
         "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
         "locator": {
           "kind": "symbol",
@@ -159,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c61467d651e72d83077f8fbb194de03113a4981f",
+            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
             "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
             "locator": {
               "kind": "symbol",
