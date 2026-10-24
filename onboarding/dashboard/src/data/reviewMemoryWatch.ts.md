@@ -24,3 +24,7 @@ useReviewMemoryWatch derives liveness from an enclosure matching repoName/taskNa
 - Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry. [4]
 - Existing state transport carries scope query and both memory event types. [5]
 - Actual ReviewSurface supplies the cycle and navigation.engage callback. [6]
+
+The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself.
+
+- The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself. [7]

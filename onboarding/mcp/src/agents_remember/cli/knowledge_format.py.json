@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "4029773672ddc9415ce313bea364718fcc32371b",
+            "blob": "9442b951a34eebaa1610f814f4e269611930b242",
             "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
             "locator": {
               "kind": "symbol",
@@ -67,12 +67,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a43436f14b0bddc355c2234535b9c400967fe5",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
             "content": "sha256:3388fbb7e7f9b0c026db8d63e6e9e2b9c92f6d44ccebe8f06a6a0b45b97f516c",
             "locator": {
-              "end": 78,
+              "end": 92,
               "kind": "line_range",
-              "start": 78
+              "start": 92
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

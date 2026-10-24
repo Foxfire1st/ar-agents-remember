@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_grades.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store lies with the task's durable records, so it outlives the environment\n\nAnchor: `def grades_path(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:2e8dccd3e91f235f51224c758c25b8d199496d5d4d2da16355e3771afd83cba3",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An absent store reads as empty; an unreadable one is a named refusal, never invented grades\n\nAnchor: `def read_grades(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:70b99041b0e8fec599b8a14bd2bc58af2bcfad602c8107a7c339b025d74d4989",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A category is two to five named grades defined once; another scale or meaning for the same name is refused\n\nAnchor: `def define(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:58d7fefc4b5969b8402ac177efc1e320c85ba0af7c72c0ea5a20d485d47f04af",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A grade needs a defined category, a grade of its scale, a one-line reason and a fingerprint for every block it names\n\nAnchor: `def grade(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:1bfcf277ddc0ac2b70e3b2e9a70d89e6dd3cb0d55d4423394466328f59dc241d",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only the grades of blocks that no longer exist are pruned\n\nAnchor: `def prune(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:a8263d17afc32fd7bd9dbd116e0adc64a57f29361ad81e2692a991d8829bd50f",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

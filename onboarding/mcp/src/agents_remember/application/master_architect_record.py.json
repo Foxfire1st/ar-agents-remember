@@ -1,0 +1,162 @@
+{
+  "path": "mcp/src/agents_remember/application/master_architect_record.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "93db40c25080169552bf043addc84516df2f931e",
+        "content": "sha256:d3a0ba48f9624728cc59399c5ea83e7a29bc9276cf32d1f7b6c1aea23bedf87e",
+        "locator": {
+          "kind": "symbol",
+          "name": "withdraw_message"
+        }
+      },
+      "id": "RLZ-CFSSDZ",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removes only sender-owned waiting rows and refuses already-committed delivery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "93db40c25080169552bf043addc84516df2f931e",
+        "content": "sha256:35b66e9121f5448986cdcf7327d616b1d44ec4c09dad224e8782d9fd689d1458",
+        "locator": {
+          "kind": "symbol",
+          "name": "hold_message"
+        }
+      },
+      "id": "RLZ-H40D7G",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Locked bounded storage, attempted-message deduplication and refused overflow.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "93db40c25080169552bf043addc84516df2f931e",
+        "content": "sha256:8cbf026f4311418df168c7c0cc7f0b014f0e4b5389e8284ca990de79f2aad411",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_record"
+        }
+      },
+      "id": "RLZ-HTV2TP",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Refuses unsupported act and atomically replaces three-fact record.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An act other than a Manager start or a claim is refused before any write\n\nAnchor: `def write_record(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:8cbf026f4311418df168c7c0cc7f0b014f0e4b5389e8284ca990de79f2aad411",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A record that cannot be read or validated names no seat instead of raising\n\nAnchor: `def read_record(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:284f3251b7b42a7daae5c23d5c4e1837797a2c141d17c60547021551532a0036",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A recipient already holding the bound refuses a further message rather than dropping one\n\nAnchor: `def hold_message(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:35b66e9121f5448986cdcf7327d616b1d44ec4c09dad224e8782d9fd689d1458",
+            "locator": {
+              "end": 660,
+              "kind": "line_range",
+              "start": 611
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A message already committed for delivery cannot be withdrawn\n\nAnchor: `def withdraw_message(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:d3a0ba48f9624728cc59399c5ea83e7a29bc9276cf32d1f7b6c1aea23bedf87e",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 663
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only a canonical AR UUID names a held-message store file\n\nAnchor: `def store_path_for(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:680366a9a8d0fa1b9f94a6550478eca8677d3efa88d9cbbc46d7c72e04a15374",
+            "locator": {
+              "end": 552,
+              "kind": "line_range",
+              "start": 543
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A process with no bound host ports raises RuntimeError before a bridge send\n\nAnchor: `explainer_control_bridge_send`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93db40c25080169552bf043addc84516df2f931e",
+            "content": "sha256:a51bfbc5d346fe6478166d9af167709944d2425311b01ffce3267fdd6182184b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

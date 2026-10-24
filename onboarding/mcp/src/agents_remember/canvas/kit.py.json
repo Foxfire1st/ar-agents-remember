@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:c041438adae169d63deae4ac82f6b0f34d3a7e7d562b276e1658821e7eb72853",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_protocol_helper_js"
+        }
+      },
+      "id": "RLZ-7VC02R",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:8e67a24b2d96eb5ed1fb54524b1814e76a3d2c5bdcd83763fd28d3107e5f067f",
+        "locator": {
+          "kind": "symbol",
+          "name": "encode_kit_offer"
+        }
+      },
+      "id": "RLZ-DKK7X6",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
         "locator": {
           "kind": "symbol",
@@ -57,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
         "locator": {
           "kind": "symbol",
@@ -75,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:e23c0aea0172bd27f4c4a021707556a15305de56c647363f9b2d40862b7ded6b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
         "locator": {
           "kind": "symbol",
@@ -129,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
         "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
         "locator": {
           "kind": "symbol",
@@ -152,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
             "content": "sha256:e23c0aea0172bd27f4c4a021707556a15305de56c647363f9b2d40862b7ded6b",
             "locator": {
               "kind": "symbol",
@@ -168,11 +204,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
             "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
             "locator": {
               "kind": "symbol",
               "name": "kit_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation adds protocol helpers to the shipped kit; the existing manifest verification and admitted-asset toolbox account remains valid.\n\nAnchor: `kit_protocol_helper_js`, `encode_kit_offer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+            "content": "sha256:c3c8f710b81e3c2beba24e668f0ca954666d9b1d39b37151d2320888c5698252",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

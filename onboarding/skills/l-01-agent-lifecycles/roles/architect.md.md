@@ -32,6 +32,10 @@ This canonical Architect owns the developer conversation, semantic requirements 
 
 Registration is also the publication trigger. Where the resolved memory carries `system/task-publication.md`, the Architect follows that file: registering a leaf creates its open linked issue, and the issue URL is recorded in the task's `references` through `task_doc set_field` with every existing entry preserved. Where that file is absent from the resolved memory, registration publishes nothing — no issue, comment, label or board item follows from it.
 
+A `From explainer ·` message carries the developer's words only when their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims the master with `explainer_control` on `agents-remember-task`, action `claim`.
+
+- Copied developer words in a From explainer message count as those words only after their hash matches the filed developer message; an Architect not named by the master-to-architect record claims that master through explainer_control. [7]
+
 When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
 For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.

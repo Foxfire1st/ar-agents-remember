@@ -27,3 +27,7 @@ Ranges are supplied by the comparison’s server-resolved side, never guessed or
 - Exact recorded-side and tree identity [1]
 - Stable equality key [2]
 - URL payload checks and explicit comparison membership [3]
+
+matchesBlockReference relates a stored grade or claim to a drawn block using its exact block key, included entry ids, encoded selection, card/hunk prefix or admitted JSON reference. Encoded references compare parsed block keys; entry JSON checks any supplied path and tree operands. A hunk prefix/JSON reference matches its path, so this matching helper must not be described as independently proving a full comparison binding for every accepted spelling. Callers retain their comparison checks.
+
+- matchesBlockReference relates a stored grade or claim to a drawn block using its exact block key, included entry ids, encoded selection, card/hunk prefix or admitted JSON reference. Encoded references compare parsed block keys; entry JSON checks any supplied path and tree operands. A hunk prefix/JSON reference matches its path, so this matching helper must not be described as independently proving a full comparison binding for every accepted spelling. Callers retain their comparison checks. [4]

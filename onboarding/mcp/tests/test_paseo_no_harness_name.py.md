@@ -7,7 +7,7 @@ The current source facts below replace the former operative inventory. The separ
 - Current RULE6_MODULES explicitly permits application/agent_binding.py and requires a positive name hit there.
 - RULE21 admits exactly cli/paseo_catalog.py and cli/paseo_launch.py for the existing least-permissive provider modes and the Claude-only `server_info` identity preapproval when the provider accepts MCP definitions. The retained `assignmentReadGrant` receipt key reports that identity-only preapproval (or that it was not applied), not assignment-content access or a restored `assignment_read` grant. Each file must have exactly its declared harness-name set; silence and an unrelated provider word both fail. Real-file mutant probes prevent this admission widening into a module-wide exception.
 
-- The two additional presenter owners are exactly `canvas/presenter_native.py` and `cli/paseo_bridge.mjs`. Each admits only `Claude` and `claude` for its qualified confinement seam. Positive witnesses and real-file mutants require those words and reject both another provider word and silence; the original RULE21 owner sets remain separate.
+- The presenter admission now names only `cli/paseo_bridge.mjs`, with exactly `Claude` and `claude` to describe the removed qualified-provider tool fence. The Python native presenter launch and its owner admission are removed; the original RULE21 owner sets stay separate. Positive witnesses and real-file mutants still reject an unrelated provider word and silence in the retained owner.
 
 ### Superseded inventory
 
@@ -40,3 +40,5 @@ The source guard derives the launch seam and the code it uses or that uses it, t
 </details>
 
 - RULE21 admits exact provider-name sets and rejects unrelated real-file mutants. [2]
+
+- - The presenter admission now names only `cli/paseo_bridge.mjs`, with exactly `Claude` and `claude` to describe the removed qualified-provider tool fence. The Python native presenter launch and its owner admission are removed; the original RULE21 owner sets stay separate. Positive witnesses and real-file mutants still reject an unrelated provider word and silence in the retained owner. [3]

@@ -8,7 +8,6 @@
 
 
 
-- Current server wiring and tool-call boundary initialize application services without an ambient session lifecycle. [8]
 
 
 
@@ -23,7 +22,7 @@ docstring — now lives in `agents_remember.mcp.registration`, one module per fa
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
-Starts the one configured MCP application and registrar loop.
+Starts the configured MCP application with either the ordinary registration families or the launch-bound explainer surface.
 
 ## Code Commentary
 
@@ -34,15 +33,11 @@ Starts the one configured MCP application and registrar loop.
 1. `install_compact_content()` — idempotent; makes the JSON text mirror of every tool result emit
    without FastMCP's hardcoded indentation. It affects text-mirror serialization only, never
    `structuredContent` or tool behaviour.
-2. Bind default worktree services with `LeafAgentArchive(config)`, initialize the application via
-   `server_startup.initialize_mcp_application(config)`, and complete FastMCP settings before
-   constructing the server. Application startup initializes application services, including
-   the workspace tool-event writer, without an ambient session lifecycle.
+2. Install a supplier through the light kernel service holder; the first dependent worktree operation builds the default services once, including `LeafAgentArchive(config)`. Initialize the boot-time caller-identity tool writer through `server_startup.initialize_mcp_application(config)` and complete FastMCP settings before constructing the server. The writer's constructors are light; this is no blanket optional-work deferral claim.
 3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
    launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
    supplies no instruction line.
-4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
-   place that decides which families a server advertises.
+4. Read the required explainer binding before choosing the surface. An ordinary launch invokes the ordered `TOOL_REGISTRARS`; a valid bound launch registers only the 22-tool explainer surface and saves its seat binding for per-call validation. An invalid required binding refuses instead of selecting the ordinary roster.
 5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
    tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
    an unmarked tool. This step changes annotations, not registration order or handler ownership.
@@ -51,7 +46,7 @@ Starts the one configured MCP application and registrar loop.
 
 ### Closed dispatch input at the public transport boundary
 
-AgentsRememberMCP.list_tools delegates directly to FastMCP. call_tool carries actual arguments inside tool_call_context, delegates to FastMCP and logs raised calls through the shared boundary. There is no dispatch-specific input-schema closing or undeclared-dispatch handler hook; tool argument admission belongs to each retained registered schema.
+AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. There is no dispatch-specific input-schema closing or undeclared-dispatch handler hook; tool argument admission belongs to each retained registered schema.
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 
@@ -63,20 +58,12 @@ context and are logged like other raised calls.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
-calls `prepare_mcp_process(config)` between config loading and `run_server`. The early declaration
-is load-bearing for worktree-hosted MCP development: without it the checkout policy would classify
-the process as an undeclared CLI and ignore the supplied authority in favor of the leaf-local dummy
-coordinator. `prepare_mcp_process` idempotently reasserts the same declaration and invokes the
-dashboard-autostart hook. That hook is a no-op
-unless the trusted settings set `dashboard.autoStart`; otherwise a daemon thread adopts a healthy
-dashboard daemon, spawns an absent one, or restarts one on version mismatch. It is total and
-threaded so it can never delay or break the stdio handshake this process exists for, and its only
-output goes to stderr — stdout is the MCP protocol.
+calls `prepare_mcp_process()` between config loading and `run_server`. The early declaration remains necessary for trusted worktree-hosted MCP authority. Preparation only reasserts the declaration. Process entry and initialization start neither the sweep nor dashboard supervision; list_tools computes its answer before scheduling the shared latch on the next loop callback. The first call_tool on either surface invokes that same latch as the fallback before its surface check and dispatch. The first attempt starts the sweep even without config; with config and trusted `dashboard.autoStart` enabled, the existing total launcher also starts its daemon thread. Later calls start neither again. The sweep thread runs its heavy worktree owner in a one-shot child with stdin=DEVNULL, so it cannot consume the serving process’s MCP stdin. Launcher/sweep failures are contained and stdout remains the MCP protocol.
 
 ### Durable-store process-role startup is owned by the application boundary
 
 `main` calls the application-layer `declare_mcp_process` before authority loading, then the
-`prepare_mcp_process` wrapper before optional dashboard supervision.
+`prepare_mcp_process` wrapper before serving; the joint sweep/conditional-dashboard start is scheduled after the tools/list answer is produced, with first-tool-call fallback through the same latch.
 `controlplane/durable_store.py` names two concurrent writers of the six
 control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
 ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
@@ -108,15 +95,14 @@ that skips this line loses no records — it just stops being distinguishable fr
   current special case.
 - Initialize compact-content serialization and application services before registering tools;
   no ambient lifecycle installer remains.
-- **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process(config)` stays before
+- **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process()` stays before
   `run_server`, and neither declaration may move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
   there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
   every MCP-owned log in a test that is exercising the dashboard, and `check_declared_writer()`
   answers for a process that is not the MCP server. The mirrored dashboard obligations are
   `cli/dashboard.py::_dev_app` and `cli/dashboard.py::run`.
-- The dashboard-autostart hook must stay total and threaded; anything that can raise or block here
-  breaks the handshake.
+- The shared post-discovery latch starts the sweep once even without config, and invokes dashboard autostart only with config/settings. The tools/list path schedules it after its answer exists; the first-call path is the fallback. The first attempt consumes the latch, with no second sweep or dashboard launch on later lists or calls.
 - Do not add a raw shell or arbitrary-command tool to this server.
 
 ### Role Runtime and Scope
@@ -125,10 +111,7 @@ Readable launch binding supplies one canonical launched-server instruction line.
 
 ## Leaf agent archive binding (MIK-R76)
 
-`create_server` builds the default worktree services with `leaf_agent_archive=LeafAgentArchive(config)`,
-so the MCP process's finalize and abandon transactions reach the archive service. The binding is
-composition only; the archive behavior lives in `cli/role_launch_archive.py` and the admitted
-terminal transactions.
+`create_server` installs the supplier whose first dependent worktree operation builds default services with `leaf_agent_archive=LeafAgentArchive(config)`, so finalize and abandon still reach the same archive owner. Supplier installation itself does not construct those services. Archive behavior remains in `cli/role_launch_archive.py` and the admitted terminal transactions.
 
 ## Evidence
 
@@ -156,3 +139,6 @@ No meaningful cross-repo references found.
 The transport server now imports its composition boundary as
 `application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
 durable-store ownership remain application concerns; only their package location changed.
+
+- Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle. [8]
+- Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]

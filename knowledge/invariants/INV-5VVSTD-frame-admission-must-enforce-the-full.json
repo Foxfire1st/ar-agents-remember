@@ -5,12 +5,13 @@
     ],
     "justification": "An unbounded metadata read would exhaust memory on a corrupt store and let modified descriptors authorize over-cap asset reads."
   },
-  "applicability": "Frame store publication, reopening, cleanup and archive under their declared byte and population ceilings.",
+  "applicability": "Every publication into one task's frame store.",
   "conditions": [
-    "The store reads or admits metadata and assets for one frame lineage or task area."
+    "The total is measured over every lineage of the task.",
+    "The check runs inside the task lock, before the write."
   ],
   "exclusions": [
-    "Reads outside the frame store, such as comparison snapshots."
+    "The per-revision bounds, which are checked on the staged assets before the lock."
   ],
   "id": "INV-5VVSTD",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Frame admission must enforce the full lineage-including-drafts and task artifact byte ceilings atomically using actual store usage, including metadata.",
+  "statement": "The task's frame-store byte total is checked under the task lock before any mutation, so a write that would pass it is refused by name with the removal control offered and no current page is evicted; the lineage byte ceiling and the revision-count ceiling are gone, and a retained revision is removed only by the developer's removal control, never silently to make room.",
   "status": "proposed",
   "supersedes": []
 }

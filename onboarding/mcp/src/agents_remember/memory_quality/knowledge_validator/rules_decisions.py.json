@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -225,12 +225,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -279,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -333,12 +333,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -351,12 +351,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ca001d21db856acaeb71d219ae6306b8f3379f4e9bf647a28366984dd60f935",
             "locator": {
-              "end": 177,
+              "end": 195,
               "kind": "line_range",
-              "start": 172
+              "start": 190
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -400,12 +400,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -418,12 +418,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:e35a52b8080bddf08f0664db81fb3dda92e7a3626ec9abfa45e9f3429b7213cc",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 244
+              "start": 262
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -467,12 +467,12 @@
         },
         {
           "anchor": {
-            "blob": "02dd3ac26dfa950118f6df21fe5e27fb26153109",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
             "content": "sha256:4ada4a34f43f7e909a89ff8040b95f0764b6ab23cfaac8314c329968ca7be956",
             "locator": {
-              "end": 250,
+              "end": 268,
               "kind": "line_range",
-              "start": 249
+              "start": 267
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+        "content": "sha256:6b711799775a0b96938509247f6c58e6d321b58a1ded556da5e3aed9ad1ec3e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "UnconfiguredPresenterRunner.start"
+        }
+      },
+      "id": "RLZ-4ZEMMB",
+      "invariant": "INV-SYH75Z",
+      "origin": {
+        "handoffEntry": "L183-presenter-default-unconfigured",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The no-runner port raises the named refusal instead of preparing a host launch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
         "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+        "content": "sha256:7f711dbb15e406e6af56ba739ee130782b328a01b40be6d0b8b43cacd04e0883",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_start"
+        }
+      },
+      "id": "RLZ-A7P9YF",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L183-A-3",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The start seam reads the ledger and refuses a reclaimed record before opening any session.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
         "content": "sha256:7f711dbb15e406e6af56ba739ee130782b328a01b40be6d0b8b43cacd04e0883",
         "locator": {
           "kind": "symbol",
@@ -39,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
-        "content": "sha256:809f9a7bfd0c1225671d90ccddbd5a93ef87b81ffb6e8f61f1ef447227423427",
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+        "content": "sha256:03eabb81b1245206068b6df777fcf01b7b2b9e66c5cd9456c5782ff5af0213f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "Presenter.__init__"
+        }
+      },
+      "id": "RLZ-G7N6X3",
+      "invariant": "INV-SYH75Z",
+      "origin": {
+        "handoffEntry": "L183-presenter-default-unconfigured",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The constructor replaces the retired implicit native runner with the explicit refusal runner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+        "content": "sha256:a89ba86e6ce3f4fc1fdef5d30245f3c36b56a17c6d3f753332462de2b90b5c37",
         "locator": {
           "kind": "symbol",
           "name": "Presenter"
@@ -78,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
             "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
             "locator": {
               "kind": "symbol",
@@ -99,6 +153,21 @@
             "locator": {
               "kind": "symbol",
               "name": "UnconfiguredPresenterRunner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current implementation adds readiness part-map persistence and typed publication refusal propagation; the existing prospective-load and attempt identity account remains valid.\n\nAnchor: `Presenter`, `UnconfiguredPresenterRunner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "content": "sha256:1da1d547a7e5498ef78cc046813ae28ae1827239f332926c0ef078c8b6c5d023",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

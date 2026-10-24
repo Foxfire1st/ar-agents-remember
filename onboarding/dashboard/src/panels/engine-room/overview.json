@@ -42,6 +42,45 @@
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1969c4569f3ea48f24b8aa282de33b8166cb8f3b",
+            "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -295,6 +334,32 @@
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 277
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -380,12 +445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:bab90421ecbc4d29e1531dc6bfdb63fdeb29501bb42094964614d6f639be991d",
             "locator": {
-              "end": 1014,
+              "end": 455,
               "kind": "line_range",
-              "start": 931
+              "start": 372
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -724,7 +789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
             "locator": {
               "kind": "symbol",
@@ -762,6 +827,45 @@
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:c0f47225fc146990c9c9b8ce66c9716b9dc57f863a26a68e7296590bcee6216f",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 631
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5358ff5616073b47b6512df0ba615bb582352133",
+            "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -771,6 +875,18 @@
         {
           "anchor": {
             "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",

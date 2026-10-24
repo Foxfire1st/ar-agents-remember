@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_explainer_moved_watcher.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_native_turn_end_loop_runs_the_workers_turn_end_without_writes_or_messages` protects the native loop publishing a notice with no write, message or pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
+            "content": "sha256:1b3cc4e13c74ae4fd25012e428b50705f5a12a31d21d94fad7df71c57dc0d310",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_native_turn_end_loop_runs_the_workers_turn_end_without_writes_or_messages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_worker_turn_end_captures_through_the_watch_and_an_unrelated_seat_is_ignored` protects a real Worker id resolving to its leaf while an unrelated seat is ignored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
+            "content": "sha256:c5845b283a53e5513ef59acd38e7bd161c1b6ee9ffc75b63b6332cdc95258308",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worker_turn_end_captures_through_the_watch_and_an_unrelated_seat_is_ignored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_update_retire_and_a_new_generation_clear_the_old_moved_notice` protects an old moved notice ceasing to be authoritative after an Update, a Retire or a new generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
+            "content": "sha256:fcb9656ae981313702784c1b68ad0b9556c2969eeb6e4969d928501951cbb7fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_update_retire_and_a_new_generation_clear_the_old_moved_notice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

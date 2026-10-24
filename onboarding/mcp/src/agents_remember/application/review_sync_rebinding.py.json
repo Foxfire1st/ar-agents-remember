@@ -310,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
             "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
             "locator": {
               "kind": "symbol",
@@ -322,7 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
             "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
             "locator": {
               "kind": "symbol",
@@ -430,12 +430,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
             "content": "sha256:f2f5096b9f88b97e9b50600c7f00890668eae6c683a8ce5360781d8a2531bd45",
             "locator": {
-              "end": 168,
+              "end": 176,
               "kind": "line_range",
-              "start": 168
+              "start": 176
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },

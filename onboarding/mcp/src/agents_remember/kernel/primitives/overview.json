@@ -282,12 +282,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
             "content": "sha256:7d4a024a5a8845a08d1c137f9f5334067997df37718ca9f090339767da1fa896",
             "locator": {
-              "end": 448,
+              "end": 457,
               "kind": "line_range",
-              "start": 371
+              "start": 380
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -295,12 +295,12 @@
         },
         {
           "anchor": {
-            "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
             "content": "sha256:9a4b7c3058d51169e128a83eece304b01d7eb31f768f0a3067bae2cd67363b1a",
             "locator": {
-              "end": 597,
+              "end": 606,
               "kind": "line_range",
-              "start": 547
+              "start": 556
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -308,12 +308,12 @@
         },
         {
           "anchor": {
-            "blob": "5c6c9d7cb373c5890bcc1ddd303f723e03e5575a",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:2a2c663cee9d6310a8f2690a07d659a873ef7a6bddec9ca134eee48eba8be734",
             "locator": {
-              "end": 346,
+              "end": 366,
               "kind": "line_range",
-              "start": 156
+              "start": 176
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -321,12 +321,12 @@
         },
         {
           "anchor": {
-            "blob": "5c6c9d7cb373c5890bcc1ddd303f723e03e5575a",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:dea02e3ca897b61813fe0fc2374411f3726b6a345911abd2f56b881f813bfc3c",
             "locator": {
-              "end": 516,
+              "end": 536,
               "kind": "line_range",
-              "start": 460
+              "start": 480
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -334,12 +334,12 @@
         },
         {
           "anchor": {
-            "blob": "5c6c9d7cb373c5890bcc1ddd303f723e03e5575a",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:101bffcfdb70c45c61bf57c578b278bdcc3a79906ef1ae9d8a36dc8585dd91ce",
             "locator": {
-              "end": 604,
+              "end": 624,
               "kind": "line_range",
-              "start": 566
+              "start": 586
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -466,7 +466,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "blob": "f5e98565595261000309d4af6931b1bd494a558b",
             "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
             "locator": {
               "kind": "symbol",
@@ -507,6 +507,22 @@
               "name": "fresh_host_block"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "516bf93cd782f6ba15df8fcb020809c3a9a2ee0c",
+            "content": "sha256:e2003ada0f75f492d653774bfa7c7e4e225bf3ac2dc86cc9fd2f8ca89cd58d03",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/control_vocabulary.py"
           },
           "kind": "code"
         }

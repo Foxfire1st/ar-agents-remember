@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f3459e5cd8f5acbc6969b22d8299626a65b4d5",
+            "blob": "85cca095fd6e84772db84f1859f9ba4b659cbde8",
             "content": "sha256:95c6b04239676caadee26a5ad9045768b45bec1faa6ef45d7e91b0d0bdd788e2",
             "locator": {
               "kind": "symbol",
@@ -23,11 +23,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5f3459e5cd8f5acbc6969b22d8299626a65b4d5",
+            "blob": "85cca095fd6e84772db84f1859f9ba4b659cbde8",
             "content": "sha256:9e817ceb2aa1ecbefc5287f7983aeb5d0eb321bd287908f083fb4f3883dbf3d5",
             "locator": {
               "kind": "symbol",
               "name": "test_an_authority_seeking_design_is_fenced_disclosed_and_still_authored"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two authoring runs explicitly inject the deterministic `LocalPresenterHarness` and assert its local bytes. The native presenter launch was retired, so these cases supply neither native-host nor model-authoring evidence.\n\nAnchor: `test_default_and_custom_runs_author_one_comparison_and_keep_every_claim`, `test_an_authority_seeking_design_is_fenced_disclosed_and_still_authored`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85cca095fd6e84772db84f1859f9ba4b659cbde8",
+            "content": "sha256:ad7e4affa66fae84b3ef09787aa002d44e2dbfce5b044f2541c2098b91adb63d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

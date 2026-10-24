@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:aa1ed0f787481cd4da73944855ad2d03f67a71ba73bd8e69f8656c69b497a38b",
             "locator": {
-              "end": 577,
+              "end": 569,
               "kind": "line_range",
-              "start": 577
+              "start": 569
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:c2754c011300a1a90ede34aac0f525d3c6abd7585c0df9492a9bb0c2b038c090",
             "locator": {
-              "end": 448,
+              "end": 446,
               "kind": "line_range",
-              "start": 402
+              "start": 400
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
@@ -205,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:fc7019a6ffe44757b66782b7380868dd2e8a2a3f3159084b672650392c0d1365",
             "locator": {
-              "end": 395,
+              "end": 393,
               "kind": "line_range",
-              "start": 364
+              "start": 362
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },

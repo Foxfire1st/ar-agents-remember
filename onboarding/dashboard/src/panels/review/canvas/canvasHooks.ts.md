@@ -19,3 +19,7 @@ The panel's data hooks: reading one saved-first frame state, opening the explici
 
 - Reading a frame state starts nothing. [1]
 - A live channel is keyed to its exact comparison. [2]
+
+forwardedBody now admits one bounded array inside the envelope: at most 32 items, at most 64 total fields once an array is encountered, scalar leaves and no nested array or object inside an array item. Non-array envelopes retain their 16-field limit. Own data descriptors avoid executing accessors; depth, character and serialized-byte limits remain distinct. useCanvasMessages attaches the channel listener in a layout effect so it is installed before a mounted frame can post.
+
+- forwardedBody now admits one bounded array inside the envelope: at most 32 items, at most 64 total fields once an array is encountered, scalar leaves and no nested array or object inside an array item. Non-array envelopes retain their 16-field limit. Own data descriptors avoid executing accessors; depth, character and serialized-byte limits remain distinct. useCanvasMessages attaches the channel listener in a layout effect so it is installed before a mounted frame can post. [3]

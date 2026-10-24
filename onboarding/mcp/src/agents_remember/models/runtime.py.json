@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:da67dd92ee65f809406cae695b257e285f724cecab0f2df85fe2cea9d840b002",
             "locator": {
-              "end": 18,
+              "end": 22,
               "kind": "line_range",
-              "start": 14
+              "start": 18
             },
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },

@@ -122,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "854d72d9efa7a0ba2c4dbe504d892669597a744f",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:e8ea9332fe0e0c03897947e1c5c9208971ac1a1602879d89777d1536932d0709",
             "locator": {
               "kind": "symbol",
@@ -297,12 +297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "854d72d9efa7a0ba2c4dbe504d892669597a744f",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:b16bf1ef7d162c95f1bb1259eefda7931c86c75fb51e44538c92e2bed19fdd41",
             "locator": {
-              "end": 896,
+              "end": 897,
               "kind": "line_range",
-              "start": 884
+              "start": 885
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -310,12 +310,12 @@
         },
         {
           "anchor": {
-            "blob": "854d72d9efa7a0ba2c4dbe504d892669597a744f",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:66d7b2648aa9c2ea81204620774bff3ec6c02471107953ac8d58bfe7d9a327ed",
             "locator": {
-              "end": 925,
+              "end": 926,
               "kind": "line_range",
-              "start": 899
+              "start": 900
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -323,12 +323,12 @@
         },
         {
           "anchor": {
-            "blob": "854d72d9efa7a0ba2c4dbe504d892669597a744f",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:e87d855ec9ffef79a1148c805a82b272bc5a492c79df1bc3a61dfbdcf099ccf5",
             "locator": {
-              "end": 950,
+              "end": 951,
               "kind": "line_range",
-              "start": 928
+              "start": 929
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
@@ -336,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "854d72d9efa7a0ba2c4dbe504d892669597a744f",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:e353d581810d23c2fc4449c389ce71c54e2d2eb49e7f1a19f91bd8d67084a675",
             "locator": {
-              "end": 964,
+              "end": 965,
               "kind": "line_range",
-              "start": 953
+              "start": 954
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },

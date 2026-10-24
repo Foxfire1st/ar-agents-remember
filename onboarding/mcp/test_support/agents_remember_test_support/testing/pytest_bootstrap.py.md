@@ -23,7 +23,10 @@ deferred imports rather than being erased at module boundaries.
 - This module imports no Dagger admission, worktree service, or provider code.
 - Both routes receive identical shared pytest behavior.
 - Global restoration precedes leak failure.
-- Module-boundary resets run in a `finally` path and never import a product owner.
+- The closed-register reset visits already-loaded owners without importing them. The module-boundary fixture also imports the lightweight worktree service holder explicitly, and resets it before the module and in its `finally` path.
+
+
+The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation.
 
 ## Evidence
 
@@ -34,3 +37,5 @@ deferred imports rather than being erased at module boundaries.
 
 - Already-loaded process state is reset before and after each module. [2]
 - Per-test restoration runs before leak failure. [3]
+
+- The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation. [4]

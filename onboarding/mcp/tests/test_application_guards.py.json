@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
             "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
             "locator": {
               "end": 19,
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:c5738ba3812c2824dc7dd385bd062f74ab6d608d21aed6d5e8909de37f938cca",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
             "locator": {
               "kind": "symbol",
@@ -134,12 +134,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:cecffa79700d0ae2448bb1adf1f2d1ae1548ab555039ffdaa2b845ddc05f8510",
             "locator": {
-              "end": 92,
+              "end": 93,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -160,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:7f40e2cf01fda9c57fbc6130e19151703cd18e0db46fe045118851986083ab9b",
             "locator": {
-              "end": 835,
+              "end": 857,
               "kind": "line_range",
-              "start": 830
+              "start": 852
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

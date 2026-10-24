@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
             "content": "sha256:26281eee4775d550c00a4096005fab1ee68897893b8a99ed510e17193c953c63",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
             "content": "sha256:d69893f1c3bd695c92b4588515bc735d2b057f5267f28a9cf9cf8ddbeaeed941",
             "locator": {
               "kind": "symbol",
@@ -98,12 +98,12 @@
         },
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
             "content": "sha256:547ee2d3390940b8a8fc7ba4a000e2da08fe7ae8903ba2bba80d4c9e4327dbf8",
             "locator": {
-              "end": 184,
+              "end": 104,
               "kind": "line_range",
-              "start": 157
+              "start": 77
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },

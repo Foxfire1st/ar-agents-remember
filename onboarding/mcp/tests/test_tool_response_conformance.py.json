@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf65940651d080c203d144de52a18c550e814e",
+            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
             "content": "sha256:71008f419ddeb28d82ad7d9e3deee3ba0467de59dedc94cbe79b486c1b8abd55",
             "locator": {
               "kind": "symbol",
@@ -186,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0bcda64a4e91ad295c82b363b76365fd076a898",
+            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
             "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
             "locator": {
-              "end": 584,
+              "end": 630,
               "kind": "line_range",
-              "start": 584
+              "start": 630
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -215,12 +215,12 @@
       ]
     },
     "22": {
-      "note": "Current literal source populations are42 roster names,13 adapter modules and44 handlers, while strict/flexible sets remain derived.\n\nAnchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT`",
+      "note": "Current literal source populations are43 roster names,14 adapter modules and45 handlers, while strict/flexible sets remain derived.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bf65940651d080c203d144de52a18c550e814e",
-            "content": "sha256:9a232218e45a5634bd50064ad2c0cc3163f2cf10c0ab924aa6d6f94a4e77fde7",
+            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
+            "content": "sha256:035e921f3d82586846aa17938695179ffe8501d4a67663694ba630ff9a79e0e7",
             "locator": {
               "kind": "file"
             }
@@ -298,7 +298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf65940651d080c203d144de52a18c550e814e",
+            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
             "content": "sha256:77fb2fc4c029d7c3830a75adbc316db7b6a7afea31777b10b10f8cf8e970d63a",
             "locator": {
               "kind": "symbol",
@@ -314,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18bf65940651d080c203d144de52a18c550e814e",
+            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
             "content": "sha256:afd6f7681d39f08c133ae77cc7fcf455726b80680450f9479c2cd045526b9717",
             "locator": {
               "kind": "symbol",

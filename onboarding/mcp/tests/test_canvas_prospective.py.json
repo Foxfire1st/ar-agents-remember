@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "39adae7d20cd53dd8cb42a4478054c65a312cf41",
+        "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
         "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "39adae7d20cd53dd8cb42a4478054c65a312cf41",
+        "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
         "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
         "locator": {
           "kind": "symbol",
@@ -34,6 +34,23 @@
         "handoffEntry": "MIK-R104-r14-readiness-and-load",
         "leaf": "260928-MIK-L104"
       }
+    },
+    {
+      "anchor": {
+        "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
+        "content": "sha256:d5438fda5d35c5574dfd72deb61ac184a7550e9cb7b08ac64a76ee2fc5835820",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_rendered_reference_inventory_is_checked_against_the_actual_packet"
+        }
+      },
+      "facet": "The prospective loader separates claimIds from basis evidenceReferences: real claims load, a claim used as evidence and a basis used as claim each fail their own resolution.",
+      "id": "PRF-JPXG3B",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      }
     }
   ],
   "realizes": [],
@@ -43,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39adae7d20cd53dd8cb42a4478054c65a312cf41",
+            "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
             "content": "sha256:20f3137d0d352e7a5783b3c3257b8ca17d6a6c87402f2b74b8bed4c72be137e5",
             "locator": {
               "kind": "symbol",
@@ -59,11 +76,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39adae7d20cd53dd8cb42a4478054c65a312cf41",
+            "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
             "content": "sha256:d1ee7778749bc2c0666df2a4481a511fe5812338d85b3d99e4419e6ac7100ac6",
             "locator": {
               "kind": "symbol",
               "name": "test_the_static_check_never_stands_in_for_a_load"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The rendered reference-inventory case keeps `claimIds` separate from `evidenceReferences`: real packet claim IDs pass in `claimIds`, a claim ID used as a basis reference fails, and a basis reference used as a claim ID fails. It also pins the default loader's separate DOM selectors for the two marks; no browser run is claimed by reading these assertions.\n\nAnchor: `test_rendered_reference_inventory_is_checked_against_the_actual_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29eb9f6c3d0a2ea24fc184fd54474c944fe0d2d4",
+            "content": "sha256:12d1820ae3e8d1d8e9c22f41eaeebbcf5abfb22208337be42b7d47d47262f754",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

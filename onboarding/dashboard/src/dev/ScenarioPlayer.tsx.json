@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
             "content": "sha256:9d5aa6f13b3a22ba56c5590d4d7b8a5e0aafd208e86b2448b59480799de56803",
             "locator": {
               "kind": "symbol",
@@ -47,12 +47,12 @@
         },
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
             "content": "sha256:1e34b86535b99692c1955e99ce5c8e51407251c660443732fb984cc5f21de303",
             "locator": {
-              "end": 22,
+              "end": 16,
               "kind": "line_range",
-              "start": 17
+              "start": 11
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -90,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "771d1ca849e63161968eb0f54325d6f5a4fcd0e2",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:cfaa8c197ff248d56341c5e0bf820ac51ae5eb2ae7a67efbc825e67a3cf42274",
             "locator": {
               "kind": "symbol",

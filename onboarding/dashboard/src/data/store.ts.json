@@ -104,6 +104,18 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "servingBuild"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
         }
       ]
     },

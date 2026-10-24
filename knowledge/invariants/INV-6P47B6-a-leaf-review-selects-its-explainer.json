@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The default spans rail composition, exact-scope menu selection and mounted tests; a Worker default would direct the developer to the wrong seat."
+  },
+  "applicability": "The dashboard review chat column for a target with repository, master and leaf, and transitions to/from Operations task documents.",
+  "conditions": [
+    "A matching hydrated task document or explicit pending/missing-task state is available.",
+    "An explainer target is forwarded through the existing shared RightRail."
+  ],
+  "exclusions": [
+    "Native frame recovery/new-generation rules stay with the existing Paseo frame owner.",
+    "Ordinary taskless Projects Architect and document role discovery keep their own policy."
+  ],
+  "id": "INV-6P47B6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/reviewExplainerColumn.test.tsx::passes column.explainer through RightRail into DocumentChat so cold, open, finalized and planning targets select explainer/placeholder, never Worker; dashboard/src/cockpit/reviewExplainerColumn.test.tsx::keeps the exact same iframe DOM node and draft across Operations and Review page/phase switches; dashboard/src/explainer/model.test.ts::filters by exact repository, master and task path, excluding foreign seats with the same short id; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE01-default-column",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf review selects its explainer or its no-seat placeholder by default, never its Worker, and the header lists only the exact task’s chats with the explainer first while other pages retain their own document chat.",
+  "status": "proposed",
+  "supersedes": []
+}

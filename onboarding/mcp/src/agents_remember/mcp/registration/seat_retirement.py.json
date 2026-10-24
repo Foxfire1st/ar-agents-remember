@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+        "content": "sha256:d3d60e12ae88a513facb91043e0694e2b9ca55339fa17c0e54fa56c70304e245",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_seat_retirement_tools"
+        }
+      },
+      "id": "RLZ-3DVWXE",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The retire_child signature stays strict while the payload loads only when retirement is invoked.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Native child retirement registration: implementation/assertion boundary described above.",
@@ -12,6 +31,21 @@
             "locator": {
               "kind": "symbol",
               "name": "register_seat_retirement_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The retire_child signature stays strict while the payload loads only when retirement is invoked.\n\nAnchor: `register_seat_retirement_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+            "content": "sha256:10a78c48b534f636c8f1f8fdb9e6203f398e4cffc98292334dc6153d9050d1f3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

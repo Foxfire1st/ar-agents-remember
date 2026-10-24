@@ -10,6 +10,8 @@ Adapt retained memory quality, citations, route indexes, initialization, baselin
 
 ## Code Commentary
 
+The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.
+
 Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
 controller method. Drift-check and citation-migrate adapters are absent. Citation fix alone
 catches exactly ConfiguredContractAuthorityError and returns configured-contract-authority-invalid
@@ -172,3 +174,5 @@ adapter cannot answer the same condition two ways; `citation_fix`'s answer still
 - The refusal carries the failing side and name in its detail, for both tools. [5]
 
 - Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged. [6]
+
+- The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics. [15]

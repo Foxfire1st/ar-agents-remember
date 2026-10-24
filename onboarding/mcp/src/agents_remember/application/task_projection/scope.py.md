@@ -11,6 +11,8 @@ comes from an existing AR owner, and this module decides nothing those owners al
 
 ## Code Commentary
 
+Projection scope creates the contract reader at projection time; _contract_of loads the same contract owner and retains the same contract-unavailable error.
+
 ### Logic
 
 Three owners answer, and this module only reconciles their answers:
@@ -100,3 +102,5 @@ binding.
 No sibling-repository contract consumes this scope resolver.
 
 No meaningful cross-repo references found.
+
+- Projection scope creates the contract reader at projection time; _contract_of loads the same contract owner and retains the same contract-unavailable error. [12]

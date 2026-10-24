@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b12753830424a32d7286762c1cd2208018d75133",
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
             "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
             "locator": {
-              "end": 218,
+              "end": 221,
               "kind": "line_range",
-              "start": 160
+              "start": 163
             },
             "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
           },

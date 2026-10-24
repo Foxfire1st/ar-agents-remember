@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
+        "content": "sha256:9c86d720add57fedb14d1c257ebdc0c9654e895bfe2da07cfcabd72b54432bce",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocationRow"
+        }
+      },
+      "id": "RLZ-0H13FM",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The location row renders the model’s chip and ungraded separator and exposes its stale/inference hover state while retaining the existing location selection and keyboard callbacks.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
         "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
+        "content": "sha256:6d1da198c0589bbb8ae5f8f10625910a4ac5fefda3de1496cb232c86c7b648d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "UngradedHeading"
+        }
+      },
+      "id": "RLZ-64V69R",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The first ungraded location’s model count becomes the visible Ungraded (n) separator, keeping the tree’s grouping consistent with the shared order.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
         "content": "sha256:5eadbc861e67d6f41beadc3766671016ea09612be1c67555076f5ba6297b7a24",
         "locator": {
           "kind": "symbol",
@@ -39,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
         "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
         "locator": {
           "kind": "symbol",
@@ -57,7 +93,25 @@
     },
     {
       "anchor": {
-        "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
+        "content": "sha256:62d5d7c87ac941e72f0ac6d0df9c59cc177ca7be873dd962b11080066d1fb4aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "JudgmentChip"
+        }
+      },
+      "id": "RLZ-J4NJK2",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Displays the model’s active grade or graded state with stale/category/grade attributes and the inference hover reason.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
         "content": "sha256:14ee9057b8f633a0b8b64aa4ad0a801803f448ab285ffe7f74178ea286dfb3e3",
         "locator": {
           "kind": "symbol",
@@ -80,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+            "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
             "content": "sha256:f68743484863d361cb21f777e875d36b6dc75487ee8d645b812d8d84f47fc806",
             "locator": {
-              "end": 118,
+              "end": 119,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             }
           },
           "kind": "code"
@@ -97,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838aa8e5684f00138e3b3bebcb79a8f336adb52f",
+            "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
             "content": "sha256:93193c50bd95366f9440368621ed27a3f67125c98eca5fba27909c4d2fffd5ae",
             "locator": {
-              "end": 162,
+              "end": 163,
               "kind": "line_range",
-              "start": 119
+              "start": 120
             }
           },
           "kind": "code"
@@ -120,6 +174,21 @@
               "end": 205,
               "kind": "line_range",
               "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "LocationRow now inserts the model's Ungraded (n) heading before the first ungraded row and renders JudgmentChip before its location label. A chip names the active grade or graded state, carries stale/category/grade attributes and the full inference/reason hover text; stale chips use dashed amber styling. The location tooltip appends those reasons while the existing accessible location/role/reason label and selection callbacks remain intact.\n\nAnchor: `JudgmentChip`, `UngradedHeading`, `locationTooltip`, `LocationRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f1beafd5a3710a42300996c224b9ca284847c11",
+            "content": "sha256:7c3e823710ba5502864df68e5b68378bdddeccc20900f8d9fdc9a66f468eb171",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

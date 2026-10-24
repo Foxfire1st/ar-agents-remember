@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_explainer_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_two_paths_reach_the_same_function_objects` protects the two import paths being one behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f510f2fc8f058607041d3577039046ef1428823",
+            "content": "sha256:332176535742aff4dbda0a4defc6608ebb5f34a7feff5a20d99447b06def34e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_two_paths_reach_the_same_function_objects"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_light_module_imports_no_service` protects the light module importing no service behind it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f510f2fc8f058607041d3577039046ef1428823",
+            "content": "sha256:930a4ecf93f0301b5f4d1a6f41774bc841d4adc7f91a6cc046235aa32ec887f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_light_module_imports_no_service"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

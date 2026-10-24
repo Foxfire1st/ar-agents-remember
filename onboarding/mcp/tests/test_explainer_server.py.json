@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_explainer_server.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_kept_authoring_tools_answer_over_this_environment` protects the kept authoring tools answering over this environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:067196c599846a75f141c375e571d5bcae9ff9080cf019ba4b3439c959af61f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_kept_authoring_tools_answer_over_this_environment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_path_outside_the_admitted_surfaces_is_refused_by_name` protects a traversal, an absolute path, an unserved surface and a symlink being held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:7661178631624ebe2f9e3e60209757d45b2b52c980528a8349c8072a47c30605",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_outside_the_admitted_surfaces_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_git_refuses_an_option_a_range_a_worktree_path_and_a_foreign_repository` protects the git reads refusing another program, a range, a worktree path and another repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:afb0d306c6bd47ab18f574c4066ef00120bcbbf72e6348c33fb34ede0975decf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_refuses_an_option_a_range_a_worktree_path_and_a_foreign_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_a_grade_at_a_binding_the_environment_left_is_refused` protects a grade at a binding the environment left being refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:4407006baac5514da0dc23dfceea50d529868794258ef159af62dd0689141f87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_grade_at_a_binding_the_environment_left_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_render_publishes_ready_revision_with_derived_part_map_and_rereads_binding_under_frames_lock` protects a render publishing a ready revision with its derived part map and a lock-time binding re-read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:e1b00dd7bf5cfc24d010e7856045b7aa8d3da866ea160cc4b340abc35d602d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_render_publishes_ready_revision_with_derived_part_map_and_rereads_binding_under_frames_lock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_production_report_delivery_routes_per_master_holds_limits_and_settles_transitions` protects report delivery routing per master and settling holds, limits and timeouts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60eff75e42fb5206126d4cc7bdb41ce11a3eb3a8",
+            "content": "sha256:1ea121a92cf2f3ba958f548b4f9dac23195b2ac0c288b93aa8457e20e346cb0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_production_report_delivery_routes_per_master_holds_limits_and_settles_transitions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

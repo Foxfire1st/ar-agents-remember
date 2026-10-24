@@ -29,11 +29,11 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "c4f3d6213c84f4f6b506b39448fc9b8aa79b7792",
-        "content": "sha256:37c8c4ffdd2aac706cd129cae2846e5d7a26beb0359eee205470094e31b4cf6e",
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
-          "name": "DocumentChatView"
+          "name": "DocumentChatImpl"
         },
         "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
       }
@@ -41,8 +41,8 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
-        "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+        "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
         "locator": {
           "kind": "symbol",
           "name": "chatPresentation"
@@ -74,7 +74,7 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
             "content": "sha256:db2b0eae047cc97474e39b38127c77dd16417e2ef657d8d6a5c92f83a0958d91",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
             "content": "sha256:6f7e573fe79d9f4d925406648783d32f0dcc57de7de80db4367bd2a6e2f3326d",
             "locator": {
               "kind": "symbol",
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -89,12 +89,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:b701690fa31ab142e0b84c9ec93e4cf3f74d8eafc5e0b94a771f65ff7216d53a",
             "locator": {
-              "end": 93,
+              "end": 94,
               "kind": "line_range",
-              "start": 92
+              "start": 93
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
             "locator": {
-              "end": 181,
+              "end": 182,
               "kind": "line_range",
-              "start": 164
+              "start": 165
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -115,12 +115,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:0749af96a39a4f9c9c3e6f215ae2d6c41515e5938ca0cfe68edd204dd337733c",
             "locator": {
-              "end": 199,
+              "end": 200,
               "kind": "line_range",
-              "start": 184
+              "start": 185
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

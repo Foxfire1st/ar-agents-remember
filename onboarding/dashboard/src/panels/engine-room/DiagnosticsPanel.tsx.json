@@ -116,6 +116,42 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRefNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProcessFactState"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
         }
       ]
     },

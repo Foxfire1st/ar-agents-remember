@@ -162,12 +162,12 @@
         },
         {
           "anchor": {
-            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
             "content": "sha256:569040dfe8418f94347d814a3e3f8ba6ebbbb22505a18de1c225b29bdbac276a",
             "locator": {
-              "end": 111,
+              "end": 112,
               "kind": "line_range",
-              "start": 107
+              "start": 108
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },

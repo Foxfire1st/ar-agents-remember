@@ -18,6 +18,8 @@ Provide the current import facade for pure MCP response/payload adapters, not th
 
 ## Code Commentary
 
+The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation.
+
 The facade retains role start/message and context/runtime/server information; dispatch is not imported or exported.
 `resolve_context_payload` is neither imported nor exported; orientation is `context_packet`.
 It also retains
@@ -148,3 +150,5 @@ second action implementation.
 re-exports no wait payload today. Recorded so the paragraph above is not read as current.
 
 - The pure payload facade now exports direct_execution_grant_payload. [18]
+
+- The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation. [20]

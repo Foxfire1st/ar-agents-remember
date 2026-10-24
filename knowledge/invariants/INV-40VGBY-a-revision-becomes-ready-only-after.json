@@ -6,12 +6,13 @@
     ],
     "justification": "The static check and the real load are deliberately separate realizations, and the cases prove neither stands in for the other."
   },
-  "applicability": "Every revision offered as ready for a page.",
+  "applicability": "Every revision a seat stages for publication on the review page.",
   "conditions": [
-    "The candidate bytes are staged before publication."
+    "Readiness reads the staged bytes and the bound evidence packet.",
+    "The load runs the page in the isolated host with no model."
   ],
   "exclusions": [
-    "A revision that is never offered as ready."
+    "A page that declares no parts, which readiness admits as one implicit whole-page part holding every claim."
   ],
   "id": "INV-40VGBY",
   "origin": {
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A revision becomes ready only after a static readiness check over its exact bytes and one real model-free load, and a failed or unavailable load refuses publication and keeps the last ready revision.",
+  "statement": "A revision becomes ready only after a static readiness check over its exact bytes — including a part-map check that refuses an inadmissible part id, a claim mark that is not a claim id of this revision, an unmapped claim and a claim whose basis does not resolve — and one real model-free load; a failed or unavailable load refuses publication and keeps the last ready revision.",
   "status": "proposed",
   "supersedes": []
 }

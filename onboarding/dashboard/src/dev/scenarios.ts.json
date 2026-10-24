@@ -15,6 +15,17 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
+            "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
+            "locator": {
+              "kind": "symbol",
+              "name": "erFrame"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -53,6 +64,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
+            "content": "sha256:086529b4b739db18a4f6fe83169c1973088e37ec8501a464b29c89e6fa633dc9",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -78,6 +101,19 @@
             "locator": {
               "kind": "symbol",
               "name": "OptionalDiagRows"
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
+            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 65
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -204,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
             "locator": {
               "kind": "symbol",

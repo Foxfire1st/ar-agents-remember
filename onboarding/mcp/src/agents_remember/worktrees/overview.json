@@ -59,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:8b8219fdb3787bbffb65b31e471a996261471d5514aa292d6ff0c7000b4d2a1a",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:42417bea660b6090aff6ed859956be2f6bbbdf5c5806d6a167ed45edb130f06e",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:5bc2d278972523eb4526c5d9ba295a99aaa1295dad55df112c88658dc3cf155d",
             "locator": {
               "kind": "symbol",
@@ -198,6 +198,82 @@
         }
       ]
     },
+    "106": {
+      "note": "The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:ae24711ffa2588e8c5b4bfee02e4cbf71befeb53805469bfd229a1beca397c13",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_services"
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:df4e9f4174d0511ace4f7789030d2b0857e130995ac3ac65724b0e657ecca6a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_stage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_intent_review_start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_intent_review_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "11": {
       "note": "The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.",
       "targets": [
@@ -249,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
             "locator": {
               "kind": "symbol",
@@ -261,7 +337,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
             "locator": {
               "kind": "symbol",
@@ -273,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
             "locator": {
               "end": 134,
@@ -286,7 +362,7 @@
         },
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:7c08e5a860b1bf82c64c5b31bda2cff218bb28404e571f30939e94e7fdb9b072",
             "locator": {
               "end": 142,
@@ -576,7 +652,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
             "locator": {
               "kind": "symbol",
@@ -669,7 +745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -686,7 +762,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
             "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
             "locator": {
               "kind": "symbol",
@@ -732,7 +808,7 @@
         },
         {
           "anchor": {
-            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
               "kind": "symbol",
@@ -790,7 +866,7 @@
         },
         {
           "anchor": {
-            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
             "locator": {
               "kind": "symbol",
@@ -981,7 +1057,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -1119,7 +1195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -1131,7 +1207,7 @@
         },
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -1143,7 +1219,7 @@
         },
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
             "locator": {
               "kind": "symbol",
@@ -1206,7 +1282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:dd9a78a4fbf03c811f8f8e5d96b0bafd292bce2f185852f5341647eb488726fb",
             "locator": {
               "kind": "symbol",
@@ -1293,7 +1369,7 @@
         },
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
             "locator": {
               "kind": "symbol",
@@ -1310,7 +1386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -1362,12 +1438,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "end": 459,
+              "end": 527,
               "kind": "line_range",
-              "start": 417
+              "start": 485
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1422,7 +1498,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
             "locator": {
               "kind": "symbol",
@@ -1434,7 +1510,7 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
             "locator": {
               "kind": "symbol",
@@ -1475,7 +1551,7 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
             "locator": {
               "kind": "symbol",
@@ -1504,7 +1580,7 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:3f096993a949203bf87250d0259c65b473c2499c874f4f9aa284b5e067c0f2c1",
             "locator": {
               "kind": "symbol",
@@ -1629,7 +1705,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
             "locator": {
               "kind": "symbol",
@@ -1663,7 +1739,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
               "kind": "symbol",
@@ -1680,7 +1756,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
             "locator": {
               "kind": "symbol",
@@ -1765,7 +1841,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:6d5715eb1e130695cd587653b7ce684c1e13e0ef342229b15e9286ed2d860094",
             "locator": {
               "kind": "symbol",
@@ -1782,7 +1858,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
             "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
             "locator": {
               "kind": "symbol",
@@ -1858,7 +1934,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:7c22d91e6252549ff5ff5b8f63dbc7bd68f9eb0498b32b119f296e52cc962e5d",
             "locator": {
               "kind": "symbol",
@@ -1941,7 +2017,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd3e69795965969ac1ee9e0423d8334caa4b390b",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
             "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "kind": "symbol",
@@ -2059,12 +2135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:24b3a17fad4bbcc5fffbcc5328cb9072ba423220282887f9f65fec19f3fca882",
             "locator": {
-              "end": 128,
+              "end": 143,
               "kind": "line_range",
-              "start": 100
+              "start": 115
             },
             "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
           },
@@ -2072,12 +2148,12 @@
         },
         {
           "anchor": {
-            "blob": "864995039bc67d3b4c54493004fe01a45b590f93",
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:d9a7b9863ac518d6e6de0365d91ecaaa703e93a790f129b4dad54c294a6c2555",
             "locator": {
-              "end": 249,
+              "end": 264,
               "kind": "line_range",
-              "start": 201
+              "start": 216
             },
             "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
           },
@@ -2138,7 +2214,7 @@
         },
         {
           "anchor": {
-            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
             "content": "sha256:85f9bc638053193cf84749ac773829bfbacae3766aa350329d01970dda190e00",
             "locator": {
               "kind": "symbol",
@@ -2155,12 +2231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
             "locator": {
-              "end": 153,
+              "end": 150,
               "kind": "line_range",
-              "start": 141
+              "start": 138
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -2199,12 +2275,12 @@
         },
         {
           "anchor": {
-            "blob": "41c3ec60cc11d54bdfd052f94f0ea7ac6aac95a3",
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
             "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
             "locator": {
-              "end": 400,
+              "end": 355,
               "kind": "line_range",
-              "start": 361
+              "start": 316
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -2248,12 +2324,12 @@
         },
         {
           "anchor": {
-            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
-              "end": 517,
+              "end": 553,
               "kind": "line_range",
-              "start": 465
+              "start": 501
             },
             "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
           },

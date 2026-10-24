@@ -3,8 +3,63 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
-        "content": "sha256:37742ed31535a5edc81a7b683180caec795cdc2f532f9f2e6de1ebebafbbebe9",
+        "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+        "content": "sha256:6be5fa9a44e505f3a4a7b84019f39891d809eb80a44170e259ceb88f7b493d10",
+        "locator": {
+          "end": 66,
+          "kind": "line_range",
+          "start": 62
+        }
+      },
+      "id": "RLZ-8QW9AX",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Legacy data-evidence bases and data-evidence-claim IDs are distinct channels; the legacy regex must not validate claim IDs as basis references because part-map/claim-basis admission owns them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_page"
+        }
+      },
+      "id": "RLZ-9EDB6X",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-A-7",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The static gate, whose checks now include the page's part map.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+        "content": "sha256:bacacd7cb66bdd3b367e26942471ca06fed81e5c787d05fd8c370b2a21e8393c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_parts"
+        }
+      },
+      "id": "RLZ-GVKAM0",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-A-7",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The part-map check itself and the four refusals it runs in order.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+        "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
         "locator": {
           "kind": "symbol",
           "name": "check_page"
@@ -47,6 +102,21 @@
             "locator": {
               "kind": "symbol",
               "name": "ReadinessReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation adds part-map and claim-basis checks to static readiness and returns that derived map for retained publication.\n\nAnchor: `_check_parts`, `claim_basis_problem`, `check_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "content": "sha256:575a44297bf4aece1e38c6ece9283ccb872adf8edaa99f96dda4102c7fc12c3e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

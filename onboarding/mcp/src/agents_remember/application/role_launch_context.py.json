@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
         "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
         "locator": {
           "kind": "symbol",
@@ -24,9 +24,9 @@
         "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
         "content": "sha256:5e6fb6711e209c70e086fdb2264c6005606d1b967419decd3efa149c98a39d40",
         "locator": {
-          "end": 122,
+          "end": 110,
           "kind": "line_range",
-          "start": 89
+          "start": 77
         }
       },
       "id": "RLZ-RA6D0D",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
         "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
         "locator": {
           "kind": "symbol",
@@ -55,6 +55,25 @@
       },
       "rationale": "The one table of what may be started without a parent; the dashboard's start and the tool's start both read it.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:2fac881f7633ac595c45e44b08bff1612b59def1a86b9ab06430cb092a2b2ca3",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-Y1H7G4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The launch context re-exports the canonical role membership definitions from models.role_identity, retaining existing import identity without a duplicate definition.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -78,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
             "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
             "locator": {
               "kind": "symbol",
@@ -143,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
             "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
             "locator": {
               "kind": "symbol",

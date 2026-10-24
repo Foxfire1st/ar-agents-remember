@@ -150,12 +150,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
             "content": "sha256:df335d4a125139d744fd24d04fcc90476e7739486a731c2c73afa5927cfabd48",
             "locator": {
-              "end": 465,
+              "end": 504,
               "kind": "line_range",
-              "start": 465
+              "start": 504
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

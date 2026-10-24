@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/explainer/FirstRequestForm.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+        "content": "sha256:257e44d3504d8768846889ac9a1df0cc018caa2c1827ca2fcf662219ab90d6c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstRequestForm"
+        }
+      },
+      "id": "RLZ-2YQ4HK",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Presents the locked capsule, fixed target, references, notes and explicit Cancel/Send controls without owning a server call.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Send is refused while there is nothing to send and while a Send is in flight\n\nAnchor: `disabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "content": "sha256:ead4f1cfcc493d316ef3fb80652678ec23f37dd319dd1f6fb15f94fb9e3a137f",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The empty message is named as the end-to-end review rather than an error\n\nAnchor: `textarea`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "content": "sha256:721147957556312b114e81033dfc079e8c7601292504b8b3040d257cd59a1c9b",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "With no reference the form says one ⊕ adds the first and later ⊕ clicks add more to the same form\n\nAnchor: `clicks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "content": "sha256:0e8f2a92685701fda77a985b76ff9dc9c75c097d588614eb9d7192602a6a528f",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The form says what sending does: it builds the workspace for the binding, then delivers the request as the first turn\n\nAnchor: `builds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd0ddae2d3c48c4a32032a444960546953687854",
+            "content": "sha256:b53030ca257296439d8fbd103962e7b957c6e57e25af61379a81c252c0250642",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

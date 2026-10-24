@@ -6,13 +6,13 @@
     ],
     "justification": "The delayed-runner test releases a receipt after cancellation; the rule prevents a late host reply from restarting an attempt the developer stopped."
   },
-  "applicability": "Late host receipts applied to durable presenter attempts.",
+  "applicability": "A host receipt that arrives after its attempt settled, and a create reply that arrives after a seat's last answer.",
   "conditions": [
-    "The fresh locked record is settled: its state is outside started and running."
+    "Only started may move to running.",
+    "A settled attempt keeps its state and takes the receipt's facts and an annotation."
   ],
   "exclusions": [
-    "A receipt for a started attempt, which may transition to running.",
-    "The separate publication-result transition, which is not a host receipt."
+    "A live attempt, whose detail the receipt may still refine."
   ],
   "id": "INV-YCMZGZ",
   "origin": {
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A delayed host receipt must not change a settled presenter attempt back to a live state.",
+  "statement": "A delayed host receipt never changes a settled presenter attempt back to a live state; a delayed create reply for a seat is reconciled onto that seat's derived id instead of reviving it, and a seat whose processes survive is refused explainer-processes-remain.",
   "status": "proposed",
   "supersedes": []
 }

@@ -10,6 +10,8 @@ Supplies retirement payload parsing, the restart notice, root-folder guards, sou
 
 ## Code Commentary
 
+The hook derives explainer_task_folder and supplies it with explainer_config; explainer_line lists only would-retire entries. hook_failed recognizes partial reports and environment states other than retired/already-retired/would-retire/finished.
+
 `archive_hook` invokes review-artifact cleanup and converts any hook exception into a failed report. `hook_failed` recognizes reported failures and `hook_remainder` counts artifacts that a preview still lists for deletion. The real retirement result and its state are owned by `task_master_retirement._clean_up`; this module does not contain a separate cleanup state machine.
 
 Root-folder admission refuses a nested master before changes. A restart notice applies when a record exists or a request would create it, including later refusals, rather than to every pre-recording refusal.
@@ -18,3 +20,5 @@ Root-folder admission refuses a nested master before changes. A restart notice a
 
 - Shared helpers parse payloads and classify hook failure and remaining work. [7]
 - Real cleanup outcome and operation state are attached by the retirement owner. [8]
+
+- The hook derives explainer_task_folder and supplies it with explainer_config; explainer_line lists only would-retire entries. hook_failed recognizes partial reports and environment states other than retired/already-retired/would-retire/finished. [9]

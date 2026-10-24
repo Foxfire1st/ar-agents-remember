@@ -154,7 +154,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:dc7b615860987c8324de1ad54311b1b5675e4c8fe023617e0bf4d5103b544aee",
             "locator": {
               "kind": "symbol",
@@ -166,12 +166,12 @@
         },
         {
           "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
+            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
             "content": "sha256:560f2eb5990e5f48db1e5c0dbe394f1f69706765ed1567442ee9daa2d5c42614",
             "locator": {
-              "end": 37,
+              "end": 36,
               "kind": "line_range",
-              "start": 23
+              "start": 22
             },
             "path": "mcp/tests/test_checkpoint_landing_end_to_end.py"
           },

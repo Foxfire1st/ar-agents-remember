@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+        "content": "sha256:4156ef4af26ac3a2c0e354a409192b624030186d359236282b28009977ae62c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "PlannedReview"
+        }
+      },
+      "id": "RLZ-GBNED4",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Draws the intended top line, synchronized effects, inert packets and deterministic controls with no frame or model.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The page draws the product's top line, the intended notice, the opened address and the four parts, holding its own sort and selection\n\nAnchor: `export function PlannedReview(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:4156ef4af26ac3a2c0e354a409192b624030186d359236282b28009977ae62c8",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Effects are drawn as a tree and as a reading list from one ordered set, with an empty case stated\n\nAnchor: `function Effects(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:7cfad691290e72920f1c0df57cbfb59126299d89777b6db48ced4a50b4721854",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tree rows are selectable by press, Enter and space\n\nAnchor: `function EffectsTree(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:55f68a4d018c9e37c5d352b82f7bfd08c97660db35ea293b8c74118447378ce4",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A resolved scope path links to the code tip; an unresolved one is captioned as text\n\nAnchor: `function ScopePathItem(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:decb30ea6f11a052d95481789415451aa6531607b60a43d134526417feed568b",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 266
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The prepared context shows its body or the word absent\n\nAnchor: `function PreparedContext(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:231fd7b6944875c3b737774c96d869a590862a0d734ec546a5b283e6f59c6855",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 366
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Reference files are listed by their task-relative path, including nested ones, or an empty case is stated\n\nAnchor: `function ReferenceFiles(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c405fcbf7f7f9b127c063ddb83adc6439e49044a",
+            "content": "sha256:6edbd2c998553781319c213abe455d661677aacc5d69429a45b9d2e2eb9d9ae9",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

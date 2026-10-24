@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:86ab2c05032a1fe9b632c7f44b708814a74929b9f727332fe4a8e846ba55b471",
             "locator": {
-              "end": 637,
+              "end": 643,
               "kind": "line_range",
-              "start": 614
+              "start": 620
             }
           },
           "kind": "test"
@@ -240,6 +240,17 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirrorMustDeclare"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -267,6 +278,17 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixtureMustSample"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -291,6 +313,40 @@
             "locator": {
               "kind": "symbol",
               "name": "INDEX_SIGNATURE_SITES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
+            "locator": {
+              "kind": "symbol",
+              "name": "AbsorbingPaths"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "content": "sha256:9fee5ea8a1aa224921c7644f25f3ea183716b20b55000ec94ab9ab229468c668",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_SIGNATURE_SITES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 550
             }
           },
           "kind": "test"
@@ -346,6 +402,17 @@
               "end": 503,
               "kind": "line_range",
               "start": 494
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnsampledMirrorPaths"
             }
           },
           "kind": "test"

@@ -210,6 +210,18 @@
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
+            "locator": {
+              "kind": "symbol",
+              "name": "amend_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
         }
       ]
     },

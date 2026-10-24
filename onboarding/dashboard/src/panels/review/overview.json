@@ -50,6 +50,22 @@
         }
       ]
     },
+    "11": {
+      "note": "The Review \\| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer.\n\nAnchor: `useSurfaceExplainer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "One tree scroller with retained navigation and pinned lane\n\nAnchor: \"export function ReviewTree(props: ReviewTreeProps)\"",
       "targets": [

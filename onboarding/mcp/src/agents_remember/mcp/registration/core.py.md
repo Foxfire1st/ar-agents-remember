@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - ping and skills_install registrations were removed.
@@ -148,3 +150,5 @@ drift tool, and that omitting it measures nothing.
 The `runtime_install` description now says the call refreshes the coordinator scaffold and provider assets, preserves `memory-repos/` and `providers/data/`, prunes legacy binaries, installs no skill folder because skills are package-served resources, stops leftover provider watchers, reports retired keys and starts none, and provisions the pinned host from the active MCP authority's `paseoRuntime` without writing settings or forcing a restart.
 
 - The install tool registration whose description states the scaffold-only install. [10]
+
+- Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused. [11]

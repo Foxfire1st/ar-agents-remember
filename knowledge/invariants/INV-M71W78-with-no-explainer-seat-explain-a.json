@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The form, tray interception and Send state must agree so a click cannot create a seat before Send or duplicate its first request."
+  },
+  "applicability": "The leaf's explainer first-request form, its build request and later Explain action.",
+  "conditions": [
+    "The active leaf address matches the pending/request event.",
+    "The Send has references, text or stale work to send."
+  ],
+  "exclusions": [
+    "Mixed archived/live ordinary tray sends retain the existing live-target settlement semantics; this proposal asserts collection preservation only for the sole archived/placeholder branch.",
+    "The backend owns final message composition and process/agent construction."
+  ],
+  "id": "INV-M71W78",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/explainer/ExplainerColumn.test.tsx::leaves the placeholder on Cancel, and no seat or environment exists before Send; dashboard/src/explainer/ExplainerColumn.test.tsx::keeps his request when the build fails, and names the step; dashboard/src/explainer/ExplainerColumn.test.tsx::never posts a second build for a second press while the first runs; dashboard/src/explainer/ExplainerColumn.test.tsx::opens the first-request form with the tray’s picks and intercepts native tray Send; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE02-first-request",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "With no explainer seat, Explain, a new reference or Send to an archived target opens the fixed-target request form without starting anything, and only explicit Send submits its references, notes and unchanged text under one stable request id with concurrent-press refusal and retryable failure, while later Explain only adds a change-set reference.",
+  "status": "proposed",
+  "supersedes": []
+}

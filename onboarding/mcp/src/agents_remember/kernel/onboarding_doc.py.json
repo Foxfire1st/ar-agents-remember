@@ -36,12 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c7e45a4112f26b6977cdbb4c826bd75817f44c1",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
             "content": "sha256:f4e20cb13556856b52017d0bdef3cd1e43b774b9f1cf841cc8b9dda05bd37b75",
             "locator": {
-              "end": 11,
+              "end": 15,
               "kind": "line_range",
-              "start": 11
+              "start": 15
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },

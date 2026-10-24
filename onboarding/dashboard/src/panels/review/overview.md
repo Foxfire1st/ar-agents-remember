@@ -10,7 +10,7 @@ The intent reviewer reads one leaf comparison as a page of changed intent and re
 
 ## Hot Path Summary
 
-Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the task's retained chat column outside this route. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair.
+Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair.
 
 ## Construction And Ownership
 
@@ -26,11 +26,13 @@ Code cards use one remembered Changes only/Full context choice. Their layout fol
 
 blockIdentity supplies comparison-bound entry and hunk identities for selection, traversal, URL restoration and tray references. changeTraversal visits drawn changed blocks followed by lane hunks. Selection landing, tree-row reveal and settled reader-position retention have separate owners; their source mechanisms do not constitute new browser measurements.
 
+The Review | Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer.
+
 ## Invariants And Boundaries
 
 The tree's height and contained scroller come from CSS. Hidden sidebars stay mounted and release their width; the shared SidebarToggle remains reachable. After the opening reads settle, an in-view lane file reads its classification and text without a gesture. Deferred file work remains limited to eight concurrent file tasks; card-mark work also waits for engagement. Pending reads retain page blocks and named failures occupy their requested slot. Catalogue completion chooses no subject, and no page or chat-column open starts an agent.
 
-Server readers own immutable comparison operands, currentness, recorded effects, refusals and continuation cursors. Family context never substitutes for a selected subject's exact revision. Existing generated-page content remains an independently owned sandboxed slot; it does not replace deterministic review content.
+Server readers own immutable comparison operands, currentness, recorded effects, refusals and continuation cursors. Family context never substitutes for a selected subject's exact revision. The Explanation tab replaces the reading body with the retained generated page and its trusted surrounding controls; switching back restores the deterministic Review body, while the tree and shared chat keep their separate owners.
 
 ## Evidence
 
@@ -46,3 +48,5 @@ Server readers own immutable comparison operands, currentness, recorded effects,
 
 - A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number. [9]
 - The mismatch line and the delivered identities reuse the page's existing note and technical-details parts. [10]
+
+- The Review \| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer. [11]

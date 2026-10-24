@@ -241,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
+            "blob": "05c7eaf6ee4c7b235150ac95488362a2aeb57388",
             "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
             "locator": {
               "kind": "symbol",
@@ -258,12 +258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:62afd1b646e225b25f919575f662f95ed2fd4bac5c30dc3f725f54d1203225cb",
             "locator": {
-              "end": 359,
+              "end": 376,
               "kind": "line_range",
-              "start": 321
+              "start": 338
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -271,12 +271,12 @@
         },
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:40bc2ad21154ca95abd1e35beae9dd537aefdc99ad6de4ad031db161dd50cf97",
             "locator": {
-              "end": 465,
+              "end": 505,
               "kind": "line_range",
-              "start": 428
+              "start": 468
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -305,12 +305,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:baf1381d29613c5fb3b3648f7398a75474925f9185b69a84fadc6d795f9d8776",
             "locator": {
-              "end": 318,
+              "end": 335,
               "kind": "line_range",
-              "start": 299
+              "start": 316
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -331,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:f5349844e4bf7e350dde15da6346c243e52072f32c9a93d0e5823ceed405f130",
             "locator": {
-              "end": 293,
+              "end": 310,
               "kind": "line_range",
-              "start": 253
+              "start": 270
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -349,12 +349,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:79cff0facd4862fe2697cc884fdd2b581da8c636498d817c084e55c7a572102b",
             "locator": {
-              "end": 739,
+              "end": 779,
               "kind": "line_range",
-              "start": 698
+              "start": 738
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -367,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:4ee1ccfc52c22e654027ddb3a4b3bc89023b46e7b863de2308ce8dce50e58066",
             "locator": {
-              "end": 761,
+              "end": 801,
               "kind": "line_range",
-              "start": 742
+              "start": 782
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -477,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
+            "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
             "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
             "locator": {
               "kind": "symbol",

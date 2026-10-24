@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
             "content": "sha256:1252bab1408b2a37a7275ac506129fa40715bf13e2d03746d0586bd5dcfd7f07",
             "locator": {
-              "end": 146,
+              "end": 150,
               "kind": "line_range",
-              "start": 125
+              "start": 129
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
@@ -88,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
             "content": "sha256:a32b0c5dfe1797a9b3c36c5a456629151f39422b4a637fcf37d2114f65d22180",
             "locator": {
-              "end": 112,
+              "end": 116,
               "kind": "line_range",
-              "start": 112
+              "start": 116
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },

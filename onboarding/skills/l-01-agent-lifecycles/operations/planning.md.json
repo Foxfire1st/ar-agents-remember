@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "084f763c88f1ebdef1358a52328f99a44df3223a",
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
             "content": "sha256:905477a73eb39f2cce3446be15e29751fcf57051d49d2d9d9982dafbbfbbe4fd",
             "locator": {
               "end": 6,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "084f763c88f1ebdef1358a52328f99a44df3223a",
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
             "content": "sha256:50bcc494e6d2c7a9aaadc66db6ab152e575bdc124415bd8420f92949c9bc757c",
             "locator": {
               "end": 4,
@@ -79,6 +79,23 @@
               "end": 14,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "content": "sha256:906fdabfc96eb8ecded4f70ae179fff5a0880efde8bb94a3b6f1655beaa2abe6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
             }
           },
           "kind": "code"

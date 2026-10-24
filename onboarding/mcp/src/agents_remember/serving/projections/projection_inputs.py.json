@@ -190,6 +190,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REPO_SURFACES_TTL_SECONDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_surfaces_stale"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -216,6 +238,19 @@
               "end": 61,
               "kind": "line_range",
               "start": 61
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "content": "sha256:080616f28cf77422a2508335a3d7e0cce09a0ba3bc4a682e7069af75dd926be4",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -255,6 +290,17 @@
             "locator": {
               "kind": "symbol",
               "name": "read"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoSurfaceReader"
             }
           },
           "kind": "code"

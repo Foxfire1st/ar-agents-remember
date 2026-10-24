@@ -196,6 +196,58 @@
         }
       ]
     },
+    "18": {
+      "note": "Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "715d185a5e3d1fbbc097f731d4726964d8ee63e4",
+            "content": "sha256:e47bb5d4b5ca7fb83e41e6473cf031cca5c5e9337dc758cb29d2cb6a5c5627c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "enforce_intent_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+            "content": "sha256:fa1a5de7cf0ce0bd6dab25973bea355afa973ec0582392f77282c72968b49fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_hook"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+            "content": "sha256:6a101cedba2c2c7820b0b94ecad78a3709e1a3c3bae3d821b52becb5a9e2ad8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "hook_failed"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "5": {
       "note": "The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner.\n\nAnchor: _MUTABLE_FIELDS",
       "targets": [

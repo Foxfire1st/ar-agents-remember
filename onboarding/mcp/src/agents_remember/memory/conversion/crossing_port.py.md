@@ -12,6 +12,8 @@ binds it, so `worktrees/` reaches the conversion without importing `memory.conve
 
 ## Code Commentary
 
+The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.
+
 ### Logic
 
 - `plan(request)` reads the three memory commits into a temporary scratch (`inputs.memory_from_git`,
@@ -60,3 +62,5 @@ The adapter and the port it implements.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+- The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior. [4]

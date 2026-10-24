@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+        "content": "sha256:0520d43ff4963f7922617b79ac8bf85098f853b26d063f532abde373a184e2ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "useExplainerTargetOf"
+        }
+      },
+      "id": "RLZ-1JJNHR",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Carries the exact repository/master/leaf address and planned/comparison/history facts from the review target into the shared column.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:354c77247cb485e9da18f9de9ee9bea16fabf1737df23ce98e9be695ccbecb25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:9d4ad5bff98a4235fd157aa5d55cf6f60ae47582fee601bd5f66447863710587",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+        "content": "sha256:2275c74c4682477110286b1e95cd47363277094adc9890c16ab91e74cc19b817",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFirstRequestOpens"
+        }
+      },
+      "id": "RLZ-DEAPDQ",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A first-request signal opens this review column only when its full explainer address matches, and the callback starts no agent or build.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+        "content": "sha256:6aea124849930cca341c23a7422d7310e2ad322780359e479c35aa2a514b1bb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainerAddress"
+        }
+      },
+      "id": "RLZ-FPMF16",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The review gets an explainer only when repository, master and leaf all exist; this public address helper keeps incomplete review targets out of the leaf-explainer default.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:b574f7d08ff5e39ecc346bc75fd5b282a4c82b35de2c6f5d2d0364bbee670b7a",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:b574f7d08ff5e39ecc346bc75fd5b282a4c82b35de2c6f5d2d0364bbee670b7a",
         "locator": {
           "kind": "symbol",
@@ -75,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:8956d2e3ad0b3248856043a744a65db12898d7350432e108462ebfbd80d2ad91",
         "locator": {
           "kind": "symbol",
@@ -93,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:f10e6ecbddb9fdc286aaad30e24ff9c7eaa3a6590c71b36392a81d91d214ce27",
         "locator": {
           "kind": "symbol",
@@ -111,8 +165,26 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
-        "content": "sha256:cf0d61a50cef37044990dc9ae1013ab6c24821e315915c9b9c6114e64f94f1ad",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+        "content": "sha256:ea67f7305939debcd9b636e2923683f738508bcc4638512ff64562643002380c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewChatTask"
+        }
+      },
+      "id": "RLZ-XZPJ7N",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The shared task entry is matched by leaf id, repository and master folder before its planned stage is carried to the explainer column; pending or missing task identity retains its explicit unbound state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+        "content": "sha256:0596a7de9e399720be5fc53cbf5beaf98e748e1089b1a8c5fd4aa2f483194213",
         "locator": {
           "kind": "symbol",
           "name": "useReviewChat"
@@ -129,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+        "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
         "content": "sha256:f10e6ecbddb9fdc286aaad30e24ff9c7eaa3a6590c71b36392a81d91d214ce27",
         "locator": {
           "kind": "symbol",
@@ -152,12 +224,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
             "content": "sha256:c71ee2f81a20ce20ef6d8b29a30797c6fed9f05e213a279a60ea3f659db2efeb",
             "locator": {
-              "end": 64,
+              "end": 67,
               "kind": "line_range",
-              "start": 44
+              "start": 47
             }
           },
           "kind": "code"
@@ -169,12 +241,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
             "content": "sha256:cfaf930509240aad47f2470913332de8b79e4f58159b2145132660c847d5f80c",
             "locator": {
-              "end": 121,
+              "end": 151,
               "kind": "line_range",
-              "start": 104
+              "start": 134
             }
           },
           "kind": "code"
@@ -192,6 +264,21 @@
               "end": 171,
               "kind": "line_range",
               "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A review with repository, master and leaf supplies a memoized explainer address plus planned/live-or-recorded and comparison-number context; a review without all three keeps the document chat. The leaf's stage comes from the exact shared task entry. The matching first-request event opens the existing column but starts nothing, and task hydration/missing-task states still prevent accidental Projects Architect binding. The default review recipient is the explainer or its placeholder; the Worker is never selected by default.\n\nAnchor: `useReviewChatTask`, `useReviewChat`, `explainerAddress`, `useExplainerTargetOf`, `useFirstRequestOpens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+            "content": "sha256:efd5b315ea5cb4588aa3b6155e8accdac1f01a80c4de37935e478eb91b1c2cac",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

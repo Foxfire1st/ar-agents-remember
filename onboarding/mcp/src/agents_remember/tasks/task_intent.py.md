@@ -26,8 +26,12 @@ packet.
   `_validate_allowlisted_classifications` compares them with the shared field taxonomy
   (`document_field_effects`) in both directions and raises `task-intent-schema-unclassified` for a slot
   that is not classified normative and for a normative field outside the projection.
-  The root normative inventory now includes `nonGoals` and `acceptance`; structural
-  `waitsFor` and audit `completedAt` stay outside normative intent.
+  The root normative inventory includes `nonGoals`, `acceptance` and `intentReview`; the nested
+  allowlists include the answer and agreed-revision fields. Structural `waitsFor` and audit
+  `completedAt` stay outside normative intent. The leaf `TaskIntentV1` construction still passes
+  its declared slots explicitly and does not pass `intentReview`; the master dictionary projection
+  retains its normative projection. Allowlist admission alone is not a claim that changing the
+  answer changes a leaf digest.
 - `task_intent_projection` refuses a master (`task-intent-leaf-required`) and an unsupported schema
   version. `task_intent_identity` is the SHA-256 of the projection's canonical JSON with sorted keys and
   compact separators. `task_intent_master_projection` projects a master's own normative fields as a plain
@@ -88,3 +92,5 @@ and its answers and errors are the same.
 - A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. [23]
 
 - One confined packet read records caller and resolved-file byte identity; invalid UTF-8 receives a named task-intent refusal. [24]
+
+- Intent-review answer/agreement fields are added to the exhaustive normative allowlists; leaf construction still explicitly supplies TaskIntentV1 slots without intentReview, unlike the master dictionary projection. [25]

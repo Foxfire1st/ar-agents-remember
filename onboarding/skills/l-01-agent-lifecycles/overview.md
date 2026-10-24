@@ -14,6 +14,8 @@ The canonical frame, roles, review criteria and handoff/impact templates now ask
 
 A launch uses explicit supported role, operation, canonical selection and workspace facts. Missing, conflicting or inapplicable bindings are reported rather than inferred from chat titles, nearby documents or runtime directories. Task-bound seats read the selected requirement packets and rendered task documents through their admitted interfaces; edits to rendered copies are not canonical task changes. Existing approvals survive reconnects and compaction.
 
+After a new leaf’s task document exists and before any start, the Architect asks the developer once, “go, or review first?” It explains that up-front review uses the planned comparison without a task workspace and creates the explainer workspace on the first Explain. The Architect records `review-first` or `go` (with `agreedRevision`) in `intentReview` through `task_doc`. A start refused as `intent-review-open` waits for the Architect’s `go`; the Manager does not retry it.
+
 Architect delegates one master to one Manager, or concurrent masters to an Orchestrator on the sprint with one Manager per master. Direct Architect coordination and an Orchestrator above a single master are developer choices. A refused coordination start does not authorize direct coordination. Hosted coordination uses `role_start`, Manager-owned `role_start_set` and `role_message` on the bound task server, preserves returned IDs and artifacts, and reconciles an uncertain or partial start with the same request ID before creating anything else.
 
 The Manager prepares Worker, Reviewer and Curator as siblings in one `role_start_set` call. Worker opens immediately; Reviewer and Curator are held until their first addressed work, unless the call carries Reviewer's first work. Reviewer cold-reads the requirement before a candidate exists, without opening a code round. Worker freezes and reports directly to Reviewer; Reviewer returns sealed findings or code PASS, and supplies the passed freeze and its producer list directly to Curator. Curator and Reviewer exchange the memory candidate and memory verdict directly. The Manager reads reports, decides delegated gates, and owns task acceptance, closeout, integration and landing order; it does not relay ordinary freeze, finding, verdict or memory contents.
@@ -391,3 +393,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [90]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [91]
+
+- Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry. [95]
+
+- Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry. [95]

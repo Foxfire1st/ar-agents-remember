@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
-        "content": "sha256:0ce612b1982ae978bcfe81011a96916ddcbf5b72f61e123afebc87998c51357b",
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:baff05fcdf7b5ff34f081c9c3f0932b7d5d01c9934879506899c99fedf03821b",
+        "locator": {
+          "end": 108,
+          "kind": "line_range",
+          "start": 79
+        }
+      },
+      "id": "RLZ-21F2HF",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:8b0e2f4f9efa469fae3d6cb78edfabed12987f113ab7c36bd0c85426157d380b",
         "locator": {
           "kind": "symbol",
           "name": "RequestLedger"
@@ -21,7 +40,116 @@
     },
     {
       "anchor": {
-        "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:bfb54ef4408f9f346f4d1dbc58ead159c339bcb03c0a55d8cf1551d0e0b0bd1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_host_message"
+        }
+      },
+      "id": "RLZ-A1J5M0",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:cfcb8e6e984ae6eb3eb1b077e92a6e784e2c045f57030c1299cea7993dd2c1be",
+        "locator": {
+          "kind": "symbol",
+          "name": "_offer_selections"
+        }
+      },
+      "id": "RLZ-CVEZJ4",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:cfcb8e6e984ae6eb3eb1b077e92a6e784e2c045f57030c1299cea7993dd2c1be",
+        "locator": {
+          "kind": "symbol",
+          "name": "_offer_selections"
+        }
+      },
+      "id": "RLZ-EJ1W95",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Admits only bounded nonempty question/choice rows and preserves their plain text.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:dfa019dd28656e1a0317cbf60ba3c97fc6876631986e60c704df8ec0a69606ed",
+        "locator": {
+          "end": 287,
+          "kind": "line_range",
+          "start": 281
+        }
+      },
+      "id": "RLZ-SJVHVY",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The closed payload dispatch table explicitly routes offer-selections through _offer_selections validation rather than accepting an unparsed operation. This dispatch is reached only after the common session-bound envelope checks; sending to the tray is not developer-message delivery.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:c3be825dd4789c054b8c8cd838eff5ce89f57c89eb97d98886cc50241e3b915b",
+        "locator": {
+          "kind": "symbol",
+          "name": "stale_parts_payload"
+        }
+      },
+      "id": "RLZ-SYVB6T",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+        "content": "sha256:bb4b4ad238a6bf71a4774fecd663037658a51a2da9e142a9c3df4de48c8851d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_request_explanation"
+        }
+      },
+      "id": "RLZ-SZSHN3",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Admits only a bounded question field before a question pick can be created.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
         "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
         "locator": {
           "kind": "symbol",
@@ -44,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
             "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
             "locator": {
               "kind": "symbol",
@@ -65,6 +193,21 @@
             "locator": {
               "kind": "symbol",
               "name": "RequestLedger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation extends FRAME_OPS with offer-selections and adds a separately validated host stale-parts operation, so the four-operation account is false.\n\nAnchor: `parse_frame_message`, `_offer_selections`, `stale_parts_payload`, `parse_host_message`, `RequestLedger`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:11a1ad2afc084c83d39327fc30e83c4ffbb59f8ef0a4d80495e8b2ebd226d479",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

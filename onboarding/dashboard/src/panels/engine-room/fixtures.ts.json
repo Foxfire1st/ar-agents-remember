@@ -16,6 +16,18 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -88,6 +100,19 @@
               "end": 209,
               "kind": "line_range",
               "start": 208
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:a69870ff3d37fe34a2fcd072803a7c290dbee8f1bcc7de15513ba6e0295450d5",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 215
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -167,6 +192,19 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
+            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -191,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
             "locator": {
               "kind": "symbol",

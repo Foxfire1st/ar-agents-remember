@@ -23,3 +23,7 @@ This file consumes comparison and owner state; it does not author knowledge or d
 - Render accessible one-line family, invariant, changed-location and group rows. [1]
 - Render accessible one-line family, invariant, changed-location and group rows. [2]
 - Render accessible one-line family, invariant, changed-location and group rows. [3]
+
+LocationRow now inserts the model's Ungraded (n) heading before the first ungraded row and renders JudgmentChip before its location label. A chip names the active grade or graded state, carries stale/category/grade attributes and the full inference/reason hover text; stale chips use dashed amber styling. The location tooltip appends those reasons while the existing accessible location/role/reason label and selection callbacks remain intact.
+
+- LocationRow now inserts the model's Ungraded (n) heading before the first ungraded row and renders JudgmentChip before its location label. A chip names the active grade or graded state, carries stale/category/grade attributes and the full inference/reason hover text; stale chips use dashed amber styling. The location tooltip appends those reasons while the existing accessible location/role/reason label and selection callbacks remain intact. [4]

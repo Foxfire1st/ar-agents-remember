@@ -1,0 +1,200 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_service.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+        "content": "sha256:7511fd03dfd4badacb3c860396b0cacfdc73b51ae8e9b45ff383bb06f165823d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_initial_or_reconciled_build"
+        }
+      },
+      "id": "RLZ-3RTPNH",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The first build prepares evidence from the chosen comparison and rechecks that binding after writing the environment before any seat is created.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+        "content": "sha256:801a30246d8401f90b9472feb3744c37daa20fe610915b2d49d2aeed52ae5eb5",
+        "locator": {
+          "kind": "symbol",
+          "name": "update_seat"
+        }
+      },
+      "id": "RLZ-D8H43T",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "An explicit Update captures the current bound comparison and prepares its packet again before replacing snapshot/instructions, without starting a model turn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+        "content": "sha256:08825a8aac3da1f540cf1312f85625e5bfc38b8e8bcee8f93d5661c38e2751bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "retire_seat"
+        }
+      },
+      "id": "RLZ-J0V8AP",
+      "invariant": "INV-EWGTN0",
+      "origin": {
+        "handoffEntry": "L183-A-2",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "retire_seat waits for the leaf lock and resumes or completes the receipt that identifies this environment; its workspace owner archives and ends the recorded processes before marking retirement finished.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+        "content": "sha256:2437c111e2476e2ef0b6f45d265cae8369c9cdefe9220fad4aefcc73d6e621c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_seat_under_lock"
+        }
+      },
+      "id": "RLZ-JA424S",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L183-A-3",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The request ledger is read under the leaf lock before any seat creation: already delivered/held requests return the recorded seat/message, and failed/pending requests prepare a retry on that same identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+        "content": "sha256:7511fd03dfd4badacb3c860396b0cacfdc73b51ae8e9b45ff383bb06f165823d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_initial_or_reconciled_build"
+        }
+      },
+      "id": "RLZ-V2D48D",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L183-A-4",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The build retains the inflight generation and derives the same agent id for a retry after an uncertain create reply. Lost-reply classification keeps that inflight state; known pre-create refusal clears it and restores the prior generation. This reconciles creation through the same identity rather than blindly minting another seat.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A Send that carries nothing, or names an unknown history mode, is refused before any build\n\nAnchor: `def build_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:81f7401b25af1f1e8954bcadd46235b1d96d3ced2b8172ab69e5159fc2a7c74c",
+            "locator": {
+              "end": 760,
+              "kind": "line_range",
+              "start": 701
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seat and the ledger row are prepared under the leaf lock, and a repeated request answers the existing seat\n\nAnchor: `def _prepare_seat_under_lock(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:2437c111e2476e2ef0b6f45d265cae8369c9cdefe9220fad4aefcc73d6e621c5",
+            "locator": {
+              "end": 834,
+              "kind": "line_range",
+              "start": 763
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A retired or archived master is refused by name, so no environment is rebuilt\n\nAnchor: `def _checked_facts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:972e44f0b3c0f12f0ce4ce7089e93af97478d0e225618b4e128e6230fa0feb72",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An Update refuses when the seat is in a turn, already retired, or has no environment, and takes no lock deadline\n\nAnchor: `def update_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:801a30246d8401f90b9472feb3744c37daa20fe610915b2d49d2aeed52ae5eb5",
+            "locator": {
+              "end": 1095,
+              "kind": "line_range",
+              "start": 1043
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A Retire waits for the lock, finishes a pending receipt and answers a finished one without repeating it\n\nAnchor: `def retire_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:08825a8aac3da1f540cf1312f85625e5bfc38b8e8bcee8f93d5661c38e2751bb",
+            "locator": {
+              "end": 1166,
+              "kind": "line_range",
+              "start": 1098
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A cancel names the seat and the request, and reports an unnaming ledger as uncertain rather than cancelled\n\nAnchor: `def cancel_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:64d52c887ac7f77ddd6f86f99895d1b118f7af3d1f2acdf3c359866a31068ddd",
+            "locator": {
+              "end": 1284,
+              "kind": "line_range",
+              "start": 1250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

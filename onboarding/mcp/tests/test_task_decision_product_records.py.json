@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2dce3b365c62b9ccb8b26962ee2a4b8d85d1ea8",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
             "content": "sha256:04b62cca9a4e9ab4d1db3df293e74daa5d7247482db406dd7a3f935d74101ccc",
             "locator": {
               "end": 236,
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fba32f056c0bb27bfa817d510e47e14b17743c16",
+            "blob": "dc4577a3f94d4af3411e041bba434c8a6e234ab8",
             "content": "sha256:d79a8ecc71e28916f002d592fdcf45320d466564fc27be9b49c617464cc5a411",
             "locator": {
-              "end": 163,
+              "end": 162,
               "kind": "line_range",
-              "start": 141
+              "start": 140
             },
             "path": "mcp/tests/test_series_finalize_rules.py"
           },

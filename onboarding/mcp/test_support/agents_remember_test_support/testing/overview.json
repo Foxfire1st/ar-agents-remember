@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
             "content": "sha256:8871d41faeb01e4371a59eeaaa76181e2fbaf1d9f69eea9aaabeea8b1bda5a5a",
             "locator": {
               "end": 1,
@@ -378,6 +378,33 @@
         }
       ]
     },
+    "29": {
+      "note": "The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register.\n\nAnchor: `reset_process_state_at_module_boundaries`, `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "content": "sha256:8c3af6fff1c4b93d4f691cdcd4b598866af27bf07bbcd8701e833a27940cdd99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller.",
       "targets": [
@@ -452,7 +479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",

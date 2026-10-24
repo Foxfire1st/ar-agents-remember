@@ -14,6 +14,8 @@ until the new field is classified.
 
 ## Code Commentary
 
+intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields.
+
 ### Logic
 
 `TaskDocumentFieldEffect` defines the closed planes: structural topology, normative intent,
@@ -144,3 +146,5 @@ None; this is the task-schema authority inside agents-remember.
 - The retirement proof, its edge selection and the row's `retirement` field are classified as audit. [10]
 
 - Exact mutation effects recurse through nested models; identical inputs have no delta. [11]
+
+- intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]

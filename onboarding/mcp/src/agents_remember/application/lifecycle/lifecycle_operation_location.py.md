@@ -10,6 +10,8 @@ Configured application authority for exact task-owned operation journal location
 
 ## Code Commentary
 
+Contract authority is checked before location resolution; worktree location/observation implementations load at resolution, with the same errors. Public location types resolve on demand from the canonical module.
+
 ### Logic
 
 The public surface is `LifecycleOperationPublicAddress`, `LocationDecisionPayload`, `ContractReadOperationObservation`, `configured_lifecycle_operation_location`, `location_decision_payload`, `unreadable_status_operations`. This application boundary exposes a closed public result and delegates durable mutation to its owning domain seam. Expected configured-contract, location, or legacy failures are translated through typed decisions; callers do not enumerate lower-level exception families or invent alternate authority.
@@ -44,3 +46,5 @@ The source file itself is the current evidence for this file-specific contract.
 No meaningful cross-repository boundary is owned by this file.
 
 - The module defines `LifecycleOperationPublicAddress`; `LocationDecisionPayload`; `ContractReadOperationObservation` as its public seam. [1]
+
+- Contract authority is checked before location resolution; worktree location/observation implementations load at resolution, with the same errors. Public location types resolve on demand from the canonical module. [2]

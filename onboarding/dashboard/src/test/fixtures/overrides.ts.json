@@ -145,6 +145,19 @@
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
         }
       ]
     },

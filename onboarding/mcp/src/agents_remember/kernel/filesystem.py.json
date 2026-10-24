@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
             "content": "sha256:db0bd40924bf1e90c5906d0f63e1ce158dcfbbd13124ada55c7387ecdc24a02d",
             "locator": {
-              "end": 943,
+              "end": 932,
               "kind": "line_range",
-              "start": 942
+              "start": 931
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
             "content": "sha256:e183e7b58e6de88bcad7a93b275b632381a133fdb68bdd47537b24b1cc4d28e4",
             "locator": {
-              "end": 966,
+              "end": 949,
               "kind": "line_range",
-              "start": 966
+              "start": 949
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:d08727d55a6cb1c0bc5bc93a37ce032d023aaa040e5c8c2b2c8ed930ba7529be",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "173c634c2a673a71154a2bb8704a9b0b9929d40b",
+            "blob": "2ad9297aa031e0aaa3931e246d19a8a360a25bd6",
             "content": "sha256:ff5457d92a71f94e20360af01a501d8fbac519479a221c71018d8c5fd3e99afe",
             "locator": {
               "kind": "symbol",

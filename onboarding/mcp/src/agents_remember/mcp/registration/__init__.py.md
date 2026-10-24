@@ -2,9 +2,11 @@
 
 ## Current operative account — MIK-R112
 
+Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current TOOL_REGISTRARS has nine entries.
+- Ordinary TOOL_REGISTRARS has ten entries, ending with register_explainer_tools after knowledge. A valid bound explainer server uses its separately selected 22-tool registrar rather than this ordinary tuple.
 - Capsule/skill family is now resource-only.
 
 ### Superseded inventory
@@ -102,3 +104,5 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 - Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior. [8]
 
 </details>
+
+- Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars. [10]

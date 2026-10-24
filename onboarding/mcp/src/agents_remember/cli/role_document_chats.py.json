@@ -6,9 +6,9 @@
         "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
         "content": "sha256:96e7ee16a8ae5501e7eff8c4776540c5163f814f5e33acf6d8cae933af9dee80",
         "locator": {
-          "end": 90,
+          "end": 102,
           "kind": "line_range",
-          "start": 57
+          "start": 69
         }
       },
       "id": "RLZ-2EZ0DF",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-        "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+        "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
         "locator": {
           "kind": "symbol",
           "name": "document_chats"
@@ -40,7 +40,25 @@
     },
     {
       "anchor": {
-        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+        "content": "sha256:bb432f7b53b7c8bc6a232bcbb73e853c364ff05ae7dd5656a0354df7fcc26ece",
+        "locator": {
+          "kind": "symbol",
+          "name": "_explainer_agents"
+        }
+      },
+      "id": "RLZ-37EDTA",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
         "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
         "locator": {
           "kind": "symbol",
@@ -61,9 +79,9 @@
         "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
         "content": "sha256:94817887839163988991af2398b35a43a520541ada47d34bf4b3da21827e55ef",
         "locator": {
-          "end": 196,
+          "end": 208,
           "kind": "line_range",
-          "start": 188
+          "start": 200
         }
       },
       "id": "RLZ-RG2GA1",
@@ -80,9 +98,9 @@
         "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
         "content": "sha256:c2f1579192c25b5dc6c4c90578cabe1f24dd186856f886e6cd1b6c53b9505a6f",
         "locator": {
-          "end": 142,
+          "end": 154,
           "kind": "line_range",
-          "start": 117
+          "start": 129
         }
       },
       "id": "RLZ-X564ZP",
@@ -111,6 +129,21 @@
         }
       ]
     },
+    "10": {
+      "note": "After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated.\n\nAnchor: `_explainer_agents`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.  Anchor: `_records`",
       "targets": [
@@ -131,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
             "content": "sha256:fbebb34033fa3fb5a65e2788ff29137384a32bbd4396b1c6cef268c03eb9582a",
             "locator": {
               "kind": "symbol",
@@ -191,15 +224,28 @@
       ]
     },
     "7": {
-      "note": "The paged walk over role blocks, with one host read bound per page.",
+      "note": "Role-record pagination bounds its own scan; the separately appended explainer lookup has its own host check.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
             "locator": {
-              "kind": "symbol",
-              "name": "document_chats"
+              "end": 321,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:bb432f7b53b7c8bc6a232bcbb73e853c364ff05ae7dd5656a0354df7fcc26ece",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 324
             }
           },
           "kind": "code"
@@ -211,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
             "content": "sha256:55a4b805c5378d76ce59f4e9ebc7936eaeee138966bd4cfcdbd4da971760a838",
             "locator": {
               "kind": "symbol",

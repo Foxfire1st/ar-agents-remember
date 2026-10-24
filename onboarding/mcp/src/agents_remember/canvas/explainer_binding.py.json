@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_binding.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+        "content": "sha256:bb9d9ae140b0b13d7772cd49a81d06d680e9819b3f973e7d877f9308de413c1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_launched_seat"
+        }
+      },
+      "id": "RLZ-GEJRBG",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Checks caller marker, workspace marker, current generation and derived seat against the launched binding on each call.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "This constant is the surface a binding may discover or call, and it is the one list discovery and dispatch both check\n\nAnchor: `EXPLAINER_SURFACE: tuple`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:a0d7c30b0a7897b1787496dd604318379bd5622f77b8a0b058252c6409b6ea75",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A binding missing a required field, naming another capability or carrying a non-positive generation is refused\n\nAnchor: `def validate_explainer_binding(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:a79b0ecad4739d1de7928750b391dc15dec2ef852922af80c078952c33d8875e",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 261
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The workspace must be the exact explainer placement of that repository, task and leaf, and must exist as a real directory\n\nAnchor: `def _check_workspace(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:726cc2024944b875081e31ac14d00f2caef6fdda36143da8f28c98a3c280fe91",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The caller's id must be the one this workspace and its current generation derive\n\nAnchor: `def require_current_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:574735309c2a6dc9566360f4fd158c1db0378547924ecbba0d0ddb85d98cc615",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A call from another seat, another workspace or a superseded generation is refused, and no argument widens the binding\n\nAnchor: `def require_launched_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:bb9d9ae140b0b13d7772cd49a81d06d680e9819b3f973e7d877f9308de413c1d",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 330
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A missing binding on a marked explainer process is refused rather than read as an ordinary process\n\nAnchor: `def read_explainer_binding(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:3797f489962beaa2162a94705c9334adc2f0625793d975942a37edf84111b698",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 374
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

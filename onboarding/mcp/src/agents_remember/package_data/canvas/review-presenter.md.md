@@ -6,14 +6,16 @@
 
 ## Purpose
 
-The installed capability text the presenter is started with — the shipped copy of the capability instructions, read by the presenter's instruction loader and budget-checked with the checkout copy.
+The shipped explainer instructions, identical to the canonical canvas copy and budget-checked with it. They describe the comparison-bound environment, its tools, page, conversation and authority limits.
 
 ## Code Commentary
 
-- The text states the assignment, the owed output and the bounds once, and leaves internal organisation to the presenter.
+- The explainer receives read-only bound snapshots, one packet prepared at build and every Update, and its own working folder. It reads only through its tool server and publishes from drafts through the confined product writer.
+- The instructions distinguish recorded and planned bindings, require claim-marked static parts, and keep grades and interpretation apart from recorded verdicts or accepted knowledge.
+- Update rebinds the environment without a turn; only an explicit regeneration request asks for a revised page. A report to the architect copies the delivered developer message by its message id.
 - It carries the kit map: which tool suits which explanation, with search keywords rather than addresses.
 - It is byte-identical to the checkout copy the capsule text test reads.
 
 ## Evidence
 
-- The installed capability text states the assignment and bounds. [1]
+- The shipped capability text states the explainer assignment and bounds. [1]

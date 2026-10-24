@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.
+
 The retained `role_message` exception describes the normative cut/file policy for waited replies; it does not implement character cutting or full-text storage. Its 4000-token ceiling and common envelope/list/short-form shaping algorithms are unchanged. The composed unheld dispatcher calls the delivery helper when a filed identity exists, while the held-drain wait merges its result without that helper. This table therefore does not prove every waited reply is character-bounded and filed; the implementation gap remains Owner/Worker-owned rather than a narrowed requirement.
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
@@ -123,3 +125,5 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 `SHAPED_TOOL_BOUNDS` gives `user_settings_init` a 900-token bound: its answer carries the state, the path, the two key lists, the harness of every role and its sources, and the largest measured answer is 572 characters. A bound is a ceiling on the delivered answer, not a promise that every field appears in the short form.
 
 - The shaped-bound table, which carries the settings answer's ceiling. [9]
+
+- explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged. [10]

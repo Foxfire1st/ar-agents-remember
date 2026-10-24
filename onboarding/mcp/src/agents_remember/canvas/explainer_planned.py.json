@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_planned.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one top line a planned page carries says there are no changes\n\nAnchor: `TOP_LINE = `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:4340f26dd19bc23714ac156f2ade528508fba30515fb0c007ef95669d55a92f3",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every planned diagram or claim carries the notice that it is intended and not a fact about the code\n\nAnchor: `INTENDED_NOTICE = `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:fe637cb04847d89b302248cd67f2d3dd6dff3c3a7f577fb5898731da2b799668",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only three deterministic sorts are offered, each a function of the declarations themselves\n\nAnchor: `PLANNED_SORTS: tuple`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:260405b19b0e9701e69866bd62602630c58bd003dfdddaf05d5f73f4ae3cab8a",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A packet's scope is read from its own prose as the backticked paths it names, each once\n\nAnchor: `def scope_paths(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:61a6475db244c82f016811840fc6a74d66f9f51c0b50461c3504144d84a2c804",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A scope path that two readings answer is listed as text, never resolved by preference\n\nAnchor: `def _resolve(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:c87079d395a069d9578bd42cd6f8c416a02f05dd3e3a9782cdc63565e4aeacd2",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The whole payload is answered from the caller's reads, with no model turn and no agent start\n\nAnchor: `def planned_page(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eaa9476022c8a6d11902b1503572fe317fce1cd3",
+            "content": "sha256:499cf3bdf3318b799b355dde6e04835d04fba332d173a573750c1c85d011cdcb",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

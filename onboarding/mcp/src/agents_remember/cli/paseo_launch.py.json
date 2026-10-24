@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+        "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_CARRIED_VARIABLES"
+        }
+      },
+      "id": "RLZ-11AW4X",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:2d7a0ad20596b244c29a60076925cb0acf9ba4264f7eebe8ce2f3bb128deb756",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
-        "content": "sha256:e8340269563dbcb8c870d8a9f6bafe48c94c0aaad707d986d5cee39e3088e44a",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+        "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
         "locator": {
           "kind": "file"
         }
@@ -56,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -74,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
@@ -92,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -110,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -128,7 +146,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -146,7 +164,25 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+        "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "tool_server_definition"
+        }
+      },
+      "id": "RLZ-F0QN5E",
+      "invariant": "INV-7PY4J2",
+      "origin": {
+        "handoffEntry": "L183-browser-module-carry",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The definition copies only nonempty supplied values from that register into the server environment without substituting an installation.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -164,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:5af30fa7f2b0102d719cfa66cc1c67342d88fc9e8f3798687c44a876c421edd5",
         "locator": {
           "kind": "symbol",
@@ -182,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
@@ -200,7 +236,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ced19ea6b174f056a8a1a08c19beae94f6b0d78ab2659cc9b98e33781f3681e4",
         "locator": {
           "kind": "symbol",
@@ -218,7 +254,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -236,7 +272,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -254,7 +290,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -272,7 +308,7 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:bc2764b0d63093e46e4fb47591faebae59cb74380b1ce675f3379b937855590e",
         "locator": {
           "kind": "symbol",
@@ -290,8 +326,8 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
-        "content": "sha256:408d4f9eea48cd27a4b0d7889a30459cd3993fd4320e04226850b10885937d63",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+        "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
         "locator": {
           "kind": "symbol",
           "name": "_CARRIED_VARIABLES"
@@ -308,7 +344,25 @@
     },
     {
       "anchor": {
-        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+        "content": "sha256:a685eb497828defe10452def100b63f3cf707e2fbfa0d7c9e4edf53bcf2fdb50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_CARRIED_VARIABLES"
+        }
+      },
+      "id": "RLZ-QPJTMK",
+      "invariant": "INV-7PY4J2",
+      "origin": {
+        "handoffEntry": "L183-browser-module-carry",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The closed register admits the host browser-module name for role tool-server handover.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
         "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
         "locator": {
           "kind": "symbol",
@@ -331,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
             "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
               "kind": "symbol",
@@ -415,12 +469,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
-              "end": 201,
+              "end": 202,
               "kind": "line_range",
-              "start": 127
+              "start": 128
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -451,16 +505,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
             "locator": {
-              "end": 329,
+              "end": 330,
               "kind": "line_range",
-              "start": 203
+              "start": 204
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value.\n\nAnchor: `_CARRIED_VARIABLES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

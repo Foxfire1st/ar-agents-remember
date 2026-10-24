@@ -1,0 +1,106 @@
+{
+  "path": "mcp/tests/test_explainer_planned_binding.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ef47984d268491e115a16d04c6156e586582f839",
+        "content": "sha256:354b5a4946d8b59e610e41b65af99bc89ac9a56e3fdb56fe9f56a2a7f10a55ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_written_planned_environment_binds_one_exact_record_across_packet_grants_and_snapshot"
+        }
+      },
+      "facet": "The stored planned binding, both measured packet operands, input grants and snapshots all name the same exact code/memory tips and distinct planned owner/reference.",
+      "id": "PRF-X24CW1",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_master_line_change_between_comparison_and_prepare_refuses_the_build_before_effects` protects a moved master line refusing the build before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47984d268491e115a16d04c6156e586582f839",
+            "content": "sha256:8875ac402902dcb81039015866b091b62c8a0426fe1ed2d5d2bf772e11b7e6b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_change_between_comparison_and_prepare_refuses_the_build_before_effects"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_written_planned_environment_binds_one_exact_record_across_packet_grants_and_snapshot` protects packet, grants, binding and snapshot naming the same four sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47984d268491e115a16d04c6156e586582f839",
+            "content": "sha256:354b5a4946d8b59e610e41b65af99bc89ac9a56e3fdb56fe9f56a2a7f10a55ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_written_planned_environment_binds_one_exact_record_across_packet_grants_and_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_the_moved_watcher_follows_the_master_line_not_the_source` protects the watcher measuring the master line's own move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47984d268491e115a16d04c6156e586582f839",
+            "content": "sha256:3ab0ee8703dd800c636f15db190335eb3b54e28578a83085311453785fddc17d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_moved_watcher_follows_the_master_line_not_the_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_an_organizational_master_binds_its_sprint_integration_line` protects an organizational master binding its sprint integration branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47984d268491e115a16d04c6156e586582f839",
+            "content": "sha256:a1f2324270a6f0c4c5a013954e14bad8312aba86779574510866fac0cc5bf311",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_organizational_master_binds_its_sprint_integration_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_an_update_with_an_unreadable_grade_store_marks_its_counts_unavailable` protects an unreadable count being reported unavailable rather than zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47984d268491e115a16d04c6156e586582f839",
+            "content": "sha256:00ac79b0463b3f1cf1988665d668494c6492036c2f326779a098639356ec842d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_update_with_an_unreadable_grade_store_marks_its_counts_unavailable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

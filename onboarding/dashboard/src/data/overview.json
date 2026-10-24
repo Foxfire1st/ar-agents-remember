@@ -184,6 +184,19 @@
             "path": "mcp/src/agents_remember/serving/delta.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+            "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/delta.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -442,6 +455,22 @@
               "name": "ReviewTreesResult"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.\n\nAnchor: `attachReviewListeners`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
+            "content": "sha256:69b9010873fc85badf3b7169e12b59f01d248674c7ff10d7563fa1131764c3c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/stream.ts"
           },
           "kind": "code"
         }
@@ -713,6 +742,45 @@
               "start": 57
             },
             "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
         }
@@ -1095,7 +1163,7 @@
         },
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
@@ -1233,7 +1301,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
             "locator": {
               "kind": "symbol",
@@ -1245,7 +1313,7 @@
         },
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
             "locator": {
               "kind": "symbol",
@@ -1699,12 +1767,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:cc5ab4a8a269511378ecac5eba5242334569f29a632c237ae9a1bff71b3cfee0",
             "locator": {
-              "end": 131,
+              "end": 202,
               "kind": "line_range",
-              "start": 117
+              "start": 188
             },
             "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
           },

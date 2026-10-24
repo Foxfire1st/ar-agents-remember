@@ -28,6 +28,8 @@
 
 ## Code Commentary
 
+Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication.
+
 ### Current Contract
 
 Prepared ordinary/remove publications retain each document with its owning task root, including a synchronized parent outside the leaf root. Dry-run overrides resolve paths from those pairs; the shared exact-source transaction publishes the batch.
@@ -404,3 +406,5 @@ constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_descrip
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [38]
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [39]
+
+- Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication. [40]

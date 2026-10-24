@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
-        "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+        "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+        "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_task_stage"
+        }
+      },
+      "id": "RLZ-A6NACM",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A planning or abandoned leaf cannot transition to inProgress while intentReview is open; the same gate covers the successor path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+        "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
         "locator": {
           "kind": "symbol",
           "name": "plan_task_stage"
@@ -42,11 +60,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
             "content": "sha256:1422848421235b70a6ead16454a5a3f743bfe58ecb57b1a3a4aaebd936938131",
             "locator": {
               "kind": "symbol",
               "name": "TaskStageChange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A planning or abandoned leaf cannot transition to inProgress while intentReview is open; the same gate covers the successor path.\n\nAnchor: `plan_task_stage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:9decfa084d8c59439dcdf8a20a00652e3da80bfeafb334400b927aa681abb4d3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

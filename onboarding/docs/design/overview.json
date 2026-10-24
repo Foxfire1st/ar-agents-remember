@@ -474,6 +474,22 @@
         }
       ]
     },
+    "37": {
+      "note": "The canvas-host amendment retires old authoring POSTs and the dedicated native presenter launch; retained authoring port and explicit browser readiness remain bounded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:4c87736c8a176160112013a2b093ec1276905e89d649c3a20d3ea489c215757c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/canvas-host.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The former observable session-lifecycle design is explicitly historical under R113.\n\nAnchor: recorded source",
       "targets": [

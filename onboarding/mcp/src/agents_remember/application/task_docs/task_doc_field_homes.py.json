@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:7bc76cf88925b870954cc873e4aa1b81912efc28244d18b4f7ed016df20dcf5d",
         "locator": {
-          "end": 160,
+          "end": 162,
           "kind": "line_range",
-          "start": 138
+          "start": 140
         }
       },
       "id": "RLZ-10EYBN",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:7bc76cf88925b870954cc873e4aa1b81912efc28244d18b4f7ed016df20dcf5d",
         "locator": {
-          "end": 160,
+          "end": 162,
           "kind": "line_range",
-          "start": 138
+          "start": 140
         }
       },
       "id": "RLZ-3W6P2F",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:ce356151aacb501ccc407d8a4c50d3f9665a9506bb9719303d7b45842d38f042",
         "locator": {
-          "end": 135,
+          "end": 137,
           "kind": "line_range",
-          "start": 103
+          "start": 105
         }
       },
       "id": "RLZ-7PKWE2",
@@ -60,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:70aa901aad28ac9b9eb7f79b0289fe4706b8739ab902675723949ed05168482b",
         "locator": {
-          "end": 100,
+          "end": 102,
           "kind": "line_range",
-          "start": 69
+          "start": 71
         }
       },
       "id": "RLZ-AMXNZ2",
@@ -79,7 +79,25 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
+        "content": "sha256:6df8cf378ee211ab319513f9d45c7586227530fb4416921715353571866c90ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "RESERVED_HEADER_LABELS"
+        }
+      },
+      "id": "RLZ-FH618Y",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Intent review prose headers are reserved for the canonical intentReview field, avoiding a prose account that bypasses the native gate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:7a9cfdcb7e5646dedf97286b6d732c84197d6127267b46eedfb75868bd49d333",
         "locator": {
           "end": 46,
@@ -98,8 +116,8 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
-        "content": "sha256:08b6bf83ded1ea069b0031bbd320395a3bafdc919286c7245f03d690545282dc",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
+        "content": "sha256:0bff0979514d43a005931ff87f1f00d34c78b468e6aa098e432a5db3cae8ccbe",
         "locator": {
           "end": 62,
           "kind": "line_range",
@@ -117,12 +135,12 @@
     },
     {
       "anchor": {
-        "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
+        "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
         "content": "sha256:70aa901aad28ac9b9eb7f79b0289fe4706b8739ab902675723949ed05168482b",
         "locator": {
-          "end": 100,
+          "end": 102,
           "kind": "line_range",
-          "start": 69
+          "start": 71
         }
       },
       "id": "RLZ-WGSQ8S",
@@ -143,6 +161,21 @@
           "anchor": {
             "blob": "bcfbaf362dbad7f062ab30f48c386773d98cc42f",
             "content": "sha256:44b225be3313994baf90b0d563f3807f5d2e6671d1841153d9ebf60ee8de721b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Intent review prose headers are reserved for the canonical intentReview field, avoiding a prose account that bypasses the native gate.\n\nAnchor: `RESERVED_HEADER_LABELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
+            "content": "sha256:4f6f8e5a7ff56153025971f5e26a8320468f6dd2c0eb298ae77e0c5b14aba193",
             "locator": {
               "kind": "file"
             }

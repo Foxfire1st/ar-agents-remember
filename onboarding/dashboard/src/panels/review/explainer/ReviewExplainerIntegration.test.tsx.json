@@ -1,0 +1,145 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+        "content": "sha256:4169cb469379dc3f88f811a2ec43f4fc218c569c60df4d0e3ec2ec461634b8c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "immediately shows MovedNotice and Update when explainer work exists, and renews live deterministic reads when no explainer work exists"
+        }
+      },
+      "facet": "Pins exact-leaf stream delivery and no-work renewal versus explicit Update.",
+      "id": "PRF-2560Q6",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+        "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+        }
+      },
+      "facet": "Pins a claim’s return to its selected Review block inside the mounted surface while the tree remains outside the explanation replacement.",
+      "id": "PRF-2CTVHM",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-retained-evidence-walk",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+        "content": "sha256:749cb834a75352920b24a0896af647fcd7f09813425e350ed2aab6fdd935da64",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
+        }
+      },
+      "facet": "Pins intended wording, inert packets, resolved/unresolved paths and synchronized deterministic order with no starts.",
+      "id": "PRF-7M7N1M",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+        "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+        }
+      },
+      "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
+      "id": "PRF-85ZY7X",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+        "content": "sha256:4ee7106e8f85d9d0a972e86b08859659f92d7e6f04c24d26db7ffa35524dab6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "orders blocks by judgment scale with Priority tie-break, groups ungraded last under Ungraded (n), preserves stale marks, and renders active-first hover reasons including carried merged grades"
+        }
+      },
+      "facet": "Pins scale order, Priority ties, Ungraded grouping and carried/stale inference reasons.",
+      "id": "PRF-B6QWG1",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The switch sits in the top line, the explanation page keeps the tree and chat outside it, and a claim link selects its exact block on return\n\nAnchor: `mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+            "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A planning-mode leaf mounts the planned page\n\nAnchor: `mounts PlannedReview when the leaf is in planning mode (/planned)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+            "content": "sha256:749cb834a75352920b24a0896af647fcd7f09813425e350ed2aab6fdd935da64",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A moved event shows the notice at once where work exists, and renews the deterministic reads where none does\n\nAnchor: `immediately shows MovedNotice and Update when explainer work exists, and renews live deterministic reads when no explainer work exists`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
+            "content": "sha256:4169cb469379dc3f88f811a2ec43f4fc218c569c60df4d0e3ec2ec461634b8c4",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 486
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

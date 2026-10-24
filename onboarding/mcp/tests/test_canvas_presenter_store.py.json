@@ -10,6 +10,40 @@
           "name": "test_retention_reclaims_to_its_ceiling_and_keeps_request_reconciliation"
         }
       },
+      "facet": "Retention reclaims to its ceiling and the ledger still reconciles the request to the reclaimed attempt.",
+      "id": "PRF-1PKW76",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L183-A-3",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+        "content": "sha256:45e2b4a04c56d8ed5bb54a5cfed09822889bf8d6187efe4c9a18f0aeedb6d057",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_store_prunes_to_its_ceiling_and_keeps_a_live_record"
+        }
+      },
+      "facet": "Pruning to the ceiling keeps the live record.",
+      "id": "PRF-956N6X",
+      "invariant": "INV-EWGTN0",
+      "origin": {
+        "handoffEntry": "L183-A-2",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eec2e01249a2170a810d30652d2db535ce828acf",
+        "content": "sha256:55c64565277b15bbd9e731b0b98d7201529258b8edf14ca557fb5c22f3a246a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retention_reclaims_to_its_ceiling_and_keeps_request_reconciliation"
+        }
+      },
       "facet": "After record reclamation, retrying its retained request identity raises attempt-record-reclaimed without adding records or runner calls.",
       "id": "PRF-DZFGWH",
       "invariant": "INV-M6Q82M",

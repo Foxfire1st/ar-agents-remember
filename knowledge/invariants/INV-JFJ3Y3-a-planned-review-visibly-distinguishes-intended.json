@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The planned reader, renderer and sorter must keep intent distinct from fact and prevent payload-created controls or runtime starts."
+  },
+  "applicability": "A current live leaf review whose planned read supplies mode planned, before a recorded change set exists.",
+  "conditions": [
+    "The planned page is obtained from its own route; refused or non-planned answers are not recast as a planned payload.",
+    "Only the product's declared/subject/effect sorts are offered."
+  ],
+  "exclusions": [
+    "This page does not claim implemented behavior or grant a work/review decision.",
+    "A payload cannot inject a judgment sort or an alternate top line."
+  ],
+  "id": "INV-JFJ3Y3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx::starts nothing: no fetch is made and no frame or host channel is mounted; dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx::renders packet bodies safely, navigates resolved Scope tip addresses while keeping unresolved paths as text, and synchronizes planned tree and reading rows; dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx::mounts PlannedReview when the leaf is in planning mode (/planned); source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE06-planned-intent",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A planned review visibly distinguishes intended effects from code facts under the product-owned planned · no changes line, renders statements, labels or explicit absence with inert packets and code-tip-only scope links, shares deterministic effect order between tree and reading rows and starts no model, fetch or frame.",
+  "status": "proposed",
+  "supersedes": []
+}

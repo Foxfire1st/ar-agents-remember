@@ -97,6 +97,8 @@ The last two are dispatched by `review_tree_knowledge.py`; the route and its bou
   reasons now travel with each native occurrence from the side that decides its state; current markers
   consume that supplied reason rather than reconstructing the membership rule.
 
+`_hunk_subject` adds the same path-and-changed-line identity the gate uses to each classified hunk: SHA-256 content for both changed spans, and `absent` for a side with no changed line. A missing blob or unhashable range yields no subject rather than a fabricated identity, so grading can mark it stale. The per-path classification, rename-as-deletion-plus-addition rule and truthful Unknown buckets are unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -129,3 +131,5 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 
 - _link preserves entry ID/kind, optional proof facet, invariant identity key, optional invariant revision/key and supplied range, and obtains families through _occurrences. With no listed family, _occurrences keeps the completeness-based state and supplies an own-side reason only for membership_unknown. Named occurrences preserve family identity/key/revision and the unchanged _membership state; _occurrence supplies an other-side reason only for membership_unknown. _membership_reason uses the reading's side name and detail, or its incomplete-family sentence, and passes the result through bounded_text. Other states receive reason=None. [9]
+
+- The current implementation adds content-addressed hunk identity for grades; the existing attribution classification and membership rules remain valid. [16]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
         "locator": {
           "kind": "symbol",
@@ -16,12 +16,12 @@
         "handoffEntry": "L102-F12",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "rationale": "FrameScope verifies the durable task/frame destinations and guards each exact IO target, keeping durable scope distinct from the explicitly admitted authoring directory; lease/state ownership remains with the draft lifecycle.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,43 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:b96195cc0f29ec341caa3c02c6b3d831094e04808471afd6daf02fc3a3a1c9af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_lineage_need"
+        }
+      },
+      "id": "RLZ-0Z3T3X",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:679b96e3a8b126d3027f38f85af347c322e1d6d99e1500158a7892abe1bf9b8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pinned_revision"
+        }
+      },
+      "id": "RLZ-1XG8HN",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
         "locator": {
           "kind": "symbol",
@@ -57,8 +93,26 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-        "content": "sha256:6b4d2ed86d875dae006a4c8e6c843b64c5acd6d7c3575c52f98753a2687df02f",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:d457554229d416b7a1c771fe09f57882ab4247c7c5a29b1fd64f7c9da1a025f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_locked"
+        }
+      },
+      "id": "RLZ-3XEX4A",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-A-8",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Publication under the task lock, where nothing is removed silently and the per-revision bytes are re-checked.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:18291bde19a7cb7e5e21438e692013e1977b44bab3ad0923673ff7b7337aed94",
         "locator": {
           "kind": "symbol",
           "name": "_check_capacity"
@@ -75,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
         "locator": {
           "kind": "symbol",
@@ -93,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:459f24fd0942d86106754b499d64596a2f0b411de485692d4ee95e8418de812a",
         "locator": {
           "kind": "symbol",
@@ -111,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
         "locator": {
           "kind": "symbol",
@@ -129,7 +183,25 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:b4480b7b128779bfe4ba76a50add6e4b9d9f51de2c464cb884f1f3e81138da72",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_document_stem"
+        }
+      },
+      "id": "RLZ-6CW7JW",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-packet-source-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Publication recognizes exactly this leaf’s own document receipt for intended-claim authority instead of treating another task-root document as intended evidence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:2de48b977d06bb3fee0c1f379a392b062074334fc74231ca0d7f163c60a6469e",
         "locator": {
           "kind": "symbol",
@@ -147,7 +219,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:e43ae0b869a4e75641d4fc54eb15305496d5c917b8803d5b9bebd5c7a7fe556d",
         "locator": {
           "kind": "symbol",
@@ -165,7 +237,61 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:0267fb2a4c854381f2295242f36497007f730368ea749eb9dd99ed17ccb1cf2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_document"
+        }
+      },
+      "id": "RLZ-9VCSEH",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:5199393da77298440d3c476d8d2449a748da20cca25f4425fcc1f507e5a6e5f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delete_revisions"
+        }
+      },
+      "id": "RLZ-9W4JVD",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:a26d9a243a323dd9aaab0181df63515c8d5f951f16a1cd44e8884bbbfa3bbae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameRefused"
+        }
+      },
+      "id": "RLZ-A5VCZH",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The frame store preserves named per-revision/draft byte-limit reasons in public refusal data; it does not reduce all publication failures to a generic error.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
         "locator": {
           "kind": "symbol",
@@ -183,7 +309,61 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:520dedf8e9c3fa6e809b4ed7a1a97852a2dd047de59eb840d9c4fa935858987e",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_revisions"
+        }
+      },
+      "id": "RLZ-CENNYZ",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-A-5",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The one removal route, which never reissues a removed number and refuses the pinned revision.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:84a2719a811c16ccccd719f534361d362dbf3bce4e3696614720b7971309f8df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_highest_removed"
+        }
+      },
+      "id": "RLZ-DABYWY",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:9e1d125632093e4be3659b73213f11eb9ce51531bd23f01ee7ed71b79dedf6c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_changed_sides"
+        }
+      },
+      "id": "RLZ-F4HDQ4",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-18",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Whole-page staleness must distinguish comparison owner as well as leaf/number/operands, especially planned versus closed-leaf number zero.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
         "locator": {
           "kind": "symbol",
@@ -201,7 +381,25 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:70e3472144d61daf42454550a59b81d2e3c9f5a18773719b2b4df33d38f7caa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repoint"
+        }
+      },
+      "id": "RLZ-K3CNG2",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
         "locator": {
           "kind": "symbol",
@@ -219,8 +417,8 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-        "content": "sha256:9de983394db97835f7d35ae10628bd180b306d7d34a5f534b0c583683e448bd6",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:30c90e72420c42c99a22ef7f2d1c068b7df56afd3a089a2df89c6d76a03aeb75",
         "locator": {
           "kind": "symbol",
           "name": "_manifest"
@@ -237,8 +435,8 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-        "content": "sha256:54c65133461eae4535b3d3a53ce9fa375446824569169c752df75eca4bd59b35",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:628ebe951311c57fd5e729e688b7fb65b0434eb5236ed6459cdcf148746ecdeb",
         "locator": {
           "kind": "symbol",
           "name": "publish_revision"
@@ -255,7 +453,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
         "locator": {
           "kind": "symbol",
@@ -273,7 +471,25 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:90c93b9a678cb569b6f425a1f381a4130ca93e504adf8f59e728dbbc03291056",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remove_locked"
+        }
+      },
+      "id": "RLZ-PBPS94",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
         "locator": {
           "kind": "symbol",
@@ -291,7 +507,25 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:62b1e66d4d5c897abc59c2a1a2e3fea7f0e1c9cce2fa7eae3fca370fbbc22c2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_assets"
+        }
+      },
+      "id": "RLZ-QPPRWZ",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The frame store preserves named per-revision/draft byte-limit reasons in public refusal data; it does not reduce all publication failures to a generic error.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:927418e42ca55878093d3c5324b429bb82bfa0b8b15dfccc1cf3d09f5682c27c",
         "locator": {
           "kind": "symbol",
@@ -309,7 +543,7 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:8eb433eface3fa9d9bb8fb1da967ca6e518f0ee19df550de885219bc0f09005c",
         "locator": {
           "kind": "symbol",
@@ -327,7 +561,25 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:477a400b41a7eebc7933aed58ffade939f3e2956c3630b3d1720386a5f89c8b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_wanted_revisions"
+        }
+      },
+      "id": "RLZ-SJQKDW",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
         "locator": {
           "kind": "symbol",
@@ -345,7 +597,26 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:504e6f0d82151eb0f28fb6b84e27c9cc8a210a10973771c55edd13d9c3057fc1",
+        "locator": {
+          "end": 1570,
+          "kind": "line_range",
+          "start": 1563
+        }
+      },
+      "id": "RLZ-VE5YVF",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The explicit developer-removal operation states its durable removal reason and named bounded lock wait here. The removal implementation consumes these constants, refuses if its task lock cannot be held and deletes no revision before acquiring it; this belongs to the retained-revision removal guarantee.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
         "content": "sha256:4ab024397e0a9adca149f2ff90652df0bd6606089123d5ee3856bc9c5cccad30",
         "locator": {
           "kind": "symbol",
@@ -363,8 +634,8 @@
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-        "content": "sha256:1ad34e076697c5c209142b4ddb4674471f183befc27e7419bed1e6d147383c9e",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:d457554229d416b7a1c771fe09f57882ab4247c7c5a29b1fd64f7c9da1a025f7",
         "locator": {
           "kind": "symbol",
           "name": "_publish_locked"
@@ -376,13 +647,31 @@
         "handoffEntry": "L102-F14",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. Manifest/ancestry and size/quota planning now precede _write_revision, pointer replacement and reclamation. The independent invalid-ancestry probe at the two-revision ceiling preserves every previous file byte-for-byte; the focused manifest-refusal preservation test also passes. Quota accounting defects remain F10, not a reason to deny this validate-before-reclaim repair.",
+      "rationale": "Publication checks current environment binding under the task lock, active/published draft state, admitted revision bytes, manifest/ancestry, ready-pointer identity and task capacity before writing a revision or replacing the pointer. L183 removes publication-triggered revision reclamation entirely; rejected publication still leaves prior durable output unchanged and creates no first-publication store state.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-        "content": "sha256:61a54625e66cdd93a38ebced3b48147fafc93f6861151a069f4d320789061798",
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:1469c0c6beaca17e6bb6446f71ec1257a0b7b53b73b6f04635de3cde98690e94",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_frames"
+        }
+      },
+      "id": "RLZ-XPRST6",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:792ae4e236613417f069543eb0cfb2b2dd6afe6d26a58ab7b976c71ad9bd4457",
         "locator": {
           "kind": "symbol",
           "name": "_draft_assets"
@@ -394,8 +683,44 @@
         "handoffEntry": "L102-F12",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "rationale": "The draft asset reader uses the persisted explicit authoring directory, validates bounded asset declarations and exact bytes/digests, and imports only those named assets. L183 adds the revision-too-large reason for an oversized declaration without changing active/failed/cancelled/abandoned draft handling or ready-output preservation.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:628ebe951311c57fd5e729e688b7fb65b0434eb5236ed6459cdcf148746ecdeb",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_revision"
+        }
+      },
+      "id": "RLZ-YHQQ3J",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-A-6",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Publication takes the part map beside the evidence packet and stores it in the manifest.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+        "content": "sha256:18291bde19a7cb7e5e21438e692013e1977b44bab3ad0923673ff7b7337aed94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_capacity"
+        }
+      },
+      "id": "RLZ-ZZRGDC",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-A-8",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The one remaining total check: the task's bytes, refused by name, with nothing reclaimed.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -404,7 +729,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
             "locator": {
               "kind": "symbol",
@@ -420,7 +745,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
             "locator": {
               "kind": "symbol",
@@ -452,7 +777,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
             "locator": {
               "kind": "symbol",
@@ -468,7 +793,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:13e739ce115b5baaf97ec67fcc70eb6bbdd46207b0e1532b1a52a4b5a3f42cf1",
             "locator": {
               "kind": "symbol",
@@ -484,7 +809,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:24cf80675059061cce923abc828df867da2abbe775d49503a8fb066f21ca8f8e",
             "locator": {
               "kind": "symbol",
@@ -500,7 +825,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
             "content": "sha256:8eb433eface3fa9d9bb8fb1da967ca6e518f0ee19df550de885219bc0f09005c",
             "locator": {
               "kind": "symbol",
@@ -518,6 +843,21 @@
           "anchor": {
             "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
             "content": "sha256:5cd1de4415c35469f49e57be050dc3d8a7ba1505f4b5c2df25a1573933b85c7d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current implementation adds binding recheck, intended-authority validation and part-map persistence, while replacing lineage/count eviction with byte-only admission.\n\nAnchor: `publish_revision`, `_publish_locked`, `_check_capacity`, `remove_revisions`, `_remove_locked`, `_repoint`, `_highest_removed`, `cleanup_frames`, `reclaim_task_frames`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+            "content": "sha256:37055b3fc76d584d864ed070707f5e7b6f930b57f7bdf42b9fb39e746c747927",
             "locator": {
               "kind": "file"
             }

@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/memory.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e1811ee65079c4e6e8c43d6da929d40684f3f219",
+        "content": "sha256:afb2e3d9f3789afefaae296284ebff8bfb162d28c74b4e58a03c00262ac35fb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_memory_health_tools"
+        }
+      },
+      "id": "RLZ-GZRJ1A",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Carryover registration declares one memory subject and describes the computed cache refresh.",
@@ -224,6 +243,21 @@
         }
       ]
     },
+    "20": {
+      "note": "Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.\n\nAnchor: `_register_memory_health_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1811ee65079c4e6e8c43d6da929d40684f3f219",
+            "content": "sha256:a4f51b2f89096dc6257337e89f4afa2fb16f7c00d8cf5bd958f11fd0f11de9e2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The typed sync/start/poll payload builders.",
       "targets": [
@@ -246,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:33ec530cd7ea134f868737123e2ef344fae4d4c7609e21308019028ba0037442",
             "locator": {
               "kind": "symbol",
@@ -276,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:9d8d695f42fefc4b5e4d8e2094742e6eb75f0700834a0beee3387672628132f3",
             "locator": {
               "kind": "symbol",
@@ -301,12 +335,12 @@
         },
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:7eaec590e90cef9afda608cb18f4d74465b0695311c5b03d70bb5de17e1d7cf7",
             "locator": {
-              "end": 784,
+              "end": 783,
               "kind": "line_range",
-              "start": 765
+              "start": 764
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

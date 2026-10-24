@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The two witness scripts separate complete discovery equivalence from bounded startup timing and record execution attribution, preventing tool counts or the wrong checkout interpreter from being presented as a preserved contract."
+  },
+  "applicability": "The two repository scripts and their explicit scratch subprocess worlds. The proposed 5s/20CPU/load<=40 bound is a measured condition, not a host-independent runtime guarantee.",
+  "conditions": [
+    "The scripts execute their own ordinary/explainer subprocess world without calling a tool.",
+    "Discovery compares canonical complete tools/list answers and reports actual executed-source attribution.",
+    "Timing records spawn-to-response, load, command, dependencies, source and cache facts."
+  ],
+  "exclusions": [
+    "Runtime refusals, installed acceptance, first-call runtime effects or any-load timing guarantees.",
+    "Reporting an over-load witness as representative or adjacency of a venv as proof of executed source."
+  ],
+  "id": "INV-JQ1WC6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R204@v1 rules2,7"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-startup-evidence-witnesses",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Startup and discovery witnesses retain their actual execution source and limits: discovery compares complete canonical tools/list results rather than counts, while startup timing measures spawn through initialize and completed tools/list without a tool call and records load/source/dependency/cache facts; neither witness substitutes for runtime refusal tests or installed acceptance.",
+  "status": "proposed",
+  "supersedes": []
+}

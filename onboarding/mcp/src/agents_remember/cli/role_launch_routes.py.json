@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
-        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "remember_master_architect"
+        }
+      },
+      "id": "RLZ-3H366X",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
-        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
         "content": "sha256:b060afa6a4dedda65db379082954429dccd0aee4485c2f6f44996bac9dbd781f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
         "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
-        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -147,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
-        "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:a6c3d99744bf389db12cbd94cd08cfbad2f7f7f5e793845685fe2e1587c44999",
         "locator": {
           "kind": "file"
         }
@@ -164,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
-        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
+        "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -202,12 +220,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:d03732758a233130c3a47ba56d498526a801430de6944fd6336095b90f602b9d",
             "locator": {
-              "end": 745,
+              "end": 746,
               "kind": "line_range",
-              "start": 716
+              "start": 717
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -302,7 +320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -318,7 +336,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -367,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -383,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
             "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
             "locator": {
               "kind": "symbol",
@@ -423,6 +441,21 @@
         }
       ]
     },
+    "22": {
+      "note": "At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.\n\nAnchor: `remember_master_architect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "content": "sha256:a6c3d99744bf389db12cbd94cd08cfbad2f7f7f5e793845685fe2e1587c44999",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Frozen implementation of _launch_prepared_role_session supporting the stated file behavior.",
       "targets": [
@@ -444,7 +477,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",
@@ -526,12 +559,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:496454fa627fd47b499198b97f45a3fce80d6c89834ef07eb493b741803a9c63",
             "locator": {
-              "end": 664,
+              "end": 665,
               "kind": "line_range",
-              "start": 571
+              "start": 572
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

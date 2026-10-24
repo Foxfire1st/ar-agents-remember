@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
             "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
             "locator": {
-              "end": 42,
+              "end": 36,
               "kind": "line_range",
-              "start": 42
+              "start": 36
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -88,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 168,
+              "end": 153,
               "kind": "line_range",
-              "start": 168
+              "start": 153
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
+            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
             "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
             "locator": {
               "kind": "symbol",
@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17f2d4a842a364ac445a776090637c466711b266",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:6d5a8fd358ca69062732d0582b02c7da212699924831f1a0bca28dcd94c67685",
             "locator": {
-              "end": 919,
+              "end": 372,
               "kind": "line_range",
-              "start": 919
+              "start": 372
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

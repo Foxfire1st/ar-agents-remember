@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2ecbb8a4dbdcfd13ac1548cd0d8473acbeed3379",
-        "content": "sha256:685e53926b29c760b42316ec1120684d6575e2a3cf59d705eb60e371b759cccb",
+        "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+        "content": "sha256:0dcbf7abcc5b858927f30e941d4f5b48035bbf16ef84c46b3173225ab7aa9683",
+        "locator": {
+          "kind": "symbol",
+          "name": "ServingCollaborators"
+        }
+      },
+      "id": "RLZ-M5DREV",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+        "content": "sha256:298a86fd0a4b045eb31e32b5c75fd8b99c345ebc8088bdce5e120d39b28c916e",
         "locator": {
           "kind": "file"
         }
@@ -88,6 +106,17 @@
       "targets": [
         {
           "anchor": {
+            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
+            "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveProjectionInputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "fde90ecb48a28342e237be9bf947aff7d0bf4a62",
             "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
             "locator": {
@@ -136,6 +165,19 @@
     "20": {
       "note": "Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks.\n\nAnchor: inclusive source ranges",
       "targets": [
+        {
+          "anchor": {
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:932636da72413c7f73075e154a3110038c67686844a2e7780378ba0b94975207",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 430
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
@@ -275,24 +317,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ecbb8a4dbdcfd13ac1548cd0d8473acbeed3379",
+            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
             "content": "sha256:53efba79150ecf4558c1097ce70c27b115b9241158cbd9d0ae523197825caf8b",
             "locator": {
-              "end": 227,
+              "end": 231,
               "kind": "line_range",
-              "start": 226
+              "start": 230
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2ecbb8a4dbdcfd13ac1548cd0d8473acbeed3379",
+            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
             "content": "sha256:a11219c81209cbd64c641668f079906965f3b6c65b3d61d8867673d08a82ed38",
             "locator": {
-              "end": 272,
+              "end": 302,
               "kind": "line_range",
-              "start": 271
+              "start": 301
             }
           },
           "kind": "code"
@@ -346,6 +388,45 @@
               "start": 53
             },
             "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecbb8a4dbdcfd13ac1548cd0d8473acbeed3379",
+            "content": "sha256:53efba79150ecf4558c1097ce70c27b115b9241158cbd9d0ae523197825caf8b",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ecbb8a4dbdcfd13ac1548cd0d8473acbeed3379",
+            "content": "sha256:a11219c81209cbd64c641668f079906965f3b6c65b3d61d8867673d08a82ed38",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.\n\nAnchor: `ServingCollaborators`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
+            "content": "sha256:294ae11931c9c1f551c920914a7aa51597e8f27dc360419cc3890b462cfd7dce",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

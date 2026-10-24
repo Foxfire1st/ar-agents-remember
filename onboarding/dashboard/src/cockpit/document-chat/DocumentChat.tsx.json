@@ -3,12 +3,11 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-        "content": "sha256:46a90482e20af50fca52d61ffd7bd254c06b089fd733263ce5bdb334aa120f40",
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
         "locator": {
-          "end": 191,
-          "kind": "line_range",
-          "start": 178
+          "kind": "symbol",
+          "name": "resolveDocumentFrameProps"
         }
       },
       "id": "RLZ-6TQESZ",
@@ -17,13 +16,13 @@
         "handoffEntry": "MIK-R122@v1 rule 5",
         "leaf": "260928-MIK-L122"
       },
-      "rationale": "The hideFrame wrapper hides the mounted frame only for an available, known selection with no effective target; pending and unreadable lookups retain the native screen, with holding or Retry text beside it.",
+      "rationale": "Branches ordinary document-chat presentation from review explainer presentation: an unbound pending review keeps the frame under its task-list hold, a known-missing review hides it behind the problem, and a bound leaf review uses the explainer column’s showFrame and frameTarget. The ordinary branch preserves docState hide/wait behavior; DocumentChatImpl keeps the single wrapper mounted across both branches.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-        "content": "sha256:46a90482e20af50fca52d61ffd7bd254c06b089fd733263ce5bdb334aa120f40",
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:60f885537a7f8af73640d7df1a471016a9e45887f4c7d140d519a90820718e27",
         "locator": {
           "end": 191,
           "kind": "line_range",
@@ -41,11 +40,11 @@
     },
     {
       "anchor": {
-        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-        "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
-          "name": "DocumentChatView"
+          "name": "DocumentChatImpl"
         }
       },
       "id": "RLZ-H0GP49",
@@ -59,8 +58,26 @@
     },
     {
       "anchor": {
-        "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-        "content": "sha256:6d902e7dce4bb1e06a0bf81afaf6003aa7bbdfa5e1120657136fd5d12e83eb57",
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:ba1111cde415e1fbbdb11031bff91b609d324eb682bb33bbbe3d42741d3b096c",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolveDocumentFrameProps"
+        }
+      },
+      "id": "RLZ-HTWQ3A",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-GY49SV-review-placeholder",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Separates ordinary launcher/wait presentation from the leaf review’s explainer placeholder and isolates pending/missing task holds before any selected agent can be targeted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
         "locator": {
           "kind": "symbol",
           "name": "DocumentChatImpl"
@@ -74,20 +91,72 @@
       },
       "rationale": "Publishes the active, nonhidden bound document-chat target; this publication does not wait for a native drawn acknowledgement.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatImpl"
+        }
+      },
+      "id": "RLZ-NC8PWD",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-persistent-frame",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The ordinary and explainer chrome share this one persistent frame wrapper and sibling dock across page and phase changes.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatImpl"
+        }
+      },
+      "id": "RLZ-PJVTEV",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Selects the ordinary or explainer state owner and composes its chrome over one retained native frame; the explainer branch disables ordinary document discovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87320203450d777a0b564196b6dccdb508028659",
+        "content": "sha256:e062eaed22a3ebb011448a80cda5c3a216c03b4272a213fc9fc315dfa126923f",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatImpl"
+        }
+      },
+      "id": "RLZ-XBVKWE",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-outside-frame-tray",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The persistent TrayColumnDock stays immediately after and outside the shared native frame wrapper while document and explainer modes switch.",
+      "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "The component composes document state, the launcher and shown-chat publication.\n\nAnchor: \"function DocumentChatImpl(props: DocumentChatProps) {\"",
+      "note": "DocumentChatImpl chooses ordinary document state or the leaf explainer state; the ordinary branch publishes its effective shown target, while explainer publication is owned by columnState.\n\nAnchor: `DocumentChatImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-            "content": "sha256:6d902e7dce4bb1e06a0bf81afaf6003aa7bbdfa5e1120657136fd5d12e83eb57",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 37
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -95,16 +164,14 @@
       ]
     },
     "2": {
-      "note": "The view retains or hides the frame wrapper, forwards preload and places the document tray dock after it.\n\nAnchor: \"function DocumentChatView({\"",
+      "note": "DocumentChatImpl composes ordinary or explainer chrome over the same persistent frame wrapper, takes visibility/target/preload from resolveDocumentFrameProps and places the document tray dock after that wrapper.\n\nAnchor: `DocumentChatImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-            "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
             "locator": {
-              "end": 196,
-              "kind": "line_range",
-              "start": 117
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -116,12 +183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
             "content": "sha256:ed0b534193a145e513deed34e43d8053bd8cfa43a72e6725d20b58706e9ec1e6",
             "locator": {
-              "end": 198,
+              "end": 276,
               "kind": "line_range",
-              "start": 198
+              "start": 276
             }
           },
           "kind": "code"
@@ -129,16 +196,14 @@
       ]
     },
     "4": {
-      "note": "The hidden frame wrapper remains mounted.\n\nAnchor: \"function DocumentChatView({\"",
+      "note": "The persistent-chat-frame wrapper stays mounted in DocumentChatImpl across ordinary document and explainer modes; a hidden phase sets display:none and aria-hidden instead of unmounting it.\n\nAnchor: `DocumentChatImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-            "content": "sha256:71d3b7fc3516bbe77c550d72334179402a63ee9f2527fed3789f33e2d7c2c26d",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
             "locator": {
-              "end": 196,
-              "kind": "line_range",
-              "start": 117
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -150,12 +215,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "end": 129,
+              "end": 136,
               "kind": "line_range",
-              "start": 59
+              "start": 66
             },
             "path": "dashboard/src/cockpit/document-chat/state.ts"
           },
@@ -168,12 +233,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
             "content": "sha256:c2ec0d752a3c6ca4d79ee3e2ebf6a4e772399e066907256f90e6670e656d2848",
             "locator": {
-              "end": 91,
+              "end": 54,
               "kind": "line_range",
-              "start": 82
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Compose ordinary document-chat chrome or the review leaf's explainer chrome above one persistent native frame and one tray dock. Ordinary documents retain their bound launcher, warmup and held-frame behavior. An explainer target disables ordinary document discovery and uses useExplainerColumn instead: resolveDocumentFrameProps supplies the explainer's frame target and showFrame state, while ColumnChrome displays its placeholder, form, progress or header. Pending unbound review identity retains the screen under its wait line; known missing identity displays the named problem. The frame wrapper remains keyed persistent-chat-frame across modes and the sibling TrayColumnDock remains persistent-tray-dock. Ordinary visible targets publish via documentShownChat; explainer targets publish through columnState, including a placeholder identity when no seat exists.\n\nAnchor: `DocumentChatChrome`, `resolveDocumentFrameProps`, `documentShownChat`, `useOptionalExplainerColumn`, `ColumnChrome`, `DocumentChatImpl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

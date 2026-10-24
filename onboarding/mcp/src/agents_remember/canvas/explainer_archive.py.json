@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_archive.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+        "content": "sha256:14921cbc3b6e125e4c5e0ee67f42945879476b06c0609f719d5f908cf1eb8926",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_environment"
+        }
+      },
+      "id": "RLZ-Y9YPR3",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Environment reclamation holds pending retire recovery material, keeps the leaf lock, and validates each removal through the admitted scope before touching artifacts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A leaf is discovered by its workspace folder, its generation counter, or both, and a symlinked entry is held rather than followed\n\nAnchor: `def environments(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:913740a2b0c662c86e097f287afe0380165e78f21b70bff332ad889ea308b98a",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A dry run classifies each environment and mutates nothing\n\nAnchor: `def _retire_one(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:3de43305479c7220c86a694fb02b81518155d0af294dd4b41e125f4161727b50",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A workspace and its counter are kept while a retire receipt is pending or unreadable\n\nAnchor: `def remove_environment(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:14921cbc3b6e125e4c5e0ee67f42945879476b06c0609f719d5f908cf1eb8926",
+            "locator": {
+              "end": 352,
+              "kind": "line_range",
+              "start": 313
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A configured host archive failure leaves the retirement receipt pending; a host that reports the agent already absent is done, and an installation with no configured host supplies no archive callback\n\nAnchor: `host_seat_archive`, `retire_environments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:9d040f03eb6e1d4767ac9e32e44bf9b4a36a35b6263431b4f2dad0437cabf67e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every explainer seat a coordination root holds is nameable without a live host, so a restart resumes none of them\n\nAnchor: `def seat_ids(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:fb2dfec7bac918c6bec544ab8a2d3dd7eb5861571dc67e1f361538684e77732e",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A configured host archive failure keeps the retirement receipt pending; no configured host supplies no archive callback, and an agent reported absent is already done.\n\nAnchor: `host_seat_archive`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90be9fad148ce0195c6e520e371efb7e1e1486a3",
+            "content": "sha256:9d040f03eb6e1d4767ac9e32e44bf9b4a36a35b6263431b4f2dad0437cabf67e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

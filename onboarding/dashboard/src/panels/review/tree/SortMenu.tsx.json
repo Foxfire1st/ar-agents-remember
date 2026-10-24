@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"function SortItem({ option, chosen }: { option: SortOption; chosen: boolean }) {\"",
+      "note": "SortItem renders one supplied deterministic or judgment option with its chosen mark and its hint or explicit unavailable reason.\n\nAnchor: `SortItem`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
-            "content": "sha256:ef9c2938102b4e9b70b43a359cea164410ba06903deeca9ad876c6e32c070f04",
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
             "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 30
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -20,16 +18,14 @@
       ]
     },
     "2": {
-      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"function memoryHint(sorts: readonly SortOption[]): string {\"",
+      "note": "memoryHint reports the first unavailable memory-sort reason or says values come from the after-side index; it does not describe judgment-category availability.\n\nAnchor: `memoryHint`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
-            "content": "sha256:bf49041d7a4fcec887e96ec3d01c717bad7dc649faac1703314b7666de34413d",
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
             "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 51
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -37,16 +33,29 @@
       ]
     },
     "3": {
-      "note": "One persisted deterministic Sort menu.\n\nAnchor: \"export function SortMenu({\"",
+      "note": "SortMenu renders Always available and Memory facts groups plus a conditional Explainer’s judgment group, disables supplied unavailable options and keeps the requested preference distinct from the applied sort.\n\nAnchor: `SortMenu`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f9ee34fb11e026c55bb04871fbd998ea0614860",
-            "content": "sha256:e1069e21be8df10a4259122c0b105e31aeca5c06bc1189e75b34b2fcfc341609",
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
             "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 58
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Render the persisted sort menu with separate Always available, Memory and conditional Explainer’s judgment sections. Judgment sorts are filtered out of the deterministic section and drawn in their own group only when supplied. The four memory sorts retain their existing missing-value reason and Priority fallback; the requested preference is not discarded. This menu only presents supplied SortOption values and changes the existing preference owner; it does not calculate grades or start an explainer.\n\nAnchor: `SortMenu`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

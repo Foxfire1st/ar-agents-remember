@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+        "content": "sha256:8e869be8362c22828366d65775fe58ded3c3f9ffd8b694cf059fe294251b738a",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_bound_explainer_tools"
+        }
+      },
+      "id": "RLZ-5KGW7B",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Registers existing tool implementations on the normal seat server.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The explainer's surface is supplied on the server the seat launch already built\n\nAnchor: `def register_bound_explainer_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:8e869be8362c22828366d65775fe58ded3c3f9ffd8b694cf059fe294251b738a",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 343
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Authoring tools refuse arbitrary file reads and write only under the environment's own folders\n\nAnchor: `def register_authoring_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:9320cb7fa01838dc70dd389caa4c9aed0952f9800e850ae14f60bc99986b0039",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Git tools read named objects and never a worktree path\n\nAnchor: `def register_git_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:eb5137b49d94feaa62243e950eb84c0ca8220d6560adde1e2328a1b123f3731d",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Admitted reads are bounded per call rather than returning a whole file\n\nAnchor: `def register_read_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:efa9137ab4097125aa661408ef175c07b4606af1a0675eba0a54788693e28576",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A grade carries the binding it was made at and refuses when the environment left it\n\nAnchor: `def register_judgment_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:447d02d8fa8b3ae0ec06567acab425b861e4000e499c742116d0973baa697413",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One report is filed per tray message, with no argument for the message's own text\n\nAnchor: `def register_report_tool(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eec44251547a1141ec27d5a35b977fc7a886dd7",
+            "content": "sha256:133cbb4fd9e5407878c4e654ae965a924554d498a460abb97aa055b8f0b19bea",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

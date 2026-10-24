@@ -8,7 +8,7 @@
   "applicability": "The two composed evidence catalogs of the merged L180 line: mcp/tests/evidence-lifecycle.toml and mcp/tests/test-evidence-lanes.toml.",
   "conditions": [
     "The claim covers the union of the L177 and L180 registrations at the frozen candidate.",
-    "A later edit that drops either side's registration violates it."
+    "A later edit that drops the registration of a module that still exists violates it; removing a module removes its registrations."
   ],
   "exclusions": [
     "Whether a registered module actually runs: registration is catalog membership, not execution.",
@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L177",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The composed evidence catalogs retain the complete registrations from both L177 and landed L180, with exact consumer and lane unions and no duplicate identity or removed consumer.",
+  "statement": "The composed evidence catalogs retain every registration from both L177 and landed L180 whose test module still exists, with exact consumer and lane unions and no duplicate identity; a test module is removed only together with all of its registrations.",
   "status": "proposed",
   "supersedes": []
 }

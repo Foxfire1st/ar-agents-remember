@@ -106,12 +106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
             "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
             "locator": {
-              "end": 529,
+              "end": 545,
               "kind": "line_range",
-              "start": 510
+              "start": 526
             },
             "path": "mcp/tests/test_standalone_master_retirement.py"
           },

@@ -71,36 +71,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
             "locator": {
-              "end": 1018,
+              "end": 936,
               "kind": "line_range",
-              "start": 1018
+              "start": 936
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
             "locator": {
-              "end": 1021,
+              "end": 939,
               "kind": "line_range",
-              "start": 1021
+              "start": 939
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
             "locator": {
-              "end": 512,
+              "end": 448,
               "kind": "line_range",
-              "start": 512
+              "start": 448
             }
           },
           "kind": "code"
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "895c8c72a552d8b1741bb9df7760cb16552b93bd",
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
             "content": "sha256:2a4d96a6908a181b96ff731c4bae392acd085d293bdb97d3ad83642b6af34caf",
             "locator": {
               "end": 35,
@@ -175,7 +175,7 @@
         },
         {
           "anchor": {
-            "blob": "6f52bb676e8c7e65458034849cd35c6b49b09172",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
             "locator": {
               "kind": "symbol",
@@ -187,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
             "locator": {
               "kind": "symbol",
@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -236,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -441,7 +441,7 @@
         },
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:b05086aeb8d2c5c4ecbae68c73eb201ea9752fe2024d179121a394a049afe0b4",
             "locator": {
               "kind": "symbol",
@@ -457,7 +457,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
             "locator": {
               "kind": "symbol",
@@ -469,7 +469,7 @@
         },
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:f2d48e829c48e0115cac7a0d635247156399f2224432ba170608f7bb0f1157d9",
             "locator": {
               "kind": "symbol",
@@ -481,12 +481,12 @@
         },
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
+            "blob": "139e72daac45a29a37bf8bb858714cee8ba9f8b5",
             "content": "sha256:7589d51a4d6e9c7a67f55144cbe1b6a4b471362ce4ec250739a63f8227bced88",
             "locator": {
-              "end": 150,
+              "end": 203,
               "kind": "line_range",
-              "start": 143
+              "start": 196
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
           },
@@ -528,7 +528,7 @@
         },
         {
           "anchor": {
-            "blob": "7b421d01108b8c585e6a8a446e1723d20cc99d06",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
             "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
             "locator": {
               "kind": "symbol",
@@ -568,12 +568,12 @@
         },
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
             "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
             "locator": {
-              "end": 554,
+              "end": 625,
               "kind": "line_range",
-              "start": 554
+              "start": 625
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },

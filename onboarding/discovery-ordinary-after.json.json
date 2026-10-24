@@ -1,0 +1,22 @@
+{
+  "path": "discovery-ordinary-after.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The stored ordinary-mode after answer contains the retained 42 declarations; it is historical capture data rather than a current live-server witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90a3a5d57224a500af08d891cf11002eeb2a3194",
+            "content": "sha256:cf264dabe01f5afcbcd2cfa8a02fbe2a56ca41a7d43baf312522ad0be5861de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

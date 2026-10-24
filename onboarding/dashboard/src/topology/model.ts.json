@@ -82,6 +82,19 @@
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -90,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
             "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
             "locator": {
               "kind": "symbol",

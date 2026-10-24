@@ -5,17 +5,20 @@
     ],
     "justification": "Hide-behind-launcher needs both the rail panel wrapper and its state hook; typed per-case proofs were withdrawn as extractor-unsupported."
   },
-  "applicability": "Selected-document chat presentation in Operations and the review page’s chat column, including Operations documentless scope with or without a matching Projects Architect.",
+  "applicability": "Selected-document chat presentation in Operations and the review page’s shared chat column, including Operations documentless scope with or without a matching Projects Architect and the bound leaf review’s default explainer selection.",
   "conditions": [
-    "A matching unarchived Projects Architect counts as an effective agent target.",
-    "An unknown answer is not confirmed absence and does not hide the existing application.",
+    "For ordinary document chat, a matching unarchived Projects Architect counts as an effective agent target; an unknown ordinary chat-discovery answer is not confirmed absence and does not hide the existing application.",
     "A review whose task document is pending or unknown has its own unbound scope and no admissible role; it never borrows the documentless Projects Architect binding.",
-    "While that review task is pending, the available retained frame stays visible and out of reach under the task-list wait line. When the task is known to be missing, the available frame hides behind the named problem line without a launcher or chat read.",
-    "A known bound review task with no effective chat retains its bound unstarted-task launcher; opening the review or column dispatches no agent."
+    "While that review task is pending, the retained frame stays visible and out of reach under the task-list wait line. When the task is known to be missing, the frame hides behind the named problem line without a launcher, ordinary document-chat read or explainer-state read.",
+    "For a known bound leaf review, default column selection uses the leaf’s explainer rather than its Worker or another task seat. If no explainer exists, the frame wrapper is hidden and the Explainer placeholder uses review-presenter settings, says nothing runs until asked, and offers Explain or ⊕ to open the first-request form rather than an ordinary Start launcher.",
+    "The bound leaf review’s ordinary document-chat discovery is inactive. Its explainer state and explicit task-chat menu selection determine its frame target; this is separate from ordinary document-chat discovery and its unknown-answer wait rule.",
+    "Other pages retain ordinary task-chat presentation. Preloading loads the client without opening an agent, and opening a review or its column alone starts no agent and builds nothing."
   ],
   "exclusions": [
     "Chats page.",
-    "Agent-bearing selections, which take the message-switch path."
+    "Message switching among effective targets and qualified control recovery retain their separate existing rules.",
+    "The review’s explicit task-chat menu choice is permitted; the explainer-or-placeholder obligation specifies its default selection.",
+    "Explainer-state read failures, first-request form, running-build and retirement presentation have their own phase and retry rules; unknown ordinary chat discovery is not a claim that these explainer phases retain the previous chat."
   ],
   "id": "INV-GY49SV",
   "origin": {
@@ -29,9 +32,9 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Only a selection known to have no effective agent (or with no admissible role) hides the loaded frame behind its launcher/problem text; unknown chat discovery keeps the existing frame visible, out of reach, under a named wait. A known effective target returns in that same frame, subject to qualified control recovery.",
+  "statement": "For ordinary document chat, only a selection known to have no effective agent, or no admissible role, hides the loaded frame behind its launcher/problem text; unknown chat discovery keeps the existing frame visible, out of reach, under a named wait. A review whose task is still pending keeps that retained frame under its task-list wait; a known-missing task hides it behind the named problem. For a known bound leaf review, the default is its explainer or, while none exists, its Explainer placeholder rather than an ordinary task-chat launcher. A known selected effective target returns in that same frame, subject to qualified control recovery.",
   "status": "proposed",
   "supersedes": []
 }

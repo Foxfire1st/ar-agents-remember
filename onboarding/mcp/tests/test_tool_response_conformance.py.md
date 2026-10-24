@@ -14,7 +14,7 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: the actual A10 module declares ROSTER_SIZE=42, TOOL_MODULE_COUNT=13 and TOOL_HANDLER_COUNT=44. The earlier41/20/65 and39/19/63 accounts describe earlier source epochs, not this candidate. The remaining source assertions compare populations rather than granting acceptance from numbers.
+- Source comparison: the current module declares ROSTER_SIZE=43, TOOL_MODULE_COUNT=14 and TOOL_HANDLER_COUNT=45, including explainer_control. The A10 declarations42/13/44 and the earlier41/20/65 and39/19/63 accounts describe earlier source epochs. The remaining source assertions compare populations rather than granting acceptance from numbers.
 - Source comparison: test_every_registered_model_is_strict_or_declared_flexible derives strict/flexible model sets; imports and compatibility rows do not enlarge the public roster.
 - Historical source comparison only: the former DispatchAgentResponse field assertion is removed on A10 and supplies no current dispatch contract.
 
@@ -154,4 +154,4 @@ No repository or external-system boundary is proved by this module.
 
 ## Current source evidence
 
-- Current literal source populations are42 roster names,13 adapter modules and44 handlers, while strict/flexible sets remain derived. [22]
+- Current literal source populations are43 roster names,14 adapter modules and45 handlers, while strict/flexible sets remain derived. [22]

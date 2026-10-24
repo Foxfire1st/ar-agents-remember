@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
-        "content": "sha256:521852cdd15b005a5595bb58fd3f88a2872ea2ed36db070fd433a5856a501fd5",
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+        "content": "sha256:ffbbacb22481e2e9a545e5ac8d7dc479674e1b1f37032c5fa7d776f2b8d9b1c6",
         "locator": {
           "kind": "symbol",
           "name": "preview_answer"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
         "content": "sha256:c304c51112992e812625bb5aab27400835e75211dafa7de664274f669840165a",
         "locator": {
           "kind": "symbol",
@@ -36,6 +36,24 @@
       },
       "rationale": "This is the dry-run archived-state classifier; the real cleanup hook outcome is owned by task_master_retirement._clean_up.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+        "content": "sha256:ffbbacb22481e2e9a545e5ac8d7dc479674e1b1f37032c5fa7d776f2b8d9b1c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_answer"
+        }
+      },
+      "id": "RLZ-6ZJ0CR",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Preview appends the hook exact explainer_line to its change list.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -76,6 +94,21 @@
           "anchor": {
             "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
             "content": "sha256:764b0796d7b3adc81a851ed0f9d7a33aa805b8e2e764cf888baa7f038ae8932a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preview appends the hook exact explainer_line to its change list.\n\nAnchor: `preview_answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e07f75507ace242c1610b9cb71969bc99e3ace",
+            "content": "sha256:41f44cbe7564fa40196b5174695b2e8a01668b5760ff5e5ba117659e1738c30a",
             "locator": {
               "kind": "file"
             }

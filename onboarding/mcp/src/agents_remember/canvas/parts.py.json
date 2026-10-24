@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/canvas/parts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reserved whole-page part is the implicit part of a page that declares none, and a page may not declare that id\n\nAnchor: `WHOLE_PAGE_PART = `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "907e30a1069c340b7cc52b6f2c88025d32814c3d",
+            "content": "sha256:3137328b05372d3431bbf789ee7fa68aa867d3cd5ed1840c7d279c8b62277990",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One function spells the bound on a part id for readiness, the protocol message and the part map\n\nAnchor: `def part_id_problem(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "907e30a1069c340b7cc52b6f2c88025d32814c3d",
+            "content": "sha256:61cc56bae3e336986b31da425ccb22b9582c14829c096333b3d6403e9472d3bc",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A page's parts are derived once from its own document, nesting resolved innermost and order kept as written\n\nAnchor: `def derive_part_map(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "907e30a1069c340b7cc52b6f2c88025d32814c3d",
+            "content": "sha256:201d9a9e8f4001a6700d47f6a884b756daed88678d0807c6520c12bbe8298a5b",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A claim two parts both hold is reported, because every claim belongs to one part only\n\nAnchor: `def _check_cross_part_claims(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "907e30a1069c340b7cc52b6f2c88025d32814c3d",
+            "content": "sha256:b67e9e10f64e245d27465f425ebbce5acf76401f203fadd03151c8dffba25c93",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

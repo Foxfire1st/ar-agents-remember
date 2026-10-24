@@ -47,7 +47,7 @@ The shell's main viewport deliberately hides overflow: panels own their scrollpo
 
 The task list fills the left rail; attention lives behind its header bell in a bounded overlay rather than a sibling height-consuming block. Compact grouping, bell and Clear all controls share viewTabLook authority. These presentation changes retain the bell's placement and the row identity contracts; the dismissal contract is the one MIK-R200@v2 changed — every served row is one acknowledgement per occurrence, Clear all included, and the reducer now serves the newest entry first.
 
-Operations’ right rail selects Event River or the selected task’s native document chat. During review the same right rail presents only that review task’s chat, preloaded while its column is closed; its frame stays in the same mounted position. The review target resolves its task through the shared task map and names pending or missing task identity. The page-wide TrayLayer is mounted by the shell, and its Tray button sits beside the four view tabs. Native tasks still come from `s.tasks` as memoized `Object.values`; the stable empty-array fallback belongs to `analytics?.engineProcesses`.
+Operations’ right rail selects Event River or the selected task’s native document chat. When a review names a leaf, the same right rail defaults to that leaf’s explainer or its no-seat placeholder; an ordinary document retains its own chat. The review column preloads while closed, and the one native frame stays in the same mounted position. The review target resolves its task through the shared task map and names pending or missing task identity. The page-wide TrayLayer is mounted by the shell, and its Tray button sits beside the four view tabs. Native tasks still come from `s.tasks` as memoized `Object.values`; the stable empty-array fallback belongs to `analytics?.engineProcesses`.
 
 ### Native Chats and execution identity
 
@@ -127,6 +127,8 @@ The product bar contains Chats, Operations, Knowledge and File Viewer, with the 
 
 - Chats is the opening view and there is exactly one full-page Chats destination; Operations is a product destination (260928-MIK-L79).
 - The shell owns its wake lock and navigation state; native host/reader owners supply their respective data.
+
+The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review | Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order.
 
 ## Invariants And Boundaries
 
@@ -385,5 +387,7 @@ the task entry's page reads now end with the task they belong to. The change-set
 - The model admits typed tray provenance and the box's geometry in one block, with the pair admission immediately after it. [91]
 
 - A composer measurement may carry the box's optional left and width, which the model admits only as a pair of finite values with a positive width. [92]
+
+- The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review \| Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order. [96]
 
 - EngineRoomImpl builds its model from engineProcesses alone and selects the process/ledger data for enclosure presentation; it reads no lifecycle collection or provider projection. [42]

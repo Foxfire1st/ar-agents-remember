@@ -32,3 +32,7 @@ Canonical agent discovery and host-owned frame steering remain separate. The unb
 - An unbound review scope binds no role or chat target and is distinct from a documentless Projects Architect scope. [6]
 - Pending unbound task discovery holds the retained screen; a known missing task hides it, with no launcher. [7]
 - Preload starts the descriptor while hidden but does not activate chat reads. [8]
+
+DocumentChatProps now accepts an optional ExplainerColumnTarget. This is a mode input for DocumentChat's composition owner, not another ordinary role binding: when it is supplied, that component disables this hook's active reads and delegates to the explainer column. Without it, the document's existing discovery, launcher and warmup behavior remains unchanged.
+
+- DocumentChatProps now accepts an optional ExplainerColumnTarget. This is a mode input for DocumentChat's composition owner, not another ordinary role binding: when it is supplied, that component disables this hook's active reads and delegates to the explainer column. Without it, the document's existing discovery, launcher and warmup behavior remains unchanged. [9]

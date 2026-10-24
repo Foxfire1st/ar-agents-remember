@@ -184,6 +184,8 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b"\0", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.
 
+The process service binding lives in the neutral kernel holder and is re-exported unchanged by `services.py`. Startup can name a supplier; the first dependent lookup constructs and retains its bundle, and reset clears both the bundle and supplier. Open intent review refuses a new leaf start before enclosure creation and a planning attach before re-entry; task-stage publication also refuses planning/abandoned-to-`inProgress` while review is open. Existing later-stage attach behavior remains.
+
 ## Evidence
 
 - Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception. [104]
@@ -297,3 +299,5 @@ A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still u
 - Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing. [101]
 - Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization. [102]
 - Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources. [103]
+
+- The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]

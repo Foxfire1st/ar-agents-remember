@@ -42,14 +42,10 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 - May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The second start reaches the held dispatch lock before pending is asserted. [2] | `test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it` | mcp/tests/test_paseo_role_tools_start.py |
+- The second start reaches the held dispatch lock before pending is asserted. [2]
 
 - The fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement callers; an occupied-seat refusal names its holder. [3]
 - A native binding refusal carries no redundant operation envelope. [4]
 - The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The role, task and report registration exists before agent-create begins, under the existing dispatch lock. [6] | `test_a_start_runs_the_launchers_path_with_the_caller_as_parent` | mcp/tests/test_paseo_role_tools_start.py |
+- The role, task and report registration exists before agent-create begins, under the existing dispatch lock. [6]

@@ -1,6 +1,26 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/__init__.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+        "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-TCRKBJ",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "`gate_response_wait_payload` is imported from `gates`.\n\nAnchor: \"from .gates import (\"",
@@ -41,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
             "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
             "locator": {
-              "end": 22,
+              "end": 23,
               "kind": "line_range",
-              "start": 22
+              "start": 23
             }
           },
           "kind": "code"
@@ -186,12 +206,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 54,
+              "end": 55,
               "kind": "line_range",
-              "start": 54
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
             }
           },
           "kind": "code"

@@ -10,6 +10,8 @@ Registers role launcher options/dispatch/result/frame APIs and serializes prepar
 
 ## Code Commentary
 
+At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.
+
 ### Current Contract
 
 Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field.
@@ -94,3 +96,5 @@ The dispatch endpoint takes the lock first and decides inside it: `role_launch_a
 
 - The dispatch endpoint that admits, prepares, binds and refuses in one locked order. [20]
 - Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made. [21]
+
+- At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat. [22]

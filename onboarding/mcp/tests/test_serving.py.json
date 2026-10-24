@@ -112,6 +112,17 @@
       "targets": [
         {
           "anchor": {
+            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+            "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_exception_never_delays_an_earlier_normal_deadline"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
             "locator": {
@@ -178,6 +189,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+            "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
             "locator": {
@@ -193,6 +216,18 @@
     "6": {
       "note": "A failed finishing attempt stays honest missing and never retries history.  Anchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+            "content": "sha256:72e80a96d6e5b8921fb605b6a1f8f06d82b682cb006deef9d677fa24c39ceed8",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 518
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
@@ -228,6 +263,17 @@
       "targets": [
         {
           "anchor": {
+            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+            "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_task_and_host_changes_get_one_early_pass_per_original_rest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
             "locator": {
@@ -242,6 +288,17 @@
     "9": {
       "note": "Other domains keep rest while leaving the task exception available.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+            "content": "sha256:4cfc3d642a4e5c57d7fddffe5b6aec1c2d1f7fd195c587604f6dc137472b7e63",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_other_domains_keep_rest_without_spending_the_task_exception"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",

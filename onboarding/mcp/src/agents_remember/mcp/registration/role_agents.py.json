@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-        "content": "sha256:8ed1ddd32ce18bafe1ee0df1609432fd2eae760e091454cf3f10152fc8a79aae",
+        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+        "content": "sha256:75fbbc5111a81997cc89f331fb0f0dfc4c2dc8868ca1d6cb9484240c1113c2fc",
         "locator": {
           "kind": "symbol",
           "name": "role_message"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-        "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
+        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+        "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
         "locator": {
           "kind": "file"
         }
@@ -35,6 +35,24 @@
       },
       "rationale": "The public structural role tool advertises model/effort/tier and the allowed feature surface without a permission-mode start parameter.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+        "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_role_agent_tools"
+        }
+      },
+      "id": "RLZ-GA7X4W",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -126,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
             "content": "sha256:3f8073c584feeaddac1f37c933b10989bf48c89890b4cf4a4afc3fbf54da2ef1",
             "locator": {
-              "end": 104,
+              "end": 100,
               "kind": "line_range",
-              "start": 68
+              "start": 64
             }
           },
           "kind": "code"
@@ -143,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
             "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
               "kind": "symbol",
@@ -164,6 +182,21 @@
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.\n\nAnchor: `register_role_agent_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

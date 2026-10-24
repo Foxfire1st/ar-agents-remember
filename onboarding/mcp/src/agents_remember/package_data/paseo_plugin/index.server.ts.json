@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
+            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
             "content": "sha256:35ecc2899a8c36630d942bdebe99144e8e526d74f6e49718f19a83d8009715dd",
             "locator": {
-              "end": 26,
+              "end": 50,
               "kind": "line_range",
-              "start": 23
+              "start": 47
             }
           },
           "kind": "code"

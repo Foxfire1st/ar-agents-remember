@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
             "content": "sha256:8f6f11b6c46f7fa3c0c786782a7032b042b5826856eee435d661f9abb67d8de6",
             "locator": {
-              "end": 334,
+              "end": 351,
               "kind": "line_range",
-              "start": 264
+              "start": 281
             },
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
           },

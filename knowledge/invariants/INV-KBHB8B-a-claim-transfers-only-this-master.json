@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The master log, held-message storage, transfer candidate admission and host-send classification must agree to avoid crossing masters, dropping custody or repeating uncertain delivery; explicit claim fixture tests cover limited/timeout/full/unavailable destinations and restoration."
+  },
+  "applicability": "explainer_control claim transfers between an earlier architect seat and the newly claiming seat.",
+  "conditions": [
+    "Logged foreign-master report IDs and non-held final states are excluded from transfer candidates.",
+    "Provider limits, unopened/unfinished seats, pending permissions, earlier waiting messages and active turns are checked before sending.",
+    "Timeout/unknown send results are classified as sent, outcome unknown rather than assumed undelivered.",
+    "Held stores enforce a bound and sender ownership rather than discarding an older row."
+  ],
+  "exclusions": [
+    "An unknown outcome is not proof of delivery or proof that no delivery occurred.",
+    "The tray fallback returns the original file path if the filesystem rename fails; no successful rename is claimed in that case.",
+    "When restoration fails too, the log records not reported rather than claiming held custody."
+  ],
+  "id": "INV-KBHB8B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "helpers/explainer-tools/behavior-proposals.json; helpers/explainer-tools/sidecar-note-audit.json; helpers/backend/normalized-writer-draft.json; MIK-R189 v2 rule 7"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A claim transfers only this master's still-held reports: it withdraws each admitted row before sending, logs the new delivery state, and does not resend a report whose outcome was logged unknown. A destination that cannot accept the report returns its backing file to the tray where possible, or restores prior held custody when no backing file exists.",
+  "status": "proposed",
+  "supersedes": []
+}

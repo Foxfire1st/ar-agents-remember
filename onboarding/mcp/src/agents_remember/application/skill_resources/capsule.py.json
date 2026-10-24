@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+        "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+        "content": "sha256:cbaeed808f286fc0d531d251de6a1b09509cb1d240a4765dd1950e044e502c61",
+        "locator": {
+          "kind": "symbol",
+          "name": "_enclosure"
+        }
+      },
+      "id": "RLZ-ERWB3Y",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Capsule compilation loads WorktreeContractReader and contract/error implementations only when enclosure resolution needs them; contract-unavailable keeps its existing refusal path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
         "content": "sha256:52a746fc00ed66cb97e7e3436f817ed49c9e0a99dfc8ff19563f50e15c7c8fc5",
         "locator": {
           "kind": "symbol",
@@ -17,6 +35,24 @@
         "leaf": "260928-MIK-L98"
       },
       "rationale": "Public old-ID compile emits the canonical capsule and one notice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+        "content": "sha256:df6167884a180469951c209d5120c996dab5d1171e3eb7c3f928a860137fece9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_declared_repository_root"
+        }
+      },
+      "id": "RLZ-TDQ066",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Repository-root contract lookup resolves the canonical contract module only in the dependent call, retaining the same contract-unavailable errors.",
       "role": "enforcement"
     }
   ],
@@ -53,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:555b110693e8fd5bcd0c9de05489a4ef1b674ae4aa306f634a858400c38200c6",
             "locator": {
               "kind": "symbol",
@@ -103,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "259ed1508440ade327c5265fd38e41e3a2344140",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -188,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
             "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
             "locator": {
               "end": 35,
@@ -224,12 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
             "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
             "locator": {
-              "end": 74,
+              "end": 129,
               "kind": "line_range",
-              "start": 59
+              "start": 114
             },
             "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
           },
@@ -242,7 +278,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:8b510f1c59eadd633e890f61a89296a725ed091b00c234a65eaec0b9fd4c861e",
             "locator": {
               "kind": "symbol",
@@ -253,7 +289,7 @@
         },
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:3b4b59e6b1ef6fdf105dfc962e2fc003c52de84325a23b0295aef1c87d1be435",
             "locator": {
               "end": 348,
@@ -270,12 +306,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:08ad34f57e19dac00b4031487a9b97943c36606399db81cc1cf4a53f6f8afd0b",
             "locator": {
-              "end": 583,
+              "end": 597,
               "kind": "line_range",
-              "start": 533
+              "start": 547
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Capsule compilation loads WorktreeContractReader and contract/error implementations only when enclosure resolution needs them; contract-unavailable keeps its existing refusal path.\n\nAnchor: `_enclosure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -321,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:70a059c5db100360ca2b2701934c524500b3002805425f09381d703bc1a9be8a",
             "locator": {
               "kind": "symbol",
@@ -332,7 +383,7 @@
         },
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:8b47f49c6b049604a4e718c0bda2deb60385ace3c2218a043efbfabdc3c48247",
             "locator": {
               "kind": "symbol",
@@ -370,7 +421,7 @@
         },
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:fd09c489fab32c6097d6cfcb18dbd69e856c1135f85d6258da17db3f572a01cc",
             "locator": {
               "end": 188,
@@ -398,7 +449,7 @@
         },
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
             "locator": {
               "kind": "symbol",
@@ -409,7 +460,7 @@
         },
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
             "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
             "locator": {
               "kind": "symbol",

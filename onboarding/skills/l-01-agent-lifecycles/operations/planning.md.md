@@ -14,6 +14,8 @@ For one master the Architect's first delegation is one Manager on that canonical
 
 Before implementation, when a leaf's packet names an effect on a recorded invariant or family, the Architect declares that effect in `expectedKnowledgeEffects` through `task_doc` on `agents-remember-task`. A packet naming no such effect requires no declaration.
 
+After a new leaf task document exists, the Architect asks the developer once, before any start: "go, or review first?" The Architect discloses that review uses a planned comparison without a task workspace, and first Explain creates the explainer workspace. It records `review-first` or `go` (`agreedRevision`) in `intentReview` through `task_doc`; `intent-review-open` holds until `go`.
+
 ## Current composition and authoring contract
 
 The shared planning contract still requires bounded approved canonical packets, one primary requirement per executable leaf, preserved prior approvals and explicit owner/delegation/evidence/publication scope. Developer authority remains required for changed promises.
@@ -22,6 +24,8 @@ The `expectedKnowledgeEffects` declaration is selected only for Architect: when 
 
 
 ## Evidence
+
+- Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go. [6]
 
 - One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception. [1]
 - Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology. [2]

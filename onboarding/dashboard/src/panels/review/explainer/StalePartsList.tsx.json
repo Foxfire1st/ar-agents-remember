@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/review/explainer/StalePartsList.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+        "content": "sha256:1384bbdfce24b0c9ac14d4b2cac830030c89b9df2314a1695ed6d6ffebc48e11",
+        "locator": {
+          "kind": "symbol",
+          "name": "StalePartsList"
+        }
+      },
+      "id": "RLZ-WRR1ZY",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The trusted list renders the host’s stale part titles and reasons outside the generated frame, preserving the true total and explicit unreadable state.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The box carries the counted total, the listed count and the stale-grade count, and states the trusted nature of the list\n\nAnchor: `export function StalePartsList(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+            "content": "sha256:1384bbdfce24b0c9ac14d4b2cac830030c89b9df2314a1695ed6d6ffebc48e11",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parts are listed with title and reason; grades-only, nothing-stale and unreadable each get their own sentence\n\nAnchor: `function StalePartsBody(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+            "content": "sha256:60fb6e88679b961b697e0c39ce14ab25294c5af4c990f2a35125b15b20b14038",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The header reads unreadable, none or the counted number rather than a zero\n\nAnchor: `function staleHeaderCountText(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+            "content": "sha256:6a7f34bfc8bae76962e62c9e3bb967fa86b66fcadf21f7c80946c660dce53712",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The summary keeps the true count, the remainder and whether anything is actually stale\n\nAnchor: `function resolveStaleSummary(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+            "content": "sha256:a4f36623e0d23ca584d2f7955eba85af7978a83c5d77bedf9856e7004db03996",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The footer adds the unlisted remainder, offers regeneration only when something is stale, and names a failed press\n\nAnchor: `function StalePartsFooter(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bba7f7a6d8218c640a195d6be151b79310b4136",
+            "content": "sha256:b20f7538fe81b29b18250a5c5cec25d539ec600abaafa8e7ae073f2dfb8543db",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

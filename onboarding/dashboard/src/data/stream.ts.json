@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d2a988c399980cf967bbb99cdf5e421391bc8138",
+        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
         "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,30 @@
     },
     {
       "anchor": {
-        "blob": "d2a988c399980cf967bbb99cdf5e421391bc8138",
+        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+        "content": "sha256:d7f0c9fea0a9995f1c42c1067ce8c4f273b8b2cf5f04e7a31661157525cdc132",
+        "locator": {
+          "kind": "symbol",
+          "name": "attachReviewListeners"
+        }
+      },
+      "id": "RLZ-C5K52Y",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Excludes stopped/replaced sources and forwards the named moved event through the existing state transport.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
         "content": "sha256:b6f6beed0a519476bf5ee3e319bea8d3b23560e4c434279e1801eb8f12e15a9d",
         "locator": {
-          "end": 14,
+          "end": 20,
           "kind": "line_range",
-          "start": 7
+          "start": 13
         }
       },
       "id": "RLZ-C5YJ9B",
@@ -40,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "d2a988c399980cf967bbb99cdf5e421391bc8138",
-        "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
+        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+        "content": "sha256:409a7431e06691789ab881a398eafaf586cff9796ac6794bd491a066157c8617",
         "locator": {
           "kind": "symbol",
           "name": "connectState"
@@ -92,12 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
             "locator": {
-              "end": 42,
+              "end": 84,
               "kind": "line_range",
-              "start": 34
+              "start": 76
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
@@ -105,14 +123,29 @@
         },
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
             "locator": {
-              "end": 48,
+              "end": 90,
               "kind": "line_range",
-              "start": 43
+              "start": 85
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "attachReviewListeners now owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open, preserving the prior reconciliation behavior.\n\nAnchor: `attachReviewListeners`, `connectState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
+            "content": "sha256:69b9010873fc85badf3b7169e12b59f01d248674c7ff10d7563fa1131764c3c7",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -212,6 +245,30 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
+            "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -220,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a773125cc623e2db3077af920369e0578744743",
+            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
             "content": "sha256:bcedda00af1760426b4d9edd93088f3e79b9dbe47e16a9cb43956cdf1ec88bce",
             "locator": {
               "kind": "symbol",
@@ -236,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:41e34c047e42f60857bf7b0892f4df206359cfb4f04e5788cd2849fbbfbd5d5a",
             "locator": {
               "kind": "symbol",
@@ -283,6 +340,42 @@
               "end": 128,
               "kind": "line_range",
               "start": 120
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:37a1839a7433d08e809633356f7b67b5dbbede3c44d66c04927285decee2f4f1",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
+            "content": "sha256:24a65ec340ac93f3d598aa813ff5946fc82aa78c627ee8b85e260cf1105a35ef",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
+            "content": "sha256:cf0a964c7a74a1c090067a5a56cdbe3b12d9cf6bb1a1a8f5db9cc2f1e262b853",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "code"

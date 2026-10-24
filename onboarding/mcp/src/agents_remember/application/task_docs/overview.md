@@ -122,6 +122,8 @@ The existing statement that finalizing a master never archives it remains an int
 > **Retained historical source account — superseded by the current route account:** The shared fact publisher performs publication, then invalidation and independent rebuild without acquiring a lock in this function. (original reference 12, retained provenance only)
 > **Retained historical source account — superseded by the current route account:** Commanded-master completion requires abandonment or Completed without completion blockers. (original reference 14, retained provenance only)
 
+A newly created subTask with no supplied `intentReview` receives `pending`. The shared candidate guard prevents erasing an existing answer, permits its change only by the bound Architect or a developer without a seat binding, and refuses an open-review transition from planning or abandoned to `inProgress`. Replace preserves the answer when omitted. Master and sprint archive hooks also receive the task-derived explainer root: preview lists would-retire environments without retiring them, and partial or failed environment cleanup remains failed hook evidence after the task retirement.
+
 ## Evidence
 
 
@@ -133,3 +135,5 @@ The existing statement that finalizing a master never archives it remains an int
 
 - Task-document batches keep each root/document destination, check one graph-bearing document and refuse task-root escapes before the common batch publisher. [16]
 - Audited never-started discard retains source/evidence CAS and central preview/publication; reopen delegates the exact same contract identity to its owner. [17]
+
+- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures. [18]

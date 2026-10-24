@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:dc8acffd8f507dea01e88c63984330651d5e6df48d5b3bb9eb7e0df05e4cd1c1",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:f8bc3c2b0cf0094671be85ea3992dd55cf85721a67293ea3004114a3426e6e2b",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:b4c21543b11429395133a0c7374dc94c14250235393525472f07f7896809d8af",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:cb160fa464d1214b4f211198a81133dcfb4af27f679052ee57f35141aa4ec83b",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
         "content": "sha256:70e54ad7bc5205242f5a3095db497f0c4a794f13dafb5b06acfefb21aeab7bdc",
         "locator": {
           "kind": "symbol",
@@ -180,6 +180,24 @@
       },
       "rationale": "Current single owner of this sealed acceptance obligation.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+        "content": "sha256:9b9cb96b3d2c8c4f28d57f940893e8f2b61f83caa5fbf0e410805ad1497910ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preview_cleanup_changes"
+        }
+      },
+      "id": "RLZ-X7X1VV",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Sprint preview names the task and the same would-retire environment line; failures retain the existing retry account.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -190,6 +208,21 @@
           "anchor": {
             "blob": "ff7f7ee220532b04421a687ec92664334c54e460",
             "content": "sha256:ec74c15db7412cde614f21dc1529b5348866b10907391cdc89559259e43d7ba3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sprint preview names the task and the same would-retire environment line; failures retain the existing retry account.\n\nAnchor: `_preview_cleanup_changes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+            "content": "sha256:eef1c08b879a63fd3b58994fd29fbb7a3ef926fa84df04c21f43460a2b1f0f02",
             "locator": {
               "kind": "file"
             }

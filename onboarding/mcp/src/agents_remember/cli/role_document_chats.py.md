@@ -10,6 +10,8 @@ The selected-document read is the correcting authority for a document’s launch
 
 ## Code Commentary
 
+After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated.
+
 A clicked hosted target promotes that pending agent in the shared active warmup pass before the pane is drawn. Already in-flight work retains its slot; the route still discovers only canonical recorded chats through read-only host evidence.
 
 
@@ -41,8 +43,11 @@ An exact task-bound Investigator request is read only when explicitly selected w
 
 ## Role blocks and the pages that follow them
 
-Records are grouped one block per role, newest first, and `_role_records` reads a taskless role through its own receipts. `_PAGE_SIZE` bounds the host reads of one page at three, not the records it may step over: a page that already answered a role steps past that role's older records without asking the host again, and `nextOffset` continues from the record the walk stopped on. A document-free selection lists the architect and the free agent, and a selection that names the free agent lists that role alone, so a bootstrap seat behind architect records is reached instead of being answered with the architect's seat.
+Records are grouped one block per role, newest first, and `_role_records` reads a taskless role through its own receipts. `_PAGE_SIZE` bounds the ordinary role-record scan to three host reads per page, not the records it may step over: a page that already answered a role steps past that role's older records without asking the host again, and `nextOffset` continues from the record the walk stopped on. The separately appended explainer lookup may make one additional host read after that ordinary scan; it is not counted by `_PAGE_SIZE`. A document-free selection lists the architect and the free agent, and a selection that names the free agent lists that role alone, so a bootstrap seat behind architect records is reached instead of being answered with the architect's seat.
 
-- The paged walk over role blocks, with one host read bound per page. [7]
 - The end of a role's block, which a continuation resumes after. [8]
 - A bootstrap seat behind architect records is reached across pages, and naming the free agent answers with its own seat. [9]
+
+- After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated. [10]
+
+- Role-record pagination bounds its own scan; the separately appended explainer lookup has its own host check. [7]

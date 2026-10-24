@@ -292,12 +292,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
             "content": "sha256:2c41764df8a1e15c5d002164115230f73688aba7cd1aa72b94e2ee686616fd7c",
             "locator": {
-              "end": 205,
+              "end": 207,
               "kind": "line_range",
-              "start": 205
+              "start": 207
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
             "content": "sha256:f5386a914e8e6757d9ebe3f9a9f4724a06ec87a82417a9a8451dff5725f62ff8",
             "locator": {
-              "end": 112,
+              "end": 114,
               "kind": "line_range",
-              "start": 112
+              "start": 114
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },

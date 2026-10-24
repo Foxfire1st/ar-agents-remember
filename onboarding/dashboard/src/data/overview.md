@@ -28,6 +28,8 @@ reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge an
 
 Catalogue and summary readers accept an optional recorded comparison number. They transmit it to their own endpoints and include it in their local/retained question identity, preserving the separate leaf-scoped invalidation and generation guards. The summary can wait disabled until the number is known. review.ts no longer declares or exports the source-content expansion client. reviewFamily.ts additionally mirrors the selected revisions’ display versions and writer state/owners/detail.
 
+The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.
+
 ## Invariants And Boundaries
 
 Missing/unavailable/refused answers stay distinguishable from empty data. A declared client type is not a runtime validation guarantee. Source inspection, inherited fixtures and citation renewal provide no new UI, host, test or whole-build acceptance.
@@ -201,3 +203,5 @@ The following reference captions describe the prior source epoch. They are prese
 - The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector. [30]
 
 - The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved. [116]
+
+- The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. [117]

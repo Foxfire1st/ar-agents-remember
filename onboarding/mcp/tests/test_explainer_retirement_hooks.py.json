@@ -1,0 +1,106 @@
+{
+  "path": "mcp/tests/test_explainer_retirement_hooks.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+        "content": "sha256:9191d2665c807b59924253b4083d8a43dedf1b5b9fcded7bd559f0c95f4ef846",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_symlink_inside_a_workspace_holds_the_leaf_and_what_lies_behind_it"
+        }
+      },
+      "facet": "Archive cleanup reports and holds a workspace containing a planted link and preserves the external target.",
+      "id": "PRF-Q79YG2",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_dry_run_lists_every_environment_and_retires_nothing` protects a retirement preview listing without retiring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+            "content": "sha256:cf210764ca18f6123967ebc3382a9df2222ab8b698ea1dbbe82f5fc93355cb56",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dry_run_lists_every_environment_and_retires_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_master_retirement_retires_and_reclaims_every_environment` protects master retirement reclaiming every environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+            "content": "sha256:5137ba755130172b6f5b468861427c366380326c4fb82bca12fcddaf04b298c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_retirement_retires_and_reclaims_every_environment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_failed_retire_keeps_the_folder_counter_receipt_and_grades` protects a failed retire keeping what the retry needs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+            "content": "sha256:3ef1492f4093b8c03fd754e2fed13c6745931a067a6dfe55b3ac516fd6a81fdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_retire_keeps_the_folder_counter_receipt_and_grades"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_an_interrupted_external_deletion_is_attributed_already_absent_from_exact_targets` protects an externally deleted target being attributed already absent from the exact confined path only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+            "content": "sha256:2885c91c645c5510936e9ad297ba0f2b98c6b0b7e699439e6cc31fdce18eb9cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_external_deletion_is_attributed_already_absent_from_exact_targets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_warmup_never_resumes_an_explainer_seat` protects the warmup leaving an explainer seat alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e33cb38534b48dc88066dbfac25c57f5b7a0c89",
+            "content": "sha256:f84387ce858934ce81e6ab76049034284cdab526cf8abc0b3c68788d40d80f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_warmup_never_resumes_an_explainer_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "content": "sha256:4603c0bff999862ff52eb0165c35eed17a61f36b9ce885a5c161d57b0606ee36",
+        "locator": {
+          "kind": "symbol",
+          "name": "_omissions_for"
+        }
+      },
+      "id": "RLZ-4TGDBV",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The packet must carry measured supplemental read losses explicitly and preserve the bound planned owner/reference; these are genuine preparation semantics.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
         "content": "sha256:544bbc0d82337ce2cb6c78b817ae0a5ff64f5a626406dc74ef19adefc127638e",
         "locator": {
           "kind": "symbol",
@@ -21,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
-        "content": "sha256:8d6fcc9be3c5658afe32615b24de01212f1aa5147b722169319fb6fb4011d6c6",
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "content": "sha256:8d89340ed9182e91367148071264da5cf4f232ddced488e664e04ff08dd10914",
+        "locator": {
+          "kind": "symbol",
+          "name": "intended_receipt_ids"
+        }
+      },
+      "id": "RLZ-C6WXZG",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-A-9",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The admitted present receipt IDs define exactly which packet, own task document and leaf reference sources can establish intended behaviour on a planned comparison.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "content": "sha256:ac33387394a5d0ee7ea6ed825de5f439b4a970a3fc502cf5e5d23e5937211746",
         "locator": {
           "kind": "symbol",
           "name": "build_evidence_packet"
@@ -34,12 +70,49 @@
         "handoffEntry": "MIK-R102@v1",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Composed CODE acceptance: original full packet/earlier closures retained from A4, and final F05/F10/F16 residuals closed on exact A5. No memory verdict or installed/UI claim.",
+      "rationale": "The packet builder preserves all four operands and conversion, distinct planned owner/reference, population coverage and explicit omissions so the explanation never fabricates a settled population.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "content": "sha256:83de7a2344f0c5c715f96b886e83551560d848ee43eba4fcbf1cc0d00f3faf45",
+        "locator": {
+          "end": 85,
+          "kind": "line_range",
+          "start": 68
+        }
+      },
+      "id": "RLZ-FYPCPR",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-packet-source-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The intended authority and exact leaf-own packet/document/reference root constants implement the corrected classification/source boundary; they are policy, not mechanical constants.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "content": "sha256:9e3ef13fbff4787a742c592f26b35766d22c4b021227857911097c2ccb63ed52",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparison_binding"
+        }
+      },
+      "id": "RLZ-V8QXX8",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The packet must carry measured supplemental read losses explicitly and preserve the bound planned owner/reference; these are genuine preparation semantics.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
         "content": "sha256:19d62eae84bf5ea6a57ec6148d14a1f36975a9265031235e30882440ce25ecb2",
         "locator": {
           "kind": "symbol",
@@ -78,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
             "content": "sha256:544bbc0d82337ce2cb6c78b817ae0a5ff64f5a626406dc74ef19adefc127638e",
             "locator": {
               "kind": "symbol",
@@ -94,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
             "content": "sha256:19d62eae84bf5ea6a57ec6148d14a1f36975a9265031235e30882440ce25ecb2",
             "locator": {
               "kind": "symbol",
@@ -110,11 +183,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59dd363550251e1afa7e89d97abad3676a901f44",
+            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
             "content": "sha256:77297362bf0269dbcdcdeaca1e0286f56cc5f1d4a7a12d1428f436494b448c7a",
             "locator": {
               "kind": "symbol",
               "name": "unselected_collection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current implementation adds intended source admission and receipt-bound omission accounting; no previous valid full-identity or population-bound statement is removed.\n\nAnchor: `comparison_binding`, `build_evidence_packet`, `intended_source_root`, `intended_receipt_ids`, `_omissions_for`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+            "content": "sha256:0598e330321af2300f2e160d9eef9b73cb9e64fbebe5ba31b5a2d1e2825deb96",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

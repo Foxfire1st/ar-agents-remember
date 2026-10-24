@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
             "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 160,
+              "end": 110,
               "kind": "line_range",
-              "start": 160
+              "start": 110
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -82,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
             "content": "sha256:b073771cdf30495fb5f193ff5a8e947aa61b532aea79c2fd105fbfd77246b442",
             "locator": {
-              "end": 28,
+              "end": 29,
               "kind": "line_range",
-              "start": 28
+              "start": 29
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -95,12 +95,12 @@
         },
         {
           "anchor": {
-            "blob": "4f0195ecdbf28a197c6c8c556e93fc75efc3f3cb",
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
             "content": "sha256:7a898b51a6ce8d0eadace4bed8976d3ac0b282d9385d94ff9e4d4fd3ad5583cc",
             "locator": {
-              "end": 166,
+              "end": 115,
               "kind": "line_range",
-              "start": 166
+              "start": 115
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
+            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
             "content": "sha256:09884457665159ef96de86f506692a9dd735ef8d65b8d6ae50c0be2e01fa52bf",
             "locator": {
               "kind": "symbol",
@@ -171,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
+            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
             "content": "sha256:b756d3cf5678d19529f2d692da67f67a010a7429f32b7b8357663f050e2404d9",
             "locator": {
               "kind": "symbol",
@@ -182,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "442a9c5e3f5b178a40f030fdddb3a1f41d74fa94",
+            "blob": "31048889278d6365efd062ce9a763eb01e7a6f76",
             "content": "sha256:48dc1ffbf0f21f0c57b0f0f76977f67799863226dd22877d54fcbb2eb68fe6a7",
             "locator": {
               "kind": "symbol",

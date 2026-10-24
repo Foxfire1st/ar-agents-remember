@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a6e9fbb6bc291a7c343c2c7435d5a6e44e62362",
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:299743c615d259ed7b09b8321534c39b46b9e6c20e1c02daf7c53cd6d207f3a2",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "6a6e9fbb6bc291a7c343c2c7435d5a6e44e62362",
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:a7235eb689ee50a623ba937d771de0a219a2e344f41f3225e1a341b1b86bd8c1",
             "locator": {
-              "end": 413,
+              "end": 416,
               "kind": "line_range",
-              "start": 401
+              "start": 404
             },
             "path": "mcp/src/agents_remember/models/knowledge/view.py"
           },

@@ -11,12 +11,16 @@ The review-presenter capability: one exact comparison, one authored page. It adm
 ## Code Commentary
 
 - `Presenter.start` refuses an activation it was not given and admits the attempt's comparison, instrument and design text before any durable effect.
-- `PresenterRunner` is the authoring port and its shipped default is `NativePresenterHarness`, which launches the confined tool server; a host that cannot confine the writes refuses with `presenter-confinement-unavailable`, and `UnconfiguredPresenterRunner` is the port implementation for a caller that supplies no harness at all.
+- `PresenterRunner` is the authoring port. The dedicated native presenter launch is retired: constructing `Presenter` without an explicitly supplied runner selects `UnconfiguredPresenterRunner`, whose start refuses `no-confined-harness`. A bare presenter therefore starts no seat with a missing tool surface.
 - `say`, `status`, `transcript`, `resume`, `cancel` and `replace` are identity-bound operations with truthful local answers when no host session exists.
 - `publish` moves the attempt's own folder into a new ready revision, and `_require_prospective_load` loads the exact prospective revision once without a model before the pointer moves.
+
+`publish` carries the explicit part map admitted by readiness into the new revision, and propagates the frame store’s own refusal reason instead of replacing it with a generic publication error.
 
 ## Evidence
 
 - An explicit activation starts one durable authoring attempt. [1]
 - Publication loads the prospective revision once without a model before any ready pointer moves. [2]
 - A runner that cannot confine its writes refuses by name. [3]
+
+- The current implementation adds readiness part-map persistence and typed publication refusal propagation; the existing prospective-load and attempt identity account remains valid. [4]

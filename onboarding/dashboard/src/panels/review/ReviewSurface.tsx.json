@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:20eec5c22f0370fe9bbf2525c5c8c0e66351fde3e5b336d11f653e0f15e684a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "readingReplacementOf"
+        }
+      },
+      "id": "RLZ-1HAYNT",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Replaces only reading-column content with the explanation or planned page while top line, tree and shared chat remain outside it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:db585453c685064d18640a2e2ef9666a96e574154b1b5cd813aa5491ca4476b6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:7eb4320d096d15812d412b43403c5195111312be5b6b9b32f4c59fb339568f6c",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-        "content": "sha256:3f7cbf91948039b26e86badbb3f08e4b4b26e7657bdac6efd229a313281588bb",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:8af8f4b2f43b4e5fb1a2b17a13278405cc232cead690c82132d840bfe8ce930c",
         "locator": {
           "kind": "symbol",
           "name": "PageReading"
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
         "locator": {
           "kind": "symbol",
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -129,8 +147,26 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:9f74dc617d909ed05902a4914b9440713b7f90e5bc08e21aa48050b7424ada54",
+        "locator": {
+          "kind": "symbol",
+          "name": "useExplainerMovedRefresh"
+        }
+      },
+      "id": "RLZ-HV61Q9",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Renews deterministic live facts on no-work/no-Update moves while excluding recorded-history views.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:db585453c685064d18640a2e2ef9666a96e574154b1b5cd813aa5491ca4476b6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -147,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-        "content": "sha256:a3f03581486d3c0910316c3ba2d00dcbf119aa443e8173a4d43f8ef0ea7fce1f",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
         "locator": {
           "kind": "symbol",
           "name": "useSurface"
@@ -165,7 +201,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
         "locator": {
           "kind": "symbol",
@@ -183,8 +219,44 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-        "content": "sha256:fb71ff66330260e85e97f9e0a3afe2836932f77af582c071b626f0497393af45",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:fd8ca2798489143d751ef42e783c9d3ea6aa6720e0d4b09aa536662fa5d1b176",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSurfaceExplainer"
+        }
+      },
+      "id": "RLZ-Q6WQJR",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-retained-evidence-walk",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Successful claim and frame-evidence resolution returns to Review and selects with keepTree:true, preserving the tree already walked.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:fd8ca2798489143d751ef42e783c9d3ea6aa6720e0d4b09aa536662fa5d1b176",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSurfaceExplainer"
+        }
+      },
+      "id": "RLZ-QDV2CP",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This composition owner binds explanation/planned reads to the displayed comparison, publishes the supplied judgments and returns resolved claims/evidence to Review while tree and shared chat stay outside the reading replacement.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+        "content": "sha256:db585453c685064d18640a2e2ef9666a96e574154b1b5cd813aa5491ca4476b6",
         "locator": {
           "kind": "symbol",
           "name": "ReviewSurface"
@@ -201,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+        "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -236,16 +308,14 @@
       ]
     },
     "66": {
-      "note": "ReviewSurface.tsx current behavior at this source owner.\n\nAnchor: \"function PageReading({ props, tree, chat, open }: { props: PageProps & { reads: Surface }; tree: ReturnType<typeof useSidebar>; chat?: ReviewChatControl; open: OpenReviewChanges }) {\"",
+      "note": "PageReading keeps the existing reading-column toggles, notes, summary, lane and technical details, replaces its body through readingReplacementOf and mounts judgment chips only for ordinary Review content.\n\nAnchor: `PageReading`",
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
-            "content": "sha256:3e04b3ea4fbb043d73c399fab68cf7e9e353e9448e3bf3a7cc71b4ade78c6e59",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
             "locator": {
-              "end": 774,
-              "kind": "line_range",
-              "start": 759
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -257,12 +327,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:6d678de25c5ac8e818b0584a10aa69240890697367d8495099c1a0644807e0d7",
             "locator": {
-              "end": 717,
+              "end": 684,
               "kind": "line_range",
-              "start": 702
+              "start": 669
             }
           },
           "kind": "code"
@@ -274,12 +344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:4e4832a7713f442038bc453d1e239a1022169ccf7f9cf999074fcb1cde5903ad",
             "locator": {
-              "end": 562,
+              "end": 545,
               "kind": "line_range",
-              "start": 547
+              "start": 530
             }
           },
           "kind": "code"
@@ -291,12 +361,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:fbc715e7787a7e4f98053e004c4fb877ec99fbe3be0903c8458946057567df3c",
             "locator": {
-              "end": 390,
+              "end": 411,
               "kind": "line_range",
-              "start": 375
+              "start": 396
             }
           },
           "kind": "code"
@@ -308,12 +378,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:6b121f7487a904aeac53ec1fb387e673792fccb580695519dfbf6d016455f918",
             "locator": {
-              "end": 268,
+              "end": 289,
               "kind": "line_range",
-              "start": 253
+              "start": 274
             }
           },
           "kind": "code"
@@ -341,11 +411,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:ab53debd7600b192c2e83005b8c27f4e18f26863ca0b508d872c4e87c208657b",
             "locator": {
               "kind": "symbol",
               "name": "PageDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "ReviewSurface now owns a Review \\| Explanation tab in the page's top line and replaces only the reading-column body with ExplanationView or the planned page; the tree, chat rail, bracket controls and deterministic Review content keep their existing owners. The former CanvasRegion is removed. useSurfaceExplainer reads the applicable planned/explainer state, publishes its judgments to the shared model and resolves claim/evidence returns through the comparison on screen before selecting with keepTree. A matching live moved notice renews deterministic reads and entry generation when no explainer work exists or the event offers no Update; a recorded-history view does not subscribe to that refresh. The ordinary Review body receives judgment chips and Ungraded headings through ReadingJudgmentMounts, with cleanup owned by that mount.\n\nAnchor: `readingReplacementOf`, `PageReading`, `useExplainerMovedRefresh`, `useSurfaceExplainer`, `ReviewSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

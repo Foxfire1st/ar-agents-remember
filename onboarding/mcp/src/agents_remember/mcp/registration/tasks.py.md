@@ -16,6 +16,8 @@ register_task_tools declares the reopen, finalizer, task-document, curator-coher
 
 ## Code Commentary
 
+Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.
+
 ### Current Contract
 
 The task_doc description now includes `put_open_question`; the finalizer description explicitly requires a master rather than advertising standalone leaves. JSON remains canonical and Markdown generated. These are registration descriptions forwarded to existing application owners, not independent authorization, publication or execution proof.
@@ -200,3 +202,5 @@ The current compact curator_coherence description names its four actions, all ni
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
 - The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]
+
+- Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call. [8]

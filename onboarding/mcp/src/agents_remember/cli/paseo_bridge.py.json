@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
         "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
-        "content": "sha256:a3228429f5eea1c706ee13b1a68910e39272ab4907d87ccde4bc499468bf3b89",
+        "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
+        "content": "sha256:e6ac20fa9c60f9e6eca92061429e6def6b4ad414a95e63f02495cade94adc56d",
         "locator": {
           "kind": "file"
         }
@@ -71,24 +71,6 @@
       },
       "rationale": "The bridge is the dynamic reply adapter: bridge_call returns an unrestricted dict decoded from the bridge's JSON reply, so a field it does not describe is still carried rather than refused, and no strict usage DTO is declared. The bounded subprocess, environment, identity and deadline guarantees stand.",
       "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
-        "content": "sha256:aa8dcb6e29feaabccd175832b43ed675e440773c572691ce515556b404a48581",
-        "locator": {
-          "kind": "symbol",
-          "name": "SEND_OUTCOME_UNKNOWN"
-        }
-      },
-      "id": "RLZ-YZDT1F",
-      "invariant": "INV-AMJAZT",
-      "origin": {
-        "handoffEntry": "MIK-R171@v1 rule 3",
-        "leaf": "260928-MIK-L171"
-      },
-      "rationale": "It is the one declaration of the bridge's unknown-outcome code, so the hold decision and the transport agree on what an unanswered send looks like.",
-      "role": "support"
     }
   ],
   "references": {
@@ -97,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
             "locator": {
               "kind": "symbol",
@@ -113,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -129,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
             "locator": {
               "kind": "symbol",
@@ -199,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
             "locator": {
               "kind": "symbol",
@@ -215,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",
@@ -231,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "blob": "82f943442a437ba25486fa1047bc14f7a1745e3c",
             "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",

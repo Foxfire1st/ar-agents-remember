@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/application/review_planned_comparison.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application adapters reach serving as one injected value, not a module-global binding\n\nAnchor: `def explainer_application_ports(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cb15f6c0968ae0239928f426c9af90de6080301",
+            "content": "sha256:b9abc0944366ed75eeef6b59089df9a6b26c21dbc3474c44fecda08595f08612",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A frame area that cannot be measured reports itself unavailable with its limit, not a partial sum\n\nAnchor: `def task_frames_total(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cb15f6c0968ae0239928f426c9af90de6080301",
+            "content": "sha256:196d6118dd94460f116c8eef45bf768a050b6becf67935692d8a11be578e2748",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Re-admission marks a missing source unavailable and a changed one changed\n\nAnchor: `def fresh_supplemental_receipts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cb15f6c0968ae0239928f426c9af90de6080301",
+            "content": "sha256:db439a6f7e6f089e904545f64128f0f762874012f204eab24834fdacb829c930",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The watcher's capture and lane ports are bound beside the explainer's own\n\nAnchor: `def watcher_application_ports(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cb15f6c0968ae0239928f426c9af90de6080301",
+            "content": "sha256:9deb9398bc0fa348c2e3dd8959ccf0dc8e14dfe5904f4094c479e76c8f32e354",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

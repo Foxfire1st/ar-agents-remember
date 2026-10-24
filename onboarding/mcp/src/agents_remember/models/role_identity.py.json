@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+        "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+        "content": "sha256:6a0c36866c2081ff8ae215af9ec43404f682141dd552a3713a898ae441892b99",
+        "locator": {
+          "kind": "symbol",
+          "name": "LEAF_ROLES"
+        }
+      },
+      "id": "RLZ-DFE4QR",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The role levels and leaf/taskless membership move byte-for-byte to the light model owner; imported launch members retain their original meaning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
         "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
         "locator": {
           "kind": "symbol",
@@ -26,12 +44,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
             "content": "sha256:218fce10682c6e6734b8d07b57c90b3e40c64b4d9a2472450843e7d310ec8512",
             "locator": {
               "end": 17,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role levels and leaf/taskless membership move byte-for-byte to the light model owner; imported launch members retain their original meaning.\n\nAnchor: `LEAF_ROLES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "content": "sha256:8a04ab2cfcabc4f33d9c317c020c090d6fade2eef0f06a1570b0a208d047c412",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

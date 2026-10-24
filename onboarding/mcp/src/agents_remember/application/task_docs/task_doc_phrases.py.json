@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
+        "content": "sha256:7c74133a3be8e0648b5b1fa1d4586d44fa31266e16d36ed7f466ca92e2229ead",
+        "locator": {
+          "kind": "symbol",
+          "name": "_MUTABLE_FIELDS"
+        }
+      },
+      "id": "RLZ-WZ08VG",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "intentReview is an admitted mutable native field, so set_field records the developer answer instead of silently ignoring it.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "A displayed new value has a fixed character clipping rule, independent of the delivered token guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "357aec82628395caa196d1afe6fe19245eeb5a39",
+            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
             "content": "sha256:8b4f96adc9f62d07d7758f99629f05dff2bd040fa859ec55407fccdf04d22e1b",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "357aec82628395caa196d1afe6fe19245eeb5a39",
+            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
             "content": "sha256:23fe257db9e5bde1d136bc6898c1d17678b45b6d745efd90fbb85c6ffd68e6d5",
             "locator": {
               "kind": "symbol",
@@ -39,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b2e7fba10f444bde353851a1526fd85b9068236",
+            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
             "content": "sha256:f3ef1975f8eec493bcd76793fd5d34788da84651d606f6b0a6a0caa7f06f5119",
             "locator": {
-              "end": 161,
+              "end": 164,
               "kind": "line_range",
-              "start": 155
+              "start": 158
             }
           },
           "kind": "code"
@@ -68,11 +87,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "357aec82628395caa196d1afe6fe19245eeb5a39",
+            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
             "content": "sha256:e84d285273c94d086b59cd7e7d062893e35166b1488c3e1640f22abcb0fcc1bc",
             "locator": {
               "kind": "symbol",
               "name": "_updated_phrase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "intentReview is an admitted mutable native field, so set_field records the developer answer instead of silently ignoring it.\n\nAnchor: `_MUTABLE_FIELDS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
+            "content": "sha256:1c7f1637467a3a8468c0795177ccfa132dcb43972e3d95418f3324cba414675f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

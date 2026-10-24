@@ -54,16 +54,16 @@
       ]
     },
     "2": {
-      "note": "The second start reaches the actual held dispatch lock before pending is asserted.",
+      "note": "The second start reaches the held dispatch lock before pending is asserted.\n\nAnchor: `test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
-            "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
+            "blob": "2602de63300601b133f21fd545395ac1eddea40d",
+            "content": "sha256:79e6a68e43f704701d8ee111a9162b46b589b2fd0a02fe806aa22f56cb710d98",
             "locator": {
-              "kind": "symbol",
-              "name": "test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_role_tools_start.py"
           },
           "kind": "test"
         }
@@ -115,16 +115,16 @@
       ]
     },
     "6": {
-      "note": "Role/task/report registration exists before agent-create begins under the existing dispatch lock.",
+      "note": "The role, task and report registration exists before agent-create begins, under the existing dispatch lock.\n\nAnchor: `test_a_start_runs_the_launchers_path_with_the_caller_as_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e20e0ea7366337d5be1e8d423b62f1399c1672a9",
-            "content": "sha256:0764d29bf109b5a99aa36147045afa6fca03992f397e5f1ea946deaf64f7511b",
+            "blob": "2602de63300601b133f21fd545395ac1eddea40d",
+            "content": "sha256:79e6a68e43f704701d8ee111a9162b46b589b2fd0a02fe806aa22f56cb710d98",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_start_runs_the_launchers_path_with_the_caller_as_parent"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_role_tools_start.py"
           },
           "kind": "test"
         }

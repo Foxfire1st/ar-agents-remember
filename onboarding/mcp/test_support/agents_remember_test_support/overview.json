@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
             "content": "sha256:271d2d23357019e973438aeec81355449cae42d8c0e5c0f6ac4c79380fdf8a5e",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
             "content": "sha256:4283e2bb761c34415d2c87bf643c62017dc2090c29c30cb06d18000c9f4b60bf",
             "locator": {
               "kind": "symbol",
@@ -149,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
@@ -174,12 +174,12 @@
         },
         {
           "anchor": {
-            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
             "content": "sha256:8a1ec3a16709d860bee5ff85a7629913bfac5f3932ac24c1d429ebf2bf530e81",
             "locator": {
-              "end": 816,
+              "end": 817,
               "kind": "line_range",
-              "start": 800
+              "start": 801
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
@@ -363,7 +363,7 @@
         },
         {
           "anchor": {
-            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
             "content": "sha256:7cf14af466c8dd63a6871322dca207c6861aed9732bbf169a9a85172dac6f1bc",
             "locator": {
               "end": 19,
@@ -406,12 +406,12 @@
         },
         {
           "anchor": {
-            "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
             "content": "sha256:cdb54e0ac5059b2ef23570765fb083db3535872b1f04eae495834182b6a9be36",
             "locator": {
-              "end": 146,
+              "end": 210,
               "kind": "line_range",
-              "start": 132
+              "start": 196
             },
             "path": "mcp/tests/conftest.py"
           },

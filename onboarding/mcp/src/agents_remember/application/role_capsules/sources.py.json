@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
             "content": "sha256:2fbddfa75252c78f0e4bdf08df8b6c44ade8117dc1c4d41f33d4e2cacc655b3a",
             "locator": {
               "kind": "symbol",
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:cbc02076178ee4d24950f063c800c5076a7082d8fdc80267179e9536bc0a6af5",
             "locator": {
               "kind": "symbol",
@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "37dceffd02563c773f94c4edc9d4c1b7685d46ea",
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
             "content": "sha256:3ac5bc350fab83b4a1b5194d9c68687751b0e7f11a0ebc4dd634f0600966099b",
             "locator": {
-              "end": 100,
+              "end": 102,
               "kind": "line_range",
-              "start": 86
+              "start": 88
             },
             "path": "mcp/src/agents_remember/models/role_capsules/source_set.py"
           },
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
             "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
             "locator": {
               "kind": "symbol",
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
             "content": "sha256:352ee2208b6afea6cb4c3b75274c4d656eeb3f44e99e08e8fbf0e8859a3275ce",
             "locator": {
               "kind": "symbol",
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:b6e0056ed4ff20eb071cfb8ff62e18992618333f2c7634c3f983cc4030dd6892",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:bdf8069c89edb0b161c83fea4d7b1ff0daa7478a54d0355ebd01c24b26dafd4f",
             "locator": {
               "kind": "symbol",
@@ -149,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:12535f9afbcafafd4b1d5ea91c2737fc710a635cbfed5ac528745e84fc523407",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:0962122aa54e95714663d0b343af57ab9e0d93574bcda547cf3544a2e2467c1e",
             "locator": {
               "kind": "symbol",
@@ -173,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:4edab9fd7d54f0f47704b16ac249e8a39adf17531e6bbcbca6c18cba3add9392",
             "locator": {
               "kind": "symbol",
@@ -185,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:93597eb5b21c47af72529e1d956db7978c310c9efe5bd3495265350c1cdcfccb",
             "locator": {
               "kind": "symbol",
@@ -197,12 +197,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:b016086576a40698f29f63ec593d55bdd90a838a16b8ce89eb890c3f49272edb",
             "locator": {
-              "end": 319,
+              "end": 315,
               "kind": "line_range",
-              "start": 311
+              "start": 307
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -210,12 +210,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:7ca37ebda7845ca9a85cf94fcb7391b66e1dc1c6f3a7ad6df868ceee2d66c977",
             "locator": {
-              "end": 326,
+              "end": 322,
               "kind": "line_range",
-              "start": 320
+              "start": 316
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -223,12 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:47302168ceadcd70e13c7ecdf205ff418d2b92faf0f1134be93fdce5c51e9e02",
             "locator": {
-              "end": 334,
+              "end": 330,
               "kind": "line_range",
-              "start": 327
+              "start": 323
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -236,12 +236,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:8c02804899823855f93317e56ebc97262ba44b56c52168a5559fc4bd0ddd25b6",
             "locator": {
-              "end": 358,
+              "end": 354,
               "kind": "line_range",
-              "start": 335
+              "start": 331
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
-        "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
+        "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+        "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,24 @@
       },
       "rationale": "The registration owner no longer registers assignment_read; task_doc get and read_ar_files are not replaced by this leaf.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+        "content": "sha256:77aaf76054d694febd932671143e3a4d603210f203a54a1c1c7999e4562dccdd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_orientation_tools"
+        }
+      },
+      "id": "RLZ-MTTNJ1",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -25,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3071bf4d172c84e9e2a65a0bf098f2ba952da17a",
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
             "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
             "locator": {
               "kind": "symbol",
@@ -53,12 +71,27 @@
         }
       ]
     },
+    "11": {
+      "note": "Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.\n\nAnchor: `_register_orientation_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`read_ar_files_payload`, imported through the `mcp.tools` facade.",
       "targets": [
         {
           "anchor": {
-            "blob": "3071bf4d172c84e9e2a65a0bf098f2ba952da17a",
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
             "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
             "locator": {
               "kind": "symbol",
@@ -92,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
             "content": "sha256:293819cf4092e8fcb1936055b547376f8a35905d83296e9375569862c5561114",
             "locator": {
-              "end": 149,
+              "end": 150,
               "kind": "line_range",
-              "start": 143
+              "start": 144
             }
           },
           "kind": "code"
@@ -109,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
             "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
             "locator": {
               "kind": "symbol",
@@ -171,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
             "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
             "locator": {
-              "end": 68,
+              "end": 69,
               "kind": "line_range",
-              "start": 58
+              "start": 59
             }
           },
           "kind": "code"

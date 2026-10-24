@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+        "content": "sha256:fa1a5de7cf0ce0bd6dab25973bea355afa973ec0582392f77282c72968b49fd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "archive_hook"
+        }
+      },
+      "id": "RLZ-539CWK",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The hook derives explainer_task_folder and supplies it with explainer_config; explainer_line lists only would-retire entries. hook_failed recognizes partial reports and environment states other than retired/already-retired/would-retire/finished.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
         "content": "sha256:4e52d19a757aa2261eeaf366369101d62d81697d383eeb64843841c98d45e1ae",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
         "content": "sha256:3f464c765e6d02618cb751eb106694ae4621ddbc60585efcbef5c0c5cdc7d6c5",
         "locator": {
           "kind": "symbol",
@@ -34,12 +52,30 @@
         "handoffEntry": "L82-MEM-M1-S-02",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "Remainder counts every current shared DELETION_KEYS class, including arCaches and explainerArtifacts, so an otherwise empty archive preview still counts those planned deletions.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+        "content": "sha256:6a101cedba2c2c7820b0b94ecad78a3709e1a3c3bae3d821b52becb5a9e2ad8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "hook_failed"
+        }
+      },
+      "id": "RLZ-8QBCGY",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cleanup preview projects exact environment outcomes; a failed or unexpected environment state contributes failed-hook evidence rather than reporting a complete close.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
         "content": "sha256:3f464c765e6d02618cb751eb106694ae4621ddbc60585efcbef5c0c5cdc7d6c5",
         "locator": {
           "kind": "symbol",
@@ -52,8 +88,26 @@
         "handoffEntry": "L82-CODE-R1-02",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "This current shared cleanup/receipt/remainder owner retains evidence of the historical L82 arCaches correction. INV-YQPQ1M remains retired and superseded by INV-25AJSA; the current owner does not implement the retired negative defect statement.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+        "content": "sha256:114693462e0badd1f942a87a98c73e0d5cd800adb86f2026a9d986add1e1771a",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainer_line"
+        }
+      },
+      "id": "RLZ-T4JK0F",
+      "invariant": "INV-Y5TT22",
+      "origin": {
+        "handoffEntry": "L183-task-close-retires-environments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cleanup preview projects exact environment outcomes; a failed or unexpected environment state contributes failed-hook evidence rather than reporting a complete close.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -85,6 +139,21 @@
               "name": "_clean_up"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The hook derives explainer_task_folder and supplies it with explainer_config; explainer_line lists only would-retire entries. hook_failed recognizes partial reports and environment states other than retired/already-retired/would-retire/finished.\n\nAnchor: `archive_hook`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+            "content": "sha256:44198d1b91a925615e212c6da6972317848f4cc985bd99392d09e205a246a2fa",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

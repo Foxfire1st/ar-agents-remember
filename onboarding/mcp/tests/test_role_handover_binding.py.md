@@ -43,7 +43,12 @@ production compilation rather than a fixture string.
 - A taskless Architect never invents a task or a repository.
 - A repeat replays the stored call; it does not rebuild the handover.
 
+
+Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.
+
 ## Evidence
 
 - Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here. [1]
 - Taskless Architect planning passes `role=architect` to the resolver and keeps the existing binding, no-invented-task and no-invented-repository assertions. [2]
+
+- Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy. [3]

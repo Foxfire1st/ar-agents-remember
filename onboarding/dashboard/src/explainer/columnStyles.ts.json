@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/explainer/columnStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The block body scrolls inside a column that does not",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a40e05b11f3c719f379327a791ce30182e308ded",
+            "content": "sha256:c876ca1828f9c0dba82effe649b8b9a479dcba6ccdfcd4994a1c50feeaf2e3e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each block is framed as a card over the panel background",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a40e05b11f3c719f379327a791ce30182e308ded",
+            "content": "sha256:03ab731ae48add3c2022c3a8b47ca8c74951bc3b5345d719d9de697fa3e2fec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "card"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The primary Send button dims and stops taking a press while disabled",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a40e05b11f3c719f379327a791ce30182e308ded",
+            "content": "sha256:a8151b9ed8d2b11a0d9fc83a52cbf65b0dac00a67f51830d7ecb259e617039e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "primaryButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A notice is amber, distinct from a failure line",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a40e05b11f3c719f379327a791ce30182e308ded",
+            "content": "sha256:a2c480bb8c5476da62ad8d3a99358ab9fca79fa8951d8ba008f924d73265031d",
+            "locator": {
+              "kind": "symbol",
+              "name": "notice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Failures are drawn in the danger colour",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a40e05b11f3c719f379327a791ce30182e308ded",
+            "content": "sha256:2474971fff29a2595236855e21dac94494ddde3dee314b567f1f1db4ba343bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "failureLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "972bc29beb92e4b48de518162b436327af8cb9e4",
+            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
             "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
             "locator": {
               "end": 82,
@@ -74,12 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
             "content": "sha256:142a5e594b7a980f474f7d6a7dd3ba9db880a5e1a26d49bc44ff0a030cbaf9b7",
             "locator": {
-              "end": 268,
+              "end": 366,
               "kind": "line_range",
-              "start": 249
+              "start": 347
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },

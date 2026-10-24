@@ -278,12 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:8f185c22a95c3ed7c51df07d2b9764247886e8cd8ca1a91553979c42a36a58d6",
             "locator": {
-              "end": 287,
+              "end": 347,
               "kind": "line_range",
-              "start": 275
+              "start": 335
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
           },
@@ -346,14 +346,14 @@
       ]
     },
     "25": {
-      "note": "Current literal public roster has 42 names, including knowledge_write and user_settings_init; historical populations retain their own epochs and supply no live-advertisement acceptance.\n\nAnchor: current source",
+      "note": "Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
               "start": 22
             },
@@ -430,6 +430,24 @@
         }
       ]
     },
+    "27": {
+      "note": "The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+            "content": "sha256:8c8dfbb10e9a3cf65b678e3a32134293018b836c307ea9398cfc834a209d66bf",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries.",
       "targets": [
@@ -495,14 +513,14 @@
       ]
     },
     "7": {
-      "note": "Current literal public roster has 42 names, including knowledge_write and user_settings_init; historical populations retain their own epochs and supply no live-advertisement acceptance.\n\nAnchor: current source",
+      "note": "Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
               "start": 22
             },

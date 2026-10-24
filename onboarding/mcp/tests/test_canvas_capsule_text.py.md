@@ -13,7 +13,12 @@ The capability text's packaging: it is read from the installed package-data copy
 - The installed copy is generated from the canonical source, so a hand-edited copy fails.
 - The launch record names whether the baseline, an addition or a replacement was used.
 
+
+The wording guard binds the side conversation to the environment, and the installed resource must carry both the `Message file:` cue and `messageId` custody field. These are source assertions over the packaged capability text; they establish no new host turn or message delivery.
+
 ## Evidence
 
 - The case `test_the_installed_copy_is_the_generated_copy_of_the_canonical_source` protects this behaviour. [1]
 - The case `test_the_launch_record_names_the_baseline_the_addition_or_the_replacement` protects this behaviour. [2]
+
+- The wording guard binds the side conversation to the environment, and the installed resource must carry both the `Message file:` cue and `messageId` custody field. These are source assertions over the packaged capability text; they establish no new host turn or message delivery. [3]

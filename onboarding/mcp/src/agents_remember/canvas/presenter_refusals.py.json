@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The refusal carries a nameable reason and an actionable detail, and is one class rather than two\n\nAnchor: `class PresenterRefused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2976ee8a92529627cee637fe50190d7eeddb97c0",
+            "content": "sha256:0f7a8590ce8d69e1fffbe350d87f4b7c400ce68ddcc341ee1acbb5836ec530d0",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reason and detail are both the stored fields and the rendered message\n\nAnchor: `def __init__(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2976ee8a92529627cee637fe50190d7eeddb97c0",
+            "content": "sha256:bc6a0ea1172f04444219ac993097f88ea31f22f55c9d1761b9fd87573ea83611",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module's whole public surface is that one name, which is what keeps it importable from a declaration module",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2976ee8a92529627cee637fe50190d7eeddb97c0",
+            "content": "sha256:9c19ffa46800a6566a5b22e2e4750adeefcfb883e1d3ce8ec89894feda3068f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

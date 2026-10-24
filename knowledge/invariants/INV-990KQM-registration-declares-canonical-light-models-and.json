@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Keeping heavy operation imports and optional dashboard supervision out of discovery prevents a harness from abandoning a valid tool server before it can advertise its tools, while retaining boot-time caller identity prevents later task state from being mislabeled as the launch."
+  },
+  "applicability": "The ordinary or launch-bound explainer MCP serving process: its canonical declarations, lazy operation collaborators, light boot-time caller writer and shared post-discovery start. The outside-scratch sweep child is the explicitly separate execution site for the heavy worktree owner.",
+  "conditions": [
+    "Tool declarations retain canonical schema models and operation validation.",
+    "The service supplier is explicit; reset clears the bound instance and pending supplier.",
+    "The produced tools/list answer schedules start_after_discovery on the event loop; call_tool reaches that same once-per-process latch before dispatch if a client never lists.",
+    "The first latch attempt is consumed even with no config: the outside-scratch reconciliation launcher is reached, while dashboard autostart requires a config and respects dashboard.autoStart. Later lists or calls start neither again.",
+    "The sweep thread invokes a one-shot child through the same Python executable with stdin=DEVNULL, captured output and a 600-second timeout; the heavy worktree import occurs only in the child. Thread-launch/child/sweep failures are contained and logged; dashboard-launch failure is contained."
+  ],
+  "exclusions": [
+    "A guarantee that serialized tools/list bytes reached the client before the scheduled callback.",
+    "A blanket claim that every optional startup collaborator is deferred, or that the whole product imports no worktree code in any process.",
+    "An any-load five-second promise, real installed-host/sweep-result proof, or review/acceptance.",
+    "The existing autoStart=true dashboard test is not credited with proving no-config or autoStart=false branches."
+  ],
+  "id": "INV-990KQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/W9-startup-server-test-markdown-proposal.json; semantic-recommendations.json; MIK-R204@v1 as amended80f71dff; role-reports/worker/dsh/L183-dsh-W9-freeze.md; source bytes revalidated against exact tree0b7e887a, with no review or acceptance claim"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-deferred-discovery-implementation",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Registration declares canonical light models and loads operation payloads on invocation, while worktree services and token measurement initialize only at their first dependent operation; the light tool-event writer stays at startup to capture boot-time caller identity. After producing a tools/list answer, the server schedules one shared post-discovery start with loop.call_soon; a first tool call uses that same latch as the fallback for clients that never list. Initialization starts neither the outside-scratch sweep nor dashboard supervision. The joint start attempts the sweep even without a config, and invokes dashboard autostart only with a config and its setting; the heavy worktree sweep runs in a one-shot child with no access to MCP stdin rather than importing its owner into the serving process.",
+  "status": "proposed",
+  "supersedes": []
+}

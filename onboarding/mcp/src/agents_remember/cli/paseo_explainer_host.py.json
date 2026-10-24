@@ -1,0 +1,162 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+        "content": "sha256:de16352747a25c5d79d9de76e6816f738a6fde70d9e8dc9b3fb04ac7168b0dbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoExplainerHost.cancel"
+        }
+      },
+      "id": "RLZ-A5RXB0",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The host adapter sends the exact agent/request pair through agent-cancel, reports a missing agent view as requestUncertain with turnStopped false, and otherwise derives permissionClosed and turnStopped from the host after-state without changing settings or seat identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+        "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_env"
+        }
+      },
+      "id": "RLZ-R7S86E",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Produces both launch identity words and refuses empty supplied words.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+        "content": "sha256:d08f1af235499e41567a6985593a4ed6ce048e0e18d42f187a0d684711fd6fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoExplainerHost._require_confined_host"
+        }
+      },
+      "id": "RLZ-TVWART",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET-ATTACH-confined-host-arguments",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Refuses unread or nonempty host argument maps before create/send/resume/cancel, retaining the confined-capability no-extra-arguments guarantee after presenter_native removal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Launch identity values must be nonempty; the browser module is supplied only when available\n\nAnchor: `_launch_env`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:4c8abd3a7ab646935396f9e1c79c63259a615bcaec8ca8a8d41533cea63ce7a3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A seat the host launched on other values than the settings chose is refused\n\nAnchor: `def _require_applied(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:1b2e75b4208ae2aec1fe7b2e695c7112cfd69cca4aa9709fdba45281c4f0d195",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A confined step refuses while the host's provider map hands a harness extra arguments\n\nAnchor: `def _require_confined_host(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:d08f1af235499e41567a6985593a4ed6ce048e0e18d42f187a0d684711fd6fca",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A seat is created with the capsule as its instructions and the surface's tools preapproved\n\nAnchor: `def create_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:303aa67bc4e7ec870d3e4239d84aea205ddead7c73e4a364bb24e3e69b30a7f1",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A send whose outcome was unknown is reconciled by message id before any resend\n\nAnchor: `def send(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:16cb00f39de37e3d4d8d82811962f32a15c869d34e4d1306aab95335e2083e80",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 449
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cancellation names the exact request and never archives or replaces the seat\n\nAnchor: `def cancel(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "content": "sha256:de16352747a25c5d79d9de76e6816f738a6fde70d9e8dc9b3fb04ac7168b0dbc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 599
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

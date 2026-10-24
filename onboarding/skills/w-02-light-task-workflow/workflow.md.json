@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:df06d29e1185979c4815a0b548f8a4f3b6f2e0705e24de3612a3e1a7ca5a1f8b",
             "locator": {
               "end": 141,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:209ddab310ae04fc496b9ccedb7680d54c275154d8c228d0cbcc9cc5d2096df4",
             "locator": {
               "end": 213,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:59a0f611a969d58994b2a4d9bc2bcc5ccd0c5b39ec348fb8c9cc732882467126",
             "locator": {
               "end": 311,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:4e7b30ae88111cb339c7e36f2e2c18446a48e7ecf6314d6e347a6e6b51562108",
             "locator": {
               "end": 232,
@@ -87,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:c711c02c25c9e915711a70d5c5ab0f843e309a642958fef2c64d40ea024e9148",
             "locator": {
               "end": 293,
@@ -99,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:fb93879892f89fc2c415d329df8787d0c102d1a4dd2b0a70fc42520a86ac80ad",
             "locator": {
               "end": 362,
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "107668185797cc1657f46eb6c07073b87c33bceb",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
             "content": "sha256:2e0a2042f24bf98b88a730f25dab9ceb9cc3b4d4dc3e81cab40582aacf4ad01b",
             "locator": {
               "end": 118,
@@ -128,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "33130ba9e787e8ed97e511c2e3453263efe14360",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
             "content": "sha256:49b437557577d5741fc2e5182374d1315cf69e44974a1456e5b825c31f7d53c5",
             "locator": {
-              "end": 51,
+              "end": 55,
               "kind": "line_range",
-              "start": 45
+              "start": 49
             },
             "path": "skills/w-02-light-task-workflow/SKILL.md"
           },

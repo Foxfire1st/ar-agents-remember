@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/explainer/ExplainerTaskDocument.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa4235c65f3dc033afdec4fe1fbd75a3dfb53380",
+        "content": "sha256:004a0b186e2b726cb2c3992cd69c39ee19f1716e61c499931e51d2ac6fd796bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplainerTaskDocumentControl"
+        }
+      },
+      "id": "RLZ-8BKPBZ",
+      "invariant": "INV-AKRFQY",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE03-retirement",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Reads a cold leaf’s authoritative state, offers the same confirmation and shows the retirement receipt without a Review visit.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Publishing a seat registers its agent and marks it active only while that seat is live or closed\n\nAnchor: `activeSeat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa4235c65f3dc033afdec4fe1fbd75a3dfb53380",
+            "content": "sha256:16cf61a5034d77cf749980728e4853480df35500dfa8188c8babcf0865d08a8f",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A leaf entry is a task, a subtask, or an entry with no children, never a master or sprint\n\nAnchor: `subTask`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa4235c65f3dc033afdec4fe1fbd75a3dfb53380",
+            "content": "sha256:d7e5c89b76117438064f03232e8c61d4941a26b5995ac7f7e096e324dfb684d0",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The viewed leaf document is resolved to its repository, master folder and leaf id before the control mounts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa4235c65f3dc033afdec4fe1fbd75a3dfb53380",
+            "content": "sha256:1218e36f898590521a1650bedbf84eee5a916233746fb25d79c19688b1e8536f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewedLeafExplainerControl"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The known seats and their listeners can be emptied between tests",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa4235c65f3dc033afdec4fe1fbd75a3dfb53380",
+            "content": "sha256:494c0232991e663ea42bb0bbaa92cdc7941523e5b41bf75120e462d83c96aeb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "resetExplainerSeats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4cc2c7d2980a8a1aeb29ea7726c895c1d5872c19",
-        "content": "sha256:df7e5393cd6d1f5172b6148bea64ad60ef732dce2f2f0838883f6f46c295874d",
+        "blob": "6e899d62b7f0436c47e344dc1c5d6661a07ffee1",
+        "content": "sha256:8f6515f305e8abc2d5e4b09b187fa4fd9de0525146ebfcc8aa0969e79284f36b",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,24 @@
       },
       "rationale": "The registry's live diagnostic-provider claims are gone while the tool contracts it still describes are unchanged.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6e899d62b7f0436c47e344dc1c5d6661a07ffee1",
+        "content": "sha256:37e5198896617b0c1f01c8e1a91cfce0eff37f97a5a1a964f9b70fc01b2a5f00",
+        "locator": {
+          "kind": "symbol",
+          "name": "TOOL_RESPONSE_MODELS"
+        }
+      },
+      "id": "RLZ-D68QX2",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -83,6 +101,18 @@
       "targets": [
         {
           "anchor": {
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
+            "content": "sha256:feafaa1915c69eb54f168301c3ff246e8b008b7b18bfc9bb106e34e34e68866d",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
             "content": "sha256:feafaa1915c69eb54f168301c3ff246e8b008b7b18bfc9bb106e34e34e68866d",
             "locator": {
@@ -136,6 +166,21 @@
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
+            "content": "sha256:bcdc83585768a9512a8a4a9d26c6ef6cbc97379320d945d7804124d2705da028",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

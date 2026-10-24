@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "f68931da55ba1536e026c86cfa5c4eec8af1e0d6",
             "content": "sha256:b9a37510447e127c4a067e0e437faf6d9fe945d7f9eda660b598fe3cd1abab0a",
             "locator": {
-              "end": 45,
+              "end": 46,
               "kind": "line_range",
-              "start": 7
+              "start": 8
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3bdf54a46fc11d63f441640e43571268dcd3bec9",
+            "blob": "e911c7b3c02dee11b93eba46500c5e702dec8905",
             "content": "sha256:c8c4fe8051d441d0b103143f578f4ce016591a65a288ee50f1b4741f22c9d048",
             "locator": {
               "end": 5,

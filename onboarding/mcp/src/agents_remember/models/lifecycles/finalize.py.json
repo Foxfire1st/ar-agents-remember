@@ -62,6 +62,19 @@
       "targets": [
         {
           "anchor": {
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
+            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "656fef29fff22fd4ab47bcc5f1d6866919deb08e",
             "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
             "locator": {

@@ -84,12 +84,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
             "content": "sha256:d5c5c20b5d07228370c6cb87170db303aadd58c62d6bad25bafb8f7839b349a4",
             "locator": {
-              "end": 130,
+              "end": 135,
               "kind": "line_range",
-              "start": 80
+              "start": 85
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -232,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
             "content": "sha256:5179e3e01a7bf30378f0ce9801d22a53a54b752227a6d879964c5debc3d128d5",
             "locator": {
               "kind": "symbol",

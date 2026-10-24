@@ -6,13 +6,15 @@
     ],
     "justification": "The direct store retention test keeps a live record while pruning settled records; the rule prevents losing the identity required to reconcile an in-flight session."
   },
-  "applicability": "Presenter attempt retention performed by the durable attempt store.",
+  "applicability": "The presenter attempt store's retention ceiling and an explicit explainer retirement.",
   "conditions": [
-    "Retention examines a record in started or running state."
+    "Store pruning preserves every attempt in started or running state.",
+    "Retire operates under the leaf's lock and resumes the seat, generation and process tree named by its existing receipt."
   ],
   "exclusions": [
-    "Settled attempts beyond the retained window, which may be reclaimed.",
-    "Explicit removal outside retention."
+    "An attempt that settled — published, failed or cancelled — may be reclaimed by attempt retention.",
+    "An Update, rather than Retire, refuses while the explainer is in a turn.",
+    "Master retirement or sprint archive may reclaim retained task artifacts through their own cleanup operation."
   ],
   "id": "INV-EWGTN0",
   "origin": {
@@ -26,9 +28,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Presenter retention must not remove an attempt whose current state is started or running.",
+  "statement": "Retention never removes a presenter attempt whose current state is started or running. Retiring an explainer waits for the leaf lock, records its seat and process tree in a durable receipt, archives the seat and ends its processes before removing the environment; an unfinished retirement retains its recovery receipt and finishes on retry, while retained pages and grades stay with the task.",
   "status": "proposed",
   "supersedes": []
 }

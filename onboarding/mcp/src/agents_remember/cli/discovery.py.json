@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
             "locator": {
-              "end": 349,
+              "end": 454,
               "kind": "line_range",
-              "start": 349
+              "start": 454
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
             "locator": {
-              "end": 351,
+              "end": 456,
               "kind": "line_range",
-              "start": 351
+              "start": 456
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -38,12 +38,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
             "locator": {
-              "end": 349,
+              "end": 454,
               "kind": "line_range",
-              "start": 349
+              "start": 454
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -51,12 +51,12 @@
         },
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
             "locator": {
-              "end": 351,
+              "end": 456,
               "kind": "line_range",
-              "start": 351
+              "start": 456
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:57afd11ee4cb0155d38f7174417397460259c8c9897017ca76417f0749efaa0c",
             "locator": {
               "kind": "symbol",

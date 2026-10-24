@@ -72,6 +72,30 @@
       "targets": [
         {
           "anchor": {
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemorySyncChoice"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:5e9062f0836ba065be875d6c3d8cfcf6f6212150edf3daacd4322b2654482cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionAction"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
             "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
             "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
             "locator": {

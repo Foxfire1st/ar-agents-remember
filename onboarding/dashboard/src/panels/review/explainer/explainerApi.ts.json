@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerApi.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A refused, non-JSON or failed answer becomes a named refusal instead of a parsed page\n\nAnchor: `async function bodyOf(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:9e148b77602a2a99d63cf67a9c9b59e30bce0fba53aa906f22af376fd43e098d",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state answer is read field by field, with the seat, the saved page, the stale record, the claims and the moved notice\n\nAnchor: `export function parseState(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:c3824a3045f4f7fbc37756a0f770eade1a08384366df9e3aacaacb12e89e1e10",
+            "locator": {
+              "end": 907,
+              "kind": "line_range",
+              "start": 882
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retained revisions keep their binding, time, kind, agreement, pin and removal receipt\n\nAnchor: `export function parseRevisions(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:5ca1e6240ed7a3558b960731f2865fa491206d290c653feda047dde392beca33",
+            "locator": {
+              "end": 964,
+              "kind": "line_range",
+              "start": 950
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The planned read answers null rather than a fabricated page when the route fails\n\nAnchor: `export async function readPlannedReview(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:43c367b514ed40ba2d5623b5593df7bd5ce4e74312281f6bba46b1de26aad0f5",
+            "locator": {
+              "end": 1002,
+              "kind": "line_range",
+              "start": 993
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A channel that does not name a page, its sandbox, its document and a script choice is refused\n\nAnchor: `function readCanvasSession(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:ab7d96ea39ea830ab17402fcde00b8d7e3f620e10e54a08338c8a645f6f2c4c8",
+            "locator": {
+              "end": 1159,
+              "kind": "line_range",
+              "start": 1130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The revision's channel is opened with its binding, comparison and compare slot\n\nAnchor: `export async function openRevisionPage(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f567989eb57d9df685dd6381a30033d25d232a0",
+            "content": "sha256:63eeefb2805e43aa24ce9560ff34266b572024c487d79fcbe83538eaa07a82e4",
+            "locator": {
+              "end": 1187,
+              "kind": "line_range",
+              "start": 1164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

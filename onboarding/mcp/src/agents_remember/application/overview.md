@@ -207,6 +207,8 @@ The route gained the two modules the one call a new user makes needs. `caller_ha
 
 `memory_init_tool` reports the knowledge state without authoring knowledge. For a complete tree, its `nextAction` reports `recorded` or `not-recorded` before asking the developer to start the Architect, which organizes a regular foundation task with a Curator. The nonlegacy unavailable-publication branch uses the same state-first handover while retaining its state, path, code and detail. A partial index keeps its named-file repair and index-rebuild action; legacy format keeps its conversion route, and context admission keeps its own refusal and next action.
 
+The explainer composition binds serving to the existing comparison, evidence and frame owners. Build and every explicit Update prepare the exact recorded or planned comparison with measured side states, supplemental packet/document/reference receipts and the verified agreed manifest. Measured loss stays a limitation; absent required preparation input is a named refusal. Planned owner/reference and intended claim authority remain distinct from numbered recorded comparisons. The frame store persists admitted part maps, enforces revision/task byte bounds without silent revision eviction, and receipts only explicit developer removal or task archive reclamation. Archive cleanup first retires each explainer, then removes only its admitted task or named explainer-root artifacts while preserving pending recovery material and lock files.
+
 ## Evidence
 
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [496]
@@ -691,3 +693,5 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
 
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
+
+- No prior text removed. The current implementation adds exact explainer evidence preparation, planned authority, explicit frame removal and named outside-task environment cleanup to the application route. [517]

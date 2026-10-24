@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
             "content": "sha256:1b07e3a860d52c858396aa54385859cf4405abbbdb94a6ea3ba7fac33e7cbe88",
             "locator": {
-              "end": 103,
+              "end": 106,
               "kind": "line_range",
-              "start": 103
+              "start": 106
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea17f8538e2614a2be674e0f88a636f6070ca19",
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
             "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
             "locator": {
               "kind": "symbol",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e92b7b46eb13a40302fa1327a2d9e518089810f",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",

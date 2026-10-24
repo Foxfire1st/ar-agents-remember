@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The service build/Update, serving comparison-owner composition and supplemental receipt producer form one evidence path; real-composition tests check exact bound sides and named failures so a page cannot explain fabricated or stale operands."
+  },
+  "applicability": "The explainer’s first environment build and every explicit Update for one leaf, including a planned comparison before the leaf starts.",
+  "conditions": [
+    "Preparation consumes the existing comparison owner’s opened operands and measured states.",
+    "A missing supplemental packet/reference is represented by its unavailable receipt and limitation, not a missing required comparison input.",
+    "An agreed revision is resolved and its manifest digest is verified before its receipt claims present bytes."
+  ],
+  "exclusions": [
+    "A read of the review page starts no build or model turn.",
+    "Regenerating a retained page does not itself rebind the environment or prepare a replacement packet."
+  ],
+  "id": "INV-0ZE4W6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_evidence_intended.py::test_e01_a_real_open_build_and_update_measure_both_code_sides_and_creates_the_seat; mcp/tests/test_review_evidence_intended.py::test_e01_a_code_side_measured_unavailable_history_is_carried_with_its_limitation; mcp/tests/test_review_evidence_intended.py::test_e01_a_truly_absent_code_side_is_a_named_refusal_never_a_packet; mcp/tests/test_explainer_planned_binding.py::test_the_written_planned_environment_binds_one_exact_record_across_packet_grants_and_snapshot; mcp/tests/test_review_explainer_receipts.py::test_an_agreed_revision_adds_its_manifest; mcp/tests/test_review_explainer_receipts.py::test_every_packet_document_and_reference_file_is_receipted; source inspection at 0b7e887a130fe432fef9e59f44917c8419d1c111"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The build and every Update prepare the packet for exactly the bound comparison, recorded or planned, through the comparison owner. A measured loss is carried. An absent input is a named refusal. A planned comparison’s packets are supplemental receipts, and its owner and reference are its own. A leaf with an agreed revision carries that revision’s manifest and its reference folder as receipts in every packet.",
+  "status": "proposed",
+  "supersedes": []
+}

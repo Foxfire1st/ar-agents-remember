@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/panels/review/explainer/RevisionSelector.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
+        "content": "sha256:fc9793c9b46f57fb8436c57e54252c928cdbfe6c262455257332b6132dcbfe8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "at the task total, names the refusal and offers only unpinned revisions"
+        }
+      },
+      "facet": "Pins the named task-total refusal and the developer’s explicit selected removal list with the agreed revision excluded.",
+      "id": "PRF-KTKAN8",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
+        "content": "sha256:fc9793c9b46f57fb8436c57e54252c928cdbfe6c262455257332b6132dcbfe8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "at the task total, names the refusal and offers only unpinned revisions"
+        }
+      },
+      "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
+      "id": "PRF-SN0XMQ",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "At the task total the refusal is named and only unpinned revisions are offered and reported\n\nAnchor: `at the task total, names the refusal and offers only unpinned revisions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
+            "content": "sha256:fc9793c9b46f57fb8436c57e54252c928cdbfe6c262455257332b6132dcbfe8c",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A per-revision refusal offers no control and states that removing others would not help\n\nAnchor: `a per-revision refusal names it and offers no control: removing others would not help`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
+            "content": "sha256:09eccb5ae2a32fae65f36e66d8e0485c433a7106026b43b5bac61d39e6befbbb",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Compare is offered with two retained revisions, reports its press, and is disabled with one\n\nAnchor: `offers Compare only when two revisions are retained, and reports the press`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
+            "content": "sha256:0a308bb59898abae2649bc3d440542e2979c527e889e8d2d2d7e57076c3b0070",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

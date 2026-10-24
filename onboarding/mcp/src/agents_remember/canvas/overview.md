@@ -1,4 +1,4 @@
-# Generated Page Host And Review Presenter — Canvas
+# Generated Page Host And Explainer Environment — Canvas
 
 ## Governing Overview
 
@@ -10,7 +10,7 @@ The canvas package owns the execution environment for a generated review page an
 
 ## Hot Path Summary
 
-A viewer opens a frame from one admitted revision; the host creates a session bound to that frame, revision and comparison, and serves the revision's own bytes under the policy whose digest the shipped proof must name. Generated scripts are enabled only while that proof covers the policy now served. The frame speaks one protocol version and four operations; an evidence request resolves against the revision's own admitted packet or is refused by name. The presenter starts only on an explicit activation, records a durable attempt, and publishes through the confined frame store after a model-free prospective load. Kit files are carried under the manifest's contract path when an attempt is authored, compared with the manifest as they are carried.
+A viewer opens a frame from one admitted revision; the host creates a session bound to that frame, revision and comparison, and serves the revision's own bytes under the policy whose digest the shipped proof must name. Generated scripts are enabled only while that proof covers the policy now served. The frame speaks one protocol version and five frame operations, with a separately validated host stale-part notice; an evidence request resolves against the revision's own admitted packet or is refused by name. The first explicit Send builds or attaches one derived explainer seat, prepares its bound environment and records the request; publication still goes through the frame store after readiness and a model-free prospective load. Opening the page starts nothing. Kit files are carried under the manifest's contract path when an attempt is authored, compared with the manifest as they are carried.
 
 ## Isolation Policy And The Proof Gate
 
@@ -24,7 +24,7 @@ The proof record is a generated artifact: it binds the served policy, the enforc
 
 `document.bound_document` delivers the binding to the admitted document itself rather than to a navigated window, announcing departure on pagehide, so a page that navigates during parsing loses its channel instead of inheriting one. The frame's own navigation is an accepted browser capability, not a boundary the host claims to deny.
 
-`parse_frame_message` refuses what a parser can see: malformed, oversized, wrong-version, unknown-op, foreign-session, stale-revision and foreign-comparison; `RequestLedger.admit` refuses `replayed`, `rate-limited` and `exhausted` after `charge` took the token, and revocation is the session's. The four frame operations are `ready`, `status`, `open-evidence` and `request-explanation`.
+`parse_frame_message` refuses what a parser can see: malformed, oversized, wrong-version, unknown-op, foreign-session, stale-revision and foreign-comparison; `RequestLedger.admit` refuses `replayed`, `rate-limited` and `exhausted` after `charge` took the token, and revocation is the session's. The five frame operations are `ready`, `status`, `open-evidence`, `request-explanation` and `offer-selections`. A selection offer carries confirmed question/choice text into the trusted tray and sends no message. The host’s `stale-parts` notice carries at most thirty-two admissible ids and the true count; marks inside the page are advisory, while the trusted panel owns the reasoned list.
 
 ## Exact Evidence
 
@@ -32,11 +32,13 @@ The frame may ask to open something; the host decides what that is. `resolve_evi
 
 ## Presenter Authoring And Publication
 
-`PresenterRunner` is the authoring port and its shipped default is `NativePresenterHarness`, whose launch carries only the confined tool server and which refuses with `presenter-confinement-unavailable` when it cannot confine; `UnconfiguredPresenterRunner` is what a caller that supplies no harness gets, so the refusal is by name rather than a claim of confinement.
+The standalone presenter native launch is retired. A bare `Presenter` now selects `UnconfiguredPresenterRunner` and refuses `no-confined-harness`; an explicitly supplied confined runner can still use the retained attempt implementation. The normal explainer uses its bound task server and the shared `AuthoringTools` implementation, with no standalone presenter server.
+
+The leaf’s environment lives outside worktrees, memory repositories and task folders. Build, Update, grades and Retire use its one leaf lock; the build writes snapshots, instructions and packet before binding last, then sends after releasing the lock. Update rebinds without waking a turn and refuses while in turn or retired. Retire waits for the lock and durably records the process tree, archive, process cleanup and workspace removal, preserving an unfinished receipt for retry. Retained pages and grades stay with the task.
 
 ## Readiness And The Prospective Load
 
-`check_page` is the static check a prospective revision passes before it is offered as ready: it follows the document's own references, refuses one that leaves the revision or names no admitted asset, and reports reduced-motion and evidence-reference facts. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. A revision whose load fails or is unavailable is refused with the failure named to the presenter; the check says nothing about how good an explanation is.
+`check_page` is the static check a prospective revision passes before it is offered as ready: it follows the document’s own references, refuses one that leaves the revision or names no admitted asset, and reports reduced-motion and evidence-reference facts. It also derives the part map from static `data-part` and claim-id marks, refuses invalid parts, unknown or unmapped claims and unresolved bases, and carries the map into publication. A page declaring no parts is answered whole-page. `BrowserProspectiveLoad` performs the load itself in the selected browser through the package-owned runner, stages the exact prospective bytes, and downgrades a claim of success that contradicts its own observations. The browser runner observes legacy evidence references and claim ids in separate bounded inventories, including marks scripts add during the load window; the trusted caller resolves both against the exact packet. A revision whose load fails or is unavailable is refused with the failure named to the presenter; the check says nothing about how good an explanation is.
 
 ## The Pinned Kit
 
@@ -47,6 +49,8 @@ The frame may ask to open something; the host decides what that is. `resolve_evi
 The dashboard is local and unauthenticated, which is a deployment posture and not a write authorization. `RefuseCrossOriginWrites` sits in front of every route and refuses a state-changing browser request that does not come from the dashboard's own page — `Sec-Fetch-Site` other than `same-origin`, or, when that header is absent, a foreign or `null` `Origin` — with a named 403 that never reaches a route. `RefuseForeignHosts` refuses every request, reads included, whose `Host` names another host or port, against DNS rebinding. A request carrying neither header comes from no browser page, so CLI and tool-server calls keep working.
 
 **L184.** The presenter's send stays outside the limit check by design, so this route changes nothing beyond the presenter's own outbound path.
+
+The explainer’s categories and grades remain its judgment, separate from change badges and accepted knowledge. Grades bind to block fingerprints and the comparison at which they were made; unresolved target reads mark parts or grades stale with a reason. The target is the environment binding unless the view explicitly selects another comparison or reads after Retire. Stale grades keep their value in the judgment sort, and a stale-page message regenerates nothing until the developer sends it.
 
 ## Evidence
 
@@ -69,3 +73,5 @@ The dashboard is local and unauthenticated, which is a deployment posture and no
 - Every request, reads included, answers only the dashboard's own host and port, against DNS rebinding. [17]
 - The frame surface serves one live session's own document and admitted assets and nothing else. [18]
 - Both canvas surfaces are registered after the API routes and before the static mount. [19]
+
+- The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain. [20]

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_token_names.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_light_name_is_the_counters_own_name` protects the light declaration staying the counter's own name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb27206aa6f11c0a12adecfe6ac8d171b0686d34",
+            "content": "sha256:3b5486b383a3b3e44216162eaafcf933b540e112c6223ae2e252f9ab82c737b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_light_name_is_the_counters_own_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

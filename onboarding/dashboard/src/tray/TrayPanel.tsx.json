@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+        "content": "sha256:275fdc9940dbc36600c4dd06eeab6f9d81a37dbbeb271038f0b76bcb05999e02",
+        "locator": {
+          "kind": "symbol",
+          "name": "controlWithin"
+        }
+      },
+      "id": "RLZ-0KKV3Z",
+      "invariant": "INV-E9HM5F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE08-tray-line",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The tray-head guard leaves nested button, link, input, textarea, select and the listed interactive ARIA-role targets to their own actions; this prevents their click/key from also expanding the tray.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+        "content": "sha256:a0899fdbe57198a876363343f61eb0d0e135fa2b9934ba6280c803e9dff139e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "expandUnlessControl"
+        }
+      },
+      "id": "RLZ-1DBFGW",
+      "invariant": "INV-E9HM5F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE08-tray-line",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The minimized head expands on a click only after the nested-control guard permits it, preserving Close and the inner expansion button’s own event routes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
         "content": "sha256:1ccd33eede201120527a54b717847f0ddf572e2b8cd9fb9323159f7b4f805e1f",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+        "content": "sha256:54a30b13acd65b5cb8feece1a26c8815c4c503d7e2f3d09c756877610c2173d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayLine"
+        }
+      },
+      "id": "RLZ-3SRE10",
+      "invariant": "INV-E9HM5F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE08-tray-line",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Makes the minimized head an accessible expansion surface while nested controls keep their own actions.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+        "content": "sha256:bb66b80941a90ce97acb0ac96a3e7b2185f7daa4687519918562a28bb1b30b5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "expandOnKey"
+        }
+      },
+      "id": "RLZ-BPE3QD",
+      "invariant": "INV-E9HM5F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE08-tray-line",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Expands on Enter/space only outside nested interactive controls, preserving their own action.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
         "content": "sha256:b1de84290a933fcb1ffff897d317c737452e34234d349152a5d81fd0a0dc5e61",
         "locator": {
           "kind": "symbol",
@@ -44,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
             "content": "sha256:cf85ff8fdb1648988cbe711e283fb9dcc067ef7b6a16a6b74396f29eb4d9c92c",
             "locator": {
-              "end": 36,
+              "end": 41,
               "kind": "line_range",
-              "start": 24
+              "start": 29
             }
           },
           "kind": "code"
@@ -61,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
             "content": "sha256:ff035ddeda759fae75d3a419b661dda55b68601b498723f1a7c11af2a76b70a2",
             "locator": {
-              "end": 40,
+              "end": 45,
               "kind": "line_range",
-              "start": 28
+              "start": 33
             }
           },
           "kind": "code"
@@ -78,12 +150,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ffb4058bc0733f4aba13ce4a0812730a198a79",
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
             "content": "sha256:d0192df7dc7371a5eab0d09df8aa444a3705c9f87b2c9f523c25c838d29eac7c",
             "locator": {
-              "end": 54,
+              "end": 59,
               "kind": "line_range",
-              "start": 42
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The minimized line's head is now an accessible button surface: a click outside a nested control, Enter or space expands it. controlWithin excludes button, a, input, textarea, select and elements with role button, link or menuitem; it does not inspect generic contenteditable elements so the existing ⊕ button and Close control keep their own actions; the line does not intercept their clicks or keys. The expanded pick/message/Send view and Close-retains-picks policy remain unchanged.\n\nAnchor: `controlWithin`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+            "content": "sha256:a68a29bf81975b2a551f8a8c32f6265a349cae72b9bdc9e9ad9d5f76bbcb553b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

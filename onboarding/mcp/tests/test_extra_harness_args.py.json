@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0d753b792870033215f10becea5741fb55a3e400",
+        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
         "content": "sha256:38f2ce09980d2bdcb72cf8ff0077c0ad54ce002b37737d442b066bbd652d099b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0d753b792870033215f10becea5741fb55a3e400",
+        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
         "content": "sha256:3c0cafc95d33695950507e9c77c9cedacdb8eeab205793afa21a0d533d34a617",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0d753b792870033215f10becea5741fb55a3e400",
-        "content": "sha256:ecd93122db5acbf4280d63818412afb306ed1a7b60f685c725610e77a3b7823f",
+        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
+        "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "0d753b792870033215f10becea5741fb55a3e400",
-        "content": "sha256:ecd93122db5acbf4280d63818412afb306ed1a7b60f685c725610e77a3b7823f",
+        "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
+        "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
         "locator": {
           "kind": "file"
         }
@@ -72,6 +72,22 @@
       "role": "support"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "the hand-over through the host's provider options, and the record an ordinary start keeps when the host map is unread. The native presenter launch and its duplicate confinement cases are removed; `test_explainer_host.py` owns the confined-seat refusal cases. Settings-role launch resolution is exercised through the catalog owner.\n\nAnchor: `test_the_presenter_launch_states_no_extra_arguments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3acb29eee3115294460b0119f3581fb1c571758",
+            "content": "sha256:6642bce7b289cfa4034824c98bb797b6cada89e7c9deda2098eb1598014dddf3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

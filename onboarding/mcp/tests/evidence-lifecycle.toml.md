@@ -9,7 +9,7 @@ The held catalog declares consumers for held queues, native retirement, role_sta
 
 
 
-The exact consumer lists for the existing settings guard (`_user_settings_guard.py`), portable Node lockfile (`fixtures/repository_profiles/node/package-lock.json`), Paseo launch support and Paseo runtime support now also name `mcp/tests/test_developer_messages.py`. The change adds only these four consumer memberships: contract rows, artifact identities and all non-consumer fields remain unchanged. Registration establishes dependency reachability; it does not establish a test invocation or change a lane, fixture authority, replacement contract or native-host qualification.
+The exact consumer lists for the existing settings guard (`_user_settings_guard.py`), portable Node lockfile (`fixtures/repository_profiles/node/package-lock.json`), Paseo launch support, Paseo role-tools support and Paseo runtime support now also name `mcp/tests/test_developer_messages.py`. The change adds these five consumer memberships: contract rows, artifact identities and all non-consumer fields remain unchanged. Registration establishes dependency reachability; it does not establish a test invocation or change a lane, fixture authority, replacement contract or native-host qualification.
 
 This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
 
@@ -40,7 +40,7 @@ The machine-readable inventory declares durable test-evidence ownership and repl
 `evidence-lifecycle.toml` declares durable evidence ownership, lifetime and replacement contracts. The current comparison changeset test is an exact-scope consumer of seven artifact rows; this is catalog membership, not a claim that an invocation ran or passed.
 ## Parked-candidate test support consumers
 
-`mcp/tests/test_sync_parked_candidate.py` is an exact consumer of three existing support artifacts: `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py` and `knowledge_conversion_test_support.py`. Its identical-byte review-rebinding case reaches that shared support through the existing real-tool fixture helpers. Only consumer membership is extended: no artifact/contract identity, owner, lifetime or replacement contract changes. Registration is reachability accounting, not test execution or acceptance.
+`mcp/tests/test_sync_parked_candidate.py` is an exact consumer of four existing support artifacts: `checkpoint_landing_test_support.py`, `curator_coherence_test_support.py`, `knowledge_conversion_test_support.py` and `writer_worklist_test_support.py`, and the settings guard and Node lockfile rows name it too. Its identical-byte review-rebinding case reaches that shared support through the existing real-tool fixture helpers. Only consumer membership is extended: no artifact/contract identity, owner, lifetime or replacement contract changes. Registration is reachability accounting, not test execution or acceptance.
 
 
 ## Current master-retirement readiness registration
@@ -157,7 +157,7 @@ The command rewrites both the lifecycle and lane catalogs. It orders rows and li
   else references it. The command removes no row: it names a row whose artifact file does not
   exist, and the loader refuses that row.
 
-- The governed files equal the cataloged paths in both directions. [11]
+- The governed files equal the cataloged paths in both directions.
 
 
 ### Registering a test module
@@ -225,9 +225,9 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 `mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 17 contracts and 90 artifacts (the retained canvas contract and shared-support artifact included); the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
-- Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
+- Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred.
 
-- The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution. [291]
+- The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution.
 
 
 
@@ -241,7 +241,11 @@ The capsule-replay, memory-review-lane, audience, manifest-edge and three step-u
 
 The derived catalog adds the clean-sync door module to the tests.unit and affected.closure consumers. Existing coverage, ownership and bounded certification rules remain. Catalog membership does not create an Owner closure plan or establish test execution.
 
-The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `test_review_evidence_residuals.py` as consumers of the review-read artifact rows; the catalogue is regenerated by its own owner and this entry adds no contract, artifact or guard.
+The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `test_review_evidence_residuals.py` in the shared settings-guard and Node lockfile consumer rows; the catalogue is regenerated by its own owner and this entry adds no contract, artifact or guard.
+
+## Composed consumer selection
+
+The composed catalog still declares 17 contracts and 90 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
 
 ## Evidence
 
@@ -251,7 +255,7 @@ The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `
 
 - Both existing Paseo support rows register the developer-message consumer and retain their stated stand-in fidelity. [309]
 
-- The review-evidence suites are declared consumers of the review-read artifacts. [305]
+- The review-evidence suites are declared consumers of the shared settings guard and the portable Node lockfile, and of no review-read artifact. [305]
 
 - The derived unit consumer registers the new module. [298]
 
@@ -939,3 +943,19 @@ The existing curator-coherence and read-boundary-oracle artifact consumer lists 
 ## Request-locator consumer registration
 
 `mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 17 contracts and 90 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.
+
+The current catalog names `test_dashboard_autostart_after_discovery.py` on the canonical settings-guard and Node-lockfile consumer lists. This is the replacement for the removed first-call-only test path: its source assertions cover scheduling after the discovery answer is produced and the first-call fallback through one latch. The existing L194 publication/landing-workflow consumers remain in both shared lists. These memberships select evidence and establish no invocation or live-host startup result.
+
+- The current catalog names `test_dashboard_autostart_after_discovery.py` on the canonical settings-guard and Node-lockfile consumer lists. This is the replacement for the removed first-call-only test path: its source assertions cover scheduling after the discovery answer is produced and the first-call fallback through one latch. The existing L194 publication/landing-workflow consumers remain in both shared lists. These memberships select evidence and establish no invocation or live-host startup result. [318]
+
+## Retained source-epoch evidence
+
+The following source-bound captions restore this card's inherited evidence uses. Their words such as current, new, adds and unchanged refer to the cited source epoch and its authoring change, not a new claim about every W9 member or runtime result. The parsed current contract above controls today's population. Membership and retained captions establish neither invocation, a passing run nor acceptance.
+
+- **Historical source-bound caption:** The governed files equal the cataloged paths in both directions. [11]
+
+- **Historical source-bound caption:** Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
+
+- **Historical source-bound caption:** The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution. [291]
+
+- The composed catalog still declares 17 contracts and 90 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result. [319]

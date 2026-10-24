@@ -374,12 +374,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:3de618a2e3240cb724e6f306b007b089d8664bce67fca3f6bd1037ec5cd7799d",
             "locator": {
-              "end": 497,
+              "end": 537,
               "kind": "line_range",
-              "start": 471
+              "start": 511
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -392,12 +392,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
             "content": "sha256:91c18b6ad791054cd4ccf163dcf2706f62451c3c85fea6bd6da183ba515a2385",
             "locator": {
-              "end": 530,
+              "end": 570,
               "kind": "line_range",
-              "start": 500
+              "start": 540
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },

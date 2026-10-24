@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationView.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+        "content": "sha256:039216b89b5764c2f751e376e23b8162c83faced796c58808b4e5934ba42a876",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens in one isolated frame with no model: a channel for its revision and nothing else"
+        }
+      },
+      "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
+      "id": "PRF-1BQ9NK",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+        "content": "sha256:b04995e75fcf294191fea73cd0d0168153bed7ad883dc0cd14803172b3ffe5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "shows the trusted stale list whatever the frame draws, and whatever it fails to draw"
+        }
+      },
+      "facet": "Pins the authoritative stale list even when the generated frame hides or fails to render its own marks.",
+      "id": "PRF-2SDSV2",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A saved page opens one isolated frame for its exact revision and starts nothing\n\nAnchor: `opens in one isolated frame with no model: a channel for its revision and nothing else`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+            "content": "sha256:039216b89b5764c2f751e376e23b8162c83faced796c58808b4e5934ba42a876",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The trusted stale list is drawn from the host's answer even when the frame cannot be shown\n\nAnchor: `shows the trusted stale list whatever the frame draws, and whatever it fails to draw`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+            "content": "sha256:b04995e75fcf294191fea73cd0d0168153bed7ad883dc0cd14803172b3ffe5b7",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every claim is marked and all four bases are named in the legend\n\nAnchor: `marks every claim and names all four bases in the legend`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+            "content": "sha256:1ee7bc3af429e14f9f5c85e4a8ed2627d758cbd74edc047f238add853c5aefe9",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 366
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A navigated or departed frame is revoked alone, and its sibling keeps its document\n\nAnchor: `revokes and reopens only the navigated compare frame on departure or second load without disturbing its sibling`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
+            "content": "sha256:74fc23e9e619445cb96c531eeaa3fe50dda52bf8bc75172af9f0ae18444ea2c3",
+            "locator": {
+              "end": 916,
+              "kind": "line_range",
+              "start": 873
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -32,6 +32,8 @@ The current files do not share the universal section order claimed by the dated 
 
 Architect authors requirements, plans, tasks and rulings, preserving exact stable IDs, versions, corpus authority and developer approvals across reconnects. Before planning repository work, its doctrine requires relevant source and invariant/family context; contradictions are surfaced rather than silently reconciled. It neither writes onboarding nor lets its own checks stand in for a leaf's build, review, curation or gate: it may check, measure, run and read on a copy for its own rulings, and only a check or investigation it does not do itself goes under delegation to the coordinators and their owning roles. In the developer-chosen direct-coordination exception, Architect may coordinate the existing paired transaction only under the already-delegated authority of the kept closeout procedures (`operations/closeout.md` with `w-02-light-task-workflow`'s `workflows/closeout.md`) and the required independent review/curation evidence.
 
+Copied developer words in a `From explainer ·` message count as those words only after their SHA-256 matches the filed message in `developer-messages/`. When no master-to-architect record names this Architect for a master, it claims that master with `explainer_control` on `agents-remember-task`, action `claim`.
+
 Manager coordinates one selected master, its leaves, readiness and landing order. Orchestrator coordinates the accepted sprint objective through Managers and verifies their aggregate delivery without absorbing the leaf repair loop. Both preserve task, candidate, role-agent, report and publication identities, keep acceptance separate from review recommendations, and use existing AR task/data and paired-Git owners. An uncertain start is reconciled with the same request ID; a refused coordinating start is reported and never silently replaced by direct coordination.
 
 Native start, finalize and abandon publish task stage and mirror the parent's row; Manager does not follow them with a redundant status write. Explicit corrections and organizational-master completion still use `task_doc set_status` under their existing authority. This instruction does not let Worker or Curator make task-state decisions, does not merge review with acceptance, and does not turn edits to rendered copies into canonical publication.
@@ -311,3 +313,7 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [61]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [62]
+
+- The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]
+
+- The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]

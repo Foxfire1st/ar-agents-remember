@@ -3,25 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:1b6fd1f0006366969fafd1cbaad6e1a9b33c54069f468bb556e5ab0937036416",
-        "locator": {
-          "kind": "symbol",
-          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > shows the bound launcher for a task without a chat and starts nothing"
-        }
-      },
-      "facet": "A bound task with no worker chat keeps the frame in an aria-hidden wrapper, shows its bound launcher and makes zero dispatch requests.",
-      "id": "PRF-4615FC",
-      "invariant": "INV-GY49SV",
-      "origin": {
-        "handoffEntry": "GY49SV-review-unbound",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:008f13fe6b1f4d04dd6e475474013af4cc48b080d6bf68b0af9118e7f642e19c",
         "locator": {
           "kind": "symbol",
           "name": "walks Operations → task document → review → open column → Back on the same frame, loaded once"
@@ -37,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:bd3df56d314c2372c362e0e582d3b5d9fbdd90d6e4441216e56123f6aaf5ce46",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:fae7aa19601cbbfb1b6e52e5e3a50116c5685670cf52e2304eb45ee55000945a",
         "locator": {
           "kind": "symbol",
           "name": "preloads a cold review closed, reads nothing else, and opens the leaf’s own chat by one switch"
@@ -54,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:7cd91f9fd48ae8d941040e09e30d2f89e98b5515ee1e61a9e490f24f44bcaaaf",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:dbfa737a6402bae6abe94541fd6bc179743b38bca14bfbe841f039120f6ddd4a",
         "locator": {
           "kind": "symbol",
           "name": "the review page keeps the one chat frame (rule 12, evidence 14) > names a review whose task the task list does not hold, and reads no chat for it"
@@ -71,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:afa2c6f6d1b9591fdda306d9da01550481905d54470ace4ccaea269a9de63ca4",
         "locator": {
           "kind": "symbol",
@@ -88,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:008f13fe6b1f4d04dd6e475474013af4cc48b080d6bf68b0af9118e7f642e19c",
         "locator": {
           "kind": "symbol",
           "name": "the review page keeps the one chat frame (rule 12, evidence 14) > walks Operations → task document → review → open column → Back on the same frame, loaded once"
@@ -105,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:80159276045aea96b67770cedc15ee405f577bc31f85e8cdc4f6ea22c8f89bb3",
         "locator": {
           "kind": "symbol",
@@ -122,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:ba6443b61220f566d40df83093cfb8df289aac8b8ba2dc98dd895237cfc781c9",
         "locator": {
           "kind": "symbol",
@@ -139,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:ba6443b61220f566d40df83093cfb8df289aac8b8ba2dc98dd895237cfc781c9",
         "locator": {
           "kind": "symbol",
@@ -156,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:afa2c6f6d1b9591fdda306d9da01550481905d54470ace4ccaea269a9de63ca4",
         "locator": {
           "kind": "symbol",
@@ -173,24 +156,41 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:34ecfff1b478d688b7b69c0ddf9af0c8350b7a05c821eb5b7a0d5a57cb0ca73d",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:05edc2caf2e06078ad4d8852f4b52d66389de72c41b87187f551dfd09214fb78",
+        "locator": {
+          "kind": "symbol",
+          "name": "the review page keeps the one chat frame (rule 12, evidence 14) > shows the bound launcher for a task without a chat and starts nothing"
+        }
+      },
+      "facet": "For a bound leaf with no explainer seat, opening the review column keeps the retained frame wrapper aria-hidden, shows the Explainer placeholder and makes zero role-launch dispatch requests.",
+      "id": "PRF-XXB94C",
+      "invariant": "INV-GY49SV",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-GY49SV-review-placeholder",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:1197885ea6aa6d93c7fa1e80117d5a3e2f41dfd40716fe1c961f95fe9e99cd81",
         "locator": {
           "kind": "symbol",
           "name": "the review page keeps the one chat frame (rule 12, evidence 14) > holds a review opened before the task list arrives and never binds the architect"
         }
       },
-      "facet": "Before task hydration the column names its wait, performs no document-chat request and posts no open; after hydration it opens the worker and never requests Architect.",
-      "id": "PRF-XMJ22P",
+      "facet": "Before task hydration the review shows its task-list wait, makes neither ordinary document-chat nor explainer-state requests and posts no open; after hydration it opens the leaf explainer a-exp and never requests Architect.",
+      "id": "PRF-XZ8096",
       "invariant": "INV-GY49SV",
       "origin": {
-        "handoffEntry": "GY49SV-review-unbound",
-        "leaf": "260928-MIK-L89"
+        "handoffEntry": "L183-CUR-FE-GY49SV-review-placeholder",
+        "leaf": "260928-MIK-L183"
       }
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
         "content": "sha256:2ad634d2aa00c808d69a68452ff83cb618d798d7be75847f81bd5f25362ef457",
         "locator": {
           "kind": "symbol",
@@ -207,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-        "content": "sha256:56655e4d88cc0e9a9e9cfd1334bd771b717fcac797a998d6c0fd6af3335cfe2b",
+        "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+        "content": "sha256:008f13fe6b1f4d04dd6e475474013af4cc48b080d6bf68b0af9118e7f642e19c",
         "locator": {
           "kind": "symbol",
           "name": "walks Operations → task document → review → open column → Back on the same frame, loaded once"
@@ -243,16 +243,14 @@
       ]
     },
     "2": {
-      "note": "Pending/absent/agentless/unreachable/reload boundaries\n\nAnchor: \"it('holds a review opened before the task list arrives and never binds the architect', async () => {\"",
+      "note": "The retained shell cases cover pending and missing task identity without chat reads, a no-seat explainer placeholder without dispatch, unavailable host recovery and reload-closed behavior; they do not require a Worker default or a role launcher in the review column.\n\nAnchor: `holds a review opened before the task list arrives and never binds the architect`",
       "targets": [
         {
           "anchor": {
-            "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
-            "content": "sha256:e0ca50d62cdc4a6c8d7ddca0e88f37138d7f50cdf2640bbb9ec14411583fcc6b",
+            "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+            "content": "sha256:e22fd79a17f45380a0022d023f6a6d774c22392a4566ae467dcf7b9560e0cf04",
             "locator": {
-              "end": 382,
-              "kind": "line_range",
-              "start": 305
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -264,12 +262,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69f2370d48be01f652fc134fa5a7856abfd129ac",
+            "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
             "content": "sha256:952ea96908a7d0240ee6e629016adfc8866dd1cd2105843b6d6151422ef62703",
             "locator": {
-              "end": 447,
+              "end": 461,
               "kind": "line_range",
-              "start": 385
+              "start": 399
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cold review still preloads the same frame without a seat/chat/warmup/dispatch read. Opening now reads the exact leaf explainer state and steers that retained frame to a-exp, with no Worker document-chat lookup. Pending or missing task identity makes no explainer-state request. A known no-seat answer draws explainer-placeholder rather than a role launcher. The existing page walk now permits one native open to select the explainer while asserting the same frame node and generation.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f4998204a34b80f70297edf507fb5b12d9aaada",
+            "content": "sha256:e22fd79a17f45380a0022d023f6a6d774c22392a4566ae467dcf7b9560e0cf04",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

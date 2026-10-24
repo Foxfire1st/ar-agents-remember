@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/models/token_names.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bdb8f1513aaa5736273e1fb3f39858ff6ec967e5",
+        "content": "sha256:7131b6e29f23d1aa84129d6e463061d383bab7881404be84f2699e0659edab2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TOKENIZER_NAME"
+        }
+      },
+      "id": "RLZ-J5HVAK",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The light owner names tiktoken:o200k_base without importing the counter; the guard test pins it to the real counter name.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The tokenizer's name is one literal with no computation at import\n\nAnchor: `TOKENIZER_NAME = \"tiktoken:o200k_base\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdb8f1513aaa5736273e1fb3f39858ff6ec967e5",
+            "content": "sha256:7131b6e29f23d1aa84129d6e463061d383bab7881404be84f2699e0659edab2c",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only the name is exported, so this module offers no counter\n\nAnchor: `__all__ = [\"TOKENIZER_NAME\"]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdb8f1513aaa5736273e1fb3f39858ff6ec967e5",
+            "content": "sha256:b0de3ea348049543019cf527313934cbe08af2c0592e94081e7ec69ed17dfaf0",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reading the name imports nothing that loads the tokenizer\n\nAnchor: `from __future__ import annotations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdb8f1513aaa5736273e1fb3f39858ff6ec967e5",
+            "content": "sha256:5384bfdb2df380b6557cc7a71d16891415bccaa87699406e236f752c6415389f",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

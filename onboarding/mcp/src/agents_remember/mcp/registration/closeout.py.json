@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/closeout.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+        "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_closeout_tools"
+        }
+      },
+      "id": "RLZ-46ZY4R",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
             "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
               "kind": "symbol",
@@ -41,6 +60,21 @@
           "anchor": {
             "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
             "content": "sha256:fcaca5dc43a7a37236131a3c630f14c9bcd4f072f3ab4e12ed8ed0ba34066310",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.\n\nAnchor: `register_closeout_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
             "locator": {
               "kind": "file"
             }
@@ -277,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93752ca8cba3a7cab1150752f4c15b35d1939021",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
             "content": "sha256:5b75019b3ffbc4d3e4a39bd0fb07638657128f43d4db984d5218401220ac7e24",
             "locator": {
               "kind": "symbol",
@@ -294,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:343b3a5dfccfbe3e2f62dc5f964cc25c6adc3766b76c039b59b5fefa77c06845",
             "locator": {
               "kind": "symbol",
@@ -306,7 +340,7 @@
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
             "locator": {
               "kind": "symbol",

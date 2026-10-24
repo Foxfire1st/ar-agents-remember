@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "686c3a2bf83d624af58885dc548a7ded1358a066",
+            "blob": "83c51bcaaed6c71812428823ab31dac0a96f9fce",
             "content": "sha256:c1bd8fd69ad63ba3874f44119f223057fe6f134c5f413a72745f55726e588293",
             "locator": {
-              "end": 418,
+              "end": 536,
               "kind": "line_range",
-              "start": 385
+              "start": 503
             },
             "path": "dashboard/src/panels/review/IntentWordDiff.test.tsx"
           },

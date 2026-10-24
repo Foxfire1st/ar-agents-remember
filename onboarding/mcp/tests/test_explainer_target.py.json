@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_explainer_target.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_line_range_maps_through_the_diff_and_hashes_the_same_bytes` protects a line range mapping through the diff and hashing the bytes it names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:d8c03e642bfad0e19838fca36711bef13fad3ebb7196cac36f0b4007d251e7cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_range_maps_through_the_diff_and_hashes_the_same_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_unmappable_range_and_a_blob_the_tree_lacks_answer_none` protects an unmappable range and a missing blob answering none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:38a55e2b04451eed9ec39ca813e7a7a076b5841507427a07a1e338c56e0bcf6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unmappable_range_and_a_blob_the_tree_lacks_answer_none"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_every_question_answers_none_when_the_trees_cannot_be_read` protects every read answering none when the trees cannot be read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:1d9eb9f55f8e3498b98d060512e77a66d9d3b7abdd586d8f4e207480927f2783",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_question_answers_none_when_the_trees_cannot_be_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_a_proof_entries_changed_fingerprint_makes_its_claim_stale` protects a claim going stale when its proof entry's fingerprint changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:5e9ff06186ecc3c89ffba9d359b952f45c18539aa905ae50cdfa7c1cd8f23a6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_entries_changed_fingerprint_makes_its_claim_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_staleness_read_writes_nothing_in_the_repositories_or_the_task` protects a staleness read leaving every file untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:6698ef76faef0250c510b76e93ba5135561930833b1524343eeff796984b3f6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_staleness_read_writes_nothing_in_the_repositories_or_the_task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_an_edited_moved_or_purely_deleted_hunk_keeps_its_grade_on_the_target_block` protects an edited, moved or purely deleted hunk keeping its grade on its target block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21494377c2825c6b9883bd7678a38add7a3dca5e",
+            "content": "sha256:8144f20e2f4d04ef53d58a1b3122f5fb27b77e668218f1863cfa6fc9dc172494",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_edited_moved_or_purely_deleted_hunk_keeps_its_grade_on_the_target_block"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

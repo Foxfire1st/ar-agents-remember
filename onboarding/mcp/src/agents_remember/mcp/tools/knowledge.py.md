@@ -14,6 +14,8 @@ Payload builders for four mounted knowledge operations over converted trees: rea
 
 ## Code Commentary
 
+Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain.
+
 ### Logic
 
 Read selects the converted tree’s derived index, computes a rich page internally, then projects its rows, proofs and family references to text ID, kind, computed state and file/heading or line locations. Selection-time commit/dirtiness and a shared revalidated resolver bind sizing and projection to one epoch; a moved checkout refuses `snapshot_unavailable`. No record body is delivered by a naming projection: its rows carry names and derived state. The requested marks views are the exception the requirements name — a `weakness` row carries that weakness's own statement and, where the record holds one, its measurement — and neither view carries a document body. Source-resolution pairs remain complete or absent. [1]
@@ -226,3 +228,5 @@ No configured domain documentation could be checked.
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
+
+- Cutover refusal helpers, worktree candidate capture and contract loading are imported at the operation branches that need them; existing legacy-format and root-selector refusals remain. [83]

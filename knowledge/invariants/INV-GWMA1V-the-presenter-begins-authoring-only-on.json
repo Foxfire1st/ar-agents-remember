@@ -7,14 +7,15 @@
     ],
     "justification": "Four places realize one path — admission, load, confined server, native launch — and the mistake it prevents is authoring on a read, publishing on an unloaded revision, or writing outside the attempt folder."
   },
-  "applicability": "Every review-presenter attempt hosted by the dashboard.",
+  "applicability": "Every explainer seat started for one leaf, and the environment the leaf's first request builds.",
   "conditions": [
-    "A caller asked for one comparison explicitly.",
-    "A confined runner or harness is configured."
+    "The environment lives under <coordination>/explainer/<repository>/<task>/<leaf>, one per leaf.",
+    "Every writer of the environment's durable facts takes the leaf's one lock and admits its target first.",
+    "A publication follows one model-free load and a readiness report over the staged bytes."
   ],
   "exclusions": [
-    "A page that is only being viewed, which starts nothing.",
-    "An attempt with no confined harness, which must refuse by name."
+    "The retired canvas presenter POSTs, which are refused by name canvas-authoring-replaced.",
+    "The architect's explainer_control tool, which updates or retires a seat instead of authoring a page."
   ],
   "id": "INV-GWMA1V",
   "origin": {
@@ -29,9 +30,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The presenter begins authoring only on an explicit activation for one exact comparison, writes only inside that attempt's prepared folder through a runner that refuses when it cannot confine, and publishes only through the frame store after one model-free load of the prospective revision.",
+  "statement": "An explainer authors only inside one environment per leaf, kept outside every worktree, memory repository and task folder; every path it writes is admitted by a guard that holds a link or an escape instead of following it; and it publishes only through the frame store, after one model-free load of the prospective revision and a readiness check over that revision's exact bytes.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "88762eabfa78e5831e04d620122616672cef2b80",
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+        "content": "sha256:56663263ffee6ee80e93552041e1329abc7a1d76d9dac01b3f2ebe388775cc4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_claim_ids_and_the_legacy_reference_check_stay_separate"
+        }
+      },
+      "facet": "A real claim id and valid legacy basis reference pass separate checks; an invented claim id fails only the part-map check.",
+      "id": "PRF-8YQGYX",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-05",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
         "content": "sha256:11e06b16a8ea894624fbdba33ad9464257c257fbc2a165572e4148a8817795d3",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,58 @@
     },
     {
       "anchor": {
-        "blob": "88762eabfa78e5831e04d620122616672cef2b80",
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+        "content": "sha256:56663263ffee6ee80e93552041e1329abc7a1d76d9dac01b3f2ebe388775cc4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_claim_ids_and_the_legacy_reference_check_stay_separate"
+        }
+      },
+      "facet": "A claim mark and a legacy reference stay two different maps.",
+      "id": "PRF-CS064A",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-A-7",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+        "content": "sha256:21d4ce58536f904fb13691ab1fa81e839f4fc183370f49c172b1893cd18c00b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_admitted_self_contained_page_is_ready"
+        }
+      },
+      "facet": "A page without explicit parts is admitted as one implicit page part.",
+      "id": "PRF-HX06Z1",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-03",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+        "content": "sha256:cbb9633f39c5be4c0dca5dd0127854244cf4d811c7e3aecdb9119fa4fabbf7f0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_page_without_parts_is_ready_as_one_implicit_part_with_real_claim_ids"
+        }
+      },
+      "facet": "An implicit page part contains every real packet claim id.",
+      "id": "PRF-J2DDRZ",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-06",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
         "content": "sha256:3f8e3bd9b29c8dbee58740036bb4eac3ea822c6a0c4365b3eaa6cedd0d22b721",
         "locator": {
           "kind": "symbol",
@@ -34,6 +102,23 @@
         "handoffEntry": "MIK-R104-r5-evidence-resolution",
         "leaf": "260928-MIK-L104"
       }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+        "content": "sha256:cabdfc041ac87acde58eb2aeb2fd854f4cad7ef9a67fd2fe372ac02af1c5afe5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_readiness_requires_resolving_claim_bases_and_unique_part_ownership"
+        }
+      },
+      "facet": "Readiness refuses a baseless claim and a claim whose named tree basis does not resolve.",
+      "id": "PRF-S5A71K",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-04",
+        "leaf": "260928-MIK-L183"
+      }
     }
   ],
   "realizes": [],
@@ -43,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88762eabfa78e5831e04d620122616672cef2b80",
+            "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
             "content": "sha256:11e06b16a8ea894624fbdba33ad9464257c257fbc2a165572e4148a8817795d3",
             "locator": {
               "kind": "symbol",
@@ -59,11 +144,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88762eabfa78e5831e04d620122616672cef2b80",
+            "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
             "content": "sha256:3f8e3bd9b29c8dbee58740036bb4eac3ea822c6a0c4365b3eaa6cedd0d22b721",
             "locator": {
               "kind": "symbol",
               "name": "test_an_evidence_reference_must_be_one_the_admitted_packet_carries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Readiness also derives a part map: claims require resolving bases and unique part ownership; `data-evidence-claim` carries actual claim IDs while `data-evidence` retains its separate basis-reference check. A page without explicit parts is one implicit `page` part containing its real claims, with whole-page staleness rather than invented part IDs.\n\nAnchor: `test_readiness_requires_resolving_claim_bases_and_unique_part_ownership`, `test_claim_ids_and_the_legacy_reference_check_stay_separate`, `test_a_page_without_parts_is_ready_as_one_implicit_part_with_real_claim_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f7c430b17efab1c547b9fe65a02a25ba626bef5",
+            "content": "sha256:543f2ec96f90db26f03a3707951e528d43b2812c764bbf16aff5338df52c8c1a",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

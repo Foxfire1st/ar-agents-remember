@@ -347,12 +347,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c07082aa2138d2e185d54fe57458598d62fa5a8e",
+            "blob": "a80733809cbf60af7617defb6e31923ca95cf87a",
             "content": "sha256:fac90a2efce29481db2fcdc3a5c2dc171b06d8d4d191e9f1c71198db08e26988",
             "locator": {
-              "end": 78,
+              "end": 82,
               "kind": "line_range",
-              "start": 69
+              "start": 73
             },
             "path": "mcp/src/agents_remember/application/agent_binding.py"
           },

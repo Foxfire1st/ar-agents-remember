@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
+        "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "GitKnowledgeValidation"
+        }
+      },
+      "id": "RLZ-E36A7J",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "LeafPublication is annotation-only under TYPE_CHECKING; the commit route no longer imports worktree services just to define its type and changes no validator decision.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The adapter, with its optional base converter.",
       "targets": [
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:937bf70e534a8c66af7c6fa04cf54b2f09da4aceee64c93b061aa63747948e5b",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:62352eeb8bd1b892218b9afc9c7f402d3a759d74d7a4f518dc884d88a1f0f973",
             "locator": {
               "kind": "symbol",
@@ -50,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:62352eeb8bd1b892218b9afc9c7f402d3a759d74d7a4f518dc884d88a1f0f973",
             "locator": {
               "kind": "symbol",
@@ -66,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:9ced8610b08876bd1fb9214f931a68616555e63002425794721a298402bbd497",
             "locator": {
               "kind": "symbol",
@@ -77,7 +96,7 @@
         },
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:5d77aa20e73ecf7bb686e08c275db199f1ab826b5c917809d54c13cc8d86056d",
             "locator": {
               "kind": "symbol",
@@ -88,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:5435d0c318fae61a69858a42f69492b51425e239406782723e38a103843df7e4",
             "locator": {
               "kind": "symbol",
@@ -138,7 +157,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
@@ -172,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa022ec4b45b059754a8f3b1252fa8d25b69384",
+            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
             "content": "sha256:6de00b263b85b95c6e0447009eb7667b131f8281a78600baf0a6a1a7e26ef1e4",
             "locator": {
               "kind": "symbol",
@@ -189,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
             "content": "sha256:5d77aa20e73ecf7bb686e08c275db199f1ab826b5c917809d54c13cc8d86056d",
             "locator": {
               "kind": "symbol",

@@ -10,7 +10,7 @@ The design of record for the generated review page's host and the review present
 
 ## Code Commentary
 
-- It opens on the two surfaces the requirement names: the frame route serving one admitted revision's bytes, and the trusted API route serving the panel and the one explicit start.
+- It opens on the two surfaces the document names: the frame route serving one admitted revision's bytes, and the trusted API route serving the panel; its changed API row says the old authoring POSTs are retired and refuse by name.
 - It records the origin arrangement and the policy: the dashboard is local and unauthenticated as a deployment posture, which is why a request guard — not authentication — is what refuses a foreign writer, and why header-less CLI calls pass.
 - Scripts are gated on the browser proof: the served policy digest, the enforcement bindings and the recorded checks must all cover what is being served, and a page whose proof does not cover it is served with no script at all.
 - The protocol, session and presenter sections state the bounds once: a closed operation set, a host-created session bound to the exact frame and revision, and a presenter that admits an explicit attempt, confines its runner and publishes only after one model-free load.
@@ -22,3 +22,10 @@ The design of record for the generated review page's host and the review present
 - Scripts are gated on the browser proof, and an uncovered page is served with no script. [2]
 - The presenter, protocol and session bounds are stated once in one design document. [3]
 - The remaining limits are named instead of being implied away. [4]
+
+## Current authoring-path account
+
+The changed API row documents retirement of the old authoring POSTs. The changed presenter section describes an injected confined runner receiving one attempt's prepared folder, and `UnconfiguredPresenterRunner` refusing by name when no runner is wired. It identifies the retired native presenter-tools launch and the explainer seat on the normal task server as the authoring path; the kept tools retain immutable packet/source reads and writes confined to the attempt's own assets. This card describes the design document's changed seams; it introduces no independent runtime guarantee or fresh execution evidence.
+
+- The trusted API row documents retirement and named refusal of the old authoring POSTs. [5]
+- The authoring section documents the injected-runner boundary, unconfigured refusal and retired standalone-native entry, while retaining the kept tools' bounded evidence/assets account. [6]

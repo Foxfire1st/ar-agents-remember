@@ -52,3 +52,7 @@ No relevant external documentation is configured.
 No meaningful cross-repository references found.
 
 - The test covers dashboard-local state transport. [3]
+
+The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.
+
+- The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements. [4]

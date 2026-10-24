@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
         "locator": {
-          "end": 730,
+          "end": 1087,
           "kind": "line_range",
-          "start": 730
+          "start": 1087
         }
       },
       "id": "RLZ-0937DQ",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
         "locator": {
-          "end": 701,
+          "end": 1054,
           "kind": "line_range",
-          "start": 701
+          "start": 1054
         }
       },
       "id": "RLZ-0H4VAS",
@@ -41,12 +41,30 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:3bf0f8c2c2f24ea52bd1b254619db026e8a8d8ba4c014d5b6552580cce51bd12",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_symlink_parents"
+        }
+      },
+      "id": "RLZ-1CFZXW",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
         "locator": {
-          "end": 731,
+          "end": 1088,
           "kind": "line_range",
-          "start": 731
+          "start": 1088
         }
       },
       "id": "RLZ-23AWS9",
@@ -60,7 +78,7 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
         "locator": {
           "kind": "symbol",
@@ -78,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
         "locator": {
-          "end": 730,
+          "end": 1087,
           "kind": "line_range",
-          "start": 730
+          "start": 1087
         }
       },
       "id": "RLZ-2R29WN",
@@ -97,12 +115,12 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
         "locator": {
-          "end": 731,
+          "end": 1088,
           "kind": "line_range",
-          "start": 731
+          "start": 1088
         }
       },
       "id": "RLZ-4JAJH2",
@@ -116,12 +134,30 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReview"
+        }
+      },
+      "id": "RLZ-8BRFS4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
         "locator": {
-          "end": 702,
+          "end": 1055,
           "kind": "line_range",
-          "start": 702
+          "start": 1055
         }
       },
       "id": "RLZ-BF10PN",
@@ -135,7 +171,25 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:a03dff3650ab47062ea801f7caa6bae1e56d94aa401d707dafe34259f8c467a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_carries_digest"
+        }
+      },
+      "id": "RLZ-D2HCGQ",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
         "locator": {
           "kind": "symbol",
@@ -153,12 +207,66 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:e8e2dae6744dcc63c390d0b44afa61ed6df86fb1d6c4748b9ef0b08bcb6bff1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_stage_refusal"
+        }
+      },
+      "id": "RLZ-F6SCW4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:d6da14c6a8c0b19a846b40ef7c08b229361903687089261e79dc4e101de153b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_refusal"
+        }
+      },
+      "id": "RLZ-G6RYWK",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:7afedfa4a66c5a9076b56d4e4faa6e246a0842203125ab7be0c7fc009f6bb5ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocument"
+        }
+      },
+      "id": "RLZ-KX3NVE",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
         "locator": {
-          "end": 702,
+          "end": 1055,
           "kind": "line_range",
-          "start": 702
+          "start": 1055
         }
       },
       "id": "RLZ-NWTXT1",
@@ -172,7 +280,7 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
         "locator": {
           "kind": "symbol",
@@ -190,12 +298,12 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
         "locator": {
-          "end": 701,
+          "end": 1054,
           "kind": "line_range",
-          "start": 701
+          "start": 1054
         }
       },
       "id": "RLZ-T61Y2X",
@@ -209,7 +317,25 @@
     },
     {
       "anchor": {
-        "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:178befa6e9425a249b71b8a09175e9f615c86b39ea77b65033d6fb8ff49775f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agreed_revision"
+        }
+      },
+      "id": "RLZ-TMSZSB",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The canonical agreement resolver validates the strict revisionId/sha256/packetVersions record and retained physical path. Digest verification accepts either exact manifest-byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; neither mode is a blanket authentication of every manifest byte. Unresolved/unverified revisions supply no pin and symlinked agreement paths refuse.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
         "content": "sha256:95fbc0f6e572d9309481769bda1cccb6877bb53beb4d5cb43db19db86fbe374b",
         "locator": {
           "kind": "symbol",
@@ -224,6 +350,42 @@
       },
       "rationale": "This predicate marks product-written records from the writers own constants, so the page matches no text and stored shape is unchanged.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:515fd777de66b1f664ec6f3109c42931fee5b47ec6a223733dfa98a7b724f3fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_erasure_refusal"
+        }
+      },
+      "id": "RLZ-VAQFV8",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+        "content": "sha256:311ee52fa979f9e3beaff4ed2be9040f56c92a42879c7020d25c8eaeafe41b4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_strict_agreement"
+        }
+      },
+      "id": "RLZ-Z64MPD",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -232,12 +394,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:fe527ac72f6dcfb35046946f2aaae515023edbe4faf06f161d5484ffa04b2c0e",
             "locator": {
-              "end": 721,
+              "end": 1074,
               "kind": "line_range",
-              "start": 721
+              "start": 1074
             }
           },
           "kind": "code"
@@ -249,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -265,7 +427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:cd1d33519541245a873eee5269a5fa220a1674e2396ff94e629c6ca601b5430d",
             "locator": {
               "kind": "symbol",
@@ -281,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:6ebfab34f5e4da086f68937803178e20cdbbfe4116b44c641f12cff8458160ec",
             "locator": {
               "kind": "symbol",
@@ -358,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:de083a3ccb2ff5c3c153fe764e71894d9576297fe6f68e11f48dc2457674021e",
             "locator": {
               "kind": "symbol",
@@ -369,7 +531,7 @@
         },
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:256c7233d8ec35bb9a24f2456fe797b31c9351c37e34d295cb4093e211129eac",
             "locator": {
               "kind": "symbol",
@@ -385,12 +547,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
             "locator": {
-              "end": 523,
+              "end": 527,
               "kind": "line_range",
-              "start": 515
+              "start": 519
             }
           },
           "kind": "code"
@@ -420,7 +582,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:2d4a1dd578a5da15c4a8be69e7c73caa1e165ff34215981b8024fc1821b6321a",
             "locator": {
               "kind": "symbol",
@@ -436,12 +598,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:e664c98c094efa6cd37780093c0c1bc3009e294aa3d30c2d556f801133a39d51",
             "locator": {
-              "end": 917,
+              "end": 1275,
               "kind": "line_range",
-              "start": 868
+              "start": 1226
             }
           },
           "kind": "code"
@@ -453,12 +615,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68c085f9fa0f12ede5f7f31e4c3f3ed96cfa89e4",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
             "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
             "locator": {
-              "end": 169,
+              "end": 171,
               "kind": "line_range",
-              "start": 160
+              "start": 162
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -471,12 +633,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:69b5a12daf6a2e7a5ea84071de02bd9bcf14f8a0e89f7eac3eaf899f38f86828",
             "locator": {
-              "end": 88,
+              "end": 92,
               "kind": "line_range",
-              "start": 81
+              "start": 85
             }
           },
           "kind": "code"
@@ -488,24 +650,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:d1a563ac63d3b034a80cef5eb62399fc6e2130c297bdc9a937b8d0771deee6d2",
             "locator": {
-              "end": 171,
+              "end": 175,
               "kind": "line_range",
-              "start": 156
+              "start": 160
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
             "locator": {
-              "end": 371,
+              "end": 379,
               "kind": "line_range",
-              "start": 348
+              "start": 356
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -518,12 +680,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
             "locator": {
-              "end": 685,
+              "end": 1038,
               "kind": "line_range",
-              "start": 655
+              "start": 1008
             }
           },
           "kind": "code"
@@ -571,12 +733,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c460327e477ba9c4fa93f5fe7be8e19e3dfec963",
+            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
             "content": "sha256:5fe1ad5d62604e25c59f356dfc0cd2c60397b74344624a2d74a62b5a49fedc9a",
             "locator": {
-              "end": 65,
+              "end": 68,
               "kind": "line_range",
-              "start": 21
+              "start": 24
             },
             "path": "mcp/src/agents_remember/cli/role_start_execution.py"
           },
@@ -625,12 +787,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:8ed242eadb1b4de31976d805099716d3479052f27552b2471a9b93213a3bcc68",
             "locator": {
-              "end": 40,
+              "end": 43,
               "kind": "line_range",
-              "start": 26
+              "start": 29
             }
           },
           "kind": "code"
@@ -642,12 +804,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:d12e2d2d75143b1f144d4d8049bae91880486980f4c8e64e022bca0c52cc1046",
             "locator": {
-              "end": 796,
+              "end": 1153,
               "kind": "line_range",
-              "start": 735
+              "start": 1092
             }
           },
           "kind": "code"
@@ -659,11 +821,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
               "name": "ExpectedKnowledgeEffect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:550a539ed995de387b5ed22663e837a524e609c09ef19a4f50045a83bb2f7177",
+            "locator": {
+              "end": 696,
+              "kind": "line_range",
+              "start": 667
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 699
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:178befa6e9425a249b71b8a09175e9f615c86b39ea77b65033d6fb8ff49775f1",
+            "locator": {
+              "end": 872,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:a03dff3650ab47062ea801f7caa6bae1e56d94aa401d707dafe34259f8c467a1",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 993
             }
           },
           "kind": "code"
@@ -691,12 +906,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
-              "end": 726,
+              "end": 1079,
               "kind": "line_range",
-              "start": 724
+              "start": 1077
             }
           },
           "kind": "code"
@@ -771,7 +986,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cc2ee73183eedfded4f8d8ccfa7ecd54ea694fa4",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
             "locator": {
               "kind": "symbol",

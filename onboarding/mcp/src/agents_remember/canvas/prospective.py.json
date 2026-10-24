@@ -3,8 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
-        "content": "sha256:d13ad7c0afad7655dc1def72056f04e4eae6db7764fa56b73540f597d48092f9",
+        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+        "content": "sha256:ce7dc75f181f51bd961e0baf5da80feec6a277159bcd5623a1f572b9c2a8c091",
+        "locator": {
+          "kind": "symbol",
+          "name": "_valid_inventory"
+        }
+      },
+      "id": "RLZ-2X0677",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+        "content": "sha256:c3a36b4e80f65e8184ff4cb12cc67780b386e000202952a8feb46b16c0a3ce6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_result"
+        }
+      },
+      "id": "RLZ-2Z5SWP",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+        "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_rendered_citations"
+        }
+      },
+      "id": "RLZ-HSQDEF",
+      "invariant": "INV-40VGBY",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-02",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Browser answers preserve separate bounded claim-id/reference inventories and reject unresolved claim bases or part-map faults before reporting a usable exact-byte load.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+        "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
         "locator": {
           "kind": "symbol",
           "name": "BrowserProspectiveLoad"
@@ -42,11 +96,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
+            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
             "content": "sha256:3d45c4c3caea3d87db12b71cad430088f32f09edfbb04d006bd9f5bbefba724a",
             "locator": {
               "kind": "symbol",
               "name": "_consistent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation separates claim IDs from basis references and validates rendered citations/parts before accepting the browser result.\n\nAnchor: `_valid_inventory`, `_validate_rendered_citations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+            "content": "sha256:3482efe567c7550caacd9e6c213ea82950659ad4eaaa6f57ba8de7e46ad788fe",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

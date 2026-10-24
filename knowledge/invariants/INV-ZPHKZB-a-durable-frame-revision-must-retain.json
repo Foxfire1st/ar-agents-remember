@@ -5,12 +5,13 @@
     ],
     "justification": "Without retained evidence a regenerated revision would lose the claims its predecessor made and promote old claims to current."
   },
-  "applicability": "A durable frame revision's stored evidence for reopening and regeneration.",
+  "applicability": "Every revision manifest the frame store writes or reads.",
   "conditions": [
-    "The revision was published with its manifest and evidence packet."
+    "The part map is stored beside the claim map it belongs to.",
+    "An all-empty part map is admitted and claims nothing."
   ],
   "exclusions": [
-    "A draft that was never published."
+    "A revision without parts, whose staleness is whole-page."
   ],
   "id": "INV-ZPHKZB",
   "origin": {
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A durable frame revision must retain the admitted R102 evidence manifest, claim map and exact retained-asset regeneration inputs, not only an optional digest with no retrievable target.",
+  "statement": "The revision the page shows keeps the part map with its claims beside its own claim map, and a manifest refuses a part id declared twice, a part carrying a claim id its revision does not hold, a claim listed twice in one part, a claim in two parts, and — when any part carries claims — a revision claim no part admits.",
   "status": "proposed",
   "supersedes": []
 }

@@ -25,5 +25,10 @@ This module supplies layout and props; chat state belongs to reviewChat.ts and t
 ## Evidence
 
 - Target forwarding and main-slot composition [1]
-- Preload and in-place rail placement [2]
 - Reachable overlay close control [3]
+
+reviewRailView also forwards column.explainer to the shared DocumentChat. The rail's preload, explicit unbound task state, closed/full-bleed visibility and placement/resize owners remain the same; the optional target changes which chrome and seat the retained frame displays.
+
+- reviewRailView also forwards column.explainer to the shared DocumentChat. The rail's preload, explicit unbound task state, closed/full-bleed visibility and placement/resize owners remain the same; the optional target changes which chrome and seat the retained frame displays. [4]
+
+- reviewRailView forwards the document reference, preload, explicit unbound state and optional leaf explainer target to the retained right rail; placement and resize behavior keep their existing owner. [2]

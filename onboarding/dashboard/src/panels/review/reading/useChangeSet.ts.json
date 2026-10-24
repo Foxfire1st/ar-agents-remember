@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
-        "content": "sha256:108a1b0a310efe5b204092f03a972b635823b7aa04052babc62fab349a8ccfc1",
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+        "content": "sha256:b26f02835df050a178d5bf9ad7dce8af3efbce788ec229886aac10e9d9f19fe2",
+        "locator": {
+          "kind": "symbol",
+          "name": "useLeafJudgments"
+        }
+      },
+      "id": "RLZ-3FXSHE",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The shared model subscribes to the category/grade snapshot at the exact repository/master/leaf key, so tree and reading receive the same published judgment input.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+        "content": "sha256:eeb1adb6d58f4d8aee916e5d7d75d5de322e0ee7564d1f6e9add16355c5721fd",
         "locator": {
           "kind": "symbol",
           "name": "useChangeSet"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
         "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
-        "content": "sha256:108a1b0a310efe5b204092f03a972b635823b7aa04052babc62fab349a8ccfc1",
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+        "content": "sha256:eeb1adb6d58f4d8aee916e5d7d75d5de322e0ee7564d1f6e9add16355c5721fd",
         "locator": {
           "kind": "symbol",
           "name": "useChangeSet"
@@ -57,7 +75,43 @@
     },
     {
       "anchor": {
-        "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+        "content": "sha256:090f52a05604cd8f94a1739a0ac83de9f2e2b1e8ae79ec2c4618c1387c93de83",
+        "locator": {
+          "kind": "symbol",
+          "name": "publishLeafJudgments"
+        }
+      },
+      "id": "RLZ-Q9JPTH",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Stores category/grade inputs under the exact leaf key and notifies the shared model only when content changes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+        "content": "sha256:b9c4d1bdb323d46f24dfec6acc137dca323f2dad9a69db30c261c6615e85a77f",
+        "locator": {
+          "kind": "symbol",
+          "name": "bumpLeafMoveGeneration"
+        }
+      },
+      "id": "RLZ-R13FZY",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A no-work move increments the addressed leaf’s generation and notifies the model listeners; the effect that consumes it re-reads that leaf’s deterministic facts rather than waking an explainer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
         "content": "sha256:ffef9ee42525ce27ac5822a9d87d0234905fe76c51e482bd19bd705a6d081f7c",
         "locator": {
           "kind": "symbol",
@@ -80,12 +134,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
             "locator": {
-              "end": 123,
+              "end": 194,
               "kind": "line_range",
-              "start": 117
+              "start": 188
             }
           },
           "kind": "code"
@@ -97,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:2fa8f8891918d69ab78edbdff956a7ed4609c3fa528586d7a253f17688f222b3",
             "locator": {
-              "end": 98,
+              "end": 169,
               "kind": "line_range",
-              "start": 82
+              "start": 153
             }
           },
           "kind": "code"
@@ -131,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
             "locator": {
               "kind": "symbol",
@@ -147,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:ffef9ee42525ce27ac5822a9d87d0234905fe76c51e482bd19bd705a6d081f7c",
             "locator": {
               "kind": "symbol",
@@ -163,12 +217,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09376967c4eb57710204ddffb2efb15110ee53b1",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
             "content": "sha256:0cda67ebac2ed524dc87079addde773c7414b63a861457bdf91f202ba4c72f51",
             "locator": {
-              "end": 139,
+              "end": 213,
               "kind": "line_range",
-              "start": 135
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Per-leaf judgment state is now published separately from comparison facts and consumed by the sole change-set model. It stores categories/grades under repository/master/leaf, emits only when their serialized content changes and deletes empty judgment payloads. A live no-work move increments a leaf generation and re-reads the numbered leaf facts and currently asked invariant cards, while retaining the opening-set card-read owner. This publication carries inference data; it does not author knowledge or convert a grade into a recorded fact.\n\nAnchor: `publishLeafJudgments`, `usePublishLeafJudgments`, `useLeafJudgments`, `useChangeSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+            "content": "sha256:1caa68112d824452fd1376959cdd8373bd114b7e456f2db9a6eda2122852071f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

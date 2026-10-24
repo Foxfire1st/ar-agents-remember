@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+        "content": "sha256:316a8cd7651c28109925e761f2abf51e54637780756416b01223c898a726e150",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_explainer_binding"
+        }
+      },
+      "id": "RLZ-B1J3Y5",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Refuses lost marker-backed binding and empty/invalid binding.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+        "content": "sha256:6e6273facf4fadc7d6ce1e57ef3728e2db9974c2cd08738b76bd608af85d9270",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checked"
+        }
+      },
+      "id": "RLZ-T7RFTV",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Admits only this capability and a self-consistent bound workspace.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A binding that is present and wrong refuses service rather than falling back to the ordinary roster\n\nAnchor: `def read_explainer_binding(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:316a8cd7651c28109925e761f2abf51e54637780756416b01223c898a726e150",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capability, required keys and the leaf's own task folder are checked before the surface is chosen\n\nAnchor: `def _checked(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:6e6273facf4fadc7d6ce1e57ef3728e2db9974c2cd08738b76bd608af85d9270",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The workspace must be the environment of the leaf and repository the binding names\n\nAnchor: `def _workspace_of(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:9c3989facdc5e772dec0c331552a6284e526a08b2eefcfb533d51f94e0e010c7",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A generation is a count from one upward, never a string that could sort as one\n\nAnchor: `def _generation(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:c3d74e0de54cec8ce5a1531545ef5b14fa74a184b04889bf6257a58e757a175e",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bound surface is registered for that leaf and no other\n\nAnchor: `def register_explainer_surface(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:e35b6e54d9a4d044ebfa524bb5cce380e86d9201c551adad589ab26fb6898bd3",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A tool outside the surface is refused by name\n\nAnchor: `def refuse_unexposed(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "content": "sha256:1d686e3a49e542ae851df78896e57f85897ea06cda042e4dc289c9778d02ed76",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

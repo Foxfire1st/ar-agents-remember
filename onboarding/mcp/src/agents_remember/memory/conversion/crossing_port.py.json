@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
+        "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "GitKnowledgeCrossing"
+        }
+      },
+      "id": "RLZ-G1PCJN",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The adapter.\n\nAnchor: `plan`",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
             "locator": {
               "kind": "symbol",
@@ -35,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
             "locator": {
               "kind": "symbol",
@@ -47,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
             "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
             "locator": {
               "kind": "symbol",
@@ -71,6 +90,21 @@
               "name": "build_default_worktree_services"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conversion port loads worktree-owned plan/result/error types only when a crossing plan is requested; it preserves conversion and failed-step behavior.\n\nAnchor: `GitKnowledgeCrossing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
+            "content": "sha256:ae3bbab5deeab7231a580d9e99a17f6f564f77f59badf1aa84120fccd4751219",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

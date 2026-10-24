@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:bf00bd1f8f1c8bdfc6defc50b75f2c956d80a223207b4d0533e234a5202fb92f",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:64fc0f062d622e33dcc65a167a75d9cc8652e996029c152db86546cea8a56c55",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:9a8e1cb66ab25b1bc452bd7a5d7e0f588a40879da0d556448c1f3e41f1e46bf7",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
             "content": "sha256:d56c715a4efc3b6706e3bcf56784c3255624b464ca1c1555744b35fb85465a95",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
+            "blob": "9fd75d5e4d6c3ddd6368df459517c5de74099533",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",

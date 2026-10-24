@@ -2,13 +2,15 @@
 
 ## Current operative account — R113 after the R112 roster reduction
 
-`PUBLIC_TOOLS` is the one cycle-free literal owner, currently42 unique names in the composed source after R109 removes resolve_context and R113 removes dispatch_agent, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple ends knowledge_read, knowledge_diff, knowledge_integrity_check and the writer's knowledge_write; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child`, `direct_execution_grant` and `user_settings_init`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
+The ordinary public roster includes explainer_control for Architect Update, Retire and claim.
+
+`PUBLIC_TOOLS` is the one cycle-free literal owner, currently43 unique ordinary-surface names in the composed source after R109 removes resolve_context and R113 removes dispatch_agent, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple ends knowledge_read, knowledge_diff, knowledge_integrity_check, the writer's knowledge_write and explainer_control; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child`, `direct_execution_grant` and `user_settings_init`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
 
 The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
 
 ## Current numbered roster witnesses and historical custody
 
-The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current42-name source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
+The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current43-name ordinary source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
 
 
 
@@ -411,5 +413,9 @@ No cross-repository implementation dependency governs this repository-local tupl
 
 ## Current source evidence
 
-- The tuple declares42 unique public names including user_settings_init; prior41/40/73/74 populations are historical source epochs. [14]
+
+- The tuple declares43 unique ordinary public names including user_settings_init and explainer_control; prior41/40/73/74 populations are historical source epochs. [14]
+
 - The current source declaration excludes dispatch_agent and resolve_context; tuple inspection is not live list_tools or execution. [16]
+
+- The ordinary public roster includes explainer_control for Architect Update, Retire and claim. [17]

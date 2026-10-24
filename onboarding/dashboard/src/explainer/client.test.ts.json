@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/explainer/client.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An archived or retired seat is no seat, and an unknown seat word is unavailable\n\nAnchor: `treats an archived or retired seat as no seat, and an unknown one as unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16b416fa1e4feffdee109b29f570a6040b2a78ac",
+            "content": "sha256:34961d06a2ece42c3cc1ae2ad3b66f1529f6a9d6263a9b665fc8559e45b6f7cf",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A refusal returns its reason and the server's detail instead of throwing\n\nAnchor: `names a refusal instead of throwing, and keeps the server’s reason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16b416fa1e4feffdee109b29f570a6040b2a78ac",
+            "content": "sha256:5798e4f7fde1022e78592accec3c8c0bfc8bc7998e34716adad931e93a8608ce",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreachable host is a sentence, not a failed page\n\nAnchor: `says the host could not be reached rather than failing the page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16b416fa1e4feffdee109b29f570a6040b2a78ac",
+            "content": "sha256:5f84db80268df287894c31db388e2a1e5ff2123eb27624ec339645d15d981a21",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Posted bodies carry a bounded single-segment request id and receipt id\n\nAnchor: `posts bodies the real route accepts: a bounded request id, a bounded one-segment receipt id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16b416fa1e4feffdee109b29f570a6040b2a78ac",
+            "content": "sha256:1ada42e787d6d3f0e94088e2079f348e29d886b0ed786dd1ec039753f28915a4",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

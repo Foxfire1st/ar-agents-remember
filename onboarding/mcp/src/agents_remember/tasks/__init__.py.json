@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "567534db3b57374c4e2eb55844b1ac276bdaa7e8",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
             "locator": {
-              "end": 667,
+              "end": 1041,
               "kind": "line_range",
-              "start": 667
+              "start": 1041
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:6e53dbcb18a140b75d4bfeb218f4873ea7447c100ca3d7c74d73a56455f452b5",
             "locator": {
-              "end": 124,
+              "end": 129,
               "kind": "line_range",
-              "start": 124
+              "start": 129
             },
             "path": "mcp/src/agents_remember/tasks/store.py"
           },
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
             "content": "sha256:96e6b89fd9d1e8879d08f0ab6f0a537ce90a6756e10026c4479274dbe0ee721d",
             "locator": {
               "end": 15,
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
             "content": "sha256:d2622e51d0765e45b27e6115da1c776a7b64811687bbba6cad83212d1b74c980",
             "locator": {
               "end": 17,
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "f9253d15cde4d77f06017c9600f00c1e89944615",
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
             "content": "sha256:6d215ca34d652dd2376c7b5d4a12c6bdfa5ab067e67787fb62b88f69eae66ffb",
             "locator": {
-              "end": 75,
+              "end": 76,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             }
           },
           "kind": "code"

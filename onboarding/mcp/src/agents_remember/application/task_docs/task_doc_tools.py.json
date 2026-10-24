@@ -3,8 +3,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
-        "content": "sha256:e1d4e6f390890a00451ccd505945555d4ad47c4ee63ea85b8936e07ebfedce1c",
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:bf88609818c7bcfb06e8f5200b48eed135725dcd73dce96cdb738d21f2ded11d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_task_doc_candidate"
+        }
+      },
+      "id": "RLZ-27WSAM",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Task-doc creation applies the pending default, replacement passes/preserves the original strict answer, and validation enforces bound-caller authority, stage refusal and non-erasure before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:11d134cd18eb163350c45a52fba53d18848241729551d4d5a69d535d64c65c9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_replace"
+        }
+      },
+      "id": "RLZ-BRW4YB",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Task-doc creation applies the pending default, replacement passes/preserves the original strict answer, and validation enforces bound-caller authority, stage refusal and non-erasure before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:bf88609818c7bcfb06e8f5200b48eed135725dcd73dce96cdb738d21f2ded11d",
         "locator": {
           "kind": "symbol",
           "name": "_validate_task_doc_candidate"
@@ -21,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
         "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
         "locator": {
-          "end": 582,
+          "end": 586,
           "kind": "line_range",
-          "start": 497
+          "start": 501
         }
       },
       "id": "RLZ-D0NMQA",
@@ -40,7 +76,43 @@
     },
     {
       "anchor": {
-        "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:ebde6935bb3dadc9b41355e8c45a671c8e320525ff4e94efeba373e28651c506",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_task_doc_edit"
+        }
+      },
+      "id": "RLZ-KMZHQE",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Task-doc creation applies the pending default, replacement passes/preserves the original strict answer, and validation enforces bound-caller authority, stage refusal and non-erasure before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:e22eae8ec6fa84bbc44615732fc64939b930fb036a39c147ea108da59660d197",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create"
+        }
+      },
+      "id": "RLZ-MH813H",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Task-doc creation applies the pending default, replacement passes/preserves the original strict answer, and validation enforces bound-caller authority, stage refusal and non-erasure before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
         "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
         "locator": {
           "kind": "symbol",
@@ -58,12 +130,30 @@
     },
     {
       "anchor": {
-        "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+        "content": "sha256:a3d0fdc08a67acff78e5673067c8bb6ea8db175b91c08e4239c58c34432f146a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pending_intent_review"
+        }
+      },
+      "id": "RLZ-PXSK6D",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
         "content": "sha256:33c13a52705c29d7c1c2178bd67aa79056b43e683db6782fad32c0e27c92ba23",
         "locator": {
-          "end": 466,
+          "end": 469,
           "kind": "line_range",
-          "start": 465
+          "start": 468
         }
       },
       "id": "RLZ-ZE90BR",
@@ -141,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:ddf7bdb26707cdc0cd8b0d97733fce2556f65c92be705efef62698ad0d9601ac",
             "locator": {
-              "end": 88,
+              "end": 89,
               "kind": "line_range",
-              "start": 52
+              "start": 53
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -154,12 +244,12 @@
         },
         {
           "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:12c3925765bc8cc86ce7f5a521634700e5ce3d2de67d3d1b849d7b7fb455c6ee",
             "locator": {
-              "end": 148,
+              "end": 149,
               "kind": "line_range",
-              "start": 109
+              "start": 110
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -167,12 +257,12 @@
         },
         {
           "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:63f72ff72365a4db1f1b611cb3eec730e64dc71373c92331e0a9d8cea1533ee6",
             "locator": {
-              "end": 163,
+              "end": 164,
               "kind": "line_range",
-              "start": 151
+              "start": 152
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },
@@ -219,12 +309,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:38d624acd3e04b9a21161f22f18e389bd0052af14896728bdf9976d8361182c6",
             "locator": {
-              "end": 303,
+              "end": 304,
               "kind": "line_range",
-              "start": 245
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -374,7 +464,7 @@
         },
         {
           "anchor": {
-            "blob": "04c4f25a7aca87521760c4c2b1239b02867fa937",
+            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
             "content": "sha256:3b63c0044428e340e875126d98ac86cbdd1b6800ba45726b3c3ba25522a35f48",
             "locator": {
               "kind": "symbol",
@@ -439,12 +529,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d2cdb8d673290339ac87e1ff36eedc4f5c42855",
+            "blob": "9fd75d5e4d6c3ddd6368df459517c5de74099533",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
-              "end": 171,
+              "end": 173,
               "kind": "line_range",
-              "start": 171
+              "start": 173
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -505,24 +595,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:49f7a70c9c77903c15174b9d4042b0a0c2a0653e8e5947070394cc2df66b3796",
             "locator": {
-              "end": 170,
+              "end": 173,
               "kind": "line_range",
-              "start": 159
+              "start": 162
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:55db5af1c6715ca246c401200f5d01103b1d395021ea9f127e1c54ca381c4732",
             "locator": {
-              "end": 192,
+              "end": 195,
               "kind": "line_range",
-              "start": 174
+              "start": 177
             }
           },
           "kind": "code"
@@ -575,12 +665,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
-              "end": 669,
+              "end": 679,
               "kind": "line_range",
-              "start": 640
+              "start": 650
             }
           },
           "kind": "code"
@@ -609,48 +699,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
             "locator": {
-              "end": 832,
+              "end": 862,
               "kind": "line_range",
-              "start": 831
+              "start": 861
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
             "locator": {
-              "end": 836,
+              "end": 866,
               "kind": "line_range",
-              "start": 835
+              "start": 865
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
             "locator": {
-              "end": 840,
+              "end": 870,
               "kind": "line_range",
-              "start": 839
+              "start": 869
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
             "locator": {
-              "end": 849,
+              "end": 879,
               "kind": "line_range",
-              "start": 843
+              "start": 873
             }
           },
           "kind": "code"
@@ -705,24 +795,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:0e26c6d0da5140ad6829be82c27e78a04f1c21fa30f47c1d8a496743a66c2508",
             "locator": {
-              "end": 297,
+              "end": 300,
               "kind": "line_range",
-              "start": 276
+              "start": 279
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:a358a45f88f3e15c40a0950f9fb9c8c20367bdc263f62aac04de93e029bdfb5e",
             "locator": {
-              "end": 348,
+              "end": 351,
               "kind": "line_range",
-              "start": 300
+              "start": 303
             }
           },
           "kind": "code"
@@ -823,12 +913,12 @@
         },
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:d9dd612804401afbadf3955842432075619c05f2f5aa20a5d7da43096e412fa7",
             "locator": {
-              "end": 889,
+              "end": 919,
               "kind": "line_range",
-              "start": 875
+              "start": 905
             }
           },
           "kind": "code"
@@ -840,12 +930,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:66fa6da7f95ae38c7d6c2aef3061dfdd31dc4694b46b7ff6b65621edd1f402fd",
             "locator": {
-              "end": 582,
+              "end": 586,
               "kind": "line_range",
-              "start": 497
+              "start": 501
             }
           },
           "kind": "code"
@@ -923,12 +1013,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:815700d5c2d98516b976325a69e05748d332154256f546a9763dda7b20eb99ef",
             "locator": {
-              "end": 455,
+              "end": 458,
               "kind": "line_range",
-              "start": 359
+              "start": 362
             }
           },
           "kind": "code"
@@ -940,12 +1030,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:5485f63bb5a59c81475fdc0f5e0005fdc62c74bd5a2df61edf1f83a3a89048a6",
             "locator": {
-              "end": 629,
+              "end": 639,
               "kind": "line_range",
-              "start": 599
+              "start": 609
             }
           },
           "kind": "code"
@@ -963,6 +1053,21 @@
               "end": 372,
               "kind": "line_range",
               "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication.\n\nAnchor: `_pending_intent_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -1008,7 +1113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6aa50741e21233c94ec79cdaa7576df12df1a47",
+            "blob": "88c495f124574184e99e00613afe85497d2d39c2",
             "content": "sha256:9b183eb2a268c4dea11f7e281db45a46fc7ef5f55f6aa512ff1237dec94910f6",
             "locator": {
               "kind": "symbol",

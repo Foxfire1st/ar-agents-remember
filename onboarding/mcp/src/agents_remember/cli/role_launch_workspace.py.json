@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-87P4BH",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_found_enclosure_to_in_progress"
+        }
+      },
+      "id": "RLZ-AQKTED",
+      "invariant": "INV-9PCXBN",
+      "origin": {
+        "handoffEntry": "L183-found-enclosure-stage",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -75,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
         "locator": {
           "kind": "symbol",
@@ -93,8 +129,26 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_open_intent_review"
+        }
+      },
+      "id": "RLZ-M4JAWB",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -111,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "94ff7c728c89e537a84d3096ca8cdbec1e53fcb8",
-        "content": "sha256:29efe7e2daffb377568798fb2545e440a1b73046096e38a5546e7ebcde45d8e5",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:7295634d8aadfadf52f471006886953c6d40e55e2e0075f74e348bf2cb15c64c",
         "locator": {
           "kind": "file"
         }
@@ -128,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -146,8 +200,8 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
         "locator": {
           "kind": "symbol",
           "name": "_ensure_leaf_enclosure"
@@ -164,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
         "locator": {
           "kind": "symbol",
@@ -182,8 +236,8 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -200,8 +254,8 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
-        "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_workspace"
@@ -218,7 +272,7 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
         "locator": {
           "kind": "symbol",
@@ -236,7 +290,7 @@
     },
     {
       "anchor": {
-        "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
         "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
         "locator": {
           "kind": "symbol",
@@ -275,7 +329,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preparation_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
             "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
             "locator": {
               "kind": "symbol",
@@ -291,7 +356,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
             "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
             "locator": {
               "kind": "symbol",
@@ -340,7 +416,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_enclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
             "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
             "locator": {
               "kind": "symbol",
@@ -362,6 +449,47 @@
               "end": 253,
               "kind": "line_range",
               "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry. The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat. Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 386
             }
           },
           "kind": "code"

@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/explainer/model.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "88d8dff8274a1d06a575e4092cf27553ddc9d338",
+        "content": "sha256:b1cf773b643b1c0ac56d24552bbccde57965ec3f751fd4199fbe73aa1d5cadf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "filters by exact repository, master and task path, excluding foreign seats with the same short id"
+        }
+      },
+      "facet": "Pins the exact explainer default and shared frame over page/phase changes.",
+      "id": "PRF-87RJYS",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The placeholder is selected while no seat exists, never the Worker\n\nAnchor: `selects the placeholder while no seat exists, never the Worker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88d8dff8274a1d06a575e4092cf27553ddc9d338",
+            "content": "sha256:76ed80521268c0fbafb24b58c926b6a507008f6a6589aab2039be2d9a4374ea1",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Send is refused with nothing to send\n\nAnchor: `refuses Send with nothing to send`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88d8dff8274a1d06a575e4092cf27553ddc9d338",
+            "content": "sha256:38a2256b85e5d91783d220aaed4f0a1ad7b6506114ba1bcd281dc85db6835102",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only a failed build names the failed step and its reason\n\nAnchor: `names the failed step and its reason, and no other build has one`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88d8dff8274a1d06a575e4092cf27553ddc9d338",
+            "content": "sha256:65b8a9cc547362e58866c9be06a19142fd9c6ea2ce6a89036bfe430a0e683f9b",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The menu filters by exact repository, master and task path\n\nAnchor: `filters by exact repository, master and task path, excluding foreign seats with the same short id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88d8dff8274a1d06a575e4092cf27553ddc9d338",
+            "content": "sha256:b1cf773b643b1c0ac56d24552bbccde57965ec3f751fd4199fbe73aa1d5cadf4",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

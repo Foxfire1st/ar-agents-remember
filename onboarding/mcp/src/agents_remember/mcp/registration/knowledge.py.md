@@ -24,6 +24,8 @@ The knowledge operation family module: the one `register_knowledge_tools(server,
 
 ## Code Commentary
 
+Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.
+
 ### Logic
 
 **One entry point, four private registrar functions, called in declared order.** `register_knowledge_tools(server, config)` is the family's whole public surface, and its body is the four calls `_register_knowledge_read(server, config)`, `_register_knowledge_diff(server)`, `_register_knowledge_integrity_check(server)` and `_register_knowledge_write(server, config)` — read, then diff, then integrity, then write. The read and write registrars take the config, because each resolves recorded source anchors and memory trees through it; the diff and integrity registrars take the server alone, which is the call shape making that boundary visible. The package docstring's rule that a family module's `_register_*` calls are never reordered applies here with the same force as `TOOL_REGISTRARS` itself.
@@ -189,3 +191,5 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file. It declares one tool family against the MCP server instance it is handed; every operation addresses a caller-supplied memory tree through this repository's payload builders, with no mounted authoring destination.
 
 No meaningful cross-repo references found.
+
+- Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced. [22]

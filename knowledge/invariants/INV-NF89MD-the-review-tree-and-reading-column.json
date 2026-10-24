@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The tree model, reading mount and row chip must share grade order and stale reasons so inference stays visible and only one consumer cannot reorder."
+  },
+  "applicability": "Recorded-mode review blocks with supplied explainer categories/grades, including stale and carried grades.",
+  "conditions": [
+    "Category/grade state is published for the same repository/master/leaf.",
+    "A category sort is available only when its category exists."
+  ],
+  "exclusions": [
+    "Planned pages expose only their own deterministic sorts.",
+    "The pure model consumes grades and does not author or validate their factual truth."
+  ],
+  "id": "INV-NF89MD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx::orders blocks by judgment scale with Priority tie-break, groups ungraded last under Ungraded (n), preserves stale marks, and renders active-first hover reasons including carried merged grades; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE05-judgment-order",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review tree and reading column render the same supplied explainer grades as inference, sorting drawn changed blocks by the declared category scale with Priority ties and ungraded blocks last under Ungraded (n), while retaining active-first hover reasons, all carried grades and stale marks alongside the available deterministic sorts.",
+  "status": "proposed",
+  "supersedes": []
+}

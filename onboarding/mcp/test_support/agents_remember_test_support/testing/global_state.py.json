@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3e5a79f6497a5df93a456def4f6d419bef159bde",
-        "content": "sha256:4f8b7e5b135154c32f07473c7319a42c2fd1cbf068bfa9df03c0a3bfec7220a0",
+        "blob": "d422851710478deaa848eb88666bbae572b1b623",
+        "content": "sha256:41c8d1ffd2c77ef5edbf3e64874f32665d9c0924e3574b772bb4b751b28fc360",
         "locator": {
           "end": 320,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "3e5a79f6497a5df93a456def4f6d419bef159bde",
-        "content": "sha256:5651bba282ba542970ddad0a73441f254f2414d12998fb7f9b75a1b7f110e16b",
+        "blob": "d422851710478deaa848eb88666bbae572b1b623",
+        "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
         "locator": {
           "kind": "file"
         }
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
             "content": "sha256:ffcae9eeee6545e17885b99259aff32e190c7f7246443f57580d5dc308160253",
             "locator": {
               "kind": "symbol",
@@ -71,12 +71,27 @@
         }
       ]
     },
+    "11": {
+      "note": "The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Process snapshot/restore uses one typed owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
             "content": "sha256:cc9d5c3656d5622c4c4b6fb88b49adeee1266da659b6887d71283ffb81724162",
             "locator": {
               "kind": "symbol",
@@ -130,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
             "content": "sha256:80068ea5fda12ee371d15fa0b0015285dc018e4d29308d159ed6f4214ffcab8d",
             "locator": {
               "kind": "symbol",
@@ -146,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
             "content": "sha256:fecf325cce31d06171e585a777aa0d59ef6f55ee13e0b4b5e09a9b3c28567d37",
             "locator": {
               "kind": "symbol",
@@ -162,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
             "content": "sha256:b526214cf1d90732f739832b696528694ec2db83e24ee3732b5b86a29b7e6201",
             "locator": {
               "kind": "symbol",

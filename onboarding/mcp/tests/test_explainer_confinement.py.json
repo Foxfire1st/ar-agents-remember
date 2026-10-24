@@ -1,0 +1,174 @@
+{
+  "path": "mcp/tests/test_explainer_confinement.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+        "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+        }
+      },
+      "facet": "Every writer of the environment's durable facts refuses a planted ancestor link and changes no byte behind it.",
+      "id": "PRF-5G8AGZ",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+        "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+        }
+      },
+      "facet": "Binding, marker, generation and request/inflight ledger writers all refuse a planted explainer-task ancestor link and leave the outside byte contents and file-name set unchanged.",
+      "id": "PRF-72E0M7",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+        "content": "sha256:c95365d69e2e8a8324b4ef1beeff4a978983ece7ca38c0cd9df230a4eefb062e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
+        }
+      },
+      "facet": "Workspace cleanup retains a nested link and its outside target rather than following it, while ordinary owned children are removed.",
+      "id": "PRF-CB2FJT",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+        "content": "sha256:60092ce08f74351c178423670338b70b791135190770f928c0a3164f64bb35af",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_binding_and_marker_writers_refuse_a_planted_workspace_link"
+        }
+      },
+      "facet": "Binding and retired-marker writers reject a symlinked workspace before writing to its outside target.",
+      "id": "PRF-DXD8EV",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+        "content": "sha256:8901b99ce34ad13ec81b9df73525895ddbb4a03eeb2d99ecf2a6bfdf1d989758",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
+        }
+      },
+      "facet": "The seat lock path guard refuses a planted link before lock acquisition, preserving outside bytes and creating no outside lock.",
+      "id": "PRF-S9WGTD",
+      "invariant": "INV-8JY29Q",
+      "origin": {
+        "handoffEntry": "the-explainers-folder-is-confined",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link` protects a symlinked task folder refusing every writer with no outside effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_generation_writers_refuse_a_planted_counter_link` protects a symlinked counter being refused while the outside file keeps its bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "content": "sha256:b53ee28a141b5f33109256dc0bd2d5533fdff72c1b22919e1387f0b3044d9bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_generation_writers_refuse_a_planted_counter_link"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_the_seat_lock_refuses_a_planted_lock_link_before_locking` protects a symlinked lock file being admitted physically before the kernel opens it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "content": "sha256:8901b99ce34ad13ec81b9df73525895ddbb4a03eeb2d99ecf2a6bfdf1d989758",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it` protects a nested link holding a workspace removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "content": "sha256:c95365d69e2e8a8324b4ef1beeff4a978983ece7ca38c0cd9df230a4eefb062e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent` protects the old generation staying coherent when an Update faults before the bind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "content": "sha256:a37582e76f67b8e19df18f0798c3f8d1b7e4be895ca0a950dcbdce3357af7d20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

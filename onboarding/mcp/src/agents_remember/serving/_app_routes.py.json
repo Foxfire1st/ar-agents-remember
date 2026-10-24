@@ -3,8 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
-        "content": "sha256:bf7363e5f898a7c6d6997ef3c399fe48cb22fa9fb98e4d73a4c5402e0377934e",
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_stream"
+        }
+      },
+      "id": "RLZ-7AHN90",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "content": "sha256:3906a46d742fa21e581aa436122da39db34575f53e0aa52f7479d72c7b8cdb07",
+        "locator": {
+          "kind": "symbol",
+          "name": "_moved_events"
+        }
+      },
+      "id": "RLZ-826KXV",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "content": "sha256:9085d3c667d46f61ade6abfc183659063af9cc5b6ddf118739ee56a778a9eea0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_projection_routes"
+        }
+      },
+      "id": "RLZ-8W58G3",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "content": "sha256:c463d68605a8321caf579f7270ad1d6e817382696c0ef8f0322d6d54ca6fab67",
         "locator": {
           "kind": "symbol",
           "name": "api_stream"
@@ -21,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
         "content": "sha256:e4178b7ceb63f539ffb08005bbae6c31f5006b9fd78da33f285d940265e08517",
         "locator": {
           "kind": "symbol",
@@ -36,6 +90,24 @@
       },
       "rationale": "The route is the join between the served configuration and the dashboard document; without it the field would exist in the type and never reach the projection.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
+        "locator": {
+          "kind": "symbol",
+          "name": "_merged_stream"
+        }
+      },
+      "id": "RLZ-Y5QNJ9",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -72,12 +144,12 @@
         },
         {
           "anchor": {
-            "blob": "9f285ef54e20d66ae397598f94a7df8786bfcfaf",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
             "content": "sha256:91704bae042925876115f062334973d1798e585aab58e5c7d5345f61005f8162",
             "locator": {
-              "end": 209,
+              "end": 307,
               "kind": "line_range",
-              "start": 189
+              "start": 287
             }
           },
           "kind": "code"
@@ -122,6 +194,21 @@
               "start": 190
             },
             "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.\n\nAnchor: `_review_stream`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

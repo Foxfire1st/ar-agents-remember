@@ -10,6 +10,10 @@ Defines the service protocols and process-local binding consumed by worktree lif
 
 ## Code Commentary
 
+The services facade directly re-exports the same light process binding functions and exception, preserving object identity while startup names a supplier without importing service composition.
+
+Optional explainer_root scopes task-owned environment retirement. None means leaf finalize/abandon/cleanup touches no explainer file.
+
 ### Logic
 
 `WorktreeServices` carries provider, memory-quality and citation services plus optional `certification_memory_rails`, `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, `review_artifact_cleanup`, `knowledge_gate` and `leaf_agent_archive`. The prepared-memory producer and continuation fields are removed. `CertificationMemoryRailsPort` returns rail definitions rather than executing a gate, and `ProviderSetupRequestSpec` keeps provider-specific higher-layer option objects opaque.
@@ -30,7 +34,7 @@ The worktree layer reaches it only through `worktrees/knowledge_gate.py`, whose 
 
 `ReviewArtifactCleanupPort.cleanup(request)` (MIK-R25 rule 5, D17) deletes an archived task's review artifacts and returns the cleanup report the finalizer carries as `taskArchive.reviewArtifacts`. The `ReviewArtifactCleanupRequest` names the task root as it is now (the archive location once archived), `task_name` (the task directory name, which alone names the review-ref namespace, ruling 2026-09-30T02:32:42 (a)), the code and memory repositories the series contract names (`None` for one the task does not have), and `dry_run`. It never raises for one artifact it could not delete; that artifact is listed under `failures`. The adapter (`application/review_artifact_cleanup.ReviewArtifactCleanup`) lives above this layer; the worktree layer calls the port only from `modules/finalize._with_review_artifact_cleanup`.
 
-bind_worktree_services assigns the composed bundle, reset_worktree_services clears it for tests/teardown, and worktree_services refuses when no bundle is bound. The getter does not lazily create dependencies. Optional capability fields permit an incomplete bundle to be represented, while consumers refuse when the selected operation requires an absent capability. The default application bundle binds rail definitions, validator/base converter, crossing, worklist, gate, review cleanup and optional archive alongside provider/memory/citation services. It binds no prepared-memory producer or continuation.
+The facade re-exports the one process holder in kernel.worktree_service_binding. bind_worktree_services assigns the composed bundle; an explicitly supplied builder is resolved once at the first worktree_services lookup, then that same instance is kept. reset_worktree_services clears both the current bundle and pending supplier. With neither, lookup refuses rather than constructing an ambient default. Optional capability fields permit an incomplete bundle to be represented, while consumers refuse when the selected operation requires an absent capability. The default application bundle binds rail definitions, validator/base converter, crossing, worklist, gate, review cleanup and optional archive alongside provider/memory/citation services. It binds no prepared-memory producer or continuation.
 
 ### Conventions
 
@@ -144,3 +148,5 @@ The prepared-memory certification service and continuation were removed. Retaine
 - `worktree_services` owns the corresponding behavior described above. [21]
 
 The default application composition installs no `PreparedCloseoutContinuation` or `PreparedMemoryCertificationAdapter`. Its remaining mandatory gate/validation ports keep their own missing-port refusals; binding is not execution or certification evidence.
+
+- The services facade directly re-exports the same light process binding functions and exception, preserving object identity while startup names a supplier without importing service composition. Optional explainer_root scopes task-owned environment retirement. None means leaf finalize/abandon/cleanup touches no explainer file. [24]

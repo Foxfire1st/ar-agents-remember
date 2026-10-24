@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3d06b054f3e440059689a3cf390e9eb5d45ded46",
-        "content": "sha256:9edc8e42d2293e3be5f6882893cebe31382040d0dcc6129a4c53c343965b347a",
+        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+        "content": "sha256:697f70089d3099fdcedc901eb364accc561069e1488477627e558ac5db67e630",
         "locator": {
           "kind": "symbol",
           "name": "create_app"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "3d06b054f3e440059689a3cf390e9eb5d45ded46",
-        "content": "sha256:16cc3040c4037485477ecb5a5712d077c9e210ba526d098f56525e4ae3797f12",
+        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+        "content": "sha256:c51c97b245e2535a92ab41c805b3a40b611f860b17b3836ec40c0be6a61abe53",
         "locator": {
           "end": 136,
           "kind": "line_range",
@@ -40,8 +40,26 @@
     },
     {
       "anchor": {
-        "blob": "3d06b054f3e440059689a3cf390e9eb5d45ded46",
-        "content": "sha256:2d26d3930491a3f890d39d27a0aebdfda0350ebf938189cea0db30b408cf44a5",
+        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+        "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_replaced_canvas_authoring"
+        }
+      },
+      "id": "RLZ-TC5XTD",
+      "invariant": "INV-Y6YAT0",
+      "origin": {
+        "handoffEntry": "L183-retired-authoring-routes",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+        "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
         "locator": {
           "kind": "file"
         }
@@ -131,6 +149,21 @@
           "anchor": {
             "blob": "62c4f00bace084e4ee7854360ace6d5d1e9578bc",
             "content": "sha256:d8c2248a835644469cb45a7d8bda3f33bd1d29e822ef1bee2a0ba4b745c588dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.\n\nAnchor: `refuse_replaced_canvas_authoring`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
+            "content": "sha256:25ad981482370f83cb0dbfedb9a319f2fe4bea4a7caa56076670b044d7b58730",
             "locator": {
               "kind": "file"
             }

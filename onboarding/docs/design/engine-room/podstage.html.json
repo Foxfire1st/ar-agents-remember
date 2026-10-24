@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dde1ca6202b9884a63b7153deaf781cdc5722cb0",
+            "blob": "e6775966ade1b66cbff27f73dbbaca0197119493",
             "content": "sha256:4c89a9f59c3f7cf96e0e802dbafdd75d0afc5fb740706fff7d600668d434bfe3",
             "locator": {
-              "end": 734,
+              "end": 735,
               "kind": "line_range",
-              "start": 710
+              "start": 711
             }
           },
           "kind": "code"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9b9066a8809973d910f841f05c918c1889f1882",
+            "blob": "720572330b9cc04232038839a95900fc0c6d40d2",
             "content": "sha256:b27d8ecf01bae037e96179216b95325c5c2e127ae94c7263e5f381b82b734f43",
             "locator": {
               "end": 173,
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
+            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
             "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
             "locator": {
-              "end": 42,
+              "end": 36,
               "kind": "line_range",
-              "start": 42
+              "start": 36
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -68,7 +68,7 @@
         },
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
+            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
             "content": "sha256:cfcf286dbea22ad8d8f3d75bee28e87a27f70af65204f235380322072d6ea62e",
             "locator": {
               "end": 721,
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
             "content": "sha256:008c8fe11be65228379f6d81493136f504b76d9437b5ee82249ec83a8094a5d2",
             "locator": {
-              "end": 168,
+              "end": 153,
               "kind": "line_range",
-              "start": 168
+              "start": 153
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
