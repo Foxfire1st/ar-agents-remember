@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "97ad12aae4df7ab8d45104642f71f73dc42cd5b9",
+        "blob": "9f65d4f36a3aa5d91d1b2e17e9de53659f5fbe2e",
         "content": "sha256:a3094e9cf8acd0a4509f97ebe19f025c36902842c85f6b0b88a27aceb3338ba6",
         "locator": {
           "kind": "symbol",
@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "MIK-R81 rule 5 (F10): refresher death beside an established native watch.",
+      "note": "The failure matrix asserts recovery onto a surviving late drift root, retained down-since and the default thirty-second retry in six fault arms.",
       "targets": [
         {
           "anchor": {
-            "blob": "f3615dabf426c71fbcc42d713d41b105ea166388",
-            "content": "sha256:184a803704c13b908f31b1644ad6c029a0c0a9439840b83189988ece458aba72",
+            "blob": "9f65d4f36a3aa5d91d1b2e17e9de53659f5fbe2e",
+            "content": "sha256:536cc953bc0e358f070af9d90276788c5fe69c501e7af143cc9ca5446af1c7bc",
             "locator": {
               "kind": "file"
             }

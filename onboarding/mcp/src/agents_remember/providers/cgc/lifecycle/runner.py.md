@@ -6,8 +6,8 @@
 
 ## Purpose
 
-`runner.py` owns the Docker runner image and command construction for
-CodeGraphContext provider execution.
+`runner.py` owns the Docker runner image build and the watcher and image inspection
+helpers for CodeGraphContext provider execution.
 
 ## Code Commentary
 
@@ -22,12 +22,12 @@ lock after successful builds. When `no_cache` is set the build adds `--no-cache`
 and bypasses the skip-if-tag-exists shortcut so the image is rebuilt from
 scratch; otherwise an existing tagged image short-circuits the build. The image build,
 status, and watcher inspect/running helpers take their `layout` argument typed as
-`CgcRuntimeLayout` (imported from `core`) rather than a loose `Any`. Runtime helpers build Docker command lines for
-bounded CGC commands, visualizer commands, and long-running watcher containers.
-Those commands mount the provider instance root and code repository at their
-host paths, run as the host UID/GID when supported so mounted runtime files
-remain user-owned, set CGC environment variables through `-e`, join the CGC
-Docker network, and route FalkorDB access through the backend container name.
+`CgcRuntimeLayout` (imported from `core`) rather than a loose `Any`. Runtime helpers
+build no watcher, bounded-command or visualizer command lines: Compose rendering lives
+in `compose.py`, and `compose_runtime.py` plans and executes it. That render carries
+the host-user block, the CGC environment variables, the Docker network and the FalkorDB
+host name, and runs as the host UID/GID when supported so mounted runtime files remain
+user-owned.
 
 ### Invariants And Boundaries
 
@@ -47,5 +47,4 @@ Docker network, and route FalkorDB access through the backend container name.
 ### Repo-Internal References
 
 - Install/status/doctor behavior consumes runner image build and status helpers. [1]
-- Watcher process control consumes Docker watcher command helpers. [2]
-- Refresh and bounded query commands run through Docker command helpers. [3]
+- Watcher process control consumes only this module's `cgc_watcher_running` inspection helper; its removal command is Compose's `rm -sf` on the watcher service, built in `process_control.py`, so this module builds no watcher command. [2]

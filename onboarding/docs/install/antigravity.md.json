@@ -1,0 +1,82 @@
+{
+  "path": "docs/install/antigravity.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.agents/`, render with `--repo`, start or reload Antigravity once; manual replacement is the stated alternative.\n\nAnchor: `docs/install/antigravity.md:16-27`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
+            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The renderer writes `GEMINI.md`, validates each named repository, and an existing `GEMINI.md` is merged first.\n\nAnchor: `docs/install/antigravity.md:18-31`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
+            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The package is listed as `GEMINI.md`, `mcp_config.json`, `mcp/agents-remember-settings.json`, `skills/`.\n\nAnchor: `docs/install/antigravity.md:33-44`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
+            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/antigravity.md:44-53`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
+            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Workspace and global instruction files, skill roots, MCP config location and the `uvx` registration are stated.\n\nAnchor: `docs/install/antigravity.md:55-131`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4128f1ec48f7ee39199a9741aa7def85cf4661e",
+            "content": "sha256:5b50769bbce349428f7c43083af450bd807a9a8b1b171d62a773b7ab4da81a51",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

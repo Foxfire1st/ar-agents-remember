@@ -4,6 +4,32 @@
 
 [dashboard/src overview](../overview.md)
 
+## Current renderer boundary
+
+The imperative canvas renderer consumes the pure constellation model and draws the workspace, repository and active worktree enclosure nodes. Provider satellites, provider orbits/edges and provider engine-state colours are removed. The model's node kinds are `ws|repo|wt` and its statuses are `core|ok|warn|idle`. `constelColors` remains a total `Record<ConstelStatus,string>` with literal CSS-token fallbacks, and `statusColor` indexes that map without a healthy-default branch. The former five-status/sixth-status explanation is historical; the source comment still says “sixth” but the present tuple has four entries. [1] [2] [3]
+
+Every node is positioned from `ang` and `rf`; the renderer has no `PROV_R` parent-orbit branch. The rings are CHECKOUTS and ENCLOSURES. It draws stars, rings, ordinary parent edges, unfrozen comets, core, nodes and labels. A non-ok worktree edge uses its supplied status colour. `buildTopology` supplies workspace/repository/worktree nodes only and derives worktree status from the bound TaskEntry's shared status/tone; it supplies no provider status. [3] [4]
+
+Resize and data updates still paint synchronously, so an occluded tab does not depend on rAF for its first/current frame. `destroy` cancels rAF, disconnects the observer and removes listeners. React owns mount/sizing and supplies model updates. The renderer truncates supplied labels and copies model-provided detail/sub-lines into the tooltip; the L184 limited-word, clockless form and detail ownership remains in `model.ts::worktreeFields` and shared status helpers. Source inspection renews no browser, test or execution acceptance. [2] [6]
+
+| Current claim | Source witness | Existing reference |
+| --- | --- | --- |
+| Four-colour total palette and direct lookup. | `dashboard/src/topology/constel.ts:31-37,73` | [1] [2] |
+| Only workspace/repository/worktree nodes and four statuses. | `dashboard/src/topology/model.ts:23-28,111-187` | [3] [4] |
+| Uniform layout, two rings and ordinary edges, with no provider draw stage. | `dashboard/src/topology/constel.ts:90-98,189-225,291-305` | [2] |
+| Synchronous resize/update paint, teardown and model-owned tooltip data. | `dashboard/src/topology/constel.ts:321-349,381-449` | [2] [6] |
+
+## Historical source account
+
+The original card below preserves its source epoch, references and dated history. Its superseded provider display, start, status and consumer claims are not the current operative account. Retained internal mechanisms grant no removed public operation.
+
+<details>
+<summary>Original card and source-epoch evidence</summary>
+
+## Governing Overview
+
+[dashboard/src overview](../overview.md)
+
 ## Purpose
 
 The imperative constellation renderer (ported from mc2's `buildConstel`/`layout`/`frame`): it draws the
@@ -97,7 +123,7 @@ The renderer consumes the `ConstelStatus` produced by `model.ts`: the workspace 
 - `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. [1]
 - `mountConstel` builds its token reader and stores `constelColors(v)` in the scene once; `statusColor` indexes the resulting total map without a fallback. [2]
 - `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. [3]
-- `worktreeStatus` maps a bound TaskEntry through shared status/tone and returns `idle` when unbound; `buildTopology` separately supplies workspace/repository and provider statuses. [4]
+> - `worktreeStatus` maps a bound TaskEntry through shared status/tone and returns `idle` when unbound; `buildTopology` separately supplies workspace/repository and provider statuses.
 - `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. [5]
 - The React wrapper that mounts this renderer once and pushes new models through `update()`. [6]
 
@@ -107,3 +133,7 @@ No meaningful cross-repo references found. The behavior is within the `agents-re
 projection/model/render boundary.
 
 No meaningful cross-repo references found.
+
+</details>
+
+- worktreeStatus maps a bound TaskEntry through shared status/tone and returns idle when unbound; buildTopology supplies only workspace, repository and worktree nodes, without provider satellites. [4]

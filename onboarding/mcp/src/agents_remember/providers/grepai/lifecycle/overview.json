@@ -262,7 +262,7 @@
       ]
     },
     "4": {
-      "note": "Watcher scan markers yield complete, in-progress, or unknown; the current-state adapter maps them with watcher and workspace guards.\n\nAnchor: grepai_watcher_initial_scan",
+      "note": "Watcher scan markers yield complete, in-progress, or unknown under the same watcher and workspace guards; no current-state adapter consumes them and the retired provider summary reports none of them.",
       "targets": [
         {
           "anchor": {
@@ -279,14 +279,14 @@
         },
         {
           "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
-            "content": "sha256:0cf026a1c1e01bd1051e3356aa1498c98030ae7844ba39a46b1c941045d31e9c",
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:5dceca2e2e75866206b5c8e035c95cb17f145d2d3820a7e8ba3c2744e5e176d6",
             "locator": {
-              "end": 336,
+              "end": 35,
               "kind": "line_range",
-              "start": 305
+              "start": 23
             },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
+            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }

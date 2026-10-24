@@ -2,6 +2,32 @@
 
 ## Governing Overview
 
+[Provider setup route](overview.md)
+
+## Current setup admission boundary
+
+`provider_setup.py` retains its typed `ProviderSetupRequest`, request/namespace conversion, facade exports, isolated-settings, seed/catch-up, progress, reporting and host-scoped locking implementation. Their internal bodies and safety rules remain readable source. They do not establish an available product install/prepare/seed/start/status route for CGC or GrepAI: `setup_common.provider_enabled` returns false for `codegraphcontext-code` and `grepai-memory` regardless of legacy authority values, and `selected_provider_enabled` carries that result to install/prepare/watcher selection.
+
+Accordingly the old ordinary-prepare sequence below is a source-epoch account, not a current worktree/runtime/benchmark promise to install or start those providers. The watcher start/status helper itself is retained but returns no selected retired-provider work through the common gate. Historical summaries/progress and existing isolated settings do not become current provider truth or revive the removed `providers/current_state.py` owner. The explicit old-watcher stop and leftover-resource cleanup keep their separate retained authority.
+
+The retained facade still delegates implementation to provider-specific/shared owners, retains positive refresh-fallback opt-in and seed catch-up constraints, and preserves subprocess environment/stdin and host-scoped locking rules. This account changes no code and supplies no fresh provider execution, test result or acceptance.
+
+| Current claim | Source witness | Existing reference |
+| --- | --- | --- |
+| The typed facade/payload implementation remains internal source. | `mcp/src/agents_remember/providers/provider_setup.py:57-120,547-588` | [3] [5] [6] |
+| Neither retired provider is enabled, regardless of legacy settings. | `mcp/src/agents_remember/providers/setup_common.py:81-100` | [5] |
+| Retained watcher start/status is selection-gated; no ordinary retired-provider action follows. | `mcp/src/agents_remember/providers/provider_setup.py:456-475` | [3] |
+| Internal catch-up can still append an index row; that helper does not prove a current worktree/runtime setup path. | `mcp/src/agents_remember/providers/provider_setup.py:434-453` | historical table reference below |
+
+## Historical source account
+
+The original card below preserves its source epoch, references and dated history. Its superseded provider display, start, status and consumer claims are not the current operative account. Retained internal mechanisms grant no removed public operation.
+
+<details>
+<summary>Original card and source-epoch evidence</summary>
+
+## Governing Overview
+
 [overview.md](../../../overview.md)
 
 ## Purpose
@@ -181,3 +207,5 @@ provider stack is POSIX-hosted anyway.
 - Setup payload summaries and failed-phase compaction live in the setup reporting module. [6]
 
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
+
+</details>

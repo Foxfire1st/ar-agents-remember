@@ -49,7 +49,7 @@ a legal lifecycle phase. Code and memory publication samples remain. The retaine
 `analytics.ledgers` data represents a downstream consumer projection, so removing the obsolete
 Git-operation sample does not remove the ledger from the dashboard fixture.
 
-The serialized root carries tasks and taskCounts instead of session lifecycles and duplicate analytics task-document/series catalogues. Operational enclosures, providers, closeout queues, analytics, metrics and watcherHealth remain sample data.
+The serialized root carries tasks and taskCounts instead of session lifecycles and duplicate analytics task-document/series catalogues. Operational enclosures, closeout queues, analytics, metrics and watcherHealth remain sample data; provider records and setup-progress/setup-summary collections are removed.
 
 The earlier formatting-only reserialization is historical, not a description of later fixture semantics. Native entries and operation meaningfulRevision values are hand-maintained coverage examples.
 
@@ -73,7 +73,7 @@ The earlier formatting-only reserialization is historical, not a description of 
 - **Every sampled vocabulary value must be legal, and every registered path must be non-vacuous.** This file is also the only place the attention row's `itemClass` vocabulary is exercised end to end: an operational row, a permission-wait action row on a taskless agent and a landed notice row, each beside the task key, agent identity and occurrence identity it opens.
   The fixture is representative rather than exhaustive. New producer enum members flow through schema
   generation and stale-output validation without forcing unrelated full-object rows into this file.
-- **Required fixture anchor rows must remain nonempty.** Shared builders require native tasks, enclosures, providers and retained engine-process/attention samples; demandServed refuses a missing anchor rather than spreading undefined.
+- **Required fixture anchor rows must remain nonempty.** Shared builders require native tasks, enclosures and retained engine-process/attention samples; demandServed refuses a missing anchor rather than spreading undefined.
 - This file is the ORACLE, not a scenario. Dev-gallery scenarios live in `src/dev/`; per-suite shapes
   are built with `test/fixtures/wire.ts`. Do not add rows here to make one test convenient — a row added
   here changes what every direction of the contract guard measures.
@@ -126,8 +126,7 @@ absent from the file rather than present as `null`.
 
 
 
-- Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value. Anchor: `activeWorktreeGroups` [5]
-
+- The manual payload retains representative enclosure rows and the activeWorktreeGroups join value; the enclosure carries the same sim-group identity. [5]
 
 - Manual decision and task-reader values are sample data, not source-derived provenance. [6]
 

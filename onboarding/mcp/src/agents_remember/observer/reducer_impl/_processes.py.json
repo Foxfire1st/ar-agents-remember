@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+        "content": "sha256:e4166ffdf2f1f001ff319b0263396096c64a94285f4a83cf5862352912a7564b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AJ3NT7",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The process reducer no longer attaches provider setup phases or provider lists to an engine-process node.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

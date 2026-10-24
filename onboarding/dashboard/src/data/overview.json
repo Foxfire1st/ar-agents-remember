@@ -174,7 +174,7 @@
         },
         {
           "anchor": {
-            "blob": "1c145f123802e351486f43a75568001266214b95",
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
             "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
             "locator": {
               "end": 53,
@@ -206,16 +206,15 @@
       ]
     },
     "107": {
-      "note": "Drift display consumes reporting counts while provider selector definitions remain.",
+      "note": "Drift display consumes reporting counts; `selectors.ts` defines no provider groupings.",
       "targets": [
         {
           "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:6d40b3354909cba62bd6c781258033f7e38e635d57b469db2161433a26b6f8af",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
             "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 118
+              "kind": "symbol",
+              "name": "driftSegments"
             },
             "path": "dashboard/src/data/selectors.ts"
           },
@@ -591,7 +590,7 @@
         },
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -654,12 +653,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
-              "end": 42,
+              "end": 43,
               "kind": "line_range",
-              "start": 13
+              "start": 14
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -667,7 +666,7 @@
         },
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
             "locator": {
               "end": 38,
@@ -680,7 +679,7 @@
         },
         {
           "anchor": {
-            "blob": "7a44ce3e7f81fc508a38e34c8f0c304f739bf168",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,

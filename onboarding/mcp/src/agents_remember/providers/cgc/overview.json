@@ -19,6 +19,24 @@
         }
       ]
     },
+    "10": {
+      "note": "The retained opt-in refresh request uses args.timeout and is not a restored refresh implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:160505290cd5b2d2e25345d55bdc2b15f75c7f832ac93d483a500b22ff0152bf",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Ordinary enabled-provider setup excludes CGC even with retained settings; direct lifecycle implementation is a separate route.",
       "targets": [
@@ -169,6 +187,78 @@
               "start": 1
             },
             "path": "providers/compose/codegraphcontext.watcher.yaml.tmpl"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The facade enumerates core, compose, backend, runner, installation and process_control only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c3fe573530750be048927d921f4fe6ea1e9304c",
+            "content": "sha256:ff711aa0ae0a8d14442e05d182e9df4fe1693987ce21fcd9761138a5b5b3df78",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed watcher service admits only stop and shutdown-all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8063e538f5580c613c4e2e24947eb26559e339a6",
+            "content": "sha256:efc67bc4124d53bf22f0fc729baa95212b8ce3fbf0f58f83635cf4c5b7303e22",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Watcher aggregation maps both CGC stop-class actions to cgc_stop_all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:27a2050cf88c43d31f053d70530b503c42bb5c24137cdacb19d82aa7cc3afc4c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "CGC preparation returns before seed work when the selected-provider predicate is false.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:2267d54b1c6de5ec102f725153992186c3e7f20308a38f411a14026100ddd01d",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
           },
           "kind": "code"
         }

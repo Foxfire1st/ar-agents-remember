@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-        "content": "sha256:64893b0712c593feefb3aa3352f0408113b5a976493af4f545989706998508c1",
+        "blob": "046383e5c526185a26684c0f11200956456de65e",
+        "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5N5W3S",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The topology model builds nodes of three kinds only and keeps L184's `worktreeFields` limit detail (words, exact end, per-seat lines) while the provider-satellite parent helper is gone with the type it consumed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "046383e5c526185a26684c0f11200956456de65e",
+        "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
         "locator": {
           "kind": "file"
         }
@@ -55,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
             "locator": {
-              "end": 188,
+              "end": 160,
               "kind": "line_range",
-              "start": 188
+              "start": 160
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },

@@ -67,6 +67,23 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "The removed per-repository exclusions table leaves only historical comments before the next retained patch constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:4267bb284a62d1e956fff32e6449790efaf163ba6031a2f81ca4f4af16b8829b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

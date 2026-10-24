@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
             "content": "sha256:ba149021a0a6054211ec39d9bb653f3bb07d5453a9590b70d7cb658258a396e6",
             "locator": {
-              "end": 1165,
+              "end": 796,
               "kind": "line_range",
-              "start": 1165
+              "start": 796
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
             "content": "sha256:f7b876097caa5bb7a951c46fde939e2577942ca901f74198d2dec85e566fcc08",
             "locator": {
-              "end": 955,
+              "end": 597,
               "kind": "line_range",
-              "start": 955
+              "start": 597
             }
           },
           "kind": "code"
@@ -65,12 +65,12 @@
         },
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
             "content": "sha256:bf2d99be1ea3bf92179953f84507723acd7f515730c761bcf2745a405673683c",
             "locator": {
-              "end": 1157,
+              "end": 789,
               "kind": "line_range",
-              "start": 1133
+              "start": 765
             }
           },
           "kind": "code"
@@ -82,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:a69870ff3d37fe34a2fcd072803a7c290dbee8f1bcc7de15513ba6e0295450d5",
             "locator": {
-              "end": 261,
+              "end": 209,
               "kind": "line_range",
-              "start": 260
+              "start": 208
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -96,16 +96,15 @@
       ]
     },
     "13": {
-      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `export interface EngineRoomScenario {`",
+      "note": "EngineRoomScenario carries name and processes only, without a workspace provider stack.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:a092949116ef3967a792b8c23f3bf715f33963ca85d2051ae7bb9438aa1e94d9",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:ec497b05891a156bbfa7c61edd877f6923f205f98619c6e8fccf549ad495f6c8",
             "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 19
+              "kind": "symbol",
+              "name": "EngineRoomScenario"
             }
           },
           "kind": "code"
@@ -113,16 +112,26 @@
       ]
     },
     "14": {
-      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `// --- T7B (05o) provider-plan block arc ----------------------------------------`",
+      "note": "The edge builder retains worktree-add, ledger-map, sync and integration lanes without provider seed/clone lanes.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:1581f37b8d8e44e1f142a2dc2b0693f42fffd23a762cb3ac44edf553e13010ed",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:19e8e15e2eb11715d5d2312b55105a3927ff7e6d47ebcb6082825c4412f497b8",
             "locator": {
-              "end": 590,
-              "kind": "line_range",
-              "start": 535
+              "kind": "symbol",
+              "name": "EdgeStates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:395c8291e744c1c51dfd2d09c67c682d0484c8ed0551d941fb9231aaf796a83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "edges"
             }
           },
           "kind": "code"
@@ -130,16 +139,15 @@
       ]
     },
     "15": {
-      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `// amber center-out reindex pulse (driven by seedFallback) + the soft indicator. One device-mgmt identity`",
+      "note": "The process builder carries enclosure, worktree, ledger, landing and action facts without provider setup/runtime fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:69af9c5095a1ceeb6d5d2e49fde60fa88c6b032879e05901217b39b19e2a75f2",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:609e33527f78bd0bc97a80d3df00b22a934d13d5341f1b8cb505c62543cc3f9c",
             "locator": {
-              "end": 852,
-              "kind": "line_range",
-              "start": 832
+              "kind": "symbol",
+              "name": "engineProcess"
             }
           },
           "kind": "code"
@@ -147,36 +155,32 @@
       ]
     },
     "16": {
-      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `{setupLine ? (`",
+      "note": "The retained boot stages describe enclosure materialisation without provider runtime-deploy or seed/clone beats.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
-            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:95fb8dae098511d52f073c18934e3871e536d120e62866d25e567217304d35b9",
             "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+              "kind": "symbol",
+              "name": "bootStages"
+            }
           },
           "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "note": "The exported scenario list collects enclosure/process fixtures without a workspace provider array.",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:e18a3b7761e8fdb781e6a1eed5d50bfe15888c9c0b8aafb79966ed768931a372",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "dashboard/src/panels/engine-room/geometry.ts"
+              "kind": "symbol",
+              "name": "ENGINE_ROOM_SCENARIOS"
+            }
           },
           "kind": "code"
         }
@@ -337,12 +341,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
             "content": "sha256:5a1834d863e9bb5fb199156f6a21ff31cbc6bad7fb5eafffe11f2a72fbfe553b",
             "locator": {
-              "end": 991,
+              "end": 631,
               "kind": "line_range",
-              "start": 991
+              "start": 631
             }
           },
           "kind": "code"

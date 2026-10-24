@@ -21,16 +21,27 @@
       ]
     },
     "10": {
-      "note": "Anchor: Captured workspace snapshot plus admitted worktree providers.",
+      "note": "The current reader hub re-exports enclosure/engine, analytical and canonical task-document readers; it exports no workspace or worktree provider reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
-            "content": "sha256:2afdc01f0d7cc1c9c456706f668f9107e73a067613f28bf580402c5b40db9ae4",
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
             "locator": {
-              "end": 168,
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
+            "locator": {
+              "end": 80,
               "kind": "line_range",
-              "start": 150
+              "start": 41
             }
           },
           "kind": "code"
@@ -118,15 +129,26 @@
       ]
     },
     "14": {
-      "note": "The reader hub omits read_sidecar_staleness while persisted drift/setup/route/tool/ledger analytical readers remain.",
+      "note": "The hub retains drift, route coverage, tool-report, ledger and worktree-start progress readers; verification-age and provider-setup readers are absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5d642956f6161dbd852c298d437f3e5cfa90dd8",
-            "content": "sha256:e7a50f387bc7ab5979451e0ca756b1d941b8b0fa70d2b512054ce1a3316c39af",
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
             "locator": {
               "kind": "symbol",
-              "name": "read_drift_snapshots"
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:791b179d5d01592bbefe8f4b08a1766add2d6f503f1d5338956d5c21553bb4d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_start_progress_entries"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -134,12 +156,12 @@
         },
         {
           "anchor": {
-            "blob": "c332979d2a91d27137d6b7a6708231d237c8e119",
-            "content": "sha256:e6951f16cd47f6b2c24a140db1b72692deb89d66321adb775818d28cd269cada",
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:0922ececb5dbe5610b6c5290e7dbb1e1eb32ad5de54e2c68e1b2d8cb751b64c2",
             "locator": {
-              "end": 210,
+              "end": 29,
               "kind": "line_range",
-              "start": 1
+              "start": 19
             }
           },
           "kind": "code"
@@ -163,35 +185,28 @@
         }
       ]
     },
-    "7": {
-      "note": "Anchor: Workspace provider current-state source path.",
+    "8": {
+      "note": "No provider-node reader is exported from this facade. Retained engine and analytical readers do not supply provider display nodes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f9c4274140f2aaed8264742f0203ad318238af3",
-            "content": "sha256:f415ae214ac810e36b1c38961d53f663c346f1d395a01441935aec7805ee1276",
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
             "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 55
-            },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
+              "kind": "symbol",
+              "name": "__all__"
+            }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Anchor: Current provider-node reader.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
-            "content": "sha256:2afdc01f0d7cc1c9c456706f668f9107e73a067613f28bf580402c5b40db9ae4",
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
             "locator": {
-              "end": 168,
+              "end": 80,
               "kind": "line_range",
-              "start": 150
+              "start": 41
             }
           },
           "kind": "code"

@@ -7,23 +7,27 @@
 
 ## Current enclosure-only composition
 
-Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained couplers and no provider-engine scan. Workspace fixtures were removed. Integration conflict flashes/STOP, source scans, memory movement, ledgers and visibility/backdrop cases remain. The current T7B successor positively asserts the fleeting enclosure, retry and abandon inside its text, no disabled-memory choice, no separate provider block/dropout/recovery chips and zero provider gauges. Its title and body now agree.
+Authored cases assert zero provider gauges/wires, absent provider seed/clone conduits and fault/reindex markers, and retained couplers. The current provider-retirement describe block checks every fixture node for removed provider/setup fields and limits its edge kinds to the five retained enclosure lanes. With effects on, it renders the first process from every fixture and rejects provider gauges, provider blocks, dropout halos, fault/reindex markers, seed/clone lanes and provider text. The former provider-specific T7B successor body is removed. Integration conflict flashes/STOP, source scans, memory movement, ledgers and visibility/backdrop cases remain; the integration refused-conduit flash is still positively asserted.
 
 ### Maintenance boundaries
 
-Provider cases retain absence assertions, not WORKSPACE_ENGINES/runtime/petal/clone arc guarantees. CUR-C02's former title/body contradiction is closed by the Owner-bound, independently passed test-only successor; the historical F06 adaptation, its replacement by L50 at the earlier sync, and the old provider-shaped account remain provenance, not current assertions. Retained producer streams record whole-file59 passed and filtered3 passed/56 skipped with this case explicitly passing; those are bounded inherited execution evidence, not a Curator rerun, live dashboard census, host-actual obligation or whole-code/memory acceptance. Replay title still overclaims bent geometry: its body tests data-strategy only.
+Provider cases retain absence assertions, not WORKSPACE_ENGINES/runtime/petal/clone arc guarantees. CUR-C02's earlier Owner-bound successor and the historical F06/L50 adaptations remain provenance; this leaf replaces that provider-specific successor with the all-fixture census. Retained producer streams reporting whole-file59 passed and filtered3 passed/56 skipped concern the earlier candidate and case, not execution of the current census. No Curator rerun, live dashboard census, host-actual obligation or whole-code/memory acceptance is claimed. Replay title still overclaims bent geometry: its body tests data-strategy only.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- The T7B successor asserts fleeting/retry/abandon/no-disabled-memory and absence of retired provider block/dropout/gauges/separate chips. [13]
+- The replacement fixture census rejects eight retired provider/setup fields on every process node and admits only worktree-add, ledger-map, sync and the two integration edge kinds. [13]
 
-- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [8]
-- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [9]
-- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [10]
-- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [11]
-- Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof. [12]
+- The effects-isolation case keeps repeating surge transforms out of the structural SVG and asserts no reindex marker in either the structural canvas or effects overlay. [8]
+
+- The static-scene cases assert no provider gauges or official engine wires, retain external-memory couplers and branch nodes, and the wiring cases reject seed/clone conduits while retaining enclosure lanes. [9]
+
+- The provider-retirement render census enables effects, renders the first process of every Engine Room fixture, and rejects provider gauges, blocks, dropout, fault/reindex markers, seed/clone lanes and provider text. [10]
+
+- Integration-conflict cases retain terminal STOP with no recovery chips and a positive red refused-conduit flash on integration/integration-mem before the STOP. [11]
+
+- The paired block resolver retains the single fleeting pre-contract shape and derives stale-base only when that blocked enclosure is behind its source. [12]
 
 ## Historical superseded account (non-operative)
 

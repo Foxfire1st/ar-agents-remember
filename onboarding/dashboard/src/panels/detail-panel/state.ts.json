@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5e434ed6c33ca44970d70d4e8993c2b2503f6a01",
-        "content": "sha256:99e1e4223af5888627c850ceb21ec0c73e7ba4a7a0168d8ba88e01066fc317a8",
+        "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+        "content": "sha256:61c7b024b683182d974bb4a3cd25e5674fcb64758de322e51e6eaaceab42d3b0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-01X8QQ",
+      "invariant": "INV-H2G4R2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-01",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The detail-panel state no longer carries provider selection or subscription fields for the spine.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+        "content": "sha256:61c7b024b683182d974bb4a3cd25e5674fcb64758de322e51e6eaaceab42d3b0",
         "locator": {
           "kind": "file"
         }

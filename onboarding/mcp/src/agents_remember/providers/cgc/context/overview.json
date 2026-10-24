@@ -108,16 +108,15 @@
       ]
     },
     "4": {
-      "note": "Materialization writes matching enriched instance and HOME-scoped global ignore files, retains an existing requirements file, and filters persisted environment keys; generated root settings carry managed repository exclusions. [4]\n\nAnchor: ensure_cgc_runtime_layout; _cgcignore_text; _cgc_env_text; CGC_ENV_FILE_EXCLUDED_KEYS; DEFAULT_CGCIGNORE; read_gitignore_patterns; CGC_REPO_CGCIGNORE_EXTRAS; _cgc_root_settings; _cgcignore_patterns_from_settings",
+      "note": "Materialization writes matching enriched instance and HOME-scoped global ignore files, retains an existing requirements file, and filters persisted environment keys. The retained settings reader accepts explicit provider/root ignore-pattern lists; generated lifecycle settings supply no CGC root block.",
       "targets": [
         {
           "anchor": {
             "blob": "aa1af8b047fef038810298719e077535c541235d",
-            "content": "sha256:a1a92e3c6dcadd83065997414cf5cae34edaafb7e3911d6698dc9c15ed18ff53",
+            "content": "sha256:dde06887bc608bb8082ca4df06596ae48b87903f3fd04c81e46651cc2624c85f",
             "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 16
+              "kind": "symbol",
+              "name": "ensure_cgc_runtime_layout"
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
           },
@@ -125,40 +124,25 @@
         },
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
-            "content": "sha256:262af87c4b4f9a451057037795d7db78481f1b34cf808e96880f06a331d8f17c",
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:bbf335003787133061875e0f172834a3ab94e0db31dfcec846c429d37c9acc41",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 35
+              "kind": "symbol",
+              "name": "_cgcignore_text"
             },
-            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
-            "content": "sha256:520cb3a96cc467140c26e009834e02369cc433be858e6845802125bfa553b96d",
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:497fcedaa98caea08afd21d965d221a0729d3147f5560af36c10c2542c388578",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 116
+              "kind": "symbol",
+              "name": "_cgc_env_text"
             },
-            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
-            "content": "sha256:27fa5c710c0e4be0c343ec1390a63483787ee55c71c194144648a83cb672ca5e",
-            "locator": {
-              "end": 348,
-              "kind": "line_range",
-              "start": 338
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
           },
           "kind": "code"
         },
@@ -167,27 +151,49 @@
             "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
             "content": "sha256:95c3789e01d55f6433414a45e419e432464740df34e2e83c0f936e78c4f1d6bb",
             "locator": {
-              "end": 567,
-              "kind": "line_range",
-              "start": 554
+              "kind": "symbol",
+              "name": "_cgcignore_patterns_from_settings"
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Settings and layout defaults share the version-and-layer image tag, currently using CGC 0.4.10 and ar2; the retained image builder skips an existing tag unless no_cache is requested, while runtime installation no longer installs provider dependencies. [5]\n\nAnchor: CGC_PIN; CGC_RUNNER_IMAGE_LAYER_REVISION; cgc_runner_image; _cgc_settings; cgc_runner_image_build; _install_assets; _install_runtime",
+      "note": "The retained tag helper uses the pinned CGC version and layer revision, currently 0.4.10 and ar2. The lifecycle-settings generator imports no CGC helper and emits no runner setting. The retained image builder skips an existing tag unless no_cache is requested; runtime installation no longer installs provider dependencies, reports enabled provider keys as unused, and attempts old-watcher stop before runtime asset refresh.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
-            "content": "sha256:062c479c83471d4fbefcd824fb958c2d4213575fddbf0616a72c102e7a205abe",
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:81afeb58c52b611673fb9131e90b6839e61bc2ac1ca519bff375d8a9256bcf14",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 7
+              "kind": "symbol",
+              "name": "CGC_PIN"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:0143a3eef992d82d864668130d284bbc883fe638068a1ca51000d3dd1267386b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CGC_RUNNER_IMAGE_LAYER_REVISION"
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
           },
@@ -196,11 +202,10 @@
         {
           "anchor": {
             "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
-            "content": "sha256:9f929684c02b608217b79fce8e49d6c22efd7a7ef0832ed1ed6230039a9897dd",
+            "content": "sha256:a00d25d8dcdad08c36d94aed2b5b366bcbd5b029b9a23aa7077863f670c74480",
             "locator": {
-              "end": 406,
-              "kind": "line_range",
-              "start": 396
+              "kind": "symbol",
+              "name": "cgc_runner_image"
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
           },
@@ -208,25 +213,11 @@
         },
         {
           "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
-            "content": "sha256:587de10fb41c8a48292917daa05528144f30ac05f17b085187895c695f59e59c",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
-            "content": "sha256:88aed8870d3c1aea9f719eb0e679643f0f6a384987cd81674771d17944ec622c",
-            "locator": {
-              "end": 295,
-              "kind": "line_range",
-              "start": 245
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },
@@ -237,9 +228,8 @@
             "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
             "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
             "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 37
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
           },
@@ -247,12 +237,11 @@
         },
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
-            "content": "sha256:4f9d7b19f478e397409c186329350debdf3d7f6b922d1bb8244010832ac13d16",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:f0598946a49230357af36595e9e513bb65bcddbc17d059844c6f1d63f15e4610",
             "locator": {
-              "end": 733,
-              "kind": "line_range",
-              "start": 668
+              "kind": "symbol",
+              "name": "_install_assets"
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -260,12 +249,24 @@
         },
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
-            "content": "sha256:e466358f9dc536f59d46a7fcabeeddaad23bbfe594bd687d3ef2146372039908",
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
+            "content": "sha256:76043812ac2da2b5922ba9d23c2f269fbacdb4844790588f25baa5c250838182",
             "locator": {
-              "end": 811,
+              "kind": "symbol",
+              "name": "_install_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
+            "content": "sha256:6a8752ae01c70a3f674fda6cffe472339de463b2636bda10c7307b9a05013d04",
+            "locator": {
+              "end": 861,
               "kind": "line_range",
-              "start": 789
+              "start": 782
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -291,7 +292,7 @@
         },
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
             "content": "sha256:4518fa7ff950537031dfde3eda6ff04334bfca079f5db6b92870e4fd3ca3d78e",
             "locator": {
               "end": 48,
@@ -317,12 +318,12 @@
         },
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
             "content": "sha256:1928b9d665b5984b7c425c00a8bed392412414acce2a3162e840c86e96e8f7e8",
             "locator": {
-              "end": 153,
+              "end": 149,
               "kind": "line_range",
-              "start": 126
+              "start": 122
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
           },
@@ -330,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "3e883fb99670064642a2f0589ac6a9e289275488",
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
             "content": "sha256:7b3610e5d1809103d7b472bd77b29d6787bd00b5943f1a5122d8154f9bd7c1af",
             "locator": {
-              "end": 364,
+              "end": 360,
               "kind": "line_range",
-              "start": 155
+              "start": 151
             },
             "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
           },

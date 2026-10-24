@@ -6,12 +6,7 @@
 
 ## Purpose
 
-Writes and clears a small, transient "start progress" file for the pre-contract window of
-`worktree_start` (slice 5e, §5.4). A start can block on external memory, providers, or a stale
-base *before* a `contract.md` is written, leaving the Engine Room's enclosure surface (which reads
-contracts) blind to that gated start. This module records admitted pre-contract progress, but not a source-lineage-blocked beat, and clears it
-once the contract supersedes it, so the enclosure-centered Engine Room process map can show a start
-that is stuck before it ever produces a contract.
+Writes and clears a small, transient "start progress" file for the pre-contract window of `worktree_start` (slice 5e, §5.4). External-memory or stale-base blocks can precede the leaf enclosure contract, so progress supplies the Engine Room with admitted pre-contract facts until the contract supersedes them. This module publishes no source-lineage-blocked beat. Provider blocking is a retired case: `provider-blocked` is explicitly classified as obsolete progress, not a current provider setup gate.
 
 ## Code Commentary
 
@@ -44,6 +39,8 @@ unlinks the file with `missing_ok=True`, also swallowing `OSError`. cit:([`read_
 parses one file by path, returning `None` on `OSError`/`JSONDecodeError` or when the payload is not
 a dict carrying the exact `START_PROGRESS_SCHEMA`.
 
+`RETIRED_START_PHASES` contains `provider-blocked`; `is_retired_start_progress(payload)` tests that phase without adding a new active start state. `read_start_progress` remains the schema-gated file parser; the separate retired-phase predicate lets its consumers reject obsolete provider progress.
+
 ### Invariants And Boundaries
 
 - Lives in the worktrees layer so `start.py` writes and `observer.snapshots` reads it without
@@ -74,3 +71,16 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 Start-progress remains the transient pre-contract surface, but the durable endpoint it waits for is now the leaf `series-contract.md` enclosure file.
 
 - Lineage-refused start beats publish no transient progress artifact. [8]
+
+- Provider-blocked is an obsolete pre-retirement phase, classified separately by is_retired_start_progress; no surviving producer writes that provider start path. [9]
+
+## Historical provider-blocked start
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> Writes and clears a small, transient "start progress" file for the pre-contract window of
+> `worktree_start` (slice 5e, §5.4). A start can block on external memory, providers, or a stale
+> base *before* a `contract.md` is written, leaving the Engine Room's enclosure surface (which reads
+> contracts) blind to that gated start. This module records admitted pre-contract progress, but not a source-lineage-blocked beat, and clears it
+> once the contract supersedes it, so the enclosure-centered Engine Room process map can show a start
+> that is stuck before it ever produces a contract.

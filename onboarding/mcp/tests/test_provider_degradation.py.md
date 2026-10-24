@@ -49,8 +49,7 @@ files. The current suite has no delivery mock; injected stop functions isolate t
 
 ### Todos
 
-- A test driving the failsafe through the real `_stop_provider_stacks` → `provider_watchers_tool`
-  line (rather than the injected stub) remains open per reviewer F3 (accepted, optional).
+The earlier reviewer F3 accepted an optional suggestion for a test through `_stop_provider_stacks` → `provider_watchers_tool` instead of an injected stub. That route is historical: the provider tools were removed, and the current evaluator requires its runtime caller to supply a `ProviderStopper`. The earlier acceptance is preserved as review history, not a current test recipe or a new test obligation. Existing classifier/evaluator safety and injected-stopper limits remain unchanged.
 
 ## Evidence
 
@@ -73,3 +72,12 @@ No relevant documentation found after checking; the protocol is repo-internal do
 No meaningful cross-repo references found.
 
 Test-only, repository-local fixtures and imports.
+
+- The current evaluator requires a supplied ProviderStopper and does not import an agent tool; the retained evaluator fixtures inject that boundary, so the former MCP-tool test route is historical. [7]
+
+## Historical optional F3 suggestion
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> - A test driving the failsafe through the real `_stop_provider_stacks` → `provider_watchers_tool`
+>   line (rather than the injected stub) remains open per reviewer F3 (accepted, optional).

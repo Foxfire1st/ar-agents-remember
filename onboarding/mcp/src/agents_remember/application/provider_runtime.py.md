@@ -6,11 +6,13 @@
 
 ## Purpose
 
-`application/provider_runtime.py` (260731-EFA-L9) is the provider lifecycle runtime for worktree
-start/teardown, moved out of the `worktrees` package because worktrees ranks below providers and
-may not import them. It combines the former `worktrees/modules/provider_teardown.py` teardown
-mechanics with the background setup launcher and status projection formerly owned by
-`worktrees/modules/provider_async.py`; the composition root binds it into `WorktreeServices`.
+`application/provider_runtime.py` (260731-EFA-L9) retains provider teardown, the
+background setup launcher and legacy setup-progress readers behind `WorktreeServices`.
+It moved out of `worktrees` because that lower-ranked package may not import providers.
+The teardown mechanics came from `worktrees/modules/provider_teardown.py`; the launcher
+and status readers came from `worktrees/modules/provider_async.py`. Ordinary worktree
+start and retry do not launch either retired provider: their plan uses the shared
+never-enabled predicate before reaching this launcher.
 
 Teardown performs full-reclaim teardown of a worktree's isolated provider stack. The lifecycle
 `stop`/`shutdown-all` actions only stop watchers and leave backend containers and networks
@@ -82,10 +84,12 @@ cit:([`launch_provider_setup`], mcp/src/agents_remember/application/provider_run
 
 ### Invariants And Boundaries
 
-- The launcher must return before any provider work happens; the contract must already be
-  written when it is called; `runner`/`thread_factory` are injectable test seams; a dead server
-  mid-setup leaves a stale heartbeat and `retry_provider_setup` is the recovery path — never
-  block teardown on a stale heartbeat.
+- If the retained launcher is explicitly called, it starts a daemon setup thread and
+  returns its starting payload; the contract must already exist and
+  `runner`/`thread_factory` remain injectable seams.
+  A dead setup thread leaves a stale heartbeat, which must not block teardown.
+  `retry_provider_setup` replans through the same retired-provider gate and cannot
+  recover provider provisioning; retained retry/status fields are not launch authority.
 - The module reads persisted settings only; it does not query the live Docker
   daemon for resource discovery.
 - `docker rm -f` is used unconditionally (force-removes even running containers).
@@ -101,6 +105,8 @@ cit:([`launch_provider_setup`], mcp/src/agents_remember/application/provider_run
   of a teardown payload can never reach the terminal blocker builder reasonless.
 
 ## Evidence
+
+- Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled. [5]
 
 ### Docs References
 

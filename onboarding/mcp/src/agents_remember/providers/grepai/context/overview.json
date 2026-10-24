@@ -46,21 +46,8 @@
       ]
     },
     "2": {
-      "note": "Context facades re-export the focused modules\n\nAnchor: module imports",
+      "note": "Context facades re-export the focused modules: layout, workspace and constants. The single core module those facades used to front is gone.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "4781afd9482e7d8470ee5cb6f0b37638121f0706",
-            "content": "sha256:4a8e403b063bb85ba06a007eae4ac2386c323e4daa801be9a1df7ba258897746",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/providers/grepai/context/core.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "4781afd9482e7d8470ee5cb6f0b37638121f0706",

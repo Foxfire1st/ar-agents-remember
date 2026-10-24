@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/lifecycle_service.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8063e538f5580c613c4e2e24947eb26559e339a6",
+        "content": "sha256:8b26f44ba4bf388908bdc329f3c24ed90a6c963114ca5799d4193e2c924e6d49",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CQW6PM",
+      "invariant": "INV-XZ48GR",
+      "origin": {
+        "handoffEntry": "L192-W-R199-03",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The lifecycle service admits the stop family only, so a generic action parameter cannot stand in for a start/status caller.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "2": {
       "note": "Retained backend implementation functions are exported lazily through the lifecycle facade, not an active CLI parser.\n\nAnchor: `_EXPORT_MODULES`, `__getattr__`",
@@ -19,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
             "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
             "locator": {
               "kind": "symbol",

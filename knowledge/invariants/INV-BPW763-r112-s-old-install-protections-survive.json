@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in four different places that refuse for different reasons: the install summary and server info report a retired provider key once as unused, the suppression reader keeps a retired provider never-enabled, the install's watcher stop records a failure instead of swallowing it, and the removal command refuses a busy, unowned or failed-stop folder. The retained-population tests name each refusal, so a claim that the cleanup still protects a user is checkable."
+  },
+  "applicability": "Install, start and cleanup paths that meet settings or folders an older installation left behind.",
+  "conditions": [
+    "The user's settings file may carry retired provider keys or a legacy contextProviders block.",
+    "Leftover provider folders or a leftover watcher may exist under the coordination root."
+  ],
+  "exclusions": [
+    "Any path that would install, prepare, seed, start, query or watch a retired provider.",
+    "Automatic deletion of a user's leftover folders."
+  ],
+  "id": "INV-BPW763",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_providers_remove.py, test_provider_setup_retired.py and test_install_runtime.py all green on this tree (274-test focused lane)."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-04",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "R112's old-install protections survive intact: legacy keys still parse and report once as unused, the retired providers stay never-enabled, the old-watcher stop still runs and records a failure, leftover folders are reported by size and removed only on explicit consent, and the busy-process, stop-failure and containment refusals still refuse.",
+  "status": "proposed",
+  "supersedes": []
+}

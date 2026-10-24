@@ -1,0 +1,177 @@
+{
+  "path": "mcp/tests/test_l192_provider_safety_prose.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+        "content": "sha256:24f4ad5bd64a8357450bb97d6b6baa37c57a77a66d6ad18d802c3bb3056f1198",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_retained_loop_is_still_the_independent_stop_caller"
+        }
+      },
+      "facet": "the periodic loop, not the dashboard, is what calls the stop",
+      "id": "PRF-Y79ZV5",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The prose tests are written against the chain, not the callback: the tick's generated settings declare no provider while the install route reads the authority document.\n\nAnchor: module docstring",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:c767a119ccfbcaff9285bab95ef983385d5ffc032c093a4815cf649ff180c6fe",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The expected cadence and stage vocabulary are derived from the metrics module and matched by stems.\n\nAnchor: `CADENCE`, `STAGE_STEMS`, `CONTINUITY_MARKERS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:69cbf6d2218d8976f8440f41543d687065d51d1122093817c4713f375f3b8218",
+            "locator": {
+              "kind": "symbol",
+              "name": "CADENCE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:f36968cfe15f6754f6e5a8ae0706b417a3c103b2aad14bfb32d8007fae1e9b29",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGE_STEMS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:703ba97dbfddf8c6a0db6b677ca7d3e456569f37840855e8dfc9a5db4d0d444e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTINUITY_MARKERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each document must state the loop in a single paragraph carrying the cadence and the failsafe gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:b1ae8ef9fc2fba717510d3c29c588cd4dbecec12432d36aa15de3e212be0f8f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_loop_paragraph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The observer home the prose must name is read from the degradation and metrics stores, which are required to agree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:decba251f4854e2ec6082efd7e9a26af1a748078a7a36733e4076d3ce8af78f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store_home"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The safety loop is required to sample, record, evaluate, compact, sleep on the default interval and supply its own stop, with an unconditional start and a non-defaulted stopper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:24f4ad5bd64a8357450bb97d6b6baa37c57a77a66d6ad18d802c3bb3056f1198",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_retained_loop_is_still_the_independent_stop_caller"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The documented `failSafeEnabled` key is bound to `fail_safe_enabled`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:ba4a8b12a192b9f50a5f8324a5d886240efb5005d2b62f0e8305b75fa64f5344",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failsafe_key_is_the_documented_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The stop's settings source is bound to the authority path with the generated document as fallback, and the generated document is shown to select no provider.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:90fb080436e2c7e742daa5faf7950f0555848640f9a3598da690cd92d03e99c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stop_reads_the_authority_settings_not_the_generated_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Both documents must state which settings document each stop reader can select from and keep naming the install and cleanup routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71ac2165b05c0118699e31bd34ed54f53de9333d",
+            "content": "sha256:06aee00160e0aef39981bb24d836b642abe5f0e14c0db870ee4ce56caa0cd30a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_document_states_which_document_each_stop_reader_can_select_from"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

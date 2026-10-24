@@ -1,0 +1,160 @@
+{
+  "path": "docs/features.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "23515cbe90e8edb60491a46e0150db2b2867f7fd",
+        "content": "sha256:7a7aafe9ddac7d3205fbb891947e4d960976018ea7b5c6d60d3ea4e1e27ac6e1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8W2HVW",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The feature page's inbound provider caption and its opening provider description are reframed as retired; other provider-stack wording on the same page is that page's own current text and not part of this change.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Search is described as a past-tense accelerator, with by-path reads carrying the product.\n\nAnchor: `docs/features.md:25-28`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Semantic and graph search were accelerators, are retired, and were never the thing trusted.\n\nAnchor: `docs/features.md:72-76`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The by-meaning and by-relationship routes are past tense with retired providers; the router works on by-path and intent alone.\n\nAnchor: `docs/features.md:199-204`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pre-code session checks drift and not provider state.\n\nAnchor: `docs/features.md:310-312`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read-only tool list omits provider health and graph/semantic queries.\n\nAnchor: `docs/features.md:346-348`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "First-run setup starts nothing provider-side, and the by-path memory path works without Docker or providers.\n\nAnchor: `docs/features.md:400-405`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Authority settings declare repositories, with old provider keys reported once as unused.\n\nAnchor: `docs/features.md:418-421`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The Learn more entry describes the Providers page as retirement plus old-install cleanup.\n\nAnchor: `docs/features.md:475-476`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A present-tense provider-index cloning account remains in the page, including per-worktree provider stacks and index seeding.\n\nAnchor: `docs/features.md:257-292`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
+            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_provider_setup_retired.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bac05c23eb65a6d37d363e5d18f1adf812c6bf1d",
+        "content": "sha256:85f1cc6901cfeaa98ed733999c4d10bf850050e5ac1d9033f510237851e74a8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retired_ids_never_count_as_enabled"
+        }
+      },
+      "facet": "a retired id in the settings never counts as an enabled provider",
+      "id": "PRF-FPB93W",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bac05c23eb65a6d37d363e5d18f1adf812c6bf1d",
+        "content": "sha256:e3f16ff32dcfdf2eafb62fe4bac8a8889b370570fee86d2dd68056c1cec16c7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_old_watcher_stop_stays_available"
+        }
+      },
+      "facet": "the old-watcher stop helper the install calls before refreshing remains importable and callable",
+      "id": "PRF-RP150V",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

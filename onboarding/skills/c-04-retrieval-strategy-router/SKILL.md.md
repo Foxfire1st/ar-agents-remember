@@ -12,7 +12,7 @@ The authored retrieval router chooses the missing-context question before select
 
 ### Contract choice and retired-provider tension
 
-Semantics labels an unknown route/location, Relationship labels missing connections around a known anchor, and Intent labels missing contracts or behavioral truth. The introductory Semantics bullet still says to prefer GrepAI when available, but the adjacent triage rule and both provider sections explicitly retire those tools and direct the reader to Intent/native search. Preserve that source tension rather than reviving providers from a stale bullet. The linked catalogs and synthetic shapes remain reference material only; the adjacent catalogs are not validated by this contract description.
+Semantics labels an unknown route/location, Relationship labels missing connections around a known anchor, and Intent labels missing contracts or behavioral truth. The current bullets mark the first two retired — no semantic-query and no relationship-query tool — and send the reader to the route index, native search over the code repo and bounded reads. The triage rule starts at Intent, and no catalog here stands in for a retired substrate. The sibling catalog files this account once linked are not in the candidate; the synthetic shapes it shows belong to the inherited account.
 
 ### Naming is not reading
 
@@ -298,14 +298,19 @@ These are the old companion’s explanatory notes, retained as historical eviden
 
 > The inline GrepAI and CGC examples explicitly forbid copying private repository names, symbols, paths, snippets, or results into reusable skill examples.
 
+## Historical Source Evidence
+
+These references retain the selected historical source chapters, including their retirement statements, synthetic response shapes and catalog links. They describe that source epoch rather than the current native question sections; they grant no callable provider or execution authority.
+
+- Historical source: retired GrepAI route and synthetic catalog examples [3]
+- Historical source: retired CodeGraphContext route, synthetic impact and complexity shapes, and native-search rules [4]
+
 ## Evidence
 
 The following references support the source-contract commentary, not fresh runtime acceptance. Canonical authored source owns the contract; the inspected package copy is an equal distribution twin only. Root overview ownership context is onboarding/overview.md, especially its construction/ownership and retained naming-versus-reading doctrine. The description of a source contract is not runtime acceptance or permission to execute its operations.
 
 - Authored identity and retrieval-contract-first purpose [1]
-- Substrate labels, retirement and introductory tension [2]
-- Retired GrepAI route and synthetic catalog examples [3]
-- Retired relationship route, synthetic shapes and native search [4]
+- Substrate labels, the retirement of the first two, and the triage rule that starts at Intent [2]
 - Location-only read_ar_files and argument refusals [5]
 - Bounded route confirmation and native research reads [6]
 - Recorded text, derived index and exact memory-root scope [7]
@@ -314,3 +319,6 @@ The following references support the source-contract commentary, not fresh runti
 - Bounded knowledge_read continuation and refusals [10]
 - Memory tree requirement and no substituted dataset [11]
 - Generated index coverage and source-read permission [12]
+
+- Semantics questions use the route index and one capped native search over memory onboarding and knowledge text; the sidecar mapping identifies the source path. [13]
+- Relationship questions follow native symbol hits one call or import level at a time; native risk triage remains a bounded map rather than a completeness claim. [14]

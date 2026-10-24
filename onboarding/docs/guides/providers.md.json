@@ -1,0 +1,160 @@
+{
+  "path": "docs/guides/providers.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+        "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N8RQ0F",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The page states retirement, what the old keys do now, stop/consent cleanup and independently retained safety, and prescribes no setup or query.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The page is a retirement account: no product path installs, enables, starts, indexes or queries the providers, and the querying tools and lifecycle CLI are gone.\n\nAnchor: `docs/guides/providers.md:1-8`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC and grepai are recorded as retired, with by-path memory, onboarding notes, drift checks and harness search carrying finding now.\n\nAnchor: `docs/guides/providers.md:10-22`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`runtime_install` reports leftover folders and their sizes but never deletes them; `providers-remove` deletes on explicit request, with `--dry-run` stopping nothing and refusals on a failed watcher stop, a live process, or an escape from the owned tree.\n\nAnchor: `docs/guides/providers.md:28-46`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retired `providers` settings block parses, drives nothing, and its keys are reported once as unused through `unusedProviderKeys` and `server_info`.\n\nAnchor: `docs/guides/providers.md:48-53`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`runtime_install` stops leftover provider watcher processes as its only watcher action and records a failed stop while continuing.\n\nAnchor: `docs/guides/providers.md:55-57`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The degradation detector samples the central provider metrics log and can stop a leftover stack at critical when the fail-safe is enabled; it starts nothing and there is no provider panel.\n\nAnchor: `docs/guides/providers.md:59-64`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`.paseoRuntime.providers` is recorded as unrelated model-provider configuration.\n\nAnchor: `docs/guides/providers.md:66-69`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Docker and Ollama are scoped to inspecting or clearing old installs.\n\nAnchor: `docs/guides/providers.md:71-81`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Troubleshooting covers old keys, leftover watcher processes and leftover runtime folders.\n\nAnchor: `docs/guides/providers.md:83-94`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

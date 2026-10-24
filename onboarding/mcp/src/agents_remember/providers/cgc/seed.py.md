@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`seed.py` owns CodeGraphContext seed request options, configured root resolution, source/target validation, export/load lifecycle orchestration, and seed result payloads.
+`seed.py` owns CodeGraphContext seed request options, configured root resolution, source/target validation, export/load lifecycle orchestration, and seed result payloads. These are retained internal helpers. Both retired provider IDs are unconditionally excluded by the shared enabled-provider gate, so ordinary worktree/provider setup does not invoke the CGC seed, install or refresh branch. A retained function or result string does not restore the deleted public provider tools or lifecycle CLI.
 
 ## Code Commentary
 
@@ -35,12 +35,12 @@ What that buys, beyond removing a copy:
   had. `run_git` strips the whole `GIT_DIR` family (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`,
   `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
   `GIT_PREFIX`) before every call. This matters here more than almost anywhere else in the tree,
-  because seeding runs during worktree start — exactly when a `GIT_DIR` is likely to be in the
-  environment.
+  because the former worktree-start seeding path inherited `GIT_DIR` from its caller. That
+  historical integration is retired; repo-scoped Git isolation remains this helper's contract.
 - **`git_head_or_none` is bounded at all.** It previously ran with no `timeout`; it now inherits the
   runner's `GIT_LOCAL_TIMEOUT_SECONDS` (300) default.
 - The catch-up diff keeps its own tighter bound, now named: `_CATCH_UP_DIFF_TIMEOUT_SECONDS = 60`.
-  It runs during provider setup, and a repo whose diff has not answered in a minute is not one a
+  If this retained helper is invoked, a repo whose diff has not answered in a minute is not one a
   per-file touch pass was going to catch up anyway.
 
 Protocol-pipe hygiene is unchanged, just relocated: stdin is `DEVNULL` because that is the runner's
@@ -69,7 +69,7 @@ runner uses `capture_output=True`), which changes nothing for callers — both c
 
 ### Logic
 
-`_resolve_seed_context` first refuses a **benchmark-scoped** target: when the target `codegraphcontext-code` provider's `instance.scope == "benchmark"`, it returns `_seed_skip` before any source/backend work, so a benchmark never seeds from the live workspace cgc backend (hermetic). Otherwise it defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source and target CGC roots from explicit arguments or settings, checks repository HEAD relatability (via `git_head_or_none` + `seed_commit_divergence`, below) unless mismatches are allowed, protects same-coordination-root cross-path seeding unless explicitly allowed or isolated, starts the source backend, exports a bundle, rewrites paths, and loads the rewritten bundle into the target. The CGC provider block is looked up through the shared `setup_common.provider_settings(settings, CGC_PROVIDER_ID)` helper rather than a local wrapper. The export and load commands run under the configurable provider-setup cap (`args.timeout` ← `timeoutCaps.providerSetupSeconds`, default 1800; `0` = unbounded opt-out) — bundle copies run <60s in practice, so only a genuinely wedged docker exec can reach the cap, and a wedge no longer hangs `worktree_start` forever. A stall watchdog (like the GrepAI clone's) is a noted follow-up; the lifecycle-CLI boundary currently blocks a progress callback here.
+`_resolve_seed_context` first refuses a **benchmark-scoped** target: when the target `codegraphcontext-code` provider's `instance.scope == "benchmark"`, it returns `_seed_skip` before any source/backend work, so a benchmark never seeds from the live workspace cgc backend (hermetic). Otherwise it defines `CgcSeedOptions` and the internal `CgcSeedContext`, resolves source and target CGC roots from explicit arguments or settings, checks repository HEAD relatability (via `git_head_or_none` + `seed_commit_divergence`, below) unless mismatches are allowed, protects same-coordination-root cross-path seeding unless explicitly allowed or isolated, starts the source backend, exports a bundle, rewrites paths, and loads the rewritten bundle into the target. The CGC provider block is looked up through the shared `setup_common.provider_settings(settings, CGC_PROVIDER_ID)` helper rather than a local wrapper. The export and load commands run under the configurable provider-setup cap (`args.timeout` ← `timeoutCaps.providerSetupSeconds`, default 1800; `0` = unbounded opt-out) — bundle copies run <60s in practice, so only a genuinely wedged docker exec can reach the cap, and the timeout bounds this retained helper's lifecycle child rather than a current worktree-start provider step. The earlier stall-watchdog follow-up and lifecycle-CLI callback limitation belong to the former setup integration; they do not describe an available CLI or a new current obligation.
 
 A HEAD difference between source and target is a state to CATCH UP from, not
 a teardown (260707-HFX-L2): the old exact-equality refusal fed the
@@ -87,15 +87,15 @@ reported as residual staleness, never blessed as caught up. `None` means git
 cannot relate the heads — unrelated repositories, the one case where refusing
 is still right. `_seed_commit_mismatch` now PROCEEDS on a
 relatable divergence, stashing the delta on `args._cgc_seed_divergence` for
-`provider_setup`'s post-watcher catch-up stage, and refuses only unrelatable
+the retained `provider_setup` post-watcher catch-up helper when invoked with that divergence, and refuses only unrelatable
 heads with the reworded reason ("source and target repository heads are
 unrelated (divergence not computable); refusing to seed a foreign graph") —
 the foreign-graph protection. `CgcSeedOptions.delta_max_files` (`0` = the
 built-in `DEFAULT_SEED_DELTA_MAX_FILES`, 200) is the catch-up bound that
-stage applies: at or below it the seeded near-perfect graph catches up
-through the watcher's own per-file indexing; above it the clone still serves
-— stale, surfaced — and a from-zero rebuild stays an explicit `cgc refresh`
-only.
+retained helper applies: at or below it the helper waits for watcher readiness before touching eligible paths; a missing readiness marker or residual paths retain stale-index state. Above the bound
+the retained result reports served stale-index state. Its old from-zero-rebuild guidance names
+`cgc refresh`, a literal in retained results rather than an available public command. Ordinary
+worktree setup does not reach this seed branch.
 
 `_cgc_settings_path(args)` is the single source of truth for which settings file cgc actually runs against. It walks the priority chain `cgc_from_settings > provider_from_settings > from_settings` and returns the first truthy value. Both `cgc_extra_args` (which builds the `--from-settings` CLI flag) and `_seed_target_runtime_root` call this helper so both always agree on the settings file.
 
@@ -127,12 +127,41 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- Provider-level CGC setup calls this module before optional refresh fallback. [1]
+
+
+- The retained CGC prepare function contains seed/fallback composition but returns no work for a retired provider because its shared enabled-provider guard is false. [1]
+
 - Bundle path rewriting is delegated to the CGC bundle module. [2]
 - The GrepAI seed applies the same benchmark-scope hermetic guard. [3]
-- Worktree setup constructs CGC seed options through the provider setup request. [4]
-- The post-watcher catch-up stage consuming the stashed divergence. [5]
+
+
+- The retained provider setup request parser constructs CGC seed options; that declaration is not evidence that normal worktree setup invokes a retired provider. [4]
+
+
+
+- The retained catch-up helper consumes supplied divergence after the retained setup composition; ordinary enabled-provider setup does not create that CGC divergence through the excluded seed branch. [5]
+
 
 | The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
 | The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
 | The shared Git runner applies caller-selected bounds and isolated repository environment; the catch-up diff passes its 60s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
+
+## Historical worktree-seeding integration
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> Seeding runs during worktree start — exactly when a GIT_DIR is likely to be in the inherited environment.
+>
+> It runs during provider setup.
+>
+> A wedge no longer hangs worktree_start forever.
+>
+> A stall watchdog (like the GrepAI clone's) is a noted follow-up; the lifecycle-CLI boundary currently blocks a progress callback here.
+>
+> A relatable divergence is stashed for provider_setup's post-watcher catch-up stage; above the delta bound the clone stays stale and a from-zero rebuild stays an explicit cgc refresh.
+>
+> Provider-level CGC setup calls this module before optional refresh fallback.
+>
+> Worktree setup constructs CGC seed options through the provider setup request.
+>
+> The post-watcher catch-up stage consuming the stashed divergence.

@@ -53,7 +53,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` preserves `StartExecution`, including `retry_provider_setup`; the application forwards that flag into the worktree arguments. Legacy running/retry bookkeeping remains. With readable settings both retired provider IDs stay disabled, so retry planning does not reach an enabled plan or launch CGC/GrepAI. It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -101,6 +101,8 @@ Each payload builder forwards the application contract and wraps its result thro
 No additional file-local TODO is established by this candidate review.
 
 ## Evidence
+
+- Retry input transport and legacy bookkeeping survive; the enablement and launch gates prevent that transport from relaunching either retired provider. [7]
 
 ### Docs References
 

@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Provider setup combines isolated GrepAI and CGC settings before running workflow-local provider lifecycle operations.\n\nAnchor: `isolated_cgc_settings`, `isolated_grepai_settings`, `run_provider_setup`",
+      "note": "Provider setup composes the isolated GrepAI and CGC settings (write_isolated_provider_settings, provider_setup.py:591-629) and then dispatches its actions (_action_results, :686-691). The install, prepare and watcher actions return no work, because provider_enabled is permanently false for both retired providers (setup_common.py:81-95).",
       "targets": [
         {
           "anchor": {
@@ -96,6 +96,69 @@
               "name": "provider_ownership_labels"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Aggregate GrepAI settings and project roots remain internal data; the current topology is derived from active worktree enclosures and has no provider-target nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:6ee89d1dbe35e44a751b18f44d0a93bec6e9481c7af95ebe99991ab3698611ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_isolated_settings_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:67dc987c25ea4f380d677e0138567a4bdf6a1b0cc8810ed6e213e69b39d3efdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_isolated_grepai_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:4b7193ff722614cdadcec5019787a402aabef68c7c617a3c83279f304651c08a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConstelNode"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:0adca7b1983f5ca96bbd82df97581eaaebd8e97a4ec43cba971181f1eee260fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeTopologyInputs"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:e1be11bdb96db1fabd46b9d9e3dfe87e16818f280a92f01d8e1e3cec728f1bdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildTopology"
+            },
+            "path": "dashboard/src/topology/model.ts"
           },
           "kind": "code"
         }

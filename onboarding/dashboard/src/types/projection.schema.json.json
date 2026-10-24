@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
-        "content": "sha256:1c585483d96f4461393452020a249511a872ffeafb476048cbea52a8f59ab10c",
+        "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
+        "content": "sha256:0e24cc10bbdb9dbb74cec102130742d523ea99e26e322bf784c5c9b9ece67bb1",
         "locator": {
           "kind": "file"
         }
@@ -17,6 +17,23 @@
       },
       "rationale": "The schema is the contract the client is generated and checked against, so the fact's shape is stated here.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
+        "content": "sha256:0e24cc10bbdb9dbb74cec102130742d523ea99e26e322bf784c5c9b9ece67bb1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T8YPHW",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The served schema carries the same split: `ProviderLimit` present, provider-only node and attention defs gone, so a payload carrying a retired provider field fails validation instead of reaching a panel.",
+      "role": "enforcement"
     }
   ],
   "references": {

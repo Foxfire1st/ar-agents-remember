@@ -68,6 +68,58 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "The shared BenchmarkWorkspace is passed to registration and retained setup after authority filtering. Setup receives lifecycle_settings_from_config through benchmark_lifecycle_settings; that generator returns disabled empty provider settings, so the call establishes neither a provider launch nor a from-scratch benchmark index-build promise. No live-workspace seed source is wired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_case"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+            "content": "sha256:b45b85aefebfe8b5169efc937560e0944d41e5bf24d9ff0ba4d7bccedad00131",
+            "locator": {
+              "kind": "symbol",
+              "name": "benchmark_lifecycle_settings"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+            "content": "sha256:6a599b8fe967ff3a804cb65ccafc8a47e3b008be08d702ca22bcd612c7bcf39c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_configured_providers"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

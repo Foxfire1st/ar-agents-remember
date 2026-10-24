@@ -71,6 +71,23 @@
           "kind": "code"
         }
       ]
+    },
+    "19": {
+      "note": "The current WorkspaceProjection constructor publishes native tasks/counts, unbound enclosures, active groups, queues, host metric and analytics, with no providers collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa86695a71693162c503d41124c312c48284e1a6",
+            "content": "sha256:dbadad4c1ab095669084d1cad0054c513c08078274380c326a02440f520bb84c",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

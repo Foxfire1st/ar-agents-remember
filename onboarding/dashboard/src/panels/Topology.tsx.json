@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d828486ee9f897b36b330d0f027e938b5aa58912",
-        "content": "sha256:a13a4941804df57805407a20395da57119e98d7250edacc75edbf68ae037da60",
+        "blob": "df6406b5558760d99e709731298749fbf82c081d",
+        "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J7121G",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The canvas draws only workspace, checkout and enclosure rings, and the hover/accessible tip it raises now carries L184's per-seat limit detail; there is no satellite or engine conduit left to draw.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "df6406b5558760d99e709731298749fbf82c081d",
+        "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
         "locator": {
           "kind": "file"
         }

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:8164a66d74351e8aa91df939055a98ff37e89e14c52065eca95f66fce3a8e099",
             "locator": {
               "end": 7,
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:da779c827da3795c878647e500000544381770373d5fd6645487b11952e94740",
             "locator": {
-              "end": 573,
+              "end": 570,
               "kind": "line_range",
-              "start": 564
+              "start": 561
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 324,
+              "end": 300,
               "kind": "line_range",
-              "start": 322
+              "start": 298
             }
           },
           "kind": "test"
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -169,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:99664b6a2ee79b59d1a73aabb4df38819af4303335d33238c7df12db586cec3d",
             "locator": {
-              "end": 190,
+              "end": 176,
               "kind": "line_range",
-              "start": 182
+              "start": 168
             }
           },
           "kind": "test"
@@ -213,15 +213,15 @@
       ]
     },
     "26": {
-      "note": "The provider builder takes its sample from the top-level providers array.",
+      "note": "The projection default object supplies tasks/taskCounts, enclosures, active worktree groups, metrics and analytics without a providers field.",
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
-            "content": "sha256:f12aa16a2649f24ea9f24960bc03abaf8e55d07651f45b0da1f4036c5206585a",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:5cb7fbe6d55bf218f6615f9a264b89257449d7a729c81da4504a3ae023d45104",
             "locator": {
               "kind": "symbol",
-              "name": "SERVED_PROVIDER"
+              "name": "projection"
             }
           },
           "kind": "test"
@@ -233,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -268,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:ded4c63a96ba260c6abdc2c92b7838df904742362d6880591309bd385839707a",
             "locator": {
               "kind": "symbol",
@@ -279,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:a626b61741f498f98cbe9aa19be1c2dcd4113285ce44e1afdff3938c60f528ee",
             "locator": {
-              "end": 324,
+              "end": 300,
               "kind": "line_range",
-              "start": 322
+              "start": 298
             }
           },
           "kind": "test"
@@ -343,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:f51bf451e52cbd60dab42d23a4ff11b3b155436ee93eced9600d143735f1a851",
             "locator": {
               "end": 8,
@@ -360,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:7e42a5e0e377e61378d25b8c95e783e30197562b5aa89d6979a6c9574b65fed0",
             "locator": {
               "end": 23,
@@ -377,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:048d2be48e5d33c20e3cf9ed45c3edc5ca0c7ab1bb6ad6008e2c4c2d29162b8b",
             "locator": {
               "end": 7,
@@ -450,12 +450,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:b84bb5fef68c7da2997f26eacdf572410d2f35298b0e8d5959899a076ad27eea",
             "locator": {
-              "end": 532,
+              "end": 529,
               "kind": "line_range",
-              "start": 530
+              "start": 527
             },
             "path": "dashboard/src/test/contract.test.ts"
           },

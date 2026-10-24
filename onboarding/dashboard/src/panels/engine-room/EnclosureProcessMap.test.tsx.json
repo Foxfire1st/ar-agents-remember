@@ -21,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EnclosureCanvas — T9B/T9C refused-conduit flash (shared red/amber primitive)\", () => {`",
+      "note": "The provider-retirement render census enables effects, renders the first process of every Engine Room fixture, and rejects provider gauges, blocks, dropout, fault/reindex markers, seed/clone lanes and provider text.\n\nAnchor: `renders no gauge, provider block, dropout halo, fault/reindex marker, seed/clone lane or provider text`",
       "targets": [
         {
           "anchor": {
-            "blob": "4b5841a80afd1c24f5c4591cd1c03f80465df6fb",
-            "content": "sha256:905dec7ad9f2d13b705cc490aad8fa352735cccbc53f691bc702f0feaa63ce72",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:492682f0f74c47d510c046020b89b22f0a0c736afc9482914658aec6fe430ff0",
             "locator": {
-              "end": 566,
+              "end": 520,
               "kind": "line_range",
-              "start": 474
+              "start": 506
             }
           },
           "kind": "test"
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EnclosureCanvas — integration conflict (T14C · terminal)\", () => {`",
+      "note": "Integration-conflict cases retain terminal STOP with no recovery chips and a positive red refused-conduit flash on integration/integration-mem before the STOP.\n\nAnchor: `EnclosureCanvas — integration conflict`",
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
-            "content": "sha256:1a40357152e9c5fdbd0a3945e29dba4e792a6b11b7071e508e6ddbd2351763ef",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:033b79f770aaf44ad11b1d79051f6aa0f3ad03d4402b14357561649ab321e73c",
             "locator": {
-              "end": 614,
+              "end": 575,
               "kind": "line_range",
-              "start": 590
+              "start": 550
             }
           },
           "kind": "test"
@@ -55,16 +55,15 @@
       ]
     },
     "12": {
-      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlocks(node: EngineProcessNode) {`",
+      "note": "The paired block resolver retains the single fleeting pre-contract shape and derives stale-base only when that blocked enclosure is behind its source.",
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:7b465945c75c12ce4b647aa292d5c7a198cfa7e142aba362860e45d3dca8b09c",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:4a7780a80d83c45d8dc75431893db3ab479330bef0168c71f78b2bec41c2b3a6",
             "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 93
+              "kind": "symbol",
+              "name": "resolveBlocks"
             },
             "path": "dashboard/src/panels/engine-room/scene.ts"
           },
@@ -73,16 +72,16 @@
       ]
     },
     "13": {
-      "note": "The T7B successor asserts fleeting/retry/abandon/no-disabled-memory and absence of retired provider block/dropout/gauges/separate chips.\n\nAnchor: 533-549",
+      "note": "The replacement fixture census rejects eight retired provider/setup fields on every process node and admits only worktree-add, ledger-map, sync and the two integration edge kinds.\n\nAnchor: `carries no provider state on any fixture node`",
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
-            "content": "sha256:d38333dbc85ba79be9eab657efa6f600b228f7353ed01e416f318195d82515e4",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:c0c543844b2e465fe6c0a6d6fe363f582e637c049ed9ff96f2920b7742e70881",
             "locator": {
-              "end": 549,
+              "end": 504,
               "kind": "line_range",
-              "start": 533
+              "start": 477
             }
           },
           "kind": "test"
@@ -111,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
             "content": "sha256:775cc049096f9cac7be03c885a072d957cb6621a4d5ac0a538c670741bbd91b4",
             "locator": {
               "end": 39,
@@ -163,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
             "locator": {
-              "end": 832,
+              "end": 682,
               "kind": "line_range",
-              "start": 832
+              "start": 682
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -181,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+            "blob": "7231a6d9beb198b538ca871ca32c37c2912efe54",
             "content": "sha256:66c7fb03929afbc3109a4bbb8849510372641018233a2ef434e767ff5a69d39a",
             "locator": {
               "end": 69,
@@ -195,14 +194,14 @@
       ]
     },
     "8": {
-      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `it(\"isolates repeating transforms from the text-heavy structural SVG\", () => {`",
+      "note": "The effects-isolation case keeps repeating surge transforms out of the structural SVG and asserts no reindex marker in either the structural canvas or effects overlay.\n\nAnchor: `isolates repeating transforms from the text-heavy structural SVG`",
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
-            "content": "sha256:7f2f52c91b590979a35b58d345fa3f102d77ac13cb54ad7d0fc297ebde2f0685",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:962f98c38d35a7fcd34b2b22b061b237b729a5c56742ea0dfd91178e85f3516f",
             "locator": {
-              "end": 85,
+              "end": 84,
               "kind": "line_range",
               "start": 67
             }
@@ -212,16 +211,16 @@
       ]
     },
     "9": {
-      "note": "Authored cases now assert zero provider gauges/wires, absent seed clone conduits/refusal/fault/reindex markers, retained — source ownership, not executed visual proof.\n\nAnchor: `it(\"renders one flow conduit per known model edge\", () => {`",
+      "note": "The static-scene cases assert no provider gauges or official engine wires, retain external-memory couplers and branch nodes, and the wiring cases reject seed/clone conduits while retaining enclosure lanes.\n\nAnchor: static bird’s-eye and conduit-wiring cases",
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
-            "content": "sha256:74c1aa3d3af092d41a54fa14f1e2c065346d3f454b35164406ebd70748de2247",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:39e726d0dd58dc55330b671d1e7363cb789f9004e807bf5cdab55c20fa28f949",
             "locator": {
-              "end": 264,
+              "end": 269,
               "kind": "line_range",
-              "start": 183
+              "start": 181
             }
           },
           "kind": "test"

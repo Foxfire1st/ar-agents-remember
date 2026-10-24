@@ -269,7 +269,6 @@ Generated instruction carriers follow their canonical role/operation owners. Cle
 - Retained reference account (no fresh execution or acceptance inferred): The GrepAI clone has a stall watchdog and no total-time cap. [109]
 - Retained reference account (no fresh execution or acceptance inferred): The CodeGraphContext seed export is bounded by the provider-setup cap. [110]
 - Retained reference account (no fresh execution or acceptance inferred): The states of the CodeGraphContext graph probe. [111]
-- Retained reference account (no fresh execution or acceptance inferred): The GrepAI indexing states. [112]
 - Retained reference account (no fresh execution or acceptance inferred): The serving layer is transport over the observer projection. [117]
 - Retained reference account (no fresh execution or acceptance inferred): The dashboard records a lifecycle gate decision through the control plane. [118]
 - Retained reference account (no fresh execution or acceptance inferred): The dashboard bundle placement, its freshness proof and its check mode. [121]

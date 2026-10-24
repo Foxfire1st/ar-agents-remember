@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e76c3eb424b6bbebb9a6d8e05c003426153de492",
+        "content": "sha256:a15381c4f1da36764801021216baf438699c5ee00e2f7f6c915b03a4c333e14a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4GTTNN",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Host provider settings are still read and forwarded through the serving boundary.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The complete setting list with its start/live split.",

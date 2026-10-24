@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
             "content": "sha256:d07740071a26e48f00680a992b67403463c24834ff51b0dca629662803963f0a",
             "locator": {
-              "end": 15,
+              "end": 13,
               "kind": "line_range",
-              "start": 15
+              "start": 13
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
           },
@@ -54,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd43e4801b1c4e3910470e06ee8323fc4066eada",
+            "blob": "85080fc5cdc891e11f59baa13097d4fd87ddfdd5",
             "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
             "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
             "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
             "content": "sha256:18b7b166310b208aea22c19d18ac0567a2442ec92f1607a76d2845b9e1c2e9ce",
             "locator": {
               "end": 335,
@@ -105,6 +105,72 @@
             "path": "mcp/tests/test_terminal_blocker_reasons.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled.\n\nAnchor: `plan_providers_for_start`, `run_or_launch_provider_setup`, `_retry_provider_setup_result`, `provider_enabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:22b289c11b3f7dd36d5ab92dcdc82292ea02619249a80cca9e9c89c2a0e2c993",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_providers_for_start"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_or_launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:707f8430d994b394092dfbc59090e97fd43a07f459d652099c251568f3c6aa22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_provider_setup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:7c1cb57aae6f6127e71d12c19499fc628f81cd83d4dc97dbc69164eafa3db07f",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
+          },
+          "kind": "code"
         }
       ]
     }

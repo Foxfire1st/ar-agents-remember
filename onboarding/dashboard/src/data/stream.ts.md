@@ -15,7 +15,7 @@ observer-event stream that feeds the Event River.
 ### Logic
 
 `STATE_EVENTS` lists the named deltas this browser connection subscribes to — the keyed-collection events
-(`task`/`enclosure`/`provider` plus their `.removed` markers) and the whole-value replacements
+(`task`/`enclosure` plus their `.removed` markers) and the whole-value replacements
 (`taskCounts`, `activeWorktreeGroups`, `metrics`, `analytics`). There is no named `closeoutQueues` listener or matching delta reducer here; full snapshot application separately retains `projection.closeoutQueues`. This listener list must not be read as proof that every snapshot field has a corresponding delta. `activeWorktreeGroups` (task 33) is the bounded
 active-enclosure set the Topology constellation filters on; its delta arrives as a wrapped
 `{activeWorktreeGroups: [...]}` marker the store unwraps. `connectState(base)` opens

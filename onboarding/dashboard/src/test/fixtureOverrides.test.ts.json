@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
             "content": "sha256:6b6515259ef6e880529387771cc66a706ad4fc286a537b39736106dc95220047",
             "locator": {
               "end": 46,
@@ -116,7 +116,7 @@
         },
         {
           "anchor": {
-            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
             "content": "sha256:9c0877c53e64ae6620ccd99197756efe3aa6fd71f8f0ac43864b968ef35ee32c",
             "locator": {
               "end": 107,
@@ -129,14 +129,15 @@
       ]
     },
     "14": {
-      "note": "Probe imports resolve to retained wire builders and projection types only; the provider-state replacement probe keeps the required-undefined control.",
+      "note": "Probe imports resolve to retained wire builders; the enclosure.repoName replacement preserves the required-undefined control.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:93b376318b74d94717e808381dfbe8b09982bf7bddec367a768e2013a9724d89",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:ee7b220dcc5bfddb42e482b629b320330b0cdff30354d5a2cc1693cd802f3c3d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "PROBE_FILES"
             }
           },
           "kind": "test"
@@ -148,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d75337f8b42efc75ce4b8d596f54fee22736c4ea",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
             "content": "sha256:53664f361037866ac39bc5d2343d194230bd87a7e5f2ca2200aa31dff112ffd3",
             "locator": {
               "end": 15,
@@ -243,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",

@@ -76,6 +76,25 @@
     {
       "anchor": {
         "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
+        "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+        "locator": {
+          "end": 139,
+          "kind": "line_range",
+          "start": 108
+        }
+      },
+      "id": "RLZ-BHYSBK",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The metrics loop still samples, records, evaluates and compacts, and still supplies the stop callback on the critical transition; its body is unchanged and its range follows the loop after L184's usage-read addition above it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eead378ad6a06e34cf5b98e81f21d5bc98d8d185",
         "content": "sha256:a169f5d711ef1fb3cfa7ccbe44b5c58efb18cec1356a11bf07cbc5f8728059c9",
         "locator": {
           "kind": "symbol",

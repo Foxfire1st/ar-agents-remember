@@ -1,13 +1,31 @@
 {
   "path": "mcp/certification-profile-v1.json",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+        "content": "sha256:e8855ddf4fcd3d62cd1f123933edff9571dedb7f981084ce0877cb7e37d7fdd6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SM460F",
+      "invariant": "INV-BXWQRD",
+      "origin": {
+        "handoffEntry": "L192-W-R199-08",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The shipped rail list is where a rail exists or does not: `rails` declares each `identity.railId` with its gate, artifacts and execution adapter, and `provider-runtime-integration` is no longer among them. This is the readable declaration of the retirement, at a path the memory writer accepts.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Bounded dependency reconstruction environments\n\nAnchor: `environments`",
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -24,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
-            "content": "sha256:0c6c68eb50286c9d88ed82a8cddb34a48a295f22a626f5ba0341888ddf0aef46",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "content": "sha256:2e266c65d9aeca93ca4feb785a367111684ee867e75a347b5a7390ee591b48ff",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -41,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
-            "content": "sha256:cb7b96eae68b54acc360dc5ea549e423904bb43465a32a0836e1aff50ff37ce8",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "content": "sha256:7b671acf9b8f04293289eadc89ba86940ab01859bf15aace1e024291747060b2",
             "locator": {
               "end": 151,
               "kind": "line_range",
@@ -54,14 +72,14 @@
       ]
     },
     "4": {
-      "note": "47 report paths include 30 rail-evidence captures; ambient and teardown publications are removed.",
+      "note": "45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
-            "content": "sha256:31d47b03459aa4dfa8000e48b718dd14f7d16721f7ff2a4aab3980010526ff08",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "content": "sha256:db184c36e3c8755a38fbe31e8e2112568c357833bfb47bc8041492df3f52b4f8",
             "locator": {
-              "end": 585,
+              "end": 567,
               "kind": "line_range",
               "start": 153
             }
@@ -75,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
-            "content": "sha256:89f6125cbaff7c411a3df1334ee3ee2b537f20f33e7f0f1ca2a1ffa9aafd2214",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "content": "sha256:4218a7eb4a43e1687045cc2f07b4e748286c12fa8be5c5c76e4311fbd2cb8379",
             "locator": {
-              "end": 3388,
+              "end": 3275,
               "kind": "line_range",
-              "start": 2778
+              "start": 2673
             }
           },
           "kind": "code"
@@ -92,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3389,
+              "end": 3276,
               "kind": "line_range",
-              "start": 3389
+              "start": 3276
             }
           },
           "kind": "code"
@@ -109,10 +127,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
-            "content": "sha256:5509ca3452304eadb6e897ebd18621bd97c0d158a5490b2d0ecfd414b1872338",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
+            "content": "sha256:a976503a9139489e01ecc45e887199c1555247af889a14cf9e2b91701d6a0b27",
             "locator": {
-              "end": 151,
+              "end": 150,
               "kind": "line_range",
               "start": 58
             }
@@ -126,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "blob": "4f9a4bf5fd493a9ef59dd1b03a8ce751ca1522ea",
             "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
             "locator": {
-              "end": 1530,
+              "end": 1512,
               "kind": "line_range",
-              "start": 1515
+              "start": 1497
             }
           },
           "kind": "code"

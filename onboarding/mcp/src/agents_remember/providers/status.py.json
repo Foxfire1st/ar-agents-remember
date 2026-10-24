@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07595ea336ca08b04de158d4eec714442e8ad6e4",
+            "blob": "76d162bfaeab38e222b5da3c9e97bc32131187a4",
             "content": "sha256:0a3a15bd9a04af0bb823dedc1b048f0f71756da713ec87ac72704a7ee9e9e659",
             "locator": {
               "end": 75,
@@ -25,32 +25,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5550c74c12c4fa6b3bac7a4cb27d57c06aff2c",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
             "content": "sha256:4a988cc5e423487009c71e7f22d521292aa99da322ef8ab1768db4ad9b41ac92",
             "locator": {
-              "end": 66,
+              "end": 80,
               "kind": "line_range",
-              "start": 66
+              "start": 80
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Current-state projection and persistence live in the current-state module.\n\nAnchor: \"def build_current_provider_state\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
-            "content": "sha256:afb03f20a64033236a924acb5c079bb87c6606885a346f4f48a7c925a03e0418",
-            "locator": {
-              "end": 19,
-              "kind": "line_range",
-              "start": 19
-            },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
           },
           "kind": "code"
         }
@@ -78,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c86583a29b0796ba6496bce761a659f55b347e4",
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
             "content": "sha256:d7bec5044f16079ae921b671c2680cb9abaf9d79823f4c802fb39b0148190081",
             "locator": {
               "end": 161,

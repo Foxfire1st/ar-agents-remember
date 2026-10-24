@@ -1,6 +1,24 @@
 {
   "path": "docs/tool-details.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "afe95b155440026f6474ee82152b83097de5980a",
+        "content": "sha256:edaf7290dd039afa82153bfa8a8731170c86b153df2534c5dfbbe2ba4bae806b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SF7FRZ",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The cleanup limits the page states are still the limits the command enforces.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The source describes the current instructions summarized above.",

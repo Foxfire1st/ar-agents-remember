@@ -45,9 +45,13 @@ managed `.cgcignore`, config, and `.env` files, detects source-tree CGC
 artifacts, and removes only generated or obsolete provider runtime artifacts
 inside validated provider roots. The public `cgc_runner_image()` is the single
 source of truth for the runner image tag
-(`repository:version-layerrevision`); `providers/settings.py` and a regression
-test depend on it, because an independent derivation there shipped the 2.5.0
-upgrade-path bug where cached-image hosts kept a guard-less image (GitHub #50).
+(`repository:version-layerrevision`); a regression test depends on it.
+Historically, an independent derivation in `providers/settings.py` shipped the
+2.5.0 upgrade-path bug where cached-image hosts kept a guard-less image (GitHub #50).
+The current `providers/settings.py` emits disabled lifecycle settings with an
+empty providers map and no longer imports or consumes this image helper. The
+helper's retained docstring instruction to use it from `providers/settings.py`
+describes that former consumer, not the current settings implementation.
 Bump `CGC_RUNNER_IMAGE_LAYER_REVISION` whenever the runner Docker layer changes
 without a cgc version change. Runtime layout no longer exposes a host
 `venvRoot` or CGC executable path, and provider settings that still define
@@ -73,9 +77,9 @@ otherwise reject.
 - Provider runtime paths stay under configured provider roots unless a helper explicitly validates another source path.
 - Managed CGC execution is Docker-owned; host venv fields are not parsed,
   created, or used as fallback executable paths.
-- Docker runner command builders consume layout-level backend container and
-  network names; layout derivation must keep those synchronized with backend
-  settings.
+- Retained layout and Compose/image helpers keep backend container and network
+  names synchronized with backend settings. The bounded CGC runner command
+  builders are removed; they are not current layout consumers.
 - Container-side paths — bind-mount targets, `working_dir`, and in-container
   env/arguments — must be driveless POSIX via `to_container_path` /
   `env(for_container=True)`; only the host side of a bind mount keeps the native
@@ -86,4 +90,5 @@ otherwise reject.
 
 ### Repo-Internal References
 
-- Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC. [1]
+
+- Retained lifecycle helpers derive layouts, clean runtime artifacts, ensure installation layouts, build runner images and stop existing watchers. [1]

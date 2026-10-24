@@ -28,8 +28,7 @@ is exactly what an operator still reads afterwards.
 Every report carries `automatic: True`, `state`, `summary`, `removed` and `notRemoved`
 cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53).
 
-The `state == ALREADY_CLEAN` short-circuit is the one special case: the terminal archive already proves the enclosure was reclaimed, so the contract's own targets are not reported as "still in place" — that would state the opposite of what that proof says — but what the retry itself removed is reported, because a completed retry that found the outside scratch root and removed it removed something real. Both inventories are
-empty and the summary says "already reclaimed"
+The `state == ALREADY_CLEAN` short-circuit is the one special case: the terminal archive already proves the enclosure was reclaimed, so the contract's own targets are not reported as "still in place" — that would state the opposite of what that proof says — but what the retry itself removed is reported, because a completed retry that found the outside scratch root and removed it removed something real. Only when this retry removed nothing are both inventories empty and the summary says "already reclaimed". If it removed a remaining outside scratch root, `removed` retains that removal and the ordinary inventory summary reports it; already-reclaimed contract targets are not reported as still present
 cit:(["ALREADY_CLEAN = \"already-clean\""], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23).
 
 Otherwise `_inventory` derives the report's two lists for all four required target kinds — worktrees, local branches, the `reports` directory and the enclosure root — plus an `outsideScratch` key when the contract records a root

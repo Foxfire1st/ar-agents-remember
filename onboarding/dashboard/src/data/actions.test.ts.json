@@ -3,16 +3,15 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the exported target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact provider-down and actionable-drift bodies and a non-202 error.",
+      "note": "The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact blocked-start and actionable-drift bodies and a non-202 error.",
       "targets": [
         {
           "anchor": {
             "blob": "c366eb88c8c30aef6662204cdf8ff4a18aaa3648",
-            "content": "sha256:e8ee2ed7f5fac9dbb3edc62273cb0e060d494f761733c5da2fa6473bb4784141",
+            "content": "sha256:e6b7fc33cf0d4028a444fd6962af3e3272a7d8bb9cd093e41fe708497f1479d3",
             "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "postAttentionDismiss"
             },
             "path": "dashboard/src/data/actions.ts"
           },
@@ -20,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "a327cdca8c65a0458f53966d202ec487bd9cad59",
-            "content": "sha256:a15f4075d63b699856eb8abd76e059301d2eb2b0b814e0af204af7737028c2e7",
+            "blob": "7032e6b6b7a77e05da8eb6339324557f60c73700",
+            "content": "sha256:added6d48c4e8ae6ce96f988454ce4a18bc076699b0553ea40383a529c7dcd80",
             "locator": {
               "end": 53,
               "kind": "line_range",

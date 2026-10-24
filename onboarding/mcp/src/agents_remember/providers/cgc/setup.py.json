@@ -3,18 +3,51 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The provider setup facade dispatches CGC install and preparation through this module.\n\nAnchor: \"def install_enabled_providers\"",
+      "note": "The setup entry points return no CGC install or preparation work because their first selection check excludes the retired provider.\n\nAnchor: `install_enabled_provider`, `prepare_enabled_provider`, `provider_enabled`, `selected_provider_enabled`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:d53de2b2603d2c637f2926d23fb6a5b72509555619c74760a6067c3863c8e6ec",
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:0670e973f279db252da1db746bccd938f816b96d1ff638f33a1f6c88b67b7bb5",
             "locator": {
-              "end": 210,
-              "kind": "line_range",
-              "start": 210
+              "kind": "symbol",
+              "name": "install_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:26f2630a7217ea7031152a7d4bf67522161e12cd2329b587e36b55c8ab1fa39d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
             },
-            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:afad0cb5bf28ae43515811e7cc22fa4f3790ca6e5c8c7c2ab08002972d59e378",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }
@@ -39,17 +72,29 @@
       ]
     },
     "3": {
-      "note": "CGC lifecycle install and refresh commands are dispatched through the lifecycle facade.",
+      "note": "The retained helper constructs a refresh request only behind its explicit fallback switch; that construction is separate from current provider availability.",
       "targets": [
         {
           "anchor": {
-            "blob": "a90c2a0fe99768bd5cbd6a910e113452d8d8b6a8",
-            "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:b959b3588a13ef75d0acb5502a1d1b3d5f71256b72334da96c629f8fb76be2ac",
             "locator": {
               "kind": "symbol",
-              "name": "__getattr__"
+              "name": "_refresh_after_seed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
             },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }

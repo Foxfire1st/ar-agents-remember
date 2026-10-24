@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8189a91f17a9062872de4283e541094ec1484f70",
+        "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
         "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
             "content": "sha256:27bb7296ec4a883a988d301b91ced911d3996b36f818048a890ca18cea208f7b",
             "locator": {
               "kind": "symbol",
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
-            "content": "sha256:a72215e0ba659cc1a37ceb35e303ed6e5f1bd2cf0b0c3226d6320e536c6aa097",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
             "locator": {
               "kind": "symbol",
               "name": "build_context_packet"
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3b0eecd3807281d484bf0b57566fa3d00a1e833",
-            "content": "sha256:e628a891ca9f23b727bc251eb06d337fc72a1926ea6ab40775c9eaa84c0464f1",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
             "locator": {
               "kind": "file"
             }
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fed969801e59c3f21496bdd6c76892ccdc0b659",
-            "content": "sha256:29e3596daeb61746fe569f6e9cd8f77cdbb4b272ffb92526538fa13c5fb0e8e2",
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
             "locator": {
               "kind": "symbol",
               "name": "provider_summary"
@@ -103,12 +103,12 @@
       ]
     },
     "3": {
-      "note": "Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate.",
+      "note": "Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` returns `WorktreeSummary`, so there is no dict boundary here to validate.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c790aa2ff909b770419509d63711ebe924d66b3",
-            "content": "sha256:4bd81b106b5483bd46c41e0f548f1e95f63cb987062c0184fff338169b9eb1f7",
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
               "name": "worktree_status_packet"
@@ -119,14 +119,13 @@
         },
         {
           "anchor": {
-            "blob": "6c790aa2ff909b770419509d63711ebe924d66b3",
-            "content": "sha256:ea4cb0110a3a4917c8e55a998693dd58062df3f134fddcc02c60ed9dfcfa3a1a",
+            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 42
+              "kind": "symbol",
+              "name": "WorktreeSummary"
             },
-            "path": "mcp/src/agents_remember/application/worktree_status.py"
+            "path": "mcp/src/agents_remember/models/worktree.py"
           },
           "kind": "code"
         }
@@ -137,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c55af2c8c0b8cd2eaef3ef961fc49505b96b823a",
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
             "content": "sha256:4f888b408f3ea32f96c6d9a7aff94534d8f465c7a1a8fc402108a5a5492e3cfb",
             "locator": {
               "end": 11,
@@ -168,8 +167,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "724de93431a763237e4b7a27b1042570fd8336b5",
-            "content": "sha256:684697fb5ea7ad34bf65f24e83058ce370cb459c15ba79307efebdefb2391f51",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
             "locator": {
               "kind": "symbol",
               "name": "context_packet_payload"
@@ -219,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5550c74c12c4fa6b3bac7a4cb27d57c06aff2c",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
             "content": "sha256:3ae031cbe65c164de319b55fe1ccefb3ad3edaeade89531a176bdfd304386d44",
             "locator": {
               "kind": "symbol",
@@ -230,8 +229,8 @@
         },
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
-            "content": "sha256:db10d8a1f4b7d55fbed6cf4b0b35165264740ff47ec3d68374d22fe6e297ecdb",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:ace4d74d87c5147165b8e2e9d8be8cd87f8ff44baf8cc030b3d0f5ec3165cc5f",
             "locator": {
               "kind": "symbol",
               "name": "ContextPacketRequest"
@@ -241,8 +240,8 @@
         },
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
-            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
             "locator": {
               "kind": "symbol",
               "name": "build_context_packet"
@@ -257,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5550c74c12c4fa6b3bac7a4cb27d57c06aff2c",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
             "content": "sha256:f745faa8f76bfefd6c2f7176bee019bfde535bf578c5852dbf5b590d818e6b64",
             "locator": {
               "kind": "symbol",

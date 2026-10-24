@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "6f1b66ab0adbb5659db6a1c5047014588600d7e3",
-    "commit": "2f699606998a68c42994b9cc102cd22d56cfae37",
+    "codeTree": "300537da1300dd821338b5b7a5eb58d7cdc89d8b",
+    "commit": "296dadd7a66d28903e0b65b5e869a783718fcaa8",
     "role": "curator",
-    "statement": "The feature page still describes the memory `system/` folder the same way, and now names `task-publication.md` as the landing-and-publication primitive.",
-    "task": "260928-MIK-L194",
+    "statement": "The feature page retains package-served skills and repository-owned system guidance, states that both lookup providers are retired and by-path reads carry the product, and names task-publication.md as the landing-and-publication primitive.",
+    "task": "260928-MIK-L192",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

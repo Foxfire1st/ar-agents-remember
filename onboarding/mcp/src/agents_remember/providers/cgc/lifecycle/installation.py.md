@@ -18,7 +18,7 @@ reports Docker-image patch status as a field of install/status/doctor results,
 initializes runtime layout state, and runs doctor checks through the runner
 image. Status now inspects the watcher container, requires it to be running for
 `ok`, includes normalized container state, reports `lastRefresh` from runtime
-state, and exposes an `indexingState` field for MCP current-state consumers.
+state, and exposes an `indexingState` field in the retained lifecycle result. Its former MCP current-state consumers are removed; the presence of this internal result does not restore them.
 
 `indexingState` comes from a real probe chain, not container liveness alone.
 `cgc_indexing_state_probe()` first checks scan markers in the watcher's
@@ -44,8 +44,9 @@ removed from this lifecycle path.
   host venv as an executable fallback.
 - Runtime source artifacts under the code repository are cleanup targets; active
   provider runtime belongs under coordinator provider roots.
-- Process start/stop and bounded CGC commands belong in sibling lifecycle
-  modules and must use Docker runner commands.
+- The sibling process-control module retains watcher stop, not the removed start
+  or bounded-query operations. The runner module retains image build and watcher
+  inspection helpers; those definitions do not restore provider start or query.
 - CGC status should not be ok when the runner image exists but the repo watcher
   container is not running.
 - Graph content probes must use `GRAPH.RO_QUERY`, never `GRAPH.QUERY`: a plain
@@ -60,4 +61,16 @@ removed from this lifecycle path.
 
 - CGC layout and backend settings come from the CGC core module. [1]
 - CGC backend install/start behavior is delegated to the backend module. [2]
-- Docker runner image build and command helpers live in the runner module. [3]
+- The runner retains Docker image build and watcher/image inspection helpers, not bounded CGC command builders; sibling process control retains stop. [3]
+
+
+## Historical provider account
+
+The following source-epoch wording is retained as history. It does not restore a removed provider consumer or operation.
+
+<details>
+<summary>Superseded provider passages</summary>
+
+> state, and exposes an `indexingState` field for MCP current-state consumers.
+
+</details>

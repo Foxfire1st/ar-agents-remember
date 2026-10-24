@@ -40,7 +40,7 @@ No additional implementation scope is opened by this memory reconciliation.
 
 The volatile-only ETag negative assertion follows publication of the exact new projection object by the real projector. The held ETag and 304 are checked after that positive publication boundary instead of after several assumed ticks.
 
-Transport fixtures now use provider events and snapshotStaleSeconds: subscription-gap and volatile-only ETag predicates remain unchanged. New controlled-clock cases allow one early TASKS/HOST_ACTIVITY pass per original rest; DRIFT keeps normal rest without spending that exception, and the exception never delays an earlier normal deadline.
+Transport fixtures now publish enclosure events and carry a drift-stale age: subscription-gap and volatile-only ETag predicates remain unchanged. New controlled-clock cases allow one early TASKS/HOST_ACTIVITY pass per original rest; DRIFT keeps normal rest without spending that exception, and the exception never delays an earlier normal deadline.
 
 ## Evidence
 

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`observer/` joins authored task facts, exact worktree identity and the host publication into one native task model, and interprets supplied structural/analytical evidence for the dashboard. It owns native TaskState/TaskEntry schemas and their producer, the host publication model, workspace Event River envelope/storage/retention, content-free completed-call events, provider/process/attention/graph builders and supporting DTOs. It does not restore an ambient agent lifecycle, a session State/Phase model, served-onboarding deduplication, lifecycle heartbeat/TTL inference or per-lifecycle log reduction.
+`observer/` joins authored task facts, exact worktree identity and the host publication into one native task model, and interprets supplied structural/analytical evidence for the dashboard. It owns native TaskState/TaskEntry schemas and their producer, the host publication model, workspace Event River envelope/storage/retention, content-free completed-call events, process/attention/graph builders and supporting DTOs. It does not restore an ambient agent lifecycle, a session State/Phase model, served-onboarding deduplication, lifecycle heartbeat/TTL inference or per-lifecycle log reduction.
 
 File-surface acquisition, shared task/contract inputs, host-to-task binding, landing observation, drift pruning and atomic projection publication remain serving responsibilities. Contract/task writers own canonical task stages; the host owns observed agent activity. Read/projection code neither writes task stages nor manufactures a second browser/session state authority.
 
@@ -16,7 +16,7 @@ File-surface acquisition, shared task/contract inputs, host-to-task binding, lan
 2. host_activity.py validates published host states and event timestamps; serving/projections/host_activity.py owns publication acquisition and caller/parent task binding.
 3. reducer.project_workspace composes supplied facts, passes native tasks/counts through and returns only unbound worktrees in the separate enclosure collection.
 4. tool_events.py writes selected finalized-call facts to the bounded workspace river; store.py and event_retention.py own its lock, byte admission and cursor-safe retained tail.
-5. reducer_impl builds provider/drift/setup/start attention and engine/process evidence. projection_graph.py retains supplied graph display semantics, not execution admission.
+5. reducer_impl builds drift and start attention plus engine/process evidence. projection_graph.py retains supplied graph display semantics, not execution admission.
 6. Reader summaries and selected full bodies remain separate; task stage/activity and actual eventAt are not recomputed from browser time or old lifecycle logs.
 
 <details>
@@ -60,9 +60,9 @@ The current ToolEventWriter retains its caller snapshot, lock and process-local 
 
 ### Retained provider, process, graph and serving boundaries
 
-Engine nodes join enclosure facts, status/guidance, isolated providers, and setup by worktree-group basename. Disposed completed/abandoned cleanup facts are filtered; cleanup-pending remains visible. Pre-contract starts receive synthetic nodes unless a contract for that group already anchors them; stale-base and source-lineage blocks map to preflight. Code/memory references, boot roles, edges, missing facts, and observed/derived/planned/missing distinctions preserve evidence honesty. External-memory lanes exist only for external-memory contracts. Landing refs, integration strategy, PR milestone time, carryover completion time, source lineage, and next-action guidance are display evidence supplied by their owners.
+Engine nodes join enclosure facts and status/guidance with the worktree's own code and memory lanes, by worktree-group basename; provider and setup-progress inputs no longer feed them. Disposed completed/abandoned cleanup facts are filtered; cleanup-pending remains visible. Pre-contract starts receive synthetic nodes unless a contract for that group already anchors them; stale-base and source-lineage blocks map to preflight. Code/memory references, edges, missing facts, and observed/derived/planned/missing distinctions preserve evidence honesty; there is no boot-role fact in the current fold, so none is presented as preserved evidence. External-memory lanes exist only for external-memory contracts. Landing refs, integration strategy, PR milestone time, carryover completion time, source lineage, and next-action guidance are display evidence supplied by their owners.
 
-Provider builders expand explicit CGC watcher and target-repository evidence into repository-scoped nodes, preserve aggregate nodes when such evidence is absent, and distinguish configured-only worktree nodes from runtime observations. One provider runtime can cover several addressable memory targets. Missing expected boot roles remain distinguishable from observed or failed roles rather than fabricated healthy state.
+No provider-node builder remains in this package: an explicit CGC-watcher or target-repository observation no longer expands into repository-scoped nodes, and there is no aggregate-versus-configured-only distinction, runtime-to-memory-target coverage or expected-boot-role comparison to read. Provider state is not part of the fold's output, so a reader must not expect provider or setup nodes from it.
 
 The graph builder accepts protocols/plain facts without importing the tasks package. Leaf title lookup uses `(owning TaskDocumentRef, leaf id)`, so equal local ids under different masters remain distinct. Serving supplies walked edges and waves; observer orders views by supplied waves and declaration order and preserves predecessor reasons/judgment ids. Landed requires completed work; resolved also permits abandonment. Frontier selection checks landed, then abandonment, then unresolved predecessors, then in-flight, then ready. A segment can display abandonment if any named leaf is abandoned while remaining unresolved until all named leaf statuses are resolved. Missing master facts never establish landed or in-flight, although a node with no unresolved predecessor can display ready. These are display predicates, not execution admission.
 
@@ -99,7 +99,7 @@ Landing refresh is serving-owned, bounded, exact-contract observation. Completed
 
 Always-on native entries/summaries do not carry the complete selected reader body. Current identity, stage/activity, counts, step/review facts and bodyRevision remain authoritative; on-demand bodies contribute long reader content and admitted matching-revision expansions. Canonical enumeration, graph-named masters and declared owner/child reads have their own actual scopes; this is not an unconditional promise of zero directory I/O or universal body-byte parity. Source-defined truncation and step-preview bounds do not become fresh execution or payload-budget acceptance.
 
-Attention now derives provider failure, actionable drift, failed/stale setup and blocked-start items together with five native kinds — an unanswered permission prompt, a held role message, a started task idle past 900 seconds with no bound agent working, and terminal landed and abandoned notices — ordered by severity, descending wait and stable id. The three live causes clear only when their native cause ends and cannot be acknowledged; the two notices are acknowledged once per occurrence. `native_attention.py` declares the fact shapes and their named bounds, `reducer_impl/_attention_native.py` holds one builder per kind, and `serving/projections/native_attention.py` is the intake that reads the product's own files and resolves nothing from an incomplete read. It does not reconstruct session blocked/awaiting-developer/quiet/fleeting attention. The fold suppresses the reconciled source-owned dismissal map; provider/setup/start recovery belongs to their native observations, while drift matches complete actionable fingerprints and retains admitted first-read acknowledgements when a fingerprint is missing. Missing data or elapsed age is not invented recovery.
+Attention now derives actionable drift and blocked-start items together with five native kinds — an unanswered permission prompt, a held role message, a started task idle past 900 seconds with no bound agent working, and terminal landed and abandoned notices — ordered by severity, descending wait and stable id. Nothing derives an item from provider failure, from failed or stale setup, or from a retried start: those builder inputs went with the search providers, and the served projection carries neither a `providers` key nor setup or start-progress analytics. The three live causes clear only when their native cause ends and cannot be acknowledged; the two notices are acknowledged once per occurrence. `native_attention.py` declares the fact shapes and their named bounds, `reducer_impl/_attention_native.py` holds one builder per kind, and `serving/projections/native_attention.py` is the intake that reads the product's own files and resolves nothing from an incomplete read. It does not reconstruct session blocked/awaiting-developer/quiet/fleeting attention. The fold suppresses the reconciled source-owned dismissal map; drift matches complete actionable fingerprints and retains admitted first-read acknowledgements when a fingerprint is missing. Missing data or elapsed age is not invented recovery.
 
 ## Invariants And Boundaries
 
@@ -278,20 +278,34 @@ No external Domain Documentation source is configured for this memory. Current i
 - Repository analytical caching returns route coverage and ledger only; workspace metrics and analytics no longer carry verification-age sidecar rollups. [52]
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [51]
+
 - The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts. [38]
+
+
 - Native state separates canonical stage, optional host activity and contributing eventAt. [39]
+
+
 - Terminal/planned stage wins; an unknown host cannot establish paused, and timestamp selection uses the contributing agents. [40]
+
+
 - The one task join creates native identity/membership and binds contracts by exact task identity. [41]
+
+
 - Published host states admit only the declared vocabulary and timezone-aware event timestamps. [42]
+
 - The host publication separately carries boot identity, completeness, agent facts and ignoredEvents. [43]
 - The completed-call writer is bounded and failure-counting; it is not the removed ambient/read.packet emitter. [44]
 - Current EventStore only appends and reads the workspace river. [45]
 - The noncreating reader helper reports whether it obtained the shared river lock. [46]
 - Every workspace append uses the shared byte-bound admission. [47]
 - Compaction replaces the river and then writes its virtual base offset separately; N2 remains a crash-window limit. [48]
-- Attention uses only provider, drift, setup and blocked-start contributors and a deterministic ranked order. [49]
+
+- Attention uses only drift and blocked-start contributors and a deterministic ranked order. [49]
+
 - Dismissal matching distinguishes drift fingerprints from other source-owned recovery/removal. [50]
+
 - `Event` is the observer event model. [2]
-- `workspace_provider_nodes` is one of the route-local provider-node helper symbols. [6]
+
 - Graph titles are master-qualified and resolved/abandoned/landed are distinct display predicates. Anchor: graph protocol, frontier and title lookup [35]
-- Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape. Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze` [36]
+
+- Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape.  Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze` [36]

@@ -50,7 +50,12 @@ Worktree lifecycle payloads expose typed MCP next hints through
 of CLI-shaped `next_command` strings. Provider setup for worktree start is fed
 through an internal `WorktreeProviderSetupConfig` created by the MCP application entry point,
 so callers no longer pass provider coordination roots, settings paths, or
-runtime roots into the worktree start surface.
+runtime roots into the worktree start surface. This is a retained configuration carrier,
+not a current retired-provider preparation promise: the shared generator returns
+`contextProviders.enabled=false` with an empty provider map, and the common
+enablement predicate returns false for both retired identities. Neither this
+facade nor its exported setup value establishes a current CGC/GrepAI seed,
+install, start or index-build operation.
 
 Closeout context reparsing, changed-path discovery, source-onboarding plans, entity fingerprint and generated route-index refresh, integration replay, cleanup, and lifecycle finalization now live in the extracted modules
 documented by the `modules/overview.md` route overview.
@@ -90,7 +95,8 @@ documented by the `modules/overview.md` route overview.
 ### Repo-Internal References
 
 
-- Provider setup performs isolated provider seed and runtime preparation. [2]
+- The retained worktree setup configuration reaches the existing provider helpers, but generated lifecycle settings are disabled/empty and both retired identities are never enabled; no ordinary CGC/GrepAI seed or runtime preparation is established. [2]
+
 - Worktree status packets project lifecycle payloads into context packets. [3]
 
 

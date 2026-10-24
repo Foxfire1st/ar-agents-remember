@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
-        "content": "sha256:f8941daa41b23f22513cb3f2833d09285d7b1699e6ff74c44260820799818437",
+        "blob": "076d83315223337d2ae1069118fadbb14829c501",
+        "content": "sha256:df422e63673c2c2e4d72bcde4ca6020c81448e3c13cdce3f37d7be4ed8236171",
         "locator": {
           "kind": "symbol",
           "name": "build_attention_queue"

@@ -1,0 +1,97 @@
+{
+  "path": "docs/install/cursor.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.cursor/`, render with `--repo`, open or restart the workspace in Cursor once.\n\nAnchor: `docs/install/cursor.md:13-24`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package contents: always-applied rule, `sessionStart` hook, project MCP registration, authority settings, skills.\n\nAnchor: `docs/install/cursor.md:26-34`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/cursor.md:36-43`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rule is the dependable surface; `sessionStart` is documented as fire-and-forget.\n\nAnchor: `docs/install/cursor.md:45-69`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Project MCP config path and the `uvx` registration are printed.\n\nAnchor: `docs/install/cursor.md:71-91`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Skill roots, flat package layout, and the no-install first-run rule are stated.\n\nAnchor: `docs/install/cursor.md:93-106`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c4f06e78351e41b2d2e5a1418930f20196c5a42",
+            "content": "sha256:4f401135b52f086e6555eb8df784a0bcf487c5c8f091d1babfe868633cc9c235",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -14,19 +14,19 @@
 
 ## Hot Path Summary
 
-Start with `__init__.py` for lazy export resolution and `watchers.py` for enabled-provider start/status/stop/shutdown aggregation. `providers/lifecycle_service.py` calls the facade directly with settings-owned arguments. Shared responsibilities are split among `command_runner.py`, `compose_runtime.py`, `docker_runtime.py`, `host_ports.py`, `log_capture.py`, `process_status.py`, `provider_settings.py`, `result_rendering.py`, `runtime_environment.py`, and `state_files.py`.
+Start with `__init__.py` for lazy export resolution and `watchers.py` for enabled-provider stop and shutdown-all aggregation. `providers/lifecycle_service.py` calls the facade directly with settings-owned arguments. Shared responsibilities are split among `command_runner.py`, `compose_runtime.py`, `docker_runtime.py`, `host_ports.py`, `log_capture.py`, `process_status.py`, `provider_settings.py`, `runtime_environment.py`, and `state_files.py`.
 
-CGC's package groups settings/layout, Compose rendering, FalkorDB backend, runner, installation/status, process control, query, and refresh functions. GrepAI's package groups settings/workspace, Compose rendering, PostgreSQL backend, Ollama embedder, runner, and high-level actions. These retained Python implementations do not establish an executable package entrypoint.
+CGC's package groups settings/layout, Compose rendering, FalkorDB backend, runner, installation/status, and process control functions. GrepAI's package groups settings/workspace, Compose rendering, PostgreSQL backend, Ollama embedder, runner, and high-level actions. These retained Python implementations do not establish an executable package entrypoint.
 
 ## How It Is Built
 
-The facade searches its ordered module tuple on attribute access and caches a matching attribute in its globals. Watcher aggregation reads provider enablement from an explicit settings file, invokes enabled GrepAI and CGC handlers, and combines their results, partial-success indication, process-namespace information, and recovery actions. CGC status aggregation includes shared backend status and per-repository results.
+The facade searches its ordered module tuple on attribute access and caches a matching attribute in its globals. Watcher aggregation reads provider enablement from an explicit settings file, invokes enabled GrepAI and CGC handlers, and combines their results, partial-success indication, process-namespace information, and recovery actions. Every admitted watcher action is a stop.
 
 Compose planning renders the symbolic `docker` command without requiring executable discovery. Real Compose execution resolves Docker through `docker_command` and then runs the command. Watcher Compose rendering emits a host `user:` block only when both `os.getuid` and `os.getgid` are callable.
 
 `BackendStartReconciliation` is a frozen shared value containing network information and optional migration and forced-removal results. CGC and GrepAI backend-start functions construct it after migration and mismatched-container reconciliation. Their completed start responses carry its network information and reconciliation command results; dry-run responses carry planned Compose commands and migration information. This shared shape belongs here because both provider backends use it.
 
-Docker helpers normalize container state, running state, start time, uptime, and health. Provider-specific modules determine their lifecycle results; `providers/current_state.py` projects and aggregates provider readiness from those results.
+Docker helpers normalize container state, running state, start time, uptime, and health. Provider-specific modules turn those facts and their Compose command outcomes into lifecycle results; no shared projection aggregates provider readiness from them.
 
 `log_capture.py` recursively reduces response detail. `_shrink_logs` empties captured output on successful nodes and keeps a bounded failure tail otherwise, retaining existing log keys. `_drop_verbose_plumbing` always removes the duplicate `json` mirror, removes command/Compose/migration detail on success, and retains failure detail with command-token redaction.
 
@@ -40,7 +40,7 @@ Settings readers require an explicit settings path. `require_lifecycle_settings_
 
 The retained GrepAI lifecycle is organized around its Docker backend, embedder, runner, and Compose actions. Its Docker status combines backend, embedder, and watcher results. The shared facade does not add a host-binary or host-Ollama execution route.
 
-Watcher start, stop, and shutdown-all require the durable-process-namespace check when they are not dry runs. Disabled providers are omitted from watcher results; combined success is computed from the included results.
+Watcher stop and shutdown-all require the durable-process-namespace check when they are not dry runs. Disabled providers are omitted from watcher results; combined success is computed from the included results.
 
 ## Source And Authority Bounds
 
@@ -58,7 +58,7 @@ There is a retained caller inconsistency: `providers/setup_common.py` still desc
 - Typed lifecycle services dispatch directly through the facade with settings-owned arguments. [6]
 - Compose plans use symbolic Docker; execution discovers Docker; host-user rendering requires callable UID/GID functions. [7]
 - Frozen backend reconciliation is shared by CGC and GrepAI and carried into start results. [8]
-- Docker summaries expose container facts; current-state projection determines provider readiness. [9]
+- Docker summaries expose container facts; no shared projection aggregates provider readiness, and the retired provider summary reports configured-or-not with `state: skipped` and reads no current-state or readiness detail. [9]
 - Recursive response reduction distinguishes successful nodes from failure detail. [10]
 - Settings readers reject a missing explicit path. [11]
 - Command execution has no environment override; its environment inherits process variables and sets UTF-8 controls. [12]

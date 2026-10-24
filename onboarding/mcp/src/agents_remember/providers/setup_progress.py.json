@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
             "content": "sha256:2b298727889b36ea6fb4b2585dbc3ce558335b334f12b56e16d0281a35278d5c",
             "locator": {
               "kind": "symbol",
@@ -31,6 +31,94 @@
               "name": "launch_provider_setup"
             },
             "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained no-op sink and file schema preserve phase events and bounded write errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:da69baff0487ede61be3a9fe293cf64363a636fa479e7e0117acc95c8865d4b4",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Retained progress projection computes heartbeat age, stale state, elapsed time and compact phase lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:71419156565c59b15cc09f6879f171ef5c88aa1a19504286029ec6e4c68db257",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The old progress-file reader retains terminal/stale status and retry arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2f62c4a9e8cbe28b7aa72d52fe9c4f6a1f6cbbc6d842cc999b7b197cf987fc69",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Worktree status can include existing setup progress through the retained port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:9f8d3ded3c3792e38ea1b465f4015c7b9710517593f33f561a9a8cb0e2d97661",
+            "locator": {
+              "end": 519,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared enablement predicate always disables the two retired provider identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }

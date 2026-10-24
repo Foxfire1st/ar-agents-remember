@@ -130,6 +130,48 @@
           "kind": "test"
         }
       ]
+    },
+    "7": {
+      "note": "The current evaluator requires a supplied ProviderStopper and does not import an agent tool; the retained evaluator fixtures inject that boundary, so the former MCP-tool test route is historical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:214c06c17ce3da9f42dd901fd4fc5d9624623f03b1dffbb7fc5be60e95aa391f",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bbd2b44b9ee05cfd3e9a3a27b72e1e617ddbe3e",
+            "content": "sha256:904dac759852aea5a29c9468336ec4ba7586d20e8549859a211bafd9f11f9550",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7bbd2b44b9ee05cfd3e9a3a27b72e1e617ddbe3e",
+            "content": "sha256:b159435989a3eaf29e48eb073685f2321195da5ae4803c9ef666c14ae86fff60",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

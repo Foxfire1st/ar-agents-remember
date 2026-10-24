@@ -20,41 +20,17 @@
       ]
     },
     "2": {
-      "note": "CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`.",
+      "note": "CGC lifecycle actions consume the selected runtime layout through the layout-action results in `process_control.py`; the start, refresh and run entry points are retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:dc7eb669fc01a1e64364da80808afa2897ccce4091249ab1a6d15d107ac43859",
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start"
+              "name": "cgc_layout_action_results"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
-            "content": "sha256:dde624991b47eee275f846529e6153c0315d85112a95b8f8cfc3e564432f693f",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_refresh"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3a70677d9651cd35ac2ce27a9583647d348e522",
-            "content": "sha256:0a3fa984f192b1b5e145be3a6af4d9ca2a315401f0049d39b89653780a8225ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_run"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py"
           },
           "kind": "code"
         }
@@ -72,6 +48,60 @@
               "name": "cgc_runner_image_build"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The CGC lifecycle facade enumerates six retained modules, without query or refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c3fe573530750be048927d921f4fe6ea1e9304c",
+            "content": "sha256:ff711aa0ae0a8d14442e05d182e9df4fe1693987ce21fcd9761138a5b5b3df78",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained watcher-stop helpers use layouts and scoped arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:07453c05545c2956dc23ef63559d92bdb9f45cb893bd7c25dcc992c5a30d6821",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Watcher aggregation admits only stop and shutdown-all, mapping CGC to stop handlers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:27a2050cf88c43d31f053d70530b503c42bb5c24137cdacb19d82aa7cc3afc4c",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
           },
           "kind": "code"
         }

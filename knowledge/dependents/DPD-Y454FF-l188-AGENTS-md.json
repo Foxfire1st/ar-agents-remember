@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
-    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "codeTree": "e2057915c8ea285fadecb95170528e37fa162fcf",
+    "commit": "2f699606998a68c42994b9cc102cd22d56cfae37",
     "role": "curator",
-    "statement": "The source-checkout instructions still say skills are authored in skills/ and refreshed into the package data by the sync script, with no harness skill folder.",
-    "task": "260928-MIK",
+    "statement": "AGENTS.md no longer asks for a provider check or an include_providers request, so its instruction to call context_packet without provider selection still stands.",
+    "task": "260928-MIK-L192",
     "uncommitted": true
   },
   "document": "AGENTS.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

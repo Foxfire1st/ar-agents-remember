@@ -14,21 +14,21 @@ L7 detector's `wc -l` semantics. Scenario content is unchanged.
 
 ## Current enclosure-only composition
 
-Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runtime fields and historical names. Only seedFallback comment changes to explicitly retired render; those inputs no longer generate engine visual charge/reindex/arcs.
+EngineRoomScenario carries {name, processes} only. The workspace provider stack, ProviderNode/ProviderBootNode factories, provider setup/runtime fields and seed/clone lanes are removed; the remaining scenarios describe enclosure, code/memory worktree, ledger, sync, integration and landing facts.
 
 ### Maintenance boundaries
 
-Preserve fixture data shape and historical scenarios; replace statements equating fixture runtime/seed fields with current gauge/arrows. Explain completed/failed/current phase strings can still appear in diagnostics, while seedFallback has no dedicated render. Integration/memory/landing/ledger fixtures still exercise surviving owners; fixture data is not served or mounted proof.
+Preserve the remaining enclosure, memory, sync, integration, landing and ledger fixtures. Provider boot/seed/clone scenarios and setup/runtime fields are removed rather than retained as current fixture inputs. Integration/memory/landing/ledger fixtures still exercise surviving owners; fixture data is not served or mounted proof.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [13]
-- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [14]
-- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [15]
-- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [16]
-- Fixture schema still carries {name, processes, workspace}, ProviderNode/ProviderBootNode factories, provider edges/runti — source ownership, not executed visual proof. [17]
+- EngineRoomScenario carries name and processes only, without a workspace provider stack. [13]
+- The edge builder retains worktree-add, ledger-map, sync and integration lanes without provider seed/clone lanes. [14]
+- The process builder carries enclosure, worktree, ledger, landing and action facts without provider setup/runtime fields. [15]
+- The retained boot stages describe enclosure materialisation without provider runtime-deploy or seed/clone beats. [16]
+- The exported scenario list collects enclosure/process fixtures without a workspace provider array. [17]
 
 ## Historical superseded account (non-operative)
 

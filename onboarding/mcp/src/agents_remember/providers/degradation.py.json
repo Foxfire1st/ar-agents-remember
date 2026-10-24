@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/degradation.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+        "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YKQ8M2",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The degradation detector and its critical failsafe remain the decision point the loop calls.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The provider-only detector/response entry point implemented by this module.\n\nAnchor: \"def evaluate_provider_degradation\"",

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`setup.py` owns the GrepAI-specific provider setup branch for install and prepare refresh orchestration.
+`setup.py` retains the GrepAI-specific install, prepare/clone and refresh helpers. All three entry points are disabled by the shared retired-provider selection gate.
 
 ## Code Commentary
 
@@ -14,27 +14,26 @@
 
 Every `run_lifecycle(...)` call passes a `setup_common.LifecycleCommand(provider="grepai",
 action=…, extra_args=tuple(grepai_extra_args(args)))` in place of the positional
-`provider`/`action` plus the `extra_args=` keyword; `timeout` and `dry_run` stay keywords. The
-argv the lifecycle CLI receives is unchanged.
+`provider`/`action` plus the `extra_args=` keyword; `timeout` and `dry_run` stay keywords. The argv is still built the same way (setup_common.py:186-229). Its former receiver, the provider lifecycle CLI, no longer exists: providers/lifecycle/ has no __main__.py and binds no main, which the non-dry branch still requests (setup_common.py:218). With both providers retired, that branch is not reached.
 
 ### Logic
 
-It checks whether `grepai-memory` is selected and enabled, then returns lifecycle `install` or `refresh` command payloads for the Docker-owned GrepAI provider. The actual lifecycle behavior remains under `providers.lifecycle` and its GrepAI lifecycle modules.
+Each entry point first calls `selected_provider_enabled`, which always returns false for `grepai-memory`; install, prepare and refresh therefore return an empty result before their work or progress announcements. The retained branches behind that gate construct lifecycle `install`/`refresh` requests or perform the prepare-time clone. Their Docker-owned implementation remains in the GrepAI lifecycle modules, without establishing an available product provisioning route.
 
-`install_enabled_provider` and `prepare_enabled_provider` announce their
-phases (`grepai install`, `grepai clone-db`) through
-`setup_progress_from(args)` so background worktree setup is observable mid-run
-(GitHub #53); return shapes are unchanged.
+The code behind the selection checks retains `setup_progress_from(args)`
+announcements for `grepai install` and `grepai clone-db` (GitHub #53). Ordinary
+setup reaches neither announcement because the retired provider is never enabled.
 
 ### Invariants And Boundaries
 
 - GrepAI setup remains Docker-owned; this module does not introduce host binary setup.
-- `skip_grepai` suppresses GrepAI setup through the shared provider-selection helper.
+- `skip_grepai` is still a selection operand, but clearing it cannot enable the retired provider: the shared `provider_enabled` check returns false for `grepai-memory`.
 - Watcher orchestration remains in the `provider_setup.py` facade because it spans providers.
 
 ## Evidence
 
 ### Repo-Internal References
 
-- The setup facade calls this module during install and prepare. [1]
+- The retained install, prepare/clone and refresh entry points all return no work at the shared retired-provider gate. [1]
+
 - Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. [2]

@@ -1,0 +1,70 @@
+{
+  "path": "docs/guides/README.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a6655b3181f48f871718a77e5fe34549bbb2e25b",
+        "content": "sha256:65290a737d4d082439b353ac1e81b84456751324f5c5714b07e07ee50a578cae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PZ7W0M",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The guides index caption describes the retirement page.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The Providers entry is annotated as retired search providers with old-install cleanup.\n\nAnchor: `docs/guides/README.md:12`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6655b3181f48f871718a77e5fe34549bbb2e25b",
+            "content": "sha256:65290a737d4d082439b353ac1e81b84456751324f5c5714b07e07ee50a578cae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The index lists operational guides, and no entry describes a provider operation.\n\nAnchor: `docs/guides/README.md:3-11`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6655b3181f48f871718a77e5fe34549bbb2e25b",
+            "content": "sha256:65290a737d4d082439b353ac1e81b84456751324f5c5714b07e07ee50a578cae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The page gives no provider id, command, leftover-state detail or safety-check account.\n\nAnchor: `docs/guides/README.md:1-12`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6655b3181f48f871718a77e5fe34549bbb2e25b",
+            "content": "sha256:65290a737d4d082439b353ac1e81b84456751324f5c5714b07e07ee50a578cae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
-        "content": "sha256:6cb8fb66c96de79e348be5ebde90bc0cf2c6d6b6f21e4fe3b8c10bc3ed6fe4cc",
+        "blob": "fecebef566013755d94a74b218e2baf8769e46f1",
+        "content": "sha256:8590855edb5c5fc618a9562be260c09ec397e186d20d9c361d904860a2a1ae55",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8ETN38",
+      "invariant": "INV-XGH3G2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-11",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The router's preference, routing and query-syntax sections now describe native search and named reads, with the retired strategies marked retired rather than preferred.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+        "content": "sha256:82a1494dd64dfb44897c6139d8c81207aaaf4543e441b6f95020ca80551cec9c",
         "locator": {
           "kind": "file"
         }
@@ -42,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:6ef285f8355938368e7d789bddb6126065c7d15c5e6d55a27c8bd2ee3492a0d8",
             "locator": {
-              "end": 250,
+              "end": 194,
               "kind": "line_range",
-              "start": 224
+              "start": 168
             }
           },
           "kind": "code"
@@ -59,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:8219b6106427ab5aec9f7ee745892cb760827f5981c17270b704a3c9e1b69899",
             "locator": {
-              "end": 258,
+              "end": 202,
               "kind": "line_range",
-              "start": 251
+              "start": 195
             }
           },
           "kind": "code"
@@ -76,12 +93,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:25dafd1d62944c5e0729d8a899e4a8bdc50f736a45c48b70250bdfe273a95535",
             "locator": {
-              "end": 267,
+              "end": 211,
               "kind": "line_range",
-              "start": 259
+              "start": 203
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Semantics questions use the route index and one capped native search over memory onboarding and knowledge text; the sidecar mapping identifies the source path.\n\nAnchor: `Retired Substrates: The Questions They Still Ask`; `Semantics questions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:5938eb35ed8a05ca3d2a4516dcd3d795a43d922c84db0fa405c0818664c3410f",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Relationship questions follow native symbol hits one call or import level at a time; native risk triage remains a bounded map rather than a completeness claim.\n\nAnchor: `Relationship questions`; `Risk triage`; `Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:e0793c048fb4bb74174976aabfb072f7e290a6d0e8971ed2bbdfd0adef696e8b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "code"
@@ -178,12 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "blob": "fecebef566013755d94a74b218e2baf8769e46f1",
             "content": "sha256:b6c026235f185e3e9e54f6602cd3d6d071446c6f7f433f5a66c5c6214f216977",
             "locator": {
-              "end": 193,
+              "end": 131,
               "kind": "line_range",
-              "start": 172
+              "start": 110
             }
           },
           "kind": "code"
@@ -212,12 +263,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:2983f08f6cc7261e51a8567731704e619680ab3fdd50c424024ebd62ef48612f",
             "locator": {
-              "end": 223,
+              "end": 167,
               "kind": "line_range",
-              "start": 214
+              "start": 158
             }
           },
           "kind": "code"

@@ -17,11 +17,12 @@ runtime package is installed.
 The packaged coordinator copy carries the canonical host launcher contract. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer names the sprint document to the Architect in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route.
 
 The template combines coordinator guidance with role routing: product-started role agents follow their handover; the rest of its opening is for free chat. Managed-source work enters the Architect workflow before code changes, with existing plan and approval boundaries. It points to the sibling installed `system/`, `tasks/` and `skills/` instructions; resolves repository context before trusting memory/tasks; obtains roots/actions through context_packet without a provider argument, reads provider facts from authority settings/provider operations rather than from that packet, and keeps coordinator system/* workspace defaults; captures durable clarifications and verifies code reality before propagating onboarding.
-The context retrieval path is routed at the coordinator entrypoint: source work
-that relies on onboarding, providers, or repository source goes through
-`c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent
-routing across optional providers, route indexes, onboarding, and bounded source
-confirmation. The generated mirror carries the research-phase naming doctrine: before the build decision, ask `read_ar_files` which cards govern the paths, then read named source/cards/overviews with harness-native tools. The tool carries no document text and has no session front-door or publication continuation. Naming calls remain retrieval evidence; native reads confirm content both before and after the build decision. The authored read doctrine is in `c-04-retrieval-strategy-router` and `l-01-agent-lifecycles`; this template is a synchronized mirror. The memory-layer read path is also explicit: memory repos are not
+The context retrieval path is routed at the coordinator entrypoint through
+`c-04-retrieval-strategy-router`. The template marks Semantics and Relationship
+provider strategies retired: concept routing uses route-index and onboarding
+search followed by bounded native reads, while relationships use native search
+from the anchor symbol. Intent names the governing cards through `read_ar_files`
+and confirms their content with bounded native reads. The generated mirror carries the research-phase naming doctrine: before the build decision, ask `read_ar_files` which cards govern the paths, then read named source/cards/overviews with harness-native tools. The tool carries no document text and has no session front-door or publication continuation. Naming calls remain retrieval evidence; native reads confirm content both before and after the build decision. The authored read doctrine is in `c-04-retrieval-strategy-router` and `l-01-agent-lifecycles`; this template is a synchronized mirror. The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
 from `system/settings.md`, `system/tools.md`, `system/task-publication.md` (when
 present, for the gated-branch landing flow read before any commit/push/PR),
@@ -83,8 +84,8 @@ This onboarding is backed by the source template itself.
 - The template separates role handovers from free-chat work, which writes sprint prose and starts an Architect through `role_start` without a document reference or brief. [1]
 
 - The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. [2]
-- The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. [3]
-- The clarification section routes verified findings through c-05 and discusses mismatches before onboarding propagation. [4]
+- The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns the Semantics, Relationship and Intent strategies across route indexes, onboarding and bounded source confirmation; Semantics and Relationship are marked retired provider strategies with no provider query behind them, answered by route-index/onboarding search and native anchor search. [3]
+- The developer-clarification section routes verified clarifications through `c-05-create-or-update-onboarding-files` only after a code-reality check, and discusses mismatches before onboarding propagation. [4]
 - The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured. [5]
 
 - Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. [6]

@@ -6,9 +6,7 @@
 
 ## Purpose
 
-Durable phase-progress reporting for background provider setup (GitHub #53):
-the observable that lets a model (or dashboard) watch a running setup instead
-of holding a multi-minute tool call open.
+Retained phase-progress reporting for internal provider setup and old progress artifacts (GitHub #53). The sink, heartbeat-stamped file and compact status reader survive. `worktree_status` can still report an existing progress file; the retired provider dashboard is not a current consumer, and both retired identities are disabled for new setup.
 
 ## Code Commentary
 
@@ -44,9 +42,7 @@ Terminal states pass through (`ok`, `ready-with-failed-phases`, `failed`,
 - Progress reporting must never raise into the provider setup chain.
 - `stale` is a READER projection of a fresh-state `running` file, never a
   written state; the heartbeat is the only liveness signal.
-- The schema is dashboard-facing: identity fields and the reserved
-  `currentPhase.metrics` shape must stay forward-compatible (bump the schema
-  version on breaking changes).
+- Retained progress files keep their identity fields and reserved `currentPhase.metrics` shape. Internal/old-artifact readers do not establish a current provider-dashboard contract; breaking file-schema changes still require a version change.
 - `seedFallback` is written the moment the fallback phase starts, not after it
   finishes — surfacing the seconds→minutes expectation change is the point.
 
@@ -60,3 +56,23 @@ No external Domain Documentation source is configured for this memory repo.
 
 - Provider setup functions announce phases through `setup_progress_from(args)`. [1]
 - The worktree launcher creates the file and finishes it from the setup payload. [2]
+
+## Historical provider-surface wording
+
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> Durable phase-progress reporting for background provider setup (GitHub #53):
+> the observable that lets a model (or dashboard) watch a running setup instead
+> of holding a multi-minute tool call open.
+>
+> - The schema is dashboard-facing: identity fields and the reserved
+>   `currentPhase.metrics` shape must stay forward-compatible (bump the schema
+>   version on breaking changes).
+
+## Current retirement-boundary evidence
+
+- The retained no-op sink and file schema preserve phase events and bounded write errors. [3]
+- Retained progress projection computes heartbeat age, stale state, elapsed time and compact phase lines. [4]
+- The old progress-file reader retains terminal/stale status and retry arguments. [5]
+- Worktree status can include existing setup progress through the retained port. [6]
+- The shared enablement predicate always disables the two retired provider identities. [7]

@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "38c4a6f6edfedff4786a29ac8eef205470336a2f",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 376,
+              "end": 533,
               "kind": "line_range",
-              "start": 376
+              "start": 533
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
+            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
             "content": "sha256:6ffeb132bdd1fb709cb2f67647c709cf273cddcdae519f585b9caaa21c504c37",
             "locator": {
-              "end": 315,
+              "end": 900,
               "kind": "line_range",
-              "start": 315
+              "start": 900
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -67,12 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
+            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
             "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
             "locator": {
-              "end": 421,
+              "end": 1028,
               "kind": "line_range",
-              "start": 421
+              "start": 1028
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -98,12 +98,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
             "locator": {
-              "end": 279,
+              "end": 321,
               "kind": "line_range",
-              "start": 279
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -116,12 +116,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "38c4a6f6edfedff4786a29ac8eef205470336a2f",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
-              "end": 376,
+              "end": 533,
               "kind": "line_range",
-              "start": 376
+              "start": 533
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -165,16 +165,93 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
             "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
             "locator": {
-              "end": 279,
+              "end": 321,
               "kind": "line_range",
-              "start": 279
+              "start": 321
             },
             "path": "pyproject.toml"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:011aab9af5e506b8f63849410c47022d140b55f37accaead1db3490572a2fdf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:7c519b4c31fa2923c8116ef64412413a9e642fae9535df356fe307003b135bdf",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+            "content": "sha256:46684d7e4b2621652ef5dc0d7f5408abbc3c2f364f1cc78ad57c238e05759698",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 675
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -353,12 +430,12 @@
         },
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:f524fb0a4af91d49a9f2a190ba0fbc7cbcf3c6240692cc4ebcf270a8453e274e",
             "locator": {
-              "end": 530,
+              "end": 516,
               "kind": "line_range",
-              "start": 501
+              "start": 487
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -366,12 +443,12 @@
         },
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:5caa2fd4b80b799d259e220611950e40350c6c539473cca268e8ff9aa6bebc89",
             "locator": {
-              "end": 471,
+              "end": 457,
               "kind": "line_range",
-              "start": 471
+              "start": 457
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -396,12 +473,12 @@
         },
         {
           "anchor": {
-            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
             "content": "sha256:2c69b6bf4581ce6c8ec6582f505f09bf2096ad16dba0a9edb9002bb063828879",
             "locator": {
-              "end": 265,
+              "end": 264,
               "kind": "line_range",
-              "start": 265
+              "start": 264
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
           },
@@ -427,12 +504,12 @@
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
             "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
             "locator": {
-              "end": 54,
+              "end": 63,
               "kind": "line_range",
-              "start": 54
+              "start": 63
             },
             "path": "mcp/tests/test_closeout_queue.py"
           },
@@ -440,12 +517,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:e7d89d00b82951853068c4c431c4482266e4c537f6aaa528749c3d74a2a4b6e2",
             "locator": {
-              "end": 86,
+              "end": 84,
               "kind": "line_range",
-              "start": 79
+              "start": 77
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -453,12 +530,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:6d62f4bde76d0dd8498787b116e2e9f8f6e4ac60059203b47477f55571189b69",
             "locator": {
-              "end": 78,
+              "end": 76,
               "kind": "line_range",
-              "start": 78
+              "start": 76
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -466,12 +543,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:4e8997294a63c7e1076e2a37b7827523027ca3943dbac58f353e5b6cfbb9c3a3",
             "locator": {
-              "end": 92,
+              "end": 90,
               "kind": "line_range",
-              "start": 92
+              "start": 90
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -479,12 +556,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:1651138f5421267b07ed1b32bab2afeae8e787d5d0214ceb31d3d6a3f9812af7",
             "locator": {
-              "end": 343,
+              "end": 351,
               "kind": "line_range",
-              "start": 343
+              "start": 351
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -492,12 +569,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:b8a0df81701d3c8da37bf1a1a217729aea5378c4d839e242d5c99cb166b57476",
             "locator": {
-              "end": 353,
+              "end": 361,
               "kind": "line_range",
-              "start": 353
+              "start": 361
             },
             "path": "mcp/tests/test_worktree_support.py"
           },
@@ -505,12 +582,12 @@
         },
         {
           "anchor": {
-            "blob": "e80a42ef2e530fe0e693cfefd6b97ca23fe2cf51",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:8f9ca25069e78298a983e492a45bbe8352e1bfc02e6db63361cec88a8c5e0951",
             "locator": {
-              "end": 716,
+              "end": 760,
               "kind": "line_range",
-              "start": 716
+              "start": 760
             },
             "path": "mcp/tests/test_worktree_support.py"
           },

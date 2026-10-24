@@ -42,7 +42,7 @@ rather than a hardcoded path. A container still mounted at an old destination
 is therefore classified as mismatched and recreated on the next backend start,
 which doubles as the in-place migration path for hosts that ran the
 pre-persistence-fix layout. Status includes a normalized Docker container
-state summary so MCP provider status can report backend state and uptime.
+state summary in the retained internal backend result. The MCP provider-status adapter is removed; these internal facts do not re-advertise it.
 Before Compose startup, it performs CGC project migration: old unmanaged
 FalkorDB and watcher containers plus the old unmanaged network are removed only
 when Docker labels do not show the expected Compose project.
@@ -59,8 +59,8 @@ when Docker labels do not show the expected Compose project.
 - Backend state and image lock writes belong here after successful validation.
 - Existing Compose-managed backend port mappings are reused on repeated starts
   rather than reallocated from host socket availability.
-- Backend status should expose enough Docker state for current provider status
-  without requiring callers to inspect containers themselves.
+- The retained backend status result exposes Docker facts to its internal callers.
+  It is not a current MCP provider-status surface.
 - Layout parameters and layout lists are typed as `CgcRuntimeLayout` (imported
   from `agents_remember.providers.context`), not bare `Any`.
 
@@ -70,3 +70,17 @@ when Docker labels do not show the expected Compose project.
 
 - CGC backend settings are derived in the CGC core module. [1]
 - Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. [2]
+
+## Historical provider account
+
+The following source-epoch wording is retained as history. It does not restore a removed provider consumer or operation.
+
+<details>
+<summary>Superseded provider passages</summary>
+
+> state summary so MCP provider status can report backend state and uptime.
+
+> Backend status should expose enough Docker state for current provider status
+>   without requiring callers to inspect containers themselves.
+
+</details>

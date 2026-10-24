@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:3dbfb0ced91205e9df4110ce3df2b084ed194f5e422473716c068bcfafe5c528",
             "locator": {
               "kind": "symbol",
@@ -20,15 +20,15 @@
       ]
     },
     "2": {
-      "note": "Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders.",
+      "note": "Generated lifecycle settings emit no provider entries. Instance naming and ownership-label helpers remain available to retained internal isolation/layout callers; the former GrepAI/CGC settings builders no longer consume them.",
       "targets": [
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:13e3cfbec31da961c5f5beeb6f88220acd13202a6f8f27c7e12642e421f74717",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
               "kind": "symbol",
-              "name": "_grepai_names"
+              "name": "lifecycle_settings_from_config"
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },
@@ -36,64 +36,23 @@
         },
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:b2ee2a2ded7ce5314c2739b4d4858514359036f9e091f55c8c761e5fb6978b78",
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:1598160f9746046dc74f983bf8ecb6ad0a5ef20be60bb76dfdf19832b15f462c",
             "locator": {
               "kind": "symbol",
-              "name": "_grepai_settings"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
+              "name": "provider_instance_id"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:f55b790414330d6ecff12768bfda58072db954aaaaf65c6b71b1573c4898a5ef",
+            "blob": "4925b4f0c208f138d2aa6fc1a138adadddf32e07",
+            "content": "sha256:55f504c841a42b7a336bc1f8ac85ba30965b85e969efe497ddbfdeb474987e5a",
             "locator": {
               "kind": "symbol",
-              "name": "_cgc_settings"
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:7b68c3745be81d6e5a2f284e6faa20a02aae995b1545019e00af55de30732576",
-            "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 71
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:c739036a9afa8bd7d7680028d82896efe0f170679d036b0c10bc86a9fde65962",
-            "locator": {
-              "end": 234,
-              "kind": "line_range",
-              "start": 195
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:e6dfa5347513efca49b8256bae8713fb888f0e45cb21573908fe74e325ccf0f6",
-            "locator": {
-              "end": 327,
-              "kind": "line_range",
-              "start": 237
-            },
-            "path": "mcp/src/agents_remember/providers/settings.py"
+              "name": "provider_ownership_labels"
+            }
           },
           "kind": "code"
         }

@@ -4,15 +4,15 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- _watchers_status now calls write_lifecycle_settings without config.
+- No watcher status probe remains: `provider_summary()` reports configured/enabled plus `state: skipped` and calls no settings writer.
 - The generator emits no enabled provider blocks.
 - context_packet now always requests a skipped provider summary rather than live diagnostics.
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/providers/status.py:229-241`.
-- Source comparison: `mcp/src/agents_remember/providers/settings.py:33-55`.
-- Source comparison: `mcp/src/agents_remember/application/context_packet.py:95-102`.
+- Source comparison: `mcp/src/agents_remember/providers/status.py:23-35`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:29-38`.
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:113-115`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -136,7 +136,6 @@ surface.
 - Provider response models define summary, diagnostics, watcher, and native provider payload shapes. [1]
 - Context packet construction consumes the compact provider summary. [2]
 
-- Current-state projection and persistence live in the current-state module. [4]
 - Restart/rebind recovery wording is shared with runtime-install recovery reporting. [5]
 - The containment metrics store whose rolling current snapshot rides the status packet (containment R4). [6]
 - Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. [7]

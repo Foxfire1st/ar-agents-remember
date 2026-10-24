@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/setup_common.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+        "content": "sha256:1ef816bce971218735b569b3e491249103e250deb969e389b34dc217dc88af3d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6N6M9Y",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The anchor that treats a retired provider as never-enabled is unchanged and still consulted.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The provider setup facade re-exports these helpers for existing callers and tests.\n\nAnchor: \"re-exports only the narrow set of symbols callers and tests still use\"",

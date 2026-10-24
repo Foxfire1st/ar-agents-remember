@@ -1,0 +1,112 @@
+{
+  "path": "docs/release-checklist.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Release notes live in GitHub Releases with no changelog file; the canonical tag is `mcp-vX.Y.Z`.\n\nAnchor: `docs/release-checklist.md:1-5`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The targeted/full Dagger gates are consumed once and not rerun; the PR-only check is deterministic and not acceptance.\n\nAnchor: `docs/release-checklist.md:7-14`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Version sync covers the package version, the `SERVER_VERSION` fallback and the README status line.\n\nAnchor: `docs/release-checklist.md:16-21`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host contract, whole-lock regeneration, Node pin and the host-contract check.\n\nAnchor: `docs/release-checklist.md:23-37`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fresh `uvx` start, dry-run then apply of `runtime_install`, and the skill-sync check.\n\nAnchor: `docs/release-checklist.md:39-41`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Setup works with no provider configuration; an older file's retired keys are reported once as unused and leftover folders are reported with sizes.\n\nAnchor: `docs/release-checklist.md:42-43`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Docs must match the shipped tool surface; the release lands by PR, the tag is proven reachable before publishing, and a GitHub Release is created.\n\nAnchor: `docs/release-checklist.md:45-56`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f74c20284b88591b0b707d11bb5567011101e028",
+            "content": "sha256:d49f4c7d1ff61d82334c02af459f53dacce8d11556eb8f0d5f386964af596de7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

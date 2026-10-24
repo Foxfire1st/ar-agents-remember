@@ -3,15 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The detail panel renders this for task-step progress.",
+      "note": "The retained component renders completed/total progress; former detail-panel and provider-seed uses are named by its source comment, not by a current caller.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:b2559c8dbb7752d10e95278e260fa9f27832850a325cb0edad79cc4b36114794",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
             "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
             "locator": {
-              "kind": "symbol",
-              "name": "ProgressFill"
+              "end": 45,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"

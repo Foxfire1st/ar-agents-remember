@@ -30,7 +30,7 @@ package as resources, and the optional harness-native instruction or hook file c
 first-action directive. In that dashboard conversation Bootstrap previews settings, chooses new or
 existing memory, initializes or reads the external memory scaffold, reports an existing user settings
 file instead of overwriting it, and at exit tells the developer to start an Architect, which organizes
-optional onboarding and the knowledge foundation as a regular task, master or sprint.
+optional onboarding and the knowledge foundation as a regular task, master or sprint. Nothing provider-side starts: the two former search providers are retired, and setup begins no provider indexing or watcher.
 
 The guide keeps external memory at `ar-coordination/memory-repos/ar-<repo>/` as the supported layout. It refuses the removed repo-local `ar-memory/` path rather than migrating or recreating it. Existing memory is inspected and its baseline/state reported, with dirty or unusable input distinguished from an absent root. Setup authors no onboarding or knowledge and starts no other role; the developer starts an Architect to organize that work as a regular task, master or sprint.
 
@@ -42,4 +42,8 @@ Guidance for a person and an agent, not proof that a command ran, that a harness
 or that a memory repo was initialized on any host.
 
 
+
 - Current source account and its stated boundaries. [1]
+
+
+The document states the retirement once, in its provider sentence: retired providers are reported as unused and setup starts no provider indexing or watcher. No setup step it describes installs, starts or indexes a provider, so a new user is never sent to one.

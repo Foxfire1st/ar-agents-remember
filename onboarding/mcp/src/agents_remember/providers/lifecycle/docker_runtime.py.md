@@ -28,8 +28,9 @@ seconds, and health status.
   host binaries.
 - The helpers expose Docker facts and requested mutations, but provider-owned
   modules decide what those facts mean.
-- Container-state helpers are fact normalization only; current provider state
-  aggregation lives in `providers/current_state.py`.
+- Container-state helpers are fact normalization only. The former
+  `providers/current_state.py` aggregator is removed; it is not a current owner.
+  Retained Docker facts and stop/cleanup helpers do not recreate public provider state.
 - FalkorDB ping polling is shared here because it is Docker health plumbing for
   the CGC backend container.
 
@@ -39,3 +40,15 @@ seconds, and health status.
 
 - CGC backend lifecycle uses Docker inspection, container-state summaries, mount matching, image locks, and FalkorDB ping polling. [1]
 - GrepAI backend, embedder, and runner lifecycles use Docker inspection, container-state summaries, and network helpers. [2]
+
+## Historical provider account
+
+The following source-epoch wording is retained as history. It does not restore a removed provider consumer or operation.
+
+<details>
+<summary>Superseded provider passages</summary>
+
+> Container-state helpers are fact normalization only; current provider state
+>   aggregation lives in `providers/current_state.py`.
+
+</details>

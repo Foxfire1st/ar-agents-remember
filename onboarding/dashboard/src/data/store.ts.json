@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-        "content": "sha256:60b3f1b28184c94de288d7174aa85094e38138d9f3511d2112145a4972d822ab",
+        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+        "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
         "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
         "locator": {
           "kind": "symbol",
@@ -35,6 +35,23 @@
       },
       "rationale": "markEventsHydrated records the ready marker's last feed in the store so the panel can name it when the window holds nothing.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+        "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YZ49MW",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The client store no longer holds provider snapshots or their SSE keys.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -78,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d27e20e29f49e1c8d21e0c3226f15dc93c290a14",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
             "locator": {
               "kind": "symbol",
@@ -113,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -124,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
             "locator": {
-              "end": 319,
+              "end": 301,
               "kind": "line_range",
-              "start": 319
+              "start": 301
             }
           },
           "kind": "code"
@@ -141,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:3df43af66aa8b16bb3c6c2a3005ae4d5a4cfaaf7bdf810fa802eabe4e46d605f",
             "locator": {
-              "end": 376,
+              "end": 358,
               "kind": "line_range",
-              "start": 376
+              "start": 358
             }
           },
           "kind": "code"

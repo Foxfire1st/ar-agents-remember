@@ -1,0 +1,142 @@
+{
+  "path": "docs/reference/runtime-layout.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source checkout keeps canonical skills, package data and provider Docker topology as source-controlled assets.\n\nAnchor: `docs/reference/runtime-layout.md:7-39`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The installed runtime tree, including the `providers/` subtree paths.\n\nAnchor: `docs/reference/runtime-layout.md:41-65`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`runtime_install` reconciles templates, skills, provider defaults and optional benchmarks, then provisions the pinned host; it writes no live settings and owns no provider database.\n\nAnchor: `docs/reference/runtime-layout.md:67-81`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`providers/` is leftover state: no product path installs, starts, indexes or queries a provider; `runtime_install` reports folders and sizes but never deletes them.\n\nAnchor: `docs/reference/runtime-layout.md:83-93`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Compose overrides are described as past-tense execution input that was never written into the coordination tree or workspace.\n\nAnchor: `docs/reference/runtime-layout.md:95-103`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Per-provider leftover layout and the `providers-remove` dry-run/report-first removal.\n\nAnchor: `docs/reference/runtime-layout.md:105-127`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Three stop callers, none of which starts a provider, including the dashboard safety loop's 30-second sampling and fail-safe transition.\n\nAnchor: `docs/reference/runtime-layout.md:129-144`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "All three read the authority settings `contextProviders` block, not the generated document that declares no providers.\n\nAnchor: `docs/reference/runtime-layout.md:146-159`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Benchmark and skill-install contracts.\n\nAnchor: `docs/reference/runtime-layout.md:161-176`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

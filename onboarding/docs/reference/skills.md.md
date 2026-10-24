@@ -5,7 +5,9 @@
 The public skill reference now documents package-served skills only. The tool server publishes every skill as an MCP resource (the SEP-2640 skills extension), so a harness reads the served text from the running server instead of a copy in a project or home skill folder: there is no `skills_install` tool any more, no harness mirror, and no copied coordination-root `skills/` tree. Exactly one skill copy is kept current — the generated package copy at `mcp/src/agents_remember/package_data/runtime/skills/`, refreshed from root `skills/` by `python3 scripts/sync-skills.py`, declared in `generated-copies.json` and checked by the pre-commit and pre-push hooks through `--check`. The page also states that native role agents receive one role file/operation, that an unbound chat creates or resolves the sprint, records the request and starts the Architect with `role_start`, and that another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account, the installed `ar-coordination/skills/` location and the manual `skills_install()` maintenance path are historical, not this page's current content.
 
 
+
 - The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, no `skills_install` tool and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read. [3]
+
 
 
 
@@ -20,6 +22,11 @@ Public skills reference: the canonical and served skill trees, the one `scripts/
 regeneration step, how a harness reads a served skill and its resource origin, the
 lifecycle/workflow skill table after the retirements, and the one-call first-run path that needs no
 skill read at all.
+
+Two catalogue rows carry this leaf's change. `c-04-retrieval-strategy-router` now states that the two
+provider-backed substrates are retired, so onboarding and source remain the proof a retrieval choice
+can cite. `c-13-install-and-onboard` now states that nothing provider-side starts during first-run
+setup, because the two former search providers are retired.
 
 ## Code Commentary
 
@@ -42,5 +49,6 @@ The retained Core Skills table lists `c-00`, `c-03`, `c-04`, `c-05`, `c-08`, `c-
 
 - Canonical lifecycle and role-document registry to which this reference defers. [1]
 - Sync script the page instructs running after skill edits. [2]
+
 
 - Current source account and its stated boundaries. [4]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-        "content": "sha256:6c7c3436fae31a7f2b93e5d0e8488704ee2210e3b4fdcecc443ed3773e291ae6",
+        "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+        "content": "sha256:de1ecbe32148898f8081577a4083b9abb984c7356d1f89bf125777bd61ecf757",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
             "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
             "locator": {
               "kind": "symbol",
@@ -63,12 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
             "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
             "locator": {
-              "end": 76,
+              "end": 73,
               "kind": "line_range",
-              "start": 76
+              "start": 73
             }
           },
           "kind": "code"
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
             "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
             "locator": {
               "kind": "symbol",
@@ -117,16 +117,15 @@
       ]
     },
     "4": {
-      "note": "`worktreeStatus` maps a bound TaskEntry through shared status/tone and returns `idle` when unbound; `buildTopology` separately supplies workspace/repository and provider statuses.",
+      "note": "worktreeStatus maps a bound TaskEntry through shared status/tone and returns idle when unbound; buildTopology supplies only workspace, repository and worktree nodes, without provider satellites.",
       "targets": [
         {
           "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
             "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 86
+              "kind": "symbol",
+              "name": "worktreeStatus"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -134,25 +133,11 @@
         },
         {
           "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
-            "content": "sha256:1e0a427bdaa5dce035239fcbd766a51a6efa0b9ea72979a8fd5526f9a9cefe8c",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:e1be11bdb96db1fabd46b9d9e3dfe87e16818f280a92f01d8e1e3cec728f1bdc",
             "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 112
-            },
-            "path": "dashboard/src/topology/model.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
-            "content": "sha256:fa495b5bda99fac776e92ceb3cc390fe544f0085c7396889c357d03042847871",
-            "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 183
+              "kind": "symbol",
+              "name": "buildTopology"
             },
             "path": "dashboard/src/topology/model.ts"
           },

@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ebdadbe5250941261081b699793125966c459c5",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
-              "end": 281,
+              "end": 282,
               "kind": "line_range",
-              "start": 252
+              "start": 253
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -789,16 +789,15 @@
       ]
     },
     "42": {
-      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `buildEngineRoomModel(engineProcesses, Object.values(lifecycles)),`",
+      "note": "EngineRoomImpl builds its model from engineProcesses alone and selects the process/ledger data for enclosure presentation; it reads no lifecycle collection or provider projection.\n\nAnchor: `buildEngineRoomModel`",
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:fe72de382df0b3d7f24adde324c8db7df4b51e35eb5d7e1ca3ce4be52c001fd9",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
             "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 119
+              "kind": "symbol",
+              "name": "EngineRoomImpl"
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
           },
@@ -829,7 +828,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
+            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
               "kind": "symbol",
@@ -1134,12 +1133,12 @@
         },
         {
           "anchor": {
-            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
             "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
             "locator": {
-              "end": 514,
+              "end": 516,
               "kind": "line_range",
-              "start": 499
+              "start": 501
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -1480,7 +1479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c1c5241bec67b462464d3ce7226c5eac99e0ed",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",
@@ -1497,7 +1496,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
             "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
               "kind": "symbol",
@@ -1558,12 +1557,12 @@
         },
         {
           "anchor": {
-            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
             "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
             "locator": {
-              "end": 413,
+              "end": 417,
               "kind": "line_range",
-              "start": 335
+              "start": 339
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -2099,7 +2098,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9c6cd497508ac31294a33ed995fb9d81b6c3c54",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
             "content": "sha256:01864cec4999cd7603ed5792352fd8c901dead91253d89fcc41f15c6b6598d6a",
             "locator": {
               "end": 282,

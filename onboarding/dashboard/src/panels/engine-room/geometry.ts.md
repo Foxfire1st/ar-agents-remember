@@ -7,20 +7,20 @@
 
 ## Current enclosure-only composition
 
-ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a straight line for known geometry or null. RuntimeState/runtimeState/chargeMotion and seed polarity arms still exist as helpers; no provider gauge renderer consumes them in this surface.
+ConduitState/conduitState retain conduit vocabulary narrowing. Provider positions, ENGINE, RuntimeState/runtimeState and chargeMotion are removed. EDGE_GEOM retains intake, sync and integration lanes; conduitPathD returns a straight line for known geometry or null. refusedPolarityOf accepts only failed or stale integration/integration-mem edges.
 
 ### Maintenance boundaries
 
-Remove active provider position/wire/gauge render guarantees. Document surviving branch/coupler/landing constants and null-path rejection of old seed kinds. Keep the retained helper vocabulary as compatibility definitions, not active visuals; failed/stale integration refusal is still geometry-backed.
+Remove active provider position/wire/gauge render guarantees. Document surviving branch/coupler/landing constants, conduit narrowing and null-path rejection of unknown kinds. Runtime/gauge/charge helpers and seed refusal arms are removed; failed/stale integration refusal is still geometry-backed.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [4]
-- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [5]
-- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [6]
-- ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof. [7]
+- ConduitState and conduitState retain the conduit vocabulary and normalize unknown values. [4]
+- Branch/coupler coordinates and intake/sync/integration geometry remain; conduitPathD returns a straight known lane or null. [5]
+- Landing flow state remains derived from the observed landing references. [6]
+- Refused polarity is derived only for failed or stale integration/integration-mem lanes. [7]
 
 ## Historical superseded account (non-operative)
 

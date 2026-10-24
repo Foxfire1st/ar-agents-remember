@@ -129,6 +129,24 @@
           "kind": "code"
         }
       ]
+    },
+    "6": {
+      "note": "Provider seed/clone kinds yield no refused polarity; the surviving integration flash also requires a shared conduit path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:10f1bc043a15d6e4d23cca602d1e73b73b83d58b6a50b215ee976b3d8a091861",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

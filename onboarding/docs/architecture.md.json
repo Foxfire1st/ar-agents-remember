@@ -1,0 +1,130 @@
+{
+  "path": "docs/architecture.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42fafd00fc8e80fba28e8ec939f24272c1c1a94d",
+        "content": "sha256:6cca1269fc4a173b8c060453cc2d7c97aa0fb520798a161a51b484e3b24a791b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3QTYBN",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The architecture page describes removal and retained cleanup, not a live provider tier.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "By-path needs no provider; by-meaning has a retired provider and no engine, and by-relationship has a retired provider.\n\nAnchor: `docs/architecture.md:85-89`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI and CodeGraphContext are named as retired, with no product path installing, enabling, starting, indexing or querying them.\n\nAnchor: `docs/architecture.md:91`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`runtime_install` stops a leftover provider watcher and reports old provider keys once; folder deletion belongs to the explicit `providers-remove` command.\n\nAnchor: `docs/architecture.md:93`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider leftovers are handled by `runtime_install` and `providers-remove`, not by memory or workflow skills, and no provider lifecycle belongs to anything now.\n\nAnchor: `docs/architecture.md:115`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Runtime ownership names provider-leftover cleanup and keeps no parallel `scripts/` route.\n\nAnchor: `docs/architecture.md:47`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The layout block still draws a `providers/` subtree.\n\nAnchor: `docs/architecture.md:28-44`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The page is silent on Docker/Ollama requirements, command flags, the unused-key field name, the safety detector and any provider panel.\n\nAnchor: `docs/architecture.md:1-140`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

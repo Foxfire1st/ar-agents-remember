@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/install/provider_watchers.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+        "content": "sha256:94b4b369d5d4f6c0e5cf994ed09a94bb7fa74146c77d4be03eff8693be5d29d0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JYN8HS",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The install's old-watcher stop still runs before the runtime tree is refreshed and still records a failed stop instead of aborting.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape.",

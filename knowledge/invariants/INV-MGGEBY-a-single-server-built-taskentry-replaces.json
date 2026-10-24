@@ -11,7 +11,7 @@
   "conditions": [
     "The native producer joins authored summaries, bound host observations and independently bound worktrees before consumers receive entries.",
     "Task-owned identity, stage/activity, progress and ordered child membership are not duplicated into the optional summary.",
-    "Independent provider, attention, analytics, landing-operation and unbound-enclosure facts remain their own surfaces, not another task collection."
+    "Live provider limit facts join TaskEntry.providerLimit; attention, analytics, landing-operation and unbound-enclosure facts retain independent surfaces, not another task collection. Retired CGC/GrepAI provider state supplies no dashboard surface."
   ],
   "exclusions": [
     "On-demand task document resources and their body/revision caches are content, not a second task-stage collection.",
@@ -39,7 +39,7 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A single server-built TaskEntry replaces the separate lifecycle, task-document and series task collections, while independent operational facts remain visible.",
   "status": "proposed",

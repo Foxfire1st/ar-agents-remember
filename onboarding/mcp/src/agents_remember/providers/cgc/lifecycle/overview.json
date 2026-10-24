@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
             "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
       ]
     },
     "2": {
-      "note": "Watcher aggregation imports CGC all-root start/status/stop behavior from this package; status combines shared backend status with per-root provider results.",
+      "note": "Watcher aggregation imports exactly `cgc_stop_all` from this package; both admitted CGC watcher actions (`stop`, `shutdown-all`) resolve to it, and no start or status aggregation is imported.\n\nAnchor: `watcher_cgc_result`, `cgc_stop_all`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
-            "content": "sha256:fbbfaba94281ecefdaa486c468ff9645ff5cdeec4c59a194009514c4e5a6de2d",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:f5f6370ed049c2f211ed6578d46bc91a01807880299e42a30dc0fec2f5e6552a",
             "locator": {
               "kind": "symbol",
               "name": "watcher_cgc_result"
@@ -47,25 +47,13 @@
         },
         {
           "anchor": {
-            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
-            "content": "sha256:7616540fb6d8f3b68aab4478d08817e89ac53631f8db2e42f697e6ad02985f9f",
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:335c76855e0da2922ebdbf796f62a803969496396da593678399fab6f08f9e9f",
             "locator": {
               "kind": "symbol",
-              "name": "watcher_cgc_status_results"
+              "name": "cgc_stop_all"
             },
-            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
-            "content": "sha256:7341627cfe5f1122a216c4f71a3fc945e1c066587c16633bce3eeb82af5442f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "watcher_cgc_backend_status"
-            },
-            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },
           "kind": "code"
         }

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08e217af8fdd405eb376d1da0e6d439c52f718bb",
+            "blob": "961ea18ac7238b6bdb3e5580ed9a875b44f5824d",
             "content": "sha256:98005caa1b2ca3eace3bc7c463f90ed4d3948a09e59f2d1f4f3f1189e5472e12",
             "locator": {
               "end": 11,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08e217af8fdd405eb376d1da0e6d439c52f718bb",
+            "blob": "961ea18ac7238b6bdb3e5580ed9a875b44f5824d",
             "content": "sha256:2169627c86a045805b1b05009563afbd1413c042edfd05cf3e1e82d7e8c184c5",
             "locator": {
               "end": 31,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08e217af8fdd405eb376d1da0e6d439c52f718bb",
+            "blob": "961ea18ac7238b6bdb3e5580ed9a875b44f5824d",
             "content": "sha256:1884a649231c6c75fff54e0f6c6ea8fcfafc30845e14d8b73d37b9191acc846f",
             "locator": {
               "end": 18,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08e217af8fdd405eb376d1da0e6d439c52f718bb",
+            "blob": "961ea18ac7238b6bdb3e5580ed9a875b44f5824d",
             "content": "sha256:53479368e9adb05e5a58b5c77a10a0a2e18b09d3a11c6f3da31db8ab13db45ad",
             "locator": {
               "end": 45,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
             "content": "sha256:3113377b9afc7711187a0731e67c7dd3abc4a91833280f7ce60eec772bbc83ae",
             "locator": {
               "end": 12,
@@ -93,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:22e676890cc8b78d15ed0ff12cc8244eca036df634b402ec26abb7258b41cda2",
             "locator": {
-              "end": 573,
+              "end": 711,
               "kind": "line_range",
-              "start": 569
+              "start": 707
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

@@ -39,17 +39,12 @@ flush/fsync it and use `os.replace` — atomic on POSIX, so a polling dashboard
 reader never sees a half-written file. This is deliberately stronger than the plain `write_text` of
 the `setup_progress` precedent, which a concurrent reader can tear.
 
-`ProviderStateRefresher` is the optional dashboard-owned refresh implementation for provider
-current-state, and `ProviderStateRefresh` is the structural protocol the projection edge accepts.
-The implementation holds a small TTL and calls `providers.status.refresh_current_provider_state`
-with the same `now` the projection will use, so `logs/providers/status/.../current.json`
-can be refreshed before `read_providers` computes stale age. Refresh failures are
-logged and the previous snapshot is used: this containment is necessary because Docker
-and provider watcher reads are external control-plane I/O, and a failed provider probe
-must not stop the dashboard from projecting the rest of the workspace.
+The projection tick has no provider-state refresher, provider/setup reader or provider snapshot
+input. `ProjectionTickState` retains the input snapshot and optional landing-state reader; its
+`stable` field carries the stable form computed for this tick's write/publication decision.
 
-`project_and_write` receives ProjectionTickState(input_state, provider_refresher, landing_state), with a cold default. It resolves observer_root, optionally refreshes provider state, and reads input state through ProjectionReaders(repo_surfaces, landing_state) plus RefreshPass. WorkspaceStructure and AnalyticalInputs pass canonical task_sources/host_activity, worktrees/providers, analytics, engine facts, closeout and source-reconciled acknowledgements to the sole reducer join. No lifecycle/series/pickup/expectation/gate fold or post-reducer dismissal prune remains.
-The retained repo reader gathers route coverage and ledger using each scope's memory root and code root; no verification-age reader is restored. The three long-lived collaborators remain one frozen tick object, with a cold-read default when no retained state is supplied. Provider refresh and landing observations retain their separate owners.
+`project_and_write` receives the retained tick state, with a cold default. It resolves observer_root and reads input state through ProjectionReaders(repo_surfaces, landing_state) plus RefreshPass. WorkspaceStructure passes enclosures and active_worktree_groups; AnalyticalInputs passes drift, route coverage, tool reports, ledgers, canonical task_sources/host_activity, closeout queues, engine facts/start progress and source-reconciled acknowledgements to the sole reducer join. No provider input, lifecycle/series/pickup/expectation/gate fold or post-reducer dismissal prune remains.
+The retained repo reader gathers route coverage and ledger using each scope's memory root and code root; no verification-age reader is restored. The input snapshot and landing reader remain separate retained collaborators on the tick object, with a cold-read default when no retained state is supplied. Landing observations retain their own owner.
 
 Warning measures summary previews only; full bodies stay on demand. Semantic changes replace each projection file individually; pair-atomic publication/all-slot rollback are not promised. Projector owns tuple-before-notify.
 
@@ -57,13 +52,12 @@ Input state retains canonical full/directed sources and enclosures; task-entry p
 
 Drift orphans require complete native branch/contract/snapshot proof. Configuration and checkout presence alone do not prove a live branch; incomplete proof retains acknowledgements/diagnostics.
 
-**Task 29:** `project_and_write` now splits worktree runtime admission before reading
-runtime surfaces. `admitted_worktree_groups(enclosures)`
-feeds `read_providers` and `read_setup_progress_nodes`, so contract-inactive provider-runtime files do not
-produce provider nodes or provider-down attention. `active_enclosure_worktree_groups(...)`
-feeds `read_engine_process_facts`, avoiding git/status probes for historical enclosure contracts
-while preserving non-terminal close/integration work in the Engine Room. The same task also wraps
-the per-repo analytical read behind `_gather_repo_surfaces_cached`, with a short TTL so route coverage and ledgers do not re-walk every memory tree on every projection tick.
+**Task 29** originally split provider-runtime admission before surface reads. Those provider and
+setup readers and their separate `admitted_worktree_groups` helper are now removed. The retained
+`active_enclosure_worktree_groups(...)` admission feeds engine-process facts, avoiding git/status
+probes for historical enclosure contracts while preserving non-terminal close/integration work in
+the Engine Room. The per-repo analytical read remains behind `_gather_repo_surfaces_cached`, with a
+TTL so route coverage and ledgers do not re-walk every memory tree on every projection tick.
 
 **Task 33:** `project_and_write` also passes `active_worktree_groups=inputs.active_worktree_groups`
 inside `WorkspaceStructure`, so the served `WorkspaceProjection.activeWorktreeGroups` reuses the exact
@@ -92,10 +86,9 @@ The recurring projection path uses projected status plus the latest landing snap
   straight into `WorkspaceStructure` / `AnalyticalInputs` and handed to `project_workspace`;
   this file adds no engine logic, only the read + thread. The bundles are transport, not
   transformation — assigning a field means the reducer receives that reader's output unchanged.
-- **Provider refresh is an I/O-edge concern:** the optional refresher runs before
-  `read_providers`, but the reducer still receives ordinary provider snapshots and
-  remains deterministic for supplied inputs. Refresh probe failures degrade to the
-  last persisted provider snapshot instead of failing the whole dashboard tick.
+- **Retired provider inputs are absent:** the tick performs no provider status refresh and the
+  reducer receives no provider/setup snapshots. Enclosure/process, drift, task/host, ledger and
+  acknowledgement facts retain their own readers.
 - **Drift snapshot retention is enforced at the I/O edge:** projection pruning happens
   before `read_drift_snapshots`, so the reducer receives a current snapshot list rather
   than an ever-growing set that clients merely filter.
@@ -113,7 +106,9 @@ The recurring projection path uses projected status plus the latest landing snap
 ## Evidence
 
 
+
 - Projection assembly forwards only retained input fields and closeout queues. [13]
+
 
 
 - The configured-root repository cache retains route coverage and ledger under its TTL. [14]
@@ -124,25 +119,40 @@ The recurring projection path uses projected status plus the latest landing snap
 
 
 
+
 - The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues. [16]
+
 
 
 
 ### Repo-Internal References
 
 - The shared store-root resolver. [1]
-- project_and_write drives the pure project_workspace assembler, passing retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, returns their tasks/counts and unbound enclosures, and builds provider/attention/Engine Room analytics and metrics. The pure enclosure action helpers gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold. [3]
+
+
+- project_and_write drives the pure project_workspace assembler with retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, and returns their tasks/counts and unbound enclosures alongside retained attention/Engine Room analytics and metrics. Provider refresh and provider display inputs are absent. The pure enclosure-action helpers still gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold. [3]
+
+
 - The worker-owned state refreshes task inputs. [4]
 - The worker-owned state refreshes engine facts. [5]
+
 - The worker-owned state refreshes progress inputs. [6]
-- The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs. [12]
+
+
+
+- The input-state pass refreshes tasks, host activity, active enclosure engine facts, drift, start progress and workspace observations, then returns retained projection inputs; it performs no provider display-state refresh. [12]
+
+
 
 | The pure fold consumes the threaded `engine_process_facts` / `engine_start_progress` inputs. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:128-181 |
 | The atomic-write design requirement and serving placement are specified in §2.5 and §5. | `### 2.5 The observer and its projections`; `## 5. Placement and Packaging` | docs/design/observable-lifecycle.md:241-251; docs/design/observable-lifecycle.md:323-338 |
-| The tick calls the TTL-gated provider refresher before `ProjectionInputState.read`, whose delegated `_refresh_providers` performs provider reads. | "tick.provider_refresher.maybe_refresh("; "inputs = state.read("; `_refresh_providers` | mcp/src/agents_remember/serving/projections/projection_inputs.py:319-338; mcp/src/agents_remember/serving/projections/projection_store.py:226-226; mcp/src/agents_remember/serving/projections/projection_store.py:228-228 |
+
+The current input-state refresh contract is recorded in reference [12]; no separate provider refresher runs before that read.
 | `ProjectionInputState.read` owns the delegated domain refreshes and returns the complete input bundle. | "def read("; "return ProjectionInputs" | mcp/src/agents_remember/serving/projections/projection_inputs.py:214-264 |
 | The repo-surface cache memoizes route coverage and ledger reads under the 120-second TTL keyed by configured repo paths; sidecar verification-age input is absent. | "_repo_surface_cache: dict[tuple[tuple[str"; "def _repo_surface_cache_key(config: McpRuntimeConfig) -> tuple[tuple[str"; "repo_surfaces=_gather_repo_surfaces_cached" | mcp/src/agents_remember/serving/projections/projection_store.py:87-87; mcp/src/agents_remember/serving/projections/projection_store.py:232-232; mcp/src/agents_remember/serving/projections/projection_store.py:349-349 |
-| Admission policy is centralized in the worktree provider admission helper. | `admitted_worktree_groups` | mcp/src/agents_remember/observer/worktree_provider_admission.py:24-45 |
+
+- Active-enclosure admission includes only named worktree groups whose cleanup is not completed, abandoned or reopened; the removed provider admission helper is not the current owner. [17]
+
 
 
 ## 260718-CHATS-L5I Current Delta
@@ -164,7 +174,9 @@ the state object. `state.read(...)` is called with a `ProjectionReaders(repo_sur
 - `project_and_write` invokes the input state rather than owning those reads itself. [9]
 - On task-structure or drift invalidation, ProjectionInputState._refresh_drift passes its retained contracts and an actionable-drift observation to pruning before reading analytical snapshots. Pruning deletes valid branch-orphaned snapshots only with complete native branch/contract/snapshot proof; failure of that proof retains snapshots. A deleted checkout/worktree alone does not prove its branch is gone, and a valid changed occurrence remains visible even when a sibling read is incomplete. [10]
 
+
 - The shared contract snapshot is retained across unaffected ticks, built for full task refresh and updated for directed task refresh.  Anchor: "_contract_snapshot_cache = ContractSnapshotCache()"; "def build(self"; "contract_cache=_contract_snapshot_cache"; "self._contract_cache.build(" [11]
+
 
 ## 260928-MIK-L177 One Stable Dump Per Tick
 

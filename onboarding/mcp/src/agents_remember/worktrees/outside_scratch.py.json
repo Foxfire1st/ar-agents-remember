@@ -106,7 +106,7 @@
         "handoffEntry": "L198-INV-C",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The only place a root is deleted on proof, and the only place a root it cannot prove is reported.",
+      "rationale": "Owns the separate ordinary-root proof and interrupted-staging removal paths, reports retained entries, and advances the bounded cursor only when the managed parent is usable.",
       "role": "primary-authority"
     },
     {
@@ -178,7 +178,7 @@
         "handoffEntry": "L198-INV-B",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The single gate every ending path and the reconcile pass through before any bytes are deleted.",
+      "rationale": "Removes an ending operation recorded root after confinement and marker-record agreement checks, or reports refusal or already-absent; reconcile uses its own removal path.",
       "role": "primary-authority"
     },
     {

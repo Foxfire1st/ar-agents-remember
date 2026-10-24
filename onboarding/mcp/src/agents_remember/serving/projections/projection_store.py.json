@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
-        "content": "sha256:1004f25c4ff85393f3e91301ebe4690b7f8a01f7fdbffc63a20d9f2679daa042",
+        "blob": "80f68a14806839156738f156091e776e566e18b6",
+        "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
         "locator": {
           "kind": "file"
         }
@@ -55,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:8e6754d4af49b0510d27b637b4bbd93d599ba4f4e241b712d16f693b77c6f1ba",
             "locator": {
-              "end": 649,
+              "end": 698,
               "kind": "line_range",
-              "start": 635
+              "start": 684
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -86,8 +86,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
-            "content": "sha256:53ddd653035ea58996869a47767f0c921e313914b2ab39eed475221b695b4c2d",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:1821f42e5a6f397a1fdb8c7513b91772060d35c05cd7f5816d54f16b6bbad6f4",
             "locator": {
               "kind": "file"
             },
@@ -97,8 +97,8 @@
         },
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:f6ac2e56a35bc8a2ac2c51a2532ebc9942ccf67b82ed8b34a0d4339b3f9581f7",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
             "locator": {
               "kind": "file"
             },
@@ -108,8 +108,8 @@
         },
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:40ac3d310a59c8c7b5ded669843889ceaf5604e20d0c0be2a6bdf9dd7c36d63a",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
             "locator": {
               "kind": "file"
             }
@@ -119,90 +119,15 @@
       ]
     },
     "12": {
-      "note": "The input state refresh pass owns its delegated task, provider, and drift refreshes before returning the projection inputs.",
+      "note": "The input-state pass refreshes tasks, host activity, active enclosure engine facts, drift, start progress and workspace observations, then returns retained projection inputs; it performs no provider display-state refresh.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:79af989664ec09f383af9b1b9471f88badff9f7b9c211864ae119198bbe0c54d",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:21da9c0e59faca47098c2df39686304abc6d2900f5199e262e58375997c121bf",
             "locator": {
               "kind": "symbol",
-              "name": "read"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:bdffc67512ed2bc2934b76b9e771aa5c32b1c164dee37c616624b30ee383717d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_tasks"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:40ec55a4791da0e47e7744b996fe7a04c6e8c76ab286501cd988853e69f9958d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_providers"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:f7b220701c4d83df8104cb78f13f62814c564e69634585040dd460175b324ae7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_drift"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:0520e6dc6e1ccdaadb0728a284b394ed857b827ad11bef8c0f6339c90728c1f3",
-            "locator": {
-              "end": 264,
-              "kind": "line_range",
-              "start": 214
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:5b6db34020928cb2f7895b86fa8539b477f968b3fda6eda62745a9f60bb2dd0a",
-            "locator": {
-              "end": 316,
-              "kind": "line_range",
-              "start": 297
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
-            "content": "sha256:170c1f988defbefbda6c1c56efed6e58400f2ef0d1b210733961a385ea926637",
-            "locator": {
-              "end": 618,
-              "kind": "line_range",
-              "start": 613
+              "name": "_read_inputs"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -215,8 +140,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
-            "content": "sha256:5667b0127cb7a1fb2fddc1a3c953237f7b6abdedfd957ed57f1175fd081e1e7b",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -231,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
             "locator": {
               "kind": "symbol",
@@ -247,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
             "locator": {
               "kind": "symbol",
@@ -260,11 +185,11 @@
       ]
     },
     "16": {
-      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.\n\nAnchor: `_gather_repo_surfaces`, `_gather_repo_surfaces_cached`, `project_and_write`, `ProjectionInputs`",
+      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.",
       "targets": [
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
             "locator": {
               "kind": "symbol",
@@ -275,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
             "locator": {
               "kind": "symbol",
@@ -286,8 +211,8 @@
         },
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
-            "content": "sha256:5667b0127cb7a1fb2fddc1a3c953237f7b6abdedfd957ed57f1175fd081e1e7b",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -297,8 +222,8 @@
         },
         {
           "anchor": {
-            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
-            "content": "sha256:5fe093d9b87538026df40592569b72a1df8166ecb9efecfbcb28bbdcf9a2b516",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:e95ca6ef4f2be52ec48402d13851e1fab71f1936509ae2d2f600bd963b24ffaa",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionInputs"
@@ -309,13 +234,41 @@
         }
       ]
     },
-    "3": {
-      "note": "project_and_write drives the pure project_workspace assembler, passing retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, returns their tasks/counts and unbound enclosures, and builds provider/attention/Engine Room analytics and metrics. The pure enclosure action helpers gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold.",
+    "17": {
+      "note": "Active-enclosure admission includes only named worktree groups whose cleanup is not completed, abandoned or reopened; the removed provider admission helper is not the current owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "312d18df89e42e3238e6dd7370c4bc8d26f58571",
-            "content": "sha256:2e7e8df270c3888119e0cdd62eb0cc68c8d9562f46feda0d42ceedbc9c546395",
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:f11ce536d5075ddd41d142138de2bf385d002f75126d27f30cc5e5400570ed28",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            },
+            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "project_and_write drives the pure project_workspace assembler with retained structural and analytical inputs. The assembler enriches enclosure actions, builds native task entries from task sources and host activity, and returns their tasks/counts and unbound enclosures alongside retained attention/Engine Room analytics and metrics. Provider refresh and provider display inputs are absent. The pure enclosure-action helpers still gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
             "locator": {
               "kind": "symbol",
               "name": "project_workspace"
@@ -326,7 +279,7 @@
         },
         {
           "anchor": {
-            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
             "content": "sha256:f0f8192b9ed0fee863d41e875cbceca1c0f0fdd252563e9923f569a534828bf7",
             "locator": {
               "kind": "symbol",
@@ -338,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
             "content": "sha256:64fed34410118cda4079e04a7c567bcc19c54615151225aa28d550fdbdca6443",
             "locator": {
               "kind": "symbol",
@@ -350,24 +303,13 @@
         },
         {
           "anchor": {
-            "blob": "6f7a987ae8b3b173c58404caca54ae1f7cca8ac3",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
             "content": "sha256:5f03b88c09c86fd492ed0a904a8e60fc5a7d2dac8ae216f5bc9c9d65aafd3bab",
             "locator": {
               "kind": "symbol",
               "name": "_cleanup_action"
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
-            "content": "sha256:e2ad7f690c1980fa2e366f6dda6665ccade19cdc79a33c5dcad50aa3d59f4f29",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_and_write"
-            }
           },
           "kind": "code"
         }
@@ -408,7 +350,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eeb57f59fb40c34ceb692ffd5abc7d685c07edbf",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:cbd8b127ee4fc7b32edb046d54507981d9836fb51f9d424c2992df0a9bf543cf",
             "locator": {
               "kind": "symbol",
@@ -438,8 +380,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:fca8bd8ee1eb3f508cd48a9afd5c95ebdb0be69c5abad250a60fa3a760b61f36",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:04ba87c2215930d6e8ccb37062b4e6d587bd52085416fcc597a8c9669ba63ec1",
             "locator": {
               "kind": "symbol",
               "name": "_refresh_progress"

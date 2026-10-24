@@ -5,10 +5,9 @@
 ## Code Discovery And Analysis
 
 - Onboarding
-- CGC
-- Grepai
+- Native search and direct source reads
 
-Note: `C-04-retrieval-strategy-router` documents the usage of these context retrieval tools.
+Note: `C-04-retrieval-strategy-router` governs retrieval here. Its CGC and GrepAI substrates are retired, and it prescribes native search and direct source reads.
 
 ---
 

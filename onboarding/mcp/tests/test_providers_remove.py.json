@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_providers_remove.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f54aaad878aa65121bdf6b292912e11030e64afc",
+        "content": "sha256:a22e78d89a64bbd5a086e3ee20023437ec373fe6a7c3bb68ded086b6acf86328",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_busy_folder_refuses_naming_the_process"
+        }
+      },
+      "facet": "a busy folder refuses the removal and leaves the user's directories in place",
+      "id": "PRF-6MYB5V",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54aaad878aa65121bdf6b292912e11030e64afc",
+        "content": "sha256:fe3a2c385e647f43fbdac1ce5119622c24c21f676f1910bebf724f2fb0c8e33d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stop_failure_refuses_and_leaves_folders"
+        }
+      },
+      "facet": "a failed stop refuses the removal and leaves the user's folders in place",
+      "id": "PRF-9KTY9V",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f54aaad878aa65121bdf6b292912e11030e64afc",
+        "content": "sha256:23c9e6d32416c55511f44ce1de5a8f2471152aa07ff0f91adfec57e72837274b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_aliased_providers_root_refuses_and_keeps_foreign_bytes"
+        }
+      },
+      "facet": "an aliased root is refused so foreign bytes survive",
+      "id": "PRF-XD8554",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {

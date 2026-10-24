@@ -27,6 +27,18 @@ The module normalizes arbitrary workspace, worktree, benchmark, provider, and re
 ### Repo-Internal References
 
 - MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`. [1]
-- Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders. [2]
 - Worktree CGC isolated settings derive workflow-local instance ids through this helper. [3]
 - Worktree GrepAI isolated settings derive workflow-local instance ids through this helper. [4]
+
+## Historical provider account
+
+The following source-epoch wording is retained as history. It does not restore a removed provider consumer or operation.
+
+<details>
+<summary>Superseded provider passages</summary>
+
+> Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders. [2]
+
+</details>
+
+- Generated lifecycle settings emit no provider entries. Instance naming and ownership-label helpers remain available to retained internal isolation/layout callers; the former GrepAI/CGC settings builders no longer consume them. [2]

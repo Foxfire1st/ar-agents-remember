@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Partial overrides can erase required task-entry stage/provider state, task-summary steps or projection enclosures without a cast; the value hole is not seen by the property-name guard.\n\nAnchor: current fresh-literal value-hole examples",
+      "note": "Partial overrides can erase required task-entry stage, enclosure repoName, task-summary steps or projection enclosures without a cast; the property-name guard does not see this value hole.\n\nAnchor: `current fresh-literal value-hole examples`",
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
-            "content": "sha256:cf6f5941b6f687d3a84b33f58c613c9ef24e316537c39418c8dfdc933b39d55f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:7baa29e96b24e70ccb4d6b9b56849a4da1bcdfaaccfe1d0dbdb7b766594d779d",
             "locator": {
-              "end": 12,
+              "end": 10,
               "kind": "line_range",
               "start": 1
             }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f5c6282b1639a6f68cf31a8433992d2e13676d8a8fb0e08e2d0c32fe754cecc",
             "locator": {
               "end": 39,
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6924ba64bfcc8eb04dd9c7903f8506f57f0c8d524d4732954337e8f92940bbc2",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
             "locator": {
-              "end": 270,
+              "end": 248,
               "kind": "line_range",
-              "start": 268
+              "start": 246
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

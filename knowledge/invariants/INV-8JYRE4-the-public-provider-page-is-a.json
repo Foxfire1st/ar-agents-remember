@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized in the page and in each inbound caption that describes it, so a reader arriving from eight different directions is told the same thing. The costly mistake is the one this leaf fixes: a live guide that promises an installation no product path performs."
+  },
+  "applicability": "The public provider page and every tracked inbound reference to it.",
+  "conditions": [
+    "The page is read as the current description of the retired providers."
+  ],
+  "exclusions": [
+    "Unrelated content on the same pages.",
+    "An invitation to opt into a provider setup that no longer exists."
+  ],
+  "id": "INV-8JYRE4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "docs/reference/runtime-layout.md states the same three stop callers and the authority-settings source, which is the account the guide and its inbound links point at."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-12",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The public provider page is a retirement and cleanup account, and every verified inbound link describes that retirement instead of promising an opt-in provider setup.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,14 +3,14 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
         "locator": {
           "kind": "symbol",
           "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
         }
       },
-      "facet": "The parameterized real ASGI harness for provider/setup/start failures asserts 503 dismissal-not-held and visible queue on persistence failure, 202 on success, unchanged/restarted suppression, and recovery then later-failure recurrence.",
+      "facet": "The real ASGI harness for blocked-start failures asserts 503 dismissal-not-held and visible queue on persistence failure, 202 on success, unchanged/restarted suppression, and recovery then later-failure recurrence.",
       "id": "PRF-5KXTJR",
       "invariant": "INV-DVQX4T",
       "origin": {
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d65e8cf29708bccab0e05c14824960249ba8aed64492517583a81be2e9b5095b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_provider_surfaces_publish_no_attention_or_projection_state"
+        }
+      },
+      "facet": "legacy provider files on disk publish no attention item and no provider projection key",
+      "id": "PRF-7E4V56",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
         "locator": {
           "kind": "symbol",
           "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
@@ -37,14 +54,48 @@
     },
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:7c656d7d30f9390938a4e7189637d252fe8a6b8d9ad1e6377a8df3b05bfccbd5",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:b103b940a906b55eb082a02c9eadee90240521428176337c2f53ec8c407c79d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retired_kind_cannot_be_dismissed_through_the_published_queue"
+        }
+      },
+      "facet": "the published queue refuses to dismiss a retired kind",
+      "id": "PRF-HQ9DXJ",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:e303f140d535ff0fcd185acca8bbc3e4b2805355c1ca430ae4023865e6e24ec1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retired_kind_cannot_be_recorded_as_a_current_dismissal"
+        }
+      },
+      "facet": "a retired kind cannot be recorded as a current dismissal",
+      "id": "PRF-HSYCB1",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
         "locator": {
           "kind": "symbol",
           "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
         }
       },
-      "facet": "For each remaining provider/setup/start kind, unchanged source passes and a new reader retain acknowledgement; an observed healthy state removes it and a later failure returns.",
+      "facet": "For blocked-start, unchanged source passes and a new reader retain acknowledgement; an observed healthy state removes it and a later failure returns.",
       "id": "PRF-K53YSK",
       "invariant": "INV-TT5CTW",
       "origin": {
@@ -54,8 +105,25 @@
     },
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d8a62a7df03e1f2614532c2890b9184ae6f4fd9bfd961815e93acd532b421c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_retired_dismissal_row_is_dropped_and_suppresses_nothing"
+        }
+      },
+      "facet": "a legacy row naming a retired kind is dropped and suppresses nothing",
+      "id": "PRF-Q6J18K",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
         "locator": {
           "kind": "symbol",
           "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
@@ -71,14 +139,14 @@
     },
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
         "locator": {
           "kind": "symbol",
           "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
         }
       },
-      "facet": "For provider/setup/start kinds, failed and unrelated partial reads retain acknowledgement; a complete native gone-source/configuration observation reclaims it.",
+      "facet": "For blocked-start, failed and unrelated partial reads retain acknowledgement; a complete native read after the start-progress file disappears reclaims it.",
       "id": "PRF-XTZ1D1",
       "invariant": "INV-D9T2BC",
       "origin": {
@@ -88,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-        "content": "sha256:d7995e34054558c3b569591bd5bb5c039862414f2b015730ba2447e6b3884d2d",
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:a6afe38838face6b70f8c2cf2519a3cfc6252ccb1d6d53f94d598844d0d214d9",
         "locator": {
           "kind": "symbol",
           "name": "test_no_change_does_not_write_and_failed_cleanup_retains_the_read_map"
@@ -111,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
             "locator": {
               "kind": "symbol",
               "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
@@ -127,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
             "locator": {
               "kind": "symbol",
               "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
@@ -143,8 +211,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
             "locator": {
               "kind": "symbol",
               "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
@@ -159,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
             "content": "sha256:cbca3a7a2d6c30cff7bcd1639c15fceb0aa82a8ab13f8285e6ed8bfc08ee5933",
             "locator": {
               "kind": "symbol",
@@ -171,15 +239,27 @@
       ]
     },
     "14": {
-      "note": "Incomplete provider census cannot clear another provider acknowledgement.",
+      "note": "The retained directory-read-failure case uses blocked-start and keeps its acknowledgement when native source listing fails; no current provider census or provider acknowledgement is asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:bdc065dd3fe0a49642c0e0989d71c65b7d8dbf745d1897a4e983cb4e52020a11",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:9316d020885c0b340d81c9c6b19c854090266420987484a5f835dd165f4b24e6",
             "locator": {
               "kind": "symbol",
-              "name": "test_failed_provider_read_cannot_end_even_another_providers_dismissal"
+              "name": "test_directory_read_failure_keeps_the_kinds_acknowledgements"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:abcf7059dbd2fdd8e1df5126b4dd6ed069c6599a7b9003c63aa7667c785a22b4",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 390
             }
           },
           "kind": "test"
@@ -191,8 +271,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:4c8b3cb68c0f141c88d92137179a1163a15792d86d0a059f7b72757331dff456",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:36f3eae4a9369f399c7533e29ddb282e9471f07e5c91db4eb965d0a30408c544",
             "locator": {
               "kind": "symbol",
               "name": "test_dismiss_suppresses_actionable_drift_until_findings_change"
@@ -223,8 +303,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:7c656d7d30f9390938a4e7189637d252fe8a6b8d9ad1e6377a8df3b05bfccbd5",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
             "locator": {
               "kind": "symbol",
               "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
@@ -239,8 +319,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
             "locator": {
               "kind": "symbol",
               "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"

@@ -33,9 +33,10 @@ instance via `replace`. This tolerates argparse subparsers that only populate th
 arguments they declare and tests that construct partial namespaces, so any field
 the namespace omits keeps its dataclass default rather than raising.
 
-`retry_provider_setup: bool = False` (GitHub #53): on an existing contract,
-worktree start relaunches background provider setup instead of attaching;
-refused while a live setup heartbeat exists.
+`retry_provider_setup: bool = False` remains an internal DTO field (GitHub #53).
+Existing-contract retry refuses while a live setup heartbeat exists, then uses
+the normal provider preflight. Both retired CGC/GrepAI provider IDs are always
+disabled, so this path does not relaunch their background setup.
 
 `stale_base_choice: str | None = None` (GitHub #54): the stale-base preflight
 recovery selector for worktree start — `fast-forward` (ff stale local source

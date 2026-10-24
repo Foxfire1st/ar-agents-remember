@@ -1,0 +1,130 @@
+{
+  "path": "docs/README.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2f500fd3655596672020da3e460f242e778052c8",
+        "content": "sha256:e13ac4d073932c7913921b0d5737ec18614e16c4571e3406dd492cde819ef99c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HHJWSK",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The inbound caption describes the retirement page rather than provider enablement.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The core-features bullet retires the semantic and code-graph providers and keeps verified Markdown and source code as the truth.\n\nAnchor: `docs/README.md:16`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Getting Started entry stops at memory and onboarding, with no provider setup step.\n\nAnchor: `docs/README.md:25`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Features tour entry names the retired providers.\n\nAnchor: `docs/README.md:26`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The guides entry describes the Providers page as retirement plus old-install cleanup.\n\nAnchor: `docs/README.md:52-53`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The external-memory paragraph links `features.md` inside the docs tree.\n\nAnchor: `docs/README.md:21`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The opening summary line still lists semantics and code-graph retrieval.\n\nAnchor: `docs/README.md:3`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The page names no provider command, setting key or provider id.\n\nAnchor: `docs/README.md:1-66`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

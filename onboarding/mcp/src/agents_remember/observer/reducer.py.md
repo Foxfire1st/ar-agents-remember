@@ -10,7 +10,7 @@ Pure assembly of workspace task, worktree and analytical projections from suppli
 
 ## Code Commentary
 
-`project_workspace` enriches enclosures with exactly integrate/cleanup availability, builds Engine Room facts, then calls `build_task_entries` once with canonical task sources, worktrees and `HostActivitySnapshot`. It publishes tasks, taskCounts and unbound enclosures, providers, active worktree groups and closeout queues. Metrics carry only the ignored host-agent count; task counts are published on `taskCounts` beside the tasks, and no staleness histogram is projected.
+`project_workspace` enriches enclosures with exactly integrate/cleanup availability, builds Engine Room facts, then calls `build_task_entries` once with canonical task sources, worktrees and `HostActivitySnapshot`. It publishes tasks, taskCounts and unbound enclosures, active worktree groups and closeout queues. The former providers collection is absent. Metrics carry only the ignored host-agent count; task counts are published on `taskCounts` beside the tasks, and no staleness histogram is projected.
 
 Attention and analytics remain pure over supplied facts: the queue is built once from the providers, the drift findings, the joined task entries, the native attention facts and the pass clock, and it appends no second interpretation of task state. Authored planned/aborted/completed stages are not overridden by activity; unavailable host facts are not proof of pause or completion. There is no `project_lifecycle`, correction fold, synthetic persistent lifecycle or stale-heartbeat abandonment. Enclosure action prerequisite/refusal distinctions and landing-operation ownership survive independently.
 
@@ -25,3 +25,11 @@ This account is current source interpretation only. It creates no executed test/
 ## Evidence
 
 - One task-source/host join supplies state/membership/counts; action and analytics assembly remain pure. [1]
+
+- The current WorkspaceProjection constructor publishes native tasks/counts, unbound enclosures, active groups, queues, host metric and analytics, with no providers collection. [19]
+
+## Historical provider collection
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> It publishes tasks, taskCounts and unbound enclosures, providers, active worktree groups and closeout queues.

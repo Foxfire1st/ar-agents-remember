@@ -18,7 +18,7 @@ copy of the required-field list, which is the part that drifts.
 
 ### Logic
 
-`project` delegates to the shared builder with gallery version/generatedAt defaults. Native task/count bases replace simulated session lifecycles and metricsFor rollups; EMPTY_ANALYTICS retains operational lists, not document/series catalogues. Provider, enclosure and event factories delegate with gallery defaults before caller overrides.
+`project` delegates to the shared builder with gallery version/generatedAt defaults. Native task/count bases replace simulated session lifecycles and metricsFor rollups; EMPTY_ANALYTICS retains operational lists, not document/series catalogues. Enclosure and event factories delegate with gallery defaults before caller overrides.
 
 A fixture that type-checks through these builders is a shape **the mirror** (`types/projection.ts`)
 can produce. `wire.ts` bases are assembled from `src/fixtures/snapshot.json`, which is **hand-maintained, not a generated snapshot**. `wire.ts`'s own header
@@ -26,21 +26,25 @@ carries the full chain and where it stops: fixture ⊆ mirror is held by `tsc` a
 producer-to-mirror conformance is held separately by schema generation and its stale-output check. The snapshot remains manual.
 
 **Slice 5i** extracts the engine-room wrap into an exported
-`engineRoomProjection(scenario)` — `project({ providers: scenario.workspace, analytics: { ...EMPTY_ANALYTICS,
-engineProcesses: scenario.processes, ledgers: [OFFICIAL_LEDGER] } })` — the single mapping now shared by
-**both** the `GALLERY` Engine Room entries (which call it instead of the old inline `project(...)`) and the
-slice-5i scenario-player frames (`dev/scenarios.ts`). Typed node factories retain explicit gallery defaults. `enclosure()` supplies enclosure identity and worktree/landing defaults, and `evt()` supplies an event timestamp before caller overrides. `providerRole(id)` stamps `role` as `memory` when the id contains `memory`/`grepai`, else `code`. `EMPTY_ANALYTICS`, imported from `test/fixtures/wire.ts`, supplies empty operational collections: drift, setup, route-coverage, tool-report, ledger, attention and engine-process lists. Native tasks/counts are projection-root fields; no `lifecycle()` helper or analytics task-document/series catalogue remains. `GALLERY` (typed `GalleryEntry[]`)
-retains its invented scenario choices and then spreads
-`...ENGINE_ROOM_SCENARIOS.filter((s) => !s.name.startsWith("engine-boot-")).map(...)` — each mapped to a
-projection whose `providers` = the scenario's `workspace` and whose `analytics.engineProcesses` = the
-scenario's `processes`. The `engine-boot-*` build-up frames (the 6 boot-step frames) are **filtered out of
-the gallery tab strip** (5h cleanup) — they are a component-test-only step-through hidden from the bench
-picker (slice 5i's scenario player plays the build-up), not a bench tab — while every other Engine Room
-scenario still gets a tab; they stay in `ENGINE_ROOM_SCENARIOS` for the render tests. Slice 5h's ledger
-popover wires its demo data through the projection: the Engine Room gallery mapping sets
-`analytics.ledgers: [OFFICIAL_LEDGER]` (imported from `engine-room/fixtures`) so the OFFICIAL coupler
-resolves its repo's ledger in `EngineRoom`; the `full` cockpit scene's hand-authored `LedgerNode`s gained
-`rows` to satisfy the new required field.
+`engineRoomProjection(scenario)` — `project({ analytics: { ...EMPTY_ANALYTICS,
+engineProcesses: scenario.processes, ledgers: [OFFICIAL_LEDGER] } })` — the single mapping shared by
+**both** the `GALLERY` Engine Room entries and the scenario-player frames (`dev/scenarios.ts`). It
+projects the scenario's process facts; the scenario type contains no workspace-provider collection.
+Typed node factories retain explicit gallery defaults. `enclosure()` supplies enclosure identity and
+worktree/landing defaults, and `evt()` supplies an event timestamp before caller overrides. The
+provider factory and `providerRole` helper are removed. `EMPTY_ANALYTICS` is imported from
+`test/fixtures/wire.ts`; this wrapper fills its engine-process and ledger collections. Native
+tasks/counts are projection-root fields; no `lifecycle()` helper or analytics task-document/series
+catalogue remains.
+
+`GALLERY` (typed `GalleryEntry[]`) retains its invented scenario choices and then spreads
+`ENGINE_ROOM_SCENARIOS.filter((scenario) => !scenario.name.startsWith('engine-boot-')).map(...)`,
+with each retained entry passed through `engineRoomProjection`. The `engine-boot-*` frames stay out
+of the gallery tab strip and remain available to the scenario player and component tests. The
+`alarm` scene supplies actionable-drift and blocked-start attention items. The Engine Room mapping
+sets `analytics.ledgers: [OFFICIAL_LEDGER]` so the OFFICIAL coupler can resolve its repository's ledger;
+the `full` cockpit scene supplies hand-authored ledger rows. These remain invented demonstration
+data, not observed workspace state.
 
 ### Conventions
 
@@ -83,7 +87,9 @@ shape, so both sides of that delegation are cited.
 
 - `project()` calls `servedProjection`. [2]
 - The gallery maps Engine Room scenarios through `engineRoomProjection`. [4]
-- The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data. [7]
+
+- The gallery wraps Engine Room process facts and OFFICIAL_LEDGER into analytics; its filtered gallery entries reuse that wrapper. EngineRoomScenario contains a name and processes, with no workspace-provider collection. [7]
+
 - WorkspaceProjection owns analytics as a required field. [9]
 
 ### Cross-Repo References

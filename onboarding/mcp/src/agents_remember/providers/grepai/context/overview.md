@@ -14,7 +14,7 @@
 
 ## Hot Path Summary
 
-Use `constants.py` for Docker/network/container defaults and preferred host ports, `layout.py` for `GrepaiRuntimeLayout`, provider settings expansion, live memory roots, and per-root `.gitignore` maintenance for GrepAI's `.grepai/` working directory, and `workspace.py` for workspace YAML rendering. The managed provider prefers host `61432` for Postgres and host `61434` for Ollama when allocating automatic ports; an existing published port or an explicitly configured port can take precedence. `core.py` and `__init__.py` re-export these focused modules.
+Use `constants.py` for Docker/network/container defaults and preferred host ports, `layout.py` for `GrepaiRuntimeLayout`, provider settings expansion, live memory roots, and per-root `.gitignore` maintenance for GrepAI's `.grepai/` working directory, and `workspace.py` for workspace YAML rendering. The managed provider prefers host `61432` for Postgres and host `61434` for Ollama when allocating automatic ports; an existing published port or an explicitly configured port can take precedence. `__init__.py` re-exports these focused modules.
 
 ## How It Is Built
 
@@ -45,7 +45,7 @@ Layout construction returns paths without creating directories. `ensure_grepai_r
 ## Evidence
 
 - Provider constants and preferred host ports [1]
-- Context facades re-export the focused modules [2]
+- Context facade re-exports the focused modules [2]
 - Frozen workspace, instance, backend and returned layout shapes [3]
 - Constructor placement defaults and workspace-name normalization [4]
 - Settings expansion, live roots and caller-supplied placement [5]

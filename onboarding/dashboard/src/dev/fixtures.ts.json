@@ -7,24 +7,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6abea218fea2985c9df1ab6bb2c5d2b7ae9b8be",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
             "content": "sha256:ce5491467ffb20168fdefbc88aa47b228e426764b6d0832caffc78ea4ede3934",
             "locator": {
-              "end": 16,
+              "end": 15,
               "kind": "line_range",
-              "start": 16
+              "start": 15
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e6abea218fea2985c9df1ab6bb2c5d2b7ae9b8be",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
             "content": "sha256:6c8bd33ff6d197e792464b49280ca6efe844b8b26c697ac90f6a35209e4ff180",
             "locator": {
-              "end": 17,
+              "end": 16,
               "kind": "line_range",
-              "start": 17
+              "start": 16
             }
           },
           "kind": "code"
@@ -36,12 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6abea218fea2985c9df1ab6bb2c5d2b7ae9b8be",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
             "content": "sha256:8ab5d6b517ef2f9cd0b1c984a9fda3c9909f3ce8ae8d284e2c6d0306e061c9e7",
             "locator": {
-              "end": 111,
+              "end": 76,
               "kind": "line_range",
-              "start": 111
+              "start": 76
             }
           },
           "kind": "code"
@@ -60,12 +60,12 @@
         },
         {
           "anchor": {
-            "blob": "e6abea218fea2985c9df1ab6bb2c5d2b7ae9b8be",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
             "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
             "locator": {
-              "end": 272,
+              "end": 208,
               "kind": "line_range",
-              "start": 272
+              "start": 208
             }
           },
           "kind": "code"
@@ -73,42 +73,40 @@
       ]
     },
     "7": {
-      "note": "The gallery consumes each `ENGINE_ROOM_SCENARIOS` entry by projecting its `processes` and `workspace` data.\n\nAnchor: \"processes: EngineProcessNode[];\"; \"workspace: ProviderNode[];\"; \"ENGINE_ROOM_SCENARIOS.filter\"; \"projection: engineRoomProjection(scenario)\"",
+      "note": "The gallery wraps Engine Room process facts and OFFICIAL_LEDGER into analytics; its filtered gallery entries reuse that wrapper. EngineRoomScenario contains a name and processes, with no workspace-provider collection.\n\nAnchor: `ENGINE_ROOM_SCENARIOS.filter`",
       "targets": [
         {
           "anchor": {
-            "blob": "7112f472338abd10d7f68eef7c90c01662c717e7",
-            "content": "sha256:8fa34cd7d66b0c05003e6e563fc01cd4fae15978bc4bcc3ac86bfb4c65bfba75",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:96b985bcd8bca89062abdcd985ab9b2cbfcf430d6cbb865667477ee2a4f34e25",
             "locator": {
-              "end": 466,
-              "kind": "line_range",
-              "start": 466
+              "kind": "symbol",
+              "name": "engineRoomProjection"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e6abea218fea2985c9df1ab6bb2c5d2b7ae9b8be",
-            "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:ec497b05891a156bbfa7c61edd877f6923f205f98619c6e8fccf549ad495f6c8",
             "locator": {
-              "end": 272,
-              "kind": "line_range",
-              "start": 272
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:4cde88fd72edea588b870956d8c10e0b076491746eda8bdb18eec8d499bc3c0e",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 21
+              "kind": "symbol",
+              "name": "EngineRoomScenario"
             },
             "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:9cb77918cd93ff36fb1920895580d2cab8b6aac88cd64511d2e5b8274c8fae9a",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 203
+            }
           },
           "kind": "code"
         }
@@ -119,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
             "locator": {
-              "end": 694,
+              "end": 682,
               "kind": "line_range",
-              "start": 694
+              "start": 682
             },
             "path": "dashboard/src/types/projection.ts"
           },

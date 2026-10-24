@@ -6,16 +6,16 @@
 
 ## Purpose
 
-`cgc.py` is the CodeGraphContext lifecycle export facade. It groups the split
-CGC implementation modules behind one import surface for `providers.lifecycle`.
+`cgc/lifecycle/__init__.py` is the CodeGraphContext lifecycle export facade. It groups
+the split CGC implementation modules behind one import surface for `providers.lifecycle`.
 
 ## Code Commentary
 
 ### Logic
 
-The module re-exports CGC backend, core settings/layout, runner, installation,
-process-control, refresh, and query lifecycle functions. It intentionally
-contains no behavior beyond those exports.
+The module re-exports CGC core settings/layout, Compose, backend, runner, installation
+and process-control functions. It intentionally contains no behavior beyond those
+exports.
 
 ### Invariants And Boundaries
 
@@ -32,5 +32,3 @@ contains no behavior beyond those exports.
 - The CGC runner module in the exported surface. [4]
 - The CGC installation module in the exported surface. [5]
 - The CGC process-control module in the exported surface. [6]
-- The CGC refresh module in the exported surface. [7]
-- The CGC query module in the exported surface. [8]

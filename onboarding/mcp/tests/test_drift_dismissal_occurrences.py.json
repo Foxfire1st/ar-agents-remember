@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
-        "content": "sha256:2402aa264b4152b80dff028d35d1aaff7288af2abddbddd6570280d002216f2b",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
+        "content": "sha256:ce67e9f00c48e3692211474af74b2aa3592d7fbc03dc8a75b038828d74f97dc7",
         "locator": {
           "kind": "symbol",
           "name": "test_drift_actual_http_click_restart_and_new_occurrence"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
         "content": "sha256:6530d1d2fab2cafc6619f3658b250e9e5a55dc1debf3a103c563fb4371e4f64d",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
         "content": "sha256:c91ce958bec42eb11da29cc18afa90686362f015cac9762b9a7f164267e497f7",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
         "content": "sha256:b4a9f70b2f0dc8caac5152dd7e8c72f5c9a6a7c3d1997b7e664aa9bd127f5b07",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
         "content": "sha256:93af76b84b44e2526606dd44602d0d2eb2d7294f2e35bcbad34abffd428d94d8",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "051b5f115dd95adec8b4d1cc6c617922853ab1f8",
+        "blob": "69e499c8187c72b331311f589cd040dbc91b112d",
         "content": "sha256:7f4f76ec1a942b71b3a6d16952f1ab5f96a1f263ed2cd659c33ae45972e82753",
         "locator": {
           "kind": "symbol",

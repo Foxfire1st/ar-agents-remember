@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
             "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,77 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The accepted install_provider_deps and no_cache fields remain forwarded, while provider dependency installation is removed. Runtime installation still attempts the required leftover-watcher stop and reports enabled provider keys as unused; no_cache establishes no provider-image rebuild.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallRequest"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:f0598946a49230357af36595e9e513bb65bcddbc17d059844c6f1d63f15e4610",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_assets"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
+            "content": "sha256:76043812ac2da2b5922ba9d23c2f269fbacdb4844790588f25baa5c250838182",
+            "locator": {
+              "kind": "symbol",
+              "name": "_install_runtime"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:bd7593e689110b2273947871c5c227f3393338406a86501018105d4132d1e4d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_runtime_from_config"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1fb3cb129c6a69ca95789c8a15b8c0de33a6112",
+            "content": "sha256:d69caeae9bbd3f3d0ff6564d342a89baa7f1fdf8686ec866e2bea23f4ca7f250",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_install"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
           },
           "kind": "code"
         }

@@ -17,7 +17,7 @@
         "handoffEntry": "MIK-R113@v1 rule 10",
         "leaf": "260928-MIK-L113"
       },
-      "rationale": "The curation operation's own account of its carriers; it names an instructed session for the taskless writer and no taskless Curator seat.",
+      "rationale": "The Curator role requires repository foundation to use the real task document and its enclosure contract; without a task, Bootstrap reports state and routes to the user-started Architect. No instructed session substitutes for task admission.",
       "role": "propagation-persistence"
     },
     {

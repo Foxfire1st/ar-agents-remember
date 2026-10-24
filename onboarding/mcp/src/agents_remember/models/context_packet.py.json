@@ -37,17 +37,39 @@
       ]
     },
     "12": {
-      "note": "Provider readiness in the packet uses compact provider summary models.",
+      "note": "The retained ContextPacketV2 schema has a ProviderSummary field, whose current producer emits configured/enabled with state skipped and no readiness items. The mounted SlimContextPacket v3 carries roots/actions and no provider block.",
       "targets": [
         {
           "anchor": {
-            "blob": "2640f116c7d6bce95de2167c335b1075abea76c6",
-            "content": "sha256:aa8802cf3a6f79cf3698078969a314a147c82a800f2ca8d741f1f69cd2116aaa",
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "content": "sha256:c1d0ad0575d6dd7eb1b23158502d843b17d2d7919b57f6695585533a74fb8e29",
             "locator": {
               "kind": "symbol",
-              "name": "ProviderSummary"
+              "name": "ContextPacketV2"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
+            "content": "sha256:65b3f5e9685099b00ec6af159b0bc0fc36593181bcc2ee5d31822b346237a6e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "SlimContextPacket"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_summary"
             },
-            "path": "mcp/src/agents_remember/models/providers.py"
+            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }
@@ -180,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea5764081bbb7a9fa9f16d71c4164e1626564383",
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",

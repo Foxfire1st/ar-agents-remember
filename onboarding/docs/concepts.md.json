@@ -1,0 +1,82 @@
+{
+  "path": "docs/concepts.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Onboarding units map one-to-one from source file to mirrored Markdown note and carry what the code does not make obvious.\n\nAnchor: `docs/concepts.md:5-16`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
+            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "By path is direct and index-free; by meaning and by relationship are past tense with retired providers and no engine.\n\nAnchor: `docs/concepts.md:41-49`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
+            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The substrate trio is Intention/Semantics/Relationship; `Semantics` and `Relationship` carry the retirement, `Intent` remains the default.\n\nAnchor: `docs/concepts.md:51-72`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
+            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider output is candidate routing evidence, not proof; source, onboarding, drift and approval remain the truth controls.\n\nAnchor: `docs/concepts.md:77-79`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
+            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Drift outcomes, approval gating, route-local overviews and the memory ledger keep their definitions.\n\nAnchor: `docs/concepts.md:81-115`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
+            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

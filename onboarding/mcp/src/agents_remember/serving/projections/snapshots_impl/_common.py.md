@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Shared file-surface helpers for the observer snapshot readers. The readers split by responsibility (providers, runtime enclosures, analytical surfaces, task documents) share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here. The common leaf also supplies fixed-level completeness-aware source enumeration and body-input generation capture.
+Shared file-surface helpers for the observer snapshot readers. The current runtime-enclosure, analytical-surface and task-document readers share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here. The former providers-reader/domain is not part of the current projection input set. The common leaf also supplies fixed-level completeness-aware source enumeration and body-input generation capture.
 
 This module also owns **the one canonical task-document enumeration** (`_iter_task_json`) and its
 bounded companion (`_canonical_task_json_candidates`). The enumeration feeds every always-on reader
@@ -90,3 +90,11 @@ the subset exact. This preserves the named candidate subset, not universal body 
 Shared enclosure snapshot construction selects the latest validated lifecycle operation and projects
 bounded task-addressed phase, timing, command, report, and failure guidance. Worker, lease, and
 resume identities remain private to recovery.
+
+- Current projection inputs import common reader helpers and carry enclosure, task, drift, start, tool, host and repository-surface facts, without a provider reader domain or collection. [7]
+
+## Historical reader inventory
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> Shared file-surface helpers for the observer snapshot readers. The readers split by responsibility (providers, runtime enclosures, analytical surfaces, task documents) share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here.

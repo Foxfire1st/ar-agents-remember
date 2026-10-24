@@ -7,8 +7,10 @@
 ## Purpose
 
 `provider_settings.py` owns lifecycle-time reads of context provider settings
-from an EXPLICIT settings file (the lifecycle CLI's `--from-settings`, normally
-server-generated from the authority config).
+from an EXPLICIT settings file. The retained reader and error wording names
+`--from-settings`; it does not supply a lifecycle CLI entrypoint. Current generated
+lifecycle settings contain a disabled, empty provider map and no longer depend
+on the authority config.
 
 ## Code Commentary
 

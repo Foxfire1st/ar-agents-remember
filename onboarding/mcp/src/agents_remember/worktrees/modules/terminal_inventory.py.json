@@ -69,7 +69,7 @@
         "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-terminal_inventory",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The terminal inventory names the outside scratch root beside the enclosure scratch it already reported, so an ending answer lists both.",
+      "rationale": "Requires the recorded outside scratch root to be absent before the no-remains terminal exception applies; cleanup and abandon produce removal entries, and cleanup_report presents their outside-scratch inventory.",
       "role": "support"
     }
   ],

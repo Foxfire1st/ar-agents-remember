@@ -30,13 +30,15 @@ Accepted native paths reach the projection refresh, with explicit incompleteness
 
 ### Logic
 
-Existing roots cover tasks/contracts, configured host publication, workspace dismissals, drift, central provider status/setup and temporary start/tool reports, and since MIK-R200 the `controlplane` activation records and the temporary held-message queue as well. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
+Existing roots cover `tasks`, the configured host-publication workspace, workspace dismissals, drift, `temp/worktree-start`, `temp/tool-reports` and, when configured, the activity directory, plus since MIK-R200 the `controlplane` activation records and terminal notice store and the temporary held-message queue. Central provider `logs/providers/{status,setup}` are **not** roots: no surviving projection reader reads them and they carry no `projection_domains_for_paths` entry, so an event there would fail open to every domain and rebuild from state nothing displays. Lifecycle logs are not roots. Root refresh admits newly appearing paths.
 
 **Nothing under `worktrees/` is a native watch root.** The source records the reasons: about
 50k checkout directories would recreate the scan cost, and each task's `provider-runtime` can
 contain Postgres/grepai data unreadable to the daemon and churning on container/WAL writes.
 Recursive watching previously crashed on permission-denied and would also wake projection for
-those unrelated writes. Central provider status is watched under `logs/providers`; worktree
+those unrelated writes. Central provider status/setup is **not** watched under `logs/providers`, for the
+reason the source gives in place: no surviving reader, no domain entry. The independent
+provider-safety sampler keeps its own loop and needs no watch root. Worktree
 provider/setup files retain their existing non-host safety/heartbeat owners.
 `ProjectionInputWatcher._watch_once` additionally passes `ignore_permission_denied=True`, so an
 unreadable subdirectory of an admitted root is skipped rather than killing the whole watch.
@@ -183,7 +185,9 @@ The watch roots are derived from — and must stay in lock-step with — the rea
 `project_and_write`; the projector consumes the pacer; `create_app` decides when a watcher exists;
 the CLI/daemon own the `--heartbeat` knob's plumbing.
 
+
 - Projector wiring and fail-open watcher completion retain actual ownership. [7]
+
 
 | Derived suffix uses the same whole-log naming owner. | `_DURABLE_LOG_LOCK_SUFFIX` | mcp/src/agents_remember/serving/change_watcher.py:158-158 |
 | Frontend advances volatile ages between heartbeat snapshots. | `VOLATILE_AGE_FIELDS` | dashboard/src/data/servedAges.ts:16-22 |
@@ -210,10 +214,18 @@ all domains so correctness fails open to a full refresh.
 
 - Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
 
+
 - Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. [4]
+
+
 - Shared lock naming and transaction mechanics keep filtering aligned. [5]
+
+
 - Projection source readers determine the input surface. [6]
+
+
 - The live-input model selects actual watcher participation. [8]
+
 - Dashboard reload entry carries the pacing configuration. [9]
 
 - Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once` [10]

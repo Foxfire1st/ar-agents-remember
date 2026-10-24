@@ -4,6 +4,23 @@
     {
       "anchor": {
         "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+        "content": "sha256:6aa5a7ae90c2708fff25a32ecde5c1259d641e75bf85260be924d46e2020e91e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G47RTT",
+      "invariant": "INV-PDCN3H",
+      "origin": {
+        "handoffEntry": "L192-W-R199-10",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The project arms the size step here and states no limit, so this line shows the rail is armed, not what the limit is.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
         "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
         "locator": {
           "end": 321,

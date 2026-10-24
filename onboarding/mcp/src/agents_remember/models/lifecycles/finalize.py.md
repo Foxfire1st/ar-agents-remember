@@ -92,4 +92,4 @@ Both are optional here for that reason. Pinned by
 
 ## 260928-MIK-L198 — the finalize response names the root and the sweep
 
-`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. Both are empty for an enclosure published before the record existed, so no existing response changes meaning.
+`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. An enclosure published before root records existed supplies no per-enclosure `outsideScratch` record. Its finalize call can still carry `outsideScratchReconcile` when the independent product-parent sweep removes or reports roots, including a sweep failure. A dry run skips that sweep, and a sweep with no findings leaves the result unchanged.

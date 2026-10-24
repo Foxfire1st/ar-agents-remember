@@ -1,0 +1,82 @@
+{
+  "path": "docs/install/claude-code.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.claude/`, render with `--repo`, restart once, and copy `mcp/mcp.json` to `<workspace>/.mcp.json` or the registration is not detected.\n\nAnchor: `docs/install/claude-code.md:16-27`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4b9953010a03193c0cd0a91fe2f914b53a96494",
+            "content": "sha256:6c6f59a05af0c3673bc4b13c0267b2f4e45ba8d2fa917711aaf05da5e1950acb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package contents: settings hook registration, Python hook and directive text, MCP registration and authority settings, skills.\n\nAnchor: `docs/install/claude-code.md:29-39`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4b9953010a03193c0cd0a91fe2f914b53a96494",
+            "content": "sha256:6c6f59a05af0c3673bc4b13c0267b2f4e45ba8d2fa917711aaf05da5e1950acb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/claude-code.md:41-49`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4b9953010a03193c0cd0a91fe2f914b53a96494",
+            "content": "sha256:6c6f59a05af0c3673bc4b13c0267b2f4e45ba8d2fa917711aaf05da5e1950acb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hook is the authoritative surface; a `CLAUDE.md` import is described as optional context and a degraded fallback.\n\nAnchor: `docs/install/claude-code.md:51-136`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4b9953010a03193c0cd0a91fe2f914b53a96494",
+            "content": "sha256:6c6f59a05af0c3673bc4b13c0267b2f4e45ba8d2fa917711aaf05da5e1950acb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Skills must stay flat because Claude Code discovers only one level under the skill root.\n\nAnchor: `docs/install/claude-code.md:138-157`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4b9953010a03193c0cd0a91fe2f914b53a96494",
+            "content": "sha256:6c6f59a05af0c3673bc4b13c0267b2f4e45ba8d2fa917711aaf05da5e1950acb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

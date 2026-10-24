@@ -1,0 +1,139 @@
+{
+  "path": "mcp/tests/test_l192_safety_stop_authority_settings.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+        "content": "sha256:9af231755af1af12a579f01ff5f4f36fa3c2b1c7ca38b13a8c1301318e22bb46",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_authority_entry_selects_none_and_reports_nothing_new"
+        }
+      },
+      "facet": "with no authority entry the stop selects none and reports nothing it cannot show",
+      "id": "PRF-QBRY3M",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+        "content": "sha256:ef6e65474abfbbdd8ec617c0c2109f6ab7b3d3bb7517a8fadecdd741591c81cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_legacy_authority_entry_makes_the_safety_stop_select_it"
+        }
+      },
+      "facet": "a degradation sample plus a legacy authority entry makes the safety stop select that provider",
+      "id": "PRF-V10P9J",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The document under test is a user authority settings file, and its legacy provider block is read for a stop without granting the authority that block governs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:532676f218c115830e8e2ad66b23e91cd4caa33642cd3b3d53db0a92eebd955b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Degradation samples are written above the critical ratio the authority document itself declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:0d61eda7e63ac2a2da5e8f33b3e759c4f3210a5dd0f88954e46bf104c8d75667",
+            "locator": {
+              "kind": "symbol",
+              "name": "_critical_samples"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stop handler is patched and restored, so the recorded action is the observable rather than container state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:ae3080b5861f8f2f7fe0509761bda095a475cc6ff98204b5b7b26e0984327cb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RecordStop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tick is driven with the watcher service's own stop as its injected stopper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:b3e2ed51e90d2a8ff30fe2b1f35d81662398a79b0d8e8a9fca87e9773435079a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run_tick"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "With a legacy authority entry and a critical sample, the safety stop selects that provider and the failsafe event names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:ef6e65474abfbbdd8ec617c0c2109f6ab7b3d3bb7517a8fadecdd741591c81cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_legacy_authority_entry_makes_the_safety_stop_select_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "With no authority entry, a critical sample still fires the failsafe but no stop handler runs and no provider is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b33390dd86e07ae4122758a5858f5f58f76d6c6e",
+            "content": "sha256:9af231755af1af12a579f01ff5f4f36fa3c2b1c7ca38b13a8c1301318e22bb46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_authority_entry_selects_none_and_reports_nothing_new"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

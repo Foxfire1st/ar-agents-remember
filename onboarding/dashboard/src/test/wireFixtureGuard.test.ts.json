@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
             "content": "sha256:16053c92f8380b4ed0cb75c194d15173264a16112e1284269646e1f9a3fd12ab",
             "locator": {
               "end": 18,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:7af3dc70814d534f52c9a90d99ad84b3480187fb178b7432c1dad589e1bb8f2f",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:af994e03936b14b21ced4609ea8f1d7b5177460e2a2b5c2d7632bd27104efcae",
             "locator": {
               "end": 39,
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:07e91ef16eef0599513f71f3de2a9e14340d6650bcec40fb235f84b748980133",
             "locator": {
               "end": 44,
@@ -85,12 +85,12 @@
       ]
     },
     "2": {
-      "note": "The sanctioned-site registry and its four groups.",
+      "note": "The sanctioned-site registry separates retained decode sites, fixture narrowing, the legacy-provider retirement probe and compiler suppression.",
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
             "locator": {
               "kind": "symbol",
               "name": "SANCTIONED_WIRE_SITES"
@@ -105,12 +105,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57cab42fcf400a47ed496a496eb8cf73f9a920cd",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 629,
+              "end": 666,
               "kind": "line_range",
-              "start": 629
+              "start": 666
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:d93f1e46d9474e2664d0ff74b0cd8982658c23e4b6c794c373db50f8e00d44ab",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
             "content": "sha256:fae2416913e7169a85f6166b5a097c5c51fb2b77965bd4adc3a6e7f794ca1943",
             "locator": {
               "kind": "symbol",
@@ -152,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
             "content": "sha256:f361358cf34b5ea79891cef1a9371928a9d955207dce0d01815b4830b1cfbc81",
             "locator": {
               "kind": "symbol",

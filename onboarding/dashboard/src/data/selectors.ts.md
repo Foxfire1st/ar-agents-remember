@@ -7,20 +7,21 @@
 ## Purpose
 
 Pure derivations over the dashboard Zustand store. These helpers keep React panels small and make
-dashboard grouping, wait-time formatting, provider-stack grouping, drift segmentation, and attention
+dashboard grouping, wait-time formatting, drift segmentation, worktree flattening, and attention
 queue filtering unit-testable without a live browser stream.
 
 ## Code Commentary
 
 ### Logic
 
-`selectQueue` reads the server-computed `analytics.attentionQueue` and drops a row whenever its id is present in `DashboardState.suppressedAttentionIds`, whatever the row's kind or its served `dismissible` flag (`selectors.ts:42`); the order it returns is the reducer's own, newest first. It returns a stable shared empty array when analytics is absent,
+`selectQueue` reads the server-computed `analytics.attentionQueue`, drops the two attention kinds the server retired with the search providers (`provider-down`, `failed-setup`) so a legacy payload cannot raise them, and filters ids currently present in
+`DashboardState.suppressedAttentionIds`. It returns a stable shared empty array when analytics is absent,
 and caches the filtered result by queue reference plus suppression-map reference so Zustand
 `useStore(selectQueue)` does not see a fresh array on every render. `hasLiveWorktree(enclosure)`
 selects physical worktree surfaces only: true when `codeWorktreeExists ||
 memoryWorktreeExists`, using the projection’s server-observed existence flags rather than a cleanup-state proxy. A reopened enclosure with neither path remains absent from Hangar; its task entry is still reachable regardless of whether worktrees exist, were cleaned up or have yet to start. Hangar retains physical-existence admission. Operations instead admits every served TaskEntry, including planned and terminal tasks without a worktree. `selectWorktrees` memoizes entry-bound worktrees plus unbound enclosures by source map identities, without matching identities. `fmtWait` formats server-computed ages only. The lower
-helpers translate provider snapshots into engine-room display groupings and drift snapshot counts into a
-stable segment list. `DRIFT_ORDER` also orders the converted names `stale` and `violation`, so a converted
+helpers turn drift snapshot counts into a stable segment list and flatten the already-bound worktree facts
+for operational surfaces. `DRIFT_ORDER` also orders the converted names `stale` and `violation`, so a converted
 repository's bar reads the same good-to-actionable way as a legacy one.
 
 `selectHostActivityUnknown` reads whether the served workspace unknown count is nonzero. Its consumers suppress unavailable per-row activity figures and show one shell notice; the selector neither polls the host nor decides a task's activity from time.

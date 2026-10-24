@@ -7,7 +7,7 @@
 ## Purpose
 
 The Zustand vanilla store backing the whole dashboard cockpit. It holds connection state, the latest
-projection split into tasks keyed by entry.key and enclosure/provider maps, plus published taskCounts,
+projection split into tasks keyed by entry.key and enclosures keyed by `enclosure`, plus published taskCounts,
 `activeWorktreeGroups` (the worktree-group basenames with a live enclosure — the Topology's active
 scope), projected `closeoutQueues`, `metrics`, `analytics`, the boot-time `servingBuild` stamp
 (260703-L15 S3), a bounded
@@ -27,7 +27,7 @@ in `useStore` for React subscribers. State mutates through these actions:
 
 - `setConn` — flips the `conn` channel (`connecting` / `live` / `signal-lost`); a same-value set
   is skipped (no write).
-- `applySnapshot` — merges a full `WorkspaceProjection` through `mergeKeyed` (tasks by `key`, providers by `id`, enclosures by `enclosure`): every incoming node that `stableEquals` its stored twin
+- `applySnapshot` — merges a full `WorkspaceProjection` through `mergeKeyed` (tasks by `key`, enclosures by `enclosure`): every incoming node that `stableEquals` its stored twin
   REUSES the stored object (identity + age anchor kept); only changed/new nodes are stamped
   (`stampServed`) and swapped in, and an entirely-unchanged collection returns the EXISTING map
   object. `taskCounts`/`metrics`/`analytics`/`activeWorktreeGroups`/`servingBuild` go through the same `reuse`
@@ -65,7 +65,7 @@ change snapshot/delta queue ingestion, queue ordering/filtering, scheduling, or 
 
 - `applySnapshot` merges by key with identity reuse; `applyDelta` only ever merges the named
   upsert/removed deltas the server emits — the two paths must keep the same keying
-  (tasks by `key`, providers by `id`, enclosures by `enclosure`) or deltas will fail to land on
+  (tasks by `key`, enclosures by `enclosure`) or deltas will fail to land on
   snapshot-seeded entries.
 - **The change gate (260703-L15):** equality at the apply boundary is `stableEquals` (volatile age
   fields ignored — the exact mirror of the server diff), so a reconnect snapshot whose only

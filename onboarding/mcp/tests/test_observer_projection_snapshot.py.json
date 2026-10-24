@@ -35,15 +35,16 @@
       ]
     },
     "3": {
-      "note": "Age-only setup heartbeat changes do not emit analytics; actual state changes do.",
+      "note": "The age-only comparison uses drift snapshots; changing actionableCount emits an analytics event.",
       "targets": [
         {
           "anchor": {
-            "blob": "44ca4f75e77c0eaae9b55adbed9b6ad299bbad2b",
-            "content": "sha256:6cd329cd86d5c3a60bc8de9bc84f9b02fa9988981b630d65d73240f18b494c8a",
+            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
+            "content": "sha256:0aaa2ba91054955a3132970c78c6c03e3966936beedc8996d5da3088129d9bcd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_setup_heartbeat_age_alone_emits_no_analytics_delta"
+              "end": 136,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "test"
