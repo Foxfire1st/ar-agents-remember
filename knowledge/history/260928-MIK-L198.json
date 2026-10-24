@@ -1,0 +1,2223 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L198",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-01XAJ9",
+      "items": [
+        "sha256:aced075e98ee9606ea5536f7758474be8058f6629af9b5d445ab548016a4d419"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+          "path": "mcp/tests/test_worktree_start_preview.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_start_preview.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-025Y1P",
+      "items": [
+        "sha256:2ec71976716f1cbc90481bcdbe336472fecaea43df5e74f991a208cb2cc107ef"
+      ],
+      "reason": "Pure local rename follow-through; no behavior or obligation of its own.",
+      "subject": "hunk:sha256:2ec71976716f1cbc90481bcdbe336472fecaea43df5e74f991a208cb2cc107ef"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 2
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0NX5YN",
+      "items": [
+        "sha256:99ed69d11c80bd194b92276ee4ce29f9b735d997f3fcfa79d80cd62ac2d2edfa"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 2,
+      "subject": "FAM-VNK792"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16DK6P",
+      "items": [
+        "sha256:9e8669558fc399cd4637a8e526594a2ac7cbb0726d5150f30688a6cb9c2cd2b5"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:9e8669558fc399cd4637a8e526594a2ac7cbb0726d5150f30688a6cb9c2cd2b5"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-83BTBD",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-GJYFFP",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-18G1R6",
+      "items": [
+        "sha256:45c9eacce6c879fa4379998372d5dea125a1951c849d063c686433464a63ded9"
+      ],
+      "reason": "No stored family states this guarantee, so the invariant stands alone rather than joining one it does not share.",
+      "revision": 1,
+      "subject": "membership:INV-BDYV4D"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1WTX9G",
+      "items": [
+        "sha256:c43f8070e100c3d8b0253e8f952cc8ed476812c49dfcf3b6a616949126101ee2"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+        },
+        {
+          "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+        },
+        {
+          "blob": "bdcffb119a966436d12f85949cca616463148c8c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/outside_scratch_reconcile.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/overview"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-83BTBD",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-GJYFFP",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-23X8KH",
+      "items": [
+        "sha256:0e626a9c1ca79df7271786b1364d94d64e5f14c6a2235869af8260d20decc5ff"
+      ],
+      "reason": "No stored family states this guarantee, so the invariant stands alone rather than joining one it does not share.",
+      "revision": 1,
+      "subject": "membership:INV-NNKNDP"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-28JV00",
+      "items": [
+        "sha256:621b568743a637c51a08cc08814198033aadc80efb5ecd6ce915e94778ed8b2d"
+      ],
+      "reason": "Pure local rename follow-through; no behavior or obligation of its own.",
+      "subject": "hunk:sha256:621b568743a637c51a08cc08814198033aadc80efb5ecd6ce915e94778ed8b2d"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-83BTBD",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-GJYFFP",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-2B60C6",
+      "items": [
+        "sha256:9383a7e63833775b441c7a34b69f8f46b405b6a439280f628fdd6602806d4865"
+      ],
+      "reason": "No stored family states this guarantee, so the invariant stands alone rather than joining one it does not share.",
+      "revision": 1,
+      "subject": "membership:INV-TMKNRV"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2NQBE4",
+      "items": [
+        "sha256:5664a059b02f15fe12b54230d7b6583be71af085730876e474124eed7310b147"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        },
+        {
+          "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        },
+        {
+          "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2X6GF4",
+      "items": [
+        "sha256:e9b1b300ada9b9f2e13d339d6c9ce6943ba52679a2a1597c79df91ae4f43a0c0"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:e9b1b300ada9b9f2e13d339d6c9ce6943ba52679a2a1597c79df91ae4f43a0c0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MWX7F",
+      "items": [
+        "sha256:c2f57f61014b9d25e84d58dca77c62af3993ed69513f5ba06739558b41c717fc"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:c2f57f61014b9d25e84d58dca77c62af3993ed69513f5ba06739558b41c717fc"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:1189af447b5b83d690094188787a592aa8653b37a0aad6ec1fd1b4f2cf9434a6",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:dce6de74aa6e4b74150b9ae10a0c3d4050977d115b024366046974cab6815853",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3NC41Y",
+      "items": [
+        "sha256:c02ef17eda6850134ada22227d2efd927c4b7727e719f8eee9e6641a932dc66a"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "57ff54b2c385636496ea7a2a4c78bd9ed78019af",
+            "content": "sha256:7321cc66ba4fe36aaf05539f59e308863a75a49a209e9d22640339fda750c11c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "b13f1292d2a89bd6ec6f9a5d6af40ff5b9fc35d7",
+            "content": "sha256:65b7212da3784e6fb00d925155ee94617332885b14517bc5c4d01114c4d6f2ef",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "066099c16ee6958067eef8910cf601070e10f043",
+            "content": "sha256:64a29025e7fcad815d6b1ae74bee33d6946aed21ec55b69556fdc55fd13f3351",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "86d3168f8494eb77f58cd3a07c5dc8c4f4b2f349",
+            "content": "sha256:26e8a7f0f370f7e4f7aa979243159b296808cd3d2dee9865ea6385781808df6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-415ZFH",
+      "items": [
+        "sha256:303dbbc08d395dfcdc9642a0a3d5b876f5fd04d3eacf620791b13b29f0026519"
+      ],
+      "reason": "The added outside-scratch test registration and merged catalog anchors change no silent-turn-end obligation; the catalog support description now distinguishes ownership and consumer reachability from lane execution.",
+      "revision": 4,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "066099c16ee6958067eef8910cf601070e10f043",
+            "content": "sha256:64a29025e7fcad815d6b1ae74bee33d6946aed21ec55b69556fdc55fd13f3351",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "86d3168f8494eb77f58cd3a07c5dc8c4f4b2f349",
+            "content": "sha256:26e8a7f0f370f7e4f7aa979243159b296808cd3d2dee9865ea6385781808df6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "57ff54b2c385636496ea7a2a4c78bd9ed78019af",
+            "content": "sha256:7321cc66ba4fe36aaf05539f59e308863a75a49a209e9d22640339fda750c11c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "b13f1292d2a89bd6ec6f9a5d6af40ff5b9fc35d7",
+            "content": "sha256:65b7212da3784e6fb00d925155ee94617332885b14517bc5c4d01114c4d6f2ef",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4A7358",
+      "items": [
+        "sha256:99f13762e747ae3f79ec358126e5a39e5d313c8556d6091e277e6ea1d7f4fd34"
+      ],
+      "reason": "The merged catalogs retain both inherited registration sets and add the outside-scratch module; catalog membership remains distinct from execution, so the composition obligation is unchanged.",
+      "revision": 1,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5D7J53",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+            "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_without_remains_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+          },
+          "before": {
+            "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
+            "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_without_remains_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+          },
+          "id": "RLZ-34ZF3P"
+        },
+        {
+          "after": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "before": {
+            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+            "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "id": "RLZ-B3GZ9J"
+        },
+        {
+          "after": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_abandon"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "before": {
+            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_abandon"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "id": "RLZ-ZSF5CK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5MP8TX",
+      "items": [
+        "sha256:413d79a19301ea616e3336f6e431f5db55d5f167913bc7ac006a52eaaa65d01b"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-R6DNZB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5RHRRE",
+      "items": [
+        "sha256:7448ff0ee4bcda6d11596edc37f28f8eee17a236492e1ecdab5cd74704ddc09c"
+      ],
+      "reason": "Import lines only.",
+      "subject": "hunk:sha256:7448ff0ee4bcda6d11596edc37f28f8eee17a236492e1ecdab5cd74704ddc09c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6A2YKJ",
+      "items": [
+        "sha256:ffb59eaeaa1920773fd6ca136c5485cf28ea65ca1fff1e3acd536936e9c71b56"
+      ],
+      "reason": "The weakness still stands where it stood; the leaf's change neither removes it nor widens it.",
+      "revision": 1,
+      "subject": "WKN-AVZ1GA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6ES1F7",
+      "items": [
+        "sha256:4fa8f5d6e730248dc0f9d4205b251e09c9b594c39c01ec8be39f1b7f77d42ec0"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+          "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/finalize.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6YE4NN",
+      "items": [
+        "sha256:25e6403f4f2de83354285e1631b12ff3780736037ce8c3c769a5ee208ffd828f"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+          "path": "mcp/tests/conftest.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/conftest.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-71ST8E",
+      "items": [
+        "sha256:d1ebb45b5bfc6593628cb56f89d9c089213857042cfdac2a44b420f1ce01d268"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:d1ebb45b5bfc6593628cb56f89d9c089213857042cfdac2a44b420f1ce01d268"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KP5TQ",
+      "items": [
+        "sha256:2ab5fedc222da829a1e693b5378e80c8f1cf2608708a316f7761aa52dede9df1"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:2ab5fedc222da829a1e693b5378e80c8f1cf2608708a316f7761aa52dede9df1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-81W1XM",
+      "items": [
+        "sha256:f785794f0e26534172d874f76f801f0bd7ea81c8cf252e951a9081f7c707d60c"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+          "path": "mcp/src/agents_remember/application/runtime/startup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-EN3DAR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-94KWQ3",
+      "items": [
+        "sha256:5db7811afbe7327119ab4817695de33cd3c4d487458d37bbd9f42a8db1548e0b"
+      ],
+      "reason": "Reached through a changed route; this leaf changes nothing the invariant states.",
+      "revision": 1,
+      "subject": "INV-8J056T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9SRXZT",
+      "items": [
+        "sha256:e2bff4194ed906a81afa79c9541a4841590b5ff73e778211549464d15590fb5f"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+          "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/abandon.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 3
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9WJPFB",
+      "items": [
+        "sha256:f18375920ee94e8de5c5e0ce7fa7c60611946cb94d78b3fe727777d550a1ddb2"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-A5EQVX",
+      "items": [
+        "sha256:a7a479c2798bc9d3606fc6b243388df54bef76f3646c55be904a725eea338eed"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "4088daf0d7efe33caa32fcbe2ad0c11eb0ef83bd",
+          "path": "mcp/src/agents_remember/worktrees/integration/terminal_cleanup_completion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/terminal_cleanup_completion.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B1PP5W",
+      "items": [
+        "sha256:881490cb52a1999bd67da9917b5c7e8dd5c7d6ae5cdd216015a00d697d745f20"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+          "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/start.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:3451c83cc9d0f29eb652854cdc8517a3e0ff3a66b12bbf8aaa30a8d2f3bae0f4",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "before": {
+            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 431
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "id": "RLZ-6PXMTZ"
+        },
+        {
+          "after": {
+            "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+            "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_without_remains_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+          },
+          "before": {
+            "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
+            "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_without_remains_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+          },
+          "id": "RLZ-80VFRB"
+        },
+        {
+          "after": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "before": {
+            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+            "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "id": "RLZ-TFV4YT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-B3HP1N",
+      "items": [
+        "sha256:2022aa087f7809cca2ed50b222f6c6e2b063c6d57a69abdaa11de3240bb59e44"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-AXWPVF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B6XQ05",
+      "items": [
+        "sha256:11bfc0437b1abe7ba98440f98f66054ededad4beecd66a500d63a2c2455ebae4"
+      ],
+      "reason": "A single import/re-export line; the callee's module entry carries the obligation.",
+      "subject": "hunk:sha256:11bfc0437b1abe7ba98440f98f66054ededad4beecd66a500d63a2c2455ebae4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BCJJWE",
+      "items": [
+        "sha256:177e7f28cc2e6272414a92772bc1e0bd27547aa251881d95de18c2e7350046c3"
+      ],
+      "reason": "Test-support import line only.",
+      "subject": "hunk:sha256:177e7f28cc2e6272414a92772bc1e0bd27547aa251881d95de18c2e7350046c3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BK5KVH",
+      "items": [
+        "sha256:76d261879d8466851e0a8420ef6e7e64de34af9db99c42e1d76b55a67c01bd74"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+          "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-BSK9QY",
+      "items": [
+        "sha256:b12bed6e1587b4f6a172f612ae43093b481127fb50c7431e0b32c5d7365bbb89"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+          "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CC6EDY",
+      "items": [
+        "sha256:7c8bc9204d47d4585db7328040d353a0cd1c3a1f58597ded562f8f1fd84ee95a"
+      ],
+      "reason": "Test-support import line only.",
+      "subject": "hunk:sha256:7c8bc9204d47d4585db7328040d353a0cd1c3a1f58597ded562f8f1fd84ee95a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CJFGDQ",
+      "items": [
+        "sha256:fcd63b61ecbfff8ead39ef9030f7c9716cf753ab24f9eb221d8b16942487cb3d"
+      ],
+      "reason": "Test import line only.",
+      "subject": "hunk:sha256:fcd63b61ecbfff8ead39ef9030f7c9716cf753ab24f9eb221d8b16942487cb3d"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8PJF2P",
+          "revision": 1
+        },
+        {
+          "id": "INV-HM7Z8C",
+          "revision": 1
+        },
+        {
+          "id": "INV-NQKEQS",
+          "revision": 1
+        },
+        {
+          "id": "INV-X16RQH",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y6DF2N",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ6Z5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CM1JD1",
+      "items": [
+        "sha256:bd8e6f13a6c3f0a3b15c58a34000903429c815e4450a1a9e3339ce3d4597f024"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 1,
+      "subject": "FAM-GJYFFP"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D3PNWR",
+      "items": [
+        "sha256:06fa94f3646ad7a78c858ae6d7397b7907054cb44864af08e448bf252b5370a9"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+          "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/cleanup.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DBZV3C",
+      "items": [
+        "sha256:3173f6f427197126595fa540c33cf8730915c10d1e58614c813db7f3c91ae9ea"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:78d6689ae7281dd57765c7da06b03983d3d132367cac686a3a1be3e34cf01fc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-896AMD"
+        },
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:4847cc311db76462e555f47c25ee5a8f4146c75e5525bff43f3de397675e108b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-CV8RK3"
+        },
+        {
+          "after": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:65ab088623bdeeb361400d0cd265a4d43b9ce6e1bf581487a84a01c976fa8202",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PDE8EW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DTDWWM",
+      "items": [
+        "sha256:63dc16f47344b0fc46fd3a83cec4aabd185b5e388a2838d416ee88b616bd3e3e"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 2,
+      "subject": "INV-QZW2X2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-YA9KV0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E9RJHG",
+      "items": [
+        "sha256:2b5207377c2689eb80a1d884034db2bb15ec431279f305b87de6b8b1029ef0e7"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-PH30YW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EABPNR",
+      "items": [
+        "sha256:136f7a14601cf42ee5f3ff4ba0bf5b9ddb8ea63a897e563bbb0f8c06177dbd06"
+      ],
+      "reason": "Pure local rename follow-through inside the same function the mechanism hunk above already covers.",
+      "subject": "hunk:sha256:136f7a14601cf42ee5f3ff4ba0bf5b9ddb8ea63a897e563bbb0f8c06177dbd06"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-934BED"
+        },
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:914aea8e3dbe20e9a793d71cbb68ffef593c92082aeedc5b716b78fb15afca2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-VD54R0"
+        },
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-Y79026"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EKFSXM",
+      "items": [
+        "sha256:892d1ddc633e9ff20c2c6e2a922ed5fa7f0c727043ab538b2b842bd1d93a4b30"
+      ],
+      "reason": "Nothing this invariant states changes: its realizations stand on the leaf's own outside-scratch change, which is recorded under the four leaf invariants.",
+      "revision": 2,
+      "subject": "INV-5ATS9T"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EN2EK3",
+      "items": [
+        "sha256:6f7d096b847f0fd1eedb0421b7e79deecf64e1fcd8b02de8747b546f9518d51d"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+          "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/enclosure.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ERY17M",
+      "items": [
+        "sha256:e2751b2f05d0e59f2fd8507d89313097739aa52d42e6f07eebab51e16aa0559c"
+      ],
+      "reason": "A module logger binding plus its blank line: incidental plumbing for the start-sweep failure log.",
+      "subject": "hunk:sha256:e2751b2f05d0e59f2fd8507d89313097739aa52d42e6f07eebab51e16aa0559c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ESMHRH",
+      "items": [
+        "sha256:970c47eaf01e6598efdf957b3bd2f4ed1282552d3371320cfc75350fee43f1b1"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:970c47eaf01e6598efdf957b3bd2f4ed1282552d3371320cfc75350fee43f1b1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5da4a97d22cefc6f36eaa641778538fc30824766",
+            "content": "sha256:7bfa4a77403849bd665404304e53bfa3a8f008443ebd5ccf9b4252be39148d68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "9a8f9fd0e812192adbbf8cc8e79907a931fe91f3",
+            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "id": "RLZ-MXEMAQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FRNA7A",
+      "items": [
+        "sha256:37da2dcb5d06e0857fac0c4bcaf50a1f8fa9e8c1a782e8c83357f0e5ff94d112"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-HM7Z8C"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G3V2Q4",
+      "items": [
+        "sha256:6a68bc5d59e8a8af4f99e449a58fae6357e496324dfd17dbb3c7a707ccccaaa9"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "dfe0753185e5a094aa76840372354516987503d5",
+          "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen_series.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7SARPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-7XBR6C",
+          "revision": 2
+        },
+        {
+          "id": "INV-85VB61",
+          "revision": 1
+        },
+        {
+          "id": "INV-8PK7FQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQCPAD",
+          "revision": 2
+        },
+        {
+          "id": "INV-MM4B51",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-G690F6",
+      "items": [
+        "sha256:e75a809a1d111ae975feb9005c853a727c8b603ad294889059bfb637074cbe6d"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 2,
+      "subject": "FAM-CR0HHJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GD30ET",
+      "items": [
+        "sha256:44445b4d8a585deb85d8d77f83cd4830b926533d82d41ab14da65dc24cc2d80a"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+          "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+        },
+        {
+          "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+          "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+        },
+        {
+          "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+          "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
+        },
+        {
+          "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+          "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+        },
+        {
+          "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+          "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+        },
+        {
+          "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+        },
+        {
+          "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+          "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GDV27Z",
+      "items": [
+        "sha256:8fcd8bcc7b2704c09000bd2760098347c6d2dd68d01287f496516a9f501c66d2"
+      ],
+      "reason": "Test-support bookkeeping for teardown.",
+      "subject": "hunk:sha256:8fcd8bcc7b2704c09000bd2760098347c6d2dd68d01287f496516a9f501c66d2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GTPGBA",
+      "items": [
+        "sha256:6f4e581bd89ec5695d4d365329bb5955deacfb82acacc79e24a98032f32187a8"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HPXBT4",
+      "items": [
+        "sha256:70c6cd0c68d949de794935a003a67ab9179107064d559cde1de427501533a0e9"
+      ],
+      "reason": "The card retains the generation-owned outside-scratch account and now describes the shared removal-parent check before ordinary-root or interrupted-staging removal, ordinary-marker validation and preservation of entries and cursor under a refused parent.",
+      "sources": [
+        {
+          "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+          "path": "mcp/src/agents_remember/worktrees/outside_scratch.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/outside_scratch.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HQMB62",
+      "items": [
+        "sha256:cca3695c8991fcd461d3bad8893b07baf756e7d24153d0b671fa22da1f911264"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+          "path": "mcp/src/agents_remember/application/runtime/startup.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/runtime/startup.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HRH4RR",
+      "items": [
+        "sha256:6fa9e6a5339cfceccfbc2a7aff3d4f0e588a83657bb43ae5089cc552b54be0c0"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+          "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_handover_projection.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HSPXFB",
+      "items": [
+        "sha256:f8dfc3494963aa8eb585e858e524880c1717b14f99450367c35b56e37120afc3"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "bdcffb119a966436d12f85949cca616463148c8c",
+          "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/outside_scratch_reconcile.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/lifecycle/outside_scratch_reconcile.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HZVVNN",
+      "items": [
+        "sha256:e66bb95b4ce8c64c758d941a09d74d57a8771c3d3184c922cbe79602f0562df1"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "550045e865c871fe9ee1356984795629372f872d",
+          "path": "mcp/tests/lifecycle_enclosure_test_support.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/lifecycle_enclosure_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JN1N8T",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "57ff54b2c385636496ea7a2a4c78bd9ed78019af",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 2
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 2
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K1W9Y2",
+      "items": [
+        "sha256:7a972ddf830b67a7fa664ae4ad2c392985433cd35ba98891a63ff8a21fb038d9"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 6,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K5Y3RR",
+      "items": [
+        "sha256:5ab3b03ababe21ca4932e58e65c1f3361d11036a40111fddb244b8047d2e577f"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:5ab3b03ababe21ca4932e58e65c1f3361d11036a40111fddb244b8047d2e577f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MA1M92",
+      "items": [
+        "sha256:5adfa7a70050ff430061aed89f2af166fc37dd5ed0bcab31224f46479fb6421e"
+      ],
+      "reason": "Import lines only.",
+      "subject": "hunk:sha256:5adfa7a70050ff430061aed89f2af166fc37dd5ed0bcab31224f46479fb6421e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-3W9GWW"
+        },
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-N4VK1C"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MNH4GS",
+      "items": [
+        "sha256:c1ac453b64e58a133c3aaf22542b641c42ff63fd024c1cbd40460575f997fa15"
+      ],
+      "reason": "Nothing this invariant states changes: its realizations carry the leaf's outside-scratch change without altering the guarantee.",
+      "revision": 2,
+      "subject": "INV-CQCPAD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MZWZ5S",
+      "items": [
+        "sha256:e4bcfd7ecd4b44358b2573b2ee43106bba2c3778aab485c91f99675f80b5ad42"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:e4bcfd7ecd4b44358b2573b2ee43106bba2c3778aab485c91f99675f80b5ad42"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P1M584",
+      "items": [
+        "sha256:faa3c7b360c7ceb0a85e92d2f1809d7fecf917e2311783608c26887e02b8b068"
+      ],
+      "reason": "The three added outside-scratch refusal cases preserve the existing test-module ownership and route account; no assertion about partial reconciliation or cursor mutation in this overview changes.",
+      "sources": [
+        {
+          "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+          "path": "mcp/tests/conftest.py"
+        },
+        {
+          "blob": "066099c16ee6958067eef8910cf601070e10f043",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "550045e865c871fe9ee1356984795629372f872d",
+          "path": "mcp/tests/lifecycle_enclosure_test_support.py"
+        },
+        {
+          "blob": "57ff54b2c385636496ea7a2a4c78bd9ed78019af",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+          "path": "mcp/tests/test_outside_scratch_root.py"
+        },
+        {
+          "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+          "path": "mcp/tests/test_worktree_start_preview.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P8K3P0",
+      "items": [
+        "sha256:aa782bff8ebb92296fbdbad295ea30c77f6112b8766e9cd906ccbfc6346f288b"
+      ],
+      "reason": "Test-support setup: it only relocates the parent so parallel workers never share one.",
+      "subject": "hunk:sha256:aa782bff8ebb92296fbdbad295ea30c77f6112b8766e9cd906ccbfc6346f288b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PV31TX",
+      "items": [
+        "sha256:ae924e9e5c5222dbfe5ead78655ab73b91b847a5eed12f71b4f16e3be5fbaa87"
+      ],
+      "reason": "The bounded repair changes only the outside-scratch reconciliation parent guard and cursor mutation; the overview makes no contrary partial-root or cursor claim and its route ownership and navigation remain unchanged.",
+      "sources": [
+        {
+          "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+          "path": "mcp/src/agents_remember/worktrees/outside_scratch.py"
+        },
+        {
+          "blob": "dfe0753185e5a094aa76840372354516987503d5",
+          "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+        },
+        {
+          "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+          "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PYQBWD",
+      "items": [
+        "sha256:5e7c53450d8e90c4882a05cb99fc6c17bc6da0fca398b3acae1846eff7341e02"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:5e7c53450d8e90c4882a05cb99fc6c17bc6da0fca398b3acae1846eff7341e02"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
+            "content": "sha256:a5be43c3751cd0f4cc44794ff1b1622c06294643ea5e5a022c4b9c9e86e6e468",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q917RD",
+      "items": [
+        "sha256:1d6d48c4aca695cfd0fd2a51c98f288e0a8299e8f6d3c90311e0b433c0b5ed2b"
+      ],
+      "reason": "The merged registry remeasures shared-source capsules and records its decision while retaining all 38 cells, fifteen step details and the capped eleven-tenths ceilings; the budget obligation is unchanged.",
+      "revision": 3,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QFK82F",
+      "items": [
+        "sha256:236cb3690d078274130dc51fe0bcf90c5db0bba4cdaee22e4229371a0f328dbd"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+          "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/worktree_contract.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:feafd7278135162dd69498634f3b00920f5bc0d1a5629db855bc453baf050d41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_directories"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "before": {
+            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "content": "sha256:4ff8e477f7cf07b5c9cc0495a3d07f5d9234cbc015fab1c5073cbbfaf6421573",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_directories"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "id": "RLZ-SDKCH6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QGZNV3",
+      "items": [
+        "sha256:7a4861c61f4cf04fabdf1f113643366ef6a0b3c14048ee9cfbe7965a16d96d17"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-N70HF0"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8XCZY1",
+          "revision": 1
+        },
+        {
+          "id": "INV-N70HF0",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0DCW1",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z1HWDF",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RCQRVM",
+      "items": [
+        "sha256:cac40c80dac54365843110e7c22e62cfbfc98a92267e0f19d0e0332f67450863"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 1,
+      "subject": "FAM-2BRZW7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-REG8WJ",
+      "items": [
+        "sha256:35db7d595e8ff5b466e11bbcb3ad9db412015a23cb9b33f81575a6573075e3f5"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:35db7d595e8ff5b466e11bbcb3ad9db412015a23cb9b33f81575a6573075e3f5"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RFCHVM",
+      "items": [
+        "sha256:41a86d6105a40e816d64297ecf5ce706dfb842b147fa18b04a0425632a916635"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+          "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/terminal_inventory.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RZJDEG",
+      "items": [
+        "sha256:4011745b7ec1cba79c023e23b7c2d777d8345d48dfe55e2fccb0a6b62af4e6f7"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "4088daf0d7efe33caa32fcbe2ad0c11eb0ef83bd",
+          "path": "mcp/src/agents_remember/worktrees/integration/terminal_cleanup_completion.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S5HQND",
+      "items": [
+        "sha256:4f7650b71ce94e68df31cb827eca01fe242bbf3af7d021701de532975791b3fe"
+      ],
+      "reason": "The weakness still stands where it stood; the leaf's change neither removes it nor widens it.",
+      "revision": 1,
+      "subject": "WKN-H8X5EX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:fe3e92348d9e1d3f15a1424416cef36b2560acef2e42832e4d45cb5ea2f90dd7",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:fe3e92348d9e1d3f15a1424416cef36b2560acef2e42832e4d45cb5ea2f90dd7",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-J4K6S5"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SBY7SJ",
+      "items": [
+        "sha256:d623d1ce8140fd0777218646349e38ff2c70259a2c00d35eed5aa61f95c7c951"
+      ],
+      "reason": "Reached through a changed route; this leaf changes nothing the invariant states.",
+      "revision": 2,
+      "subject": "INV-945YZ4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SG2015",
+      "items": [
+        "sha256:360b104fda35e60e6fd81384693e9f6cb87e01d2095d0088efa220c277390b52"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+          },
+          "before": {
+            "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
+            "content": "sha256:f92c115ae913a644e337f0b3c315b69884feb14a30909dc7edff8f0763b4c0ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+          },
+          "id": "RLZ-A9DDYM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-SVBPCN",
+      "items": [
+        "sha256:e46105f50ffe012bc22fdb2ab51d2662a0b7ec935bd85222c9880a21fdbeda9f"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-FEB6Y6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SXMJTC",
+      "items": [
+        "sha256:8510184584e4d4c6b5c84fa072776ef14c193c2c07acfea99bb341c5d78225a2"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:8510184584e4d4c6b5c84fa072776ef14c193c2c07acfea99bb341c5d78225a2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TA9R8Y",
+      "items": [
+        "sha256:76a541a05e490a2055a21d06437d9ecb25a7f436d7437c87f689967b1c510fd8"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+          "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+        },
+        {
+          "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+          "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
+            "content": "sha256:a5be43c3751cd0f4cc44794ff1b1622c06294643ea5e5a022c4b9c9e86e6e468",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-J2031X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-V43DCZ",
+      "items": [
+        "sha256:15e75b3534b2120b8048c3d1780214ef88863e3e60d54cfcb02757e517b3aaf6"
+      ],
+      "reason": "The merged capsule and step-word measurements leave the handover section and its retained token measurements unchanged; no new projection measurement is asserted.",
+      "revision": 1,
+      "subject": "INV-JKD5DE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "before": {
+            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+            "content": "sha256:955ed378972111d6a5056f2863dc73a615ecca2ceaea4f9b5df30a66c9024144",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "id": "RLZ-15KPEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VM5G9F",
+      "items": [
+        "sha256:2ab6daab85a6d903f91930100ada6662433d7c3c10e6a620f75938ef1c1ca320"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-ZJ9JXS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VTXZG0",
+      "items": [
+        "sha256:b8d6d8f50fe62c00bd4fb8f68a825de13894658912ca56fc82548d1f2b22a870"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+          "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/lifecycles/finalize.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VXHN0B",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W39DBJ",
+      "items": [
+        "sha256:49861c2dcced07caf9572211ae295c0135ea2a70cc33b97fb8ab5f9443f4c609"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W9NFDD",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "considered": [
+        "FAM-2BRZW7",
+        "FAM-83BTBD",
+        "FAM-CR0HHJ",
+        "FAM-GDXSJG",
+        "FAM-GJYFFP",
+        "FAM-VNK792"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-WAKQR6",
+      "items": [
+        "sha256:499ce16b10145d1754631188dbf0a2e6c137fc99cdcaf51a09fa91bde799e1fa"
+      ],
+      "reason": "No stored family states this guarantee, so the invariant stands alone rather than joining one it does not share.",
+      "revision": 1,
+      "subject": "membership:INV-T8672G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+            "content": "sha256:6d3074e2c9b530dc7b2c70272fa0852facab5d0f6bbec70cb8bf5ef97da27b81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "before": {
+            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "content": "sha256:a1fa73e7ba7d398e81097b6a20f47d9f1be0d8ba0ec19baa218f8bc994aad39f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+          },
+          "id": "RLZ-G40F37"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WE7HA6",
+      "items": [
+        "sha256:1d8d6c52fe34dc3bd872128143d019be55f919e6dde1d851e76118ad6fd30b1a"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 1,
+      "subject": "INV-ZVD184"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WTYP27",
+      "items": [
+        "sha256:cbcd27d34ca062c4d572b17609e778b921279b1048e308d1ef95ed43a46976dd"
+      ],
+      "reason": "Import-list reformatting with one added name; purely mechanical.",
+      "subject": "hunk:sha256:cbcd27d34ca062c4d572b17609e778b921279b1048e308d1ef95ed43a46976dd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WZT8Y3",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "066099c16ee6958067eef8910cf601070e10f043",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X6SXFW",
+      "items": [
+        "sha256:4109b0f99e40ad044d8de11845352715c761e2ba83968838a08ccbec20c0c559"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X95JQ2",
+      "items": [
+        "sha256:da6fed5154c214c955893878e5525a9d5721d29ded00527db8500a224a4331ce"
+      ],
+      "reason": "The change alters nothing this card states; it lists other owners' behaviour or its index was refreshed.",
+      "sources": [
+        {
+          "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+          "path": "mcp/src/agents_remember/models/worktree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y44QGC",
+      "items": [
+        "sha256:e3b05fef44016e9e6cd7e8566a0f211147df49eb8464b9fc55e4330634fb6220"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-Y4PTCS",
+      "items": [
+        "sha256:07c99cf8d47c67d63b3b34b74ab2c7925a1a600387da85c1ef057ecd9a7d1453"
+      ],
+      "reason": "Every member keeps its stated guarantee; the leaf's change reaches the family through routes, not through a member's obligation.",
+      "revision": 5,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YEWSGY",
+      "items": [
+        "sha256:a54ee3cb7c2cce5a47fe5bc921474797ca6502a86920f9e59a9289a20456f984"
+      ],
+      "reason": "The card now carries this leaf's account of the generation's outside scratch root and its removal.",
+      "sources": [
+        {
+          "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+          "path": "mcp/src/agents_remember/models/worktree.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/models/worktree.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YH1355",
+      "items": [
+        "sha256:f5ba0a751da18ee43e0e5f19429705571ac9c15964c741124526f7c04a79ec73"
+      ],
+      "reason": "The card preserves historical publication-pointer measurements and distinguishes them from the merged-source capsule values, capped formulas and unchanged recorded handover values.",
+      "sources": [
+        {
+          "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets.json"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:65ab088623bdeeb361400d0cd265a4d43b9ce6e1bf581487a84a01c976fa8202",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:4847cc311db76462e555f47c25ee5a8f4146c75e5525bff43f3de397675e108b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YQ1M7G",
+      "items": [
+        "sha256:576e160d1210547edea26c600aaf20e157a2f61d66a1ba9d77ad4303a6934187"
+      ],
+      "reason": "Nothing this invariant states changes: the touched realizations keep their meaning and their bytes are the leaf's outside-scratch change recorded under its own invariants.",
+      "revision": 2,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z2NN4N",
+      "items": [
+        "sha256:aa0098f48a32e0967b8676a4f9c5593457fe62a1ac2666536f96e05a2ca30f14"
+      ],
+      "reason": "Import line only.",
+      "subject": "hunk:sha256:aa0098f48a32e0967b8676a4f9c5593457fe62a1ac2666536f96e05a2ca30f14"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZHP576",
+      "items": [
+        "sha256:6df97bb0adfcbea2a37a2526ccb56f7a93e9aa17c9db49956b04e8e1cc9d2de1"
+      ],
+      "reason": "The card retains the generation-owned outside-scratch test account and replaces the predecessor execution-count caption with the source assertions for refused-parent staging retention, cursor preservation, valid-parent recovery and refusal of linked partial entries.",
+      "sources": [
+        {
+          "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+          "path": "mcp/tests/test_outside_scratch_root.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_outside_scratch_root.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZTG2TE",
+      "items": [
+        "sha256:e213ad57a5b2100e66a05c7f6d979cc6f6bcb7b5dd32acf1336cee58f25960a9"
+      ],
+      "reason": "Three import lines for the module's own thread and log calls; an import carries no obligation and is covered by whatever entry explains the sweep below it.",
+      "subject": "hunk:sha256:e213ad57a5b2100e66a05c7f6d979cc6f6bcb7b5dd32acf1336cee58f25960a9"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
-        "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
         "locator": {
           "kind": "symbol",
           "name": "terminal_without_remains_reason"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "22f9d9978e59392d32bb3a6b12b8d0a79793fde7",
-        "content": "sha256:99d01aee9c2f528680671d2e2b2485b40b03b49d0383b59f8800ec438167932b",
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
         "locator": {
           "kind": "symbol",
           "name": "terminal_without_remains_reason"
@@ -36,6 +36,41 @@
       },
       "rationale": "Current single owner of this sealed acceptance obligation.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:fc2a99e2fcec1da7f2658e24ad28aa3efc5593542dbd5ef4a39fac90b6d3aca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_outside_scratch_absent"
+        }
+      },
+      "id": "RLZ-GKDZ7F",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The extra condition the remains-free reason now requires.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:6dceb7ab40340ff77ed6d4ac3aa5ef5dc67ed5f31d710b46b16cdc4fcd852cd5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MDB7T1",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-terminal_inventory",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The terminal inventory names the outside scratch root beside the enclosure scratch it already reported, so an ending answer lists both.",
+      "role": "support"
     }
   ],
   "references": {

@@ -3,10 +3,7 @@
 ## Purpose
 
 `abandon.py` is the discard-without-integration lifecycle operation for
-worktree-backed tasks. Unlike `cleanup.py` (which requires a completed
-integration), abandon runs at any lifecycle stage and reclaims the isolated
-provider stack, removes code and memory worktrees, deletes task branches, and
-removes the worktree group directory.
+worktree-backed tasks. Unlike `cleanup.py` (which requires a completed integration), abandon runs at any lifecycle stage and reclaims the isolated provider stack, removes code and memory worktrees, deletes task branches, removes the worktree group directory, and removes the enclosure generation's outside scratch root.
 
 Successful series abandonment and exact already-abandoned terminal replay pass through
 `with_terminal_atomic_series_release` after lifecycle locks are gone. Release is conditional on the
@@ -26,14 +23,7 @@ Abandon now publishes the admitted contract cleanup result, canonical task stage
 
 ### Logic
 
-`abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run),
-then delegates to four sub-operations: `teardown_worktree_providers` reclaims
-Docker containers, networks, and the `provider-runtime/` tree; `_abandon_worktrees`
-calls `remove_registered_worktree` with the `force` flag passed through;
-`_abandon_branches` calls `_abandon_branch` for the code work branch, memory
-work branch, and memory integration branch; `_abandon_directories` removes the
-worktree group dir (force-removes with `remove_tree` when `force=True`,
-otherwise `remove_empty_dir`). `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set. Non-force leaf removal also removes reserved `logs/`, exposes its result under `directories.logs`, and includes removed/would-remove logs in the empty-group plan. Series removal removes its reserved `logs/` before returning but preserves exactly the `reports` and `lifecycle` response keys. Both pass `dry_run` through; preview leaves log bytes in place. Force leaf removal reclaims logs as part of the whole group.
+`_abandon_result(args: WorktreeArgs)` requires explicit approval (or dry-run), then delegates to four sub-operations: `teardown_worktree_providers` reclaims Docker containers, networks, and the `provider-runtime/` tree; `_abandon_worktrees` calls `remove_registered_worktree` with the `force` flag passed through; `_abandon_branches` calls `_abandon_branch` for the code work branch, memory work branch, and memory integration branch; `_abandon_directories` removes the worktree group dir (force-removes with `remove_tree` when `force=True`, otherwise `remove_empty_dir`) and the recorded outside scratch root, while `abandon_result` wraps that answer with the outside-scratch reconcile. `_abandon_terminal_outputs` collects group reports before provider teardown, recording a collection failure instead of removing; `_abandon_directories` removes the group's role folders and merges them into the planned-removal set. Non-force leaf removal also removes reserved `logs/`, exposes its result under `directories.logs`, and includes removed/would-remove logs in the empty-group plan. Series removal removes its reserved `logs/` before returning but preserves exactly the `reports` and `lifecycle` response keys. Both pass `dry_run` through; preview leaves log bytes in place. Force leaf removal reclaims logs as part of the whole group.
 
 `_abandon_branch` checks for unmerged commits via `git log --oneline
 <base>..<branch>`. Without `force` it refuses to delete a branch that has
@@ -181,7 +171,7 @@ exact terminal retry/status works after the live root is gone. Atomic series req
 terminal release capability, never a persistent queue blocker. Already-abandoned results retain and
 surface terminal archive proof.
 
-Rule 5 no-remains exception: with no locator, no worktree folder and no work branches, abandon finishes directly with nothing to archive and nothing to delete, persisting its reason in the surviving contract with a readback. A leaf with uncommitted changes or unlanded branch commits is given up only with `force` and the explicit approval, without a sync of its master.
+Rule 5 no-remains exception: with no locator, no worktree folder, no work branches and no recorded outside scratch root still on disk, abandon finishes directly with nothing to archive and nothing to delete, persisting its reason in the surviving contract with a readback. A leaf with uncommitted changes or unlanded branch commits is given up only with `force` and the explicit approval, without a sync of its master.
 
 ## Governing Overview
 
@@ -192,3 +182,7 @@ Rule 5 no-remains exception: with no locator, no worktree folder and no work bra
 - No-remains abandon validates task-stage authority before teardown. [17]
 - The normal publication returns shared task/contract projection effects. [18]
 - One shared owner publishes/restores task stage and contract under the terminal guard. [19]
+
+## 260928-MIK-L198 — Abandon removes the root and records its completion
+
+`abandon_result` is now a wrapper that returns `with_outside_scratch_reconcile(_abandon_result(args), dry_run=args.dry_run)`, so an abandon run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. `_abandon_directories` publishes the root's entry under the `outside_scratch` key through `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` on the series path, the leaf path and the `force` path. `_already_abandoned` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `abandon-blocked`, the summary "The worktree is already recorded as abandoned but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the abandoned contract and task row are published and read back, `_publish_abandon` calls `write_completion_record(contract, updated, operation="worktree_abandon")`.

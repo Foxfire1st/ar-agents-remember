@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
+        "content": "sha256:00d289986fe2d75e13c03e1d3356de99dc0923381b0b2dda0d435e034f18e20a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_predecessor_generation"
+        }
+      },
+      "id": "RLZ-0QN6SY",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The fold that reads the tombstone's generation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
         "content": "sha256:3dd4f96b7afc9c9c35585cd2c36563477260376121836cdc7d643bc963f76e0c",
         "locator": {
-          "end": 879,
+          "end": 894,
           "kind": "line_range",
-          "start": 847
+          "start": 862
         }
       },
       "id": "RLZ-1S0T4E",
@@ -22,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
         "content": "sha256:2b010583b4708e1c8b0d9b86fcad61f9f672f998c4929d77bd66adae7552ea5c",
         "locator": {
-          "end": 340,
+          "end": 341,
           "kind": "line_range",
-          "start": 323
+          "start": 324
         }
       },
       "id": "RLZ-CPM4R2",
@@ -41,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
         "content": "sha256:0fd35b3b9092dc0f7ef9930f23bea5d7aa77c32456a658a7bfc0dd2c566b62c9",
         "locator": {
           "kind": "symbol",
@@ -59,12 +77,29 @@
     },
     {
       "anchor": {
-        "blob": "407a91bda1ba845644927ec41a1ce0739d39dacc",
+        "blob": "e4124ae832c5caaba0d03a1ff64188ce9c3f1221",
+        "content": "sha256:a5d34c153aa28db1395b3747d3ce9af437ddc831626b934ab9204b134f568fa3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-P4NXAA",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-reopen_series",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "A reopened series publishes a new generation with its own outside scratch root, and proves its predecessor only through the predecessor's completion.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
         "content": "sha256:182336023165c5ea6b1582af0ee4978ffdd86a360ea4309f30e3e9eb101f9247",
         "locator": {
-          "end": 844,
+          "end": 859,
           "kind": "line_range",
-          "start": 816
+          "start": 831
         }
       },
       "id": "RLZ-ZPYW83",
@@ -98,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42706ec8841265b7c6d29565c7cc973f7b5baba9",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
             "content": "sha256:01c3deb5c259511fd6a7b2d0007df44b2cd2f255a23b4ac746f67b1ca7885a1b",
             "locator": {
-              "end": 674,
+              "end": 722,
               "kind": "line_range",
-              "start": 593
+              "start": 641
             }
           },
           "kind": "code"

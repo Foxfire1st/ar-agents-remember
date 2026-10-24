@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
         "locator": {
           "end": 41,
@@ -17,12 +17,12 @@
         "handoffEntry": "MIK-R113@v1 rule 10",
         "leaf": "260928-MIK-L113"
       },
-      "rationale": "The Curator role text's foundation paragraph: the user-started Architect opens the real task, and the Curator starts on it; no instructed session substitutes for task admission.",
+      "rationale": "The curation operation's own account of its carriers; it names an instructed session for the taskless writer and no taskless Curator seat.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:bd1d755a46d1af72e7027ad39b71d342bd5c445a49ef05d7d1241d08ac652f1c",
         "locator": {
           "end": 95,
@@ -41,8 +41,25 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-        "content": "sha256:4847cc311db76462e555f47c25ee5a8f4146c75e5525bff43f3de397675e108b",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+        "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BVZVJR",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "One of the three rewritten texts the roles overview describes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+        "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +75,12 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-        "content": "sha256:dce6de74aa6e4b74150b9ae10a0c3d4050977d115b024366046974cab6815853",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+        "content": "sha256:1189af447b5b83d690094188787a592aa8653b37a0aad6ec1fd1b4f2cf9434a6",
         "locator": {
-          "end": 95,
+          "end": 97,
           "kind": "line_range",
-          "start": 89
+          "start": 91
         }
       },
       "id": "RLZ-D0XTAP",
@@ -77,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
           "end": 109,
@@ -96,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
           "end": 65,
@@ -115,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:fe3e92348d9e1d3f15a1424416cef36b2560acef2e42832e4d45cb5ea2f90dd7",
         "locator": {
           "end": 109,
@@ -134,7 +151,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
           "end": 109,
@@ -153,7 +170,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
         "locator": {
           "end": 41,
@@ -172,7 +189,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
           "end": 155,
@@ -191,7 +208,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
         "locator": {
           "end": 136,
@@ -210,7 +227,7 @@
     },
     {
       "anchor": {
-        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
         "content": "sha256:aa81672e23992d4fd756542776e03d5436baa4531f4332b8ecd35de051835f92",
         "locator": {
           "end": 122,
@@ -348,7 +365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:28227192feeb0f70c57e549a4d51193a936b2cb4f70721adabae7d82ba085f4e",
             "locator": {
               "end": 61,

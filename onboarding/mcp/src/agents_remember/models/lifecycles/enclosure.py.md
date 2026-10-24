@@ -6,16 +6,13 @@
 
 ## Purpose
 
-Defines immutable enclosure locator, manifest, terminal archive, receipt, and cleanup argument contracts.
+Defines immutable enclosure locator, manifest, terminal archive, receipt, outside-scratch-root record, and cleanup argument contracts.
 
 ## Code Commentary
 
 ### Logic
 
-Strict models bind repository/task identity, generation, contract digest, predecessor, archive
-entries, removed working-state identities (`TerminalEnclosureArchive.removedWorkingState`), and
-cleanup request evidence; validators require exact manifest, path, and removed-working-state
-uniqueness proofs.
+Strict models bind repository/task identity, generation, contract digest, predecessor, the generation's outside scratch root (`OutsideScratchRootRecord`), archive entries, removed working-state identities (`TerminalEnclosureArchive.removedWorkingState`), and cleanup request evidence; validators require exact manifest, path, and removed-working-state uniqueness proofs.
 
 ### Conventions
 
@@ -52,3 +49,7 @@ No cross-repository source is allowed by the resolved settings, and this unit ow
 protocol claim.
 
 - No meaningful cross-repository reference applies. [3]
+
+## 260928-MIK-L198 — The manifest carries the outside scratch root record
+
+`OutsideScratchRootRecord` is a frozen strict model that forbids extra fields and holds `path`, `generation` and `markerSha256`, the identity a root is proved by. `LifecycleEnclosureManifest` carries it as the optional `outsideScratch` field, defaulting to `None`. `_expected_manifest_text` excludes `outsideScratch` from the serialised text exactly when it is `None`, the same rule the file already applies to `predecessorTerminal`, so a manifest published before this change keeps its exact bytes. A generation that records a root carries the three cells in that key, and the existing successor/predecessor validator is unchanged.

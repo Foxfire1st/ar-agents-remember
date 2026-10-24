@@ -127,7 +127,7 @@ Worker ends with requirement-satisfying bytes, focused checks and report with Re
 
 ## Landing evidence and retained intent
 
-A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record or scratch root, not the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
+A cut-card observation calls for a causal account: the handover names the change of this task that made the removed master text untrue. Removing text to silence a quality finding is never the remedy. Evidence and working files belong to the task record, the hand-over's scratch root, or — for what must not live under the projects home — the hand-over's outside scratch root, never the memory worktree; durable onboarding and knowledge remain the Curator’s writable memory surface. This adds review content without transferring the one writer, full-quality loop or landing authority.
 
 ## Current composition and authoring contract
 
@@ -186,3 +186,7 @@ Reviewer records the separate memory lane, leaving code state intact. Method rel
 The role's authoring routes now name the mounted `knowledge_write` beside `agents-remember knowledge-ingest`: it runs the same writer with the same arguments under the task's leaf contract, a repository foundation authored through `c-14-knowledge-bootstrap` uses the same route inside its own Architect task, and no other route writes knowledge from this seat. The commit word is spelled both ways (`--commit`, `commit: true`), and the sentence that said no MCP tool writes knowledge is gone, because the mounted writer is one.
 
 - The curator's authoring routes name the mounted `knowledge_write` beside the leaf command, and say no other route writes knowledge. [26]
+
+## 260928-MIK-L198 — the curator's temporaries gain a named outside root
+
+The Curator's closing paragraph now admits `workspace.outsideScratchRoot` for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, with `XDG_CONFIG_HOME` kept inside `workspace.scratchRoot`, and says never to remove that root. Agent-authored temporaries, experiments and working copies still belong only in the real `workspace.scratchRoot`, outside code/memory/task folders; product, test-runner and admitted sandbox temporaries follow their owners, and reports and evidence go in the hand-over's report folder that the product copies to canonical notes before removal. The launch projection carries the field as `outsideScratchRoot` beside `scratchRoot`.

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
-        "content": "sha256:955ed378972111d6a5056f2863dc73a615ecca2ceaea4f9b5df30a66c9024144",
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
         "locator": {
           "kind": "symbol",
           "name": "cleanup_result"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
         "content": "sha256:475bbca5dcda63307c3fcbc1b6653e2ff65523e22b8123487a5ac760be470890",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,24 @@
     },
     {
       "anchor": {
-        "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:1c56b5c7fc022d6fc6525689775ec06899cbfa1e6ee459d6816d83c2f0752bc8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-835S7H",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-cleanup",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Cleanup removes the generation's recorded outside scratch root and reports the removal or the blocker.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
         "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
         "locator": {
           "kind": "symbol",
@@ -57,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
-        "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
           "name": "_publish_cleanup"
@@ -75,8 +92,44 @@
     },
     {
       "anchor": {
-        "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
-        "content": "sha256:2377bc203fa673e8bbee202ad59d18ff2aff663cf7ed11e32fa9940d31265e6e",
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
+        "locator": {
+          "kind": "symbol",
+          "name": "_removed_directories"
+        }
+      },
+      "id": "RLZ-BX7F68",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The directory inventory that gained the outside row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:104810b533eb6302e6c24edb0ccac715dfc7b5e77e0332d612c3986dbc6aafde",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_completed_cleanup"
+        }
+      },
+      "id": "RLZ-SZ7QYA",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The completed-retry path shared in shape by all three endings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+        "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
         "locator": {
           "kind": "symbol",
           "name": "_publish_cleanup"
@@ -98,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -148,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:4f12e525616477b9a6cfc60916cf62ac07f299a7784ed0a6e0ee020b8819336a",
             "locator": {
               "kind": "symbol",
@@ -211,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "069c1a517ae15e4ed31b45486b24f1b59666ea8c",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
             "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
             "locator": {
               "kind": "symbol",

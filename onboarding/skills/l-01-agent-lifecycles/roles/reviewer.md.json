@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
         "content": "sha256:2ed13e9eb192ba65bbb4d545dbe1279f43772e4fb4ea57c6d3b680e8fd40d29c",
         "locator": {
           "end": 191,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
           "end": 199,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
-        "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
         "locator": {
           "end": 14,
           "kind": "line_range",
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
         "content": "sha256:0e5018d7771d3e3ad2a445ab4c4a9f312fa6bb42fad27e6411131a66e4bf0c53",
         "locator": {
           "end": 117,
@@ -79,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
-        "content": "sha256:f29c3b68f1fe08fb47d4d5121a626c8e0de5835c712aa0ee4f18d66705c9c47e",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
         "locator": {
           "end": 14,
           "kind": "line_range",
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
-        "content": "sha256:65ab088623bdeeb361400d0cd265a4d43b9ce6e1bf581487a84a01c976fa8202",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
         "locator": {
           "kind": "file"
         }
@@ -115,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
         "content": "sha256:2dbd11202571d80781d9a5f8866e2e82d509699d6d81446284a59dd36f2f47ff",
         "locator": {
           "end": 115,
@@ -134,7 +134,7 @@
     },
     {
       "anchor": {
-        "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
         "content": "sha256:9100dd9f9032e5e530a035fc3432e10f34aeeb41dc03f560e7380ca46f583345",
         "locator": {
           "end": 84,
@@ -150,6 +150,23 @@
       },
       "rationale": "reviewer receives the same assignment autonomy and responsibility bounds in its own composed role text.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WFV931",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The sentence as it stands in the Reviewer text.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -192,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:28530c40b148303759b99194259951139d644a69ab7e275c14ddcdd85233279e",
             "locator": {
               "end": 84,
@@ -209,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:18b9e7928200b2e586a77c0c1ca7cc6da2daab0c57744cfba15724eb3836822e",
             "locator": {
               "end": 117,
@@ -226,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:9ae48a0d1266c79c01c33e693033441e1afe7b49ebf437417d90bc68840fda8d",
             "locator": {
               "end": 155,
@@ -350,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0e219228aa4ab34266da183e9c9370b51f910a2",
+            "blob": "b9472cdb51bfd680471f0251f563478096d96234",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 55,
@@ -484,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:2a9d9687849770fd97decafa0d5307b9c63bdd8dc3779617821844065f817416",
             "locator": {
               "end": 33,

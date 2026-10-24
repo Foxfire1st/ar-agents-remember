@@ -1,0 +1,604 @@
+{
+  "path": "mcp/tests/test_outside_scratch_root.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:615737c9e9f94895ce4715c8d2935f540a1f2db0525d6dc8eb5b221c96095621",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_conflicting_generation_tree_is_refused_and_left_intact"
+        }
+      },
+      "facet": "An allocation that clears a root carrying another generation's complete marker, or a refusal that loses the tree's contents or rewrites its marker, would be caught.",
+      "id": "PRF-124DB7",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:fc4ebb9defcc6e044346a865cc0c266a744f550d79fedd249074a4ecb6ec2210",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_that_is_a_link_or_escapes_the_parent_is_never_removed"
+        }
+      },
+      "facet": "A removal that follows a symlinked root and deletes its target, or that answers anything but symlink, outside-the-managed-parent and parent-unusable for those three conditions, would be caught.",
+      "id": "PRF-1G0PC2",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:c67611467c74f96a97288296276b095d20a0ac1c137c19baa7969457edeff19e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_terminal_owner_proves_an_ended_generation_once_its_cleanup_completes"
+        }
+      },
+      "facet": "A terminal owner that treats the published archive alone as proof and deletes the root before cleanup completes, would be caught.",
+      "id": "PRF-2R35WN",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:dcfc0175fc53b16cf3c3247448f72ec7691479badbbdbcb7761c201163f16103",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_next_leaf_use_recreates_an_aged_away_root_from_the_manifest"
+        }
+      },
+      "facet": "A leaf use that cannot restore a root removed after the record was published, or a manifest whose outsideScratch payload disagrees with the record, would be caught.",
+      "id": "PRF-2Y38AT",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:4bc09df78c4b21e120974b7a38618a013cc7211c98cd29617e69e252f2f3df24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_teardown_removes_only_this_invocations_roots"
+        }
+      },
+      "facet": "A teardown that sweeps a parallel sibling's live root or a root outside its own base, or that is not safe to repeat, would be caught.",
+      "id": "PRF-3JGT93",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:1f643ad5927f72d666d0a7d55f7ac1ebce7191ca01a23b639ab53e1e287a12af",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_generation_is_derived_and_the_root_stays_short"
+        }
+      },
+      "facet": "A generation derivation that lets a successor reuse its predecessor's root, or that names a root by anything other than `ar-` plus the first twelve generation characters, would be caught.",
+      "id": "PRF-410B50",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:891fd9e64642fe2a19535f1e9a8ec0980cc14a4389ecbb4f25a1b35c9455f949",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_managed_parent_is_private_and_ours"
+        }
+      },
+      "facet": "A parent preparation that accepts a world-readable mode, a symlink, or a directory owned by a uid other than this process's, would be caught.",
+      "id": "PRF-476B05",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:312a2fc52a6d6d519cb6a93a30f6deababdb780fb8ed43d63b711d0a215f0502",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_next_direct_use_recreates_an_aged_away_root"
+        }
+      },
+      "facet": "A direct use that answers a vanished root without recreating it, recreates it as a copy rather than an empty marked root, or returns a different root on a second use, would be caught.",
+      "id": "PRF-4BJSEY",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:23333e804e42e3a66e9b734dd689132944a4541fa7f8055e8cf83ff1fd386f8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_sandbox_use_of_the_root_ends_with_the_enclosure"
+        }
+      },
+      "facet": "A sweep that leaves a sandbox's tmux tree and installed packages behind after the enclosure ends, would be caught.",
+      "id": "PRF-4PC0TC",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:b4621eebfa7fbb2932939069bc0b3e8df3fdb0483cb1213c5ee3843c7f21e13e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_interrupted_publication_is_swept_rather_than_left_behind"
+        }
+      },
+      "facet": "A sweep that skips dot-named staging directories and so never reclaims a marker left by an interrupted publication, would be caught.",
+      "id": "PRF-4RZZX4",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:05e9deb0a7837449c1e19826c6b2c6c16039628452f046d844efbfeb4b6b2cf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bounded_pass_reaches_the_roots_behind_the_prefix"
+        }
+      },
+      "facet": "A bounded pass that inspects more than its limit, re-reads only the prefix and never reaches the trailing roots, or leaves the reconcile cursor behind after finishing, would be caught.",
+      "id": "PRF-4WQXZY",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:ce30da7db2d654cca206588345968f834a9b35f80b4f9544061766bcedee9705",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_completed_retry_removes_a_root_that_remains_and_blocks_on_one_it_cannot"
+        }
+      },
+      "facet": "A completed retry that leaves a removable root in place, or that answers no blockers for a root it could not remove, would be caught.",
+      "id": "PRF-6F0XAQ",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:e1746eb3c64403cbd73936a41b06de43a8bf821937f40ae987300abe57c420d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_that_ageing_removed_is_recreated_with_the_same_digest"
+        }
+      },
+      "facet": "A recreated root whose marker digest differs from the recorded one, or a second ensure that reports a fresh creation instead of presence, would be caught.",
+      "id": "PRF-7EAQ3Y",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:3edc5f7cc6668b68462b846d049c26a7c0b1dfaa2de3e1cbe2654a8318fbdf80",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_publishing_an_enclosure_allocates_its_root_before_its_contract"
+        }
+      },
+      "facet": "A publication that writes the enclosure before its root exists, or records a manifest whose outsideScratch path, generation or marker digest disagrees with the allocated root, would be caught.",
+      "id": "PRF-8HS53H",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:9e6778bf2618dadec9a3be9af4529d2796d0eb933d8db00e89cc69ecc407f19f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_tool_server_start_sweeps_the_roots"
+        }
+      },
+      "facet": "A tool-server start that never runs the sweep, or runs it on the caller's thread so the stdio handshake waits for it, would be caught.",
+      "id": "PRF-A54MD8",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:0e44ac633848608e35ae7f694972def57dc266eb403a51f61ad2df31ce4c717f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_handover_names_the_outside_root_only_when_one_is_recorded"
+        }
+      },
+      "facet": "A handover field that names a root when none is recorded, that omits a recorded root, or that reads a root out of an absent worktree group, would be caught.",
+      "id": "PRF-B2T3ZW",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:199f14240b98565954f8c2ea409ca6be78e387a48b30c111442138d9e9a93b65",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_removal_refuses_a_tree_of_another_generation"
+        }
+      },
+      "facet": "A removal that deletes a tree whose marker names another generation, or one whose marker is missing or unreadable, would be caught.",
+      "id": "PRF-BYRR1T",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:da673cc11f2a79b2accda45a80c2df8179753d3de27d5b335a2d9f8ce74c2847",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_aged_away_root_is_not_a_blocker_and_a_remaining_one_is"
+        }
+      },
+      "facet": "A blocker computation that blocks on an already-absent or successfully removed root, or that passes a symlink refusal or an unperformed preview as clean, would be caught.",
+      "id": "PRF-C4NF0D",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:a8bb9b1b0a9e15c2e2f3325f2d470838f925630488ddfceed4274301a5edcd12",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_paging_takes_every_root_in_name_order_however_the_stream_yields_them"
+        }
+      },
+      "facet": "A page that yields names out of order, or a cursor that skips or repeats a root between a limit-1 page and its successor, would be caught.",
+      "id": "PRF-CHZ607",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:ff8e5d2b4ce0f8c900f537c4669e124d22d04f0c3c39d8929d124c05c11d10f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_recorded_root_survives_the_contract_text"
+        }
+      },
+      "facet": "A contract publication that drops the root, its generation or its marker digest on the round trip through contract text, or a retry of the same generation that founds a second root instead of reusing the record, would be caught.",
+      "id": "PRF-CJGMX2",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:31b74c6c43b3d51defee564875656093eb76886c922ab77c31da6f77a62b383e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_dry_run_reports_the_removal_it_would_make"
+        }
+      },
+      "facet": "A dry run that actually removes the tree, or that answers removed instead of would_remove, would be caught.",
+      "id": "PRF-FP2HY8",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:6320a22709e7c6caf081dfc780f7db0ab7f4634f445e90274adcc3db5f715877",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_archive_ready_generation_keeps_its_root"
+        }
+      },
+      "facet": "An archive-ready generation whose root is deleted, or whose surviving root is not reported as generation-not-ended, would be caught.",
+      "id": "PRF-GN79NF",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:3c0b0569328c0e0f830088d40370978ae00cfc7e08982c90179e3d01734426ab",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_parent_larger_than_one_pass_is_walked_to_its_end"
+        }
+      },
+      "facet": "A walk that stops at the first MAX_ROOTS page and loses the roots behind it, or that needs more than the expected number of passes, would be caught.",
+      "id": "PRF-JH4SMM",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:39fa059c6419cbe4c789d6ced2dcf017b5cde52b179fc8544962b51b86de5f56",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_pre_change_publication_writes_no_new_manifest_field"
+        }
+      },
+      "facet": "A publication of a pre-change contract that records no root, yet writes an outsideScratch field into the manifest, would be caught.",
+      "id": "PRF-JW8B1B",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:a6a3c04f2827bc86451671131d07d0f5f5777d809ac262059a3b57a79c27f39e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_pre_change_contract_records_no_root_and_materialises_nothing"
+        }
+      },
+      "facet": "A pre-change contract that is read as owning an outside scratch root, or that yields a removal entry or a terminal blocker for one, would be caught.",
+      "id": "PRF-JW9WE1",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:be8df845efd3ffbab37bb96ddf4a21fd6d6b29e6c7a0939598788199876ba0cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_reconcile_deletes_only_a_root_it_can_prove_is_finished"
+        }
+      },
+      "facet": "A sweep that deletes a root by its name rather than by a marker proving the generation ended, so an active, unmarked, misnamed or symlinked entry is removed, would be caught.",
+      "id": "PRF-MRTEDP",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:c169a85f642292fe2b9a78be5ee62fa8b156317c07d9c5c89383755f037ba253",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_successor_proves_its_predecessor_only_through_its_completion"
+        }
+      },
+      "facet": "A successor proof that accepts a vanished predecessor group as ended without its completion record, or that fails to name the predecessor's root while the record stands, would be caught.",
+      "id": "PRF-MZVETE",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:b2cfb39b88d82bf384632ef8ff7598d9d8c384694c42247d3b8ad400c18bf82c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_taken_by_another_remover_is_answered_as_already_absent"
+        }
+      },
+      "facet": "A remover that raises when a parallel remover or ageing got there first, instead of answering the exact already-absent entry, would be caught.",
+      "id": "PRF-NSM714",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:6af6405737f81b363a3233c099d508768801d0a28cda1c4e6da5325ba7515224",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_too_long_for_a_sandbox_socket_is_refused"
+        }
+      },
+      "facet": "An allocation that proceeds when the root's socket path exceeds the platform limit, or that refuses without naming the platform's admission, would be caught.",
+      "id": "PRF-PDT9B4",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:68773440463c91002dec9884cf84cc39cbc006806ca3a0928266b9ba6261d515",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_recorded_root_outside_the_managed_parent_is_never_removed"
+        }
+      },
+      "facet": "A removal that deletes a recorded root sitting outside the managed parent, or that reports it removed, would be caught.",
+      "id": "PRF-Q4QJDS",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:4db2ad4d282f54cc636971126132eeaf2f69b7d578e1f4defff8effb1f114b8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_allocation_and_removal_refuse_a_redirected_or_foreign_parent"
+        }
+      },
+      "facet": "An allocation or removal that mutates through a symlinked parent, or through a parent whose mode is not the managed one, would be caught.",
+      "id": "PRF-Q8D1PB",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:a0cb76709118466fdc7c52f200ee5b8abd4244ebd242f1569d8bb3ee879b743f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_active_generation_is_reported_and_kept_by_the_reconcile"
+        }
+      },
+      "facet": "A reconcile that removes, or fails to report as generation-not-ended, a root whose enclosure is still live, would be caught.",
+      "id": "PRF-T3FM5E",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:7ac0817f95635c846bc0f1daa62bbbbe2d1d4599b704a48ed6f8957738a0d580",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_already_clean_answer_keeps_its_removal_in_the_report"
+        }
+      },
+      "facet": "A report reader that reads only the nested directories shape and so drops the top-level removal an already-clean operation really performed, would be caught.",
+      "id": "PRF-VFJZC5",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:ba138584f97963b973b84ec9beb3f4acbd350479c0fe4626a0f087371af705ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_completed_retry_reports_the_root_it_removed"
+        }
+      },
+      "facet": "An already-clean retry whose removal of the outside root is dropped from the removed list or summary, or duplicated into notRemoved, would be caught.",
+      "id": "PRF-X2Z1YE",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:755a6234815d4cd24d1e78ae0df1f9fc45873d7dd46b8aa7cd030c621a4847ef",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PAHW12",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The module the test overview must list, and the largest new surface in the change.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -28,14 +28,11 @@ is exactly what an operator still reads afterwards.
 Every report carries `automatic: True`, `state`, `summary`, `removed` and `notRemoved`
 cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53).
 
-The `state == ALREADY_CLEAN` short-circuit is the one special case: the terminal archive already
-proves the enclosure was reclaimed, so nothing remained to remove, and reporting the contract's own
-targets as "still in place" would state the opposite of what that proof says. Both inventories are
+The `state == ALREADY_CLEAN` short-circuit is the one special case: the terminal archive already proves the enclosure was reclaimed, so the contract's own targets are not reported as "still in place" — that would state the opposite of what that proof says — but what the retry itself removed is reported, because a completed retry that found the outside scratch root and removed it removed something real. Both inventories are
 empty and the summary says "already reclaimed"
 cit:(["ALREADY_CLEAN = \"already-clean\""], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-23).
 
-Otherwise `_inventory` derives the report's two lists for all four target kinds — worktrees, local
-branches, the `reports` directory and the enclosure root
+Otherwise `_inventory` derives the report's two lists for all four required target kinds — worktrees, local branches, the `reports` directory and the enclosure root — plus an `outsideScratch` key when the contract records a root
 cit:([`_inventory`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:60-78):
 
 - Removed entries come from the cleanup payload: `removed_worktrees` with a truthy `removed`,
@@ -73,8 +70,7 @@ returns a new dict. There is no `try`, no mutation of `payload`, no filesystem p
   grow a fallback that re-shapes those payloads.
 - **`already-clean` must stay reported as already reclaimed.** Restating the contract's targets as
   un-removed would contradict the terminal proof.
-- **The `removed`/`notRemoved` inventories stay complete over all four target kinds** — a silent
-  destructive success is not acceptable.
+- **The `removed`/`notRemoved` inventories stay complete over all four required target kinds and over the optional outside scratch root** — a silent destructive success is not acceptable.
 - **Absence of a key is reported, not invented.** `_entries` tolerates a missing or non-dict payload
   cell by treating it as empty, and `_reason` names `cleanup-did-not-run` rather than guessing.
 
@@ -109,3 +105,7 @@ This is an in-process report shape with no separate repository or external-syste
 is no cross-repository protocol to cite.
 
 No meaningful cross-repo references found.
+
+## 260928-MIK-L198 — The report lists the outside scratch root
+
+`_inventory` gains a fifth inventory key, `outsideScratch`, filled by `_outside_scratch` from `outside_scratch.recorded_root(contract)` and the payload's `directories.outside_scratch` cell, falling back to a top-level `outsideScratch` entry when the nested one is absent. An enclosure that records no root reports no such row, so a pre-MIK-R207 cleanup keeps the four it always had. `_inventory_phrase` appends the counted clause after the enclosure root, so a real cleanup that removed the root reads "... 1 enclosure root, 1 outside scratch root; nothing was left in place." A `removed` entry for the root goes into `removed`, and a root that stayed goes into `notRemoved` with `_reason` supplying its reason. The `already-clean` short-circuit reports what the retry itself removed instead of asserting an empty inventory.

@@ -1,13 +1,67 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+        "content": "sha256:4a471b0df3b528f982d910db3ac08083ec25de6a50dfc4b72ae9b207aa63266f",
+        "locator": {
+          "kind": "symbol",
+          "name": "OutsideScratchRootRecord"
+        }
+      },
+      "id": "RLZ-36Y1SQ",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The record's three identifying fields and its frozen, forbidding shape.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+        "content": "sha256:003000e698c5f3a0354096b853252e23e722bbd315da02b8933035979b43a759",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleEnclosureManifest"
+        }
+      },
+      "id": "RLZ-J978QF",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The manifest model that gained the optional record and the exact-bytes rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+        "content": "sha256:874eba00d7190b92a86c55048422fd76e53c2b84bbac9bcc5e6070ad3bc21fd1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TH0ZF8",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-models-lifecycles-enclosure",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The enclosure model carries the outside scratch record into the contract text and the immutable manifest, and reads it back.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "No external domain source is required to establish this repository-owned implementation.",
       "targets": [
         {
           "anchor": {
-            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",
@@ -23,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",
@@ -39,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6bbec9cbfc096676c54ad4dd86c945a5fd415f18",
+            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
             "content": "sha256:37d4d0cbae40ce59c05610e80ad653f7c2d479361382ef59d060c1e69a23c490",
             "locator": {
               "kind": "symbol",

@@ -3,7 +3,7 @@
 ## Purpose
 
 Owns post-integration cleanup of registered worktrees, merged task branches,
-worktree-owned observer drift snapshots, and empty worktree folders. Under MIK-R108
+worktree-owned observer drift snapshots, empty worktree folders, and the enclosure generation's outside scratch root. Under MIK-R108
 rule 3 cleanup also removes `<enclosure>/logs/` whole with the enclosure — no age
 pruning there before cleanup, nothing archived, copied or left as a marker — and the
 cleanup call's own line goes to the coordination root, never into the enclosure it removes.
@@ -16,11 +16,7 @@ Cleanup preserves its check order and no-remains handling. Dry and real calls bo
 
 The contract-derived terminal mutation authority identifies the external-memory checkout separately. `remove_registered_worktree` discards changes to its root ledger cache through the shared cache owner before ordinary Git removal. No force flag is added for cache handling. Code files named `memory.md`, other memory paths and branch-ancestry safeguards retain their normal protection.
 
-`cleanup_result` takes the typed `WorktreeArgs` dataclass (imported from
-`agents_remember.worktrees.modules.args`), replacing the former
-`argparse.Namespace`; it reads `args.approved`, `args.dry_run`,
-`args.teardown_providers`, and `args.contract_path`, asserting the latter is
-non-`None` before loading the contract. Cleanup requires completed integration
+`_cleanup_result` takes the typed `WorktreeArgs` dataclass (imported from `agents_remember.worktrees.modules.args`), replacing the former `argparse.Namespace`; it reads `args.approved`, `args.dry_run`, `args.teardown_providers` and `args.contract_path`, asserting the latter is non-`None` before loading the contract, while `cleanup_result` is the wrapper that adds the outside-scratch reconcile around it. Cleanup requires completed integration
 and explicit approval for real mutation.
 
 Successful series cleanup, including an exact already-completed retry reconstructed from the
@@ -306,3 +302,7 @@ Rule 5 terminal cases: branch retirement primitives moved whole into `terminal_b
 [governing overview](overview.md)
 
 - Cleanup preserves its check order and no-remains handling. Dry and real calls both return blocked/coded answers for live provider setup or terminal blockers. Incomplete integration returns integration-incomplete with worktree_integrate guidance; a recognized missing carryover returns carryover-required. Cleanup gains no force override from shared blocker wording. The archive-ready kept_line=None/no-rejudgment/no-invented-landedTips policy is now owned by _cleanup_terminal_branch and returned to cleanup_result; its earlier failure narrative is historical. Unrecognized exceptions remain named failures. [25]
+
+## 260928-MIK-L198 — Cleanup removes the root and sweeps the ended ones
+
+`cleanup_result` is now a thin wrapper that returns `with_outside_scratch_reconcile(_cleanup_result(args), dry_run=args.dry_run)`, so every run also sweeps the product parent and carries `outsideScratchReconcile` on the payload when the sweep removed or reported a root. `_removed_directories` adds `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` to the directory inventory under the `outside_scratch` key on both the series path and the leaf path, which removes the recorded root and reports `would_remove` on a preview. `_already_completed_cleanup` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `blocked`, the summary "Cleanup is already recorded as completed but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the completed contract is published and read back, `_publish_cleanup` calls `write_completion_record(contract, updated, operation="worktree_cleanup")`, the completion evidence a successor's sweep reads in place of the contract the group takes away.

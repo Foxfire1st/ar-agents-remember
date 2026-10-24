@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
+        "content": "sha256:ddcbb2033aa392eea562440dc552f1f75ab3c1d0329c42f578db593701f03fe6",
+        "locator": {
+          "kind": "symbol",
+          "name": "model_text"
+        }
+      },
+      "id": "RLZ-M3TDGS",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The serializer whose exclusion set now names both optional fields.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Binding identity and payload fields are closed and predecessor-aware.",
       "targets": [
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:ff16a32629103479bc49695d797b25ab603d5646e59faf5eaa856c9f06d3ec60",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:4aadb11f7efc4ff00d1b29f7aa6800dc7e8dc36c33f2a5dae70506881fa916ec",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:1af3875eaabf5515397000923f0ebaa5dc7569bb850b7032e18e0072729b4403",
             "locator": {
               "kind": "symbol",
@@ -56,7 +75,7 @@
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:30ded36bf353e0607f7329252356d33e66852229e20ac76eb112adb62483b762",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:0aa9a41c09eaf6b6cb2960d9a5c8f1578d67b87be26382161a4e9d3f320e5572",
             "locator": {
               "kind": "symbol",
@@ -114,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:729b9dacb5d8e95152d7e7885bbca1f0eb3818cf5ebc3de3717891340cb0fb8f",
             "locator": {
               "end": 25,
@@ -126,7 +145,7 @@
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:4aadb11f7efc4ff00d1b29f7aa6800dc7e8dc36c33f2a5dae70506881fa916ec",
             "locator": {
               "end": 115,

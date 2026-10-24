@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
         "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+        "content": "sha256:d42f711de503ca65c80b7f779713f31b0e06af8652fa4f1190e241b0639d43ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recover_master_series_bootstrap"
+        }
+      },
+      "id": "RLZ-G1R8P7",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The recovery comparison that now admits the recorded form.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
         "content": "sha256:39bdfb87152031c42af7914c04214f93c0d17c55a3969ef22bbba0d7d5da1dc0",
         "locator": {
           "kind": "symbol",
@@ -39,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
         "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
         "locator": {
-          "end": 1100,
+          "end": 1112,
           "kind": "line_range",
-          "start": 1001
+          "start": 1013
         }
       },
       "id": "RLZ-S6D64F",
@@ -58,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
         "content": "sha256:0bde9c4a4127b2a17edee190daf33496aad845ee1c27dbffd538383865183a6e",
         "locator": {
           "kind": "symbol",
@@ -73,6 +91,23 @@
       },
       "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+        "content": "sha256:525d6c870158f1c01db760543fd39843f42be1f3d252511d7a9198af2aad3559",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XPDWTW",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-startup-start_contract",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The series bootstrap retry accepts the contract it already published, with this generation's outside scratch record, instead of allocating a second root.",
+      "role": "support"
     }
   ],
   "references": {
@@ -190,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -214,12 +249,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:c36973447a984987b2c1eff20f85d946ed00cded00f21df2358d95cd70fd78a5",
             "locator": {
-              "end": 181,
+              "end": 182,
               "kind": "line_range",
-              "start": 164
+              "start": 165
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -245,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
             "content": "sha256:f5daf2397ff0b2a452c8306adfef34ccba84c8905b80a16950887a757c2b30be",
             "locator": {
               "kind": "symbol",
@@ -278,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
             "content": "sha256:54ada2250a6412b2f9e23b361e014590e1cbde4243bf4b8dec0abd58938936ed",
             "locator": {
               "kind": "symbol",
@@ -326,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
             "content": "sha256:5ccdd8fd932088729bee34a4ac52d0aa1359456278e281226d8e8bc0adc50282",
             "locator": {
               "kind": "symbol",
@@ -358,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
             "content": "sha256:071e46223f63203b7dc7f86a12a63bd9d976dba790f3b8952a367951b910c0d7",
             "locator": {
               "kind": "symbol",
@@ -391,12 +426,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
             "content": "sha256:071e46223f63203b7dc7f86a12a63bd9d976dba790f3b8952a367951b910c0d7",
             "locator": {
-              "end": 229,
+              "end": 230,
               "kind": "line_range",
-              "start": 217
+              "start": 218
             }
           },
           "kind": "code"
@@ -499,12 +534,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f4e60103b854b700f62e7ca7a1dbd8f21367cfb0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
             "content": "sha256:f0ecfd0a31daeb79921da6fc95121fef13d96b5019555e6983cf75cfd94eeab8",
             "locator": {
-              "end": 222,
+              "end": 223,
               "kind": "line_range",
-              "start": 222
+              "start": 223
             }
           },
           "kind": "code"
@@ -598,7 +633,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
             "content": "sha256:db2b0eae047cc97474e39b38127c77dd16417e2ef657d8d6a5c92f83a0958d91",
             "locator": {
               "kind": "symbol",
@@ -610,7 +645,7 @@
         },
         {
           "anchor": {
-            "blob": "b64481ae9f2c9a9a7ce901952bcbaa4c03f65227",
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
             "content": "sha256:6f7e573fe79d9f4d925406648783d32f0dcc57de7de80db4367bd2a6e2f3326d",
             "locator": {
               "kind": "symbol",

@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
-        "content": "sha256:a1fa73e7ba7d398e81097b6a20f47d9f1be0d8ba0ec19baa218f8bc994aad39f",
+        "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+        "content": "sha256:231462c0f69b19a6c4d9fce70c209d5af66dc7649830bd96cf1dc8e16fa71a4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "WORKSPACE_FIELDS"
+        }
+      },
+      "id": "RLZ-94HJ1J",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The whitelist that decides which workspace keys reach a hand-over.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+        "content": "sha256:6d3074e2c9b530dc7b2c70272fa0852facab5d0f6bbec70cb8bf5ef97da27b81",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
             "content": "sha256:8c8b039704da49294d04bfce2b0a1aa12c5245dd5e0b5cb46da89805bfa070f3",
             "locator": {
               "kind": "symbol",
@@ -41,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
             "content": "sha256:3848eeeb3ac65293abf48699cd5416a27657501e70e7bc701e67e15d42151431",
             "locator": {
               "kind": "symbol",
@@ -57,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
             "content": "sha256:aa7d6530dca53d71b93bfe7b02fbd76841b79ddad205c2829e68b30cb557a867",
             "locator": {
               "kind": "symbol",
@@ -73,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440da9316af5a6fc3306c164088b1b97d8b42e90",
+            "blob": "10fb7a51df0dc168eef360291e299855421627b7",
             "content": "sha256:d30a565cdbd79a8c5a85bcb828f5c99ca0b1f305e171909967bfc11141c4391e",
             "locator": {
               "kind": "symbol",

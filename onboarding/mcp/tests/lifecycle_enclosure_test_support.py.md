@@ -48,3 +48,7 @@ The test file is direct evidence for the production boundary named above.
 No cross-repository source is allowed by the resolved settings.
 
 - No meaningful cross-repository reference applies. [3]
+
+## 260928-MIK-L198 — a published test enclosure's root is this module's to remove
+
+`publish_test_enclosure` now remembers the outside scratch root each publication creates — from the manifest's published record, else from the contract's recorded root — and removes those roots when the run ends, so a test that deletes its fixture tree does not leave an empty root behind in the product parent. Publication itself is unchanged: the helper still delegates to `publish_new_lifecycle_operation_location`.

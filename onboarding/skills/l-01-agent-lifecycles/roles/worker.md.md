@@ -190,3 +190,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [13]
 - Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [14]
 - Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [15]
+
+## 260928-MIK-L198 — the hand-over names an outside scratch root beside the leaf scratch root
+
+The Worker's closing paragraph now names the real `workspace.outsideScratchRoot` beside the real `workspace.scratchRoot` and sends there what must not live under the projects home — a sandbox root above all — and one short `TMPDIR` when a tool refuses the scratch path, with `XDG_CONFIG_HOME` kept inside `workspace.scratchRoot`. Everything else stays in `workspace.scratchRoot`; no agent names another location or removes the outside root, which the product deletes with the enclosure. Agent-authored temporaries stay out of code, memory and task folders, and product/tooling, test-runner and explicitly admitted repository sandbox temporaries keep their own owners. The launch projection's workspace field list now carries `outsideScratchRoot` directly after `scratchRoot`, so the field arrives under the dotted name the role text uses.

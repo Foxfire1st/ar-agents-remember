@@ -1,13 +1,67 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+        "content": "sha256:a9fd12a668a0682f1477390ec342e8c9f4f85d1a29d18af5650398648c9a2a0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "EnclosurePublicationArtifacts"
+        }
+      },
+      "id": "RLZ-EPC1V3",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The artifact bag that carries the computed record to the creation step.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+        "content": "sha256:e8192f2dec59f603aa8e7547984f5b610179236d25f127b791a09ae8fd906bf2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HQQ510",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-integration-lifecycle-lifecycle_operation_location",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Publication computes the generation, records the root in the contract and manifest, materialises the directory once the text is durable, and accepts its own published record on a retry.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+        "content": "sha256:581a9ca3cc55d1ab6fed35decea83e19dca0971c1a695d51bd917f7060c2bf40",
+        "locator": {
+          "kind": "symbol",
+          "name": "_materialise_outside_scratch"
+        }
+      },
+      "id": "RLZ-K0GVZ5",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The creation step placed after the contract and manifest proof.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "No external domain source is required to establish this repository-owned implementation.",
       "targets": [
         {
           "anchor": {
-            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
             "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
             "locator": {
               "kind": "symbol",
@@ -23,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
             "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
             "locator": {
               "kind": "symbol",
@@ -39,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
             "content": "sha256:f19eb4bf75811935b3c02dd696a33ce58350e4c5e52e9a5433f41d54c210a5ec",
             "locator": {
               "kind": "symbol",

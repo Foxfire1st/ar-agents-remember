@@ -1,13 +1,49 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/finalize.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+        "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_or_verify_cleanup"
+        }
+      },
+      "id": "RLZ-24G05D",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The retry branch that runs the root removal before answering already-completed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+        "content": "sha256:7665400f6ecd0fd1f2163f0b895638cea23edd0eb9abe02b9f895eb8a0e3d60a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RSCVS1",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-finalize",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Finalize removes the generation's recorded root on its completed path and reports what it removed and what the sweep left.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Final result releases exact terminal selection before root task archival, reports retryable release failure, and carries the review-artifact archive hook's report on an archived (or would-archive) root task (MIK-R25).",
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -105,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
             "locator": {
               "kind": "symbol",
@@ -117,7 +153,7 @@
         },
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
             "locator": {
               "kind": "symbol",
@@ -185,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
             "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
             "locator": {
               "kind": "symbol",
@@ -218,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -234,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
             "locator": {
               "kind": "symbol",
@@ -268,12 +304,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
             "content": "sha256:c67d9c6f0da95e0f43314b177f8e65a64274cd7457cd8d5de05324b0da35ea03",
             "locator": {
-              "end": 646,
+              "end": 854,
               "kind": "line_range",
-              "start": 646
+              "start": 854
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -314,12 +350,12 @@
         },
         {
           "anchor": {
-            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
+            "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
             "content": "sha256:e74ee28e7f64b88a243d97af5586c007ca35f3d15151bb12efbd2f7fd64c1d3d",
             "locator": {
-              "end": 23,
+              "end": 24,
               "kind": "line_range",
-              "start": 23
+              "start": 24
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
           },
@@ -332,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:c773772c477e0a2152a0edb5e62dff7715402b045b5c6b15b82d3f173b053fdd",
             "locator": {
-              "end": 193,
+              "end": 197,
               "kind": "line_range",
-              "start": 193
+              "start": 197
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
@@ -350,12 +386,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
             "content": "sha256:7ae935e29050f5f7f886d27b0ffe1b833167f4d5286c20a8d8683cc7a2725f63",
             "locator": {
-              "end": 282,
+              "end": 242,
               "kind": "line_range",
-              "start": 282
+              "start": 242
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -368,12 +404,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:dfafbc520cb954b6258d2bf8dc8f11b751a7fe68de832884ba929b220075060e",
             "locator": {
-              "end": 120,
+              "end": 125,
               "kind": "line_range",
-              "start": 120
+              "start": 125
             },
             "path": "mcp/src/agents_remember/tasks/store.py"
           },

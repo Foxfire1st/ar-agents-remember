@@ -1,6 +1,42 @@
 {
   "path": "mcp/tests/lifecycle_enclosure_test_support.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "550045e865c871fe9ee1356984795629372f872d",
+        "content": "sha256:ef59455423f3787f3039cd2fee6027b487b0ace7b1397e2f98cf5dfbf2dff38c",
+        "locator": {
+          "kind": "symbol",
+          "name": "discard_owned_roots"
+        }
+      },
+      "id": "RLZ-7FSRAQ",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The helper that replaced the prefix-shaped sweep.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cedc06c451be64665d2a9476587730918f4e088e",
+        "content": "sha256:99f0b1e2b5666b7a4b4b4787a5d39cbed4f703cf0a6c40f2c9461c4ad36162a9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R0BAX1",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-tests-lifecycle_enclosure_test_support",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The test support removes each published enclosure's outside scratch root when the run ends, reading it from the manifest or the contract.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "No external domain source is required for this repository-owned test contract.",

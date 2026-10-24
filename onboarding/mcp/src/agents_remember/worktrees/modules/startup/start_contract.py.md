@@ -83,10 +83,7 @@ memory branch, no memory base and no ledger, so a plan whose repo path is missin
 `_external_memory_value` still blanks the memory work branch for non-external modes before it
 reaches the plan.
 
-The extracted parent-series helpers are unchanged in responsibility from their old `start.py` location:
-they create/load a root series contract, ensure the integration branch when needed, derive memory source
-and work branches for external memory, and compute `memory_base_for_source` from the source branch tip
-rather than the current memory checkout. Existing `task.json` master artifacts are parsed through
+The extracted parent-series helpers keep the same responsibility from their old `start.py` location — they create/load a root series contract, ensure the integration branch when needed, derive memory source and work branches for external memory, and compute `memory_base_for_source` from the source branch tip rather than the current memory checkout — and the bootstrap now also records the generation's outside scratch root in that contract before publishing it. Existing `task.json` master artifacts are parsed through
 `read_task_doc` without suppressing malformed documents; only missing optional artifacts are skipped.
 Standalone/light tasks are accepted through the same start builder because `leaf_ref_start` delegates to
 the shared resolver, which indexes non-master `task.json` docs as leaf candidates.
@@ -238,7 +235,7 @@ start admission.
 
 ## 260821-CLIVE-L2 Current Contract
 
-The current source seams include `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec`. New enclosures publish the strict root manifest, canonical journal directory, and locked address-only locator before exposure or operation admission. Pre-existing readable enclosures require the explicit adoption route; start never infers or falls back.
+The current source seams include `memory_base_for_source`, `memory_mode_for_repository`, `MasterSeriesContractSpec`. New enclosures publish the strict root manifest — which now records the generation's outside scratch root — the canonical journal directory, and the locked address-only locator before exposure or operation admission. Pre-existing readable enclosures require the explicit adoption route; start never infers or falls back.
 
 ### Reconciled Source Evidence
 
@@ -271,3 +268,7 @@ the same spec, dry-run, activation arguments and operation label without a secon
 
 - The facade carries the exact spec and arguments to the extracted activation owner. [21]
 - The extracted owner retains bootstrap locking, outside-authority fetch and exact activation reconciliation. [22]
+
+## 260928-MIK-L198 — Series bootstrap publishes and recovers a recorded generation
+
+`_finish_master_series_bootstrap` applies `outside_scratch.with_root_record(contract)` before the retry comparison and before `publish_new_lifecycle_operation_location` writes the contract text, so the series contract this publication pins records the generation's root. The record goes on before the comparison because a retry finds the contract this same publication already wrote, and the retry must keep that published record instead of computing a second identity whose root would be a second directory. `_recover_master_series_bootstrap` accepts a contract file that equals either the bare rebuild or that rebuild with the record applied, and returns the on-disk contract, so an interruption between the publication and the journal's retirement neither refuses the retry's own work nor loses the root. `with_root_record` reuses the record the enclosure's published manifest already holds, so a bootstrap retry names the same root. The publication the bootstrap already performs then creates the directory, because `publish_new_lifecycle_operation_location` runs the materialisation step owned by `lifecycle_operation_location.py`.

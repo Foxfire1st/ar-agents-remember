@@ -89,3 +89,7 @@ Both are optional here for that reason. Pinned by
 `{"lifecycle_finalize_task"}`.
 
 - The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]
+
+## 260928-MIK-L198 — the finalize response names the root and the sweep
+
+`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. Both are empty for an enclosure published before the record existed, so no existing response changes meaning.

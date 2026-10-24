@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/outside_scratch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:a85f6c1d5e725a0afa69c4286250492cd4ea202aba6978ca601cc4fb71050278",
+        "locator": {
+          "kind": "symbol",
+          "name": "confinement_problem"
+        }
+      },
+      "id": "RLZ-1YFGWS",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The refusal that keeps a removal inside the managed parent rather than following a link out of it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:d72c6fea363171a8f2d7f44ca6347925dc808917e34e58b99d72d45033ebfa77",
+        "locator": {
+          "kind": "symbol",
+          "name": "OutsideScratchRoot"
+        }
+      },
+      "id": "RLZ-4S74C2",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The record type every other path in the package speaks in.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:7f80f524dce1c9908bb5e3c71dc1e75978758c093c63a145110a36510716a2ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_blocker"
+        }
+      },
+      "id": "RLZ-BSSAHE",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Where an ending operation decides whether a remaining root blocks its answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:ef6832676886e7ca76af178f7848a05075522f61f7146174227f2c930b33fa11",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_managed_parent"
+        }
+      },
+      "id": "RLZ-F4ZTSX",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The check that makes the parent private to this user before any ownership or removal decision.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:f07d0239d3e0b31b0bde6406b33ca9fefb241efd98f0987464ba92c5181e090b",
+        "locator": {
+          "kind": "symbol",
+          "name": "OUTSIDE_SCRATCH_PARENT"
+        }
+      },
+      "id": "RLZ-K31RQJ",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The single product-owned parent the whole package allocates under.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:c2205eb202253603e239b7f2d954065da9d4b409c462681cede5c38a46cc9184",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile"
+        }
+      },
+      "id": "RLZ-MD1JA1",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The only place a root is deleted on proof, and the only place a root it cannot prove is reported.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:b76bb3c444a8e9e02c476bc0bd875720eb26f4a7df756580c14079afdf156aa1",
+        "locator": {
+          "kind": "symbol",
+          "name": "scan_roots"
+        }
+      },
+      "id": "RLZ-Q1BQ1Y",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The bounded, cursor-resumable walk that keeps a sweep from re-reading a prefix or stopping at one page.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:ef8261c64a85c109d991a3ff2d489dd06ecef882f060999556c8340bbbfaa92a",
+        "locator": {
+          "kind": "symbol",
+          "name": "generation_id"
+        }
+      },
+      "id": "RLZ-TAXY3S",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The derived generation is what makes a root attributable without a name convention; nothing else computes it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:4463ea94cf97ea6339eda2ffa6c0f4e50056910d5dfed757da19c3613375799a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_root"
+        }
+      },
+      "id": "RLZ-V06YJ4",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The single place that creates a root, writes its marker and refuses a conflicting, escaping or over-long root.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:2415a36e7a1b477c99a343422bbe2cb7d8a2f5fa48a1970c8a3f2a7dee579ccf",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_root"
+        }
+      },
+      "id": "RLZ-X92B97",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The single gate every ending path and the reconcile pass through before any bytes are deleted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+        "content": "sha256:4832ddd1cb5836247f968f38bf4116d3b37dd19fed1050cc64460152e1a856ed",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZGGTBX",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The module that derives, records, creates and removes the root is what the root overview now has to describe.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

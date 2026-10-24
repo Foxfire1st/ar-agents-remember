@@ -6,11 +6,11 @@
 
 ## Purpose
 
-The model, the reader and the writer of a series contract and of a leaf enclosure contract. A contract is a small Markdown file whose front-matter block records which task, repositories, branches, base commits and worktrees belong together and where the task stands in review, closeout, integration and cleanup. Every worktree tool reads its contract through `load_contract`, and every rewrite regenerates the whole document from the `WorktreeContract` value.
+The model, the reader and the writer of a series contract and of a leaf enclosure contract. A contract is a small Markdown file whose front-matter block records which task, repositories, branches, base commits and worktrees belong together, where the task stands in review, closeout, integration and cleanup, and — for an enclosure published by this build — the outside scratch root that generation owns. Every worktree tool reads its contract through `load_contract`, and every rewrite regenerates the whole document from the `WorktreeContract` value.
 
 ## Code Commentary
 
-`WorktreeContract` is a frozen dataclass: task identity, paths, the code side, the memory side (repositories, branches, base commit, worktree, ledger path and state), the review/closeout/integration/cleanup facts, `lifecycle_id`, `sync_log` and `unknown_cells`. `kind` is `series` or `leaf`. The six vocabulary cells are imported once and turned into frozen sets with `get_args`; `ContractCells` names those six as optional fields, and `amend_contract` copies a contract with the cells given, so a write of one of them is checked by the type checker. `CONTRACT_SCHEMA` is `ar-series-contract/v1`.
+`WorktreeContract` is a frozen dataclass: task identity, paths, the code side, the memory side (repositories, branches, base commit, worktree, ledger path and state), the review/closeout/integration/cleanup facts, `lifecycle_id`, the outside scratch root in `outside_scratch_root`/`outside_scratch_generation`/`outside_scratch_marker_sha256`, `sync_log` and `unknown_cells`. `kind` is `series` or `leaf`. The six vocabulary cells are imported once and turned into frozen sets with `get_args`; `ContractCells` names those six as optional fields, and `amend_contract` copies a contract with the cells given, so a write of one of them is checked by the type checker. `CONTRACT_SCHEMA` is `ar-series-contract/v1`.
 
 **Two vocabularies for the mode, split by direction.** `WorktreeContract.memory_mode` is `ReadableMemoryMode`: a contract on disk may carry the removed `disabled` mode and still load, so status, attach, and guarded abandon can answer it. `ContractCells.memory_mode` — the write path — is `MemoryMode`: producing the removed mode is a type error at the writer, and `default_contract` always builds an external-memory leaf (memory worktree plus ledger path, no disabled branch). `VALID_MEMORY_MODES` is the external-only set.
 
@@ -33,3 +33,7 @@ The model, the reader and the writer of a series contract and of a leaf enclosur
 - Runtime vocabulary set is external-only [70]
 
 - Healing reports foreign contracts as skipped and unreadable contracts as errors without treating either as a healable enclosure. [71]
+
+## 260928-MIK-L198 — The contract records its generation's outside scratch root
+
+`WorktreeContract` carries three additive string fields with a `""` default — `outside_scratch_root`, `outside_scratch_generation` and `outside_scratch_marker_sha256` — and `_contract_from_data` reads them from an `outside_scratch:` section whose cells are `root`, `generation` and `marker_sha256`. `contract_to_text` emits that section through `_outside_scratch_lines`, placed after the `lifecycle:` block and before `memory:`, and only when `outside_scratch_root` is non-empty. A contract written before this change records no root, so the helper returns no lines and a rewrite reproduces its text unchanged, while a parse of that same text yields the three empty defaults. `outside_scratch.recorded_root` in `worktrees/outside_scratch.py` treats a root as recorded only when all three cells are set, so an enclosure without one keeps the handling it had.

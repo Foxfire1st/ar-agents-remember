@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
         "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
-        "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:3451c83cc9d0f29eb652854cdc8517a3e0ff3a66b12bbf8aaa30a8d2f3bae0f4",
         "locator": {
           "end": 487,
           "kind": "line_range",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
         "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,29 @@
     },
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:57a0794dac3c550f3a1b59eb88116279fd0873b10be611cd254e677907ff8b72",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KCH5N2",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-abandon",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Abandonment removes the generation's recorded outside scratch root and reports it, or refuses while it remains.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
         "content": "sha256:367c79d12a1064456921fa57c7b3d8ff8509efb2c529a25cc538d0e4b13fb901",
         "locator": {
-          "end": 307,
+          "end": 320,
           "kind": "line_range",
-          "start": 304
+          "start": 317
         }
       },
       "id": "RLZ-PJVT0S",
@@ -77,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
-        "content": "sha256:4ff8e477f7cf07b5c9cc0495a3d07f5d9234cbc015fab1c5073cbbfaf6421573",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:feafd7278135162dd69498634f3b00920f5bc0d1a5629db855bc453baf050d41",
         "locator": {
           "kind": "symbol",
           "name": "_abandon_directories"
@@ -95,8 +112,26 @@
     },
     {
       "anchor": {
-        "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
-        "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:87ad594177115fc04b50aff6eff5bd6b00773d0b5bc979042702cd18771592d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_abandoned"
+        }
+      },
+      "id": "RLZ-SGXCTV",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The completed-retry branch that reports the root or blocks on it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
         "locator": {
           "kind": "symbol",
           "name": "_publish_abandon"
@@ -134,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
             "locator": {
-              "end": 190,
+              "end": 191,
               "kind": "line_range",
-              "start": 190
+              "start": 191
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -248,7 +283,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
             "content": "sha256:1cd6600be0a0654cc885b6b086bc65fc722483f905dab9e515eccce97288f9bd",
             "locator": {
               "kind": "symbol",
@@ -314,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
             "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
             "locator": {
               "kind": "symbol",

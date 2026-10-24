@@ -96,3 +96,7 @@ The following source-backed definitions and producer seams retain the broader re
 - **Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool. [163]
 
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]
+
+## 260928-MIK-L198 — the response envelope names the outside scratch root
+
+`WorktreeCommandResponse` gains two optional fields: `outsideScratch`, naming the outside scratch root an ending removed or left with its reason, and `outsideScratchReconcile`, carrying the sweep that ran beside the answer. Both default to `None`, so an operation that touched no root omits them and no existing response changes shape.

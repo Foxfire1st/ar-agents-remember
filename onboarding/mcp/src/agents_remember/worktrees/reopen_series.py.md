@@ -26,3 +26,7 @@ Master reopen plans from the master's own refs against the sprint that commands 
 
 
 - Series reopen passes source-path/document pairs to the existing scope owner. [2]
+
+## 260928-MIK-L198 — A successor generation records its own root
+
+`_publish_series_successor` now builds the successor's contract with `outside_scratch.with_root_record(live, predecessor_generation=_predecessor_generation(plan.tombstone), new_generation=True)` before it pins any text. `_predecessor_generation` reads the terminal predecessor's own record through `outside_scratch.recorded_root(tombstone)` and answers `""` when that tombstone records none. The published text and the three locator calls — `inspect_lifecycle_operation_locator`, `reserve_new_lifecycle_operation_location` and `resume_new_lifecycle_operation_location` — all use that `published` contract, so the text that gets pinned names the successor's root. Because `new_generation=True` replaces the record rather than reusing it, and the predecessor generation is folded into the generation hash, a successor's root is never the terminal generation's root.

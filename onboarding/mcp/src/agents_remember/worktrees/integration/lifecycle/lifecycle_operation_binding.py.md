@@ -14,8 +14,7 @@ the lifecycle enclosure publication state machine.
 `EnclosureBindingIdentity` is the closed set of locator/manifest facts protected by the enclosure
 binding digest. `enclosure_binding_payload` includes the predecessor terminal proof only when one
 exists; `locator_binding` deliberately excludes mutable publication state and proof fields when
-comparing immutable address bindings. The SHA-256 helpers and `model_text` define the deterministic
-bytes used by both publication and readback verification. Conflict constructors report only bounded
+comparing immutable address bindings. The SHA-256 helpers and `model_text` define the deterministic bytes used by both publication and readback verification, and `model_text` omits each of `predecessorTerminal` and `outsideScratch` that is null, so a manifest published before the root record existed keeps its exact bytes. Conflict constructors report only bounded
 model dumps or byte digests and sizes.
 
 This module performs no reads, writes, locking, path confinement, or state transitions. Those remain
@@ -24,7 +23,7 @@ functions while reserving, proving, validating, terminalizing, or resuming an en
 
 ## Invariants And Boundaries
 
-- The binding payload has one canonical field set and deterministic JSON encoding.
+- The binding payload has one canonical field set and deterministic JSON encoding, and that set is address identity plus the predecessor terminal proof: the outside scratch root is recorded in the manifest and covered by the manifest digest, not by the binding fingerprint.
 - Mutable locator state and proof fields cannot change immutable binding identity.
 - Byte conflicts disclose digest and size, not raw lifecycle contract contents.
 - This module never becomes a fallback locator, journal reader, or write authority.
@@ -47,3 +46,7 @@ tests govern this internal durability boundary.
 ### Cross-Repo References
 
 No cross-repository authority is owned here.
+
+## 260928-MIK-L198 — Exact bytes leave a null root out, the binding does not carry it
+
+`model_text` now omits each of `predecessorTerminal` and `outsideScratch` that is null, and passes `exclude=None` when neither is null, so a manifest published before the root record existed re-serialises to the same bytes. That is what keeps `expectedManifestSha256`, the terminal archive's manifest entry and every readback proof stable across the change. The binding payload is untouched: `enclosure_binding_payload` still holds the nine address fields plus the `predecessorTerminal` proof, and it names nothing about the root. The root is covered by the manifest digest and not by the binding fingerprint, so recording it does not change a published enclosure's binding identity. `EnclosureBindingIdentity` gains no field either, and `locator_binding` still excludes mutable state and proof fields.

@@ -103,3 +103,17 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 - The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes. The publication pointers were measured in their own decision entry — twelve capsules, the 36-word Manager clause, both coordination capsules at the 3,700 ceiling and `manager/coordination` at 3,684 — under the capped budget policy unchanged. [3]
+
+## Outside scratch and merged capsule measurements
+
+The outside-scratch guidance preserves the capped eleven-tenths formulas and the existing ceilings. The registry retains the publication-pointer decision's historical measurements above, the earlier outside-scratch sync measurements in `decision_L198_sync`, and the merged measurements in `decision_L198_post_L194_sync`. They describe their own source trees; the earlier curator values are not the current merged values. [9]
+
+The current registry records worker orientation at 2,643 words with budget 2,908, implementation at 2,378 with budget 2,616, and recovery at 1,959 with budget 2,155. Curator orientation is 3,121 with budget 3,434, curation is 3,700 with budget 3,700, and recovery is 2,437 with budget 2,681. Reviewer orientation is 3,698 with budget 3,700, review is 3,652 with budget 3,700, and recovery is 3,014 with budget 3,316. Manager coordination is 3,678 with budget 3,700. All 38 capsule rows retain the capped formula; all fifteen step-detail measurements remain unchanged in the merged decision. These are stored declarations, not a fresh compiler run. [9] [10]
+
+The retained handover block records worker implementation at 3,038 tokens, reviewer review at 3,064 and curator curation at 3,054, each budgeted at 3,300. The sync changes none of those recorded values; reading the registry does not claim a new handover measurement. [10]
+
+## Merged measurement evidence
+
+- The registry records the instruction-change measurements and reasons under the existing capped budget policy. [9]
+
+- The registry's current capsule, step-detail and handover rows retain their capped formulas and recorded values. [10]

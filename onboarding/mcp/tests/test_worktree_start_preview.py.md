@@ -57,3 +57,7 @@ No Domain Documentation source is configured in system/sources.md. These are cur
 
 
 - Wrong source/parent assertions refuse in preview and actual calls with corrected executable arguments and no parent publication. [18]
+
+## 260928-MIK-L198 — a bootstrap retry accepts the contract it published
+
+A new case pins the interrupted-bootstrap retry: the publication lands, the journal retirement is interrupted, and the retry meets a contract that already carries this generation's outside scratch record. The retry must accept those exact bytes and reuse the recorded root instead of refusing them as different task facts or allocating a second root.

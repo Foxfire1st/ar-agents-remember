@@ -3,7 +3,60 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+        "content": "sha256:e9031da708137427a8e18fd2336966a98d96ecf559f15d14aa19e5f19969178d",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_outside_scratch_reconcile"
+        }
+      },
+      "id": "RLZ-3WZFNZ",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The runtime hook that makes the sweep part of every start.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+        "content": "sha256:a544e29f05ab792331f9fd6a4e4f7b44691c5ff9deeefa1186e8a6fec21039cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reconcile_outside_scratch_roots"
+        }
+      },
+      "id": "RLZ-5QED56",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The thread body that catches and logs instead of raising.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+        "content": "sha256:6a7c4224ef3994761ce51e26f1fd8c681020c6f9f9d80f8df355858a2110c3c7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BQ9CVB",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-application-runtime-startup",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The tool server's start now sweeps the outside scratch parent before it serves, and prepares its own process scratch beside it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
         "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
         "locator": {
           "kind": "symbol",
@@ -26,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
             "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",

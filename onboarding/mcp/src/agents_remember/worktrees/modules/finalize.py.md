@@ -33,14 +33,10 @@ ancestry on the local recorded source branch. It intentionally does not infer
 squash-merge equivalence; squash recovery is a manual/emergency path because it
 breaks commit-lineage based memory lookup.
 
-Cleanup is handled as part of the finalization operation, and it is the **only** route that reclaims
-an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized
-leaf still owns its worktrees, its merged local branches, its reports directory and its enclosure
-root. `_run_or_verify_cleanup` is the whole seam
+Cleanup is handled as part of the finalization operation, and it is the **only** route that reclaims an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized leaf still owns its worktrees, its merged local branches, its reports directory, its enclosure root and its outside scratch root. `_run_or_verify_cleanup` is the whole seam
 cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:284-318):
 
-- If the contract is already cleaned, the response records `already-completed` without calling
-  cleanup at all.
+- If the contract is already cleaned, `_run_or_verify_cleanup` asks `outside_scratch.terminal_blocker` first: it removes a recorded root still on disk, reports one it could not remove as a `blocked` return code 2, and otherwise records `already-completed` with the root's entry under `outsideScratch` without calling `cleanup_result` at all.
 - Otherwise it delegates to `cleanup_result` with `approved=not dry_run` and `teardown_providers`
   carried through.
 - The `except RuntimeError` branch is unchanged: a raised cleanup refusal becomes
@@ -221,3 +217,7 @@ tree.
 
 - The completed row goes through the master demotion rule. [15]
 - The one rule for a leaf naming no master, shared with the master sync and reopen. [16]
+
+## 260928-MIK-L198 — A cleaned contract still reclaims a leftover root
+
+`finalize_result` now returns `with_outside_scratch_reconcile(_finalize_result(args), dry_run=args.dry_run)`, so a finalize run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. In `_run_or_verify_cleanup`, the `contract.cleanup == "completed"` branch no longer answers `already-completed` unconditionally: it asks `outside_scratch.terminal_blocker(contract, dry_run=args.dry_run)`, which removes a recorded root still on disk, and a root it could not remove returns return code 2 with state `blocked` and the summary "Cleanup is recorded as completed but the enclosure's outside scratch root could not be removed." beside `blockers`. When the root is removed or already absent, the `already-completed` payload carries the entry as `outsideScratch`. The branch that has not completed cleanup is unchanged: it still delegates to `cleanup_result`, which now removes the root and runs the sweep itself.

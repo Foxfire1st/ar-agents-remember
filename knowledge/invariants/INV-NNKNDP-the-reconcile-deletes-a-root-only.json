@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is spread over the module that owns the place, the publication and removal callers, the contract and manifest models and the role hand-over, and mcp/tests/test_outside_scratch_root.py pins each part with its own case."
+  },
+  "applicability": "Every cleanup, abandon, finalize and tool-server start that runs the reconcile.",
+  "conditions": [
+    "A predecessor's proof is its completion record, or the live address answered cleanup-completed.",
+    "An archive, or a worktree group that merely vanished, proves nothing.",
+    "A bounded page resumes from the recorded cursor, and a scan that reaches its bound reports it."
+  ],
+  "exclusions": [
+    "An active, ambiguous or unproved root is never deleted.",
+    "Ownership is never inferred from a name."
+  ],
+  "id": "INV-NNKNDP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_outside_scratch_root.py pins the behaviour with 34 cases on candidate tree f8f92ae2; the leaf's test lane records 5 failed and 6025 passed with no candidate-only failure (Worker A3 report).",
+        "The tool server's start now sweeps the outside scratch parent before it serves, and prepares its own process scratch beside it.",
+        "The changed lines of this file at candidate tree f8f92ae2 are this leaf's call into, record in, or test of the outside scratch mechanisms; mcp/tests/test_outside_scratch_root.py covers the behaviour."
+      ],
+      "path": "pass1.json"
+    },
+    "handoffEntry": "L198-INV-C",
+    "leaf": "260928-MIK-L198",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reconcile deletes a root only when the marker inside it matches the retained record and that generation is proven ended by its own completion record or by a live address answered cleanup-completed; it reports every root it cannot prove, walks the parent in lexical order behind a cursor with a bounded page, and runs at every ending operation and at tool-server start.",
+  "status": "proposed",
+  "supersedes": []
+}

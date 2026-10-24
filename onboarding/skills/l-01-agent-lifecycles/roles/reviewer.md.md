@@ -184,3 +184,7 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [18]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [19]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [20]
+
+## 260928-MIK-L198 — the reviewer writes outside the projects home only in the named outside root
+
+The Reviewer's closing paragraph now sends temporary files, experiments and working copies to the hand-over's real `workspace.scratchRoot` and, for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, to `workspace.outsideScratchRoot`, with `XDG_CONFIG_HOME` inside `workspace.scratchRoot` and that root never removed. Product/tooling temporary files, test-runner temporary files and explicitly admitted repository sandboxes keep their own owners, and reports and evidence stay in the hand-over's local report folder for the product to copy to canonical notes before removal. The same change keeps temporaries outside code, memory and tasks, and the launch projection carries the new field as `outsideScratchRoot` beside `scratchRoot`.

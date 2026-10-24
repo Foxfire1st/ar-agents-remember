@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
-        "content": "sha256:f92c115ae913a644e337f0b3c315b69884feb14a30909dc7edff8f0763b4c0ae",
+        "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+        "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
         "locator": {
           "kind": "symbol",
           "name": "LifecycleFinalizeTaskResponse"
@@ -18,6 +18,24 @@
       },
       "rationale": "The finalize response carries the archive report, so the closing answer can name archived, owed and left-alone targets.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+        "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleFinalizeTaskResponse"
+        }
+      },
+      "id": "RLZ-WT6T54",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The finalize response's two new dictionaries.",
+      "role": "presentation"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fea17f8538e2614a2be674e0f88a636f6070ca19",
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
             "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
             "locator": {
               "end": 13,
@@ -44,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
             "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
             "locator": {
-              "end": 108,
+              "end": 110,
               "kind": "line_range",
-              "start": 108
+              "start": 110
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

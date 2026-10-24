@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is spread over the module that owns the place, the publication and removal callers, the contract and manifest models and the role hand-over, and mcp/tests/test_outside_scratch_root.py pins each part with its own case."
+  },
+  "applicability": "Publishing a leaf, series, successor or reopened enclosure generation, and every retry of such a publication.",
+  "conditions": [
+    "The root's identity is computed from the repository, the resolved contract path and the predecessor generation, so the same generation always computes the same root.",
+    "The record is written into the contract and the immutable manifest; the directory is materialised as part of the same publication.",
+    "A root that systemd-tmpfiles aged away is recreated with the digest the enclosure already records.",
+    "A contract written before this change records no root and materialises nothing."
+  ],
+  "exclusions": [
+    "Taskless seats' role-execution scratch and setting TMPDIR for a whole seat.",
+    "Allocation during role preparation: the root belongs to publication."
+  ],
+  "id": "INV-T8672G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_outside_scratch_root.py pins the behaviour with 34 cases on candidate tree f8f92ae2; the leaf's test lane records 5 failed and 6025 passed with no candidate-only failure (Worker A3 report).",
+        "The role launch workspace resolves the enclosure's recorded outside scratch root and hands it to the seat as workspace.outsideScratchRoot.",
+        "The changed lines of this file at candidate tree f8f92ae2 are this leaf's call into, record in, or test of the outside scratch mechanisms; mcp/tests/test_outside_scratch_root.py covers the behaviour.",
+        "The enclosure model carries the outside scratch record into the contract text and the immutable manifest, and reads it back.",
+        "Publication computes the generation, records the root in the contract and manifest, materialises the directory once the text is durable, and accepts its own published record on a retry.",
+        "Starting an enclosure leaves the outside scratch root to publication and carries its record into the workspace the new seat receives.",
+        "The series bootstrap retry accepts the contract it already published, with this generation's outside scratch record, instead of allocating a second root.",
+        "A reopened series publishes a new generation with its own outside scratch root, and proves its predecessor only through the predecessor's completion.",
+        "The contract carries the outside scratch record through its data, its text and its round trip, and writes it only where a generation recorded one.",
+        "The preview test tree pins the interrupted-bootstrap retry that meets its own published outside scratch record."
+      ],
+      "path": "pass1.json"
+    },
+    "handoffEntry": "L198-INV-A",
+    "leaf": "260928-MIK-L198",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every task enclosure generation owns one private scratch root under the product's own /var/tmp/agents-remember parent: its identity is derived from the repository, the exact enclosure contract path and the predecessor generation, the record of that path, generation and marker digest is carried into the contract and the immutable manifest before the enclosure is exposed, and a role receives it as workspace.outsideScratchRoot, so a task's outside work travels with the task and no published generation names a place it did not create.",
+  "status": "proposed",
+  "supersedes": []
+}
