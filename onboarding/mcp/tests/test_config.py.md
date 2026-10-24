@@ -1,63 +1,56 @@
-# test_config.py
+# mcp/tests/test_config.py
 
 ## Governing Overview
 
-[Test suite overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-Runtime authority settings, repository identity and path-containment tests.
-
-## Current source account
-
-The added Paseo settings case checks the absent optional block (the named no-host state), the complete five-fact block with the contract's version, absolute roots, host:port and canonical browser-origin spellings, empty providers/embed and the per-fact missing-key refusals. Unknown keys, malformed provider/embed shapes and duplicate origins refuse. A version key is accepted and never selects the release, so version ranges are no longer refused here; the four selector variants and the retired-selector notice belong to `test_paseo_install_contract`. These are parser checks rather than provision or provider startup.
+Covers the configuration contract: two repository ids may not share one Git common directory, an external
+memory root may not alias a configured code repository, the config file may not live inside the coordination
+root, and a repository's certification profile or contract path must stay inside the root. The optional
+`paseoRuntime` block is exact and fails loud, while a retired harness skill root is tolerated and never read.
 
 ## Code Commentary
 
 ### Logic
 
-Real temporary Git aliases cannot give two repository IDs or external memory the same Git common directory. Configuration must live outside coordination. The positive authority fixture checks derived provider paths and runtime settings; malformed certification-profile paths, escaped contract paths and globally delegated human-pinned gates refuse.
+`write_json()` and `settings_payload()` build a settings document, and `McpConfigTests` loads it through the
+real primitive (`runtime_config`, `providers.settings`, `paseo_runtime_settings`). `OrchestrationSettingsTests`
+loads the global orchestration file.
+
+- **Identity.** `test_two_repository_ids_cannot_share_one_git_common_dir` and
+  `test_external_memory_cannot_alias_another_configured_code_repo` refuse two ids on one directory and an
+  external memory aliasing a code repo.
+- **Placement.** `test_config_must_not_live_inside_coordination_root` and
+  `test_repository_contract_path_cannot_escape_coordination_root` keep the config file outside the
+  coordination root and a contract path inside it.
+- **Authority.** `test_loads_authority_settings` loads the authority settings, and
+  `test_repository_certification_profile_reference_fails_closed` fails closed on a bad profile reference.
+- **The runtime block.** `test_optional_paseo_runtime_block_is_exact_and_fail_loud` requires the block to be
+  exact and to fail loud; a retired harness skill root is tolerated and left unread
+  (`test_a_retired_harness_skill_root_is_tolerated_and_unread`, MIK-R196 rule 7), because the installed-copy
+  root left the configuration contract.
+- **Orchestration.** `test_human_pinned_kind_in_global_file_fails_boot` fails boot on a human-pinned kind in the
+  global file.
 
 ### Conventions
 
-The baseline cases retained from IAS `d3610903` are joined by the current source account above. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+Every case writes a settings document and loads it through the product's own reader, so a validation that
+exists only in the test would not pass.
 
 ### Invariants And Boundaries
 
-These cases establish configuration authority, not provider startup. Historical migration-warning and broad settings matrices are no longer present.
-
-### Todos
-
-No file-local implementation change is requested by this reconciliation.
+- A repository's identity is its Git common directory; two ids on one directory are refused.
+- An unknown or retired key is tolerated and unread rather than silently honoured.
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
-
-No configured domain evidence applies to the file-local claims above.
-
-### Repo-Internal References
-
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
 - Two repository ids cannot share one git common dir. [1]
 - External memory cannot alias another configured code repo. [2]
-- Config must not live inside coordination root. [3]
-- Loads authority settings. [4]
-- Repository certification profile reference fails closed. [5]
-- Repository contract path cannot escape coordination root. [6]
-- Human pinned kind in global file fails boot. [7]
-
-### Cross-Repo References
-
-No cross-repository implementation evidence is required for these local test and fixture claims.
-
-Fixture repositories and protocol doubles do not establish a live external integration.
-
-## 260928-MIK-L96 The optional host block
-
-The optional-block cases this module owns are the absent-block named refusal, the complete five-fact-plus-version block load, kept browser-documented embed spellings, empty providers/embed and the per-fact missing-key refusals. The four selector variants and the retired-selector notice are exercised by the install-contract cases, not by this module.
-
-- The optional-block cases this module owns. [8]
+- Config must not live inside the coordination root. [3]
+- The authority settings load. [4]
+- A repository certification profile reference fails closed. [5]
+- A repository contract path cannot escape the coordination root. [6]
+- A human-pinned kind in the global file fails boot. [7]
+- The optional `paseoRuntime` block's exactness and fail-loud behaviour, including the tolerated retired skill root. [8]

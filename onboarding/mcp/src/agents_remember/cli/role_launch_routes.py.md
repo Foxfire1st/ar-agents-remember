@@ -87,3 +87,10 @@ Investigator dispatch uses the existing selection admission lock; options expose
 - The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
 
 - Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]
+
+## Admission and first-run preparation under the dispatch lock
+
+The dispatch endpoint takes the lock first and decides inside it: `role_launch_admission.admit` refuses an invalid parentless selection and a request id another execution or another selection's binding already owns, then `prepare_first_run_for` runs the three cold stages only for a request that has neither. A queued same-request call therefore sees the binding or receipt its predecessor published rather than a pre-lock decision. The route no longer re-checks the parentless table before the lock and no longer requires a configured runtime before admission — a genuinely cold root has none, and the stage establishes it. The caller harness is bound after preparation, and a refusal that arrives after preparation is re-raised with the completed stages and retained host state carried in its detail. The starting receipt's `preparation` block carries `firstRun` when this call prepared one. The missing-copy warning and the bridge status mapping moved to `cli.role_launch_request_rules`.
+
+- The dispatch endpoint that admits, prepares, binds and refuses in one locked order. [20]
+- Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made. [21]

@@ -1,382 +1,35 @@
 {
   "path": "mcp/tests/test_tool_answer_table.py",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:0d58d24d6d82082066743ec6c50f9e0085bf3c5fc54b85239ff018d99c6e7856",
-        "locator": {
-          "end": 2560,
-          "kind": "line_range",
-          "start": 2536
-        }
-      },
-      "facet": "A line-failure overflow stays in bound with agreeing counts.",
-      "id": "PRF-1QCVW0",
-      "invariant": "INV-0VAC47",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 error-cut",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:db46871184a30b436a0a200d2c853cc871913ab7e8da92476876d7943b193522",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_stalled_writer_leaves_concurrent_neighbor_parseable"
-        }
-      },
-      "facet": "A stalled writer leaves the concurrent neighbor parseable.",
-      "id": "PRF-2VQ093",
-      "invariant": "INV-Y3TD13",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §3 daily-line",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_short_credential_variable_value_is_omitted"
-        }
-      },
-      "facet": "A short credential-variable value inside a longer argument is omitted.",
-      "id": "PRF-35PF9V",
-      "invariant": "INV-XJ7GV5",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:ae3f1469afca4550277210d34ce8f350db43eb4ba84e1eb5b3cff994fe90ce38",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_collect_rows"
-        }
-      },
-      "facet": "Rows are collected from log lines with the separated framing tolerated.",
-      "id": "PRF-5E66XS",
-      "invariant": "INV-KJFNBQ",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §8 stats",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:c7a49870176b53b87dec5206c0180d2c3b8a0767cf16786d75aed0a33f0e2a59",
-        "locator": {
-          "end": 2890,
-          "kind": "line_range",
-          "start": 2886
-        }
-      },
-      "facet": "Terminating operations log to the root.",
-      "id": "PRF-9478HH",
-      "invariant": "INV-JRV850",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §3 destinations",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:94ed41d185ae40718bc5b233de0dda7372e52cfc8035d200b31c9dacb41898ce",
-        "locator": {
-          "end": 2437,
-          "kind": "line_range",
-          "start": 2401
-        }
-      },
-      "facet": "Two late failures keep the first error and recount.",
-      "id": "PRF-C66JJK",
-      "invariant": "INV-MDE1ZN",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 logError-fixed",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:9d4cd35afa708b7815a0297a614fafd90c70fda8ed9b015dac0aa846c8b8251d",
-        "locator": {
-          "kind": "symbol",
-          "name": "ToolAnswerGuardTests.test_nested_lists_are_cut_through_retained_items"
-        }
-      },
-      "facet": "The pure truncate_lists cases check nested first-twenty ordered items, original count and truncation flags; they do not assert a filesystem detail/log location.",
-      "id": "PRF-FEA7C4",
-      "invariant": "INV-B7J1PZ",
-      "origin": {
-        "handoffEntry": "L112-semantic-replacement-PRF-RYVXYP",
-        "leaf": "260928-MIK-L112"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:045dbe0d371b0bf690380e33826bf6495281226e8692ed7ad1db26dc642e2f8b",
-        "locator": {
-          "kind": "symbol",
-          "name": "ToolAnswerGuardTests.test_envelope_stripped_from_every_answer"
-        }
-      },
-      "facet": "This server_info shaping case asserts that its answer omits each of the four envelope fields, retains ok and omits nextStep/log; it is not a census of every public tool answer.",
-      "id": "PRF-H1T045",
-      "invariant": "INV-B7J1PZ",
-      "origin": {
-        "handoffEntry": "L112-semantic-replacement-PRF-1XJ3QK",
-        "leaf": "260928-MIK-L112"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:8c5e32b1d38dde1de86b2dfa37e64b28d58a0d4c0002db32d3ddd5d6cdfbc70a",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_concurrent_stall_is_counted_on_the_next_persisted_line"
-        }
-      },
-      "facet": "A stalled write is counted on the next persisted line.",
-      "id": "PRF-J0Z70W",
-      "invariant": "INV-Y3TD13",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §3 daily-line",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:7fc3055cec865cd15a4eebbb09ddcf09c0e039a84397c803fa0f0a862b53e514",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_short_form_fixed_part_and_location_fit_with_longest_code"
-        }
-      },
-      "facet": "Fixed part and location fit hold with the longest code.",
-      "id": "PRF-JKEZYQ",
-      "invariant": "INV-CQSY2Z",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 fixed-250",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:026483ba11f142c72dede8032d4b161a278a5353ab2d9ccbc33479b8fe5f5566",
-        "locator": {
-          "end": 3118,
-          "kind": "line_range",
-          "start": 3090
-        }
-      },
-      "facet": "Cleanup removes logs with the enclosure.",
-      "id": "PRF-K2K392",
-      "invariant": "INV-E8S0YF",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_valid_shaped_row_passes"
-        }
-      },
-      "facet": "A valid shaped row passes.",
-      "id": "PRF-MXFH7R",
-      "invariant": "INV-180VCA",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §6 table",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:9494980a66ce801f786df64f5d8b3d368e2130fff6669eb13a864c1927808d5e",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_over_budget_root_path_through_the_choke"
-        }
-      },
-      "facet": "An over-budget root path passes the choke with the fixed sentence.",
-      "id": "PRF-NF7PTQ",
-      "invariant": "INV-SYBT3F",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 location-omitted",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:84019f61f074f34604db9098415828d73896f446e95fa8fccedcccf733382f95",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_cut_answer_late_failure_reguards_at_the_short_ceiling"
-        }
-      },
-      "facet": "A cut answer re-guards against the short-form ceiling after a late failure.",
-      "id": "PRF-PAR1GQ",
-      "invariant": "INV-QN78E9",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_empty_use_fails"
-        }
-      },
-      "facet": "A field without a stated use fails.",
-      "id": "PRF-TW1JNF",
-      "invariant": "INV-180VCA",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §6 table",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_ordinary_env_value_is_written"
-        }
-      },
-      "facet": "An ordinary environment value is written.",
-      "id": "PRF-VZ86GQ",
-      "invariant": "INV-XJ7GV5",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:f667bba5d2d2df3609e521ca8bd192519213ef1ee4c1c388e9dbc51b69d93e85",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_full_short_form_fits_including_bookkeeping"
-        }
-      },
-      "facet": "The full short form fits 400 including bookkeeping with the error shrinking last.",
-      "id": "PRF-Z49D7H",
-      "invariant": "INV-QN78E9",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:c6c7f82f1bc6310015d1e037cfd16c9ff993afed83103e66da45f6d07cf5e2f7",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_invalid_code_case_fails_the_row"
-        }
-      },
-      "facet": "A row case producing a malformed code fails.",
-      "id": "PRF-Z9WC6G",
-      "invariant": "INV-GWG9HD",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §4 code-120",
-        "leaf": "260928-MIK-L108"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:81f7b274b42c68fd4f4891e990b0e838479c65bc6a272851c7fa7e295b1b3e81",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_home_folder_path_stays_whole"
-        }
-      },
-      "facet": "A home-folder path stays whole.",
-      "id": "PRF-ZDX94J",
-      "invariant": "INV-XJ7GV5",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
-        "leaf": "260928-MIK-L108"
-      }
-    }
-  ],
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-        "content": "sha256:161ebaafe68df07701b05d2f139e9ca752f8ef68511b3830763d3d4c1bc9bbf2",
-        "locator": {
-          "kind": "symbol",
-          "name": "validate_row_case"
-        }
-      },
-      "id": "RLZ-8MJZRK",
-      "invariant": "INV-180VCA",
-      "origin": {
-        "handoffEntry": "MIK-R108@v1 §6 table",
-        "leaf": "260928-MIK-L108"
-      },
-      "rationale": "validate_row_case checks one case payload's measured bound, code validity and field cover, so invalid-code and guard-hit cases reject the row itself.",
-      "role": "enforcement"
-    }
-  ],
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
-      "note": "Each row carries fields, uses, cases, bound and interim ownership.",
+      "note": "Table construction retains each row's fields, uses, cases, bound and interim ownership.\n\nAnchor: `build_tool_answer_table`",
       "targets": [
         {
           "anchor": {
-            "blob": "61eb45ac1883d415065b9b7499cf7957752673d9",
-            "content": "sha256:f4b2d8d8f7dd941065f4aa1172cf8a4c60c0b3be4ca3439ffa031bee129e03ff",
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolAnswerRow"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_answer_table_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "Rows are validated against missing uses, extra fields and over-bound cases.",
+      "note": "Cases are checked against missing uses, extra fields and bounds.\n\nAnchor: `validate_row_case`",
       "targets": [
         {
           "anchor": {
-            "blob": "6956c22d306b45581ae758a6270bad232be866bd",
-            "content": "sha256:47d672492795b1f68d11b88406c66fe8b88fcc0e1a4b66dc7381eedbc8dcbbbf",
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_row_case"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_answer_table_support.py"
           },
           "kind": "test"
         }
@@ -387,71 +40,89 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-            "content": "sha256:b6d1719e2d9c400d688d0f8dc6166bf4468aecc23bed8eabfd607f55a470d9ba",
+            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
             "locator": {
-              "end": 2148,
-              "kind": "line_range",
-              "start": 2134
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_answer_table_log.py"
           },
           "kind": "test"
         }
       ]
     },
     "4": {
-      "note": "Authored install-case dimensions normalize the current user-settings XDG prefix.",
+      "note": "Produced install answers read the sandbox MCP authority, without an XDG user-settings precondition.\n\nAnchor: `_produced_install_compact`",
       "targets": [
         {
           "anchor": {
-            "blob": "6956c22d306b45581ae758a6270bad232be866bd",
-            "content": "sha256:b6867ad601a34d8683716e6dae6878a355a82561d664dd5f221234017e0961ed",
+            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
+            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
             "locator": {
-              "kind": "symbol",
-              "name": "_produced_install_compact"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_answer_table_install.py"
           },
           "kind": "test"
         }
       ]
     },
     "6": {
-      "note": "Final-delivery observer patches record_tool_completed and compares delivered_tokens with returned/logged count; no ambient lifecycle is installed.",
+      "note": "The delivery observer patches record_tool_completed and compares delivered tokens with returned and logged counts.\n\nAnchor: `ToolAnswerFinalMeasureTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "c758549206cb264f1c2617af8fac65700f5c10bb",
-            "content": "sha256:c016160bdb4872d61c54b59e04dbba17b5f735dd6a64d422c66be9d585d04f84",
+            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolAnswerFinalMeasureTests"
-            }
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_answer_table_measure.py"
           },
           "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "Ordinary/largest install fixture dimensions pin copiedFiles=120 and createdDirs=171/170; these are projection-equality fixtures under existing answer bounds, not universal maxima.\n\nAnchor: `_INSTALL_ORDINARY_CASE`, `_INSTALL_LARGEST_CASE`",
+      "note": "Ordinary and largest install fixtures pin copiedFiles=18 and createdDirs=44/43 as projection-equality fixtures under the existing answer bounds.\n\nAnchor: `_INSTALL_ORDINARY_CASE`, `_INSTALL_LARGEST_CASE`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5173f6233330baef787bc92fcfbec8340c8a230",
-            "content": "sha256:17ebd774f934e72143e9a9d1a3af0f5ee4f9cb2a7b8decf596db2b23c71cffdf",
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
             "locator": {
-              "kind": "symbol",
-              "name": "_INSTALL_ORDINARY_CASE"
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_answer_table_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The table covers every registered tool with no extras and each task-document row covers every operation.\n\nAnchor: `ToolAnswerTableTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
+            "content": "sha256:bb7c2953503b8d6144fb4e4248f418c976865415b41d750b17203492a8dcfe2b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "9": {
+      "note": "The three largest answers are operation-produced and pinned.\n\nAnchor: `L109LargestProductionTests`",
+      "targets": [
         {
           "anchor": {
-            "blob": "a5173f6233330baef787bc92fcfbec8340c8a230",
-            "content": "sha256:7ada244fc6396d89008afd60d3d02e9209c072e6ccec43836a73657e14083213",
+            "blob": "16022b2bbe9b55a19f4ac57de9ef00bc8baf5aa0",
+            "content": "sha256:bb7c2953503b8d6144fb4e4248f418c976865415b41d750b17203492a8dcfe2b",
             "locator": {
-              "kind": "symbol",
-              "name": "_INSTALL_LARGEST_CASE"
+              "kind": "file"
             }
           },
           "kind": "test"

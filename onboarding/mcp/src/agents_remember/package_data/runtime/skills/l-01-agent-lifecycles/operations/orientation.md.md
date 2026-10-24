@@ -10,7 +10,7 @@ Recover the selected native role assignment and canonical inputs without derivin
 
 ## Current Contract
 
-The native launcher supports Architect, Investigator, Orchestrator, Manager, Worker, Reviewer and Curator. System Specialist is the earlier read spelling of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
+The role launcher supports these eight role IDs: `architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, and `bootstrap`; `bootstrap` is the taskless setup role the one start call reaches. `system-specialist` is the earlier ID of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
 
 Task-bound reads use the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree.
 
@@ -18,7 +18,7 @@ Use the launching build’s `agents-remember-task` server through its actual har
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/operations/orientation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/operations/orientation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
@@ -51,6 +51,10 @@ No relevant documentation found after checking live sources.
 
 - The operation block's declared purpose, source path, and applicable roles. [3]
 - The canonical source of this block. [4]
+
+### Role launcher and alias
+
+- The launcher supports these eight role IDs, including the taskless `bootstrap` setup role, and `system-specialist` is the earlier ID of the same Investigator role. [5]
 
 ### Cross-Repo References
 

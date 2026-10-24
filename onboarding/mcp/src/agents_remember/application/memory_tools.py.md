@@ -12,6 +12,16 @@ scope, execution, and async control now belong to the dedicated typed controller
 
 Provides the memory-facing application entry points and the ordinary leaf writer guard. Citation fixing and route-index apply also share one measured pre-baseline admission on the configured converted memory root.
 
+`memory_init_tool` scaffolds the memory root and reports the measured knowledge state; it does not author
+knowledge. For a complete resolved tree reported as `not-recorded` or `recorded`, the next action names
+that state and asks the developer to start the Architect, which runs the foundation as a regular task
+with a Curator. A nonlegacy `PublishedIntentUnavailable` answer retains its measured state, dataset path,
+code and detail and uses the same handover. This can include `unusable` from unavailable publication; it
+is distinct from a resolved partial index, whose next action remains to repair the named knowledge files
+and rebuild their derived index. Admission failures keep their own next action, and legacy-format
+publication keeps conversion guidance. The handover neither invokes a role nor retires the separately
+registered knowledge-bootstrap CLI.
+
 ## Code Commentary
 
 ### Logic
@@ -194,10 +204,16 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
 - Carryover has one memory subject and forwards it without a ledger-message option. [3]
 - Canonical quality scope is owned by the focused scope module. [4]
+
 - Typed quality execution and public run translation are owned by the controller. [5]
+
 - The route-index application entry point forwards resolver-owned authority. [6]
-- The route-index builder. [7]
+
+- The route-index builder uses explicit repository and storage authority. [7]
+
+
 - The route-index builder receives storage authority explicitly in its typed signature. [8]
+
 - The apply entry point that forwards that subject and nothing else. [9]
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
@@ -205,9 +221,15 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - The apply entry point that forwards that subject and nothing else. [13]
 - Canonical quality scope is owned by the focused scope module. [14]
 - Its resolver, which binds a repository to the scope the quality surface runs against. [15]
-- The one execution path both the report and the closeout gate run through. [16]
-- The curator worklist publication that follows a full scoped call. [17]
-- On a converted tree the citation check reports the sidecar references' state instead of reading citation tables. [18]
+
+- This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
+
+
+- The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]
+
+
+- On a converted tree the citation check reports sidecar references instead of reading citation tables. [18]
+
 - The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
 - The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
 - The scope object the caller's excludes ride with, validated at construction. [21]
@@ -220,9 +242,13 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
 - The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
 - Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
-- The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build. [32]
+
+- This application function selects pre-baseline admission or the ordinary leaf contract. Its pre-baseline and unconverted-refusal returns explicitly add measuring_build_stamp(); its converted-leaf return calls _citation_fix_result. [32]
+
 - Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
 - Finite fix selection is validated before reads with the shared bound. [34]
 
 - The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated. [35]
 - The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]
+
+- Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]

@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_agent_override.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+        "content": "sha256:3acdd5dcc455eb1ce9f1c05d3f0f2bae5b9f1d8232496b38830022114e1546c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "bound_to_caller_harness"
+        }
+      },
+      "id": "RLZ-4FGEP4",
+      "invariant": "INV-RNPZRD",
+      "origin": {
+        "handoffEntry": "L188-B09",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This owner binds the honest caller harness before validating the authored model choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+        "content": "sha256:2530174969c28f7e16e464dada1f5c9a2f801cdcfe5e2ef8fdb9a79b96fdfaef",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_override"
+        }
+      },
+      "id": "RLZ-XMCJHZ",
+      "invariant": "INV-RNPZRD",
+      "origin": {
+        "handoffEntry": "L188-B09",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Bootstrap model-only selection is admitted without weakening other-role provider binding.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The override rule, with the free agent alone admitting a model or effort without an agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:2530174969c28f7e16e464dada1f5c9a2f801cdcfe5e2ef8fdb9a79b96fdfaef",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_override"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pre-dispatch binding and validation on a configured host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:3acdd5dcc455eb1ce9f1c05d3f0f2bae5b9f1d8232496b38830022114e1546c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_to_caller_harness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every other role still refuses a model given without its agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:570ccf55ae775a4138a756c2eede73c0714e3043a4e8717d16caca4cc15760dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_other_roles_still_refuse_a_model_without_its_agent"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Bootstrap overrides are validated before dispatch when a host is configured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:cd7a16323f92584da8e2d0d1497e7048d56237f96acc67955f7e784e87f65ff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_overrides_are_validated_before_dispatch_when_a_host_is_configured"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

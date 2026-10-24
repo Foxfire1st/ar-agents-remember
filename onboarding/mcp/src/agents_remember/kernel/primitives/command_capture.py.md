@@ -15,9 +15,7 @@ response payloads for the remaining script-facade bridge code.
 
 `run_package_main()` redirects stdout and stderr while calling an importable
 `main(argv)` function. It returns `ok`, `operation`, `returncode`, `argv`,
-captured streams, and parsed JSON payload when stdout is JSON. Current MCP
-skill application entry points call service functions directly; this helper remains only
-where lower-level provider setup still bridges through `lifecycle.main`.
+captured streams, and parsed JSON payload when stdout is JSON. The skill-application entry routes described by the older card were removed in this leaf. The retained helper’s provider-setup account applies where setup bridges through `lifecycle.main`; it does not establish a current public skill-application endpoint.
 
 ### Invariants And Boundaries
 
@@ -30,5 +28,4 @@ where lower-level provider setup still bridges through `lifecycle.main`.
 
 ### Repo-Internal References
 
-- Provider setup still uses this helper while bridging to the provider lifecycle CLI facade. [1]
-- Skill application entry points now call service-backed functions instead of returning command-capture payloads. [2]
+- Provider setup invokes run_package_main with lifecycle.main and constructed arguments. [1]

@@ -45,3 +45,12 @@ Investigator is canonical in new selection output. The parsed selection retains 
 ## Refreshed current evidence
 
 - Frozen implementation of RoleSelection supporting the stated file behavior. [1]
+
+## The free agent as a launcher role
+
+`LauncherRole` admits `bootstrap`, the free agent a new user reaches through the one start call; `system-specialist` normalizes to `investigator`. `RoleDispatchRequest` carries `caller_harness` (`callerHarness`, at most 120 characters), the harness the calling chat itself runs: absent means the caller named none, and nothing substitutes a provider for it. Neither addition authorizes a start, a parent or a replacement.
+
+- The launcher role set that includes the free agent. [9]
+- The dispatch request, which carries the caller's harness name. [10]
+
+- The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission. [11]

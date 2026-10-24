@@ -2,12 +2,44 @@
 
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-Launcher routes retain canonical report links, immutable request content, projection-before-launch and operation admission. The projection-ordering case builds its prepared dictionary inside the test: it plans the hand-over with the product's own planner (`planned_handover_file`) and stubs `_compile_handover` to return that dictionary, so the added `handoverFile` and `handoverFileContent` carry the builder's shape — the two fields the real builder returns at `role_launch_preparation.py:855-869` — and the write-once and projection-before-launch assertions read them. Public execution whitelists host fields, keeps saved calls private and separates report availability from status. Request replay and bounded matching taskless-history migration retain existing identity rather than minting replacement topology.
+Covers the HTTP routes behind the dashboard's role launch: the task-report link, the message-binding
+projection a launch reuses, the public execution result the dashboard reads, the projects architect
+dispatch, and the identity a taskless execution keeps across a revive.
+
+## Code Commentary
+
+### Logic
+
+- **Task reports.** `TaskReportAccessTests.test_report_link_writes_to_canonical_task_reports` keeps the
+  report link writing into the canonical task reports.
+- **Binding projection.** `MessageBindingProjectionTests` reuses identical request content for a
+  projection and refuses a replacement, and proves a launch receipt references the projection before the
+  native launch.
+- **The public result.** `RoleExecutionResultTests` admits the manual role operations by the shipped
+  capsule manifest, keeps the selected capsule operation on a public execution, and whitelists the host
+  fields while keeping the saved call private. It also proves `canStart` means a fresh request while a
+  bound live seat stays a singleton, and that report availability is projected independently of session
+  status.
+- **Dispatch.** `RoleProjectDispatchTests.test_projects_architect_dispatch_remains_available` keeps the
+  projects architect dispatch reachable through the routes.
+- **Taskless identity.** `TasklessExecutionIdentityTests` keeps a taskless request address exact and a
+  bound revive unchanged, replays a same request while a second intent gets its own receipt and report,
+  and confines the one-time history-id migration to matching taskless ids.
+
+### Conventions
+
+`_runtime_config()` builds the configuration a route reads, and the routes are registered against a test
+app so each case observes the answer the dashboard receives.
+
+### Invariants And Boundaries
+
+- The public execution result is a whitelist: host fields travel, the saved call does not.
+- A request's identity does not drift between a taskless revive and a bound one.
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above, and the projection case's prepared dictionary now carries `handoverFile` and `handoverFileContent` in the builder's shape, planned with the product's planner and returned by a stubbed compile. [1]
+- Report links, projection reuse, the public execution result, dispatch and taskless identity are asserted through the routes. [1]

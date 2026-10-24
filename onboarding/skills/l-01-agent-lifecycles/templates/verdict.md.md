@@ -19,6 +19,10 @@ This account controls the named changed seams; contradictory earlier card wordin
 - The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS. [5]
 
 
+## Current Source Qualification
+
+The carryover criterion now names the kept procedure rather than a retired skill: `skills/c-10-adopt-memory-baseline/workflows/carryover-from-branch.md`, checked against the recorded landing line. Inherited statements that name a `C-11` carry-over skill describe the retired owner, not a current route.
+
 ## Message/file transport
 
 This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.

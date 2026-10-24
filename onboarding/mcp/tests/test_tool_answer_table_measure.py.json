@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_measure.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:0d58d24d6d82082066743ec6c50f9e0085bf3c5fc54b85239ff018d99c6e7856",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_line_failure_overflow_stays_in_bound_and_counts_agree"
+        }
+      },
+      "facet": "A line-failure overflow stays in bound with agreeing counts.",
+      "id": "PRF-1QCVW0",
+      "invariant": "INV-0VAC47",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 error-cut",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:db46871184a30b436a0a200d2c853cc871913ab7e8da92476876d7943b193522",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolPartialWriteTests.test_stalled_writer_leaves_concurrent_neighbor_parseable"
+        }
+      },
+      "facet": "A stalled writer leaves the concurrent neighbor parseable.",
+      "id": "PRF-2VQ093",
+      "invariant": "INV-Y3TD13",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 daily-line",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:94ed41d185ae40718bc5b233de0dda7372e52cfc8035d200b31c9dacb41898ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_two_late_failures_keep_first_error_and_recount"
+        }
+      },
+      "facet": "Two late failures keep the first error and recount.",
+      "id": "PRF-C66JJK",
+      "invariant": "INV-MDE1ZN",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 logError-fixed",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:8c5e32b1d38dde1de86b2dfa37e64b28d58a0d4c0002db32d3ddd5d6cdfbc70a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolPartialWriteTests.test_concurrent_stall_is_counted_on_the_next_persisted_line"
+        }
+      },
+      "facet": "A stalled write is counted on the next persisted line.",
+      "id": "PRF-J0Z70W",
+      "invariant": "INV-Y3TD13",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 daily-line",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:84019f61f074f34604db9098415828d73896f446e95fa8fccedcccf733382f95",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_cut_answer_late_failure_reguards_at_the_short_ceiling"
+        }
+      },
+      "facet": "A cut answer re-guards against the short-form ceiling after a late failure.",
+      "id": "PRF-PAR1GQ",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+        "content": "sha256:f667bba5d2d2df3609e521ca8bd192519213ef1ee4c1c388e9dbc51b69d93e85",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerFinalMeasureTests.test_full_short_form_fits_including_bookkeeping"
+        }
+      },
+      "facet": "The full short form fits 400 including bookkeeping with the error shrinking last.",
+      "id": "PRF-Z49D7H",
+      "invariant": "INV-QN78E9",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 overflow-400",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An exact-edge answer is re-guarded after its log location is attached, and the observer's count matches what was delivered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A short or stalled write is detected, never joined to the next record, and a stuck write is dropped and counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dead9740c6fc297f4331c1301d021142e194f4c",
+            "content": "sha256:0531a708a6505155d3f518232ee7620c0f49ef6422df23a47e1f51d887348b4e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

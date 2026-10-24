@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+        "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
         "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
         "locator": {
           "kind": "symbol",
@@ -20,24 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
-        "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_real_closeout_phase_passes_with_landing_aboard"
-        }
-      },
-      "facet": "The real services-bound closeout quality phase remains ok with both landing populations under a scratch contract; it is not a real leaf closeout.",
-      "id": "PRF-GT1X76",
-      "invariant": "INV-NRXFWN",
-      "origin": {
-        "handoffEntry": "MIK-R120@v1",
-        "leaf": "260928-MIK-L120"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+        "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
         "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+        "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
         "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
         "locator": {
           "kind": "symbol",
@@ -63,40 +46,6 @@
       },
       "facet": "A 200-cut payload retains the full count, first bounded slim rows and a token-bounded answer; no log acquisition is claimed by this fixture.",
       "id": "PRF-Q24TE8",
-      "invariant": "INV-NRXFWN",
-      "origin": {
-        "handoffEntry": "MIK-R120@v1",
-        "leaf": "260928-MIK-L120"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
-        "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_operations_hold_both_populations_without_new_refusals"
-        }
-      },
-      "facet": "The actual check with both landing populations has identical ok/refusal findings to its control.",
-      "id": "PRF-RV55G1",
-      "invariant": "INV-NRXFWN",
-      "origin": {
-        "handoffEntry": "MIK-R120@v1",
-        "leaf": "260928-MIK-L120"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
-        "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_checklist_actionable_parity_on_real_populations"
-        }
-      },
-      "facet": "Check-derived payloads render landing paths without changing checklist status or actionable counts.",
-      "id": "PRF-W41VPM",
       "invariant": "INV-NRXFWN",
       "origin": {
         "handoffEntry": "MIK-R120@v1",
@@ -111,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:0e8f19085550b441a086814504036835e236d81faa46c40ccf5a86752b1f2b2f",
             "locator": {
               "kind": "symbol",
@@ -123,16 +72,28 @@
       ]
     },
     "10": {
-      "note": "The changed role-text portion accepts one scoped Curator equivalent with deletion controls on every discovered source root and compiles canonical Curator/curation. Both Reviewer landing sentences move to the exact delivered reviewer-memory-d301 step-8 file and are checked with per-sentence deletion controls for each discovered root. Measurement/Git/gate/quality-phase and refusal fixtures are otherwise unchanged.\n\nAnchor: Current test/support source",
+      "note": "The current role-text cases accept the scoped Curator equivalent, exercise deletion controls on both surviving source roots and compile canonical Curator/curation. Both Reviewer landing sentences are checked in the exact delivered step-8 file with per-sentence deletion controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
-            "content": "sha256:5877d6ceb1d7af8975a0a68268f2ee98eb8a38f1992cf5773485f2b55d61b1d8",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
+            "content": "sha256:c69fb31670a4eab7b7e80ac8a6e514f01678bdc823b1efb7273ba302ac0b9ccb",
             "locator": {
-              "end": 1307,
+              "end": 404,
               "kind": "line_range",
-              "start": 1
+              "start": 355
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
+            "content": "sha256:c9d7da1d09463c6e420f3b0b2bc76bf83aba10809b058cfa417f35bf0c85534a",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 407
             }
           },
           "kind": "test"
@@ -144,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:bf3e1d57f3de03738b974243b96e6025fb0a77d6c58cdfec1488d3bdd66ee2da",
             "locator": {
               "kind": "symbol",
@@ -160,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:7c74a031f8a96e7e44ab92a0cb871465b16711fb48e734e26ea1efb23ef5f3bb",
             "locator": {
               "kind": "symbol",
@@ -176,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:4eb33fe56ce92a2f4221a05eb0c08b5fe850c6eef0ca1303c830d78b131d61bc",
             "locator": {
               "kind": "symbol",
@@ -188,16 +149,28 @@
       ]
     },
     "5": {
-      "note": "Curator sources and canonical capsule retain the three protected clauses; each discovered Reviewer root delivers both protected landing sentences in the named step-8 memory file.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "note": "Curator sources and canonical capsule retain the three protected clauses; each discovered Reviewer root delivers both protected landing sentences in the named step-8 memory file.",
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
-            "content": "sha256:5877d6ceb1d7af8975a0a68268f2ee98eb8a38f1992cf5773485f2b55d61b1d8",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
+            "content": "sha256:c69fb31670a4eab7b7e80ac8a6e514f01678bdc823b1efb7273ba302ac0b9ccb",
             "locator": {
-              "end": 1307,
+              "end": 404,
               "kind": "line_range",
-              "start": 1
+              "start": 355
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
+            "content": "sha256:c9d7da1d09463c6e420f3b0b2bc76bf83aba10809b058cfa417f35bf0c85534a",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 407
             }
           },
           "kind": "test"
@@ -222,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:a7ade1c9e2a0a3456ece9227da3aacd5dfce9701b7490c02ba9f49ba7f02ae66",
             "locator": {
               "kind": "symbol",
@@ -234,32 +207,34 @@
       ]
     },
     "7": {
-      "note": "Real knowledge-gate evaluation is complete and non-refusing with the populations aboard.",
+      "note": "Real knowledge-gate evaluation is complete and non-refusing with the populations aboard in the disposable fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
             "content": "sha256:f29e9eecbf12964d452b1a2afedc3cfbc1e69114d84a6f886cd2f5629f35e71c",
             "locator": {
               "kind": "symbol",
               "name": "test_real_gate_evaluates_landed_candidate_clean"
-            }
+            },
+            "path": "mcp/tests/test_landing_report_closeout.py"
           },
           "kind": "test"
         }
       ]
     },
     "8": {
-      "note": "The actual closeout-quality phase reports landed and clean counts with unchanged zero refusing findings.",
+      "note": "The closeout-quality fixture reports landed and clean counts with unchanged zero refusing findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
             "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
             "locator": {
               "kind": "symbol",
               "name": "test_real_closeout_phase_passes_with_landing_aboard"
-            }
+            },
+            "path": "mcp/tests/test_landing_report_closeout.py"
           },
           "kind": "test"
         }
@@ -270,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aa51e331d1bd220d025930c7acee41dce37170d",
+            "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:777274d78a5b22e0722fe012723b952c46c63f187f3dfac9511d563d31a1e3a2",
             "locator": {
               "kind": "symbol",

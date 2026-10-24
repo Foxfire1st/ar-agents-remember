@@ -27,6 +27,22 @@
           "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:13-19"
         }
       ]
+    },
+    "3": {
+      "note": "The instruction targets a benchmark workspace receives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "733ce3471b462a9ca6d5416b3f81083cfbfba468",
+            "content": "sha256:6a2af536c9d87a9902c93aa4af0952d2f6d7c1211679d8045f1a87bb551c5177",
+            "locator": {
+              "kind": "symbol",
+              "name": "AGENTS_MD_TARGETS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -2,22 +2,54 @@
 
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-Message send distinguishes idle-turn start, in-flight steering, permission refusal and non-steerable busy providers. Wait follows the turn that consumed the message rather than a later unrelated turn, and reports delivery uncertainty without cancelling work. The native client is replaced by a controlled event/state stub. R71 cases prove creation sends mode and each feature before any prompt, the profile bridge reads only the running host configuration, and the read grant uses exact `server_info` with mutators out.
+Runs the bridge's `agent-send` and `agent-wait` commands as the real script against a scripted daemon
+client, and proves an agent created by a role start is named to the runtime as its parent. Delivery is
+judged only against a live agent with an open session: a running turn is steered when its provider
+takes a steer and held otherwise, and a send that fails still says what is known of the delivery.
 
-## Send-decision script cases
+## Code Commentary
 
-`AgentSendScriptTests` covers the steer-or-hold decision the script makes. `test_an_idle_agent_starts_a_turn_and_a_steer_goes_only_to_a_provider_that_takes_one` sends to an idle agent with `{messageId}` alone — no active-turn behaviour is asked for — and steers only when a turn is running for a provider known to take one. `test_a_running_turn_is_steered_or_held_by_the_provider_and_never_cut_off` steers a steering provider and returns `busy` for a provider without steering, with no send in that case, so its turn is untouched; the same provider is still sent to while idle. A send the runtime refuses remains a refused call. These are the controlled script stub's assertions, not a live host.
+### Logic
+
+The fixtures build the scenario pieces the runtime reports — `agent()`, `sent()`, `reply()`, `tool()`,
+`ends()` for a turn that ends with the runtime's own event, and `begins()` for a turn starting with the
+entries the runtime records — while `RoleBridgeScriptTestCase.call()` runs one command and `recorded()`
+reports what the fake client was asked to do.
+
+- **Send eligibility.** `AgentSendScriptTests` proves only a live agent with an open session is sent to,
+  an agent waiting for a permission decision is not, and an idle agent starts a turn while a running turn
+  is steered only into a provider known to take one — never cut off.
+- **Attachments.** `test_images_and_text_attachments_go_with_the_message_only_when_given` sends native
+  image and text attachments when they are given and leaves a send without them unchanged, and a
+  malformed payload fails before any operation is recorded.
+- **Resume ordering.** `test_a_send_after_a_resume_gives_the_tool_servers_their_time_first` waits out
+  the tool servers a resumed session starts (`TOOL_SERVER_START_MS`) before sending.
+- **Waits.** `AgentWaitScriptTests` reports a turn that ends during the call from the runtime's own
+  event, one that ended before the call from the agent's state, gives an unnamed message time to begin
+  its turn, refuses to attribute a later turn to the message, and reports a pending permission or a
+  still-running turn as such. `SteeredWaitScriptTests` covers a message handed to a running turn: that
+  turn or the next one consumes it.
+- **Parent.** `test_the_starting_agent_is_named_to_the_runtime_as_the_parent` checks the created agent
+  carries the starting agent's id as its parent.
+- **Creation wire.** `R71CreationWireTests` proves creation sends mode and each feature before any
+  prompt, that the profile bridge reads only the running host's configuration, and that the read grant
+  uses exact server info while keeping mutators out.
+
+### Conventions
+
+Every case starts the real script against the scenario's runtime and asserts on the fake client's record
+of calls as well as on the command's answer.
+
+### Invariants And Boundaries
+
+- A send never cuts off a running turn; it steers or holds.
+- A failed send reports what is known of the delivery rather than claiming a clean refusal.
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
-
-## Native picked payload options
-
-`test_images_and_text_attachments_go_with_the_message_only_when_given` sends one image and one text attachment through the real bridge script to the controlled native-client stub and compares the complete recorded send options. Empty lists leave only `messageId`. Missing text-attachment MIME type, a non-image MIME type and a non-list image payload each raise `invalid_bridge_payload` before any agent read or send. The case checks the script's options and refusal boundary; it does not prove that an installed chat rendered or consumed an attachment.
-
-- Native options include both payload classes; empty lists omit them; malformed payloads fail before any recorded operation. [2]
+- Send eligibility, steering versus holding, attachment payloads, waits and parent naming run against the real script. [1]
+- Native image and text attachments travel only when given, and a malformed payload fails before any recorded operation. [2]

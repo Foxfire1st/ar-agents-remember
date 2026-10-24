@@ -21,7 +21,7 @@
   ],
   "references": {
     "1": {
-      "note": "Context-packet composition calls the converted-only bounded drift summary; skills_install_tool delegates to install_skills and is not a drift-summary caller.",
+      "note": "Context-packet composition calls the converted-only bounded drift summary without filing a report.",
       "targets": [
         {
           "anchor": {
@@ -32,18 +32,6 @@
               "name": "_drift_packet"
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
-            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "skills_install_tool"
-            },
-            "path": "mcp/src/agents_remember/application/runtime/skills.py"
           },
           "kind": "code"
         }
@@ -70,11 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:ca61885f81efeca1246694a9167a3e86bb7ed03b339cb8270c5b89c320175aa3",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_converted_summary"
+              "end": 176,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "code"
@@ -86,11 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:ca61885f81efeca1246694a9167a3e86bb7ed03b339cb8270c5b89c320175aa3",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_converted_summary"
+              "end": 176,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "code"
@@ -102,11 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:8962256abed2880de4ec74ec9bec6ab598a65bf6dae896c51a53a0d56dd691d6",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_converted_summary"
+              "end": 124,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "code"
@@ -114,28 +105,16 @@
       ]
     },
     "14": {
-      "note": "Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars.\n\nAnchor: source responsibility",
+      "note": "Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
-            "content": "sha256:5d952f371b572cd38438fed79d4ac5b6e7f87d0a736054accee8951ed1d9eca4",
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:5db74bd7df43149ee9dd9f9e45ebb8c376779cc406b88876c680bb3f44e12497",
             "locator": {
-              "end": 214,
+              "end": 176,
               "kind": "line_range",
-              "start": 139
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5b3b70d80062f5d1c8a6f0142d7f93f8069780d4",
-            "content": "sha256:034787bbbe9b222a77c974016f699c0aac3dfa36bdb6a38ad2e9c6711f7f7f54",
-            "locator": {
-              "end": 386,
-              "kind": "line_range",
-              "start": 343
+              "start": 135
             }
           },
           "kind": "code"
@@ -148,6 +127,45 @@
               "end": 278,
               "kind": "line_range",
               "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:955a60527aed79f09650cf9ef1e425a5887516761ad07b20ab8d0aab0bb1750f",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:c8c8bfe41cd020d4e67fc461f1e5bb6b837203c77d4ea462e9a39c138639bdbd",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:5e2a1de99667eeba2a1a4ee4284be3e127b242db76cdc44016dcdc587ca74e80",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -244,12 +262,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c5d642956f6161dbd852c298d437f3e5cfa90dd8",
-            "content": "sha256:9c1266de9b259213b383f4567ce484dd6b3387dc84c17b25cc2330477bb95adf",
+            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "content": "sha256:1c23bbeb8b14703f4322ae4d19bb601af40b035a4ceea87871538c21f801f2cc",
             "locator": {
-              "end": 74,
+              "end": 136,
               "kind": "line_range",
-              "start": 74
+              "start": 78
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -262,11 +280,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:1e8f18ae78e5b7bd563f3cf322ec2812ca715906c30a016838644b093e0b786b",
+            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "content": "sha256:c8c8bfe41cd020d4e67fc461f1e5bb6b837203c77d4ea462e9a39c138639bdbd",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_converted_snapshot"
+              "end": 269,
+              "kind": "line_range",
+              "start": 224
             }
           },
           "kind": "code"

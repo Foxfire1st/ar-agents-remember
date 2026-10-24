@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion.\n\nAnchor: `## Start-of-Task Onboarding Trust Gate`",
+      "note": "The template routes first/second drift checks and approved maintenance through c-05 while retaining clean/dirty-source classification, developer review and report deletion.",
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
-            "content": "sha256:4bf1717d3502ca83713d255021ded9fb9207094e39510e96f61c08c1b47b3c51",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
+            "content": "sha256:54f20aea236c27af74f0f5714bbdb70c28b990b4b25abb05a49545d18cf8eaa3",
             "locator": {
-              "end": 59,
+              "end": 50,
               "kind": "line_range",
-              "start": 1
+              "start": 14
             }
           },
           "kind": "code"
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled.\n\nAnchor: `include_providers`",
+      "note": "Gate2 calls context_packet for the configured MCP repository; provider authority comes from MCP settings and provider operations, never a packet provider argument.",
       "targets": [
         {
           "anchor": {
-            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
-            "content": "sha256:de72b7e667b3c6cb26c6e266e99a7db50abbaecd8531780da1e33de4216215da",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
+            "content": "sha256:711afecfaef803d520d6c8d0463996e262b6e46f99029638442832df69ead3b1",
             "locator": {
-              "end": 22,
+              "end": 28,
               "kind": "line_range",
-              "start": 22
+              "start": 17
             }
           },
           "kind": "code"
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
             "content": "sha256:622890cd7ebc088d9c7ecef080f6395a6f0b756eb7c5d86c0f3441d6a809b134",
             "locator": {
               "end": 61,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
             "content": "sha256:f4c8970fd6d305670b875d7dc6b40016aa1ce68fbb47a1f44470ae0e5e877676",
             "locator": {
               "end": 69,
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
             "content": "sha256:d6c30c83372bbc502fee72b30171bd37982e21601c43b96207840e2c7833e7e8",
             "locator": {
               "end": 85,
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
             "content": "sha256:b7570c1b1bc43d91d3d897a1b025c02179dfe98e629dd0ed7f02144482d2af54",
             "locator": {
               "end": 91,
@@ -109,10 +109,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b275a16e3ac07ec027ed9b0b089c530a69068512",
-            "content": "sha256:63935876044a22ec8a40ed87c7c78cb904fd883604dae899bc2efe226ca85b67",
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
+            "content": "sha256:54f20aea236c27af74f0f5714bbdb70c28b990b4b25abb05a49545d18cf8eaa3",
             "locator": {
-              "kind": "file"
+              "end": 50,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a94f3833b0aa5e4b47d551f9057e85ab9b243dc",
+            "content": "sha256:1ba89c509abae5abd9dd2a8f3156bfb8323baa5a9f1b0061c413762959757883",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "51232152049671e86bb8d535cd0ce21f1c3325e5",
-        "content": "sha256:3fe12ce46e7c95c90cad9ac520a03002f091fae0bc5c5ab3df87d3cad2ca0e7e",
+        "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+        "content": "sha256:d49e0fab10a63ee093545d53c6b1d52a772963b9c6ca8d918cc00de893df6040",
         "locator": {
           "end": 85,
           "kind": "line_range",
@@ -23,15 +23,29 @@
   ],
   "references": {
     "1": {
-      "note": "The run command requires an absolute `--config` path and rejects coordinator `system/settings.json`; `uvx agents-remember-mcp` and the pip console script both call `server.main()`.",
+      "note": "The run command requires absolute MCP authority settings, rejecting user settings and coordinator system/settings.json; the package console entry delegates to server.main().",
       "targets": [
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:b51ad4a6129f7fd6a5e687cc77377f6accb5d644e78413bfba4d6b11788319e4",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
             "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "end": 203,
+              "kind": "line_range",
+              "start": 181
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -39,40 +53,67 @@
         },
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:e1f4547fb3e834f9d3010e6f52f94e144546d376cfec52ea05cec75699cee18c",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:fd2cef6d29cac749b95ff90ad3cb1933922d3381e33a8b931064c096b5a6980f",
             "locator": {
-              "kind": "symbol",
-              "name": "require_config_path"
+              "end": 76,
+              "kind": "line_range",
+              "start": 74
             },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+            "path": "mcp/pyproject.toml"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "782aa73feb7c2c955a2baa07be50668a006f080f",
-            "content": "sha256:75f6acc8c6cacd9951ef2da4ccb34e46823a789ad63891fe5980b08c3c7e8f15",
+            "blob": "ab78be40f9d47ecdb224d994180945115476b92b",
+            "content": "sha256:448b810687a197ba2f2083859164a29faa8d70453018bc36225db491bc508bef",
             "locator": {
-              "end": 296,
+              "end": 8,
               "kind": "line_range",
-              "start": 282
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+            "path": "mcp/src/agents_remember/mcp/__main__.py"
           },
           "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "Package-first onboarding explicitly retires provider installation, indexing and watching.\n\nAnchor: whole-file",
+      "note": "Package-first onboarding explicitly retires provider installation, indexing and watching.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
-            "content": "sha256:3d834001ee4d2e99f5f19acee7ff12c36e748f5722e4817d6d3a5afd2c566b95",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:1f94040eea6dccba42f70964170069913ab6ceed75868634e6fa1b9baba5e90c",
             "locator": {
-              "kind": "file"
+              "end": 54,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:1c397f301da2a901560a63eac30a114b9738d05c1262a03e4a6c1d38167784ec",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:6226601c1ddbcc8ab36d341fb288ba33e497c6e8b7fa774f655d25c7442c92f0",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 276
             }
           },
           "kind": "code"
@@ -80,14 +121,28 @@
       ]
     },
     "11": {
-      "note": "Retained install knobs, unused provider keys and asked-only container removal do not re-enable provider setup.\n\nAnchor: whole-file",
+      "note": "Retained install knobs, unused provider keys and asked-only container removal do not re-enable provider setup.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9f52755ac2ee86086515764e0c399ef699b1cc",
-            "content": "sha256:3d834001ee4d2e99f5f19acee7ff12c36e748f5722e4817d6d3a5afd2c566b95",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:afb47a4e0ddbc2bd13a5f2a4d4b20eab39b2850c69136a8404d40bb633a4ccf7",
             "locator": {
-              "kind": "file"
+              "end": 191,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:55c9a31169f9d67947cf7b0a8ce408f02b0896750aaf7d7db201984bdd765733",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 290
             }
           },
           "kind": "code"
@@ -95,14 +150,29 @@
       ]
     },
     "12": {
-      "note": "The advertised families are the retained registrar tuple, not the README's broad historical tool labels.\n\nAnchor: whole-file",
+      "note": "The advertised families are the retained registrar tuple, not the README's broad historical tool labels.",
       "targets": [
         {
           "anchor": {
-            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
-            "content": "sha256:7214cc6d02be039cb9c725635336955fc02a9de932e9e7d67917b0081e935aff",
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:36cfa10613dd0d8b96e6e2b276812d64a2c37d6771b220f120e0d3679e16b6f9",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:c116d99ae3256727ac9ad04059b6d8963ff70e491121623a2ad0d6f814b9e3c8",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 21
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
@@ -115,12 +185,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51232152049671e86bb8d535cd0ce21f1c3325e5",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
             "content": "sha256:e6c0ed572be8e8989fc9e41bccaba055d6a03e9fc6b00816942bf9ae687f551a",
             "locator": {
-              "end": 100,
+              "end": 90,
               "kind": "line_range",
-              "start": 96
+              "start": 86
             }
           },
           "kind": "code"
@@ -132,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f960ca45e4fea2dcef8e92a29382eff04914397a",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
             "content": "sha256:cc1d200f395187cf7e3587863f80feba2596aec076cbc6a0783cb08447f5cd42",
             "locator": {
               "end": 82,
@@ -146,32 +216,31 @@
       ]
     },
     "3": {
-      "note": "The Quickstart has the user copy a harness starter package, render it either with the local `render-starter` convenience script or by manual placeholder replacement, wire MCP, restart once, and then hand post-restart setup off to the copied `c-13-install-and-onboard` skill, which runs or verifies `runtime_install()` and does not call `skills_install()` in package-based first-run setup.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
+      "note": "The Quickstart registers MCP, restarts if needed, then makes one Bootstrap call; skills are package resources and maintenance remains separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "4561679eaf748ce2f7afe8ba5f2c4bd9c2e8bac0",
-            "content": "sha256:f3559ae9b179135dd3e06684a0a98cedb7d570b347001edb593f249f49964af2",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:b837fa477809cc8adf5eb37235ee35c1b090394db81e3868cf0cfd86082c56dc",
             "locator": {
-              "end": 273,
+              "end": 37,
               "kind": "line_range",
-              "start": 6
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+              "start": 15
+            }
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference.\n\nAnchor: \"def create_server(config: McpRuntimeConfig) -> Any:\"; `# MCP Tool Reference`",
+      "note": "The reference catalog introduces the tool surface; actual server registration and its registrar tuple own the advertised families and signatures, rather than every historical catalog row.",
       "targets": [
         {
           "anchor": {
-            "blob": "252b78ac6957e9364de9a88548b8fe4d5efa7672",
-            "content": "sha256:45d556b186b42d4b30476bb3851251525271a884d4eb92fe454f83c32336a422",
+            "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
+            "content": "sha256:e6972cb34594aee7d665d7c48de793483a91a0c32fda996e9994f3977952fa86",
             "locator": {
-              "end": 238,
+              "end": 8,
               "kind": "line_range",
               "start": 1
             },
@@ -181,14 +250,27 @@
         },
         {
           "anchor": {
-            "blob": "3139669673aad140278e0fba2c1e12a0723ebfda",
-            "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
+            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
+            "content": "sha256:97ab535702b6ed0fb143e42ecea352e0341a086866bcc660be01c1be03e62ca1",
             "locator": {
-              "end": 162,
+              "end": 174,
               "kind": "line_range",
-              "start": 162
+              "start": 154
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:c116d99ae3256727ac9ad04059b6d8963ff70e491121623a2ad0d6f814b9e3c8",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
         }
@@ -199,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:ee1844899d24faed094c3a064dca97204f56ebea822848911950282a961a9e4c",
             "locator": {
               "kind": "symbol",
@@ -211,12 +293,12 @@
         },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:8bc4be81ebdeb31598fcc3fbaa15aa58e8d600027aec6f79f595f9828fe65e66",
             "locator": {
-              "end": 787,
+              "end": 809,
               "kind": "line_range",
-              "start": 768
+              "start": 790
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -229,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbc24d6811b722123b1235591e8a5d01ed6a04c9",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
             "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
             "locator": {
               "kind": "symbol",
@@ -242,16 +324,16 @@
       ]
     },
     "7": {
-      "note": "Requirements and the development-runtime section state the bounded package line, the historical published range, and the canonical exact source build.\n\nAnchor: `## Requirements`; `### Canonical Linux/WSL development runtime`",
+      "note": "Requirements and the development-runtime section state the bounded package line, the historical published range, and the canonical exact source build.",
       "targets": [
         {
           "anchor": {
-            "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
-            "content": "sha256:3213a3f88c93c01ce8d794611e3629f37c241e8ae24e68edbf5d5138a75ccf8c",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:101a5b47d162f6820f5caf55f55009b88ad771d818bbb5596f443983b540c845",
             "locator": {
-              "end": 86,
+              "end": 89,
               "kind": "line_range",
-              "start": 49
+              "start": 39
             }
           },
           "kind": "code"
@@ -259,15 +341,29 @@
       ]
     },
     "8": {
-      "note": "The dashboard command that starts both.",
+      "note": "The dashboard command ensures the dashboard and starts or adopts the configured host; this path does not install it.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
-            "content": "sha256:88dcf0bf1cb4abadecd695c1821318f6942c4a8b5d819cb4ee14679539d688ae",
+            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+            "content": "sha256:2ac014290e03e6cef09c5d4c86328c45a3db96e9e47ee81cdd4c28e284d99354",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "end": 409,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+            "content": "sha256:79fe6a065a6a178d0b9ee734cf4d48647cef2d3a26d3e2462b46f5384402b105",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 528
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -280,7 +376,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",

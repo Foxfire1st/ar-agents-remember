@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/converted_onboarding_drift_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A converted memory is identified by the `ar-memory-layout/v2` marker it holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
+            "content": "sha256:d2fd9cc3e3d036ab67e944d7022b24065b1c6e620c0b3c2cfe8fe6f1989c4988",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchors are built from the file's git blob id and content identity, and the stale one carries zeros.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
+            "content": "sha256:d2fd9cc3e3d036ab67e944d7022b24065b1c6e620c0b3c2cfe8fe6f1989c4988",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The no-write fingerprint covers HEAD, the index tree, porcelain status and every file's bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
+            "content": "sha256:d2fd9cc3e3d036ab67e944d7022b24065b1c6e620c0b3c2cfe8fe6f1989c4988",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

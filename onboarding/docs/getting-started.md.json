@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "13574bcaa890538f8527fe59546fa0fe27c44aee",
-        "content": "sha256:1355da788554950f986e2e2569f1633aa661bd6421a174919b8d1386912b6aec",
+        "blob": "5f6047fcfe018839ff9723eb04c29ad9ac43b465",
+        "content": "sha256:9a2072e139e6af06b4aec61fd0f91b77b543921f3f54dad81b7dc93fc877a2a0",
         "locator": {
           "kind": "file"
         }
@@ -19,6 +19,22 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f554a4d804537c6b3a2b01e6f17415cf1f313637",
+            "content": "sha256:71b5388afa1df6ed9fc18c2170d2993177082d24cef5b421dd7c500e3961c17f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

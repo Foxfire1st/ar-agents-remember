@@ -91,3 +91,9 @@ Selected-task Investigator receipts are per request rather than singleton select
 - Conditional retry payload preserves original selection/reason. [19]
 
 - Test source checks validator refusal before host replay. [20]
+
+## The message-binding address admission reads
+
+`message_binding_projection_path` is the public name of the binding-file address; the request-id refusal and the discard path use it too. Admission reads the same file a preparation wrote, which is how a retry whose receipt never landed returns to the seat it prepared instead of preparing the root again. Receipt creation, replay and projection semantics are unchanged.
+
+- The one binding-file address, read by admission and written by preparation. [21]

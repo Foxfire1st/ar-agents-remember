@@ -3,36 +3,17 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Provider setup still uses this helper while bridging to the provider lifecycle CLI facade.\n\nAnchor: [\"provider_setup.\"]",
+      "note": "Provider setup invokes run_package_main with lifecycle.main and constructed arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
-            "content": "sha256:9c3e6877b750191ba3b2c1c3624864616223f3645684092c160661e23f001ead",
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9fedec650ef6711e3ad80e7a88a9eb186eb9500f99ceec3537dbe8464b474f1e",
             "locator": {
-              "end": 206,
-              "kind": "line_range",
-              "start": 206
+              "kind": "symbol",
+              "name": "run_lifecycle"
             },
             "path": "mcp/src/agents_remember/providers/setup_common.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Skill application entry points now call service-backed functions instead of returning command-capture payloads.\n\nAnchor: [\"install_skills(\"]",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
-            "content": "sha256:9a102dc3302f769e6d5eb44813f7870a189490ba9f4600d4b100328ed64eedae",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 25
-            },
-            "path": "mcp/src/agents_remember/application/runtime/skills.py"
           },
           "kind": "code"
         }

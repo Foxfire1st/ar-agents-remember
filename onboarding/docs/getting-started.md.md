@@ -7,40 +7,39 @@
 ## Purpose
 
 The first-run setup guide for a workspace that holds one or more code repositories. Setup is
-agent-driven: the user asks the agent to do the work and answers one question along the way, and the
-only mandatory restart in the package-based path is after copying the harness package and wiring the
-MCP server.
+agent-driven and starts with one call after the MCP server is installed and registered with the
+harness: `role_start(role="bootstrap", request_id="<fresh UUID>")` prepares a missing coordinator
+scaffold and host, verifies the plug-in and starts one instructed Bootstrap seat whose dashboard
+chat continues setup. The page names no starter package, renderer or skill folder, says the MCP
+server serves canonical skills from its package as resources, keeps optional harness-native
+instruction and hook files under the per-harness install guides, gives the source-built wheel
+registration command with an absolute MCP settings path, and states that the authored settings
+authority is separate from the user settings file that records the harness choice for each role. It
+closes by saying setup authors no onboarding or knowledge and starts no other role: at exit it tells
+the developer how to start an Architect, which organises optional onboarding and the knowledge
+foundation as a regular task, master or sprint.
 
 ## Current source account
 
-The short path is: copy a harness starter package and render it (`render-starter` with one `--repo`
-list, or replace the placeholders by hand); register the Agents Remember MCP server with `uvx` and an
-absolute settings path outside `ar-coordination/`; restart the harness once; then invoke
-`c-13-install-and-onboard`, which pre-checks setup, runs or verifies `runtime_install()`, sets up the
-memory repo (it asks whether to scaffold a new one or use an existing one), bootstraps onboarding,
-and starts provider indexing.
+The short path the page now states is: register the Agents Remember MCP server with `uvx` and an
+absolute settings path, restart the harness if it needs that to discover the connection, then make one
+call from your own chat — `role_start(role="bootstrap", request_id="<fresh UUID>")` — whose answer
+names the Bootstrap seat and the dashboard chat where setup continues. The page says no skill folder,
+starter package or renderer is required, because the MCP server serves canonical skills from its
+package as resources, and the optional harness-native instruction or hook file carries only the
+first-action directive. In that dashboard conversation Bootstrap previews settings, chooses new or
+existing memory, initializes or reads the external memory scaffold, reports an existing user settings
+file instead of overwriting it, and at exit tells the developer to start an Architect, which organizes
+optional onboarding and the knowledge foundation as a regular task, master or sprint.
 
-The guide states the resolver's memory topology: external memory is the only supported topology,
-bound at `ar-coordination/memory-repos/ar-<repo>/`, initialized by the `c-13-install-and-onboard` and
-`c-00-initialize-memory-repo` skills; a repository still carrying the removed repo-local `ar-memory/`
-root is refused with that path and the route to re-point it. A new memory repo's onboarding runs
-`c-03-repo-bootstrap`, for which a thin `overview.md` is enough to start.
+The guide keeps external memory at `ar-coordination/memory-repos/ar-<repo>/` as the supported layout. It refuses the removed repo-local `ar-memory/` path rather than migrating or recreating it. Existing memory is inspected and its baseline/state reported, with dirty or unusable input distinguished from an absent root. Setup authors no onboarding or knowledge and starts no other role; the developer starts an Architect to organize that work as a regular task, master or sprint.
 
-Its Providers section records that MIK-R112 removed the provider tools: no product path installs,
-starts or watches `codegraphcontext-code` / `grepai-memory`; the install skill stops leftover watcher
-processes and reports old provider keys once as unused, and there is nothing to start. Providers are
-optional for memory, onboarding, drift and task workflows.
-
-The working section routes sessions by role through `l-01-agent-lifecycles` and states the normal
-task loop: resolve the repository context, run the memory quality check, read the onboarding beside
-the code, propose, wait for approval, implement, then update onboarding through the c-05 workflow.
-Work that needs a durable plan escalates to `w-02-light-task-workflow` or a master series.
+Maintenance previews `runtime_install(dry_run=true)` and reconciles managed runtime files while preserving memory, tasks and user-owned state. It creates no skill copy. Benchmarks are optional and local outputs remain. Retired providers are reported as unused, and setup starts no provider indexing or watcher. Normal work follows the user-started Architect's task and approval workflow; role agents follow their exact handovers and read verified onboarding alongside source.
 
 ## Boundaries
 
 Guidance for a person and an agent, not proof that a command ran, that a harness copied the package,
 or that a memory repo was initialized on any host.
 
-The document is not internally uniform on providers: its short path still says the install skill
-starts provider indexing, while its Providers section says the provider tools were removed and there
-is nothing to start. The card records both statements and resolves neither.
+
+- Current source account and its stated boundaries. [1]

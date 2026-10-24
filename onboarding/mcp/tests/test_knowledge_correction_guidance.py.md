@@ -27,6 +27,4 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 ## Evidence
 
 - Describes source-level checks that canonical curator/planner guidance and writer/gate docstrings explain supported corrections. Marker assertions protect documentation compatibility, not implementation behavior, runtime installation or full semantic acceptance of every sentence in the referenced guides. [1]
-
-
 - Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide. [2]

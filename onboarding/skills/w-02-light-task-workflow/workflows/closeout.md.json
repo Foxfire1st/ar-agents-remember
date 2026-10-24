@@ -1,0 +1,256 @@
+{
+  "path": "skills/w-02-light-task-workflow/workflows/closeout.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:d7f1674f95819c36eed54c772935a12a07395796fcd59d6c5e97d920c687e619",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6PKTPE",
+      "invariant": "INV-5GJFDS",
+      "origin": {
+        "handoffEntry": "L188-B16",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This diagnostic/publication boundary is scoped to its own procedure rather than denying its sibling worktree procedure.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:d7f1674f95819c36eed54c772935a12a07395796fcd59d6c5e97d920c687e619",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CHD1PB",
+      "invariant": "INV-EAX9HM",
+      "origin": {
+        "handoffEntry": "L188-B13",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The kept closeout procedure owns the transferred preview, approval and publication stops.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 261
+        }
+      },
+      "id": "RLZ-DMZR23",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:d7f1674f95819c36eed54c772935a12a07395796fcd59d6c5e97d920c687e619",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FC78GJ",
+      "invariant": "INV-0J87VE",
+      "origin": {
+        "handoffEntry": "L188-B14",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The transferred publication workflow retains explicit preview and approval stops.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
+        "locator": {
+          "end": 245,
+          "kind": "line_range",
+          "start": 239
+        }
+      },
+      "id": "RLZ-RM75GK",
+      "invariant": "INV-8NHCRK",
+      "origin": {
+        "handoffEntry": "L41-R8-O5 / ruled delta",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "These lines are the skill's statement of where an abandoned row that landed refuses, and they now name finalization beside the closeout and the task tool.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:27ca657a0b1eca2fa0d6d092fd366221e2200287963218ec6bb2a35dc1a03f93",
+        "locator": {
+          "end": 244,
+          "kind": "line_range",
+          "start": 243
+        }
+      },
+      "id": "RLZ-S7NJK5",
+      "invariant": "INV-E20AY2",
+      "origin": {
+        "handoffEntry": "L41-continuation-O5",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The canonical kept closeout procedure and its generated packaged serving copy describe this finalization decision; product finalization remains its separate enforcement owner.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:68dcf69c3376477b1a55ced5f4651d4b15be4f0aac1d0a327fda32802bd98072",
+        "locator": {
+          "end": 266,
+          "kind": "line_range",
+          "start": 261
+        }
+      },
+      "id": "RLZ-YZB03G",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:66eda4457cd57ba1179e3f908870e4c44ea39441a5d5ab45605aad53f399ede4",
+        "locator": {
+          "end": 219,
+          "kind": "line_range",
+          "start": 218
+        }
+      },
+      "id": "RLZ-ZWGF8R",
+      "invariant": "INV-J8MBSE",
+      "origin": {
+        "handoffEntry": "L94-CODE-F10",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The schema-valid named-leaf verify and create examples that carry leaf_task_document_ref, code message, candidate tree and the create candidate_tree/code_commit_message requirements.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The legacy-operation retirement does not retire the preserved direct_landing forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:3503bf30366b0bc3f272c854343c9b947dc68687a85979273d99b2ab064b579f",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closeout consumes full role handoffs and previews immutable code/memory commit legs before applying them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:8aee19f5c0b8f445ea20b7a65a0000e7c666695fda98e89269ce4dad04919506",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Both schema-valid named-leaf verify/create forms are preserved under the grant-gated branch-direct route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:d77effb34fc155f72562fb6d4ba0a56d40668a36793b3884865a1011dc18b6c5",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Finalization refuses abandoned-but-landed contradictions for both master natures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Individual-master retirement and whole-sprint archive remain distinct operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:e69097a34ed85139b23008b1dddd86b5eda2fe7faaf9a4ae465a9d2e15c8a379",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Same-generation publication recovery preserves proven code and resumes the missing memory/ledger leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:ddbd4b65b8caba58dc2a56c9dbf73722505c3a0c72654a6c5e14f2d0f05227a4",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

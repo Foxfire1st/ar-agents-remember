@@ -12,9 +12,9 @@
 
 MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
 
-The L111 predecessor declared41 public names after L109 removed resolve_context (earlier42 was historical); the current source has41 — that 40 plus the mounted knowledge_write. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
+The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current source has42 — that 41 plus the mounted user_settings_init. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
-`create_server` calls nine registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, and knowledge. Eight declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 41 names, including native `retire_child`, `role_start_set` and the mounted `knowledge_write`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
+`create_server` calls nine registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, and knowledge. Eight declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 42 names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init` and `knowledge_write`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
 > **Retained historical source account — superseded by the current route account:**
 > A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
@@ -125,42 +125,88 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 ## Evidence
 
 
-- **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal. [1]
-- **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection. [2]
-- **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction. [3]
-- **Retained historical source account — superseded by the current route account:** Bounded paging, continuation, and walk-currentness description. [4]
-- **Retained historical source account — superseded by the current route account:** Current walk-code-tree currentness description. [5]
-- **Retained historical source account — superseded by the current route account:** Current tree/contract integrity signature and delegate replace the database/run-selection account. [6]
-- **Retained historical source account — superseded by the current route account:** Three-operation knowledge composition. [7]
-- **Retained historical source account — superseded by the current route account:** Server invokes the ordered registrar tuple after application/transport wiring. [8]
-- **Retained historical source account — superseded by the current route account:** Shared response adapter delegates whole-result and optional answer completion. [9]
-- **Retained historical source account — superseded by the current route account:** Roster declaration and unchanged adapter export; current count is 41. [10]
+- **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal.
+- **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection.
+- **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction.
+- **Retained historical source account — superseded by the current route account:** Bounded paging, continuation, and walk-currentness description.
+- **Retained historical source account — superseded by the current route account:** Current walk-code-tree currentness description.
+- **Retained historical source account — superseded by the current route account:** Current tree/contract integrity signature and delegate replace the database/run-selection account.
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge composition.
+- **Retained historical source account — superseded by the current route account:** Server invokes the ordered registrar tuple after application/transport wiring.
+- **Retained historical source account — superseded by the current route account:** Shared response adapter delegates whole-result and optional answer completion.
+- **Retained historical source account — superseded by the current route account:** Roster declaration and unchanged adapter export; current count is 41.
 
-- Current single literal PUBLIC_TOOLS contains 41 public names (the 40 plus mounted knowledge_write) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
-- **Retained historical source account — superseded by the current route account:** Inherited argument-count exemption target retained pending location confirmation. [11]
-- **Retained historical source account — superseded by the current route account:** Shared task locator. [12]
-- **Retained historical source account — superseded by the current route account:** Canonical message input and refused-field vocabulary retain both named co-targets. [13]
-- **Retained historical source account — superseded by the current route account:** Current worktree registrar composition replaces the old import-range target. [14]
-- **Retained historical source account — superseded by the current route account:** Attach import retained; enclosure adoption is also currently imported. [15]
-- **Retained historical source account — superseded by the current route account:** Existing status-related range retained with the complete current handler as deciding witness. [16]
-- **Retained historical source account — superseded by the current route account:** Three-operation knowledge family, without mounted change/project. [17]
-- **Retained historical source account — superseded by the current route account:** Read receives runtime roots; diff and integrity keep separate delegates. [22]
-- **Retained historical source account — superseded by the current route account:** Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions. [23]
-- **Retained historical source account — superseded by the current route account:** Native role registration declares start, set start and messaging; it does not witness task retirement. [24]
-- **Retained historical source account — superseded by the current route account:** Core identity, reader-context, and install registration. [25]
-- Ordered composition uses seat retirement, not a removed sessions registrar, and retains the capsule resource position between task and role-agent registration. [26]
+- Current single literal PUBLIC_TOOLS contains 42 public names (the 41 plus mounted user_settings_init) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.
+- **Retained historical source account — superseded by the current route account:** Inherited argument-count exemption target retained pending location confirmation.
+- **Retained historical source account — superseded by the current route account:** Shared task locator.
+- **Retained historical source account — superseded by the current route account:** Canonical message input and refused-field vocabulary retain both named co-targets.
+- **Retained historical source account — superseded by the current route account:** Current worktree registrar composition replaces the old import-range target.
+- **Retained historical source account — superseded by the current route account:** Attach import retained; enclosure adoption is also currently imported.
+- **Retained historical source account — superseded by the current route account:** Existing status-related range retained with the complete current handler as deciding witness.
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge family, without mounted change/project.
+- **Retained historical source account — superseded by the current route account:** Read receives runtime roots; diff and integrity keep separate delegates.
+- **Retained historical source account — superseded by the current route account:** Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions.
+- **Retained historical source account — superseded by the current route account:** Native role registration declares start, set start and messaging; it does not witness task retirement.
+- **Retained historical source account — superseded by the current route account:** Core identity, reader-context, and install registration.
+- Ordered composition uses seat retirement, not a removed sessions registrar, and retains the capsule resource position between task and role-agent registration.
 
-- **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary. [27]
-- **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description. [28]
+- **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary.
+- **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description.
 
-- Current composed PUBLIC_TOOLS declares41 names (40 plus the mounted knowledge_write); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
+- Current composed PUBLIC_TOOLS declares42 names (41 plus the mounted user_settings_init); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.
 
-- **Retained historical source account — superseded by the current route account:** Skill resources, declaration coupling, and index/file construction. [31]
-- **Retained historical source account — superseded by the current route account:** Extension installation and catalog-backed methods. [32]
-- **Retained historical source account — superseded by the current route account:** Task descriptions, including coherence transport, retirement and current queue projection. [33]
-- **Retained historical source account — superseded by the current route account:** Pause and sync descriptions and forwarding. [34]
-- **Retained historical source account — superseded by the current route account:** Closeout descriptions, message inputs, and delegate composition. [35]
-- **Retained historical source account — superseded by the current route account:** Native-role adapters forward typed single-start, set-start and message calls to Paseo owners. [37]
+- **Retained historical source account — superseded by the current route account:** Skill resources, declaration coupling, and index/file construction.
+- **Retained historical source account — superseded by the current route account:** Extension installation and catalog-backed methods.
+- **Retained historical source account — superseded by the current route account:** Task descriptions, including coherence transport, retirement and current queue projection.
+- **Retained historical source account — superseded by the current route account:** Pause and sync descriptions and forwarding.
+- **Retained historical source account — superseded by the current route account:** Closeout descriptions, message inputs, and delegate composition.
+- **Retained historical source account — superseded by the current route account:** Native-role adapters forward typed single-start, set-start and message calls to Paseo owners.
 
 
-- The L111 predecessor declared41 public names after L109 removed resolve_context (earlier42 was historical); the current source has41 — that 40 plus the mounted knowledge_write. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred. [38]
+- The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current source has42 — that 41 plus the mounted user_settings_init. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred.
+
+## The settings initializer's registration
+
+`role_agents.py` mounts `user_settings_init` beside the three role tools and reads the caller's harness name from the served request's own client info, so a launch is told which harness the calling chat runs and is told nothing when the client named none.
+
+- The transport's own client name, or no name at all.
+- The registration that mounts the role tools and the settings initializer.
+
+[1] mcp/src/agents_remember/mcp/registration/tasks.py — symbol lifecycle_finalize_task
+- Current single literal PUBLIC_TOOLS contains 42 public names, including the mounted `user_settings_init`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
+- Current composed PUBLIC_TOOLS declares 42 names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
+- The L111 predecessor declared 41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current composed source has 42 — the 41 predecessor plus the mounted user_settings_init. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
+
+[2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97
+[3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99
+[4] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 85-98
+[5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91
+[6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
+[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
+[8] mcp/src/agents_remember/mcp/server.py — symbol create_server
+[9] mcp/src/agents_remember/mcp/tools/base.py — symbol _tool_payload
+[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__
+[11] pyproject.toml — lines 38-38
+[12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef
+[13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
+[14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
+[15] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 22-22; mcp/src/agents_remember/mcp/registration/worktrees.py — lines 23-27
+[16] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 172-199; mcp/src/agents_remember/mcp/registration/worktrees.py — lines 177-203
+[17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
+[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
+[23] mcp/src/agents_remember/mcp/registration/memory.py — symbol citation_fix
+[24] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start_set; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_message
+[25] mcp/src/agents_remember/mcp/registration/core.py — code file
+[26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
+[27] mcp/src/agents_remember/mcp/server.py — code file
+[28] mcp/src/agents_remember/mcp/registration/core.py — symbol _register_installation_tools
+[29] mcp/src/agents_remember/models/tools/public_roster.py — code file
+[31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
+[32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
+[33] mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_closeout_queue_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_curator_coherence_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_reopen_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_finalizer_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _TASK_DOC_TOOL_DESCRIPTION; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_document_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol register_task_tools
+[34] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 206-266
+[35] mcp/src/agents_remember/mcp/registration/closeout.py — lines 37-311
+[37] mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_message_payload; mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_start_payload; mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_start_set_payload
+[38] mcp/src/agents_remember/models/tools/public_roster.py — code file; mcp/src/agents_remember/mcp/registration/tasks.py — code file; mcp/src/agents_remember/mcp/registration/worktrees.py — code file; mcp/src/agents_remember/mcp/registration/closeout.py — code file; mcp/src/agents_remember/mcp/registration/role_agents.py — code file
+[39] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol caller_harness_name
+[40] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools

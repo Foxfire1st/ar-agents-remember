@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "A quality procedure that asks for a file the product no longer writes cannot be run at all; the requirement and the adoption skill must name the current owner together."
+  },
+  "applicability": "The transferred memory-quality-control and baseline-adoption procedure after the retirement.",
+  "conditions": [
+    "The kept owner is c-05-create-or-update-onboarding-files/workflows/memory-quality-control.md, and the durable result is the contract-scoped checklist memory_quality_check replaces at the reportPath it returns, with no temporary drift report filed.",
+    "A retired task-start drift file is not required to run it."
+  ],
+  "exclusions": [
+    "Keeping a dead file reference as a compatibility note."
+  ],
+  "id": "INV-1ZJS8R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P8; docs/reference/drift-c02.md:9–20; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B17",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The transferred MQC and baseline-adoption procedure names the current report/result owner rather than requiring a retired task-start drift file.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics.\n\nAnchor: `# Git Workflow Example`; `## The landing flow`; `## PR merge: prefer a merge commit over squash`; `## Commit and push quality gates`; `## Release And Changelog Convention`",
+      "note": "The placeholder example uses w-02 for worktree/closeout and c-10 for carryover; actual memory-content commits attribute landed code and empty carryover makes no commit.",
       "targets": [
         {
           "anchor": {
-            "blob": "6addcd3ee3d13cfe236efe8f63f3a47408d50942",
-            "content": "sha256:9225e82058fe29a8f264d0e8b0aacdf268b1b7691072282002ecb915a9bfc122",
+            "blob": "ff39d7f9d94b36c9001c935c40e748ce1d13cc64",
+            "content": "sha256:d063f0636cc8940fcf89c0bcf58782cefb450b1bfde3b2a36095fd06f6bcfe70",
             "locator": {
-              "end": 97,
+              "end": 49,
               "kind": "line_range",
-              "start": 1
+              "start": 16
             }
           },
           "kind": "code"

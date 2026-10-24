@@ -1,0 +1,41 @@
+{
+  "confirmed": {
+    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "role": "curator",
+    "statement": "The source-checkout instructions still say skills are authored in skills/ and refreshed into the package data by the sync script, with no harness skill folder.",
+    "task": "260928-MIK",
+    "uncommitted": true
+  },
+  "document": "AGENTS.md",
+  "id": "DPD-Y454FF",
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "dpd-5",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "kind": "file",
+      "path": "scripts/sync-skills.py"
+    },
+    {
+      "anchor": {
+        "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+        "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "shipped_skill_tree"
+        },
+        "path": "mcp/src/agents_remember/application/skill_resources/provider.py"
+      },
+      "kind": "anchor"
+    }
+  ]
+}

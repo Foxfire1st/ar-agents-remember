@@ -1,0 +1,48 @@
+{
+  "confirmed": {
+    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "role": "curator",
+    "statement": "The tool reference still matches what first-run preparation does: it prepares the runtime and host before dispatch and reports each stage it completed.",
+    "task": "260928-MIK",
+    "uncommitted": true
+  },
+  "document": "docs/tool-details.md",
+  "id": "DPD-10YCT2",
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "dpd-1",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "anchor": {
+        "blob": "3d5e58b7836e8f82afefa7914174ad78dfcaa06d",
+        "content": "sha256:4dfecd273e8b7851ec4b7d4cfa3656919408df3d0c9325d4769becf683f22684",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_first_run"
+        },
+        "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+        "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "establish_authority_paseo_runtime"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+      },
+      "kind": "anchor"
+    }
+  ]
+}

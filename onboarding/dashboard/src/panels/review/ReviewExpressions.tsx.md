@@ -6,7 +6,7 @@
 
 ## Retirement
 
-The source was deleted. Its dataset-only file accordion, revision-to-location selection and file-card expansion no longer run; no equivalent accordion relocated. The original card and sidecar remain in their existing custody for retirement/history, not as an active implementation claim.
+The source is absent at both the base and candidate code trees; it was already deleted before either tree. Its dataset-only file accordion, revision-to-location selection and file-card expansion no longer run; no equivalent accordion relocated. This Markdown card remains in custody as the retirement record; its JSON sidecar was retired as metadata because the renderer it described was already absent, not because a new source deletion occurred, and it makes no active implementation claim.
 
 ExpressionControls was extracted during the earlier retirement, without preserving the removed accordion. A4-F5 subsequently removes those controls and SourceContent as well. ReadingColumn now owns the page-level Changes only / Full context control and draws the shared model's subjects and lane; no card Full file fallback remains.
 
@@ -95,5 +95,4 @@ The following reference captions describe the prior source epoch. They are prese
 
 
 
-- The current page-level Code context control selects Changes only or Full context through the persisted code-context store; the old ExpressionControls callbacks are retired. [10]
-- ReadingColumn renders the shared model's subject groups and lane under its page-level control; the retired file accordion is not this composition. [11]
+- The two current ReadingColumn facts formerly cited here — the page-level Code context control and the shared model's subject/lane rendering — are carried by the [ReadingColumn.tsx](reading/ReadingColumn.tsx.md) card; this retirement record keeps no live citation.

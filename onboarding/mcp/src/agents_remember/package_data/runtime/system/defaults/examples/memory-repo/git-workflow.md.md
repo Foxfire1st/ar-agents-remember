@@ -16,9 +16,9 @@ through a gated branch (e.g. a PR-gated `main`).
 The file tells users to copy the example to memory-layer `system/git-workflow.md` and fill in the
 `<placeholders>` for their repo. It states the spine (spear branch + whether it is gated; `feat/`|
 `fix/` work branches; whether work is worktree-backed), an issue/PR policy table, a generic landing
-flow (issue → branch → worktree → leaf closeout gate → push→PR→checks→merge→cleanup
-→ `c-11-memory-carryover-from-branch` skill carryover run against the merged spear, which maps the ledger to the actual spear HEAD
-including a PR merge commit even when nothing else needs carrying), a "prefer merge commit over
+flow (issue → branch → w-02 worktree setup/closeout → push→PR→checks→merge→cleanup
+→ c-10-adopt-memory-baseline carryover through an ordinary recovery leaf against the merged spear;
+each memory-content commit attributes the actual landed code HEAD, and no content means no commit), a "prefer merge commit over
 squash" rule for branches that bundle distinct changes, and the altitude-owned quality cadence:
 deterministic local checks, targeted acceptance once at leaf closeout, no leaf-integration rerun,
 full acceptance once at master integration, and deterministic pull-request validation without an
@@ -51,7 +51,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics. [1]
+- The placeholder example uses w-02 for worktree/closeout and c-10 for carryover; actual memory-content commits attribute landed code and empty carryover makes no commit. [1]
 - The examples README documents that the memory layer owns this landing-flow file. [2]
 
 ### Cross-Repo References

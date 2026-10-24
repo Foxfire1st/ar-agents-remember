@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
             "content": "sha256:da514b2ed3f7fc87722d5ba16d2048a6cfdc9e03f3e5765ce27ffc22a96d0fc4",
             "locator": {
               "end": 15,
@@ -20,16 +20,16 @@
       ]
     },
     "10": {
-      "note": "Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes.\n\nAnchor: `## Converted Memory`",
+      "note": "Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "content": "sha256:94b74f2e0b77aec344ec5066148cfccfbafd096e3e10a72a7d04706142d161f3",
             "locator": {
-              "end": 53,
+              "end": 57,
               "kind": "line_range",
-              "start": 42
+              "start": 48
             },
             "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
           },
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
             "content": "sha256:b875ec336bc6b654781a768a9778d4fd41a7a8356dd97552bd49827685997804",
             "locator": {
               "end": 87,
@@ -56,14 +56,14 @@
       ]
     },
     "12": {
-      "note": "Converted no-impact answers use writer-owned source and route history rows, and converted cards exclude legacy metadata/history and self-assigned references.\n\nAnchor: `## When the card needs no change`; `## Never on converted memory`",
+      "note": "Converted no-impact answers use writer-owned source and route history rows, and converted cards exclude legacy metadata/history and self-assigned references.",
       "targets": [
         {
           "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
-            "content": "sha256:615ab0c3220877ec3808a7b622f93fbc71d5dbc076b15e3a393acc638fd1a60c",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:8963946dcc6fea4aa25fcb5067c2a6ac0a44d4f1a95df5f96a54dbb6cea7a37a",
             "locator": {
-              "end": 183,
+              "end": 185,
               "kind": "line_range",
               "start": 159
             },
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
             "content": "sha256:6b4da7ea526e2798374ed9d4cbfb47ef4d6d440c74f080344d0f6365789cc6f1",
             "locator": {
               "end": 24,
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
             "content": "sha256:48e36596911b5606a222ccf2e2a45c8f10d583c27a906bf5ce23a8c829454e59",
             "locator": {
               "end": 40,
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
             "content": "sha256:43a0f49b2121dc9953f4c6847b2901e6c083ca2a4f34627eb5a87e57cc5ba536",
             "locator": {
               "end": 50,
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
             "content": "sha256:cb788f20b578485c7f5b06c83059429369ebe4c5362d110a99db3bbb8e5dcaf9",
             "locator": {
               "end": 73,
@@ -142,12 +142,12 @@
       ]
     },
     "6": {
-      "note": "Creation, maintenance and review inspect evidence, seed useful entities, handle fingerprint coverage and preserve legacy history.\n\nAnchor: `## Create Workflow`; `## Maintain Workflow`; `## Review Heuristics`",
+      "note": "Creation, maintenance and review inspect evidence, seed useful entities, handle fingerprint coverage and preserve legacy history.",
       "targets": [
         {
           "anchor": {
-            "blob": "383d5a621300fc24ab3147149866821ad29a8aa7",
-            "content": "sha256:8280d585537679e8e59531ab3734142755c94fc155a0a98410f35a6590635baf",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
+            "content": "sha256:61149fdcdd9710b5f27a79f8ea85d4a7a005adf1d08abff6fcc008eb996246b4",
             "locator": {
               "end": 107,
               "kind": "line_range",
@@ -208,18 +208,17 @@
       ]
     },
     "9": {
-      "note": "The canonical skill describes c-05 fingerprint curation and c-02 comparison/coverage roles.\n\nAnchor: `## Quick Rules`",
+      "note": "The retained c-05 maintenance workflow requires evidence review and names c-05 fingerprint-drift and coverage reporting.\n\nAnchor: current definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:11f7e3d55aa3dbfa00dbb685ecda453e792c5e0804f13dccb0a78e4722a4b1dd",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
+            "content": "sha256:dae8b447f3e86e1aaee926ab16689aca27e15c94b4b63b534564636aac92fea9",
             "locator": {
-              "end": 130,
+              "end": 96,
               "kind": "line_range",
-              "start": 122
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+              "start": 88
+            }
           },
           "kind": "code"
         }

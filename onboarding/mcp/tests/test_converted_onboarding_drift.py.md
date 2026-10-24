@@ -2,56 +2,81 @@
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-One test per rule of the truthful converted onboarding drift packet (MIK-R44@v2). Each behavioural
-case is written to discriminate its change with fail-before/pass-after expectations; this card
-describes static definitions and assertions, not a fresh run or renewed acceptance. The
-description, parity and packaging cases assert exact surfaces instead — every required statement on
-every surviving named surface and its generated copies, equal numbers at the three entrances with
-`include_drift=false`, and report/snapshot content from one measurement.
+One case per rule of converted onboarding drift (MIK-R44@v2): a converted tree takes the converted branch
+instead of legacy discovery, the result names every measured field, empty, unreadable and unbuildable trees
+report truthfully, and every consumer of the measurement returns the same answer. The baseline cases cover
+blocking, adoption and the refusal paths either side of the commit.
 
 ## Code Commentary
 
-Rule coverage runs through the shipped seams on real repositories under `tmp_path`: the converted
-branch of `run_drift_summary`, the retained internal drift-summary call, the context-packet drift block,
-and both baseline tools (no public `drift_check` adapter is restored), the converted adoption gate, and the private-index staging interval. The
-retained interval-failure case injects `RuntimeError("boom")` at `memory_commit_refusal` and, for
-`dry_run=True` and `False`, asserts the matching exception, unchanged `_fingerprint` and
-`ls-files --stage` output, the intent-to-add empty-blob entry, the untracked symlink's unchanged
-target and absence from the worktree index, and the staged file's unchanged text. `_fingerprint`
-compares HEAD (or `unborn`), `git write-tree` stdout, porcelain status and a digest of non-`.git`
-file paths/bytes; it does not measure raw index bytes or flags. Separate tests assert committed-tree
-identity with the validated candidate. A rewriting pre-commit hook runs and refuses without
-HEAD/main publication, restoring the original layout/index except its untracked marker; a passing
-hook runs once and publishes the validated tree. Successful adoption leaves `git write-tree`
-equal to `HEAD^{tree}`. These stored cases do
-not witness concurrent edits, ignore-file restoration or mode, preparation failures, or Git failures.
+### Logic
 
-The description case rejects restoration of `drift_check` registration, then checks the surviving `context_packet` include-drift description, its longer-explanation pointer and both shipped skill populations. It also requires each c-02 copy to contain the ordinary-candidate statements "a current `onboarding_trace` row about the file" and "a counted change of its card alone never answers". Those static corpus assertions do not remove L53's amended, leaf-local old-MAIN-LINE counted-card exception. Measurement/currentness/advisory obligations survive the retired tool; the removed registration sentence does not. Context requests no longer carry the removed `include_providers` argument.
+`bound_validation()` supplies the validator binding the baseline cases need, and the cases drive
+`context_packet`, `memory_quality.converted_check`, the validator trees and the worktree services.
 
-The complete-finding regression changes a reference slot beyond the retained one-row sample: counts and sample remain equal while `actionableFingerprint` changes. Repeating the same measurement or using detail_limit=0 leaves the fingerprint unchanged; malformed sidecar input yields null instead of a trusted complete fingerprint.
+- **The branch.** `test_converted_trees_take_the_converted_branch_and_skip_legacy_discovery` requires the
+  converted basis, its count and actionable count, the measured states, and an actionable sample with no
+  legacy classification key.
+- **The result.** `test_converted_result_names_every_measured_field` requires every converted field present
+  with anchors and bounded samples only.
+- **Truthful absence.** `test_empty_missing_and_unbuildable_base_trees` keeps zero means empty, unread means
+  error and an unbuildable base one refusal.
+- **Carried anchors.** `test_carried_anchor_is_refused_as_carried_stale_never_as_new` requires a carried
+  deleted anchor to refuse as `R22.6-carried-stale`, never as a new anchor.
+- **One measurement.** `test_three_consumers_return_one_answer` and
+  `test_report_and_snapshot_come_from_the_same_result` keep the drift check, context drift and both baseline
+  tools on one summary, and the Markdown report and observer snapshot on one measurement.
+  `test_complete_drift_fingerprint_changes_beyond_equal_counts_and_sample` proves the fingerprint is taken
+  over the full findings, not the limited sample.
+- **Baseline states.** `test_baseline_states_for_converted_trees` reports `ready`, `blocked-drift` and
+  `blocked-invalid` distinctly; `test_accept_drift_never_clears_a_validator_violation` keeps `accept_drift` to
+  stale anchors; `test_stale_anchors_adopt_once_accepted` shows the committed tree attributed;
+  `test_first_baseline_commits_exactly_the_validated_tree` requires the commit to record the staged tree
+  validation passed.
+- **Nothing on refusal.** `test_dry_run_and_refusal_change_nothing` keeps the index, the refs and every file
+  untouched, and `test_adoption_refuses_where_the_validator_is_not_bound` refuses rather than commits.
+- **Command line.** `test_baseline_command_line_validates` keeps the module command line validating like the
+  tool.
+
+### Conventions
+
+The measurement is taken once and read by every consumer in a case, so two consumers disagreeing is the
+failure the case looks for.
+
+### Invariants And Boundaries
+
+- A missing or unreadable tree is never reported as a checked zero.
+- Adoption commits exactly the tree validation passed, and a refusal changes nothing.
 
 ## Evidence
 
-- Full actionable findings, not the limited sample, own fingerprint identity; incomplete input yields null. [16]
-- Converted trees return a checked, nonempty drift summary whose report state agrees; no forbidden legacy-discovery callback is installed by this case. The converted-branch title is not a new mocked legacy-callback assertion. [1]
+
+- Converted trees are measured on the converted basis, with the expected count, actionable count and states, and no legacy classification key in the actionable sample. [1]
+
+
 - The converted result names every measured field. [2]
-- Empty, missing and unbuildable-base trees report truthfully, never as checked-zero. [3]
+- Empty, missing and unbuildable-base trees report truthfully, never as checked zero. [3]
+
+- The carried deleted-path test refuses R22.6-carried-stale rather than new-anchor-path; the moved helper constructs anchors, the separate descriptions case checks current-row doctrine, and the split context/summary case asserts three matching violations. [4]
+
+- The consumers return the same summary; the carried deleted-path test and split context/summary fixture retain matching carried-stale observations and three violations. The moved descriptions assertion is separate current-row doctrine, not additional carried-stale proof. [5]
+
 - Report and snapshot come from the same measured result. [6]
 - Converted baseline states block on violations first, then on unaccepted drift. [7]
 - Accepting drift never clears a validator violation. [8]
 - The first baseline commits exactly the validated tree. [9]
-- A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint. [10]
+- Full findings, not the limited sample, own the fingerprint identity; incomplete input yields null. [16]
 
+
+- A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints. [10]
+
+
+- Surviving descriptions state measurement/currentness/advisory wording. Canonical and sole packaged c-05 copies include their moved memory-quality-control workflow when checking current-row/no-counted-card-edit-alone doctrine; c-10 copies retain stale-anchor-only adoption wording. [11]
 - The context-packet leaf route binds the leaf base. [12]
-
-- Injected RuntimeError("boom") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted. [13]
-
-- `test_carried_anchor_is_refused_as_carried_stale_never_as_new` asserts deleted-path carried anchors refuse R22.6-carried-stale, never new-anchor R22.6-anchor-path; it does not cover all content staleness. [4]
-- Consumers return the same summary; the carried deleted-path context/summary fixture asserts matching R22.6-carried-stale samples and three violations. [5]
-- Surviving surfaces and generated copies assert measurement/currentness/advisory wording; c-02 copies additionally assert ordinary-candidate current-row/no-counted-edit-alone doctrine. [11]
-- Static description assertions check surviving surfaces, current-row doctrine and generated copies, and reject restoration of the removed adapter. [14]
-- Current source delta inspected statically: Repair carried-anchor refusal/parity captions and current-row corpus witness; separate static tests from execution and rollout exception. [15]
+- Injected RuntimeError("boom") for both dry-run values preserves HEAD/unborn, write-tree-stdout, porcelain-status, non-.git path/byte fingerprints and ls-files --stage; intent-to-add, unstaged symlink target and staged file text remain asserted. [13]
+- Static description assertions inspect surviving descriptions and canonical/package copies, retain c-05 current-row doctrine, and reject restoration of the removed drift tool. [14]
+- Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance. [15]

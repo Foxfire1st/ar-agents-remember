@@ -3,8 +3,42 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cce2326a39a5cfc2fedfaa315b9e789e21fbf8fe",
-        "content": "sha256:c7ecec399a280ca6cf4487a6dfa9b05cd10ad140b92c9f045ba25eb2d085b3ed",
+        "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+        "content": "sha256:64818ab62b6bda181f2a8075f01f0abe8522b80b645c59182fb907af9965e03b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1K1HNE",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-B12",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The continuation organizes foundation work through ordinary Architect tasks and the Curator route.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+        "content": "sha256:64818ab62b6bda181f2a8075f01f0abe8522b80b645c59182fb907af9965e03b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-48RN5M",
+      "invariant": "INV-1P5Z3B",
+      "origin": {
+        "handoffEntry": "L188-B15",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The foundation continuation delegates worktree/branch policy without granting every master an intermediate branch.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+        "content": "sha256:64818ab62b6bda181f2a8075f01f0abe8522b80b645c59182fb907af9965e03b",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +49,13 @@
         "handoffEntry": "MIK-R113@v1 rule 10",
         "leaf": "260928-MIK-L113"
       },
-      "rationale": "Says who carries the first knowledge foundation before a task exists: the bootstrap seat and an instructed session, and no Curator seat without a task document.",
+      "rationale": "The c-14 procedure says it has no taskless entry and no instructed session stands in; the user-started Architect opens the real foundation task and the Curator runs this procedure on it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "cce2326a39a5cfc2fedfaa315b9e789e21fbf8fe",
-        "content": "sha256:c7ecec399a280ca6cf4487a6dfa9b05cd10ad140b92c9f045ba25eb2d085b3ed",
+        "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+        "content": "sha256:64818ab62b6bda181f2a8075f01f0abe8522b80b645c59182fb907af9965e03b",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "cce2326a39a5cfc2fedfaa315b9e789e21fbf8fe",
-        "content": "sha256:c7ecec399a280ca6cf4487a6dfa9b05cd10ad140b92c9f045ba25eb2d085b3ed",
+        "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+        "content": "sha256:64818ab62b6bda181f2a8075f01f0abe8522b80b645c59182fb907af9965e03b",
         "locator": {
           "kind": "file"
         }

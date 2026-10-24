@@ -4,7 +4,7 @@
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current registry retains role_start/role_message and the three knowledge read/diff/integrity rows, plus earlier role_start_set=RoleStartSetResponse and native retire_child=RetireChildResponse. `context_packet` now maps to `SlimContextPacket`; `read_ar_files` remains mapped to its rebuilt naming model, and `resolve_context`/`ResolveContextResponse` are removed. Private exact-ID/admin/gate compatibility rows remain excluded by INTERNAL_COMPAT_TOOL_NAMES; their existence is not restored public registration.
+- Current registry retains role_start/role_message and the three knowledge read/diff/integrity rows, plus earlier role_start_set=RoleStartSetResponse and native retire_child=RetireChildResponse. `context_packet` now maps to `SlimContextPacket`; `read_ar_files` remains mapped to its rebuilt naming model, and `resolve_context`/`ResolveContextResponse` are removed. The module now declares one thing: `TOOL_RESPONSE_MODELS`, the by-name response-model mapping. No compatibility exclusion set and no derived public subset remain here, so a name this mapping omits is not a private registration this module hides — the mapping is the whole registry.
 
 ### Superseded inventory
 
@@ -25,11 +25,9 @@ The strict registry additionally maps direct_execution_grant to DirectExecutionG
 
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [14]
 
-
 ## Synced current-source qualification
 
 The synced registry also maps direct_execution_grant to DirectExecutionGrantResponse. This retained new-base registration boundary is distinct from the reader naming changes and grants no role authority by an import.
-
 
 ## Historical original card — preserved, not the current operative account
 
@@ -104,15 +102,8 @@ No configured domain documentation was available.
 
 > Historical registry-owner scope only: the public structural/gate/capsule/five-knowledge and dated acceptance claims below describe earlier registry states. They grant no current tool or executor result. The current registry maps context_packet to SlimContextPacket, omits resolve_context, and retains explicitly excluded private compatibility rows.
 
-- The exclusion set names trusted compatibility and administration operations. [1]
-- The complete registry includes structural agent and gate responses alongside internal exact models. [2]
-- The advertised subset is derived rather than independently maintained. [3]
-- The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order. [4]
-- The stop tool's response model is registered immediately after its sync sibling, matching the advertised order. [5]
-- The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order. [6]
-- The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position. [7]
 - The choke point validates against this registry before emitting the envelope. [8]
-- The three rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. [9]
+
 - The three strict response contracts those rows map to, in the module that declares them. [10]
 - The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]
 
@@ -282,3 +273,9 @@ for that rule to be violated. `KnowledgeIntegrityCheckResponse` carries `compati
 explicit `unresolved` list rather than manufacturing a verdict from a passing test.
 
 </details>
+
+## The settings initializer's response model
+
+`TOOL_RESPONSE_MODELS` binds `user_settings_init` to `UserSettingsInitResponse`, so its answer crosses the strict model that declares the state, path, role harnesses and refusal fields.
+
+- The by-name response-model registry, which carries the settings initializer. [15]

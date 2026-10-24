@@ -1,52 +1,55 @@
 # mcp/tests/test_paseo_role_tools.py
 
-## STOP-delta current source contract
-
-The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change.
-
-This source account supplies no fresh test execution or MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
-
-## Current paired source contract — scoped assertions and incoming catalogs
-
-The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.
-
-This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
-
-
-- The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance. [3]
-
-
-
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-Role start enforces the caller's child-role matrix and own sprint/master scope, serializes admitted starts and reuses a starter/request binding. Changed documents reconcile the same saved agent; foreign starter receipts and cross-leaf ID reuse do not prepare new work. Registered tools retain their names and caller-binding refusals without the redundant `operation` envelope field; the assertions check `ok` and `refusal` at that boundary. R71 cases prove worker instruction text is not a start-permission input, repeats keep the original launch after a host profile change, and mode is absent from the tool schema and refused at the HTTP route.
+Holds the shared fixture of both role tools and the cases that decide who may start whom: the may-start
+rule, a selection whose closed execution another starter began, a request id reused on another
+selection, and the registered tool surface a harness actually reaches. A registered tool refuses what
+the dashboard refuses, in the same words.
 
-Concurrent role starts observe the second caller's failed nonblocking acquisition of the actual held dispatch lock before asserting it remains pending. Lock-expiration cases assert the refusal and retry behavior, while shared hang guards bound fixture release/join; elapsed speed is not an assertion.
+## Code Commentary
 
-The launch observer now reads role-agent facts during the native agent-create call: worker role, exact leaf key and nonempty report filename must already exist. This strengthens registration-before-first-turn ordering while retaining the held dispatch-lock assertions; the host itself remains a fixture.
+### Logic
 
-## Hold and delivery answers in the controlled fixture
+- **The may-start rule.** `MayStartRuleTests.test_each_role_may_start_exactly_the_roles_the_rule_names`
+  walks the rule's table, and `test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master`
+  bounds a task-bound caller to its own sprint or master.
+- **Another starter.** `OtherStarterTests` admits a new start on a selection whose closed execution
+  another began, and refuses to take over a receipt of another starter that appears during the start.
+- **A reused request id** of one leaf on another prepares nothing:
+  `ReusedRequestIdTests.test_the_request_id_of_one_leaf_reused_on_another_prepares_nothing`, with
+  `compile_handover()` supplying the binding that names the selection.
+- **The registered surface.** `RegisteredRoleToolTests` registers the tools and calls them as a harness
+  would: they are registered under their names and answer inside the envelope; `mode` is absent from the
+  tool schema and rejected by the HTTP route; a chat without a role starts a parentless Architect; and
+  the registered tool refuses what the dashboard refuses in the same words.
 
-The controlled runtime distinguishes a recipient in a turn by the agent's status or by `turnReportedByHost` in the payload. A message to such a recipient whose `steers` is not `True` is refused `busy` and left untaken, and a taken message records its id in the recipient's timeline without deduplicating. On that shape the suite asserts what the facade answers: a held message reports `held` with `heldReason` `recipient-in-turn` and sends nothing, and a delivery that carries held work answers `accepted` through `RoleMessageResponse`. The fixture is a stand-in; these are not live provider events.
+### Conventions
+
+Cases reach the tools through the MCP registration (`mcp.registration.role_agents`) rather than calling
+the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge fixture.
+
+### Invariants And Boundaries
+
+- A request id belongs to one selection; a start never takes over another starter's request or receipt.
+- The registered tool surface is narrower than the HTTP route: `mode` is not offered and is refused.
 
 ## Evidence
 
-- Role/task/report registration exists before agent-create begins under the existing dispatch lock. [6]
+- May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The second start reaches the held dispatch lock before pending is asserted. [2] | `test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it` | mcp/tests/test_paseo_role_tools_start.py |
 
+- The fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement callers; an occupied-seat refusal names its holder. [3]
+- A native binding refusal carries no redundant operation envelope. [4]
+- The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]
 
-- The second start reaches the actual held dispatch lock before pending is asserted. [2]
-
-
-## Refreshed current evidence
-
-- The scoped current source carries the module/document behavior described above. [1]
-
-- Native binding refusals have no redundant operation envelope. [4]
-
-- The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change. [5]
-
+| Finding | Anchor | Source |
+| --- | --- | --- |
+| The role, task and report registration exists before agent-create begins, under the existing dispatch lock. [6] | `test_a_start_runs_the_launchers_path_with_the_caller_as_parent` | mcp/tests/test_paseo_role_tools_start.py |

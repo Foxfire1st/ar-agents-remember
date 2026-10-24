@@ -44,3 +44,9 @@ The bridge starts the product's Node by its full path instead of looking for `no
 - The bridge launch that starts the product's Node by full path with the packaged script and names this build's install state. [7]
 
 - The configured-runtime requirement the bridge enforces before any process starts. [8]
+
+## The host block is read from the authority settings file
+
+`require_bridge_runtime` names `authority_settings_path(config.config_path)` in its refusal, because the `paseoRuntime` block belongs to the MCP settings file the tool server was started with rather than to a coordination-root file. Reading the block per use is unchanged: a block a cold first run just established is visible to the next call without a restart.
+
+- The configured-runtime read and the authority path its refusal names. [9]

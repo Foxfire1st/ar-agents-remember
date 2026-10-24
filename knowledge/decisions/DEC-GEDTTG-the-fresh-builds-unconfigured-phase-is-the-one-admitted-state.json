@@ -47,8 +47,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+        "content": "sha256:ee73cab34237c9c1c63e77243ebbf70075caac4f1ae4383edfcc709609405a12",
         "locator": {
           "kind": "symbol",
           "name": "build_unlocked"
@@ -68,7 +68,7 @@
     "leaf": "260928-MIK-L179",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

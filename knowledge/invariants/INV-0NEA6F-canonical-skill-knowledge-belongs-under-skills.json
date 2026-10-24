@@ -7,7 +7,7 @@
   },
   "applicability": "Canonical skills and candidate-aware generated-copy projection recognition for the exact generated-copies.json declaration.",
   "conditions": [
-    "The declaration names canonical skills, the package target and eight harness targets, and its explicit ignore-name/suffix policy; consumers share that parsed authority instead of maintaining divergent target tuples.",
+    "The declaration names canonical skills and the package target, and its explicit ignore-name/suffix policy; consumers share that parsed authority instead of maintaining divergent target tuples.",
     "Only an exact declared candidate payload equal to the canonical candidate blob and with nonsymlink source/copy is classified as an equal generated copy.",
     "Equal declared copies need no unexplained-row answer; divergent copies, undeclared paths and ordinary excluded files retain their actual obligations.",
     "Candidate settings/card-reference migration must preserve knowledge and reach real quality readiness; implementing the generator/predicate alone is not completed Curator migration."
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L54",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Canonical skill knowledge belongs under skills and equal declared generated copies have no unexplained-row obligation, while divergent copies and ordinary excluded files retain theirs.",
   "status": "proposed",

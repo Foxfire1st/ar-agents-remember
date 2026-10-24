@@ -6,23 +6,27 @@
 
 ## Purpose
 
-The knowledge-bootstrap skill.
+Build or resume a repository's first knowledge foundation through the existing curator, as regular task work the user-started Architect organises.
 
 ## Code Commentary
 
-The skill states every foundation state a taskless bootstrap can meet -- complete-empty, complete-authored, partial, admission and legacy -- and the views that enumerate an existing foundation.
+The skill states every foundation state a run can meet -- complete-empty, complete-authored, partial, admission and legacy -- and the views that enumerate an existing foundation.
+
+Its order is fixed and the source states every link of it: setup stops at the memory setup and the first attributed baseline, the bootstrap seat reads and reports the knowledge state and tells the developer to start the Architect, the Architect opens a task for the foundation (a leaf with its task document, or a leaf under a master or sprint), and the curator authors the foundation inside that task with `--contract` naming that task's leaf enclosure contract. The writer is `agents-remember knowledge-ingest`, or the mounted `knowledge_write`; the run reads the code worktree and writes the memory worktree the contract names, and the leaf's own closeout publishes it. Planning is the default and `--commit` is the developer's whole write act, and it makes no Git commit.
+
+There is no taskless entry and no instructed session standing in for one: an instruction to author a repository's foundation before any task exists is reported as the missing task it names. Reading and reporting the knowledge state before such a task exists stays with the bootstrap seat, where it is a fact about setup rather than a production route. Reading the result back means the report's records, history rows and remaining work plus `knowledge_read` over the memory worktree and `agents-remember knowledge-validate <memory worktree> --code <code worktree> --code-commit <revision>`. A zero exit status is never quoted as a written foundation, and a partial run reports itself partial with a resumable next action.
 
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
+No separate reference list: the file's sidecar carries the realization entries for its current anchors.
 
 ## Current source qualification
 
-The current source distinguishes the procedure from a role seat: an actual Curator starts only on a selected leaf with sprint/master/leaf scope. Before a task exists, Bootstrap reads the foundation state and hands authoring off, or an already instructed session carries the Curator's procedure without pretending to be a taskless Curator seat. Foundation authoring still uses the existing admitted file writer and selected memory line, not a new database or publication destination. Older taskless-seat/capsule-routing statements in the inherited copy are historical on those changed seams.
+The current source distinguishes the procedure from a role seat and removes the taskless authoring entry. The bootstrap seat neither reaches the procedure nor authors a record: it reads `memory_init`'s `knowledge` block, reports the state, and names the Architect as the next step. The Architect opens the real task, and a Curator started on that task's document through the ordinary launch route authors the foundation under the task's actual enclosure contract; a curator started from the dashboard without a task reads and reports only. No flag, boolean or instructed session takes the place of task admission, and no development leaf, worktree, enclosure or task document is fabricated to give the writer an argument list. Foundation authoring still uses the existing admitted file writer and the memory worktree the contract names, not a new database or publication destination. Older taskless-seat, taskless-wave and capsule-routing statements in the inherited copy are historical on those changed seams.
 
 - Foundation procedure carriers are distinct from the leaf-bound Curator seat; historical taskless-seat availability is not restored. [1]
 
-The procedure's last step is about what a run meets while reading: whatever part of the code it reads, a weakness it meets in that file is recorded in the same step, as a `WKN-` record of kind `context`, `compute`, `storage`, `time`, `fault` or `debt`, on the file and the symbol where it occurs, with one sentence and any measurement the reader took. The author is the curator and the route the writer, as for every other record; nothing writes a weakness by hand. A wave's census, coverage plan and independent check count records and obligations, not weaknesses: a weakness is not a finding, its absence from a file is not an omission, and a run that meets none records none.
+The procedure's last step is about what a run meets while reading: whatever part of the code it reads, a weakness it meets in that file is recorded in the same step, as a `WKN-` record of kind `context`, `compute`, `storage`, `time`, `fault` or `debt`, on the file and the symbol where it occurs, with one sentence and any measurement the reader took. The author is the curator and the route the writer, as for every other record; nothing writes a weakness by hand. A run's census, coverage plan and independent check count records and obligations, not weaknesses: a weakness is not a finding, its absence from a file is not an omission, and a run that meets none records none.
 
 
 ## Inherited Source-Epoch Commentary

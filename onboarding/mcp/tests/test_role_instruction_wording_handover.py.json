@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_role_instruction_wording_handover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+        "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+        }
+      },
+      "facet": "Compiles every launcher role with and without a parent and requires the parent-routed developerQuestions sentence for all six parentable roles while the parentless value stays byte-identical.",
+      "id": "PRF-18H967",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+        "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
+        }
+      },
+      "facet": "The compiled ownerRelation requires leaf peer arguments, no routine parent result and current-Manager role/task returns. Coordinating roles retain named developer-needed categories/final-report duties and captured starter provenance, not byte-identical addressing text. Parentless relation equality is separately asserted; this case is not native delivery or the developerQuestions-ID discriminator.",
+      "id": "PRF-8AD3VX",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "CUR-L117-owner-relation-facet",
+        "leaf": "260928-MIK-L117"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The handover names the tool server, its two tools and the host, and tells a parentless role it needs none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+            "content": "sha256:944dd4bc371c126fd10ac87d22d575a16b0f9ea615e38eb5a710e864d19c2154",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "No first message and none of the three tool descriptions names a forbidden host string.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+            "content": "sha256:944dd4bc371c126fd10ac87d22d575a16b0f9ea615e38eb5a710e864d19c2154",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

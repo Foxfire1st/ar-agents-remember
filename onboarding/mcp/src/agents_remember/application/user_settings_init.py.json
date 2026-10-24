@@ -1,0 +1,195 @@
+{
+  "path": "mcp/src/agents_remember/application/user_settings_init.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+        "content": "sha256:b50deafc17c8655e5e84ffe69227f17c6133d5b719e92c896f37bd63cdae4385",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_exclusively"
+        }
+      },
+      "id": "RLZ-8D2GM2",
+      "invariant": "INV-7T4ENM",
+      "origin": {
+        "handoffEntry": "L188-B04",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Absent role-settings creation uses exclusive creation and refuses an occupied destination.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+        "content": "sha256:0ccd1fb97c9dc9039d37309c05bbc2e2787b80080ba157f76e7dd9441e5da3f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_existing_role_report"
+        }
+      },
+      "id": "RLZ-A5XDYC",
+      "invariant": "INV-JRXN00",
+      "origin": {
+        "handoffEntry": "L188-B03",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This readback preserves pre-existing choices without filling absent roles.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+        "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "initialize_role_settings"
+        }
+      },
+      "id": "RLZ-X8H3DJ",
+      "invariant": "INV-JRXN00",
+      "origin": {
+        "handoffEntry": "L188-B03",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The initializer separates existing-file reporting from absent-file creation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The one create-or-report decision, with the existing file reported before any choice is validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+            "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_role_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The exclusive create at 0600 that refuses any destination already present.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+            "content": "sha256:b50deafc17c8655e5e84ffe69227f17c6133d5b719e92c896f37bd63cdae4385",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_exclusively"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The write-time refusal of a destination the preview saw absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+            "content": "sha256:9ad5ffeec4382e30271c272a319ca6f6c4a84401740d0b8e4f8d7d693f4030d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_after_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An absent destination is created exclusively with the chosen roles, and the created file is not world readable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b930e6013ac16bcb35ffbcd13a65c1039d1dd3",
+            "content": "sha256:ccdb1c5283ac65de17ce7d582f98738497cf24b386677f5063b20f25939a57d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_destination_is_created_exclusively_with_the_chosen_roles"
+            },
+            "path": "mcp/tests/test_mik_r196_settings_init_preserves_existing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:8e3300bf683e11d43988ade656bfb16c349abcb80d258823f819da72a8475c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_created_file_is_not_world_readable"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An existing marked file is reported and kept byte for byte, an unreadable one is refused without a second read, and a destination that appears after the state read is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05b930e6013ac16bcb35ffbcd13a65c1039d1dd3",
+            "content": "sha256:3a1301eba552553a996caab360d0cadd38e881471a8875aaded2d812b3c48294",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_marked_file_is_reported_and_kept_byte_for_byte"
+            },
+            "path": "mcp/tests/test_mik_r196_settings_init_preserves_existing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05b930e6013ac16bcb35ffbcd13a65c1039d1dd3",
+            "content": "sha256:e59d338bb5abd5bd8e3aef5ad3eac5c118837c96184782710efbb260d2829bcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_destination_that_appears_after_the_state_read_is_refused"
+            },
+            "path": "mcp/tests/test_mik_r196_settings_init_preserves_existing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "05b930e6013ac16bcb35ffbcd13a65c1039d1dd3",
+            "content": "sha256:8a99062b311fc5e4eb1dc75c12c32e1e546f3d0cd063e32d0eb3565f04b40f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_answer_refuses_an_unreadable_file_without_a_second_read"
+            },
+            "path": "mcp/tests/test_mik_r196_settings_init_preserves_existing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+            "content": "sha256:8ea159a26ced2dec781ed32892ad113ee06c00c17023819b30bf33765ea24332",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

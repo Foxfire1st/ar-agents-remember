@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-        "content": "sha256:6234ee03e6d37fec1895595e6fb7a4440ebf34660139c5a1f56f321a7cade932",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "content": "sha256:4847cc311db76462e555f47c25ee5a8f4146c75e5525bff43f3de397675e108b",
         "locator": {
           "kind": "file"
         }
@@ -102,12 +102,12 @@
       ]
     },
     "13": {
-      "note": "Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. [12]\n\nAnchor: Foundation carrier and admission",
+      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. [12] Anchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
-            "blob": "c8d89e369d931e74a40fb4d2fec6622282a804c8",
-            "content": "sha256:90a059d9e2175ab5eec88fec63f9fcfc39a362f9f0b9b1a656da8fc4070cc450",
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:28227192feeb0f70c57e549a4d51193a936b2cb4f70721adabae7d82ba085f4e",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -118,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "c8d89e369d931e74a40fb4d2fec6622282a804c8",
-            "content": "sha256:22d69d40cac1b80bdb653f9be2a74220c1f3be24cab9870ed0d01de9ea3cc09e",
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:b15db4ca0df6af1ac5b501e0b3fc66f35f6247549df7712a7204ee5263ea8d91",
             "locator": {
               "end": 125,
               "kind": "line_range",

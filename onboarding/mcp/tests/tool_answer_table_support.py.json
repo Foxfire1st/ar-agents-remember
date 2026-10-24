@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/tool_answer_table_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+        "content": "sha256:161ebaafe68df07701b05d2f139e9ca752f8ef68511b3830763d3d4c1bc9bbf2",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_row_case"
+        }
+      },
+      "id": "RLZ-8MJZRK",
+      "invariant": "INV-180VCA",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §6 table",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "validate_row_case checks one case payload's measured bound, code validity and field cover, so invalid-code and guard-hit cases reject the row itself.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The table is built from the authored roster and the landed final rows only, never synthesized from the registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The roster check requires exactly one authored row per registered tool, and the row gates return their failures rather than raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A shaped row's bound is authored or product-sourced and validated against its largest case, never computed from it, and its fields each carry a caller-step use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
+            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

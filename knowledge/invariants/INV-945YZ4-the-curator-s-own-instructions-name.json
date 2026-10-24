@@ -8,7 +8,7 @@
   },
   "applicability": "The Curator's compiled role text as a curator seat reads it: roles/curator.md and the operation text it names.",
   "conditions": [
-    "The role text lists knowledge-ingest, the mounted knowledge_write which runs the same writer with the same arguments, and the taskless bootstrap route, then says no other route writes knowledge.",
+    "The role text lists knowledge-ingest with this task's leaf contract, the mounted knowledge_write which runs the same writer with the same arguments, and the c-14 foundation under a task contract, then says no other route writes knowledge from this seat.",
     "The commit spelling names both --commit and commit: true."
   ],
   "exclusions": [
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L186",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The Curator's own instructions name the mounted knowledge_write among the routes that author knowledge, and say that no other route writes it.",
   "status": "proposed",

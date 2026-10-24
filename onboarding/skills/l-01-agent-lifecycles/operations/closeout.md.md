@@ -12,9 +12,11 @@ The closeout operation instruction.
 
 The instruction owns the leaf closeout transaction: the invariant gate over the exact candidate, the memory commit built from the judged tree, and the restoration of every preparation a refusal must give back.
 
+The current source names the kept closeout workflow instead of the retired closeout skill: a flat run's Architect may coordinate the paired transaction only under the already-delegated authority of `../../w-02-light-task-workflow/workflows/closeout.md`, carried under that workflow's accepted code/memory input. The retired `c-09`/`c-12` authority the inherited quotation names, and its claim that `scripts/sync-skills.py` regenerates "the eight harness copies", describe superseded owners and distribution: no harness copy exists now, and the packaged tree the tool server serves is the only generated copy.
+
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
+No separate reference list: the file's sidecar carries the realization entries for its current anchors.
 
 ## Inherited Source-Epoch Commentary
 

@@ -3,58 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
-        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_success_brings_real_index_to_adopted_state"
-        }
-      },
-      "facet": "After validation passes the worktree index is brought to the adopted state.",
-      "id": "PRF-0PX548",
-      "invariant": "INV-DZB7MC",
-      "origin": {
-        "handoffEntry": "L44-C1-03",
-        "leaf": "260928-MIK-L44"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
-        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_success_brings_real_index_to_adopted_state"
-        }
-      },
-      "facet": "After validation passes the worktree index is brought to the adopted state.",
-      "id": "PRF-4MPNST",
-      "invariant": "INV-ZCRMS7",
-      "origin": {
-        "handoffEntry": "L44-M1-01",
-        "leaf": "260928-MIK-L44"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
-        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_interval_failure_leaves_everything_untouched"
-        }
-      },
-      "facet": "With an externally staged file, intent-to-add entry and untracked symlink present, injected RuntimeError(\"boom\") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted.",
-      "id": "PRF-4V5WHK",
-      "invariant": "INV-ZCRMS7",
-      "origin": {
-        "handoffEntry": "L53-inherited-proof-narrowing-INV-ZCRMS7",
-        "leaf": "260928-MIK-L53"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
+        "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
         "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
         "locator": {
           "kind": "symbol",
@@ -71,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
+        "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
         "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
         "locator": {
           "kind": "symbol",
@@ -88,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
+        "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
         "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
         "locator": {
           "kind": "symbol",
@@ -105,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
+        "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
         "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
         "locator": {
           "kind": "symbol",
@@ -119,37 +68,21 @@
         "handoffEntry": "L44-C1-03",
         "leaf": "260928-MIK-L44"
       }
-    },
-    {
-      "anchor": {
-        "blob": "771f377ba63499d367a8a495e605ede26b2f635b",
-        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_interval_failure_leaves_everything_untouched"
-        }
-      },
-      "facet": "With an externally staged file, intent-to-add entry and untracked symlink present, injected RuntimeError(\"boom\") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted.",
-      "id": "PRF-PTKXPW",
-      "invariant": "INV-DZB7MC",
-      "origin": {
-        "handoffEntry": "L53-inherited-proof-narrowing-INV-DZB7MC",
-        "leaf": "260928-MIK-L53"
-      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Converted trees take the converted branch and skip legacy discovery.",
+      "note": "Converted trees are measured on the converted basis, with the expected count, actionable count and states, and no legacy classification key in the actionable sample.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:b3e4d895081bcc24c58ccc40960f643a154bfbee2a20ef3ccd310ba37b945536",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:a68d1102e48d6449c8fd5684ba500f7d8b1b951fe4f50ea4cabcbb0bc367e449",
             "locator": {
-              "kind": "symbol",
-              "name": "test_converted_trees_take_the_converted_branch_and_skip_legacy_discovery"
+              "end": 108,
+              "kind": "line_range",
+              "start": 89
             }
           },
           "kind": "test"
@@ -157,22 +90,11 @@
       ]
     },
     "10": {
-      "note": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint.",
+      "note": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_fingerprint"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:f1c9094359d52da8507780a1ef2df4e7f4b5aae99c82b08f2f515edf9a86941f",
             "locator": {
               "kind": "symbol",
@@ -180,57 +102,33 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
+            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fingerprint"
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "11": {
-      "note": "Surviving surfaces and generated copies assert measurement/currentness/advisory wording; c-02 copies additionally assert ordinary-candidate current-row/no-counted-edit-alone doctrine.",
+      "note": "Surviving descriptions state measurement/currentness/advisory wording. Canonical and sole packaged c-05 copies include their moved memory-quality-control workflow when checking current-row/no-counted-card-edit-alone doctrine; c-10 copies retain stale-anchor-only adoption wording.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:e02a3432019a8153d94844c2c4f9522af2c2c7a2fcd6a282e717841362df8ce4",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f545f261e9a4c9b24cf52bf1c1031777b9e34a471cd04494d40ce5e1b1d7c58e",
             "locator": {
-              "end": 732,
-              "kind": "line_range",
-              "start": 684
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
-            "locator": {
-              "end": 320,
-              "kind": "line_range",
-              "start": 318
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:60739562a5f1e321a500892f8d62005ad559b847d3f74570a4b0cee1f626a24e",
-            "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 722
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
-            "locator": {
-              "end": 903,
-              "kind": "line_range",
-              "start": 903
-            }
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         }
@@ -241,143 +139,97 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7c7d28ab16d83a89d74dc9fdf880f765efde534",
-            "content": "sha256:5e1b5a56ef6d3f728b956cdbc85c4b007ee88c03ad62e5533477fa9ba4d917a7",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:341c2a6e29b416b644eb870c9f430bf31176a17301c15a41025633ac2a556f9d",
             "locator": {
               "kind": "symbol",
               "name": "test_context_packet_leaf_route_binds_the_leaf_base"
-            }
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         }
       ]
     },
     "13": {
-      "note": "Injected RuntimeError(\"boom\") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted.",
+      "note": "Injected RuntimeError(\"boom\") for both dry-run values preserves HEAD/unborn, write-tree-stdout, porcelain-status, non-.git path/byte fingerprints and ls-files --stage; intent-to-add, unstaged symlink target and staged file text remain asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_fingerprint"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:958e0f263300828f9dcc01426c9aac204b607b523b15efc51e69e88bb13b94b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_stage_list"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
             "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
             "locator": {
               "kind": "symbol",
               "name": "test_interval_failure_leaves_everything_untouched"
-            }
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
+            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fingerprint"
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "Static description assertions check surviving surfaces, current-row doctrine and generated copies, and reject restoration of the removed adapter.",
+      "note": "Static description assertions inspect surviving descriptions and canonical/package copies, retain c-05 current-row doctrine, and reject restoration of the removed drift tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:e02a3432019a8153d94844c2c4f9522af2c2c7a2fcd6a282e717841362df8ce4",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f545f261e9a4c9b24cf52bf1c1031777b9e34a471cd04494d40ce5e1b1d7c58e",
             "locator": {
-              "end": 732,
-              "kind": "line_range",
-              "start": 684
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
-            "locator": {
-              "end": 320,
-              "kind": "line_range",
-              "start": 318
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:60739562a5f1e321a500892f8d62005ad559b847d3f74570a4b0cee1f626a24e",
-            "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 722
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
-            "locator": {
-              "end": 903,
-              "kind": "line_range",
-              "start": 903
-            }
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         }
       ]
     },
     "15": {
-      "note": "Current source delta inspected statically: Repair carried-anchor refusal/parity captions and current-row corpus witness; separate static tests from execution and rollout exception.",
+      "note": "Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance.\n\nAnchor: `test_carried_anchor_is_refused_as_carried_stale_never_as_new`",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 320,
-              "kind": "line_range",
-              "start": 318
-            }
+              "kind": "symbol",
+              "name": "test_context_packet_agrees_with_the_summary_on_carried_anchors"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:60739562a5f1e321a500892f8d62005ad559b847d3f74570a4b0cee1f626a24e",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f545f261e9a4c9b24cf52bf1c1031777b9e34a471cd04494d40ce5e1b1d7c58e",
             "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 722
-            }
+              "kind": "symbol",
+              "name": "test_descriptions_say_what_the_check_is"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:a62866eef8b821ad1422eab25b1006925fa50284c959b4f0bffd33fec42bbfdb",
             "locator": {
-              "end": 903,
-              "kind": "line_range",
-              "start": 903
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -389,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:4cdca97b0c0eb9cf548b1bd76df22f580520a4f0b4087a3a49c97bda70eedc30",
             "locator": {
               "kind": "symbol",
@@ -405,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:357bb9b93290a1cb0bde44751616dd7f8a6d430a33ed543f937aba5e8ee87fd3",
             "locator": {
               "kind": "symbol",
@@ -421,7 +273,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:a5696e7277cd70460b050fb81f7582c6c7589c2496247ed3d81711e21a93ba8d",
             "locator": {
               "kind": "symbol",
@@ -433,64 +285,80 @@
       ]
     },
     "4": {
-      "note": "`test_carried_anchor_is_refused_as_carried_stale_never_as_new` asserts deleted-path carried anchors refuse R22.6-carried-stale, never new-anchor R22.6-anchor-path; it does not cover all content staleness.",
+      "note": "The carried deleted-path test refuses R22.6-carried-stale rather than new-anchor-path; the moved helper constructs anchors, the separate descriptions case checks current-row doctrine, and the split context/summary case asserts three matching violations.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "1a96941520346e7dc73dfe2804995e4f87ccb79f",
             "content": "sha256:7b990676f0c575f8af2a1f0263a7a127d3df934fd9e1100297a0790aae97cd6b",
             "locator": {
-              "end": 126,
+              "end": 95,
               "kind": "line_range",
-              "start": 122
-            }
+              "start": 91
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:e389d828cda28467535228d2b7942e7d0e9defe44abfa4893e6966a78ee77453",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f545f261e9a4c9b24cf52bf1c1031777b9e34a471cd04494d40ce5e1b1d7c58e",
             "locator": {
-              "end": 320,
+              "end": 163,
               "kind": "line_range",
-              "start": 285
-            }
+              "start": 112
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 320,
+              "end": 337,
               "kind": "line_range",
-              "start": 318
-            }
+              "start": 292
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:60739562a5f1e321a500892f8d62005ad559b847d3f74570a4b0cee1f626a24e",
-            "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 722
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 903,
+              "end": 334,
               "kind": "line_range",
-              "start": 903
+              "start": 334
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:e389d828cda28467535228d2b7942e7d0e9defe44abfa4893e6966a78ee77453",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 213
             }
           },
           "kind": "test"
@@ -498,52 +366,67 @@
       ]
     },
     "5": {
-      "note": "Consumers return the same summary; the carried deleted-path context/summary fixture asserts matching R22.6-carried-stale samples and three violations.",
+      "note": "The consumers return the same summary; the carried deleted-path test and split context/summary fixture retain matching carried-stale observations and three violations. The moved descriptions assertion is separate current-row doctrine, not additional carried-stale proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:76ff18f75331facfdaa1ce0c87c8eb6b179b348bf43de1609afa5e40acfd770e",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f545f261e9a4c9b24cf52bf1c1031777b9e34a471cd04494d40ce5e1b1d7c58e",
             "locator": {
-              "end": 399,
+              "end": 163,
               "kind": "line_range",
-              "start": 373
-            }
+              "start": 112
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 320,
+              "end": 337,
               "kind": "line_range",
-              "start": 318
-            }
+              "start": 292
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
-            "content": "sha256:60739562a5f1e321a500892f8d62005ad559b847d3f74570a4b0cee1f626a24e",
-            "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 722
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 903,
+              "end": 334,
               "kind": "line_range",
-              "start": 903
+              "start": 334
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:76ff18f75331facfdaa1ce0c87c8eb6b179b348bf43de1609afa5e40acfd770e",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
+            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 213
             }
           },
           "kind": "test"
@@ -555,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:c235349b2af6acc4887d5b64ef297c09455140bbee53eadfe03d74a0a0b0cb9e",
             "locator": {
               "kind": "symbol",
@@ -571,7 +454,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:90d65886325c64e8fde792c4ae767b2cc27db43b1b423f26a7be5a48fd39c762",
             "locator": {
               "kind": "symbol",
@@ -587,7 +470,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:a79590b9f9f9d4a3e84993c8792b1a059c852cfd8c9459aebeb0ccaa16a75225",
             "locator": {
               "kind": "symbol",
@@ -603,7 +486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55f2e618ed11ea65e075f38b1a05d26a007ea2f1",
+            "blob": "6ee2858f7ae12f922860265e3ec630192cc71bd1",
             "content": "sha256:92655406773531aad3b3b930c3249c3c147168ad09848d0612459893b72f3800",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/paseo_allowance_table.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every allowance is a count and a written reason, per rule and per file, in the one table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68f4aeff3174bb7c972538bfdcfec5aba7b335d2",
+            "content": "sha256:3cb20896019db71b840dfa484ce001d18a304cd8ae51ad7ccf6e1654f70cbd80",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three path prefixes and the nine rule names are the vocabulary the scan reports in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68f4aeff3174bb7c972538bfdcfec5aba7b335d2",
+            "content": "sha256:3cb20896019db71b840dfa484ce001d18a304cd8ae51ad7ccf6e1654f70cbd80",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

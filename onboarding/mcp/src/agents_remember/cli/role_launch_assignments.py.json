@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_assignments.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bootstrap sentence that invents no identity and creates no task, worktree or role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874934cf3cedab861627143256ed09ce476e4af6",
+            "content": "sha256:4af16c6e9f1be3229328290bf1cb564bcc8caf3e6f01a28d2e1d905a5cee9c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrap_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The investigator sentence, whose concern comes from the parent that started the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874934cf3cedab861627143256ed09ce476e4af6",
+            "content": "sha256:75ba190437616aa7d2eecb3d6aba358373c329d21a8f53cd7b262e48ee11dd1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The project-scoped architect sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874934cf3cedab861627143256ed09ce476e4af6",
+            "content": "sha256:7cb21d1589e7633bca1c43eabeda0794a63b6d007887e5e09bd016ca1bee6944",
+            "locator": {
+              "kind": "symbol",
+              "name": "architect_assignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

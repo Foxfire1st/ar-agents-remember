@@ -5,7 +5,7 @@
     ],
     "justification": "The seeded reinsertion tests prove each registered sentence fails the guard on its own surface, and the wording tests pin the current sentences, so a regression cannot pass unnoticed."
   },
-  "applicability": "The canonical lifecycle instruction tree and its nine generated copies.",
+  "applicability": "The canonical lifecycle instruction tree and its packaged generated copy.",
   "conditions": [
     "A row is a sentence that shipped on a named base surface with a distinctive probe that matches no kept live wording."
   ],
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The retired-wording register holds only sentences that shipped on named base surfaces, each with its exact carrier files, a distinctive probe that matches no kept live text and a reason naming that sentence's specific obsolete duty; the wording tests assert each current coordination and curator sentence, and the corpus guard reinserts each registered sentence on the surfaces that shipped it to prove the guard fails.",
   "status": "proposed",

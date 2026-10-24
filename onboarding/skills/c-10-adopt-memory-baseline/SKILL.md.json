@@ -1,6 +1,24 @@
 {
   "path": "skills/c-10-adopt-memory-baseline/SKILL.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d83bf0d948ea90e2f80dd09f33352f96622e84be",
+        "content": "sha256:fe0b35d4b26352c1acba4f7c6b061d4c6d5f89507586d45732ac2cfffc34b3ba",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-74H38G",
+      "invariant": "INV-1ZJS8R",
+      "origin": {
+        "handoffEntry": "L188-B17",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Baseline adoption no longer requires the retired temporary drift-report prerequisite.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Existing-onboarding use case and explicit trust boundary\n\nAnchor: \"# c-10-adopt-memory-baseline Adopt Memory Baseline\"",

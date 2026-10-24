@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
         "content": "sha256:e47b49a6d6f9ca4782a1f01ad59b5ef6a09577a7bf118c729b0081d2adfa9c75",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
         "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+        "content": "sha256:ee73cab34237c9c1c63e77243ebbf70075caac4f1ae4383edfcc709609405a12",
         "locator": {
           "kind": "symbol",
           "name": "build_unlocked"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
         "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
         "content": "sha256:700e09b37d07b78f6a2a7afae9e25492221d783897d9235da8b6cff3d0d72013",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
         "content": "sha256:f9c167aabc96fb810cc3f669b8baf2cde2ce1f323a93ba3ae3070b093d85fe4c",
         "locator": {
           "kind": "symbol",
@@ -111,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-        "content": "sha256:d5dbd25beaf8163ab94b4c9d1371ecf72c330e7b999f056b61bcbc7818777fc5",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+        "content": "sha256:ee73cab34237c9c1c63e77243ebbf70075caac4f1ae4383edfcc709609405a12",
         "locator": {
           "kind": "symbol",
           "name": "build_unlocked"
@@ -124,13 +124,13 @@
         "handoffEntry": "L71-CURRENT242-W-15",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The public sandbox builder seeds the owned isolated user-config path, including the landed host-reader dependency.",
+      "rationale": "The sandbox builder invokes the product-backed settings preparer; the standard developer user-settings path stays a protected input while the host block belongs to sandbox MCP authority, rather than being seeded into the user file.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-        "content": "sha256:da754ca670ddb279d76f64071f3a3a617caead23a74c9b15fcdfa3c6b7fcbd3f",
+        "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+        "content": "sha256:a7689f8d4350d9ed3458e557337454688c9439a3220318ea9a4ab9127d85f843",
         "locator": {
           "kind": "symbol",
           "name": "_corpus_request"
@@ -152,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-            "content": "sha256:ba62ff95c9221c3a871536b3263d30a27a931206a1ff2feec82c0489ea945392",
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+            "content": "sha256:e1912b05b21a709d6455c61ebce751e0d2ebfb9ed8c7474dff3891784923975c",
             "locator": {
               "kind": "file"
             }
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
             "content": "sha256:b724580976d5e1330a0045f33dd398bc7d94eefadda5a8374f2609e10cc5de67",
             "locator": {
               "kind": "symbol",
@@ -183,11 +183,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dab8268245fc0d275831f939ec9ee819bd3be505",
-            "content": "sha256:da754ca670ddb279d76f64071f3a3a617caead23a74c9b15fcdfa3c6b7fcbd3f",
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+            "content": "sha256:a7689f8d4350d9ed3458e557337454688c9439a3220318ea9a4ab9127d85f843",
             "locator": {
-              "kind": "symbol",
-              "name": "_corpus_request"
+              "end": 246,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+            "content": "sha256:9c1690ac785a7d7cbdfd0728fed26bc0b1319dda99eadf900e00c9e7ab599eb4",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current builder writes host facts to MCP authority and consumes preparedSettingsPath from the sandbox-owned preparer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+            "content": "sha256:6bd38ee9c009fa79439e2d381959444a217213e763b1064a989b0fe4e42cbb5b",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 320
             }
           },
           "kind": "code"

@@ -28,3 +28,12 @@ Investigator has Projects, selected-sprint and selected-sprint/master launch cla
 ## Refreshed current evidence
 
 - Frozen implementation of resolve_role_launch_context supporting the stated file behavior. [1]
+
+## The free agent a one-call start reaches
+
+`ROLE_LEVELS` gives `bootstrap` the `free-agent` level, so no per-level task override applies to it and its role row is its whole set of launch choices. It is taskless with `architect` and `investigator`: its execution receipt is keyed by the request id because the selection holds no document at all, not because it is a second identity of another role. `PARENTLESS_START_SELECTIONS` admits it with no sprint, master or leaf reference, so a document reference carried by a bootstrap start is a refused selection rather than an ignored one. The task-document resolution for every other role is unchanged.
+
+- The level the free agent holds, which no per-level override reaches. [4]
+- The taskless set whose receipts are keyed by their request id. [5]
+- The parentless row that admits no document reference for the free agent. [6]
+- The free agent is a launcher role with no document and no parent, and every document reference on its start is refused. [7]

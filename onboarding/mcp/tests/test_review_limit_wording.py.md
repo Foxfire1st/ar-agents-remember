@@ -2,35 +2,49 @@
 
 ## Governing Overview
 
-[Test suite](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-Guard review-budget and stage-boundary wording in the explicitly scoped lifecycle sources and compiled role/operation text. Instruction sources name the settings limit rather than embedding its numeric value; required role facets belong inside the extracted stage-end section.
+Holds MIK-R116 evidence 6 and 10: no text names a review-round number, and the stage-end sections that
+replace such a number hold in both the sources and the compiled capsules. The check runs over the canonical
+skill tree and the packaged serving copy.
 
 ## Code Commentary
 
-The number detector recognizes digit and generative number-word budget forms while exempting round labels and granted allowances. Source scans cover the named canonical, packaged and starter Markdown populations. Compiled checks use the declared package/canonical role-operation matrices; separate synchronization tests establish projection equivalence. Required Worker, Reviewer, Curator and Manager clauses are checked inside the extracted section, with source and compiled deletion/relocation controls with nonvacuous text-change assertions. Rule-nine checks bind the property-and-construction sentences to the specified roles and operations.
+### Logic
+
+`SKILL_TREES` names the canonical and packaged trees, `_role_operations()` yields the operations the
+composition manifest gives a role, and `_compile()` builds the capsules a seat receives. The number detector
+is built from `_ONES`, `_TEENS`, `_TENS`, `_TWO_DIGIT_WORD`, `_NUMBER_WORD` and `ROUND_NUMBER_PATTERNS`,
+which is what makes it a class detector rather than a spelling list.
+
+- **No number.** `test_no_role_source_names_a_review_round_number` and
+  `test_no_compiled_capsule_names_a_review_round_number` scan sources and compiled texts.
+- **The detector has teeth.** `test_number_detector_catches_limit_forms_and_exempts_labels` proves limit
+  forms are caught while intentional labels are exempt.
+- **Stage-end sections.** `test_stage_end_sections_hold_in_sources_and_compiled_texts` requires the four
+  roles to hold the section and its parts; `_section_missing()` and `_check_source_sections()` bind each
+  facet to the extracted section rather than to anywhere in the file.
+- **Binding fails on mutation.** `test_stage_section_binding_fails_on_deletion_and_relocation` and
+  `test_compiled_section_binding_fails_on_deletion_and_relocation` delete or relocate each required facet and
+  require the check to fail; `_mutate_section()` performs the mutation on the real text.
+- **Rule 9.** `test_rule_nine_sentences_hold_for_reviewer_worker_manager` keeps the Reviewer, Worker and
+  Manager sentences in both source and compiled projections.
+
+### Conventions
+
+`REVIEWER_STAGE_EQUIVALENTS` and `CURATOR_STAGE_EQUIVALENTS` hold role-scoped alternatives, and `STOPS` and
+`STAGE_PARTS` define the section boundary the facets are bound to.
 
 ### Invariants And Boundaries
 
-- This suite compiles instruction text and starts no role. It is not the real lint-repair sandbox/host evidence.
-- Its detector controls establish the declared prohibited/exempt forms, not every possible paraphrase.
-- It does not independently scan registered task_doc tool text, prove heading uniqueness, or compile every native harness launcher.
-
-## Current audience, delivery and evidence contract
-
-Reviewer and Curator stage facets accept only their scoped explicit alternative forms. Every role is separately parametrized; both source and compiled mutations delete all accepted forms, prove a real text change, and fail when facets are relocated outside Stage end. Role-scoped alternatives do not become permissions for untouched roles or a general semantic classifier.
+- A limit is stated as a property of the settings, never as a number in a text.
+- A facet outside the extracted section does not satisfy the check.
 
 ## Evidence
 
-- Positive detector controls and intentional label/allowance exemptions. [1]
+- Positive detector controls and the intentional label and allowance exemptions. [1]
 - Stage facets are bound to the extracted section rather than satisfied by relocated source text. [2]
-- The specified Reviewer, Worker and Manager property/construction sentences survive source and compiled projections. [3]
-
-
-- Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain. [4]
-
-## 260928-MIK-L172 — the stage-end facets follow the shipped sentence
-
-The stage-end facet and its Reviewer and Curator equivalents were re-pinned to the sentences that send what an agent awaits to its parent with `role_message` instead of naming it in a last line, and the Curator repair marker follows the tightened repair sentence. The extracted-section binding, deletion and relocation controls are unchanged.
+- The Reviewer, Worker and Manager property and construction sentences survive source and compiled projections. [3]
+- Reviewer and Curator facet alternatives are role scoped, and presence, deletion and relocation checks bind to the extracted stage-end section. [4]

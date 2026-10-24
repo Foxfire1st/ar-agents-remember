@@ -1,33 +1,52 @@
-# mcp/tests/test_mik_r173_card_row_binds_every_copy_of_its_source.py
+# mcp/tests/test_mik_r173_card_row_binds_every_copy.py
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-Guard that a card's onboarding row binds every source of the leaf's persisted worklist item of its subject -- the whole identical-copy group -- and that the single-source card and uncovered overview keep the rows and the refusal they had before.
+A card row binds every copy of its source (MIK-R173): a group of two identical copies (canonical and packaged) deleted or reworded at the
+candidate is bound by one card row, and the worklist item the row answers closes. A single-source card keeps
+today's one-source row, and an overview row keeps its refusal while binding its item's files.
 
 ## Code Commentary
 
-### The group proof is the leaf's own worklist loop
+### Logic
 
-This module builds a real repository pair instead of composing the item by hand. The code base holds L56's shape: one canonical `c-05` template and its nine generated copies. The leaf contract is re-based on the commit that holds the group, so at the candidate the leaf's own `leaf_worklist` raises the card's `onboarding_trace` item with ten sources, all `absent` when the group is deleted and each with its real blob when the group is reworded; the item is open before the row exists.
+`_grouped_leaf()` builds the two identical copies at the code base with the one card that owns them, `_rebased()`
+re-bases the leaf contract on the commits holding the group and its card, `_blob()` reads a path's blob at the
+candidate the writer and the worklist both read, and `_writer()` runs one committing leaf whose whole document
+is a `no_impact` row for the subject. `_trace_item()` reads the leaf's own `onboarding_trace` item out of its
+worklist run.
 
-The product's writer then captures its own code snapshot from that worktree -- no constructed snapshot and no injected blobs -- writes the row from the persisted worklist document, and the stored row carries the item's ten `(path, blob)` pairs. A second `leaf_worklist` run must return the same item `satisfiedBy` the written row's ID, which is the gate's own question asked again.
+- **Deleted group.** `test_a_card_row_binds_every_copy_of_its_source` binds both copies and the item closes.
+- **Reworded group.** `test_a_grouped_card_row_binds_the_copies_blobs_when_they_are_present` binds each copy's own
+  blob when the copies are present at the candidate.
+- **One source.** `test_a_single_source_card_row_is_unchanged` keeps the one-source row, whichever way the source
+  is named.
+- **Overview.** `test_an_overview_row_keeps_its_refusal_and_binds_its_items_sources` keeps the refusal for an
+  uncovered overview and binds the files of a covered one.
+- **Author input.** `test_an_author_supplied_sources_field_is_still_refused` keeps `RowRequest` as it is: the
+  sources are the writer's, never the curator's input.
 
-### The branches that stay as they were
+### Conventions
 
-A card no item names and a card whose item names only its own path both keep a one-source row. An overview with no covering item is still refused with the original `no worklist item covers` problem, while an overview whose item names its governed files binds them. A hand-off that tries to supply a `sources` field is refused as `the writer owns ['sources']`, so the writer keeps sole authorship of the row's sources.
+The row is read back from the stored history the writer wrote, not from the writer's answer, so a row that is
+reported but not stored fails.
 
-### Bounds
+### Invariants And Boundaries
 
-The cases are source-level regressions over the writer, the worklist and the history file. The RED 2-failed/4-passed and GREEN 6-passed runs belong to the Worker's receipts under the passed freeze; this Curator did not execute them, and neither lane substitutes for the gate's own onboarding evidence.
+- A group's row binds every member's blob at the candidate.
+- A curator cannot hand the writer a `sources` list.
 
 ## Evidence
 
-- A card row binds all ten sources of its deleted group, and the item comes back satisfied by that row. [1]
-- A reworded group binds each copy's own blob. [2]
+
+- A card row binds both sources of its deleted canonical/package group, and the item comes back satisfied by that row. [1]
+
+- A reworded group binds each copy's own blob and closes its worklist item. [2]
+
 - A card with one source keeps its one-source row whether or not an item names it. [3]
-- An uncovered overview is refused and a covered one binds its item's files. [4]
+- An uncovered overview is refused, and a covered one binds its item's files. [4]
 - An author-supplied `sources` field is still refused. [5]

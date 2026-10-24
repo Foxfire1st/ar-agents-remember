@@ -9,6 +9,10 @@ This account controls the named changed seams; contradictory earlier card wordin
 - Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [2]
 
 
+## Current Source Qualification
+
+The flat-mode exception now names the kept procedures: the Architect may coordinate the paired closeout only under the already-delegated authority of `../operations/closeout.md` and its `../../w-02-light-task-workflow/workflows/closeout.md` workflow, after independent review and the required curation evidence exist. The retired `c-09`/`c-12` skill names in the inherited account below are the removed owners of that authority, not current routing, and the packaged copy the tool server serves is the only generated copy of this page.
+
 ## Message/file transport
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
@@ -45,7 +49,7 @@ approval increments the requirement version.
 
 ### Invariants And Boundaries
 
-Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; existing delegated c-09/c-12 authority remains required for Architect closeout coordination.
+Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs. Native assignments preserve approved requirement IDs/versions, exact task/paired/report bindings and actual returned role-agent identities. An approved packet is not rewritten in place and delivery roles do not acquire semantic revision authority. No inferred repository/parent, uncertain duplicate, self-approval or shell-publication substitute is allowed; existing delegated authority of the kept closeout procedures (`operations/closeout.md` with `w-02-light-task-workflow`'s `workflows/closeout.md`) remains required for Architect closeout coordination.
 
 Canonical lifecycle doctrine owns canonical skill content; generated copies are synchronization
 outputs. An approved requirement packet is never

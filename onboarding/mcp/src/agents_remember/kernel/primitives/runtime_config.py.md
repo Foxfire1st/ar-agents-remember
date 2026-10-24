@@ -76,7 +76,9 @@ This account is current source interpretation only. It creates no executed test/
 - [16]
 - [17]
 - [19]
-- [20]
+
+- `load_authority_paseo_runtime` reads the authority file's `paseoRuntime` block from `configPath` on every use; the shared reader is retained, not a per-harness fallback. [20]
+
 - [21]
 - Current dashboard boot settings are DashboardSettings with auto_start=False and DEFAULT_DASHBOARD_PORT, not ProviderScope. [3]
 - [5]
@@ -84,3 +86,10 @@ This account is current source interpretation only. It creates no executed test/
 - DashboardSettings declares disabled-by-default auto_start and DEFAULT_DASHBOARD_PORT; this is dashboard configuration, not ProviderScope. [9]
 
 - Legacy gateDelegation migration warnings are emitted once per authority-file-path/shadowed-state pair in the process, not at every configuration re-resolution. Provider degradation parsing belongs to kernel/primitives/provider_degradation_settings.py. This clarification introduces neither a restored provider/benchmark tool nor a new settings or delegation authority. [22]
+
+## The host block the authority file holds
+
+`harness_skill_root` is gone from `McpRuntimeConfig` and from settings parsing: no skill folder is resolved, so `infer_harness_skill_root` and the optional `harnessSkillRoot` key no longer exist. `paseo_runtime` reads the block from the file named by `config_path` on every use, and `load_paseo_runtime_settings` reads that same file, so the block a cold first run writes and the block every later call reads are the same bytes. An absent authority file is `no host configured` rather than an unreadable settings file — a cold root is exactly that state until a launch establishes the block — while an unreadable or malformed one is answered as a settings refusal with a recovery action.
+
+- The per-use host block read from the named authority file. [23]
+- The settings-file read that treats an absent authority file as no host. [24]

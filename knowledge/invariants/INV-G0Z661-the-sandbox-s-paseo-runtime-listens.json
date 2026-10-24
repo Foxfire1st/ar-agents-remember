@@ -26,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Public sandbox build/check/start/stop accept explicitly chosen host/dashboard ports, retaining defaults6820/9797 and the same ownership/safety refusals without automatic port selection. The named tooling has one public renderer; actual product roots/runtime are admitted separately.",
+  "statement": "Public sandbox build/check/start/stop accept explicitly chosen host/dashboard ports, retaining defaults6820/9797 and the same ownership/safety refusals without automatic port selection. The sandbox-owned preparer uses the selected product SDK for guarded user-settings location and host defaults; actual product roots/runtime are admitted separately.",
   "status": "proposed",
   "supersedes": []
 }

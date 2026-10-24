@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:ac30c7798cfffff52c5325ee55cc8d9c0ad2bd798e32a2f2ebd3a762ed8c7c54",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:fef33e4345b05251c341beb1cb33fe681ccdc2e9e1ef7eb99c15d8b7cdf293e1",
             "locator": {
               "end": 152,
               "kind": "line_range",
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:34a4ed746cc97c29d853ed1a8bef8b0ef88c2546999e6d5a2b71fa2bf40dc2e1",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:dc678045d999a5624ced840f4cec1d1a4095fb40dd7771c65513f5b01b28f645",
             "locator": {
               "end": 163,
               "kind": "line_range",
@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:7f87a8f5deaee1e121060af98d6661f13b1e543a9bbc054d2acbc050314242ab",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:db926e2a40e32261a659be470c47bcea9b40a3d61094944add71389351b9cb56",
             "locator": {
               "end": 204,
               "kind": "line_range",
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:8d8649f8e1fbc2a80004834152c2ccf2c5d374fc0c35e3b631cfd0ce9a6c0270",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:a2b413c2c06911dfd22baa8b4135d264d992e906ae514933d275748336a4ad25",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:eb64f01976d248a838f74536673d53d63e1aae36be46ee46e24f9c3bf5bd0d88",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:03d773b1d912ac84c71ff59f0abf35296785fcc72dbcc1c989640f4389c4f92c",
             "locator": {
               "end": 302,
               "kind": "line_range",
@@ -87,8 +87,8 @@
         },
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:5c47594bd9985ddd7d2b303843281dc9a5ef37eb607fb4a25d52aafbbcf946fd",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:5a143d8f89544935fdf561b3be13a3f357b5a08c1f46d2bccff8fe4747f3cddf",
             "locator": {
               "end": 257,
               "kind": "line_range",
@@ -104,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:039c1b44579513e196d347cc64db0f6bd12d0ead2f5038281fbfb5f7c71bdb4d",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:701d26055947fd274117242ee2791ea2a3d31b3cbb1b16706f523f3f5e775912",
             "locator": {
               "end": 333,
               "kind": "line_range",
@@ -116,8 +116,8 @@
         },
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:ae6d6e51eb3b0aa5c2357e5f9732e0d1a63038c1290f8df42830255c9754f4d2",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:ecb250ca21215332e73955262359f3a407373d5fb9287b0f3cde4f45fcaea31f",
             "locator": {
               "end": 367,
               "kind": "line_range",
@@ -129,28 +129,31 @@
       ]
     },
     "8": {
-      "note": "Anchor: Undo reports a separate skills install honestly and restores unselected startup.",
+      "note": "Normal runtime undo restores startup targets; explicit install_roots can still produce separately attributed legacy formatting rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
             "content": "sha256:0303cffd194750b676f5e107a589315f260df9cdc820cf5543feb29c5bc5a778",
             "locator": {
-              "end": 456,
-              "kind": "line_range",
-              "start": 417
+              "kind": "symbol",
+              "name": "experiment_rollback_plan"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "9": {
+      "note": "The startup targets capsule mode withholds, which no longer include a skills instruction file.",
+      "targets": [
         {
           "anchor": {
-            "blob": "ace6c73fca7185112d839407bc3986927ddbc46d",
-            "content": "sha256:7ffe0de540ead406e324c1330bcc7f86c021401c0449a2a8931d652c2e9fbee2",
+            "blob": "a4031efa146131e72dc6d8b56e6d4ca6e3d0487a",
+            "content": "sha256:ef6a042cd657b877f5efd6941b5c6a6d669f7c2257ab4088b3a1c3af0d6dec34",
             "locator": {
-              "end": 462,
-              "kind": "line_range",
-              "start": 459
+              "kind": "symbol",
+              "name": "WITHHELD_STARTUP_TARGETS"
             }
           },
           "kind": "code"

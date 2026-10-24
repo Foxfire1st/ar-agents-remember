@@ -5,12 +5,12 @@
     ],
     "justification": "Guards the costly error this statement names: The c-12-closeout skill and its nine copies say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and for organizational mast"
   },
-  "applicability": "The c-12-closeout skill and its nine generated copies describing where an abandoned row that landed refuses.",
+  "applicability": "The canonical skills/w-02-light-task-workflow/workflows/closeout.md instructions and their packaged runtime copy describing where an abandoned row that landed refuses.",
   "conditions": [
     "The skill text must say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and organizational masters."
   ],
   "exclusions": [
-    "Skill copies that are not generated from the canonical skills/c-12-closeout tree."
+    "Instruction copies outside the declared canonical-to-packaged generated projection."
   ],
   "id": "INV-8NHCRK",
   "origin": {
@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L41",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The c-12-closeout skill and its nine copies say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and for organizational masters.",
+  "statement": "The kept closeout instructions and their single packaged copy say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and organizational masters.",
   "status": "proposed",
   "supersedes": [
     "INV-3YSSTZ"

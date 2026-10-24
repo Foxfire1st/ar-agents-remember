@@ -1,0 +1,127 @@
+{
+  "path": "mcp/tests/test_mik_r196_settings_init_preserves_existing.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:8a99062b311fc5e4eb1dc75c12c32e1e546f3d0cd063e32d0eb3565f04b40f72",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_public_answer_refuses_an_unreadable_file_without_a_second_read"
+        }
+      },
+      "facet": "An unreadable settings file is refused without a second read.",
+      "id": "PRF-2E8X3V",
+      "invariant": "INV-0G2Q2Q",
+      "origin": {
+        "handoffEntry": "L188-B07",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:39ee99a4b03f3afd3395db519674dafb8a75b12327bd9f54b2deb0cede1c88d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_public_answer_refuses_a_symlinked_destination"
+        }
+      },
+      "facet": "A symlinked destination is refused by name rather than written through.",
+      "id": "PRF-6NQYQ0",
+      "invariant": "INV-0G2Q2Q",
+      "origin": {
+        "handoffEntry": "L188-B07",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:fbf9364a31dae82137d4473cafa38841182e78cac7f632b6f79264997385f532",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_file_without_role_choices_is_not_completed"
+        }
+      },
+      "facet": "A file without role choices is not completed on the user's behalf.",
+      "id": "PRF-8QTJJS",
+      "invariant": "INV-JRXN00",
+      "origin": {
+        "handoffEntry": "L188-B03",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:3a1301eba552553a996caab360d0cadd38e881471a8875aaded2d812b3c48294",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_marked_file_is_reported_and_kept_byte_for_byte"
+        }
+      },
+      "facet": "An existing marked settings file is reported and left byte-identical.",
+      "id": "PRF-CXTEWB",
+      "invariant": "INV-JRXN00",
+      "origin": {
+        "handoffEntry": "L188-B03",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:e59d338bb5abd5bd8e3aef5ad3eac5c118837c96184782710efbb260d2829bcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_destination_that_appears_after_the_state_read_is_refused"
+        }
+      },
+      "facet": "A destination that appears after the state read is refused.",
+      "id": "PRF-FFV734",
+      "invariant": "INV-7T4ENM",
+      "origin": {
+        "handoffEntry": "L188-B04",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:2ecffd21ad3108e314559e2a555a6b6aede03717dabb47afb490c112c226f72e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_sibling_init_symlink_is_neither_followed_nor_truncated"
+        }
+      },
+      "facet": "A sibling init symlink is left alone instead of being written through.",
+      "id": "PRF-HN4QH9",
+      "invariant": "INV-7T4ENM",
+      "origin": {
+        "handoffEntry": "L188-B04",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "content": "sha256:979facbf22a458fcc3a30e680c34c8f2618d6a96df3efd4ad4f62d6a8de782fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_exclusive_create_refuses_a_destination_the_existence_check_missed"
+        }
+      },
+      "facet": "The exclusive create refuses a destination the earlier existence check did not see.",
+      "id": "PRF-KTM3SR",
+      "invariant": "INV-7T4ENM",
+      "origin": {
+        "handoffEntry": "L188-B04",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-        "content": "sha256:ddc59c2889521fcce228c11d72802d6e842db5c31295c30f968158b4a886fa8a",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
         "locator": {
           "kind": "file"
         }
@@ -105,12 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
             "content": "sha256:e0de6277dfb0665d61964d21c74dcd5c9795894e6b81026b8cab7862c0a468d3",
             "locator": {
-              "end": 332,
+              "end": 316,
               "kind": "line_range",
-              "start": 314
+              "start": 298
             }
           },
           "kind": "code"
@@ -177,23 +177,6 @@
         }
       ]
     },
-    "7": {
-      "note": "The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3eb0701053b400248f38396e91dbc480d82d7d6a",
-            "content": "sha256:07f030f3fb397768ae5be187893fb61d5fbc070e3ca511fd5277345e58d27f52",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_settings"
-            },
-            "path": "scripts/harness/render_starter.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "The package copy of the install skill.",
       "targets": [
@@ -210,16 +193,16 @@
       ]
     },
     "9": {
-      "note": "Stage 5 orders onboarding/fixer before adoption and foundation, preserving existing-memory handling and explicit audit retention.\n\nAnchor: \"Stage 5\"",
+      "note": "Stage 5 initializes without onboarding/fixer, adopts the attributed baseline, then reports knowledge state and names the Architect; existing-memory handling and audit retention remain explicit.\n\nAnchor: current source",
       "targets": [
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
-            "content": "sha256:c4245130abd226b2e11557a309648489ed8ed7e97f7fdd1cc500529470d6eb54",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:bb12b11ff6cf85340d89d82d9a38dacdb2e33e8f2fccc6570bf8fd7033135cc5",
             "locator": {
-              "end": 447,
+              "end": 433,
               "kind": "line_range",
-              "start": 395
+              "start": 385
             }
           },
           "kind": "code"

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,26 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "content": "sha256:ae5997c75a3f9b9702040723b9c6b0a30ddef7a3a651258c3b1344406c65d441",
+        "locator": {
+          "end": 758,
+          "kind": "line_range",
+          "start": 754
+        }
+      },
+      "id": "RLZ-GFATR9",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The indexed-memory result sends recorded/not-recorded states to the same developer-started Architect and regular-task continuation, while an unusable partial index keeps its explicit repair action. The initializer reports; it performs no foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:9de9f4e5133226cbb72cb3625c3dda0fb110f0642c9b8eeed1a06438b8a81007",
         "locator": {
           "kind": "symbol",
@@ -75,7 +94,26 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "content": "sha256:910178dbc0247244e141b02e44b602b499401c0af9db5b9fa94e9d992bb89e05",
+        "locator": {
+          "end": 662,
+          "kind": "line_range",
+          "start": 658
+        }
+      },
+      "id": "RLZ-MF9P9F",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The shared guidance names the developer-started Architect, a regular foundation task and its Curator. It presents the existing setup-to-foundation continuation rather than authorizing taskless foundation production.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
@@ -93,7 +131,26 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
+        "locator": {
+          "end": 730,
+          "kind": "line_range",
+          "start": 722
+        }
+      },
+      "id": "RLZ-PCQR3A",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The unavailable-publication result uses that state-first Architect handover for nonlegacy states; the legacy-format branch retains its separate conversion refusal. This returns continuation guidance and does not start the Architect or write foundation records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
@@ -111,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
         "locator": {
           "kind": "symbol",
@@ -129,7 +186,7 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
@@ -147,7 +204,7 @@
     },
     {
       "anchor": {
-        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "blob": "418f56cddea13a857e15e32f93c11db719101459",
         "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
         "locator": {
           "kind": "symbol",
@@ -170,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -186,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -202,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1041f2f6e24eba20d1af2237ed1db8ca0dd39ce8",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
             "locator": {
               "kind": "symbol",
@@ -281,12 +338,12 @@
       ]
     },
     "16": {
-      "note": "The one execution path both the report and the closeout gate run through.",
+      "note": "This controller function revalidates the scope, calls the scoped memory-quality check and composes its result.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
-            "content": "sha256:32b6b2c48db620a2f9de7453bfeea68151270c6eb3e0b13d5c5183a723428abe",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -298,12 +355,12 @@
       ]
     },
     "17": {
-      "note": "The curator worklist publication that follows a full scoped call.",
+      "note": "The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e263354c7f9588ebdc59c15524e7c064e76d4d1",
-            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -315,12 +372,12 @@
       ]
     },
     "18": {
-      "note": "On a converted tree the citation check reports the sidecar references' state instead of reading citation tables.\n\nAnchor: `citation_check_tool`, `is_converted_memory`",
+      "note": "On a converted tree the citation check reports sidecar references instead of reading citation tables.",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:61e5e7470ca2a50fe7d96e26bd86ead6725425db2ffb5c799eb767e4b24eb897",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "content": "sha256:6a04802ea6586dd0e323bb3072fa8615e8bea72dc3298eeef2972754f9982cbb",
             "locator": {
               "kind": "symbol",
               "name": "citation_check_tool"
@@ -347,7 +404,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
@@ -363,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1041f2f6e24eba20d1af2237ed1db8ca0dd39ce8",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -412,7 +469,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -457,7 +514,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
             "content": "sha256:6918f2ee0d10bbb302b9a5825ac0309321a87cc5271af0ee5a2a11102e76be05",
             "locator": {
               "kind": "symbol",
@@ -469,7 +526,7 @@
         },
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
             "content": "sha256:7fe54fb261752044862f79b45d0ea3ccf57b8981074bc78771a941b10ddc473c",
             "locator": {
               "kind": "symbol",
@@ -524,7 +581,7 @@
         },
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -540,7 +597,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -556,7 +613,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -588,7 +645,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:f763db344a416efd66bbb0d3414cfd2cfcf00cfec743dabcb71778a18ef92f63",
             "locator": {
               "kind": "symbol",
@@ -604,7 +661,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
             "locator": {
               "kind": "symbol",
@@ -616,12 +673,12 @@
       ]
     },
     "32": {
-      "note": "The existing citation fixer selects pre-baseline admission or the ordinary leaf contract and reports the measuring build.",
+      "note": "This application function selects pre-baseline admission or the ordinary leaf contract. Its pre-baseline and unconverted-refusal returns explicitly add measuring_build_stamp(); its converted-leaf return calls _citation_fix_result.",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix_tool"
@@ -636,7 +693,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -652,7 +709,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -668,7 +725,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:0ad4605217085ded778cd1fafd60116a0873ead51fdde2374479e3ee480c2c64",
             "locator": {
               "kind": "symbol",
@@ -700,7 +757,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
             "locator": {
               "kind": "symbol",
@@ -728,7 +785,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
             "locator": {
               "kind": "symbol",
@@ -744,7 +801,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
@@ -789,7 +846,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -805,7 +862,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
             "locator": {
               "kind": "symbol",
@@ -816,7 +873,7 @@
         },
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -827,12 +884,39 @@
         }
       ]
     },
-    "5": {
-      "note": "Typed quality execution and public run translation are owned by the controller.\n\nAnchor: `run_memory_quality_request`, `_resolve_execution`",
+    "42": {
+      "note": "Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_init_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_foundation_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Typed quality execution and public run translation are owned by the controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -844,8 +928,8 @@
         },
         {
           "anchor": {
-            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
-            "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:639ad1bd1203dac73613f0b23e99c3c53170586d911beda46efbc260fcca2060",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_execution"
@@ -861,7 +945,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -873,12 +957,12 @@
       ]
     },
     "7": {
-      "note": "The route-index builder.",
+      "note": "The route-index builder uses explicit repository and storage authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "30bbe109d1dc8629712ce577e2a7a055c185e0e1",
-            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
               "name": "build_route_indexes"
@@ -894,8 +978,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30bbe109d1dc8629712ce577e2a7a055c185e0e1",
-            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
               "name": "build_route_indexes"

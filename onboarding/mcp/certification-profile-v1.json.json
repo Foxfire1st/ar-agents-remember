@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "602bcad6d807c0a8200d400da6021c99474b71a4",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
             "content": "sha256:f389111330d3fa39846d47f51320c1e391f55e5500dd96820287a9e1068ca267",
             "locator": {
               "end": 34,
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Pinned Dagger execution adapter and actual runtime digest\n\nAnchor: `executorAdapters`",
+      "note": "Pinned Dagger execution adapter and actual runtime digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
-            "content": "sha256:1a30316d59e8fc2aeebd9c209c89fac4f36b7e69a5a0c63c86cc64c78ef8826e",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:0c6c68eb50286c9d88ed82a8cddb34a48a295f22a626f5ba0341888ddf0aef46",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -37,16 +37,16 @@
       ]
     },
     "3": {
-      "note": "The declaration carries its own canonical profile digest.\n\nAnchor: `profileDigest`",
+      "note": "The declaration carries its own canonical profile digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
-            "content": "sha256:86c5a862919b5ed4853468183d9490a00e450af9159aeb089e2069407fecd0b7",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:cb7b96eae68b54acc360dc5ea549e423904bb43465a32a0836e1aff50ff37ce8",
             "locator": {
-              "end": 182,
+              "end": 151,
               "kind": "line_range",
-              "start": 182
+              "start": 151
             }
           },
           "kind": "code"
@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "54 report paths including 32 rail-evidence captures\n\nAnchor: `publishedArtifacts`",
+      "note": "47 report paths include 30 rail-evidence captures; ambient and teardown publications are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
-            "content": "sha256:2cc412ca973fa0f762e97a2182ecd54cce84a9277a698880887b2fdd3f85362c",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:31d47b03459aa4dfa8000e48b718dd14f7d16721f7ff2a4aab3980010526ff08",
             "locator": {
-              "end": 679,
+              "end": 585,
               "kind": "line_range",
-              "start": 184
+              "start": 153
             }
           },
           "kind": "code"
@@ -71,16 +71,16 @@
       ]
     },
     "5": {
-      "note": "Full/targeted/local selections and explicit applicability\n\nAnchor: `selections`",
+      "note": "Full/targeted/local selections and explicit applicability.",
       "targets": [
         {
           "anchor": {
-            "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
-            "content": "sha256:2b0adb31a3a500c3f3d5b0a353360dc1bc230f5b640be1093f48b4b2c90050e7",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:89f6125cbaff7c411a3df1334ee3ee2b537f20f33e7f0f1ca2a1ffa9aafd2214",
             "locator": {
-              "end": 3616,
+              "end": 3388,
               "kind": "line_range",
-              "start": 3117
+              "start": 2778
             }
           },
           "kind": "code"
@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "602bcad6d807c0a8200d400da6021c99474b71a4",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
             "content": "sha256:5b61e07e69a2162de6bd707be5042305c9d54dba74d88ccc813669ef8997d25b",
             "locator": {
-              "end": 3421,
+              "end": 3389,
               "kind": "line_range",
-              "start": 3421
+              "start": 3389
             }
           },
           "kind": "code"
@@ -105,16 +105,33 @@
       ]
     },
     "7": {
-      "note": "The generated-skills source inventory includes the canonical copy declaration and the profile digest is refreshed without changing other rails.",
+      "note": "Generated skills keep only the package target; generated-harness inputs drop renderer sources and the canonical digest is refreshed.",
       "targets": [
         {
           "anchor": {
-            "blob": "602bcad6d807c0a8200d400da6021c99474b71a4",
-            "content": "sha256:b66e5b558bca2240a7a9a43245731d52d53362899ee9084f838bde33ceda3493",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:5509ca3452304eadb6e897ebd18621bd97c0d158a5490b2d0ecfd414b1872338",
             "locator": {
-              "end": 184,
+              "end": 151,
               "kind": "line_range",
-              "start": 174
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The retained generated-harness rail checks skills through scripts/sync-skills.py --check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:8ad62a1372fedc962f0c7131c3852cb8b8e8047c7c273c03730df3c4480a9c52",
+            "locator": {
+              "end": 1530,
+              "kind": "line_range",
+              "start": 1515
             }
           },
           "kind": "code"

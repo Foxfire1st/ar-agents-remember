@@ -31,6 +31,8 @@ then environment selection; unknown ids refuse before mutation, and unselected r
 restore withheld legacy startup targets. The document separates read-only host preview,
 absent-host setup information and needed-restart/outside-host remedies.
 
+The server_info explanation no longer advertises harnessSkillRoot. Runtime install manages documentation and applicable AGENTS targets; skills remain package-served MCP resources in both experiment modes, with no installed skill copy. Host maintenance reads paseoRuntime from the active --config MCP authority file per use, writes no authority settings and defers a required restart. These are documentation contracts, not evidence that an installer or host ran.
+
 Provider setup is retired; old enabled keys are unused and only watcher stop remains. A failed installer stop is reported while installation continues; explicit `providers-remove` owns provider deletion. `removedPartStores` reports retained old stores and stored gates once, with `agents-remember removed-stores` as the user-commanded removal route; install deletes none of them. Managed scaffold pruning is not blanket deletion of preserved memory/provider/store data.
 
 `role_start_set` is owning-Manager-only and reconciles the same Worker/Reviewer/Curator set by request ID. Worker opens immediately; Reviewer opens with supplied first work or stays held, and Curator stays held. Native `retire_child` is original-starter-only, requires explicit interruption authority for an active turn, records its reason and is idempotent for an already retired agent. It is not the removed structural retirement plane.
@@ -46,7 +48,7 @@ must not be interpreted as permission to restore provider install/index/watch wo
 
 ### Repo-Internal References
 
-- The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence. [1]
+
 
 ## External and cross-repository evidence
 
@@ -55,4 +57,9 @@ This card claims only the package-local source contract; no external runtime or
 cross-repository acceptance evidence is inferred.
 
 
-- The shipped document retains long explanations and replaces citation source-snapshot options with old-format refusal; registration remains the callable-signature owner. [2]
+
+
+- Skills are package-served in both install modes and host facts come from active MCP authority per use. [3]
+
+- The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence. [1]
+- The shipped explanation states citation admission and old-format refusal and distinguishes anchor measurement from currentness; registration remains the callable-signature owner. [2]

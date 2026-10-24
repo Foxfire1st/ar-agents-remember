@@ -8,10 +8,14 @@
 Map retained MCP operation families while distinguishing source-document history from the
 candidate's actual advertised roster and current request schemas.
 
+## Current Source Qualification
+
+The skills-versus-tools paragraph now names the kept owners: `c-00-initialize-memory-repo` drives `memory_init`, `c-05-create-or-update-onboarding-files` drives drift reporting (`context_packet` / `memory_quality_check`), and `w-02-light-task-workflow` drives both the `worktree_*` tools and the `*_closeout_*` tools. The inherited `c-02`/`c-09`/`c-12` names describe retired skills, not current mapping.
+
 ## Code Commentary
 
-The current literal PUBLIC_TOOLS has40 distinct entries after removal of dispatch_agent and resolve_context;41/42-entry populations are historical, not this candidate roster.
-The current frozen reference header literally states40 public tools, matching the current40 distinct literal roster. Pre-L113 header38 and predecessor41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
+The current literal PUBLIC_TOOLS has42 distinct entries, including user_settings_init, after removal of dispatch_agent and resolve_context;40/41-entry populations are historical, not this candidate roster.
+The current frozen reference header still literally states40 public tools, so its count disagrees with the 42-entry literal roster; that header count is source-document debt, not a roster census. Pre-L113 header38 and predecessor40/41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
 use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
@@ -102,6 +106,6 @@ sub-task naming none whose folder `task.json` is not a master is refused" (MIK-R
 review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:52, so a `light` task that is its own
 `task.json` is not covered by the refusal). The rest of the row, including standalone support and that the parent
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
-(`mcp/registration/tasks.py`) and the c-09 skill.
+(`mcp/registration/tasks.py`) and the `w-02-light-task-workflow` skill, which now owns that procedure.
 
-- Current reference header and literal roster both declare40 public tools; older header38/roster41/42 statements are historical, not live advertisement. [1]
+- Current reference header states 40 public tools while the literal roster declares 42; older header38 and 40/41-name roster statements are historical, not live advertisement. [1]

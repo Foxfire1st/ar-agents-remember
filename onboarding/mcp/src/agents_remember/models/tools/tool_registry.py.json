@@ -2,29 +2,13 @@
   "path": "mcp/src/agents_remember/models/tools/tool_registry.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The exclusion set names trusted compatibility and administration operations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fce66805fc8dc67be43d1cbdcac8bdcc8d0030d",
-            "content": "sha256:c1e383ab68e5843dbec29d6192224846cca2516c057d1c0792710ec6cde177e4",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:4889da96e4a539fa55d10bd7a94ae233269cd690271782d68de54eab67c5f048",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -40,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
-            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
+            "content": "sha256:8a760b6b38a702e3ca4b1d8dd38599d08c681d62913ba65f4443b0e14c4bea24",
             "locator": {
               "kind": "symbol",
               "name": "RoleCapsuleResponse"
@@ -52,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
             "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
             "locator": {
               "kind": "symbol",
@@ -64,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
+            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
             "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
             "locator": {
               "kind": "symbol",
@@ -81,36 +65,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:feafaa1915c69eb54f168301c3ff246e8b008b7b18bfc9bb106e34e34e68866d",
             "locator": {
               "end": 118,
               "kind": "line_range",
               "start": 97
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
-            "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 187
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:6a8ad15391153df8c0e8ef6d3e158e1e76f0d70bbca93d7df82029d6f0b2f248",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 187
             }
           },
           "kind": "code"
@@ -122,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:ea3523f2a662bbf25aae4a5215c44816fc55b564a277878ffed0b6f27e04ad68",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -138,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:7904f05a5a65cea9013a16583d739e2ed767d8c01641afa42edf124fb2f5fb1d",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7be9c99a567f5b369affaf3f339a250cca3667e761945bb540d788680260c203",
             "locator": {
               "kind": "file"
             }
@@ -148,101 +108,16 @@
         }
       ]
     },
-    "2": {
-      "note": "The complete registry includes structural agent and gate responses alongside internal exact models.\n\nAnchor: \"\\\"dispatch_agent\\\": DispatchAgentResponse,\"; \"\\\"gate_decide\\\": GateDecideResponse,\"",
+    "15": {
+      "note": "The by-name response-model registry, which carries the settings initializer.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
-            "locator": {
-              "end": 253,
-              "kind": "line_range",
-              "start": 163
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The advertised subset is derived rather than independently maintained.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
             "locator": {
               "kind": "symbol",
-              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The checkpoint-landing tool's response model is registered between its integrate and record-landing siblings, matching the advertised order.\n\nAnchor: `worktree_checkpoint_landing`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 151
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The stop tool's response model is registered immediately after its sync sibling, matching the advertised order.\n\nAnchor: `worktree_pause`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:fcd08cb2085b842e309edbce6d4f9965dd019c2dba710c44a95280a9f6b33199",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 147
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The record-landing tool's response model is registered immediately after its checkpoint sibling, matching the advertised order.\n\nAnchor: `worktree_record_landing`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 152
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The three rows the capsule-and-skill registrar needs, at the mapping's tail to match their appended roster position.\n\nAnchor: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
-            "content": "sha256:d4a8b4d417baf9ab43fafd8f756a9809e29778f62410e84428ad5b2f5d7ef49f",
-            "locator": {
-              "end": 248,
-              "kind": "line_range",
-              "start": 246
+              "name": "TOOL_RESPONSE_MODELS"
             }
           },
           "kind": "code"
@@ -254,30 +129,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
             "locator": {
               "kind": "symbol",
               "name": "_tool_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:a30808185d7b0f10991bd70239f2fc0622317c9a1c2c6e5efd5e2c41f7651818",
-            "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 251
-            }
           },
           "kind": "code"
         }

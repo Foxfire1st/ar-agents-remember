@@ -14,7 +14,9 @@
 
 The converted summary explicitly calls the shared converted checker with `include_landing=False`. It remains a validator/reference-state summary; the landing census belongs to quality-check callers rather than this drift-summary route; admitted leaf callers carry their leaf base. Skipping landing acquisition here changes no summary count, filing mode, reference-state classification or existing validator refusal.
 
+
 - The converted drift summary suppresses landing acquisition while preserving validator/reference measurements. [13]
+
 
 
 
@@ -44,16 +46,20 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 ### Repo-Internal References
 
-- Context-packet composition calls the converted-only bounded drift summary; skills_install_tool delegates to install_skills and is not a drift-summary caller. [1]
+- Context-packet composition calls the converted-only bounded drift summary without filing a report. [1]
 
 
 - The drift-snapshot dir + schema the b1 write targets (shared with the reader). [6]
 
 - The shared drift-snapshot filename helper now used by the producer. [7]
 
+
 - The observer reader that consumes the persisted snapshot. [8]
 
+
+
 - The converted snapshot persists current/stale/violation counts and source/memory/report provenance from the measured packet. [9]
+
 
 - A converted tree takes `_run_converted_summary`: `status: checked` with `basis: converted-references`,
   the two roots, `sidecarCount`, `count` over observed code/test anchors, `states: {current, stale}`,
@@ -65,9 +71,13 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 - A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
 
+
 - The converted summary exposes measured counts, roots and unreadable sidecars; zero alone does not prove the entire memory tree was readable. [11]
 
+
+
 - The converted branch gates report, observer snapshot and reportPath together; unfiled reads retain the same measured packet. [12]
+
 
 
 - DriftSummaryPacket imports the canonical DriftStatus owner and retains optional converted measurement fields; the classification set is removed. [3]
@@ -79,4 +89,8 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 ## Current source evidence
 
 
+
 - Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars. [14]
+
+
+- Current source account and its stated boundaries. [15]

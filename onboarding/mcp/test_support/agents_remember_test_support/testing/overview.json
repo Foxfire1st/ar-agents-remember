@@ -53,16 +53,29 @@
       ]
     },
     "14": {
-      "note": "Canonical skill copies and their harness mirrors are the synchronization owner's.\n\nAnchor: scripts/sync-skills.py source declaration",
+      "note": "The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors.",
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:fbba92b8a660284ad60d20f09931d327167a6af0a2ed32fe2f13676e8c2e79d6",
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
             "locator": {
-              "end": 20,
+              "end": 10,
               "kind": "line_range",
-              "start": 1
+              "start": 3
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
             },
             "path": "scripts/sync-skills.py"
           },
@@ -301,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
             "content": "sha256:d8d2d36ffff46631e2af79007d82177e086ea879656904d2bcfd1dc6afcb32e1",
             "locator": {
-              "end": 241,
+              "end": 240,
               "kind": "line_range",
-              "start": 225
+              "start": 224
             },
             "path": ".githooks/_gate.sh"
           },

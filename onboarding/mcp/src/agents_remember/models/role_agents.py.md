@@ -70,3 +70,11 @@ requested-versus-observed semantics remain unchanged.
 
 - Current source section contains excerpt `class RoleStartResponse(ToolResponse):`; DTO/control ownership is not execution acceptance. [6]
 - Current source section contains excerpt `def harness_carries_one_server(harness_id: str `; DTO/control ownership is not execution acceptance. [7]
+
+## The free agent's wire fields
+
+`RoleStartCall` carries `caller_harness`, the client name the transport reported, so a model-only free-agent choice can be bound to the provider that chat runs. `RoleEnvironmentPreparation` declares `firstRun`, the report a cold start established before the seat existed: the producer emitted it and the model did not declare it, so the report was lost at the validating boundary. `RoleStartResponse` declares `dashboardAddress`, `dashboardAddressDetail`, `chatAddress` and `chatAddressDetail`, which the start answer emits and a strict response model would otherwise drop.
+
+- The start call, which carries the caller's own harness name. [12]
+- The environment preparation block, which now declares the first-run report. [13]
+- The start answer, which declares the seat's continuation. [14]

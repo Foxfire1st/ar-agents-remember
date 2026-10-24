@@ -15,11 +15,13 @@ coordination-owned and symbolic names retain their stated resolution limits.
 
 ## Current source account
 
-Compact native role/operation sources remain manifest-resolved. Positive compact-curation checks use CURATION_POLICY_STATEMENTS; the exact retired-sentence guard retains seeded re-insertion/removal controls and developer-request doctrine. The handoff-contract test now declares canonical-plus-nine-generated containment checks for current onboarding rows, no counted-card-edit-alone answer and references-only counted sidecar edits; c-05 workflow copies are checked for current overview rows and updated/no_impact wording. These narrow text assertions are not propagation-owner byte equality.
+Compact native role/operation sources remain manifest-resolved. Positive compact-curation checks use CURATION_POLICY_STATEMENTS; the exact retired-sentence guard retains seeded re-insertion/removal controls and developer-request doctrine. The handoff-contract test now declares canonical-plus-one-packaged-copy containment checks for current onboarding rows, no counted-card-edit-alone answer and references-only counted sidecar edits; c-05 workflow copies are checked for current overview rows and updated/no_impact wording. These narrow text assertions are not propagation-owner byte equality.
 
 RF01 adds two separate witnesses. test_new_series_guidance_requires_json_primary_master_before_dependencies declares a normalized-text loop over the canonical w-02 SKILL.md, template.md, master-template.md and workflow.md plus every declared generated skill-copy root. It rejects the three obsolete guidance fragments and requires the literal `kind:"master"`, `before`, `waitsFor`, `task_doc` and `intentionally migrated` markers. This is token containment, not proof of sentence ordering, generated-copy byte equality or an intentional migration run. No generated/private tree was opened in this reconciliation.
 
 The separate test_native_new_master_then_indexed_leaf_dependencies uses the real application task_doc_tool on temporary coordination data. Its legacy control seeds a leaf through write_task_doc and a Markdown-only master, expects a master-naming refusal for waitsFor, and compares the pre-existing fixture files’ bytes. In a fresh sibling series it then calls create for a JSON-primary master and two leaves, asserts parent row IDs [A, B], accepts A waiting for B, and checks persisted waitsFor and the generated Order heading. It does not migrate the legacy series, assert every possible write artifact is absent, or execute a role/worktree lifecycle. These are added source assertions, not a run result.
+
+The undeclared-surface negative control follows `fragment_one_surfaces()`; its carrier is derived from the declared fragment rather than hardcoded to a retired c-02 path. The canonical corpus plus its sole packaged projection are the checked roots; byte equality remains the propagation owner's separate obligation.
 
 ## Code Commentary
 
@@ -80,8 +82,8 @@ stages a tree whose document cites a repo-relative path that exists nowhere and 
 
 ### The Compact-Curation Policy And Retired-Wording Guard
 
-The exact retired-sentence census reaches the canonical tree and all nine generated
-copies, with seeded re-insertion controls and a preserved developer-request-doctrine
+The exact retired-sentence census reaches the canonical tree and its sole declared packaged
+copy, with seeded re-insertion controls and a preserved developer-request-doctrine
 control. `CURATION_POLICY_STATEMENTS` names the two compact curation sources. The
 canonical positive case checks every declared marker; the generated-copy helper accepts
 any one marker, so that case alone cannot prove both the complete-curation sentence and
@@ -97,7 +99,7 @@ Corpus helpers and disposable fixtures declare no network/provider access. Corpu
 ### Invariants And Boundaries
 
 - Corpus-shape cases read canonical sources; retired-curation wording and the handoff-contract test
-  also declare generated-copy reads. The latter checks canonical plus nine copies of both the
+  also declare generated-copy reads. The latter checks canonical plus the sole packaged copy of both the
   handoff template and c-05 workflow for the R53 answer sentences. Narrow normalized-text
   containment is distinct from propagation-owner byte equality (`scripts/sync-skills.py --check`
   and the projection suite); none of those checks was run here.
@@ -127,6 +129,7 @@ No relevant documentation found after checking live sources.
 - The resolver under test reports missing manifest sources rather than silently accepting them. [1]
 
 - The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`. Anchor: "Focused behavioral check for the consolidated role-instruction corpus" [2]
+
 - The manifest this module resolves, and the corpus it governs. [3]
 
 ### Cross-Repo References
@@ -135,6 +138,12 @@ No sibling-repository contract defines this corpus check.
 
 No meaningful cross-repo references found.
 
-- This module declares narrow normalized-text R53 assertions over canonical plus nine generated handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this review. [4]
+
+- This module declares narrow normalized-text R53 assertions over canonical plus the sole packaged handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this reconciliation. [4]
+
 
 - RF01 source adds w-02 guidance token checks across declared canonical/generated roots and a separate real task_doc legacy-refusal/new-JSON-master authoring fixture. Neither is an intentional migration, copy-equality result or executed acceptance; existing retired-sentence controls and propagation-owner equality responsibility remain. [5]
+
+## Current source evidence
+
+- The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface instead of naming retired c02. [6]

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:859824602377c52ba0fda75fa81d992cccb35019d0b174cb2f3385c78e0d2f9c",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:8e732b27e9b902da21c5825f1f3c0159d483cd34566f9102ce32e01aff01afe9",
         "locator": {
           "kind": "symbol",
           "name": "test_a_sandbox_whose_settings_select_another_host_is_refused"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:1f6d83e34824337f196e038d3f01fa17b2ce641ae83cb9f10000d6e6016b8966",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:b0d8a68bbe24dc6a704631219d2c7e9fc47e6fb6a7e05413cd30d8437578c2b4",
         "locator": {
           "kind": "symbol",
           "name": "test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:920fab14c0ada4d3665736cae5feb7a56d7dd4532a25e427c57c37f037b4b2a6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:035e2b66db6643045eea0d2a5bcd2d7dd43fe63a6f63e02be36b098ceb457c64",
         "locator": {
           "kind": "symbol",
           "name": "test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one"
@@ -71,12 +71,12 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:2700d6456c8018530039ec9b02d2694e0ab7dccc05bbddd8df0108f004962075",
         "locator": {
-          "end": 679,
+          "end": 670,
           "kind": "line_range",
-          "start": 607
+          "start": 598
         }
       },
       "facet": "exact selector/session names disappear, credentials remain, the seven sandbox-owned values are installed, and real children receive their own PWD",
@@ -89,7 +89,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
         "locator": {
           "kind": "symbol",
@@ -106,7 +106,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:2ed259ce82a381dc63016c09a2a53be3948c628bc2e730cb4dcc3a7c82640843",
         "locator": {
           "kind": "symbol",
@@ -123,12 +123,12 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
         "locator": {
-          "end": 1089,
+          "end": 1085,
           "kind": "line_range",
-          "start": 1049
+          "start": 1045
         }
       },
       "facet": "each cut, timeout and malformed outcome replaces the old success with a fresh failure naming the underlying error and paths",
@@ -141,8 +141,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:c7c4d88bb9c146c52213803ff56e2e228ee88d77105612e1d20038d147a0b1c2",
         "locator": {
           "kind": "symbol",
           "name": "test_a_root_that_cannot_be_resolved_fails_closed_and_is_named"
@@ -158,7 +158,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:b55ffcd1d2c454b16f0eead3ba3a41b1036ddd23dc114bfcfaa207cc870b4747",
         "locator": {
           "kind": "symbol",
@@ -175,7 +175,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
         "locator": {
           "kind": "symbol",
@@ -192,7 +192,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
         "locator": {
           "kind": "symbol",
@@ -209,7 +209,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:f7d9d746aa776418e16539079d56ed695184d061d37f7710aab18ccd0a997d66",
         "locator": {
           "kind": "symbol",
@@ -226,7 +226,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
         "locator": {
           "kind": "symbol",
@@ -243,7 +243,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:4f9116d2538cac1cb3f07278ab963bc4e031ceeaf11c0dee00acd56d03e7594a",
         "locator": {
           "kind": "symbol",
@@ -260,8 +260,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:ef5c5f7c2fbf18af17ead07fb61ab6ca097b2966deb699d1caddfb3e9dddb23a",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:b323e4cab8872028e222fdad0106ba85a62b1ecc763024515e629b8c81608221",
         "locator": {
           "kind": "symbol",
           "name": "test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase"
@@ -277,8 +277,8 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-        "content": "sha256:d4413865144e3a314bd07da2efaf556962edb40240f6a9995d13534f1646b026",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:7c560dfcab6c7e2d9d4c06bbb25e52b074fc45be94c7bbb83f41704a3b87e46d",
         "locator": {
           "kind": "symbol",
           "name": "test_a_root_the_build_fills_in_by_default_is_caught"
@@ -294,7 +294,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
         "locator": {
           "kind": "symbol",
@@ -311,7 +311,7 @@
     },
     {
       "anchor": {
-        "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
         "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
         "locator": {
           "kind": "symbol",

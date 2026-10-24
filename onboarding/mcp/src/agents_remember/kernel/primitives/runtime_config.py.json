@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
         "content": "sha256:2f263671c7d5b0d1a221c8a8f1d420249a377d4a8c0d78646d8f709579c0ebd1",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
-        "content": "sha256:d47ee77077683eb532abc2fbba97862dfbfcab0de94274aab7d33cb65b2a8e33",
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpRuntimeConfig"
+        }
+      },
+      "id": "RLZ-HGR6H7",
+      "invariant": "INV-R4760T",
+      "origin": {
+        "handoffEntry": "L188-B18",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Runtime configuration no longer carries installed harness-skill-root authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
         "locator": {
           "kind": "symbol",
           "name": "McpRuntimeConfig"
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
         "content": "sha256:1d9119bc64ab4dc5fd43c1b90c70440eaa0c51e7bba433af8ed35d886b413eb8",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
-        "content": "sha256:6786e6983843aa1d9597109700cd14a6197ccca2b5e63fdf4bc375b0dd215278",
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
         "locator": {
           "kind": "file"
         }
@@ -79,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:c5e398eb7321638b65395f10397c7ac50723b7b62870218ebf5b524c7095ab1c",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:a45acb44467f2575b539b96d6ada7fc9a9cfd4d0d326be8fd8dbda9dd8c8a9db",
             "locator": {
               "end": 183,
               "kind": "line_range",
@@ -96,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:5c80261a520684e6519eb2f35f40a297fc6fd8b8b915ef8e6ab1121ea325da3b",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:df685e37ffe125af626e6dfe4db5630686de4afbe74843d0c8629c0c6c4bfff6",
             "locator": {
               "end": 342,
               "kind": "line_range",
@@ -113,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:22147ea2d45a4d7a813a1cf75682f10ee1b5d76dd2df6bf230b1edd60ca5a232",
             "locator": {
               "end": 352,
               "kind": "line_range",
@@ -130,8 +148,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:a3a590c78a3b1776026b947839616dcef7c84362a52f8cc925bba2cf1ba57860",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:22147ea2d45a4d7a813a1cf75682f10ee1b5d76dd2df6bf230b1edd60ca5a232",
             "locator": {
               "end": 352,
               "kind": "line_range",
@@ -143,16 +161,15 @@
       ]
     },
     "20": {
-      "note": "Anchor: Retained shared authority reader, not per-harness fallback.",
+      "note": "`load_authority_paseo_runtime` reads the authority file's `paseoRuntime` block from `configPath` on every use; the shared reader is retained, not a per-harness fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:74e3852e55b91ab7fbf8dde243da165660d8d747d4452c86c2d4f237e8863ee0",
             "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 28
+              "kind": "symbol",
+              "name": "load_authority_paseo_runtime"
             },
             "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
           },
@@ -165,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:021a0e8c78cb3e1ac3ae4d94599aacc8a9f7ace5962881048bc4607695dff037",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:dbe2c95419b864bfe4c56539ab248d5412e6c1e3a26702a51559cba6374ba4f8",
             "locator": {
               "end": 597,
               "kind": "line_range",
@@ -182,10 +199,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0b43326f338ea9f8e4967ed81f41dcaa19ba8fc",
-            "content": "sha256:02d133a34a8d526aed5a4715429b42cce962256cc8279fa7b3ec23f2ecc158ba",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The per-use host block read from the named authority file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:793187d866d1722921e7d622acbe6bbc94d8f8cc9b17fa769e9143400b7cb0ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "paseo_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The settings-file read that treats an absent authority file as no host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:dbc0d0de7748c2d157c740655c45d6c401a08cacc9bc2a48ec3aca7086f36716",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_paseo_runtime_settings"
             }
           },
           "kind": "code"
@@ -197,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -231,8 +280,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:5c80261a520684e6519eb2f35f40a297fc6fd8b8b915ef8e6ab1121ea325da3b",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:df685e37ffe125af626e6dfe4db5630686de4afbe74843d0c8629c0c6c4bfff6",
             "locator": {
               "end": 342,
               "kind": "line_range",
@@ -248,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -259,8 +308,8 @@
         },
         {
           "anchor": {
-            "blob": "63a74c463004e2f0999c1a9339f16dcae19ecfac",
-            "content": "sha256:4a0ef91fa6b220d1af6d3b8aee0c48c07920a97e254f1824a29ba6b09d44a229",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "end": 115,
               "kind": "line_range",

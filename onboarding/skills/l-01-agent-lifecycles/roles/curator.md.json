@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-        "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
         "locator": {
           "end": 41,
           "kind": "line_range",
@@ -17,17 +17,17 @@
         "handoffEntry": "MIK-R113@v1 rule 10",
         "leaf": "260928-MIK-L113"
       },
-      "rationale": "The curation operation's own account of its carriers; it names an instructed session for the taskless writer and no taskless Curator seat.",
+      "rationale": "The Curator role text's foundation paragraph: the user-started Architect opens the real task, and the Curator starts on it; no instructed session substitutes for task admission.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:bd1d755a46d1af72e7027ad39b71d342bd5c445a49ef05d7d1241d08ac652f1c",
         "locator": {
-          "end": 97,
+          "end": 95,
           "kind": "line_range",
-          "start": 95
+          "start": 93
         }
       },
       "id": "RLZ-7B663Y",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-        "content": "sha256:6234ee03e6d37fec1895595e6fb7a4440ebf34660139c5a1f56f321a7cade932",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "content": "sha256:4847cc311db76462e555f47c25ee5a8f4146c75e5525bff43f3de397675e108b",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:dce6de74aa6e4b74150b9ae10a0c3d4050977d115b024366046974cab6815853",
         "locator": {
-          "end": 97,
+          "end": 95,
           "kind": "line_range",
-          "start": 91
+          "start": 89
         }
       },
       "id": "RLZ-D0XTAP",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 111,
+          "end": 109,
           "kind": "line_range",
-          "start": 111
+          "start": 109
         }
       },
       "id": "RLZ-DT71R6",
@@ -96,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:16982b1069215292a905dc7d1ebaccddab307de10f359aff1b57c1af343a81ca",
         "locator": {
-          "end": 67,
+          "end": 65,
           "kind": "line_range",
-          "start": 67
+          "start": 65
         }
       },
       "id": "RLZ-HVJ3RJ",
@@ -115,8 +115,8 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-        "content": "sha256:c210f1cd4085c85d6bab67a1d67d489d2fba9caa74519af1ca26ec369cbf750c",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "content": "sha256:fe3e92348d9e1d3f15a1424416cef36b2560acef2e42832e4d45cb5ea2f90dd7",
         "locator": {
           "end": 109,
           "kind": "line_range",
@@ -134,12 +134,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:1bc0a41af7223cbc91ea2f78270614076e6727ab0f503209ac75b70b830453f1",
         "locator": {
-          "end": 111,
+          "end": 109,
           "kind": "line_range",
-          "start": 111
+          "start": 109
         }
       },
       "id": "RLZ-JFZ5WP",
@@ -153,8 +153,8 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-        "content": "sha256:5728abf91a9df3d1cc0f688b68e90be44054fbb5b4830163405930449083da4a",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+        "content": "sha256:f76a51fc551df2ddc8ef1e8544f69fc7758fe2fd52ddb071f0c7580db6cdf9a4",
         "locator": {
           "end": 41,
           "kind": "line_range",
@@ -172,12 +172,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "end": 157,
+          "end": 155,
           "kind": "line_range",
-          "start": 155
+          "start": 153
         }
       },
       "id": "RLZ-Q70RTA",
@@ -191,12 +191,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
         "locator": {
-          "end": 138,
+          "end": 136,
           "kind": "line_range",
-          "start": 126
+          "start": 124
         }
       },
       "id": "RLZ-SHXSR1",
@@ -210,12 +210,12 @@
     },
     {
       "anchor": {
-        "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+        "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
         "content": "sha256:aa81672e23992d4fd756542776e03d5436baa4531f4332b8ecd35de051835f92",
         "locator": {
-          "end": 124,
+          "end": 122,
           "kind": "line_range",
-          "start": 116
+          "start": 114
         }
       },
       "id": "RLZ-V1AKR1",
@@ -344,12 +344,12 @@
       ]
     },
     "15": {
-      "note": "Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. [13]\n\nAnchor: Foundation carrier and admission",
+      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. [13] Anchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:90a059d9e2175ab5eec88fec63f9fcfc39a362f9f0b9b1a656da8fc4070cc450",
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:28227192feeb0f70c57e549a4d51193a936b2cb4f70721adabae7d82ba085f4e",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -360,10 +360,10 @@
         },
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:22d69d40cac1b80bdb653f9be2a74220c1f3be24cab9870ed0d01de9ea3cc09e",
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "content": "sha256:6719405682a75696487c0d8fe4e1df3bce94c42ff31364ae9843ee551af84c7e",
             "locator": {
-              "end": 160,
+              "end": 157,
               "kind": "line_range",
               "start": 149
             }
@@ -479,7 +479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
             "content": "sha256:ecc246e59241aed510b2b97b39743d48a13d91db7eab4de737a7b5f7fc524a65",
             "locator": {
               "end": 99,
@@ -497,7 +497,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11b8ef10c8763f50ed20180a7e8e41c2cb9aeb0b",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
             "content": "sha256:e539ae56bc6d0dc38e8c81840aae4265cf58cdbe902b07c5519632f02bfd3087",
             "locator": {
               "end": 194,

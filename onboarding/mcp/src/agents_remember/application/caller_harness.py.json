@@ -1,0 +1,85 @@
+{
+  "path": "mcp/src/agents_remember/application/caller_harness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The comparable key a client name and a provider id are both folded to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54ec9f04b391dfafa4822a69b41c26fcf760201e",
+            "content": "sha256:07dd12500d4f3d28fb92f3beeac6d3c5572eb9ef4558ed44db5884671f8ffebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_harness_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one match rule: equal, leading part either way, or a whole dash-separated segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54ec9f04b391dfafa4822a69b41c26fcf760201e",
+            "content": "sha256:f2be6b617aba1c9333b9e7771048b0cebd96787fca060905afd1f2b45659205d",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_for_caller"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Maps a client name onto an offered provider and returns nothing when none matches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:b2cb082cd1c397c7167fc80221058d3c535ab06ad08f6934d5e789b5f75795dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_caller_harness_maps_to_a_provider_or_to_nothing"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A model-only bootstrap call is served on the calling chat's own harness, and a provider the bound harness does not offer is refused before a seat exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:44511f1ef4cf9dffca62132dc78e2d53b843dc5e46cea5187b4c36d9573e159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_model_only_bootstrap_call_binds_the_callers_own_harness"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:10547776d7bf7332e1d5007e8cb719e24b2a82f157d23287d054426f193ba042",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_model_the_bound_provider_does_not_offer_is_refused_before_the_seat"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

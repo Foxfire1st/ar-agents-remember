@@ -1,16 +1,34 @@
 {
   "path": "mcp/src/agents_remember/models/__init__.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "892ac16b8fabdac6d293c67a5ffa641e6cfa52b3",
+        "content": "sha256:d336b73c5e06a01782ccf3394ac08a0d33fba0833d1b8c7adab88ebb56ddb220",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X7QVV6",
+      "invariant": "INV-R4760T",
+      "origin": {
+        "handoffEntry": "L188-B18",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The public export surface excludes the retired skill-installer response model.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Anchor: Actual explicit export list.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a16db278fa8cf306fa27a9a7be04a8e0f61127d",
-            "content": "sha256:0b704913b471b2915041fda0129ac45710887b4c8aaef1e1824e2ecb7ef869ad",
+            "blob": "892ac16b8fabdac6d293c67a5ffa641e6cfa52b3",
+            "content": "sha256:b30c9d5a5415bb21fc165d1c179951ef4f5593bf34c2805e8aaa3c6d04a5f2d6",
             "locator": {
-              "end": 163,
+              "end": 161,
               "kind": "line_range",
               "start": 88
             }
@@ -24,10 +42,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a16db278fa8cf306fa27a9a7be04a8e0f61127d",
-            "content": "sha256:0b704913b471b2915041fda0129ac45710887b4c8aaef1e1824e2ecb7ef869ad",
+            "blob": "892ac16b8fabdac6d293c67a5ffa641e6cfa52b3",
+            "content": "sha256:b30c9d5a5415bb21fc165d1c179951ef4f5593bf34c2805e8aaa3c6d04a5f2d6",
             "locator": {
-              "end": 163,
+              "end": 161,
               "kind": "line_range",
               "start": 88
             }

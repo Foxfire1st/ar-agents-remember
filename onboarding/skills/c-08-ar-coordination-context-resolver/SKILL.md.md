@@ -28,7 +28,7 @@ include_freshness fetches remotes and therefore can write; include_drift measure
 
 ### Consumers and non-mutation boundary
 
-MQC consumes context and owns quality checks; bootstrap/retrieval/onboarding/task workflows consume roots; c-09 owns Git/worktree lifecycle mutation. The skill tree is instruction-only and package/MCP routes implement resolution. The old example todo, crossRepo-v2 wording, .env exclusion and private implementation reference remain scoped inheritance, not newly inspected implementation facts or a claim that worktree examples are still missing.
+The memory-quality consumer is now `c-05-create-or-update-onboarding-files`, which owns the quality checks — task-start drift classification and trust reporting — together with onboarding authoring; bootstrap, retrieval and onboarding workflows and task workflows consume the resolved roots; `w-02-light-task-workflow` owns Git worktree mutation, task-contract updates and closeout sequencing. The resolver itself still creates no scaffolding and no worktree: memory-root creation is `c-00-initialize-memory-repo`'s and worktree lifecycle mutation is the kept worktree procedure's. The retired `c-02`, `c-09` and `c-12` names inherited below are names of removed skills, not current consumers. The skill tree is instruction-only and package/MCP routes implement resolution. The old example todo, crossRepo-v2 wording, .env exclusion and private implementation reference remain scoped inheritance, not newly inspected implementation facts or a claim that worktree examples are still missing.
 
 ### Scoped inherited commentary and evidence
 

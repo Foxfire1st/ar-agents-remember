@@ -45,36 +45,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The inherited targets implement runtime skill installation, not benchmark service calls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
-            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "skills_install_tool"
-            },
-            "path": "mcp/src/agents_remember/application/runtime/skills.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
-            "content": "sha256:d045b602cb5add906b1035fcf1ad35dcc7973f7cd026fdda0fecbf4f31301f21",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 11
-            },
-            "path": "mcp/src/agents_remember/application/runtime/skills.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary.",
       "targets": [
@@ -124,7 +94,7 @@
             "blob": "292d0a37bd0c888f7998cf891391e09ac1fd595f",
             "content": "sha256:c80cf5dae406f94875d9e9095b326ace73a5a9792487082e576979aa5794d81d",
             "locator": {
-              "end": 161,
+              "end": 156,
               "kind": "line_range",
               "start": 1
             },
@@ -137,7 +107,7 @@
             "blob": "6e8c764268f2f49b4fc5558c39f46505a7006f92",
             "content": "sha256:10c2549f17a7ef33cd063efeabb339cde38f97f6f2dd0bb58b005a3653e67b04",
             "locator": {
-              "end": 45,
+              "end": 40,
               "kind": "line_range",
               "start": 1
             },
@@ -163,7 +133,7 @@
             "blob": "e7b9169b9121e30aa03a531cf3b8fda097c806c4",
             "content": "sha256:a595e7d11b15fa5ef87ed4681983210ba8d56ea36f17fd10028ce6f63c497146",
             "locator": {
-              "end": 295,
+              "end": 293,
               "kind": "line_range",
               "start": 1
             },
@@ -176,7 +146,7 @@
             "blob": "65bdf04618a07cb474fb545a308ec7f2586674ba",
             "content": "sha256:ffa36b3c7c3bcc8b8e311a37b6efb49745672af1aad55b4444e164aa7da8e78c",
             "locator": {
-              "end": 212,
+              "end": 172,
               "kind": "line_range",
               "start": 1
             },
@@ -261,8 +231,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:cc77c227a45f6bb35c6f4daf1538638af4b9b843cfb5290e6e3458295bf8a5b7",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:5df6318d8b33ff813384e623005bd166f51fb107212a9a80e371c49f8f7e2d95",
             "locator": {
               "end": 68,
               "kind": "line_range",
@@ -274,8 +244,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:911d23140753b4daeabefd06c5daee6f49fba21748797732b49503d030fd1990",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:5fdc4cb503119f9cb640bf48eb08badf7d269f43314ab7bb0676a3fcb1876154",
             "locator": {
               "end": 231,
               "kind": "line_range",
@@ -287,8 +257,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:97f946123c8ebc6353f0e73c70923d19da780bf8dac630dc2cdb46c7ff512c6d",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:5dc0da47e49028ab3563b9a60a51d61474dbc03e5f6d758e279573082864b1c9",
             "locator": {
               "end": 347,
               "kind": "line_range",
@@ -300,8 +270,8 @@
         },
         {
           "anchor": {
-            "blob": "e7b9169b9121e30aa03a531cf3b8fda097c806c4",
-            "content": "sha256:e67f2032f57bcb9285d3f0269861a4d7f3c73385341f2f4f3651934613a1ba3d",
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:b8358bf9bc8da311e37ff10edaef3b14729645b88f3c246ec9844af0899df787",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -360,7 +330,7 @@
             "blob": "a0ba267c847aa2dcb9b53d1ad185182e99c1e2ab",
             "content": "sha256:a9e57b43fc7d629f61d7b501a0f7882203b2941f5a5c2871be3a14a9474b306c",
             "locator": {
-              "end": 192,
+              "end": 185,
               "kind": "line_range",
               "start": 1
             },
@@ -378,6 +348,23 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/benchmarks/runner_modules/roots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The runtime-asset sync that writes no skill tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c181c7078f3cd5e6e027e658a6d5bcd4d1893b",
+            "content": "sha256:e3a27a390dde645a40f5d6e5e151a06c42a08d0ece8a4f8ba2e370d59488d5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_runtime_assets"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py"
           },
           "kind": "code"
         }

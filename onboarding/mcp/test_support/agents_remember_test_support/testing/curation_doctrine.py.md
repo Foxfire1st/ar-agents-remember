@@ -45,8 +45,7 @@ this one retired sentence present on this one surface", `doctrine_files` and `re
 sweep a tree, and `missing_curation_policy_statements` answers whether each declared compact source carries
 at least one current policy marker.
 `GENERATED_SKILL_COPIES` and `CURATION_DOCTRINE_SURFACES` define the sweep: the canonical `skills` tree
-plus the nine copies `scripts/sync-skills.py` owns — a stale copy is a real defect, because a seat on that
-harness reads the old sentence.
+plus every skills target declared by generated-copies.json, currently the single packaged runtime tree. A stale served copy remains a defect. The retired closeout-wording row now names the c05 spelling on the kept w-02 skill; source confinement, probe, normalization and reason remain the guard.
 
 ### Conventions
 
@@ -83,7 +82,7 @@ The Curator positive entry now accepts “At intake and after every repair, run 
 
 ## Evidence
 
-- The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple. [7]
+
 
 
 ### Docs References
@@ -101,17 +100,15 @@ case, generated-copy marker reader and seeded retired-wording controls live in
 `mcp/tests/test_role_instruction_corpus.py`. The marker reader retains the `any` limit
 described above.
 
-- The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. [1]
 
-- The required-rule table names the exact form each canonical surface must state, keyed by shipped path. [2]
 
-- The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. [3]
+
+
 
 - The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. [4]
 
 - The consuming cases and the seeded re-insertion that proves the guard can fail. [5]
-- The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. [6]
-
+- The repository sync script checks the declared package projection against canonical skills. [6]
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
@@ -119,4 +116,12 @@ No meaningful cross-repo references found.
 No meaningful cross-repo references found.
 
 
-- Only the exact Curator positive marker changes to the shorter intake/after-repair/full-curation/coherence sentence. The operation tuple still carries COMPLETE_CURATION_RULE and prepare → publish → validate. Retired sentence census, declared source confinement, normalized matching and any-marker positive reader remain unchanged. [8]
+
+
+- The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. [1]
+- The required-rule table names the exact form each canonical surface must state, keyed by shipped path. [2]
+- The current Curator tuple carries the intake/after-repair full-operation marker, while the operation keeps COMPLETE_CURATION_RULE and prepare/publish/validate. Retired matching remains source-confined whole-sentence matching and the positive reader accepts any declared marker. [8]
+
+- The sweep adds canonical skills to every target from the generated-copy declaration, currently the single packaged runtime tree. [3]
+
+- The generated skill census is derived from the canonical declaration through its parser rather than a duplicated tuple. [7]

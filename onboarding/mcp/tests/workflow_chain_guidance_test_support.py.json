@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/workflow_chain_guidance_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The walk calls each step exactly as its guidance gave it, then again with only the arguments it omitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
+            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The callability population is the union of each hop's guidance and each response's own operational triple.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
+            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A call's failure arm is decided by model identity: the tool's own argument model is the caller's error, any other raise lost the envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
+            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

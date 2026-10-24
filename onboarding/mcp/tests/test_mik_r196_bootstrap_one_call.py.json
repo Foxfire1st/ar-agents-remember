@@ -1,0 +1,73 @@
+{
+  "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+        "content": "sha256:b2cb082cd1c397c7167fc80221058d3c535ab06ad08f6934d5e789b5f75795dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_caller_harness_maps_to_a_provider_or_to_nothing"
+        }
+      },
+      "facet": "A client that names no harness maps to nothing rather than to the first offered provider.",
+      "id": "PRF-TM76CY",
+      "invariant": "INV-RNPZRD",
+      "origin": {
+        "handoffEntry": "L188-B09",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+        "content": "sha256:cd7a16323f92584da8e2d0d1497e7048d56237f96acc67955f7e784e87f65ff0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_bootstrap_overrides_are_validated_before_dispatch_when_a_host_is_configured"
+        }
+      },
+      "facet": "An override naming a harness the host cannot offer is refused before dispatch.",
+      "id": "PRF-WPYP8D",
+      "invariant": "INV-RNPZRD",
+      "origin": {
+        "handoffEntry": "L188-B09",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This address case invokes construction helpers with explicit server/agent inputs, while the separate registered delivery test requires returned identity and continuation to match its created seat; neither source reading is a native execution witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:21bbcd76d53720f4d4624dd2b4126c2764099f06dbcf27d21d34f0a956758f89",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 379
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

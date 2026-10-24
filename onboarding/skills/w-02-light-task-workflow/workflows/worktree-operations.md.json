@@ -1,0 +1,125 @@
+{
+  "path": "skills/w-02-light-task-workflow/workflows/worktree-operations.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+        "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K9S451",
+      "invariant": "INV-0J87VE",
+      "origin": {
+        "handoffEntry": "L188-B14",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The transferred worktree procedure names available operations and preserves admission/recovery authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+        "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MNBDTJ",
+      "invariant": "INV-1P5Z3B",
+      "origin": {
+        "handoffEntry": "L188-B15",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Branch ownership follows recorded organizational versus atomic execution nature.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+        "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
+        "locator": {
+          "end": 514,
+          "kind": "line_range",
+          "start": 499
+        }
+      },
+      "id": "RLZ-QGSRZ5",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+        "content": "sha256:7d8d0418c163fc59ff2fcd6399c1d99cd6d6c1440e2761c31cbd1578985e9604",
+        "locator": {
+          "end": 514,
+          "kind": "line_range",
+          "start": 499
+        }
+      },
+      "id": "RLZ-YSSZK6",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "The repaired instruction extent names this operational contract.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The kept procedure owns intake and intent, start/attach/status, sync, closeout hand-off, integration, finalization, cleanup and reopening, with the `worktree_*` family as its authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Atomic and organizational masters are read from the task's recorded nature and edge: an organizational master adds no series contract or integration branch, and its leaves use the recorded super branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Intake order keeps context resolution, the task-start drift check, the pre-worktree memory commit and the Worktree Intent Gate, and a developer-gated step holds its action while the turn follows the orientation operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
+            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,110 @@
+{
+  "path": "mcp/tests/test_mik_r196_l188_preparation_order.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:5fb52dc3ee1fd13db8945d57be10eb991a2c3a80fc1315c759c9200af224c4d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cold_path_crosses_the_scaffold_gate_to_the_host_stage"
+        }
+      },
+      "facet": "With the scaffold present the cold path reaches the host stage instead of stopping at the root gate.",
+      "id": "PRF-333K6B",
+      "invariant": "INV-D3VXYX",
+      "origin": {
+        "handoffEntry": "L188-B01",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:c3e3f0002999e2da9f04a272f57791523d96d2105a8d45b71752835f090b430f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_invalid_document_reference_is_refused_before_any_effect"
+        }
+      },
+      "facet": "An invalid document reference is refused before any durable effect is written.",
+      "id": "PRF-70Y6YT",
+      "invariant": "INV-MGQ6ES",
+      "origin": {
+        "handoffEntry": "L188-B05",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:053b481ae51fb8be7022f2c0b42f29967414aa9770317190b2a78ea4fe6de17b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_installed_scaffold_is_what_the_cold_path_accepts"
+        }
+      },
+      "facet": "The same scaffold gate holds on the legacy delivery mode.",
+      "id": "PRF-9DX0BE",
+      "invariant": "INV-D3VXYX",
+      "origin": {
+        "handoffEntry": "L188-B01",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:66733b67fa5de5249c1b1dab4dbc0e410644ec541448b48972da520e20c92b2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_provision_failure_carries_the_completed_stages_and_the_retained_daemon"
+        }
+      },
+      "facet": "A provision failure names the completed stages and the daemon it left running.",
+      "id": "PRF-A101J8",
+      "invariant": "INV-Y6WN6Y",
+      "origin": {
+        "handoffEntry": "L188-B06",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:a34ad1a971bd29c270447be5485866f19cbdab8cb90f1adc9cc167e56261f35a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_plugin_load_failure_carries_the_running_daemon"
+        }
+      },
+      "facet": "A plug-in load failure reports the running daemon it could not use.",
+      "id": "PRF-F3GN4R",
+      "invariant": "INV-Y6WN6Y",
+      "origin": {
+        "handoffEntry": "L188-B06",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+        "content": "sha256:7d1fe6ff7ce4514b8f7041158047f12846d7fd5a152703893e87b0cc621e4c73",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_receipt_is_reconciled_without_a_second_preparation"
+        }
+      },
+      "facet": "An existing receipt is reconciled without preparing the host again.",
+      "id": "PRF-XAVTB3",
+      "invariant": "INV-MGQ6ES",
+      "origin": {
+        "handoffEntry": "L188-B05",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

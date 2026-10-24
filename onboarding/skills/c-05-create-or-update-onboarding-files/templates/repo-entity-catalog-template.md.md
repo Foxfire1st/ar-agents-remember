@@ -22,7 +22,7 @@ Catalog content should describe real entities and their projections, not a gener
 
 ### Invariants And Boundaries
 
-The template describes the fingerprint/inventory match but implements no comparer or parser. The actual c-05 skill assigns curated evidence-path selection and refresh to onboarding maintenance and fingerprint comparison/inventory matching to c-02. This is an attribution in the inspected c-05 source, not independent execution or inspection of c-02 machinery. The catalog template’s metadata and history comment are legacy source-description details, not requirements for the converted card documenting this file.
+The template describes the fingerprint/inventory match but implements no comparer or parser. The retained entity workflow under c-05 requires review of changed evidence and names c-05 as the reporter of fingerprint drift, missing fingerprint rows and orphaned rows or missing paths. This is the instruction contract, not an independent execution of a comparer. The catalog template’s metadata and history comment are legacy source-description details, not requirements for the converted card documenting this file.
 
 This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes.
 
@@ -39,8 +39,9 @@ The source supplies the inventory, projection and fingerprint shapes. The actual
 - The entity template requires a fingerprint for every inventory entity and describes sorted current Git blob evidence with a smallest-practical load-bearing source set. [1]
 - The entity inventory retains real-object meaning, source authority, naming drift, identifiers, relationships, confusions, references and migration notes. [2]
 - The source describes Reality/Firmware/Backend/Frontend projections, optional catalog ownership notes and legacy history syntax. [3]
-- The c-05 source routes repository entity catalogs separately from file-level units. [4]
-- The inspected c-05 source attributes evidence-path curation to maintenance and fingerprint comparison/inventory matching to c-02; the template itself performs neither. [5]
+- The c-05 source names file-level units and repository entity catalogs as its two artifact types. [4]
+
+- The retained c-05 entity workflow requires evidence review and names its current fingerprint-drift and inventory-coverage reporting owner; the template itself performs neither comparison nor parsing. [5]
 - The converted workflow requires a source-mirrored Markdown/companion card without manually authored metadata, history or sidecar JSON. [6]
 
 ### Cross-Repo References

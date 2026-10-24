@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Converted templates alone cannot reach adoption without a writable measured fixer, the adoption gate alone cannot create anchors, and valid cards/baseline alone cannot truthfully claim foundation state; all five obligations form the fresh-setup guarantee."
+    "justification": "The five members jointly distinguish setup and foundation ownership from optional onboarding work: card format and measured fixer admission govern authored cards, baseline admission refuses legacy cards, ordered setup permits scaffold-only adoption, and c-03 handoff prevents card/baseline state from being mistaken for knowledge. Each member applies under its own conditions rather than executing on every setup path."
   },
-  "guarantee": "A new repository reaches an attributed first baseline with converted anchored onboarding through the existing authority-measured fixer, and the ordered setup/handoff never treats those cards or that baseline as a knowledge foundation.",
+  "guarantee": "Converted-memory setup attributes the first baseline before new-root foundation authoring and reports the actual knowledge state for an Architect-owned task, without making onboarding a setup prerequisite. When onboarding is authored, converted card shape, admitted fixer authority and the prohibition on legacy-format first-baseline cards apply; the c-03 handoff retains its clean-fixer and actual-state account. Neither cards nor an attributed baseline establish an authored knowledge foundation.",
   "id": "FAM-VDDPC6",
   "members": [
     "INV-4XD2ZF",
@@ -22,7 +22,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/memory",

@@ -53,3 +53,10 @@ This account is bound to the candidate source, not a claim of a running serving 
 - **Retained historical source account — superseded by the current contract:** Current registration declares the public input/delegation surface and its normative promises; it does not independently qualify composed filing, held waits or DTO completeness. [1]
 
 - The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery. [3]
+
+## The caller's harness name and the settings tool
+
+`caller_harness_name` reads the client name the calling harness sent in its `initialize` request from the served request context, and answers `None` for a client that named nothing or for a call made outside a served request, so the launch reports an unknown caller harness rather than inventing one. `user_settings_init` is registered beside the three role tools, takes a target, an optional harness or per-role harnesses and a dry run, and runs its payload builder in a thread.
+
+- The transport's own client name, or no name at all. [7]
+- The registration that mounts the role tools and the settings initializer. [8]

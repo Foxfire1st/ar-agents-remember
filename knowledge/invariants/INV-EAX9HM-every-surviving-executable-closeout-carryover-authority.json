@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Retiring a skill leaves dangling authority in every workflow that cited it; resolving them to the kept owners is the difference between a retirement and a broken lifecycle."
+  },
+  "applicability": "Every executable reference from a surviving lifecycle workflow to a closeout or carryover procedure.",
+  "conditions": [
+    "Each reference resolves to a kept workflow that states the procedure.",
+    "The dated doctrine account stays as history and is not read as executable authority.",
+    "The retirement record names each retired section's surviving owner by path and range, its retained obligation and any gap, and stays marked as a historical diagnostic rather than a current certification."
+  ],
+  "exclusions": [
+    "Rebuilding a retired skill to keep a reference alive."
+  ],
+  "id": "INV-EAX9HM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P4; final-a3/removal-hits.json; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B13",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every surviving executable closeout/carryover authority resolves to an exact kept workflow while dated doctrine history stays intact.",
+  "status": "proposed",
+  "supersedes": []
+}

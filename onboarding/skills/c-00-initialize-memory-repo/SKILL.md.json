@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content. Starter packages supply harness skills. The prior reference's skills_install maintenance/manual claim is retained above only as superseded history; the current canonical skill does not advertise that route.",
+      "note": "The skill initializes memory roots, not coordinator runtime assets, skill copies, task worktrees, or onboarding content. The tool server serves the canonical skill tree from its packaged copy, so the skill neither installs skills nor creates a skill folder anywhere; the prior reference's skills_install and starter-package claims are retained above only as superseded history.",
       "targets": [
         {
           "anchor": {
-            "blob": "eaffc05c76c788ebbb57c75e2f7936b1471630f6",
-            "content": "sha256:7a9220bb6b8bc61864c9d03d7273a5790028f664cea41ae874f72f8db8b53310",
+            "blob": "57e97d1df26bdb06eb4f5481b1760e7db59e0f91",
+            "content": "sha256:102e8073d0c5fa01887866e687e03c3b2b4793e02a6ea7f3aae34c8c922ad7ed",
             "locator": {
               "kind": "file"
             }
@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eaffc05c76c788ebbb57c75e2f7936b1471630f6",
+            "blob": "57e97d1df26bdb06eb4f5481b1760e7db59e0f91",
             "content": "sha256:4d6cfce60dc9bcd6f5fd0c3e76fdc1808596bfdd2d5f59c781c0ca6718541084",
             "locator": {
-              "end": 250,
+              "end": 254,
               "kind": "line_range",
-              "start": 184
+              "start": 188
             }
           },
           "kind": "code"
@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eaffc05c76c788ebbb57c75e2f7936b1471630f6",
+            "blob": "57e97d1df26bdb06eb4f5481b1760e7db59e0f91",
             "content": "sha256:d46d53b7f21e255d3261f5588ca0a6367240f9b96f7144c6db6f0593d6b5e785",
             "locator": {
-              "end": 324,
+              "end": 328,
               "kind": "line_range",
-              "start": 308
+              "start": 312
             }
           },
           "kind": "code"
@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eaffc05c76c788ebbb57c75e2f7936b1471630f6",
+            "blob": "57e97d1df26bdb06eb4f5481b1760e7db59e0f91",
             "content": "sha256:efc9b3fb90c7ddeea54b47efac07de5387d0073b429b4bd6c5f53cc46f5055f8",
             "locator": {
-              "end": 38,
+              "end": 39,
               "kind": "line_range",
-              "start": 20
+              "start": 21
             }
           },
           "kind": "code"
@@ -90,12 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eaffc05c76c788ebbb57c75e2f7936b1471630f6",
+            "blob": "57e97d1df26bdb06eb4f5481b1760e7db59e0f91",
             "content": "sha256:3d9e642b14d1726cf0eea31417a03b71854640b62adfe5df25a02b1be6a0c4d9",
             "locator": {
-              "end": 105,
+              "end": 107,
               "kind": "line_range",
-              "start": 65
+              "start": 67
             }
           },
           "kind": "code"

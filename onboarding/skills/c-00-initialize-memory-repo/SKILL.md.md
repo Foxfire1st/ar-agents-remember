@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The canonical initialization skill describes creation or repair of the external repository memory scaffold. It is instruction, not an independent runtime, task, role, or permission authority. Package-generated copies carry this canonical text rather than a separate initialization contract.
+The canonical initialization skill describes creation or repair of the external repository memory scaffold. It is instruction, not an independent runtime, task, role, or permission authority. It creates no skill folder: the tool server serves the canonical skill tree from its packaged copy.
 
 ## Code Commentary
 
@@ -14,7 +14,11 @@ The normal installed input is `repo_id`; a code root is for conceptual review or
 
 Before creation, the skill asks for the foundation branch, states the exact external memory path and explains the separate repository, its directories, the automatically produced `memory.md` view and baseline/adoption, and deliberate branch migration in plain language. This describes the skill's setup explanation; it does not grant publication, commit, landing, or ledger ownership to the reader.
 
-Initialization owns missing memory scaffolding only. Runtime repair remains with `runtime_install`; starter packages expose harness skills; bootstrap owns onboarding generation. Existing files are preserved without explicit overwrite approval. The removed repo-local `ar-memory/` layout is reported by exact path with its route out, not read, migrated, deleted, or recreated by this skill. Legacy content without `knowledge/layout.json` is not initialized around: the source names the first-conversion procedure and `legacy-format` refusal before ordinary memory operations resume. Machine policy and path rules belong to memory-layer `system/settings.json`, not coordinator runtime settings or the explanatory Markdown.
+Initialization owns missing memory scaffolding only. Runtime repair remains with `runtime_install`, whose scaffold carries no skills copy. Skills are never installed as files: the tool server serves the canonical tree from its packaged copy as MCP resources, so an absent `skills/` directory in a harness, project or coordination root is the expected state. `c-03-repo-bootstrap` owns onboarding generation. Existing files are preserved without explicit overwrite approval. The removed repo-local `ar-memory/` layout is reported by exact path with its route out, not read, migrated, deleted, or recreated by this skill. Legacy content without `knowledge/layout.json` is not initialized around: the source names the first-conversion procedure and `legacy-format` refusal before ordinary memory operations resume. Machine policy and path rules belong to memory-layer `system/settings.json`, not coordinator runtime settings or the explanatory Markdown.
+
+## Current Source Qualification
+
+The current source names no skill carrier at all. It states that skills are not installed as files, that the tool server serves the canonical tree from its packaged copy as MCP resources, that the coordination root carries no `skills/` directory, and that root `skills/` is the source repository's authoring source rather than a runtime dependency of a project. The scaffold list it checks therefore omits `skills/`, and an absent skill folder is not a missing-runtime defect. Earlier starter-package, generated-copy and `skills_install` statements below describe superseded distribution, not current capability.
 
 ## Retained Prior Commentary And Historical Claims
 
@@ -24,7 +28,7 @@ The following preserves the earlier curated operative account and the original c
 
 The current source facts below replaced the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures and evidence are retained here as history; they grant no current call, restored route or fresh execution acceptance.
 
-- Source removes that route and only says starter packages supply skills.
+- That repair's source removed the skill-install route and named copied starter packages as the skill carrier; neither carrier exists now, and the current text serves skills from the package instead (see Current Source Qualification).
 - Existing legacy content without `knowledge/layout.json` is not initialized around: `memory_init` writes no marker and names the first-conversion procedure. Ordinary unconverted-memory operations refuse with `legacy-format` even if no converted branch exists. Convert first as `c-13-install-and-onboard` and `docs/guides/first-conversion.md` describe, then resume scaffolding; legacy card reads and conversion remain available.
 
 ### Superseded Inventory
@@ -108,7 +112,7 @@ No meaningful cross-repo references found.
 
 ## Evidence
 
-- The skill initializes memory roots, not coordinator runtime assets, harness skills, task worktrees, or onboarding content. Starter packages supply harness skills. The prior reference's skills_install maintenance/manual claim is retained above only as superseded history; the current canonical skill does not advertise that route. [1]
+- The skill initializes memory roots, not coordinator runtime assets, skill copies, task worktrees, or onboarding content. The tool server serves the canonical skill tree from its packaged copy, so the skill neither installs skills nor creates a skill folder anywhere; the prior reference's skills_install and starter-package claims are retained above only as superseded history. [1]
 - Repo-local ar-memory was removed and is reported by exact path with a route out, rather than created, read, or migrated; external memory resolves under coordination-root/memory-repos after runtime verification. Legacy content without the layout marker is refused, not initialized around. [2]
 - Starter settings examples keep storage and path rules under memory-layer system/settings.json and seed common generated/vendor/build/local excludes. [3]
 - Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. [4]

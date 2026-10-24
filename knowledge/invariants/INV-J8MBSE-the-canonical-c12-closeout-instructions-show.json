@@ -5,7 +5,7 @@
     ],
     "justification": "An instruction omitting canonical leaf, preview-tree binding or same-generation recovery sends later agents to an invalid or unsafe publication route."
   },
-  "applicability": "Canonical c12 direct-landing instructions and generated copies.",
+  "applicability": "Granted Branch-Direct Landing instructions in the canonical kept closeout workflow and its generated packaged copy; named-leaf verify/create forms and same-generation recovery instructions.",
   "conditions": [
     "Named-leaf verification and creation use their declared schema and current generation recovery owner."
   ],
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L94",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The canonical c12 closeout instructions show schema-valid named-leaf verify and create forms and describe generation journaling with code-proven/memory-missing and memory-proven/ledger-missing recovery and no second code commit, identically across all generated copies.",
   "status": "proposed",

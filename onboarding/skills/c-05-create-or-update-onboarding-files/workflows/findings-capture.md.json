@@ -1,0 +1,37 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/workflows/findings-capture.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The kept procedure names its durable destinations, its two operating modes and the rule that a confirmed finding is never left only in chat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e991097e36a7bcc2a0be6e2603e47320bec04cc",
+            "content": "sha256:7ec2f9eabb0b82acc75367da063625282c473c59b450a90db376f60d0989629a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Onboarding propagation is the last resort destination and is gated on verified current-state fact, with approved requirement and architecture text never rewritten from one finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e991097e36a7bcc2a0be6e2603e47320bec04cc",
+            "content": "sha256:7ec2f9eabb0b82acc75367da063625282c473c59b450a90db376f60d0989629a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

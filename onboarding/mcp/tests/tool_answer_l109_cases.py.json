@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/tool_answer_l109_cases.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each producer rebuilds one largest answer from a hermetic fixture with a fixed git environment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "850c08dd01fdd31329e5a79826b2cd417fe393aa",
+            "content": "sha256:7e69b6b4babdc61ce36e668bdf938dcc5aa75700ee5cb31a7e849fa96c90ac47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The built answer is sanitized of scratch paths and identities before it is compared with the stored case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "850c08dd01fdd31329e5a79826b2cd417fe393aa",
+            "content": "sha256:7e69b6b4babdc61ce36e668bdf938dcc5aa75700ee5cb31a7e849fa96c90ac47",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

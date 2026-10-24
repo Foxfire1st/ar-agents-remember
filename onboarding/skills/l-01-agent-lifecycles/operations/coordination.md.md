@@ -9,6 +9,10 @@ This account controls the named changed seams; contradictory earlier card wordin
 - The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager. [1]
 
 
+## Current Source Qualification
+
+The current source addresses a leaf hand-over by the role and the exact task reference in `leafSeats.roleMessageArguments`, rather than by a per-seat list kept in prose. Everything else this account states about unique live seats, ambiguity refusal, held messages, permission notices, separate CODE/MEMORY counts and non-relay of direct peer packages is unchanged.
+
 ## Message/file transport
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
@@ -35,7 +39,7 @@ Only the paragraph assigning Manager report reading, next-seat/time tracking and
 
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
+No separate reference list: the file's sidecar carries the realization entries for its current anchors.
 
 ## Inherited Source-Epoch Commentary
 

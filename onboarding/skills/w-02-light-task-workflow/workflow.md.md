@@ -12,6 +12,10 @@ This qualification governs the named current seams; incompatible earlier general
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
 
 
+## Current Source Qualification
+
+The workflow's four shared discipline points now name the kept owners: drift checked with `c-05-create-or-update-onboarding-files`, onboarding updated through the same skill, and a separate commit approval before this skill's own closeout creates Git commits for worktree-backed tasks. The leaf contract for a worktree-backed task is placed by this skill at `enclosures/<leaf-id>/series-contract.md`. Inherited sentences that route those steps to a `c-09` worktree manager or a `c-12` closeout skill describe retired owners.
+
 ## Governing Overview
 
 [repository onboarding overview](../../overview.md)

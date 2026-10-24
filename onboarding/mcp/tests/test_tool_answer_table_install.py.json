@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_install.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The row's bound and fields come from the production lookup and projection, and both stored cases are operation-produced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
+            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An over-bound install answer overflows through the unchanged guard and leaves one guard-cut log line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1231febf1d6b5fd0fbfd9f0207fd50d14eaac97",
+            "content": "sha256:bac198d8e64a01f148de9a3029f50320c02a66dc5cade17ec412111fc93fef3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

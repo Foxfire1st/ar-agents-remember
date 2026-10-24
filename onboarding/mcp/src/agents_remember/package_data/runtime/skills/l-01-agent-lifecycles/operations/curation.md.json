@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
-        "content": "sha256:397e398fac2550880380009410da4d9280ebcdce91bbe52734bdeba597f96ab1",
+        "blob": "145be631612f52c363b97b82d253839028ebc907",
+        "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
         "locator": {
           "kind": "file"
         }
@@ -131,22 +131,12 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.\n\nFoundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. [6]\n\nAnchor: Foundation carrier and admission",
+      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. [6] Anchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-            "content": "sha256:d1ddba3cca503f5f3cad370e448bf88011ea98e6139536e976bfcb1d1201a5e9",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:66d0bc8f115a657019dd34edd0e697f3ae81f8546670d2940c85c565154777e6",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -157,12 +147,22 @@
         },
         {
           "anchor": {
-            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-            "content": "sha256:9f5b328082283a5858c2b02a98ea5a9e8d03d6aedc04b72c1eca22964d95c7e5",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:a917dcb96e7d3537526b86625dffe2b116c7bdc821e23852321ae7177169a263",
             "locator": {
-              "end": 201,
+              "end": 198,
               "kind": "line_range",
               "start": 182
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

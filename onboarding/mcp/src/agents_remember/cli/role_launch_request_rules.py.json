@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The free seat bound to the caller's harness, or refused with the list the host runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "content": "sha256:23bd27e6b2c5d3b7135b7a6f5a2d0c5b1dfe47654f1729b9c04078b819f961bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_caller_harness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The missing-copy warning that keeps the start succeeding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_copies_receipt_warning"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A harness the host does not run is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:10c5f14f4859e88da084df881bab90b607c0e937e308e7c78e5bc3ea54f119e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_harness_the_host_does_not_run_is_refused_by_name"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The bridge status mapping the route answers with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "content": "sha256:40b9b78a5d624b34e69c7053ecc525efc5c313167f38d9dac20a56bfc5682e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "bridge_http_error"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

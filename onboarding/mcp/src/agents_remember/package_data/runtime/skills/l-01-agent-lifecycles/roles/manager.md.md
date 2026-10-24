@@ -42,7 +42,7 @@ authority for current onboarding.
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/roles/manager.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 - Change manager doctrine only in canonical `skills/`.
 - Propagate and verify with `scripts/sync-skills.py`.

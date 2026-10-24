@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-        "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:2ddc246015eec4c299d483b821d0fb8b429250d2382493abef72c8a0321e462b",
         "locator": {
           "end": 252,
           "kind": "line_range",
@@ -22,8 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-        "content": "sha256:769f824dbfe0096ab2bdca0722772df9ef07a88093bd8bbd2740bd27644284ac",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9DSETR",
+      "invariant": "INV-R1E181",
+      "origin": {
+        "handoffEntry": "L188-B11",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The kept installation workflow uses native one-call setup and served detail.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:a3c410c76cdde01f3878013ae89532134a207e17907def1ff4f28eeb8f07b2fc",
         "locator": {
           "end": 108,
           "kind": "line_range",
@@ -41,12 +58,29 @@
     },
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EGW82W",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-B12",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Setup ends at the Architect handover rather than performing the knowledge foundation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
         "content": "sha256:7f100080b048a59ff0e21ed4d1f5ee333cbb006e83a96e7af982099f3f984c9b",
         "locator": {
-          "end": 173,
+          "end": 176,
           "kind": "line_range",
-          "start": 148
+          "start": 151
         }
       },
       "id": "RLZ-G2F9YV",
@@ -55,13 +89,13 @@
         "handoffEntry": "MIK-R96@v1 §7",
         "leaf": "260928-MIK-L96"
       },
-      "rationale": "This common install procedure teaches the shared setup, public host result and executable single-start route, and is the source regenerated into each harness skill copy.",
+      "rationale": "This common install procedure teaches the shared setup, public host result and executable single-start route, and is the source regenerated into the single packaged skill copy the tool server serves as MCP resources.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-        "content": "sha256:fb5de159bb4cbe0df7e9f61dcd0a487181219e95c2fa68515c886b807dd6e050",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:2ddc246015eec4c299d483b821d0fb8b429250d2382493abef72c8a0321e462b",
         "locator": {
           "end": 252,
           "kind": "line_range",
@@ -79,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-        "content": "sha256:5e1eac2552301245140d26bb8cac68b34f16064f8dd9191a77cdd020f7d7453d",
+        "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+        "content": "sha256:678eb7be79d47d24444c446e4d22d4fe1ec08c82608067b315bba434aa0bdba3",
         "locator": {
           "end": 428,
           "kind": "line_range",
-          "start": 381
+          "start": 386
         }
       },
       "id": "RLZ-P2BV6G",

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Consolidation puts procedures with different powers in one skill, so the boundary has to hold in both the closeout workflow and the quality-control workflow that now share a home."
+  },
+  "applicability": "The consolidated skills that now carry both a diagnostic procedure and its sibling authorship or worktree procedure.",
+  "conditions": [
+    "Each procedure keeps its own powers and states them where it lives.",
+    "A diagnostic procedure does not acquire authorship or transaction authority by consolidation."
+  ],
+  "exclusions": [
+    "Splitting the consolidated skill back into one skill per procedure."
+  ],
+  "id": "INV-5GJFDS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P7; c-05 SKILL.md:7–20,43–55; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B16",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Consolidated skills distinguish diagnostic/closeout procedures from their sibling authorship/worktree procedures without contradictory powers.",
+  "status": "proposed",
+  "supersedes": []
+}

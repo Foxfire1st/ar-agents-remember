@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
+        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
         "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
-        "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
+        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+        "content": "sha256:5e6fb6711e209c70e086fdb2264c6005606d1b967419decd3efa149c98a39d40",
         "locator": {
           "end": 122,
           "kind": "line_range",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
-        "content": "sha256:031bcfe5b9b1ac342427dc2c0fe738beef326c73ecb96eefd8615da0fae486a1",
+        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+        "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
         "locator": {
           "kind": "symbol",
           "name": "PARENTLESS_START_SELECTIONS"
@@ -63,8 +63,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
-            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "content": "sha256:33bb11d89392b2002216579ca55faae9e0c5c14722b2d48e00a1bc455f7088ef",
             "locator": {
               "kind": "file"
             }
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
             "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
             "locator": {
               "kind": "symbol",
@@ -94,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
-            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "content": "sha256:2707c1a1adec25477388ca75ea6c1189bdbad6517bba744d44e0dd308f6496cc",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -103,6 +103,83 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The level the free agent holds, which no per-level override reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "content": "sha256:d49a923e52a43539c1c40ef136cb3a70bcb028c9ecbcea4a5444f8e65aa8d50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_LEVELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The taskless set whose receipts are keyed by their request id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "content": "sha256:b4d998c454a1ab4b666d9fefe473a52c921b55000f5e9b301ee264eab2c13a3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_ROLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The parentless row that admits no document reference for the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENTLESS_START_SELECTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The free agent is a launcher role with no document and no parent, and every document reference on its start is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:a19b473c50720880480268ef37eefc789f2eba7e4b3f0943c6fe21c25d2c6550",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_is_a_launcher_role_with_no_document_and_no_parent"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:9cb44c2a72c48d01b91466132b1293139dc1f96e1767d85357504566e6e24b7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_selection_refuses_every_document_reference"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
         }
       ]
     }

@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Canonical role registry and three-condition router this page summarizes.\n\nAnchor: `# l-01-agent-lifecycles — The Agent Lifecycles`",
+      "note": "Canonical lifecycle and role-document registry to which this reference defers.\n\nAnchor: current role routing",
       "targets": [
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:1ca46a8318fb7c0df4394df84b9aa3debfb3c195fb5893f3357aa260b6547d29",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
             "locator": {
-              "end": 180,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -25,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:84e09ce4c0c974eb09f0813104bae24e09442ca25472eb7570f1d5bba17d47af",
             "locator": {
-              "end": 27,
+              "end": 40,
               "kind": "line_range",
-              "start": 27
+              "start": 40
             },
             "path": "scripts/sync-skills.py"
           },
@@ -39,12 +37,29 @@
       ]
     },
     "3": {
-      "note": "The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged.\n\nAnchor: `docs/reference/skills.md`",
+      "note": "The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, no `skills_install` tool and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read.",
       "targets": [
         {
           "anchor": {
-            "blob": "6723dcb81e360097d1bd7f2e435b9ad371085de6",
-            "content": "sha256:3baf41c9a75e66991909efdac61fb66175051362a18a45e489499a058705c106",
+            "blob": "7c86474c922b10680cc26e4b3e91a47b1c8f2c98",
+            "content": "sha256:d5906bfde01d7bbd699f382c8e6a1f193a92911ea8371df1d85d34fa3c7a0e05",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c86474c922b10680cc26e4b3e91a47b1c8f2c98",
+            "content": "sha256:d5906bfde01d7bbd699f382c8e6a1f193a92911ea8371df1d85d34fa3c7a0e05",
             "locator": {
               "kind": "file"
             }

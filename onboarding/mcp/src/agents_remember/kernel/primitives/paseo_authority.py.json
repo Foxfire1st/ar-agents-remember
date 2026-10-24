@@ -3,63 +3,70 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-        "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+        "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+        "content": "sha256:0ddabb8549d0779979fc648888de87b2aa1fcac7cbbfbf74e382e8fb8c02d0fb",
         "locator": {
           "kind": "symbol",
-          "name": "load_shared_paseo_runtime"
+          "name": "_write_authority"
         }
       },
-      "id": "RLZ-1BA9GW",
-      "invariant": "INV-0PAKA9",
+      "id": "RLZ-HF14KZ",
+      "invariant": "INV-7T4ENM",
       "origin": {
-        "handoffEntry": "MIK-R96@v1 §8 / OR-R034",
-        "leaf": "260928-MIK-L96"
+        "handoffEntry": "L188-B04",
+        "leaf": "260928-MIK-L188"
       },
-      "rationale": "Reads the single migrated user-config Paseo authority per use through the common location guard; absent/malformed data is named and no per-harness or coordinationRoot/system fallback is consulted.",
-      "role": "unclassified"
+      "rationale": "The single-Bootstrap publisher uses an exclusive same-folder temporary file and rename with honest cleanup/name-state detail; it contains no file-lock mechanism.",
+      "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-        "content": "sha256:fa0dc2f42ce6e2c59108360a9246518d2be301dd67ccd8cb9140d8ebc6c66c19",
+        "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+        "content": "sha256:74e3852e55b91ab7fbf8dde243da165660d8d747d4452c86c2d4f237e8863ee0",
         "locator": {
-          "kind": "file"
+          "kind": "symbol",
+          "name": "load_authority_paseo_runtime"
         }
       },
-      "id": "RLZ-CVNGM2",
-      "invariant": "INV-B7D1WM",
+      "id": "RLZ-HNGRYE",
+      "invariant": "INV-0PAKA9",
       "origin": {
-        "handoffEntry": "L71-CURRENT242-W-15",
-        "leaf": "260928-MIK-L71"
+        "handoffEntry": "L188-curator-583ec80a-new-MCP-authority-realization",
+        "leaf": "260928-MIK-L188"
       },
-      "rationale": "The landed host authority reader now resolves the same user config location rather than retaining its older coordination user-file reader.",
-      "role": "propagation-persistence"
+      "rationale": "Reads the configPath MCP authority file on each use and returns its parsed paseoRuntime block with source attribution; no user-file or per-harness fallback is consulted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+        "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "establish_authority_paseo_runtime"
+        }
+      },
+      "id": "RLZ-T7KYZ5",
+      "invariant": "INV-0PAKA9",
+      "origin": {
+        "handoffEntry": "L188-curator-583ec80a-new-MCP-authority-realization",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Setup addresses the same MCP configPath authority, preserves an existing block, and creates only an absent block through the single authority writer.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The shared path.",
+      "note": "The authority path, made absolute without following a link.",
       "targets": [
         {
           "anchor": {
-            "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
-            "content": "sha256:b54824dbea465c2d25eddfd730b33bd9a3aca4d06f93cdd4be0e49d0b1029bca",
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:e9aa2b5d6a4e0b1ff122eb2201aad50f6a4bca57203493e65866ede7c61cd701",
             "locator": {
               "kind": "symbol",
-              "name": "paseo_runtime_path"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-            "content": "sha256:c1a52f1720725e35c45417d66920fcbe2160853072402d42bcca336ac27b0648",
-            "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 20
+              "name": "authority_settings_path"
             }
           },
           "kind": "code"
@@ -67,15 +74,15 @@
       ]
     },
     "2": {
-      "note": "The per-use read of the shared block.",
+      "note": "The per-use read of the authority block, absent when the file or block is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:74e3852e55b91ab7fbf8dde243da165660d8d747d4452c86c2d4f237e8863ee0",
             "locator": {
               "kind": "symbol",
-              "name": "load_shared_paseo_runtime"
+              "name": "load_authority_paseo_runtime"
             }
           },
           "kind": "code"
@@ -83,18 +90,101 @@
       ]
     },
     "3": {
-      "note": "The no-fallback migration warning.",
+      "note": "The once-only establishment that leaves an existing block byte-identical.",
       "targets": [
         {
           "anchor": {
-            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-            "content": "sha256:751c976c76006801810204777327c4ca99211fac30fb5356933111843361ea27",
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
             "locator": {
               "kind": "symbol",
-              "name": "warn_per_harness_paseo"
+              "name": "establish_authority_paseo_runtime"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The publication by private temporary and rename, naming what remains on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:0ddabb8549d0779979fc648888de87b2aa1fcac7cbbfbf74e382e8fb8c02d0fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The five-key block the host settings module owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:33352d5b900ab8adaf068a15ad52e48b359a84c708d29976c72b2c50490d2de9",
+            "locator": {
+              "kind": "symbol",
+              "name": "authority_paseo_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An absent file is created and an existing block is left alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:7cd2c947c76bf2604c7fd407c8739396eb684d4bc93f1678c104bf3f182ae5ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_file_is_created_and_an_existing_block_is_left_alone"
+            },
+            "path": "mcp/tests/test_mik_r196_authority_replacement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A symlinked authority file is refused and its target untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:820e238cbc2e30f27d420dbf2f9d6bf06ec349a03e3438f563afd4a12ee0a789",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlinked_authority_is_refused_and_its_target_untouched"
+            },
+            "path": "mcp/tests/test_mik_r196_authority_replacement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A failed publication names the actual authority and temporary states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:50a050b820c76795e311bbed139faadb72a5a73b30dd6cf0093d49f98213c380",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_publication_names_the_actual_authority_and_temporary_states"
+            },
+            "path": "mcp/tests/test_mik_r196_authority_replacement.py"
+          },
+          "kind": "test"
         }
       ]
     }

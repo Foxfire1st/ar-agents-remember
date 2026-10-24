@@ -10,7 +10,7 @@ Owns the candidate's declarative mapping from canonical `skills` to generated sk
 
 ## Construction And Boundaries
 
-Version 1 declares one canonical source, `skills`, with the MCP runtime package target and eight named harness targets. `ignoreNames` and `ignoreSuffixes` are part of that projection contract rather than a separate consumer-maintained census. A declared target is not automatically current or canonical.
+Version 1 declares one canonical source, `skills`, with the MCP runtime package target as its only declared target. `ignoreNames` and `ignoreSuffixes` are part of that projection contract rather than a separate consumer-maintained census. A declared target is not automatically current or canonical.
 
 The worklist recognizes equal declared copies by actual candidate source/copy equality and rejects symlink equality; ordinary exclusions and divergent copies retain their obligations. A raw nonregular declaration entry is present invalid input, including an empty tree, not an absent declaration. The sync owner consumes the same parsed mapping and validates its projected certification profile before replacing output targets.
 
@@ -18,6 +18,6 @@ This card neither opens nor modifies any generated mirror. It makes no migration
 
 ## Evidence
 
-- Versioned declaration names canonical skills, package/harness targets and exact ignore-name/suffix policy. [1]
+- Versioned declaration names canonical skills, its single package target and exact ignore-name/suffix policy. [1]
 - Candidate recognition compares declared source and copy blobs and keeps present nonregular declarations distinct from absence. [2]
 - The common parser validates the declaration and constructs parsed copy projections. [3]

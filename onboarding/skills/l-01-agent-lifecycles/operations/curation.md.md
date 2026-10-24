@@ -6,7 +6,9 @@ MEMORY review stays separately sealed/counted and never opens or resets CODE rev
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [1]
+
 
 
 ## Message/file transport
@@ -26,9 +28,11 @@ The curation operation instruction.
 
 ## Foundation carrier and writer admission
 
-The repository-foundation entry is carried by a taskless instructed session following Curator rules, not by opening a taskless Curator seat. Bootstrap reads/reports the foundation state; a Curator seat opened on a task document authors on that task line. Knowledge-bootstrap retains its no-enclosure admission and developer commit word, while knowledge-ingest remains the contract-scoped leaf writer. No invented task document or enclosure bridges those admissions.
+Repository foundation is regular task work inside the task the user-started Architect opens, standalone or under a master or sprint, with that task's leaf admission and scope. This seat is started on that task document and runs `c-14-knowledge-bootstrap` with its actual enclosure contract; an incidental code delta is not required. Bootstrap reads and reports the foundation state and names the Architect as the next step, and no instructed session substitutes for task admission. The writer keeps its developer commit word and stays the contract-scoped leaf writer. No invented task document or enclosure bridges those admissions.
 
-- Foundation authoring is taskless-session work under Curator rules; an actual Curator seat is task-document-bound and the two writer admissions do not substitute for one another. [3]
+
+- Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state. [3]
+
 
 ## Code Commentary
 
@@ -36,7 +40,9 @@ The instruction owns the selected curation workflow, full quality check and cohe
 
 Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
 
-- Raw clean curation and the independent second-reader fact-check have separate obligations. [2] The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them.
+
+- Raw clean curation and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them. [2]
+
 
 ## Current composition and authoring contract
 
@@ -49,23 +55,32 @@ Reviewer records memory begin/result with `reviewKind=memory`, retaining separat
 
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
+No separate reference list: the file's sidecar carries the realization entries for its current anchors.
+
 
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [4]
 
+
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [5]
+
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [6]
 
+
+
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [7]
 
+
+
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [8]
+
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [9]
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [10]
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [11]
+
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [12]

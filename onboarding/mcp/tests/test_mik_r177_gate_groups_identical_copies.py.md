@@ -15,8 +15,8 @@ file also covered was retired with the certified closeout, and its cases were re
 
 ### One group, two consumers
 
-The module builds a real repository pair in which a canonical file and its generated copies are
-deleted together and one carded owner remains. One card row authored by the product's writer binds
+The module builds a real repository pair in which exactly two identical members, the canonical template
+and its packaged copy, are deleted together and one carded owner remains. One card row authored by the product's writer binds
 every source of the group. The cases then ask the same question twice: the leaf's own worklist
 item and the memory-quality gate's item must be the same item, and the row must answer that item,
 before the grouped change closes. The pre-change behaviour is kept as a control:
@@ -54,7 +54,9 @@ The test symbols below carry the module's grouping and refusal proof at the reco
 
 - One row binding every copy closes the worklist item and the memory-quality gate sees that same answered item. [1]
 
+
 - Without groups the card item is a different singleton and the matched row does not answer it; the trace gate reports MISSING_CODE. [2]
+
 
 - The memory-quality gate refuses absent or incomplete worklist runs by name instead of judging ungrouped items. [3]
 
@@ -64,5 +66,5 @@ The test symbols below carry the module's grouping and refusal proof at the reco
 
 - A single-source card is the same answered item in the worklist and the memory-quality gate. [6]
 
-- Existing trace-item sources prevail over conflicting unexplained-group metadata. [7]
-- Cardless deleted groups, a deleted/live pair and a single path bind exact candidate source maps accepted by the unchanged unexplained-item predicate. [8]
+- An existing trace source set wins over conflicting unexplained-group metadata. [7]
+- Cardless deleted, mixed and singleton source maps are authored by the writer and accepted by the unchanged predicate. [8]

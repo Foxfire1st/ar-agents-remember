@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_tool_entry_point_read_only.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every advertised read changes no file of the coordination root or the repositories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a6ace05fc42d22e2305aceb4d05ecaacb42bcf4",
+            "content": "sha256:99cedf50ee694943480dfb531ae88f287553551fed330d87da1af61648ee0480",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sweep catches a git metadata write, a runtime write outside the index and an ordinary write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a6ace05fc42d22e2305aceb4d05ecaacb42bcf4",
+            "content": "sha256:99cedf50ee694943480dfb531ae88f287553551fed330d87da1af61648ee0480",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

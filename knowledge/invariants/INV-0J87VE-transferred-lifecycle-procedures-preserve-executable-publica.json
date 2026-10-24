@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "A transferred procedure that names a deleted tool reads as authority while being unrunnable; the two kept workflows are where those stops now live or fail."
+  },
+  "applicability": "The lifecycle procedures transferred out of the retired skills into the kept worktree and closeout workflows.",
+  "conditions": [
+    "Publication, admission and recovery stops name tools that exist and remain executable.",
+    "A preview or approval stop is preserved where the original had one."
+  ],
+  "exclusions": [
+    "Duplicate compatibility skills kept only to host the text."
+  ],
+  "id": "INV-0J87VE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P5; a2/retired-section-map.md legacy-repair row; models/tools/public_roster.py and actual worktree_operation_control schema (retry/resume/recover/cancel/retire/supersede; no closeout_door/legacy bridge)."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B14",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Transferred lifecycle procedures preserve executable publication, admission and recovery stops using tools that actually exist.",
+  "status": "proposed",
+  "supersedes": []
+}

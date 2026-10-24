@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Retired starter and copy commands survived in the setup skill, a sandbox expectation module and the settings reference at once, so the removal is durable only where all three agree."
+  },
+  "applicability": "Startup and install guidance that a user or sandbox runner follows to reach a working seat.",
+  "conditions": [
+    "The guidance names the one-call path and the package-served skills.",
+    "Sandbox and runtime helpers obtain their expectations from the live settings and host surface rather than a copied skill tree."
+  ],
+  "exclusions": [
+    "Captured historical evidence, which is not rewritten to describe the new build."
+  ],
+  "id": "INV-R1E181",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/distribution-review.md F2; a2/doctrine-review.md P2; final-a3/removal-hits.json executable hits, including docs/install/{claude-code,codex,cursor,antigravity,hermes,openclaw,pi,vscode-copilot}.md and generated hooks/renderers; a3/routes/07-distribution-removal.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B11",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Current startup instructions and sandbox/runtime dependencies use the one-call package-served path, not retired harness copies or their generators.",
+  "status": "proposed",
+  "supersedes": []
+}

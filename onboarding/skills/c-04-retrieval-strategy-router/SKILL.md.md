@@ -24,7 +24,7 @@ Unknown routes start with overview.index.json; prose overviews are conditional o
 
 ### Recorded intent belongs to the selected memory tree
 
-knowledge_read names records by text ID, kind, state and file/heading/line, and the caller opens those files. Authored cards/sidecars and knowledge records feed a rebuildable derived index; there is no database publication destination. Taskless reads use canonical memory, leaf reads use that contract’s memory worktree, with no fallback. Legacy-format, registration_absent and selector_absent name their actual absence/refusal instead of borrowing another tree’s truth.
+knowledge_read names records by text ID, kind, state and file/heading/line, and the caller opens those files. Authored cards/sidecars and knowledge records feed a rebuildable derived index; there is no database publication destination. The writer is named on this route: `agents-remember knowledge-ingest`, or the mounted `knowledge_write`, writes under a task's leaf contract, including the repository foundation work the user-started Architect organises through `c-14-knowledge-bootstrap`; a read of the tree sees those files. Taskless reads use canonical memory, leaf reads use that contract’s memory worktree, with no fallback. Legacy-format, registration_absent and selector_absent name their actual absence/refusal instead of borrowing another tree’s truth.
 
 ### Family completeness and continuation custody
 

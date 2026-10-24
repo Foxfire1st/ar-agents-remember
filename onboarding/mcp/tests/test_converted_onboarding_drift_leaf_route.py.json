@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_success_brings_real_index_to_adopted_state"
+        }
+      },
+      "facet": "After validation passes the worktree index is brought to the adopted state.",
+      "id": "PRF-0PX548",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+        "content": "sha256:1da8a37a64f8c13baa0ed7da7d88dad7b9051ae001f057fbd1701db9866c6b35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_success_brings_real_index_to_adopted_state"
+        }
+      },
+      "facet": "After validation passes the worktree index is brought to the adopted state.",
+      "id": "PRF-4MPNST",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interval_failure_leaves_everything_untouched"
+        }
+      },
+      "facet": "With an externally staged file, intent-to-add entry and untracked symlink present, injected RuntimeError(\"boom\") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted.",
+      "id": "PRF-4V5WHK",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-ZCRMS7",
+        "leaf": "260928-MIK-L53"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+        "content": "sha256:4242b9e90dcea8a8b9296bd8690396c571687b7122e72aaf66dce4ec7a45d238",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interval_failure_leaves_everything_untouched"
+        }
+      },
+      "facet": "With an externally staged file, intent-to-add entry and untracked symlink present, injected RuntimeError(\"boom\") is asserted for dry_run=True and False with equal HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints and ls-files --stage output; the intent-to-add empty-blob entry, unstaged symlink target and staged file text remain as asserted.",
+      "id": "PRF-PTKXPW",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-DZB7MC",
+        "leaf": "260928-MIK-L53"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The leaf route compares against the leaf base and agrees with the summary on a carried stale anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:5cd69b0a77c9a5812b6662939d7c2bee0d2e4da146d893ba629af26c2a71d1df",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An interrupted adoption leaves the entry state untouched, and a passing hook records exactly the validated tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:5cd69b0a77c9a5812b6662939d7c2bee0d2e4da146d893ba629af26c2a71d1df",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A hook that rewrites and stages layout bytes is refused with no commit and the branch where it was.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16e8a9547e4b383736b92f39bcd8c27ea4a1904b",
+            "content": "sha256:5cd69b0a77c9a5812b6662939d7c2bee0d2e4da146d893ba629af26c2a71d1df",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

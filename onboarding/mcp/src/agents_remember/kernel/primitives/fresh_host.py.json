@@ -1,0 +1,52 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five-key block built from the XDG homes, the default listen address and the dashboard origins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a74244f8dff8b3cae163ef87730b710dce2c8013",
+            "content": "sha256:624b25ff701c56cadce092ae405d4429a816bb6a18e01a4ff58ef38474d03040",
+            "locator": {
+              "kind": "symbol",
+              "name": "fresh_host_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The host authority is created with that five-key block and an existing block is never rewritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:4f1236db4ec8cc0fa1a40bce59cf50a05dddaad69fd3bf6899f363e89b3dc743",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_host_authority_is_created_with_the_five_key_block"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:3cbfff89ae3fe86db4ccdd11b563690d7aefb0dc1b4cfe0a2e70138c23473aa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_block_that_already_exists_is_never_rewritten"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

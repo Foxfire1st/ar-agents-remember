@@ -38,3 +38,11 @@ An exact task-bound Investigator request is read only when explicitly selected w
 - Host reads are bounded and paged, existence is verified, and an unreachable host is distinct from an empty answer. [4]
 - The current source implements this file’s stated Investigator boundary. [5]
 - The selected-document read is the correcting authority for a document’s launch-record chats. It checks each recorded native agent’s existence/archive state; the separate tree read preloads the same receipt-derived discovery before a selection click. [6]
+
+## Role blocks and the pages that follow them
+
+Records are grouped one block per role, newest first, and `_role_records` reads a taskless role through its own receipts. `_PAGE_SIZE` bounds the host reads of one page at three, not the records it may step over: a page that already answered a role steps past that role's older records without asking the host again, and `nextOffset` continues from the record the walk stopped on. A document-free selection lists the architect and the free agent, and a selection that names the free agent lists that role alone, so a bootstrap seat behind architect records is reached instead of being answered with the architect's seat.
+
+- The paged walk over role blocks, with one host read bound per page. [7]
+- The end of a role's block, which a continuation resumes after. [8]
+- A bootstrap seat behind architect records is reached across pages, and naming the free agent answers with its own seat. [9]

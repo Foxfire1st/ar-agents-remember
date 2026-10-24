@@ -4,18 +4,18 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "Operation and installer order must agree so new users do not invoke a foundation writer on an unborn memory line."
+    "justification": "The setup operation and installer must agree on initialization, attributed baseline and truthful state handover; the Architect/Curator continuation owns actual foundation authoring in its real task."
   },
-  "applicability": "First-hour bootstrap/install procedure for newly initialized memory with no commit.",
+  "applicability": "First-hour Bootstrap/install setup of a new memory root and its handover to the Architect-owned foundation task; already-committed memory retains the stated ordering exception.",
   "conditions": [
-    "The existing fixer produces initial converted onboarding before attributed adoption.",
-    "The foundation uses the baseline commit and is authored by the curator through its own route.",
-    "Memory that already has a commit may reach its foundation before onboarding/adoption."
+    "Setup initializes the memory root before baseline adoption, reads baseline status before and after adoption, and authors no onboarding or knowledge.",
+    "After reporting the knowledge state, setup tells the developer to start the Architect; the Architect opens the real task and its Curator authors through that task’s admitted writer and enclosure.",
+    "A new memory root needs the baseline commit before foundation authoring; memory that already has a commit may reach foundation before onboarding or baseline adoption."
   ],
   "exclusions": [
-    "Making onboarding mandatory for every foundation.",
-    "A fabricated task, leaf or enclosure as a foundation prerequisite.",
-    "Bootstrap seat authoring knowledge or owning ordinary Git/closeout transactions."
+    "Making onboarding mandatory for every foundation or baseline.",
+    "Fabricating a task, worktree or enclosure merely to satisfy a writer argument list, or using a taskless authoring session in place of the real Architect task.",
+    "Bootstrap seat authoring onboarding or knowledge, starting another role, or owning ordinary Git/closeout transactions."
   ],
   "id": "INV-DE9ZZF",
   "origin": {
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A new repository runs memory_init, first onboarding with the fixer, baseline adoption, then the knowledge foundation, which needs the baseline commit; only a memory that already has a commit may run the foundation earlier.",
+  "statement": "New-repository setup runs memory_init and attributed baseline adoption without authoring onboarding or running its fixer, reports the knowledge state and tells the developer to start the Architect; the Architect opens the regular foundation task whose Curator authors against the required memory commit.",
   "status": "proposed",
   "supersedes": []
 }

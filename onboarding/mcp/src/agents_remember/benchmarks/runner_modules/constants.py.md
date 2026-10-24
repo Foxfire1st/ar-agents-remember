@@ -32,3 +32,9 @@ No external Domain Documentation source is configured for this memory repo.
 ### Cross-Repo References
 
 No configured sibling repository is required for this module.
+
+## No skill-exposure constants
+
+`SKILL_EXPOSURE_MODES`, `SKILLS_EXPOSURE_NAMESPACE` and `COPYTREE_IGNORE` are gone, and `AGENTS_MD_TARGETS` no longer names `runtime/agents-md-files/skills/AGENTS.md`: nothing mirrors a skill tree into a benchmark workspace and no skills instruction file is installed.
+
+- The instruction targets a benchmark workspace receives. [3]

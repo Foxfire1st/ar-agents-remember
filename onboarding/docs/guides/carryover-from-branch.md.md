@@ -16,8 +16,14 @@ File cards, route overviews, memory-only documents and the entity catalog are Ma
 
 Missing records and their transitive links may accompany the units; different held records are not overwritten. Source history rows are reading aids, never imported answers. Apply regenerates indexes and validates the exact worktree against the leaf memory base and official code using `writer_reports`, restoring pre-apply bytes including existing edits on refusal. It commits nothing, has no `memory_commit_message` argument and refreshes no ledger cache. Retry skips equal writes, preserves differing uncommitted targets and validates the whole tree. `would-carryover` is the plan; `carried-into-worktree` is validated uncommitted content; `nothing-to-carryover` still validates. The curator authors its own rows; ordinary closeout makes the attributed gate-judged memory commit and integrates it. `carryover-pending` still holds cleanup/finalization until that publication.
 
+The guide closes with `c-10-adopt-memory-baseline` and Adopt Existing Memory for the baseline, then links the kept `c-05-create-or-update-onboarding-files/workflows/memory-quality-control.md` procedure for `memory_quality_check`, `curator_coherence` and their tool-returned result/report paths.
+
 ## Evidence
 
 ### Repo-Internal References
 
+
 - The source describes the current instructions summarized above. [1]
+
+
+- Current source account and its stated boundaries. [2]

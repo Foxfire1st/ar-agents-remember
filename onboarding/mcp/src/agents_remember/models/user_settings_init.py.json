@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/models/user_settings_init.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response model and its declared fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de6e069f068d1048a3edbda8f7dac1698cbbb4cb",
+            "content": "sha256:39e48a94fb23d79198312718b1823162272b583a3cc4d7d082e1e2d03c307d1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UserSettingsInitResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry binds the tool name to this response model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_RESPONSE_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A preview writes nothing and reports the preview state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:6a31f3d7af80642ab31db2314fc8c60c75796752272612c0ef03bd69cceb8df1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_preview_writes_nothing"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de6e069f068d1048a3edbda8f7dac1698cbbb4cb",
+            "content": "sha256:07a952fef59e6f689023c531cb2e0b7a4f44359801661e077f7a7633b7afd99d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

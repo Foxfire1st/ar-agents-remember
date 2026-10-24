@@ -16,7 +16,7 @@ The documented installed route uses memory_baseline_status before adoption and r
 
 ### Attribution, not cache presence, proves adoption
 
-The workflow resolves external context, runs MQC drift classification, and inspects reachable memory commits for Code-Commit attribution. Existing attribution yields already-adopted regardless of cache presence. The configured memory default branch receives one onboarding/system/docs content commit with a Code-Commit trailer; memory.md is computed afterward without another commit and is never committed as baseline content. A missing, stale or malformed cache is not evidence for or against adoption.
+The workflow resolves external context, runs the memory-quality procedure's drift classification (`c-05-create-or-update-onboarding-files` `workflows/memory-quality-control.md` §2) against the resolved onboarding root, and inspects reachable memory commits for Code-Commit attribution. That classification answers in `context_packet(include_drift=true)`'s own response and files no temporary report; the contract-scoped result is the checklist `memory_quality_check` replaces at the `reportPath` it returns. Existing attribution yields already-adopted regardless of cache presence. The configured memory default branch receives one onboarding/system/docs content commit with a Code-Commit trailer; memory.md is computed afterward without another commit and is never committed as baseline content. A missing, stale or malformed cache is not evidence for or against adoption.
 
 ### Converted-tree validity cannot be waived
 
@@ -28,7 +28,7 @@ The source enumerates ready, blocked-drift, blocked-invalid, unavailable, alread
 
 ### Refresh and inherited vocabulary boundaries
 
-Adoption does not refresh onboarding; c-05 owns that maintenance. The old account’s already-ledgered state, command-line flags, existing-ledger test, delegation to c-09 and no-overwrite-memory.md assertion are retained as historical statements, not current adoption rules. In particular, cache state must not replace reachable attribution, and the current state name is already-adopted. Old package-service anchors remain archived evidence only; the skill text and its equal packaged copy are source-contract evidence, not implementation acceptance.
+Adoption does not refresh onboarding; c-05 owns that maintenance. Carrying memory from one branch to another is the sibling procedure the source now keeps here, `workflows/carryover-from-branch.md`: plan then apply, candidate units, code evidence and anchors, records, and recovery, with the curator answering its worklist and normal closeout publishing. The old account’s already-ledgered state, command-line flags, existing-ledger test, delegation to a worktree-manager skill and no-overwrite-memory.md assertion are retained as historical statements, not current adoption rules. In particular, cache state must not replace reachable attribution, and the current state name is already-adopted. Old package-service anchors remain archived evidence only; the skill text and its equal packaged copy are source-contract evidence, not implementation acceptance.
 
 ### Scoped inherited commentary and evidence
 

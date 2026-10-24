@@ -1,0 +1,88 @@
+{
+  "path": "mcp/tests/test_role_first_message_guards.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+        "content": "sha256:686f2e98a9233790ff099507551f4a1cc2982b6ea0be2526e70c263d70981e90",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstMessageMatrixTests.test_a_held_seat_opens_through_the_delivery_path"
+        }
+      },
+      "facet": "drains a held seat's actual held message through the delivery path and checks the message the seat receives",
+      "id": "PRF-92WQRG",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "MIK-R193@v1",
+        "leaf": "260928-MIK-L185"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+        "content": "sha256:17356a9c2c3c9d914e0d55281e7bffe3b560983ea30fe2991b196a5889a26910",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstMessageMatrixTests.test_the_path_check_reads_a_whitespace_path_whole_and_runs_at_send"
+        }
+      },
+      "facet": "shows a whitespace-containing path read whole and the check running against the send snapshot",
+      "id": "PRF-K7GSQK",
+      "invariant": "INV-SRBWN3",
+      "origin": {
+        "handoffEntry": "L185-R193-5-paths-exist-at-send",
+        "leaf": "260928-MIK-L185"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only the admitted bootstrap pair may hold one value twice, and the control fails every other pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The path check reads a whitespace-bearing path whole and runs on the message the host was handed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A held seat opens through the real delivery path, and the delivered turn begins with its saved opening.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648b27458fcdf390c3905ab596aa5afbba2f9a20",
+            "content": "sha256:07fc9d0e221a3511ddc3e74efc1af5548acbd2faf50fbe30ff002e7fe0975336",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

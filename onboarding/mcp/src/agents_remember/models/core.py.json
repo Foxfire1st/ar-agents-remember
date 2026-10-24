@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5c6b2d0141a5f5ff09345e727524c685305dd86c",
+        "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
         "content": "sha256:45ffbe1b4a8d2c53e47faf3813a9e55327c9275517a33a1343634c7615b3d2f7",
         "locator": {
           "kind": "symbol",
@@ -26,20 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29bbb7423fed083253d12410a9ebd95c64a4f961",
-            "content": "sha256:a3d78685f5ea3ed471635079f69344d46d3bfde27099ecfd596e2745ac0d631a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ping_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
-            "content": "sha256:e52508120ec07cfe784de617e0341f5ee52c25dcc23d4445f7e8117081d9431b",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
@@ -50,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "b5a6b8386af0f8efbf3d6ad574b11490625c4806",
-            "content": "sha256:3dfa4a3488bf10adf850e817801e1d24851c66d13580ba7a67077e4feb92fcbc",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -62,8 +50,8 @@
         },
         {
           "anchor": {
-            "blob": "29bbb7423fed083253d12410a9ebd95c64a4f961",
-            "content": "sha256:38c242ecda5acf9b1767448a02c3e5bb99e2b75362eea0eb1006bde004928e2d",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
             "locator": {
               "end": 31,
               "kind": "line_range",
@@ -75,27 +63,14 @@
         },
         {
           "anchor": {
-            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
-            "content": "sha256:057f79d4fdc541c348796ba7e1a192e61187974461445b2a075f94c3a4ad4fdd",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:1ec90aba43b5f76d9be2c25b951262b491fc5413ce956389925fe3d24c5684a3",
             "locator": {
               "end": 51,
               "kind": "line_range",
               "start": 31
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:d66517371833bb46785c470e395380a998829e1b7957453c1771cf1ecebfa1e0",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 124
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         }
@@ -106,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5527f5c3f05b37a2978e297d3e5438520706d07e",
+            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
             "content": "sha256:a6a3dc6a1fe961cae3f0047ee5735dcdddbcb9d94d288137268b1e4335540f16",
             "locator": {
               "kind": "symbol",
@@ -122,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1aec2a93a63198029966c9fb7ab761e9f4efc178",
-            "content": "sha256:00dc1bd43af281722938bb6b9c456b2aee5e3d709263513b08773d77e2a9048e",
+            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
+            "content": "sha256:441c5c9c00c28dcd2b29751cfd7d116d0a544b8b8ede7032e332db65d62f3334",
             "locator": {
               "kind": "symbol",
               "name": "ServerInfoResponse"
@@ -138,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5527f5c3f05b37a2978e297d3e5438520706d07e",
-            "content": "sha256:82a24160957dbff49d3c0544da9812cfda1d3a23dbe4a2f3ad87e19927e91d46",
+            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
+            "content": "sha256:343622eff86e1e1d78b873b5e9263fad2122c3a5f1d3a33f893c44342e4c0b6c",
             "locator": {
               "end": 62,
               "kind": "line_range",
@@ -155,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5527f5c3f05b37a2978e297d3e5438520706d07e",
+            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
             "content": "sha256:9b9d2bf08c051b4d8c9c8dec2286050649bb82493a92c20fd3aca1c2206a9746",
             "locator": {
               "end": 28,
@@ -172,14 +147,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e669a850829d64077c748a66b6f13c25b6b47bea",
-            "content": "sha256:aadc3bd37d3243e6db4abdd3828d14d4ae83d4527708ff5beea200f9f02adfcd",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:11e737091550531c3c6ac4880c0d92746c7c00ee7ecf59de319b61833f900aa8",
             "locator": {
               "end": 56,
               "kind": "line_range",
               "start": 26
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The strict server-info DTO without a harness skill root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
+            "content": "sha256:441c5c9c00c28dcd2b29751cfd7d116d0a544b8b8ede7032e332db65d62f3334",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServerInfoResponse"
+            }
           },
           "kind": "code"
         }

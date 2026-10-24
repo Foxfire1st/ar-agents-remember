@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
+        "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
         "content": "sha256:8ed1ddd32ce18bafe1ee0df1609432fd2eae760e091454cf3f10152fc8a79aae",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
-        "content": "sha256:6cca9a8573c0ffa2a5afa384ca8d763ead0c1a570be399c2464a0f53ede15a73",
+        "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+        "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
         "locator": {
           "kind": "file"
         }
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
-            "content": "sha256:bd96eeacf7d910d62f6238d345e235ebd8178f70a637b98361a487903eb35336",
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
             "locator": {
               "kind": "file"
             }
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "376d0f3b5c0248d94e11bdb05977acd6d52b61c3",
-            "content": "sha256:930c9fc6a71ff2a85c4f024b7721851938a53a37214c85646c0920727e4be234",
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:219243b506686d858151b941e3d7afa3ec5d2d6902a6536f24dee1a980572867",
             "locator": {
               "end": 141,
               "kind": "line_range",
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
-            "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
             "locator": {
               "kind": "file"
             }
@@ -126,12 +126,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31cff56ad7f3d6a8ae849c20ddf444bbb2a26211",
-            "content": "sha256:b446107717d02cc92a1a734edf82cd97f5500314c5090b48f930f449dd011cf5",
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:3f8073c584feeaddac1f37c933b10989bf48c89890b4cf4a4afc3fbf54da2ef1",
             "locator": {
               "end": 104,
               "kind": "line_range",
               "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The transport's own client name, or no name at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "caller_harness_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registration that mounts the role tools and the settings initializer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:3a020b47dcead1b39714d5ff629712c61f61dece62effbd1c8442a149c4faec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
             }
           },
           "kind": "code"

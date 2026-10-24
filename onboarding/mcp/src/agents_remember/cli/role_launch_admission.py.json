@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The three decisions and their order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1339674fd3a4afc1a33a88cffc3c4f27962fcf3",
+            "content": "sha256:08ab4b0b00023d8da6c9e85edf0f1b548a4643dac46418bd04d9ccd5e79e0201",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parentless selection refused before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1339674fd3a4afc1a33a88cffc3c4f27962fcf3",
+            "content": "sha256:b6e948813228eeb9f0de8be006ee2b88911f1151421bfccfc15342f75566aa18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_parentless_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An invalid document reference and an archived request id are both refused before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:c3e3f0002999e2da9f04a272f57791523d96d2105a8d45b71752835f090b430f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invalid_document_reference_is_refused_before_any_effect"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:4ba423b7b6faa01d5e0f992fcb7ff5d6e91ca08e1043408b836a986be5f8faaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_archived_request_id_is_refused_before_any_effect"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A request with a binding but no receipt is not prepared again, and an existing receipt is reconciled without a second preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:e9233258fc482b8c84c41045722b1a2a307986c88869f0ed75d272ff9dcae75b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_with_a_binding_but_no_receipt_is_not_prepared_again"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:7d1fe6ff7ce4514b8f7041158047f12846d7fd5a152703893e87b0cc621e4c73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_receipt_is_reconciled_without_a_second_preparation"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cold preparation runs under the dispatch lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:60969d3d60298fedac3872d1622c00a8ea0d34d0bd0aff305b3fb05e7ca7c69a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cold_preparation_runs_under_the_dispatch_lock"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

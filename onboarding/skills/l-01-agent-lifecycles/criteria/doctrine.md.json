@@ -1,6 +1,24 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46db7c266e9276f50d4562bbb87fb818df8d0352",
+        "content": "sha256:f29cfa29d45b1f3db753e86560b3c08d96ddf85df6ba78aa8d7979329660c57e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QBST6F",
+      "invariant": "INV-EAX9HM",
+      "origin": {
+        "handoffEntry": "L188-B13",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The dated catching-evidence account remains history rather than becoming an executable retired-skill dependency.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Canonical doctrine source binds baseline review and seals the narrower fix-verification scope.\n\nAnchor: `# Criteria Catalog — Doctrine Review`",

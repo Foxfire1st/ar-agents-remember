@@ -32,6 +32,8 @@ The separate `knowledge_read` route selects text trees through derived indexes. 
 
 The file writer reads a handoff, authors records/entries/history, mechanically carries surviving anchors and validates the whole output before writing. A proof may name a JavaScript or TypeScript case by its exact lines when no name reaches it, and a still_rejected reconsideration row may re-point a fired link to where its code now lives; the range is resolved in `knowledge_writer/case_proof.py`, the re-point in `knowledge_writer/repoint.py`, and the command's own raise refusal and its four fixed causes in `knowledge_write_command.py`. A `raise` the command cannot publish is refused whole and names the mounted `knowledge_write` with the absolute contract and hand-off paths. Onboarding rows receive candidate source sets and counted flags, and a known paired memory base governs comparison rather than a persisted flag. Membership/no-family and decision/facet record rows use canonical subject aliases, stable rerun identities and candidate revisions; foreign-owner evidence survives reason-only rewrites without duplication. New row kinds do not authorize unsupported producers. Registry-declared writer reports allow across-run repair and name the later refusing route. The existing overview-order/numbered-citation validation and task-owned reconsideration questions remain. File writing is explicit and is not Git acceptance.
 
+Onboarding source selection preserves existing trace authority. Without a trace item, uncovered unexplained groups supply their complete member-path union; the existing snapshot authoring owner binds candidate blobs. The selector does not trust blob values from group metadata or alter the gate's equality check.
+
 Contract-scoped memory quality measures the admitted pair, publishes its full checklist and evaluates converted worklist/gate policy. Trace dispatch captures actual candidate code blobs and forwards them to the pure gate; capture failure is a named repair finding, not an empty pass. The controller owns complete finding/readiness populations; bounded answer projection and delivery logging confer no semantic or Git acceptance. Repository diagnostics remain official-memory diagnostics, not leaf acceptance. Build identity names the serving ruler separately from the candidate measured.
 
 > **Retained historical source account — superseded by the current route account:**
@@ -198,6 +200,12 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: The over-length unreadable-owner detail summarised; a fitting one kept. (historical reference 344; retired in L57)
 
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: **Retained historical source account — superseded by the current route account:** Retired collections report unavailable; assessment currentness is measured. (historical reference 465; retired in L57)
+
+## The one-call setup surface
+
+The route gained the two modules the one call a new user makes needs. `caller_harness.py` answers which provider is the calling chat's own harness from the MCP client name the transport reports, and answers none rather than substituting the first provider the host lists. `user_settings_init.py` owns the one write into the developer's user settings file — the harness of each role, created exclusively at mode 0600 only when that destination is absent, with an existing file read and reported and never written, merged, completed or re-moded. The host block is not written here: `paseoRuntime` belongs to the MCP authority settings file and the launcher's first-run stage establishes it. `application/runtime/skills.py` was removed with the skill-install entry it fronted.
+
+`memory_init_tool` reports the knowledge state without authoring knowledge. For a complete tree, its `nextAction` reports `recorded` or `not-recorded` before asking the developer to start the Architect, which organizes a regular foundation task with a Curator. The nonlegacy unavailable-publication branch uses the same state-first handover while retaining its state, path, code and detail. A partial index keeps its named-file repair and index-rebuild action; legacy format keeps its conversion route, and context admission keeps its own refusal and next action.
 
 ## Evidence
 
@@ -493,7 +501,10 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The inherited row owner fills item IDs from the worklist. [382]
 - The inherited row owner updates an entry rationale from its authored cover. [383]
 - A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat with no scheduled deletion writes none. [385]
-- Current imported source owns this scoped route boundary. [386] [387] [388] [389] [415]
+- Current imported source owns this scoped route boundary. [386] [387] [388] [415]
+
+- Current imported source owns this scoped route boundary. [389]
+
 - Joining a computation in flight; the bound applies only to a new one. [390] [437]
 - The child's handlers, alarm, parent-death signal and parent check. [391]
 - The memo's key of exact identities. [392]
@@ -672,3 +683,11 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The delivered resolver establishes the four sides a leaf delivered from its enclosure's delivery records and refuses any side it cannot establish. [512]
 - A closed leaf's default read asks the delivered pair first, while the recorded read addresses the published comparison. [510]
 - The comparison owner publishes a record through a create-only link, so a lost race answers the winner or refuses. [511]
+
+- The caller-harness answer the launch binds a free-agent choice to. [513]
+
+- The one role-harness write, made only when the destination is absent. [514]
+
+- Existing trace authority precedes uncovered grouped source selection; the collector supplies member paths. [515]
+
+- The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]

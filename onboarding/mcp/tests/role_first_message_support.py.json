@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/role_first_message_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+        "content": "sha256:5978d9f71b82bb9df802bf3093e88d2dac1fb9fcefa3ac8a7fea897067a8513a",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstMessageMatrixBase.check_message"
+        }
+      },
+      "id": "RLZ-2M7CY2",
+      "invariant": "INV-JKD5DE",
+      "origin": {
+        "handoffEntry": "L185-R193-4-legal-maximum-budgets",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "Every first message's projection is counted here with the vendored vocabulary and must stay within the budget_tokens the registry records for its role and operation, so this is where an over-budget projection actually fails.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+        "content": "sha256:ad352379a5cfacc45d34086303246b153cafa8f1134268bbb6008805dc830945",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstMessageMatrixBase.check_paths"
+        }
+      },
+      "id": "RLZ-FS0YV1",
+      "invariant": "INV-SRBWN3",
+      "origin": {
+        "handoffEntry": "L185-R193-5-paths-exist-at-send",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The assertion site: it refuses a launch whose send left no snapshot, which is where the held-delivery fault would otherwise pass.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+        "content": "sha256:f5143bb401fdb95197206780c4bd5526f3316847aa641cfaacf371ee9e3a6e81",
+        "locator": {
+          "kind": "symbol",
+          "name": "_missing_paths"
+        }
+      },
+      "id": "RLZ-Q2C55D",
+      "invariant": "INV-SRBWN3",
+      "origin": {
+        "handoffEntry": "L185-R193-5-paths-exist-at-send",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "One predicate decides which emitted paths must exist and which are exempt; the send-time observer and the later checks both use it, so the policy cannot drift between them.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The matrix builds the real first message for every allowed role and harness through the launch route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+            "content": "sha256:fe68600ff5677b18852dc27403ba7253c817763fee2faf2ed5be253ab9ab133f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Path and reachability checks read delimited spans whole and run at the send boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+            "content": "sha256:fe68600ff5677b18852dc27403ba7253c817763fee2faf2ed5be253ab9ab133f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only absolute paths and task-document references are allowed to stand in two places.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53645da0cf810c4a213db900271ea1fb9405d417",
+            "content": "sha256:fe68600ff5677b18852dc27403ba7253c817763fee2faf2ed5be253ab9ab133f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
-        "content": "sha256:285e91b3db243ea3b745da102237f8906833f5013480077f994298b21107a13a",
+        "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+        "content": "sha256:df60167c6d394fcdeeff105f030cbc4ce395179522b23d54175ac0a9c378e390",
         "locator": {
           "end": 692,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5bf7a216d28ae3daba83299a0b6a0ab6addca90e",
-        "content": "sha256:f039f3c902d82094d1345c528ec665e05acc9835adf0e8ee4bc7a71fe26d78a3",
+        "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+        "content": "sha256:215efda3a4a4b427566518ac3e2a1b816838f4ef631cc3e825dbfac0a4e0de35",
         "locator": {
           "kind": "file"
         }
@@ -40,16 +40,28 @@
   ],
   "references": {
     "1": {
-      "note": "All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure.\n\nAnchor: Current source; preserved L88 property 1",
+      "note": "All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
-            "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:504275419d2b48c33c1170e2a7124dde78718ef2841b1019f6fe0bb375f05207",
             "locator": {
-              "end": 548,
+              "end": 4,
               "kind": "line_range",
-              "start": 1
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:10f2ba217951d0a7e6853693f0434b6c548db25c6499e5b17ff51f81a44e0cb6",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -61,11 +73,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0af0431175466d1d6d0ef30654277069c9ac6095",
-            "content": "sha256:1a2e5bc3df0f8e53fb9c847cf2b7aa6a397ccae242a38e0b058133b988b79aed",
+            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+            "content": "sha256:0c6ca7dd0173e655fbe1fdabae1004e65beeb63e4dc905d636bd481841f7a00b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_no_capsule_exceeds_its_recorded_budget"
+              "end": 137,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
+            "content": "sha256:d634a7439a17046937afb5babbcc2a33ca374c3f8271805ad5fb90aa52fae8e4",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 105
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -74,16 +100,16 @@
       ]
     },
     "3": {
-      "note": "The registry retains 38 capped capsule rows, fourteen step-file rows and the earlier L54 decision account; L88 decisions state the new ceiling and growth provenance.\n\nAnchor: Current source; preserved L88 property 3",
+      "note": "The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes.\n\nAnchor: current definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
-            "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:7fad4a400b6fcb1924bb0469b9d2228ec5a9a7980946a0570549d47ea8d9a81b",
             "locator": {
-              "end": 548,
+              "end": 255,
               "kind": "line_range",
-              "start": 1
+              "start": 25
             }
           },
           "kind": "code"
@@ -95,25 +121,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d0d6f9d69cda64e9f2be34e06881def8db0acf4",
-            "content": "sha256:d494745e207ae082795c0c2cca7727ea2d40c2141a52da119458e00a95a361b2",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:215efda3a4a4b427566518ac3e2a1b816838f4ef631cc3e825dbfac0a4e0de35",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 5",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
-            "content": "sha256:5444b63ab1eb28a6ad90d2499136fe6ae446724c6198ee8f05ac0a682f463894",
-            "locator": {
-              "end": 158,
+              "end": 845,
               "kind": "line_range",
               "start": 1
             }
@@ -122,17 +133,46 @@
         }
       ]
     },
-    "6": {
-      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 6",
+    "5": {
+      "note": "The earlier L88 decision introduced capped capsule/step budgets and recorded fourteen admitted step files at that change; those fourteen are historical measurements, not the current step-file total.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
-            "content": "sha256:af2847eb890a79f52c149e2716990a0e43ccb21fbd9462aa038c3dca8e29c1d6",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
             "locator": {
-              "end": 308,
+              "end": 349,
               "kind": "line_range",
-              "start": 159
+              "start": 256
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The earlier L88 repair-round decision retains its measured capsule changes under the fixed capsule and detail ceilings; its fourteen-file context remains historical, not a fresh measurement or current registry total.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "code"
@@ -140,16 +180,28 @@
       ]
     },
     "7": {
-      "note": "Replaces uncapped eleven-tenths budgets with capped capsule/step budgets; adds fourteen step sources and L88 provenance while retaining parsed older decision payloads.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "The retained L88 decisions preserve their authority, measurements and fourteen-step-file provenance from that change; later step additions do not rewrite those historical measurements.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
-            "content": "sha256:88180f27b098acccd39573872e9a531212707d7deb6b1cda9ed7404daeb1927f",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
             "locator": {
-              "end": 547,
+              "end": 349,
               "kind": "line_range",
-              "start": 311
+              "start": 256
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "code"
@@ -161,10 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
-            "content": "sha256:0e95431c6f630e5087e444b9a93c5980a35f9b687d6367fa03a0b3cdc4769bc3",
+            "blob": "b2328c97a4cdd7602df23b5175a828098129934b",
+            "content": "sha256:9329de3daf39c0ae43976357804e99757f5d130bcaa58eb1d0888e21cca1bc72",
             "locator": {
-              "kind": "file"
+              "end": 845,
+              "kind": "line_range",
+              "start": 256
             }
           },
           "kind": "code"

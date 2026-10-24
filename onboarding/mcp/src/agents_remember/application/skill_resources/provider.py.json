@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/provider.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f1d4e8e2f8295896686d4d104794e325b9694007",
+        "content": "sha256:5c093fea021c330d2c618bb11ee7902c52a15b4e661c6dbcceb21dffa645efd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "shipped_skill_tree"
+        }
+      },
+      "id": "RLZ-QW55JK",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "MIK-R196@v1 rule7",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The resource owner locates packaged skill bytes without a project/home installed-skill tree.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The served tree is the packaged runtime skills copy, which is what makes a served revision reproducible.",

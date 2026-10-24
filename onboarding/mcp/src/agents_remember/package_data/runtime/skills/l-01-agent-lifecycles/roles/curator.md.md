@@ -22,7 +22,7 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 ## Purpose
 
-The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pass; a separately admitted repository-foundation entry retains its bounded taskless writer route.
+The Curator owns one selected leaf’s intent/onboarding/knowledge coherence pass; a repository foundation runs the same pass inside the task the user-started Architect opens, under that task’s leaf admission and enclosure.
 
 ## Current Contract
 
@@ -44,13 +44,13 @@ Explicit report-only admission writes its report/upstream message and claims non
 
 ## Foundation carrier and writer admission
 
-The Curator seat opens only on a leaf task document. Before any task exists, Bootstrap carries foundation read/report work and an instructed session runs knowledge-bootstrap under the Curator rules without opening a taskless Curator seat or fabricating an enclosure. This deliberately supersedes the earlier taskless-seat admission account, not the foundation writer itself. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
+The Curator seat opens only on a leaf task document. Repository foundation is regular task work: after setup reports memory and baseline state, the user starts the Architect, which opens the real foundation task — standalone or under a master or sprint — and this seat starts on that task document with its actual enclosure contract. This deliberately supersedes the earlier taskless-seat and instructed-session admission accounts, not the foundation writer itself. The writer routes, developer commit word and one-writer/independent-review boundaries remain distinct.
 
-- Foundation authoring is taskless-session work under Curator rules; the actual Curator seat is leaf-bound and the two writer admissions do not substitute for one another. \[12] [13]
+- Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. \[12] Anchor: Foundation carrier and admission [13]
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/roles/curator.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
@@ -79,7 +79,7 @@ Normal converted curation requires current source-bound updated/no_impact onboar
 
 The leaf intake includes the task, accepted requirement revision, captured change set, existing onboarding, producer handoff and exact worktree contract. Producer fields remain owned by their producer; the curator supplies semantic scope, family/source examination and resolved outcomes.
 
-The writer is the shipped knowledge-ingest route for leaves and the admitted knowledge-bootstrap route for taskless foundation work. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
+The writer is the shipped knowledge-ingest route under a task contract (or the mounted knowledge_write, which runs the same writer); the low-level taskless knowledge-bootstrap wave remains a separate CLI, not a Curator foundation route. The full contract-scoped memory-quality operation and, when admitted, structured coherence remain evidence rather than semantic approval from tests. A typed refusal is reported honestly.
 
 Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure every hand-off target carries
 its own authored `rationale` (why that place carries the obligation, specific to the construct it names,

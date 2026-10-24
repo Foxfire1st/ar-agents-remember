@@ -6,7 +6,9 @@
 
 ## Purpose
 
-The public settings reference states five distinct homes and their read cadences: boot infrastructure in the MCP authority file; host runtime in the shared user configuration; memory topology under the memory root; global/repository-local agentic settings; and provider lifecycle settings derived from authority configuration. User configuration is neither an MCP authority file nor an implicit provider settings source.
+The public settings reference states five distinct homes and their read cadences: boot infrastructure in the MCP authority file; host runtime (`paseoRuntime`) in that same active MCP authority file selected by the server's absolute `--config`; memory topology under the memory root; global/repository-local agentic settings in the user configuration file and an optional repo-local override; and provider lifecycle settings derived from authority configuration. User configuration is neither an MCP authority file nor an implicit provider settings source.
+
+The current page moves `paseoRuntime` out of `~/.config/agents-remember/settings.json` and into the authority file, states that the one Bootstrap call creates an absent block once and preserves an existing block unchanged while maintenance only reports the absent state, warns that concurrent writers of the host authority file are unsupported, and drops the optional `harnessSkillRoot` setting because skills are served as MCP resources with no installed harness skill root to configure. The agentic interview keeps its global file and repo-local override.
 
 Documents landing.commitCheckTimeoutSeconds: positive integer, default 900, reread per landing; timeout refuses.
 

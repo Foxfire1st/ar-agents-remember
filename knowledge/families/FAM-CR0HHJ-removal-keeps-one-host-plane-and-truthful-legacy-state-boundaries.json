@@ -23,12 +23,12 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp",
     "dashboard/src",
-    "scripts/harness",
-    "skills"
+    "skills",
+    "agents-md-files"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

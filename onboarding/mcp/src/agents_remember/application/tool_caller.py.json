@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8975a2190ade138854226426a16fbe12a1b98887",
+        "blob": "053492925f1f7bac551d7505dc0ed0534956b7a0",
         "content": "sha256:5b734be49536a2b9309f6847a6f86c46d604da6c935134499c0d8adea5098a86",
         "locator": {
           "end": 51,
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8975a2190ade138854226426a16fbe12a1b98887",
+            "blob": "053492925f1f7bac551d7505dc0ed0534956b7a0",
             "content": "sha256:5b734be49536a2b9309f6847a6f86c46d604da6c935134499c0d8adea5098a86",
             "locator": {
               "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8975a2190ade138854226426a16fbe12a1b98887",
-            "content": "sha256:f0789362bf72db56af9508b3b7aa03acf691f71944966c466b6f69a3b7696e2c",
+            "blob": "053492925f1f7bac551d7505dc0ed0534956b7a0",
+            "content": "sha256:5737a72d623c186a5af6d28fe9d215271adc9c1ab8a1b706e25311279071f7d2",
             "locator": {
               "kind": "symbol",
               "name": "derive_harness"

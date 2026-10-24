@@ -2,39 +2,73 @@
 
 ## Governing Overview
 
-[MCP tests overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-This module checks MIK-R53 Part C's named report reasons and refusal boundaries over controlled converted-memory fixtures. A rule cannot be registered as plainly report-only; sync-merge reports and migration debt have different conditions, messages and later refusing routes.
+Decides MIK-R53 Part C (rules 10-12) for the report-only rules: a rule that only reports must name its report
+reason and be refused registration when it does not, a carried record that no longer holds reports at a merge and
+refuses off it, and once a migration census is complete the carried debt refuses on every publication route.
 
 ## Code Commentary
 
 ### Logic
 
-The registry cases reject plainly report-only registrations and rules with both named report reasons, and verify the ten-rule decision sets plus writer-reported refusing rules. Controlled fixture edits exercise governs, existing-record admission, absent carried routes, unrealized families and gone-path anchors at leaf/publication or merge boundaries.
+`_validate()` runs the validator, `_rules()` and `_messages()` read the registry and its messages,
+`_census_files()` builds a migration census over two onboarding routes with the given statuses, and
+`_validate_counted()` counts `_Admitted` equality comparisons so a case can constrain per-record classification
+without timing the wall clock.
 
-Conversion cases verify that standalone conversion admits no base, paired code or leaf publication. Migration cases include candidate-tree overview routes, select the latest route status across censuses, distinguish carried debt from new debt, and require every route to be migrated or excluded before inherited debt becomes refusing everywhere. Per-record operation-count cases check the admission classifier without claiming a timing benchmark. Merged-row fixtures show a merge report becoming an ordinary covered-entry refusal at the next publication.
+- **Registration.** `test_a_plain_report_only_rule_is_refused_registration`,
+  `test_a_rule_with_both_report_reasons_is_refused_registration`,
+  `test_no_registered_rule_is_plainly_report_only` and
+  `test_each_of_the_ten_rules_carries_its_mik_r53_decision` keep the registry honest;
+  `test_the_five_refusing_rules_report_inside_the_writer` keeps the five refusing rules reporting inside the
+  writer, and `test_governs_refuses_a_decision_that_governs_nothing` refuses an empty decision.
+- **Merge and off-merge.** `test_an_existing_record_whose_criterion_no_longer_holds_refuses_off_merge` and
+  `..._reports_at_a_merge`, `test_a_carried_route_absent_refuses_off_merge_and_reports_at_a_merge`,
+  `test_an_unrealized_family_refuses_off_merge_and_reports_at_a_merge` and
+  `test_a_carried_stale_anchor_refuses_off_merge_and_reports_at_a_merge` state the pair for each class.
+- **Conversion.** `test_a_conversion_authors_merge_and_debt_states`,
+  `test_a_conversion_sidecar_without_markdown_names_conversion_and_next_refusal` and the three
+  `test_conversion_with_*_is_refused_at_entry` cases keep a standalone conversion reporting what later routes will
+  judge, while a conversion carrying a base, code or a publication refuses at entry.
+- **Census.** `test_candidate_overview_route_joins_the_migration_population`,
+  `test_no_census_no_routes_stays_incomplete` and `test_latest_status_across_censuses_governs` keep the
+  population and its status resolution.
+- **Carried versus new.** `test_a_carried_sidecar_without_markdown_reports_while_a_new_one_refuses`,
+  `test_a_carried_unresolved_target_reports_while_a_new_one_refuses`,
+  `test_a_carried_unassigned_family_reports_while_a_new_state_refuses` and
+  `test_carried_legacy_debt_is_counted_while_new_legacy_refuses` keep carried debt reporting while a new one
+  refuses, and the `..._once_complete` cases refuse the same carried debt after a full census.
+- **Publication routes.** `test_an_unrealized_family_refuses_at_publication`,
+  `test_completed_census_debt_refuses_at_landing_and_sync` and `test_a_merge_moved_row_is_refused_at_the_next_publication`
+  extend the refusal to landing, sync and the next publication.
+- **Messages and texts.** `test_no_violation_message_says_reported_not_refused` and
+  `test_a_reported_finding_names_its_reason_and_the_route_that_refuses` keep a report from reading as a refusal,
+  and `test_the_command_help_lists_the_ten_rules_with_their_decision` and
+  `test_the_c02_skill_lists_the_ten_rules_with_their_decision` (now reading the quality-control workflow text)
+  keep the decisions written down.
+- **Cost.** `test_all_new_unassessed_classifies_each_record_in_constant_time` and
+  `test_mixed_complete_migration_classifies_each_record_in_constant_time` bound the per-record comparisons.
+
+### Conventions
+
+A case that asserts a route's behaviour calls the validator through the route (publication, merge, sync) rather
+than only through the validator function.
 
 ### Invariants And Boundaries
 
-- `R13.3-governs` has neither merge nor migration-debt exemption; the four other newly refusing rules have the declared sync-merge reporting boundary.
-- New migration debt refuses immediately; carried debt reports only while migration is incomplete. Once complete, sidecar-without-Markdown, unresolved-target, unassigned-route and legacy-record debt refuse at both publication and sync.
-- Reports must state their reason and refusing route, and may not use unconditional never-refuse language. Command help and the c-02 skill carry the same ten-rule decisions.
-- Fixtures, mock equality counters and source assertions are bounded test mechanisms, not proof that this Curator ran the suite, migrated live routes, or accepted the current memory.
-
-The registry-set assertion also admits `R22.6-link-target-path` alongside the original MIK-R53 merge-report set. That additional MIK-R54 rule is not an eleventh retroactive ten-rule decision: its own registration uses `merge_requires_carried`, so only an identical carried missing target reports at a sync merge; a newly authored missing target still refuses.
+- A report-only rule states its reason; a rule that reports nothing is refused registration.
+- Carried debt reports until the census is complete, then refuses.
 
 ## Evidence
 
-### Repo-Internal References
-
 - Registration rejects unnamed reporting or competing report reasons and verifies the rule sets. [1]
-- Leaf/publication versus merge cases exercise existing-record, absent-route, unrealized-family and gone-path refusal boundaries. [2]
-- Standalone conversion rejects bases, paired code and publication; candidate overviews join the migration population. [3]
+- Leaf and publication versus merge cases exercise the existing-record, absent-route, unrealized-family and gone-path boundaries. [2]
+- A standalone conversion rejects bases, paired code and publication, while candidate overviews join the migration population. [3]
 - Admission operation counts constrain per-record classification rather than elapsed runtime. [4]
-- Merge-moved rows report at merge but are refused by covered-entry validation at publication. [5]
-- Messages, command help and skill text carry the named reporting and refusal decisions. [6]
-- Complete-census boundary cases cover carried debt at both landing and sync with incomplete controls. [7]
-
-- The merge-report set assertion includes the separate link-target rule beside the original ten-rule decisions. [8]
+- A merge-moved row reports at merge but is refused by covered-entry validation at publication. [5]
+- Messages, command help and the workflow text carry the named reporting and refusal decisions. [6]
+- Complete-census cases cover carried debt at both landing and sync with incomplete controls. [7]
+- The merge-report set assertion includes the separate link-target rule beside the original ten decisions. [8]

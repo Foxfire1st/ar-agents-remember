@@ -2,22 +2,55 @@
 
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-> **Retained historical source account — superseded by the current contract:**
-> Cases prove each leaf role publishes a real leaf copy before handover compilation, public writes refresh only the own leaf in every existing enclosure, failed copy publication restores every copy and the canonical source, edits to copies are never read back, and cleanup removes copies while external links refuse.
-
-> **Retained historical source account — superseded by the current contract:**
-> Scope and membership cases also pin the refresh's selection boundary: unrelated task roots and readable sibling contracts are not loaded, notes/archive copies are not yielded, and a leaf directory named `notes` remains visible. Foreign membership is positional and filesystem-resolved; foreign paths are named even after their worktree group disappears. Snapshot, healing, scope and knowledge selection exercise the shared guard. The successful-own case refreshes copies beside an unreadable neighboring file, warns by that path, and checks the own copy against canonical rendered bytes. The unreadable-only case instead makes the explicitly selected contract a directory: target resolution fails before canonical publication or refresh, names that path, leaves both initial source files unchanged, and creates no copy directory. It is preflight preservation evidence, not proof of post-publication rollback or of the no-own-refresh branch. These are assertion contracts, not a claim that a new run occurred during curation.
+Covers the copies a task document carries: each leaf role publishes a real leaf before the handover is
+compiled, a public write refreshes only its own leaf in every existing enclosure, a failed publication restores
+every copy and the canonical source, and cleanup removes the copies it made. Scope is bounded (MIK-R134): a
+foreign contract is skipped and named, never loaded.
 
 ## Code Commentary
 
-Own-leaf copy controls now include real nonsymlink requirement bytes/digest rows, missing rows and handover warning, exclusion of reference/master/sprint baggage, publication adding a requirement, source drift/stale_copy_line then refresh, and requirement-copy reclamation. Adding/refreshing fixtures patch contract enumeration/load seams; they are not real-host launch acceptance. Transactional rollback and canonical-file authority remain unchanged.
+### Logic
+
+`TaskDocumentCopyTests.selection()` and `.snapshot()` build the leaves and the snapshot a write reaches, and
+`_write_requirement_fixture()` writes requirement files beside a leaf.
+
+- **Publication.** `test_each_leaf_role_publishes_real_leaf_before_handover_compilation`,
+  `test_public_writes_refresh_only_own_leaf_in_every_existing_enclosure` and
+  `test_leaf_title_updates_canonical_master_but_copies_only_the_leaf` keep the canonical write and the copies
+  distinct.
+- **Rollback.** `test_failed_copy_publication_restores_every_copy_and_canonical_source` restores every copy and
+  the canonical source after a failure.
+- **Read-back.** `test_edits_to_copy_are_not_read_back_and_next_leaf_write_replaces_them` keeps an edit of a copy
+  from being read back, and `test_cleanup_removes_copies_and_external_links_are_refused` cleans up while refusing
+  an external link.
+- **Requirements.** `test_requirement_files_are_copied_beside_the_leaf_and_nothing_else`,
+  `test_missing_requirement_is_named_in_handover_lists_and_receipt_warning`,
+  `test_write_adding_a_requirement_adds_its_copy`, `test_changed_source_is_named_and_next_write_refreshes` and
+  `test_cleanup_removes_requirement_copies` cover a requirement's copy, its absence, its drift and its cleanup.
+- **Scope.** `TaskDocumentCopyScopeTests` proves a foreign contract below a master's notes stops no write, that
+  one in the changed task's enclosures is skipped and named, that a refresh loads only the changed task's
+  contracts, and that the walk yields task enclosures and none below `notes`.
+- **Membership.** `TaskDocumentCopyMembershipTests` keeps a sibling leaf's contract from being loaded while a
+  broken sibling does not stop a real write, fails a destroyed own contract and restores the sources, succeeds a
+  master write with enclosures present, treats a `..` alias escaping the repo's tasks as foreign, names the
+  group in refresh and in heal, and — per the Architect ruling — names an unreadable file beside a refreshed own
+  copy while failing closed when only the unreadable enclosure is own.
+
+### Conventions
+
+A case writes through the public task-document surface and reads the copies from disk, so what a seat receives
+is what is asserted.
+
+### Invariants And Boundaries
+
+- A write refreshes exactly the copies of the document written; a foreign contract is skipped and named.
+- A failed publication leaves the canonical source and every copy as they were.
 
 ## Evidence
 
-- **Retained historical source account — superseded by the current contract:** The module retains preparation/publication/cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls. [1]
-
-- Own-leaf copy controls now include real nonsymlink requirement bytes/digest rows, missing rows and handover warning, exclusion of reference/master/sprint baggage, publication adding a requirement, source drift/stale_copy_line then refresh, and requirement-copy reclamation. Adding/refreshing fixtures patch contract enumeration/load seams; they are not real-host launch acceptance. Transactional rollback and canonical-file authority remain unchanged. [2]
+- The module keeps preparation, publication and cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls. [1]
+- Own-leaf copy controls include real non-symlink requirement bytes and digest rows, missing rows with a handover warning, exclusion of reference, master and sprint baggage, publication adding a requirement, source drift then refresh, and requirement-copy cleanup. [2]

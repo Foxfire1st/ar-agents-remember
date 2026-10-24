@@ -2,19 +2,17 @@
 
 ## Current operative account — R113 after the R112 roster reduction
 
-`PUBLIC_TOOLS` is the one cycle-free literal owner, currently40 unique names in the composed source after R109 removes resolve_context and R113 removes dispatch_agent, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple still ends knowledge_read, knowledge_diff and knowledge_integrity_check; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child` and `direct_execution_grant`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
+`PUBLIC_TOOLS` is the one cycle-free literal owner, currently42 unique names in the composed source after R109 removes resolve_context and R113 removes dispatch_agent, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple ends knowledge_read, knowledge_diff, knowledge_integrity_check and the writer's knowledge_write; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child`, `direct_execution_grant` and `user_settings_init`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
 
 The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
 
 ## Current numbered roster witnesses and historical custody
 
-The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current40-name source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
+The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current42-name source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
 
 
-- The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The independent A741-name witness and older73/74 populations remain historical custody only, not this current source census or runtime list_tools. [16]
 
 
-- The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The incoming L10941-name observation belongs to its earlier source epoch, not the current tuple. This is source declaration only, not runtime list_tools or test execution. [14]
 
 - Historical incoming whole-source qualification: Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [15]
 
@@ -186,7 +184,7 @@ history of how the tail arrived; this section is its current state.
 - The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
 
 
-- The capsule/skill-serving names role_capsule_compile, skill_catalog_list and skill_catalog_read appear consecutively in PUBLIC_TOOLS. [3]
+- The capsule/skill-serving names role_capsule_compile, skill_catalog_list and skill_catalog_read appear consecutively in PUBLIC_TOOLS. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
 
 
 - The knowledge family at the roster tail contains knowledge_read, knowledge_diff and knowledge_integrity_check; knowledge_change and knowledge_project are no longer advertised. [4]
@@ -385,7 +383,7 @@ violations with no `models → mcp` edge and no new cycle.
 
 - The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
 - The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
-- The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. [3]
+- The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
 - The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
 - The adapter re-exports this object through `__all__` instead of declaring its own tuple. [5]
 - The response model that reads the roster to enforce the worktree surface's next-move vocabulary. [6]
@@ -410,3 +408,8 @@ No cross-repository implementation dependency governs this repository-local tupl
 - Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior. [12]
 
 </details>
+
+## Current source evidence
+
+- The tuple declares42 unique public names including user_settings_init; prior41/40/73/74 populations are historical source epochs. [14]
+- The current source declaration excludes dispatch_agent and resolve_context; tuple inspection is not live list_tools or execution. [16]

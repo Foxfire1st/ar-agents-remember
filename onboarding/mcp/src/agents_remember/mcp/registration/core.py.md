@@ -142,3 +142,9 @@ drift tool, and that omitting it measures nothing.
 - Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6]
 
 </details>
+
+## The install description and the skill corpus
+
+The `runtime_install` description now says the call refreshes the coordinator scaffold and provider assets, preserves `memory-repos/` and `providers/data/`, prunes legacy binaries, installs no skill folder because skills are package-served resources, stops leftover provider watchers, reports retired keys and starts none, and provisions the pinned host from the active MCP authority's `paseoRuntime` without writing settings or forcing a restart.
+
+- The install tool registration whose description states the scaffold-only install. [10]

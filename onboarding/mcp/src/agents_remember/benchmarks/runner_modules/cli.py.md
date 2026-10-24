@@ -33,3 +33,9 @@ No external Domain Documentation source is configured for this memory repo.
 ### Cross-Repo References
 
 No configured sibling repository is required for this module.
+
+## The removed skill-exposure switch
+
+`--skill-exposure-mode` is gone from the prepare and run commands, and `SKILL_EXPOSURE_MODES` with it: a benchmark workspace reads the skills the tool server serves from the package copy, so there is no copy-or-none choice left to name. The commands and their other arguments are unchanged.
+
+- The parser both commands are built from, without the exposure switch. [3]

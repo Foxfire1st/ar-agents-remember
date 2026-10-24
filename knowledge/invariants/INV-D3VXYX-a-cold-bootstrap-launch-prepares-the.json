@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Preparing the scaffold before any seat exists is what lets a cold install start Bootstrap at all; the two cold-path cases name the scaffold gate and the host stage that follows it."
+  },
+  "applicability": "A Bootstrap role start on a host the MCP authority can run, when the coordination root, the memory root, or the runtime scaffold inside it is absent.",
+  "conditions": [
+    "The runtime scaffold comes from the package-owned runtime assets, not from an installed harness skill folder.",
+    "A missing scaffold is created through the runtime owner before dispatch, and a missing memory root stays an expected setup state rather than a launch blocker.",
+    "A runtime block that is absent is created once; a configured host that cannot be loaded back, does not answer or owes a restart is refused by its own stage name instead of being treated as cold."
+  ],
+  "exclusions": [
+    "A root configuration that is misconfigured rather than absent.",
+    "An installed skills directory as a precondition of launching."
+  ],
+  "id": "INV-D3VXYX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N1; final-a3/source-witnesses.md; the new scaffold test manufactures SCAFFOLD_ENTRIES instead of using the installer."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B01",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A cold Bootstrap launch prepares the retained runtime scaffold without requiring an installed skills directory.",
+  "status": "proposed",
+  "supersedes": []
+}

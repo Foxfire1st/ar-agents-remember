@@ -1,0 +1,95 @@
+{
+  "path": "agents-md-files/coordinator/AGENTS.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+        "content": "sha256:2d89c333b98e7409e56061923ef8ed9118665eb4d33072bc3f02daf97931a89c",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-EDMVAT",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The text a chat without a role is given: answer inline, and for work on a managed repository write the request into the sprint document and start an Architect with `role_start`.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Role handovers and free-chat managed-work routing have separate applicability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "content": "sha256:4d973783cc165272310f3b2bb5f872eb7d70f6ccacfd5ffbdde1985c94a70954",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Plan, task-change and transaction authority remain explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "content": "sha256:753b978f4c86a826ab2b72a9b21cf19b180c389495844f0bfd5f4117af5822dd",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Before the build decision, bounded source/card paths are named before native file reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "content": "sha256:06c9a8da28acc25ba3224b97acadcdbf5e9ae1c7a95847f63afbc7838f0e5aef",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The repository and memory context resolve before repository-specific system instructions are used.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "content": "sha256:c9b59bca6e82234d33d50fa4afee27c9ee3c763d48a2f980f44f9c38e84c772e",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

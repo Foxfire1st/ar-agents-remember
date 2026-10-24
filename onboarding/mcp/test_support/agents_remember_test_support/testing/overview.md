@@ -12,7 +12,7 @@
 
 Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and certifying startup are distinct. `pytest_bootstrap.py` supplies optional seeded collection ordering, an isolated cache directory for the pytest process, and the check that a test restores owned module-level state. Per-test restored rows, module-boundary reset rows and constant-for-tests rows have distinct treatments in a closed register; resetting touches only already-loaded product owners. The ordinary bootstrap carries no certifying or external-service capability. `certifying_bootstrap.py` admits a Dagger quality process before resolving the candidate test process.
 
-The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill copies and their harness mirrors belong to the synchronization owner, `scripts/sync-skills.py`.
+The route also owns instruction-wording registries and readers used to check the shipped instruction corpus. These helpers do not hold an AR seat or author knowledge. Test qualification, completed curation, semantic acceptance and Git publication retain their separate authorities; running a bootstrap or validator does not itself supply acceptance. Canonical skill sources and their sole generated package copy belong to the synchronization owner, `scripts/sync-skills.py`; no harness skill mirror is produced.
 
 The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.
 
@@ -87,7 +87,7 @@ The generated route index lists the source files of this route and their cards.
 - A leaked change of owned module-level state fails the test after restoration. [9]
 - Seeded ordering uses its own random generator. [10]
 - The curation-doctrine registry and the statements a canonical instruction source must make. [13]
-- Canonical skill copies and their harness mirrors are the synchronization owner's. [14]
+
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
 - The registry of retired curation sentences. [17]
@@ -107,3 +107,5 @@ The generated route index lists the source files of this route and their cards.
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
 
 - The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
+- The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]

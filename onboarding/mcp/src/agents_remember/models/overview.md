@@ -19,9 +19,9 @@ MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existe
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-tools/public_roster.py owns the advertised 41-name tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
+tools/public_roster.py owns the advertised 42-name tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
 
-The current public source roster has41 names: the 40 after dispatch_agent removal plus the mounted knowledge_write; the41-name L109 composition and pre-sync R11142-name account are historical. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
+The current public source roster has42 names, including mounted knowledge_write and user_settings_init; the earlier41-name and pre-sync R11142-name compositions remain historical source epochs. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
 
 > **Retained historical source account — superseded by the current route account:**
 > A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
@@ -166,6 +166,10 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 **L184.** The role-message answer model gains the reset time a limited recipient's hold reports.
 
+## The one-call setup contracts
+
+`models/user_settings_init.py` declares the settings initializer's answer — its state, path, target, the harness of each role, what the call wrote or preserved, and its refusal fields — and `models/skills.py` was removed with the skill-install response it declared. On the role wire, `RoleStartCall` carries the caller's harness name, `RoleEnvironmentPreparation` declares the first-run report, and `RoleStartResponse` declares the dashboard and chat addresses the start answer emits. `LauncherRole` also admits the taskless setup role `bootstrap`; `system-specialist` normalizes to Investigator. `RoleDispatchRequest` carries `callerHarness` independently of the optional agent/model/effort override; model fields do not establish successful launch or permission authority.
+
 ## Evidence
 
 - The packet shapes bind one comparison and refuse an inconsistent collection or coverage count. [325]
@@ -234,7 +238,9 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Public MCP payload builders validate through the response model registry. [67]
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
 - The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. [69]
+
 - The registry maps every modeled builder and the advertised public subset to response models. [70]
+
 - Contract tests prove public tool coverage and schema generation. [71] [77]
 - The record-landing envelope is declared on this route. [72]
 - The checkpoint-landing envelope is declared on this route. [73]
@@ -357,7 +363,10 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - All of an owner's history files read as one. [272]
 - The attempt-qualified history path. [273]
 - Why a row cannot govern an invariant whose revision the leaf changed. [274]
-- Current imported source owns this scoped route boundary. [275] [276] [277] [278]
+- Current imported source owns this scoped route boundary. [275] [277] [278]
+
+- Current imported source owns this scoped route boundary. [276]
+
 - A second computation over moved inputs is refused as inputs_changing; a process failure keeps its own code. [279]
 - The dashboard's tokens for the codes. [280]
 - Overload is its own refusal code with a true action. [281]
@@ -427,7 +436,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Membership and decision/facet record forms. [313]
 - Each winning row retains its own closed-file provenance. [314]
 
-- Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance. [315]
+- **Retained historical source account — superseded by the current route account:** Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance. [315]
 
 - Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]
 
@@ -444,3 +453,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Focused card memory availability carries the after tree and explicit index state or reason. [331]
 
 - The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]
+
+- The settings initializer's answer shape. [333]
+
+- The start answer that declares the seat's continuation. [334]
+
+- The current literal public roster declares42 names, including knowledge_write and user_settings_init; this source census is not live advertisement or acceptance. [335]
+
+- Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]

@@ -1,0 +1,48 @@
+{
+  "confirmed": {
+    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "role": "curator",
+    "statement": "The reference still describes the host block Bootstrap's preparation writes into the active MCP settings file, and now also states that one Bootstrap at a time is assumed.",
+    "task": "260928-MIK",
+    "uncommitted": true
+  },
+  "document": "docs/reference/settings-json.md",
+  "id": "DPD-W0T9V9",
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "dpd-0",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "anchor": {
+        "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+        "content": "sha256:dbc0d0de7748c2d157c740655c45d6c401a08cacc9bc2a48ec3aca7086f36716",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_paseo_runtime_settings"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
+        "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "initialize_role_settings"
+        },
+        "path": "mcp/src/agents_remember/application/user_settings_init.py"
+      },
+      "kind": "anchor"
+    }
+  ]
+}

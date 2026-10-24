@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
+        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
+        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
         "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
+        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
-        "content": "sha256:0e7ab8028f45c541a4a02a08880352e947c3e0ddf5b2c3cf62b173eb7a59064b",
+        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+        "content": "sha256:a3228429f5eea1c706ee13b1a68910e39272ab4907d87ccde4bc499468bf3b89",
         "locator": {
           "kind": "file"
         }
@@ -74,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "d85fb07d9e8eff3f4ae36dc7090f00ededdbea55",
+        "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
         "content": "sha256:aa8dcb6e29feaabccd175832b43ed675e440773c572691ce515556b404a48581",
         "locator": {
           "kind": "symbol",
@@ -97,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
-            "content": "sha256:bf15ee9997f50f80cd0a980ce6cd07fe0ff004f11e8f4c01286660ff59b4d38d",
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c317b932a6967f953c35276901a817463e135f02",
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -129,8 +129,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3aa3272a9a3f40526d122a20b9cc39d4ebe7f834",
-            "content": "sha256:6985ce32be39beaf0db4ae7e1792c15d4d554b0e0f3fb7e0d045133e409ef89e",
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
             "locator": {
               "kind": "symbol",
               "name": "_configured_server_id"
@@ -145,8 +145,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
-            "content": "sha256:7d799e12e4909fe3c0a0881f77fae7d2aea996677264496266b86285d5a44fa4",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:f34816fb4a70b77bbfa9b0a7dee87da1021f400f938206cbe0461cfde77b5d97",
             "locator": {
               "end": 160,
               "kind": "line_range",
@@ -163,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
-            "content": "sha256:7d64fbca8bf9bb513e9233411e4cf04112ed51cad1b2f81b2251dd35f9e50b30",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:b59b161f244726713a524ace1e547221a395af17b831b6f382163b26a4805d80",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -181,8 +181,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
-            "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:f2572127f2ed9598e8391e397e0dde6b390483fdeab5365f493d6731493ed76d",
             "locator": {
               "end": 670,
               "kind": "line_range",
@@ -199,8 +199,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
-            "content": "sha256:991bbeb60185bc429254a298ff4c0237f7258f1b45e5a4a6250fd2cee2066ee4",
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
             "locator": {
               "kind": "symbol",
               "name": "bridge_call"
@@ -215,8 +215,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c317b932a6967f953c35276901a817463e135f02",
-            "content": "sha256:17e2f711275228a07167e23f3c17b579cc51b039c62d6393ab5f147fb0d7a873",
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_bridge_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The configured-runtime read and the authority path its refusal names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d98cfbde541e5ce30e37f5f5361c93906f67cdbb",
+            "content": "sha256:309e342dd4baae0cfd50164ae67c8029bd56f7b0a9fcf255eb384b0f81b9dfae",
             "locator": {
               "kind": "symbol",
               "name": "require_bridge_runtime"

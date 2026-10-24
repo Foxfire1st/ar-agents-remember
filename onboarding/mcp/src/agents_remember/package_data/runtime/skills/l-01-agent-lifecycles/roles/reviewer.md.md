@@ -113,7 +113,7 @@ Keep task-bound attempt/verdict evidence, requested seam distinctions and the Re
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/roles/reviewer.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/roles/reviewer.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
@@ -171,7 +171,7 @@ revision is adjudicated, now ends with one line: when the leaf's task document d
 its declared subjects and effects match what the packet requires, with no effect missing and none invented
 — and a mismatch is a finding. The architect ruled the line in (ruling Q3, 2026-09-29T21:56:18+02:00); it
 sits in the role file rather than a criteria catalog because the catalogs admit a standing criterion only
-with catching evidence. The package copy is synced from `skills/` with the eight harness copies
+with catching evidence. The package copy is synced from `skills/` as the sole generated skill target, which the tool server serves as MCP resources
 (`scripts/sync-skills.py`).
 
 ### Todos

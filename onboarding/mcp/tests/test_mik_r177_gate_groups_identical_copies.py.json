@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
-        "content": "sha256:5231505fad60d85e99252c2bfd1511e54fc658c91aaf098ff148abae7cecdb62",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares"
+        }
+      },
+      "facet": "The real writer binds all supplied uncovered group member paths to candidate-owned absent/live values, and the unchanged consumer accepts the row. Deleted and single cases use native worklist output; mixed live/deleted input is explicitly supplied, not native grouping-emission evidence.",
+      "id": "PRF-5J8S9G",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:1c2aa4a1edf7516a6d06b2a2b6249d214daecba54b1d8da647c8286bcc63a081",
         "locator": {
           "kind": "symbol",
           "name": "test_one_row_binding_every_copy_answers_the_worklist_and_the_gate"
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:f27cd664d3afd443c22457ca2f548445559aa18d142b17d4032ad4c37c6f81ba",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
         "locator": {
           "kind": "symbol",
@@ -88,8 +105,25 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
-        "content": "sha256:3a661c1184ba9dfbfad390c071bcd973ff1bb7beabbcbebe974e216038ca211f",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups"
+        }
+      },
+      "facet": "An existing trace item keeps its source-set priority over conflicting uncovered group metadata, and the real writer row is accepted by the gate.",
+      "id": "PRF-AP9XA2",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:6359f20aa227c88f6bd4acfbb602d30dff0eb62b28928545bf619ed8ca0e089e",
         "locator": {
           "kind": "symbol",
           "name": "test_an_empty_group_is_the_old_singleton_item_and_the_row_does_not_answer_it"
@@ -105,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
         "locator": {
           "kind": "symbol",
@@ -122,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
         "content": "sha256:07e31c0ae8d193744f74563c43b24a5fcad60dd404e55450f8f875143a73eab4",
         "locator": {
           "kind": "symbol",
@@ -145,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
-            "content": "sha256:5231505fad60d85e99252c2bfd1511e54fc658c91aaf098ff148abae7cecdb62",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:1c2aa4a1edf7516a6d06b2a2b6249d214daecba54b1d8da647c8286bcc63a081",
             "locator": {
               "kind": "symbol",
               "name": "test_one_row_binding_every_copy_answers_the_worklist_and_the_gate"
@@ -161,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
-            "content": "sha256:3a661c1184ba9dfbfad390c071bcd973ff1bb7beabbcbebe974e216038ca211f",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:6359f20aa227c88f6bd4acfbb602d30dff0eb62b28928545bf619ed8ca0e089e",
             "locator": {
               "kind": "symbol",
               "name": "test_an_empty_group_is_the_old_singleton_item_and_the_row_does_not_answer_it"
@@ -177,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
             "locator": {
               "kind": "symbol",
@@ -193,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:8fe1120c218f3bbff78c6c8dd643d5221bf9d272b0cb331b02336bad485b847f",
             "locator": {
               "kind": "symbol",
@@ -209,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:07e31c0ae8d193744f74563c43b24a5fcad60dd404e55450f8f875143a73eab4",
             "locator": {
               "kind": "symbol",
@@ -225,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:f27cd664d3afd443c22457ca2f548445559aa18d142b17d4032ad4c37c6f81ba",
             "locator": {
               "kind": "symbol",
@@ -237,11 +271,11 @@
       ]
     },
     "7": {
-      "note": "Existing trace-item sources prevail over conflicting unexplained-group metadata.",
+      "note": "An existing trace source set wins over conflicting unexplained-group metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
             "locator": {
               "kind": "symbol",
@@ -253,11 +287,11 @@
       ]
     },
     "8": {
-      "note": "Cardless deleted groups, a deleted/live pair and a single path bind exact candidate source maps accepted by the unchanged unexplained-item predicate.",
+      "note": "Cardless deleted, mixed and singleton source maps are authored by the writer and accepted by the unchanged predicate.",
       "targets": [
         {
           "anchor": {
-            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
             "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
             "locator": {
               "kind": "symbol",

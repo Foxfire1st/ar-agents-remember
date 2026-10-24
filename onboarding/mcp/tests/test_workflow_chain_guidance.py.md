@@ -9,6 +9,10 @@ account and its measured run/census/mutation evidence below are historical, not 
 acceptance status of the present L46 candidate. Current prose describes source assertions only;
 verification metadata remains closeout-owned.
 
+## Current owners and assertion bounds
+
+The main module retains `WorkflowChainTests`; its world, walk, classifier and declaration pins moved to `workflow_chain_guidance_test_support.py`. Existing inline line captions and explicitly historical measurements below retain their earlier source epoch, rather than naming current owner locations. The current own-address case checks each present truthy path and requires at least as many checks as observed hops. The sibling case requires a raw hint, rejects the sibling only for present paths, and checks public membership only when a top-level next tool exists. Callability claims stay bounded to the observed reachable hops and producers. Extraction does not widen them to every channel or every possible state.
+
 ## Purpose
 
 The AR workflow as **one ordered path**, kept true by a test run rather than by a document. A trace
@@ -349,3 +353,7 @@ because the rows name modules that only exist once L8 and L9 have landed.
 - Values for arguments a recommendation leaves to the caller — values, never a population. [7]
 - The two refusal arms separated by model identity, never by wording. [8]
 - The fields a tool's own argument model named as required and absent. [9]
+
+## Current source evidence
+
+- Own/sibling checks apply to present truthy path channels, with conditional public-tool membership and observed-hop bounds. [55]

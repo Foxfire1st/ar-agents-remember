@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+        "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
         "content": "sha256:c8105f64114ab88553302ff9a836331d80009398936f95673fbedfc91c4b8039",
         "locator": {
-          "end": 224,
+          "end": 225,
           "kind": "line_range",
-          "start": 194
+          "start": 195
         }
       },
       "id": "RLZ-G8F33S",
@@ -27,10 +27,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
-            "content": "sha256:d7517b3068989847caa59c1c72c6c62872a520b18dc7f20fc388fdf0e98028ec",
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:c35655656f3018f1115c1df73512fd5ee7bed733176001fb40691ce9218d30f2",
             "locator": {
-              "kind": "file"
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:42a1cc3410ce0695acdc2544e78c2d9e2a7eb8c3830ddeca610ec40f7ca03e23",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:c674bc3e9f8aa5548863a2ff0714f9e58a3a29038cf48049556257ba2b5a10d0",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:0577cfa23132556dfb18a61f32b5b6f6d5f996ce371ae783cbba9dbdb7032d3a",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 299
             }
           },
           "kind": "code"
@@ -38,14 +76,28 @@
       ]
     },
     "2": {
-      "note": "The document the tooling follows.",
+      "note": "The manual documents the selected ports and the public install, host-authority and retained-session boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
-            "content": "sha256:d7517b3068989847caa59c1c72c6c62872a520b18dc7f20fc388fdf0e98028ec",
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:22e7d871976580f2e46edd6dbd900c895b4629a97d2a800918386777dc58f3c0",
             "locator": {
-              "kind": "file"
+              "end": 26,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+            "content": "sha256:0c5eb4f47b9ad586d5f4cf1147950b5f9d52f6dbae803cc7372c24e97e9c6a3c",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 284
             }
           },
           "kind": "code"
@@ -57,13 +109,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d61b4e8161349ce95d3fa90e80eb883ea7465785",
+            "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
             "content": "sha256:3b1e7af75ebb1c26c929f8c6131a824db5639fa789fccfeaf04e9b1f8dde5f6e",
             "locator": {
-              "end": 219,
+              "end": 220,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current sandbox setup writes the host block to MCP authority, separately from the protected user-settings path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e5f51d40449cc36589cc9f0ba618df222c8dc6",
+            "content": "sha256:d198f309e7c4d65c277988a8dc1e380b3e6d5a5a8abd0b9a8549cf3ff26870e7",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "scripts/pnt_sandbox/builder.py"
           },
           "kind": "code"
         }

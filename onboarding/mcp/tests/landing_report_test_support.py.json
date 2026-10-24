@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/landing_report_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A leaf pair is two git repositories at one base, and the landing cuts one card and adds one file without committing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16305e30d15ea0ed27b1e2dfe77dcad069c5d9e5",
+            "content": "sha256:0b8cd547f856cd8ae85c0d4252464d88340e0dd21bbb98a5d7571e0d5a714a37",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The loadable leaf contracts bind the fixture bases so the real gate and closeout phases can run on scratch trees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16305e30d15ea0ed27b1e2dfe77dcad069c5d9e5",
+            "content": "sha256:0b8cd547f856cd8ae85c0d4252464d88340e0dd21bbb98a5d7571e0d5a714a37",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -2,7 +2,7 @@
 
 ## Current operative account — MIK-R112
 
-The self-contained world now builds without an ambient lifecycle. Its prepared_state/state_after strings are fixed fixture labels, not observations. The ambient matrix, arrange helper and STATE_DEPENDENT_RAISERS/AMBIENT_STATES/population declarations are removed. Retained roster equality, exact envelope pins, three-axis refusal marks, choke/census controls and read-only annotation/file oracles remain separate guarantees. No test invocation or historical census is renewed.
+The self-contained world now builds without an ambient lifecycle. Its prepared_state/state_after strings are fixed fixture labels, not observations. The ambient matrix, arrange helper and STATE_DEPENDENT_RAISERS/AMBIENT_STATES/population declarations are removed. Retained roster equality, exact envelope pins, three-axis refusal marks, choke/census controls and read-only annotation/file oracles remain separate guarantees. No test invocation or historical census is renewed. The current main module imports its world, classifier and population pins from `tool_entry_point_sweep_support.py`; negative controls live in `test_tool_entry_point_sweep_controls.py` and read-only oracles in `test_tool_entry_point_read_only.py`. The support declares an empty `ENVELOPE_LOSING_RAISERS`, `T34_REPAIRED_TOOLS={memory_baseline_adopt}` and empty `UNMARKED_NOT_OK`. Current equality assertions remain in the main probe. Older inline line positions and explicitly superseded captions below retain their source epoch; they are not current owner locations.
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
@@ -272,3 +272,8 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 - The benign census includes grant input and canonical direct-landing leaf identity. [56]
 
 - The retained envelope pin remains exact in both directions; the removed ambient-state matrix is not a finalize acceptance or current test population. Historical raiser counts are not re-certified. [57]
+
+## Current source evidence
+
+- Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
+- The main probe retains exact equality between observed raisers and the current pin. [59]

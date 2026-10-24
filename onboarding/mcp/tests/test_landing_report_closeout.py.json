@@ -1,0 +1,90 @@
+{
+  "path": "mcp/tests/test_landing_report_closeout.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+        "content": "sha256:dc1e0053a244a0d1f0b5a66ffed134469d6019a48125668d90850ccf162ff9c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_closeout_phase_passes_with_landing_aboard"
+        }
+      },
+      "facet": "The real services-bound closeout quality phase remains ok with both landing populations under a scratch contract; it is not a real leaf closeout.",
+      "id": "PRF-GT1X76",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+        "content": "sha256:44281868bedf9ea2c170d3da276d01c094ca58f61d833517fd45946695df1dd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_operations_hold_both_populations_without_new_refusals"
+        }
+      },
+      "facet": "The actual check with both landing populations has identical ok/refusal findings to its control.",
+      "id": "PRF-RV55G1",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+        "content": "sha256:2684f3099605ae7e65287e66559645a084a16049c392699db7c59969170af4c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_checklist_actionable_parity_on_real_populations"
+        }
+      },
+      "facet": "Check-derived payloads render landing paths without changing checklist status or actionable counts.",
+      "id": "PRF-W41VPM",
+      "invariant": "INV-NRXFWN",
+      "origin": {
+        "handoffEntry": "MIK-R120@v1",
+        "leaf": "260928-MIK-L120"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every real consumer judges a landed candidate exactly as a clean one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+            "content": "sha256:14c0890b8bd4ec414039403fb10e7a9b896ee94389eb0d6b53749b387ea67efe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An existing refusal fires identically with and without the landing populations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0131028a0660bb2a0b94ee2e064845c5c38ce788",
+            "content": "sha256:14c0890b8bd4ec414039403fb10e7a9b896ee94389eb0d6b53749b387ea67efe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

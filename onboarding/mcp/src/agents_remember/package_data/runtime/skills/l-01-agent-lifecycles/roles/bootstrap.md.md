@@ -11,7 +11,7 @@ This packaged copy makes role messages short wake-ups naming requested work or a
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current manifest’s bootstrap tool list has four retained setup tools.
+- Current manifest’s bootstrap tool list has five retained setup tools.
 - Role still forbids task/code/knowledge authoring and delegates its procedure.
 
 ### Superseded inventory
@@ -33,7 +33,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Synced current-source qualification
 
-The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The current prohibition explicitly names `retire_child`, alongside task, role-start, closeout and other mutations outside the setup surface; it does not currently name `message_child` or `rename_*`. The earlier three-name account belongs to the predecessor wording. Four setup tools remains a source manifest count, not an execution result.
+The read surface names context_packet, server_info and read_ar_files; resolve_context is removed. Ask which cards govern a path, then open them natively. The current prohibition explicitly names `retire_child`, alongside task, role-start, closeout and other mutations outside the setup surface; it does not currently name `message_child` or `rename_*`. The earlier three-name account belongs to the predecessor wording. Five setup tools remains a source manifest count, not an execution result.
 
 The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
 
@@ -115,7 +115,7 @@ for another role is refused and reported rather than absorbed.
 
 - Role sources are concise, parseable and self-contained. The compact capsule policy supersedes fixed section order and minimum length; role-specific tests protect the duties that matter.
 - Editing it means editing the canonical `skills/l-01-agent-lifecycles/roles/bootstrap.md` and
-  running `python scripts/sync-skills.py`; the nine generated copies are never hand-edited.
+  running `python scripts/sync-skills.py`; the single generated package copy is never hand-edited.
 - Its permitted surface is a positive list, and it is deliberately narrow: the setup surfaces, the
   read-only resolution/retrieval surfaces, native reads, and exactly one artifact — its own report.
   Everything task-shaped (`worktree_*`, `task_doc`, `lifecycle_*`, `gate_*`, `dispatch_agent`,

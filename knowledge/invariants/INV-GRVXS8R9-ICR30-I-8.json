@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "applicability": "The canonical skills tree and its declared generated packaged runtime projection.",
   "conditions": [],
   "exclusions": [],
   "id": "INV-GRVXS8R9",
@@ -16,9 +16,9 @@
     "legacyId": "18d6035a-b0c3-4f7e-81bc-d77aa6b37ca0",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The repository's skill tree is the canonical instruction source and every generated copy of it, in the packaged package-data tree and in each harness starter package, is produced by the repository's own sync script, so a copy edited in place is reported as divergence rather than accepted as a second source.",
+  "statement": "The repository's skill tree is the canonical instruction source; its generated packaged runtime copy is produced by the repository's own sync script, so a copy edited in place is reported as divergence rather than accepted as a second source.",
   "status": "proposed",
   "supersedes": []
 }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cde8234d3e0707bce8da54eef70480965d0fea34",
+        "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
         "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
         "locator": {
           "kind": "symbol",
@@ -26,27 +26,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61b83aed5a1e50d8f145aa654b7d1bf7b32e1cac",
+            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
             "content": "sha256:cae0a20a11eb68589ff854a24d2bf73afc0039e7979f9eb7de53bf97010b32ab",
             "locator": {
               "kind": "symbol",
               "name": "test_plugin_pin_drift_fails_release_concordance"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The rendered-block case.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
-            "content": "sha256:32a1a90fd67731116893b4baaca8a16d7fc506a72246e9dc544e75a4d1f81fc1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_starter_renders_one_shared_block_and_preserves_existing_settings"
             }
           },
           "kind": "test"
@@ -58,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61b83aed5a1e50d8f145aa654b7d1bf7b32e1cac",
+            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
             "content": "sha256:ddba604a888f7451816b1701378764fd98be8fe06eaefae32c1684048ff5c5f3",
             "locator": {
               "kind": "symbol",
@@ -69,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "61b83aed5a1e50d8f145aa654b7d1bf7b32e1cac",
+            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
             "content": "sha256:d8d159f3e0f9f92134223b1712c163176e210bb49370b1600873d10d34407b0a",
             "locator": {
-              "end": 105,
+              "end": 83,
               "kind": "line_range",
-              "start": 80
+              "start": 58
             }
           },
           "kind": "test"
@@ -86,11 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95523181d5306f13a4c6c4b3384edb30f8c55ebc",
-            "content": "sha256:25da727db53e6457ea445fbbc10d5b80c75bbece4ee9162b972b1c7af6ce83f9",
+            "blob": "20c836e7a4b2fff1ef94a62c6f1951d5f2e3b29a",
+            "content": "sha256:4d10b9c9171547e934922978fc16ba8a2c73b31f8e6994f39618d6f8044fb7c3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_retired_selector_notice_once_on_each_public_command_and_dashboard_line"
+              "end": 167,
+              "kind": "line_range",
+              "start": 128
             }
           },
           "kind": "test"

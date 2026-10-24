@@ -20,12 +20,34 @@
         }
       ]
     },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `# mcp/src/agents_remember/benchmarks/runner_modules Overview`",
+    "3": {
+      "note": "The shared preparation object, without a skill-exposure mode.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137"
+          "anchor": {
+            "blob": "68fa770e00e655744392f47267813de7377753af",
+            "content": "sha256:1d811397a9dc2063a16d5d1973b935205bb662d77ad76e6082cacb1aa33b7314",
+            "locator": {
+              "kind": "symbol",
+              "name": "BenchmarkPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68fa770e00e655744392f47267813de7377753af",
+            "content": "sha256:9000011a19f052249d5ba5eb1d1a059f587f8589f274c52099f0fdbaa49f02b3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

@@ -10,7 +10,7 @@ The sandbox manual describes the fixed disposable layout and five command flows,
 
 ## User settings isolation
 
-The manual now gives the sandbox its own user settings file at `config/agents-remember/settings.json` (including `paseoRuntime`), runs every process under `XDG_CONFIG_HOME=<sandbox>/config`, and requires the explicit whole-file upgrade for an older sandbox instead of reading the old file as a fallback.
+The sandbox user-settings path remains config/agents-remember/settings.json under XDG_CONFIG_HOME=<sandbox>/config, with an explicit whole-file upgrade for an older layout and no fallback reader. The qualified manual and current builder place paseoRuntime in settings/agents-remember-settings.json, the sandbox MCP authority file; the tool-call helper reads that same authority. The user-settings path remains separate from host authority.
 
 ## The tool server
 
@@ -22,7 +22,12 @@ The manual's tool-server section tells an agent how to drive a sandbox: tool cal
 
 The sandbox README now documents the public build/check/start/stop commands taking the two ports with defaults 6820/9797, the sandbox start using the public install route instead of the retired direct provision, and the product Node and cache roots the safety check requires inside the sandbox.
 
-- The document the tooling follows. [2]
+
+
+
+- The tool-server section names the request fields, environment separation, host refusal, the no-host build phase and the start prerequisite. [3]
+
+- Current sandbox setup writes the host block to MCP authority, separately from the protected user-settings path. [4]
 
 - The scoped current source carries the module/document behavior described above. [1]
-- The tool-server section names the request fields, environment separation, host refusal, the no-host build phase and the start prerequisite. [3]
+- The manual documents the selected ports and the public install, host-authority and retained-session boundaries. [2]

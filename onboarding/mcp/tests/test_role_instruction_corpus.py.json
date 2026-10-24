@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+        "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+        "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
         "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+        "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+        "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
         "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+        "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
         "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
         "locator": {
           "kind": "symbol",
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
             "content": "sha256:661dffee802e82084f6713b5f70e2619b8d89e9da6a0c6936eff222b688f4c17",
             "locator": {
-              "end": 163,
+              "end": 164,
               "kind": "line_range",
-              "start": 150
+              "start": 151
             }
           },
           "kind": "test"
@@ -111,12 +111,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
-            "content": "sha256:fd569c8598a8912594e6daf688c311950d49b100252666ab97ac72e49c85b451",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:517faeb94846c69f9ec812e70f616f18cad0f1d629ef2f7e9fe1d70f6050083b",
             "locator": {
-              "end": 116,
+              "end": 19,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:176ba50d9d8b684144694e8abd6237083ce0c1f7ae13d8e1a0692ee79a58f3c1",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:3823c30d1c68692eb9f2f1e791bafb0eb676dc5cd3bcf5bcefe7c34cb7479db9",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "test"
@@ -128,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
             "locator": {
               "end": 2,
@@ -141,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:f657ca4a79e44dd339e0199c6c5a7f219c9b2ada1d263c310bdbe5e1e188294d",
             "locator": {
               "end": 4,
@@ -154,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:a99ff78812f4ba8840370589fc2dc832d742c95ffe58e905f5b9e14eec6ce5f7",
             "locator": {
               "end": 18,
@@ -168,28 +192,15 @@
       ]
     },
     "4": {
-      "note": "This module declares narrow normalized-text R53 assertions over canonical plus nine generated handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this review.",
+      "note": "This module declares narrow normalized-text R53 assertions over canonical plus the sole packaged handoff/c-05 copies; the propagation owner separately checks projection byte equality. Neither check was executed in this reconciliation.",
       "targets": [
         {
           "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
-            "content": "sha256:167f9d45bdb5669d7ef0014f353c6f43073799895e3561fc580baec78697c906",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:4f7dea265646c6ddfb52bdab8f358660fc28849543c0116448955e76e188daaf",
             "locator": {
-              "end": 646,
-              "kind": "line_range",
-              "start": 628
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
-            "content": "sha256:37a97c0a467d6777d6d90b5e3fd35814ab20acfd61246a98ee5ca7b4286e7865",
-            "locator": {
-              "end": 669,
-              "kind": "line_range",
-              "start": 650
+              "kind": "symbol",
+              "name": "test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared"
             }
           },
           "kind": "test"
@@ -201,24 +212,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
             "content": "sha256:45e5a172b94a90ddb17cb18a6db40dcea5df2835f34a2bfd36b9718f24992c1d",
             "locator": {
-              "end": 981,
+              "end": 956,
               "kind": "line_range",
-              "start": 972
+              "start": 947
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "25a5fd8aff63b823376471b545cb59aeca9d1852",
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
             "content": "sha256:7020da9e33011db12df983119555d90e2149e62c74b13524e8cd4d13a2acee9d",
             "locator": {
-              "end": 1009,
+              "end": 984,
               "kind": "line_range",
-              "start": 984
+              "start": 959
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface instead of naming retired c02.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:4f7dea265646c6ddfb52bdab8f358660fc28849543c0116448955e76e188daaf",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 603
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "content": "sha256:8ddd4575a7efa1cecedb1b1bc65ee975422cf82336a25023f8b81f1c021b05a0",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 935
             }
           },
           "kind": "test"

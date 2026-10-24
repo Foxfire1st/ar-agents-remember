@@ -1,0 +1,52 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/bootstrap-failure-states.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The failure-state table is a separate step detail read only when a step answers with a state the seat cannot name, and its rows stay distinct rather than merged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a3c2df2fd1eb43e855d071e4869c08a64dde2b",
+            "content": "sha256:3ff26f2d2b3c2d47347851277b9ccfcff379611eae0b06228505851579486cb4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Foundation states, a refused admission and an unusable destination are reported with their own codes and identity, and the move names the Architect rather than an authoring attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a3c2df2fd1eb43e855d071e4869c08a64dde2b",
+            "content": "sha256:3ff26f2d2b3c2d47347851277b9ccfcff379611eae0b06228505851579486cb4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settings states are reported with their path: an existing file is never overwritten, merged or re-moded, and a refused write is the developer's decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84a3c2df2fd1eb43e855d071e4869c08a64dde2b",
+            "content": "sha256:3ff26f2d2b3c2d47347851277b9ccfcff379611eae0b06228505851579486cb4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

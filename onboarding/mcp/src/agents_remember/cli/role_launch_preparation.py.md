@@ -143,3 +143,10 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 - Defaults extraction preserves host-role lookup. [12]
 - Detail-bound composition enters the existing handover and message binding. [13]
 - Concrete frozen detail pointers retain existing user-note composition. [14]
+
+## The bootstrap capsule and the assignment owner
+
+`ROLE_START_OPERATIONS` binds `bootstrap` to its capsule operation, so the free agent is compiled from the same capsule the role documents describe rather than from a second corpus. The assignment sentences of the three roles a launch admits without a canonical task — architect, investigator and bootstrap — are owned by `cli.role_launch_assignments`, and `_role_assignment` returns the bootstrap sentence for that role instead of asserting a selected task. Nothing else in preparation changes for the existing roles.
+
+- The capsule operation each launcher role is compiled from, including the free agent. [15]
+- The assignment the bootstrap seat carries, which names no task. [16]

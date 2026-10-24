@@ -14,7 +14,7 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: the actual A10 module declares ROSTER_SIZE=40, TOOL_MODULE_COUNT=13 and TOOL_HANDLER_COUNT=42. The earlier41/20/65 and39/19/63 accounts describe earlier source epochs, not this candidate. The remaining source assertions compare populations rather than granting acceptance from numbers.
+- Source comparison: the actual A10 module declares ROSTER_SIZE=42, TOOL_MODULE_COUNT=13 and TOOL_HANDLER_COUNT=44. The earlier41/20/65 and39/19/63 accounts describe earlier source epochs, not this candidate. The remaining source assertions compare populations rather than granting acceptance from numbers.
 - Source comparison: test_every_registered_model_is_strict_or_declared_flexible derives strict/flexible model sets; imports and compatibility rows do not enlarge the public roster.
 - Historical source comparison only: the former DispatchAgentResponse field assertion is removed on A10 and supplies no current dispatch contract.
 
@@ -151,3 +151,7 @@ No repository or external-system boundary is proved by this module.
 </details>
 
 - The composed source declares41 public tools,20 modules and65 handlers; the R111 pre-sync42/20/66 and older39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent. [21]
+
+## Current source evidence
+
+- Current literal source populations are42 roster names,13 adapter modules and44 handlers, while strict/flexible sets remain derived. [22]

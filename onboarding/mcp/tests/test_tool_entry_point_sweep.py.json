@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -54,12 +54,12 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
-          "end": 989,
+          "end": 174,
           "kind": "line_range",
-          "start": 948
+          "start": 133
         }
       },
       "facet": "Every sweep aspect runs on its own subTest even when an earlier one fails.",
@@ -74,49 +74,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
-        "locator": {
-          "kind": "symbol",
-          "name": "ENVELOPE_LOSING_RAISERS"
-        }
-      },
-      "id": "RLZ-25RX8K",
-      "invariant": "INV-8V5KH0",
-      "origin": {
-        "handoffEntry": "L130-pins-taken",
-        "leaf": "260928-MIK-L130"
-      },
-      "rationale": "Declares the current empty ENVELOPE_LOSING_RAISERS pin after L111 repairs; the preceding four-raiser ownership/removal account is historical, not four current members or an executed census. Bidirectional observed/pinned equality belongs to the separate assertion unit.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:62f79d21a9b38e354584d2fa8b5302a2aaab2db6401e859f7fd7d3893d8aee9a",
-        "locator": {
-          "end": 125,
-          "kind": "line_range",
-          "start": 119
-        }
-      },
-      "id": "RLZ-6VVBP4",
-      "invariant": "INV-8V5KH0",
-      "origin": {
-        "handoffEntry": "MIK-R130 W03 pin comment",
-        "leaf": "260928-MIK-L130"
-      },
-      "rationale": "The pin comment states L111 ownership and the same-change repair rule.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
-          "end": 989,
+          "end": 174,
           "kind": "line_range",
-          "start": 948
+          "start": 133
         }
       },
       "id": "RLZ-8E1MYK",
@@ -130,26 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:b89188f5d30d2a208ed3c96d46914af961a333f6d17f8bbb415478b42f24a04a",
-        "locator": {
-          "end": 134,
-          "kind": "line_range",
-          "start": 127
-        }
-      },
-      "id": "RLZ-B0D6N2",
-      "invariant": "INV-8V5KH0",
-      "origin": {
-        "handoffEntry": "MIK-R130 W03 pin constant",
-        "leaf": "260928-MIK-L130"
-      },
-      "rationale": "This span contains the current empty envelope-loss declaration and the introduction to the separately governed retained positive T34 population. The earlier four lifecycle preconditions were L111 repair provenance, not current pin members or this Curator's measurement.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
         "locator": {
           "end": 26,
@@ -168,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
         "locator": {
           "kind": "symbol",
@@ -186,25 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
-        "locator": {
-          "kind": "symbol",
-          "name": "ENVELOPE_LOSING_RAISERS"
-        }
-      },
-      "id": "RLZ-F381M7",
-      "invariant": "INV-TG334W",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-20",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The current ENVELOPE_LOSING_RAISERS constant is empty after the L111-owned repairs. Historical since-b52/L26 four-arm ownership and same-change pin removal remain provenance; positive repaired tools and shared-world populations are separate and no execution is claimed.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
+        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
         "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
         "locator": {
           "kind": "symbol",
@@ -218,42 +144,6 @@
         "leaf": "260928-MIK-L70"
       },
       "rationale": "Class cleanup registers the existing world close before any deadline can fail fixture setup.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
-        "locator": {
-          "kind": "symbol",
-          "name": "ENVELOPE_LOSING_RAISERS"
-        }
-      },
-      "id": "RLZ-WQDNDW",
-      "invariant": "INV-8V5KH0",
-      "origin": {
-        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
-        "leaf": "260928-MIK-L130"
-      },
-      "rationale": "The actual ENVELOPE_LOSING_RAISERS declaration holds no current members. The four named worktree operations belong to the retained historical L111 repair account, not a present four-operation declaration or newly observed failures.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "ba641b6fef944eaea108f4faeb4fb392a6d572b4",
-        "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
-        "locator": {
-          "kind": "symbol",
-          "name": "T34_REPAIRED_TOOLS"
-        }
-      },
-      "id": "RLZ-Y2XJG0",
-      "invariant": "INV-8V5KH0",
-      "origin": {
-        "handoffEntry": "MIK-R130 W03 sweep pin prose",
-        "leaf": "260928-MIK-L130"
-      },
-      "rationale": "The current T34 declaration keeps only memory_baseline_adopt after the eight code-search tools were retired; the adjacent source distinguishes named worktree pins from the empty ambient-state population, without a new failure-census claim.",
       "role": "support"
     }
   ],
@@ -311,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
             "locator": {
               "kind": "symbol",
@@ -362,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:995a2e5792acde634a2f8609a360561be5b5fb9942e5d80573a5a6fcb7e7c852",
             "locator": {
               "kind": "symbol",
@@ -462,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:f18c14781ddeecc0fca17b58d2b4d8d3f97930328f9c497895ac89df4713fc79",
             "locator": {
               "kind": "symbol",
@@ -474,24 +364,24 @@
         },
         {
           "anchor": {
-            "blob": "9c1ec323cee26860dafb01aa7d27b1f1259d5ab6",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
             "content": "sha256:b132a2a2d4d753b575dfd386512b6e9a21bc2e7750c918e2461d1138e1a51eaa",
             "locator": {
-              "end": 1139,
+              "end": 327,
               "kind": "line_range",
-              "start": 1127
+              "start": 315
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "9c1ec323cee26860dafb01aa7d27b1f1259d5ab6",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
             "content": "sha256:8f14734706c32adc59706968b0a18f752e8465450d9bf46d360cda834511b7ae",
             "locator": {
-              "end": 1155,
+              "end": 343,
               "kind": "line_range",
-              "start": 1141
+              "start": 329
             }
           },
           "kind": "test"
@@ -503,7 +393,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:44100f1a6d5a720f1e607189ff8b81859a2e782b84895087152af79f27792881",
             "locator": {
               "kind": "symbol",
@@ -515,12 +405,12 @@
         },
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:ccd5cc11587b9151d106ba8f8b8332aeed400f81a55f3fc605714c170439e422",
             "locator": {
-              "end": 580,
+              "end": 576,
               "kind": "line_range",
-              "start": 558
+              "start": 554
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -622,12 +512,12 @@
         },
         {
           "anchor": {
-            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
             "content": "sha256:b7d8c5eebe6ace19a88c5c8d86a2458bff070b5f72c4b869690e3a57b3561fde",
             "locator": {
-              "end": 72,
+              "end": 77,
               "kind": "line_range",
-              "start": 70
+              "start": 75
             }
           },
           "kind": "test"
@@ -733,7 +623,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:7a0ad366490b4757f2733b07c064848e5f9f5fb375a3e32ef5ba06d3e6a314df",
             "locator": {
               "end": 48,
@@ -746,12 +636,12 @@
         },
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:b7ed0ed5d00dcb3dcfc8a2a183c79a5a7c16c95606ac5bba47169a355502932f",
             "locator": {
-              "end": 526,
+              "end": 522,
               "kind": "line_range",
-              "start": 491
+              "start": 487
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -777,12 +667,12 @@
         },
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:013fea916dec48472c2c0310925822170f04fab585b568a0384ad1cdc4dc413d",
             "locator": {
-              "end": 518,
+              "end": 514,
               "kind": "line_range",
-              "start": 491
+              "start": 487
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -811,7 +701,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c1ec323cee26860dafb01aa7d27b1f1259d5ab6",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
             "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
             "locator": {
               "kind": "symbol",
@@ -877,7 +767,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
+            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
             "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
             "locator": {
               "kind": "symbol",
@@ -964,6 +854,37 @@
           "anchor": {
             "blob": "8ff5c5145a961c4258b8dfdfbcebe8636a2b86e4",
             "content": "sha256:a7ab5171b54cd890bbda764508345021afd7a4f30f84566d4786ec3fb48f9ab3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt.\n\nAnchor: `ENVELOPE_LOSING_RAISERS`, `T34_REPAIRED_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+            "content": "sha256:d98b1b91e0f2d00b70114238e0f6d37bd6fd6f37df71b3ff6540d2239843503d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "The main probe retains exact equality between observed raisers and the current pin.\n\nAnchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
             "locator": {
               "kind": "file"
             }

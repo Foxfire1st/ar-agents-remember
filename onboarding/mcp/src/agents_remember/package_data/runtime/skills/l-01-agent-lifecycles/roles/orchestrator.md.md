@@ -32,7 +32,7 @@ Verify each Manager's delivery and aggregate evidence; it may inspect the suppli
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/roles/orchestrator.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/roles/orchestrator.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 

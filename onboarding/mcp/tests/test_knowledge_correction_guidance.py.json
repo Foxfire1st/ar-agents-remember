@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d11a931be72188488a9f5b140ecc9b0ee4da7bde",
-            "content": "sha256:2f5da4df96ec37be02a3926803be0392f2ba1566f1f91f60c0968d1513ab2a28",
+            "blob": "8f9a16c43d43af7f46c2fecae4d2f10cb6094546",
+            "content": "sha256:1840df9fd4e96ff410d3079b8e203f6ee27531c1b3167370df0be9c6790e73a1",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide.\n\nAnchor: Current test/support source",
+      "note": "Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide.",
       "targets": [
         {
           "anchor": {
-            "blob": "49a9ad8f30a91f043b5acff2052816d4730504ff",
-            "content": "sha256:3d5be96b5eeffce0fa3af8cd66f665b83aaea782b8b7013905079db123f8ad83",
+            "blob": "8f9a16c43d43af7f46c2fecae4d2f10cb6094546",
+            "content": "sha256:1840df9fd4e96ff410d3079b8e203f6ee27531c1b3167370df0be9c6790e73a1",
             "locator": {
               "end": 111,
               "kind": "line_range",

@@ -52,13 +52,13 @@ Author semantic scope and each target’s rationale. Examine a family’s own gu
 
 ## Foundation carrier and writer admission
 
-The repository-foundation entry is carried by a taskless instructed session following Curator rules, not by opening a taskless Curator seat. Bootstrap reads/reports the foundation state; a Curator seat opened on a task document authors on that task line. Knowledge-bootstrap retains its no-enclosure admission and developer commit word, while knowledge-ingest remains the contract-scoped leaf writer. No invented task document or enclosure bridges those admissions.
+Repository foundation is regular task work: the user-started Architect opens the real foundation task, standalone or under a master or sprint, and the Curator seat starts on that task document with its actual enclosure contract. Bootstrap reads and reports the foundation state and names the Architect as the next step; no instructed session substitutes for task admission. Foundation authoring uses the contract-scoped leaf writer, and the developer's commit word is the whole of the write act. No invented task document or enclosure manufactures either admission.
 
-- Foundation authoring is taskless-session work under Curator rules; an actual Curator seat is task-document-bound and the two writer admissions do not substitute for one another. \[6] [7]
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission [7]
 
 ## Conventions
 
-Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
+Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy, the sole generated skill target, which the tool server serves as MCP resources; no generated file defines a separate obligation.
 
 ## Invariants And Boundaries
 
@@ -131,4 +131,4 @@ No meaningful cross-repository implementation dependency.
 - Current review-budget and preserved ownership obligations are defined by these source instructions. [3]
 
 
-- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. [7]
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.

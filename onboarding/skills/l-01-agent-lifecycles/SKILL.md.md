@@ -10,7 +10,7 @@ This canonical thin router selects a native role capsule from an explicit suppor
 
 ## Logic
 
-The native launcher supports Architect, Investigator, Orchestrator, Manager, Worker, Reviewer and Curator. System Specialist is the earlier read spelling of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
+The native launcher supports eight roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. System Specialist is the earlier read spelling of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
 
 Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. With a parent named in `host.parent` a developer question goes to that parent, and only a parentless or unreachable-parent agent asks in its own chat; dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
@@ -48,7 +48,7 @@ separate protocol events as delivery attempts.
 
 ## Conventions
 
-- `skills/l-01-agent-lifecycles/` is canonical. Package and harness trees are synchronized outputs.
+- `skills/l-01-agent-lifecycles/` is canonical. The packaged runtime skill tree is its generated distribution output.
 - One self-contained role file owns each role lifecycle; templates carry dispatch inputs and
   hand-off shapes, not alternate doctrine.
 - `templates/curator-handoff-list.md` is the one **producer output shape** among them: the
@@ -102,13 +102,14 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-- Explicit supported role and applicable operation select the native capsule. [1]
-- The native launcher exposes seven roles while the manifest retains its compiler registry. [2]
-- Canonical task/workspace facts arrive in the handover rather than being inferred from Projects. [3]
-- Same-task continuity restores durable role, operation, agent and report identities. [4]
-- Native role starts and messages use the bound task server and actual returned identities. [5]
+- One explicit supported role and applicable operation select the two instruction blocks; the router injects no shared core. [11]
+- The native launcher names eight roles, including Bootstrap; System Specialist remains the earlier Investigator spelling, and other manifest registry entries are not launched here. [12]
+- Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location. [13]
+- Restore the same role, operation, task, agent and report through reconnect; reconcile an uncertain start with its same request ID and retain separate acceptance/publication authorities. [14]
+- Native role starts and messages use the launching build's task server and actual returned identities. Developer questions follow the actual parent channel when a parent exists. [15]
+- First delegation to a coordinating agent, developer-chosen direct coordination and parentless dashboard admission have their stated scopes. [16]
 
-- Developer-chosen direct coordination and valid parentless dashboard admission are explicit. [6]
+The following requirement and attempt references retain their source-epoch evidence. Applicable approved packets and owning role records determine current authority; this thin router does not inject the former shared sources.
 
 - Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
 - Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
@@ -147,7 +148,7 @@ independent reviewer rejection permits a successor.
 
 ## Current intake and developer-question evidence
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[11] [11]
+- Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named. [17]
 
 ## Inherited Source-Epoch Commentary
 
@@ -255,4 +256,4 @@ Inherited reference 4 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
-- The authored source owns this contract; the distribution copy is not a separate authority. [12]
+- Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent. [18]

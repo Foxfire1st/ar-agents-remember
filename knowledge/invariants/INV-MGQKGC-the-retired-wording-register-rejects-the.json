@@ -7,7 +7,7 @@
   },
   "applicability": "The retired instruction probes and generated lifecycle skill mirrors.",
   "conditions": [
-    "Canonical lifecycle sources own meaning; all nine mirrors are synchronization outputs.",
+    "Canonical lifecycle sources own meaning; the packaged skill copy is the synchronization output.",
     "Each registered old sentence is tested on its declared carrier."
   ],
   "exclusions": [
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L98",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The retired wording register rejects the old display name and replaced clauses, and every generated skill mirror matches the canonical Investigator source with no old role file.",
+  "statement": "The retired wording register rejects the old display name and replaced clauses, and the packaged generated skill copy matches the canonical Investigator source with no old role file.",
   "status": "proposed",
   "supersedes": []
 }

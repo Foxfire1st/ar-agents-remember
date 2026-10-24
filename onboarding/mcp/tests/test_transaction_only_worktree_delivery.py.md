@@ -1,87 +1,78 @@
 # mcp/tests/test_transaction_only_worktree_delivery.py
 
-| Field | Value |
-| --- | --- |
-| verificationStatus | working-candidate |
-
-The LCA L9 working-candidate account is historical. Current file-local statements describe inspected source assertions, not a new execution or acceptance verdict; verification metadata remains closeout-owned.
-
 ## Governing Overview
 
-[Nearest governing route overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-Protect public transaction-only closeout/integration and recovery with two accepted outputs and a disposable memory cache.
+Holds the transaction-only closeout and integration regressions (CCR-R12): closeout and integration are Git
+transactions that need no acceptance tool, the publication is bound to the branch and head that were admitted, a
+moved branch refuses and a retry completes, and a refused memory publication gives back every preparation it made.
 
 ## Code Commentary
 
 ### Logic
 
-The current source has 17 test definitions; this is neither collected case count nor evidence of execution. Normal public transaction
-scenarios forbid named quality, selected-certification and curator-certification entry points
-while retaining converted-memory judgment. Converted closeout fixtures use paired bases and
-open `leaf-1` history with a `no_impact` row for `onboarding:feature.py`;
-`_seed_leaf_trace_row` receives the full contract, captures its code worktree with `CodeSnapshot`,
-and binds the actual source path/blob in that row before public closeout; the branch/head
-disturbance scenario replaces `leaf_gate_refusal` with an injection seam. Public closeout begins with malformed cache text and must create exactly one code commit and one memory commit; recovery begins with a missing cache, interrupts after code publication, rejects a wrong recovery code identity, and resumes without another code commit.
+The transaction cases remain in this module. Shared fixtures, executable hooks, branch-race helpers and attribution assertions live in `transaction_only_worktree_delivery_test_support.py`; the cache-refresh cases live in `test_transaction_only_worktree_delivery_cache.py`. Their extraction changes the source owners, not the transaction, restoration or hook guarantees described here.
 
-Configured failing pre-commit hooks are probed to prove they work, Failing hooks refuse with both heads unchanged; passing code/memory hooks each log one run. Memory message has one Code-Commit and one tree-bound Commit-Check-Pass. `_assert_memory_attribution` checks the exact memory message and both native trailer readers, and verifies memory.md is absent from the memory-content commit. The resulting cache is present and untracked; retired ledger result fields are absent. Integration still publishes exact refs and refuses a moved source before pair publication.
+The cases drive `worktree_closeout_apply`, the integration lifecycle and the worktree modules over a real
+repository pair, with `applications.worktree_tool_requests`, `memory_cache` and `memory_ledger` supplying the
+request and the cache witness.
 
-The sync/recloseout case passes the accepted code commit to _commit_memory_content and proves an unchanged memory candidate reuses the actual merged head. The final two cache tests derive canonical data from Git, keep an already-correct cache unchanged, recreate a missing cache, and repair malformed, forged, reordered, or header-inconsistent text. They compare refs and all commit objects in both repositories and preserve real file bytes and clean content state.
+- **Code commit.** `test_ordinary_code_commit_is_the_admitted_tree_and_keeps_a_later_edit` proves a file edited
+  while the commit object is written is not committed.
+- **Refusals.** `test_a_moved_code_branch_refuses_the_closeout_and_a_retry_completes_it` and
+  `test_a_moved_memory_branch_leaves_the_pair_to_the_recovery_a_retry_runs` keep a moved branch a concrete
+  refusal with nothing of the memory side published, and a retry completing it.
+- **Preparation.** `test_a_refused_converted_memory_publication_gives_back_every_preparation` gives back
+  everything a refused converted-memory publication prepared, and
+  `test_the_publication_is_bound_to_the_branch_and_the_head_the_closeout_admitted` keeps the publication bound to
+  the admitted branch and head.
+- **No acceptance tool.** `test_public_closeout_commits_code_and_memory_without_acceptance_tools` requires the
+  closeout to commit both sides with no quality or review authority present, and
+  `test_public_integration_merges_prepared_pair_without_acceptance_tools` merges a prepared pair the same way.
+- **Recovery.** `test_closeout_recovery_attributes_the_memory_commit_it_still_owed` resumes an interrupted public
+  closeout with only its memory commit owed.
+- **Integration race.** `test_public_integration_ref_movement_refuses_before_pair_merge` keeps a source-tip race a
+  refusal, so a torn pair is never published.
+- **Recloseout.** `test_recloseout_after_a_sync_records_the_memory_head_as_content_commit` records the live memory
+  head after a sync rather than the stale record.
+- **Certification and hooks.** `test_l56_required_references_separate_requested_dagger_from_ordinary_closeout`
+  keeps certification requested rather than an automatic gate, `test_l56_publication_code_pins_both_live_commit_hook_mechanisms`
+  and `test_l56_closeout_skill_names_the_live_hook_guarantee_without_prepared_policy` remove the retired policy
+  claims without weakening the live hook guarantee, and the renderer and reader prose cases name only surviving
+  routes and analytics.
 
 ### Conventions
 
-Mocks forbid named acceptance-tool calls or inject interruption and branch/head races.
-`_apply` and the main normal/recovery fixtures bypass `require_first_ready_generation` for
-their synthetic waiting door. `_disturbed` also substitutes `leaf_gate_refusal` to inject the
-post-judgment race. These are explicit fixture boundaries, not unmocked acceptance proof. The cache test fixture creates no ledger-only commit and never treats its observed cache as canonical input. Scenario definitions and their execution receipts are separate evidence.
+A case builds a real code and memory repository pair and asserts on refs, commit objects and content bytes, so a
+publication that wrote a plausible record over the wrong tree fails.
 
 ### Invariants And Boundaries
 
-- Normal transaction delivery does not acquire the forbidden acceptance tools.
-- Recovery retains exact code identity and one real memory output.
-- Both Git trailer readers see the attribution, while the committed tree contains no memory cache.
-- Cache rebuilds change no refs, commit objects, or substantive content.
-Named acceptance tools remain forbidden; repository pre-commit hooks run and are asserted.
-
-### Todos
-
-No new file-local follow-up is identified by this source reconciliation.
+- Closeout and integration are Git transactions; no acceptance tool is consulted.
+- A moved branch or ref refuses rather than publishing a torn pair.
 
 ## Evidence
 
-### Docs References
+- An interrupted public closeout resumes only its exact accepted code identity. [3]
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
-
-### Repo-Internal References
-
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
-
-
-### Cross-Repo References
-
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-## 260918-TSIP-L6 The Closed Payload's Own Address, Driven End To End
-
-The historical L6 assertion remains in the test symbol
-`test_public_closeout_commits_code_and_memory_without_acceptance_tools`: the applied closeout
-payload's `contractPath` must equal `contract.contract_path.as_posix()`. It is the **producer
-half** of `260918-TSIP` `T54` — `status_payload` emits the snake_case `contract_path`, while the
-guidance guard a seat's next move depends on reads `contractPath`/`enclosurePath`, so a closed
-closeout declaring neither made the guard withhold the guidance **entirely** and the seat silently
-lost "integrate the task branches". This is the only case that drives the real producer end to
-end; the guard's own four cases are in `mcp/tests/test_response_address_binding.py`.
-
-### Current Source-Inspection References
-
-- Named acceptance-tool prohibition and real failing-hook probes. [1]
-- One code/memory commit, cache absence from the committed tree, and both trailer readers. [2]
-- Interrupted public closeout resumes only its exact accepted code identity. [3]
 - Integration publishes accepted refs or refuses source movement before publication. [4]
-- A recloseout after sync records the actual memory head. [5]
-- Cache materialization preserves both repositories' refs/commit objects and real content. [6]
-- Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status. [7]
-- The open trace fixture binds its actual contract code snapshot and source path/blob. [8]
+
+
+- A recloseout after a sync records the actual memory head. [5]
+
+
+- Closeout commits code and memory as one transaction without any acceptance tool. [9]
+- A refused converted-memory publication gives back every preparation it made. [10]
+
+- Named acceptance-tool prohibition and real failing-hook probes — `_forbid_acceptance_tools`, `_install_failing_pre_commit_hooks` in mcp/tests/test_transaction_only_worktree_delivery.py. [1]
+
+- One code/memory commit, cache absence from the committed tree, and both trailer readers — `_assert_memory_attribution`, `test_public_closeout_commits_code_and_memory_without_acceptance_tools`, `_converted_closeout_fixture`, `_seed_leaf_trace_row`, `_apply` in mcp/tests/test_transaction_only_worktree_delivery.py. [2]
+
+- Cache materialization preserves both repositories' refs/commit objects and real content — `test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache`, `test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git`, `_ClosedCacheLeaf` in mcp/tests/test_transaction_only_worktree_delivery.py. [6]
+
+- Cache witnesses compare HEADs, refs and all commit-object identities, then check content bytes, untracked cache and clean repository status — `test_cache_refresh_preserves_current_bytes_and_materializes_a_missing_cache`, `test_cache_refresh_repairs_malformed_forged_and_reordered_data_from_git`, `_ClosedCacheLeaf` in mcp/tests/test_transaction_only_worktree_delivery.py. [7]
+
+- The open trace fixture binds its actual contract code snapshot and source path/blob — `_seed_leaf_trace_row` in mcp/tests/test_transaction_only_worktree_delivery.py. [8]

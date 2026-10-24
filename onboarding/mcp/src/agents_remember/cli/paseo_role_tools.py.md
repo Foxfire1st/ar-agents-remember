@@ -51,7 +51,7 @@ A delivery that carried held messages answers `ok` with `status` `accepted` and 
 
 ## Feature passthrough, choice metadata and message-time collection
 
-`_agent_override` passes speed `featureValues` through even without an agent/model/effort override, and still refuses a model or effort without its agent. The start answer carries launch-choice metadata, task-document files and any warning beside preparation. `send_role_message` collects the sender's own execution reports before delivery when its receipt matches the bound agent; a collection failure is recorded and returned alongside the delivered message rather than blocking it.
+`_agent_override` passes speed `featureValues` through even without an agent/model/effort override, and refuses a model or effort without its agent except for a Bootstrap model/effort-only choice, whose provider comes from the caller’s harness; an explicit agent is preserved. The start answer carries launch-choice metadata, task-document files and any warning beside preparation. `send_role_message` collects the sender's own execution reports before delivery when its receipt matches the bound agent; a collection failure is recorded and returned alongside the delivered message rather than blocking it.
 
 ## Grant-backed leaf preparation and revival
 
@@ -122,3 +122,10 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 - On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [18]
+
+## The caller's own harness and the override rule
+
+`_start_role` carries `callerHarness` into the dispatch request, so the transport's own report about its client reaches the launch instead of being reconstructed from a settings path. `_agent_override` delegates to `cli.role_agent_override.agent_override`, and before the dispatch endpoint runs, `_start_role` validates a bound free-agent override through `bound_to_caller_harness` with the caller-harness binding — on an already configured host, a model the bound provider does not offer is refused under the binding’s own sentence before preparation. At a cold root, provider binding and model validation occur after first-run preparation, whose report retains the effects already made. Every other role keeps the refusal a model given without its agent already gets.
+
+- The start path's own override rule, now owned by the caller-harness module. [19]
+- The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]

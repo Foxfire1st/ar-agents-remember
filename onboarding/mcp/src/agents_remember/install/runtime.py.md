@@ -229,8 +229,8 @@ fields the entry point reads cannot drift apart.
 - The MCP application entry point forwards one typed request to the installer. [1]
 - `RuntimeInstallScope` carries the required resolved selection, and both public entry points funnel through one private installer. [2]
 - The cutover withholds the legacy startup chain and removes a copy an earlier install left. [3]
-- The installed `skills/` tree is authored source, not the compiler's input. [4]
-- The packaged application mirror is installed into `<coordination_root>/runtime/eve-agent` with machine-local trees preserved rather than pruned. [5]
+- No skill tree is installed beside the runtime; the canonical corpus is reached from the packaged copy. [4]
+- The removed Eve application has no install path in this module. [5]
 - An already-resolved selection is what the installer consumes; only the configuration entry point reads the ambient environment. [6]
 - Provider settings generation derives lifecycle settings from MCP authority. [8]
 - `install_runtime` stores a provider watcher rebind report, stops watchers before provider refresh, starts/checks them afterward, and includes rebind/recovery details in the MCP payload. [9]
@@ -246,3 +246,11 @@ fields the entry point reads cannot drift apart.
 
 - Install consumes the one shared removed-store inventory without defining or deleting it. [14]
 - The shared no-follow store/gate/lock inventory and reporting retain explicit user-owned removal. [15]
+
+## Observed effects and no installed skill tree
+
+`ensure_dir`, `copy_file`, `remove_path` and `ensure_gitignore_entry` each run inside `install.effects.observe_install_effect`, so the entries one call changed are reported whether the operation finished or raised, while an ordinary install's summary and behavior are unchanged. The install no longer syncs a `skills` tree into the coordination root: canonical skills are served from the packaged copy by the tool server's own resource surface, and that folder is not created either. `AGENTS_MD_TARGETS` keeps the coordinator, system and tasks instruction files.
+
+- The directory creation whose changed entries are observed. [16]
+- The file copy whose changed entries are observed. [17]
+- The install pass that writes the scaffold and no skill tree. [18]

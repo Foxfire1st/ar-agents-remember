@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/curation_statement_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declared and undeclared surfaces are named here once, and the sentence comes from the retired-statement registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1577cc0fdabb3c0a14229e230b6b5670d5f37077",
+            "content": "sha256:9a893d9b61b6ca304e4b9196bf92e2433e0b4963a340d00995761c671dcc24d3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

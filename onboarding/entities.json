@@ -36,11 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
+            "content": "sha256:8c81c5963162fec8e00ad1c843f68d1ca665875f03ea6f904c25713748a13ec7",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
+              "end": 304,
+              "kind": "line_range",
+              "start": 247
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -48,11 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:9bc38fef7bc11ddc1de1d2b7ae2ea61cc327316538063fd9bab0c61b808c8678",
             "locator": {
-              "kind": "symbol",
-              "name": "code_commit"
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -60,11 +62,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:0f765bc2dcf4c715068f78a3659053af844c1e783850d5109959f557ea0a1d1e",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_content_commit"
+              "end": 275,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -77,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:78334e01841f3edf7966468e2fc130757a77aa97da9d16493a05166347a87698",
             "locator": {
               "kind": "symbol",
@@ -89,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:8a42883742de5bb67811b56bd75ca2056b7f40e55427162b5f9bb007effca913",
             "locator": {
               "kind": "symbol",
@@ -101,12 +104,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:c4d00ddb632af514dd84a2a1df82481bbc8b8a9d9495b9766b7a923f86662a9e",
             "locator": {
-              "end": 497,
+              "end": 528,
               "kind": "line_range",
-              "start": 490
+              "start": 521
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -114,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:97baf7cb74933938fd44dff425ea36a1ba3a56a4886eecc5bf01021e3eb82fda",
             "locator": {
-              "end": 505,
+              "end": 536,
               "kind": "line_range",
-              "start": 500
+              "start": 531
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -132,11 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
-            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:af35285709799fdf076abe8de9497621942c1f9c065b8e48411f3df9da40d1ff",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_integration_ref_move"
+              "end": 222,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
           },
@@ -147,8 +151,9 @@
             "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
             "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
             "locator": {
-              "kind": "symbol",
-              "name": "require_integrated_memory_ancestry"
+              "end": 312,
+              "kind": "line_range",
+              "start": 297
             },
             "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
           },
@@ -191,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
             "locator": {
               "kind": "symbol",
@@ -225,11 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "434d45bc71bdc6e739827062531ec2cdbe1970f2",
-            "content": "sha256:8247b4751f8814567be6b20878bd9287267e94104b0d8b2c4e8a848d93304eb0",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
             "locator": {
-              "kind": "symbol",
-              "name": "_resume"
+              "end": 390,
+              "kind": "line_range",
+              "start": 344
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -238,14 +244,16 @@
       ]
     },
     "17": {
-      "note": "Compact task delivery/reporting and informational copy drift leave canonical task and Git-lineage authority distinct; recognized integration refusals preserve pre-write eligibility.",
+      "note": "Canonical task edits and by-file input/report answers, informational task-copy drift, Git-source lineage and recognized pre-write integration refusals retain separate owners; compact reporting does not transfer their authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
-            "content": "sha256:26c27a5fb21541d542009d1004fa71e54d793c44fee01a9dc3d9d5976f1e13a7",
+            "blob": "0b4113bdf18110f214248e9f1ffc6fe9199af6f9",
+            "content": "sha256:d84c7d0d4d88007ba22dca50e8af66e6a32efc690bf4a2e761e656c033d243c0",
             "locator": {
-              "kind": "file"
+              "end": 455,
+              "kind": "line_range",
+              "start": 351
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -253,10 +261,12 @@
         },
         {
           "anchor": {
-            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
-            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:13ed106f407dbc7d8ad9f82f81cbcda585ec7275c43eb9298107332fb05b1cbe",
             "locator": {
-              "kind": "file"
+              "end": 398,
+              "kind": "line_range",
+              "start": 326
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
           },
@@ -264,10 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "04f207bff3a3289359654ed505e99a9b85c66d9f",
-            "content": "sha256:802bf8699a1ccaa77f126ead412500e989bdbd19441d01ea07803137cf7e99a3",
+            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
             "locator": {
-              "kind": "file"
+              "end": 140,
+              "kind": "line_range",
+              "start": 134
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -275,10 +287,25 @@
         },
         {
           "anchor": {
-            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
-            "content": "sha256:b93c9b036f1d93a9f32ff95e9cce15ca814b5e19c0c781f51dd6d3d39553df2f",
+            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "content": "sha256:5f5ac63f2e8b18c1ff054ae79e46cc68fddfe9eee61fccd4602df1999dff952f",
             "locator": {
-              "kind": "file"
+              "end": 335,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:71ee01a215fe8e64333a9a45e032d20811a4c94da97c8138cbf2ed2f46d80bac",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 233
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -286,10 +313,25 @@
         },
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:59ca6b97dd141b21ecae14d80e3c161b0efaa1b18822ea1cde305d97dc9a8653",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
             "locator": {
-              "kind": "file"
+              "end": 730,
+              "kind": "line_range",
+              "start": 695
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:8d65f9195d7d2534788db36d63b1507bc618b07799f83e91c5d418dc022efd74",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
           },
@@ -302,11 +344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+            "content": "sha256:5bc2b65dbf22847c050c7d580b951d0ee2b85446a1effd675d03edc41bb5abb4",
             "locator": {
-              "kind": "symbol",
-              "name": "task_state"
+              "end": 145,
+              "kind": "line_range",
+              "start": 91
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -315,16 +358,16 @@
       ]
     },
     "19": {
-      "note": "Declared-list order and documented-subTask master validation with absent-master fallback form cycle-safe canonical entries; other listed kinds retain guarded list placement without own-master validation.\n\nAnchor: Listed admission, reporting and identity/cycle guards",
+      "note": "Declared-list order and documented-subTask master validation with absent-master fallback form cycle-safe canonical entries; other listed kinds retain guarded list placement without own-master validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:498b6aad55667bbf47656269670659b9718752be4fe352284b8c87114724fcd3",
+            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+            "content": "sha256:0036f194cc9995b12de913a19a0228715ef86d2c1ab007ae89e7750eee8f98db",
             "locator": {
-              "end": 248,
+              "end": 291,
               "kind": "line_range",
-              "start": 147
+              "start": 165
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -332,12 +375,25 @@
         },
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
+            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+            "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
             "locator": {
-              "end": 341,
+              "end": 398,
               "kind": "line_range",
-              "start": 263
+              "start": 357
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 337
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -346,15 +402,16 @@
       ]
     },
     "2": {
-      "note": "Cache write failure is reported without a Git publication.",
+      "note": "Cache materialization reports unavailable without publishing Git; the separate preparation owner excludes the cache from memory-content staging and may refuse preparation.",
       "targets": [
         {
           "anchor": {
             "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
             "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
             "locator": {
-              "kind": "symbol",
-              "name": "refresh_memory_cache"
+              "end": 113,
+              "kind": "line_range",
+              "start": 87
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
@@ -362,11 +419,12 @@
         },
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
-            "content": "sha256:5100d97eebd9e4a3f1b68fc62189e707e02528dd8d298f788e69d1fdbf252d39",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_memory_cache"
+              "end": 84,
+              "kind": "line_range",
+              "start": 63
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
@@ -396,7 +454,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
             "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
             "locator": {
               "end": 22,
@@ -410,16 +468,16 @@
       ]
     },
     "22": {
-      "note": "Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants.\n\nAnchor: Current source; preserved L88 property 18",
+      "note": "Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants.",
       "targets": [
         {
           "anchor": {
-            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
-            "content": "sha256:3090ebc67acc49b612c0a88971545b2fb79bb76a7df7a3a73b914cc3ae12f91a",
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:60db448ba40a154801956f91881edbd0000ce92f579646f22916a14e3ecd4c58",
             "locator": {
-              "end": 98,
+              "end": 110,
               "kind": "line_range",
-              "start": 1
+              "start": 16
             },
             "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
           },
@@ -441,15 +499,16 @@
       ]
     },
     "23": {
-      "note": "Ordinary memory publication and recovered-commit gate own the retained output proof; no exclusive prepared-certificate continuation publishes memory. [23]",
+      "note": "Ordinary memory publication and recovered-pair gating own retained output proof; metadata refresh separately updates entity fingerprints and route indexes, and no exclusive prepared-certificate continuation publishes memory.",
       "targets": [
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 481,
+              "kind": "line_range",
+              "start": 453
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -457,23 +516,38 @@
         },
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:5f80c34d3a26a96ee3b3933d9e652f6b0f9ae7cf541a25f9892af3dfc1d4b73d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_external_memory"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
+              "end": 587,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
+            "locator": {
+              "end": 651,
+              "kind": "line_range",
+              "start": 630
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -629,40 +703,42 @@
       ]
     },
     "8": {
-      "note": "Adoption creates the memory-content output and refreshes its cache.",
+      "note": "Adoption publishes or reuses the validated memory-content output, returns its actual identity and refreshes the disposable cache; adopted status derives from attributed Git history.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
-            "content": "sha256:1834a2483ffa461724103e034967198529657d465a220947126a075820851cdf",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "content": "sha256:e6efde98dbdc142eac05f01d17a88f64b2fe8efe87801079040c749718685126",
             "locator": {
-              "kind": "symbol",
-              "name": "adopt_initial_baseline"
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
-            "content": "sha256:5cf1c1740890e174725b28aa72721dc0e1a4b74583e4ca900ce12a6fc84e5cab",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_content_commit"
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
-            "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
-            "locator": {
-              "end": 575,
+              "end": 562,
               "kind": "line_range",
-              "start": 568
+              "start": 511
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "content": "sha256:974562a3cd9750ad0a9cc3f1a70581427003c81faa2bbad8837140eb6fc07428",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 546
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "content": "sha256:3080713fc38cc6803cc646334343cdc8018c05d4c59a43cc6e515405f8293f2a",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 565
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -675,7 +751,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
               "kind": "symbol",
@@ -687,7 +763,7 @@
         },
         {
           "anchor": {
-            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -699,7 +775,7 @@
         },
         {
           "anchor": {
-            "blob": "1d402a49aa56821231b8ef481e0d186176f2c535",
+            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
             "content": "sha256:54db39c277083dab87a1a463a2d00dd6c303001aa204b4851452de4e461745cf",
             "locator": {
               "end": 610,

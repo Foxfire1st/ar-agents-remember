@@ -2,46 +2,51 @@
 
 ## Governing Overview
 
-[tests route overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-**Selected receipt and rebinding state values through the real tools.** The receipt block
-(`final_output_receipt`) is exercised via `worktree_closeout_apply` and `worktree_integrate`;
-the rebinding block (`review_rebinding`) via `worktree_sync`. Each case builds its reviewed
-leaf through the existing result-block fixture and asserts its own selected match/verdict
-fields. Bound cases assert both channels; moved-code receipt cases assert the code mismatch
-and moved verdict without a memory-match assertion. This module does not cover every valid
-outcome: no-comparison and not-recorded outcomes remain outside this selected population.
+Reaches every state value of the two result blocks — the sync rebinding block and the closeout and integration
+receipts — through the real tools (MIK-R74 rule 7): current, moved, no-movement, not-measured, bound and
+unmeasured, each with the trees that justify it.
 
 ## Code Commentary
 
-Ruling 814778 narrowed the v2 receipt to measured values only (`bound`/`moved`); a delivery without a memory commit writes no receipt. The rebinding keeps its `unmeasured` match and verdict with a staged-fault case. The removed memory-disabled mode has no comparison case here; its named refusal boundary is held by `test_memory_opt_out_refused_start.py` and `test_memory_opt_out_refused_routes.py`. Both blocks compare trees, never branch history: a rebase ending in the same tree reads as the same.
+### Logic
 
-The integration receipt fixtures write `knowledge/layout.json` in canonical text.
-Their shared `_integrate_without_item_judgment` helper stubs only
-`closeout_external.leaf_gate_refusal`: uncovered scaffold worklist items are outside
-these receipt cases. The knowledge validator and real integration tool still run,
-and bound/moved receipt assertions remain unchanged. These cases are not proof of
-worklist-item judgment acceptance.
+`_reviewed_closeout()` builds a closeout leaf with converted memory, a seeded memory line and a recorded
+review; `_closed_reviewed_leaf()` builds the integrate leaf reviewed and closed out, so a receipt case starts
+from a real owner history and a fresh production comparison.
 
-The refused-carry case parks `SAME = 1` while the landed line holds `SAME = 2`; it invokes the public sync tool and keeps the original assertions that `review_rebinding.state` is `not-measured` and `covers_resolved_pair` is false. The different-byte scenario is deliberate: the separately owned parked-candidate case exercises an identical-byte successful carry and asserts a `current` rebinding block. A refused sync is not upgraded to current, and branch movement alone is not tree mismatch. Source assertions describe the cases; execution receipts remain separately owned.
+- **Sync.** `test_sync_records_current_when_the_carried_line_leaves_both_trees`,
+  `test_sync_records_moved_with_matching_code_on_a_memory_only_carry` and
+  `test_sync_records_no_movement_when_the_pair_already_contains_the_line` cover current, moved and
+  no-movement; `test_sync_records_not_measured_when_the_carry_fails` keeps a refused carry from producing a
+  pair, and `test_sync_records_unmeasured_when_the_memory_capture_faults` stages one fault at the memory-candidate
+  capture seam.
+- **Closeout receipt.** `test_closeout_receipt_is_moved_when_its_own_memory_commit_differs`,
+  `..._when_code_changes_after_review` and `..._for_a_memory_change_with_matching_code` show a receipt reads
+  moved when the delivered memory commit or the code differs from what was reviewed.
+- **Integration receipt.** `test_integration_receipt_is_bound_when_both_trees_match` requires a bound verdict
+  when both trees match the reviewed pair, and `test_integration_receipt_is_moved_when_code_changes_after_review`
+  reads moved when late code lands.
 
+### Conventions
 
-## MIK-R46 R8: compare the closed history before closeout
+Each case lands a real change through the tool and reads the block the tool attaches, rather than calling the
+comparison directly.
 
-`_closed_reviewed_leaf` retains the initial real review-tree capture, then closes LEAF-C's owner history through `close_owner_history`. It takes another production `live_review_trees` comparison using a fresh code capture and requires a real `ReviewTrees` before `close_out_leaf`. The reviewed memory now includes the closed history that closeout delivers; no fabricated receipt or relaxed bound/moved assertion replaces that comparison. The separately documented item-gate fixture seam and selected-outcome limits remain.
+### Invariants And Boundaries
 
+- A block's state is decided by the trees delivered, not by what the caller says it reviewed.
+- A refused carry or a faulted capture reads not-measured or unmeasured; neither is reported as current.
 
 ## Evidence
 
-### Current Source-Inspection References
-
-- Sync records current when the line leaves both trees [1]
-- Closeout receipt is moved when code changes after review [2]
-- Integration receipt is bound when both trees match [3]
-- Memory capture fault records unmeasured [4]
-- Removed-mode behavior is a named refusal, not a memory-free comparison. [5]
-- A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam. [6]
-
-- Close the real owner history and take a fresh production comparison before closeout; original receipt assertions remain. [7]
+- Sync records current when the carried line leaves both trees. [1]
+- A closeout receipt reads moved when the code changes after review. [2]
+- An integration receipt is bound when both trees match. [3]
+- A memory capture fault records unmeasured. [4]
+- Removed-mode behaviour is a named refusal, not a memory-free comparison. [5]
+- A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. [6]
+- The real owner history is closed and a fresh production comparison taken before closeout, with the original receipt assertions intact. [7]

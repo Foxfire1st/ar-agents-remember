@@ -37,6 +37,6 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- MCP skill tools type result envelopes and provider setup config through this facade-exported model. [1]
+- MCP skill tools type result envelopes and provider setup config through this facade-exported model. \[1]
 
 - Retained frozen DTOs and plan list shapes do not imply the removed legacy classifiers or verification stamping. [2]

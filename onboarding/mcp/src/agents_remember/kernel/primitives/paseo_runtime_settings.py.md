@@ -29,3 +29,10 @@ A present `paseoRuntime` block now requires the five operational facts (`install
 
 - The parser with the five facts and optional version. [7]
 - The named no-host state and its refusal. [8]
+
+## The dedicated host's address and dashboard origins
+
+`DEFAULT_HOST_LISTEN` is the installed procedure's listen address (`127.0.0.1:8766`) and `DASHBOARD_ORIGINS` are the two browser spellings its dashboard may be reached on. They are held beside the parser that reads them, are written into a fresh host block, and are validated by that parser like any other configured value.
+
+- The default listen address of the dedicated host. [9]
+- The dashboard origins a fresh block carries. [10]

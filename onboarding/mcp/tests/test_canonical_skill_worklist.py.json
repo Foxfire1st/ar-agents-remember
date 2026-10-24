@@ -10,6 +10,23 @@
           "name": "test_canonical_skill_card_closes_without_nine_generated_copy_rows"
         }
       },
+      "facet": "A canonical skill card closes without the nine generated-copy rows, so the retired harness mirrors are not required of it.",
+      "id": "PRF-SFQJPN",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "MIK-R196@v1 rule7",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ad44dc6a40dd50beafc434a9ed209b4796f570e4",
+        "content": "sha256:4022d0f2a23dc67947a3b68e5615000c50cc7f826e8b8a853d49e83320a28935",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_canonical_skill_card_closes_without_nine_generated_copy_rows"
+        }
+      },
       "facet": "Source-defined regression check; not executed by Curator: Canonical skill curation closes the fixture without nine redundant equal-copy rows.",
       "id": "PRF-Z65SPM",
       "invariant": "INV-0NEA6F",

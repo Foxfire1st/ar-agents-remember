@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fde20d4a51c1dd0e21d03d2276f232385ca0b227",
-        "content": "sha256:1d6bead38127f7de4133e2eb621e626dfb7d2c620df9319379d30b09e8855b50",
+        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
           "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "fde20d4a51c1dd0e21d03d2276f232385ca0b227",
-        "content": "sha256:1d6bead38127f7de4133e2eb621e626dfb7d2c620df9319379d30b09e8855b50",
+        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
           "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"

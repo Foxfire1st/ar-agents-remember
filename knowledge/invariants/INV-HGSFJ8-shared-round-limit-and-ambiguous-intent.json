@@ -6,7 +6,7 @@
     ],
     "justification": "The shared routing and record duties and the census live in five canonical files plus the register, and the independent negative guard fails when a registered sentence is reinserted or an entry is re-merged."
   },
-  "applicability": "The shared lifecycle instructions that state round limits, ambiguous-intent routing and the retired-wording census, and their nine generated copies.",
+  "applicability": "The shared lifecycle instructions that state round limits, ambiguous-intent routing and the retired-wording census, and every generated serving copy declared by generated-copies.json.",
   "conditions": [
     "The review limit is read from the settings and task_doc's review-state limit; a beyond-limit round or memory pass requires recorded approval naming the task's Architect or the developer and holding the approval words. The Manager asks the task's Architect for the extra round; developer decisions and ambiguous-intent questions keep the existing parent route and quoted developer-answer provenance.",
     "The retired census declares each independently restorable obsolete sentence at its actual carrier, retaining the R93 parent-routing entries and adding the R98 narrow-concern, old-permission and separate-assignment mutation clauses with explicit current reasons.",
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L93",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
   "statement": "Shared round-limit and ambiguous-intent instructions send developer requests through the parent when one exists, preserve required authorization records, and retired wording cannot return to its declared source unnoticed.",
   "status": "proposed",

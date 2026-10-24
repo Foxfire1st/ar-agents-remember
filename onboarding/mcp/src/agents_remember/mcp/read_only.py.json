@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2f93e8f410d60e59064340294f56f4fa12aa3120",
-        "content": "sha256:71c514d647f8d8e8ab5562b3bcdd143c0f76942476448663ce96f7dcd64060bc",
+        "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
+        "content": "sha256:65492d5153f0874416cf77be84852d2143a312a96c93814c06501a8c91634307",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30f5603d5029dab36b4f47fc6007c8d810db3ad1",
+            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
             "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
             "locator": {
               "kind": "symbol",
@@ -36,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "30f5603d5029dab36b4f47fc6007c8d810db3ad1",
-            "content": "sha256:3b3b2cfae5f57bd3d33e98f6f6f1256dfe48138237eeacc88913f25f4d344933",
+            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
+            "content": "sha256:682cefe42c75f2c8d2684cca419fd8405af5c1043fc14335adf61c3ec0f698a3",
             "locator": {
               "kind": "symbol",
               "name": "MUTATING_TOOLS"
@@ -52,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
-            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
+            "content": "sha256:65492d5153f0874416cf77be84852d2143a312a96c93814c06501a8c91634307",
             "locator": {
               "kind": "file"
             }
@@ -67,10 +67,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a294897034c11f8a14b6c40e4795ca1781ebcff",
-            "content": "sha256:d78372e33897d598044888865a143414816fc32fb84e6d46339c5be3e636a135",
+            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
+            "content": "sha256:65492d5153f0874416cf77be84852d2143a312a96c93814c06501a8c91634307",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mutating set that now carries the settings initializer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
+            "content": "sha256:682cefe42c75f2c8d2684cca419fd8405af5c1043fc14335adf61c3ec0f698a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MUTATING_TOOLS"
             }
           },
           "kind": "code"

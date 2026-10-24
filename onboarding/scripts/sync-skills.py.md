@@ -7,8 +7,8 @@
 ## Purpose
 
 `scripts/sync-skills.py` is the repository helper that keeps the root
-canonical `skills/` tree synchronized with every generated skill copy shipped in
-the MCP package data and harness starter packages.
+canonical `skills/` tree synchronized with the sole generated skill copy shipped in
+the MCP package data and served to harnesses as resources.
 
 ## Code Commentary
 
@@ -18,8 +18,6 @@ The script resolves the repository root from its own path, treats root
 `skills/` as canonical, and derives sync targets plus ignore names/suffixes from the single skills projection in `generated-copies.json` through the dependency-free parser owner. `skill_targets(root)` joins those declared target paths to its selected root; the parser itself belongs to this checkout. The current declaration covers:
 
 - MCP package data under `mcp/src/agents_remember/package_data/runtime/skills`
-- Claude Code, Codex, Cursor, VS Code/Copilot, Hermes, OpenClaw, Pi, and
-  Antigravity starter package skill folders
 
 It computes SHA-256 digests for every non-ignored file under the canonical tree
 and each target, then reports missing, extra, and changed files. In normal mode
@@ -31,7 +29,7 @@ prints the canonical source and all target paths.
 
 `replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
-Ignore names/suffixes come from the canonical declaration, currently covering local/generated filesystem noise. Keep target declarations explicit so new harness packages consciously opt in; do not maintain a second target or ignore tuple here.
+Ignore names/suffixes come from the canonical declaration, currently covering local/generated filesystem noise. The declared destination is the packaged serving tree; do not maintain a second target or ignore tuple here.
 
 ### Invariants And Boundaries
 
@@ -59,7 +57,7 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
-- The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. [1]
+- The script defines `skills/` as canonical and derives the sole MCP package-data serving target. [1]
 - `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. [2]
 - Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. [3]
 - The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. [4]
@@ -69,3 +67,7 @@ No relevant external documentation found.
 No sibling repository evidence is needed for this helper.
 
 No meaningful cross-repo references found.
+
+## Current source evidence
+
+- The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection. [6]

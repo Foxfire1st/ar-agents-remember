@@ -2,9 +2,11 @@
 
 ## Current A10 retained-source account
 
-The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged.
+The public skill reference now documents package-served skills only. The tool server publishes every skill as an MCP resource (the SEP-2640 skills extension), so a harness reads the served text from the running server instead of a copy in a project or home skill folder: there is no `skills_install` tool any more, no harness mirror, and no copied coordination-root `skills/` tree. Exactly one skill copy is kept current — the generated package copy at `mcp/src/agents_remember/package_data/runtime/skills/`, refreshed from root `skills/` by `python3 scripts/sync-skills.py`, declared in `generated-copies.json` and checked by the pre-commit and pre-push hooks through `--check`. The page also states that native role agents receive one role file/operation, that an unbound chat creates or resolves the sprint, records the request and starts the Architect with `role_start`, and that another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account, the installed `ar-coordination/skills/` location and the manual `skills_install()` maintenance path are historical, not this page's current content.
 
-- The public skill reference now describes native role agents receiving one role file/operation. An unbound chat creates/resolves the sprint, records the request and starts the Architect with role_start; another role is selected only on explicit developer instruction. The former spawn-environment/first-brief/dispatch routing account is historical, not the current launcher. Canonical/generated skill copy and sync ownership remains unchanged. [3]
+
+- The page documents only package-served skills: MCP resources with the server's own origin and URI, one generated package copy kept current by `sync-skills.py`, no `skills_install` tool and no harness mirror or coordination-root skill tree, plus the one-call first-run path that needs no skill read. [3]
+
 
 
 
@@ -14,29 +16,18 @@ The public skill reference now describes native role agents receiving one role f
 
 ## Purpose
 
-Public skills reference: where installed and canonical skill copies live, the
-`scripts/sync-skills.py` sync step, the lifecycle/workflow and core skill tables, and the manual
-`skills_install()` maintenance path.
+Public skills reference: the canonical and served skill trees, the one `scripts/sync-skills.py`
+regeneration step, how a harness reads a served skill and its resource origin, the
+lifecycle/workflow skill table after the retirements, and the one-call first-run path that needs no
+skill read at all.
 
 ## Code Commentary
 
-The page documents the two skill locations (installed `ar-coordination/skills/`, canonical
-`agents-remember/skills/`) and the sync command that refreshes the MCP package-data copy and every
-harness starter package (pre-push runs `scripts/sync-skills.py --check`). The Lifecycle And
-Workflow Skills table describes `l-01-agent-lifecycles` with the current role census and
-routing: three router conditions (spawn-role env → fresh role brief → otherwise free chat), **nine**
-per-role lifecycles — architect · backend orchestrator · designer · strategist · manager · worker ·
-curator · **system-specialist** · adversarial reviewer. Free chat is the developer entry and
-resolves a sprint before spawning its architect; architect, orchestrator, and manager seats are
-sprint-local, and backend orchestrators run as spawned seats. The **system-specialist** seat is the
-investigate-first provider-degradation
-responder: it reports first and fixes only on explicit orchestrator order, is never developer-facing,
-and reports to the current sprint orchestrator through structural parent messaging.
-`w-02-light-task-workflow` is
-the durable one-page plan that escalates to a master + light sub-task series. The Core Skills table
-lists `c-00` through `c-13` one line each. The install section routes first-run setup to the
-harness starter packages and manual maintenance installs through `skills_install()` (target
-inferred from the MCP settings location; packaged skills are flat, one folder per skill).
+The page documents one canonical location (`agents-remember/skills/`) and the one served package copy (`mcp/src/agents_remember/package_data/runtime/skills/`). `python3 scripts/sync-skills.py` regenerates it; `generated-copies.json` declares the refresh and the pre-commit/pre-push hooks check it through `--check`. Served MCP resources retain the server's own origin and URI. There is no installed coordination-root skill tree.
+
+The lifecycle reference row names architect, backend orchestrator, designer, strategist, manager, worker, curator, investigator and adversarial reviewer. It describes native role agents receiving one role file and operation, and free chat creating or resolving the sprint, recording the developer's request, and starting an Architect with `role_start`; another role is selected this way only when the developer names the role and task. That reference row is documentation, not a claim that every listed lifecycle is a public launchable role.
+
+The retained Core Skills table lists `c-00`, `c-03`, `c-04`, `c-05`, `c-08`, `c-10`, `c-13` and `c-14`. Quality/findings procedures live with `c-05`; carryover lives with `c-10`; closeout and worktree lifecycle procedures remain inside the retained skills instead of separate skills. The first-run path needs one Bootstrap call and no skill read: compiled role/operation instructions arrive in its first message. The c-13 table row still includes the words "provider indexing"; that is retained reference wording, not evidence that current setup starts indexing or a watcher.
 
 ## Invariants And Boundaries
 
@@ -49,5 +40,7 @@ inferred from the MCP settings location; packaged skills are flat, one folder pe
 
 ### Repo-Internal References
 
-- Canonical role registry and three-condition router this page summarizes. [1]
+- Canonical lifecycle and role-document registry to which this reference defers. [1]
 - Sync script the page instructs running after skill edits. [2]
+
+- Current source account and its stated boundaries. [4]

@@ -2,56 +2,69 @@
 
 ## Governing Overview
 
-[tests route overview](overview.md)
-
-## Current source contract evidence
-
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [14]
+[Tests route overview](overview.md)
 
 ## Purpose
 
-### STOP-delta current source contract
-
-Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression.
-
-These are current source/assertion-carrier meanings. The qualified attempt14 CODE verdict is inherited, not a Curator test run, native freeze-currentness certification or independent MEMORY acceptance. Earlier contrary accounts are historical only; unaffected contracts and typed provenance remain.
-
-**MIK-R74 rule 6: a read changes no branch, tag or HEAD, no worktree file, no Git index, no task document and no requirement packet.** The selected knowledge, enclosure, memory, skill and dashboard read roster runs against scratch fixtures and compares refs/HEAD, index files, working trees, task files, object stores and directories. Its oracle distinguishes allowed `runtime/` caches, attributed comparison objects and pin refs, and preview worklists, reports and judged-tree objects. The dedicated freshness case additionally permits only the requested fetch's remote-tracking refs, objects, reflogs and `FETCH_HEAD`; without that request nothing fetches or changes.
+Holds MIK-R74 rule 6 over every read the product registers: a read changes no branch, tag or HEAD, no worktree
+file, no Git index, and files nothing — except the cache it is allowed to write. The cases are grouped by the
+surface a caller reaches (tool reads, enclosure reads, dashboard GETs, skill reads), and the harness is proved
+non-vacuous by a read that is made to mutate.
 
 ## Code Commentary
 
-The main knowledge roster covers family, invariant and source-context reads, named unsupported-view refusals, a rootless direct knowledge_diff refusal (report-unwritable), integrity and internal published intent. This diff case supplies no successful report-writing comparison witness. A second case mutates one read to create a directory and shows the oracle catching it. Enclosure comparisons, reviewer GETs, server-info/gate/file calls, the context packet and internal drift check, baseline status/adoption previews, adopted-seat status and dry runs, the carryover/queue refusal paths and remaining dashboard GETs keep their selected protected populations unchanged. This is the file's explicit roster, not universal execution of every registered tool or live-session route. Its adopted-seat integration dry run holds the leaf rejudgment passing: that fixture proves the read boundary, not acceptance of its pair by the landing gate. The oracle lives in `read_boundary_oracle_test_support.py`.
+### Logic
 
-Skill coverage uses the retained registry and response builders: list the catalog, read a URI it advertised and reject a bogus URI. The skill case keeps its historical test identifier, but its current assertions cover only those catalog operations.
+`tool_world()` builds a real world and `_read_tool()` calls a registered read; `_context()` supplies the
+memory-backed context a read needs. Each case compares the protected Git and filesystem state before and after
+the call.
 
-The converted-drift case applies the same before/after filing oracle to drift and registered
-baseline-status calls. Its original run caught report, observer-snapshot and directory creation;
-the repaired branch removes those differences. The response assertions check dictionary shape,
-not individual returned fields, and the fixture serializes an array-valued sidecar. This case is
-therefore a filing-boundary witness, not proof of clean-card measurement or returned pointer
-values; the summary/projection owners carry those separate contracts.
+- **The harness has teeth.** `test_a_mutated_read_is_caught` makes a read create a directory and requires the
+  comparison to fail.
+- **Tool reads.** `test_every_registered_read_leaves_nothing_but_cache` covers knowledge read, diff,
+  integrity and the published-intent block.
+- **Enclosure reads.** `test_enclosure_reads_record_only_comparisons_and_previews` and
+  `test_adopted_seat_status_preview_and_dry_runs` cover review, status, preview, integrate and reopen dry
+  runs; `test_remaining_preview_plan_and_queue_reads_write_nothing` adds the carryover plan and queue status.
+- **Dashboard GETs.** `test_review_get_routes_read_without_writing` serves the review and its summary for
+  real, and `test_remaining_dashboard_gets_read_without_writing` covers files, notes and the changeset diff.
+- **Memory-backed reads.** `test_memory_backed_reads_write_nothing` keeps the context packet, internal drift
+  and baseline status on the selected memory-backed seat, including `ok=False` and `state="legacy-format"` for
+  an unconverted baseline; `test_converted_drift_check_read_writes_nothing` and
+  `test_converted_adopt_dry_run_writes_nothing` cover the converted format.
+- **Bounded freshness.** `test_context_packet_freshness_fetch_is_bounded` keeps freshness opt-in: without it
+  nothing changes, with it only the fetch.
+- **Skill reads.** `test_diagnostic_watcher_and_skill_reads_write_nothing` keeps the catalog list, the
+  advertised-URI read and a bogus-URI refusal on the untouched fixture.
+- **Description-called reads.** `test_miscellaneous_description_called_reads_write_nothing` keeps server info,
+  the resolver and file calls preserving the synthetic seat, with `resolve_context` not called.
+
+### Conventions
+
+Every case asserts on the whole protected footprint — refs, index, worktree bytes and the non-`.git` tree —
+rather than on a single file, so a read that files something anywhere is caught.
+
+### Invariants And Boundaries
+
+- A read's only permitted write is its cache.
+- A refusal is asserted by its exact returned code where the surface returns one, not by a raised exception.
 
 ## Evidence
 
-- Selected knowledge reads, unsupported-view refusals, the report-unwritable direct diff refusal, integrity and internal published intent assert only the allowed footprint. [1]
+- Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint. [1]
 - A mutated read is caught, so the roster cannot pass vacuously. [2]
 - Enclosure reads attribute comparison objects and allow only preview effects. [3]
 - Review GET routes read without other protected-state changes. [4]
 - Remaining dashboard GETs read without writing. [5]
-- Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics. [6]
-- Server-info, gate and file calls preserve the synthetic seat; resolve_context is not called and file inputs do not prove successful naming. [16]
-- Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat; the current unconverted baseline-status assertion is ok=False and state="legacy-format", not the prior missing-root expectation. [8]
+- Converted drift and registered baseline status use the filing oracle. [6]
+- Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including `ok=False` and `state="legacy-format"`. [8]
 - Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
 - Baseline adoption dry run preserves the converted fixture. [10]
-- Freshness is opt-in: no unrequested fetch; a requested fetch asserts the behind-upstream action line and only the allowed Git footprint. [11]
-
-- Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance. [12]
+- Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint. [11]
+- Adopted-seat status, preview, integrate and reopen dry runs respect the preview allowance. [12]
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]
+- Two formerly raised boundary cases assert their exact returned refusal codes, while unrelated authority and queue errors still raise. [15]
+- Server-info, gate and file calls preserve the synthetic seat; `resolve_context` is not called and file inputs do not prove successful naming. [16]
+- The summary port accepts `_number`, and all three GETs retain the before-and-after oracle. [17]
 
-- Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression. [15]
-
-## Comparison-aware summary callback
-
-The dashboard GET fixture supplies the summary reader's optional comparison-number argument as `_number`. The exercised requests omit a number, and the callback ignores it while reading the same placed snapshots. This adapts the route seam while retaining the full before/after filing oracle; it does not independently prove numbered-comparison selection or add a new writelessness population.
-
-- The summary port accepts `_number`; all three GETs retain the before/after oracle. [17]
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred — mcp/tests/test_knowledge_read_boundary.py:1-1037. [14]

@@ -13,6 +13,10 @@ This canonical template requires messages to be short wake-ups naming requested 
 
 Defines the producer/curator handoff data boundary. Nine producer fields travel unchanged; the curator resolves the outcome and authors semantic scope, family coverage and external-source provenance.
 
+## Current Source Qualification
+
+The writer section now names the routes the seat actually has: `agents-remember knowledge-ingest` and the mounted `knowledge_write`, both using the task's leaf enclosure contract and the same curator file writer. Repository foundation work enters through the user-started Architect's regular task under `c-14-knowledge-bootstrap`, with that same writer and no taskless authoring session; the former taskless `knowledge-bootstrap` wave entry and its no-enclosure admission are history of those bytes. The tree must still be converted: on a legacy-format tree the writer refuses with `legacy-format` and names the conversion command, and the producer's thirteen fields are unchanged.
+
 ## Code Commentary
 
 ### Logic
@@ -105,7 +109,7 @@ new bullet, **"Proofs are shown and counted (MIK-R28)"**, tells the curator that
 `invariant` and `family` views of a converted tree return the proofs, that the checklist lists the
 invariants without any proof as information and not as a gate, and that a curator pass turns a migrated
 record's "Evidence: …" text (`origin.handoff`) into proofs through `proofs`, with an authored facet. The
-same text reaches the package copy and the eight harness starter copies through `sync-skills.py`.
+same text reaches the package copy the tool server serves through `sync-skills.py`.
 
 Since leaf `260928-MIK-L30` (MIK-R30) the MIK-R12 section's history-row bullets gain one for the
 **onboarding row**, on converted memory only: subject `onboarding:<source path>` or
@@ -114,8 +118,7 @@ nothing else. It records that a changed source file's card, or its governing rou
 and needs no change; a counted change of the card or overview (its Markdown, or a sidecar field other than
 an anchor's `blob`, line numbers and `content`) needs no row. This is the curator's side of the
 onboarding gate on history files, where only a counted change or such a row satisfies a trace (architect
-ruling 2026-09-29T18:49:50 (1)). The bullet reaches the package copy and the eight harness starter copies
-through `sync-skills.py`.
+ruling 2026-09-29T18:49:50 (1)). The bullet reaches the package copy the tool server serves through `sync-skills.py`.
 
 Since leaf `260928-MIK-L11` (MIK-R11) the same list gains a bullet for the **planned row**, on converted
 memory only. It answers a `planned_untouched` worklist item: an effect the leaf's task document declared in
@@ -127,7 +130,7 @@ it adds `ref` and nothing else: `{row}` or `{invariant}` (which must exist) for 
 through the task owner and refuses when it does not resolve. The bullet also states that a `no_impact` row
 about the declared invariant does not answer the item, while a `changed` row with the declared effect (or,
 for `retire`, a retiring `deleted` row) delivers it and raises no item. It reaches the package copy and the
-eight harness starter copies through `sync-skills.py`.
+one package copy the tool server serves through `sync-skills.py`.
 
 Since leaf `260928-MIK-L10` (MIK-R10) the same list gains a bullet for the **no_invariant row**, on converted
 memory only. It answers an `unexplained_hunk` or `unexplained_file` worklist item in a **covered** file: a
@@ -137,7 +140,7 @@ else. The bullet also names the other answers, which need no such row: attach a 
 non-retired invariant (`invariant_id`) or author a new invariant over the change. A delete-only hunk admits
 only `no_invariant` (ruling 2026-09-30T01:56:39 Q1: an attach or author cannot answer it, so the item stays
 open), and an item in an **uncovered** file is answered by the file's onboarding trace, not by this row (ruling
-03:24:28 N2). It reaches the package copy and the eight harness starter copies through `sync-skills.py`.
+03:24:28 N2). It reaches the package copy the tool server serves through `sync-skills.py`.
 
 Since leaf `260928-MIK-L27` (MIK-R27) the template has a section, **"The admission rule (MIK-R27)"**,
 after the file writer's sections. Every **new** invariant, family and decision record states the
@@ -155,7 +158,7 @@ references, developer ruling IDs, commit hashes, dates and provenance words, rul
 **demotion** retires the record with a `deleted` row, effect `retire`, and never deletes its file. It
 gives two admitted, two refused and one local example, as packet rule 5 requires; the "New" bullet was
 rewrapped to 100 columns (F5), while the table rows cannot wrap. The section reaches the package copy
-and the eight harness starter copies through `sync-skills.py`. It binds converted memory only, so
+and the one package copy the tool server serves through `sync-skills.py`. It binds converted memory only, so
 today's hand-off lists are unchanged.
 Since leaf `260928-MIK-L13` (MIK-R13) the template has a section, **"Decision records (MIK-R13)"**, after the
 admission section. A decision record keeps a choice that **keeps governing code** with the alternatives weighed, as
@@ -188,8 +191,7 @@ item stays open. The bullet adds that a `route:` target is raised by a row that 
 that a superseded decision is never raised, never to reverse a decision (`raise` it), and to keep linked
 alternatives at their index. The decision-record section's refusal list gains "a linked alternative moved to
 another index against the memory base" (`R14.1-linked-alternative-order`). The stale-item refusal is not in the
-template; its message names its own fix (review note R6-3). It reaches the package copy and the eight harness
-starter copies through `sync-skills.py`, and binds converted memory only, so today's hand-off lists are
+template; its message names its own fix (review note R6-3). It reaches the package copy the tool server serves through `sync-skills.py`, and binds converted memory only, so today's hand-off lists are
 unchanged.
 
 **The History section since L37 (decision record DEC-0AEQ28; INV-MS9BMJ and INV-XN0FG8).** It now says:
@@ -409,7 +411,7 @@ The following distribution-copy account preserves useful explanations and source
 > `invariant` and `family` views of a converted tree name proofs by ID, kind, state and location; the proof files are opened natively, that the checklist lists the
 > invariants without any proof as information and not as a gate, and that a curator pass turns a migrated
 > record's "Evidence: …" text (`origin.handoff`) into proofs through `proofs`, with an authored facet. The
-> same text reaches the package copy and the eight harness starter copies through `sync-skills.py`.
+> same text reaches the package copy the tool server serves through `sync-skills.py`.
 >
 > On converted memory, the template declares a current `onboarding:<source path>` or
 > `onboarding:<route>/overview` row (`onboarding:overview` for the root). `updated` requires
@@ -444,7 +446,7 @@ The following distribution-copy account preserves useful explanations and source
 > through the task owner and refuses when it does not resolve. The bullet also states that a `no_impact` row
 > about the declared invariant does not answer the item, while a `changed` row with the declared effect (or,
 > for `retire`, a retiring `deleted` row) delivers it and raises no item. It reaches the package copy and the
-> eight harness starter copies through `sync-skills.py`.
+> one package copy the tool server serves through `sync-skills.py`.
 >
 > Since leaf `260928-MIK-L10` (MIK-R10) the same list gains a bullet for the **no_invariant row**, on converted
 > memory only. It answers an `unexplained_hunk` or `unexplained_file` worklist item in a **covered** file: a
@@ -454,7 +456,7 @@ The following distribution-copy account preserves useful explanations and source
 > non-retired invariant (`invariant_id`) or author a new invariant over the change. A delete-only hunk admits
 > only `no_invariant` (ruling 2026-09-30T01:56:39 Q1: an attach or author cannot answer it, so the item stays
 > open), and an item in an **uncovered** file is answered by the file's onboarding trace, not by this row (ruling
-> 03:24:28 N2). It reaches the package copy and the eight harness starter copies through `sync-skills.py`.
+> 03:24:28 N2). It reaches the package copy the tool server serves through `sync-skills.py`.
 >
 > Since leaf `260928-MIK-L27` (MIK-R27) the template has a section, **"The admission rule (MIK-R27)"**,
 > after the file writer's sections. Every **new** invariant, family and decision record states the
@@ -472,7 +474,7 @@ The following distribution-copy account preserves useful explanations and source
 > **demotion** retires the record with a `deleted` row, effect `retire`, and never deletes its file. It
 > gives two admitted, two refused and one local example, as packet rule 5 requires; the "New" bullet was
 > rewrapped to 100 columns (F5), while the table rows cannot wrap. The section reaches the package copy
-> and the eight harness starter copies through `sync-skills.py`. It binds converted memory only, so
+> and the one package copy the tool server serves through `sync-skills.py`. It binds converted memory only, so
 > today's hand-off lists are unchanged.
 > Since leaf `260928-MIK-L13` (MIK-R13) the template has a section, **"Decision records (MIK-R13)"**, after the
 > admission section. A decision record keeps a choice that **keeps governing code** with the alternatives weighed, as

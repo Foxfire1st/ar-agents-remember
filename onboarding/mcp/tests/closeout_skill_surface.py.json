@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/closeout_skill_surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical and packaged closeout texts are read from the one named skill path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a19dbd60b88884ac014f69e63671b2d4f06f5fb2",
+            "content": "sha256:51325b8d26995e8a05605729e9832da4cf6835dc549f3d437395adbf5a2e3047",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The packaged copy is addressed under the runtime package data tree the compiler reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a19dbd60b88884ac014f69e63671b2d4f06f5fb2",
+            "content": "sha256:51325b8d26995e8a05605729e9832da4cf6835dc549f3d437395adbf5a2e3047",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

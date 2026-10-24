@@ -1,0 +1,70 @@
+{
+  "path": "skills/c-10-adopt-memory-baseline/workflows/carryover-from-branch.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
+        "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3PZZMQ",
+      "invariant": "INV-EAX9HM",
+      "origin": {
+        "handoffEntry": "L188-B13",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The kept carryover owner preserves recovery-leaf and normal-publication routing.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The kept procedure owns the carryover sequence beside baseline adoption: plan read-only, review, approval-gated apply, curator rows, normal closeout publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
+            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate units keep their own selection keys and differ only within an identical conversion-format version; unconverted memory is refused rather than read further.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
+            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Apply commits nothing; `carryover-pending` blocks cleanup and finalization until the memory publication lands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f79d3605010a4388c8f472d0820416be81f2783",
+            "content": "sha256:e31949a50d00e95c63e95c214016fd6c74baf973a47d97436a391240b67a6a33",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

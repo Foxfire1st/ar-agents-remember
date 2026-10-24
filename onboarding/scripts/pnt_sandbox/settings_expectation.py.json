@@ -1,0 +1,60 @@
+{
+  "path": "scripts/pnt_sandbox/settings_expectation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a88bb26742b51036c8f4c5fd980506eeb9f06b3",
+        "content": "sha256:f2331c45b75702b1effe07a4d4e44cab1794533c0e8340790c3a50b6b4efcef0",
+        "locator": {
+          "kind": "symbol",
+          "name": "check"
+        }
+      },
+      "id": "RLZ-3JXCMM",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The sandbox preparer resolves the same standard guarded developer user-settings path as a protected input and checks its digest unchanged; its host block belongs separately to the sandbox MCP authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "da7241a039468b2532f5163e5494fd9e3c0c40a8",
+        "content": "sha256:a53cde74b76788adb5184a177dc9c5f9c0945e22dc7bae8947683673b106210d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5SZ10K",
+      "invariant": "INV-R1E181",
+      "origin": {
+        "handoffEntry": "L188-B11",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The surviving sandbox expectation owner preserves settings instead of reconstructing retired starters.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The sandbox MCP file owns host authority; developer user settings are input-only, checked for change before the sandbox write and recorded by before/after receipt digests.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da7241a039468b2532f5163e5494fd9e3c0c40a8",
+            "content": "sha256:98f036e56789d26505388383cbffc6ded06365deb3b6eeba62f1dab6c419a0da",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

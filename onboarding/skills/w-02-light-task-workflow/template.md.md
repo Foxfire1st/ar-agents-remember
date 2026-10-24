@@ -13,6 +13,10 @@ indexed child documents before leaf `waitsFor` writes. Existing hand-authored Ma
 unchanged until intentionally migrated. The scaffold defines the stable section structure, live
 checklist shape, and filtered requirement projection. [4]
 
+## Current Source Qualification
+
+Rule 3 now names this skill as the owner of the leaf contract a worktree-backed task stores at `<task-root>/<task-slug>/enclosures/<leaf-id>/series-contract.md`; the inherited wording that names a worktree-manager skill describes the retired owner.
+
 ## Code Commentary
 
 ### Logic

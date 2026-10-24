@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
-        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
-        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
-        "content": "sha256:1913e4a6ccfbe9ac7920b4e702e7489846ef1a79643486d5cebd14a4bcd75316",
+        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+        "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5aef03c98d1fde7eff2fa3041e1dea5c111b1b6f",
+        "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
         "content": "sha256:8f981c11f1290686733d9086a5107bdf08e1dfc3328aa7937b4143a226db6598",
         "locator": {
           "end": 579,
@@ -81,11 +81,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
-            "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:9235a1574c2d317f0c529fd1bb8c55903b32cf7f90555c9cd044076400210e4a",
             "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_CURATION_STATEMENTS"
+              "end": 587,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:599fc5b2e8d68a0717607857e2c6dc1986be4368085e13a9c0c7176939fe8840",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 66
             }
           },
           "kind": "code"
@@ -97,11 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
-            "content": "sha256:6a46b5df1a4b60e3b4c28ce3710aca8d060de9ca94d1c00872e5a1b8e6cf3839",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:baa16b101a04f9636bafa89ddf47efdccb6c782aa875f28cd4e8cb3e00ea9119",
             "locator": {
-              "kind": "symbol",
-              "name": "CURATION_POLICY_STATEMENTS"
+              "end": 631,
+              "kind": "line_range",
+              "start": 623
             }
           },
           "kind": "code"
@@ -109,15 +123,16 @@
       ]
     },
     "3": {
-      "note": "The nine generated copies are the sweep targets, and the canonical tree is sweep target zero.",
+      "note": "The sweep adds canonical skills to every target from the generated-copy declaration, currently the single packaged runtime tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-            "content": "sha256:34a0fc2576100ebe900f1dd81204517ee42baa8b703e9c1de07da1cc00793042",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:56c4159db1eaa20651d6411e00c537b4e9de889724ad8e2bc0acf35452bfd771",
             "locator": {
-              "kind": "symbol",
-              "name": "GENERATED_SKILL_COPIES"
+              "end": 57,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"
@@ -129,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
@@ -145,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9246c5aff746378c5e0de36d3e71590ca5a58652",
+            "blob": "4584c1ad639201c4b14cbd9d884d46f0eb1f2a42",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",
@@ -158,16 +173,14 @@
       ]
     },
     "6": {
-      "note": "The nine copies are produced from the canonical tree by the generator whose `--check` proves currency.\n\nAnchor: \"--check\"",
+      "note": "The repository sync script checks the declared package projection against canonical skills.\n\nAnchor: skill_targets",
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
-            "content": "sha256:3834212530d102e4d17271f2c6ababa60643994708b979be5ce666f02155af8f",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
             "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 70
+              "kind": "file"
             },
             "path": "scripts/sync-skills.py"
           },
@@ -180,8 +193,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
-            "content": "sha256:e3c89ecf994b9876775b9e606be29b87f5fad2d7ca4842d62adacf63e60aa442",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:56c4159db1eaa20651d6411e00c537b4e9de889724ad8e2bc0acf35452bfd771",
             "locator": {
               "end": 57,
               "kind": "line_range",
@@ -193,16 +206,40 @@
       ]
     },
     "8": {
-      "note": "Only the exact Curator positive marker changes to the shorter intake/after-repair/full-curation/coherence sentence. The operation tuple still carries COMPLETE_CURATION_RULE and prepare → publish → validate. Retired sentence census, declared source confinement, normalized matching and any-marker positive reader remain unchanged.\n\nAnchor: Current test/support source",
+      "note": "The current Curator tuple carries the intake/after-repair full-operation marker, while the operation keeps COMPLETE_CURATION_RULE and prepare/publish/validate. Retired matching remains source-confined whole-sentence matching and the positive reader accepts any declared marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "75e19d2f61349598c34a72a40a658ad25fe60adb",
-            "content": "sha256:9fffa7aae0fc6fbb6e3002a10ff786a7bcfe8da9faf2e2cc58d5516aeb06b791",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:baa16b101a04f9636bafa89ddf47efdccb6c782aa875f28cd4e8cb3e00ea9119",
             "locator": {
-              "end": 770,
+              "end": 631,
               "kind": "line_range",
-              "start": 1
+              "start": 623
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:f501de5fba55ac19a3d1165849963968b6552e733acff6d61b4a5f20d04c22e7",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 640
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 743
             }
           },
           "kind": "code"

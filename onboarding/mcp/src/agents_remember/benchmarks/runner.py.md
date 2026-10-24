@@ -46,7 +46,7 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- MCP benchmark tools import the facade as `benchmark_runner`. [1]
+- MCP benchmark tools import the facade as `benchmark_runner`. \[1]
 
 ### Cross-Repo References
 

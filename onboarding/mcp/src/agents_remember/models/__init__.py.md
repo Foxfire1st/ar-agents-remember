@@ -20,3 +20,7 @@ Current source interpretation only; no fresh execution or grade.
 
 - [1]
 - [2]
+
+## The skill-install export is gone
+
+`SkillsInstallResponse` is no longer imported or exported: the skills install surface it described is removed, and the models package exposes no replacement, because the tool server serves skills from the packaged copy instead of installing them into a harness root.

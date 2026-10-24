@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Replaying a request must never prepare twice or start a second seat; the order of validation against effect is what makes that observable."
+  },
+  "applicability": "Every role start that reaches the first-run preparation path, including a repeated request id.",
+  "conditions": [
+    "An invalid document reference or an archived request id is refused before any durable effect.",
+    "An existing receipt is reconciled without a second preparation."
+  ],
+  "exclusions": [
+    "A start whose role needs no preparation at all."
+  ],
+  "id": "INV-MGQ6ES",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N6; final-a3/source-witnesses.md; unchanged execution owner."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B05",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A role start validates its selection and request lineage before durable preparation and reconciles same-request receipts without unnecessary mutation.",
+  "status": "proposed",
+  "supersedes": []
+}

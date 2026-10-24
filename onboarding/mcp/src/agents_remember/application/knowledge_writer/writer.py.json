@@ -76,6 +76,24 @@
     {
       "anchor": {
         "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+        "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+        "locator": {
+          "kind": "symbol",
+          "name": "_onboarding_sources"
+        }
+      },
+      "id": "RLZ-N5PSFX",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The selector gives existing trace items precedence before admitting uncovered group sources for otherwise unbound subjects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
         "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
         "locator": {
           "kind": "symbol",
@@ -90,6 +108,24 @@
       },
       "rationale": "Raw superseded fields are diagnosed with the derived-state recovery before generic record-model parsing.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+        "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unexplained_onboarding_sources"
+        }
+      },
+      "id": "RLZ-R9S872",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This collector unions member paths by the matching onboarding subject and leaves current blob or absent values to the existing code snapshot owner.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -149,11 +185,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
             "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "write_knowledge"
             }
           },
           "kind": "code"
@@ -166,11 +201,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:c7f692199f11ad3fa15b1ca963f1c49f1bce699db6bd05c739630783f3aa244a",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
             "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 139
+              "kind": "symbol",
+              "name": "write_knowledge"
             }
           },
           "kind": "code"
@@ -232,11 +266,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:a00ea9e16040ed4caf6ef34c7e140c76a715453ad1468673f885acdf8cd071e7",
+            "content": "sha256:f1d00f3e6dd6fe0c8a4d7a194e818294ba4555e8a004992e3527f38547204b9c",
             "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 83
+              "kind": "symbol",
+              "name": "WriteRequest"
             }
           },
           "kind": "code"
@@ -249,11 +282,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:971607dbb764dc7801b378cfa228c8e819810e24cb8d36796f08574e20dac421",
+            "content": "sha256:76336a59c7d319c2759ef0906e5d2b0583511d1b3cfac93a8f5f54147fb68d48",
             "locator": {
-              "end": 475,
-              "kind": "line_range",
-              "start": 440
+              "kind": "symbol",
+              "name": "_finish"
             }
           },
           "kind": "code"
@@ -266,11 +298,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:f0455925d2e444b461e2fa780106865fb6c325d3c27de03afc5ee85633a5223f",
+            "content": "sha256:4dad4e5cccc7b45a4e0d04e4823fdf5a3a51f07fbfc42fe69168f0a5431d6d03",
             "locator": {
-              "end": 504,
-              "kind": "line_range",
-              "start": 480
+              "kind": "symbol",
+              "name": "_render"
             }
           },
           "kind": "code"
@@ -278,7 +309,7 @@
       ]
     },
     "26": {
-      "note": "Trace subjects retain source authority; matching uncovered groups supply a sorted union of member paths only when no trace item exists.",
+      "note": "Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection.",
       "targets": [
         {
           "anchor": {
@@ -290,7 +321,12 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "27": {
+      "note": "Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted.",
+      "targets": [
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
@@ -298,22 +334,6 @@
             "locator": {
               "kind": "symbol",
               "name": "_unexplained_onboarding_sources"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "Read, author, check history, render, validate, then finish or refuse.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_knowledge"
             }
           },
           "kind": "code"
@@ -359,6 +379,22 @@
               "end": 179,
               "kind": "line_range",
               "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Read, author, check history, render, validate, then finish or refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:40763ff436b8caf03041360d21b6fc3492f3a5876a0c17b1f1a7a75d482627ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
             }
           },
           "kind": "code"
@@ -592,11 +628,10 @@
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:c1363b6b250cdfc8b329d17cf693db7de96277c5960578ab4174b9d9c515b2f6",
+            "content": "sha256:f1d00f3e6dd6fe0c8a4d7a194e818294ba4555e8a004992e3527f38547204b9c",
             "locator": {
-              "end": 114,
-              "kind": "line_range",
-              "start": 92
+              "kind": "symbol",
+              "name": "WriteRequest"
             }
           },
           "kind": "code"
@@ -604,28 +639,15 @@
       ]
     },
     "6": {
-      "note": "Reconsideration items are projected by subject; committing question append returns published keys and refusals",
+      "note": "Committing question append returns published keys and refusals",
       "targets": [
-        {
-          "anchor": {
-            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
-            "content": "sha256:5bbbf40b90825b25eabe42452a741017154c176841529067516e25f62091e44f",
-            "locator": {
-              "end": 276,
-              "kind": "line_range",
-              "start": 270
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:228f60a32f02597b678534f7a9baf03f83513c245bf5547b5680c14b39903e48",
             "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 400
+              "kind": "symbol",
+              "name": "_append_raised"
             }
           },
           "kind": "code"

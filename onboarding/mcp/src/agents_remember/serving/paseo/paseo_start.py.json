@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
         "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
         "content": "sha256:cd55f8a97f01af38eb6036e2307d7ff613d7adcb454639ac28c8831a1fc8a6f1",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
         "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+        "blob": "8563bb28265ef187a6e390687d8c59f174137386",
         "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
         "locator": {
           "kind": "symbol",
@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
             "content": "sha256:a818b6da2ab0f76df7990b165b8f51b22c8a7bb7ed9a4d50bc7143ff5e3da540",
             "locator": {
               "kind": "symbol",
@@ -91,8 +91,8 @@
         },
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
-            "content": "sha256:ee3c5f30de18948e4b7b7d90202a132916a189ca3f302951c00665e09eea10db",
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "content": "sha256:83c97eaf0fadd7fc69bda7f061ed63f74f79307947f8e0123aabbd9cf410f217",
             "locator": {
               "end": 78,
               "kind": "line_range",
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
             "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
             "locator": {
               "kind": "symbol",
@@ -124,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
             "content": "sha256:6d8163cec7a8ef94cb559e1f8ef6e031741eb976fb558acb2f3d51b8651a1f2a",
             "locator": {
               "kind": "symbol",
@@ -140,11 +140,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
             "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
             "locator": {
               "kind": "symbol",
               "name": "_remedy_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The settings read behind every host state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8563bb28265ef187a6e390687d8c59f174137386",
+            "content": "sha256:7b320d6a1acff10e85883e981504da50cf56972908202b2ecd50324fd2f46cb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings"
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
-        "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
+        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
-        "content": "sha256:8b62dd2493353e052b5677bb853a49f60fdb3bda3a734cddc4b187f624a3d73e",
+        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
+        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
         "locator": {
           "kind": "file"
         }
@@ -33,6 +33,23 @@
         "leaf": "260928-MIK-L71"
       },
       "rationale": "The canonical roles/bootstrap.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
+        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9KEEX4",
+      "invariant": "INV-CZV6J3",
+      "origin": {
+        "handoffEntry": "L188-B10",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The governing role bounds Bootstrap to setup and a user-started Architect handover.",
       "role": "primary-authority"
     }
   ],

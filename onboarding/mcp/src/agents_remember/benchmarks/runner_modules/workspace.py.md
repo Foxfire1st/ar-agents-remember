@@ -12,9 +12,9 @@ Benchmark workspace and repository preparation orchestration.
 
 ### 260731-EFA-L2 Preparation And Workspace Objects
 
-`prepare_case(preparation, case, *, provider_ids=())` takes a `BenchmarkPreparation` in place of
-`benchmarks_root` plus the five preparation keywords (`dry_run`, `skill_exposure_mode`,
-`force_clone`, `provider_timeout`, `allowed_provider_ids`). The containment R1 filter still runs
+At this migration, `prepare_case(preparation, case, *, provider_ids=())` took a `BenchmarkPreparation` in place of
+`benchmarks_root` plus the five then-present preparation keywords (`dry_run`, `skill_exposure_mode`,
+`force_clone`, `provider_timeout`, `allowed_provider_ids`). The current object has the root plus four preparation keywords: `dry_run`, `force_clone`, `provider_timeout` and `allowed_provider_ids`; `skill_exposure_mode` is retired. The containment R1 filter still runs
 first — `filter_benchmark_provider_ids(case.case_id, provider_ids, preparation.allowed_provider_ids)`
 — so the authority set reaches it through the preparation object rather than a loose keyword.
 
@@ -60,8 +60,16 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
-- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
+The [route overview](overview.md) describes the benchmark runner split; it is a discovery companion rather than a repository source target.
 
 ### Cross-Repo References
 
 No configured sibling repository is required for this module.
+
+## Preparation writes no skill exposure
+
+`prepare_case` syncs the runtime assets and no longer calls `sync_workspace_skill_exposure`, and no preparation object carries a skill-exposure mode: the workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration this workspace writes.
+
+- The case preparation that lays down assets and no skill exposure. [3]
+
+- Current source account and its stated boundaries. [4]

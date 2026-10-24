@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
-            "content": "sha256:7131667bc6f11773534fc57e49cc6a1c8b1c4424e755edca359dd3dfcef79066",
+            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
             "locator": {
               "kind": "symbol",
               "name": "install_host"
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
-            "content": "sha256:1fcef94ffc2329bab6a830d0fcf5918467663f92049ae1114d9e672fd9604b5f",
+            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "content": "sha256:e6c6716d95d5a31ead17cd8300db17e5a2c357739b5c4e09e3189c184d37669d",
             "locator": {
               "end": 88,
               "kind": "line_range",
@@ -35,11 +35,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b127a3dd7b944a884fd247e8e9597483d161505f",
+            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
             "content": "sha256:d12c187488683a4c1069726c6776362feafd0210b0d554adf01bd24622e52067",
             "locator": {
               "kind": "symbol",
               "name": "preview_host"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The install host entry point and the authority file it reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ba99edfcc42e4a14d029370b586330f8c0a82c9",
+            "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
             }
           },
           "kind": "code"

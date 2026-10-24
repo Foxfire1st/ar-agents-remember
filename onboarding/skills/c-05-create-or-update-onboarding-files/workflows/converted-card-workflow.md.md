@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Canonical authoring workflow for converted file cards and route overviews: Markdown is the authored explanation, native citation authoring owns references, and the knowledge writer owns realizations, proofs and history. Generated copies inherit this contract.
+Canonical authoring workflow for converted file cards and route overviews: Markdown is the authored explanation, native citation authoring owns references, and the knowledge writer owns realizations, proofs and history. Root `skills/` is the authoring source and the packaged copy the tool server serves is its only generated copy, so no harness starter package inherits this contract any more.
 
 ## Code Commentary
 
 Converted Markdown has no legacy metadata or Update History. The Curator writes citation-table inputs, then the document-scoped fixer resolves them against the code candidate and converts them to numbered prose over sidecar references. Existing-key reauthoring replaces the old cited line; orphan removal leaves surviving keys unchanged. Preview/apply results are examined for refusal, unreadable inputs and unresolved targets rather than just ok=true.
 
-Converted carryover selects paired content and missing records, validates and commits nothing; the recovery Curator authors own rows and ordinary closeout owns publication. It is not the former forbidden legacy copy/metadata/commit apply.
+Converted carryover selects paired content and missing records, validates and commits nothing; the recovery Curator authors own rows and ordinary closeout owns publication. It is not the former forbidden legacy copy/metadata/commit apply. The current source names where that procedure lives: `c-10-adopt-memory-baseline` `workflows/carryover-from-branch.md`, the retained recovery-leaf → curator-row → normal-closeout publication sequence behind `memory_carryover_plan` / `memory_carryover_apply`. Route indexes stay uncommitted caches regenerated with `route_index_refresh`, scoped to the leaf's contract.
 
 Body maintenance comes before anchors. Mechanical blob/content/line refreshes do not count as authored card changes. Moved behavior carries its entries through writer-owned covers before creating current prose and retiring the old sidecar. Deleted-source cleanup first checks whether behavior moved; surviving callers' references are retargeted to actual replacements or removed.
 

@@ -7,6 +7,7 @@ The current source facts below replace the former operative inventory. The separ
 - The failure table omits resolve_context, removed lifecycle primitives, providers, benchmarks, old structural calls and capsule/skill tools; lifecycle_finalize_task remains. read_ar_files deliberately receives an object entry to drive argument-removed, not to request source text. The adoption invocation uses `absent_contract(world)`, a nonexistent path inside the coordination root; `expected_worktree_group` is `(world.coord / "tasks" / REPO).as_posix()`, `rationale` is the string "refusal census", and `dry_run=True`. This dictionary is a refusal stimulus, not successful adoption or this Curator's executed probe.
 - drive_census checks the failure table against PUBLIC_TOOLS and calls it without arranging any session lifecycle; returned rows retain delivered payload and log-read whole facts.
 - Returned rows carry both delivered payload and whole result read from log.
+- The failure table includes `user_settings_init` with `target: host-authority`, a refusal setup before any live-host read. It proves no settings write or host acceptance.
 - Failure inputs include role_start_set without a bound caller and native retire_child selected by LEAF_REF task_document_ref plus role=worker, not an unknown native ID. The roster equality remains the population authority; these inputs own no acceptance assertion and restore no old structural plane.
 
 ### Source and authority bounds
@@ -140,3 +141,7 @@ No repository or external-system boundary is proved by this module.
 </details>
 
 - The direct-landing failure input includes its explicit absent canonical leaf. [9]
+
+## Current source evidence
+
+- The failure table includes user_settings_init with target host-authority as a refusal input, not successful host or settings execution. [10]

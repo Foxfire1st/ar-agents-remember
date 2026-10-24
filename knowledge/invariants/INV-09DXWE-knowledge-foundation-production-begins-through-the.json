@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The setup skill and the knowledge-bootstrap skill each used to describe the foundation as something Bootstrap begins; the boundary holds only while both say otherwise."
+  },
+  "applicability": "The route from a finished Bootstrap setup to a repository's first knowledge foundation.",
+  "conditions": [
+    "The foundation is organised by a user-started Architect as regular task, master or sprint work.",
+    "c-14 remains the Architect/Curator continuation, not a Bootstrap execution stage."
+  ],
+  "exclusions": [
+    "A taskless knowledge-authoring session.",
+    "A foundation started by Bootstrap or by the installer."
+  ],
+  "id": "INV-09DXWE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P3; a3/routes/05-bootstrap-doctrine.md; bootstrap-foundation-d301.md correctly states the contrasting exit."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B12",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge foundation production begins through the user-started Architect as regular task/master/sprint work, not as taskless setup.",
+  "status": "proposed",
+  "supersedes": []
+}

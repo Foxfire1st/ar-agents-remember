@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+        "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_case"
+        }
+      },
+      "id": "RLZ-SK5YWY",
+      "invariant": "INV-6526WA",
+      "origin": {
+        "handoffEntry": "L188-B19",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Live benchmark preparation uses surviving runtime/resource operations without a local skill-copy fallback.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.",
@@ -19,12 +38,34 @@
         }
       ]
     },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `# mcp/src/agents_remember/benchmarks/runner_modules Overview`",
+    "3": {
+      "note": "The case preparation that lays down assets and no skill exposure.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137"
+          "anchor": {
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:e52b095af0a94ac681dcbf943d67d06ec688fc740075e9b59d05104112003d8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_case"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:514fc3f33cedefe8ef0d7f6d51a4fa117947e2fb16a7e73293d377b56dc805bb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

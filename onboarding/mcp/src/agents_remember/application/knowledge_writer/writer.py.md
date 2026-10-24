@@ -18,14 +18,8 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
 
 ### Logic
 
-- **Onboarding source selection.** `_onboarding_sources` first collects every trace subject,
-  including a trace with unusable metadata. A valid trace source list stays authoritative.
-  Without a trace item for the subject, `_unexplained_onboarding_sources` unions the string
-  member paths from matching uncovered `unexplained_hunk` and `unexplained_file` items with
-  mapped facts, `onboardingTrace` and `sourceBlobs`, then sorts the paths. Covered items,
-  other kinds and other subjects contribute nothing. The selector returns paths only;
-  row authoring reads their actual candidate blobs or records `absent`. With neither source
-  of paths, a file subject keeps its own-path binding and an overview keeps its refusal.
+- **Onboarding source selection.** An existing `onboarding_trace` item owns its subject's source list. Its subject excludes unexplained-group selection even when the trace metadata is unusable. Without a trace item, uncovered `unexplained_hunk` and `unexplained_file` items contribute the member-path keys of `sourceBlobs` for their matching trace subject. The selector unions and sorts those paths; the existing snapshot authoring owner supplies their actual candidate blobs or `absent`. Covered items, unrelated kinds and malformed maps contribute nothing. Without either item, the existing single-file fallback remains; an overview cannot invent a source set.
+
 - `WriteRequest` carries the two roots, the `Owner`, the hand-off path as `origin.handoff.path` records it,
   the parsed document, the commit word and the `authorization` reference. The file format has no field for
   the authorization, so the report records it. Since MIK-R11 it also carries `decisions`, the task
@@ -123,16 +117,20 @@ No configured live documentation source was available for this pass.
 
 The operation and its stages.
 
-- Trace subjects retain source authority; matching uncovered groups supply a sorted union of member paths only when no trace item exists. [26]
+- Existing trace subjects retain source-set priority, including exclusion of malformed trace metadata from group selection. [26]
+- Uncovered unexplained items contribute a sorted union of matching member paths; supplied blob values are not adopted. [27]
+
 
 - The refusal text for an unconverted memory tree. [1]
 
-- Read, author, check history, render, validate, then finish or refuse. [27]
+- Read, author, check history, render, validate, then finish or refuse. [3]
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
 
 
+
 - After validation, committing runs publish raised questions before knowledge files. [28]
-- Reconsideration items are projected by subject; committing question append returns published keys and refusals [6]
+- Committing question append returns published keys and refusals [6]
+
 
 
 - The carry-forward call and its report field. [29]
@@ -150,12 +148,16 @@ The operation and its stages.
 
 
 
+
 - Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
 
 
 
+
 - The memory tree and its base, or why the writer cannot write it. [17]
+
 - A crossing owner authors no entry, ruling or new record. [18]
+
 - The writer compares an unconverted HEAD through its converted base. [19]
 - A master line's crossing records its rows through the writer. [33]
 ### Cross-Repo References
@@ -170,6 +172,7 @@ No cross-repo boundary is crossed by this file.
 - Current request inputs include paired memory-base binding and leaf-required worklist admission [2]
 
 
+
 - Registry-marked `writer_reports` refusals become reasoned reports inside the writer; the refusing commit/landing route is named. [34]
 
 - Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base. [35]
@@ -181,4 +184,5 @@ The current converted writer checks persisted leaf worklist shape and authored i
 
 - Worklist and changed-link admission precede validation and file publication. [37]
 - File publication reports actual restoration and already-published question recovery. [24]
+
 - A stored derived superseded field refuses before canonical rendering. [25]

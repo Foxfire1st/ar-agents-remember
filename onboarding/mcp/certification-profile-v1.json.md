@@ -12,7 +12,7 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 ### Logic
 
-The generated-skills input now includes `generated-copies.json` in `sourceScopes` beside the sync script and canonical skills tree, and its outer canonical digest is refreshed. This exact declaration diff changes no other rail or artifact inventory and is not evidence that any certification or skill sync ran.
+The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The retained generated-harness input drops renderer targets, names generated-copies.json plus skills as its source scopes, and uses scripts/sync-skills.py --check. The outer canonical profile digest is refreshed. These declaration changes are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
 
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
@@ -42,9 +42,8 @@ No remaining producer gap is recorded for the three L30 artifacts. The profile d
 
 ## Evidence
 
-- The generated-skills source inventory includes the canonical copy declaration and the profile digest is refreshed without changing other rails. [7]
-
-
+- Generated skills keep only the package target; generated-harness inputs drop renderer sources and the canonical digest is refreshed. [7]
+- The retained generated-harness rail checks skills through scripts/sync-skills.py --check. [8]
 ### Docs References
 
 No external Domain Documentation source is configured for this repository. This card records repository-owned behavior from the source references below; no external documentation claim is made.
@@ -57,10 +56,10 @@ The exact source declarations below establish the current behavior; this invento
 
 - Bounded dependency reconstruction environments [1]
 
-- Pinned Dagger execution adapter and actual runtime digest [2]
-- The declaration carries its own canonical profile digest. [3]
-- 47 report paths including 30 rail-evidence captures; ambient and teardown publications are removed. [4]
-- Full/targeted/local selections and explicit applicability [5]
+
+
+
+
 - Current source-owned selector configuration digest [6]
 
 ### Cross-Repo References
@@ -68,3 +67,8 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- Pinned Dagger execution adapter and actual runtime digest. [2]
+- The declaration carries its own canonical profile digest. [3]
+- 47 report paths include 30 rail-evidence captures; ambient and teardown publications are removed. [4]
+- Full/targeted/local selections and explicit applicability. [5]

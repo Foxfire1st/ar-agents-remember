@@ -34,18 +34,6 @@
   "id": "DEC-XM18KM",
   "links": [
     {
-      "relation": "explains",
-      "target": {
-        "blob": "23f89436ed722d0c3ab6470a0bf9079145e22632",
-        "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
-        "locator": {
-          "kind": "symbol",
-          "name": "load_shared_paseo_runtime"
-        },
-        "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
-      }
-    },
-    {
       "relation": "motivated_change_to",
       "target": {
         "id": "MIK-R96",
@@ -69,7 +57,7 @@
     "leaf": "260928-MIK-L96",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

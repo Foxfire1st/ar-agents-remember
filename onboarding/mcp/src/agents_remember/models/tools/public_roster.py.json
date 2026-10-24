@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
-            "content": "sha256:12200c2ef3e36ff98b41480aa7d935360159b72ed488a1f74ed5da7355b336c8",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
-            "content": "sha256:2f45c654bbec0d447d009eb6b10b263566657ec1f3f95f63f0afc3195330d00e",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:86df5ba0e21313eb37e969223c7d9683ece433561c0b281f700c2de91762a4f9",
             "locator": {
               "kind": "symbol",
               "name": "register_capsule_and_skill_tools"
@@ -40,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:75e6ff162f472186848c092bbe1d1742318ddba247e8f802c97094a5d2a5262d",
+            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"
@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
-            "content": "sha256:12200c2ef3e36ff98b41480aa7d935360159b72ed488a1f74ed5da7355b336c8",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -73,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
-            "content": "sha256:12200c2ef3e36ff98b41480aa7d935360159b72ed488a1f74ed5da7355b336c8",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -85,12 +85,12 @@
       ]
     },
     "14": {
-      "note": "The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The incoming L10941-name observation belongs to its earlier source epoch, not the current tuple. This is source declaration only, not runtime list_tools or test execution.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "The tuple declares42 unique public names including user_settings_init; prior41/40/73/74 populations are historical source epochs.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
             "locator": {
               "kind": "file"
             }
@@ -104,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fbe0c965d0be4e831a65565045eeeb97bb5cbf2",
-            "content": "sha256:ccc887406edd9c0802533977d85f3af82aeb53bbd3a6bacf9a26ff53e1123c46",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
             "locator": {
               "kind": "file"
             }
@@ -115,12 +115,12 @@
       ]
     },
     "16": {
-      "note": "The current composed PUBLIC_TOOLS declares40 unique names and excludes dispatch_agent and resolve_context. The independent A741-name witness and older73/74 populations remain historical custody only, not this current source census or runtime list_tools.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "The current source declaration excludes dispatch_agent and resolve_context; tuple inspection is not live list_tools or execution.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
             "locator": {
               "kind": "file"
             }
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
               "end": 42,
@@ -146,30 +146,13 @@
         }
       ]
     },
-    "3": {
-      "note": "The capsule/skill-serving names role_capsule_compile, skill_catalog_list and skill_catalog_read appear consecutively in PUBLIC_TOOLS.\n\nAnchor: `source range`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
-            "content": "sha256:a3e47ab388213b4a1d29e82854bdf9947f0ce1be15289b541d5a0170ab3eb531",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 89
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The knowledge family at the roster tail contains knowledge_read, knowledge_diff and knowledge_integrity_check; knowledge_change and knowledge_project are no longer advertised.\n\nAnchor: `knowledge_read; knowledge_diff; knowledge_integrity_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:8652b23fc284dc92543c7ef98b222e9bc81a50adde9beaf70c84e827f5f63465",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:32fa7ae9d1dc34475a199fff4a36c017e9b1f7c7505c62c2efb2f07a0fb4157e",
             "locator": {
               "end": 66,
               "kind": "line_range",
@@ -220,20 +203,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
-            "content": "sha256:8a47b6b491c0348c7b44466fa5affd0bc2d187d51524ab3a0e0a4aeb37e3c3b1",
+            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
+            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -249,8 +220,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
-            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:99af9a6a427cf236127e24d5be61389107383dbbf702a8547b09e09dc08713ed",
             "locator": {
               "kind": "symbol",
               "name": "PublicSurfaceInventoryTests"
@@ -261,8 +232,8 @@
         },
         {
           "anchor": {
-            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
-            "content": "sha256:575ed3c42ea8c86b68817bff9913ad69f3a102441c4bf5442875186cab815d53",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:b805de0d79f475a5787fd49ded1bfe30593aeb7a995f6e5665af2e6462635a75",
             "locator": {
               "end": 281,
               "kind": "line_range",
@@ -284,18 +255,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_next_tool_must_name_a_registered_public_tool"
-            },
-            "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3f3b31e87748120cf9b50b0d32079f880bef128",
-            "content": "sha256:09073ec8cc753fff30dfbd3724baa80856f9fbb54e64db4ddc520b9135ad8e51",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_worktree_surface_refuses_a_registered_but_non_public_tool"
             },
             "path": "mcp/tests/test_worktree_status_terminal_next_tool.py"
           },

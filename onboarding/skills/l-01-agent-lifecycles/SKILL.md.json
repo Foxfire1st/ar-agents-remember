@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
         "locator": {
           "end": 29,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
         "locator": {
           "end": 20,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
         "locator": {
           "end": 16,
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
-        "content": "sha256:07fad88f84314c09b18f9f8d337170cba44bcd05ce1b4492cec148624f6ad480",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
         "locator": {
           "end": 12,
           "kind": "line_range",
@@ -74,12 +74,12 @@
         "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "The router states the two instruction blocks, the seven roles this launcher supports and the refusal of an absent or inapplicable selection.",
+      "rationale": "The current router admits eight native roles including Bootstrap, composes one selected role and applicable operation, and refuses missing or unsupported selection without injecting shared core.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
         "locator": {
           "end": 31,
@@ -98,8 +98,8 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
-        "content": "sha256:006ebced49dda456feef33483f16c0537a3358063497726f9afeed2d4630297e",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
         "locator": {
           "kind": "file"
         }
@@ -115,7 +115,7 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
         "locator": {
           "end": 29,
@@ -134,8 +134,8 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
-        "content": "sha256:006ebced49dda456feef33483f16c0537a3358063497726f9afeed2d4630297e",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
         "locator": {
           "kind": "file"
         }
@@ -151,8 +151,8 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
-        "content": "sha256:006ebced49dda456feef33483f16c0537a3358063497726f9afeed2d4630297e",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+        "content": "sha256:6c8851c74d00d29d5ed65c302ae546e6e1b1f75e4d50adcd5d1a661a48d67f69",
         "locator": {
           "kind": "file"
         }
@@ -168,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+        "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
         "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
         "locator": {
           "end": 35,
@@ -187,23 +187,6 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The router is exactly three ordered conditions.\n\nAnchor: \"## Which Lifecycle Am I? (the router — exactly three conditions, in order)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:25af96624d32195662fa2f95c370c3ba801fa6ee51693258c0cf49fc50f721a1",
-            "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 13
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "The companion files now include the producers' curator hand-off shape beside the brief schemas.\n\nAnchor: \"the **producer's output shape**\"",
       "targets": [
@@ -222,14 +205,16 @@
       ]
     },
     "11": {
-      "note": "Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [11]",
+      "note": "One explicit supported role and applicable operation select the two instruction blocks; the router injects no shared core.\n\nAnchor: line 8-12",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
-            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"
@@ -237,153 +222,206 @@
       ]
     },
     "12": {
-      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "note": "The native launcher names eight roles, including Bootstrap; System Specialist remains the earlier Investigator spelling, and other manifest registry entries are not launched here.\n\nAnchor: line 12",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
-            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:4230329a55832157e75cf3c4846656878c853b4db81df245fe3f5752b787019f",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The registry assigns one canonical file to each role.\n\nAnchor: \"## The Role Registry\"",
+    "13": {
+      "note": "Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location.\n\nAnchor: the cited source extents",
       "targets": [
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:73f893c413cf21875ea98a6a520e96f53e6c7f2bc8d97c01ad98e678c901efd6",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:94e015e104f30a1ca74fccfe69524d73d513a997a7822271fcbb9f0cbe3376b4",
             "locator": {
-              "end": 67,
+              "end": 8,
               "kind": "line_range",
-              "start": 67
+              "start": 8
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:58175d14b56c66917a6ec87b8dee3ac5281dc0b4a60e23997f7b2e0ca07a46f8",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
             "locator": {
-              "end": 80,
+              "end": 16,
               "kind": "line_range",
-              "start": 69
+              "start": 14
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The minimal frame binds roles to canonical task-document altitude and relays silence mechanically.\n\nAnchor: \"the shared core\"; `# Core — The Minimal Lifecycle Frame`; `# Core — The Minimal Lifecycle Frame`; \"The seat binding is the catalog binding made at dispatch\"; \"Silence is supervised\"",
+    "14": {
+      "note": "Restore the same role, operation, task, agent and report through reconnect; reconcile an uncertain start with its same request ID and retain separate acceptance/publication authorities.\n\nAnchor: line 33-35",
       "targets": [
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:ae465ec498021ee113ba345cb16e388df23d0ccdfec5b9b986f0381a87d41e8c",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:726e2fc9729719af993f688485b1c2eb8b66bb514513c8276faaa1936b02b641",
             "locator": {
-              "end": 131,
+              "end": 35,
               "kind": "line_range",
-              "start": 126
+              "start": 33
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Native role starts and messages use the launching build's task server and actual returned identities. Developer questions follow the actual parent channel when a parent exists.\n\nAnchor: line 20-29",
+      "targets": [
         {
           "anchor": {
-            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
-            "content": "sha256:7a825e5fa7330c232393ba521185cc16a8ec9f8a2013b24834dfa55e3f74c0fe",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:38e2ffae55983bd0a9adf38a91c8a8422e73a95ab2a74488f334261cad70c040",
             "locator": {
-              "end": 188,
+              "end": 29,
               "kind": "line_range",
-              "start": 181
-            },
-            "path": "skills/l-01-agent-lifecycles/core/authority.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eec7e6fdb27c60c0baf05bfaa3b771afdee44710",
-            "content": "sha256:77c2d52c1a607968eaf72b2d743eaef87d6165533ca3113a9c354d322c46eb4d",
-            "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
+              "start": 20
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Shared continuity and authority invariants are explicit.\n\nAnchor: `# Core — Shared Invariants (every role can count on these)`; `# Core — Shared Invariants (every role can count on these)`; `# Core — Seat Authority (shared by every role)`",
+    "16": {
+      "note": "First delegation to a coordinating agent, developer-chosen direct coordination and parentless dashboard admission have their stated scopes.\n\nAnchor: line 31",
       "targets": [
         {
           "anchor": {
-            "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-            "content": "sha256:800fbf439859b4fedba7eaefbb5d5328f83d9f0e99078ed42133f3a7326bb58a",
-            "locator": {
-              "end": 6,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/authority.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
-            "content": "sha256:8dcc78812092daf6f788be86ec379e186a990a3098247ebb7477d99e313cfadd",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/core/invariants.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Dispatch has two process-derived caller kinds and one shared transaction.\n\nAnchor: \"two disjoint caller kinds\"; \"Every launcher or role that dispatches a hosted role calls\"; \"two disjoint caller kinds\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
-            "content": "sha256:f0f4a57ef77a56c7fc84782a6b34113369b777a4c9f5575125d73cd2ac3f7eee",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 51
-            },
-            "path": "skills/l-01-agent-lifecycles/core/authority.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Developer-chosen direct coordination and valid parentless dashboard admission are explicit.\n\nAnchor: `An Architect first delegates coordination to one Manager`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
             "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
             "locator": {
               "end": 31,
               "kind": "line_range",
               "start": 31
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named.\n\nAnchor: the cited source extents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:7da9256f29c0ba6f5dbffc96f2d35c4639c2edfd478623f9532d13710f0e5811",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent.\n\nAnchor: current canonical and distribution owners",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:8f7265928b549cfa8543b3e613a844fb9ac2d76619825d24d71fccdb1ca1505f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:ef363c84a088d4e2e2c5bd08bb52e1802a9edd4cb3cf16714ba2b6cb417e7fe1",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:3d5fee8dfff23f07b0efe612d0fea74c29f4cac291e21abbcafaee73081de94b",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }

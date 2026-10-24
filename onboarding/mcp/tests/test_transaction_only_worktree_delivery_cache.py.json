@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_transaction_only_worktree_delivery_cache.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A current cache is preserved byte for byte, and a missing one is rebuilt to the canonical ledger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44131c3ba0f11aa8721d01090a1536a38696f20a",
+            "content": "sha256:2d4c1bebfa3b60bf6386a818e5a961254acd3e2bfd9451b0b8d6cd33634b56a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Malformed, forged, reordered and wrongly headed caches are repaired with no Git commit object or ref written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44131c3ba0f11aa8721d01090a1536a38696f20a",
+            "content": "sha256:2d4c1bebfa3b60bf6386a818e5a961254acd3e2bfd9451b0b8d6cd33634b56a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

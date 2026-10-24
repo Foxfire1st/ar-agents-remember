@@ -41,6 +41,5 @@ a relative path against the current working directory before applying the prefix
 
 ### Repo-Internal References
 
-- Runtime install uses packaged assets unless tests pass an explicit source root. [1]
-- Skill installation reads package-owned runtime skills through the shared asset root. [2]
+- Runtime install uses packaged assets unless a caller supplies an explicit source root. [1]
 - Benchmark tooling resolves packaged benchmark cases through the same package-data root. [3]

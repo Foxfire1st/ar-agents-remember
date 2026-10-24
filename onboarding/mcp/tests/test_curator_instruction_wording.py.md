@@ -2,19 +2,43 @@
 
 ## Governing Overview
 
-[tests route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Current source account — the moved Curator wording pins and the admitted writer
+## Purpose
 
-The module was split out of `test_role_instruction_wording.py` so that module stays under the size rail; it reads the same canonical `skills/l-01-agent-lifecycles` tree and the same built parser, and decides the same questions there. `test_current_coordination_and_curator_rules` matches each required clause against its source file after whitespace folding, and its Curator block fixes the authoring routes: `knowledge-ingest`, then the mounted `knowledge_write` "which runs the same writer with the same arguments", then "No other route writes knowledge", with `--commit` written as `commit: true`. The git-comparison scope of the skill tree is asserted once at the end of that case rather than per clause.
+Holds the Curator and coordination instruction wording that the role wording module no longer carries: the
+Curator's own authoring routes, the manifest's descriptions following the coordination default, the
+writer's admission for the selected runtime, and the tool grants the manifest gives each role.
 
-The writer-admission case pins the `{{detail:reference/curator-writer-details.md}}` include in the role text, the `knowledge-ingest` invocation and `--authorization-ref <ref> --commit --json` in the detail file, the operation's "source-bound command" wording and its refusal to bypass a refusal through another installation, and the parser accepting that invocation while exiting 2 with `unrecognized arguments` for `--baseline`, `--publish` and `--publish-to`. The remaining cases keep the coordination-default manifest descriptions and the rule that `role_start` is granted to starter roles only and no tool outside `PUBLIC_TOOLS` is listed.
+## Code Commentary
 
-## Evidence Scope
+### Logic
 
-This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.
+`read()` and `role_text()` open a file of the canonical skill tree (`CANONICAL`, `LIFECYCLE`) and the role
+text a seat receives, with `STARTERS` naming the starter roles the manifest describes.
+
+- **Authoring routes.** `test_current_coordination_and_curator_rules` requires the Curator's role text to
+  name both authoring routes, to say no other route writes knowledge, and to write `--commit` as
+  `commit: true`.
+- **Manifest descriptions.** `test_manifest_descriptions_follow_the_coordination_default` keeps each
+  description on the coordination default rather than a local variant.
+- **Writer admission.** `test_the_curator_writer_is_admitted_for_the_selected_runtime` pins the admission in
+  the role, detail and operation texts and requires the parser to refuse the removed options with exit 2.
+- **Grants.** `test_the_manifest_grants_the_role_tools_to_the_roles_that_may_use_them` checks the manifest
+  grants the role tools to exactly the roles allowed to use them, through `models.tools.public_roster` and
+  `models.role_identity`.
+
+### Conventions
+
+Cases read the shipped text through `capsule_wording` rather than a copy, so a case fails on the surface a
+seat actually reads.
+
+### Invariants And Boundaries
+
+- One authoring route writes knowledge; the Curator's text says so.
+- A writer option that was removed is refused by the parser, not ignored.
 
 ## Evidence
 
-- The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true` [1]
-- The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2 [2]
+- The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`. [1]
+- The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2. [2]

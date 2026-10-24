@@ -1,0 +1,87 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/workflows/memory-quality-control.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
+        "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5RRBPZ",
+      "invariant": "INV-5GJFDS",
+      "origin": {
+        "handoffEntry": "L188-B16",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The MQC diagnostic workflow distinguishes its role from the same kept skill's authoring procedures.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
+        "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D7DJK9",
+      "invariant": "INV-1ZJS8R",
+      "origin": {
+        "handoffEntry": "L188-B17",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The transferred diagnostic workflow names the current result/report owner.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Drift classification answers in `context_packet`'s own response and files no temporary report; the durable result is the contract-scoped checklist at the `reportPath` `memory_quality_check` returns, with its attestation beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
+            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The procedure reports and routes; authoring belongs to this same skill's `SKILL.md` and `converted-card-workflow.md`, and closeout commits stay with the `w-02-light-task-workflow` transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
+            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Curation is always the complete operation, and a scoped diagnostic never replaces it or turns into a repository-wide adoption scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
+            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

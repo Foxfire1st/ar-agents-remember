@@ -6,12 +6,14 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current Stage 6 is Retire Providers with stop-only/unused-key observation. `server_info.openUserSettings` is relayed with both exact commands; setup changes no mode itself. Host catalog choices, not removed native-adapter vocabulary, govern role starts. `launchArgs`, `sessionCommands` and `promptKeywords` remain loadable but unread. Free chat writes the sprint request and starts an Architect via `role_start` without document references or a brief.
 - skills_install maintenance and old provider recovery evidence are obsolete.
-- New-memory Stage 5 runs onboarding through c-03 and the fixer, then the first attributed baseline, then the curator-owned knowledge foundation that needs that memory commit. A converted memory tree that already has a commit may reach its foundation earlier; an unconverted tree converts first, before adoption or foundation authoring. Contractless fixing is only the measured pre-baseline exception, not an invented leaf or knowledge-write permission.
-- Onboarding/bootstrap audit files are retained by adoption unless removed beforehand; only memory-root-level bootstrap is excluded. Onboarding, adoption and foundation remain separate outcomes with actual states and next actions. Before a task exists, bootstrap reads/reports and an instructed session authors through `knowledge-bootstrap` under Curator rules; no taskless Curator seat is promised. A Curator role starts only on a selected leaf.
+- New-memory Stage 5 initializes the root without onboarding or a citation fixer, adopts the first attributed baseline through its owning procedure with status read before and after, then reads and reports the knowledge state and tells the user to start the Architect. The Architect opens the regular foundation task for its Curator; setup neither authors knowledge nor creates its task, worktree or enclosure. A memory tree that already has a commit may reach its foundation before onboarding or baseline adoption; an unconverted tree converts before adoption or foundation authoring.
+- Onboarding/bootstrap audit files already present are retained by adoption unless the developer removes them beforehand; only memory-root-level bootstrap staging is excluded. Onboarding, baseline adoption and foundation remain separate outcomes with actual states and next actions. Without a task, Bootstrap reads and reports state and names the Architect; no instructed session substitutes for foundation task admission. A Curator starts on the real task document and uses its actual enclosure contract.
 - First conversion precedes ordinary operations even when the repository has no converted memory elsewhere. `read_ar_files` still returns unchanged cards marked `legacy-format`; no knowledge section is read. With no attributed baseline, run `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` on the root, then adopt its validated baseline; prior status is `legacy-format`, and initialization writes no marker. With an official line, start one new leaf, convert its memory worktree using its paired code worktree as the first memory change (explicit `--code-commit`, default code HEAD), then close out and land under validator/invariant gating against the converted base; conversion itself counts as no change. Landing moves the source branches, not the base; read back the landed memory commit and `Code-Commit` trailer plus the tip marker. Other open lines cross at `worktree_sync` with `merge-memory`. Validation failure writes no conversion changes; after conversion/crossing repeat the refused operation.
 - The procedure is named by `docs/guides/first-conversion.md` and `knowledge-convert --help`. The converter command, read-only legacy-database reader and conversion-format version 1 are permanent: other clones/machines may still need them. This master does not schedule retirement; removing any requires a separate developer decision.
 
-- Stage 5 orders onboarding/fixer before adoption and foundation, preserving existing-memory handling and explicit audit retention. [9]
+
+- Stage 5 initializes without onboarding/fixer, adopts the attributed baseline, then reports knowledge state and names the Architect; existing-memory handling and audit retention remain explicit. [9]
+
 
 ### Superseded inventory
 
@@ -156,13 +158,13 @@ No external documentation is needed to prove this repository-local skill contrac
 
 ### Repo-Internal References
 
-- The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. [1]
-- Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. [2]
-- Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. [3]
-- Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
-- Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
+- Historical original-card/source account (not current setup authority): The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. [1]
+- Historical original-card/source account (not current setup authority): Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. [2]
+- Historical original-card/source account (not current setup authority): Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. [3]
+- Historical original-card/source account (not current setup authority): Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
+- Historical original-card/source account (not current setup authority): Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
 
-- The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical. [7]
+- The starter/setup renderer that writes the shared coordination settings file when it is absent; the removed install-side seed writer is historical. \[7]
 
 ### Cross-Repo References
 
@@ -201,6 +203,6 @@ a development leaf, worktree or enclosure to give the writer an argument list it
 
 The installed skill's preflight checks that the shared settings name a host, its runtime stage says that `runtime_install` brings the host and how to read the host part, and its report has a host line and ends with the one start. No step tells the user to run the provision as part of an install; the terminal provision is the explicit transition.
 
-- The package copy of the install skill. [8]
+- Historical original-card/source account (not current setup authority): The package copy of the install skill. [8]
 
 </details>

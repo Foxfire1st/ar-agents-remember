@@ -18,6 +18,10 @@ The byte-equal packaged skill is a distribution carrier, not an independent role
 
 - The canonical source supplies the current instruction or template contract described above; the package copy is derived. [1]
 
+## Current Source Qualification
+
+The current relationship table pairs this skill with `c-05-create-or-update-onboarding-files` for post-bootstrap promotion: touched files move from deferred to covered under that skill, which now also carries the memory-quality and findings-capture procedures. The retired `c-02-memory-quality-control` skill the inherited copy names in that row is history of those bytes, not a current neighbour.
+
 ## Inherited Source-Epoch Commentary
 
 The following complete distribution-copy commentary and reference-note meanings are retained as inherited context. Earlier incompatible claims on the current seams explained above are historical, not restored authority. Historical reference labels do not allocate this card's references.

@@ -25,3 +25,9 @@ A running host observation includes the expected contract Node and observed exec
 
 
 - The observed Node comparison and explicit provision remedy. [4]
+
+## The authority file the host is read from
+
+`_settings` resolves `authority_settings_path(config.config_path)` and reads it through `load_authority_paseo_runtime`, so the observation reads the same block a cold first run establishes. A read error, malformed JSON or non-object JSON raises `HostAuthorityRefused` in that reader, which names the path and the error; `_settings` catches only `PaseoRuntimeSettingsError` and `OSError`, so the refusal escapes `_settings`, `observe_host` and `ensure_host` rather than becoming a `not installed` observation. The reachable callers include the dashboard `--status` path and the serving start path; `runtime_config._paseo_runtime_block` catches the refusal for its own callers, but `_settings` bypasses that wrapper. Nothing here writes settings.
+
+- The settings read behind every host state. [5]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
         "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
         "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
         "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
         "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
         "locator": {
           "kind": "symbol",
@@ -73,12 +73,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+        "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
         "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
         "locator": {
-          "end": 121,
+          "end": 119,
           "kind": "line_range",
-          "start": 117
+          "start": 115
         }
       },
       "id": "RLZ-KZSY9R",
@@ -97,11 +97,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
-              "kind": "symbol",
-              "name": "TARGETS"
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
             },
             "path": "scripts/sync-skills.py"
           },
@@ -110,77 +124,47 @@
       ]
     },
     "2": {
-      "note": "None\n\nAnchor: \"mcp/src/agents_remember/package_data/runtime/skills\"",
+      "note": "The generated-skills profile scope and declaration select the single MCP package tree from canonical skills.",
       "targets": [
         {
           "anchor": {
-            "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
-            "content": "sha256:6b42c5ae7adc4d2019a077872511ae068b3c2d75efc4f724c318b0cd064da9c9",
+            "blob": "395adb8f691a17c5247923b5afe871a07c831707",
+            "content": "sha256:17a81bccd3430a978370b90c55371ea8454ff195ab33a67e332de78e81cb11c7",
             "locator": {
-              "end": 180,
+              "end": 148,
               "kind": "line_range",
-              "start": 158
+              "start": 134
             },
             "path": "mcp/certification-profile-v1.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The boundary clauses this module re-asserts across canonical plus the nine copies, quoted from the doctrine guard.",
+      "note": "The boundary clauses are checked across canonical skills and every declaration-backed package target; synthetic missing-copy controls keep their original facets.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa6b99bc359f684819c0a8df22f9ba1246bec976",
-            "content": "sha256:2fd9565c1694edc13ad32b80f722ab7cc18d04d4904c2a2dc7e153cc1704b6d8",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "content": "sha256:f1849a57f486634563cfdfd5baccdd42da460e84a73375cc474cc0a904bcd284",
             "locator": {
-              "kind": "symbol",
-              "name": "PROJECTED_BOUNDARY_CLAUSES"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
-            "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
-            "locator": {
-              "kind": "symbol",
-              "name": "BoundaryClause"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "99aaef12a6ac9dd723324025054b12a2ada50063",
-            "content": "sha256:afd86f3618671b2b56b8bbcfb5b06d38c735fa07878eba673c3b7d8e17abf76b",
-            "locator": {
-              "kind": "symbol",
-              "name": "boundary_locations"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
-            "content": "sha256:4e0529e3637638a8fcb3ec332ba11b08f795075b03df756a6448b360c6ba1ab8",
-            "locator": {
-              "kind": "symbol",
-              "name": "boundary_surface_texts"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
-            "content": "sha256:69a86d56d8892411b8c6e86ada9e4c5dc679b8d8dd75cc1b83cdb58ce6a4a6bb",
-            "locator": {
-              "kind": "symbol",
-              "name": "missing_clause_locations"
+              "end": 199,
+              "kind": "line_range",
+              "start": 171
             }
           },
           "kind": "test"
@@ -192,36 +176,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:26d677fe34c9d7b0acd9de9a6105b629392574287d657218f94f6dd9319946a2",
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:fac708389f4be2411d00eed64bafb5eb9308c15e9062f27e0bb70e64e2d23a41",
             "locator": {
-              "kind": "symbol",
-              "name": "OWED_STATEMENTS"
-            },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:ad356ce7e3ba8637bbf6916860893578e64abc9ae3b384cda14dee01009f6bd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "COMPLETION_TRUTH_ROSTER"
-            },
-            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:10c8e62a31ee488281bc15e6028805ebe2d964778dab27a2b483e7d78e464316",
-            "locator": {
-              "end": 529,
+              "end": 491,
               "kind": "line_range",
-              "start": 478
+              "start": 465
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 104
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -230,18 +203,56 @@
       ]
     },
     "5": {
-      "note": "The doctrine surface the whole-boundary clause now ships at, and the copy family that must carry it.\n\nAnchor: \"templates/turn-report.md\"",
+      "note": "The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.",
       "targets": [
         {
           "anchor": {
-            "blob": "9210bbacd978073332af13197d3e95904f247ea0",
-            "content": "sha256:6f874c118670d295afc77ac589b9a905f9d5fc98c7e8b5ad112e84af7f8e8ad6",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "content": "sha256:b88bca6d05f450b838f05a02a435b4c8b7e201ac80829d7effbdb64e91ccc0a0",
             "locator": {
-              "end": 77,
+              "end": 24,
               "kind": "line_range",
-              "start": 77
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "content": "sha256:41507c4be51e297e8490caa46dbcaf31821ce544dbed265bdffdf089a4068f93",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "content": "sha256:01809f4b5ef55de4e179ce9d4fc4d6b59dff9d5afed0a385af87c2bd40384f6d",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }
@@ -252,36 +263,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
             "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
             "locator": {
-              "end": 317,
+              "end": 315,
               "kind": "line_range",
-              "start": 284
+              "start": 282
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
             "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
             "locator": {
-              "end": 351,
+              "end": 349,
               "kind": "line_range",
-              "start": 327
+              "start": 325
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
             "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
             "locator": {
-              "end": 427,
+              "end": 425,
               "kind": "line_range",
-              "start": 368
+              "start": 366
             }
           },
           "kind": "test"
@@ -293,24 +304,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
             "content": "sha256:828b48ac3014febba22489ae481ce5ed60c101ed43f9543f36d0652cef5aa7e0",
             "locator": {
-              "end": 133,
+              "end": 131,
               "kind": "line_range",
-              "start": 124
+              "start": 122
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b588526786203f00c55dfdd6413030b636dc1523",
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
             "content": "sha256:ca3ac12c457ae49ca2ff7b4004154aed958dcd921551c0c307702e26562aea14",
             "locator": {
-              "end": 636,
+              "end": 634,
               "kind": "line_range",
-              "start": 598
+              "start": 596
             }
           },
           "kind": "test"

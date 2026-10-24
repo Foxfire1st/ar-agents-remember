@@ -1,19 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "family_guarantee"
     ],
-    "justification": "Spans canonical text and all shipped mirrors: existing-public-generator propagation with no resurrected SystemSpecialist text and no assignment_read first-reads is the derivation discipline FAM-GDXSJG's mirror guarantee depends on."
+    "justification": "The packaged serving copy is the surface the family's mirror guarantee now names, so this obligation is what states that guarantee."
   },
-  "applicability": "Every shipped copy of canonical role, operation and onboarding text.",
+  "applicability": "Every canonical role, operation, criteria and onboarding text the tool server ships to a harness.",
   "conditions": [
-    "The existing public generator propagates canonical text to all retained mirrors.",
+    "skills/ is the authoring source; mcp/src/agents_remember/package_data/runtime/skills is its generated serving copy, refreshed by scripts/sync-skills.py.",
     "SystemSpecialist text stays retired.",
-    "No shipped first-read text uses assignment_read."
+    "No shipped first-read text uses assignment_read.",
+    "No harness installs a copy of the skills: the generated-copy declaration names one target for source skills, and the retired sync and starter renderers are gone."
   ],
   "exclusions": [
-    "Hand-edited mirrors.",
+    "Hand-edited package copies.",
     "Resurrected retired role text.",
     "Lifecycle rerouting or role resets by propagation."
   ],
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Canonical role/operation and onboarding text is propagated by the existing public generator to all retained shipped mirrors; the source-retired SystemSpecialist text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "statement": "Canonical skills are authored in skills/ and propagated to the package-owned runtime skills tree for resource serving and capsule compilation, without installed harness mirrors.",
   "status": "proposed",
   "supersedes": []
 }

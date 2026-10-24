@@ -5,14 +5,17 @@
     ],
     "justification": "Verified against frozen 242 paseo_authority.py (require_user_settings_path) and the retargeted install/start/runtime plus host-release tests; admitted under Owner semantic case 4ef8129e."
   },
-  "applicability": "Every harness resolving the host settings authority on the current line.",
+  "applicability": "Host-authority preparation and per-use reads on the current installation, with developer role-settings location handled separately.",
   "conditions": [
-    "XDG_CONFIG_HOME selects the config root when set; otherwise the standard user config directory.",
-    "An old-location file present at coordinationRoot/system/settings.json refuses with location-upgrade-required before any read."
+    "The MCP configPath file owns host authority; an absent file or block selects no host until admitted setup creates it.",
+    "An existing host block is preserved rather than rewritten; callers retain modeled unreadable or malformed authority refusals.",
+    "XDG_CONFIG_HOME or the standard user config directory selects the separate developer user-settings path.",
+    "An old coordinationRoot/system/settings.json user-settings file refuses before its contents are read; the explicit upgrade owns whole-file migration."
   ],
   "exclusions": [
-    "Per-harness fallback blocks, which no reader uses.",
-    "Partial settings copies; the upgrade moves the whole file."
+    "A user-settings or per-harness host fallback.",
+    "Partial user-settings copies; the upgrade moves the whole user file.",
+    "Host-authority preparation does not initialize or rewrite developer role settings."
   ],
   "id": "INV-0PAKA9",
   "origin": {
@@ -26,9 +29,9 @@
     "leaf": "260928-MIK-L96",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Every harness reads one user-configuration host authority (~/.config/agents-remember/settings.json, under XDG_CONFIG_HOME when set); setup creates the block once there and readers read it per use with no fallback to a per-harness block; an existing coordinationRoot/system/settings.json file is never read and requires the explicit product upgrade before the server loads settings.",
+  "statement": "Every harness reads one installation host authority from the paseoRuntime block in the MCP settings file named by configPath, per use and without user-settings or per-harness fallback. Setup creates an absent host block once and preserves an existing block; developer role settings retain their distinct standard user-config location and old-location refusal.",
   "status": "proposed",
   "supersedes": []
 }

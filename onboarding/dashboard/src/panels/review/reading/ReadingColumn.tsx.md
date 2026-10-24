@@ -23,3 +23,6 @@ This file consumes comparison and owner state; it does not author knowledge or d
 - Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance. [1]
 - Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance. [2]
 - Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance. [3]
+
+- The page-level Code context control selects Changes only or Full context through the persisted code-context store; the old ExpressionControls callbacks are retired. [4]
+- ReadingColumn renders the shared model's subject groups and lane under its page-level control; the retired ReviewExpressions file accordion is not this composition. [5]

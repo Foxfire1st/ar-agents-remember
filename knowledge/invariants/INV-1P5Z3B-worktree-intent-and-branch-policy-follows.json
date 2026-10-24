@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Branch policy stated in two places that disagree produces worktrees nobody can reconcile, so it is durable only while the worktree workflow and the bootstrap route state one policy."
+  },
+  "applicability": "The worktree intent and branch policy that a light task or a bootstrap decides before work starts.",
+  "conditions": [
+    "The recorded organizational or atomic nature of the work decides the branching, not a rule per master.",
+    "The deciding text lives in the kept workflow that performs it."
+  ],
+  "exclusions": [
+    "Creating a branch for every master by default."
+  ],
+  "id": "INV-1P5Z3B",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P6; criteria/doctrine.md D-4; core/authority.md:109–116; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B15",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Worktree intent and branch policy follows recorded organizational versus atomic execution nature instead of creating a branch for every master.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -11,7 +11,7 @@ The package separates transport from decisions. MCP registration and HTTP routes
 
 The `canvas/` package (MIK-R104, MIK-R105) is the generated review page's host and the presenter capability. `policy` states the isolation policy once and enables scripts only when the shipped proof record covers it; `document` binds the channel to the admitted document rather than a navigated window; `protocol` and `sessions` close what one frame may ask and revoke it with a named reason; `evidence` resolves a requested reference only against the revision's own admitted packet; `paths`, `presenter_files` and `presenter_store` confine, read and record one attempt; `presenter`, `presenter_inputs`, `presenter_host` and `presenter_native` admit an explicit start, fence the design text as appearance only, hand the work to a confined runner and publish only through the frame store after one model-free load; `kit` carries the pinned offline kit into an attempt under its manifest, comparing each file with the manifest when it is carried into an attempt, and refusing no kit path later. `serving/canvas.py` registers the frame and trusted API surfaces, and `serving/write_guard.py` refuses a state-changing request from a foreign or opaque origin and answers only this dashboard's own host. The package adds no dashboard, AR, local-service, credential or arbitrary-network authority: pages execute in the browser's sandboxed frame (v2, D331), and its two partial rules stay named — the kit is product data verified by manifest, not a container, and a presenter with no confined harness refuses by name through `UnconfiguredPresenterRunner`.
 
-The present public roster has 41 names on this successor: the 40 left after `dispatch_agent` was removed plus the mounted `knowledge_write`; preceding 41/42-name source epochs stay historical; older39/41 epochs are historical. It excludes `dispatch_agent` and includes native `role_start` and `role_message`, task/worktree/memory operations, and four knowledge operations: read, diff, integrity and write. Public `retire_child` calls the native receipt-tracked owner; retained structural retirement code is not its handler. Historical counts of 63 or 66 tools are not the present inventory. The SEP-2640 skill surface remains resource/protocol transport: `skills/list`, `skills/get`, individual skill resources, and this server's convenience `skill://index.json`. Its registrar now registers resources rather than the historical capsule/catalog tools. Serving a skill grants no capability and does not turn supplied prose into local-file authority.
+The present public roster has 42 names on this successor: the 40 left after `dispatch_agent` was removed, plus the mounted `knowledge_write` and the mounted `user_settings_init`; preceding 41- and 42-name source epochs stay historical, and older 39/41 epochs are historical. It excludes `dispatch_agent` and includes native `role_start` and `role_message`, task/worktree/memory operations, and four knowledge operations: read, diff, integrity and write. Public `retire_child` calls the native receipt-tracked owner; retained structural retirement code is not its handler. Historical counts of 63 or 66 tools are not the present inventory. The SEP-2640 skill surface remains resource/protocol transport: `skills/list`, `skills/get`, individual skill resources, and this server's convenience `skill://index.json`. Its registrar now registers resources rather than the historical capsule/catalog tools. Serving a skill grants no capability and does not turn supplied prose into local-file authority.
 
 MIK-R112 changes the retrieval account: harness-native onboarding and source search replace CGC/GrepAI retrieval. Generated lifecycle settings contain an empty provider map and disabled `contextProviders`, regardless of the authority configuration. Retained provider implementation does not restore public provider tools or enabled lifecycle blocks. Runtime installation retains the old-watcher stop: a failed stop is recorded with recovery information and does not abort the install.
 
@@ -27,7 +27,7 @@ The packaged light-task skill/template/workflow are synchronized projections of 
 
 MIK-R109 changes agent reads from document carriers to names. `read_ar_files` accepts up to twenty path strings and names governing cards, states/counts and overview locations once per call, nearest first; it returns no text and keeps no session delivery state. `knowledge_read` pages record IDs/kinds/states/locations, and `knowledge_diff` names trees/counts/decision records beside a whole comparison report. Agents open files natively. Mounted `context_packet` is the slim version-3 roots/task/actions/build/pair answer; the internal resolver and full context builder remain separate. Every registered tool receives `readOnlyHint` from `mcp/read_only.py`; context freshness and diff capture/report capability are marked false.
 
-Historical L109 composition declared41 names after removal of resolve_context; the pre-sync R11142-name account is historical. The current successor declares41 names: the 40-name L113 declaration after dispatch_agent removal plus the mounted knowledge_write. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.
+Historical L109 composition declared41 names after removal of resolve_context; the pre-sync R11142-name account is historical. The current successor declares 42 names: the post-dispatch-removal 40-name L113 declaration plus mounted `knowledge_write` and `user_settings_init`. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict.
 
 Landing cut/add observations are report-only; use the measurement owner and canonical Curator/Reviewer duties for independent memory judgment.
 
@@ -40,7 +40,7 @@ Converted knowledge is authored text: onboarding cards and sidecars plus records
 
 The retained published_intent block declares the 8,000 `tiktoken:o200k_base` threshold. Mounted knowledge_read leaf pages instead cut their delivered naming projection against bound_for("knowledge_read") and TOOL_ANSWER_LIST_MAX - 1, reserving the header entry; the internal threshold is not the public answer bound. Counts distinguish total, returned, and remaining selection. Continuations bind memory tree, seed, policy/order, and the code tree measured on the first page; mismatches require restarting the seed. Deferred seeds remain visible; an excessive queued tail is refused as `seed_queue_exceeded`. Internally, a single indivisible oversized row is returned whole with its explicit flag; the mounted `knowledge_read` answer adds no such exception, and its public answer guard replaces any over-bound answer with its short form. Currentness is measured against the selected code tree, never silently against HEAD: current, stale, unverifiable, and unrealized remain visible, and reads do not re-anchor or judge.
 
-For authoring, `knowledge-ingest` admits a leaf or crossing through its contract; `knowledge-bootstrap` admits a taskless wave. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
+For authoring, repository foundation is regular work in the real Architect task, through its contract-scoped `knowledge-ingest` or mounted `knowledge_write`; ordinary leaf and crossing admissions retain their own contract rules. Ordinary ingest requires a nonblank authorization reference. Planning reads, resolves, validates and reports without writing; `--commit` writes files, not Git history. The writer validates the resulting tree and owner history before publication, while registry-declared writer deferrals name their later refusing commit/landing route. The leaf route supplies its paired memory base for counted-card comparison, falling back to the operation base only when unresolved. New onboarding, membership/no-family and decision/facet record judgments are distinct row domains with writer-owned source/revision fields; they do not license an unsupported producer. Authored realization rationale is required rather than manufactured. Mechanical carry supplies no semantic disposition. Crossing resolves existing conflicting records at one revision above the higher side rather than authoring new records.
 
 For leaf maintenance, the worklist compares exact B/K_B/C/K_C, task declarations and maintenance scope. It classifies entries and record changes, reaches families once, reconciles planned effects, checks routes, classifies unexplained changes and surfaces one-hop reconsideration. New or newly unlisted live invariants raise membership work; changed surviving base decisions/facets compare both JSON and retained unparsed Markdown. Only the leaf's own open raise with an otherwise status-only reconsideration mark is exempt. The final sorted/digested list includes the membership and touched-record kinds and subject-based planning marks on the kinds passed through planning. Unreadable input is named incomplete scope. Persisted worklists are projections; the mandatory gate recomputes its inputs.
 
@@ -250,6 +250,9 @@ change-set reads now run on the route family's own bounded admission: `changeset
 
 **L184.** The product reads the host's usage report at a stamped turn end, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port.
 
+- **Retained historical source account — superseded by the current route account:** The skill states the three master rules. \[253]
+- The skill states the three master rules. \[253]
+
 ## Evidence
 
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
@@ -355,6 +358,7 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - **Retained historical source account — superseded by the current route account:** The template's informational section. [97]
 - **Retained historical source account — superseded by the current route account:** The realization admission owner. [100]
 - **Retained historical source account — superseded by the current route account:** The package-owned template copy stating the superseding target shape. [102]
+
 - The current review namespace is the derived KnowledgeIndex.repository_id when that index opens; otherwise the requested repository is retained. The receipt/baseline-generation lookup is historical, not a current namespace mechanism. [105]
 - **Retained historical source account — superseded by the current route account:** **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
 - **Retained historical source account — superseded by the current route account:** Actual absent/unreadable authority and task-context matrix cases [112]
@@ -453,7 +457,6 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - **Retained historical source account — superseded by the current route account:** The removed repository memory root is resolved through the recorder. [250]
 - **Retained historical source account — superseded by the current route account:** The host step of the install. [251]
 - **Retained historical source account — superseded by the current route account:** The packaged host contract. [252]
-- **Retained historical source account — superseded by the current route account:** The skill states the three master rules. [253]
 - **Retained historical source account — superseded by the current route account:** This source owns the route’s Investigator selection or execution boundary. [254]
 - **Retained historical source account — superseded by the current route account:** The layout-marker test both commands use. [255]
 - **Retained historical source account — superseded by the current route account:** **The production port the cases drive, and the two states F09 collapsed.** [258]
@@ -511,10 +514,13 @@ change-set reads now run on the route family's own bounded admission: `changeset
 
 - The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
 - Public closeout payload delegates the current task-bound request. [165]
-- The exact binary-wheel pin and the in-file reason tying it to the session build option. [168]
+
+- The derived knowledge index pins APSW exactly and names the build-time SQLite features its schema requires; knowledge remains text in Git. [356]
 - The same pin in the requirements manifest. [169]
-- The storage home and the one-way import direction, declared as charter wording only. [170]
-- The storage package's own boundary statement. [171]
+
+- The memory charter places text knowledge in Git and its derived SQLite cache under memory; lower-ranked consumers receive model values or prepared results and do not import memory/knowledge. [357]
+
+- The knowledge package owns the derived-index schema, row codecs and reads, with no canonical knowledge-row writer or approval/task/Git authority; its lower-layer import boundary remains. [358]
 - The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
 
 
@@ -522,34 +528,49 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - The one route this leaf adds. [188]
 - The GET-only registration. [189]
 - The typed request the query string parses into, with no path among its inputs. [190]
-- The port field on the collaborators dataclass, and the rank reason it exists. [191]
+
+- The port field on the collaborators dataclass, and the rank reason it exists. [359]
 - The registration that reads that port. [192]
-- The composition root's two adapter functions. [193]
-- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [194] [268]
+
+- The composition root supplies the application adapters to the serving collaborators. [360]
+
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [361]
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
-- **The two ports passed into the shared collaborators.** [196]
+
+- The composition root binds distinct knowledge-review and entry-list ports through their application adapters. [362]
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
-- Current contract-scoped file writing [199]
-- **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
+
+- Current contract-scoped file writing [363]
+
+- The retained internal published-intent block delegates to the shared knowledge-read context and scope owners; it does not restore inline content to mounted naming answers. [364]
+
 - Historical published_intent response carrier; current strict ReadArFilesResponse names files and overview locations with state/refusal metadata and has no published_intent field. [209]
+
 - Historical Published Intent Before Planning carrier section; package sync remains, while current retrieval skill requests names and opens files natively. [210]
+
 - Historical published_intent carrier test reference; the current CarrierParityTests case checks naming answer keys and rejects retired carrier spellings, including published_intent. [211]
 - **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
 - **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
 - **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
-- **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
-- The composition root's third review port, and the registration call that passes all three collaborators. [216]
+
+- **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [365]
+
+- The composition root's third review port, and the registration call that passes all three collaborators. [366]
 - **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
 - The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
 - **The one mapping both adapters reach, and the one body builder it uses.** [219]
 - **The two actions the bodies gained, and the not-found body's offending input.** [220]
 - **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
-- The crossing owner's route of knowledge-ingest. [222]
+
+- The crossing owner's route of knowledge-ingest. [367]
 - Historical bootstrap database route took the cutover lock; that writer route is retired. Current _run writes converted files via run_wave_write or refuses unconverted memory with conversion/cutover guidance. [223]
-- The lock every memory route asks. [225]
+
+- The lock every memory route asks. [368]
 - A copied Git index keeps the index file's modification time. [226]
-- The cache's ignore rule alone. [227]
-- Current imported source owns this scoped route boundary. [228] [229] [230] [231]
+
+- The cache's ignore rule alone. [369]
+
+- Current imported source owns this scoped route boundary. [370]
 - The ledger loader reads through the recorder. [232]
 - The limits of the worklist processes. [234]
 - One request: digest, join or start, wait, leave. [235]
@@ -557,23 +578,29 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - The build-mismatch failure asks for a dashboard restart. [237]
 - The options every parsed diff passes. [238]
 - The shared-read block of the batched blob reader. [239]
-- The composition root creates the process owner. [240]
+
+- The composition root creates the reviewer worklist process owner. [371]
 - It supplies the owner's shutdown to the app. [241]
-- The waiting bound counts computations, not the requests sharing them. [242]
+
+- The waiting bound counts computations, not the requests sharing them. [372]
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
-- A recording block collects the rows of one computation. [246]
-- A kept set is checked with its path selections first. [247]
+
+- A recording block collects the rows of one computation. [373]
+
+- A kept set is checked with its path selections first. [374]
 - A conflict or an unreadable row is a failed observation. [248]
-- The contract loader reads through the recorder. [249]
+
+- The contract loader reads through the recorder. [375]
 - The removed repository memory root is resolved through the recorder. [250]
 - The host step of the install. [251]
 - The packaged host contract. [252]
-- The skill states the three master rules. [253]
 - This source owns the route’s Investigator selection or execution boundary. [254]
-- The layout-marker test both commands use. [255]
-- **The production port the cases drive, and the two states F09 collapsed.** [258]
+
+- The shared application route owns the converted-layout marker check that the CLI routes import. [376]
+
+- The production review port delegates the candidate-bound complete review through the recorded-answer owner. [377]
 - **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [259]
 - **The two deletion owners and the record that precedes every deletion.** [260]
 - **The Git-object retention member this route's `worktrees/` gained.** [261]
@@ -584,31 +611,39 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
 - **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
 - The batch blob reader. [272]
-- The task reopening tool on the registration surface. [285]
+
+- The task reopening tool on the registration surface. [378]
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
 - Historical D226 collected-case declaration: 5000 unit/1000 integration, superseded first by the composed 6000/1000 declaration and then by D460's unit-only raise to 10,000/1,000. The retained reference records that earlier policy epoch, not the current ceiling. [287]
 - The lane row. [18]
 - The lane row. [28]
 - The lane row. [32]
 - The two lane rows. [37]
-- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [103]
-- Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
-- The converted-card workflow's opening. [224]
+
+- The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
+- Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
+
+- The converted-card workflow's opening. [381]
 - The two lane rows. [233]
 
-- Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The grouped bounded-landing answer and role-duty witnesses remain distinct co-targets. [288]
+- Historical L113 source census recorded 40 public names after dispatch removal; its grouped bounded-landing and role-duty co-targets retain that source epoch. The current 42-name roster is backed separately below. This historical census supplies no live-advertisement acceptance. [288]
 
-- Paired-base authoring comparison and contract write route. [315]
+- The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
 - Named reporting and refusing routes. [312]
 - Source bindings, membership and record models. [313]
 - Non-author statement/diff/omission fact-check. [314]
 
-- Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current source roster has42 names; the earlier41-name population is historical. Task authoring and public landing/role delivery now have their own final shaped rows, separate from whole-result logging and the location-free content measurements. task_doc.get/read_steps are removed: canonical JSON/rendered files are the observation route, writes deliver phrases, and linkage_report files its facts with counts/location. Reachable packet-owned landing refusals preserve the same sentence, code, check order and no-write boundary; conversion recovery uses the single central probe's case and either actual tool arguments or separately carried CLI values with a quoted display. Launch copies comprise the own leaf plus declared requirements and report missing sources without inventing authority. These source facts supply no new code grade, installed acceptance, transaction permission or independent memory verdict. [316]
+
+- The current literal roster has 42 names, including mounted knowledge_write and user_settings_init; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
+
 
 - The runtime synchronizer declares five targets without docs; retained packaged tool details do not add a sixth generator target. [311]
 
 - Task stage is authored; only started tasks receive known bound host activity and contributing event time. [324]
+
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
@@ -644,4 +679,5 @@ change-set reads now run on the route family's own bounded admission: `changeset
 - The bridge validates attachment extras before recipient inspection and applies them to idle and active-turn sends. [352]
 - Filing removes only newly created orphan pick blobs on pre-message failure. [353]
 - Sent logs are bounded working views and settle held outcomes from launch records without delivery. [354]
+
 - Developer delivery retains ordered holds and attempted IDs, resumes eligible closed recipients and attributes immediate drain results to this message. [355]

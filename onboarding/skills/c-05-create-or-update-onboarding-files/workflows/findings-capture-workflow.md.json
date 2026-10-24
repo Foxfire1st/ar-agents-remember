@@ -1,0 +1,37 @@
+{
+  "path": "skills/c-05-create-or-update-onboarding-files/workflows/findings-capture-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow keeps its caller responsibilities, ordered steps and prohibited patterns, and is read as the companion of the kept findings-capture procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596f3267674282e250c15ac21a25bc6b4ab35fc4",
+            "content": "sha256:f664113e11dde54e106c956545f320f90b19882f7c9c3ecdbbf2f7d04eb2b529",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capture is complete only against its completion criteria and a returned summary, not by the intention to record the finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "596f3267674282e250c15ac21a25bc6b4ab35fc4",
+            "content": "sha256:f664113e11dde54e106c956545f320f90b19882f7c9c3ecdbbf2f7d04eb2b529",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

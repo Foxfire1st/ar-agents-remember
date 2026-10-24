@@ -2,7 +2,7 @@
   "path": "docs/reference",
   "references": {
     "1": {
-      "note": "The normalized public input has only two commit legs.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs.",
       "targets": [
         {
           "anchor": {
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
-            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:457b9ce311765d89fa23812aeecfe4ef682abdaf9bab7db651d5350730d5ccf0",
             "locator": {
               "kind": "symbol",
               "name": "EffectiveCloseoutInput"
@@ -49,18 +49,31 @@
       ]
     },
     "11": {
-      "note": "Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal.\n\nAnchor: memory_quality_check",
+      "note": "Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "5913ba545d715a93a1b4ee5534a2f1ef3b60b032",
-            "content": "sha256:b47d0be30f24560768cd36bf94fd2829b35f97e39532121ab8d832407d6fd6fd",
+            "blob": "06d9244972b16b13fb93aaa1664352175ac98876",
+            "content": "sha256:d4b6e09cbc46da433449c03580d64d39ef0c4034e9747324f89ec5239897bdb1",
             "locator": {
-              "end": 83,
+              "end": 67,
               "kind": "line_range",
-              "start": 52
+              "start": 36
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:5ef7dfb0d7ba3ca6dd7e770968de21909a7841293669f0a15a567997e90ad75c",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
         }
@@ -89,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "end": 534,
@@ -102,7 +115,7 @@
         },
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:5341d23a5b03cdaf667bbe234478e3c94a2691baa313b75ef28be5ff47e59ab9",
             "locator": {
               "end": 580,
@@ -120,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+            "blob": "418f56cddea13a857e15e32f93c11db719101459",
             "content": "sha256:f3a2d7cb0f2350a087df56ee847ea235331e3f4bf708dd240131a2cc4c3d6e63",
             "locator": {
               "end": 618,
@@ -138,12 +151,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
             "content": "sha256:9ccd352f443969c755b97b9f48e7494c61dde20f19c2f8ee8520d8f1fc8e8fe9",
             "locator": {
-              "end": 247,
+              "end": 246,
               "kind": "line_range",
-              "start": 192
+              "start": 191
             },
             "path": ".githooks/_gate.sh"
           },
@@ -227,12 +240,12 @@
       ]
     },
     "2": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "77e116c68e12aff38e3c971e1d908a6bd214116f",
-            "content": "sha256:fd5f5b98eb8fce471d8f6362c2989ec74cbe90d25abc3254b09ceda2b31c7894",
+            "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
+            "content": "sha256:2e355dbb346c7dfb42267d5b78de2f494f4fb618173ddeaafad61f57082de1a4",
             "locator": {
               "kind": "file"
             },
@@ -247,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f20e2bdd349f2d6f8d541fd954bb6cb6f6028ade",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
               "end": 189,
@@ -283,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d624a37ecd8800604aa5b08f6343e8e771bd8cb7",
+            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
             "content": "sha256:21276d40d9fd521f37d482c3fd99f34938c9dbbc406db52d816c89ff77dba7c3",
             "locator": {
               "end": 195,
@@ -315,16 +328,16 @@
       ]
     },
     "24": {
-      "note": "Setup delegates the foundation to the curator and retires provider indexing.\n\nAnchor: Stage 5 / Stage 6",
+      "note": "Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers.",
       "targets": [
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
-            "content": "sha256:2f093f149dc575866c1c537784e7d40f4b7fa935ba02f78aaf5b729f3a2afbbe",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:52e3fc7597b971bbd611df5f1a177a7cd11b961da52c3e0a4bb73fffc461b010",
             "locator": {
-              "end": 457,
+              "end": 443,
               "kind": "line_range",
-              "start": 417
+              "start": 386
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
           },
@@ -333,14 +346,16 @@
       ]
     },
     "25": {
-      "note": "Current L113 literal roster has40 names after dispatch_agent removal; native retire_child, role_start_set and direct_execution_grant remain. Source census only, not executed/live advertisement. Superseded historical predecessor account: Current literal roster:41 names after resolve_context removal, including direct_execution_grant, retire_child and role_start_set; source count is not executed/live advertisement. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current literal roster has42 public names, including direct_execution_grant as well as native retire_child and role_start_set; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
+      "note": "Current literal public roster has 42 names, including knowledge_write and user_settings_init; historical populations retain their own epochs and supply no live-advertisement acceptance.\n\nAnchor: current source",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
-              "kind": "file"
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -353,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0bd46a6055621f90d076e2e705686262fbc00fd3",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
             "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
               "kind": "symbol",
@@ -365,7 +380,7 @@
         },
         {
           "anchor": {
-            "blob": "0bd46a6055621f90d076e2e705686262fbc00fd3",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
             "content": "sha256:4af59765f940af1a42be4a8141c0700127633ca8a23a8bbd6453e39df90b4b91",
             "locator": {
               "kind": "symbol",
@@ -377,7 +392,7 @@
         },
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
             "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
               "kind": "symbol",
@@ -402,7 +417,7 @@
         },
         {
           "anchor": {
-            "blob": "d9ec580a1e6651cc06aac93418814c4a96bbf84d",
+            "blob": "19698025360b6b65d8046dac5ec8bed5d54924a1",
             "content": "sha256:c18516aed2d5fd457d50e0f2b16a1bcf31d079458182806cb73b25853a50c2df",
             "locator": {
               "end": 119,
@@ -416,12 +431,12 @@
       ]
     },
     "3": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca83c919de94eef25d5f43d0db1f9f8ee36d25d6",
-            "content": "sha256:ddb3a4554c426f86e2881acfc6e886f26a2d89c9c278fa23be766efaaafd5433",
+            "blob": "792cf6ab378a93556fa2f8158e47c1f2aff5b46a",
+            "content": "sha256:63f167df54a9499eb698b580a807060fef1a217d1c6adf57e1ebd6878f4a286f",
             "locator": {
               "kind": "file"
             },
@@ -432,12 +447,12 @@
       ]
     },
     "4": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The Paseo catalog adapter is the source owner for the configured host catalog route.",
       "targets": [
         {
           "anchor": {
-            "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
-            "content": "sha256:fec6ba6620fca7bd558dac583e22af34caaa21c4ae917f127e5a08762423d2e5",
+            "blob": "5c6c9d7cb373c5890bcc1ddd303f723e03e5575a",
+            "content": "sha256:bd31b3b5e57ae42772db1454312b9c62ef0983c21de76a756a90606ff44d095a",
             "locator": {
               "kind": "file"
             },
@@ -448,12 +463,12 @@
       ]
     },
     "5": {
-      "note": "The settings document's host section.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The settings document's host section.",
       "targets": [
         {
           "anchor": {
-            "blob": "36b67065d5344f6458c1169d8f6089c43eee9721",
-            "content": "sha256:8ed2ca3dd8c9b08252b497928b6fbc0368f6c6283db9bed3ff63b068b45bf7af",
+            "blob": "792cf6ab378a93556fa2f8158e47c1f2aff5b46a",
+            "content": "sha256:63f167df54a9499eb698b580a807060fef1a217d1c6adf57e1ebd6878f4a286f",
             "locator": {
               "kind": "file"
             },
@@ -464,12 +479,12 @@
       ]
     },
     "6": {
-      "note": "The runtime layout document.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The runtime layout document.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3bb19074ebd2bdeb4fafefa26796ff20aee94e2",
-            "content": "sha256:8f735caeb775cf5b77b098f2877355ba5029a204846e40e653e8c9618e8e4cc3",
+            "blob": "ec2f49e928c4655185deae15db3e60c5fe0dc759",
+            "content": "sha256:39ec97c82087f8716caeb4f0c0dd7b24a04fd65ae0b3e95e93ea55d656f754e4",
             "locator": {
               "kind": "file"
             },
@@ -480,14 +495,16 @@
       ]
     },
     "7": {
-      "note": "Current L113 literal roster has40 names after dispatch_agent removal; native retire_child, role_start_set and direct_execution_grant remain. Source census only, not executed/live advertisement. Superseded historical predecessor account: Literal public roster has 41 names, including native retire_child and role_start_set; other retired tools remain excluded despite residual reference rows.\n\nAnchor: PUBLIC_TOOLS",
+      "note": "Current literal public roster has 42 names, including knowledge_write and user_settings_init; historical populations retain their own epochs and supply no live-advertisement acceptance.\n\nAnchor: current source",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
-              "kind": "file"
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -496,12 +513,12 @@
       ]
     },
     "8": {
-      "note": "Ordered family registration owns the advertised tool definitions.\n\nAnchor: TOOL_REGISTRARS",
+      "note": "Ordered family registration owns the advertised tool definitions.",
       "targets": [
         {
           "anchor": {
-            "blob": "15396e17a8d6bc3592053c499e32dc655982f46f",
-            "content": "sha256:8e0dd841fb1e62ffa44de7197a278c8b22cb510377b390cc41038fa55a8b876c",
+            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "content": "sha256:3a21dad9d101ae64efe7a488da80fb0b2724cfb536ac2feb5531e126849440df",
             "locator": {
               "end": 43,
               "kind": "line_range",
@@ -514,16 +531,16 @@
       ]
     },
     "9": {
-      "note": "Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings.\n\nAnchor: register_role_agent_tools / role_start / role_start_set",
+      "note": "Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings.",
       "targets": [
         {
           "anchor": {
-            "blob": "45d5630e75c274559d8d915d28fcc5ed701bcf9a",
-            "content": "sha256:e23bcc2ecc9fb317d27a811e37836b5e661e3b2396b05e5c2e76714672605e5b",
+            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
+            "content": "sha256:6101a2e1740a76820bc7304e53f8fbd28a6edbd548d6f5365a674a76143b9026",
             "locator": {
-              "end": 199,
+              "end": 163,
               "kind": "line_range",
-              "start": 66
+              "start": 88
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },

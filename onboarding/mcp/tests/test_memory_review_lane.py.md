@@ -2,35 +2,59 @@
 
 ## Governing Overview
 
-[Governing route overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-Separate task-document memory-review sequence, candidate authority and Curator step-up count.
+Keeps a product task-document's memory review in its own lane: a memory record answers through the Curator
+lane without reopening code that already passed, a memory baseline after a code pass is independent and
+persisted, and a memory record binds memory bytes rather than code bytes. Generic task mutations can neither
+author nor erase the lane, and an invalid kind or an incomplete count fails closed.
 
 ## Code Commentary
 
-Exercises public task_doc begin/record persistence after code PASS, own sealed memory finding IDs/reports/count/limit/approval, shrink-only successors and record-only memory-byte identity. Code-only mutations do not change a memory record binding; changed memory does require begin. Curator threshold uses only memory failed-round records and fake-host launch preserves both states. Strict ordinary reading, launch-only raw diagnostic preservation, generic mutation refusal, contract/config fallback and prohibition on memory-kind code-route evidence are explicit. Legacy mixed code records are not migrated into Curator count, and incomplete counts suppress automatic selection.
+### Logic
 
-## Evidence Boundaries
+`launch_world` from `paseo_launch_test_support` provides the launch fixture, `_memory_config()` builds the
+memory-side configuration, and the cases drive `task_doc_route_review`, `task_doc_tools`, `task_review_step_up`,
+`route_review`, `launch_review_read` and the review history.
 
-- The source includes persistence/reread and production application/model/candidate/count paths on disposable repositories, plus a fake-host Curator-start control.
-- The no-backfill source case preserves legacy reviewState while leaving memoryReviewState absent.
-- No independent review is performed or accepted by these tests; IDs and verdicts are fixtures.
-- The new lane is post-landing rollout only; this source is not permission to migrate underway reviews or backfill historical leaves.
-- No native model/permission/no-prompt occasion is executed here.
+- **Independent lane.** `test_memory_record_answer_uses_curator_lane_without_reopening_passed_code` and
+  `test_memory_baseline_after_code_pass_is_independent_and_persisted` keep the memory answer and its baseline
+  independent of the code pass.
+- **What is bound.** `test_memory_record_only_binds_memory_bytes_not_code_bytes` binds memory bytes only, and
+  `test_memory_lane_strict_reader_and_launch_only_diagnostic_preserve_raw_state` keeps the strict reader and
+  the launch-only diagnostic from rewriting state.
+- **Who may write.** `test_memory_lane_cannot_be_authored_or_erased_by_generic_task_mutations` and
+  `test_memory_candidate_authority_uses_contract_or_configured_fallback_only` bound the lane to the contract or
+  the configured fallback, and `test_memory_kind_cannot_publish_code_route_evidence` stops a memory record
+  publishing code-route evidence.
+- **Counting.** `test_product_memory_threshold_own_limits_approval_and_shrinking_list` gives the memory
+  threshold its own limits and approval, `test_legacy_mixed_code_records_are_not_migrated_into_curator_count`
+  keeps mixed legacy records out of the curator count, and
+  `test_invalid_kinds_and_incomplete_memory_count_fail_closed` fails closed.
 
-This card describes assertion/support/document source, not a test invocation, independent verdict or publication.
+### Conventions
+
+The launch-world step-up case asserts on the review record its launch persisted; the task-document cases
+read the review state back from the document they wrote; the pure model and authority cases judge
+documents built in memory, without a launch world or a persisted review.
+
+### Invariants And Boundaries
+
+- A memory review never reopens a passed code record, and the code lane never writes the memory lane.
+- An unknown kind or an incomplete count refuses; it is not defaulted.
 
 ## Evidence
 
-- Source assertion: test_memory_record_answer_uses_curator_lane_without_reopening_passed_code. The declaration is not an execution receipt. [1]
-- Source assertion: test_memory_baseline_after_code_pass_is_independent_and_persisted. The declaration is not an execution receipt. [2]
-- Source assertion: test_memory_record_only_binds_memory_bytes_not_code_bytes. The declaration is not an execution receipt. [3]
-- Source assertion: test_memory_lane_strict_reader_and_launch_only_diagnostic_preserve_raw_state. The declaration is not an execution receipt. [4]
-- Source assertion: test_memory_lane_cannot_be_authored_or_erased_by_generic_task_mutations. The declaration is not an execution receipt. [5]
-- Source assertion: test_memory_candidate_authority_uses_contract_or_configured_fallback_only. The declaration is not an execution receipt. [6]
-- Source assertion: test_memory_kind_cannot_publish_code_route_evidence. The declaration is not an execution receipt. [7]
-- Source assertion: test_product_memory_threshold_own_limits_approval_and_shrinking_list. The declaration is not an execution receipt. [8]
-- Source assertion: test_legacy_mixed_code_records_are_not_migrated_into_curator_count. The declaration is not an execution receipt. [9]
-- Source assertion: test_invalid_kinds_and_incomplete_memory_count_fail_closed. The declaration is not an execution receipt. [10]
+- A memory record answers through the Curator lane without reopening passed code. [1]
+- A memory baseline after a code pass is independent and persisted. [2]
+- A memory record binds memory bytes, not code bytes. [3]
+- The strict reader and launch-only diagnostic preserve raw state. [4]
+- The memory lane cannot be authored or erased by generic task mutations. [5]
+- Memory candidate authority comes from the contract or the configured fallback only. [6]
+- A memory kind cannot publish code-route evidence. [7]
+- The product memory threshold has its own limits, approval and shrinking list. [8]
+
+- Source assertion: test_legacy_mixed_code_records_are_not_migrated_into_curator_count. The declaration is not an execution receipt — `test_legacy_mixed_code_records_are_not_migrated_into_curator_count` in mcp/tests/test_memory_review_lane.py. [9]
+- Source assertion: test_invalid_kinds_and_incomplete_memory_count_fail_closed. The declaration is not an execution receipt — `test_invalid_kinds_and_incomplete_memory_count_fail_closed` in mcp/tests/test_memory_review_lane.py. [10]

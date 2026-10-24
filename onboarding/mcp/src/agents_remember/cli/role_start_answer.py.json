@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/cli/role_start_answer.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+        "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
+        "locator": {
+          "kind": "symbol",
+          "name": "started_answer"
+        }
+      },
+      "id": "RLZ-FYTPV0",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The successful launch producer binds the real seat and its continuation addresses.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Receipt identity, status, disclosure and conditional remedy all derive from saved state.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e0dbc0064c978ad8897f02aa59e86af6d3e1bb1",
-            "content": "sha256:8f2d651ddffa9ee7f37c1c46508c6a737d035f641e21a58396afed2ca4280dd6",
+            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+            "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
             "locator": {
               "kind": "symbol",
               "name": "started_answer"
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd33ebc2ed88d1d738738abfda0fe11b3c0a2611",
+            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
             "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
             "locator": {
               "kind": "symbol",
@@ -40,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
             "content": "sha256:08b0253c5c205f75dcfe81f7f0eebee5baed056d371b558eaa52e7703aa6e34e",
             "locator": {
               "kind": "symbol",
@@ -57,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
             "content": "sha256:9ced9aed8c51779af29b6e64f032eaff532eb8f55f27832cec4fc17d4d915041",
             "locator": {
               "kind": "symbol",
@@ -87,8 +106,8 @@
         },
         {
           "anchor": {
-            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-            "content": "sha256:249d4cb3d2a0b5a446391b2f26b49ae19f17e38d2878f3e54d1431931a206bac",
+            "blob": "5b8915684281d9fbe484317de569253e503b52e5",
+            "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
             "locator": {
               "end": 132,
               "kind": "line_range",
@@ -100,13 +119,88 @@
         },
         {
           "anchor": {
-            "blob": "02279b1899b0f489b0b75330252e236206667193",
-            "content": "sha256:3e6f4cdac0de2c6eb0ac6c8320e731719530146e61410c5495cc82dee0f5148f",
+            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+            "content": "sha256:6d28e63c1151666c3f506918858fd69e1e7b9977de1ea760c11ef375c7210269",
             "locator": {
               "end": 80,
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The receipt-derived answer that adds the continuation for the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+            "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
+            "locator": {
+              "kind": "symbol",
+              "name": "started_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:c7da8e8fa7cc958ef689e00a5ffbe736605b98329d7f1acf81a66b0be5e714fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dashboard_that_does_not_answer_is_reported_instead_of_published"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Dashboard publication requires the owner/origin result; host chat independently derives its route from embed, reported server id and receipt agent id without an HTTP chat-page probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+            "content": "sha256:ad95058fbcf856b0e4b52dafe052aa9d252ef588543e0131c13ff6e5fa16751c",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "content": "sha256:0504c52d1d1df5ff4c37535158f0c2e2c92d7609e5bcd261e56e3b474b0f80c0",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard_address.py"
           },
           "kind": "code"
         }

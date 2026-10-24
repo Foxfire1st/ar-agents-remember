@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
-        "content": "sha256:f78970c70167dfd00400699fc648c7019a0595f2d97b1f371fd4f3958dd637cc",
+        "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
+        "content": "sha256:c0ae5da22604fe17819b1c2c21af2af9595e5ba81efd37dd0bea439cdc8a7150",
         "locator": {
           "kind": "symbol",
           "name": "test_a_grouped_card_row_binds_the_copies_blobs_when_they_are_present"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
         "content": "sha256:388761932550c36268a0123b45f10b13dd1a300e24cdd23d8d437a122b5f15fa",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
         "content": "sha256:9be05b9da078cf8d6b077727a04316c74b6888bdc93720938787f5d6c49a2144",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+        "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
         "content": "sha256:21b53c5bf18a202eb89d61bd833879fd2e50c4ed00eedc29e0e250dae297308b",
         "locator": {
           "kind": "symbol",
@@ -71,14 +71,14 @@
     },
     {
       "anchor": {
-        "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
-        "content": "sha256:1ca00edbe823cf704b557c025fcee0e6038903b7f86be3c3ab8171389c16e82c",
+        "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
+        "content": "sha256:e12b2f949efc8979b0431313ff17ae718c8f53726fc4736cb0e1e038d99090e4",
         "locator": {
           "kind": "symbol",
           "name": "test_a_card_row_binds_every_copy_of_its_source"
         }
       },
-      "facet": "A ten-copy group deleted at C: the leaf worklist raises the item open with ten absent sources, the writer's own snapshot produces a row carrying ten (path, absent) pairs, and the re-run worklist returns the item satisfiedBy that row.",
+      "facet": "A two-member canonical/package group deleted at C: the leaf worklist raises the item open with both absent sources, the writer’s own snapshot produces a row carrying both (path, absent) pairs, and the re-run worklist returns the item satisfiedBy that row.",
       "id": "PRF-V640YP",
       "invariant": "INV-7V4K9G",
       "origin": {
@@ -90,12 +90,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A card row binds all ten sources of its deleted group, and the item comes back satisfied by that row.",
+      "note": "A card row binds both sources of its deleted canonical/package group, and the item comes back satisfied by that row.",
       "targets": [
         {
           "anchor": {
-            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
-            "content": "sha256:1ca00edbe823cf704b557c025fcee0e6038903b7f86be3c3ab8171389c16e82c",
+            "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
+            "content": "sha256:e12b2f949efc8979b0431313ff17ae718c8f53726fc4736cb0e1e038d99090e4",
             "locator": {
               "kind": "symbol",
               "name": "test_a_card_row_binds_every_copy_of_its_source"
@@ -106,12 +106,12 @@
       ]
     },
     "2": {
-      "note": "A reworded group binds each copy's own blob.",
+      "note": "A reworded group binds each copy's own blob and closes its worklist item.",
       "targets": [
         {
           "anchor": {
-            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
-            "content": "sha256:f78970c70167dfd00400699fc648c7019a0595f2d97b1f371fd4f3958dd637cc",
+            "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
+            "content": "sha256:c0ae5da22604fe17819b1c2c21af2af9595e5ba81efd37dd0bea439cdc8a7150",
             "locator": {
               "kind": "symbol",
               "name": "test_a_grouped_card_row_binds_the_copies_blobs_when_they_are_present"
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
             "content": "sha256:9be05b9da078cf8d6b077727a04316c74b6888bdc93720938787f5d6c49a2144",
             "locator": {
               "kind": "symbol",
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
             "content": "sha256:21b53c5bf18a202eb89d61bd833879fd2e50c4ed00eedc29e0e250dae297308b",
             "locator": {
               "kind": "symbol",
@@ -158,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d464857b419ba83e861fca53e10b8983464be9ba",
+            "blob": "34751dd92d88947aa0612b251e8eeaff6e1b5b12",
             "content": "sha256:388761932550c36268a0123b45f10b13dd1a300e24cdd23d8d437a122b5f15fa",
             "locator": {
               "kind": "symbol",

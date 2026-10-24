@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
-        "content": "sha256:b68ebb2a4cc01f25f38d1648145979d28ff8b4290c2edafee50d5aa57600c8f5",
+        "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+        "content": "sha256:b07a8b7fec70760763225f4587cc207b9018ded1e2389703e8c49293eee91e3a",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,70 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of RoleSelection supporting the stated file behavior.\n\nAnchor: `RoleSelection`",
+      "note": "Frozen implementation of RoleSelection supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
-            "content": "sha256:5fffc7fbd546a2cb4bb61b07dac78003db7a45611d59a9ad9d404d6c990bff69",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:8d1d0947f12616edc007da49926186ec7cffaec310ad78ef070b88c3b200a934",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "RoleSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The dispatch request, which carries the caller's harness name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleDispatchRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The earlier system-specialist spelling names Investigator; Bootstrap and callerHarness remain launcher model data rather than caller permission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_role"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:e15e9e9fbb08a43542e1401acb3e6ba1f5bbf051f7b4f2cba4128ebcd48548bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LauncherRole"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleDispatchRequest"
             }
           },
           "kind": "code"
@@ -40,8 +96,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
-            "content": "sha256:b15eb32ce96c9c432a9cb55bb55b4982be594a2b37080e598c5e0bd77a595a8b",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:a31bfe1281b5f89fb5ed437ff2bf29390494d602c08796a130f2b7e57474b59f",
             "locator": {
               "kind": "symbol",
               "name": "RoleAgentOverride"
@@ -56,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a502f4a9fc581105ec6e1beac1d5c4c4c9a617",
-            "content": "sha256:218e7e5028a98077fff6bf832bfd69e59c9845bdd67806bf9d20782104b59213",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
               "name": "RoleDispatchRequest"
@@ -72,13 +128,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
-            "content": "sha256:5fffc7fbd546a2cb4bb61b07dac78003db7a45611d59a9ad9d404d6c990bff69",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:8d1d0947f12616edc007da49926186ec7cffaec310ad78ef070b88c3b200a934",
             "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 1
+              "kind": "symbol",
+              "name": "RoleSelection"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_role"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "content": "sha256:f2c7438ee933042bbff257c4c0cc7e098dc2f55b3b27a2794183a20442b93c7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_spellings"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
           },
           "kind": "code"
         }
@@ -89,8 +168,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1024277b460ece8315abbad24554b4c827340c5",
-            "content": "sha256:ba038f929be5899bc2d34a1ef4e67e373d43623f583dea55eb64e8e005cabf07",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:805168af60c28797b6db053b1d928ab341e428856a8558395fa614997b343b83",
             "locator": {
               "kind": "symbol",
               "name": "RoleDispatchRequest"
@@ -141,12 +220,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "14e284444735ed4ed43101ca3775396ae4c53044",
-            "content": "sha256:dc189ab05c713c49fc9d94cd82095afb99d0ea70c8ec0abc800940f75e7c2adf",
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:698b496a4f5cf6370780e26c022cb68ec68dee8e3bba66408331d353ff16a24f",
             "locator": {
               "end": 97,
               "kind": "line_range",
               "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The launcher role set that includes the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+            "content": "sha256:e15e9e9fbb08a43542e1401acb3e6ba1f5bbf051f7b4f2cba4128ebcd48548bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LauncherRole"
             }
           },
           "kind": "code"

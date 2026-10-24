@@ -8,6 +8,10 @@
 
 This skill describes thin durable task orchestration for medium-risk or multi-step work: a reviewable plan, distinct implementation examples, explicit approval and decision tracking, with a single-page implementation plan as a rule of thumb rather than a hard threshold. Non-code work and small isolated code changes can fit the model. Larger or broader work composes a master with flat light sub-task plans instead of resurrecting a separate heavy workflow. Its historical “light” vocabulary must be distinguished from current master/leaf task-authoring admission.
 
+## Current Source Qualification
+
+The skill's own reading list now carries the two procedures the retired skills left behind: `workflows/worktree-operations.md` (intake and intent, start/attach/status, mid-task sync, closeout, integration, finalization and cleanup, reopening) and `workflows/closeout.md` (approval authority, durable gates, closeout order, granted branch-direct landing, failure conditions and boundaries). Its text therefore names this skill where the inherited copy names a worktree-manager or closeout skill: a worktree exists only after this skill's own intent work, the commit/closeout preview and approval stop belong here, and drift is checked with `c-05-create-or-update-onboarding-files` rather than a separate memory-quality skill.
+
 ## Code Commentary
 
 ### Thin plans and current task admission

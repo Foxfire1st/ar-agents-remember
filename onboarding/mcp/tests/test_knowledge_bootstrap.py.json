@@ -1,6 +1,41 @@
 {
   "path": "mcp/tests/test_knowledge_bootstrap.py",
-  "proves": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+        "content": "sha256:2448658b94fbe383d9fd5237768af65ef9720fd5134424757db8407d9f574706",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_init_hands_unavailable_nonlegacy_knowledge_to_the_architect"
+        }
+      },
+      "facet": "Obstructing the actual derived-cache directory reaches the nonlegacy unavailable-publication result. The public initializer retains its state/path/code/detail, returns the state-first developer-started Architect/regular-task/Curator handover instead of a knowledge-bootstrap command, and leaves authored memory and the obstructing file unchanged. This checks emitted guidance without executing an Architect task.",
+      "id": "PRF-A641QK",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+        "content": "sha256:47ef22fa8f0492130024d838445d69aa1b57675c5d929199bb3957e24aef82d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_init_reports_empty_recorded_and_partial_text_knowledge"
+        }
+      },
+      "facet": "The real public memory initializer reports not-recorded and recorded states with state-first developer-started Architect, regular task and Curator guidance instead of a knowledge-bootstrap command. It preserves authored-memory bytes on each report, the exact partial-index repair action and legacy conversion recovery. These assertions check returned guidance and state boundaries, not actual Architect execution.",
+      "id": "PRF-HP5EHV",
+      "invariant": "INV-09DXWE",
+      "origin": {
+        "handoffEntry": "L188-curator-B12-regular-task-next-action-a740",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "34": {
@@ -8,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:6324c77a07f9e448a122f439195fefcc784953b6066b6d838f7094f2683f763b",
             "locator": {
               "kind": "symbol",
@@ -20,12 +55,12 @@
       ]
     },
     "35": {
-      "note": "`test_an_unconverted_memory_root_is_refused_as_legacy_format_and_nothing_is_written` owns the current boundary described above.",
+      "note": "An unconverted memory root is refused as legacy format with nothing written.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9abf0956980a6a4a0964943a8fea86680a6f39f",
-            "content": "sha256:6bb421d132fcc5cf08b158b91fc8c2fdc3a6421544e496c13e6a439540f41756",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:7c13a65ed39fb0cae0b28f1f2ef3dcbbf32e60f43c4d8a0f5985d2e0899909c3",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unconverted_memory_root_is_refused_as_legacy_format_and_nothing_is_written"
@@ -40,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:aeb74397c404c9685a7c95d0a18be5267e5fb93c5209d0a5300f81d68b550d02",
             "locator": {
               "kind": "symbol",
@@ -56,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:34287594238d98ddf4428c2e4a0faafd0666bd1ae3d7aa9114ebf1f18defffa1",
             "locator": {
               "kind": "symbol",
@@ -67,8 +102,8 @@
         },
         {
           "anchor": {
-            "blob": "e9abf0956980a6a4a0964943a8fea86680a6f39f",
-            "content": "sha256:2e1022a6afd8de73c72445e4d6a28016088513e72044a856f712a235e1d7551f",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:de8cb065ec1d055db8d454d9a408aee8daf68c4c6bc10c9c6f63f0721471c9c7",
             "locator": {
               "kind": "symbol",
               "name": "_write"
@@ -78,8 +113,8 @@
         },
         {
           "anchor": {
-            "blob": "e9abf0956980a6a4a0964943a8fea86680a6f39f",
-            "content": "sha256:f034c9cfb653eaec18af1523acc07b729a147c6738850d1cbcb472fcc4d949d6",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:7550083865dd798ec0a70cade88d121ffd26782d5d7d41b73427c9b1315af355",
             "locator": {
               "kind": "symbol",
               "name": "_commit"
@@ -94,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:7af31747e573ded25849d41d1332800a65efcac158af70e90369390e80999cb9",
             "locator": {
               "kind": "symbol",
@@ -110,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:80ce2cc0ecdc90536018e0fdcc4e1ccf1abc3415e77a548a8acc8e1ebea1bd59",
             "locator": {
               "kind": "symbol",
@@ -126,7 +161,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:ad85f09992047a84e58ece78edd73d88205e0006d51fe7253f23f49ec232da06",
             "locator": {
               "kind": "symbol",
@@ -142,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:6324c77a07f9e448a122f439195fefcc784953b6066b6d838f7094f2683f763b",
             "locator": {
               "kind": "symbol",
@@ -154,12 +189,12 @@
       ]
     },
     "42": {
-      "note": "The memory initializer naming the knowledge foundation and its measured state.",
+      "note": "The initializer distinguishes complete empty/recorded states, emits the Architect/regular-task/Curator handover for those states, preserves exact partial-index and legacy guidance, and compares authored memory bodies around reporting.",
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
-            "content": "sha256:e0d01e208207d51d936650f6e36c63f2bea653e3a81024a98aefeface60e4c6d",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:47ef22fa8f0492130024d838445d69aa1b57675c5d929199bb3957e24aef82d9",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_init_reports_empty_recorded_and_partial_text_knowledge"
@@ -191,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:fdee13b4197baa4ccc42204df20389dcdccb7d079a951ec3d57bf4a7a5533043",
             "locator": {
               "kind": "symbol",
@@ -202,7 +237,7 @@
         },
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:6324c77a07f9e448a122f439195fefcc784953b6066b6d838f7094f2683f763b",
             "locator": {
               "kind": "symbol",
@@ -213,11 +248,38 @@
         },
         {
           "anchor": {
-            "blob": "04fb0382803a5ee95bcefef601d23806efd39fcc",
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
             "content": "sha256:aeb74397c404c9685a7c95d0a18be5267e5fb93c5209d0a5300f81d68b550d02",
             "locator": {
               "kind": "symbol",
               "name": "test_a_converted_memory_root_is_written_as_the_named_wave"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "A real nonlegacy unavailable-publication result caused by an obstructed derived-cache path retains state/datasetPath/code/detail and names the measured state before the Architect handover; authored memory bodies and the obstruction bytes stay unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:2448658b94fbe383d9fd5237768af65ef9720fd5134424757db8407d9f574706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_hands_unavailable_nonlegacy_knowledge_to_the_architect"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90e4e5a38bf5b9d21d472d6c0a7dd24e5b167dd4",
+            "content": "sha256:7ff2ab5165357511d59c65ce2e92fff4279dda9b7fc0021da825dae9da658036",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_architect_handover"
             }
           },
           "kind": "test"

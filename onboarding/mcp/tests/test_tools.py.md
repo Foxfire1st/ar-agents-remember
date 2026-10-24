@@ -5,7 +5,7 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Ping and typed CGC/GrepAI refusal tests were deleted.
-- server_info case now expects unusedProviderKeys and excludes tools/reservedTools.
+- server_info case expects unusedProviderKeys and excludes tools/reservedTools and harnessSkillRoot; the running server names no installed-harness skill root.
 - Live-registration order, per-landing models/descriptions and curator publish-field assertions remain.
 
 ### Source and authority bounds
@@ -182,3 +182,7 @@ live; the module was already registered, so this leaf added no lane row and **no
 `mcp/tests/test-evidence-lanes.toml` moved**.
 
 </details>
+
+## Current source evidence
+
+- The safe-summary case excludes harnessSkillRoot while retaining unusedProviderKeys and the other safe configuration fields. [15]

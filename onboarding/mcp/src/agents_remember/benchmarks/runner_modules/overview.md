@@ -52,10 +52,23 @@ Lifecycle, landing and acceptance authority are outside this source account. The
 
 ## Evidence
 
-- The facade re-exports runner modules and retains its repository-preparation wrapper. [1]
-- The inherited targets implement runtime skill installation, not benchmark service calls. [2]
-- Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary. [3]
-- Case models, manifest validation, selection, shared preparation and workspace construction. [4]
-- Benchmark registration, registration sweep and disabled lifecycle-settings construction. [5]
-- Git preparation delegates to the shared environment, argv and subprocess owner. [6]
-- Codex execution, analysis, service payloads and direct CLI callers. [7]
+- The facade re-exports runner modules and retains its repository-preparation wrapper.
+- Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary.
+- Case models, manifest validation, selection, shared preparation and workspace construction.
+- Benchmark registration, registration sweep and disabled lifecycle-settings construction.
+- Git preparation delegates to the shared environment, argv and subprocess owner.
+- Codex execution, analysis, service payloads and direct CLI callers.
+
+## No skill exposure in a benchmark workspace
+
+Preparation no longer mirrors a skill tree into a workspace: `sync_runtime_assets` writes the instruction targets and the provider assets, the `.codex/skills` exposure helpers are removed, no preparation object carries a skill-exposure mode and no command accepts one. The workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration the workspace writes.
+
+- The runtime-asset sync that writes no skill tree.
+
+[1] mcp/src/agents_remember/benchmarks/runner.py — lines 28-28; mcp/src/agents_remember/benchmarks/runner.py — lines 10-24; mcp/src/agents_remember/benchmarks/runner.py — lines 28-33
+[3] mcp/src/agents_remember/providers/grepai/seed.py — symbol GrepaiSeedOptions; mcp/src/agents_remember/providers/grepai/seed.py — symbol _clone_inputs; mcp/src/agents_remember/providers/cgc/seed.py — symbol _seed_precondition_skip
+[4] mcp/src/agents_remember/benchmarks/runner_modules/models.py — lines 1-156; mcp/src/agents_remember/benchmarks/runner_modules/constants.py — lines 1-40; mcp/src/agents_remember/benchmarks/runner_modules/manifest.py — lines 1-223; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 1-293; mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — lines 1-172
+[5] mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py — lines 1-300; mcp/src/agents_remember/providers/settings.py — lines 32-47; mcp/src/agents_remember/providers/provider_setup.py — lines 56-121; mcp/src/agents_remember/providers/setup_common.py — lines 66-102
+[6] mcp/src/agents_remember/benchmarks/runner_modules/commands.py — lines 1-57; mcp/src/agents_remember/kernel/git_command.py — lines 58-68; mcp/src/agents_remember/kernel/git_command.py — lines 151-231; mcp/src/agents_remember/kernel/git_command.py — lines 302-347; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 38-75
+[7] mcp/src/agents_remember/benchmarks/runner_modules/execution.py — lines 1-420; mcp/src/agents_remember/benchmarks/runner_modules/analysis.py — lines 1-221; mcp/src/agents_remember/benchmarks/runner_modules/services.py — lines 1-117; mcp/src/agents_remember/benchmarks/runner_modules/cli.py — lines 1-185; mcp/src/agents_remember/benchmarks/runner_modules/roots.py — lines 1-17
+[8] mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — symbol sync_runtime_assets

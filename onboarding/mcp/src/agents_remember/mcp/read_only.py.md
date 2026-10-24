@@ -26,3 +26,9 @@ Read-only checks exclude only the derived index and logs under their owner rules
 - The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent. [1]
 - An unknown registered name fails closed instead of receiving a default mark. [2]
 - Annotations are applied after registrars from the same partition. [3]
+
+## The settings initializer is a writer
+
+`user_settings_init` is in the mutating set: a call that is not a preview creates the one user settings file, so the mark describes the capability rather than one invocation's choice. The partition, its fail-closed rule and its application after registration are otherwise unchanged.
+
+- The mutating set that now carries the settings initializer. [4]

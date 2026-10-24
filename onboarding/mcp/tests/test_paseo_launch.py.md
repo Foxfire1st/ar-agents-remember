@@ -2,15 +2,48 @@
 
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-Dispatch creates each role in its exact selected folder with compiled title/labels/binding and stores the receipt around the native call. Missing or unusable replies remain retryable, repeats converge on one identity, conflicts refuse and a closed leaf execution still names its unarchived holder. Only an explicit authorized replacement retires that holder; the successor’s handover names the predecessor reports. Host-read failure refuses rather than freeing a seat. Real enclosure child tests coexist with fake host responses. The launch-file census explicitly includes fixture-owned task JSON/Markdown and the launch-published task-document copies alongside handover artifacts and home/agents-remember/role-agents.json plus its lock; this is still an exact-file discriminator, not a blanket exclusion. A removed runtime-settings subcase is followed by host re-preparation before later catalog failures are judged.
+Runs the role-launch dispatch route against a fake bridge, with capsule compilation stubbed and the
+rest real: request shaping, refusals, the receipt, the execution's answer and the leaf enclosure the
+launch records. Two module-level cases also prove what a role tool definition carries — the product
+XDG homes and the place of the user settings — without starting anything.
 
-The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics.
+## Code Commentary
 
-Sequential fresh-leaf preparation runs in the existing child path and preserves every caller AgentBinding environment value after each launch. It does not install or preserve an ambient lifecycle. The exact launch census separately admits the role-agent fact file and its lock, never arbitrary new files.
+### Logic
+
+`PaseoLaunchTestCase` wires the shared fake runtime (`FakeRuntime`, `CATALOG`, `SERVER_ID` from
+`paseo_launch_test_support`) into the catalog, launch and status bridge calls, stubs `_role_defaults`
+with `ROLE_DEFAULTS`, compiles its own handover, and exposes `request()`, `dispatch()`, `refused()`,
+`receipt_path()`, `receipt()`, `agent_of()`, `refresh()` and `close_execution()`. `FakeEnclosures`
+stands in for AR's worktree status and start of one leaf, and `record_enclosure_in_leaf()` writes what a
+real start leaves in the task document.
+
+- **Refusal is free of effects.** `LaunchRefusalTests.test_a_launch_that_cannot_start_refuses_before_any_runtime_call_or_receipt`
+  checks the refusal arrives with no launch call (no workspace opened, no agent created or archived) and no receipt
+  file. The catalog read before the catalog-failure refusal and the attempted leaf-enclosure start are asserted
+  separately from those launch calls.
+- **Feature values are merged, never clobbered.** `LaunchFeatureValuesTests` shows a service tier merged
+  into accepted feature values, feature values passing through untouched when no tier is asked for, and a
+  tier alone setting only its own key.
+- **Tool definition.** `test_role_tool_definition_carries_product_xdg_homes_without_starting` and
+  `test_role_tool_definition_carries_the_place_of_the_user_settings` pin the environment and the settings
+  path an agent's tool server must inherit from its launching process.
+- **No-answer codes.** `NO_ANSWER_CODES` names the reply codes that do not count as an answer, so a reply
+  is never read as a started seat by accident.
+
+### Conventions
+
+Cases use `SPRINT_REF`, `MASTER_REF` and `LEAF_REF` task-document references under a temporary
+coordination root and read the receipt from the path the route reports.
+
+### Invariants And Boundaries
+
+- A refused launch leaves no launch call (no workspace opened, no agent created or archived) and no receipt behind.
+- The bridge is fake here; nothing starts a daemon, and the capsule body comes from the case's stub.
 
 ## Bounded locator at any report depth
 
@@ -20,13 +53,5 @@ The fixture now gives the process a short temporary home of its own, as a real a
 
 ## Evidence
 
-- Sequential child preparation leaves the caller binding environment exact. [4]
-
-
-- The scoped current source carries the module/document behavior described above. [1]
-
-## Current contract evidence
-
-- The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics. [2]
-
-- The exact launch-file census includes fixture task documents and published copies. [3]
+- Dispatch, refusal without effects and feature-value merging are asserted against the shared fake runtime. [1]
+- The fixture takes `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support` and wires them into the catalog, launch and status calls. [2]

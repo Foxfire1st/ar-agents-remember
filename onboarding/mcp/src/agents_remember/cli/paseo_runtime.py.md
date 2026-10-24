@@ -10,7 +10,7 @@ Exposes provision/status/stop for the selected Paseo runtime settings block.
 
 ## Code Commentary
 
-Each command requires an explicit settings file and loads only paseoRuntime without claiming coordination process authority. Missing authority refuses exit two before process operation. One JSON report carries observed changes/failure step; this adapter neither starts role agents nor changes global harness configuration.
+Each command requires an explicit settings file and reads only that file's `paseoRuntime` host block, without claiming coordination process authority. Missing authority refuses exit two before process operation. One JSON report carries observed changes/failure step; this adapter neither starts role agents nor changes global harness configuration.
 
 ## Evidence
 

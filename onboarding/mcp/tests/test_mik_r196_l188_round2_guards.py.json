@@ -1,0 +1,76 @@
+{
+  "path": "mcp/tests/test_mik_r196_l188_round2_guards.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "32b1a3e1f7a9679b323749644f84677b68576324",
+        "content": "sha256:8ab93b8a3c4a0c5fd2d4775543485822b9a43ecbc154f1356aa432528983b6ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_sandbox_builder_reads_the_key_its_producer_returns"
+        }
+      },
+      "facet": "The sandbox builder reads the key its producer actually returns instead of a copied expectation.",
+      "id": "PRF-446WST",
+      "invariant": "INV-R1E181",
+      "origin": {
+        "handoffEntry": "L188-B11",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "32b1a3e1f7a9679b323749644f84677b68576324",
+        "content": "sha256:abe2ae1af4af7a8f5118dbee6d47b52a8c599288398cb9238a48395c21e38654",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_qualification_rail_runs_a_script_the_repository_holds"
+        }
+      },
+      "facet": "Every qualification rail names a script the repository still holds, so no retired command is cited.",
+      "id": "PRF-70GPKW",
+      "invariant": "INV-R1E181",
+      "origin": {
+        "handoffEntry": "L188-B11",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9085fbff738cdcce48e71a64f47c390b084c04d9",
+        "content": "sha256:d14ec9bcad109e1b71101a1799999063b4e9c80cda6b6962b0ba7aa35dc55df2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_benchmark_preparation_discovers_package_skills_without_installing_copies"
+        }
+      },
+      "facet": "Benchmark preparation discovers the package-served skills and installs no copy.",
+      "id": "PRF-B0KEHM",
+      "invariant": "INV-6526WA",
+      "origin": {
+        "handoffEntry": "L188-B19",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "32b1a3e1f7a9679b323749644f84677b68576324",
+        "content": "sha256:1b515e09b4955b79c0af76afd697a5ac11f9eeb14bf9e04e4ab44f79592a599b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_setup_skills_assign_no_onboarding"
+        }
+      },
+      "facet": "The setup skills assign no onboarding authorship, so the boundary survives their rewording.",
+      "id": "PRF-Y789HK",
+      "invariant": "INV-CZV6J3",
+      "origin": {
+        "handoffEntry": "L188-B10",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

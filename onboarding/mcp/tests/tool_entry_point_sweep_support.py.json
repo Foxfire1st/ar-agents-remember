@@ -1,0 +1,182 @@
+{
+  "path": "mcp/tests/tool_entry_point_sweep_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-25RX8K",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "L130-pins-taken",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "Declares the current empty ENVELOPE_LOSING_RAISERS pin after L111 repairs; the preceding four-raiser ownership/removal account is historical, not four current members or an executed census. Bidirectional observed/pinned equality belongs to the separate assertion unit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:62f79d21a9b38e354584d2fa8b5302a2aaab2db6401e859f7fd7d3893d8aee9a",
+        "locator": {
+          "end": 60,
+          "kind": "line_range",
+          "start": 54
+        }
+      },
+      "id": "RLZ-6VVBP4",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin comment",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The pin comment states L111 ownership and the same-change repair rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:7accf97cce3c54c263cd48959022ef447fb38e737093b6f661acd0c5f2d4b6f5",
+        "locator": {
+          "end": 70,
+          "kind": "line_range",
+          "start": 62
+        }
+      },
+      "id": "RLZ-B0D6N2",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 pin constant",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "This span contains the current empty envelope-loss declaration and the introduction to the separately governed retained positive T34 population. The earlier four lifecycle preconditions were L111 repair provenance, not current pin members or this Curator's measurement.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-F381M7",
+      "invariant": "INV-TG334W",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-20",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The current ENVELOPE_LOSING_RAISERS constant is empty after the L111-owned repairs. Historical since-b52/L26 four-arm ownership and same-change pin removal remain provenance; positive repaired tools and shared-world populations are separate and no execution is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
+        "locator": {
+          "kind": "symbol",
+          "name": "ENVELOPE_LOSING_RAISERS"
+        }
+      },
+      "id": "RLZ-WQDNDW",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The actual ENVELOPE_LOSING_RAISERS declaration holds no current members. The four named worktree operations belong to the retained historical L111 repair account, not a present four-operation declaration or newly observed failures.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+        "content": "sha256:17ad49c49bee633b673e5481327505991854f0f36441ebc2266603b65e789608",
+        "locator": {
+          "kind": "symbol",
+          "name": "T34_REPAIRED_TOOLS"
+        }
+      },
+      "id": "RLZ-Y2XJG0",
+      "invariant": "INV-8V5KH0",
+      "origin": {
+        "handoffEntry": "MIK-R130 W03 sweep pin prose",
+        "leaf": "260928-MIK-L130"
+      },
+      "rationale": "The current T34 declaration keeps only memory_baseline_adopt after the eight code-search tools were retired; the adjacent source distinguishes named worktree pins from the empty ambient-state population, without a new failure-census claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+            "content": "sha256:d98b1b91e0f2d00b70114238e0f6d37bd6fd6f37df71b3ff6540d2239843503d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The census reads the world by digest, with the coordination boundary split by declared write zone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+            "content": "sha256:d98b1b91e0f2d00b70114238e0f6d37bd6fd6f37df71b3ff6540d2239843503d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A usable logged whole-result mapping is read from disk; an absent, unreadable or non-mapping log leaves the delivered payload as the classifier input.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+            "content": "sha256:e4c6a24c1df136e92f540a0c0935479293ce6465cc1852e9e44afa744c57762f",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preparation is a no-op and sweep state fields are fixed none labels rather than observations.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af5c7079634dcbf1df67d1c8a248efaf8de6ca8f",
+            "content": "sha256:338b0cb1bfd3d3f86fe8479d656631340a4564abb5d87e287a5b8098c769b291",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 803
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

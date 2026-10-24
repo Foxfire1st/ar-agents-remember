@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
         "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
-        "content": "sha256:150d70b8b6f06c2af1e852b0e3a7aba60bc9c94ef338e1215086313c7a1ac802",
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+        "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4MH0RZ",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Public tool response projection must preserve the admitted role-start continuation fields.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+        "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
         "locator": {
           "kind": "file"
         }
@@ -38,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
         "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
         "locator": {
           "kind": "symbol",
@@ -56,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -74,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "9ea9969706c694e53bdfc6626e96727722f9a7ce",
+        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -97,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
-            "content": "sha256:31590d40eb7608e3c9a1891a727e13695bc47c44fdb59d0a5e8bdf814df1dcf3",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
             "locator": {
               "kind": "symbol",
               "name": "project_landing_answer"
@@ -113,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
             "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
             "locator": {
               "kind": "symbol",
@@ -129,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
             "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
             "locator": {
               "kind": "symbol",
@@ -145,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
-            "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
             "locator": {
               "kind": "symbol",
               "name": "project_task_doc_answer"
@@ -161,8 +178,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
-            "content": "sha256:ff4d07038857d9956ca42087426f54f6b3061dd1f3effbe34617c108c15a3916",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
             "locator": {
               "kind": "file"
             }
@@ -176,12 +193,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda9d23146f649f039bc5f3774dcfb3bccb206b4",
-            "content": "sha256:93509cdf5d5f088cd2afc44f80c460c1edb736b99ebe2b28772b0820791e9c48",
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "content": "sha256:74c120ab2ac81f943440a32266b2d32e5d4313ea3a17f164003aaa00398f62c5",
             "locator": {
               "end": 675,
               "kind": "line_range",
               "start": 642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The kept-field set of a successful role start, which now carries the continuation beside the identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ROLE_START_SUCCESS_KEPT"
             }
           },
           "kind": "code"

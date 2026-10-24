@@ -3,46 +3,17 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Runtime install uses packaged assets unless tests pass an explicit source root.\n\nAnchor: \"if request.source_root is None\"; \"packaged_source_root() if request.source_root is None\"",
+      "note": "Runtime install uses packaged assets unless a caller supplies an explicit source root.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f99cfc219a3a4a26ad011d3d472a52f276c579a",
-            "content": "sha256:cffe7f3c5c49cdff5cf1afaca964375ed03f1bb382c70213e451dc14660dabf2",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:bd7593e689110b2273947871c5c227f3393338406a86501018105d4132d1e4d6",
             "locator": {
               "kind": "symbol",
               "name": "install_runtime_from_config"
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Skill installation reads package-owned runtime skills through the shared asset root.\n\nAnchor: `packaged_source_root`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6967d98c92a8a6b77e0a00ac29be43f8898f34f9",
-            "content": "sha256:f8a6935c1fe27789dbe9d2ae44b96533dac652d540b3f971bac763c330ab61c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "install_skills"
-            },
-            "path": "mcp/src/agents_remember/install/skills.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6967d98c92a8a6b77e0a00ac29be43f8898f34f9",
-            "content": "sha256:76bc41a66a62f097dbca14f28c02bf3e4b5eca40f795fd3330e8a5b169751f92",
-            "locator": {
-              "kind": "symbol",
-              "name": "skills_root"
-            },
-            "path": "mcp/src/agents_remember/install/skills.py"
           },
           "kind": "code"
         }

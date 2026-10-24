@@ -21,6 +21,10 @@ This account controls the named changed seams; contradictory earlier card wordin
 - The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. [5]
 
 
+## Current Source Qualification
+
+The current brief publishes no closeout door. After the handoff and a current-lineage proof, the leaf is closed out through its own procedure — `worktree_closeout_preview`, then the approval stop (explicit developer commit approval for standalone/final work, or the recorded delegated series authority), then `worktree_closeout_apply` with an explicit nonblank message per enabled leg and that authority as its intent note. That transaction owner proves admission itself (task intent, super → master → leaf lineage, the invariant/knowledge gate and the curator's coherence authority) and records recoverable per-leg journal evidence. No advertised tool declares or publishes a waiting generation, so the Manager names none as the publisher; a refusal reporting a missing generation is a developer decision reported with its exact code. `closeout_queue` is only the sprint's disposable waiting-only projection (`status`, `rebuild`) and confers no authority. Inherited statements about declaring, updating or re-proving a door generation describe a tool the roster no longer carries.
+
 ## Message/file transport
 
 This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and generated copies share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.

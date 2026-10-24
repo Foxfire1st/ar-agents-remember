@@ -14,9 +14,14 @@ The corpus request now names its sandbox and that sandbox's `hostPort`, produced
 
 ## 260928-MIK-L96 The old-layout rebuild
 
-`is_built` and the build path now recognize the genuine old layout and shared-authority schema, rebuild through the bounded public renderer route, and preserve the user's task file and repository fixture before the start proceeds.
+Historical L96 source account: is_built and the build path recognized the old layout/shared-authority schema and rebuilt through the then-public renderer while preserving the user task and repository fixture. The current preparation owner is sandbox settings_expectation through Operations.render_settings; the host block is written to the sandbox MCP authority, separately from developer user settings.
 
 - The built-state recognition. [2]
+
+
+
+
+- The current builder writes host facts to MCP authority and consumes preparedSettingsPath from the sandbox-owned preparer. [4]
 
 - The scoped current source carries the module/document behavior described above. [1]
 - The corpus request carries the sandbox and its Paseo port from the layout, and the bootstrap order is unchanged. [3]

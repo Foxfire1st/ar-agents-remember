@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d1fb3cb129c6a69ca95789c8a15b8c0de33a6112",
-        "content": "sha256:03cf85c632e6332bd17a994d31403352404e6c5d3103fdf2c425b362d357e18b",
+        "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+        "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
         "locator": {
           "kind": "file"
         }
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
-            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "blob": "3071bf4d172c84e9e2a65a0bf098f2ba952da17a",
+            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
             "locator": {
               "kind": "symbol",
               "name": "read_ar_files_payload"
@@ -37,13 +37,29 @@
         }
       ]
     },
+    "10": {
+      "note": "The install tool registration whose description states the scaffold-only install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:a0a0bb91d62b57fefd322dd8d623be0d6bf3cd4213eda75007e3dd1d80d32d40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_installation_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`read_ar_files_payload`, imported through the `mcp.tools` facade.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
-            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "blob": "3071bf4d172c84e9e2a65a0bf098f2ba952da17a",
+            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
             "locator": {
               "kind": "symbol",
               "name": "read_ar_files_payload"
@@ -76,10 +92,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
-            "content": "sha256:eddbb1e2487831ecfa88e69e4b23dabb0f61a94721d3e7c893286e83aa403205",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:293819cf4092e8fcb1936055b547376f8a35905d83296e9375569862c5561114",
             "locator": {
-              "end": 185,
+              "end": 149,
               "kind": "line_range",
               "start": 143
             }
@@ -93,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f01fac9b7f8a001f3303d6976841dc6d5285b21",
-            "content": "sha256:be4afd34f7e5fd22eb8dab45faefdb70380bbb570c111ba62b0fe12c43480078",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:dcb834f03fccd05554205c7589796d4f8d2da74c9ba8e718c9dfd370cb513481",
             "locator": {
               "kind": "symbol",
               "name": "_register_identity_tools"
@@ -109,8 +125,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
-            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
             "locator": {
               "kind": "file"
             }
@@ -124,8 +140,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "45ac78cc8e9110d7be319a2aacf82bebf4c3f1eb",
-            "content": "sha256:cca1feb13ceb929ec5ac4e7db2b5b7fdbfcc3b989e367e4994129e4830a2eb64",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:a0a0bb91d62b57fefd322dd8d623be0d6bf3cd4213eda75007e3dd1d80d32d40",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -140,8 +156,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
-            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
+            "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
             "locator": {
               "kind": "file"
             }
@@ -155,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee53a26799c1344843076340785bf5730d0ad6ac",
+            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
             "content": "sha256:08a3cac0c3fc80034bcf5e1347273b2005f1b3be7af895b9bb2eb027bdd53df0",
             "locator": {
               "end": 68,

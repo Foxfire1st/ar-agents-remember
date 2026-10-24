@@ -74,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
-        "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
           "name": "recovery_note"
@@ -182,8 +182,8 @@
     },
     {
       "anchor": {
-        "blob": "e2375a78428dce9741f276eb6edf1f3f24f431b6",
-        "content": "sha256:bbac68a49582dc2ae9a74d1a6ba653e75de65aa0036f200bd155eace56ba8091",
+        "blob": "3a99751dd8849399ec7b194659788370b5ce7593",
+        "content": "sha256:a82b0108b65417661402d17fbb334d7b33c48fbd13fc9ee36116f7599d0216ab",
         "locator": {
           "kind": "symbol",
           "name": "recovery_note"

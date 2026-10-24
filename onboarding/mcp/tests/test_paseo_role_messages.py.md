@@ -1,35 +1,64 @@
 # mcp/tests/test_paseo_role_messages.py
 
-## Current paired source contract — scoped assertions and incoming catalogs
-
-Composed controlled-runtime cases hold permission/start-unfinished/unwritable-turn messages and deliver waiting work in order; two live leaf occupants refuse ambiguity and completed holders retain the seat until archived. Non-holdable failed resumes retain undelivered message files. Busy holding is not a general undelivered-file refusal or a sender-retry instruction. Current fixtures patch facade-local native/resolve owners; files, sender-line composition, limits, wait and independent report collection remain source assertions, not live host proof.
-
-This section supersedes contrary earlier prose only for these changed seams; retained evidence and useful unaffected accounts are not deleted or promoted to new proof.
-
-- Composed controlled-runtime cases hold permission/start-unfinished/unwritable-turn messages and deliver waiting work in order; two live leaf occupants refuse ambiguity and completed holders retain the seat until archived. Non-holdable failed resumes retain undelivered message files. Busy holding is not a general undelivered-file refusal or a sender-retry instruction. Current fixtures patch facade-local native/resolve owners; files, sender-line composition, limits, wait and independent report collection remain source assertions, not live host proof. [3]
-
-
-## Message transport contract coverage
-
-Controlled-runtime cases now require one timestamp/sender/recipient message file and returned SHA-256, preserving unchanged bodyless delivered text and existing receipts. Busy and failed-resume attempts retain undelivered audit records. The refusal vocabulary adds message-too-long, message-file-failed and settings-invalid. Lookup, capacity, revival, wait/timeout and independent collection-error behavior remain; these are stub-controlled filesystem assertions, not live host execution.
-
-
 ## Governing Overview
 
-[Route overview](overview.md)
+[Tests route overview](overview.md)
 
-## Purpose and current source account
+## Purpose
 
-Recipients come from this line's receipts and exact role/task selection; multiple candidates and missing binding refuse, including two live occupants of the same leaf seat. Pending permissions instead hold messages without answering the prompt. Unfinished starts and unwritable active turns use the same held store; a fresh message remains behind waiting work even after the host becomes writable. Closed sessions pass Revive scope checks before send. Wait tracks the consuming turn, and timeout leaves the message delivered rather than causing duplicate send or turn cancellation. An R71 case proves delivery proceeds despite collection errors with per-agent isolation and the failure returned separately.
+Covers role messaging between role agents against a fake bridge: how a role resolves to its live agent
+through the receipts, which recipients are refused and which are held, how a refused or unanswered send
+is delivered exactly once, and how a wait reports the turn that consumed the message. Delivery is
+at-most-once even when the recipient's own timeline already holds the copy.
 
-## Hold, single-copy, answered-batch and steer-or-hold cases
+## Code Commentary
 
-`RoleMessageTests` holds the cases this change adds. `test_a_running_turn_is_steered_or_held_by_its_provider_and_never_cut_off` steers a running turn only for a provider marked as taking one and holds the message as `recipient-in-turn` for the other, whose turn keeps running. `test_the_hosts_own_activity_record_holds_a_message_the_snapshot_calls_idle` holds a message the agent snapshot calls idle when the host's publication says `in-turn`, steers for a provider known to take one, and delivers the held message when that record says the turn ended. `test_an_unknown_send_outcome_is_not_delivered_twice` and `test_a_copy_the_recipient_already_holds_is_not_sent_again` keep one copy: the second sends nothing when the recipient's timeline already carries the attempted id, without a host that deduplicates. `test_a_delivery_that_takes_held_messages_answers_ok` answers `accepted` with no `turnId`, and `RoleMessageResponse` validates it. `test_a_held_batch_preserves_the_reported_replacement_and_warning` keeps `taken` `replaced` with the plain replacement warning through the same answer model. These are the controlled fixture's assertions, not live host execution.
+### Logic
+
+`RoleMessageTests` drives the role-tool surface (`paseo_role_tools`) with `role_held_messages`,
+`models.role_agents`, the host-activity observer and its projection, and the worktree boundary.
+
+- **Addressing.** `test_a_role_resolves_through_the_receipts_to_its_live_agent` resolves a role name to
+  one live agent, `test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among` and
+  `test_a_leaf_seat_with_two_live_agents_refuses_by_role` refuse ambiguity instead of picking, and
+  `test_the_caller_is_no_candidate_of_its_own_role_address` keeps a caller out of its own address.
+- **Reachability.** `test_only_an_agent_id_of_this_lines_receipts_is_a_recipient` bounds recipients to
+  the line's receipts; `test_every_execution_of_a_taskless_role_that_is_not_stopped_is_asked_about`
+  asks about every unstopped execution of a taskless role, and
+  `test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said` refuses past that bound
+  and says where it cut.
+- **Holding.** A recipient whose start has not finished, one waiting for a permission decision, and one
+  whose host does not answer are held rather than dropped; `test_a_held_batch_preserves_the_reported_replacement_and_warning`
+  keeps the host's replacement and warning, and `test_a_delivery_that_takes_held_messages_answers_ok`
+  proves no validation error follows a delivery of held work.
+- **At-most-once.** `test_a_copy_the_recipient_already_holds_is_not_sent_again` settles a duplicate from
+  the recipient's own timeline, and `test_an_unknown_send_outcome_is_not_delivered_twice` resends with the
+  same id, so an unknown outcome is not a second copy.
+- **Turns.** `test_a_running_turn_is_steered_or_held_by_its_provider_and_never_cut_off` and
+  `test_a_refused_send_is_held_and_no_answer_names_a_cancellation` keep steering provider-scoped and a
+  refusal held; `test_the_hosts_own_activity_record_holds_a_message_the_snapshot_calls_idle` lets the
+  host's own activity record decide too.
+- **Waits.** `test_a_wait_returns_the_outcome_of_the_turn_that_consumed_the_message`,
+  `test_a_wait_follows_the_message_into_the_turn_that_consumes_it` and
+  `test_a_wait_that_times_out_leaves_the_message_delivered` keep a wait tied to the consuming turn and a
+  timeout a delivered message.
+- **Text and refusals.** `test_the_delivered_text_opens_with_the_line_that_names_the_sender` and
+  `test_the_results_and_refusals_are_exactly_the_named_ones` pin the delivered prefix and the named
+  result and refusal codes.
+
+### Conventions
+
+Cases use `paseo_role_tools_test_support` for the bridge and message fixtures, and
+`runtime_that_names_no_turn()` / `message_with()` to vary what the runtime reports about a turn.
+
+### Invariants And Boundaries
+
+- No message is delivered twice, whether the outcome was unknown, the copy was already held or a wait
+  timed out.
+- Ambiguity is refused by name; a role is never resolved by guessing between live agents.
 
 ## Evidence
 
-
-- The scoped current source carries the module/document behavior described above. [1]
-
-
-- Controlled-runtime cases now require one timestamp/sender/recipient message file and returned SHA-256, preserving unchanged bodyless delivered text and existing receipts. [2]
+- Role addressing, reachability bounds, holding, at-most-once delivery, turn steering and waits are asserted here. [1]
+- A message file carries one timestamp, sender and recipient and reports its returned SHA-256, while a bodyless delivered text keeps its existing form. [2]
+- Controlled-runtime cases hold permission, start-unfinished and unwritable-turn messages, deliver waiting work in order, refuse two live leaf occupants, and keep a completed holder's seat until archived. [3]

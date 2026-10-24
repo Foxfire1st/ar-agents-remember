@@ -14,41 +14,41 @@
 
 The landed IAS README now documents ordinary isolated pytest development, explicit integration selection and genuine Dagger-only certification. Its lines269–271 still contain superseded 90%/CRAP30 wording at d3610903; the current policy is diagnostic coverage and production CRAP20 review as declared by AGENTS.md and docs/design/python-pytest-bootstrap.md. This mismatch is a documentation defect, not authority to restore a floor. The primary implementation checkout carries the correction for subsequent delivery.
 
-The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
+The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery that finds but does not decide, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. Its `Harness-ready first run` bullet still says starter packages carry the native MCP, skills, hooks, rules and instruction files, which the Quickstart's statement that no starter package, rendered settings or skill folder is copied contradicts; that table sentence is retained source text, not a corrected claim. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
-The previous MCP-installs-skills first-run model was replaced with package-first
-harness setup. The root page now keeps one short, harness-agnostic three-step
-quickstart that the agent drives: (1) copy the harness-native starter package
-from the repo and render the copied package. The `render-starter` script is a
-convenience that infers the workspace root from the copied harness folder, takes
-one explicit `--repo` list such as `--repo my-app shared-lib`, and fills path,
-repository, and hook-command placeholders; the docs also allow manual
-placeholder replacement. The package provides skills, hooks, rules,
-instructions, MCP settings templates, and rendered hook commands; (2) build the
-checkout's wheel (`uv build --wheel mcp`) and wire that local artifact with
-`uvx --python 3.14 --from <abs>/built-wheel.whl agents-remember-mcp --config
-<abs>/agents-remember-settings.json`, then restart the harness once so it loads
-the MCP server and native package files; (3) invoke `c-13-install-and-onboard`,
-which runs or verifies `runtime_install()`, asks scaffold-new vs existing memory,
-bootstraps onboarding when needed, and starts provider indexing when enabled.
-`skills_install()` remains documented as maintenance/manual, not the normal
-first-run path. Harness-specific setup links point to dedicated pages under
-`docs/install/`, and detailed first-run setup lives in `docs/getting-started.md`.
+The first-run model the page now states is neither an MCP install of skills nor a copied
+starter package. Quickstart step 1 is the MCP authority settings file — copy
+`examples/mcp/settings.example.json` to a path of your own and replace its paths with
+absolute ones: the coordination folder (it may not exist yet), the workspace root, the
+transcript folder and one entry per code repository. Step 2 registers the wheel with `uvx
+--python 3.14 --from <abs>/built-wheel.whl agents-remember-mcp --config
+<abs>/agents-remember-settings.json`, pointing at the registration file the harness guide
+carries, then restarts the harness once so it starts the server. Step 3 is one call in a chat
+that names no task, sprint or repository — `role_start(role="bootstrap",
+request_id="<a UUID you generate>")` — which prepares the runtime scaffold, provisions and
+starts the Paseo host, verifies the plug-in, starts one instructed Bootstrap seat and returns
+that seat's dashboard address; setup continues there (repository and memory root, initialize
+or read the baseline, adopt its content, harness per role with model and effort left unset),
+Bootstrap writes the user settings file and reports an existing one instead of overwriting it,
+and it finally tells the developer to start the Architect, which organises the knowledge
+foundation as ordinary task work.
 
-The README distinguishes the source checkout from the installed runtime. The
-source checkout exposes root `skills/` as the canonical skill source tree and
-`scripts/sync-skills.py` as the helper that refreshes MCP package-data and
-harness package skill copies. It also exposes root `agents-md-files/`,
-`benchmarks/`, `providers/`, and `system/` as canonical runtime asset source
-folders and `scripts/sync-runtime.py` as the helper that refreshes MCP
-package-data copies only. The installed `ar-coordination/` runtime owns
-installed instructions, skills, optional benchmark package content, local
-coordination artifacts, external memory repos, worktrees, and temp files. The
-Repository Layout section states the installed runtime defaults to
-`<workspace>/ar-coordination/` — inside the workspace, never the user's home
-directory — and points at the `c-13-install-and-onboard` skill, which presents
-that and every other install path as a workspace-first accept-or-override
-default.
+The page states plainly that this is the whole first-run path: no skill folder, starter
+package or rendered settings is copied into a harness, because the tool server serves the
+canonical skills as MCP resources, so the skills a session reads belong to exactly one
+installed build and no separate skill-install route exists. The source checkout paragraph is
+corrected to match: root `skills/` is the canonical authoring tree and
+`scripts/sync-skills.py` refreshes only the packaged copy that is served, while root
+`agents-md-files/`, `benchmarks/`, `providers/` and `system/` stay canonical runtime asset
+sources refreshed by `scripts/sync-runtime.py`. The self-hosted harness trees under
+`.claude/`, `.codex/`, `.cursor/`, `.github-vscode/`, `.vscode/`, `.hermes/`, `.openclaw/`,
+`.pi/` and `.agents/` are maintained in place, one file per harness — MCP registration,
+optional instructions and an optional session-start hook or rule — and carry no skill folder
+and no placeholder renderer. The installed `ar-coordination/` layout therefore no longer
+lists `skills/`, and the page says why: the server serves the packaged copy, so the
+coordination root carries no second skill tree to keep current. The hooks paragraph drops
+`sync-harness.py` from the generated-copy checks, keeping `sync-skills.py --check` and
+`sync-runtime.py --check`.
 
 A `## What It Looks Like In Practice` mini-transcript sits between Core Features and the Live Demo: it shows a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-onboarding-then-propose-then-refresh loop — a concrete picture of the by-path loop for skimming readers.
 
@@ -78,7 +78,7 @@ public orientation layer; the executable bootstrap and provenance contract stay 
 - Keep the README short enough to scan.
 - Use the README to orient and route, not to carry full setup matrices or reference material.
 - Use `docs/` for user-facing docs, `benchmarks/` for optional benchmark fixtures, `AGENTS.md` and installed runtime templates for agent behavior, and onboarding for durable repository knowledge.
-- Keep public language focused on the current intended install model: copy a harness starter package, wire the MCP server, run/verify `runtime_install()` through `c-13-install-and-onboard`, and store memory in a memory repository of its own under `ar-coordination/memory-repos/ar-<repo>/` — the only supported topology. The former repo-local `ar-memory/` internal mode was removed from the product and is refused by name; do not describe it as an available or default option.
+- Keep public language focused on the current intended install model: write the MCP authority settings, register the server with the harness's own registration file, restart once, and make one `role_start(role="bootstrap", …)` call whose dashboard chat carries setup onward into a user-started Architect. No starter package, rendered settings or skill folder is copied, and memory stays in a memory repository of its own under `ar-coordination/memory-repos/ar-<repo>/` — the only supported topology. The former repo-local `ar-memory/` internal mode was removed from the product and is refused by name; do not describe it as an available or default option.
 - Avoid presenting the public README as a source-package explanation or compatibility guide for old alpha layouts.
 
 ### Invariants And Boundaries
@@ -107,14 +107,14 @@ No external documentation is needed to prove the root README's current structure
 
 The README routes readers into the split documentation tree and gives the current runtime/source layout.
 
-- The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. [1]
+- The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. Its retained `Harness-ready first run` bullet still says starter packages carry skills, hooks, rules and instruction files, which the Quickstart's no-copied-package statement contradicts. Anchor: `## Core Features` [1]
 - The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. [2]
 - The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. [3]
 - The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation. [4]
-- The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server from a locally built wheel with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. [5]
+- The quickstart is a short, harness-agnostic three-step agent-driven flow: write the MCP authority settings file from `examples/mcp/settings.example.json`, register the locally built wheel with `uvx --config` and restart the harness once, then make one `role_start(role="bootstrap", request_id="<UUID>")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied. Anchor: `## Quickstart`; `uvx`; `role_start`; `bootstrap` [5]
 - The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. [6]
 - The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
-- The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. [8]
+- The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes the one served package copy, exposes root `agents-md-files/`, `benchmarks/`, `providers/` and `system/` as canonical runtime assets refreshed by `scripts/sync-runtime.py`, states that the self-hosted harness trees are maintained in place without a renderer and that the installed runtime carries no `skills/` folder, and notes the workspace-first `<workspace>/ar-coordination/` default. Anchor: `## Repository Layout`; `skills/`; `scripts/sync-skills.py`; `agents-md-files/`; `scripts/sync-runtime.py`; `<workspace>/ar-coordination/` [8]
 - The README's Status first paragraph distinguishes the Python 3.14 source candidate from the historical Python 3.13 artifact at the same `3.0.0rc8` version, states core-path and harness maturity, and sends stability guarantees to Stability and release notes to GitHub Releases, the canonical changelog rather than a local CHANGELOG.md. Its second paragraph retains the historical observable/steerable-session and durable-gate 3.0 account with the rc settling caveat. MIK-R113 removed the product-owned session/gate surfaces: that retained source paragraph is not authority to restore them or a claim that the current product still hosts chats. Native host role agents and the dashboard remain. [9]
 - The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed. [10]
 - The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). [11]
@@ -136,7 +136,7 @@ states:
 
 - Both hooks are thin wrappers over `.githooks/_gate.sh`, which takes the tier as its argument.
 - **pre-commit** runs the fast tier over the **staged** content: the generated-copy checks
-  (`sync-skills.py --check`, `sync-runtime.py --check`, **`sync-harness.py --check`**), plus
+  (`sync-skills.py --check`, `sync-runtime.py --check`), plus
   Ruff, **`ruff format --check`**, and Pyright.
 - **pre-push** repeats the deterministic non-test checks over current-checkout bytes and records
   pushed refs; it does not run acceptance.
@@ -157,15 +157,18 @@ states:
 Note that `sync-dashboard.py` is **not** among the generated-copy checks — it is a release
 build step with no `--check` mode, because the bundle it places is no longer in version control.
 
-### The Repository Map Gained The Harness Source
+### The Repository Map No Longer Carries A Harness Generator
 
-The layout section now lists `scripts/sync-harness.py` ("generate the nine harness
-configuration trees") and `scripts/harness/` ("canonical source for those trees") beside
-`sync-skills.py` and `sync-runtime.py`, and a paragraph tells readers to edit
-`scripts/harness/` and run the generator to regenerate `.claude/`, `.codex/`, `.cursor/`,
-`.github-vscode/`, `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/` and `.agents/`. It names
-`mcp/tests/test_sync_harness.py` as running the same check inside the suite, so drift is
-caught even without hooks.
+The layout section lists `sync-skills.py` as the helper that refreshes the one served package
+copy, beside `sync-runtime.py` for runtime assets; `scripts/sync-harness.py` and
+`scripts/harness/` are gone from the map and from the repository. A paragraph now states that
+the self-hosted harness configuration in `.claude/`, `.codex/`, `.cursor/`,
+`.github-vscode/`, `.vscode/`, `.hermes/`, `.openclaw/`, `.pi/` and `.agents/` is maintained
+in place, one file per harness — MCP registration, optional instructions, and the optional
+session-start hook or rule — carrying no skill folder and no placeholder renderer, with the
+`<PATH/TO/YOUR/PROJECTS_FOLDER>` markers replaced by hand. The earlier claim that
+`mcp/tests/test_sync_harness.py` caught drift inside the suite describes a test that no
+longer exists.
 
 ## 260718-CHATS-L5I Current Delta
 

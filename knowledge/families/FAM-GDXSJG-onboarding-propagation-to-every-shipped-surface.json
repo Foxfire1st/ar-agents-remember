@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the generated mirrors jointly guarantee that whatever a role-launch change touches, the surface that states it carries it in the same change, with mirrors derived and retired text staying retired."
+    "justification": "The three member obligations hold only together: the extracted launcher, the shipped reference and the packaged serving copy jointly guarantee that whatever a role-launch change touches, the surface that states it carries it in the same change, with the served copy derived and retired text staying retired."
   },
-  "guarantee": "Each role-launch surface carries the change that reaches it, and every affected surface is updated by the same change: the dashboard launcher (INV-63Z0MN) carries a change to launch choices, the settings reference (INV-DKN3CG) carries a change to an accepted settings key, and every shipped skill mirror (INV-NNQR91) is regenerated through the existing public generator from the canonical role, operation and onboarding text. A change to one surface's own subject does not oblige the others; mirrors stay derived rather than hand-edited, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
+  "guarantee": "Each role-launch surface carries the change that reaches it, and every affected surface is updated by the same change: the dashboard launcher (INV-63Z0MN) carries a change to launch choices, the settings reference (INV-DKN3CG) carries a change to an accepted settings key, and the packaged serving copy of canonical role, operation and onboarding text (INV-NNQR91) is regenerated from its authoring source. A change to one surface's own subject does not oblige the others; the served copy stays derived rather than hand-edited, no harness installs a copy of the skills, retired role text is not resurrected, and no shipped first-read text uses assignment_read.",
   "id": "FAM-GDXSJG",
   "members": [
     "INV-63Z0MN",
@@ -20,13 +20,15 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "dashboard/src/cockpit",
     "docs",
     "skills/c-13-install-and-onboard",
     "skills/l-01-agent-lifecycles",
-    "mcp/src/agents_remember/package_data/runtime/skills"
+    "mcp/src/agents_remember/package_data/runtime/skills",
+    "mcp/src/agents_remember/application/skill_resources",
+    "scripts"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

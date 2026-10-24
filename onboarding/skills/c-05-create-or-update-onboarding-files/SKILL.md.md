@@ -25,6 +25,10 @@ Converted carryover selects paired content and missing records into a recovery w
 - Converted-card authorship separates prose, native references, typed entries and current trace rows. [16]
 
 
+## Current Source Qualification
+
+The current source owns two procedures the retired skills left behind, and says so in its own text: `workflows/findings-capture.md` (a finding's durable destination, from the retired findings-capture skill) and `workflows/memory-quality-control.md` (the pre-commit and pre-curation checks, from the retired memory-quality-control skill), with the `memory_quality_check` and `curator_coherence` tools owning the checks themselves. It also states the drift check on converted cards: how many reference anchors are current, how many are stale, and that a reference whose path is gone refuses the leaf's closeout or landing, while a stale reference alone never blocks. Worktree maintenance inside `w-02-light-task-workflow` consults `worktree_status` freshness and `worktree_sync` first. Inherited statements that hand these procedures to separate `c-01`/`c-02` skills or to a `c-09` worktree manager describe retired owners, not current routing.
+
 ## Inherited Source-Epoch Commentary
 
 The following complete predecessor account is retained historical scope, not a second operative contract, current binding or new acceptance. Its legacy-only metadata, cache-refresh, output-state and converted-apply refusal statements are superseded by the current source account above. Reference labels are provenance labels, not newly fabricated references.

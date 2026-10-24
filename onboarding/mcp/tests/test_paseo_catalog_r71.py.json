@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_paseo_catalog_r71.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Host fields win while every contributing source stays recorded, and a start call supplies no permission authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0599ac1e1bfa514fe0d53f524cd2f3c3c940121d",
+            "content": "sha256:7c58d04faa1fbb47c4196f69d3ec89452ed3b8677f66202eb65cf4968916d1a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Refusals name the exact settings and host profile sources they came from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0599ac1e1bfa514fe0d53f524cd2f3c3c940121d",
+            "content": "sha256:7c58d04faa1fbb47c4196f69d3ec89452ed3b8677f66202eb65cf4968916d1a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

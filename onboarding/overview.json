@@ -6,19 +6,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c29d4d1f5abb5d84654822e8bf0869461435bd85",
-            "content": "sha256:02b07dc98dece4abf336abe33df3337a149cd230990a0e26a19f6078721b4b88",
-            "locator": {
-              "end": 549,
-              "kind": "line_range",
-              "start": 534
-            },
-            "path": "skills/c-09-git-worktree-manager/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
             "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
             "locator": {
@@ -316,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
             "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
             "locator": {
               "end": 19,
@@ -334,12 +321,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
             "content": "sha256:7e9f1dc3267afa3d829234b9768060fabdd0a2e2bc3a16d07d5cec96307df0d8",
             "locator": {
-              "end": 320,
+              "end": 319,
               "kind": "line_range",
-              "start": 250
+              "start": 249
             },
             "path": ".githooks/_gate.sh"
           },
@@ -352,12 +339,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
             "content": "sha256:c3990657ce48bfc68ba7d342108feb8e693c0ae75c9a8f25654718abd5ba5dd2",
             "locator": {
-              "end": 235,
+              "end": 234,
               "kind": "line_range",
-              "start": 196
+              "start": 195
             },
             "path": ".githooks/_gate.sh"
           },
@@ -595,7 +582,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a0f7531418049179e1ad020e0b8fed6314c73d1",
+            "blob": "d3e57ca71a5f07ed39cb190d9f5dcda431c764f3",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -661,12 +648,12 @@
         },
         {
           "anchor": {
-            "blob": "e42c18ff23d89634795cf0146dd3266324d63fcb",
+            "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
             "content": "sha256:406f87f15ce148145e4262e6b00a47abb1430a2d305a0ee94b24bbb10bf6b654",
             "locator": {
-              "end": 240,
+              "end": 241,
               "kind": "line_range",
-              "start": 240
+              "start": 241
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -713,7 +700,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d93f7d335880722fb27e012f63564c3a8928218e",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
             "locator": {
               "kind": "symbol",
@@ -932,7 +919,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -949,7 +936,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:5a2facadf1c69d4133cb376211c1fcea32e74596cf59632985f86de1f2826f43",
             "locator": {
               "end": 416,
@@ -979,30 +966,12 @@
         }
       ]
     },
-    "252": {
-      "note": "The skill's finalizer paragraph, mirrored into the package and starter copies.\n\nAnchor: `master lists it, the finalizer always derives that`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c29d4d1f5abb5d84654822e8bf0869461435bd85",
-            "content": "sha256:10504dfc6142bea874588a95b095a471fb2fe64d00aa13f21acbe842d6f73baa",
-            "locator": {
-              "end": 535,
-              "kind": "line_range",
-              "start": 535
-            },
-            "path": "skills/c-09-git-worktree-manager/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "253": {
       "note": "The template's reconsideration-row bullet, mirrored into the package and starter copies.\n\nAnchor: `A reconsideration row (MIK-R14, converted memory only)`",
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:458a14d8ba7e1ab3af75e2a7ccfbab6fa15681997f448c74b5495b0dfe845635",
             "locator": {
               "end": 641,
@@ -1020,7 +989,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:a4536cbc8a0574bfa0215af7579c45038101e9c1c33d89b5da25ba31649e74f0",
             "locator": {
               "end": 823,
@@ -1056,7 +1025,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:9d61073a02e7b6def460a91321fcfee8ac6db8ddaa9ecd2ada6b87e55bdae335",
             "locator": {
               "end": 632,
@@ -1074,7 +1043,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:3ae2c6ae8cb6e559ada2ec2eea18365efe26198e1683e179fe764689fcae1d5d",
             "locator": {
               "end": 785,
@@ -1128,7 +1097,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:7d191c213614ade44c0a25bb27e024d7873c59fd79d369c97a483a8cd07788c9",
             "locator": {
               "end": 732,
@@ -1164,12 +1133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cce2326a39a5cfc2fedfaa315b9e789e21fbf8fe",
+            "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
             "content": "sha256:3aa5642f02b79ba6e10f1587feee72fe7572f76c107f8014e3ee72f99b517da9",
             "locator": {
-              "end": 157,
+              "end": 158,
               "kind": "line_range",
-              "start": 157
+              "start": 158
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-14-knowledge-bootstrap/SKILL.md"
           },
@@ -1182,7 +1151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:511402a93a43ae1914d1f6c1879f6c66c6737a2bed658f42e35573b4081f0775",
             "locator": {
               "end": 621,
@@ -1218,12 +1187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e42c18ff23d89634795cf0146dd3266324d63fcb",
+            "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
             "content": "sha256:0e6ea027256d8995280cdaf4406d1cd2c748524b62e9b46b90a35b903fccb9da",
             "locator": {
-              "end": 229,
+              "end": 230,
               "kind": "line_range",
-              "start": 229
+              "start": 230
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1271,7 +1240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:4462ad09db8f1ca86038234a9225f2152562b3bff6261bae7ac26ade1dafb48f",
             "locator": {
               "end": 507,
@@ -1324,7 +1293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8069d1448df63d36f9a908d910ee3efe63135512",
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -1341,7 +1310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:1a4616de9b047e30ec76f51e28fab65d9d85cde5c5fa20cb2014faff223f1a61",
             "locator": {
               "end": 392,
@@ -1395,7 +1364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -1413,7 +1382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:8607745186f3570ef4e75ca14fcc5785bca5484e8981daeff8a1ea8552556c0b",
             "locator": {
               "end": 16,
@@ -1519,12 +1488,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3bb19074ebd2bdeb4fafefa26796ff20aee94e2",
+            "blob": "ec2f49e928c4655185deae15db3e60c5fe0dc759",
             "content": "sha256:aaf21c9f66bfbc47831cb9c42cd44e2720587930dba7e68f96d30610b2636818",
             "locator": {
-              "end": 111,
+              "end": 108,
               "kind": "line_range",
-              "start": 108
+              "start": 105
             },
             "path": "docs/reference/runtime-layout.md"
           },
@@ -1537,12 +1506,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c26c20413f3c139dd465b0e928e4193e04cd458f",
+            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
             "content": "sha256:5212c9894d9bcb63611f9483b53561523d0545faa9e817ce2a6fecbbb360441e",
             "locator": {
-              "end": 154,
+              "end": 163,
               "kind": "line_range",
-              "start": 154
+              "start": 163
             },
             "path": "README.md"
           },
@@ -1555,12 +1524,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:3c9d63b793979da555922409c418c416f776f79561e808b9d18e55a8d29ae5a1",
             "locator": {
-              "end": 149,
+              "end": 150,
               "kind": "line_range",
-              "start": 149
+              "start": 150
             },
             "path": "AGENTS.md"
           },
@@ -2252,12 +2221,12 @@
         },
         {
           "anchor": {
-            "blob": "a44e94849cddcfdaa693be8e4c9deeaa42953b0f",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
             "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
             "locator": {
-              "end": 859,
+              "end": 862,
               "kind": "line_range",
-              "start": 841
+              "start": 844
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -2706,7 +2675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -2719,12 +2688,12 @@
         },
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
             "locator": {
-              "end": 144,
+              "end": 145,
               "kind": "line_range",
-              "start": 144
+              "start": 145
             },
             "path": "AGENTS.md"
           },
@@ -2755,7 +2724,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:b8d33350a2132248e847caeac2d126658047b18c6ff349b9d52534f75bef6046",
             "locator": {
               "end": 620,
@@ -2769,14 +2738,16 @@
       ]
     },
     "332": {
-      "note": "The L111 predecessor had41 public names after resolve_context removal; the current source has41 — that 40 plus the mounted knowledge_write — retaining direct_execution_grant, native retire_child and role_start_set; the earlier R11142-name population is historical; response registration and live advertisement must agree with that one declaration. This source count is not fresh live advertisement or acceptance.",
+      "note": "The current42-name roster adds user_settings_init to the41-name predecessor and retains the native grant,retire_child androle_start_set boundaries; source declaration is not fresh live advertisement.",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
             "locator": {
-              "kind": "file"
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -2932,7 +2903,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -2950,12 +2921,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f1cff8e4a9b334411878ee6d8f6a19223e63d1f",
+            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 205,
+              "end": 206,
               "kind": "line_range",
-              "start": 149
+              "start": 150
             },
             "path": "AGENTS.md"
           },
@@ -3040,12 +3011,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
+            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
             "content": "sha256:ec5b884bf9ab64fb39e21d13511238e2dbbad25041b3fd19bae019b2863bcd1d",
             "locator": {
-              "end": 85,
+              "end": 83,
               "kind": "line_range",
-              "start": 78
+              "start": 76
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3112,7 +3083,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "385e50d77ae251a70756cbfd7674d0c7d973012b",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
             "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
             "locator": {
               "end": 176,
@@ -3184,12 +3155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
             "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
             "locator": {
-              "end": 374,
+              "end": 379,
               "kind": "line_range",
-              "start": 369
+              "start": 374
             },
             "path": "skills/c-13-install-and-onboard/SKILL.md"
           },
@@ -3265,6 +3236,105 @@
             "path": "mcp/tests/test_converted_carryover.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "355": {
+      "note": "Canonical skills have one generated packaged serving destination; harness starter packages carry no skill folder.\n\nAnchor: \"skills\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "356": {
+      "note": "The public source roster includes the settings initializer among42 names.\n\nAnchor: `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "357": {
+      "note": "Host preparation reads and conditionally creates the MCP-file authority, distinct from developer user settings.\n\nAnchor: `establish_authority_paseo_runtime`, `load_authority_paseo_runtime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+            "content": "sha256:df0ad851f6b48076609b7f2799c2d2b808fbde38a9be7ddd6618fbf9cbde42fc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "358": {
+      "note": "Current PUBLIC_TOOLS has42 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:8bef79894c0947f448c7278f193249786d766046c9866c84aa1e39235f388db3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "359": {
+      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+            "content": "sha256:ee5c5466394b40ad16cec540b7508c61eda13a424b43bf773db4c3a2d59bab13",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -3576,7 +3646,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:5fa48ffebc8ff56f025ae86c950a2599a6995ad46cfefd8a723199fb70c986d4",
             "locator": {
               "end": 846,
@@ -3688,24 +3758,6 @@
               "name": "main"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "72": {
-      "note": "The skill text states that retire is the only archive route and that finalize never archives a master.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fb7ee6c541ff12537f5e1e9722aef9979c56423d",
-            "content": "sha256:7b7ec2c6593954d5f3292313879cc17dc9b6a0c7ee56af7b7d145055b6fc2521",
-            "locator": {
-              "end": 270,
-              "kind": "line_range",
-              "start": 260
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }
@@ -3957,55 +4009,6 @@
         }
       ]
     },
-    "87": {
-      "note": "Closeout is worktree-only, and the apply records its authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bcce4fbd8f27efaa7c7396ed54282b2a9cfb8a78",
-            "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
-            "locator": {
-              "end": 15,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "skills/c-12-closeout/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bcce4fbd8f27efaa7c7396ed54282b2a9cfb8a78",
-            "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 106
-            },
-            "path": "skills/c-12-closeout/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "88": {
-      "note": "The branch-addressed landing of a leaf without its own enclosure.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a3db75cfbcdc6c1d0bc961e535f08a43cd173c48",
-            "content": "sha256:f1d7c76f18585bdd0ab02483432b544cc5f7a196981531243ab3523caf075a77",
-            "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 242
-            },
-            "path": "skills/c-12-closeout/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "89": {
       "note": "The pause releases one master's activation selection and publishes nothing.",
       "targets": [
@@ -4029,7 +4032,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74366459d4451f38bd8c063ce635036c8a947c19",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
             "content": "sha256:6df301bb935036b353d082e45430bfdf528c4c3fc62f57e7786972401e4d6427",
             "locator": {
               "end": 784,

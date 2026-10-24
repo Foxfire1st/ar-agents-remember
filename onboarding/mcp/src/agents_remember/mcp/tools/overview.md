@@ -7,13 +7,13 @@
 
 `mcp/tools/` is the domain-organized payload-adapter package between MCP registration and the application services that implement Agents Remember operations. Its facade preserves a shared import surface for builders and protocol constants; an exported builder is not necessarily an advertised tool. Most builders forward typed inputs to their responsibility-owning application entry point and return through `base._tool_payload`. The package is not globally pure: application calls can perform authorized mutations, the shared response boundary records calls, and the knowledge and enclosure-adoption modules also compose selection, validation or approval-sensitive results.
 
-`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 41 names on this successor: the 40 left after `dispatch_agent` was removed plus the mounted `knowledge_write`; preceding 41/42-name source epochs stay historical; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, and older39/41 epochs are historical; the historical 61–66-name inventories remain historical.
+`PUBLIC_TOOLS` has one definition in `models/tools/public_roster.py`, re-exported unchanged through `base.py` and the facade. Keeping advertised wire vocabulary in the model layer avoids a downward dependency from models into MCP and avoids a second roster that can diverge. `TRANSPORT` is `stdio`; `RESERVED_TOOLS` is empty. The present roster contains 42 names on this successor: the 40 left after `dispatch_agent` was removed, plus the mounted `knowledge_write` and `user_settings_init`; preceding 41/42-name source epochs stay historical; `retire_child`, `role_start_set` and `direct_execution_grant` remain declared, and older39/41 epochs are historical; the historical 61–66-name inventories remain historical.
 
 ## Hot Path Summary
 
 MIK-R109 adapters answer names, not documents. `core.context_packet_payload` keeps the full builder as an internal/CLI/dashboard route and finalizes its slim version-3 projection; do not describe the slim answer as all resolver settings or assume this adapter logs omitted full context. `read_ar_files_payload` preserves canonical reader/task scope and refuses removed/object inputs before delegating to card-location naming. `knowledge_read_payload` reuses its exact selected epoch for ID/kind/state/location projection and projected page sizing; a moved checkout refuses instead of mixing snapshots. `knowledge_diff_payload` keeps the full comparison in a caller-readable report and returns trees/counts/bounded changed-record names/report location. These adapters acquire no semantic verdict authority.
 
-The composed model-owned public roster has41 names after L109 removed resolve_context; the pre-sync R11142-name account is historical. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.
+The composed model-owned public roster has42 names, the retained 41 plus the mounted `user_settings_init`; the pre-sync R11142-name account is historical. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.
 
 Registration constructs the request for the domain builder; the builder delegates behavior and passes the result to `_tool_payload`; `application/tool_response.py::complete_tool_response` validates and enriches the whole result through the model-owned finalizer, then shapes and records the answer actually delivered to an agent. Registration order is intentional. Flat declarations and builder-side parameter objects remain distinct; approved structured requests are exceptions to the flat-signature convention.
 
@@ -93,6 +93,10 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | ---------------------- | ---------------------------------------------- |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
 
+## The settings initializer payload
+
+`role_agents.py` builds the `user_settings_init` answer: a preview or one create of the role-harness settings file, with a refusal answered as data — `state: refused` and its code, detail, next action, path and target — rather than raised. `core.py`'s `server_info` no longer reports a harness skill root, and the response-model registry binds the new tool name.
+
 ## Evidence
 - The named refusal of a root with no code tree. [1]
 - A converted tree's projection reads each view whole. [2]
@@ -143,7 +147,11 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. [56]
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
 
-- The L111 predecessor model-owned public roster had41 after resolve_context removal; the current source has41 (that 40 plus the mounted knowledge_write; earlier42 is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
+- The L111 predecessor model-owned public roster had41 after resolve_context removal; the current source has42 (that 41 plus the mounted user_settings_init; the earlier 42-name epoch is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
 
 - Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members. [44]
-- Current single literal PUBLIC_TOOLS contains 41 public names (40 plus mounted knowledge_write) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [45]
+- Current single literal PUBLIC_TOOLS contains 42 public names, including the mounted `user_settings_init`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [45]
+
+- The settings payload that answers a refusal instead of raising it. [61]
+
+- The server-info answer without a harness skill root. [62]

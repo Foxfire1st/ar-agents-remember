@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The address is answered only after the owner was asked and the origin answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "content": "sha256:87d585406898a9e123652bbfecdeaaa72b3cbc0d56283fbba23ad20fa8156915",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unserved origin, a 503 page and a failed owner are reported as reasons, never published as an address.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "content": "sha256:87d585406898a9e123652bbfecdeaaa72b3cbc0d56283fbba23ad20fa8156915",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

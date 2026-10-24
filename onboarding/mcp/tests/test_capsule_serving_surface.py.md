@@ -2,37 +2,60 @@
 
 ## Governing Overview
 
-[Onboarding overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-The shipped-surface, protocol-exchange, and guard cases for role-capsule and skill serving. The shipped corpus and manifest, the real client/server exchange over the installed SDK, and the guards the baseline review found unpinned (with the nesting rule) live here; fixture worlds, frozen vocabularies, and the first behaviour blocks stay in the sibling serving module and are imported, so every definition lives exactly once.
+Covers the shipped capsule surface: the real corpus parses and every served skill has a root revision, the
+composition manifest and the serving plane agree on one identity, the server's index resource and the
+extension's own entries are complete, and a real client drives the real server over stdio. Containment,
+index, naming and idempotence guards are each reached with a seeded mutation.
 
 ## Code Commentary
 
-The shipped-surface block pins the real corpus: every served skill parses with frontmatter, a body digest, and a readable URI; the composition manifest and the catalog agree on skill identity and origin; this server's own index resource keeps the Agent Skills discovery shape (distinct from the extension's enumeration entries); and every extension entry is complete with verbatim frontmatter and per-file digests verified against the bytes on disk.
+### Logic
 
-The protocol block drives one real client session against the real server over stdio and asserts everything the client observed: negotiated capabilities and extension declaration, discovery without bodies, the index naming every served skill, a selected body equal to the exact bytes on disk with its revision and trust metadata, a supporting-file read resolved against the skill root, the not-found refusal, the absence of the retired `role_capsule_compile`, `skill_catalog_list`
-and `skill_catalog_read` tools, and both extension methods answered on the same transport with an unregistered method still refused. A separate live-server case proves a traversal URI is refused rather than served, and a sanity case proves the harness's own assertions can fail.
+`_live_settings()` and `_server_parameters()` build the documented argv in a disposable coordination root with
+this worktree's source, `_drive_exchange()` runs one client session against the real server, and
+`_drive_extension_methods()` issues the extension's methods over the transport its declaration rode in on.
 
-The guard block pins each seeded-mutation proof the baseline review found unpinned: an escaping catalog record is refused by the containment guard, the index loader refuses while a skill cannot be served, a directory/name disagreement is recorded not served, and a second extension declaration installs no second wrapper. The remaining cases pin altitude admission from the task layer itself, the capsule operation serving every seat the document can carry with refusal by name for the rest, flat publication of a nested skill, and the legacy role rename returning the canonical investigator with one notice.
+- **Shipped corpus.** `test_the_shipped_corpus_parses_and_every_served_skill_has_a_root_revision` requires
+  frontmatter, a body digest and a readable URI per skill.
+- **Identity.** `test_the_composition_manifest_declares_the_skill_that_is_served` keeps the two planes agreeing
+  on skill identity and origin.
+- **Entries.** `test_this_servers_own_index_resource_keeps_the_agent_skills_discovery_shape` pins this server's
+  index resource, and `test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter` checks the
+  extension's entry shape against the tree rather than against itself.
+- **The real exchange.** `test_a_real_client_and_server_exchange_over_the_installed_sdk` drives the entry point
+  over stdio with the installed SDK's client; `test_the_mutation_harness_can_actually_fail` proves the evidence
+  can fail.
+- **Containment.** `test_the_server_process_never_serves_a_file_outside_a_skill_directory` requires a traversal
+  URI to be refused by the running server rather than normalized into a read, and
+  `test_a_catalog_record_that_escapes_its_skill_directory_is_refused` reaches the same refusal through a record.
+- **Guards.** `test_the_index_reader_refuses_while_a_skill_cannot_be_served`,
+  `test_a_skill_whose_directory_name_disagrees_with_its_name_is_recorded_not_served` and
+  `test_the_extension_declaration_is_installed_once_per_server` reach the index, name and idempotence guards.
+- **Altitude.** `test_altitude_admission_admits_every_role_the_document_can_carry_and_refuses_the_rest` and
+  `test_the_capsule_operation_serves_every_seat_its_document_can_carry` keep admission with the task layer rather
+  than a hardcoded role name, `test_a_nested_skill_is_published_flat_like_any_other` permits nesting with flat
+  publication, and `test_old_role_compile_input_returns_the_canonical_investigator_with_one_notice` keeps the
+  legacy rename to one notice.
+
+### Conventions
+
+Cases that need a live server start the real entry point; a guard case seeds the exact defect it claims to
+catch, so no guard passes without being reached.
+
+### Invariants And Boundaries
+
+- Nothing outside a skill directory is served, in the process, whatever the URI says.
+- Admission is the task layer's rule; the serving surface does not hardcode roles.
 
 ## Evidence
 
-
-- Split contract: surface cases here, worlds and vocabularies imported [1]
-
-
-- Shipped corpus, manifest identity, index shape, entry completeness [2]
-
-
-- Real stdio exchange and its eight client-observed checks [3]
-
-
-- Live-server traversal refusal and harness-can-fail sanity [4]
-
-
-- Seeded-mutation guards: containment, index, name rule, idempotence [5]
-
-
-- Altitude admission, capsule seats, nesting, legacy rename [6]
+- The split contract: surface cases here, worlds and vocabularies imported. [1]
+- Shipped corpus, manifest identity, index shape and entry completeness. [2]
+- The real stdio exchange and its client-observed checks. [3]
+- Live-server traversal refusal and the harness-can-fail sanity check. [4]
+- Seeded-mutation guards: containment, index, name rule and idempotence. [5]
+- Altitude admission, capsule seats, nesting and the legacy rename. [6]

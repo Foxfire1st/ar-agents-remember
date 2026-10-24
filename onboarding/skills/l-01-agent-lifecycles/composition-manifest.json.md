@@ -6,11 +6,15 @@
 
 ## Purpose
 
-This authored manifest is the prose-free routing metadata for canonical role and operation sources. `SKILL.md` remains the thin selector and `skills/` the authoritative source tree. The native route composes the selected role followed by one applicable operation; task and workspace facts remain separate handover data. Retained core/launcher/registry metadata does not inject shared core prose or expand the seven roles this native launcher exposes.
+This authored manifest is the prose-free routing metadata for canonical role and operation sources. `SKILL.md` remains the thin selector and `skills/` the authoritative source tree. The native route composes the selected role followed by one applicable operation; task and workspace facts remain separate handover data. Retained core/launcher/registry metadata does not inject shared core prose or expand the eight canonical roles this native launcher exposes.
 
 It is authored bytes, not generated output: the parser that consumes it is explicit that "the
 declared vocabulary is authoritative over the manifest, not the other way round", so a manifest edit
 "can therefore not quietly mint a new role or a ninth operation."
+
+## Current Source Qualification
+
+The manifest now routes the first-hour seat's added surfaces: the `bootstrap` role's tool list gains `user_settings_init` beside `runtime_install`, `memory_init`, `memory_baseline_status` and `memory_baseline_adopt`, and it also lists `role_message`, which the role page's own text allows no message from. The `bootstrap-foundation-d301` reference entry is re-described as "the foundation state this seat reports and the Architect handover that follows it", its step moves to "when you reach step 8, not before", and a new step-detail entry `bootstrap-failure-states` names `reference/bootstrap-failure-states.md` as "the states a new user's setup actually hits, and the move for each", injected only when a step answers with a state the seat cannot name. Both entries stay non-injected step details for the `bootstrap` role.
 
 ## Code Commentary
 
@@ -18,7 +22,7 @@ declared vocabulary is authoritative over the manifest, not the other way round"
 
 **Identity and composition.** The schema is `ar-role-capsule-composition/v1`, the router is `SKILL.md` and the authoritative tree is `skills/`. Native `composition_order` is `role` then `operation`. Canonical task/workspace facts travel as separate handover data.
 
-**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/Investigator without a synthetic task. `role_order` still retains ten registry roles; native launch support remains the seven current UI roles.
+**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/Investigator without a synthetic task. `role_order` still retains ten registry roles; native launch support now includes eight canonical roles, including Bootstrap; the system-specialist spelling is an alias of Investigator.
 
 **`operations` declares each operation's source and the roles that may run it.** Nine entries —
 orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
@@ -49,7 +53,7 @@ skill by origin, URI and root source (`agents-remember/skills`, `skill://agents-
 content*, so its identity is server/repository origin plus skill URI — a bare name would collide
 across servers." `launcher` is the ambient launcher's composition: `is_role: false`, the routing
 condition it belongs to, `core/launcher.md` as its instruction source, the `launcher` core block,
-orientation and coordination as its operations, and `architect-brief.md` as its one template. The `references` block retains rationale, rulings, lenses, criteria and templates and adds fourteen named step details plus visual-explainer guidance. Entries carry `injected: false`; step details declare their reader roles and read step, rather than entering the inline instruction body.
+orientation and coordination as its operations, and `architect-brief.md` as its one template. The `references` block retains rationale, rulings, lenses, criteria and templates and contains fifteen named step details plus visual-explainer guidance. Entries carry `injected: false`; step details declare their reader roles and read step, rather than entering the inline instruction body.
 
 **The identity keys say what the file is and where its authority sits.** `schema` fixes the document
 vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
@@ -97,7 +101,7 @@ package paths, because the corpus root is supplied by the consumer. Every list t
 iterates is an array of strings or of objects with a `source`/`purpose` pair; nothing is keyed by a
 display name where an identity would do, and the one skill entry carries origin plus URI rather than
 a bare name. Duplicated knowledge is deliberate and testable: the operations' `applies_to_roles` and
-the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only native composition, the inert core map, separate handover facts, the retained ten/nine vocabulary versus seven launchable roles, and bound native role tools.
+the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only native composition, the inert core map, separate handover facts and bound native role tools. Its seven-launchable-role caption predates Bootstrap; the current public roster has eight canonical roles, while the compiler vocabulary retains ten roles and nine operations.
 
 The file is a flat JSON object with `snake_case` keys, ordered so the document reads from identity to
 registry to composition to notes. Values that select a file are root-relative POSIX strings
@@ -162,9 +166,9 @@ No task-independent follow-up is recorded. The current reference-only entries, i
 
 Operations now declare `audience`: `sections` for the eight marked operation sources and `all` for the protected authorized-closeout source. The stage markers select common text and named-role text rather than requiring the complete multi-role operation in every capsule. Selected role text remains whole; task facts remain separate handover data.
 
-The references registry now includes thirteen extracted detail files, the shared writing profile and optional visual-explainer guidance, in addition to its earlier reference trees. Fourteen entries declare `step_detail: true`, step text and eligible roles, with `injected: false`; they are separate named-step material, not a second instruction authority. Visual-explainer guidance is reference-only without step_detail. Registration is not proof of a real start or a read at the named step.
+The references registry now includes fourteen extracted detail files, the shared writing profile and optional visual-explainer guidance, in addition to its earlier reference trees. Fifteen entries declare `step_detail: true`, step text and eligible roles, with `injected: false`; they are separate named-step material, not a second instruction authority. Visual-explainer guidance is reference-only without step_detail. Registration is not proof of a real start or a read at the named step.
 
-Retained core metadata remains non-injected for native role capsules; the ten-role/nine-operation vocabulary is not the seven-role native launcher roster. Requested tools are metadata, not grants. No new may-start permission or new role is added.
+Retained core metadata remains non-injected for native role capsules; the ten-role/nine-operation vocabulary is distinct from the eight-role native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission.
 
 
 ## Evidence
@@ -195,20 +199,32 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
 
 
+
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [10]
+
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]
 - The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [12]
 - The install-time corpus anchor and the corpus test that reads the manifest by path. [13]
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [15]
+
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [16]
+
 - The six block names the corpus holds (including the launcher block authored here so the registry holds only roles); the manifest composes role then operation only, and a dispatched seat receives no shared core block (`models/role_capsules/selection.py:158-163` returns `core_blocks=()`).
+
 - The role registry itself and the two role entries that show the per-seat shape. [18]
+
+
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
+
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [20]
 - The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [21]
+
 - The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [22]
+
+
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [23]
+
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [24]
 - The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [25]
 - The install-time corpus anchor and the corpus test that reads the manifest by path. [26]
@@ -224,22 +240,36 @@ No meaningful cross-repo references found.
 
 ## Current Investigator contract impact
 
-The manifest exposes canonical Investigator among the seven native roles, requests the approved fourteen Investigator reading tools and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
+The manifest exposes canonical Investigator among the eight native roles, requests the seven Investigator reading tools and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [14]
+
+- The manifest retains canonical Investigator with its seven requested reading tools, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+
 
 
 ## Refreshed current evidence
 
+
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
+
 
 - The role registry in canonical order and the two routing conditions, with the non-role launcher declared separately. [32]
 
+
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
+
+
 - The role registry itself and the two role entries that show the per-seat shape. [5]
+
+
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+
+
 - The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [8]
+
+
 - The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]
+
 
 ## Inherited Source-Epoch Commentary
 
@@ -482,17 +512,21 @@ Inherited reference 9 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [27]
 
 
-- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [28]
 
-- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [29]
+- The earlier audience-selection change added audience fields for all nine operations and fifteen reference entries, fourteen then marked step_detail. Those counts describe that change before the Bootstrap failure-state detail was added; they are not the current registry totals. [28]
 
-- Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged. [30]
+- The earlier audience-selection account records unchanged routing vocabulary, applicability, role order and role/operation composition order at that change. [29]
+
+- The earlier audience-selection account retains its recorded fifteen reference entries and fourteen marked step_detail; those are historical change counts. [30]
 
 ## Current account — the curator's requested tool list
 
 The curator role's `tools` list requests `knowledge_write` beside `knowledge_read`. The list requests tools: it is checked against the published tool roster and enters the seal digest, so it records what the role may reach and grants nothing by itself. The mounted `knowledge_write` runs the same leaf writer with the same arguments as `knowledge-ingest`, which is why the curator's role text may name it as an authoring route.
 
 - The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]
+
+- The current registry has fifteen non-injected step-detail entries, including the added Bootstrap failure-state detail; visual-explainer guidance is not a step detail. [33]

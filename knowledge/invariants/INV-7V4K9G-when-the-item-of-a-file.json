@@ -8,17 +8,18 @@
   },
   "applicability": "Every onboarding-trace row the file writer authors for a card subject -- a file-level card or a route overview -- in a converted memory worktree.",
   "conditions": [
-    "An onboarding_trace item's valid source list remains authoritative; every trace subject excludes matching unexplained groups even when that trace metadata is unusable.",
-    "Without a trace item, collect the sorted union of string member paths from sourceBlobs of matching uncovered unexplained_hunk and unexplained_file items with mapped facts, onboardingTrace and sourceBlobs.",
-    "Resolve every selected path from the candidate code snapshot, recording absent for a missing path; never copy worklist blob values into row history.",
+    "An onboarding_trace item naming the subject selects its own sources first; matching uncovered unexplained-group metadata cannot enlarge or replace that source set.",
+    "When no onboarding_trace item names the subject, matching uncovered unexplained_hunk or unexplained_file items supply the union of sourceBlobs member paths through their onboardingTrace subject; the writer sorts those paths and binds their actual candidate blobs, or absent for deleted sources.",
+    "SourceBlobs metadata selects paths; its values are not trusted as the candidate's blob authority.",
     "When no usable selected source entry exists, including a trace with unusable metadata that suppresses groups, a file subject binds its own path and an overview keeps its no-worklist-item refusal.",
-    "An item naming only one path retains one-source binding."
+    "An item naming only one path retains one-source binding.",
+    "An existing trace subject suppresses unexplained-group fallback even if its sources metadata is malformed; this does not admit a conflicting group's sources."
   ],
   "exclusions": [
     "Covered unexplained items, other item kinds and other subjects contribute no member paths; malformed facts or member paths contribute no group.",
-    "The gate, grouping producer, authoring-row owner and refusal of an author-supplied sources field are unchanged.",
-    "Other row kinds do not take their sources through this selection.",
-    "A row answering its item is not whole-suite, installed-host, serving-build or acceptance evidence."
+    "The worklist's grouping, item contract, gate and authoring-row owner are unchanged; RowRequest still holds no sources field, and a hand-off that supplies one is refused.",
+    "No other row kind -- invariant, family, dependency, unexplained-change, planned, reconsideration, membership or record -- takes its sources this way.",
+    "A row answering its item is not whole-suite, installed-host, serving-build, fresh Curator execution or acceptance evidence."
   ],
   "id": "INV-7V4K9G",
   "origin": {
@@ -32,9 +33,9 @@
     "leaf": "260928-MIK-L173",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "For each onboarding subject, the knowledge writer binds its row to the source paths selected by the trace-item precedence and matching uncovered-group rules, with each blob read from the candidate.",
+  "statement": "Without an onboarding_trace item for its subject, a writer-authored onboarding row binds every member path from the uncovered unexplained source group to its actual candidate blob or absent, while an existing trace item retains source-set priority.",
   "status": "proposed",
   "supersedes": []
 }

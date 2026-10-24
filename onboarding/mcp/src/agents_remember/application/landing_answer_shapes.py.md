@@ -14,7 +14,7 @@ Landing projections retain the reached state, blockers, executable next-step inp
 
 Redundant contract echoes are removed only from copied answer mappings. Preview commit intent/count information remains while additional worktree/ledger locations stay in the whole result. Nested next-step information still reaches the common guidance translation; removing an echo must not remove the arguments needed to act.
 
-A successful role start retains the agent ID, handover location and a meaningful warning. A successful role message retains outcome/status/taken, adds the recipient ID only for role addressing, and keeps a host cancellation warning. A waited reply additionally carries text and actionable wait detail; an oversized reply is fitted to keep its beginning. Refused role operations retain their producer refusal shape.
+A successful role start retains the agent ID, handover location, a meaningful warning and the continuation a one-call seat names — `dashboardAddress`, `dashboardAddressDetail`, `chatAddress`, `chatAddressDetail` and `nextAction`. A successful role message retains outcome/status/taken, adds the recipient ID only for role addressing, and keeps a host cancellation warning. A waited reply additionally carries text and actionable wait detail; an oversized reply is fitted to keep its beginning. Refused role operations retain their producer refusal shape.
 
 Task-document writes retain the changed-unit/value phrase, file-input digest when measured, and supplied code/memory review states plus reviewKind on review-changing operations. Only create returns the rendered document location. A successful master sync is omitted, but failure stays visible. A dry run retains loss and a bounded diff, not rendered leaf/master contents; the completion owner settles its cut marker against the report/detail that was actually retained. The role-start success shape carries `handoverFilePath` beside `handoverArtifactPath`.
 
@@ -43,3 +43,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log. [5]
+
+## The success answer keeps the seat's continuation
+
+`_ROLE_START_SUCCESS_KEPT` is the one place a successful `role_start` answer is filtered, so a field the producer emits and the whitelist omits never reaches the caller. The whitelist was written before the one call promised an address, so a successful start could not cross it: the two addresses, their reasons and the producer's one following move are named there beside the identity and the handover paths. Refused, rejected and unknown starts keep their own shape and read why from their detail; no other role sets `nextAction` on a successful start.
+
+- The kept-field set of a successful role start, which now carries the continuation beside the identity. [7]

@@ -117,3 +117,9 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 - **Retained historical source account — superseded by the current contract:** The grant tool has explicit L111 interim ownership. [5]
 
 - SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict. [6]
+
+## The settings answer's bound
+
+`SHAPED_TOOL_BOUNDS` gives `user_settings_init` a 900-token bound: its answer carries the state, the path, the two key lists, the harness of every role and its sources, and the largest measured answer is 572 characters. A bound is a ceiling on the delivered answer, not a promise that every field appears in the short form.
+
+- The shaped-bound table, which carries the settings answer's ceiling. [9]

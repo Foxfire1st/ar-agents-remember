@@ -7,23 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
-            "content": "sha256:6937596471fbd3178e3d0c51712a0564c4252c1252e95ade13fd0155bee393d7",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:9b260fbadc47c2d1474173b3980f337b4ce135511332cc531545bb3b2e3d14a1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
-            "content": "sha256:fd0dd527ae990fe8ccc3afba35935ba92a003b598e298288ab42b52e51edc502",
-            "locator": {
-              "end": 515,
+              "end": 540,
               "kind": "line_range",
-              "start": 449
+              "start": 466
             }
           },
           "kind": "test"
@@ -31,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The installed root's corpus is measured as authored source rather than compiled a second time.",
+      "note": "A selected install leaves no coordination-root skill tree or received startup targets; the corpus remains package-served.",
       "targets": [
         {
           "anchor": {
-            "blob": "d7f17e512b688aba3bbb79736f3a41801193ea9e",
-            "content": "sha256:9600de45164afd92f54d4fc9c9220eedb71cc4729220ba6591bda91b13d270f6",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:0e3f3bf103063d34a9ae0c7e32f941c0d73818f32b9ff94ed1be062f297fbe10",
             "locator": {
               "kind": "symbol",
               "name": "test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source"
@@ -51,23 +40,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30b37b413b7dd9a504f48acb417c6588bc64943e",
-            "content": "sha256:2c1e85a208b5c8e4fe930b5baa8d31cb3ae6415992e50216a6fcca4f08d54ff9",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_registered_tool_takes_the_selection_as_this_run_s_own_input"
+              "end": 618,
+              "kind": "line_range",
+              "start": 567
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d7f17e512b688aba3bbb79736f3a41801193ea9e",
-            "content": "sha256:bd71551bdee2cbffde0c61702fb7191d466c1048f4e2536683022f6cf1216f7d",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:4d13e8e44cead27f40556759f09b2694de2b515ec982f318c71c04ae77cdee6b",
             "locator": {
-              "end": 571,
+              "end": 540,
               "kind": "line_range",
-              "start": 530
+              "start": 537
             }
           },
           "kind": "test"
@@ -91,15 +81,16 @@
       ]
     },
     "5": {
-      "note": "The rollback plan renders the installed artifacts and the restore command.",
+      "note": "The current rollback test names the AGENTS.md restore row and its no-experiment restore command, and compares the payload rollback paths with those rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "692f79431814b394af61d023185c1331cca1bf3f",
-            "content": "sha256:cd71b33ca7dd52761c04ced05d8112c51d1d3333565ce553a15fc3f4f33188cc",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:59c03c2641907a04cdef6d19b84d40f2142435c7bf6a779bc77aa337776b4134",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_rollback_plan_names_the_installed_artifacts_and_the_restore_command"
+              "end": 656,
+              "kind": "line_range",
+              "start": 643
             }
           },
           "kind": "test"
@@ -107,16 +98,29 @@
       ]
     },
     "6": {
-      "note": "The two consumer rows this leaf adds to the catalog's consumer proof.\n\nAnchor: `test_capsule_experiment_install`",
+      "note": "The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 1177,
+              "end": 200,
               "kind": "line_range",
-              "start": 1177
+              "start": 200
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 1807,
+              "kind": "line_range",
+              "start": 1807
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -125,16 +129,29 @@
       ]
     },
     "7": {
-      "note": "The two consumer rows this leaf adds to the catalog's consumer proof.\n\nAnchor: `test_capsule_experiment_install`",
+      "note": "The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 1177,
+              "end": 200,
               "kind": "line_range",
-              "start": 1177
+              "start": 200
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
+            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "locator": {
+              "end": 1807,
+              "kind": "line_range",
+              "start": 1807
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -147,11 +164,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
-            "content": "sha256:478cf7c1cf26e37a7c972fcf8ea160bdc40dcc33a8d86874f643f1609c147b21",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:ab503426fbe987464ed2e2e2cec25b7f3b2bc6db7ac9186017fd53fce204f5e4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
+              "end": 492,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:4d13e8e44cead27f40556759f09b2694de2b515ec982f318c71c04ae77cdee6b",
+            "locator": {
+              "end": 540,
+              "kind": "line_range",
+              "start": 537
             }
           },
           "kind": "test"
@@ -163,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7f17e512b688aba3bbb79736f3a41801193ea9e",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
             "content": "sha256:d14da8f6cd5a1b9b6eb13015e0b1b6e7aef8cafa1fb49d56adfbba1563c12c6a",
             "locator": {
               "kind": "symbol",

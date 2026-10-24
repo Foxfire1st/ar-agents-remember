@@ -7,8 +7,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d33ede4a96fc626b69d2523b1315d4e92881451b",
-            "content": "sha256:dd0184db95cf250e4de521164f0e91d25663b510392a527b828f5fb7e976fd4d",
+            "blob": "b4336306585b68e26579baad94742ee383f116d9",
+            "content": "sha256:7432dd7107beb4dd2cf1276b926cb7f5e5105536c40f94303ddb2daa861a9827",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4336306585b68e26579baad94742ee383f116d9",
+            "content": "sha256:7432dd7107beb4dd2cf1276b926cb7f5e5105536c40f94303ddb2daa861a9827",
             "locator": {
               "kind": "file"
             }

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The boundary is only real when the canonical role text, the operation text and its packaged serving copy all stop at the same place; one edited copy would let Bootstrap drift back into the foundation."
+  },
+  "applicability": "Bootstrap's setup conversation and its closing report, from memory-root choice to the handover instruction.",
+  "conditions": [
+    "Memory root, baseline and settings are established and read back by Bootstrap itself.",
+    "The report ends by telling the user to start the Architect, and names c-14 as that continuation."
+  ],
+  "exclusions": [
+    "Authoring onboarding, repairing citations, creating a task or starting a role.",
+    "Claiming that the knowledge foundation already happened."
+  ],
+  "id": "INV-CZV6J3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P1; a2/retired-section-map.md; a3/routes/05-bootstrap-doctrine.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B10",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Bootstrap performs memory/baseline setup without onboarding authorship or citation repair and hands foundation work to a user-started Architect.",
+  "status": "proposed",
+  "supersedes": []
+}

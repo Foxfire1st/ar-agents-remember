@@ -8,7 +8,7 @@
   "applicability": "Canonical instruction sources and their generated shipped copies after old-agent-plane removal.",
   "conditions": [
     "No current instruction prescribes a removed session, lifecycle or gate tool.",
-    "Repository foundation can use the instructed-session writer; no taskless Curator seat is promised.",
+    "Repository foundation is regular task work: the Curator starts on that task document and writes through its contract; no instructed session substitutes for task admission.",
     "The leaf Curator writer and admitted no-document Architect start remain."
   ],
   "exclusions": [
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "No role text, skill, template, workspace instruction file or reference tells an agent or a person to use a removed part, and the copies in every harness's folder follow: a Curator seat opens only on a leaf's task document, and an Architect is started without a document.",
+  "statement": "No role text, skill, template, workspace instruction file or reference tells an agent or a person to use a removed part, and the packaged copy follows: a Curator seat opens only on a leaf's task document, and an Architect is started without a document.",
   "status": "accepted",
   "supersedes": []
 }

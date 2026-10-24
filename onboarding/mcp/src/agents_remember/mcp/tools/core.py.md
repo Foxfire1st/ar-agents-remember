@@ -129,3 +129,9 @@ remain unchanged; the move removes the former flat application-module ownership.
 
 - Frozen implementation of server_info_payload supporting the stated file behavior. [1]
 - Frozen implementation of context_packet_payload supporting the stated file behavior. [2]
+
+## Server info names no harness skill root
+
+`server_info_payload` no longer reports `harnessSkillRoot`: no skill folder is resolved or installed, so there is no root to name, and `ServerInfoResponse` no longer declares the field. The remaining roots, allowed repo ids and unused provider/settings keys are reported as before.
+
+- The server-info answer, which no longer carries a harness skill root. [8]

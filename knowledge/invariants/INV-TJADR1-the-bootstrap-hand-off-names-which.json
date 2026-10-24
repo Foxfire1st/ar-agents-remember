@@ -6,7 +6,7 @@
     ],
     "justification": "Skill and template must report the same actual state so a card corpus is not mistaken for authored knowledge."
   },
-  "applicability": "Bootstrap handoff at the actual moment it reports cards, fixer, attributed baseline and knowledge state.",
+  "applicability": "The c-03 onboarding-bootstrap procedure’s handoff, at the actual moment it reports cards, a clean fixer dry run, attributed baseline and knowledge state. This is conditional on that onboarding procedure being performed; the first-run Bootstrap seat’s setup does not author cards or invoke the fixer.",
   "conditions": [
     "A clean tree dry run means no remaining citation-table authoring and no refused card.",
     "Knowledge before the first memory revision reports context-not-admitted/memory_revision_unavailable; absent knowledge after adoption reports not-recorded.",
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The bootstrap hand-off names which cards exist, a clean fixer dry run, the baseline state, and the knowledge state memory_init reports at that moment with its named next step, never claiming a foundation because cards exist.",
   "status": "proposed",

@@ -13,7 +13,7 @@ Declare boot/build identity, role-launched server binding and retained server in
 ServingBuildPayload and AgentBindingPayload forbid extra fields. Build identity is supplied
 at boot, not fabricated at each query; agent binding carries recorded canonical selection
 references and does not itself authorize work. ServerInfoResponse requires stdio transport,
-configured roots and servingBuild, with optional harnessSkillRoot/toolServer/agentBinding.
+configured roots and servingBuild, with optional toolServer/agentBinding.
 Its allowedRepoIds and unusedProviderKeys lists default empty. Old provider configuration
 keys are unused metadata, not live capabilities. PingResponse is deleted; tools/reservedTools
 and allowedProviderIds are not current server-info inventory fields. Read-only information
@@ -67,3 +67,9 @@ AgentBindingPayload captures launch agent, role, request, report and optional ca
 
 - Frozen implementation of AgentBindingPayload supporting the stated file behavior. [2]
 - Frozen implementation of ServerInfoResponse supporting the stated file behavior. [3]
+
+## Server info keeps no harness skill root
+
+`ServerInfoResponse` no longer declares `harnessSkillRoot`, and `server_info_payload` no longer answers it: no skill folder is resolved for a harness, so the field had no current value to report. Transport, roots, allowed repo ids and unused provider keys are unchanged.
+
+- The strict server-info DTO without a harness skill root. [7]

@@ -1,0 +1,120 @@
+{
+  "path": "mcp/tests/test_paseo_launch_roles.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+        "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RolePreparationChildTests.test_both_entry_points_prepare_in_the_existing_child"
+        }
+      },
+      "facet": "The shared dispatch case checks the existing-child argv/request and same-enclosure reuse for Worker then Reviewer dispatch; it does not call a separate role_start entry point or establish native launch proof.",
+      "id": "PRF-P0B9WG",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "L112-semantic-replacement-PRF-9QSPDZ",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+        "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
+        "locator": {
+          "kind": "symbol",
+          "name": "RolePreparationChildTests.test_sequential_fresh_leaves_preserve_the_callers_binding"
+        }
+      },
+      "facet": "Sequential fresh-leaf preparations preserve the calling AgentBinding environment rather than consulting or mutating a removed ambient persistent lifecycle.",
+      "id": "PRF-PDGSKS",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-5ATS9T-current-caller-binding-proof",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+        "content": "sha256:3c7cd8b3cad4a9b7d77e82181c2303269ccd1107f0c713ac706caa6155e1abd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+        }
+      },
+      "facet": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.",
+      "id": "PRF-TZXFK2",
+      "invariant": "INV-FMB2AG",
+      "origin": {
+        "handoffEntry": "PNT-R03@v1 §4 / D2",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each role class gets one agent in its own folder, with title, labels and reachable paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared dispatch path prepares Worker and Reviewer in the existing child, and a refusing, failing or unfinished child refuses the launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The launch-file census includes fixture task documents and published copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Sequential child preparation leaves the caller's binding environment exact.\n\nAnchor: `test_sequential_fresh_leaves_preserve_the_callers_binding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -28,6 +28,22 @@
           "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137"
         }
       ]
+    },
+    "3": {
+      "note": "The parser both commands are built from, without the exposure switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+            "content": "sha256:6e0150716b5a5fd52a70a1c4832fcb53dfdf3bfe6a68aa60cca9ad2e774e4b59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

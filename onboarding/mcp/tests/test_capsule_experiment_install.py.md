@@ -2,88 +2,79 @@
 
 ## Governing Overview
 
-[tests route overview](overview.md)
+[Tests route overview](overview.md)
 
 ## Purpose
 
-The forcing suite for the experimental installation and instruction cutover (260915-CAPS-L9): **19
-cases** that drive the real installer against scratch coordination roots and read the resulting
-tree, the returned run record and the compiled capsule text. It is the proof surface for behaviour 2
-(the per-run recorded selection with no silent switch), behaviour 3 (the cutover and its
-deduplication screens) and behaviour 5 (the run record and the way back).
-
-Historical creation account, not current branch or commit state: this module was **new in 260915-CAPS-L9** and **uncommitted on `ar/260915-caps-l9-ar`** then; it is not
-one of the six lane-manifest `D9` modules (its row is registered and the loader names the same six as
-at the clean base), and its two consumer rows in `mcp/tests/evidence-lifecycle.toml` are the measured
-catalog delta this leaf contributes.
+Runs the experimental installation and instruction cutover end to end: an unselected run installs the legacy
+startup chain, a selected one cuts over to the capsule path and replaces an earlier legacy installation, and
+the next unselected run restores the legacy chain because the selection is per run and never persisted. A
+selected run with no usable capsule path refuses and writes nothing.
 
 ## Code Commentary
 
-### What each case class is protecting
+### Logic
 
-- **The cutover pair and its positive control.** `…an_unselected_run_installs_the_legacy_startup_chain`
-  and `…a_selected_run_cuts_over_to_the_capsule_path` are two real installs in two scratch roots; the
-  disabled run is the control for the opted-in one, and `…a_selected_run_removes_an_earlier_legacy_installation`
-  proves the removal half rather than only the withholding half.
-- **The way back is executable.** `…running_the_installer_again_without_the_selection_restores_the_legacy_chain`
-  runs the documented undo as a run, not as prose.
-- **The selection surface.** `…the_selection_resolves_from_the_request_then_the_run_environment` and
-  `…the_registered_tool_takes_the_selection_as_this_run_s_own_input` drive the registered payload
-  builder and assert `selectionSource == "request"` for a request-supplied selection and `legacy`
-  with no record for an unselected one; `…an_unknown_experiment_is_refused_by_name` pins the refusal
-  vocabulary.
-- **Fail-closed refusals write nothing.** `…a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing`
-  and `…a_pin_mismatch_refuses_the_install_and_names_the_capability` assert both the named capability
-  and the absence of a created coordination root.
-- **The deduplication and delivery screens.** `…the_legacy_fingerprint_is_present_when_disabled_and_absent_when_opted_in`
-  counts the four coordinator `AGENTS.md` targets **on disk**; `…the_canonical_corpus_reaches_an_opted_in_run_once_through_the_capsule`
-  reads the trusted instruction text the production compile route produces; and
-  `…the_installed_root_carries_the_canonical_corpus_only_as_authored_source` reads the **installed**
-  coordination root instead of compiling a second time, which is the screen that says what the
-  installed `skills/` copy actually is.
-- **The record and the rollback plan.** `…the_run_record_carries_the_packet_shape_and_the_independent_versions`
-  compares the record against the pinned `package.json` rather than against the product's own output,
-  and `…the_rollback_plan_names_the_installed_artifacts_and_the_restore_command` pins the rendered
-  undo rows.
-- **The no-persistence guard, which is the case `S2`'s strengthened text names.**
-  `…the_selection_is_recorded_per_run_and_never_persisted` **content-digests every regular file under
-  the coordination root** before and after the selected run and inspects every file that appeared or
-  changed; the root-scoped reading demands that every hit be a **byte-identical authored asset**,
-  with a control that the scan found something at all. It replaced a first revision whose guard was
-  `rglob("*.json")` and therefore blind to a `.toml`, a `.txt` or an extension-less switch — the
-  baseline review's `L9-1`, whose four seeded channels (`S12` `.json`, `S12b` `.toml`, `S12c` `.txt`,
-  `S12d` extension-less) plus the deselected-install seed `S12e` the case now catches.
-- **The install stays inside its destination.** `…a_selected_install_writes_nothing_into_the_install_source_tree`
-  and `…the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` (which asserts the
-  installed `node_modules` is a real directory and not a symlink).
+`create_install_source()` builds one install source tree from this repository's canonical assets,
+`dispatcherless_deps()` keeps the provider stack out, and `run_install()` runs the real installer through the
+entry point the run selects. `CORPUS_FINGERPRINT`/`CORPUS_FINGERPRINT_SOURCE` and
+`LEGACY_FINGERPRINT`/`LEGACY_FINGERPRINT_SOURCE` are real corpus text, so a zero count means absence rather
+than drift; `fingerprint_count()`, `snapshot_regular_files()` and `files_containing()` measure the effective
+material.
+
+- **Two modes.** `test_an_unselected_run_installs_the_legacy_startup_chain`,
+  `test_a_selected_run_cuts_over_to_the_capsule_path` and
+  `test_a_selected_run_removes_an_earlier_legacy_installation` cover each mode and the replacement;
+  `test_running_the_installer_again_without_the_selection_restores_the_legacy_chain` shows no global switch is
+  left on.
+- **Selection.** `test_an_unknown_experiment_is_refused_by_name`,
+  `test_the_selection_resolves_from_the_request_then_the_run_environment` and
+  `test_the_registered_tool_takes_the_selection_as_this_run_s_own_input` keep the selection an input of this
+  run, and `test_the_selection_is_recorded_per_run_and_never_persisted` digests every regular file under the
+  coordination root before and after.
+- **Fail closed.** `test_a_selected_run_with_an_unavailable_capsule_path_refuses_and_writes_nothing` refuses
+  instead of falling back.
+- **One corpus copy.** `test_the_legacy_fingerprint_is_present_when_disabled_and_absent_when_opted_in` and
+  `test_the_canonical_corpus_reaches_an_opted_in_run_once_through_the_capsule` count the corpus over the real
+  effective material from two producers, and
+  the historically named `test_the_installed_root_carries_the_canonical_corpus_only_as_authored_source`
+  now asserts that the installed coordination root has no `skills/` tree and that startup targets remain
+  withheld. The corpus is package-served rather than copied under the coordination root.
+- **Record and dry run.** `test_the_run_record_carries_the_packet_shape_and_the_independent_version` and
+  `test_a_dry_run_reports_the_cutover_and_writes_nothing` cover the record and the dry run.
+- **Source tree.** `test_a_selected_install_writes_nothing_into_the_install_source_tree` keeps caches, manifests
+  and generated state out of the tracked tree, and `test_the_rollback_plan_names_the_restore_command` names the
+  restore command.
+- **Earlier installs.** `test_an_install_over_an_earlier_experimental_installation_fails_on_none_of_its_stores`
+  keeps what an earlier build left and fails on none of it.
+
+### Conventions
+
+Facts are read from the retained logged install result and from digests of the tree, not from the installer's
+returned summary alone.
 
 ### Invariants And Boundaries
 
-- The suite drives the **real** installer entry points against scratch roots; it does not assert on
-  the live coordination root.
-- Every case that claims a count names the producer of each side; no case presents two different
-  producers' numbers as one measurement.
-- Seed coverage lives in `notes/reports/caps-l9-mutation-probe.py` (24 caught, 0 vacuous), not in
-  this module.
-- Failures are never smoothed: the `L9-1` vacuity is recorded as the reason the guard is
-  root-scoped rather than as a silent edit.
-
-The machine-settings preservation fixture writes its own default seed into its private temporary coordination tree before either install. Both installs compare against those pre-existing bytes; the test establishes preservation, and does not depend on installation creating missing private settings.
-
-The registered selected-run case enters the real tool-call log context and reads `experiment` from the retained whole result named by the delivered answer’s `log`. Selection source and capsule delivery are asserted there; an overflow answer’s omitted field is not the fact being tested. The unselected run remains the separate legacy/no-record control.
+- The selection belongs to one run; nothing under the coordination root records it afterwards.
+- A selected run never falls back to the legacy chain.
 
 ## Evidence
 
-### Repo-Internal References
-
 - The no-persistence guard digests every regular file under the coordination root before and after the selected run. [1]
-- The installed root's corpus is measured as authored source rather than compiled a second time. [2]
+
+- A selected install leaves no coordination-root skill tree or received startup targets; the corpus remains package-served. [2]
+
 - The registered tool takes the selection as this run's own input and the record names the input that won. [3]
-- The installed application keeps machine-local trees out of the mirror and its `node_modules` is a real directory, not a symlink. [4]
-- The rollback plan renders the installed artifacts and the restore command. [5]
-- The two consumer rows this leaf adds to the catalog's consumer proof. [6]
-- The two consumer rows this leaf adds to the catalog's consumer proof. [7]
 
 - Private machine settings pre-exist both installations and retain their bytes. [8]
 
 - Selected-run facts are asserted from the retained logged whole result. [9]
+
+- Historical source-bound test account: the earlier `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` at source blob `692f79431814b394af61d023185c1331cca1bf3f`, lines 668–698, asserted that machine-local dependency trees were not copied/pruned and the installed node_modules was a real directory. [4]
+
+The present test module no longer contains that test or asserts those installed-application facts; the earlier witness is retained at its original source epoch, not claimed as a current regression case.
+
+- The current rollback test names the AGENTS.md restore row and its no-experiment restore command, and compares the payload rollback paths with those rows. [5]
+
+- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
+- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [7]

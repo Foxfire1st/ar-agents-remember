@@ -54,16 +54,16 @@
       ]
     },
     "4": {
-      "note": "The c-05 source routes repository entity catalogs separately from file-level units.\n\nAnchor: \"## Routing\"",
+      "note": "The c-05 source names file-level units and repository entity catalogs as its two artifact types.\n\nAnchor: current definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:cab76462dd40ef39994467b3b2e01cbf6b9554d21c568feb150fb554e5293b91",
+            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "content": "sha256:da92a848d2152e556c2ab883600ffd54517e1438322474a68d73b651c8daa8bb",
             "locator": {
-              "end": 68,
+              "end": 11,
               "kind": "line_range",
-              "start": 55
+              "start": 8
             },
             "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
           },
@@ -72,18 +72,18 @@
       ]
     },
     "5": {
-      "note": "The inspected c-05 source attributes evidence-path curation to maintenance and fingerprint comparison/inventory matching to c-02; the template itself performs neither.\n\nAnchor: \"6. Repo-level entity catalogs use deterministic\"",
+      "note": "The retained c-05 entity workflow requires evidence review and names its current fingerprint-drift and inventory-coverage reporting owner; the template itself performs neither comparison nor parsing.\n\nAnchor: current definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:fb30abd1435ff412dac2c9893bf0da97171b3256f6f3922b30debe9b08d9fef7",
+            "blob": "2c9ba7f6146931d73109e0f33178c6764ae65542",
+            "content": "sha256:dae8b447f3e86e1aaee926ab16689aca27e15c94b4b63b534564636aac92fea9",
             "locator": {
-              "end": 130,
+              "end": 96,
               "kind": "line_range",
-              "start": 125
+              "start": 88
             },
-            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md"
           },
           "kind": "code"
         }
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
             "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
             "locator": {
               "end": 33,

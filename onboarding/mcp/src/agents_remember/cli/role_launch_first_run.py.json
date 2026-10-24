@@ -1,0 +1,236 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_first_run.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+        "content": "sha256:60a343b037c2b9cd98d16352523df8504435b35a5bdc2c42cced25174dc34814",
+        "locator": {
+          "kind": "symbol",
+          "name": "_install_scaffold"
+        }
+      },
+      "id": "RLZ-3CWZHF",
+      "invariant": "INV-D3VXYX",
+      "origin": {
+        "handoffEntry": "L188-B01",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This stage delegates actual absent-scaffold installation and reports its effects before host dispatch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+        "content": "sha256:fa5f2fb7f684310afe24bbd78f2a083dd186e98dc7e1e86c251edb3d15483512",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fail"
+        }
+      },
+      "id": "RLZ-AWF5DH",
+      "invariant": "INV-Y6WN6Y",
+      "origin": {
+        "handoffEntry": "L188-B06",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The failure boundary retains stage and completed preparation effects.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+        "content": "sha256:a19cf4eb8ccdcf76b97625a18561a067c2a144897e776c49a1f6bc09cc4ccc16",
+        "locator": {
+          "kind": "symbol",
+          "name": "scaffold_present"
+        }
+      },
+      "id": "RLZ-H1J5M9",
+      "invariant": "INV-D3VXYX",
+      "origin": {
+        "handoffEntry": "L188-B01",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The first-run predicate admits the retained scaffold without requiring the removed skills directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+        "content": "sha256:ada19e5e5b997c8718e8f0ee9644b1c3d5aec02c0576f7210ccf83ca99c0d9fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_completed_effects"
+        }
+      },
+      "id": "RLZ-NPJ0TW",
+      "invariant": "INV-Y6WN6Y",
+      "origin": {
+        "handoffEntry": "L188-B06",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "This collector preserves prior effect identities in partial-progress reports.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The three stages in order, and the report that carries what each observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+            "content": "sha256:4dfecd273e8b7851ec4b7d4cfa3656919408df3d0c9325d4769becf683f22684",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_first_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The predicate names the assets every delivery mode writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+            "content": "sha256:acdc7ad07d5ecd74d31a40391938b1472e334c8032f015e865899552010880c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCAFFOLD_ENTRIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The post-provision proof: the daemon answers and the plug-in it loaded is the installed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+            "content": "sha256:5788dd90016fffd581692febd8d384604bf6b961dadd50be6d15abd67a55393d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_running"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The failure detail names the completed stages, their paths and the retained daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
+            "content": "sha256:e1049a4177e20dd76510010b63d3e280e6199742886cc5f6c1bc624fc3b6c586",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failure_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A provision failure and a plug-in load failure each carry the completed stages and the running daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:66733b67fa5de5249c1b1dab4dbc0e410644ec541448b48972da520e20c92b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_provision_failure_carries_the_completed_stages_and_the_retained_daemon"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:a34ad1a971bd29c270447be5485866f19cbdab8cb90f1adc9cc167e56261f35a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_plugin_load_failure_carries_the_running_daemon"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The installed scaffold is what the cold path accepts, and a root without it is not prepared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:053b481ae51fb8be7022f2c0b42f29967414aa9770317190b2a78ea4fe6de17b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_installed_scaffold_is_what_the_cold_path_accepts"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "content": "sha256:a8cc6acefa86ff1065b74cb52c532ea2bd5880bd53925fcc943e33672337b2d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_coordination_root_without_its_scaffold_is_not_prepared"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A receipt or matching selection binding marks an existing request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1339674fd3a4afc1a33a88cffc3c4f27962fcf3",
+            "content": "sha256:08ab4b0b00023d8da6c9e85edf0f1b548a4643dac46418bd04d9ccd5e79e0201",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Public first-run preparation leaves that existing execution alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1339674fd3a4afc1a33a88cffc3c4f27962fcf3",
+            "content": "sha256:d7f7f194376b0cedfa3496b14aef9878e57b01f72deea9aeba4e8b84d1f3bfd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_first_run_for"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

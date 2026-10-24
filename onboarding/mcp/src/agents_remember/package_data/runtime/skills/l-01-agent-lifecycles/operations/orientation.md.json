@@ -73,14 +73,32 @@
       "targets": [
         {
           "anchor": {
-            "blob": "363d653128562c18094b47ad1c490c2a1388e451",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
-              "end": 1,
+              "end": 2,
               "kind": "line_range",
-              "start": 1
+              "start": 2
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The launcher supports these eight role IDs, including the taskless `bootstrap` setup role, and `system-specialist` is the earlier ID of the same Investigator role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:670083a34824cf8b5a616979c0ae2b0c7b63375c7a4645eb8a94c3e0d48e937d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
           },
           "kind": "code"
         }

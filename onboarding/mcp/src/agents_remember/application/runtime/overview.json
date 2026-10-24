@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:7caec175c6320d20accf7e357b79e757fff27bd113a5565c683b4beacba3a329",
             "locator": {
               "kind": "symbol",
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
-            "content": "sha256:d92987e44780f687c9627ea24cc97a283297cee2ae090f549c2f763156a49cdd",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",
               "name": "initialize_mcp_application"
@@ -30,7 +30,7 @@
         },
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
         },
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
@@ -71,29 +71,12 @@
         }
       ]
     },
-    "3": {
-      "note": "Skill installation resolves the configured harness skill root and delegates the copy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6fe0f509cc8d096afac65a4ce3bfb7a4cbb71be7",
-            "content": "sha256:364e64a9ed7adbe0959731447cf332d8eab1df0d3ef2a126b90f79e86a3120a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "skills_install_tool"
-            },
-            "path": "mcp/src/agents_remember/application/runtime/skills.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The composition with the host part.",
       "targets": [
         {
           "anchor": {
-            "blob": "a81adb6dde0d503439aba7164940ec4bd011a65c",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
             "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
@@ -110,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2da95a5fcd8329ce16067afc1a9291becc04b5",
+            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
             "content": "sha256:3500c6bcf13e029163a8af609ea5070f5acbe80a5f9cc16b3f113a3f63ab2df1",
             "locator": {
               "kind": "symbol",
@@ -127,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
-            "content": "sha256:b5b8684cc53062377655e44bed5142bf84b630ddb852378fa116129e07a1829f",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
             "locator": {
               "kind": "symbol",
               "name": "checkout_cli_location"

@@ -15,7 +15,7 @@
   "exclusions": [
     "The harness permission prompt is answered in the agent's own chat; that answer is not a return.",
     "Tool grants, parent identity, report paths, capsule budgets and the start and message powers are unchanged; this obligation is instruction text only.",
-    "The package-data and eight harness skill copies are generated carriers, not independent authorities for this rule."
+    "The skill copies declared by generated-copies.json are generated carriers, not independent authorities for this rule."
   ],
   "id": "INV-QZW2X2",
   "origin": {
@@ -29,7 +29,7 @@
     "leaf": "260928-MIK-L172",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A role agent's hand-over, and its statement of what it awaits, reach the waiting agent with role_message; its own chat text is an answer only for a sender that waits on its own call.",
   "status": "proposed",

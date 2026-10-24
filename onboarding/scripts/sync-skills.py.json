@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3N2P7D",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "MIK-R196@v1 rule7",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The retained generator owns canonical-to-package propagation, rather than generating harness mirrors.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
         "locator": {
           "kind": "symbol",
@@ -21,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
         "locator": {
           "kind": "symbol",
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
         "locator": {
           "kind": "symbol",
@@ -57,7 +74,7 @@
     },
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
         "locator": {
           "kind": "symbol",
@@ -75,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
         "locator": {
           "kind": "symbol",
@@ -87,12 +104,12 @@
       "origin": {
         "leaf": "260921-ICR-L30"
       },
-      "rationale": "The sync script is the propagation owner and the install tool is where the copy reaches a harness skill root, which is the pair that makes one source authoritative.",
+      "rationale": "The repository sync script produces and checks the single packaged runtime skill tree from canonical skills; no harness starter installation is part of this current distribution guarantee.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
         "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
         "locator": {
           "kind": "symbol",
@@ -111,11 +128,11 @@
   ],
   "references": {
     "1": {
-      "note": "The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets.\n\nAnchor: `CANONICAL_SKILLS`, `TARGETS`",
+      "note": "The script defines `skills/` as canonical and derives the sole MCP package-data serving target.\n\nAnchor: `CANONICAL_SKILLS` `skill_targets`",
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
             "locator": {
               "kind": "symbol",
@@ -126,11 +143,11 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
               "kind": "symbol",
-              "name": "TARGETS"
+              "name": "skill_targets"
             }
           },
           "kind": "code"
@@ -181,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
             "locator": {
               "kind": "symbol",
@@ -192,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:f35d9bc1c4491781420f8987e479b45f3169879ccd845e11bc9cadd2fbeaf700",
             "locator": {
               "kind": "symbol",
@@ -238,7 +255,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
             "locator": {
               "end": 32,
@@ -250,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
               "end": 59,
@@ -262,36 +279,51 @@
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
             "locator": {
-              "end": 210,
+              "end": 209,
               "kind": "line_range",
-              "start": 191
+              "start": 190
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
             "locator": {
-              "end": 244,
+              "end": 243,
               "kind": "line_range",
-              "start": 233
+              "start": 232
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
             "locator": {
-              "end": 230,
+              "end": 229,
               "kind": "line_range",
-              "start": 213
+              "start": 212
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection.\n\nAnchor: `skill_targets`, `check_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -10,11 +10,11 @@
 
 ## What This Area Is
 
-This package binds runtime configuration to the application's MCP startup, runtime-install and skill-install operations. It supplies the application seam between transport registration and the lower services; provider, benchmark, worktree, memory and task operations remain in their own application modules.
+This package binds runtime configuration to the application's MCP startup and runtime-install operations. It supplies the application seam between transport registration and the lower services; provider, benchmark, worktree, memory and task operations remain in their own application modules.
 
 ## Hot Path Summary
 
-Use `startup.py` for trusted MCP process preparation, application collaborators and the typed serving-build gateway. Use `install.py` for runtime-install composition and `skills.py` for packaged skill deployment.
+Use `startup.py` for trusted MCP process preparation, application collaborators and the typed serving-build gateway. Use `install.py` for runtime-install composition; the skill-install entry point that used to live here is removed, because the tool server serves the canonical skills from its package copy.
 
 ## How It Is Built
 
@@ -28,13 +28,12 @@ Startup declares MCP process ownership before authority settings are loaded. App
 
 Runtime installation delegates to the lower runtime service, then provisions or previews the configured host. The entry retains the earlier result, adds the host report as `host`, and conjoins the earlier and host `ok` values: a failed host step makes the combined result false without discarding the earlier steps.
 
-Skill installation requires the configured harness skill root and passes the dry-run, overwrite and archive-existing choices to the lower copy service.
+Skill installation has no entry point in this package: `skills.py` was removed with the skill-install surface, and no harness skill root is resolved or written anywhere in the install path.
 
 ### File-Level Onboarding Map
 
 - [`__init__.py.md`](__init__.py.md) — side-effect-free package marker.
 - [`install.py.md`](install.py.md) — runtime installation and host-result composition.
-- [`skills.py.md`](skills.py.md) — configuration-bound skill installation.
 - [`startup.py.md`](startup.py.md) — MCP trust declaration, launch-bound workspace event collaborator, measurement identity and optional supervision.
 
 There are no child overviews. Begin with the operation's file card and follow its lower-service references; MCP payload and registration mechanics remain in their own routes.
@@ -56,7 +55,6 @@ No Domain Documentation source is configured. No cross-repository implementation
 - Undeclared source-checkout execution is isolated or refused, rather than admitted to live coordination by a diagnostic workaround. [6]
 
 - Runtime installation composes the lower service result with the public host step at the application entry. [2]
-- Skill installation resolves the configured harness skill root and delegates the copy. [3]
 - The composition with the host part. [4]
 
 - Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read. [7]

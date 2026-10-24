@@ -51,7 +51,7 @@ reality mismatches are surfaced before propagation. Configured provider readines
 is checked from settings/provider operations after context resolution, not from context_packet provider blocks.
 `c-04-retrieval-strategy-router` skill owns retrieval strategy and source/onboarding confirmation after the
 relevant repository context is known. The template
-also preserves workflow approval boundaries by forbidding protected branch
+names w-02-light-task-workflow before committing and preserves workflow approval boundaries by forbidding protected branch
 movement and worktree lifecycle operations unless the selected workflow has
 granted the required approvals. Repository-specific test, lint, typecheck,
 build, smoke-check, branch, and local command guidance belongs in the resolved
@@ -84,8 +84,7 @@ This onboarding is backed by the source template itself.
 
 - The installed `AGENTS.md` routing section tells agents when to read sibling `tasks/AGENTS.md` instructions. [2]
 - The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. [3]
-- The developer-clarification section routes important clarifications through `c-01-findings-capture` and `c-05-create-or-update-onboarding-files` skill only after code-reality checks. [4]
-
+- The clarification section routes verified findings through c-05 and discusses mismatches before onboarding propagation. [4]
 - The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured. [5]
 
 - Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. [6]
@@ -100,5 +99,7 @@ No sibling repository evidence is needed for this package template.
 No meaningful cross-repo references found.
 
 ## Preserved incoming L109 source witness
+
+
 
 - Historical incoming L109 source evidence: Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [10]

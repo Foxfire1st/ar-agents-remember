@@ -10,6 +10,10 @@ This template defines a master plus flat light-subtask series when one task no l
 single-page plan. It connects one integration branch and multiple leaf enclosures to the approved
 requirement corpus.
 
+## Current Source Qualification
+
+Each sub-task slice is committed through this skill's own closeout behind an explicit commit gate, integrated into the master integration branch and finalized for that parent-child edge; the master still owns the single release. The inherited wording that names a worktree-manager skill for that closeout describes the retired owner.
+
 ## Code Commentary
 
 ### Logic

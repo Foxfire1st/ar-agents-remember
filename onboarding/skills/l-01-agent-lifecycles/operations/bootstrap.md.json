@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-        "content": "sha256:6f9d258a8427c5ceb33ce7abddb01129ae471cab33c9239a8a13e3cac73013b6",
+        "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+        "content": "sha256:40ab756d202e7a3a15c529b28863ca2b42c13f201b0ae945ee7fc4106a5f9982",
         "locator": {
-          "end": 67,
+          "end": 79,
           "kind": "line_range",
-          "start": 54
+          "start": 64
         }
       },
       "id": "RLZ-942ZBQ",
@@ -18,6 +18,23 @@
         "leaf": "260928-MIK-L45"
       },
       "rationale": "The first-hour operation order the bootstrap seat follows.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+        "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GTTE96",
+      "invariant": "INV-CZV6J3",
+      "origin": {
+        "handoffEntry": "L188-B10",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The complete setup procedure excludes onboarding authorship and citation repair.",
       "role": "primary-authority"
     }
   ],
@@ -103,12 +120,12 @@
       ]
     },
     "4": {
-      "note": "Fresh setup orders scaffold/fixer before baseline and foundation; earlier foundation needs committed memory.\n\nAnchor: \"Scaffold the first onboarding\"",
+      "note": "Fresh setup orders settings, memory root, the baseline and then the Architect handover; onboarding and the foundation are later task work, not setup steps.\n\nAnchor: \"Read what the baseline will carry, and author none of it.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
-            "content": "sha256:a8f2952c31509b42c8ed45bb2c16eb135bb75c0b308d2590da5931cb38decafa",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b30e88dc16f750ff31ae0f1d94c07ffee4e9597dd867b7f73ee4e9adef8c8e32",
             "locator": {
               "end": 87,
               "kind": "line_range",

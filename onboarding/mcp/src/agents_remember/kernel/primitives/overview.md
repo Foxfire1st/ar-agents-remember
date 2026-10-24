@@ -19,13 +19,17 @@ directExecutionEnabled is ignored for every value and warned when trusted settin
 > **Retained historical source account — superseded by the current route account:**
 > The runtime record and parser live in kernel so consumers can share configuration without importing the MCP package. The record separates repository and provider scopes, gate policy, dashboard settings, degradation settings, retirement settings and tool-log settings. The Paseo runtime is read through the shared authority reader rather than stored as a boot snapshot.
 
-The host primitives comprise the packaged host/Node contract, release-owned Node paths, the installation-wide shared authority reader, the session-environment filter, and the strict Paseo settings parser. Node path selection requires Linux x86_64 with `/proc`. A configured Paseo block requires `installPrefix`, `home`, `listen`, `providers` and `embed`; `version` is optional and does not select a build. The shared reader uses the user's settings location and reads it per use. The environment filter removes named session variables plus the `PASEO_` and `AR_SPAWN_` prefixes, while retaining unrelated login/configuration variables.
+The host primitives comprise the packaged host/Node contract, release-owned Node paths, the active MCP authority-file reader, the session-environment filter, and the strict Paseo settings parser. Node path selection requires Linux x86_64 with `/proc`. A configured Paseo block requires `installPrefix`, `home`, `listen`, `providers` and `embed`; `version` is optional and does not select a build. The authority reader uses the `paseoRuntime` block of the server's own `--config` settings file and reads it per use, with no user-settings or per-harness fallback. The environment filter removes named session variables plus the `PASEO_` and `AR_SPAWN_` prefixes, while retaining unrelated login/configuration variables.
 
 Model, effort and service tier are separate role settings. The agentic settings records and parsers preserve those fields and their settings precedence; the native CLI catalog owner resolves their provider/model scope and refuses selections the host does not offer. Effort remains model-bound and requires a selected model. These primitives do not themselves perform launch or establish host readiness.
 
 Checkout classification derives from the loaded package path, independently of the working directory. An undeclared linked-checkout process gets a synthetic runtime configuration and disposable coordination root; the central durable-write guard permits that root and the enclosure's exact `reports/` root. Declared MCP, dashboard, lifecycle-operation and test modes bypass checkout CLI isolation. The lifecycle-operation declaration does not yield a daemon writer role.
 
 Other modules provide command-module output capture, drift snapshot path/removal helpers, observer store paths, provider instance naming, degradation-settings parsing, and tool-report retention/redaction. Version identity resolves installed distribution metadata through a function seam, falling back to the committed source-checkout release identity when distribution metadata is unavailable.
+
+## The fresh host block
+
+`fresh_host.py` spells the `paseoRuntime` block a cold host needs — the packaged install prefix, the daemon home, the dedicated listen address, an empty provider map and one embed entry per dashboard origin — so the settings writer asks for a block instead of spelling an address of its own. The serving host modules read that block from the MCP authority settings file: `paseo_install.install_host` and `paseo_start._settings` both resolve the file the tool server was started with, and neither writes settings.
 
 ## What Belongs Here
 
@@ -44,6 +48,7 @@ Other modules provide command-module output capture, drift snapshot path/removal
 | `provider_degradation_settings.py` | Provider degradation settings parsing. |
 | `tool_reports.py` | Bulk tool-report retention/redaction. |
 | `version.py` | Installed package identity with an explicit metadata-or-source fallback resolver. |
+| `fresh_host.py` | The five-key `paseoRuntime` host block a cold settings file receives. |
 
 The host modules described above and `user_settings_location.py` also belong to this directory; the preserved inventory table predates those entries.
 
@@ -133,25 +138,55 @@ None.
 
 ## Evidence
 
-- Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. [1]
-- The layering contract loader establishes package ranks; the checker enforces their order on imports between distinct packages. [2]
-- Structural gate models import the producer-owned gate vocabulary from kernel. [3]
-- Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal. [4]
-- Runtime configuration owns repository/profile parsing and reads shared host authority per use. [5]
-- Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import. [6]
-- Role settings parsers shape-check independent fields; quality-gate caps remain optional. [7]
-- The shared authority reader reads the user's host block on each use. [8]
-- The session environment filter delegates to named-variable and prefix predicates. [9]
-- The five-fact settings parse accepts an optional non-selecting version key. [10]
-- Checkout modes, leaf-local roots and daemon-role narrowing define the execution boundary. [11]
-- Gate policy is human-first and rejects non-human delegation of pinned kinds; gate vocabulary is kernel-owned. [12]
-- Command capture, snapshot removal, observer paths and provider naming are shared primitive operations. [13]
+- Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots.
+- The layering contract loader establishes package ranks; the checker enforces their order on imports between distinct packages.
+- Structural gate models import the producer-owned gate vocabulary from kernel.
+- Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal.
+- Runtime configuration owns repository/profile parsing and reads shared host authority per use.
+- Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import.
+- Role settings parsers shape-check independent fields; quality-gate caps remain optional.
+- The authority reader reads the block of the MCP settings file on each use.
+- The session environment filter delegates to named-variable and prefix predicates.
+- The five-fact settings parse accepts an optional non-selecting version key.
+- Checkout modes, leaf-local roots and daemon-role narrowing define the execution boundary.
+- Gate policy is human-first and rejects non-human delegation of pinned kinds; gate vocabulary is kernel-owned.
+- Command capture, snapshot removal, observer paths and provider naming are shared primitive operations.
 
-- Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
-- Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives. [15]
-- Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
-- Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections. [17]
+- Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler.
+- Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives.
+- Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary.
+- Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections.
 
-- The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout. [18]
+- The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout.
 
-- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools. [19]
+- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.
+
+## The host authority file
+
+`paseo_authority.py` owns one file: the MCP settings file named by `configPath`. It reads that file's `paseoRuntime` block on every use and creates the block exactly once, publishing through a private temporary and rename, refusing a symlink and leaving an existing block byte-identical. `paseo_runtime_settings.py` holds the dedicated listen address and the dashboard origins a fresh block is built from. `runtime_config.py` reads the block from that same file, treats an absent one as no host configured, and no longer resolves a harness skill root.
+
+- The once-only establishment of the host block.
+- The default listen address a fresh block carries.
+
+[1] mcp/src/agents_remember/kernel/primitives/checkout_coordination.py — symbol resolve_checkout_location; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py — symbol require_durable_write_target
+[2] mcp/test_support/agents_remember_test_support/code_quality/layering.py — symbol load_contract; mcp/test_support/agents_remember_test_support/code_quality/layering.py — lines 151-154; mcp/test_support/agents_remember_test_support/code_quality/layering.py — lines 229-244
+[3] mcp/src/agents_remember/models/structural/gates.py — lines 8-13
+[4] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — code file
+[5] mcp/src/agents_remember/kernel/primitives/runtime_config.py — code file
+[6] mcp/src/agents_remember/kernel/_agentic_settings_core.py — code file
+[7] mcp/src/agents_remember/kernel/_agentic_settings_sections.py — code file
+[8] mcp/src/agents_remember/kernel/primitives/paseo_authority.py — symbol load_authority_paseo_runtime
+[9] mcp/src/agents_remember/kernel/primitives/host_environment.py — symbol host_environment; mcp/src/agents_remember/kernel/primitives/host_environment.py — lines 13-26
+[10] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — symbol parse_paseo_runtime_settings
+[11] mcp/src/agents_remember/kernel/primitives/checkout_coordination.py — lines 19-87; mcp/src/agents_remember/kernel/primitives/checkout_coordination.py — lines 111-129
+[12] mcp/src/agents_remember/kernel/primitives/gate_policy.py — lines 1-149; mcp/src/agents_remember/kernel/primitives/gate_vocab.py — lines 1-49
+[13] mcp/src/agents_remember/kernel/primitives/command_capture.py — lines 1-49; mcp/src/agents_remember/kernel/primitives/drift_snapshot.py — lines 1-55; mcp/src/agents_remember/kernel/primitives/observer_paths.py — lines 1-50; mcp/src/agents_remember/kernel/primitives/identity.py — lines 1-135
+[14] mcp/src/agents_remember/kernel/primitives/memory_cap.py — code file; mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py — code file; mcp/src/agents_remember/kernel/primitives/tool_reports.py — code file; mcp/src/agents_remember/kernel/primitives/version.py — code file
+[15] mcp/src/agents_remember/kernel/primitives/paseo_host_contract.py — lines 1-12; mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py — lines 1-71; mcp/src/agents_remember/kernel/primitives/user_settings_location.py — lines 1-46
+[16] mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py — lines 1-258
+[17] mcp/src/agents_remember/cli/paseo_launch.py — lines 371-448; mcp/src/agents_remember/cli/paseo_launch.py — lines 547-597; mcp/src/agents_remember/cli/paseo_catalog.py — lines 156-346; mcp/src/agents_remember/cli/paseo_catalog.py — lines 460-516; mcp/src/agents_remember/cli/paseo_catalog.py — lines 566-604
+[18] mcp/src/agents_remember/kernel/primitives/runtime_config.py — lines 417-441; mcp/src/agents_remember/worktrees/modules/quality/certification_records.py — lines 192-235; mcp/src/agents_remember/worktrees/modules/quality/gate.py — lines 248-364
+[19] mcp/src/agents_remember/kernel/primitives/runtime_config.py — code file; mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py — code file
+[20] mcp/src/agents_remember/kernel/primitives/paseo_authority.py — symbol establish_authority_paseo_runtime
+[21] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — symbol DEFAULT_HOST_LISTEN
+[22] mcp/src/agents_remember/kernel/primitives/fresh_host.py — symbol fresh_host_block

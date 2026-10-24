@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+        "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued"
+        }
+      },
+      "facet": "The answer carries the started agent identity and the host's chat route for that seat.",
+      "id": "PRF-VZEYSS",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:333c685e4d47e523e7eb7d8bedebcff989bbbfe57e8f0eb34b4be7dc5e298704",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:333c685e4d47e523e7eb7d8bedebcff989bbbfe57e8f0eb34b4be7dc5e298704",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A preparation refusal reports the files already written and each returned effect's identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:333c685e4d47e523e7eb7d8bedebcff989bbbfe57e8f0eb34b4be7dc5e298704",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

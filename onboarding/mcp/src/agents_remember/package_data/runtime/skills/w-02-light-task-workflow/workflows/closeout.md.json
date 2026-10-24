@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/w-02-light-task-workflow/workflows/closeout.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+        "content": "sha256:ddbd4b65b8caba58dc2a56c9dbf73722505c3a0c72654a6c5e14f2d0f05227a4",
+        "locator": {
+          "end": 355,
+          "kind": "line_range",
+          "start": 310
+        }
+      },
+      "id": "RLZ-X9AC7D",
+      "invariant": "INV-J8MBSE",
+      "origin": {
+        "handoffEntry": "L94-CODE-F10",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The generation-journaling and in-flight/ambiguous recovery prose that matches the repaired code-or-memory pair mechanism, including the advertised public recover control.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The packaged projection carries both named-leaf direct_landing forms under the granted route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:d77effb34fc155f72562fb6d4ba0a56d40668a36793b3884865a1011dc18b6c5",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finalization refuses the abandoned-but-landed contradiction for atomic and organizational masters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery consumes the same-generation publication state and preserves an already proven code leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3ccc22fa08cb393e1ed603a84f2ad953baf264",
+            "content": "sha256:ddbd4b65b8caba58dc2a56c9dbf73722505c3a0c72654a6c5e14f2d0f05227a4",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/role_instruction_wording_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The forbidden strings and the one matcher are defined here, and the role set is derived from the launcher roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aceb964495974f29ca5783af5f87cbb1b9350f8c",
+            "content": "sha256:cbe7f6b007f328b9b7ac80740c5bbdd66e264d6a0bb5cf354fd61aa66f99cf1e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The instruction set comes from the lifecycle composition manifest: the router, the role files and their operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aceb964495974f29ca5783af5f87cbb1b9350f8c",
+            "content": "sha256:cbe7f6b007f328b9b7ac80740c5bbdd66e264d6a0bb5cf354fd61aa66f99cf1e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

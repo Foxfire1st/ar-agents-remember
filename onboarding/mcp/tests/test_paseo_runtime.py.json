@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c9db75dcc22969521d05bdf6722d0bfc07250840",
-        "content": "sha256:f685e719768f2c02f16ecca7e0f44e21244cd75de3c91a0d6bd72f3e6ba53df1",
+        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+        "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
           "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c9db75dcc22969521d05bdf6722d0bfc07250840",
-        "content": "sha256:f685e719768f2c02f16ecca7e0f44e21244cd75de3c91a0d6bd72f3e6ba53df1",
+        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+        "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
         "locator": {
           "kind": "symbol",
           "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "c9db75dcc22969521d05bdf6722d0bfc07250840",
+        "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
         "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
         "locator": {
           "kind": "symbol",

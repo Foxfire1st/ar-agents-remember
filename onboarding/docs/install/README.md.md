@@ -6,42 +6,25 @@
 
 ## Purpose
 
-The install-guide index: how to copy the Agents Remember starter package for each agent harness and
-what the normal first-run path is. Per-harness pages are linked from it; the package files are meant
-to be copy-pasteable.
+The install-guide index: how to register the Agents Remember MCP tool server with each agent harness
+and what the normal first-run path is. Per-harness pages are linked from it. The current page carries
+no starter package and no skill folder: the server serves the canonical skills as MCP resources, the
+optional native instruction or hook file carries only the first-action directive, and its path markers
+are replaced by hand.
 
 ## Current source account
 
-The normal path: copy the harness-native package files from the repository into the workspace; render
-the copied package with `render-starter` (`.py`, `.sh` or `.ps1`), which infers the workspace root from
-the copied harness folder, fills repository names and hook/context commands, validates that each
-requested repository folder exists, and creates the one shared host settings file when absent;
-register the MCP server (`uvx agents-remember-mcp@latest --config <absolute path to
-agents-remember-settings.json>`); restart the harness once; invoke `c-13-install-and-onboard`, which
-runs or verifies `runtime_install()` — provisioning the build-pinned Paseo host and its plugin on the
-product's checked Node — and then handles memory, onboarding and providers.
+The normal path is to write absolute MCP authority settings, register the server with `--config` pointing to that file, restart or reload the harness, and call `role_start(role="bootstrap", request_id="<fresh UUID>")` from a chat with no task, sprint or repository selection. The call prepares a missing coordinator scaffold and host, verifies the plug-in and starts one parentless, taskless Bootstrap seat with its compiled instructions. The same request UUID reconciles to the same seat.
 
-The renderer creates one shared `~/.config/agents-remember/settings.json` (or
-`$XDG_CONFIG_HOME/agents-remember/settings.json`) `paseoRuntime` block for all harnesses, with absolute
-data/state paths and a fresh `127.0.0.1:8766` listen; it never overwrites an existing file. The guide
-records the shipped host's limits: Linux x86_64 with `/proc` only, one exact host, a whole npm lock,
-and Node 26.11.1 with its official archive digest. A missing shared block is reported as
-`configured=false`; a block is added from the c-13 five-key form and `runtime_install` is retried.
-Existing per-harness blocks are ignored with a migration notice and are moved to the shared file
-preserving explicit listen/home/prefix settings. The renderer also accepts `--coordination-root`,
-`--host-port` and `--dashboard-port`, defaulting to workspace/ar-coordination, 8766 and 8765.
+In that seat's dashboard conversation, the developer chooses the repository/memory root and each role's harness. Bootstrap initializes or reads the memory baseline, adopts content after review, and creates an absent user settings file; an existing user file is reported rather than overwritten. Model and effort may remain unset. At exit Bootstrap tells the developer to start an Architect, which organizes optional onboarding and knowledge foundation work as an ordinary task, master or sprint. Bootstrap itself authors no onboarding or knowledge and starts no role.
 
-Settings: an old coordination settings file, alone or beside the user file, refuses rendering before
-any harness file is changed; the refusal names both paths and the explicit whole-file upgrade command
-(`agents-remember upgrade-user-settings --coordination-root <absolute root>`), and the renderer never
-selects or migrates an old file. The dashboard start uses the served version from `server_info`; a
-start uses the installed host and never installs or upgrades.
+The shipped host remains Linux x86_64 with `/proc`, one exact host/whole npm lock, and Node 26.11.1 with its official archive digest. A missing `paseoRuntime` block is prepared in the active MCP authority settings file with absolute data/state paths and listen `127.0.0.1:8766`; an existing block is never rewritten. Invalid settings or a host that holds live sessions produce the actual failed stage and retained daemon state. They are not reported as a successful launch. The user role-settings file is a separate authority.
 
-The guide also records initial skills and hooks/rules/instructions coming from the copied package
-(they are not installed for first-run setup), the native-Windows long-path setting, and
-`worktree_start` refusing a projected path the host cannot represent.
+The Windows long-path prerequisite and projected-path `worktree_start` refusal remain documented. Optional per-harness instruction/hook/rule files carry only a first-action directive; users replace their path markers by hand. There is no renderer, starter package, copied skill folder or skill-install step.
 
 ## Boundaries
 
-Instructions for a person and an agent; not proof that a renderer or install ran, that a harness
+Instructions for a person and an agent; not proof that setup or installation ran, that a harness
 restarted, or that a host was provisioned on any machine.
+
+- Current source account and its stated boundaries. [1]

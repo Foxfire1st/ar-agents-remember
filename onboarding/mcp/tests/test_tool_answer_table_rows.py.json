@@ -1,0 +1,90 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_rows.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "content": "sha256:3a3aca3dd8f1fea4366a262248516bb6437de0c5fe8d9ca18a199654317922f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerRowGateTests.test_valid_shaped_row_passes"
+        }
+      },
+      "facet": "A valid shaped row passes.",
+      "id": "PRF-MXFH7R",
+      "invariant": "INV-180VCA",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §6 table",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "content": "sha256:383e8f5213fcd363b7ced7c8ada20285f571ee20aeff684afed62503a8e8c0d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerRowGateTests.test_empty_use_fails"
+        }
+      },
+      "facet": "A field without a stated use fails.",
+      "id": "PRF-TW1JNF",
+      "invariant": "INV-180VCA",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §6 table",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+        "content": "sha256:c6c7f82f1bc6310015d1e037cfd16c9ff993afed83103e66da45f6d07cf5e2f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerRowGateTests.test_invalid_code_case_fails_the_row"
+        }
+      },
+      "facet": "A row case producing a malformed code fails.",
+      "id": "PRF-Z9WC6G",
+      "invariant": "INV-GWG9HD",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §4 code-120",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each rule-6 failure mode fails its gate, and a production-proven row is the one shape allowed without case payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+            "content": "sha256:10c4b13d88805f29827dbd8cbfdb28dfa4fa713a1406d250c23531457ec559b1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every authored row's owner matches the roster, and a removed tool has no row and no owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcefea26893c2599c9e8c6df1bfef245fa031d1a",
+            "content": "sha256:10c4b13d88805f29827dbd8cbfdb28dfa4fa713a1406d250c23531457ec559b1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

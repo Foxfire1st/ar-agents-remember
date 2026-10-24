@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "A dead configuration field or exported symbol still reads as installed-copy authority to the next agent; the removal is only honest where the runtime config and the package exports agree."
+  },
+  "applicability": "Every model, configuration field and package export that served the retired installed-skill copy.",
+  "conditions": [
+    "A removed surface has no surviving consumer.",
+    "Retained runtime configuration keeps the fields its live readers use.",
+    "The certification profile declares no obsolete generated-copy output: the retired renderer declarations are gone and the legitimate harness hook, MCP and rules scopes stay declared."
+  ],
+  "exclusions": [
+    "The retained package skill-serving surface."
+  ],
+  "id": "INV-R4760T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/distribution-review.md F3; final-a3/removal-hits.json install/config/export class; scripts/pnt_sandbox/layout.py and tool/test worlds."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B18",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retired installed-skill contracts have no dead model/configuration/export surface or implied installed-copy authority without a surviving product operation.",
+  "status": "proposed",
+  "supersedes": []
+}

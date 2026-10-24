@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. Eight existing artifact consumer lists change; existing non-consumer fields and all contract rows are preserved. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The current parsed catalog declares 17 contracts and 90 artifacts (the leaf's own contract and shared-support artifact included). Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. Eight existing artifact consumer lists change; existing non-consumer fields and all contract rows are preserved. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows, and since MIK-R200 the settings-guard and Node-lockfile rows also declare the four new native-attention modules, with `test_attention_native_inputs.py` declared on the Paseo-runtime row. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -15,9 +15,11 @@ This section supersedes contrary earlier prose only for these changed seams; ret
 
 
 
+The catalog adds four declared contracts and fourteen artifacts for the current Bootstrap/authority and extracted support owners. Twenty-nine existing consumer lists change without deleting their artifact identities or changing their non-consumer fields. The workflow, launch, sweep, table and other split supports retain explicit replacement nodes and lifetimes. These are source declarations of reuse and ownership, not test invocation or a newly measured evidence lifetime.
+
 ## Consumer declarations for the delivered-comparison module
 
-`test_review_delivered_comparison.py` is now named by the canonical user-settings guard's consumer list and by the portable Node-lockfile fixture's consumer list, which are the two source-derived lists the evidence-lifecycle validator checks for a new governed module. The change is those two entries only: contract rows, artifact identities, lane assignment and every non-consumer field remain as they were, and the run reports PASS over the governed artifacts. Membership establishes dependency reachability; it does not establish that the module ran.
+`test_review_delivered_comparison.py` is now named by the canonical user-settings guard's consumer list and by the portable Node-lockfile fixture's consumer list, which are the two source-derived lists the evidence-lifecycle validator checks for a new governed module. The change is those two entries only: contract rows, artifact identities, lane assignment and every non-consumer field remain as they were, and the run reported PASS over the governed artifacts at that change. Membership establishes dependency reachability; it does not establish that the module ran.
 
 ## Governing Overview
 
@@ -71,12 +73,12 @@ The current artifact paths and every exact consumer list are canonically sorted.
 
 The L109 incoming 101-artifact caption and the refusal-suite registration account are retained historical observations, not the current population or L162 additions. The current Node-lockfile artifact still declares native reapply and now also task-document Order; membership alone proves no invocation.
 
-The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. That comparison is retained at its own source epoch; the current parsed inventory is 13 contracts/76 artifacts.
+The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/passed 14-contract/102-artifact and incoming 101-artifact populations remain historical on their own objects. Native reapply and task-document Order remain declared on the existing Node lockfile artifact; task-document Order also remains on the settings guard. Compared with landed L162 (6be1b3fa), four consumer lists expand: settings guard and Node lockfile each gain 25 consumers, coherence support gains three, and enclosure support gains one. Contract/artifact identities and non-consumer fields are unchanged in this comparison. Declarations and canonical ordering establish no invocation or acceptance. That comparison is retained at its own source epoch; the current parsed inventory is 17 contracts/90 artifacts.
 
 
 ### Current Contract
 
-The current source TOML declares 13 contract rows and 76 artifact rows, including this leaf's `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
+The current source TOML declares 17 contract rows and 90 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 The incoming 101-artifact and prior 14-contract/102-artifact populations remain historical on their own objects. Native source-reference currency alone cannot establish semantic correspondence.
 
 
@@ -220,7 +222,7 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 ## Task-Document Order Consumer
 
-`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included); the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 17 contracts and 90 artifacts (the retained canvas contract and shared-support artifact included); the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
 - Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
@@ -244,7 +246,9 @@ The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `
 ## Evidence
 
 - The settings guard row retains its metadata and gains the developer-message consumer. [307]
+
 - The existing portable Node lockfile row gains the same consumer while preserving its independent-boundary declaration. [308]
+
 - Both existing Paseo support rows register the developer-message consumer and retain their stated stand-in fidelity. [309]
 
 - The review-evidence suites are declared consumers of the review-read artifacts. [305]
@@ -386,7 +390,7 @@ The held catalog declares the host modules test_paseo_install_contract.py, test_
 
 ## 260928-MIK-L129 Repeated-cleanup regression test consumers
 
-test_cleanup_repeated_archive_ready.py is declared on fourteen exact artifact consumer rows in the held catalog and in the integration lane. The earlier three-list change describes a dated delta, not its current support population. The canonical writer derives consumer lists but neither these rows nor their order prove the writer or regression ran.
+test_cleanup_repeated_archive_ready.py is declared on fifteen exact artifact consumer rows in the held catalog and in the integration lane. The earlier three-list change describes a dated delta, not its current support population. The canonical writer derives consumer lists but neither these rows nor their order prove the writer or regression ran.
 
 ### Historical empty-caption custody
 
@@ -431,7 +435,7 @@ No external domain-documentation evidence is used by this card.
   question from whether the module exists and is imported.
 - Registry consistency and permanent-support rationale do not claim execution or certification.
 
-- Closeout-input support names the same retained code/memory transaction replacement node. Anchor: "mcp/tests/closeout_input_test_support.py" [254]
+- Closeout-input support names the same retained code/memory transaction replacement node. [254]
 
 - **A consumer row is a catalog change.** Adding an importer to a `consumers` list moves the file's
   bytes; `test_dependency_ownership_ast_helpers.py` computes every property from the catalog — no byte,
@@ -683,7 +687,7 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The referenced transaction test definition exists in the current source. Anchor: "test_public_closeout_commits_code_and_memory_without_acceptance_tools" [252]
+- The referenced transaction test definition exists in the current source. [252]
 
 - Closeout input support declares the retained code/memory transaction test as its replacement node.
 
@@ -695,7 +699,7 @@ The references below distinguish present catalog declarations, implementation so
 
 
 
-- The referenced transaction test definition exists in the current source. Anchor: "test_public_closeout_commits_code_and_memory_without_acceptance_tools" [257]
+- The referenced transaction test definition exists in the current source. [257]
 
 The converted-drift test module is declared on the consumer lists it exercises, with rule-specific case definitions. Its earlier fail-before/pass-after account is historical; this source reconciliation supplies no new invocation receipts.
 
@@ -743,45 +747,47 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 
 - All nine retained Doc14 fixture artifact rows declare the R53 judgment-row and report-policy modules as consumers; their artifact identities are unchanged. [224]
 
-- Durable-artifact declarations include the R53 consumers on Doc14 fixtures, validator/writer support and the existing Node lockfile; lane rows remain in test-evidence-lanes.toml. [14]
+- Durable-artifact declarations include the R53 judgment-row and report-only consumers on the nine retained knowledge_files fixture rows; lane rows remain in test-evidence-lanes.toml. [14]
 
 - At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [273]
 
 
 - At the pre-L109 L53 freeze (CODE d457a9ae / MEMORY bacaaf79), Current source delta inspected statically: The code-base-to-candidate diff adds consumers only to twelve existing artifact rows. Retain the statically parsed 13-contract/93-artifact account and historical earlier counts; catalog declarations are reachability, not a loader, test, lane or acceptance result. This retained 13-contract/93-artifact source observation is historical on the successor with13contracts/101artifacts; it remains no loader/test/acceptance result. Retained historical passed-L111 catalog observation (not a current post-sync census): The current declarative catalog has 14 contract rows and 94 artifact rows. It includes the permanent local-composition tool_answer_l111_test_support artifact and tool-answer-l111-shaped-rows replacement contract. These declarations establish ownership/reachability, not observed execution or a fresh acceptance census; older catalog populations are historical. [300]
 
-- The fifteen-artifact STOP-delta caption retains its prior epoch and scoped source/grade history. Current L162 task-order consumers on existing Node-lockfile/user-settings guard artifacts coexist with landed L61 guard-consumer maintenance; identities and metadata are distinct from consumer membership, and neither establishes execution or acceptance. [274]
+- Historical source-bound account: the fifteen-artifact STOP-delta caption and its scoped source/grade history remain at their earlier epoch; that count is not the current catalog population. The retained L162 account described task-order consumers on existing Node-lockfile/user-settings-guard artifacts coexisting with landed L61 guard-consumer maintenance; artifact identity and non-consumer metadata stayed distinct from membership, and neither established execution or acceptance. [274]
+
+- The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. [316]
 
 
-- Consumers of `mcp/tests/anchor_fixture_models.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [275]
+- The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [275]
 
-- Consumers of `mcp/tests/curator_coherence_test_support.py` add `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [276]
+- The held consumers of `mcp/tests/curator_coherence_test_support.py` include `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [276]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [277]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [277]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [278]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/context_packet_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [278]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [279]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [279]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [280]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_diff_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [280]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [281]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [281]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [282]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/knowledge_read_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [282]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [283]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_largest.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [283]
 
-- Consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [284]
+- The held consumers of `mcp/tests/fixtures/l109_tool_answers/read_ar_files_ordinary.json` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [284]
 
-- Consumers of `mcp/tests/knowledge_index_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [285]
+- The held consumers of `mcp/tests/knowledge_index_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [285]
 
-- Consumers of `mcp/tests/knowledge_rows_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [286]
+- The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [286]
 
-- Consumers of `mcp/tests/knowledge_writer_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [287]
+- The held consumers of `mcp/tests/knowledge_writer_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [287]
 
 - Consumers of `mcp/tests/read_boundary_oracle_test_support.py` add `mcp/tests/test_abandoned_series_closeout.py`, `mcp/tests/test_closeout_refusal_aftermath.py`, `mcp/tests/test_direct_landing_leaf_identity.py`, `mcp/tests/test_enclosure_without_remains.py`, `mcp/tests/test_knowledge_gate_routes.py`, `mcp/tests/test_master_chain_public_routes.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [288]
 
-- Consumers of `mcp/tests/read_scope_test_support.py` add `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. All other governed row attributes are preserved; declaration is not execution. Anchor: Changed existing consumer row [289]
+- The held consumers of `mcp/tests/read_scope_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [289]
 
 - **Historical source-bound reference account, not an operative override:** The schema version and the large-fixture threshold at the top of the file. [1]
 
@@ -885,10 +891,13 @@ The existing `paseo_launch_test_support.py` shared-support row now describes the
 - The retained conversion-cost tests are declared consumers on the existing three artifact lists. [295]
 
 
-- Current exact consumer populations are seven for comparison, twelve for overview-order and fourteen for repeated cleanup; the reviewer-worklist-process support survives and the retired conversation/Eve artifacts are not declared. [296]
+- The current exact consumer populations are seven for comparison, twelve for overview-order and fifteen for repeated cleanup; reviewer-worklist-process support remains declared and the retired conversation/Eve artifacts are not declared. Catalog membership is source reachability, not invocation or acceptance. [296]
 
 
-- The current parsed inventory declares 13 contracts and 76 artifacts (the leaf's own contract and shared-support artifact included). The two L57 supports are permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. Earlier catalog populations and landed-L162 comparisons remain historical. [311] [271]
+
+- The current parsed inventory declares 17 contracts and 90 artifacts; earlier catalog populations and landed-L162 comparisons remain historical. [311]
+- The two L57 supports remain permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. [271]
+
 
 
 - The L88 consumer-only account is historical. The current comparison adds review_curator_fixture_support.py and reviewer_leaf_view_support.py; eight existing artifact rows change consumers, with existing non-consumer metadata and contract rows preserved. [297]
@@ -902,11 +911,11 @@ the new `test_changeset_cancellation.py` is declared on the two exact artifact c
 
 The source-owned regeneration adds `mcp/tests/test_mik_r177_gate_groups_identical_copies.py` to the three derived consumer lists that the writer worklist support already declares. No artifact, contract, replacement node, category, scope, guard or limit changes; consumer membership is dependency accounting, not proof of an invocation or an acceptance.
 
-- The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers, so the builders that make a task directory, admitted packet, published revision and comparison answer are declared once for every canvas case. \[306] [306]
+- The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers, so the builders that make a task directory, admitted packet, published revision and comparison answer are declared once for every canvas case. [306]
 
 ## MIK-R118/R124 mark-suite consumers
 
-The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. The artifact and contract populations are unchanged at 13 contracts and 76 artifacts, and every non-consumer field, replacement node, category, scope, guard and limit is preserved; only those `consumers` lists grow, in canonical order. This is consumer reachability, not an execution claim.
+The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. In that registration epoch, artifact and contract populations stayed at 13 contracts and 76 artifacts; the current parsed inventory is 17 contracts and 90 artifacts, and every non-consumer field, replacement node, category, scope, guard and limit is preserved; only those `consumers` lists grow, in canonical order. This is consumer reachability, not an execution claim.
 
 ## Current account — this leaf's lifecycle rows
 
@@ -918,11 +927,15 @@ The lifecycle registry gains the leaf's new evidence files: the case-extent test
 
 - The unit-regression lane names the re-point and recovery modules where its order puts them. [314]
 
-The existing curator-coherence and read-boundary-oracle artifact consumer lists include `mcp/tests/test_terminal_notice_commit_recovery.py` for its new fixture imports. These two source-derived memberships preserve every other consumer and non-consumer field, all 13 contracts and 76 artifacts, and lane metadata. This is dependency accounting, not proof of execution or acceptance.
+## Current source evidence
+
+- The catalog declares 17 contracts and 90 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence. [315]
+
+The existing curator-coherence and read-boundary-oracle artifact consumer lists include `mcp/tests/test_terminal_notice_commit_recovery.py` for its new fixture imports. These two source-derived memberships preserve every other consumer and non-consumer field, all 17 contracts and 90 artifacts, and lane metadata. This is dependency accounting, not proof of execution or acceptance.
 
 
-- The existing curator-coherence and read-boundary-oracle artifact lists declare test_terminal_notice_commit_recovery.py as a consumer; declarations establish dependency reachability, not execution. [315]
+- The existing curator-coherence and read-boundary-oracle artifact lists declare test_terminal_notice_commit_recovery.py as a consumer; declarations establish dependency reachability, not execution. [317]
 
 ## Request-locator consumer registration
 
-`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 13 contracts and 76 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.
+`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 17 contracts and 90 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.

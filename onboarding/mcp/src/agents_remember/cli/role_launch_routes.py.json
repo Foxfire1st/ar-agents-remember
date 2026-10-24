@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
-        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
-        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
         "content": "sha256:b060afa6a4dedda65db379082954429dccd0aee4485c2f6f44996bac9dbd781f",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_launch_dispatch_endpoint"
+        }
+      },
+      "id": "RLZ-RA5JXR",
+      "invariant": "INV-MGQ6ES",
+      "origin": {
+        "handoffEntry": "L188-B05",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "Dispatch admission orders selection, request lineage and serialization before durable preparation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -93,7 +111,25 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_prepared_role_session"
+        }
+      },
+      "id": "RLZ-SFNK16",
+      "invariant": "INV-MGQ6ES",
+      "origin": {
+        "handoffEntry": "L188-B05",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The admitted path reconciles retained request/receipt identity rather than preparing a second seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -111,8 +147,8 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
-        "content": "sha256:25724a880f70ee2f23dc60405b035bdd82f5ac15d7a523ed7cbf380f5f97dd79",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
         "locator": {
           "kind": "file"
         }
@@ -128,8 +164,8 @@
     },
     {
       "anchor": {
-        "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
-        "content": "sha256:bb88ade82236f4ba155c18436e2303b652d3da9eac1ee6f3192a1f28248aefed",
+        "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+        "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -151,8 +187,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:48fa80d6b9d5075576c179aac8712f8159592384fdba3fce7289e97c2c7b1ba0",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
             "locator": {
               "kind": "file"
             }
@@ -167,11 +203,11 @@
         {
           "anchor": {
             "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
-            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "content": "sha256:d03732758a233130c3a47ba56d498526a801430de6944fd6336095b90f602b9d",
             "locator": {
-              "end": 750,
+              "end": 745,
               "kind": "line_range",
-              "start": 721
+              "start": 716
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -202,10 +238,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:a7fd10d9d66469966af1a88ca7a3c847c3eb5de03c02d56a8d0e76e562229775",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:47101cbe7ed7d12a47b45ebba9da53a37f2699e55e00da32bc7e74f317b44dd1",
             "locator": {
-              "end": 632,
+              "end": 633,
               "kind": "line_range",
               "start": 1
             }
@@ -219,10 +255,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:4abb4c980164052151d1f0648397eb5a792321dc395ccb6a19721ac95547e946",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
             "locator": {
-              "end": 914,
+              "end": 899,
               "kind": "line_range",
               "start": 1
             }
@@ -236,8 +272,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:48fa80d6b9d5075576c179aac8712f8159592384fdba3fce7289e97c2c7b1ba0",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
             "locator": {
               "kind": "file"
             }
@@ -251,8 +287,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
-            "content": "sha256:b96d720cf0cbb4569e12111eccc6bb1cb94bcfed1ccd741cb3f571b96f895f92",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:dd383cd23ae765617242a36d0c4a544a51b6b543f625b011983abe94c9e2f894",
             "locator": {
               "kind": "file"
             }
@@ -266,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -282,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -298,8 +334,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7303f44f0642307a880a1f2556003aeb50f98dfe",
-            "content": "sha256:090e98ca37320670e693cf1ab002f7843e54d0ffd9767329aac1b25347af212b",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
             "locator": {
               "kind": "symbol",
               "name": "_launch_prepared_role_session"
@@ -310,16 +346,17 @@
       ]
     },
     "19": {
-      "note": "Missing-copy and step-up warnings coexist.",
+      "note": "Missing-copy and step-up warnings coexist in the launch request rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
-            "content": "sha256:8ec07c6d797285a2a8d249c453cec3a08a4f0a446b639948695cf35dd3675ef1",
+            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
             "locator": {
               "kind": "symbol",
-              "name": "_missing_copies_receipt_warning"
-            }
+              "name": "missing_copies_receipt_warning"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
           },
           "kind": "code"
         }
@@ -330,8 +367,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:9871455b381edc6d2e8213343c5f30dd12222100de71684c9592add560a10449",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
               "name": "_start_execution"
@@ -341,13 +378,58 @@
         }
       ]
     },
+    "20": {
+      "note": "The dispatch endpoint that admits, prepares, binds and refuses in one locked order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_launch_dispatch_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44e9f4e15ed3cb8902b38856192974fce2c57465",
+            "content": "sha256:60969d3d60298fedac3872d1622c00a8ea0d34d0bd0aff305b3fb05e7ca7c69a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cold_preparation_runs_under_the_dispatch_lock"
+            },
+            "path": "mcp/tests/test_mik_r196_l188_preparation_order.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:fceed4850dd859ea53eadf40d38e152060ad31aafd8be2a22dd3e83fcd57822e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_http_refusal_keeps_successful_preparation_effects"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "Frozen implementation of _launch_prepared_role_session supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f9898bd50eee52cc189413403c084e95f49ab0b",
-            "content": "sha256:d9af9e898a751ea232f04ae4e57f9e7581dadb2287fd9bf2860bfaba66e59f77",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
+            "content": "sha256:cb27169336e447491b4bb84a6f91e993c9337699a6a9cd841a53dabff6a0b93d",
             "locator": {
               "kind": "symbol",
               "name": "_launch_prepared_role_session"
@@ -362,7 +444,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "345b093d29ae5ea4ff80b990ec3bcac0a4c90cab",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",
@@ -378,8 +460,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
-            "content": "sha256:288331b337ac2c31833aa29ee958f68180cfb7c92acc816dade2baffcb5f2487",
+            "blob": "eff61bd009114853d63dfa173a28c593ba4cdf18",
+            "content": "sha256:30594f5fa73a62687ba763a09c8b540cc839fd97f60ccb98945ebe0a25404222",
             "locator": {
               "kind": "file"
             },
@@ -394,14 +476,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
+            "blob": "40d282dd9310955624bd2cf90cf838bbb8608a41",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
-              "end": 1019,
-              "kind": "line_range",
-              "start": 979
+              "kind": "symbol",
+              "name": "test_a_repeated_request_converges_on_the_same_agent"
             },
-            "path": "mcp/tests/test_paseo_launch.py"
+            "path": "mcp/tests/test_paseo_launch_outcomes.py"
           },
           "kind": "test"
         }
@@ -412,8 +493,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be47e1ce7c587b1a39eb82aa110f21b78dda17af",
-            "content": "sha256:788b112577fc17a01314f0a5aea04cd680d5c3847c79dff34c0603a219fb580b",
+            "blob": "735fbff960e8691bf138f01a4e8aaf4ffc49870b",
+            "content": "sha256:34ba90d18b18a0d2a1051cd76b279ad6535a9ec7b4b089bc843050c8078d2f81",
             "locator": {
               "kind": "file"
             },
@@ -428,14 +509,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f100ce7f5f5381456d67cea47b8638ce0acea36",
-            "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
+            "blob": "40d282dd9310955624bd2cf90cf838bbb8608a41",
+            "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
             "locator": {
-              "end": 1248,
-              "kind": "line_range",
-              "start": 1192
+              "kind": "symbol",
+              "name": "test_a_task_bound_receipt_is_created_exclusively"
             },
-            "path": "mcp/tests/test_paseo_launch.py"
+            "path": "mcp/tests/test_paseo_launch_outcomes.py"
           },
           "kind": "test"
         }
@@ -447,11 +527,11 @@
         {
           "anchor": {
             "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
-            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "content": "sha256:496454fa627fd47b499198b97f45a3fce80d6c89834ef07eb493b741803a9c63",
             "locator": {
-              "end": 669,
+              "end": 664,
               "kind": "line_range",
-              "start": 576
+              "start": 571
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

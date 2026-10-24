@@ -12,9 +12,8 @@
     "legacyId": "f36490ad-18e8-4552-8d34-bea3ee31c301",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
-    "mcp/src/agents_remember/application/runtime",
     "mcp/src/agents_remember/kernel",
     "mcp/src/agents_remember/tasks",
     "scripts"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-        "content": "sha256:f7c968787e1b958cceed458df4784ac3c3704147164999904730fd82b8f1c875",
+        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "content": "sha256:96e7ee16a8ae5501e7eff8c4776540c5163f814f5e33acf6d8cae933af9dee80",
         "locator": {
           "end": 90,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-        "content": "sha256:3ac1637713f98fd28f7cb32557da391451fd2344f832ee8650c0d3d63e4a55db",
+        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
         "locator": {
           "kind": "symbol",
           "name": "document_chats"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
         "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-        "content": "sha256:a77458e9e828325f3fd044c17eea1c64be4e9babd2c4b3505f9654b7f6d99352",
+        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "content": "sha256:94817887839163988991af2398b35a43a520541ada47d34bf4b3da21827e55ef",
         "locator": {
           "end": 196,
           "kind": "line_range",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-        "content": "sha256:71d7984f08a8f56a3469b8515a5d0625002b3138876e6d81911404429339f5e2",
+        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "content": "sha256:c2f1579192c25b5dc6c4c90578cabe1f24dd186856f886e6cd1b6c53b9505a6f",
         "locator": {
           "end": 142,
           "kind": "line_range",
@@ -101,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
             "locator": {
               "kind": "file"
             }
@@ -116,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
             "locator": {
               "kind": "file"
             }
@@ -131,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
             "content": "sha256:fbebb34033fa3fb5a65e2788ff29137384a32bbd4396b1c6cef268c03eb9582a",
             "locator": {
               "kind": "symbol",
@@ -147,8 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:3ac1637713f98fd28f7cb32557da391451fd2344f832ee8650c0d3d63e4a55db",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
             "locator": {
               "kind": "symbol",
               "name": "document_chats"
@@ -163,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:7ca3b097f9a380bcd22f081447eb88348a0f8ad4aa3c815ae779a8f314a818d9",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:5e9e77d56110e27da0d2b62e8f5a0eaf38b60edaabba06f8a014cc9af96fbc7b",
             "locator": {
               "end": 132,
               "kind": "line_range",
@@ -180,13 +180,74 @@
       "targets": [
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
             "locator": {
               "kind": "file"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The paged walk over role blocks, with one host read bound per page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_chats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The end of a role's block, which a continuation resumes after.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+            "content": "sha256:55a4b805c5378d76ce59f4e9ebc7936eaeee138966bd4cfcdbd4da971760a838",
+            "locator": {
+              "kind": "symbol",
+              "name": "_block_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A bootstrap seat behind architect records is reached across pages, and naming the free agent answers with its own seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:de8d95b3b7ab1ac6a18cf4451b0f9e5071475db66e7dd36bdb8476d84b25c501",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_seat_behind_architect_records_is_reached_across_pages"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:972b676de97753d3f8517f9522193c5c49df9786be1a9e0f5d042e228779a573",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_explicit_bootstrap_selection_answers_with_the_bootstrap_seat"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
         }
       ]
     }

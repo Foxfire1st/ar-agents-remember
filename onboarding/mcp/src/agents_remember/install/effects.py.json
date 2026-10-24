@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/install/effects.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The call-local capture, set and reset around the one call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc3f62710c46db1aeae9f598a54323cc0e5c078a",
+            "content": "sha256:30fe34c8e93164ffa6b7cd4a9a973d5b40f62a495167ed1a7d145efb950516ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_install_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The before/after observation that names changed entries without masking the error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc3f62710c46db1aeae9f598a54323cc0e5c078a",
+            "content": "sha256:014b675fe22c64a6674516fed3c77dfd74fe24c33ba3edd5d698714f6409abcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_install_effect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing ancestors, a removed tree and a copied file's entry states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc3f62710c46db1aeae9f598a54323cc0e5c078a",
+            "content": "sha256:2669f8388312ae62c3b17ebc53c72567ff7dde2f2e6d845915e0c6e84985643f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_before_states"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An installer failure reports the files already written, an occupied file returns a refusal with its partial effects, and a partial tree removal names the deleted child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:6dae9c147f4c374b0c50dfb6a21e11936dbf894f04db150c6f6419d4fb9e721f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_installer_failure_reports_the_files_already_written"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "content": "sha256:045a515341c35833753d2b5580123f57bc06a21f69535c8f1b793e31ec45a2bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_tree_removal_names_the_deleted_child"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

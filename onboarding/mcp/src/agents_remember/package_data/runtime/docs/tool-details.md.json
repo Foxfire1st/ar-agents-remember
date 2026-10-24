@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence.\n\nAnchor: lines 1-107",
+      "note": "The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "9455750a8616d3d25e28aaa4f158dee209c33e7f",
-            "content": "sha256:71120fb6a402ce740346a7d0627f957e952a426ff2f4239735c1df8261ee6f7e",
+            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
+            "content": "sha256:f064b8cbfc99cde602e43b42bfbbd56b9c4fc8cd65d44d876951b51f705d1214",
             "locator": {
-              "end": 107,
+              "end": 118,
               "kind": "line_range",
               "start": 1
             }
@@ -20,16 +20,33 @@
       ]
     },
     "2": {
-      "note": "The shipped document retains long explanations and replaces citation source-snapshot options with old-format refusal; registration remains the callable-signature owner.",
+      "note": "The shipped explanation states citation admission and old-format refusal and distinguishes anchor measurement from currentness; registration remains the callable-signature owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef052a554e59b0a8a26ef43d1e740035dc75b0d8",
-            "content": "sha256:9b1c44c03db9f6b35f2611b840a510ffe0cb6f35273167c8aa0cbe75718e6d4a",
+            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
+            "content": "sha256:5835d671370afc534e495be902dbf291eb1b4baba3d5953dc9a2c348f4af2483",
             "locator": {
-              "end": 273,
+              "end": 160,
               "kind": "line_range",
-              "start": 1
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Skills are package-served in both install modes and host facts come from active MCP authority per use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
+            "content": "sha256:587fd50aef8cf94f65d8c0119390ffc913c3628342eaf1a598204bf3d36f603d",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 18
             }
           },
           "kind": "code"

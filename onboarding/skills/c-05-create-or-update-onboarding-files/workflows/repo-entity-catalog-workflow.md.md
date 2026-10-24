@@ -8,6 +8,10 @@
 
 This source defines the retained repo-level `entities.md` catalog workflow: select load-bearing real entities that recur across layers, explain their canonical meaning and naming drift, and curate deterministic evidence fingerprints for review. The catalog lives once per repository under the resolved onboarding root and complements its overview; it is neither a glossary nor an exhaustive ontology. This card documents that source and its template without treating retained legacy metadata/history instructions as converted-memory permission.
 
+## Current Source Qualification
+
+Fingerprint drift, a missing fingerprint row and an orphaned row or missing evidence path are now reported by this skill (`c-05-create-or-update-onboarding-files`), which compares the stored `git-blob-set-v1` evidence sets and checks inventory/fingerprint correspondence. The inherited steps that name a separate memory-quality skill describe the retired owner.
+
 ## Code Commentary
 
 ### Logic
@@ -26,7 +30,7 @@ The catalog template makes this practical through category, real-world referent,
 
 Every Entity Inventory entry has one matching Entity Fingerprints row. The workflow names `git-blob-set-v1`: sort the curated repo-relative evidence paths, resolve the current `HEAD:<path>` blob hashes, hash the path-plus-blob-hash list and store `sha256:<digest>`. Definition, mapper, schema/interface and lifecycle files are preferable to broad roots or every consumer. This is the algorithm description in the workflow and template, not a newly inferred byte serialization or a computation performed here.
 
-A changed fingerprint is a review prompt, not automatic proof that prose is wrong. Inspect changed evidence and decide whether meaning, identifiers, relationships, naming drift, references or projections need correction before refreshing the fingerprint, even if prose remains correct. Missing inventory coverage requires curated evidence and a row; orphaned rows or missing paths require checking whether the entity was removed, renamed or moved before deleting content or replacing evidence. Review also checks that entities are real and stable, neighbors are distinguished, names have not drifted into canonical labels, layer tracing works, and evidence remains small and deterministic. The canonical c-05 skill describes c-05 as curating/refreshing these paths and c-02 as comparing fingerprints and inventory coverage; that is source-level role allocation, not an independent verification of the c-02 implementation.
+A changed fingerprint is a review prompt, not automatic proof that prose is wrong. Inspect changed evidence and decide whether meaning, identifiers, relationships, naming drift, references or projections need correction before refreshing the fingerprint, even if prose remains correct. Missing inventory coverage requires curated evidence and a row; orphaned rows or missing paths require checking whether the entity was removed, renamed or moved before deleting content or replacing evidence. Review also checks that entities are real and stable, neighbors are distinguished, names have not drifted into canonical labels, layer tracing works, and evidence remains small and deterministic. The retained c-05 maintenance workflow owns this review sequence and names c-05 as the reporter of fingerprint drift and missing or orphaned evidence rows; that is an instruction-level allocation, not an independent verification of a comparer implementation.
 
 ### Retained Legacy Shape And Converted Applicability
 
@@ -49,10 +53,15 @@ The inherited TODO calls for verification-metadata refresh after its working-tre
 - The retained catalog complements the root overview and carries legacy timestamp and draft/active metadata. [3]
 - Fingerprints use git-blob-set-v1 and curated load-bearing paths; drift requires review and missing/orphaned rows require relocation/deletion investigation. [4]
 - Canonical names, explicit drift and selective entry criteria prevent duplicate synonyms and vocabulary-only entries. [5]
+
 - Creation, maintenance and review inspect evidence, seed useful entities, handle fingerprint coverage and preserve legacy history. [6]
+
 - The catalog template records fingerprints, real referents, canonical ownership, relationships, naming drift and cross-layer projections. [7]
 - The template retains metadata and append-only Update History as legacy catalog shape, not converted-card requirements. [8]
-- The canonical skill describes c-05 fingerprint curation and c-02 comparison/coverage roles. [9]
+- The retained c-05 maintenance workflow requires evidence review and names c-05 fingerprint-drift and coverage reporting. [9]
+
 - Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes. [10]
+
 - Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references. [11]
+
 - Converted no-impact answers use writer-owned source and route history rows, and converted cards exclude legacy metadata/history and self-assigned references. [12]

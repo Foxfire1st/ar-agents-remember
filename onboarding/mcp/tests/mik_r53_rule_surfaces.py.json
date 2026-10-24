@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/mik_r53_rule_surfaces.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shipped workflow that lists the ten rules is named once, under the c-05 skill tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e703073f48d00b6c6f29e82db13eb6c3feaa868",
+            "content": "sha256:5dc85715324f46191078a50498a4252c75a967aa266f3f7b42306c16805877fd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

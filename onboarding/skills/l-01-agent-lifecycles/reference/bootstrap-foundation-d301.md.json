@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "New separate step-7 detail copied from Bootstrap foundation paragraph; no foundation authoring power is added to Bootstrap.\n\nAnchor: Candidate instruction body, lines 1–13",
+      "note": "Bootstrap step 8 reads and reports the foundation state, tells the user to start the Architect and grants no foundation authorship to Bootstrap.\n\nAnchor: current source",
       "targets": [
         {
           "anchor": {
-            "blob": "ace4771286e68fd5987f369e62d6db1e1304c44f",
-            "content": "sha256:53882407103b249b5b9aed2dfc97e857875e71dd0780cf265b9fc4eea623fcbe",
+            "blob": "1a969e658eb6bf16c5762b123a0d9df57192cae8",
+            "content": "sha256:5a84b35c801aa03c578ce10c5d00b659b7bc4de1b2b62b739bb4051d34cc5e84",
             "locator": {
-              "end": 13,
+              "end": 19,
               "kind": "line_range",
               "start": 1
             }

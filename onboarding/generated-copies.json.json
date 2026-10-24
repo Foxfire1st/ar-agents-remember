@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7f87344928ff3c3658db530b4d3e5e3766e69523",
-        "content": "sha256:7ecb0f5d8725e0a7caaac40448a9f7be1ce183423e4db3ff98a134f050002834",
+        "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+        "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "Versioned declaration names canonical skills, package/harness targets and exact ignore-name/suffix policy.",
+      "note": "Versioned declaration names canonical skills, its single package target and exact ignore-name/suffix policy.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f87344928ff3c3658db530b4d3e5e3766e69523",
-            "content": "sha256:7ecb0f5d8725e0a7caaac40448a9f7be1ce183423e4db3ff98a134f050002834",
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
             "locator": {
-              "end": 21,
+              "end": 13,
               "kind": "line_range",
               "start": 1
             }

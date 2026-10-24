@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "05c181c7078f3cd5e6e027e658a6d5bcd4d1893b",
+        "content": "sha256:e3a27a390dde645a40f5d6e5e151a06c42a08d0ece8a4f8ba2e370d59488d5f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_runtime_assets"
+        }
+      },
+      "id": "RLZ-15TGJH",
+      "invariant": "INV-6526WA",
+      "origin": {
+        "handoffEntry": "L188-B19",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The runtime asset sync retains admitted assets without copying a coordination skills tree.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: \"from agents_remember.benchmarks.runner_modules.filesystem import *\"",
@@ -20,12 +39,34 @@
         }
       ]
     },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `# mcp/src/agents_remember/benchmarks/runner_modules Overview`",
+    "3": {
+      "note": "The runtime-asset sync that writes no skill tree.",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137"
+          "anchor": {
+            "blob": "05c181c7078f3cd5e6e027e658a6d5bcd4d1893b",
+            "content": "sha256:e3a27a390dde645a40f5d6e5e151a06c42a08d0ece8a4f8ba2e370d59488d5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_runtime_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05c181c7078f3cd5e6e027e658a6d5bcd4d1893b",
+            "content": "sha256:e44a275db8420da5e08f88a95bb221a91ea084c169f5f7fff31c0d1c0c7f39b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

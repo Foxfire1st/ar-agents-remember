@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ac6bf6046020a044460f384b661436a7a7ce2ea5",
+        "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 189,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "ac6bf6046020a044460f384b661436a7a7ce2ea5",
+        "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 189,
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "ac6bf6046020a044460f384b661436a7a7ce2ea5",
-        "content": "sha256:1073f6d30f8ac91c9d4ad2f061b6252f59777d96156e32859eadcf2cd8d5a643",
+        "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
+        "content": "sha256:2e355dbb346c7dfb42267d5b78de2f494f4fb618173ddeaafad61f57082de1a4",
         "locator": {
           "kind": "file"
         }
@@ -59,11 +59,11 @@
   ],
   "references": {
     "1": {
-      "note": "Current reference header and literal roster both declare40 public tools; older header38/roster41/42 statements are historical, not live advertisement.",
+      "note": "Current reference header states 40 public tools while the literal roster declares 42; older header38 and 40/41-name roster statements are historical, not live advertisement.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f8db5328c7061d5c11f50502b5907401bb74eb3",
+            "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
             "content": "sha256:f9e8d8278ea6c455e34139e07f4eb8439d2ce07b7074c4e361c3daddafccff76",
             "locator": {
               "end": 5,
@@ -75,8 +75,8 @@
         },
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:5726cbf2def61d536e93fe24332977d81fc1c136503bd693fbe360a9d619d681",
+            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
             "locator": {
               "kind": "file"
             },

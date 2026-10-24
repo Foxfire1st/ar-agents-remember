@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed.
+The canonical evidence-lane catalog: which test modules belong to which lane, so a leaf's checks can name the population they ran. Membership declares the selected population, never that an invocation ran or passed. The current parsed catalog declares 466 unit-regression, 3 public-contract, 101 integration and 22 architecture members (592 total); the other three lanes are empty. This leaf adds 25 unit-regression modules without removing or reclassifying earlier members.
 
 The source-owned regeneration removes eleven memberships whose files L113 deleted: eight from `unit-regression` and three from `integration`, and it registers three converted-carryover regressions in `unit-regression`; that earlier regeneration snapshot held 385 `unit-regression` and 99 `integration` memberships across the same seven lane identities. The current parsed catalog's membership count was 390 `unit-regression` and 99 `integration` at that snapshot; later registrations, including the MIK-R118/R124 mark suite below, add to those populations, and the parsed catalog is the authority on the count. The earlier total is historical. The current candidate also registers the four native-attention test modules — `test_attention_native_kinds.py`, `test_attention_native_inputs.py`, `test_attention_notice_store.py` and `test_attention_notice_publication.py` — in `unit-regression`, alongside `test_reader_timeline_spill.py`, `test_review_memory_watch.py`, `test_review_record_presence.py` and `test_route_review_clean_sync_door.py` in `unit-regression`, and replaces the removed `test_review_verification_observation_model.py` with `test_reviewer_text_shape.py` there. The seven lane identities remain unchanged. Retained L81 accounting, warmup, projection, watcher and budget suites keep their declared lanes; no removed local hosted test is selected as current evidence, and no lane deletion waives full-final coverage.
 
@@ -217,3 +217,7 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 ## Request-locator module registration
 
 `mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are each selected once in `unit-regression`, in the list's canonical order: the first between `test_role_first_message.py` and `test_role_instruction_corpus.py`, the second between `test_role_launch_routes.py` and `test_role_message_files.py`. The seven lane identities, every other membership set and the case-budget policy are unchanged. Membership is selection metadata and establishes neither invocation nor pass.
+
+## Current source evidence
+
+- The catalog declares 592 members across 466 unit-regression, 3 public-contract, 101 integration and 22 architecture entries; three lanes are empty. Membership selects evidence without proving invocation. [867]
