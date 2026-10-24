@@ -13,7 +13,7 @@ Canonical memoized Operations detail entry over the single served TaskEntry sele
 ### Composition and selection
 
 The original monolith was split by responsibility: state.ts owns selection/body state, model.ts pure
-derivation, taskDocPanels.tsx entry composition, worktreeSpine.tsx bound worktree/provider lanes and taskReader.tsx form
+derivation, taskDocPanels.tsx entry composition, worktreeSpine.tsx bound code/memory checkout lanes and taskReader.tsx form
 composition. The fixed-page head, blocks, own views, index groups and styles have separate owners
 (docHead, taskBlocks, skeletons, docViews, task-groups, pageParts/pageStyles). The shared Panel remains
 unchanged. A selected document has exactly one in-page ID/title; sticky Panel chrome keeps Back/parent
@@ -53,7 +53,7 @@ docIdentity and persists on a same-document refresh; own-view Back restores its 
 ChangeSetBar retains the master net with includeLeaves:true and its own leaf attribution, not a fake
 zero when breakdown is absent. Leaf working and single Intent review controls retain their own owners,
 brief states/disclosures and task-context targets. No Lifecycle GateResponder or task-local gate response box is mounted. Native document chat retains its own separately owned conversation and permission boundaries.
-Spine lanes remain read-only rendering of entry-bound worktrees and provider facts, not command authority.
+Spine lanes remain read-only rendering of entry-bound code/memory checkout presence and cleanup facts, not command authority.
 The no-selection Panel retains EmptyStateBackdrop and its existing effects/motion gating. Memoization
 skips unchanged persistent selections but allows actual store/selection changes.
 

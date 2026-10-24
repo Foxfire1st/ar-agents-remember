@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31f34dadebf6c89b987bcc33fb85dd72d7281f94",
-            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
             "locator": {
               "kind": "symbol",
               "name": "Event"
@@ -54,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
-            "content": "sha256:25cc191049c4508c0eb91582783ecbda98164af392a9ff3c2de19480daf059cc",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:b7acb5c9e29678903fd8aa3465439733a65b3dc299929f00382f206c28744686",
             "locator": {
               "kind": "file"
             },
@@ -70,8 +70,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "312d18df89e42e3238e6dd7370c4bc8d26f58571",
-            "content": "sha256:2e7e8df270c3888119e0cdd62eb0cc68c8d9562f46feda0d42ceedbc9c546395",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
             "locator": {
               "kind": "symbol",
               "name": "project_workspace"
@@ -87,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
-            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:547d65d6d0b433cae876cf724e68072e618693d82797005287db781304a46dee",
             "locator": {
               "kind": "symbol",
               "name": "TaskState"
@@ -104,8 +104,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
             "locator": {
               "kind": "symbol",
               "name": "task_state"
@@ -121,8 +121,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
             "locator": {
               "kind": "symbol",
               "name": "build_task_entries"
@@ -138,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "892f1ad6351be996d466f5d33cf1e4b69efcee8f",
-            "content": "sha256:84dbf28f470e2d02f803d64bd0c81d1da5312073ac4e18d1063dd9376ffd5330",
+            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
+            "content": "sha256:bf1efb90fded60a112126321d7f8f0c871c21b48ede172894de918660797b75c",
             "locator": {
               "kind": "symbol",
               "name": "PublishedAgentActivity"
@@ -155,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "892f1ad6351be996d466f5d33cf1e4b69efcee8f",
+            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
             "content": "sha256:52aeb74957de86c9196f6f2ed21f0b958f7adaba398fc727905cbe2f5773717b",
             "locator": {
               "kind": "symbol",
@@ -253,12 +253,12 @@
       ]
     },
     "49": {
-      "note": "Attention uses only provider, drift, setup and blocked-start contributors and a deterministic ranked order.",
+      "note": "Attention uses only drift and blocked-start contributors and a deterministic ranked order.",
       "targets": [
         {
           "anchor": {
-            "blob": "5fea81ac6e51630ad7f1031515b2b432882154bc",
-            "content": "sha256:865757f66ad1160737377cc0cfb31736b1ee111caa26ed8f971f4b932bbf613f",
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:df422e63673c2c2e4d72bcde4ca6020c81448e3c13cdce3f37d7be4ed8236171",
             "locator": {
               "kind": "symbol",
               "name": "build_attention_queue"
@@ -274,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fea81ac6e51630ad7f1031515b2b432882154bc",
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
             "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
             "locator": {
               "kind": "symbol",
@@ -304,12 +304,12 @@
         },
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
             "content": "sha256:a9698c32fa9a20bab81fc0f683925767fc43a427ce913e1f3c157c94cc3c4f95",
             "locator": {
-              "end": 341,
+              "end": 417,
               "kind": "line_range",
-              "start": 263
+              "start": 339
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -322,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
             "locator": {
               "kind": "symbol",
@@ -334,7 +334,7 @@
         },
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
             "locator": {
               "kind": "symbol",
@@ -365,23 +365,6 @@
               "name": "build_analytics"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`workspace_provider_nodes` is one of the route-local provider-node helper symbols.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a30ae9ea5e5a69217cfb32875e92438165ead1d1",
-            "content": "sha256:3b73aa8fd49e2ebdd532ad71ff979a654510ab050f8ed85949eb8b5d5ff20d71",
-            "locator": {
-              "kind": "symbol",
-              "name": "workspace_provider_nodes"
-            },
-            "path": "mcp/src/agents_remember/observer/provider_nodes.py"
           },
           "kind": "code"
         }

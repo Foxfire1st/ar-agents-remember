@@ -154,7 +154,7 @@ The following reference captions describe the prior source epoch. They are prese
 
 - Volatile-age equality includes elapsedSeconds. [105]
 - Full scenario reset increments generation once and clears closeout queues. [106]
-- Drift display consumes reporting counts while provider selector definitions remain. [107]
+- Drift display consumes reporting counts; `selectors.ts` defines no provider groupings. [107]
 
 - The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
 

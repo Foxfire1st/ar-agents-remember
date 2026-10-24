@@ -27,8 +27,10 @@ port mapping, starts Ollama through the package Compose project, waits for
 `ollama list`, detects whether the configured model is present, and ensures the
 model is loaded. It shares the GrepAI project migration helper so standalone
 embedder startup can clean pre-Compose containers and networks before Compose
-owns them. Status includes a normalized Docker container state summary so MCP
-provider status can report embedder state and uptime. For new `auto` host-port
+owns them. Its internal status helper includes normalized Docker container state
+for retained lifecycle diagnostics. The context-packet provider summary reports
+configured/enabled/skipped only; it does not publish embedder state or uptime.
+For new `auto` host-port
 allocations it prefers `GREPAI_OLLAMA_DEFAULT_PORT` (`61434`) while keeping the
 container-side Ollama HTTP port at `11434`.
 
@@ -54,8 +56,8 @@ fallback runs. The failed seed result is attached to the response as
   rather than reallocated from host socket availability.
 - The preferred host port avoids developer-owned host Ollama services; the
   container port remains the Ollama service port used inside the Docker network.
-- Embedder status should expose enough Docker state for current provider status
-  without requiring callers to inspect containers themselves.
+- The internal embedder status result retains Docker state, network and mount
+  checks, ports and model readiness. It does not supply current MCP provider status.
 - `_seed_ollama_model_from_source` returns `None` (not a failed result dict)
   when no `seedFromContainer` is configured or the source equals the target, so
   callers skip the seed path entirely for the workspace embedder.
@@ -69,6 +71,8 @@ fallback runs. The failed seed result is attached to the response as
   an opaque `Any`.
 
 ## Evidence
+
+- Internal embedder diagnostics still return container state; the context-packet provider summary does not consume or publish that detail. [6]
 
 ### Repo-Internal References
 

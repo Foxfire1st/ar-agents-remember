@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7627e7090c13b211851e1ce36349ff387ad71c57",
-        "content": "sha256:2511ec62af1e7338055c285c13f298e31360077912b690e39b49ed4634b045e3",
+        "blob": "0a02148fc8d08913cd2790d2a38893a6391e4f39",
+        "content": "sha256:e659732eee4f680eb97d95bda6bb71001b06377a72e0b9d35009e99c363b706f",
         "locator": {
           "kind": "file"
         }
@@ -21,76 +21,16 @@
   ],
   "references": {
     "7": {
-      "note": "The provider-parenting fixtures and assertions: matching worktree groups, missing groups, aggregate workspace providers, repo-scoped workspace providers, and `worktreeGroup` precedence.\n\nAnchor: \"joins a worktree provider to its enclosure when worktreeGroup formats differ (path vs basename)\"; \"parents worktree-scoped providers to their owning worktree node\"; \"falls back to the workspace core when a worktree provider has no matching group\"; \"keeps workspace-scoped providers parented to the workspace core\"; \"parents repo-scoped workspace providers to their covered repo node\"; \"keeps worktreeGroup precedence over repoId for provider parenting\"",
+      "note": "The current topology tests cover native task/worktree identity and status, shared limits, active groups and repository parenting, and assert only ws/repo/wt node kinds with no provider satellites.\n\nAnchor: `describe('entry worktrees in the topology', () => {`",
       "targets": [
         {
           "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:b372a30ff74bee201bc3f9db5334e96c06b7561e7c83af964159772239056722",
+            "blob": "0a02148fc8d08913cd2790d2a38893a6391e4f39",
+            "content": "sha256:75c02f58645cf790509b912ae8b4f8fe9088765cb4ee4ce926ec2d4539a61483",
             "locator": {
-              "end": 198,
+              "end": 107,
               "kind": "line_range",
-              "start": 188
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:bbb92979442f135c41e347733687107a9f5ee1eab1eb4df848564a791102b258",
-            "locator": {
-              "end": 209,
-              "kind": "line_range",
-              "start": 200
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:aa22999df81d65e01fa735c48544d742b48f63d98570e27a4bb95f2eb3c72829",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 211
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:4c85e5827b234f7dcceb9240d6aa04d6690347b651d7f756e180fd19da19b5f5",
-            "locator": {
-              "end": 229,
-              "kind": "line_range",
-              "start": 219
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:bf79415d534e74648d9e2108c9874affdb561c6fe2bb288b46bcae574d3b84b2",
-            "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 231
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "71d6c22bdf89090e52580a00d275a7dd9a73dd41",
-            "content": "sha256:59868ba268b432b935e187a6362cebe2143e78c1a28bee71be3b12f01fcd69a6",
-            "locator": {
-              "end": 267,
-              "kind": "line_range",
-              "start": 251
+              "start": 46
             }
           },
           "kind": "test"

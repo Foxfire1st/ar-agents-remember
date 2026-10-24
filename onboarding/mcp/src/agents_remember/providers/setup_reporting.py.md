@@ -27,7 +27,7 @@ watcher status, counts results, and writes a setup summary.
   are not the source of current provider truth.
 - A failed phase remains visible even when a final watcher status later reports
   ready.
-- The MCP current-state path is owned by `current_state.py`, not this module.
+- This module persists historical setup summaries, not current MCP provider state. The former `current_state.py` adapter is removed; no current provider-state consumer is assigned to these summaries.
 - Dry runs must report intended summary paths without writing files.
 - Compact summaries should preserve diagnosis fields while omitting large raw
   output.
@@ -59,3 +59,14 @@ No relevant external documentation is needed for this provider setup summary beh
 No sibling repository boundary is needed to explain this file.
 
 No meaningful cross-repo references found.
+
+## Historical provider-surface wording
+
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> - The MCP current-state path is owned by `current_state.py`, not this module.
+
+## Current retirement-boundary evidence
+
+- Setup finalization derives strict success, readiness, failed phases, final status, counts and persisted summaries. [5]
+- The retained summary helper selects the last recorded watcher-status result; this is not a current MCP state adapter. [6]

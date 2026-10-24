@@ -20,7 +20,7 @@ liveness, reads `/proc/<pid>/cmdline`, or resolves provider venv Python paths.
 
 ### Invariants And Boundaries
 
-- Watcher/process starts must fail fast in ephemeral namespaces.
+- Lifecycle actions using the durable-namespace guard fail fast in ephemeral namespaces; the retained CGC and aggregate watcher consumers enforce it for real stop-class actions.
 - This helper must not reintroduce host venv executable path resolution for
   managed providers, nor PID liveness or `/proc/<pid>/cmdline` inspection.
 
@@ -28,5 +28,6 @@ liveness, reads `/proc/<pid>/cmdline`, or resolves provider venv Python paths.
 
 ### Repo-Internal References
 
-- CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection. [1]
-- Aggregate watcher lifecycle reports namespace durability before starting enabled providers. [2]
+- The retained CGC stop path uses the shared durable-process-namespace gate. process_status.py does not inspect provider PID liveness or /proc/<pid>/cmdline; Docker watcher inspection remains with the runner helper. [1]
+
+- Watcher aggregation applies durable-namespace checks to non-dry-run stop and shutdown-all actions. Aggregate start/status branches are absent. [2]

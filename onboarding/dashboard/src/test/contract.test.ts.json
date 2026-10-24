@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-        "content": "sha256:355254c39f9fd24f1cf748afaa22bc65d81a3fad55534b97782bf2556bb61fd9",
+        "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+        "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
         "locator": {
           "kind": "file"
         }
@@ -121,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
             "content": "sha256:19ce2bbc6b38863728b1d9d5c3634cf4065296a982b4988bc428c9980485d82c",
             "locator": {
               "end": 20,
@@ -134,7 +134,7 @@
         },
         {
           "anchor": {
-            "blob": "980a29c38e96a7c41d2ec79a71f8310445eaa91c",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
             "content": "sha256:ea1acfc19fc5f9efabd2579b0931bb02b2f813054f37dd37262c8a1fb1b7ef5a",
             "locator": {
               "end": 40,
@@ -170,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "85bfabbd9bc1d198a3e5080e42db1f702f42be98",
             "content": "sha256:54a014da3bbf53d59a35b820c533f8f8437a073cfd63d015a8a6b5ca3a835b6e",
             "locator": {
-              "end": 285,
+              "end": 287,
               "kind": "line_range",
-              "start": 268
+              "start": 270
             }
           },
           "kind": "test"
@@ -221,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
             "locator": {
               "kind": "symbol",
@@ -248,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
             "locator": {
               "kind": "symbol",
@@ -271,11 +271,11 @@
       ]
     },
     "7": {
-      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 12 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain.",
+      "note": "AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain.\n\nAnchor: `reaches every node the mirror leaves unwalkable, and says why each one is opaque`",
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
             "locator": {
               "kind": "symbol",
@@ -286,23 +286,11 @@
         },
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
-            "content": "sha256:9fee5ea8a1aa224921c7644f25f3ea183716b20b55000ec94ab9ab229468c668",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:5f4c30debe3ba7585b95d5bf042cea2c32186e94e03e81eb6ebeb727b01bf45a",
             "locator": {
               "kind": "symbol",
               "name": "INDEX_SIGNATURE_SITES"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
-            "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
-            "locator": {
-              "end": 554,
-              "kind": "line_range",
-              "start": 544
             }
           },
           "kind": "test"
@@ -330,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "537ecae9a7efe4d556fc8840d6a87111a4cf8be1",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
             "locator": {
               "kind": "symbol",

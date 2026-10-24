@@ -401,6 +401,59 @@
           "kind": "code"
         }
       ]
+    },
+    "28": {
+      "note": "The retained launch seam returns non-enabled plans without starting a setup job.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:8fdec9e1de122df37d67dd611da720ea786c3ae8672a12277498ff8296b53957",
+            "locator": {
+              "end": 1009,
+              "kind": "line_range",
+              "start": 951
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The preflight returns skipped state when neither provider is enabled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:b9f0e0e0b8b6b3d632d5cd150b977a7c760c061b2c8e6454c936ac7aa1871695",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The shared enablement predicate always disables CGC and GrepAI, regardless of legacy settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

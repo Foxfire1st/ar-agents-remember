@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/grepai/lifecycle/compose.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a0701d2b4a958c4252049d52e3255157c704cae",
+        "content": "sha256:639e95d049a20b30858d772a200774aede87a2319435f2964886b2c3f23c875c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3J3WAV",
+      "invariant": "INV-M8V5ZA",
+      "origin": {
+        "handoffEntry": "L192-W-R199-07",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The GrepAI compose renderer the stop path still uses is retained for the same reason.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "`grepai_compose_render()` fills the package override template and shared port mapping values.",

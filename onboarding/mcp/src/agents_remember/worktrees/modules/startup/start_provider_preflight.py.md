@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Computes provider enablement and settings-readability state before worktree start exposes provider setup.
+Computes settings-readability and retained provider-plan state before worktree start. Both retired provider identities are disabled, so readable settings yield a skipped plan rather than provider setup.
 
 ## Code Commentary
 
 ### Logic
 
-The public surface is `provider_enablement_state`. Provider enablement is a start-time projection only. An unreadable provider configuration becomes bounded public evidence; provider availability neither locates the lifecycle journal nor changes enclosure authority.
+The module callable is `provider_enablement_state`. It reads the configured settings through the existing port; unreadable settings remain a bounded blocked result. The shared predicate always returns `False` for `codegraphcontext-code` and `grepai-memory`, regardless of their legacy settings, so this helper returns the skipped state and settings path for those providers. This is settings/plan reporting, not provider activation; it neither locates the lifecycle journal nor changes enclosure authority.
 
 ### Conventions
 
@@ -43,3 +43,16 @@ The source file itself is the current evidence for this file-specific contract.
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+## Historical provider-surface wording
+
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> Computes provider enablement and settings-readability state before worktree start exposes provider setup.
+>
+> The public surface is `provider_enablement_state`. Provider enablement is a start-time projection only. An unreadable provider configuration becomes bounded public evidence; provider availability neither locates the lifecycle journal nor changes enclosure authority.
+
+## Current retirement-boundary evidence
+
+- The preflight retains unreadable-settings evidence and returns skipped state for disabled providers. [2]
+- The shared enablement predicate always returns false for both exact retired provider identities. [3]

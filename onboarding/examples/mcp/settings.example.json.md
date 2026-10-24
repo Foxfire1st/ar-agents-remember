@@ -81,5 +81,6 @@ from the template so normal Codex `.codex/mcp` placement can use the inferred
 ### Repo-Internal References
 
 - MCP config rejects coordinator `system/settings.json` as an authority file and derives provider runtime roots from provider ids. [1]
-- Provider lifecycle settings are generated from MCP config instead of read from coordinator settings. [2]
 - The `providerDegradation` shape shown here validates through the dedicated fail-loud parser (260707-HFX-L7). [3]
+
+- The retained lifecycle settings helper emits a disabled contextProviders document with an empty providers map; configured legacy keys do not generate runtime settings or enable the retired providers. [2]

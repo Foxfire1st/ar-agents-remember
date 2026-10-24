@@ -3,8 +3,32 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Lifecycle CGC modules use these layout and cleanup helpers before running or installing CGC.\n\nAnchor: \"return cgc_runtime_layout(\"; \"cleanup_cgc_runtime_artifacts(\"; \"cleanup_cgc_runtime_artifacts(\"; \"def cgc_runner_image_build(\"",
+      "note": "Retained lifecycle helpers derive layouts, clean runtime artifacts, ensure installation layouts, build runner images and stop existing watchers.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "5ea158aba1e9e1543bd7108a50560723e0c9239b",
+            "content": "sha256:e73a59347f824293858bf5a8f4a849db0eea4ad33f029c1294363443bbae0c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_layout_from_args"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ea158aba1e9e1543bd7108a50560723e0c9239b",
+            "content": "sha256:a5bd1e46f696ce55335de5a41bfd1725a3326cb1cb9f934529ab9d794ea4acc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_apply_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
@@ -19,50 +43,11 @@
         },
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:9e0ae577e1c58525fa11a89a215d88a11239bad58aeffa375c2ce61a28be0ee8",
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:0b2af5fbece35f33aa6452259e0f89c70b02f48380ed0e2c0a9ce8082cc5ee0e",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start_preflight"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
-            "content": "sha256:84862f0becaa9d206e86cc6e98fb08ba9768f81246a6d954dda9d8396cb113e0",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 50
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
-            "content": "sha256:439df43e64b9f3ecd60d883c4b8fb4edf9802eb11c7a2ee16a0739f34a5b4c35",
-            "locator": {
-              "end": 300,
-              "kind": "line_range",
-              "start": 300
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
-            "content": "sha256:439df43e64b9f3ecd60d883c4b8fb4edf9802eb11c7a2ee16a0739f34a5b4c35",
-            "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 185
+              "name": "cgc_install_all"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
           },
@@ -71,13 +56,36 @@
         {
           "anchor": {
             "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
-            "content": "sha256:0fdb750d3c3463b5c1e25c189dd440c18c8c5d9c01f2b9b23a779cce50f9230b",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
             "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 37
+              "kind": "symbol",
+              "name": "cgc_runner_image_build"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:ae76c4565d013a52a7893167cee7a75d96cde7c1319b34b6e3fd5062c96adee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop_preflight"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },
           "kind": "code"
         }

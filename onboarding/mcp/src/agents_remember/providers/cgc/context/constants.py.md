@@ -8,10 +8,9 @@
 
 `cgc/constants.py` owns CGC provider identifiers, pins, Docker runner image,
 watcher naming defaults, shared Docker network name, backend defaults, source
-artifact names, env exclusion keys, default `.cgcignore` text, per-repo managed
-exclusions (`CGC_REPO_CGCIGNORE_EXTRAS` — L12: agents-remember excludes its committed
-package_data bundle from watch/index work), the watcher timer-pop patch snippets, and upstream
-patch snippets.
+artifact names, env exclusion keys, default `.cgcignore` text, the watcher timer-pop patch snippets, and upstream
+patch snippets. The former per-repository `CGC_REPO_CGCIGNORE_EXTRAS` mapping is removed;
+its retained source comment describes the earlier package-data exclusion, not a current table.
 
 ## Code Commentary
 
@@ -28,10 +27,10 @@ new tag.
 
 - This file is part of the direct `providers.context` facade implementation; there is no `context_providers.py` compatibility fallback.
 - Provider runtime paths stay under configured provider roots unless a helper explicitly validates another source path.
-- Bump `CGC_RUNNER_IMAGE_LAYER_REVISION` whenever the runner Docker layer
-  changes without a cgc version change: `runtime_install` skips building image
-  tags that already exist, so an unbumped revision leaves upgraded hosts on the
-  cached old image (the GitHub #50 failure mode).
+- `CGC_RUNNER_IMAGE_LAYER_REVISION` remains part of the retained runner image tag.
+  The source comment preserves the earlier cached-image installation rationale
+  (the GitHub #50 failure mode); it does not advertise a current `runtime_install`
+  provider build/start path.
 
 ## Evidence
 
@@ -40,3 +39,5 @@ new tag.
 - CGC runtime layout uses provider constants and default ignore text from this module. [1]
 - CGC Docker runner command/build helpers use runner image and watcher container constants from this module. [2]
 - CGC patch application uses marker and snippet constants from this module. [3]
+
+- The removed per-repository exclusions table leaves only historical comments before the next retained patch constant. [4]

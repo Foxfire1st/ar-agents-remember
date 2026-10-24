@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-        "content": "sha256:2b2f1bb30de42f2cd4084f86667d15540f18a46f708fa16f386e64178da9adf6",
+        "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+        "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-        "content": "sha256:06396fdbff4b3fbc66f5cc8f691ed6c5b85c470d69b979f8f4f013fbca08c042",
+        "blob": "4c2b3ccd9f114336d8e1b1a5ece3671ebd90c587",
+        "content": "sha256:7ba004b6f06cc48e74594f77172fbe54cfa0a29bf33016e5c99b1c95129cc68a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HSNJ5Q",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The served projection declares no search-provider node, boot record, setup summary or progress entry; the only provider-shaped field left is `providerLimit` on a task entry, which is L184's model-provider usage limit shown to a person, not a running CGC/GrepAI engine, and the two must not be read as one.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+        "content": "sha256:bb72b8be4d60d3da890342fc50a7c9a2e583efe4bef923bfe01a05c24f9b0539",
         "locator": {
           "kind": "symbol",
           "name": "AttentionItem"
@@ -38,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-        "content": "sha256:2b2f1bb30de42f2cd4084f86667d15540f18a46f708fa16f386e64178da9adf6",
+        "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+        "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
         "locator": {
           "kind": "file"
         }

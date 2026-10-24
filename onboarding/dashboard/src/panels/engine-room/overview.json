@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1ac5ff62fa39b65bb851d844e0fad99657c0326",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
             "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
             "locator": {
-              "end": 82,
+              "end": 13,
               "kind": "line_range",
-              "start": 82
+              "start": 13
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
             "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
             "locator": {
-              "end": 124,
+              "end": 98,
               "kind": "line_range",
-              "start": 124
+              "start": 98
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -32,12 +32,12 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
-              "end": 543,
+              "end": 374,
               "kind": "line_range",
-              "start": 543
+              "start": 374
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a941853ffe69e4fe546c6c360148ed1b57599f4f",
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
             "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
             "locator": {
               "kind": "symbol",
@@ -178,16 +178,39 @@
       ]
     },
     "16": {
-      "note": "Terminal, recovery, and landing predicates\n\nAnchor: resolveGates through resolveLanding",
+      "note": "Terminal, recovery and landing predicates retain their source conditions; recovery deduplicates next action and enabled action names.",
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:4494bdf44f6d6fbe9d57e71da7f2a368641a67e501eebc48d16da32c66519721",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:3141fb71c0867801b3bab45b71b4421d41f8c75b246dd3eda1916c8f27a3ed8e",
             "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 168
+              "kind": "symbol",
+              "name": "resolveGates"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:83ea024dbd04381fa97e0d25a4e3196ecc52bb160d45543440c39963a66bf862",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRecovery"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:5e273681b2a142f6cfaed7c327f07c31d1c6ee27eb865ac35e4f2e28a6ab9984",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveLanding"
             },
             "path": "dashboard/src/panels/engine-room/scene.ts"
           },
@@ -249,12 +272,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
             "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
             "locator": {
-              "end": 324,
+              "end": 240,
               "kind": "line_range",
-              "start": 278
+              "start": 194
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -262,12 +285,12 @@
         },
         {
           "anchor": {
-            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
             "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
             "locator": {
-              "end": 404,
+              "end": 320,
               "kind": "line_range",
-              "start": 337
+              "start": 253
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -324,16 +347,15 @@
       ]
     },
     "21": {
-      "note": "Actual producer vocabulary and seed-state precedence\n\nAnchor: _start_process_node, _process_edges, _seed_edge_state",
+      "note": "The current process producer emits worktree-add, ledger-map and sync edges; provider seed/clone lanes and their state-precedence reducer are absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2eb66d3a91dd50bcf65fe4138ef7527e430c5c6e26663304e96db2bd9a9003ba",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 147
+              "kind": "symbol",
+              "name": "_process_edges"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -341,12 +363,11 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:60b324335bfaa5fe148538654b7a0c7a3c3d57f45816bfacec29a2c8d91f1f8c",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
             "locator": {
-              "end": 654,
-              "kind": "line_range",
-              "start": 543
+              "kind": "symbol",
+              "name": "_materialize_edge_state"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -407,7 +428,7 @@
         },
         {
           "anchor": {
-            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
             "content": "sha256:ccaa718c09af11cc7b3d63386664583d9bdf8d7b6175a239c5d752fbf9941cf1",
             "locator": {
               "kind": "symbol",
@@ -487,16 +508,29 @@
       ]
     },
     "29": {
-      "note": "T7B assertion source agrees with retirement and recovery policy\n\nAnchor: retired T7B cases",
+      "note": "The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical.\n\nAnchor: `renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block`; `EnclosureCanvas — provider traces are gone (MIK-R112 rule 2)`",
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
-            "content": "sha256:218e11edef022b6290770389481f0df980bafadf9ed4136880325ede3acba06b",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:cba204820a8a7da8b68ef2fca5f4b5efff375bfa06d2920bda6aa89ab5e4c272",
             "locator": {
-              "end": 549,
+              "end": 39,
               "kind": "line_range",
-              "start": 510
+              "start": 31
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:8f7caa2c52679d2c1791e4e364844d08e1f548b64394bc0a5c8fadd58a527fb0",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 477
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -526,7 +560,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
             "content": "sha256:47718d6637f76abc954c7d5dcbfb9708e21681526e7e15c8328d3419df6e54f0",
             "locator": {
               "end": 185,
@@ -552,12 +586,12 @@
         },
         {
           "anchor": {
-            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
             "content": "sha256:daf2ff19d8889ea99f9c36af2cdf9b8fd94d80e9be49204697efed0a92aafd44",
             "locator": {
-              "end": 71,
+              "end": 70,
               "kind": "line_range",
-              "start": 63
+              "start": 62
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -590,6 +624,78 @@
               "start": 78
             },
             "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The enclosure process edge builder emits worktree-add, ledger-map and sync, without provider seed/clone edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 374
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Pre-contract start nodes also create only worktree-add and ledger-map edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:e4320fe12f6cca6ca4ae474b86803e4b13e938c15ceddf48b76c0dbd8bcef000",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Current refused polarity accepts only integration and integration-mem, with failed/stale state deciding red/amber.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:10f1bc043a15d6e4d23cca602d1e73b73b83d58b6a50b215ee976b3d8a091861",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Diagnostics render current process facts without provider setup/heartbeat rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:397c1377ed5752a6665e1b9a7e3057d55a5e680f53f8ce8ba7145635932a03ef",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
           "kind": "code"
         }
@@ -631,16 +737,15 @@
       ]
     },
     "6": {
-      "note": "\"def _seed_edge_state(\" and \"_DECISIVE_SETUP_EDGE_STATES: dict[str\" — the only producers of a seed lane's state, including the \"metrics=_metrics(lifecycles\" reroute.\n\nAnchor: \"def _seed_edge_state(\"; \"_DECISIVE_SETUP_EDGE_STATES: dict[str\"",
+      "note": "The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer.",
       "targets": [
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:c0f47225fc146990c9c9b8ce66c9716b9dc57f863a26a68e7296590bcee6216f",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:86af058e0c5abc7a69a835324dcdc9697f80441984b3e2dceaa2cedd54eafdbb",
             "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 631
+              "kind": "symbol",
+              "name": "_process_edges"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -648,27 +753,13 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:868f56411c0f65bcaedd6ca1614d510845b8d4ccf8b225829b1726b3b6455ecb",
             "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 638
+              "kind": "symbol",
+              "name": "_materialize_edge_state"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "769360798335525af876426016e9fadc32f697e9",
-            "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
-            "locator": {
-              "end": 63,
-              "kind": "line_range",
-              "start": 63
-            },
-            "path": "mcp/src/agents_remember/observer/reducer.py"
           },
           "kind": "code"
         }
@@ -679,7 +770,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",

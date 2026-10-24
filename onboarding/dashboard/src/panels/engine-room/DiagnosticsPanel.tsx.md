@@ -7,18 +7,19 @@
 
 ## Current enclosure-only composition
 
-The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setupState/currentPhase/heartbeat, completed and failed phase text, source files and retained diagnostic action rows remain, with no gate responder; cleanup/abandoned still changes completed markers to muted ◦ and setup text to powering down.
+The panel renders phase and health, code source/worktree refs, optional source lineage, diagnostic actions, missing facts and source files. Summary, next action and memory source/worktree refs remain optional. Setup/currentPhase/heartbeat rows, completed/failed phase lists, the Seed row and the powering-down presentation are removed; there is no gate responder.
 
 ### Maintenance boundaries
 
-Replace provider-specific Setup wording and remove dedicated Seed-row guarantee. Explain historical provider phase strings may remain as generic server-projected diagnostics; seedFallback alone no longer produces text. Keep gate-boundary and honest ref/missingFacts behavior.
+Keep the current diagnostic account limited to the retained projected facts and display-only actions. Do not retain a Setup row, provider-progress list or powering-down glyph guarantee. CommitRow still displays the server fact state and absent/dirty/behind flags; optional memory refs and missing-fact/source sections render only when present.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof. [9]
-- The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof. [10]
+- DiagnosticsPanel renders phase/health, code refs, optional lineage, diagnostic actions, missing facts and source files; the removed setup and completed/failed-phase sections are absent. [9]
+
+- OptionalDiagRows renders summary, next action and optional memory source/worktree refs; DiagnosticActionRow maps nonempty actions to Affordance rather than a gate responder. [10]
 
 ## Historical superseded account (non-operative)
 

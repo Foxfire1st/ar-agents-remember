@@ -89,6 +89,23 @@
       },
       "rationale": "Rejects unknown keys and missing operational facts before constructing the five-fact authority; the version key is optional and never selects the release.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
+        "content": "sha256:cab565c0668ef60fae815dd1d5e8ca01a4971e4dd6c90f22aa2fabc30c27b1a3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Y1SZXE",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The .paseoRuntime.providers contract is still required and validated; L184 extended this module with the extra-args provider ids and user-settings location, which is additive to the contract and not a search-provider surface.",
+      "role": "primary-authority"
     }
   ],
   "references": {

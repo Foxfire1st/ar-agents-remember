@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in four places that must agree: the attention reducer, the dismissal admission validator, the projection inputs and the client selector. The tests prove the negative cases: a legacy row is dropped and suppresses nothing, and a retired kind cannot be displayed or dismissed. The generated types and the served schema refuse retired provider fields, not retired kind strings."
+  },
+  "applicability": "The operational attention queue: what may be observed, recovered, admitted to a dismissal, projected or shown.",
+  "conditions": [
+    "A legacy dismissal row or observation naming a retired kind may still exist on disk.",
+    "An unknown future kind must still pass through untouched."
+  ],
+  "exclusions": [
+    "A replacement alarm derived from the safety loop.",
+    "actionable-drift and blocked-start, which keep their kinds, ordering and dismissal semantics.",
+    "`ProviderLimit` and `LimitedSeat`, which the same generated types do declare — L184's model-provider limit, not a search provider, and not one of the two retired attention kinds.",
+    "A retired kind string refused by the generated types or the served schema; neither constrains a string value, and the client selector is what drops it."
+  ],
+  "id": "INV-EQGQ9G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_l192_retired_acknowledgement_reclamation.py (9 cases), test_drift_dismissal_occurrences.py and test_observer_projection_attention.py (41 passed together) on this tree.",
+        "The proof that the retirement holds is `dashboard/src/panels/AttentionQueue.test.tsx:84`, `never shows or dismisses an entry whose kind the server retired`: it seeds a payload older than the removal carrying both retired kinds (`provider-down`, `failed-setup`), then asserts the bell reads one waiting, one row renders, and neither retired entry is shown and neither is ever passed to `postAttentionDismiss` — the invariant, not a sample of it. It sits in the describe at :53, `the attention kinds the server still publishes`, which covers the surviving kinds: the blocked-start cause/severity case at :54, the `it.each` dismissal case at :65, and :125, :136, :149 for clear-all, failed-write restore and the clear-all restore. Server side, green on this tree: test_l192_retired_acknowledgement_reclamation.py (9 cases), test_drift_dismissal_occurrences.py and test_observer_projection_attention.py (41 passed together)."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-13",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The two provider-only attention kinds are retired at every producer, admission and display boundary: the reducer builds only actionable drift and blocked-start, the dismissal record validator admits only those two and reconciles a legacy row away, and the client selector filters the two retired strings out of a legacy payload. An attention item's kind stays an open string, so a retired value is filtered out, not rejected by a type or a schema.",
+  "status": "proposed",
+  "supersedes": []
+}

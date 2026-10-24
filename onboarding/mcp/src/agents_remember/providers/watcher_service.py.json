@@ -1,6 +1,26 @@
 {
   "path": "mcp/src/agents_remember/providers/watcher_service.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+        "content": "sha256:d2a4b6a649c3ec4a78c2aa966a4f13f98e7832b1fc8745121d0bebf967eff6c9",
+        "locator": {
+          "end": 65,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-HVDK68",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The stop now hands the authority settings path to the watcher lifecycle, which is what makes rule 5's retained safety reach a provider; the generated document is only the no-authority fallback.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Defines the function `run_configured_watchers` (lines 16-43) — Run one watcher action against temporary settings derived from live config..",

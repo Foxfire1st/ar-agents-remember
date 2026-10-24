@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+        "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
         "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
         "locator": {
           "kind": "symbol",
@@ -20,12 +20,12 @@
     },
     {
       "anchor": {
-        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+        "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
         "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
         "locator": {
-          "end": 419,
+          "end": 450,
           "kind": "line_range",
-          "start": 398
+          "start": 429
         }
       },
       "facet": "Prime and failed live tick reach the same completion hook while replay has no pacer.",
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+        "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
         "content": "sha256:28a82ff1eff26f71cfd22b5482d05a04c03c61263de5aa8d3193d7e4a292f860",
         "locator": {
           "kind": "symbol",
@@ -55,7 +55,7 @@
     },
     {
       "anchor": {
-        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+        "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
         "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
         "locator": {
           "kind": "symbol",
@@ -72,12 +72,12 @@
     },
     {
       "anchor": {
-        "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
+        "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
         "content": "sha256:8ed7714230f1e4b8bbb715fb25071581bbf732c620d7cc0149009a5c7a93556d",
         "locator": {
-          "end": 396,
+          "end": 427,
           "kind": "line_range",
-          "start": 357
+          "start": 388
         }
       },
       "facet": "Five-second work retains work/rest notifications; short/medium/long durations yield one/two/three-second rests, with degraded and heartbeat deadlines.",
@@ -112,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
             "locator": {
               "kind": "symbol",
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
             "locator": {
-              "end": 484,
+              "end": 547,
               "kind": "line_range",
-              "start": 387
+              "start": 450
             }
           },
           "kind": "test"
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:72e80a96d6e5b8921fb605b6a1f8f06d82b682cb006deef9d677fa24c39ceed8",
             "locator": {
-              "end": 543,
+              "end": 606,
               "kind": "line_range",
-              "start": 486
+              "start": 549
             }
           },
           "kind": "test"
@@ -228,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
             "locator": {
               "kind": "symbol",
@@ -244,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca94f7130bd66555d23ee5ac22800014b7b2d4b",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:4cfc3d642a4e5c57d7fddffe5b6aec1c2d1f7fd195c587604f6dc137472b7e63",
             "locator": {
               "kind": "symbol",

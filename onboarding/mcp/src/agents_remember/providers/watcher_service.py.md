@@ -6,6 +6,10 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current call uses parameterless write_lifecycle_settings().
 - Wrapper still delegates and unlinks its owned temporary file.
+- The stop reads the authority settings file when it exists: `run_configured_watchers`
+  passes `config.config_path` to the stop-class service, and uses an owned generated
+  document only when that file is absent. Reading the authority block is a stop input
+  only, and with no authority file nothing is selected.
 
 ### Superseded inventory
 
@@ -14,7 +18,7 @@ The current source facts below replace the former operative inventory. The separ
 ### Source and authority bounds
 
 - Source comparison: `mcp/src/agents_remember/providers/watcher_service.py:19-47`.
-- Source comparison: `mcp/src/agents_remember/providers/settings.py:32-47`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:11-26`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 

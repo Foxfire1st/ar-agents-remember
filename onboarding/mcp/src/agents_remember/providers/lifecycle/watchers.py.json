@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+        "content": "sha256:4bd9497220c021f963e535af40fa371fc3603e594467429421ba80a9c3da8703",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4MNGQX",
+      "invariant": "INV-XZ48GR",
+      "origin": {
+        "handoffEntry": "L192-W-R199-03",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The watcher module now maps stop-class actions only and exposes no status/start dispatch, which is the surviving-root closure the rule demands at symbol level.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "GrepAI watcher behavior lives in the Docker runner module.",
@@ -20,52 +38,50 @@
       ]
     },
     "2": {
-      "note": "CGC start/stop/status behavior lives in the CGC process-control and installation modules.\n\nAnchor: `cgc_start`, `cgc_stop`, `cgc_status`",
+      "note": "The CGC aggregate branch imports cgc_stop_all and maps only stop/shutdown-all to the retained stop closure; it imports no start or status aggregator.",
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:dc7eb669fc01a1e64364da80808afa2897ccce4091249ab1a6d15d107ac43859",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:f5f6370ed049c2f211ed6578d46bc91a01807880299e42a30dc0fec2f5e6552a",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+              "name": "watcher_cgc_result"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:93fb87cb47528cb4d8d98338e26cb764fab3b6c6aa6e234ce43e32d4193c2c69",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_stop"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
+              "name": "WATCHER_PROVIDER_ACTIONS"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
-            "content": "sha256:86240505a791540944168ce9a2d6faa1bb4164e3ee410c0a98c3ad353b67fc75",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:e89976c5856944d02ce93232dd219a6c6b70c9f4129afbe241741dc987057e7b",
             "locator": {
-              "kind": "symbol",
-              "name": "cgc_status"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "CGC backend status is reported through the backend module and folded into watcher aggregate status.\n\nAnchor: [\"def cgc_backend_status(args: argparse.Namespace)\"], `watchers_run`",
+      "note": "The backend module retains cgc_backend_status as an internal implementation. watchers_run combines stop-class action results and does not fold backend status into an aggregate status response.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
             "content": "sha256:11dbccf6e06012ccd8ce90d695afed2aaa3ade959d9cf2347ea20103830d9ad1",
             "locator": {
               "kind": "symbol",
@@ -76,14 +92,24 @@
         },
         {
           "anchor": {
-            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
-            "content": "sha256:eb938da185dbf9bdd22e5a93d8d9394c197643bf25f8ba74f7aa453051ae0b29",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:f5f6370ed049c2f211ed6578d46bc91a01807880299e42a30dc0fec2f5e6552a",
             "locator": {
-              "end": 194,
+              "kind": "symbol",
+              "name": "watcher_cgc_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:87eae0acd4a182319d0950ebfb0a2532cda0d53be3730f4b8da0fe3f67ad8677",
+            "locator": {
+              "end": 81,
               "kind": "line_range",
-              "start": 194
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+              "start": 67
+            }
           },
           "kind": "code"
         }

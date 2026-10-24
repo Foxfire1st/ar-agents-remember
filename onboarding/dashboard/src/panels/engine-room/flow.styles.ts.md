@@ -8,8 +8,8 @@
 
 The flow and failure-overlay style domain of the Engine Room, split from
 `engineRoomStyles.ts` by the 260731-EFA-L8 R6 ruling. Owns conduit/flow-packet
-recipes, the scan ring, ghosted lane, refused-conduit flashes, engine dropout,
-moved-badge trio, fleeting-enclosure box, gates, reason/attention badges, recovery
+recipes, the scan ring, ghosted lane, refused-conduit flashes, moved-badge trio,
+fleeting-enclosure box, gates, reason/attention badges, recovery
 chips, stop bar, and the abandon/cleanup records.
 
 ## Code Commentary

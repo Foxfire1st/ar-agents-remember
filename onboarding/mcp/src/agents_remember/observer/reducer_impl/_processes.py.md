@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Engine Room process map: one node per worktree contract (slice 5e). Composed, not read: contract + status guidance join the worktree's provider stack and setup-progress boot sequence into the process node vocabulary. Pure and deterministic so the served projection and sim replay stay byte-identical.
+Engine Room process map: one node per worktree contract (slice 5e). Composed, not read: contract + status guidance join the worktree's own code and memory lanes into the process node vocabulary, and a start blocked before its contract adds a synthetic node. No provider stack, boot sequence or setup-progress input reaches this module. Pure and deterministic so the served projection and sim replay stay byte-identical.
 
 ## Code Commentary
 
@@ -18,18 +18,12 @@ Engine Room process map: one node per worktree contract (slice 5e). Composed, no
 - `_MemoryRefs`
 - `_code_refs`
 - `_memory_refs`
-- `_SetupFacts`
-- `_setup_facts`
-- `_provider_boot_nodes`
-- `_expected_provider_roles`
-- `_engine_runtime_state`
 - `_ref_fact_state`
 - `_process_phase`
 - `_process_health`
 - `_ProcessLanes`
 - `_process_edges`
 - `_materialize_edge_state`
-- `_seed_edge_state`
 - `_missing_facts`
 - `_source_files`
 - `_as_dict`

@@ -19,45 +19,32 @@ permanently dead. That is exactly how `refused` and its `refusedPolarity` compan
 
 ### Logic
 
-Five `it` cases over `SCENARIOS`: (1) `build-up` has 6 frames opening on a `worktree_start` caption and
-ending on the `idle constellation`; (2) `tear-down` has ≥6 frames (idle → `removed`/`stack`) and its
-frames' `engineProcesses` phases include `cleanup-pending` (the de-materialise beat — proven via a
-`flatMap` over each frame's `analytics.engineProcesses[].phase`); (3) every scenario has ≥1 frame and
-each frame is a full `WorkspaceProjection` (`version === 2`, `analytics.engineProcesses` is an array, a
-string caption); (4) a folded-in gallery state (`engine-cleanup-pending`) is a single-frame scenario; (5)
-**(05o)** the `memory-block` T3B arc has verify/block/reconcile captions, a frame whose `engineProcesses`
-`health` includes `blocked`, a frame driving a **running `cgc-seed`/`grepai-clone` edge** (so the recover's
-copy-arrow clone beat can't be silently dropped again), and a single `worktreeGroup` across all frames (the
-one-enclosure recover); (6) **(05o T1B)** the `stale-base` arc has preflight/block/fast-forward captions, a
-`blocked`-health frame whose `codeSource.behindSource` is `> 0` and whose `missingFacts` include a
-`contract not yet written` entry (the fleeting born-blocked beat), a frame driving a **running
-`cgc-seed`/`grepai-clone` edge** (the recover's copy-arrow clone beat, so it can't regress to a teleport), and
-a single `worktreeGroup` across all frames (one enclosure). **(05o)** Six further `it` cases pin one arc
-per remaining failure mode, each asserting the choreography off the projection rather than off captions:
-(7) **`seed-fault` (T9B)** — the fault frame drives a `failed`-health node with a `failed` `grepai-clone`
-edge, the `memory`-role provider `runtimeState === "down"` while the `code` provider is NOT down, and a
-re-running `grepai-clone` AFTER the fault (re-seed, not a teleport); (8) **`reindex-reroute` (T9C)** — a
-**`stale`** `cgc-seed` edge plus `seedFallback === true`, never a `blocked`
-health (soft reroute), with the reroute→reindex-settle pair asserted as a same-`worktreeGroup` prop diff.
-Two things changed here in 260731-EFA-L4: the caption match moved from `/refused/i` to `/reroute/i`, and
-the `refusedPolarity === "amber"` assertion was **deleted** — the edge carries no polarity field of its
-own, and the amber flash polarity is derived from the edge state by the renderer
-(`EnclosureCanvas.tsx::refusedPolarityOf`);
-(9) **`provider-block` (T7B)** — a `blocked`-health node with `setupState === "blocked"`, zero `providers`
-(engines never light), `missingFacts` carrying both a `contract not yet written` and a provider-plan/setup
-entry, and the recover running the seed/clone copy-arrows; (10) **`live-sync` (T12B)** — a `blocked` node
-with a `blocked` `ledger-map` edge (but NOT a `worktree-add` block), `memorySource.behindSource > 0`, an
-existing `memoryWorktree`, NO clone/seed beat (the recover is a ff/ref diff since the engines never go
-down), and a final frame that is unblocked with `memorySource.behindSource === 0`; (11)
-**`integration-conflict` (T14C)** — a transient flash frame with a `failed` `integration`/`integration-mem`
-return-lane, a TERMINAL last frame in phase `integration-blocked` with no clone tail (no recover), and the
-flash→STOP pair sharing one `worktreeGroup`; (12) **`abandon` (T18)** — exactly 4 frames whose phases go
-nominal then `abandoned`×3, no `landing` refs on any abandon frame (never lands), `durMs === 1300` on the
-held dissolve beat, and a single `boot-demo` node `id` across all frames (one continuous identity). Across
-the recoverable modes the recover re-runs the clone beats, and each failure beat shares one enclosure
-identity with its resolving neighbour.
+The model assertions cover `SCENARIOS` without mounting a component. `build-up` has four frames,
+opening on a `worktree_start` caption and ending on the `idle constellation`; its two provider beats
+are gone. `tear-down` has at least six frames, begins idle, ends removed/stack, and includes a
+`cleanup-pending` process phase. Every scenario has at least one frame, and each frame has
+`version === 2`, an engine-process array and a string caption. The folded-in
+`engine-cleanup-pending` gallery state remains a single-frame scenario.
 
-**(13) The vocabulary guard (260731-EFA-L4).** A final `it` — *never authors an engine edge state the
+The `memory-block` arc retains verify/block/reconcile captions, a blocked-health beat, a ledger-map
+edge, and one `worktreeGroup` across its frames. The `stale-base` arc retains
+preflight/block/fast-forward captions, a blocked pre-contract process whose base is behind upstream,
+a worktree-add edge, and one worktree group. Both cases explicitly reject `cgc-seed` and
+`grepai-clone` edge kinds; recovery no longer reruns provider copy-arrow beats.
+
+The `live-sync` case pins a blocked ledger-map edge without a blocked worktree-add edge, an existing
+memory worktree behind its source, no seed/clone kinds, and a final unblocked process back in sync.
+`integration-conflict` retains the failed integration return-lane flash, terminal
+`integration-blocked` last frame, absence of seed/clone kinds, and shared flash-to-STOP worktree
+identity. `abandon` retains exactly four frames, nominal then three abandoned phases, no landing refs
+on its abandoned frames, a 1300 ms dissolve hold, and one `boot-demo` identity.
+
+The former `seed-fault`, `reindex-reroute` and `provider-block` test cases are removed. A replacement
+case checks all three names are absent from `SCENARIOS` and every encountered edge kind belongs to
+`worktree-add`, `ledger-map`, `sync`, `integration` or `integration-mem`. It requires a nonempty set of
+encountered kinds so an empty traversal cannot pass. These are authored assertions, not a test run.
+
+**The vocabulary guard (260731-EFA-L4).** A final `it` — *never authors an engine edge state the
 reducer cannot emit* — flattens every `scenario.frames[].projection.analytics.engineProcesses[].edges[]`
 into a `Set` of states, asserts the set is non-empty (so the test cannot pass vacuously on a broken
 traversal), and asserts every member is in the module-local `SERVED_EDGE_STATES` set:
@@ -68,7 +55,7 @@ message names the offending state.
 ### Conventions
 
 Arc assertions read the **projection**, not the captions, wherever the projection carries the fact —
-health, edge state, `seedFallback`, `worktreeGroup` identity. Captions are matched only where the
+health, edge state/kind and `worktreeGroup` identity. Captions are matched only where the
 caption itself is the artefact under test. `SERVED_EDGE_STATES` is a deliberate hand-kept mirror of a
 Python-side comment: there is no generated vocabulary to import here, so the set is written out and
 cited rather than inferred.
@@ -104,12 +91,17 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. [1]
+- The replacement provider-retirement case asserts the three provider arc names are absent and all encountered edge kinds belong to the five retained enclosure lanes, with a nonempty traversal. [1]
+
 - `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. [2]
 - Asserts the `build-up`/`tear-down` timelines + frame validity. [3]
-- The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. [4]
+
+- SCENARIOS registers build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon before the resting frames; the three provider arcs are removed. [4]
+
 - `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. [5]
-- `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. [6]
+
+- The surviving state guard lists nine accepted edge states, including stale, and rejects any encountered state outside that set after requiring a nonempty traversal. It does not claim a removed seed-edge reducer still emits them. [6]
+
 - `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. [7]
 
 ### Cross-Repo References

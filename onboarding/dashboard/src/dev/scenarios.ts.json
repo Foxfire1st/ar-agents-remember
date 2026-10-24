@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
             "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
               "kind": "symbol",
@@ -19,16 +19,37 @@
       ]
     },
     "10": {
-      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `function erFrame(scenarioName: string, caption: string, durMs?: number): ScenarioFrame {`",
+      "note": "erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
-            "content": "sha256:086529b4b739db18a4f6fe83169c1973088e37ec8501a464b29c89e6fa633dc9",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 34
+              "kind": "symbol",
+              "name": "erFrame"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:e685af48372589e8192b1f03364c6c7950af029a673adf7dca82026b8c1b9b73",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildUp"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCENARIOS"
             }
           },
           "kind": "code"
@@ -36,16 +57,27 @@
       ]
     },
     "11": {
-      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `{setupLine ? (`",
+      "note": "The paired diagnostics owner renders phase, health, refs, source lineage, actions, missing facts and sources; optional summary, next action and memory refs remain, without the removed setup/progress rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
-            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
             "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 74
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:2c005740ed1d39c83898a61fd68d7df6a0b597b044ddc8399737791c396c2785",
+            "locator": {
+              "kind": "symbol",
+              "name": "OptionalDiagRows"
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -54,16 +86,27 @@
       ]
     },
     "12": {
-      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "note": "The paired conduit geometry contains worktree-add, ledger-map, sync and the two integration lanes; an edge without geometry produces no conduit path.",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:9402042e8294712388b3e805cec8240dc98c8bcb9c8a730a9af5d133902f9c72",
             "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 68
+              "kind": "symbol",
+              "name": "EDGE_GEOM"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitPathD"
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -72,16 +115,15 @@
       ]
     },
     "13": {
-      "note": "ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlocks(node: EngineProcessNode) {`",
+      "note": "The paired block resolver derives a fleeting pre-contract enclosure from the missing contract fact and limits the stale-base state to a behind-source blocked fleeting enclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:0d6701c6f9f8dea02887d89fcc89e2938a9793f492de6a504b9b08fae8cf2c5c",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:4a7780a80d83c45d8dc75431893db3ab479330bef0168c71f78b2bec41c2b3a6",
             "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 93
+              "kind": "symbol",
+              "name": "resolveBlocks"
             },
             "path": "dashboard/src/panels/engine-room/scene.ts"
           },

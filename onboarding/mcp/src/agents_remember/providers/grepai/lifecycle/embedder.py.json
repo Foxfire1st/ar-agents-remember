@@ -86,6 +86,34 @@
           "kind": "code"
         }
       ]
+    },
+    "6": {
+      "note": "Internal embedder diagnostics still return container state; the context-packet provider summary does not consume or publish that detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:1364d0f8d1a790b8801564e798fa33b207f530ae347399b75aa7df893e7a57e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_backend_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_summary"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

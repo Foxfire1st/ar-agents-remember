@@ -7,20 +7,23 @@
 
 ## Current enclosure-only composition
 
-ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order remain. Edited S5/R4/P3-P6/D5 captions describe diagnostics and worktree/coupler state instead of retired gauges/arcs.
+ScenarioFrame remains a full WorkspaceProjection plus caption, optional events and duration. Build-up now has four beats: the official line, code checkout, memory checkout/contract, and nominal. The seed-fault, reindex-reroute and provider-block timelines are removed. Memory-block and stale-base recover through ledger mapping and worktree creation without provider seed/clone beats; the retained registry also includes tear-down, live-sync, integration-conflict, abandon and the folded-in gallery states.
 
 ### Maintenance boundaries
 
-Replace the current-visual claims for T9B/T9C/T7B and teardown with diagnostics-only seed failure/currentPhase facts, no seed arrows/flicker/reindex pulse/engine scan, and pre-contract fleeting state. Preserve historical frame names. Explicitly qualify remaining B3/B4, S3/S4, R3, memory/stale-base recovery and abandon captions as residual historical provider wording, not actual render proof; do not claim all captions were corrected.
+Keep the current account aligned with the retained enclosure timelines: do not restore the removed provider arcs or treat their old fixture names as current frames. Preserve the historical account below as provenance. The scenario model supplies full projection frames; the cited diagnostics, geometry and pre-contract block owners define their retained display facts, rather than evidence of provider visuals or a rendered animation run.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [10]
-- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [11]
-- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [12]
-- ScenarioFrame remains a full WorkspaceProjection plus caption/duration; existing fixture identities and timeline order r — source ownership, not executed visual proof. [13]
+- erFrame wraps a named Engine Room scenario into a full projection and throws on an unknown name; build-up has four frames and SCENARIOS omits the removed provider timelines. [10]
+
+- The paired diagnostics owner renders phase, health, refs, source lineage, actions, missing facts and sources; optional summary, next action and memory refs remain, without the removed setup/progress rows. [11]
+
+- The paired conduit geometry contains worktree-add, ledger-map, sync and the two integration lanes; an edge without geometry produces no conduit path. [12]
+
+- The paired block resolver derives a fleeting pre-contract enclosure from the missing contract fact and limits the stale-base state to a behind-source blocked fleeting enclosure. [13]
 
 ## Historical superseded account (non-operative)
 

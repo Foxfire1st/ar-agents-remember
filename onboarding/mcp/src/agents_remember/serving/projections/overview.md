@@ -8,7 +8,7 @@
 
 ## What This Area Is
 
-This area reads file surfaces published by producing subsystems and assembles native task, enclosure, provider, engine, drift, landing, ledger and analytical inputs for the workspace projection. `read_task_sources` supplies canonical summaries plus declared parent/child facts; the observer task-entry producer joins them with worktree contracts and bound native host-agent activity. Served tasks/counts replace parallel lifecycle/document/series projections. The workspace River is a separate diagnostic/event transport, not an input folded into task state.
+This area reads file surfaces published by producing subsystems and assembles native task, enclosure, engine, drift, landing, ledger and analytical inputs for the workspace projection. `read_task_sources` supplies canonical summaries plus declared parent/child facts; the observer task-entry producer joins them with worktree contracts and bound native host-agent activity. Served tasks/counts replace parallel lifecycle/document/series projections. The workspace River is a separate diagnostic/event transport, not an input folded into task state.
 
 ## Hot Path Summary
 
@@ -16,7 +16,7 @@ Native task sources feed one server TaskEntry producer: authored status owns sta
 
 The named dependency adapter joins the owning ordinary master and its explicitly listed child files; source state feeds the same pure master-order derivation used by publication. Requested-body/corpus readers and newly read named owner/child inputs require the raw task schema before tolerant parsing. Missing/wrong-schema neighbors are not admitted. The earlier defaulted-schema admission gap remains historical diagnosis, not a current source defect; these predicates and scoped dependency-field assertions do not establish universal serialized-body parity or an executed result.
 
-`snapshots.py` supplies provider readers and re-exports the split readers. `projection_inputs.py` refreshes retained inputs by domain; `contract_snapshot.py` builds one immutable enclosure snapshot for each task refresh. `landing_state.py` observes eligible landing arcs in the background. `projection_store.py::project_and_write` connects input reading, reduction and publication. `paths.py` resolves serving's observer store paths locally; the kernel has equivalent path definitions, but this module is not currently a wrapper around them.
+`snapshots.py` is the projection's file-surface reader surface for data surfaces 1–3, 5, 6, 8, 10 and 12 and re-exports the responsibility-split readers: enclosure and runtime/engine facts, the analytical surfaces (drift counts, route coverage, tool reports, ledger currency) and the task-document readers. It supplies no provider reader, and nothing in it reads provider status. `projection_inputs.py` refreshes retained inputs by domain; `contract_snapshot.py` builds one immutable enclosure snapshot for each task refresh. `landing_state.py` observes eligible landing arcs in the background. `projection_store.py::project_and_write` connects input reading, reduction and publication. `paths.py` resolves serving's observer store paths locally; the kernel has equivalent path definitions, but this module is not currently a wrapper around them.
 
 ## Construction And Data Flow
 
@@ -31,7 +31,7 @@ on-demand joins below; they create no task, acceptance or scheduling authority.
 
 Full body requests avoid canonical task-corpus enumeration: they read the requested document, graph-named master documents and the child files explicitly declared by those masters for sprint annotations, plus the owning ordinary master/listed tasks for dependency facts. External direct-grant annotation adds an explicit task-addressed grant census and legacy unaddressed fallback, so no zero-directory/constant-I/O promise is made. These content dependencies are captured for a separate body cache; canonical background task-source enumeration remains distinct.
 
-The serving projector passes its retained input state, provider refresher and landing reader into `project_and_write`. Refresh kinds distinguish full refreshes, named domain changes and heartbeats. Domain retention avoids re-reading every surface for unrelated changes; closeout queues are nevertheless read on every input pass.
+The serving projector passes its retained input state and landing reader into `project_and_write`; the tick state carries exactly those two, and there is no provider refresher to pass. Refresh kinds distinguish full refreshes, named domain changes and heartbeats. Domain retention avoids re-reading every surface for unrelated changes; closeout queues are nevertheless read on every input pass.
 
 Full task refresh constructs contracts, enclosures and canonical task sources locally before assigning the retained trio; failure during construction preserves that trio. A failed input read leaves `_task_refresh_pending` set; a later pass forces a full healing-domain retry while preserving explicitly owed domains. Complete incremental samples assign contracts/enclosures before replacing the reprojected document closure, so that branch is not whole-trio rollback atomic. Closure replacement drops newly invalid sources rather than retaining stale summaries. Contract construction still reuses successful parses only while mtime, size and ctime match, removes departed entries and publishes a read-only mapping.
 
@@ -157,7 +157,9 @@ The body cache records link/target and consumed task/graph/order/grant input ide
 
 - Serving locally defines equivalent observer paths rather than importing the kernel definitions. [5]
 
+
 - The projection tick consumes these readers. [2]
+
 - The on-demand body reader validates the requested canonical task document, joins only graph-named masters and their declared children through _graph_master_docs, and also obtains ordinary order/dependency fields through read_order_fields, which reads the owning master and its explicitly listed children. It avoids enumeration of the canonical task corpus; the body join is not graph-only. [3]
 
 - Full task-domain construction stages contracts, enclosures and task_sources in locals and assigns the retained trio only after construction succeeds. Complete incremental dependency refresh is not whole-trio rollback atomic: contracts/enclosures are assigned before affected document closure projection can fail. Any failed read leaves _task_refresh_pending set; a later read forces full healing-domain reconciliation and clears the flag only after success. These guarantees are about the retained trio, not rollback of every cache or aged slot. [6]

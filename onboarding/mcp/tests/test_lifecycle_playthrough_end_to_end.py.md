@@ -80,13 +80,15 @@ the run, in eight ordered beats:
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
-- The module docstring states exactly where the public route is used and where it is not, so the
-  exception is deliberate rather than an oversight: leaf start and leaf closeout use the fixture's
-  structural equivalents (`QueueFixture.start_leaf`, which is what `worktree_start` records, and the
-  same closeout recording the checkpoint module uses), because the registered start route needs the
-  harness lifecycle and provider scaffolding that a coordination-root fixture deliberately does not
-  carry. The master-level interactions — status, integrate, checkpoint, pause, resume — are the
-  registered tools themselves.
+- Leaf start and leaf closeout use the fixture's structural equivalents
+  (`QueueFixture.start_leaf` and the imported closeout recorder); master-level
+  status, integrate, checkpoint, pause and resume use registered tools. The module
+  docstring still attributes this split to missing harness lifecycle/provider
+  scaffolding. That rationale does not describe a current start prerequisite:
+  `worktree_start_tool` creates its own stable identity, can skip provider setup,
+  and generated lifecycle settings contain no retired providers. This fixture is
+  still not public `worktree_start` coverage, and these facts do not establish
+  that it can use that route unchanged.
 
 ### Invariants And Boundaries
 
@@ -114,6 +116,8 @@ the run, in eight ordered beats:
 None recorded. Verification metadata on this card remains closeout-owned.
 
 ## Evidence
+
+- The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale. [16]
 
 ### Docs References
 

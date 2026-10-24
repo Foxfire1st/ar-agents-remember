@@ -1,6 +1,24 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/file_size.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "196039de191454ad40d6a4cc976d04868b641de7",
+        "content": "sha256:39c346e54ecb887626fdac113cb5d29e72ebe69354465e807750098fcba372cb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JH3QGP",
+      "invariant": "INV-PDCN3H",
+      "origin": {
+        "handoffEntry": "L192-W-R199-10",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The detector holds the hard limit the step enforces; the count of this leaf's touched files is the leaf's measurement, recorded as evidence, not something this module proves.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The project-owned wrapper's file-size rail selects enforcing or report-only behavior from explicit configuration.",

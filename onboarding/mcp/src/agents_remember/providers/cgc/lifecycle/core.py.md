@@ -48,5 +48,17 @@ runner image/build/lock/container settings for CGC command execution.
 ### Repo-Internal References
 
 - CGC backend container lifecycle consumes backend settings from this module through `cgc_backend_start`. [1]
-- CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`. [2]
+- The current layout consumers belong to retained backend, runner, installation and watcher-stop helpers. CGC start, native run and refresh are not current lifecycle exports.
 - CGC Docker runner helpers consume runner image/build/lock/container fields from this layout through `cgc_runner_image_build`. [3]
+
+## Historical provider-surface wording
+
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> - CGC lifecycle actions consume the selected runtime layout through `cgc_start`, `cgc_refresh`, and `cgc_run`. [2]
+
+## Current retirement-boundary evidence
+
+- The CGC lifecycle facade enumerates six retained modules, without query or refresh. [4]
+- Retained watcher-stop helpers use layouts and scoped arguments. [5]
+- Watcher aggregation admits only stop and shutdown-all, mapping CGC to stop handlers. [6]

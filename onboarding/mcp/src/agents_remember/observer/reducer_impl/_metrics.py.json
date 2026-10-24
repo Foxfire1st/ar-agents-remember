@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+        "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KP00D6",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The metrics reducer no longer folds provider metrics into the served snapshot.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Lifecycle metrics derive vocabulary-owned counts without age histograms.",

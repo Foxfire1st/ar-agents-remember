@@ -65,7 +65,7 @@ The Markdown primitive list does not name ProviderBlock, so that list is still v
 
 ### Maintenance boundaries
 
-Keep the listed generic badge responsibilities. Add a precise retirement boundary for ProviderBlock, and qualify RefusedConduit by geometry: old seed kinds may still derive polarity but have no path/render; integration flashes survive. Refresh shifted evidence locators without claiming all failure badges were deleted.
+Keep the listed generic badge responsibilities. Add a precise retirement boundary for ProviderBlock, and qualify RefusedConduit by geometry: the polarity helper admits only integration/integration-mem, and old provider seed/clone kinds yield no polarity; integration flashes survive when shared geometry is present. Refresh shifted evidence locators without claiming all failure badges were deleted.
 
 Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
 Historical provider-shaped input data and retained compatibility definitions do not
@@ -74,3 +74,5 @@ restore removed provider visuals or tool exposure.
 - The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [3]
 - The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [4]
 - The Markdown primitive list does not name ProviderBlock, so that list is still valid. Source deletes ProviderBlock and E — source ownership, not executed visual proof. [5]
+
+- Provider seed/clone kinds yield no refused polarity; the surviving integration flash also requires a shared conduit path. [6]

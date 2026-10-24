@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
-        "content": "sha256:79ded38ca2e41774be178ef5ef8a3a76f2c9591d432b7a6f196d33bc5400f63a",
+        "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+        "content": "sha256:3b04b8d5bc326d44d888f1eaa0038867c9acf9533bb47e35c1728aa71d687851",
         "locator": {
           "kind": "symbol",
           "name": "CheckoutCoordinationIsolationTests.test_checkout_guard_is_named_by_cli_registered_server_and_dashboard"

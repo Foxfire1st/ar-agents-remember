@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:5c2369e4d9746bb79cc50e22a49170e5d5d8f786a8b3a63caf04bedc4cf2655e",
             "locator": {
               "end": 27,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:030df64870c5c8092d2602c565d990a53b7d8368881594db4ad04bb722af37d4",
             "locator": {
               "end": 33,
@@ -48,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:82aab64db1f985c9f2ecbeec5620b7a0dbe74a8137d844e00538f57cca3854d1",
             "locator": {
               "end": 119,
@@ -60,12 +60,12 @@
         },
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:2da1be91169aee6721a1235815f4ac3c9801138113f3a09b6a5bc785f1d2c2b6",
             "locator": {
-              "end": 183,
+              "end": 187,
               "kind": "line_range",
-              "start": 160
+              "start": 164
             }
           },
           "kind": "code"
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:02f31803b1820ea437dc6431f3b3193740cdaa8e15127192bc5c1cbcda7e13f2",
             "locator": {
               "end": 48,
@@ -90,16 +90,16 @@
       ]
     },
     "3": {
-      "note": "The onboarding section routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation.\n\nAnchor: `### Onboarding Documentation`, `c-04-retrieval-strategy-router`",
+      "note": "The coordinator marks Semantics and Relationship provider strategies retired, answers their questions with route-index/onboarding search and native anchor search, and uses named cards plus bounded native reads for Intent.\n\nAnchor: `### Memory Retrieval Strategies`",
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
-            "content": "sha256:1a786a10f38c4f51f9ee5a00ab39b8fee3b3708acfab115cf0553ce61522c3ce",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "content": "sha256:d9a2385863c6df813880a5e04c2118d3881571a7d57ecda56b5ff041563fa47b",
             "locator": {
-              "end": 56,
+              "end": 150,
               "kind": "line_range",
-              "start": 44
+              "start": 135
             }
           },
           "kind": "code"
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:337559417d5e277acceb74bd380124c5ba189de4975cc7b20d3aaa0de1c33d14",
             "locator": {
               "end": 73,
@@ -128,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:bb6fa9de4a777293d930fefaf76cf62c9025e4dca7b0c85cc599640872d7ed66",
             "locator": {
               "end": 101,
@@ -145,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:1041f92612baf62f7c5c76462eadba99314e9aafbfb6e7dc9473b63f52a8aee6",
             "locator": {
               "end": 134,
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
-              "end": 170,
+              "end": 174,
               "kind": "line_range",
-              "start": 155
+              "start": 159
             }
           },
           "kind": "code"
@@ -179,12 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
-              "end": 170,
+              "end": 174,
               "kind": "line_range",
-              "start": 155
+              "start": 159
             }
           },
           "kind": "code"
@@ -196,12 +196,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
+            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
             "content": "sha256:0d595ad8a97a1e345377a2f7919e7745f25c81514e8f2a516dc87cbb31944894",
             "locator": {
-              "end": 183,
+              "end": 187,
               "kind": "line_range",
-              "start": 176
+              "start": 180
             }
           },
           "kind": "code"

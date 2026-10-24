@@ -39,7 +39,7 @@ No configured domain evidence applies to the file-local claims above.
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 - Measure counts newlines like wc and flags only hard limit. [1]
-- Unarmed step reports and armed step fails. [2]
+- Unarmed step builds its command with `--report` and the armed step omits it — command construction only; the case runs neither step and asserts no exit code. [2]
 
 ### Cross-Repo References
 

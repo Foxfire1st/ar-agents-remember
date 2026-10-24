@@ -22,12 +22,13 @@ Once the roots are laid down, `prepare_case` builds one **`BenchmarkWorkspace`**
 root, coordination root, source repo root, memory repo, filtered provider ids) and hands that whole
 object to `write_benchmark_mcp_registration(workspace, *, provider_timeout, dry_run)` and
 `prepare_configured_providers(workspace, *, dry_run, provider_timeout)`. That is the point: the
-registration written to disk and the providers launched against it are now guaranteed to describe
-the same materialized workspace.
+registration written to disk and the retained setup call receive the same materialized workspace.
+That shared input does not guarantee a provider launch: the current lifecycle-settings generator
+emits a disabled, empty provider map.
 
 ### Logic
 
-`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup. `prepare_case` calls `prepare_configured_providers` with no seed source: each benchmark stack indexes its own pinned fixture from scratch (hermetic-cold) rather than warm-starting from the live workspace.
+`workspace.py` derives source-only and with-memory workspace paths, prepares Git checkouts, renders benchmark AGENTS files, syncs runtime assets, writes MCP registration, prepares memory repos, and invokes configured provider setup. `prepare_case` calls `prepare_configured_providers` with no seed source. The retained call receives the shared generator's disabled, empty lifecycle settings, so it no longer establishes that each benchmark builds an index from its pinned fixture. The no-seeding boundary still prevents using the live workspace as a seed source.
 
 `filter_benchmark_provider_ids(case_id, provider_ids, allowed_provider_ids)`
 (containment R1, 260707-HFX-L1) enforces that the case manifest is not launch
@@ -58,6 +59,10 @@ direct-script run.
 No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
+
+
+- The shared BenchmarkWorkspace is passed to registration and retained setup after authority filtering. Setup receives lifecycle_settings_from_config through benchmark_lifecycle_settings; that generator returns disabled empty provider settings, so the call establishes neither a provider launch nor a from-scratch benchmark index-build promise. No live-workspace seed source is wired. [5]
+
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
 The [route overview](overview.md) describes the benchmark runner split; it is a discovery companion rather than a repository source target.

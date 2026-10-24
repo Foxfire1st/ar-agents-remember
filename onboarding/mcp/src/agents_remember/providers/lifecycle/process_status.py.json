@@ -3,15 +3,27 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "CGC process lifecycle uses namespace gates, liveness checks, and command-line inspection.",
+      "note": "The retained CGC stop path uses the shared durable-process-namespace gate. process_status.py does not inspect provider PID liveness or /proc/<pid>/cmdline; Docker watcher inspection remains with the runner helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:bde1bd37f9e5da5cd9629b0f59197038f60d85e1484435c641f4aa6f25928319",
+            "blob": "46d785a42fdf7e9a82640d6dd94104b2b8a39dbb",
+            "content": "sha256:f74a6e38c246a8c6ba7f7a5e32e48f31d703c21ae11e39c162ff56d690620839",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start_watch_process"
+              "name": "require_durable_process_namespace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:59f17c2fe8c893e20230a458ff8ffc89aa14ff248ed5ea85de4d7d75da044ba6",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },
@@ -20,12 +32,24 @@
       ]
     },
     "2": {
-      "note": "Aggregate watcher lifecycle reports namespace durability before starting enabled providers.",
+      "note": "Watcher aggregation applies durable-namespace checks to non-dry-run stop and shutdown-all actions. Aggregate start/status branches are absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c6ffc6a682ccbcb83b2cdac5ad08e62943626f5",
-            "content": "sha256:824b874266a154a86592bb9679bdc6119f465d360667cc61c15adc4b5ea3b128",
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:93fb87cb47528cb4d8d98338e26cb764fab3b6c6aa6e234ce43e32d4193c2c69",
+            "locator": {
+              "kind": "symbol",
+              "name": "WATCHER_PROVIDER_ACTIONS"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/watchers.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "313cccf27ecb857ee439e37d244b9512f017738d",
+            "content": "sha256:1c77ad06664b82eee351f34ed965da9ee8e964f7725feb6d301f12d600e0a952",
             "locator": {
               "kind": "symbol",
               "name": "require_durable_watcher_namespace"

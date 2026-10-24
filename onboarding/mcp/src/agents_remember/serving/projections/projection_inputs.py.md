@@ -16,7 +16,7 @@ Complete path samples refresh canonical task sources and document-consumer closu
 
 ### Logic
 
-Refresh domains are tasks/workspace/drift/providers/start-progress/tool-reports/HOST_ACTIVITY, plus the contract-scoped activation records under `controlplane` and the held-message queue under `temp`. Each pass derives permission rows and turn-end stamps from retained host facts, updates stall clocks, and reports the live native kinds' own occurrence ends to the dismissal owner. Native file-backed observations refresh on first look or relevant invalidation, while unfinished held and pause acquisition continues in bounded steps on the existing heartbeat; initialized, complete quiet views are retained. This adds no host read or timer. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
+Refresh domains are tasks/workspace/drift/start-progress/tool-reports/HOST_ACTIVITY, plus the contract-scoped activation records under `controlplane` and the held-message queue under `temp`. Each pass derives permission rows and turn-end stamps from retained host facts, updates stall clocks, and reports the live native kinds' own occurrence ends to the dismissal owner. Native file-backed observations refresh on first look or relevant invalidation, while unfinished held and pause acquisition continues in bounded steps on the existing heartbeat; initialized, complete quiet views are retained. This adds no host read or timer. Ordinary full healing excludes HOST_ACTIVITY; only startup or explicit invalidation reads it. Display age advancement is separate from acquisition.
 `ProjectionInputState.read` refreshes invalidated domains and recomputes admission sets from their owning changes, returning the retained aggregate. `ProjectionReaders.repo_surfaces` returns exactly `(route_coverage, ledgers)` and the read unpacks those two collections; `ProjectionInputs` has no `sidecar_staleness`. Domain collections are replaced as a whole so removals reclaim retained rows on their relevant refresh. [6]
 
 The state also reuses one contract snapshot cache and the task-document payload cache rather than
@@ -30,16 +30,16 @@ sake — each bundles values that are only meaningful read against one another, 
   structural task-change flag together. `_read_inputs` re-binds it with `dataclasses.replace`
   after `_refresh_tasks`; it does not mutate a frame that later refreshers share.
 - `ActiveGroups(groups, changed)` carries both an admission set and whether it moved. The
-  provider set comes from `admitted_worktree_groups(self._enclosures)` and the engine set from
-  `active_enclosure_worktree_groups(self._enclosures)`: the set says what to read and the flag
-  whether to reread, preventing both unconditional rereads and permanently retained stale groups.
+  engine set comes from `active_enclosure_worktree_groups(self._enclosures)`: the set says what
+  to read and the flag whether to reread, preventing both unconditional rereads and permanently
+  retained stale groups. No provider admission set is computed.
 - `ProjectionReaders(repo_surfaces, landing_state=None)` is the frozen I/O bundle; it has no
   lifecycle reader. `ProjectionInputState.read(config, readers, *, observer_root, pass_)` takes
   those bundles rather than independent clocks/readers. Refreshers retain their domain-specific
   arguments, including attention observations where an actual read must supply proof.
 - `task_sources` and default-unknown host facts replace task_documents/series/session slots.
 
-`_read_inputs` updates task/closeout slots and first/invalidated host facts, then contract admission. Only actually read kinds supply AttentionObservation proof: provider/setup/drift/start readers contribute completeness, existence, explicit health and fingerprints; the two notice kinds contribute the retained-set observation; and `_observe_native_kinds` (:750-786) supplies one observation per complete live native kind, derived from the same pass that publishes or withholds the row, with the ids `native_attention_items` and `stall_occurrences` produce. Unread/failed kinds prove no removal, and a row this same pass still publishes is never reported healthy. Workspace reconciliation locks read/rewrite and retains last successful acknowledgements on OSError; incomplete sibling proof does not hide valid changed drift.
+`_read_inputs` updates task/closeout slots and first/invalidated host facts, then contract admission. Only actually read kinds supply AttentionObservation proof: drift/start readers contribute completeness, existence, explicit health and fingerprints; the two notice kinds contribute the retained-set observation; and `_observe_native_kinds` (:750-786) supplies one observation per complete live native kind, derived from the same pass that publishes or withholds the row, with the ids `native_attention_items` and `stall_occurrences` produce. Unread/failed kinds prove no removal, and a row this same pass still publishes is never reported healthy. Workspace reconciliation locks read/rewrite and retains last successful acknowledgements on OSError; incomplete sibling proof does not hide valid changed drift.
 
 `_advance_model_age` no longer carries a `# noqa: UP047` suppression — the whole gate now runs
 without exemptions.
@@ -51,7 +51,7 @@ retention and invalidation explicit rather than heuristic.
 
 ### Invariants And Boundaries
 
-- Heartbeat advances ages and existing non-host provider/workspace owners, never host census.
+- Heartbeat advances ages on drift snapshots, tool reports, task-source summaries and start-progress entries, never host census.
 - Repository surfaces are requested only on full passes or after their 120-second TTL
   (`_REPO_SURFACES_TTL_SECONDS`); all other passes retain the route-coverage and ledger
   slots without calling the surface reader. A missing snapshot is stale immediately.
@@ -60,7 +60,7 @@ retention and invalidation explicit rather than heuristic.
 - `RefreshPass`, `ActiveGroups` and `ProjectionReaders` are frozen: pass updates use replacement,
   not mutation of a frame that a later refresher reads.
 - Host requires startup/invalidation plus armed boot reconciliation.
-- Contract admission changes refresh provider/engine input independently of sessions.
+- Contract admission changes refresh engine input independently of sessions.
 - Owning-domain closure replacement drops deleted/invalid sources, not a whole-corpus admission proof.
 - Failure heals non-host plus pending domains without all-slot rollback.
 
@@ -81,7 +81,6 @@ No Domain Documentation source is configured.
 
 - Full input passes or an expired/missing 120-second retained-surface snapshot reach the repo-surface reader; other passes retain its two collections unread. [3]
 - The production repo-surface reader can itself reuse its 120-second cache. [4]
-- The three parameter objects are frozen; the task-change frame is replaced, and provider/engine admission sets travel with their change flags. [5]
 
 
 

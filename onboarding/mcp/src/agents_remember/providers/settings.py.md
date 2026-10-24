@@ -5,7 +5,8 @@
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current generator takes no config and returns enabled=false with providers={}.
-- Detailed Docker settings helpers remain but are not called by that generator.
+- No detailed Docker settings helper remains: the module is that empty generator
+  and the temporary-file writer.
 
 ### Superseded inventory
 
@@ -13,8 +14,8 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/providers/settings.py:32-47`.
-- Source comparison: `mcp/src/agents_remember/providers/settings.py:50-59`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:11-26`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:29-38`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -88,7 +89,9 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 ### Repo-Internal References
 
+
 - MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. [1]
+
 - Provider status writes generated lifecycle settings before calling `watchers_run`. [2]
 - Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. [3]
 - GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. [4]

@@ -4,16 +4,43 @@
 
 [mcp/overview.md](../../../overview.md)
 
+## Current metrics and safety boundary
+
+`metrics.py` retains the provider-container sample store used by the serving daemon's periodic safety sequence. Label-based sampling sees leftover stacks independently of launch settings. `ProviderMetricsStore` records container samples, publishes its rolling current snapshot, reads recent sample/index rows and compacts the log; retained `record_index_state` and the two-writer ownership declaration remain part of the store contract. The shared enable predicate makes both retired search-provider IDs never enabled, so the old account of an ordinary `worktree_start`/`runtime_install` setup thread actively appending index rows is historical. The internal `_record_index_state` helper remains present; its presence is not evidence of that current production path.
+
+The periodic sampler/degradation/stop/compaction loop remains active. Removing display/status/setup projections does not authorize suppressing sampling, weakening the fail-safe, or claiming leftover stacks are gone. The earlier dashboard statistics-board and MCP provider-status consumers are historical display accounts, not current consumers restored by this retained metrics store. A retained configured/skipped provider summary is not provider current-state observation.
+
+Every append/rewrite retains the durable-store lock contract; `record` holds the log lock before the current-snapshot lock, `record_index_state` uses the log lock and compaction protects tail selection and replacement. Reads retain their declared tolerant/no-authority limitations; they do not grant launch authority or semantic acceptance. Historical durability measurements below retain their original scope and are not rerun here.
+
+| Current claim | Source witness | Existing reference |
+| --- | --- | --- |
+| Label-based container sampling and durable store methods remain. | `mcp/src/agents_remember/providers/metrics.py::sample_provider_containers`, `ProviderMetricsStore` | [1] [2] |
+| Periodic serving sampler remains, distinct from removed provider display/status. | `mcp/src/agents_remember/serving/_app_lifespan.py` | [3] |
+| The legacy setup append helper remains internal; neither retired ID is enabled. | `mcp/src/agents_remember/providers/provider_setup.py:434-453`; `mcp/src/agents_remember/providers/setup_common.py:81-100` | historical table references below |
+
+The old consumer and execution descriptions below preserve source-epoch evidence rather than asserting present MCP/provider-display activity.
+
+## Historical source account
+
+The original card below preserves its source epoch, references and dated history. Its superseded provider display, start, status and consumer claims are not the current operative account. Retained internal mechanisms grant no removed public operation.
+
+<details>
+<summary>Original card and source-epoch evidence</summary>
+
+## Governing Overview
+
+[mcp/overview.md](../../../overview.md)
+
 ## Purpose
 
 `metrics.py` is the central provider containment metrics module (containment
 R4, task 260707-HFX-L1, developer ruling 2026-07-07): the MCP observes
 per-stack uptime, reliability, and resource pressure so degradation is a
 detectable state instead of a post-mortem. One store under the observer root
-holds the samples; the serving daemon's sampling loop writes them,
-`provider_status` reads them now, and the degradation protocol (260707-HFX-L7)
-and the dashboard statistics board (260703_statistics-component) consume the
-same rows later.
+holds the samples; the serving daemon's sampling loop writes them, and the
+degradation protocol (260707-HFX-L7) reads the rolling snapshot and the newest
+index rows when it builds an event. The dashboard statistics board
+(260703_statistics-component) consumes the same rows later.
 
 ## Code Commentary
 
@@ -124,7 +151,7 @@ provider container on the host (`schema` = `PROVIDER_METRICS_SCHEMA`,
 `ProviderMetricsStore(coordination_root)` is the append-log + rolling-current
 store under `<coordinationRoot>/logs/observer/providers/`: `metrics.jsonl`
 accretes samples for trend/statistics consumers, and `metrics-current.json` is
-the cheap always-fresh read for status packets and the projection. `record()`
+the cheap always-fresh read for the degradation detector's event payload. `record()`
 appends one JSON line to the log and republishes the current snapshot — **since
 260731-EFA-L5 both under one hold of the log's lock, through `durable_store.append_line` and
 `rewrite_lines`, not the old hand-rolled tmp file + `os.replace`** (see the L5 section above for
@@ -143,8 +170,8 @@ default is filled in when the payload carries none. The rolling
 `metrics-current.json` stays container-only; index rows ride the append log
 only. `read_recent_index_states(limit=20)` is the read side: the newest
 index-lifecycle rows oldest-first, schema-filtered out of the shared log (it
-scans the last 500 rows through `read_recent`) — `provider_status` attaches
-the last 10 as the packet's `indexState`.
+scans the last 500 rows through `read_recent`) — the degradation event carries
+the last 10 as `recentIndexState`.
 
 `sample_provider_containers(cwd=..., timeout=DOCKER_SAMPLE_TIMEOUT_SECONDS)`
 is one read-only sampling pass. Discovery is label-based: every provider
@@ -222,9 +249,13 @@ each docker call.
 - The ownership labels every provider container carries (`provider_ownership_labels`). [1]
 - `run_command` / `docker_command` seams the sampler runs through. [2]
 - The serving daemon's lifespan runs the 30s sampling loop into this store. [3]
-- `provider_status_packet` attaches `read_current()` to the status packet. [4]
+> - `provider_status_packet` no longer attaches `read_current()`; the status packet reports the configured summary and reads no provider state.
 
 | The seed catch-up stage records index-state rows through `_record_index_state`. | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
 | Index-lifecycle tests pin the `record_index_state` row landing in the log with its schema. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
 | `ar-durable-store/1.0` itself: `exclusive_access`, `append_line`, `rewrite_lines`, `SCHEMA_VERSION`, `schema_version_supported` and the `StoreOwnership` record `PROVIDER_METRICS_OWNERSHIP` instantiates. Cited by symbol: this file grew ~100 lines mid-leaf and earlier line ranges into it are invalid. | `DURABLE_STORE_CONTRACT` | mcp/src/agents_remember/controlplane/durable_store.py:43-43 |
 | The MCP-side appender that makes this a two-process store (`_record_index_state`). | `_record_index_state` | mcp/src/agents_remember/providers/provider_setup.py:434-453 |
+
+</details>
+
+- The metrics store retains read_current for independent containment consumers. The retired provider summary reports configured-or-not with state skipped; no provider_status_packet attaches these samples to a public status response. [4]

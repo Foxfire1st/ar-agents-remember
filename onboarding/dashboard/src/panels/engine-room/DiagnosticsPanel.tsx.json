@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
             "content": "sha256:b0448c920f01a9e14300fb5c17751232ed4536dbf63c27667d28e819ae48f78b",
             "locator": {
               "kind": "symbol",
@@ -19,16 +19,26 @@
       ]
     },
     "10": {
-      "note": "The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof.\n\nAnchor: `function PhaseLineList({`",
+      "note": "OptionalDiagRows renders summary, next action and optional memory source/worktree refs; DiagnosticActionRow maps nonempty actions to Affordance rather than a gate responder.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
-            "content": "sha256:1f6f1572d53e9545c71a40e57145f6b1bc0225df7e9046caa1cfeced095d6d11",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:2c005740ed1d39c83898a61fd68d7df6a0b597b044ddc8399737791c396c2785",
             "locator": {
-              "end": 194,
-              "kind": "line_range",
-              "start": 111
+              "kind": "symbol",
+              "name": "OptionalDiagRows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:ccaa718c09af11cc7b3d63386664583d9bdf8d7b6175a239c5d752fbf9941cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticActionRow"
             }
           },
           "kind": "code"
@@ -85,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:50f9ff4de6d7ea1b819ab16e492bc8eff46f9491168de6e4c82d8bce0c2c8ba9",
             "locator": {
               "kind": "symbol",
@@ -97,7 +107,7 @@
         },
         {
           "anchor": {
-            "blob": "c398ac1326fc5cb9eba54ae0ba6cab40c3650138",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
             "locator": {
               "kind": "symbol",
@@ -148,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:b5eb89541759bd74a4d581988aea1c1a12f77995838dac730b894e8e868882c4",
             "locator": {
               "kind": "symbol",
@@ -160,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:cbc8e14c07cc0d6763d65950e76d29f4b3a03b0aa9f70d7185d74c8ff5d1b801",
             "locator": {
               "kind": "symbol",
@@ -172,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:12ea845a3eafbd4552f76a3946eedc5c574194560d194f070f806ac921ed09aa",
             "locator": {
               "kind": "symbol",
@@ -184,7 +194,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:8dd0b63cab8f1ca80bc1fa90a933e157f42ee5b9a8b0ffbcd32676025ba9546a",
             "locator": {
               "kind": "symbol",
@@ -196,7 +206,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:cb925b92ff4a11ed52767227a8350dae028a6e9d38078efda2fb74dd89d0148a",
             "locator": {
               "kind": "symbol",
@@ -208,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:7627dadac0274d24151527feed082a2361e315b3f7485f44241d1dcf27f12753",
             "locator": {
               "kind": "symbol",
@@ -220,7 +230,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:c69d2b1d832160fbfcf06fd813482d964f7ed7e6ca66c17bd158ad469d0510e9",
             "locator": {
               "kind": "symbol",
@@ -244,7 +254,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:2d8fb424210aa0ec1a34bdf52262477d1cbf95a525292d407d0f5afa55703158",
             "locator": {
               "kind": "symbol",
@@ -256,7 +266,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:70553ded75cdcf4ef92a62554dbb46c39d0c41b084df527315a00dab2800aaeb",
             "locator": {
               "kind": "symbol",
@@ -282,16 +292,15 @@
       ]
     },
     "9": {
-      "note": "The setup row is now labeled Setup. The seedFallback-only Seed row is removed. Summary/health/phase, refs/lineage, setup — source ownership, not executed visual proof.\n\nAnchor: `// 5k F3 — during the power-down (cleanup-pending / abandon) the runtimes are being torn down, so the`",
+      "note": "DiagnosticsPanel renders phase/health, code refs, optional lineage, diagnostic actions, missing facts and source files; the removed setup and completed/failed-phase sections are absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f943240da1fdfbe832351f9f1f6646dbaebe0e",
-            "content": "sha256:3ab07b309a10a715de512cd408ac198be24eabd495e06c95ce3fc7103632654a",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
             "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 49
+              "kind": "symbol",
+              "name": "DiagnosticsPanel"
             }
           },
           "kind": "code"

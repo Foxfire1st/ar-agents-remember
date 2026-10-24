@@ -14,25 +14,21 @@ service definitions do not restore either callable surface.
 
 ### 260731-EFA-L2 Typed Request Object
 
-`run_cgc_lifecycle(service_config, request)` takes the frozen
-**`CgcLifecycleRequest(action, repo_id=None, native_args=(), port=8000, context=None)`**. The
-action and its inputs are only meaningful together: `native_args` carry a `run` query, while
-`port`/`context` carry where a `visualize` server binds and which graph it serves. `native_args` is
-a tuple because the request is frozen, and is expanded with `list(request.native_args)` at the CLI
-boundary. The allowed-action check (`run`, `visualize`, `refresh-all`) and its `ValueError` are
-unchanged.
+`CgcLifecycleRequest` and `run_cgc_lifecycle` are gone with the provider start,
+visualize and query surface. `ProviderLifecycleServiceConfig` is the module's only
+typed input: no request object, action allow-list or CLI boundary remains here.
 
 ### Logic
 
-`ProviderLifecycleServiceConfig` carries the trusted coordination root,
-temporary lifecycle settings path, dry-run mode, and timeout. The service
-functions normalize those paths, build internal namespaces, and dispatch to the
-provider lifecycle implementation functions:
+`ProviderLifecycleServiceConfig` carries the trusted coordination root, lifecycle
+settings path, dry-run mode, and timeout. `run_watchers_lifecycle()` normalizes that
+config, builds the internal namespace, and dispatches to the watcher lifecycle
+implementation:
 
-- `run_cgc_lifecycle()` supports `run`, `visualize`, and `refresh-all`.
-- `run_grepai_lifecycle()` supports `run` and `refresh`.
-- `run_watchers_lifecycle()` supports `status`, `start`, `stop`, and
-  `shutdown-all`.
+- `WATCHER_SERVICE_ACTIONS` admits `stop` and `shutdown-all` only.
+- Any other action raises `ValueError` before dispatch.
+
+No CGC or GrepAI service entrypoint remains in this module.
 
 The service API catches provider lifecycle operational errors and returns
 structured `ok: false` payloads for internal callers.
@@ -41,7 +37,7 @@ structured `ok: false` payloads for internal callers.
 
 - Internal service callers must supply trusted lifecycle settings, not treat these helpers as public provider tools.
 - This module is not a generic shell wrapper and does not parse arbitrary provider CLI arguments.
-- CGC service calls do not carry a Python executable because Docker runner
+- No service call here carries a Python executable; the Docker runner
   lifecycle owns provider execution.
 - The retained `lifecycle` package is a lazy backend facade; its CLI and `main()` execution
   adapter were deleted. Do not prescribe a CLI or public MCP provider-tool replacement.

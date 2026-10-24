@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
         "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
-        "content": "sha256:3425e7ab920fb60da5ae21e8ef50c44ce3b5105dd811b0af96ab1411ba5637e0",
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PJE2J1",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Dismissal admission rejects the retired kinds and physically reclaims rows a tolerant read drops, while current-claim and lock semantics are unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
         "locator": {
           "kind": "symbol",
           "name": "AttentionDismissalStore.reconcile"
@@ -39,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
         "content": "sha256:1dcc68f7fdbb8adf76fff8050d44630c2189d288412b92924a06e90d728f74a5",
         "locator": {
           "kind": "symbol",
@@ -57,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
-        "content": "sha256:585647eee2b40d0c97f74b97469a04e76c9287ca49d37c921c72dbf8e2056a90",
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:745a400fe7fc55f2ec747a69b1ead24437bffa3efa0e9a6c0f7979be2839db80",
         "locator": {
           "kind": "symbol",
           "name": "AttentionDismissalStore"
@@ -75,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
-        "content": "sha256:40b2449de2601298a2bdd80411183dad2cc1ea0138ddf237cf5ca4cf6a24fa96",
+        "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+        "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
         "locator": {
           "kind": "file"
         }
@@ -123,12 +140,12 @@
         },
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
             "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
             "locator": {
-              "end": 104,
+              "end": 131,
               "kind": "line_range",
-              "start": 56
+              "start": 83
             }
           },
           "kind": "code"

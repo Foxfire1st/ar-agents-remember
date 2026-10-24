@@ -44,15 +44,26 @@
       ]
     },
     "2": {
-      "note": "Watcher process control consumes Docker watcher command helpers.",
+      "note": "Watcher process control consumes only this module's `cgc_watcher_running` inspection helper; its removal command is Compose's `rm -sf` on the watcher service, built in `process_control.py`, so this module builds no watcher command.\n\nAnchor: `cgc_watcher_running`, `cgc_stop`, `cgc_stop_all`",
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:bde1bd37f9e5da5cd9629b0f59197038f60d85e1484435c641f4aa6f25928319",
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:e7cb0e0c83656f59556ac0ce63aef9b9bc762aa1e58035b3a15cfcd79af962cd",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start_watch_process"
+              "name": "cgc_watcher_running"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },
@@ -60,42 +71,13 @@
         },
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:bcc556175a2d901bd937451266fd4ded6f65d8fce971f7299610d5621cf3cb32",
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:335c76855e0da2922ebdbf796f62a803969496396da593678399fab6f08f9e9f",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start_all_watch_process"
+              "name": "cgc_stop_all"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Refresh and bounded query commands run through Docker command helpers.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
-            "content": "sha256:3453f157e693c52a99587feaf45b75054079422744f92a0f444a42be0100e164",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_refresh_command"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3a70677d9651cd35ac2ce27a9583647d348e522",
-            "content": "sha256:3b96a5d26cbcd5afc428bb02273ba193617af281a595df23d77782c23f13b849",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_run_command"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py"
           },
           "kind": "code"
         }

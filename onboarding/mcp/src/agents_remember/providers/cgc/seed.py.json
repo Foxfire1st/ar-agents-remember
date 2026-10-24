@@ -3,18 +3,31 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Provider-level CGC setup calls this module before optional refresh fallback.\n\nAnchor: \"def prepare_enabled_provider(\"",
+      "note": "The retained CGC prepare function contains seed/fallback composition but returns no work for a retired provider because its shared enabled-provider guard is false.",
       "targets": [
         {
           "anchor": {
             "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
-            "content": "sha256:f0294b92fea8593c48cde2600289ba737df262a0e097edde1a0c64f4818dfe97",
+            "content": "sha256:26f2630a7217ea7031152a7d4bf67522161e12cd2329b587e36b55c8ab1fa39d",
             "locator": {
-              "end": 241,
+              "end": 251,
               "kind": "line_range",
               "start": 241
             },
             "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }
@@ -57,36 +70,88 @@
       ]
     },
     "4": {
-      "note": "Worktree setup constructs CGC seed options through the provider setup request.\n\nAnchor: \"cgc_seed=CgcSeedOptions(\"",
+      "note": "The retained provider setup request parser constructs CGC seed options; that declaration is not evidence that normal worktree setup invokes a retired provider.",
       "targets": [
         {
           "anchor": {
             "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:c5fd39865082e125d982cee69d93570688f4efabceed74fc42eeb51d0ad67f1b",
+            "content": "sha256:00afc9360efddecc6504b1600ee2ca75e4f8232fb06baf1f9c771a86e93c95a5",
             "locator": {
-              "end": 137,
+              "end": 148,
               "kind": "line_range",
-              "start": 137
+              "start": 127
             },
             "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The post-watcher catch-up stage consuming the stashed divergence.\n\nAnchor: \"def _seed_catchup_results(\"",
+      "note": "The retained catch-up helper consumes supplied divergence after the retained setup composition; ordinary enabled-provider setup does not create that CGC divergence through the excluded seed branch.",
       "targets": [
         {
           "anchor": {
             "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:e56e0300c0d2351067c0d2dc535a512750a47626fb193b114df2c04643462823",
+            "content": "sha256:014b352f04cb7276e6a67b68c60a49fe5d0a1c2a458082faf8e9d01525f997b4",
             "locator": {
-              "end": 250,
+              "end": 233,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:8fdb46b34ef205b406ff7123133d98c6d9b3aad34501f7f06af0df83189d2aa2",
+            "locator": {
+              "end": 332,
               "kind": "line_range",
               "start": 250
             },
             "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:26f2630a7217ea7031152a7d4bf67522161e12cd2329b587e36b55c8ab1fa39d",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }

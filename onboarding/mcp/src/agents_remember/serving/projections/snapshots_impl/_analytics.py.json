@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
-        "content": "sha256:255bab037e4d8b8bea9149d6594c274e60e2dd3b151a9d55c0e0f6b9b205c013",
+        "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+        "content": "sha256:d7aca4eb2f439dffbbf98a255575a3872e34a2005ba5e6b5cc5f0a6c5f30e617",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,27 @@
   ],
   "references": {
     "1": {
-      "note": "Persisted drift, setup/route/tool/ledger readers and ledger enrichment remain without an onboarding verification-age reader. [1]",
+      "note": "Persisted drift, blocked-start, route, tool and ledger readers and ledger enrichment remain; setup-summary/setup-progress readers and onboarding verification-age input are absent. The start reader skips retired provider gates without treating them as unreadable observations.\n\nAnchor: retained reader and enrichment definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
-            "content": "sha256:255bab037e4d8b8bea9149d6594c274e60e2dd3b151a9d55c0e0f6b9b205c013",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:791b179d5d01592bbefe8f4b08a1766add2d6f503f1d5338956d5c21553bb4d2",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "read_start_progress_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:e7250b6b53747d6ce25487e45ed7477f7b071c4d6459c28429adcc49499950bf",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 141
             }
           },
           "kind": "code"

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "blob": "5ea158aba1e9e1543bd7108a50560723e0c9239b",
             "content": "sha256:e73a59347f824293858bf5a8f4a849db0eea4ad33f029c1294363443bbae0c1d",
             "locator": {
               "kind": "symbol",
@@ -37,7 +37,7 @@
       ]
     },
     "3": {
-      "note": "Docker runner image build and command helpers live in the runner module.",
+      "note": "The runner retains Docker image build and watcher/image inspection helpers, not bounded CGC command builders; sibling process control retains stop.\n\nAnchor: `cgc_runner_image_build`, `cgc_watcher_inspect`, `cgc_runner_image_status`, `cgc_stop`",
       "targets": [
         {
           "anchor": {
@@ -48,6 +48,42 @@
               "name": "cgc_runner_image_build"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:3b760ef4bba26c2f9fbf3bb7b437a98ad547230ff176581d7eedc1fad059f68c",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_watcher_inspect"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:1574d411c75d29aa83e56c3c92309aee036bd5ba69e351ffcad9da0df024bbd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_runner_image_status"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },
           "kind": "code"
         }

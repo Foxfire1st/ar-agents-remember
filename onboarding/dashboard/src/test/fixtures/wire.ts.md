@@ -131,9 +131,10 @@ The former task-document builder sampled analytics in the predecessor. Current n
 - BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained. [24]
 - The engine-process builder takes its sample from analytics. [25]
 
-- The provider builder takes its sample from the top-level providers array. [26]
+- The projection default object supplies tasks/taskCounts, enclosures, active worktree groups, metrics and analytics without a providers field. [26]
 
-- The served snapshot supplies the code provider and memory provider in its top-level provider array.
+`SERVED_PROVIDER`, `BASE_PROVIDER` and the `provider()` builder are removed; the projection's default object supplies no top-level provider array.
+
 - The override constraint every builder takes, and the three limits it documents. [28]
 - The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. [29]
 - `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. [31]

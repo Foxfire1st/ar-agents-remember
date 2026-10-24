@@ -24,6 +24,23 @@
         "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
         "locator": {
           "kind": "symbol",
+          "name": "test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+        }
+      },
+      "facet": "the Paseo runtime block is still read and validated exactly, failing loudly on a shape it does not accept",
+      "id": "PRF-DGYE2T",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+        "content": "sha256:640e9bc3c1938e741e08d465862f4ffb32bc77c656852bc8d5728c909ee6d4bd",
+        "locator": {
+          "kind": "symbol",
           "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
         }
       },

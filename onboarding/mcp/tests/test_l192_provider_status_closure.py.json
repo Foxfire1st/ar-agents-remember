@@ -1,0 +1,157 @@
+{
+  "path": "mcp/tests/test_l192_provider_status_closure.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+        "content": "sha256:f5fc4a3f62fe1479c2b8b2f04d591a14f52556f8851ba6f0fbfd631e9009241b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_surviving_action_asks_a_watcher_to_start_or_report_status"
+        }
+      },
+      "facet": "no surviving action dispatches a watcher start or a status report",
+      "id": "PRF-4Z5HPY",
+      "invariant": "INV-XZ48GR",
+      "origin": {
+        "handoffEntry": "L192-W-R199-03",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "357ab41cbae9d18b131f15fec00ee98921a2b69e",
+        "content": "sha256:62c117aa7a008d29cffce491af73ff0c444a9cc7f5d8d0f2e5a53fe4c07b189a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_status_only_projection_is_gone_and_the_stop_route_and_image_owner_survive"
+        }
+      },
+      "facet": "the stop route and the image owner the surviving stop needs are still present after the removal",
+      "id": "PRF-9BJEN4",
+      "invariant": "INV-M8V5ZA",
+      "origin": {
+        "handoffEntry": "L192-W-R199-07",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+        "content": "sha256:623b1a0d192d3e46aac3fe359d3e159ff90985c2c6fae583000832b2231452ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_detailed_status_closure_is_not_reachable_from_the_surviving_entry_point"
+        }
+      },
+      "facet": "the removed status closure cannot be reached from the entry point that survives",
+      "id": "PRF-EDW3D2",
+      "invariant": "INV-XZ48GR",
+      "origin": {
+        "handoffEntry": "L192-W-R199-03",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The surviving summary's parameter list is read from the live signature and required to be `config` alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:623b1a0d192d3e46aac3fe359d3e159ff90985c2c6fae583000832b2231452ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_detailed_status_closure_is_not_reachable_from_the_surviving_entry_point"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The former detail helpers and `include_providers` are required absent from `agents_remember.providers.status`.\n\nAnchor: `_watchers_status`, `_provider_summary_item`, `include_providers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:6baa3837fd45241765128b1cc17457e8a9794c38b3486e4370a9e109a03ef03f",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A configured key still reports configured but as a skipped projection that states no health and no `ok`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:b9f79bddff8e9bd9184345902280b3eb034d472d300bd1462d97b5e44266995c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_configured_key_still_reports_as_configured_with_no_live_detail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The stop/cleanup route, the settings writer and the metrics store are asserted present rather than assumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:f55a0438486e501840cb70ce1b670021258c00cdd6d6ea2eee1a6bd1e3024d43",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_retained_stop_settings_and_safety_callers_are_still_present"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The watcher service admits only stop/shutdown-all and refuses `start` and `status` with `ValueError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:f5fc4a3f62fe1479c2b8b2f04d591a14f52556f8851ba6f0fbfd631e9009241b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_surviving_action_asks_a_watcher_to_start_or_report_status"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The status-only projection module is required unimportable while the stop route and the cgc image owner survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+            "content": "sha256:1a7fb4530eb08d40414e68c66d974f0bae89e890704638993258b5af253e540f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_status_only_projection_is_gone_and_the_stop_route_and_image_owner_survive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

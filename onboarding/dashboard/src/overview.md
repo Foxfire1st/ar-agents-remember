@@ -97,7 +97,7 @@ The review root clips overflow above 40rem; its tree has a local scroller and Re
 
 Fixture-honesty support discovers wire vocabulary from `src/types/` or the first-line TypeScript/Browser mirror marker. Rule 1 spans all scanned files; rules 2–5 are restricted to test/spec, fixture, src/test, src/dev and e2e surfaces. Sanctioned production decode assertions are site-specific and bidirectionally reconciled, not file-wide exemptions. The named holes below remain part of its contract.
 
-Engine Room currently composes enclosures, their process map/stack, boot timeline and diagnostics. Named seed/clone/provider dev scenarios remain projected inputs and historical captions, some explicitly naming retired visuals. They do not restore provider gauges/arcs, seed/clone arrows, provider fallback presentation or tool exposure. A retained definition or fixture title is not proof of a mounted visualization.
+Engine Room currently composes enclosures, their process map/stack, boot timeline and diagnostics. The current dev timelines are build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon, followed by gallery resting frames. The seed-fault, reindex-reroute and provider-block timelines are removed, and build-up now has four enclosure-only beats. Retained fixtures do not restore provider gauges/arcs, seed/clone arrows, provider fallback presentation or tool exposure. A retained definition or fixture title is not proof of a mounted visualization.
 
 
 ### Native selection and source-owner qualifications
@@ -108,7 +108,7 @@ A slow host or native drawing answer remains waiting while the application answe
 
 The plugin's Parent action retains the live selected-source/relation checks. Canonical selection, exact launched-request identity, dynamic model/effort/tier validation and observed host values remain their existing owners; chat cache and display messages acquire no task acceptance or launch authority.
 
-The dashboard frontend is the operator-facing React cockpit. Product views are native Chats, Operations, Knowledge and File Viewer. Notes and change sets have focused takeovers; the review page lives within Operations beside its shared task chat. Task detail remains the Operations layer’s persistent panel. Retained internal/dev layouts project observer and provider evidence; terminal-catalog and adapter/control owners are absent, and injected layouts add no product-bar entry.
+The dashboard frontend is the operator-facing React cockpit. Product views are native Chats, Operations, Knowledge and File Viewer. Notes and change sets have focused takeovers; the review page lives within Operations beside its shared task chat. Task detail remains the Operations layer’s persistent panel. Retained internal/dev layouts present observer evidence, with Engine Room reading its process and ledger slices; terminal-catalog and adapter/control owners are absent, and injected layouts add no product-bar entry.
 
 - [data overview](data/overview.md) — retained projection state, task/document identity and the
   review, change-set, file and knowledge transports, with their authority boundaries.
@@ -220,7 +220,7 @@ Current topology instead resolves TaskEntry status through shared taskStatusKey/
   test reading `snapshot.json` must come through it; a second `as unknown as` elsewhere silently
   re-opens the hole for that file.
 - `test/fixtures/overrides.ts` — `Overrides<O,T>` guards required-field overrides at fresh call sites in `fixtures/wire.ts`; for example, the current header names `taskEntry({ stage: undefined })`, not a lifecycle factory. It is not project-wide exact optional typing and does not close widened-variable, deeper-property or other-Partial inputs. The former lifecycle example and wire/conversationWire scope are historical. The earlier recorded project-wide diagnostic of 222 errors across 71 files remains a historical experiment, not a measurement of this candidate.
-- `dev/fixtures.ts` delegates projection, provider, enclosure and event construction to `test/fixtures/wire.ts`, passing gallery-specific defaults explicitly rather than maintaining a second required-field list. `engineRoomProjection` supplies scenario processes/workspace and the official ledger over `EMPTY_ANALYTICS`. Native tasks/counts are projection-root fields; no `metricsFor` rollup or harness-catalog stub remains. `dev/` remains fixtures, not a production authority.
+- `dev/fixtures.ts` delegates projection, enclosure and event construction to `test/fixtures/wire.ts`, passing gallery-specific defaults explicitly rather than maintaining a second required-field list. `engineRoomProjection` supplies scenario processes and the official ledger over `EMPTY_ANALYTICS`. Native tasks/counts are projection-root fields; no `metricsFor` rollup or harness-catalog stub remains. `dev/` remains fixtures, not a production authority.
 
 The dashboard route absorbed the L7 live-thinking change on top of the L8 split: that historical conversation-timeline family rendered one coalesced live `thinking` indicator per active turn (`collapse.ts` stable-row refactor + `ThinkingItem` animated indicator), with acceptance pins in `liveThinking.test.tsx` and `collapse.test.ts`; none of those modules or tests exists in the pinned source, whose Chats route mounts the native `RoleChatsPane` frame instead. The earlier L7 report described a clean file-size result. The project wrapper defines the detector's TS/TSX scope; this paragraph supplies no fresh file-size or rule6/full-final acceptance.
 
@@ -281,7 +281,6 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 
 
-- The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [42]
 - The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof. [43]
 - The Knowledge destination in the registry. [1]
 - A reader URL opens the shell on the Knowledge view. [2]
@@ -386,3 +385,5 @@ the task entry's page reads now end with the task they belong to. The change-set
 - The model admits typed tray provenance and the box's geometry in one block, with the pair admission immediately after it. [91]
 
 - A composer measurement may carry the box's optional left and width, which the model admits only as a pair of finite values with a positive width. [92]
+
+- EngineRoomImpl builds its model from engineProcesses alone and selects the process/ledger data for enclosure presentation; it reads no lifecycle collection or provider projection. [42]

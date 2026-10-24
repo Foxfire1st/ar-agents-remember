@@ -4,6 +4,40 @@
     {
       "anchor": {
         "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:da673cc11f2a79b2accda45a80c2df8179753d3de27d5b335a2d9f8ce74c2847",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_aged_away_root_is_not_a_blocker_and_a_remaining_one_is"
+        }
+      },
+      "facet": "Blocker computation accepts already-absent and removed roots, reports a symlink refusal as an outside-scratch blocker, and excludes a preview reporting would_remove from blockers.",
+      "id": "PRF-0BVPS7",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L192-M10-proof-repair-INV-BDYV4D",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:05e9deb0a7837449c1e19826c6b2c6c16039628452f046d844efbfeb4b6b2cf5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_bounded_pass_reaches_the_roots_behind_the_prefix"
+        }
+      },
+      "facet": "With MAX_ROOTS set to two, each pass reports at most two removals; repeated passes remove all five roots, including those behind the first page, and clear the cursor after completing the walk.",
+      "id": "PRF-0HNFCH",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L192-M10-proof-repair-INV-NNKNDP",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
         "content": "sha256:615737c9e9f94895ce4715c8d2935f540a1f2db0525d6dc8eb5b221c96095621",
         "locator": {
           "kind": "symbol",
@@ -174,23 +208,6 @@
     {
       "anchor": {
         "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
-        "content": "sha256:05e9deb0a7837449c1e19826c6b2c6c16039628452f046d844efbfeb4b6b2cf5",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_bounded_pass_reaches_the_roots_behind_the_prefix"
-        }
-      },
-      "facet": "A bounded pass that inspects more than its limit, re-reads only the prefix and never reaches the trailing roots, or leaves the reconcile cursor behind after finishing, would be caught.",
-      "id": "PRF-4WQXZY",
-      "invariant": "INV-NNKNDP",
-      "origin": {
-        "handoffEntry": "L198-INV-C",
-        "leaf": "260928-MIK-L198"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
         "content": "sha256:ce30da7db2d654cca206588345968f834a9b35f80b4f9544061766bcedee9705",
         "locator": {
           "kind": "symbol",
@@ -225,40 +242,6 @@
     {
       "anchor": {
         "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
-        "content": "sha256:3edc5f7cc6668b68462b846d049c26a7c0b1dfaa2de3e1cbe2654a8318fbdf80",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_publishing_an_enclosure_allocates_its_root_before_its_contract"
-        }
-      },
-      "facet": "A publication that writes the enclosure before its root exists, or records a manifest whose outsideScratch path, generation or marker digest disagrees with the allocated root, would be caught.",
-      "id": "PRF-8HS53H",
-      "invariant": "INV-T8672G",
-      "origin": {
-        "handoffEntry": "L198-INV-A",
-        "leaf": "260928-MIK-L198"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
-        "content": "sha256:9e6778bf2618dadec9a3be9af4529d2796d0eb933d8db00e89cc69ecc407f19f",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_the_tool_server_start_sweeps_the_roots"
-        }
-      },
-      "facet": "A tool-server start that never runs the sweep, or runs it on the caller's thread so the stdio handshake waits for it, would be caught.",
-      "id": "PRF-A54MD8",
-      "invariant": "INV-NNKNDP",
-      "origin": {
-        "handoffEntry": "L198-INV-C",
-        "leaf": "260928-MIK-L198"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
         "content": "sha256:0e44ac633848608e35ae7f694972def57dc266eb403a51f61ad2df31ce4c717f",
         "locator": {
           "kind": "symbol",
@@ -287,23 +270,6 @@
       "invariant": "INV-TMKNRV",
       "origin": {
         "handoffEntry": "L198-INV-D",
-        "leaf": "260928-MIK-L198"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
-        "content": "sha256:da673cc11f2a79b2accda45a80c2df8179753d3de27d5b335a2d9f8ce74c2847",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_an_aged_away_root_is_not_a_blocker_and_a_remaining_one_is"
-        }
-      },
-      "facet": "A blocker computation that blocks on an already-absent or successfully removed root, or that passes a symlink refusal or an unperformed preview as clean, would be caught.",
-      "id": "PRF-C4NF0D",
-      "invariant": "INV-BDYV4D",
-      "origin": {
-        "handoffEntry": "L198-INV-B",
         "leaf": "260928-MIK-L198"
       }
     },
@@ -373,6 +339,23 @@
       "origin": {
         "handoffEntry": "L198-INV-C",
         "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:9e6778bf2618dadec9a3be9af4529d2796d0eb933d8db00e89cc69ecc407f19f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_tool_server_start_sweeps_the_roots"
+        }
+      },
+      "facet": "Calling the startup reconcile hook invokes the patched sweep, whose event is observed within the test wait bound.",
+      "id": "PRF-H528J3",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L192-M10-proof-repair-INV-NNKNDP",
+        "leaf": "260928-MIK-L192"
       }
     },
     {
@@ -526,6 +509,23 @@
       "origin": {
         "handoffEntry": "L198-INV-D",
         "leaf": "260928-MIK-L198"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b1d422e4db5e6f243208381fbfd8a925fa0c301a",
+        "content": "sha256:3edc5f7cc6668b68462b846d049c26a7c0b1dfaa2de3e1cbe2654a8318fbdf80",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_publishing_an_enclosure_allocates_its_root_before_its_contract"
+        }
+      },
+      "facet": "After publication returns, the manifest records the expected outside-scratch path, generation and marker digest; the root is a real managed-mode directory with the expected marker schema, and the published record matches the expected record.",
+      "id": "PRF-RYX4XM",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L192-M10-proof-repair-INV-T8672G",
+        "leaf": "260928-MIK-L192"
       }
     },
     {

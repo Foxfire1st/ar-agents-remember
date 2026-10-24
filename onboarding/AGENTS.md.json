@@ -1,6 +1,24 @@
 {
   "path": "AGENTS.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e60848154d5bc66f07dcad5a3ffcf82482137e04",
+        "content": "sha256:153da913a572205ac1dd919fa012d6179d0d928d4d898dadf6a908d6d3b1dd68",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-01HFHG",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The root instruction's context_packet call now names only an admitted parameter, which is what a reader copies.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Source scope and role routing.\n\nAnchor: `## Start Here — Route By Role`",

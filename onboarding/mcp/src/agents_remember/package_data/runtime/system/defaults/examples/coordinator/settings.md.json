@@ -103,6 +103,59 @@
           "kind": "code"
         }
       ]
+    },
+    "7": {
+      "note": "The current source example still contains inherited provider install, start/status, watcher and indexing guidance. Actual generated lifecycle settings are disabled and empty; runtime installation instead attempts leftover-watcher stop and reports enabled keys as unused, and the advertised PUBLIC_TOOLS literal contains no provider tool. The template text is not evidence of present managed provider availability or executed behavior.\n\nAnchor: `## Context Providers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1fb3cb129c6a69ca95789c8a15b8c0de33a6112",
+            "content": "sha256:d69caeae9bbd3f3d0ff6564d342a89baa7f1fdf8686ec866e2bea23f4ca7f250",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_install"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "322a01b7560d7402dc0daa221e3f5d430a0ae448",
+            "content": "sha256:716d3d9cddf0d5aa21e0d64980a3dd6a6d188d2768bfc66b420f45e7ecc7392d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
+            "content": "sha256:fc05c6400e1e786635147e3c733a9d0b8f17e462ec5d7bad01c04de75721e242",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

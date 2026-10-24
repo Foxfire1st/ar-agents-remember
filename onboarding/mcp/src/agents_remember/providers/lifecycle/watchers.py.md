@@ -15,22 +15,22 @@ GrepAI and CodeGraphContext.
 
 The module reads provider enablement from lifecycle settings
 (`context_provider_enabled` with the explicit `--from-settings` path — since
-260703-L13 there is no coordination-root fallback, so watcher commands need the
-generated settings file), maps generic watcher actions to provider-specific
+260703-L13 there is no coordination-root fallback, so watcher commands need an
+explicit settings path), maps generic watcher actions to provider-specific
 actions, calls GrepAI or CGC lifecycle
 functions, normalizes provider errors into structured results, and collects
-recovery actions from partial failures. Non-dry-run long-running actions require
-a durable process namespace. CGC aggregate status now includes FalkorDB backend
-status, and the provider-level `ok` flag requires both backend health and all
-configured repo watchers to be ok.
+recovery actions from partial failures. The action maps carry the stop family
+only: `grepai` maps `stop` and `shutdown-all` to `stop`, and `cgc` maps them to
+`stop-all` and `shutdown-all`. Non-dry-run stop actions require a durable process
+namespace, and combined success is computed from the included provider results.
 
 ### Invariants And Boundaries
 
 - Watcher aggregation should not perform provider-specific Docker or CGC work
   itself.
-- CGC watcher status must include the shared backend status so current provider
-  state can distinguish repo watcher health from FalkorDB health.
-- Start/stop/shutdown actions must respect durable process namespace checks.
+- A watcher action outside the stop family has no branch here: `status` and
+  `start` were removed with the provider surface.
+- Stop and shutdown-all actions must respect durable process namespace checks.
 - Partial provider failures should be reported as structured lifecycle results,
   not hidden.
 
@@ -39,5 +39,7 @@ configured repo watchers to be ok.
 ### Repo-Internal References
 
 - GrepAI watcher behavior lives in the Docker runner module. [1]
-- CGC start/stop/status behavior lives in the CGC process-control and installation modules. [2]
-- CGC backend status is reported through the backend module and folded into watcher aggregate status. [3]
+
+- The CGC aggregate branch imports cgc_stop_all and maps only stop/shutdown-all to the retained stop closure; it imports no start or status aggregator. [2]
+
+- The backend module retains cgc_backend_status as an internal implementation. watchers_run combines stop-class action results and does not fold backend status into an aggregate status response. [3]

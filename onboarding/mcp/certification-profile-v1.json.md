@@ -14,11 +14,13 @@ Declares Agents Remember's repository-owned certification selections, Gates 1–
 
 The generated-skills input declares only the packaged runtime skills tree and includes generated-copies.json beside the sync script and canonical skills source. The retained generated-harness input drops renderer targets, names generated-copies.json plus skills as its source scopes, and uses scripts/sync-skills.py --check. The outer canonical profile digest is refreshed. These declaration changes are not certification or sync execution; the remaining rail/publication-artifact boundaries stay separate.
 
+The profile no longer declares the provider-runtime integration rail. `rails` declares each rail's `identity.railId` with its gate, class, artifacts, evidence contract and execution adapter, and that rail is absent from the declaration: the retirement is readable here as the absence of a declaration rather than as a comment about one, and the gate selections that named it moved with it. The mechanical binding table under the build-tooling directory follows this declaration and is follow-through, not a second account of it — it carries no card of its own.
+
 `closeout-full` and `closeout-targeted` declare all four code gates. `local-targeted` declares Gate 4 not applicable. Each rail binds identity, prerequisites, observed evidence, required-on-pass artifacts, runtime and execution policy. Selector configuration and executor runtime digests are recomputed from their actual owners; the outer profile digest binds the canonical profile.
 
-The publication inventory is finite: 47 declared paths, including 30 stable `rail-evidence/` capture paths. The ambient-role-chat and teardown-process-cleanliness rails and their artifacts are removed. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
+The publication inventory is finite: 45 declared paths, including 29 stable `rail-evidence/` capture paths. The ambient-role-chat and teardown-process-cleanliness rails and their artifacts are removed. Captures use `application/octet-stream` because an exact bounded byte tail may begin within a UTF-8 sequence. A rail's `requiredOnPass` artifact obligation remains distinct from an optional path's publication allowance. Exporting a result payload does not excuse absent evidence bytes.
 
-Dashboard browser execution writes its configured Playwright JSON result with line and JSON reporters. Provider integration keeps its actual pytest phase report and dashboard coverage keeps the stable `dashboard-coverage.json` export. The removed ambient scenario no longer produces an ambient summary, replication records, source-selection artifact or `teardown-proof.json`.
+Dashboard browser execution writes its configured Playwright JSON result with line and JSON reporters, and dashboard coverage keeps the stable `dashboard-coverage.json` export. The removed ambient scenario no longer produces an ambient summary, replication records, source-selection artifact or `teardown-proof.json`.
 
 The profile retains bounded dashboard dependency reconstruction, generated-input scopes and the remaining full/targeted/local selections. It no longer declares ambient-role source applicability or conditional teardown prerequisites. This removal does not by itself narrow the remaining dashboard or Python test obligations.
 
@@ -42,7 +44,9 @@ No remaining producer gap is recorded for the three L30 artifacts. The profile d
 
 ## Evidence
 
+
 - Generated skills keep only the package target; generated-harness inputs drop renderer sources and the canonical digest is refreshed. [7]
+
 - The retained generated-harness rail checks skills through scripts/sync-skills.py --check. [8]
 ### Docs References
 
@@ -57,8 +61,16 @@ The exact source declarations below establish the current behavior; this invento
 - Bounded dependency reconstruction environments [1]
 
 
+- Pinned Dagger execution adapter and actual runtime digest. [2]
 
 
+- The declaration carries its own canonical profile digest. [3]
+
+
+- 45 report paths include 29 rail-evidence captures; ambient and teardown publications are removed. [4]
+
+
+- Full/targeted/local selections and explicit applicability. [5]
 
 - Current source-owned selector configuration digest [6]
 
@@ -67,8 +79,3 @@ The exact source declarations below establish the current behavior; this invento
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
-
-- Pinned Dagger execution adapter and actual runtime digest. [2]
-- The declaration carries its own canonical profile digest. [3]
-- 47 report paths include 30 rail-evidence captures; ambient and teardown publications are removed. [4]
-- Full/targeted/local selections and explicit applicability. [5]

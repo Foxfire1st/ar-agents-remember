@@ -41,10 +41,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7c86474c922b10680cc26e4b3e91a47b1c8f2c98",
-            "content": "sha256:d5906bfde01d7bbd699f382c8e6a1f193a92911ea8371df1d85d34fa3c7a0e05",
+            "blob": "331d4df51fde6f890d4819be6e13d43f889c2e79",
+            "content": "sha256:962ecd593f2932967845e6a427736cef70aecd7da56d2418a9f0fec52e31e7b9",
             "locator": {
-              "end": 60,
+              "end": 20,
               "kind": "line_range",
               "start": 1
             }
@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "note": "Current source account and its stated boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c86474c922b10680cc26e4b3e91a47b1c8f2c98",
-            "content": "sha256:d5906bfde01d7bbd699f382c8e6a1f193a92911ea8371df1d85d34fa3c7a0e05",
+            "blob": "331d4df51fde6f890d4819be6e13d43f889c2e79",
+            "content": "sha256:0edd3a662ced257bec4553a69dad6e1d0e16bf427e12a58c3dbb3a4a6bc14095",
             "locator": {
               "kind": "file"
             }

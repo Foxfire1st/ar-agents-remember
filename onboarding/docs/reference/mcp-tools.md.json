@@ -55,6 +55,23 @@
       },
       "rationale": "The tool reference maps the retained MCP operation families and their current request schemas; where it describes the message tool it documents the ordinary held answer, and it carries no limited-recipient reset. This is documentation of the public surface, not enforcement of the message rule.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ac6bf6046020a044460f384b661436a7a7ce2ea5",
+        "content": "sha256:1073f6d30f8ac91c9d4ad2f061b6252f59777d96156e32859eadcf2cd8d5a643",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SS2V9X",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The retired-tool account is preserved as history rather than removed.",
+      "role": "presentation"
     }
   ],
   "references": {

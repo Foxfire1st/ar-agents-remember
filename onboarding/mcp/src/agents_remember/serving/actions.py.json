@@ -15,7 +15,7 @@
         "handoffEntry": "L168-W-R166-02-04",
         "leaf": "260928-MIK-L168"
       },
-      "rationale": "The dismissal action accepts all four operational kinds and reports whether persistence held.",
+      "rationale": "The dismissal action accepts the two current supported operational kinds, actionable-drift and blocked-start, and reports whether persistence held.",
       "role": "primary-authority"
     }
   ],

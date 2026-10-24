@@ -25,7 +25,7 @@ External memory is present in the scene only when `memoryMode === 'external'` an
 
 Fleeting is derived from a missing-fact string matching “contract not yet written.” A stale base requires a positive code-source behind count, blocked presentation, and fleeting. The former provider-plan distinction no longer overrides fleeting. Memory movement requires a real memory worktree and a positive memory-source behind count: before blocking it yields the moved notification; after blocking it yields the live memory gate only when ledger-map is blocked. This does not reclassify a code-side blocked sync edge.
 
-Terminal presentation is selected by `integration-blocked`; the STOP itself additionally needs a blocked integration edge. That edge is excluded from ordinary edge gates. Terminal non-fleeting scenes suppress recovery chips. Other blocked edges retain steady gates; failure/reroute flashes are separate from gates. Recovery labels deduplicate next action, retry setup when retry arguments exist, and enabled action names. Fleeting displays at most three choices.
+Terminal presentation is selected by `integration-blocked`; the STOP itself additionally needs a blocked integration edge. That edge is excluded from ordinary edge gates. Terminal non-fleeting scenes suppress recovery chips. Other blocked edges retain steady gates; failure/reroute flashes are separate from gates. Recovery labels deduplicate the supplied next action and enabled action names; they do not synthesize a retry label from retry arguments. Fleeting displays at most three choices.
 
 Landing chips omit missing refs and appear only in the listed landing phases or when an integration strategy is present. Stale remote observations remain inspectable with stale tone/text and optional age. Directional flow eligibility requires observed refs: origin-feat makes push available; an observed merged PR advances to pull; observed pushed origin-mem-main advances to carry and push-mem. Carry and push-mem can both be active at that frontier. The closeout train appears only during closeout-pending and reads code → onboard → quality → memory → ledger.
 
@@ -39,7 +39,7 @@ Landing chips omit missing refs and appear only in the listed landing phases or 
 - Ledger preview shows eight rows, expands to the served window, and reports older rows remaining in memory.md. The server I/O owner in `serving/projections/snapshots_impl/_analytics.py` bounds both windows to 25 rows and probes commit metadata best-effort, keeping the reducer pure. Missing, invalid, or unreadable worktree ledgers yield an empty window; unreadable official ledgers are omitted. Missing local commit metadata, failed Git probes, and timeouts retain hashes without invented messages or dates. The display has six data fields plus a separate ⇄ seam cell; dates are compacted by string slicing without viewer-timezone conversion. The popover anchors high, opens downward without flipping, and uses its styled scroll area for overflow.
 - `remote.tsx` owns positioned origin chips and the PR merge arrow. Code refs occupy the top dock and memory-main the bottom. Planned is muted/dashed, live amber, landed mint, and stale explicitly distinguished. Full labels and freshness detail remain in hover titles.
 - `BootTimeline.tsx` owns boot, steady, and teardown sequences. Boot leads with “Contract anchor,” then code worktree and external-memory ledger/worktree materialisation; non-external memory is shown as skipped. The contract row is currently hardcoded complete, including for provisional input; it is not proof that a contract exists. Dispose phases include integration-blocked and carryover-pending. Conflict marks closeout complete, push blocked, and later steps pending. Abandon skips landing steps and marks disposal complete.
-- `DiagnosticsPanel.tsx` owns commit fact chips, phase/health/setup/heartbeat text, completed and failed phases, missing observability, source files, and optional source-lineage state with its summary in a hover title. Cleanup and abandon display “powering down” and mute completed-phase marks. Its action row maps supplied actions to descriptive `Affordance` components only; no lifecycle ID, gate kind or `GateResponder` is accepted or mounted by this diagnostics owner.
+- `DiagnosticsPanel.tsx` owns commit fact chips, phase and health text, optional summary/next-action text, missing observability, source files, and optional source-lineage state with its summary in a hover title. It renders no provider setup or heartbeat rows. Its action row maps supplied actions to descriptive `Affordance` components only; no lifecycle ID, gate kind or `GateResponder` is accepted or mounted by this diagnostics owner.
 - `useShouldAnimate.ts` gates effects on document/window availability, the document effects flag, and OS reduced-motion preference. It reacts to effects-attribute and media-query changes. `useEngineTimeline.ts` owns DrawSVG reveal/retraction, MotionPath packets, scan expansion, surge, attention breathing, terminal flash, and one-shot refused flashes. Its signature includes phase, running kinds, landing state/fact-state, failed/stale kinds, and memory mode; worktree group separately participates in effect dependencies. Completed draw stamps prevent repeated sweeps, are cleared on departure, and are set only after completion to avoid the documented StrictMode interruption.
 - `useElementVisible.ts` supplies an IntersectionObserver gate, initially visible and remaining a no-op where the observer is unavailable. The timeline pauses context-recorded tweens off-screen and resumes them without rebuilding merely for visibility. The backdrop pauses/plays on visibility; the header's repeating phase pulse additionally requires visibility. `EngineFxOverlay.tsx` now owns surge and attention only.
 - `styles.ts` re-exports the six semantic domains: layout, stage, ledger, flow, remote, and backdrop. The historical semantic-axis split remains an ownership rationale; old physical-line counts are not current size measurements. Fixtures, render tests, model/gate tests, and dev scenarios are specimens and source-level assertions, not execution receipts.
@@ -48,11 +48,11 @@ Landing retains three render-position tiers: the integration/source line, a midd
 
 ## Invariants And Boundaries
 
-Server semantics and client presentation remain distinct. The client may derive visual predicates from served states, but this does not authorize task-stage or transaction decisions, Git operations, clocks, or fabricated observations. The server still carries provider-related facts and produces provider seed/clone edges; their absence from the current rendered geometry is a surface retirement, not proof of removal from the serving pipeline.
+Server semantics and client presentation remain distinct. The client may derive visual predicates from served states, but this does not authorize task-stage or transaction decisions, Git operations, clocks, or fabricated observations. The current server process builders emit worktree-add, ledger-map and sync edges; provider seed/clone edges are removed from that producer. Retained fixture shapes, helper names and old comments do not restore provider observations.
 
-Refused polarity is derived from edge state, never a dedicated payload field: failed → red, stale → amber, only for cgc-seed, grepai-clone, integration, and integration-mem. The overlay must also obtain a shared path. Because current geometry omits provider seed/clone kinds, those retained helper arms do not produce seed flashes. Integration paths retain the transient flash and terminal STOP specimen behavior. No conduit stamps a refused-polarity attribute; the flash overlay carries its own derived polarity.
+Refused polarity is derived from edge state, never a dedicated payload field: failed → red and stale → amber, only for integration and integration-mem. Provider seed/clone kinds yield no polarity, and the overlay must also obtain a shared path. Integration paths retain the transient flash and terminal STOP specimen behavior. No conduit stamps a refused-polarity attribute; the flash overlay carries its own derived polarity.
 
-The inspected server edge builders emit worktree-add, cgc-seed, ledger-map, grepai-clone, and sync, not integration or integration-mem. The retained integration arms have a documented historical reason: integration belongs to the projection's commented kind vocabulary and the integration lane/conflict scenarios were authored as fixture coverage. Integration-mem is the companion mirror, absent from that comment vocabulary. This is inherited design intent, not a promise to add a producer. The projection forbids extra fields, but kind/state are strings with documented vocabularies rather than enum validation; absence from a comment alone does not prove a value is rejected.
+The inspected server edge builders emit worktree-add, ledger-map and sync, not provider seed/clone, integration or integration-mem edges. The retained integration arms have a documented historical reason: integration belongs to the projection's commented kind vocabulary and the integration lane/conflict scenarios were authored as fixture coverage. Integration-mem is the companion mirror, absent from that comment vocabulary. This is inherited design intent, not a promise to add a producer. The projection forbids extra fields, but kind/state are strings with documented vocabularies rather than enum validation; absence from a comment alone does not prove a value is rejected.
 
 Stable enclosure identity is `worktreeGroup`, rather than the changing process-node ID. This preserves selection/list identity across provisional-to-contract transitions. The process-map shell uses Motion layout when effects are enabled, but its current parent key is store generation; the overview must not imply that this map is keyed directly by enclosureKey.
 
@@ -62,7 +62,7 @@ The historical alarm policy limits flicker to three flashes per second. Current 
 
 The landing order remains code-first, memory-after. However, the timeline and canvas do not enforce identical freshness predicates: canvas flow helpers require observed facts, while disposeFrontier accepts broader non-planned origin-feat facts and tests PR/memory states without an observed-fact check. Keep the shared-progression intent separate from this implementation difference. Likewise, the two carryover lines may be simultaneously active; “one cyan flow” is not a literal current guarantee.
 
-Canvas recovery chips are descriptive labels, not operation buttons. The T7B specimen offers retry/abandon without disabled-memory choice, retaining the policy that memory cannot be disabled for an individual task. `resolveRecovery` itself does not filter such a choice from arbitrary served actions; this local observation does not establish whether upstream policy enforcement exists elsewhere.
+Canvas recovery chips are descriptive labels, not operation buttons. The former T7B specimen's retry/abandon pair and absence of a disabled-memory choice remain historical policy context, not assertions supplied by the current test body. Memory cannot be disabled for an individual task. `resolveRecovery` itself does not filter such a choice from arbitrary served actions; this local observation does not establish whether upstream policy enforcement exists elsewhere.
 
 The former diagnostics responder and operator-inbox decision story are retired here. `DiagnosticsPanel` takes only the process node and displays optional source-lineage information plus descriptive actions; it offers no gate-decision or inbox-posting control. Retained gate approval histories elsewhere do not restore a responder to this view. Native task stage/activity is read through the separate bound-task entry, not inferred from process phase, health or transaction progress.
 
@@ -72,7 +72,7 @@ The inherited design history spans the state-backed slice 5e, lifecycle motion 5
 
 The former eight-mode library comprised T3B memory/ledger block, T1B stale-base block, T7B provider-plan block, T9B seed fault, T9C reindex reroute, T12B live-memory sync, T14C integration conflict, and T18 abandon. T3B/T1B/T12B enclosure predicates, T14C integration specimens, and T18 teardown remain represented. T7B now reads as fleeting when its missing facts say the contract is unwritten. Provider dropout, seed flash/fault, reindex, gauges, clone arcs, structural petals/bezel palette, and official provider-engine wiring are historical visuals. Historical gold-bezel/petal and provider-slot-honesty policies should not be presented as current rendered obligations.
 
-The inherited CUR-C02/T7B title-body closure is supported here only by the present assertion source agreeing on fleeting, retry/abandon, no disabled-memory choice, and no retired provider markers/gauges. Its producer receipt was not inspected. This is not a new mounted capture, e2e run, or full-suite PASS. The integration test title still mentions a bent replay path, while its body checks data-strategy and current renderer source deliberately draws straight paths.
+The inherited CUR-C02/T7B title-body closure remains historical. The current pre-contract assertion checks fleeting recovery against `nextAction`, and the all-fixture census rejects retired provider fields and visuals. The former T7B retry/abandon and no-disabled-memory assertion is not present in that current body. Its producer receipt was not inspected. This is not a new mounted capture, e2e run, or full-suite PASS. The integration test title still mentions a bent replay path, while its body checks data-strategy and current renderer source deliberately draws straight paths.
 
 The 260712-TRH-L7 stale-landing intent survives in explicit stale chip/PR text, hover age, and observed-only directional-flow predicates. The 260727-CHATS-IM-L2 sibling-SVG ownership survives with surge/attention rather than reindex. The historical L5I keep-alive rationale has changed: current Cockpit conditionally mounts EngineRoom only for the engine view, and comments describe retained pages without a dashboard entry. Visibility gates and memoized slice subscriptions remain, but this source does not support describing Engine Room as a currently hidden keep-alive cockpit layer or claiming near-zero measured hidden-view CPU.
 
@@ -90,13 +90,20 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/panels/engine-room/`              |
 
+## Historical producer-reference wording
+
+These superseded reference captions remain history; the current evidence region below records the surviving producer.
+
+> - Retained reference account (no fresh execution or acceptance inferred): "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute.
+
+> - Historical pre-retirement producer vocabulary and seed-state precedence; the current builder account above supersedes this reference description.
+
 ## Evidence
 - Retained reference account (no fresh execution or acceptance inferred): The server composer of the process nodes the client renders. [1]
 - Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract. [2]
 - Retained reference account (no fresh execution or acceptance inferred): The honest-motion gate the GSAP/Motion read. [3]
 - Retained reference account (no fresh execution or acceptance inferred): The cockpit shell that hides the rails for the Engine Room view (§4.1). [4]
 - Retained reference account (no fresh execution or acceptance inferred): `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. [5]
-- Retained reference account (no fresh execution or acceptance inferred): "def _seed_edge_state(" and "_DECISIVE_SETUP_EDGE_STATES: dict[str" — the only producers of a seed lane's state, including the "metrics=_metrics(lifecycles" reroute. [6]
 - Retained reference account (no fresh execution or acceptance inferred): The client mirror of the edge, which no longer declares a polarity field. [7]
 - Retained reference account (no fresh execution or acceptance inferred): Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8] [9] [10] [11] [12]
 
@@ -105,12 +112,13 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Process/ledger slice subscriptions, memoized process-only mapping, selected enclosure and repository ledger retain their own source boundaries. [14]
 
 - Memory/materialisation/fleeting and movement predicates [15]
-- Terminal, recovery, and landing predicates [16]
+
+- Terminal, recovery and landing predicates retain their source conditions; recovery deduplicates next action and enabled action names. [16]
+
 - Provider geometry absent; integration paths straight; polarity state-derived [17]
 - Replay metadata without bent geometry; observed-only landing progression [18]
 - Bounded ledger window and best-effort metadata [19]
 - Preview, matching row, missing metadata, downward popover [20]
-- Actual producer vocabulary and seed-state precedence [21]
 - Extra fields forbidden, kind/state string fields, optional lineage [22]
 - Timeline freshness differs from canvas; abandon/conflict dispositions [23]
 - Source-lineage state remains a display fact, while the diagnostics action row renders only Affordance and no former gate responder. [24]
@@ -118,8 +126,19 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Motion gate, scoped context pause and cleanup [26]
 - Current sibling overlay contains surge and attention [27]
 - EngineRoom conditionally mounted, contrary to inherited keep-alive account [28]
-- T7B assertion source agrees with retirement and recovery policy [29]
+
+- The current pre-contract fleeting assertion checks `nextAction`, and the replacement census rejects retired provider/setup fields and rendered traces; the former T7B retry/abandon and no-disabled-memory assertion remains historical. [29]
+
 
 - BranchTier mounts integration/source and worktree tiers plus a conditional middle landing tier, with branch labels from projected refs. [30]
 
 - Enclosure status joins the exact native entry worktree.enclosure and delegates to TaskStatusWord; no matching entry renders no task word, not an invented lifecycle status. [31]
+
+- The enclosure process edge builder emits worktree-add, ledger-map and sync, without provider seed/clone edges. [32]
+- Pre-contract start nodes also create only worktree-add and ledger-map edges. [33]
+- Current refused polarity accepts only integration and integration-mem, with failed/stale state deciding red/amber. [34]
+- Diagnostics render current process facts without provider setup/heartbeat rows. [35]
+
+- The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer. [6]
+
+- The current process producer emits worktree-add, ledger-map and sync edges; provider seed/clone lanes and their state-precedence reducer are absent. [21]

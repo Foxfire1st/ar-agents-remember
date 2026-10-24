@@ -3,11 +3,11 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scene/wire recipes.",
+      "note": "The static scene, node, canopy, lane-flag and warp-coupler recipes.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:bc8f5d68c1d5a6961435fe4e2ae24b5f6f5c9becdd426e3efcc8cd6b2a30df78",
             "locator": {
               "kind": "symbol",
@@ -18,33 +18,22 @@
         },
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:41d3723c7adff40f3942041f556aeb140e9fb2b01375cedb4cccdcf99d323515",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:bfa051c06960387994b20a585a56f610a8cc03318edd5f1ea6eac285a7051132",
             "locator": {
               "kind": "symbol",
-              "name": "officialWire"
+              "name": "laneFlag"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:072b528dc7b446ad42b49af20489c724614f68e613f6a4cc1ef58cdf60876c7f",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:9b05f3d9d5b144a12e47bbd81bbcf94a8bf78ec51a6f245c89bb402609119493",
             "locator": {
               "kind": "symbol",
-              "name": "worktreeWire"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:f7e2ae04a80b2f3f5489cae89d7cb9f7804463b1f2c5ede9c005c48cb584141e",
-            "locator": {
-              "kind": "symbol",
-              "name": "canopyStroke"
+              "name": "warpCouplerBar"
             }
           },
           "kind": "code"
@@ -52,33 +41,11 @@
       ]
     },
     "2": {
-      "note": "The engine gauge/pruned-node recipes.",
+      "note": "The pruned-node recipe retains the dormant/desaturated stale-base register.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:d0c302038252af02efe211e0db105f3e25a16473805114b8ed45cf771bee51de",
-            "locator": {
-              "kind": "symbol",
-              "name": "engineGaugeOut"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:58417d64fb9f47bd13ec0c76d57389e8f5b5d1d9eded8d91196e626d39c1ad61",
-            "locator": {
-              "kind": "symbol",
-              "name": "engineCharge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:3ca2cef9006a54cae295646d84d7df587366593a13c9b703147d1d789a8be257",
             "locator": {
               "kind": "symbol",

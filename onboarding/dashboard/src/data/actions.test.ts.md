@@ -28,7 +28,7 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
-- The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the exported target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact provider-down and actionable-drift bodies and a non-202 error. [1]
+- The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact blocked-start and actionable-drift bodies and a non-202 error. [1]
 
 - The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body. [2]
 

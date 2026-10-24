@@ -1,0 +1,97 @@
+{
+  "path": "docs/install/pi.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pi core has no built-in MCP client; the starter package uses `pi-mcp-adapter`.\n\nAnchor: `docs/install/pi.md:3-5`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Copy `.pi/`, render with `--repo`, start or reload Pi once; manual replacement is the stated alternative.\n\nAnchor: `docs/install/pi.md:16-27`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Package contents: settings, startup extension, authority settings, project MCP override, skills.\n\nAnchor: `docs/install/pi.md:29-40`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/pi.md:42-48`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Skill roots, recursive discovery with the parent-folder naming rule, and the no-install first-run rule.\n\nAnchor: `docs/install/pi.md:63-80`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `.pi/mcp.json` entry, `/mcp` and `/mcp setup`.\n\nAnchor: `docs/install/pi.md:82-110`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b39b053155c6f584a58f9076a398dcf07c52499e",
+            "content": "sha256:dcf259f7e2925e1e7b519ae5e38ec6742fc4d46af9840c20ef324bf0d9447190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

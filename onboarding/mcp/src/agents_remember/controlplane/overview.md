@@ -10,11 +10,17 @@ This route retains generic durable-store mechanics, gate record/policy/enforceme
 
 ## Construction And Ownership
 
-durable_store.py owns validated JSONL mutation and held-lock replacement; records.py/store.py and gate_policy.py/enforcement.py retain existing approval values and their pure policy/enforcement. No product surface authors new gates; GateStore.claim_approval consumes an existing approval under its log lock and returns the gateless policy without creating a lifecycle lock directory when the log is absent. Stored approval history is not a native host lifecycle or a second task state. attention_dismissals.py owns the workspace acknowledgement set for actionable-drift, provider-down, failed-setup and blocked-start occurrences and for the two terminal notice kinds, and it refuses the three live native causes, whose occurrences end only with their cause. attention_notices.py is the separate disposable store for those terminal notices: it holds confirmed occurrences, interrupted intents and the baseline cut, bounded by count and bytes, and it is written whole under its own ownership lock. Its observations reclaim an occurrence only after a complete source read proves it gone, healthy or changed, protecting acknowledgements newer than that read. Incomplete/unread kinds are retained. closeout_queue_records.py and closeout_queue_store.py hold the disposable projection, not canonical task truth. The route does not restore removed public gate tools, dashboard decisions, terminal catalogs, expectation projection rows or notifier scheduling. Spent approval kinds survive automatic TTL reclamation; legacy gate logs require the explicit removed-stores command for physical removal. Lock-only lifecycle residue is a distinct class requiring a complete native terminal-contract census. The former dormant lifecycle event-directory cleanup is not a current retention owner.
+durable_store.py owns validated JSONL mutation and held-lock replacement; records.py/store.py and gate_policy.py/enforcement.py retain existing approval values and their pure policy/enforcement. No product surface authors new gates; GateStore.claim_approval consumes an existing approval under its log lock and returns the gateless policy without creating a lifecycle lock directory when the log is absent. Stored approval history is not a native host lifecycle or a second task state. attention_dismissals.py owns the workspace acknowledgement set for actionable-drift and blocked-start occurrences and for the two terminal notice kinds, and it refuses the three live native causes, whose occurrences end only with their cause. attention_notices.py is the separate disposable store for those terminal notices: it holds confirmed occurrences, interrupted intents and the baseline cut, bounded by count and bytes, and it is written whole under its own ownership lock. Its observations reclaim an occurrence only after a complete source read proves it gone, healthy or changed, protecting acknowledgements newer than that read. Incomplete/unread kinds are retained. closeout_queue_records.py and closeout_queue_store.py hold the disposable projection, not canonical task truth. The route does not restore removed public gate tools, dashboard decisions, terminal catalogs, expectation projection rows or notifier scheduling. Spent approval kinds survive automatic TTL reclamation; legacy gate logs require the explicit removed-stores command for physical removal. Lock-only lifecycle residue is a distinct class requiring a complete native terminal-contract census. The former dormant lifecycle event-directory cleanup is not a current retention owner.
 
 ## Verification Boundary
 
 Static source/intent inspection only. The removal inventory and Git history, not archived cards or historical references to removed sources, hold the deletion history. No guard is changed and no runtime, MEMORY grade or acceptance is inferred.
+
+## Historical acknowledgement inventory
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> attention_dismissals.py owns the workspace acknowledgement set for actionable-drift, provider-down, failed-setup and blocked-start occurrences.
 
 ## Evidence
 - Retained gate logs have strict authority reads and a separate tolerant projection reader; their namespace is not a current lifecycle event stream. [1]
@@ -52,3 +58,5 @@ Static source/intent inspection only. The removal inventory and Git history, not
 - Approval spending folds/evaluates/applies under one log lock  Anchor: claim_approval [19]
 
 - Approval claiming keeps fold/evaluate/applied append under one log lock; no existing log yields gateless policy before opening a lock. [42]
+
+- Workspace acknowledgements admit only actionable-drift and blocked-start; reconciliation also removes rows dropped by current admission, including retired provider kinds. [43]

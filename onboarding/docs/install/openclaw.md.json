@@ -1,0 +1,112 @@
+{
+  "path": "docs/install/openclaw.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.openclaw/` to the shared workspace root, render with `--repo`, merge the registry template, restart the gateway or start OpenClaw.\n\nAnchor: `docs/install/openclaw.md:16-30`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package contents and the copy-into-existing-workspace alternative.\n\nAnchor: `docs/install/openclaw.md:32-46`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/openclaw.md:47-52`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Workspace `AGENTS.md` is the first-action authority; the file-based hook surface is scoped to gateway automation.\n\nAnchor: `docs/install/openclaw.md:54-80`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`mcp.servers` registration plus status/doctor/probe commands.\n\nAnchor: `docs/install/openclaw.md:82-114`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Workspace skill precedence, flat package layout, and skill list/check commands.\n\nAnchor: `docs/install/openclaw.md:116-137`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The long-running-turns section configures model-provider timeouts and a gateway restart.\n\nAnchor: `docs/install/openclaw.md:139-163`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1076e569cf3b3435ac32fb65ba2fa486be2b734b",
+            "content": "sha256:0b25be5c65134c632789d5c9a100284e98d7a7de72b9aa1c5015642d84c309e6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

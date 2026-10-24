@@ -20,7 +20,7 @@
       ]
     },
     "2": {
-      "note": "Gate2 calls context_packet for the configured MCP repository; provider authority comes from MCP settings and provider operations, never a packet provider argument.",
+      "note": "Gate 2 requests context_packet for roots/actions with no provider argument. The source template assigns configured provider state to MCP settings/provider operations, never packet provider blocks.\n\nAnchor: `Provider authority comes from the MCP settings file`",
       "targets": [
         {
           "anchor": {

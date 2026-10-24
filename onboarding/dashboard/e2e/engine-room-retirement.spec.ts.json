@@ -1,0 +1,97 @@
+{
+  "path": "dashboard/e2e/engine-room-retirement.spec.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header states the engine view has no entry and no URL, that no spec can mount it, and that the spec censuses reachable entries instead.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:1-10`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The assertion helpers: no `/engine/i` button or link, four engine/provider test ids at zero, four provider text tokens absent.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:12-30`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cockpit-root and dev-harness-index cases.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:32-44`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three timelines, with `memory-block` as the degraded beat and the note that the provider arcs went with the providers.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:46-53`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The timeline loop presses the exact play control and settles on the end caption before asserting absence.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:55-71`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The calm resting state and the two dev pages.\n\nAnchor: `dashboard/e2e/engine-room-retirement.spec.ts:73-89`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a022cb5c96a8ea475b13dfad719163d164f6fb5",
+            "content": "sha256:f9ec69bbb4bf87f9f060a5e0e0e57c27097e9e385431ede6551e36f1137f2bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

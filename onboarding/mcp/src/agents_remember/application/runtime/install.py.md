@@ -32,7 +32,10 @@ restate the flag list, which is what used to make the two definitions drift.
   belong in `agents_remember.install.runtime`. This module is a re-export plus the host-step
   composition, and the host part and its `ok` conjunction are owned here.
 - Do not add path fields to `RuntimeInstallRequest`; keep it to typed install
-  booleans (`no_cache` forces a from-scratch provider image rebuild downstream).
+  booleans. The retained `install_provider_deps` and `no_cache` fields are still
+  accepted and forwarded, but provider dependency installation has been removed;
+  `no_cache` does not request a provider-image rebuild. Runtime installation still
+  attempts the required leftover-watcher stop and reports unused provider keys.
 - Default `dry_run` is false — the tool applies by default (act-by-default
   contract). Pass `dry_run=true` to inspect the planned reconcile before
   mutation; the packaged install skills tell the agent to preview first.
@@ -40,6 +43,8 @@ restate the flag list, which is what used to make the two definitions drift.
 ## Evidence
 
 ### Repo-Internal References
+
+- The accepted install_provider_deps and no_cache fields remain forwarded, while provider dependency installation is removed. Runtime installation still attempts the required leftover-watcher stop and reports enabled provider keys as unused; no_cache establishes no provider-image rebuild. [5]
 
 - MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`. [1]
 - The tool declaration exposes `runtime_install` as a public tool. [2]

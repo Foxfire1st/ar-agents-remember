@@ -18,9 +18,9 @@ Evidence rows are proof records rather than activity logs. Each finding cites ev
 
 ### Conventions
 
-The supplied examples use `F-01`/`F-02` finding labels and `E-01`/`E-02`/`E-03` evidence labels. The ledger columns are ID, Kind, Source / Query, Claim Proven and Limits. Full-shape proof inventory includes onboarding reads, semantic and code-graph queries, inspected source, external references and executable validations; compact inventory retains the first four categories.
+The supplied examples use `F-01`/`F-02` finding labels and `E-01`/`E-02`/`E-03` evidence labels. The ledger columns are ID, Kind, Source / Query, Claim Proven and Limits. Full-shape proof inventory includes onboarding reads, route-index and onboarding searches, native code searches for callers/callees/dependencies, inspected source, external references and executable validations; compact inventory retains the first four categories.
 
-Evidence kinds are Semantics, Relationship, Intent, External, Executable, Developer and Inference. Intent pairs onboarding with bounded source confirmation. Developer clarification is checked against source before it becomes durable current-state knowledge; inference cites its input evidence and remaining uncertainty. The template retains GrepAI, CodeGraphContext and a cgc example in its vocabulary. These are literal report examples, not evidence of provider availability or permission to call a provider.
+Evidence kinds are Semantics, Relationship, Intent, External, Executable, Developer and Inference. Semantics uses the route index plus a capped native search over onboarding text; Relationship uses native search for callers, callees, dependencies, impact or neighboring structure. Intent pairs onboarding with bounded source confirmation. Developer clarification is checked against source before it becomes durable current-state knowledge; inference cites its input evidence and remaining uncertainty. The ledger examples use route-index/onboarding searches and native callers/dependency searches.
 
 The full decision block asks for a research-only exit, whether to spawn a build, the suggested artifact shape (minimal `w-02` task versus master plus series) and plan-gate status. Preserve that artifact-shape distinction rather than reintroducing the older build-mode axis.
 
@@ -40,7 +40,9 @@ This is a repository-local Markdown report contract. The inherited card required
 - Claims cite evidence, inference is distinguished and limits remain visible. [2]
 - The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields. [3]
 - Compact research retains answer, evidence, proof inventory, gaps and decision. [4]
-- Evidence taxonomy retains provider vocabulary while requiring bounded intent, developer confirmation and inference uncertainty. [5]
+
+- The evidence taxonomy defines Semantics as route-index plus capped onboarding-text search and Relationship as native structural search, while requiring bounded Intent, source-verified developer clarification and explicit inference uncertainty. [5]
+
 - Ledger guidance asks for inspectable source detail and guards against overclaiming. [6]
 - Current capsule composition is role plus operation, not a shared lifecycle or template-injection claim. [7]
 - Turn completion, review, curation, semantic acceptance and publication have separate owning evidence. [8]

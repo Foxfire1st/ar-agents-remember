@@ -1,0 +1,97 @@
+{
+  "path": "docs/install/hermes.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.hermes/`, render with `--repo`, merge `config.yaml` into the user config, start or reload once.\n\nAnchor: `docs/install/hermes.md:12-32`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Package contents: `HERMES.md`, `config.yaml` merge template, authority settings, skills exposed through `skills.external_dirs`.\n\nAnchor: `docs/install/hermes.md:34-40`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/hermes.md:42-49`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`HERMES.md` is loaded before `AGENTS.md`; root `AGENTS.md` is not overwritten.\n\nAnchor: `docs/install/hermes.md:51-61`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "MCP lives under `mcp_servers` in the user config with the printed `uvx` entry and `/reload-mcp`.\n\nAnchor: `docs/install/hermes.md:63-80`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Skill layout, `harnessSkillRoot` / `skills.external_dirs`, and the no-install first-run rule are stated.\n\nAnchor: `docs/install/hermes.md:82-107`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b94c0236c4362826696a9c5e08e4b7135a842bd1",
+            "content": "sha256:b854d1f669002d46418561176b6e668eaee9d5847ed24518249352508e0c6d22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

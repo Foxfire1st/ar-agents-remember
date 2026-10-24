@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A router that still prefers a retired substrate sends an agent to a query that cannot run, and the agent then reports search results it never obtained. One file carries the obligation, so the guard is the error it prevents, not several locations."
+  },
+  "applicability": "The canonical retrieval router skill, as the source of routing advice for agents.",
+  "conditions": [
+    "The skill is read as current instruction rather than as a historical quote."
+  ],
+  "exclusions": [
+    "The routed method catalogs, which this leaf does not recreate.",
+    "Native search, Intent reads and named-file reads, which the router keeps."
+  ],
+  "id": "INV-XGH3G2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Corpus and instruction tests green; the two routed catalogs no longer exist in the canonical source and are not recreated."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-11",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The canonical retrieval router no longer prefers or routes to the retired providers: it keeps the discovery questions and the native-search, Intent and named-file procedure, and neither routed method catalog survives as a prescription in the canonical source.",
+  "status": "proposed",
+  "supersedes": []
+}

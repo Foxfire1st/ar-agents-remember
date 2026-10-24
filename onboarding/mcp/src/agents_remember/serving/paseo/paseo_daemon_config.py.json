@@ -52,6 +52,23 @@
       },
       "rationale": "The daemon read is declared here as a port serving may call, and a failure names the harness whose map went unread — no cli import is made from this layer.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "802882312b04f50e71322bf7465e4e97e93c605f",
+        "content": "sha256:bef49c5911b65d945691fe32af9a2c3050af7f1ed1bb94b60de2268b870dee7d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X8S863",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The daemon configuration module holds the host-provider entries written into the daemon file; the write runs settings -> provision -> write_provider_entries, and L184's DaemonConfigRead port beside it reads the running configuration for host extra arguments rather than forwarding settings.",
+      "role": "support"
     }
   ],
   "references": {

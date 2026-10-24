@@ -1,0 +1,97 @@
+{
+  "path": "docs/install/vscode-copilot.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Copy `.vscode/` and the contents of `.github-vscode/` into `.github/`, render, then open or restart VS Code once.\n\nAnchor: `docs/install/vscode-copilot.md:14-25`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `.github-vscode/` name avoids the source checkout's own workflows while the install target is `.github/`.\n\nAnchor: `docs/install/vscode-copilot.md:27-30`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Package contents: instruction template, hook templates, skill templates, `.vscode` MCP files.\n\nAnchor: `docs/install/vscode-copilot.md:32-45`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`c-13-install-and-onboard` runs or verifies `runtime_install()` and covers memory and onboarding; nothing provider-side starts.\n\nAnchor: `docs/install/vscode-copilot.md:47-52`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Skill roots, `chat.agentSkillsLocations`, the instruction file and `SessionStart` hook discovery.\n\nAnchor: `docs/install/vscode-copilot.md:54-106`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Workspace MCP config path and the `uvx` registration.\n\nAnchor: `docs/install/vscode-copilot.md:108-128`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82f5e112d479c0f20aa132751bddee29557aa5c7",
+            "content": "sha256:10a99a90f0773d172138431ad9a5fa9aaa21c152059284e769b8ba161505dacb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

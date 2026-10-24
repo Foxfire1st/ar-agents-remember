@@ -11,7 +11,7 @@ The tool log preserves the delivered slim answer, not an automatic V2 dump. `inc
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
-- Current request removes provider inclusion/detail knobs and always passes include_providers=False.
+- Provider inclusion/detail knobs are gone: `build_context_packet` calls `provider_summary_packet(config)` with no inclusion parameter, so the provider block is the retired skipped summary.
 - With `include_drift=false` the drift block is `not-checked`. When drift is requested for an existing unconverted memory directory, `_drift_packet` returns `status: "error"` and the shared `legacy_format_refusal` message for `context_packet`, without measuring drift. This is unconditional: a converted branch elsewhere is not an admission prerequisite. Convert first through the procedure named by the refusal, then repeat; a missing root still reaches the existing summary error.
 
 ### Superseded inventory
@@ -20,14 +20,16 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/application/context_packet.py:114 (include_providers=False)`.
+- Source comparison: `mcp/src/agents_remember/application/context_packet.py:113-115` (`provider_summary_packet(config)`).
 - Source comparison: `mcp/src/agents_remember/models/tools/public_roster.py:22 (PUBLIC_TOOLS =)`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [12]
+
 
 ## Historical original card — preserved, not the current operative account
 
@@ -133,10 +135,16 @@ l-01 trust checkpoint is the intended opt-in caller.
 ### Repo-Internal References
 
 - `ContextPacketV2` and nested summary models define the response shape. [1]
+
 - Provider summary projection keeps context compact and points details at diagnostics. [2]
-- Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` (L14-L49) returns `WorktreeSummary`, so there is no dict boundary here to validate. [3]
+
+
+- Worktree status projection supplies the read-only worktree summary — as the MODEL: `worktree_status_packet` returns `WorktreeSummary`, so there is no dict boundary here to validate. [3]
+
 - `DriftSummaryPacket` (L17-L20) — the `TypedDict` `_drift_packet` now returns — and `DriftStatus` (declared in `models/drift.py`). [4]
+
 - Public payload builder validates this application entry point output through the model registry. [5]
+
 - Branch freshness facts (upstream, fetch, ahead/behind) come from the freshness kernel. [6]
 - `ledgerMapsCodeHead` reuses the ledger loader and mapping lookup. [7]
 
@@ -146,11 +154,14 @@ The current source seams include `ContextPacketError`, `ContextPacketRequest`, `
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary. [8]
+
 
 - A leaf drift block compares against the leaf's converted base and agrees with the drift tool. [9]
 
 </details>
 
 - Slim orientation factors shared roots and optional task/actions/build/pair fields without rich policy blocks. [10]
+
 - Rich V2 assembly remains internal and optionally includes index facts. [11]

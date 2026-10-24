@@ -12,10 +12,12 @@ MIK-R81 rule 5 (F10): refresher death beside an established native watch.
 
 The suite checks common failure matrix keeps down since and default thirty second retry; refresher death beside live watch reconciles and raises; abnormal watch child death recovers with new root. Tests assert only their named facets; they do not confer MEMORY, installation, lifecycle or broad performance acceptance.
 
+The failure matrix must recover onto a surviving projection root that appears during the outage while preserving down-since and the default thirty-second retry. It uses the drift input; the retired provider-status and setup directories cannot supply that late-root witness.
+
 ## Boundaries
 
 Local implementation and executable evidence do not replace requirement authority or the owning transaction. Retained source semantics and explicit unavailable/failure states remain binding.
 
 ## Evidence
 
-- MIK-R81 rule 5 (F10): refresher death beside an established native watch. [1]
+- The failure matrix asserts recovery onto a surviving late drift root, retained down-since and the default thirty-second retry in six fault arms. [1]

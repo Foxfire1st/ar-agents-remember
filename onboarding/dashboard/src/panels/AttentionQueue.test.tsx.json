@@ -3,14 +3,14 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
-        "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+        "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
+        "content": "sha256:345a4b76067c5836a3329f9b4cdbe27edbbce45e7ed0984d8f2d424b2a8c6da7",
         "locator": {
           "kind": "symbol",
-          "name": "the four remaining attention kinds > Clear all sends every listed item, including provider, setup and start failures"
+          "name": "the attention kinds the server still publishes > Clear all sends every listed item"
         }
       },
-      "facet": "The current plain-title case seeds all four supported kinds and asserts one itemId/kind request per listed item after Clear all.",
+      "facet": "The current plain-title case seeds the two live kinds (actionable-drift, blocked-start) and, after Clear all, asserts exactly two itemId/kind requests; a separate case proves the retired provider pair is never rendered or dismissed.",
       "id": "PRF-657JSC",
       "invariant": "INV-DVQX4T",
       "origin": {
@@ -20,11 +20,11 @@
     },
     {
       "anchor": {
-        "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
-        "content": "sha256:d5d6b5b237043fc9e7a3b0f701061f581d9bcc9e050d24a991ebc03fd2f8d7f7",
+        "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
+        "content": "sha256:504ff487e30190cf257f67727370660a2c8e0217a37057178171e412c70e7549",
         "locator": {
           "kind": "symbol",
-          "name": "the four remaining attention kinds > restores an item and reports that its click did not hold when the write fails"
+          "name": "the attention kinds the server still publishes > restores an item and reports that its click did not hold when the write fails"
         }
       },
       "facet": "The mocked unsuccessful reply restores the optimistically hidden row with a failure alert, and a successful retry clears that alert.",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
-            "content": "sha256:6c603b1b19d01b6fe32fda4bbc3064c40c3693bd4a08764799016c73f01b3d26",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
             "locator": {
               "kind": "file"
             },
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8987ff18dae5fabe696d0b2341498f11897b102",
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
             "content": "sha256:2f86385c2a6b0479a5f16362c7a03aa7dc50b9676692719235518453a47d7a0f",
             "locator": {
-              "end": 166,
+              "end": 127,
               "kind": "line_range",
-              "start": 166
+              "start": 127
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
           },
@@ -77,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89d4e63a66ed0f97022b672f5b76c65cbf72b990",
-            "content": "sha256:1d3e2b9790a3913a855f585df589827cddad449a489f3cd511dde2cb6176ba61",
+            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
+            "content": "sha256:15842fe7ae8704f8ad3ae4378498af0f9b75dd8511ecca4c9352746c180b3df5",
             "locator": {
               "kind": "file"
             }
@@ -88,7 +88,7 @@
       ]
     },
     "4": {
-      "note": "The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, non-dismissible suppression exclusion, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance.",
+      "note": "The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice; a separate case seeds a payload from an older server that still carries both retired kinds beside one live item and asserts the bell count and rendered list carry only the live items, with no dismissal request naming a retired kind. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, suppression of a served non-dismissible action, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance.",
       "targets": [
         {
           "anchor": {
@@ -128,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
+            "blob": "d5bd55087c2355aada95f1fe61fa9337768143e6",
             "content": "sha256:dc53b82380678d1f44a42c652a183c88b2442d88b00a8c84bc0d212c32d08a37",
             "locator": {
-              "end": 360,
+              "end": 435,
               "kind": "line_range",
-              "start": 322
+              "start": 397
             }
           },
           "kind": "test"
@@ -141,11 +141,11 @@
       ]
     },
     "5": {
-      "note": "Clear all optimistically removes every listed provider-down, actionable-drift, failed-setup and blocked-start item, and sends each exact itemId/kind pair. The mixed-result case restores only the failed provider-down row and reports that dismissal did not hold; worktree-lane setup/start failures are included, not skipped.",
+      "note": "Clear all optimistically removes both listed live items and sends exactly two itemId/kind requests. The mixed-result case restores only the failed `blocked-start` row and reports that dismissal did not hold.\n\nAnchor: none: the assertions name no symbol",
       "targets": [
         {
           "anchor": {
-            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "blob": "bdf392d65a85312eab214561dc76bffebbc0ab15",
             "content": "sha256:eb11a5af06a0021f0a6eca7d41574a75aef4fc42d53a7f9ca91b1d469e2cfbc4",
             "locator": {
               "end": 45,
@@ -170,7 +170,7 @@
         {
           "anchor": {
             "blob": "9bba1cf5ebc04e5228ae7ae8c48f49183f4d05b8",
-            "content": "sha256:3b9928e90564a626e19f9527bcca7e40caee31c48d1d5ebbcb23c9a8e3917d4d",
+            "content": "sha256:caefdde4a880b7f0b5a622950a6a046e610d23e34a227e347371c7d654ef9e2c",
             "locator": {
               "end": 177,
               "kind": "line_range",

@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
             "content": "sha256:1ee0f375a32c28ed4f1b39edaba6294521dd82bfd9b903cc7d4c826719b53a0a",
             "locator": {
-              "end": 42,
+              "end": 40,
               "kind": "line_range",
-              "start": 15
+              "start": 13
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
           },
@@ -85,7 +85,7 @@
       ]
     },
     "13": {
-      "note": "Shared port, namespace, rendering, and JSON-state responsibilities remain in named helper modules.",
+      "note": "Shared port, process-namespace and JSON-state responsibilities remain in named helper modules; result rendering is no longer a module of its own.",
       "targets": [
         {
           "anchor": {
@@ -110,19 +110,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/process_status.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e49b9bd0f826edec83a6649258716809d3405a9",
-            "content": "sha256:bc8cef504d1ecb2b7e5ae246520ecfd308fb8a6ac7c22e2f8da9c71b50b3636a",
-            "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/providers/lifecycle/result_rendering.py"
           },
           "kind": "code"
         },
@@ -376,7 +363,7 @@
       ]
     },
     "9": {
-      "note": "Docker summaries expose container facts; current-state projection determines provider readiness.",
+      "note": "Docker summaries expose container facts; no shared projection aggregates provider readiness, and the retired provider summary reports configured-or-not with `state: skipped` and reads no current-state or readiness detail.",
       "targets": [
         {
           "anchor": {
@@ -393,40 +380,14 @@
         },
         {
           "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
-            "content": "sha256:3a6205d7ec168bab1ad5fc6bfdd1a5fe5e299c69b530fb92ceda2d764a5c8fea",
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:5dceca2e2e75866206b5c8e035c95cb17f145d2d3820a7e8ba3c2744e5e176d6",
             "locator": {
-              "end": 39,
+              "end": 35,
               "kind": "line_range",
-              "start": 19
+              "start": 23
             },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
-            "content": "sha256:7365df11871efa6774ec9ae3c5f0721253cef0eac3ef96615b280be4b1956e31",
-            "locator": {
-              "end": 171,
-              "kind": "line_range",
-              "start": 92
-            },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
-            "content": "sha256:8febfbd8de120b48bf6ff66e1532de370a42c5fd71bcc00de1ad20144575ed97",
-            "locator": {
-              "end": 302,
-              "kind": "line_range",
-              "start": 182
-            },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
+            "path": "mcp/src/agents_remember/providers/status.py"
           },
           "kind": "code"
         }

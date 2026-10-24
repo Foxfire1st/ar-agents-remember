@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:b18ba66e4ecc1620f05579c2557d837eaa4cd1321b1d95bc76f5f0350c9aca66",
             "locator": {
-              "end": 209,
+              "end": 204,
               "kind": "line_range",
-              "start": 209
+              "start": 204
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -33,12 +33,12 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:657ed5b4ea4d698c3a5ae1f0f660c49f68daca417d0c7ecbbd108690b025bbf3",
             "locator": {
-              "end": 247,
+              "end": 214,
               "kind": "line_range",
-              "start": 247
+              "start": 214
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -46,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:3b8a57447d3cd319123cc504187d09d3953f9f307d73a104e4e864555cc99288",
             "locator": {
-              "end": 252,
+              "end": 219,
               "kind": "line_range",
-              "start": 248
+              "start": 215
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -59,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
             "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
             "locator": {
-              "end": 264,
+              "end": 231,
               "kind": "line_range",
-              "start": 253
+              "start": 220
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -73,17 +73,29 @@
       ]
     },
     "2": {
-      "note": "Provider setup performs isolated provider seed and runtime preparation.",
+      "note": "The retained worktree setup configuration reaches the existing provider helpers, but generated lifecycle settings are disabled/empty and both retired identities are never enabled; no ordinary CGC/GrepAI seed or runtime preparation is established.\n\nAnchor: `WorktreeProviderSetupConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:b64aa089108121e0b97ec8199f606cb2089f7ee7e3fe6e977ce521f1390a394d",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
               "kind": "symbol",
-              "name": "ProviderSetupRequest"
+              "name": "lifecycle_settings_from_config"
             },
-            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         },
@@ -98,18 +110,6 @@
             "path": "mcp/src/agents_remember/providers/provider_setup.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:223a5612b91ac48282958e37f921b9967abde3245254e9b79bcdcb4cb011be9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "write_isolated_provider_settings"
-            },
-            "path": "mcp/src/agents_remember/providers/provider_setup.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -118,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10893332b1e69cfd66783b8546ba95ff7cf10642",
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
             "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
             "locator": {
-              "end": 808,
+              "end": 849,
               "kind": "line_range",
-              "start": 757
+              "start": 798
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -148,12 +148,12 @@
         },
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
+            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
             "content": "sha256:e716b22e10ba0963ceb1a6133816bc238c956f11486fc189e1a1aed31552f78b",
             "locator": {
-              "end": 798,
+              "end": 839,
               "kind": "line_range",
-              "start": 747
+              "start": 788
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

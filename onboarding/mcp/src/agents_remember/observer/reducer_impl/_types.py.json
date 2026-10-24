@@ -1,14 +1,32 @@
 {
   "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f72c8701152e2f178534923ff06bc9669c13c305",
+        "content": "sha256:1050b55faeab2f5a67576e9639065a1233afcfedb29405635b3b4b4ef8dd201b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5KK1W5",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The reducer's node and snapshot types no longer declare a provider node, a provider boot record or setup summaries, so no reducer output can carry one.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.",
       "targets": [
         {
           "anchor": {
-            "blob": "f624b0088835de680e8e12a932b101c87591a812",
-            "content": "sha256:e20231740aabb8954e6142a0c398a321ab7d0ee768cfabb47a5302cb7040d05b",
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:d6c71de443a9302315db3156efb7533e65181eba5735022b09c5ad46f6315365",
             "locator": {
               "kind": "symbol",
               "name": "WorkspaceStructure"
@@ -18,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "22ebc14a52491cc205438d17efdcb79faabc6eb5",
-            "content": "sha256:6b20ff96da5f116ec65927fc35989c4ee53d8eaba1eddb36173715edd04995f8",
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:510bd84303a0dd322a3ff7995371bf9a55b1eca6b406817f069859785e7745d2",
             "locator": {
               "kind": "symbol",
               "name": "AnalyticalInputs"
@@ -34,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cae3fcca43ab0359a7184ffcd967c196ae190993",
-            "content": "sha256:676be47282d507442cd8092694e106f8e7846c413263785d7c7839e555520ad2",
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:510bd84303a0dd322a3ff7995371bf9a55b1eca6b406817f069859785e7745d2",
             "locator": {
               "kind": "symbol",
               "name": "AnalyticalInputs"

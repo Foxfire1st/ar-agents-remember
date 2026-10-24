@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/models/tools/tool_registry.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4cc2c7d2980a8a1aeb29ea7726c895c1d5872c19",
+        "content": "sha256:df7e5393cd6d1f5172b6148bea64ad60ef732dce2f2f0838883f6f46c295874d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9QC0D9",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The registry's live diagnostic-provider claims are gone while the tool contracts it still describes are unchanged.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "10": {
       "note": "The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names.",

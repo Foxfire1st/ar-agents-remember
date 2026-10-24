@@ -37,7 +37,7 @@ Every prime/live/watcherless projection wake records its actual reason, domains 
 
 ### Logic
 
-`Projector(config, cadence, replay, refreshers, ledger)` owns the published tuple, stable comparison, boot nonce, subscriber queues and one HostSupervisorSubscription. A watched live input state receives host reconciliation and the subscription’s armed predicate. Replay clock/feeder, provider/landing and change watcher retain their separate roles; there is no second task-status producer or publication path.
+`Projector(config, cadence, replay, refreshers, ledger)` owns the published tuple, stable comparison, boot nonce, subscriber queues and one HostSupervisorSubscription. A watched live input state receives host reconciliation and the subscription’s armed predicate. Replay clock/feeder, landing and change watcher retain their separate roles; there is no provider refresher, and no second task-status producer or publication path.
 
 - `prime()` computes the first projection (so the first client gets an immediate snapshot) and
   seeds the stable-form cache; it is resilient — a failure is logged and left for the tick loop
@@ -160,8 +160,10 @@ concepts, all with module-level defaults:
   serving) — the sim/replay seam. **They are one substitution**: sim wires a replay clock together
   with the feeder that writes the world that clock is about, and a replay clock without its feeder
   ticks over a world that never moves.
-- **`ProjectionRefreshers`** (`provider`, `landing`, `change_watcher`, `host_activity_reconcile`; `NO_PROJECTION_REFRESHERS`)
-  — the side-inputs a LIVE tick drives, plus the watcher that lets it wake early. Production composition supplies the native reconcile port with the existing live inputs, which are
+- **`ProjectionRefreshers`** (`landing`, `change_watcher`, `host_activity_reconcile`; `NO_PROJECTION_REFRESHERS`)
+  — the side-inputs a LIVE tick drives, plus the watcher that lets it wake early. There are exactly
+  three: no provider refresher survives, because no current projection reader consumes provider
+  status. Production composition supplies the native reconcile port with the existing live inputs, which are
   enabled together for live serving and disabled together for sim replay (the feeder only writes
   *inside* a tick, so a change-gated loop would never wake). One choice — "is this projector
   attached to a moving world?" — not independent status producers.

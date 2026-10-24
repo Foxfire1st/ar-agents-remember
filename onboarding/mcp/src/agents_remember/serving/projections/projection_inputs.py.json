@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+        "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+        "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-99Y5CH",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Projection inputs no longer carry provider attention state.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
         "content": "sha256:789ac37fb033896703cc84871be425a5a1daa3f8ce20458947d8c49fb956a9a6",
         "locator": {
           "kind": "symbol",
@@ -38,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+        "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
         "locator": {
           "kind": "file"
         }
@@ -55,8 +72,25 @@
     },
     {
       "anchor": {
-        "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-        "content": "sha256:485c84751e7883838c77de4180c2e136aafed232ecde6090afa858f062873405",
+        "blob": "39e76d5f318181ffa7a607dc94fb9c7caabbbfca",
+        "content": "sha256:7e2a4b0031089fe480fc6885c2f18e8c706d1feeb69a50ba09f000b8c69ffbf2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FHBCWZ",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Projection inputs collect no provider display state, so a removed panel has nothing to be fed from.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+        "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
         "locator": {
           "kind": "file"
         }
@@ -137,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
             "locator": {
               "kind": "symbol",
@@ -148,7 +182,7 @@
         },
         {
           "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
             "locator": {
               "kind": "symbol",
@@ -176,64 +210,14 @@
         },
         {
           "anchor": {
-            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:080616f28cf77422a2508335a3d7e0cce09a0ba3bc4a682e7069af75dd926be4",
             "locator": {
-              "end": 63,
+              "end": 61,
               "kind": "line_range",
-              "start": 63
+              "start": 61
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The three parameter objects are frozen; the task-change frame is replaced, and provider/engine admission sets travel with their change flags.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-            "content": "sha256:d349bda07bab0db108ad6222bf15b0ad4f82b7f28890253f6a9495223a3f275d",
-            "locator": {
-              "kind": "symbol",
-              "name": "RefreshPass"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-            "content": "sha256:3f93a2c5150c7a2af82c3b0eeea4d3656508e91ce278f20f119c1ab224c85f1f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ActiveGroups"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
-            "content": "sha256:5e38e797f15dd310ce2493ea5e332bc00ef6c0576091ff55c18af6d90b6def3c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProjectionReaders"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
-            "content": "sha256:9b0fa03e8f3270c9040dfc378a7a21431ec05b4e6885f88883dbdcd847ada9be",
-            "locator": {
-              "end": 419,
-              "kind": "line_range",
-              "start": 380
-            }
           },
           "kind": "code"
         }
@@ -244,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a8a378c2bc7d193b2fe826ffd1dfde1433a2087",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
             "locator": {
               "kind": "symbol",

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
             "locator": {
               "kind": "symbol",
@@ -72,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:8c9d4ce0c0ed0a0879f1a5ee0ea038662470e23436de1e416d11af48e3650200",
             "locator": {
               "kind": "symbol",
@@ -84,16 +84,26 @@
       ]
     },
     "4": {
-      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export type ConduitState =`",
+      "note": "ConduitState and conduitState retain the conduit vocabulary and normalize unknown values.",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:18f662700056b1315a89e66b7100c17bba2894f6e9447b3c5feef69c00694fac",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:42462cc41d617c96101b8927acfef5c5ad931679309bd07892b209376b1a96be",
             "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 12
+              "kind": "symbol",
+              "name": "ConduitState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:281c97ffe839783da21ba1cf64f67a1a8459c60abc261e1956f63b0a96c61068",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitState"
             }
           },
           "kind": "code"
@@ -101,16 +111,37 @@
       ]
     },
     "5": {
-      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export const NODE_H = 62;`",
+      "note": "Branch/coupler coordinates and intake/sync/integration geometry remain; conduitPathD returns a straight known lane or null.",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:133b2c5899d569d7ad431a974f37d9261ac4ca924e795fb2c47aa68e350f06c7",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:30c4aff267012828ad14c98781311a3a19c0bd648efa9bd84c76a0974b3fb920",
             "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 40
+              "kind": "symbol",
+              "name": "POS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:9402042e8294712388b3e805cec8240dc98c8bcb9c8a730a9af5d133902f9c72",
+            "locator": {
+              "kind": "symbol",
+              "name": "EDGE_GEOM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
+            "locator": {
+              "kind": "symbol",
+              "name": "conduitPathD"
             }
           },
           "kind": "code"
@@ -118,16 +149,15 @@
       ]
     },
     "6": {
-      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export function landingFlowState(refs: LandingRefNode[], kind: string): FlowState {`",
+      "note": "Landing flow state remains derived from the observed landing references.",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:89a799c2dbb0ee2d96fa24a8399b9140de994a3eaed1d5d1cd755724cbe8ad6e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:624b15c552f8f2d746a943ec233f384d716916c6945c35e2e3af528b30d6dd7d",
             "locator": {
-              "end": 263,
-              "kind": "line_range",
-              "start": 245
+              "kind": "symbol",
+              "name": "landingFlowState"
             }
           },
           "kind": "code"
@@ -135,18 +165,16 @@
       ]
     },
     "7": {
-      "note": "ENGINE now holds w/h only; provider positions and seed clone EDGE_GEOM entries are deleted. conduitPathD returns a strai — source ownership, not executed visual proof.\n\nAnchor: `export function RefusedConduit({ edge, polarity }: { edge: EngineProcessEdge; polarity: \"amber\"   \"red\" }) {`",
+      "note": "Refused polarity is derived only for failed or stale integration/integration-mem lanes.",
       "targets": [
         {
           "anchor": {
-            "blob": "335b9c69049161a6e78cfc89526cc9ecd0eacfbe",
-            "content": "sha256:191cceb854d4d65537076a4bdc26ce0529ad9b74c59f5fe730120767011c51e4",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
             "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 236
-            },
-            "path": "dashboard/src/panels/engine-room/badges.tsx"
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            }
           },
           "kind": "code"
         }

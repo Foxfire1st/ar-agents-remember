@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Attention bell/layer assertions cover provider-down, actionable-drift, failed-setup and blocked-start. Every served row posts itemId/kind; lifecycle/gate joins stay retired, and dismissibility is no longer a page gate — the action fixtures carry the v1 `dismissible: false` flag precisely so the suite proves the page ignores it.
+Attention bell/layer assertions cover the two operational kinds the server still publishes — `actionable-drift` and `blocked-start` — together with the live native causes (a permission wait, a stalled task) and a landed notice. A separate case seeds a payload from an older server that still carries both retired kinds (`provider-down`, `failed-setup`) beside one live item, and asserts that the bell count and the rendered list carry only the live items and that no dismissal request ever names a retired kind. Every served row posts itemId/kind; lifecycle/gate joins stay retired, and dismissibility is no longer a page gate — the action fixtures carry the v1 `dismissible: false` flag precisely so the suite proves the page ignores it.
 
 ## Code Commentary
 
@@ -23,14 +23,18 @@ Seeded render and mocked writes do not prove server persistence. Severity render
 ### Repo-Internal References
 
 
+
 - The panel under test (generic severity-keyed rendering). [1]
 
+
 - The reducer source of the `blocked-start` item (§9). [2]
+
 
 - The store `applySnapshot` path used by this fixture's projection seed. [3]
 
 
-- The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, suppression of a served non-dismissible action, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance. [4]
+
+- The seeded queue includes the two operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, suppression of a served non-dismissible action, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance. [4]
 
 
-- Clear all optimistically removes every listed provider-down, actionable-drift, failed-setup and blocked-start item, and sends each exact itemId/kind pair. The mixed-result case restores only the failed provider-down row and reports that dismissal did not hold; worktree-lane setup/start failures are included, not skipped. [5]
+- Clear all optimistically removes both listed live items and sends exactly two itemId/kind requests. The mixed-result case restores only the failed `blocked-start` row and reports that dismissal did not hold. [5]

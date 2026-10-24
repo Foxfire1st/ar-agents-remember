@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized in the two stop-path compose renderers and the process control that renders them, and the mistake it prevents is deleting a compose template the stop still needs — a deletion that would only surface at the moment a user asks the product to clean up an old install."
+  },
+  "applicability": "Provider runtime assets, generated declarations and the mirrors that copy them.",
+  "conditions": [
+    "The stop path's renderers are traced before an asset is called dead.",
+    "Source and package copies are compared through their owning generator."
+  ],
+  "exclusions": [
+    "A Docker or compose name alone establishing that an asset is unused.",
+    "Recreating a mirror a later leaf retires."
+  ],
+  "id": "INV-M8V5ZA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Retained stop-path assets are exercised by the degradation and stop tests; the prose that states which assets left and which stayed is asserted by test_l192_provider_safety_prose.py, repaired under pyright without changing an assertion. E7 remains a read-only scan with its scope stated, not extended repository checks."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-07",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Assets and generated declarations left with their last legitimate caller: provider runtime assets and mirrors are gone, while the compose templates and layout helpers the surviving stop paths render are kept and exercised.",
+  "status": "proposed",
+  "supersedes": []
+}

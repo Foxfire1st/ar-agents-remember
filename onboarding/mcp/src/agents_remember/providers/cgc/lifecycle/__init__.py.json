@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e8b470d74215b38afe84d85693a7f42351ea7e",
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
             "content": "sha256:50cd8afaf3f9b90d848022d70d7a0e4d9f687b42446786e29f76faedbe90fe30",
             "locator": {
               "end": 11,
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bef1510d5667467b29295b3a4debc89849723ff9",
+            "blob": "5ea158aba1e9e1543bd7108a50560723e0c9239b",
             "content": "sha256:24e4c2cc170cb75e5ecacc3b018a4c0a071b5bfce98f65c45f9e3d5b5511e51d",
             "locator": {
               "kind": "symbol",
@@ -100,40 +100,6 @@
               "name": "cgc_start"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The CGC refresh module in the exported surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
-            "content": "sha256:dde624991b47eee275f846529e6153c0315d85112a95b8f8cfc3e564432f693f",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_refresh"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The CGC query module in the exported surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3a70677d9651cd35ac2ce27a9583647d348e522",
-            "content": "sha256:0a3fa984f192b1b5e145be3a6af4d9ca2a315401f0049d39b89653780a8225ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "cgc_run"
-            },
-            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/query.py"
           },
           "kind": "code"
         }

@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/cli/providers_remove.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "32fe9198f3fdff09fbd7cdc31a4cc816397df286",
+        "content": "sha256:51649aa30a6810a9378e2bbf530473cec380a9be66887256d473d6703782570c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-H8JRKG",
+      "invariant": "INV-BPW763",
+      "origin": {
+        "handoffEntry": "L192-W-R199-04",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Consent-based removal, size reporting and the busy-process/containment refusals keep their shape; the stop it performs now reads the authority settings.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-253",

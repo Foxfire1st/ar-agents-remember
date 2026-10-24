@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+        "blob": "8dc9b1852c479fc96771ecfcf0d392d17b35f9fe",
+        "content": "sha256:9a52fbcecc5fbed3adde11292a77329ce207499c27ea914ef595ef28eb4c29d6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K1KD32",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The store selectors no longer derive provider state for any panel.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
         "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
         "locator": {
           "kind": "symbol",
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c07983d592a02414e45f8b028e564aea10ddc48",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
             "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
             "locator": {
               "kind": "symbol",

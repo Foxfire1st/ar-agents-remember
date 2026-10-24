@@ -77,6 +77,45 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "grepai_backend_status still returns internal container-state, network/data/port and readiness diagnostics, and grepai_backend_start_context retains its settings/layout record. The advertised PUBLIC_TOOLS literal has no provider-status tool; these backend helpers do not restore an MCP provider-status surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:c1c6edc19a7ef28db2ed3c1197fa7c6ffeef2576b9baaccc0d59bc13f120f1be",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:c4b4feefbffd8da1b92d1ba5336c5b665447e7688537be4f613ae7c182d770c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_start_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "322a01b7560d7402dc0daa221e3f5d430a0ae448",
+            "content": "sha256:716d3d9cddf0d5aa21e0d64980a3dd6a6d188d2768bfc66b420f45e7ecc7392d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

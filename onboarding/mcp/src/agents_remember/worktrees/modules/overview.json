@@ -766,7 +766,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38c2ec8caef0b69e09d03b007b64c33cdf9c1eb1",
+            "blob": "e1713978da84d0a849ef0b6337646379c7f9bcaa",
             "content": "sha256:47533414cfe50c47fc0a96d168e3a8088223fbe06a569c227fd901cd5ef61bbd",
             "locator": {
               "kind": "symbol",
@@ -778,7 +778,7 @@
         },
         {
           "anchor": {
-            "blob": "38c2ec8caef0b69e09d03b007b64c33cdf9c1eb1",
+            "blob": "e1713978da84d0a849ef0b6337646379c7f9bcaa",
             "content": "sha256:802909471c6ffdc718a04a7cfc1dd1c5a5dcb314cd5e3806409ef665dee1526d",
             "locator": {
               "kind": "symbol",
@@ -2092,6 +2092,72 @@
               "name": "publish_abandoned_task"
             },
             "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "Start and retry share the retired-provider gate and return before the retained background setup branch.\n\nAnchor: `plan_providers_for_start`, `run_or_launch_provider_setup`, `_retry_provider_setup_result`, `provider_enabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:22b289c11b3f7dd36d5ab92dcdc82292ea02619249a80cca9e9c89c2a0e2c993",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_providers_for_start"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_or_launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "content": "sha256:707f8430d994b394092dfbc59090e97fd43a07f459d652099c251568f3c6aa22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_provider_setup_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45b63ee2b11932f9042ed5039888627c21aa9c0e",
+            "content": "sha256:7c1cb57aae6f6127e71d12c19499fc628f81cd83d4dc97dbc69164eafa3db07f",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_provider_preflight.py"
           },
           "kind": "code"
         }

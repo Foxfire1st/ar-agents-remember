@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Contract-derived provider/setup admission is stricter than active-enclosure membership; neither determines authored task stage.
+Active-enclosure membership derives from durable worktree facts and does not determine authored task stage. The former provider/setup admission helper is removed.
 
 Session-log phase demotion and series-retention clocks are removed.
 
@@ -14,7 +14,7 @@ Session-log phase demotion and series-retention clocks are removed.
 
 ### Logic
 
-`admitted_worktree_groups` requires worktreeGroup, cleanup outside completed/abandoned/reopened, and neither completed closeout nor integration. `active_enclosure_worktree_groups` only requires the group and non-inactive cleanup; close/integration work can remain visible without paging providers. Both return basenames from supplied EnclosureNode facts, with no I/O, session fold or retention clock.
+The retained `active_enclosure_worktree_groups` requires a nonempty worktreeGroup and cleanup outside completed/abandoned/reopened. It returns basenames from supplied EnclosureNode facts, with no I/O, session fold or retention clock. There is no current `admitted_worktree_groups` function or provider-paging policy in this module.
 
 ## Evidence
 
@@ -27,6 +27,6 @@ No relevant external documentation found after checking in-repo design docs for 
 
 ### Repo-Internal References
 
-- Provider admission returns nonempty worktreeGroup basenames from durable enclosures whose cleanup is not completed, abandoned or reopened and whose closeoutStatus and integrationStatus are both not completed. Admission has no lifecycle-log input or missing-log exception. [1]
-
-- Active-enclosure membership returns nonempty worktreeGroup basenames from enclosures whose cleanup is not completed, abandoned or reopened. Unlike provider admission it does not additionally filter completed closeout/integration; lifecycle logs are not inputs. [3]
+- The complete current module only imports Path and EnclosureNode, declares the inactive-cleanup set and computes active-enclosure membership from supplied facts. It performs no I/O, session fold, retention-clock computation or provider-paging action. [4]
+- The earlier current-callable provider-admission account is withdrawn: the complete current module has no admitted_worktree_groups function. Its only membership helper is active_enclosure_worktree_groups. [1]
+- Active-enclosure membership returns nonempty worktreeGroup basenames from enclosures whose cleanup is not completed, abandoned or reopened. It adds no closeout/integration filter and reads no lifecycle log. [3]

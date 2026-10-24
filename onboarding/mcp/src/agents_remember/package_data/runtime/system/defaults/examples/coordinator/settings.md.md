@@ -10,7 +10,11 @@ This file is the human-facing coordinator settings example for `ar-coordination/
 
 The example describes the coordinator as workspace-wide routing and workflow state. It lists global instructions, shared tools, workspace source registries, task/worktree roots, notes, selected memory repos, and operator conventions as coordinator-owned surfaces. The context provider section frames providers as local discovery accelerators, maps semantic discovery to GrepAI, relationship discovery to CodeGraphContext, and intent retrieval back to onboarding plus bounded source confirmation. Machine-readable provider authority belongs to the MCP settings file outside the coordinator root, not to this human-facing coordinator example.
 
-The provider install guidance says installs should be coordination-owned:
+### Current runtime and retained template guidance
+
+The current source example still contains the inherited provider install, start/status, watcher and indexing guidance summarized below. Those paragraphs describe the template's retained text; they do not establish current managed provider availability. The current shared lifecycle generator emits disabled, empty provider settings, runtime installation attempts the required leftover-watcher stop and reports enabled keys as unused, and the advertised MCP roster has no provider tool. Retained backend lifecycle and cleanup APIs, Docker ownership, path containment and data-preservation rules remain separate. No runtime execution or acceptance is inferred here.
+
+The retained provider install guidance says installs should be coordination-owned:
 pinned requirements under `providers/requirements/`, patches under
 `providers/patches/`, and Docker image locks beside those pins. `providers/_bin`
 and `providers/_venvs` are explicitly not managed provider contracts. Providers
@@ -55,6 +59,8 @@ No external documentation is needed.
 ## Evidence
 
 ### Repo-Internal References
+
+- The current source example still contains inherited provider install, start/status, watcher and indexing guidance. Actual generated lifecycle settings are disabled and empty; runtime installation instead attempts leftover-watcher stop and reports enabled keys as unused, and the advertised PUBLIC_TOOLS literal contains no provider tool. The template text is not evidence of present managed provider availability or executed behavior. [7]
 
 - The example states that coordinator settings are workspace-wide and do not replace per-repository memory settings. [1]
 - The routing section tells agents to invoke "c-08-ar-coordination-context-resolver" and treat repository-specific memory guidance as more specific. [2]

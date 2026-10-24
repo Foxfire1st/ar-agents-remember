@@ -18,7 +18,7 @@
 
 In the retained Docker stack-start branch, backend and embedder startup precede container-facing workspace preparation and watcher startup; errors are returned rather than a promised running stack. The ordinary enabled-provider setup gate separately excludes `grepai-memory`, even if an old settings block says enabled. Settings-backed native commands use `grepai_docker_run_command`, which executes bounded GrepAI CLI commands in the Compose watcher service; native `watch` is rejected in favor of lifecycle start/stop/refresh.
 
-Status combines backend, embedder, and watcher results. Managed container status includes normalized running state, health, and uptime for MCP current-state packets. The watcher reads Docker logs since its container start into `initialScan`: `Initial scan complete` means `complete`; otherwise `Indexing [`, `Initial scan`, or `Embedding` means `in-progress`; absent usable evidence means `unknown`. The current-state adapter maps those scan states to `indexed` and `indexing` when the watcher is up and a workspace is present, and retains `unknown` when neither marker state is established.
+Status combines backend, embedder, and watcher results. Managed container status includes normalized running state, health, and uptime in the lifecycle results. The watcher reads Docker logs since its container start into `initialScan`: `Initial scan complete` means `complete`; otherwise `Indexing [`, `Initial scan`, or `Embedding` means `in-progress`; absent usable evidence means `unknown`. Those markers are the watcher's own status facts: nothing maps them to an `indexed` or `indexing` provider state, because the current-state adapter went with the retired providers, and the summary the context packet reads reports `skipped` and reads no scan state at all.
 
 For new `auto` host-port allocations, backend and embedder startup prefer host `61432` for PostgreSQL and host `61434` for Ollama. Existing published ports are reused; if the preferred port is unavailable, the allocator selects an ephemeral port. Container service ports default to `5432` and `11434` and remain separate from host-port allocation.
 
@@ -55,7 +55,7 @@ Frozen dataclasses group the resolved values used by lifecycle operations:
 
 - The GrepAI lifecycle facade exposes configuration, Compose rendering, backend, embedder, runner, and actions. [2]
 - Settings-backed native commands execute bounded GrepAI CLI commands through the Compose watcher service. [3]
-- Watcher scan markers yield complete, in-progress, or unknown; the current-state adapter maps them with watcher and workspace guards. [4]
+- Watcher scan markers yield complete, in-progress, or unknown under the same watcher and workspace guards; no current-state adapter consumes them and the retired provider summary reports none of them. [4]
 - Container status reports normalized running state, health, and uptime. [5]
 - Dependency host ports reuse existing mappings and prefer 61432/61434 for new auto allocations; container ports are separate configurable defaults. [6]
 - Lifecycle configuration requires an explicit settings path and constructs the runtime layout. [7]

@@ -12,11 +12,11 @@ Observer snapshot projection and persisted current-state smoke test.
 
 ### Logic
 
-The fixture builds temporary runtime inputs and drives project-and-write end to end. It requires no lifecycles root and a persisted latest-state.json under the configured observer root. Pending enclosures count as admitted/active runtime groups, while reopened enclosures do not. Setup heartbeat age alone emits no analytics delta; changing setup state to failed does.
+The fixture builds temporary runtime inputs and drives project-and-write end to end. It requires no lifecycles root and a persisted latest-state.json under the configured observer root. Pending enclosures count as admitted/active runtime groups, while reopened enclosures do not. Changing only drift-snapshot age emits no analytics delta; changing the snapshot actionable count from zero to two emits one analytics event.
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+This card describes the current retained assertions; the earlier IAS `d3610903` source identity is historical. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 
@@ -31,7 +31,6 @@ The additional predicates are source assertions over real contract files and con
 ## Evidence
 
 - Pending but not reopened enclosures admit runtime worktree groups. [2]
-- Age-only setup heartbeat changes do not emit analytics; actual state changes do. [3]
 
 
 ### Docs References
@@ -51,3 +50,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- The age-only comparison uses drift snapshots; changing actionableCount emits an analytics event. [3]

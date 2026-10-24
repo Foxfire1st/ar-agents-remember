@@ -40,8 +40,9 @@ instead of re-pulling it over the network.
 
 - Worktree GrepAI remains an all-memory provider instance; it must not collapse to a single-repo-only provider unless that architecture changes.
 - Only the active project memory root is rewritten for worktree mode; unrelated memory roots must remain pointed at their configured roots.
-- Per-repo topology dots are allowed to reflect these addressable project targets,
-  but this file still creates one aggregate worktree GrepAI provider config.
+- This internal helper creates one aggregate worktree GrepAI provider config with
+  addressable project roots. Current topology uses active worktree inputs and
+  workspace/repository/worktree nodes; these settings do not supply GrepAI project dots.
 - Worktree-local GrepAI logs should use `logs/providers/...` so cleanup can
   remove provider logs without confusing them with runtime/data roots.
 - Indexed chunk contents are not rewritten here. File-content changes flow through the target memory files and watcher reconciliation.
@@ -49,8 +50,10 @@ instead of re-pulling it over the network.
 
 ## Evidence
 
+- Aggregate GrepAI settings and project roots remain internal data; the current topology is derived from active worktree enclosures and has no provider-target nodes. [4]
+
 ### Repo-Internal References
 
-- Provider setup combines isolated GrepAI and CGC settings before running workflow-local provider lifecycle operations. [1]
+- Provider setup composes the isolated GrepAI and CGC settings (write_isolated_provider_settings, provider_setup.py:591-629) and then dispatches its actions (_action_results, :686-691). The install, prepare and watcher actions return no work, because provider_enabled is permanently false for both retired providers (setup_common.py:81-95). [1]
 - GrepAI database warm-start is handled by the seed module after isolated target settings exist. [2]
 - Provider identity helpers derive the worktree instance id and ownership labels. [3]

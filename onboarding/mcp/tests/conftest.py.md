@@ -98,4 +98,4 @@ scope `all-tests`.
 
 ## 260928-MIK-L198 — each pytest process isolates the outside scratch parent
 
-The harness creates its own outside scratch parent under the invocation's isolated root and points the product at it for the whole run, so no test allocates or sweeps a root under the real `/var/tmp/agents-remember` and no worker shares a parent with a sibling. Teardown removes a root by ownership alone: a root survives unless the coordination root its marker carries resolves under this run's own base, so a parallel worker's roots are never removed by name shape or by being present.
+The session fixture redirects outside-scratch allocations in this pytest process to its isolated parent. A separately served product subprocess does not load this fixture and can allocate under the original `/var/tmp/agents-remember` parent. Teardown checks both parents and removes only roots whose marker's resolved coordination root is this invocation's temporary base or lies beneath it; sibling and foreign roots remain. It then restores the parent and socket limit and removes the isolated directory.

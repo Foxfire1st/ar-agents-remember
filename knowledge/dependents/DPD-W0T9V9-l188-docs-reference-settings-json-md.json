@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
-    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "codeTree": "e2057915c8ea285fadecb95170528e37fa162fcf",
+    "commit": "2f699606998a68c42994b9cc102cd22d56cfae37",
     "role": "curator",
-    "statement": "The reference still describes the host block Bootstrap's preparation writes into the active MCP settings file, and now also states that one Bootstrap at a time is assumed.",
-    "task": "260928-MIK",
+    "statement": "The settings reference now records the provider block as retired, still parsed and reported unused, and no longer promises server-derived provider lifecycle settings, so its reference account still stands.",
+    "task": "260928-MIK-L192",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -34,8 +34,8 @@
     },
     {
       "anchor": {
-        "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
-        "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+        "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+        "content": "sha256:b4ddcf4a6b053e14bc4a2bdc4e286138fb7723752d9bc5bec0cd88992e96969a",
         "locator": {
           "kind": "symbol",
           "name": "initialize_role_settings"

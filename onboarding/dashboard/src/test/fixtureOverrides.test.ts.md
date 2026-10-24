@@ -12,7 +12,7 @@ The proof that `fixtures/overrides.ts` does what its header claims — and the c
 The header states the division precisely cit:([`exactOptionalPropertyTypes`], dashboard/src/test/fixtureOverrides.test.ts:16-16). `wireFixtureGuard.ts` measures property NAMES: it
 catches a field the mirror never declared, an `any` with no shape at all, and every syntactic way of
 opting out. It cannot catch a fixture whose names are all correct and whose VALUE is `undefined` on a
-field the server always sends. `provider({ state: undefined })` has correct field names and no cast/suppression, yet asks a required wire field to be absent. The retained probe uses this provider call; conversationPage/conversationWire are removed and supply no current fixture coverage.
+field the server always sends. `enclosure({ repoName: undefined })` has correct field names and no cast/suppression, yet asks a required wire field to be absent. The retained probe uses this enclosure call; conversationPage/conversationWire are removed and supply no current fixture coverage.
 
 Overrides constrain builder calls without enabling exactOptionalPropertyTypes in the virtual program. Historical project diagnostic counts are not a current typecheck measurement.
 
@@ -24,7 +24,7 @@ cit:([`GUARD_COMPILER_OPTIONS`], dashboard/src/test/wireFixtureGuard.ts:138-149)
 
 ### Logic
 
-- Virtual impossible calls supply undefined to provider.state, taskEntry.stage, taskSummary.steps and projection.enclosures: exactly four undefined-to-never diagnostics.
+- Virtual impossible calls supply undefined to enclosure.repoName, taskEntry.stage, taskSummary.steps and projection.enclosures: exactly four undefined-to-never diagnostics.
 - Excess calls add refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary: exactly two unknown-property diagnostics.
 - Honest native calls, optional undefined and pre-widened Partial<TaskEntry> remain diagnostic-free. Missing probe modules throw before reading diagnostics.
 
@@ -76,4 +76,4 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 No cross-repository or external-system boundary is exercised. The probes import in-repo builders and
 the in-repo mirror; the compiler is a devDependency, not a system boundary.
 
-- Probe imports resolve to retained wire builders and projection types only; the provider-state replacement probe keeps the required-undefined control. [14]
+- Probe imports resolve to retained wire builders; the enclosure.repoName replacement preserves the required-undefined control. [14]

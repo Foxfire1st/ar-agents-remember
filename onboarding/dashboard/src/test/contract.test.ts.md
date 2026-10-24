@@ -46,7 +46,7 @@ Derived open-map/closed-union Record registries now walk native entry stage/acti
 
 Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. Lifecycle bucket suites/master-series pins are removed; only the edge.refusedPolarity inverted pin remains.
 
-The retired `projection.metrics.stalenessHistogram` is no longer an absorbing site; `projection.analytics.driftSnapshots[].counts` remains registered. The observed current registry has 12 keys, not a permanent quota. The local predecessor kept LifecycleProjection while retiring the gate model; L168 now replaces that lifecycle shape with native task entries, so that predecessor declaration is not a current contract.
+The retired `projection.metrics.stalenessHistogram` is no longer an absorbing site; `projection.analytics.driftSnapshots[].counts` remains registered. The observed current registry has 10 keys, not a permanent quota. The local predecessor kept LifecycleProjection while retiring the gate model; L168 now replaces that lifecycle shape with native task entries, so that predecessor declaration is not a current contract.
 
 ### Historical 260831-LOCR-L17 — the retired observer-health vocabulary entries
 
@@ -99,7 +99,9 @@ makes the behaviour load-bearing HERE.
 - `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. [5]
 
 - `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. [6]
-- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 12 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain. [7]
+
+- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and retired gate/ask sites remain absent; drift counts remain. [7]
+
 - `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
 
 

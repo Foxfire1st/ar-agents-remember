@@ -1,0 +1,195 @@
+{
+  "path": "docs/llms.txt",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "47e641e2847eb375846bd69ef40f2f149f5b9133",
+        "content": "sha256:7538177030a0f03ff8b62131621f0b484b2b72c7fb416c7887c9cd1ae4363b68",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FYQW3E",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The machine-facing index caption matches the retirement page.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The file is a versioned, dated snapshot of documentation prose, published from the docs root.\n\nAnchor: `Hash: f62c732`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:ee9b486b27b677e0bfd84cfd64a13ed90f249ab24e4c9d5615e04f4712f7e96a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The Providers link now describes retired providers and leftover-state cleanup.\n\nAnchor: `[Providers](guides/providers.md)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:4471d88d00d6c4bb54b28c5a0a84642d2c5fde141700d52716f19a36dfaee521",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 477
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The product summary says both search providers are retired and by-path reads carry the product, while the same list still credits provider indexes cloned into a worktree.\n\nAnchor: `both providers are retired`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:8e8d46784b43ac71b9922bb65c81149bea6f0cbd976ec360d2d21b5b919203bf",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The trust paragraph keeps the note as the thing trusted and marks search as retired history.\n\nAnchor: `neither was ever the thing you trust`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:2824265b587c4a40ec4d5a5dc92350d91fa19fe15b5ab43e2eb073355c3c6f84",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retrieval routes are stated in the past tense with their providers retired, while by-path stays always available.\n\nAnchor: `Both provider-backed substrates are`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:766f3196063e4e1a9cd8bfd24537188b18bb65907632c0051964f82cae91dbd2",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The read-only tool list no longer includes provider health, graph or semantic-index queries.\n\nAnchor: `- **Read-only tools** compute facts with no side effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:99eb37adddcf99eebcd5217f97af1a6d28fe8ad9c00816681388628a9c1030d7",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "First-run setup starts nothing provider-side, and by-path memory needs neither Docker nor providers.\n\nAnchor: `starts nothing provider-side`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:71796918acdd434aa0feb6687cfbf1d16d3a3aa174e7c3c87ada33532278c3f1",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Authority settings cover repositories and report old provider keys once as unused.\n\nAnchor: `old provider keys are reported once as unused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:79e5ce7d24272aff523cc00607bc931381eb1ec3d9955cca662dbf47daca35db",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 420
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The isolation section still describes provider indexes as live machinery and says providers can be created with a worktree.\n\nAnchor: `Cheap isolation: indexes are cloned, not rebuilt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The composition summary still credits index cloning as what makes isolation cheap.\n\nAnchor: `**Index cloning** makes that isolation cheap enough to use by default.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "content": "sha256:6fe28ae1575865ec66f03e483e1255c0bbcfe9a6bcf0356f551bffdbc1d04a7a",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 453
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

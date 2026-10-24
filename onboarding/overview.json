@@ -227,23 +227,6 @@
         }
       ]
     },
-    "112": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The GrepAI indexing states.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f9c4274140f2aaed8264742f0203ad318238af3",
-            "content": "sha256:0646a63a5de6646f311a6b512da8b76de5f9932179098647f0364557d10c7dd5",
-            "locator": {
-              "kind": "symbol",
-              "name": "grepai_indexing_state"
-            },
-            "path": "mcp/src/agents_remember/providers/current_state.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "117": {
       "note": "The serving layer is transport over the observer projection.",
       "targets": [
@@ -582,7 +565,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3e57ca71a5f07ed39cb190d9f5dcda431c764f3",
+            "blob": "513853f9c98c3a99c34eefb82b39c2f5911df8bb",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -648,12 +631,12 @@
         },
         {
           "anchor": {
-            "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:406f87f15ce148145e4262e6b00a47abb1430a2d305a0ee94b24bbb10bf6b654",
             "locator": {
-              "end": 241,
+              "end": 179,
               "kind": "line_range",
-              "start": 241
+              "start": 179
             },
             "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1187,12 +1170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
             "content": "sha256:0e6ea027256d8995280cdaf4406d1cd2c748524b62e9b46b90a35b903fccb9da",
             "locator": {
-              "end": 230,
+              "end": 168,
               "kind": "line_range",
-              "start": 230
+              "start": 168
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },
@@ -1364,7 +1347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -1382,7 +1365,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:8607745186f3570ef4e75ca14fcc5785bca5484e8981daeff8a1ea8552556c0b",
             "locator": {
               "end": 16,
@@ -1524,12 +1507,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:3c9d63b793979da555922409c418c416f776f79561e808b9d18e55a8d29ae5a1",
             "locator": {
-              "end": 150,
+              "end": 155,
               "kind": "line_range",
-              "start": 150
+              "start": 155
             },
             "path": "AGENTS.md"
           },
@@ -2675,7 +2658,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:94e5ff1652cf414853a4226b05dd6df8cfa9ffb8f240bc8a3baa9c30cc60dab1",
             "locator": {
               "end": 10,
@@ -2688,12 +2671,12 @@
         },
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
             "locator": {
-              "end": 145,
+              "end": 150,
               "kind": "line_range",
-              "start": 145
+              "start": 150
             },
             "path": "AGENTS.md"
           },
@@ -2921,12 +2904,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 206,
+              "end": 211,
               "kind": "line_range",
-              "start": 150
+              "start": 155
             },
             "path": "AGENTS.md"
           },
@@ -4014,7 +3997,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:c6adf85d1f03b1bea9d72524ce129e6ab7282226d1c7851bbb12d2f9fe60888b",
             "locator": {
               "end": 17,

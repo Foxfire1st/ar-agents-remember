@@ -8,7 +8,7 @@
 
 The override parameter type the retained builders in `fixtures/wire.ts` take, and the reason it is not a bare `Partial<T>`. `RequiredKeys<T>` is local; `Overrides<O,T>` and `NoOverrides` are the two exported types. Source length and obsolete conversation-builder populations are not current API counts.
 
-**The defect it closes.** Without exactOptionalPropertyTypes, optional slots in Partial<T> admit an explicit undefined; the builder spread writes it into the result. `provider({state:undefined})` therefore constructs a ProviderNode whose required state is undefined, not a conversation page or missing capabilities. The retained taskEntry.stage, taskSummary.steps and projection.enclosures controls are the same required-field move without a cast. Overrides rejects this move at a fresh literal call site; property-name/AST guards alone cannot detect it.
+**The defect it closes.** Without exactOptionalPropertyTypes, optional slots in Partial<T> admit an explicit undefined; the builder spread writes it into the result. `enclosure({repoName:undefined})` therefore constructs an EnclosureNode whose required repoName is undefined, not a conversation page or missing capabilities. The retained taskEntry.stage, taskSummary.steps and projection.enclosures controls are the same required-field move without a cast. Overrides rejects this move at a fresh literal call site; property-name/AST guards alone cannot detect it.
 
 Nothing in `wireFixtureGuard.ts` can see any of them, and the source says exactly why (cit:(["no assertion for rule 1"], dashboard/src/test/fixtures/overrides.ts:10-12)): there
 is no assertion for rule 1, no suppression for rule 5, and rule 4 measures property NAMES, which are
@@ -88,7 +88,8 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 ### Repo-Internal References
 
-- Partial overrides can erase required task-entry stage/provider state, task-summary steps or projection enclosures without a cast; the value hole is not seen by the property-name guard. [1]
+- Partial overrides can erase required task-entry stage, enclosure repoName, task-summary steps or projection enclosures without a cast; the property-name guard does not see this value hole. [1]
+
 - The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. [2]
 - Current limits are fresh-literal-only and retained wire.ts builders only; the widened TaskEntry control is a known pass, not a removed conversation/nested builder promise. [3]
 - `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. [4]

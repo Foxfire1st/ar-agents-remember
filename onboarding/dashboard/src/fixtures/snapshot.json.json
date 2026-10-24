@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
             "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
             "locator": {
-              "end": 574,
+              "end": 527,
               "kind": "line_range",
-              "start": 557
+              "start": 510
             }
           },
           "kind": "code"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:a189bbea179fd400c95a2351cdfddc4801b54913b80f50cd74b12923c5eb8219",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
             "locator": {
-              "end": 29,
+              "end": 30,
               "kind": "line_range",
-              "start": 29
+              "start": 30
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -149,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
             "locator": {
               "kind": "symbol",
@@ -161,7 +161,7 @@
         },
         {
           "anchor": {
-            "blob": "a863e49a83213f748fa2993ef0953d7e0f2362a4",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:9741921eda39fb5ee6462359d93e7ce7ac93db599bd71107e8ac0ce9a960a6a2",
             "locator": {
               "end": 34,
@@ -251,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
             "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
             "locator": {
-              "end": 351,
+              "end": 337,
               "kind": "line_range",
-              "start": 351
+              "start": 337
             }
           },
           "kind": "code"
@@ -280,12 +280,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
             "content": "sha256:f1a21c9db71a179f315e271cd83fd0eff6b089e0ff9148b7776236ec0b4829cb",
             "locator": {
-              "end": 2156,
+              "end": 2030,
               "kind": "line_range",
-              "start": 2120
+              "start": 1994
             }
           },
           "kind": "code"
@@ -310,16 +310,28 @@
       ]
     },
     "5": {
-      "note": "Representative enclosure rows, two providers, and the `activeWorktreeGroups` join value.\n\nAnchor: `activeWorktreeGroups`",
+      "note": "The manual payload retains representative enclosure rows and the activeWorktreeGroups join value; the enclosure carries the same sim-group identity.\n\nAnchor: `activeWorktreeGroups`; `enclosures`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f59b6a29faaf71486e570254845c61fa4c24a77",
-            "content": "sha256:f8f905f07141c8e18288d136810b169d10609ca229a5e116b06d07633d028e0c",
+            "blob": "d3ddf96258ed92cf127774218e6ed70f52a1dea6",
+            "content": "sha256:7d1a23031d5e23f08cf6476d950cea56b9f4de7f5a61890f981b9619bc4b6638",
             "locator": {
-              "end": 2,
+              "end": 4,
               "kind": "line_range",
-              "start": 2
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:eb7b972ea0f4ffde10f8a9dadf66261afaf142db5eea973d0c0851d8de8c9efe",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 599
             }
           },
           "kind": "code"

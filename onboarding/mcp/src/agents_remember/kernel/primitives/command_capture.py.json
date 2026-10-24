@@ -3,7 +3,24 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Provider setup invokes run_package_main with lifecycle.main and constructed arguments.",
+      "note": "The retained provider caller requests `lifecycle.main`, but the current facade has no CLI/main export; this helper still captures an explicitly supplied callable and does not establish a working provider CLI bridge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9fedec650ef6711e3ad80e7a88a9eb186eb9500f99ceec3537dbe8464b474f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Skill application no longer goes through this helper — skills are the package copy the server serves — and the surviving caller is `setup_common.run_lifecycle`, which passes `main=lifecycle.main`.",
       "targets": [
         {
           "anchor": {

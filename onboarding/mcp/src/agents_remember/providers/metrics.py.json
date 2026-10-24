@@ -1,6 +1,24 @@
 {
   "path": "mcp/src/agents_remember/providers/metrics.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+        "content": "sha256:09cd77c66932e5e098f9fe19f35bdef6b2a1d9bbda1cea09b27c8957cda17012",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DY150J",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The metrics store and sampler the loop depends on are retained.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The ownership labels every provider container carries (`provider_ownership_labels`).",
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
             "content": "sha256:eb36348e0fc745b7f4cd4c0faa410869cad2c2dfc8b4f6a8c36c805e17ccde73",
             "locator": {
               "kind": "symbol",
@@ -55,17 +73,28 @@
       ]
     },
     "4": {
-      "note": "`provider_status_packet` attaches `read_current()` to the status packet.",
+      "note": "The metrics store retains read_current for independent containment consumers. The retired provider summary reports configured-or-not with state skipped; no provider_status_packet attaches these samples to a public status response.",
       "targets": [
         {
           "anchor": {
-            "blob": "f69234bdcc96f9151d173f456645ff89f9d2fc4b",
-            "content": "sha256:307bccc4a446f7721aea7542ee90face4d445321c2de4b5129bae4146f382b3a",
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:117e1d6115145488ab9411f807a96af034b39fe2894a8bde95fe448ea48324d3",
             "locator": {
               "kind": "symbol",
-              "name": "provider_status_packet"
+              "name": "provider_summary"
             },
             "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+            "content": "sha256:b35414d9d1a770c686e214bb4a6879ba5c7cdbed6e50667b7aab5838de43c8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_current"
+            }
           },
           "kind": "code"
         }

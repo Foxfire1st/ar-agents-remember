@@ -1,0 +1,226 @@
+{
+  "path": "mcp/tests/test_l192_root_advice_has_no_removed_parameter.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+        "content": "sha256:b09bdd69538cfffba2063d6e75a0cfc3c35305991a90b9913711073d5219b94a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_advertised_schema_never_admits_the_removed_parameter"
+        }
+      },
+      "facet": "the advertised schema of the tool the root advice calls admits no removed parameter",
+      "id": "PRF-4R8779",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+        "content": "sha256:c483fdd1ded4b76d9c3135119fd65fe4c904e06bf844ef074ebfd9643ec7880a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_carrier_instructs_the_removed_parameter"
+        }
+      },
+      "facet": "no shipped instruction carrier tells an agent to pass the removed parameter",
+      "id": "PRF-R4KZ12",
+      "invariant": "INV-8YX6P5",
+      "origin": {
+        "handoffEntry": "L192-W-R199-09",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The admitted parameter set is read from the advertised schema of a server built from `TOOL_REGISTRARS`, not from a literal list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:348f3170be61947ffb9aaf646097bfcc58b4950da32430ad14e53103ec82333b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_advertised_parameters"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The removed knob is spelled once and compared against everywhere.\n\nAnchor: `REMOVED_PARAMETER`, `TOOL_NAME`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:a8be03e9df7a6bbe3d70c170cfdc27bc546675ca6d6e15df2b173b5b3fba5070",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_PARAMETER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:9a120129caa4b0035992fe6e27a20125e723f1636c9abc6c7d980e97febfb8c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_NAME"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The carrier inventory is glob-based, with a required-surface list that fails when a glob stops matching.\n\nAnchor: `CARRIER_GLOBS`, `REQUIRED_SURFACE_ROOTS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:390e8b288dbff6fa8035f30ebc1ece1bc62d854833645d97b45addf9601934b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CARRIER_GLOBS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:fd636e81219ff7155c422800bd35ba4617e5bb6e920f09aaf61d0f5e90e590d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIRED_SURFACE_ROOTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Written calls are parsed with a quote-aware parenthesis scan and an `ast` parse after normalising prose literals; unparseable calls are reported rather than skipped.\n\nAnchor: `_arguments`, `_parameters`, `carrier_calls`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:1aff4789da1b0958b0635519494e721d50266267b327715cb015a3050616df8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_arguments"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:90e7e3723c6808275237c94dac7da466971defb4f71e69c24287d348f39f58c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parameters"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:f487390981a92e034cd62ebeda3bcdd1e56d09e21c588e02f79146a7a061e052",
+            "locator": {
+              "kind": "symbol",
+              "name": "carrier_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The schema case requires the removed name absent while `repo_id`, `task_context`, `include_drift` and `include_freshness` stay admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:b09bdd69538cfffba2063d6e75a0cfc3c35305991a90b9913711073d5219b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_advertised_schema_never_admits_the_removed_parameter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The internal request may not re-admit the removed name and must forward only names the schema advertises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:fbc25b64267ad02f8f5e5dd5cf9b4229bf4022f9b10778502fe2ee9593d43910",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_internal_request_never_readmits_the_removed_parameter"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Offending carriers are named by `path:line` for both the removed-parameter case and the admitted-parameters-only case.\n\nAnchor: `test_no_carrier_instructs_the_removed_parameter`, `test_every_carrier_call_names_only_admitted_parameters`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:c483fdd1ded4b76d9c3135119fd65fe4c904e06bf844ef074ebfd9643ec7880a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_carrier_instructs_the_removed_parameter"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:c7507856302443f7e51b20c81555660c0c00e95e58e0eef4b8b2243c20ebb9fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_carrier_call_names_only_admitted_parameters"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Every required surface root and every generated copy root must contribute a carrier, with floors on the generated-copy list and the written-call inventory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e00ce1174e96ca8a55d872cb89e6f37f501963f",
+            "content": "sha256:e630842cad9471af8f993bf90e3c3222e75dc3097038af0d56e88451fcdde043",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_carrier_inventory_covers_every_shipped_surface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

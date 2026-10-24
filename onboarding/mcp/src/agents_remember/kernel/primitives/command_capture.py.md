@@ -15,7 +15,12 @@ response payloads for the remaining script-facade bridge code.
 
 `run_package_main()` redirects stdout and stderr while calling an importable
 `main(argv)` function. It returns `ok`, `operation`, `returncode`, `argv`,
-captured streams, and parsed JSON payload when stdout is JSON. The skill-application entry routes described by the older card were removed in this leaf. The retained helper’s provider-setup account applies where setup bridges through `lifecycle.main`; it does not establish a current public skill-application endpoint.
+captured streams, and parsed JSON payload when stdout is JSON. Current MCP
+skill application entry points call service functions directly. The retained
+`setup_common.run_lifecycle` caller passes `main=lifecycle.main` to this helper,
+but the current lifecycle facade exports no CLI/main and has no package-execution
+entrypoint. That attempted call is a retained caller inconsistency, not an
+available lifecycle CLI bridge or evidence of successful provider execution.
 
 ### Invariants And Boundaries
 
@@ -28,4 +33,6 @@ captured streams, and parsed JSON payload when stdout is JSON. The skill-applica
 
 ### Repo-Internal References
 
-- Provider setup invokes run_package_main with lifecycle.main and constructed arguments. [1]
+- The retained provider caller requests `lifecycle.main`, but the current facade has no CLI/main export; this helper still captures an explicitly supplied callable and does not establish a working provider CLI bridge. [1]
+
+- Skill application no longer goes through this helper — skills are the package copy the server serves — and the surviving caller is `setup_common.run_lifecycle`, which passes `main=lifecycle.main`. [2]

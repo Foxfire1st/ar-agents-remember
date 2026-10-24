@@ -6,6 +6,11 @@ The retained Playwright source checks attention queue ranking/empty views, task-
 
 - The retained Playwright source checks attention queue ranking/empty views, task-rail grouping and cross-origin Role chats clipboard policy. The old PTY/stage/inspector/set/composer contract and removed chats-E2E sibling supplies no current proof. Fixture gallery and mocked route assertions are not a fresh run or native-host acceptance. [3]
 
+The attention-queue test ranks its gallery alarm against the actionable-drift item: the provider-down
+entry that used to hold the first slot went with the retired search providers, so the spec's first-item
+assertion names `3 actionable drift` and its severity label stays `alarm`. Read it as a fixture assertion
+over mocked routes, not as a fresh run.
+
 
 
 ## Governing Overview

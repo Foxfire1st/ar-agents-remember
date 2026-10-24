@@ -23,14 +23,14 @@ both sides carry lockstep tests.
 
 `_strip_volatile` / `_stable_dump` — a node's stable form: the wire dump (by-alias, none-free)
 with volatile keys recursively removed. `StableProjectionState` holds one projection's stable
-forms (tasks by qualified key, enclosures/providers by their own identities, plus taskCounts/metrics/analytics/activeWorktreeGroups);
+forms (tasks by qualified key, enclosures by enclosure, plus taskCounts/metrics/analytics/activeWorktreeGroups);
 `stable_projection_state(projection)` computes them once (~4–5 ms on the ~800 KB live payload).
 
-`DeltaEvent(event, data)` is a frozen transport value: task upserts use `task`, removals `task.removed` with `{key: ...}`, and aggregate count changes use `taskCounts`. Enclosure/provider and activeWorktreeGroups/metrics/analytics events retain their own contracts. There are no lifecycle collection deltas.
+`DeltaEvent(event, data)` is a frozen transport value: task upserts use `task`, removals `task.removed` with `{key: ...}`, and aggregate count changes use `taskCounts`. Enclosure and activeWorktreeGroups/metrics/analytics events retain their own contracts. There are no lifecycle collection deltas.
 
 `diff_projection(previous, current, *, previous_state=None, current_state=None)` returns `[]` on
 the first tick (`previous is None` — the first projection is delivered as the snapshot, not
-deltas). Otherwise it diffs the task/enclosure/provider collections via `_collection_deltas` on their stable
+deltas). Otherwise it diffs the task/enclosure collections via `_collection_deltas` on their stable
 forms, and emits a whole-value event for `activeWorktreeGroups` and a whole-block event for
 `taskCounts`/`metrics`/`analytics` when the *stable* forms differ. The optional `*_state` arguments accept
 precomputed stable forms — the projector caches the previous tick's so each tick pays for ONE
@@ -58,6 +58,9 @@ deterministic (replay/sim fixtures compare byte-for-byte).
 
 ### Repo-Internal References
 
-- WorkspaceProjection version 2 carries native tasks and taskCounts, unbound enclosures, providers, active worktree groups, optional closeout queues, metrics and analytics; each TaskEntry has a qualified key/reference and may own worktrees. Stable diff state keys tasks by entry.key, enclosures by enclosure and providers by id; counts, active groups, metrics and analytics use whole-value comparisons. There is no lifecycles collection in this schema. [1]
+
+
 - The projector calls the stable-state and diff functions, publishes the projection, and broadcasts resulting items. [2]
 - The client mirror of the volatile set + local age advancement. [3]
+
+- WorkspaceProjection carries native tasks/taskCounts, enclosures, active worktree groups, optional closeout queues, metrics and analytics. Stable diff state keys tasks by entry.key and enclosures by enclosure, and compares counts, groups, metrics and analytics as whole values. Provider collections and provider SSE events are absent; no lifecycles collection is restored. [1]

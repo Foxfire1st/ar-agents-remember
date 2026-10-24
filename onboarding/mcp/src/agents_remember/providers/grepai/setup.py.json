@@ -3,18 +3,62 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The setup facade calls this module during install and prepare.\n\nAnchor: `install_enabled_provider`",
+      "note": "The retained install, prepare/clone and refresh entry points all return no work at the shared retired-provider gate.\n\nAnchor: `install_enabled_provider`, `prepare_enabled_provider`, `refresh_enabled_provider`, `provider_enabled`, `selected_provider_enabled`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
-            "content": "sha256:398b423bad956a8e22b283bb2ee9a30e10ffb5fb2a5104ad03f1963c5df3d0ef",
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:e6d94674d95d5337ec716f674b9a1c10a3e33c09d75d45253701d51da54f3a55",
             "locator": {
-              "end": 230,
-              "kind": "line_range",
-              "start": 210
+              "kind": "symbol",
+              "name": "install_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:616cbba1ae96ecc60912600c46d5282f6a8453b87cd0e48de0b3cd5b00e5652e",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f45213a811767ecb30498884a6cbbc9fe53b85d",
+            "content": "sha256:fcf07bf7e2e264198c2db4cc9c006ab17ef170cf609d61b375c124f57c20dd3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_enabled_provider"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
             },
-            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:afad0cb5bf28ae43515811e7cc22fa4f3790ca6e5c8c7c2ab08002972d59e378",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
           },
           "kind": "code"
         }

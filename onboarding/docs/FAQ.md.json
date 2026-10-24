@@ -1,0 +1,115 @@
+{
+  "path": "docs/FAQ.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "17adb1817b95675239c17f19d5114e9457c8f057",
+        "content": "sha256:e91e75e5d8a67e6e68fe72a16a9d883a28671bf6408e9e7d8634b1eb47f2c0e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RB4FYX",
+      "invariant": "INV-8JYRE4",
+      "origin": {
+        "handoffEntry": "L192-W-R199-12",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The FAQ entry no longer presents provider setup as available.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "By-meaning and by-relationship are described in the past tense as retired, with by-meaning left without an engine and by-path keeping the deterministic mirror address.\n\nAnchor: `docs/FAQ.md:24-26`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "By-path is called \"the route with an engine today\" and the providers page is characterized as a retirement and old-install cleanup account.\n\nAnchor: `docs/FAQ.md:28`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The comparison answer says the product \"used them\" and that by-path reads now carry the finding job.\n\nAnchor: `docs/FAQ.md:124`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The former providers built derived indexes over memory and code, never replaced it as the source of truth, and are retired.\n\nAnchor: `docs/FAQ.md:136`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The memory-growth answer still describes an optional semantic index in the present tense.\n\nAnchor: `docs/FAQ.md:40`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The page names no provider command, setting key or provider id.\n\nAnchor: `docs/FAQ.md:1-136`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+            "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

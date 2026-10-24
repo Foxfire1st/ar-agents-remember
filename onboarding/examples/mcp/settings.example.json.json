@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
             "content": "sha256:ecc3c3c8f78a3ede9ad1e547359d16fd6cec6adb344ad3557c5576b198e5f830",
             "locator": {
-              "end": 166,
+              "end": 191,
               "kind": "line_range",
-              "start": 166
+              "start": 191
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -21,16 +21,15 @@
       ]
     },
     "2": {
-      "note": "Provider lifecycle settings are generated from MCP config instead of read from coordinator settings.\n\nAnchor: \"def lifecycle_settings_from_config\"",
+      "note": "The retained lifecycle settings helper emits a disabled contextProviders document with an empty providers map; configured legacy keys do not generate runtime settings or enable the retired providers.",
       "targets": [
         {
           "anchor": {
-            "blob": "8670aacc9070692522816494fd7703d079763d2a",
-            "content": "sha256:67b072abea5fa645d2dde768432b7ff05b7fc770b9fc513c9276e1d18596afa6",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 32
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },
