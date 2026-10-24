@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents a retained facade from silently trying a retired native launch whose tool server no longer exists."
+  },
+  "applicability": "The retained Presenter facade when constructed without a runner and given an otherwise admitted explicit start.",
+  "conditions": [
+    "The constructor selects UnconfiguredPresenterRunner when no runner is supplied.",
+    "The selected runner refuses its start with no-confined-harness; the failed attempt records that named refusal."
+  ],
+  "exclusions": [
+    "An explicitly injected runner retains its own behavior.",
+    "This does not claim that the failed attempt writes no attempt metadata or working-folder bytes."
+  ],
+  "id": "INV-SYH75Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_presenter.py::test_a_presenter_without_a_runner_refuses_the_retired_native_seat; source read at W9 tree0b7e887a130fe432fef9e59f44917c8419d1c111"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-presenter-default-unconfigured",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A presenter constructed without an explicitly wired runner refuses authoring as no-confined-harness and prepares no native host launch.",
+  "status": "proposed",
+  "supersedes": []
+}

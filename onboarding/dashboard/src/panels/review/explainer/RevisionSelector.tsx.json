@@ -1,0 +1,129 @@
+{
+  "path": "dashboard/src/panels/review/explainer/RevisionSelector.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+        "content": "sha256:2ae83b922104b739ef73369991e9721b628570acbb3c5521c85e9f79ca40c5e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefusalBox"
+        }
+      },
+      "id": "RLZ-6EV44K",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The task-total refusal alone exposes the developer’s removal choices, keeping per-revision refusals separate and offering only unpinned retained revisions.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+        "content": "sha256:0c464ce831b4d3d02ff097aea4abb43a85a88e182cc2701c7165462a5c6a4d1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionSelector"
+        }
+      },
+      "id": "RLZ-7HK3TN",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Displays each retained revision’s binding, time and kind and reports shown/compared choices without generating content.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The selector states the agreed revision, lists every retained row and hands both presses upward\n\nAnchor: `export function RevisionSelector(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+            "content": "sha256:0c464ce831b4d3d02ff097aea4abb43a85a88e182cc2701c7165462a5c6a4d1a",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A row carries its binding, kind, time, pin and removal state, and a removed revision cannot be shown again\n\nAnchor: `function RevisionRow(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+            "content": "sha256:2362d80058a64871397762c41dc8cd8af59e920e1425f0fb01fbc32d1ebb9a15",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Compare needs two retained revisions and switches between starting and stopping the pair\n\nAnchor: `function CompareControl(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+            "content": "sha256:cdf886c6c7d88b78bb15f98cdb5037e1fc13685c84e1b8cca39f5e21f059f69f",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only the task total's refusal offers removal; another refusal says why removal would not help\n\nAnchor: `function RefusalBox(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+            "content": "sha256:2ae83b922104b739ef73369991e9721b628570acbb3c5521c85e9f79ca40c5e5",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The removal list never contains the pinned revision and says so when nothing may be removed\n\nAnchor: `function RemovalChoices(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1926c27748de9fca4de29be92f9d9d9a81da0fba",
+            "content": "sha256:772be5e30e47f0b42465b4562c2a98654d0cf95b5439725cd619bfc3787541c1",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

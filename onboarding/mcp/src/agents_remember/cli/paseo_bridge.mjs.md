@@ -10,6 +10,8 @@ The native Paseo bridge module the runtime serves.
 
 ## Code Commentary
 
+agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence.
+
 The bridge module carries native host integration loaded beside the runtime. A provider catalog row that is still loading retains `modes`, `defaultModeId` and `fetchedAt` from the discovered provider entry, falling back to empty/null only when absent, alongside its empty models and loading error. Pending model listing does not discard mode offerings the host has already supplied. `closingText` concatenates the final trailing assistant messages, trims the assembled text and exposes the whole nonempty reply with `textTruncated: false`; it imposes no role-message character cut. The delivery policy layer owns settings-bound reply text and complete reply-file storage. The earlier retirement changed no bridge part; that historical observation is not a claim that this later reply transport changed nothing.
 
 `host-activity-snapshot` delegates to `daemon.invokePluginRpc("ar-plugin", "ar.host-activity-snapshot", {})` and returns the configured server identity plus the plugin publication. It is the full-host reconciliation RPC, not the bounded `agents-live` discovery census; a bridge answer is not evidence that role facts were consumed.
@@ -34,5 +36,9 @@ The header documents `presenter-transcript` as a read of up to 200 timeline entr
 - `agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`. [2]
 - A still-loading provider row retains discovered mode/default-mode/fetched-at fields, defaulting only absent values. [3]
 - The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface. [4]
-- The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it. [5]
+
+- `agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the product confines its own bound tool server at registration and dispatch. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request. [5]
+
 - Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options. [6]
+
+- agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence. The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null. [7]

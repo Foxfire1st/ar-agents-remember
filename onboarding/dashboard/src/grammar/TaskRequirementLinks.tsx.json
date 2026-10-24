@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
             "content": "sha256:a96f3d35efcd85c17ab4c16a2e7fa07b22d425c40434835adcea6cb37545cd18",
             "locator": {
-              "end": 129,
+              "end": 134,
               "kind": "line_range",
-              "start": 80
+              "start": 85
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },

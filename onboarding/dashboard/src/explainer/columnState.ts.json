@@ -1,0 +1,148 @@
+{
+  "path": "dashboard/src/explainer/columnState.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+        "content": "sha256:8d926d8e899d370bd751d8b6909c6680bd90c7e4488f0f885208732cbc8f80e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRetire"
+        }
+      },
+      "id": "RLZ-9DMW7Z",
+      "invariant": "INV-AKRFQY",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE03-retirement",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Keeps one receipt identifier while retirement is incomplete and retains confirmation until its receipt reports no remaining processes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+        "content": "sha256:090fb273e0bd4aaab0219247aba6f734114dee26e8f4755eff72429878214e38",
+        "locator": {
+          "kind": "symbol",
+          "name": "useExplain"
+        }
+      },
+      "id": "RLZ-GCH3YP",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Adds only a change-set pick when a seat exists and otherwise opens the first-request form; it does not send.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+        "content": "sha256:a91a7e6d574ea9cac96eec54d7bebb019704fc1b518107cb4e55e92ed58d923b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useCancel"
+        }
+      },
+      "id": "RLZ-MEAVE1",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Clears the pending form/request and its collected request content without calling a build or creating a seat.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+        "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
+        "locator": {
+          "kind": "symbol",
+          "name": "buildBodyForSend"
+        }
+      },
+      "id": "RLZ-QQCRMK",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Carries developer text without pre-composing it and names the fixed new-explainer target, picks, binding and stale work exactly once.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+        "content": "sha256:327883f96a6b0e3d5cb99e5b70fa795dc50a65f626c49a2648ad964732847a45",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSend"
+        }
+      },
+      "id": "RLZ-VV9RJW",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Guards a concurrent Send, keeps its request identifier across refusals and submits the explicit build request while retaining failed request state.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A build and an in-flight Send are re-read on an interval that clears when both stop\n\nAnchor: `setInterval`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+            "content": "sha256:4cf5d5873b6057741ddb0cbf0317ab479fc850f42c66f64c5708ab9be8a292d2",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A Send carries the text unchanged with the stale parts the form pre-filled\n\nAnchor: `stalePartIds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+            "content": "sha256:9606ac92682372e2141ea4c8722a9a17c5e45d93e0f9238b7c25d8785f7a765b",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One call states the whole column: the read, the form, the rows, Send and Retire, and the frame target and shown chat",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f369c3103a03adbe31cd533b768d81ffb228164",
+            "content": "sha256:d2cd0a0e06adbb327031c1084ea2bdf16bfde11cdc0e63194acbfd63455c6d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "useExplainerColumn"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

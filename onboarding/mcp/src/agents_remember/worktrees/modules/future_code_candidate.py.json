@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
             "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
             "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
             "locator": {
               "kind": "symbol",
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
             "content": "sha256:7554da3806fc2d0ce11a64cabeefe38b24837d2eeecbb6ca99c1d2d327554eff",
             "locator": {
               "kind": "symbol",
@@ -82,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
             "content": "sha256:4b0616c2aa418fb761c6ef249a751e7b4e48e43a2cd50f6f9091db5550888218",
             "locator": {
-              "end": 173,
+              "end": 181,
               "kind": "line_range",
-              "start": 168
+              "start": 176
             },
             "path": "mcp/src/agents_remember/errors.py"
           },

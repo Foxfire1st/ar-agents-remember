@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+        "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
         "content": "sha256:14eba404ad24300a67c9c822073d2165dc2225ddf8f02f7aebf70980ff3dea10",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
             "content": "sha256:a995cd1baa17fcb718bf47a991e68998f9dcb416b95a706ac4ddc1de1d14835f",
             "locator": {
               "end": 19,
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
             "content": "sha256:32638777d39f72a4ecb214525d6e7d112b65a4199ef9c5990ef19292c38121cb",
             "locator": {
               "end": 28,
@@ -60,12 +60,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
+            "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
             "content": "sha256:aaff09d75e80bac78b75f74118e3f5e53cfa3e6a2769526a7344e57cf35ad120",
             "locator": {
               "end": 63,
               "kind": "line_range",
               "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The row grid gains an auto-width column between its caret and flexible name for the judgment chip, followed by the existing trailing reason. Height/scroller, responsive width, pinned rows and popup styling remain under the same stylesheet. This layout change alone defines no independent meaning obligation; it supports the judgment-chip contract.\n\nAnchor: `row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
+            "content": "sha256:a81ab35d289657f389b32403b42b5612f777b149ff2b770f5ae7a331051221e4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

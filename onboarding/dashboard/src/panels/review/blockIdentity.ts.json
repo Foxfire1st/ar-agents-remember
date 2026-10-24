@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+        "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
+        "content": "sha256:e06a2d761a862a300b7c97518549689ad350d31484f85718339e1c64a0e6370b",
+        "locator": {
+          "kind": "symbol",
+          "name": "matchesBlockReference"
+        }
+      },
+      "id": "RLZ-52QVDR",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Grades and claims reach a drawn block through this shared matcher’s exact/encoded/entry forms and its explicitly supported path-only hunk spellings; it provides reference compatibility, not an independent proof of full comparison binding.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
         "content": "sha256:c47c7777e584b5e71f28b91f75eb5c03358cc7575827eddbb2b107a9b398a2aa",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+        "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
         "content": "sha256:9f6078f8772035c073bceecde521cb39f876cc945554b55ea2eab02a13068d58",
         "locator": {
           "kind": "symbol",
@@ -44,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
             "content": "sha256:e60e6a0c212a82a80fe5188bee3df57fa2d091ca6608f79f0f0fce6eda84b604",
             "locator": {
               "end": 82,
@@ -61,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
             "content": "sha256:a0062a4bd5172be97a71ae5a466d0f1d085f6b5395fa5b9f7d9cc0db120597b3",
             "locator": {
               "end": 114,
@@ -78,12 +96,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdff9408cad7079f3ed18410350fa2e68ff894b1",
+            "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
             "content": "sha256:5f5ce4ce6e6cc0aaeef4d53cc517f3e396fea78a366b502812a0819126c38451",
             "locator": {
               "end": 235,
               "kind": "line_range",
               "start": 142
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "matchesBlockReference relates a stored grade or claim to a drawn block using its exact block key, included entry ids, encoded selection, card/hunk prefix or admitted JSON reference. Encoded references compare parsed block keys; entry JSON checks any supplied path and tree operands. A hunk prefix/JSON reference matches its path, so this matching helper must not be described as independently proving a full comparison binding for every accepted spelling. Callers retain their comparison checks.\n\nAnchor: `matchesJsonReference`, `matchesEncodedBlock`, `matchesPrefixedSubject`, `matchesBlockReference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9a380018dbd629bd264c9874e086cc28d241a9a",
+            "content": "sha256:f16d028e4c2b8dcb322e8c037b3e8f53eac385c263f3aab924eb20219458d678",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

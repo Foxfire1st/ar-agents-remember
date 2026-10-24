@@ -1,0 +1,82 @@
+{
+  "path": "mcp/tests/test_dashboard_autostart_after_discovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+        "content": "sha256:6ded61fba73f061c96db7bb110275528f71fe888eaa019ea865d4c122bdbdcdf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dashboard_autostart_starts_after_discovery_and_only_once"
+        }
+      },
+      "facet": "With autoStart enabled in two fresh-process source scenarios and the dashboard/host launchers stubbed, the asserted snapshots show no autostart at preparation, creation or the produced list answer before callback execution; one scheduled start after discovery; no additional start on later list/call; and one first-call start when the client never lists. This does not prove serialized client receipt or real host startup.",
+      "id": "PRF-QXY5S5",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "In the autoStart-enabled scenarios, the assertions and helper checks require zero/one sweep together with the once-only dashboard trigger at discovery/call boundaries. Dashboard/host launchers and reconciliation are recorders; no no-config, serialized-delivery, real-removal or installed-host outcome is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+            "content": "sha256:a40fbda59ef5b9579705f4bdad3527c4a5bc23d5809ab7fdd94b035252b692f6",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+            "content": "sha256:0f1297ae5cbc8adc17f27790172141af9542efb9d0bfdabaf521cd3e000ea7bd",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 233
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
+            "content": "sha256:6ded61fba73f061c96db7bb110275528f71fe888eaa019ea865d4c122bdbdcdf",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runner starts a fresh interpreter against the checkout source with inherited AR bindings removed, checks the subprocess exit and reads its JSON report under the shared hang guard.\n\nAnchor: `_run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a508b337a97dbced6a0404e16395a390ef51e97",
+            "content": "sha256:a44cb88804b8d5f1f04db337c75bbb10d30cc07d043f9290985448f15a9ea0a6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

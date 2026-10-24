@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:0706dfc4562c880f95f98d8fdad559874303a430ebcb1741084ad177511e0ebb",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:afe1894e1b77ea9e75f46345823da8ff8fec2569a186055696d01cb45c3e586b",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:8e8886b140a2acdffb0c32730ebec13ecf0845f2cea0ec84dd2e2ae6bd1cb126",
             "locator": {
               "kind": "symbol",
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:01ffaef2d8cf6864badeec9f7cf750fe03824303fac0d987254d6e80bcd41a2e",
             "locator": {
               "kind": "symbol",
@@ -182,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:a214788c7f3ded989faab65e778fbe2a488b8b5f299146a6c67e314447458733",
             "locator": {
-              "end": 76,
+              "end": 66,
               "kind": "line_range",
-              "start": 76
+              "start": 66
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -200,12 +200,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:76e1552838503ed65fc0d36446743b6dbf4326173608a48869635895b979befb",
             "locator": {
-              "end": 32,
+              "end": 22,
               "kind": "line_range",
-              "start": 32
+              "start": 22
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -213,12 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
             "locator": {
-              "end": 40,
+              "end": 30,
               "kind": "line_range",
-              "start": 40
+              "start": 30
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -226,12 +226,12 @@
         },
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
             "content": "sha256:3c56d187d271da6631d4a03368cb99d9a368bfd9d738a1a65b5231caee2ac7c3",
             "locator": {
-              "end": 45,
+              "end": 35,
               "kind": "line_range",
-              "start": 45
+              "start": 35
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -244,12 +244,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:c485c290c1ae15965367b24a7fd5261585725a9788c022a191071e493835d16d",
             "locator": {
-              "end": 66,
+              "end": 63,
               "kind": "line_range",
-              "start": 66
+              "start": 63
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

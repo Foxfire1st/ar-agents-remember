@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/__init__.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+        "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+        "locator": {
+          "kind": "symbol",
+          "name": "TOOL_REGISTRARS"
+        }
+      },
+      "id": "RLZ-QKA3DE",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.",
@@ -14,6 +33,21 @@
               "name": "create_server"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.\n\nAnchor: `TOOL_REGISTRARS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
@@ -140,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
             "content": "sha256:8ed6cfec39c93d129d6bc8f8dd0bc802ab7b24aef5ff4d8ce96a0a22ef2033f1",
             "locator": {
               "end": 8,

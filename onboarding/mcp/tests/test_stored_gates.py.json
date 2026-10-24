@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
         },
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
             "locator": {
               "kind": "symbol",
@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:476b900cd02c924eef93e09ba981d1fa4a8edc4a52c8689f895b85baa8af783c",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:e992f9c11ed1454cd7cba91ffb9d0d96ad78ce94a4546a9c22fe3daac8d86cfc",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2289b4b0c235c765cbc6f09c6d1d13284a01fd17",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:8cd559879d28ef51f47323cfe8c44f46a4390502a1427eed3e29e59cf7b91c53",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2289b4b0c235c765cbc6f09c6d1d13284a01fd17",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
             "content": "sha256:19680dbf9a0ae6ca140df60ca87416f39295a4e69f5c47e8c98ec3d17778227d",
             "locator": {
               "kind": "symbol",

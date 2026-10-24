@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/tasks/planned_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+        "content": "sha256:2ec465b68bac364de7bc2423418a32ee69d82d5554039b80a4546960c1c1dd71",
+        "locator": {
+          "kind": "symbol",
+          "name": "agreed_revision_number"
+        }
+      },
+      "id": "RLZ-RTPDHW",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Only resolve_agreed_revision with digest_verified true yields the agreed revision number. Loose keys, missing retention or failure of both exact-manifest-byte and declared-artifact digest modes pin nothing. Revision rows expose this exact pin; a matching declared artifact digest is not independent authentication of every manifest byte.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A planned comparison records number 0 with every base equal to its candidate\n\nAnchor: `def planned_comparison(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+            "content": "sha256:d5ddce533e55344d2d9936863723bce0532a586ba79b8635224f4bc60ed55733",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only a resolved, digest-verified agreement pins a revision number\n\nAnchor: `def agreed_revision_number(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+            "content": "sha256:2ec465b68bac364de7bc2423418a32ee69d82d5554039b80a4546960c1c1dd71",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each side's lines are read from the contract in the order the master's nature implies\n\nAnchor: `def contract_branch_lines(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+            "content": "sha256:eb478344d9b0d79a67f0b477f4026b7ca4ebe1cf93971b808f36d6f27ac1cc97",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An unresolvable line answers nothing instead of the repository's HEAD\n\nAnchor: `def resolve_line_commit(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+            "content": "sha256:3198ebbb1030b7add205e5188e10949be2bff3c67757c358974d3c1e9cbefe1b",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A master with none of the three organizational markers reads as atomic",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aff7f848b06dc4f83ba2528ddfa6c103b00cc406",
+            "content": "sha256:75f64fd76e23bc2046f59c617e7f38e8f9e882ac2fd08cdfeec560e97abd5852",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
             "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e26a2f739363835cc7125bc26dd14635c6636ab8",
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
             "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
             "locator": {
               "kind": "symbol",
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ac494c87b6287a2356ab8baf253e3c4713c689a",
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
             "content": "sha256:65bfec270f239bff2aa3c9e27eb2b6bf6eab743ef1babc145d132176d38d0129",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ac494c87b6287a2356ab8baf253e3c4713c689a",
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
             "content": "sha256:baa7496e08b8674445e4fc3626d179f9dbe5de8ee434d91430bae0d54c206750",
             "locator": {
               "kind": "symbol",
@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
+            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
             "content": "sha256:830ef8e16f743aaea58b5a2b47cc56d870a7d3aa0c3aede4ac9e6449bd0647ce",
             "locator": {
               "kind": "symbol",
@@ -201,6 +201,99 @@
               "name": "frame_sandbox"
             },
             "path": "mcp/src/agents_remember/canvas/policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain.\n\nAnchor: `parse_frame_message`, `parse_host_message`, `Presenter`, `EXPLAINER_SURFACE`, `build_seat`, `update_seat`, `retire_seat`, `_check_parts`, `part_staleness`, `GradeStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:11a1ad2afc084c83d39327fc30e83c4ffbb59f8ef0a4d80495e8b2ebd226d479",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "content": "sha256:1da1d547a7e5498ef78cc046813ae28ae1827239f332926c0ef078c8b6c5d023",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
+            "content": "sha256:fcb596618cf0a2a1029f301225adc1e07ec302aea60fffa1ff1348437d62e4e2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
+            "content": "sha256:4a111ca372ef47521086ce0f62c77ece274fc8675fc53adeacd03caa7c561ba1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "content": "sha256:575a44297bf4aece1e38c6ece9283ccb872adf8edaa99f96dda4102c7fc12c3e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:ccecc61c21b17e18782ef96265843941657ee0236c264b25ccb825a546e22ac9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
+            "content": "sha256:836af3da59a7136ddc44440556032fe920c9937304557f9355d991b369c4237b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_grades.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b977f16845495bebfcfa43045a025f9174852e73",
+            "content": "sha256:24c5464b388d025d51499b17d100cd957cf568878712ad8503e6b21f3777b1ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
           },
           "kind": "code"
         }
@@ -296,7 +389,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
             "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
             "locator": {
               "kind": "symbol",

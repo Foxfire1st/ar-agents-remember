@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_access.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One comparison identity token names the owner, the number and all four trees, and a planned binding names its two tips instead\n\nAnchor: `def binding_claim(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:cb456bb286c4d945fd333356e3189cff33e7ca3fa8d1986f6e70956dd0482efc",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A surface this reader does not serve is refused by name before any path is resolved\n\nAnchor: `def root(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:6a190b867b69f5fa1e050f47a7069ef5750ea769743c7cf5c632aff03a5cf4be",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Traversal, an absolute path, an empty segment and a drive letter are refused as `path-refused`\n\nAnchor: `def relative_parts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:7eaae06cb2d710d9889fb62fa056601648e79608a6dee6632a5722ff83c41a01",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A Git option that would run another program, read a worktree path or write an output is refused, and every Git answer is marked history and not evidence\n\nAnchor: `def _run(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:66a9439fb2338f77f03d6e409edcf0128b83fb7985678740b73548c37ed26c4d",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 658
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A read is one bounded chunk of a size-capped file, with the whole-file digest and the next offset\n\nAnchor: `def reading(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:d6566cfd5a8426c186aed86ca3986614d26c27ca842cfa8150732a1159ca4d52",
+            "locator": {
+              "end": 505,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The knowledge views are a closed set, and any other view name is refused\n\nAnchor: `_VIEWS: Mapping`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e67d3087439eb16edd0dc7c471c3f194632b823e",
+            "content": "sha256:e23b284dad0c970a3c4c77a51fff9fff726311959132385c7ed58c15a67b49aa",
+            "locator": {
+              "end": 844,
+              "kind": "line_range",
+              "start": 837
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

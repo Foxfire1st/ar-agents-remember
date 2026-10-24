@@ -5,9 +5,10 @@
     ],
     "justification": "A caller-invented complete state would hide the comparison owner's partial index or lost history."
   },
-  "applicability": "Preparation of an evidence packet from the landed comparison payload.",
+  "applicability": "Preparation and consumption of an evidence packet from the existing comparison owner's opened payload.",
   "conditions": [
-    "The comparison owner has opened its sides and measured their index states."
+    "The comparison owner has opened both memory sides and measured their index states, and measured both named code sides.",
+    "Measured unavailable-history remains a stated loss; a truly absent measured code-side input refuses evidence-source-unavailable before a packet is prepared."
   ],
   "exclusions": [
     "Caller-fabricated side states or a second comparison."
@@ -24,9 +25,9 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The prepared evidence seam must consume the landed L43/L57 comparison payload and expose usable historical evidence addresses to its consumers rather than requiring tests to fabricate every collection.",
+  "statement": "The prepared evidence seam consumes the existing comparison owner's opened four-tree payload and measured side and index states, and exposes historical evidence addresses that resolve against that comparison and their recorded owner identity; callers do not fabricate completeness or substitute another comparison's populations.",
   "status": "proposed",
   "supersedes": []
 }

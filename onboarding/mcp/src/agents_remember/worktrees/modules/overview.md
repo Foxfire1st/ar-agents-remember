@@ -136,6 +136,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | `quality/certification_reuse.py` | [certification_reuse.py.md](quality/certification_reuse.py.md) | Original-object and physical-publication validation of zero-start rows |
 | `quality/execution/` | [Execution overview](quality/execution/overview.md) | Canonical suffix DTO, frozen declaration bounds and prepared sandbox manifest |
 
+`start.py` resolves the addressed leaf and checks its canonical intent-review answer before contract construction, and checks again before enclosure creation. `pending` and `review-first` return `intent-review-open` with ask-Architect guidance; an absent answer or `go` continues existing admission. Attach applies the guard only to a planning leaf, so re-entry at a later stage is distinct from starting work. The refusal creates no worktree, branch, contract or task-stage write.
+
 ## Evidence
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
 - Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. [2]
@@ -255,4 +257,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Counted native change sets have their own relocated NUL parser and changed-path observation hook. [89]
 - A capture observer runs only after an unchanged post-capture baseline is established. [90]
 - Abandon publishes contract/task/parent facts with explicit restoration of those publication inputs. [91]
-- Start and retry share the retired-provider gate and return before the retained background setup branch. [92]
+
+- start_result and attach_result place canonical intent-review checks before their admitted create/re-entry paths, with planning-only attach behavior and a second pre-create guard. [92]
+
+- Start and retry share the retired-provider gate and return before the retained background setup branch. [93]

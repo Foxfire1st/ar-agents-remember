@@ -1,0 +1,196 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+        "content": "sha256:dfca9b69177df547c2487db07515d84c4720d2bbc881d3478ce106b6d7d7b53a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fallback_or_restore"
+        }
+      },
+      "id": "RLZ-03HKDS",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Returns an available report file through the tray fallback; with no backing file it attempts to restore the previous held row. The log records held at the prior Architect only after successful restoration, and not reported if restoration fails. The return count remains not reported even when prior held custody is restored.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+        "content": "sha256:71ca219bb5c4328e63f0e8a4d4c2df36a16de0d12fa9091a5de3aa192a6da34d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admitted_held_row"
+        }
+      },
+      "id": "RLZ-1TGENK",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Filters foreign IDs and logged non-held outcomes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+        "content": "sha256:b5c927268011139f6963f171c09147161b86489a502a24c2dae43c351f4c3093",
+        "locator": {
+          "kind": "symbol",
+          "name": "_seat_action"
+        }
+      },
+      "id": "RLZ-32G84A",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Checks record/caller identity before leaf update or retire.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+        "content": "sha256:edc4defef8384fdda65eab883ab3f28e8f9dda957214e586d2a694ddf5819c4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_claim"
+        }
+      },
+      "id": "RLZ-86V8Y5",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Checks canonical architect binding and writes record before moving custody.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+        "content": "sha256:41c952ae7912f040b812f9b5a7cdd3265df680c32f78805b11e002e88d7f12fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_transfer_withdrawn_report"
+        }
+      },
+      "id": "RLZ-94QKZV",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Routes an already-withdrawn report through delivered/unknown, held, or fallback handling and returns that branch’s state after its calls complete; it does not prove exception-free logging or exactly-once delivery.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An unknown action is refused before any lookup or mutation\n\nAnchor: `def _require_action(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:61b43250af83907ebd646bb36ac4d74c4a9c7ef5ef02edcaa631dd07e645105d",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Update and Retire are accepted only from the seat the record names, and a missing record accepts none\n\nAnchor: `def _seat_action(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:b5c927268011139f6963f171c09147161b86489a502a24c2dae43c351f4c3093",
+            "locator": {
+              "end": 805,
+              "kind": "line_range",
+              "start": 744
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A claim writes the record first and then moves the master's held reports\n\nAnchor: `def _claim(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:edc4defef8384fdda65eab883ab3f28e8f9dda957214e586d2a694ddf5819c4e",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A withdrawn report follows delivery, held, unknown or fallback handling; if no backing file exists, fallback attempts to restore the previous held custody\n\nAnchor: `_transfer_withdrawn_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:6221edc631a52985711521c0c889aa4ebb67cb73c0b84070efe5e851ccb93107",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A timeout or unknown outcome is classified as uncertainty rather than a failure to report\n\nAnchor: `def _classify_send_exception(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:3e4c1c6a7105bb43954e7728e51fd145fc074f34348d2cb8af50166236c0d716",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Provider-limit, unopened, unfinished, permission, waiting-message and active-turn conditions are checked before a send attempt\n\nAnchor: `_pre_send_hold`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "content": "sha256:6221edc631a52985711521c0c889aa4ebb67cb73c0b84070efe5e851ccb93107",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

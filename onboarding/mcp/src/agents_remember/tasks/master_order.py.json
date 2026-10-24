@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
         "content": "sha256:117cf11c0828775f1b56b948879c541782e828208fbb89880b663ca48a119689",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,48 @@
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "content": "sha256:1d8a6fa5c3ffb0899420b99c69d907fbf080a5fad904e5c20fabe0932ed26565",
+        "locator": {
+          "kind": "symbol",
+          "name": "MasterOrderTask"
+        }
+      },
+      "id": "RLZ-A45KCK",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The canonical order row carries the native review state and its open predicate; this feeds the existing readiness computation and rendered state without a second ready list.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
+        "locator": {
+          "kind": "symbol",
+          "name": "derive_master_order"
+        }
+      },
+      "id": "RLZ-CSQJ04",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "MasterOrderTask carries the review state and the existing ready_ids filter excludes a non-go present review; dependency/cycle readiness rules remain.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
-          "end": 204,
+          "end": 219,
           "kind": "line_range",
-          "start": 142
+          "start": 157
         }
       },
       "id": "RLZ-H1FD2Z",
@@ -40,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
         "content": "sha256:665053f8d2822bfd03cee886c0d16ad38befd56ec6b3ea59830aba8c0e5c0a76",
         "locator": {
           "kind": "symbol",
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
           "kind": "symbol",
@@ -76,12 +112,11 @@
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
-        "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
         "locator": {
-          "end": 236,
-          "kind": "line_range",
-          "start": 207
+          "kind": "symbol",
+          "name": "derive_master_order"
         }
       },
       "id": "RLZ-QPKY0E",
@@ -90,17 +125,16 @@
         "handoffEntry": "MIK-R128@v1 rule 2",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "derive_master_order uses _task_population: each explicitly listed row takes the matching subTask child document status (matching id/kind) when available, otherwise its declared master-row status. Each waitsFor prerequisite absent from that listed population is instead inserted with synthetic status \"gone\", not taken from either a child document or a row. _component_waves retains stored-cycle identity; ready_ids admits only noncyclic planning tasks whose prerequisites are Completed. No Order is returned unless a matching listed child has nonempty waitsFor.",
+      "rationale": "derive_master_order uses each explicitly listed matching child document when available, otherwise its master-row status; absent prerequisites are synthetic gone entries. It returns no Order without a matching child with nonempty waitsFor and derives stored-cycle waves separately. Its ready_ids additionally requires a noncyclic planning task, Completed prerequisites, and no pending/review-first intent review. This is the derived Order view, not task-start authority.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
-        "content": "sha256:8e392b789fd5dbe8fc3788dd69af26738e8a3424ffbe8f361bbf4674401ae1e2",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "content": "sha256:8ff3ed975ec2710dea9083ef003e91d8d5e024780af092efce99ed76870b0be1",
         "locator": {
-          "end": 139,
-          "kind": "line_range",
-          "start": 119
+          "kind": "symbol",
+          "name": "_task_population"
         }
       },
       "id": "RLZ-YXXT68",
@@ -109,13 +143,13 @@
         "handoffEntry": "MIK-R128@v1 rule 2",
         "leaf": "260928-MIK-L162"
       },
-      "rationale": "Uses the matched child document status when available, otherwise the declared master-row fallback for wave derivation; that calculation is not a file-less dependency display-state promise.",
+      "rationale": "The transient task population takes each matched child document status, otherwise its declared master-row fallback, and carries the child intentReview.state for the separate ready_ids exclusion. Waves remain computed from status and prerequisites; the intent-review field supplies neither stored waves nor an automatic task-start gate.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
-        "content": "sha256:7f1c8eabc79d6b37aa94c86706168ce6a441fa2d4cb0152d5e6b6f935f190405",
+        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
         "locator": {
           "kind": "symbol",
           "name": "derive_master_order"
@@ -139,6 +173,21 @@
           "anchor": {
             "blob": "7da9f46c5df58baebae20d92e34e2121b5c6f2a3",
             "content": "sha256:1bfa0358102062decc80e2fc44b9205f1683a09d621841b0a8dae374b7eeaa03",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "MasterOrderTask carries the review state and the existing ready_ids filter excludes a non-go present review; dependency/cycle readiness rules remain.\n\nAnchor: `derive_master_order`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+            "content": "sha256:bae5f810eb2f2ab91ff372f651d626e3766048c13a13665f6aaa5cc50a4dd13c",
             "locator": {
               "kind": "file"
             }

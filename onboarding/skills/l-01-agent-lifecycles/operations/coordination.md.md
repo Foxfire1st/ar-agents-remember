@@ -30,6 +30,8 @@ The coordination operation instruction.
 
 The instruction owns the manager-side coordination transaction the lifecycle uses. The seat-list sentence names the sibling routes a role's own seat list gives for the role addressed, because three of that document's readers carry no `leafSeats` in their hand-over.
 
+When a start is refused as `intent-review-open`, the Manager waits for the Architect's `go` and does not retry the start.
+
 ## Current composition and authoring contract
 
 The common instructions retain explicit canonical bindings, allowed role starts, sibling leaf preparation with role_start_set, direct peer repair handovers, same-request recovery and exact-seat refusal. Held messages, permission-prompt handling, file payloads and ordinary report returns retain their established boundaries.
@@ -39,7 +41,9 @@ Only the paragraph assigning Manager report reading, next-seat/time tracking and
 
 ## Evidence
 
-No separate reference list: the file's sidecar carries the realization entries for its current anchors.
+- A Manager receiving intent-review-open waits for the Architect's go and never retries the start. [5]
+
+The file's sidecar retains the realization entries for its current anchors.
 
 ## Inherited Source-Epoch Commentary
 

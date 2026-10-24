@@ -12,6 +12,8 @@ parsing markdown back.
 
 ## Code Commentary
 
+IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode.
+
 ### Logic
 
 `TaskDocument` (and the nested `Step`/`SubStep`/`Decision`/`CodeExample`, plus
@@ -339,3 +341,5 @@ Current finalization no longer appends that exact decision; it stamps own `compl
 
 
 - Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing. [21]
+
+- IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode. [30]

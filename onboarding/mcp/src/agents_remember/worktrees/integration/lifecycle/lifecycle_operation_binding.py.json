@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
+            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
             "content": "sha256:11ff62b99ddf7f2dac49299d76f2d88db75c85912491a16a7c1264d48740e738",
             "locator": {
-              "end": 265,
+              "end": 275,
               "kind": "line_range",
-              "start": 180
+              "start": 190
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },

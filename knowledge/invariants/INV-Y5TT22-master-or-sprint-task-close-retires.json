@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The archive hook and cleanup request carry one explicit task environment root, preventing master/sprint close from leaving live explainers behind or leaf cleanup from retiring an environment it does not own."
+  },
+  "applicability": "Task retirement/archive cleanup hooks and ReviewArtifactCleanupRequest. Transaction ownership remains the existing close operation.",
+  "conditions": [
+    "A master/sprint task close supplies its own explainer root to the cleanup hook.",
+    "Preview leaves environments unchanged and lists exact would-retire identities."
+  ],
+  "exclusions": [
+    "Leaf finalize, abandon or cleanup when explainer_root is None.",
+    "Calling a partial/failed environment cleanup successful because the enclosing transaction already committed."
+  ],
+  "id": "INV-Y5TT22",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R186@v2 rules8-9"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-task-close-retires-environments",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Master or sprint task close retires that task own explainer environments through the same cleanup hook, deriving their root from coordination/repository/task rather than the moved archive directory. A preview lists exact would-retire leaf/agent/generation entries and retires nothing. Partial or failed environment cleanup is retained as failed hook evidence; leaf finalize/abandon/cleanup carries no explainer root and does not retire the environment.",
+  "status": "proposed",
+  "supersedes": []
+}

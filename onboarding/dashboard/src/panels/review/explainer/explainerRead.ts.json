@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerRead.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two reads drop stale answers by sequence and take a moved event into the held state\n\nAnchor: `function useExplainerAnswer(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:572aecf6739ba92f7134eca5ce03b9c2b89d097423aae5badc0a1ca83660c4b8",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only the newest answer for a mounted view is allowed to land\n\nAnchor: `function isCurrent(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:46d6786ded1588f95b404c7ed7c3b106745c3c730ec05ad76d7b196e6724a2fd",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Update and removal report a named refusal and re-read after every press\n\nAnchor: `function useExplainerPresses(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:98dfa23ed927aa2eb363b867297a684b52d047baa5ac5e04efd1e772879836df",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "An identical regeneration press reuses its request id, and a success re-reads\n\nAnchor: `function useRegenerateAction(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:c0ec8ba926d8e67151e34d3232e4b60183b8aec18660c0f5858bf6a4ad1e68d3",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A claim link resolves to a location, hunk or subject selection, or to nothing\n\nAnchor: `export function resolveClaimSelection(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:ff68a672cb9c05600849f3321de67ef5f2a6641a4a9598d72e178c1e395c0fbc",
+            "locator": {
+              "end": 550,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A frame's evidence destination resolves only against the shown comparison\n\nAnchor: `export function resolveEvidenceSelection(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1e97804b3d469e1b66dc36468f79c42b32b0d3a",
+            "content": "sha256:cc5c133e0244370e8bd1fd6664aa2f4876c0ede51c37f11d05bec4592a9229f8",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 562
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

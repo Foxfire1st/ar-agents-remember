@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/cockpit/reviewExplainerColumn.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+        "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the exact same iframe DOM node and draft across Operations and Review page/phase switches"
+        }
+      },
+      "facet": "Pins a single iframe DOM node and its draft across the ordinary-document and explainer transitions.",
+      "id": "PRF-2C9YAK",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-persistent-frame",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+        "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps the exact same iframe DOM node and draft across Operations and Review page/phase switches"
+        }
+      },
+      "facet": "Pins the exact explainer default and shared frame over page/phase changes.",
+      "id": "PRF-9BDS5M",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+        "content": "sha256:0257cb34b6fa34efa48e2d23b25e7e0fc22d75f160462407f990c0f12c8ddb86",
+        "locator": {
+          "kind": "symbol",
+          "name": "passes column.explainer through RightRail into DocumentChat so cold, open, finalized and planning targets select explainer/placeholder, never Worker"
+        }
+      },
+      "facet": "Pins the exact explainer default and shared frame over page/phase changes.",
+      "id": "PRF-RQCZRR",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A review without a leaf has no explainer address\n\nAnchor: `names the review’s repository, master and leaf, and no other page’s chat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+            "content": "sha256:7055bc64bd3bf1c46b71b5cf73b4ddc8b073d75c123e4f05c84be7147c7987f9",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An Operations leaf document shows Retire and retires a cold explainer\n\nAnchor: `mounts ExplainerTaskDocumentControl on Operations leaf task documents and retires cold explainers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+            "content": "sha256:56a37b5d2fcf87cd83c07ae25b963fc4f461d84abc783d8172980a23b67a4da6",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The frame node and the draft survive switching between Operations and Review\n\nAnchor: `keeps the exact same iframe DOM node and draft across Operations and Review page/phase switches`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+            "content": "sha256:0ce3b58e88f62d4180e5fcbcf739eed8b6887ddb5db9944e97f12699802c6d52",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A page without an explainer keeps the document's own chat and reads no explainer state\n\nAnchor: `keeps the document’s own chat for a page without an explainer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06ab2ccac065ddfc70f87a07cd6c30c9d408b967",
+            "content": "sha256:75cb35383677b336f3d92b4b3cf8ce5cb462c670f7863ffbb9939f57e4547914",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

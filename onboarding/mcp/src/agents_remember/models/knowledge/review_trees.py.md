@@ -18,6 +18,8 @@ same_trees compares task/leaf, four repository/tree pairs and converted base. It
 
 `ReviewTreesResult` adds `latest`, the leaf's highest recorded number (the comparison menu's list), and `delivered`, the notice value. A landed leaf's resolved `comparison` is its delivered pair unless the read explicitly asks for a recorded number, which returns that record instead; it need not be the highest number, so the two are separate fields. An explicit `history=recorded` with no number is its own branch: it disables delivery and reopens the leaf's latest published record, which for a landed leaf whose last record is stale is not its delivered pair (`review_candidate_resolution.py:189-202`, `review_committed_leaf.py:125-136`).
 
+`TreeKnowledge` and `ReviewTrees` are frozen internal carriers moved here from the application owner. The first pairs a memory side's wire state with an optional index path; the second carries the comparison record, both indexes, recorded/live location facts and code sides. `sides()` returns before then after. Moving these carriers does not capture trees, pin refs or validate a current candidate.
+
 Knowledge sides distinguish available, unavailable-history and legacy-unavailable, carrying complete/partial index state and problems. Reopened code sides distinguish available from unavailable-history. Standalone file/record/source/tree memory-diff carriers remain exported; their existence does not add a knowledge_diff field to ReviewTreesResult.
 
 ReviewWorklistView carries source/bound metadata, item/history documents, gate-owned item verdicts, linked changes and incomplete items. Its code_changes attribute is excluded from serialization; the root result has a separate public code_changes field. Application owners project document keys and establish binding: the DTO does neither.
@@ -40,3 +42,7 @@ All shapes use the shared frozen bounded model conventions. They record trees, o
 
 - The delivered value names the pair, its four trees and the notice state, without becoming a review. [23]
 - The leaf-wide result separates the highest recorded number from the comparison it resolved. [24]
+
+- The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation. [25]
+
+- The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation. [25]

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:978c67478e11663ed940c6e0265ad11166d276984ba64df13d377a560b36c101",
             "locator": {
               "kind": "symbol",
@@ -128,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
             "content": "sha256:e843910b5bfaed01bdf269f09215a71349d149d857ac5a3d1c6bd142cae57b4a",
             "locator": {
               "end": 83,
@@ -163,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
             "locator": {
               "kind": "symbol",
@@ -175,12 +175,12 @@
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:ec47c057b29b773e37b111630980ebbc724ecf79a307ff782e9cda7b2737c82e",
             "locator": {
-              "end": 324,
+              "end": 322,
               "kind": "line_range",
-              "start": 243
+              "start": 241
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },

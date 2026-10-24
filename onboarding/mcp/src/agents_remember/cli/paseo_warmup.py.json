@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9428d73e043d1a52e02a94e709a8a0e90b8b1aeb",
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
         "content": "sha256:4bcfb50317177298a29872dc1c8e95835aab6ef8c03427a916e792ededae4822",
         "locator": {
-          "end": 331,
+          "end": 336,
           "kind": "line_range",
-          "start": 280
+          "start": 285
         }
       },
       "id": "RLZ-AJJHFC",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "9428d73e043d1a52e02a94e709a8a0e90b8b1aeb",
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
         "content": "sha256:842ecb7f0b54c004ef33e512586e12626fbed10242f7ad5ecfcf699e74b82f84",
         "locator": {
-          "end": 83,
+          "end": 84,
           "kind": "line_range",
-          "start": 64
+          "start": 65
         }
       },
       "id": "RLZ-BQ33S1",
@@ -38,6 +38,24 @@
       },
       "rationale": "This transport issues only the timeline-read resume command and preserves the host refusal.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+        "content": "sha256:5d252ee6f35f4bebc6c8c13eaaf4b3bc2a1b85573ede9070f3a9d2c3964888c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "tree_agent_ids"
+        }
+      },
+      "id": "RLZ-Z10WMV",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Warmup removes all explainer_seat_ids derived from environments after collecting ordinary role ids; a host restart does not load those seats.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -48,6 +66,21 @@
           "anchor": {
             "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
             "content": "sha256:648a3cb48f72161c1d4b561ea07942f426ccc73677f9b0c5bc06b75e0b6e5279",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Warmup removes all explainer_seat_ids derived from environments after collecting ordinary role ids; a host restart does not load those seats.\n\nAnchor: `tree_agent_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+            "content": "sha256:3f386b2c5cee92657f13c0fd5d4cc2c96000c359069d53b90ad52fe05599f9ae",
             "locator": {
               "kind": "file"
             }

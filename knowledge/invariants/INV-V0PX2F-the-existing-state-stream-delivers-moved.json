@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The stream adapter, scoped subscriber and refresh must agree so one leaf cannot refresh a sibling or retain stale no-work facts."
+  },
+  "applicability": "A mounted live review receiving review.explainer.moved, including planning-master moves and cleared notices.",
+  "conditions": [
+    "The payload names the exact address and is received from the current EventSource generation."
+  ],
+  "exclusions": [
+    "No independent transport or latency guarantee is introduced.",
+    "The event says a move exists; the developer's Update remains a separate action."
+  ],
+  "id": "INV-V0PX2F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/data/stream.test.ts::delivers the named SSE event to a mounted subscriber without a page reopen; dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx::immediately shows MovedNotice and Update when explainer work exists, and renews live deterministic reads when no explainer work exists; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE07-moved-notice",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing state stream delivers moved and cleared notices only to the exact leaf subscriber, shows the watcher line and explicit Update when work exists, renews live deterministic facts for no-work or no-Update moves, clears the mark on a cleared notice and excludes recorded-history refresh without waking an explainer.",
+  "status": "proposed",
+  "supersedes": []
+}

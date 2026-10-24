@@ -319,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
             "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
             "locator": {
               "end": 35,
@@ -355,12 +355,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
             "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
             "locator": {
-              "end": 74,
+              "end": 129,
               "kind": "line_range",
-              "start": 59
+              "start": 114
             },
             "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
           },

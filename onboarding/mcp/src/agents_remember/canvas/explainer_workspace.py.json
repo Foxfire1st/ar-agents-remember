@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_workspace.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+        "content": "sha256:4ed43a258e0fcf208ac6679b348d6361e14992236f2b52e815c685ed6e0cfc17",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_environment"
+        }
+      },
+      "id": "RLZ-TBNSKE",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The build writes the snapshot, the instructions and the binding last, so a failed build leaves no bound environment behind.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every input is written before the binding, so a failed build never claims an environment\n\nAnchor: `def build_environment(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:4ed43a258e0fcf208ac6679b348d6361e14992236f2b52e815c685ed6e0cfc17",
+            "locator": {
+              "end": 713,
+              "kind": "line_range",
+              "start": 649
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An Update binds last, and keeps the snapshot it replaced while a turn may still be reading it\n\nAnchor: `def update_environment(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:f82f8c0be7c25995ae070b5be998b69c04cfab8ab559fed62a2936c4beabd5cb",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 716
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A snapshot links the files whose blobs are unchanged and writes the rest, recording each one in a read-only manifest\n\nAnchor: `def write_snapshot(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:e0b9a4f4007531e25cb726c0c2e25b7b49e7e01425b7620b1764196cd9e9c802",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A snapshot number above the bound one is reclaimed, so an interrupted build leaves nothing to reuse\n\nAnchor: `def next_snapshot_number(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:4017fac182693753d99185d1727aea2960cc76e53a42b6d18d689ad448e57618",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The process tree is recorded in a receipt before the seat is archived or any file is removed\n\nAnchor: `def retire_workspace(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:6328d10097f74a93f89c0c448a4f59af908b375afae2a31149844e27f744511c",
+            "locator": {
+              "end": 1066,
+              "kind": "line_range",
+              "start": 1042
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Archive, process end and removal are each recorded, and the receipt finishes only after the workspace is gone\n\nAnchor: `def settle_retire(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
+            "content": "sha256:20f0de503e3dfcc19be5f4bd4fb1014955229337896c9e3d03ae8420d57b9fb9",
+            "locator": {
+              "end": 1142,
+              "kind": "line_range",
+              "start": 1090
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

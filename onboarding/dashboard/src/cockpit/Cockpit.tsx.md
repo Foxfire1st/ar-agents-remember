@@ -395,3 +395,7 @@ No separate cross-repository implementation claim.
 - Operations/sidebar and review/chat column sizing. [102]
 - Shown page/repository provenance values. [103]
 - Tray button outside the view group and layer outside railed body. [104]
+
+The shared RightRail now forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key.
+
+- The shared RightRail now forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key. [105]

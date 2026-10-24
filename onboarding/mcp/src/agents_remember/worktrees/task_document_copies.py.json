@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:0a810d4c6fcf7b05397a00594ec42bfe1957c0981a0e528ff4bbf97cd4ddfb0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_collect_agreed_revision_writes"
+        }
+      },
+      "id": "RLZ-1N4KSK",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:d9b1e754708d6706d68c6b3c9a6de235fc1964bc4fe06588e5c2425427e2985e",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_leaf_workspace_reference"
+        }
+      },
+      "id": "RLZ-2HK37B",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Reference staging reads task-owned notes/reference/<leaf> and a strict digest-verified agreed revision, excludes binding.json/manifest.sha256/reclaimed.json/ready.json/draft.json, checks per-file/total/scan budgets and symlink confinement, publishes staged files, then seals reference-custody. A retry with intact sealed files reuses custody.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:5b46a64269a66d193bd36f56914b292e6d417b931eb9d93c82e3044f7a6152d5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
@@ -39,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:935a00e1a2d66e4ae67ffd4ab55db56a28fbdfc64ec9f6e7d931d2283fda1f2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ReferenceCopyStage"
+        }
+      },
+      "id": "RLZ-9KAPDB",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
@@ -57,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:f4dfa4282ff079a1da5341d0ccba273a44931231a090cfe0eed4af02b7c5366d",
         "locator": {
           "kind": "symbol",
@@ -75,7 +129,43 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:a18f502921bd5e83906ace02094f78261556a5f132c1531a35249d9215e32d5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "REFERENCE_EXCLUDED_NAMES"
+        }
+      },
+      "id": "RLZ-F5EGZ2",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:d58bfb7fe068f27c324fda44a2d99e5ce99d052d8f4aa72eda6f3853b9df928d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_confined_source"
+        }
+      },
+      "id": "RLZ-H5CSAZ",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:801be0b9ba72a820e9ad0e5a48ce65dfb01cd93bae60b7fddc9e449251879340",
         "locator": {
           "kind": "symbol",
@@ -93,7 +183,43 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:c434ca574fbeb20f180e88c43c3ba7f3ae1931574d3fa025bbdff801c701492a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_agreed_revision_dir"
+        }
+      },
+      "id": "RLZ-M3ZG2M",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:f186d37215df4341cf8c05fd13beaad601923cc886a8ab74d46a74b57624630d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_collect_task_reference_writes"
+        }
+      },
+      "id": "RLZ-N60RZE",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:f4dfa4282ff079a1da5341d0ccba273a44931231a090cfe0eed4af02b7c5366d",
         "locator": {
           "kind": "symbol",
@@ -111,7 +237,7 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:f0e3d69461507f8f28e3e39041837ad7e5c22cd2af27f333f8cdfc979e615ed5",
         "locator": {
           "kind": "symbol",
@@ -129,7 +255,7 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
         "locator": {
           "kind": "symbol",
@@ -147,7 +273,25 @@
     },
     {
       "anchor": {
-        "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+        "content": "sha256:f1391d2d98de01353363d0891ce08939cf85ea6311b69818f40f51e7fd2bbe0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reused_reference_custody"
+        }
+      },
+      "id": "RLZ-SC0VR8",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The custody implementation excludes runtime metadata, budgets the admitted real-path copies, resolves the canonical agreement triple, reuses sealed copied custody on retry and turns copy failure into a named warning.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
         "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
         "locator": {
           "kind": "symbol",
@@ -170,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
             "content": "sha256:4fef8b0785d912b8f457a056d30f518ec2228d777028daddaacee2a79443903c",
             "locator": {
               "kind": "symbol",
@@ -234,12 +378,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
             "content": "sha256:dfc75805de9637418bf788acd2a96d2a193400b375047e184bb84be87f0d3cdf",
             "locator": {
-              "end": 698,
+              "end": 706,
               "kind": "line_range",
-              "start": 694
+              "start": 702
             }
           },
           "kind": "code"
@@ -247,12 +391,27 @@
       ]
     },
     "6": {
-      "note": "An admitted leaf receives its own rendered document plus declared requirement files at repository-task-relative paths, deduplicated from local Markdown links/typed references. It does not copy master/sprint/reference baggage. INDEX records copied digests and missing requirement rows; missing sources are named without failing launch solely for absence. Refresh resolves the bound own leaf using artifact identity or the safe leaf_id/task_root binding, recomputes the leaf-plus-requirements set, reclaims obsolete copies and includes deletions in rollback. Foreign/unrecognized contracts still fail closed. Per-file/aggregate copy and rollback budgets and bounded status reconciliation remain explicit; large-file size/time comparison is not a universal hash witness. Copies are outside Git and never replace canonical authority.",
+      "note": "An admitted leaf receives its own rendered document plus declared requirement files at repository-task-relative paths, deduplicated from local Markdown links/typed references. The rendered-document copy set excludes master/sprint/reference baggage; the separate prepare_leaf_workspace_reference routine in this module copies the task-owned reference folder and exact agreed static revision into the group’s reference directory. INDEX records copied digests and missing requirement rows; missing sources are named without failing launch solely for absence. Refresh resolves the bound own leaf using artifact identity or the safe leaf_id/task_root binding, recomputes the leaf-plus-requirements set, reclaims obsolete copies and includes deletions in rollback. Foreign/unrecognized contracts still fail closed. Per-file/aggregate copy and rollback budgets and bounded status reconciliation remain explicit; large-file size/time comparison is not a universal hash witness. Copies are outside Git and never replace canonical authority.\n\nAnchor: `prepare_leaf_workspace_reference`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f49aa7f780ee01887653bdf6222e49bd4427dd3",
-            "content": "sha256:fe0be55b31df8f9f73b8b774e716b1d8a2583d45227ab5aa5b9392590eca0bd8",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Reference staging reads task-owned notes/reference/<leaf> and a strict digest-verified agreed revision, excludes binding.json/manifest.sha256/reclaimed.json/ready.json/draft.json, checks per-file/total/scan budgets and symlink confinement, publishes staged files, then seals reference-custody. A retry with intact sealed files reuses custody.\n\nAnchor: `prepare_leaf_workspace_reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
               "kind": "file"
             }

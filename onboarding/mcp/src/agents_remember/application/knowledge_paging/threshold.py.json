@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+        "content": "sha256:ab9be371d337f0c21933b05e772dee0c59a4138b047a8125f52e5bbe08aa0df1",
+        "locator": {
+          "kind": "symbol",
+          "name": "response_tokens"
+        }
+      },
+      "id": "RLZ-6BRY85",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The threshold header uses the light TOKENIZER_NAME string; measuring a response loads the existing models.tokens counter at first measurement, retaining the same 8000-token threshold and tokenizer name.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module statement: one measurement for the cut and the stamped tokens.\n\nAnchor: \"The one token threshold every bounded knowledge read\"",
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
             "content": "sha256:cbc837fa4fb1bc5445b8c9d9803511a2c2f1b7443542a6478a6a515c3ec544d2",
             "locator": {
               "kind": "symbol",
@@ -51,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
             "content": "sha256:c389089db08dbfd442f3c61b408364558eefa363d39ca17806f2f16e72324bab",
             "locator": {
               "kind": "symbol",
@@ -78,11 +97,26 @@
         },
         {
           "anchor": {
-            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
             "content": "sha256:ce736041f052d420506d6846a01a240d0cbc7929e781b2f0e2b8fd362265b918",
             "locator": {
               "kind": "symbol",
               "name": "threshold_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The threshold header uses the light TOKENIZER_NAME string; measuring a response loads the existing models.tokens counter at first measurement, retaining the same 8000-token threshold and tokenizer name.\n\nAnchor: `response_tokens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+            "content": "sha256:c1390829d706c5e8374c4b9ba16d703c8e7eb47e86a136c37580f8380b8eb3a2",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

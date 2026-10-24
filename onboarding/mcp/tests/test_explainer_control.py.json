@@ -1,0 +1,275 @@
+{
+  "path": "mcp/tests/test_explainer_control.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:14d900799b6de4153e6793d316cfd773848930388deb632d9cc82e6b17fb4ca9",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClaimTests.test_claim_restores_custody_when_no_report_file_exists"
+        }
+      },
+      "facet": "When the claiming workspace and backing report file are both absent, the withdrawn report ID reappears in the previous Architect’s held store; the log records held at that previous Architect while the claim counts notReported rather than claiming delivery or a new-recipient hold.",
+      "id": "PRF-0C0XB7",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:3de974e21d450482d573b46b568b57dc476ea582f2c2061d65618cd41af4c847",
+        "locator": {
+          "kind": "symbol",
+          "name": "SeatActionTests.test_update_by_the_named_seat_is_accepted"
+        }
+      },
+      "facet": "The Architect already named by the record may Update; the payload reports updated and forwards the exact repository/master/leaf scope and composed host to the seat service.",
+      "id": "PRF-0WFJCM",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:fe3e1f128f58151451b4301830ef296c3a359a136c1d83b74d6d7acc9a76720a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClaimTests.test_a_non_architect_claim_is_refused_and_writes_nothing"
+        }
+      },
+      "facet": "A Manager-bound caller attempting claim receives not-an-architect in both reason and code, and no master-to-architect record file is written.",
+      "id": "PRF-5KBCYQ",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:87648322c7c96e20ee87e4f658f9f6d448b80bebd53935d1ccdaea9f167505a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "SeatActionTests.test_update_with_no_record_is_refused_and_names_claim"
+        }
+      },
+      "facet": "Update with no master-to-architect record returns not-this-masters-architect and points the caller to claim instead of accepting the action.",
+      "id": "PRF-6SMD5X",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:2cbca449bba2f9e83bc8735e98e7af73612e9d3330b5d29401638e49b19a7b48",
+        "locator": {
+          "kind": "symbol",
+          "name": "ManagerStartWriterTests.test_an_orchestrator_starter_records_its_architect_parent"
+        }
+      },
+      "facet": "A Manager start whose starter is an Orchestrator with a recorded Architect parent persists the parent Architect ID and explicitly differs from the Orchestrator ID.",
+      "id": "PRF-ETRZ36",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:00c5d85094064f19164ba73c05a2be2ba0f2d541da9baefae21d26f484ba3298",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClaimTests.test_claim_respects_provider_limit_timeout_and_full_or_unavailable_destination"
+        }
+      },
+      "facet": "The three asserted subcases show: a provider-limited recipient receives a held row without a sender call; a send timeout logs sent, outcome unknown and is not resent on claim retry even when its old held row reappears; a full destination held store returns the report file to an undelivered tray file, logs not reported and does not increment held.",
+      "id": "PRF-P23V2V",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:b7d11d9fab430a68a8c41951252df3530764d5101c8e87088a33178855b1e62e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClaimTests.test_claim_with_an_unavailable_destination_falls_back_to_the_tray"
+        }
+      },
+      "facet": "When the claiming Architect has no receipt/workspace, the report’s backing file becomes an undelivered tray file, the log records not reported with destination-unavailable, and no held or sent success is counted.",
+      "id": "PRF-PSSJE4",
+      "invariant": "INV-KBHB8B",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:a1b134bb9a747c7e0998a89577ee55bdf3610cbfa017033ba73c1189e2278e03",
+        "locator": {
+          "kind": "symbol",
+          "name": "ManagerStartWriterTests.test_a_hosted_architect_starter_is_recorded"
+        }
+      },
+      "facet": "A Manager start whose starter is a hosted Architect persists that Architect’s agent ID with act manager-start at the master’s record address.",
+      "id": "PRF-SPHY27",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:5f1a51bff534869acd5ce22f22670bbbdaac427c38e1c9641a3c081b91d38e91",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReceiptBoundaryTests.test_a_path_receipt_id_is_refused_at_the_tool_boundary_and_leaves_outside_bytes"
+        }
+      },
+      "facet": "A Retire receipt ID containing ../../ is refused receipt-id-required before retire_seat is called; the outside file and the product inventory remain unchanged.",
+      "id": "PRF-T4JDYB",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+        "content": "sha256:bd8c7b9ec3bdb27670e9682583a4ee0b3ce0d20a4dce014ca722eab10132168a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ClaimTests.test_an_architect_claim_writes_the_record"
+        }
+      },
+      "facet": "A hosted Architect claim returns claimed and persists that caller’s agent ID, act claim and nonempty time in the master-to-architect record.",
+      "id": "PRF-TMP5MC",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_an_architect_claim_writes_the_record` protects the architect's claim writing the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:bd8c7b9ec3bdb27670e9682583a4ee0b3ce0d20a4dce014ca722eab10132168a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_architect_claim_writes_the_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_non_architect_claim_is_refused_and_writes_nothing` protects a non-architect claim being refused without a write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:fe3e1f128f58151451b4301830ef296c3a359a136c1d83b74d6d7acc9a76720a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_non_architect_claim_is_refused_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_claim_moves_one_held_report_to_the_claiming_seat` protects a claim moving exactly one held report to the claiming seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:1dcb0c4d1b0b6583beb26d69bb96bf20061caf8b2e791968fa016ba865e7b151",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_claim_moves_one_held_report_to_the_claiming_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_update_by_another_seat_is_refused_and_names_claim` protects an Update from a seat the record does not name being refused as a claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:60631a0477bdfcd69f92a08627cbf9b7ebc41703885585aaddeecb98c6b77f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_update_by_another_seat_is_refused_and_names_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_update_and_retire_reach_the_real_seat_service` protects both seat actions reaching the composed seat service.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:acbad37684a6f3ec8661381c37c4d18e24c71e60c6545927a572e4f48a2a28c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_update_and_retire_reach_the_real_seat_service"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_a_path_receipt_id_is_refused_at_the_tool_boundary_and_leaves_outside_bytes` protects a path receipt id being refused at the tool boundary with no outside write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4737977284fb4095fa9991f03d6dda55b09cd799",
+            "content": "sha256:5f1a51bff534869acd5ce22f22670bbbdaac427c38e1c9641a3c081b91d38e91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_receipt_id_is_refused_at_the_tool_boundary_and_leaves_outside_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

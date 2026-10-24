@@ -90,6 +90,6 @@ Both are optional here for that reason. Pinned by
 
 - The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]
 
-## 260928-MIK-L198 — the finalize response names the root and the sweep
+## Outside scratch in the finalize response
 
-`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. An enclosure published before root records existed supplies no per-enclosure `outsideScratch` record. Its finalize call can still carry `outsideScratchReconcile` when the independent product-parent sweep removes or reports roots, including a sweep failure. A dry run skips that sweep, and a sweep with no findings leaves the result unchanged.
+`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. The model defaults both fields to empty dictionaries. An enclosure without a recorded root has no own-root removal to report, while a non-preview terminal sweep can still populate `outsideScratchReconcile` with other roots it removed or reported, or with a reconciliation failure. A dry run skips that independent sweep, and a sweep with no findings leaves the result unchanged.

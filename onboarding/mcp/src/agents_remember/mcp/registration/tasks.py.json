@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/tasks.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+        "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_task_document_tools"
+        }
+      },
+      "id": "RLZ-QYHQYS",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
@@ -131,12 +150,27 @@
         },
         {
           "anchor": {
-            "blob": "56347c4b09f5f0338f5f534cc4a623e36d623ebb",
+            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
             "content": "sha256:1b05f9da36ec3e14d0d484571e1def8adf54ccac0d41c499c1a44176c06c6140",
             "locator": {
-              "end": 83,
+              "end": 75,
               "kind": "line_range",
-              "start": 83
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.\n\nAnchor: `_register_task_document_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

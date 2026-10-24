@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
-        "content": "sha256:effc738471a3fdc61ce3d3a1cb0a1327cd2c5d16c8636b25c1eb5dd69d231c3d",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:1bc9eae7c7c554f777b2d2b684886a704611d9d58999052ef5876b3241f1c81d",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
-        "content": "sha256:6b8f98c6e8c2093069eeac8647aa2535db431a3041d75a5fa0c8d25b084ca995",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentState"
+        }
+      },
+      "id": "RLZ-3E84XH",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:5c4f65fa2a114379d7e49d2a782c996316085752a0a2cf942e5fb9c334e13fc4",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +74,8 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
-        "content": "sha256:6b8f98c6e8c2093069eeac8647aa2535db431a3041d75a5fa0c8d25b084ca995",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:5c4f65fa2a114379d7e49d2a782c996316085752a0a2cf942e5fb9c334e13fc4",
         "locator": {
           "kind": "file"
         }
@@ -73,7 +91,25 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "cancelSeat"
+        }
+      },
+      "id": "RLZ-D33A31",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
         "locator": {
           "kind": "symbol",
@@ -91,8 +127,8 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
-        "content": "sha256:effc738471a3fdc61ce3d3a1cb0a1327cd2c5d16c8636b25c1eb5dd69d231c3d",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+        "content": "sha256:1bc9eae7c7c554f777b2d2b684886a704611d9d58999052ef5876b3241f1c81d",
         "locator": {
           "kind": "symbol",
           "name": "agentCreation"
@@ -109,7 +145,7 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
         "locator": {
           "kind": "symbol",
@@ -127,7 +163,7 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
         "locator": {
           "kind": "symbol",
@@ -145,7 +181,7 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
         "locator": {
           "kind": "symbol",
@@ -163,7 +199,7 @@
     },
     {
       "anchor": {
-        "blob": "802f4205ed1f722488ab68eb65a7d09f777f8f33",
+        "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",
@@ -186,12 +222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
-              "end": 1118,
+              "end": 1385,
               "kind": "line_range",
-              "start": 1108
+              "start": 1375
             }
           },
           "kind": "code"
@@ -233,12 +269,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:8f20824ca1a7a145e73b03e91e72398a6f2cd96399fd7b08e9f62071199336c3",
             "locator": {
-              "end": 420,
+              "end": 464,
               "kind": "line_range",
-              "start": 409
+              "start": 453
             }
           },
           "kind": "code"
@@ -263,40 +299,14 @@
       ]
     },
     "5": {
-      "note": "The bridge carries the review-presenter confinement and its two commands: a launch whose `ar.capability` is `review-presenter` is refused with `presenter_confinement_unavailable` unless the provider is Claude and the only applied tool server is `review-presenter`, and it then passes `tools: ''` with `strict-mcp-config` so the capability's own read/write tools are the entire authority on every resume; `presenter-transcript` and `presenter-cancel` are the bridge's own operations for reading an attempt's conversation and cancelling it.\n\nAnchor: \"if (input.labels['ar.capability'] === 'review-presenter') {\"; \"async function presenterTranscript({ api, daemon }, input) {\"; \"async function presenterCancel({ api, daemon }, input) {\"",
+      "note": "`agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the product confines its own bound tool server at registration and dispatch. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request.\n\nAnchor: `cancelSeat`, `agentState`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-            "content": "sha256:a289f64af9267d07a84593a2b4c1f5c87f129bc6b4d1d1cd11406c41ff0f4688",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:5c4f65fa2a114379d7e49d2a782c996316085752a0a2cf942e5fb9c334e13fc4",
             "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 627
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-            "content": "sha256:ec71c77a22d773dd031fb902d232d04a33bee8b37de03d5cd71f27ec609078bb",
-            "locator": {
-              "end": 754,
-              "kind": "line_range",
-              "start": 733
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-            "content": "sha256:dcb9ce467f4a4802adf2e31ccb7d1c91532f30717562cd5fd573446705718723",
-            "locator": {
-              "end": 763,
-              "kind": "line_range",
-              "start": 756
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -308,12 +318,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 902,
+              "end": 1169,
               "kind": "line_range",
-              "start": 841
+              "start": 1108
             }
           },
           "kind": "code"
@@ -341,6 +351,21 @@
               "start": 23
             },
             "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence. The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null.\n\nAnchor: `cancelSeat`, `agentState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:5c4f65fa2a114379d7e49d2a782c996316085752a0a2cf942e5fb9c334e13fc4",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The minimized line and dock tests guard nested event propagation so Close cannot also expand while retaining picks."
+  },
+  "applicability": "The minimized tray line drawn above a native composer or at its existing dock.",
+  "conditions": [
+    "The target is outside a nested button, link, input, textarea or select, and outside a nested role=button, role=link or role=menuitem element. The guard does not inspect generic contenteditable elements."
+  ],
+  "exclusions": [
+    "No new geometry or paste/capture semantics."
+  ],
+  "id": "INV-E9HM5F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/tray/TrayDock.test.tsx::expands when the docked line itself is clicked, away from its button; dashboard/src/tray/TrayDock.test.tsx::keeps the close control on the docked line closing the tray, and does not expand on it; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE08-tray-line",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The minimized tray head expands on a click, Enter or space when the target is outside the nested controls listed by its guard; those controls retain their own action, so Close cannot also expand and continues to retain the picks.",
+  "status": "proposed",
+  "supersedes": []
+}

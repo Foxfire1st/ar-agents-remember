@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Declare the review’s subject, exact block and code-without-invariant lane selections plus its deterministic sort vocabulary.
+Declare the review's subject, exact-block and lane selections, deterministic sorts and explainer-category sort keys.
 
 ## Code Commentary
 
@@ -23,4 +23,9 @@ This is shared vocabulary, not selection state, persistence or ranking implement
 ## Evidence
 
 - Selection forms and sort domain [1]
-- Complete labels and memory-dependent subset [2]
+
+Declare subject, exact block and lane selections, plus deterministic and explainer-category sort vocabulary. DeterministicSort contains the seven existing sorts; JudgmentSort is a nonempty judgment:<category> key. isJudgmentSort, judgmentCategoryOf and judgmentSortFor convert that vocabulary. REVIEW_SORTS keeps the deterministic array for enumeration but its includes handler accepts valid judgment keys; SORT_LABELS derives their ✦ category label. MEMORY_SORTS still identifies only the four entry-memory-dependent deterministic sorts. This file owns vocabulary, not ranking, persisted preference or judgment authoring.
+
+- Declare subject, exact block and lane selections, plus deterministic and explainer-category sort vocabulary. DeterministicSort contains the seven existing sorts; JudgmentSort is a nonempty judgment:<category> key. isJudgmentSort, judgmentCategoryOf and judgmentSortFor convert that vocabulary. REVIEW_SORTS keeps the deterministic array for enumeration but its includes handler accepts valid judgment keys; SORT_LABELS derives their ✦ category label. MEMORY_SORTS still identifies only the four entry-memory-dependent deterministic sorts. This file owns vocabulary, not ranking, persisted preference or judgment authoring. [3]
+
+- The sort vocabulary retains seven deterministic values and four memory-dependent sorts, accepts nonempty judgment:<category> keys through REVIEW_SORTS.includes and derives their ✦ labels through SORT_LABELS. [2]

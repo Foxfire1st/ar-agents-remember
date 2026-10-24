@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c460327e477ba9c4fa93f5fe7be8e19e3dfec963",
+            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
             "content": "sha256:5fe1ad5d62604e25c59f356dfc0cd2c60397b74344624a2d74a62b5a49fedc9a",
             "locator": {
-              "end": 65,
+              "end": 68,
               "kind": "line_range",
-              "start": 21
+              "start": 24
             },
             "path": "mcp/src/agents_remember/cli/role_start_execution.py"
           },

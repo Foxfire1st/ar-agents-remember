@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_canvas_authoring_retired.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+        "content": "sha256:364aabaa43085efffdf7b6d27a36725313d5a8694687d6cbf72d1b9534415679",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_missing_frame_is_refused_by_name_and_never_swapped"
+        }
+      },
+      "facet": "A request for missing review-page while explainer exists returns 404 frame-unavailable and names review-page instead of serving the other frame.",
+      "id": "PRF-NR8CJV",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-missing-frame-refusal",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+        "content": "sha256:885d2fa4c734e1af005e7cafe158c47b86bf13f5343c35539910b87ad6b2becb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_create_app_serves_saved_frame_revisions_nested_assets_and_bridge_messages"
+        }
+      },
+      "facet": "The real app opens revision 1 and revision 2 in separate channels without displacing the first; each serves its own page text and revision 1 serves its nested asset, while retired authoring POSTs leave the prior state unchanged.",
+      "id": "PRF-NV628S",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+        "content": "sha256:885d2fa4c734e1af005e7cafe158c47b86bf13f5343c35539910b87ad6b2becb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_create_app_serves_saved_frame_revisions_nested_assets_and_bridge_messages"
+        }
+      },
+      "facet": "Through the real application, the retained revision channel accepts offer-selections and records request-explanation; this case asserts those named states, not a complete tray-rendering or no-model execution audit.",
+      "id": "PRF-YEZ2RN",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_every_retired_authoring_post_refuses_by_name` protects the typed refusal every retired authoring path answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+            "content": "sha256:c067b5c3c67fb6fe0ea1ebef4c31022a6c4561c8527234f706380009a232e6c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_retired_authoring_post_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_saved_page_and_its_reads_still_serve` protects the saved page, its asset and its frame state surviving the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+            "content": "sha256:5349c4ef61686bbfc305ce8db418205a0e8e58c5c175805b4ab861a204390501",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_saved_page_and_its_reads_still_serve"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_saved_pages_assets_keep_their_path_conversion` protects an asset conversion reaching the route behind the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+            "content": "sha256:ef17893eb9b2388481bb1d87752373d1028220a3beccd5a111e1b9ca5a26d41e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_saved_pages_assets_keep_their_path_conversion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_real_create_app_serves_saved_frame_revisions_nested_assets_and_bridge_messages` protects zero effects from a refusal on the real app while sessions and messages still work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+            "content": "sha256:885d2fa4c734e1af005e7cafe158c47b86bf13f5343c35539910b87ad6b2becb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_create_app_serves_saved_frame_revisions_nested_assets_and_bridge_messages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_missing_frame_is_refused_by_name_and_never_swapped` protects a missing frame being refused by name instead of answered with another frame's bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85050af089a42865a2de9fc660a47b92abb4e4c4",
+            "content": "sha256:364aabaa43085efffdf7b6d27a36725313d5a8694687d6cbf72d1b9534415679",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_frame_is_refused_by_name_and_never_swapped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_role_handover_binding.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+        "content": "sha256:36553ea2f6b5acc2ed882d02f71eb91baf557355edfe3f524305ca6669fc0d86",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEnclosureSprintBindingTests.test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner"
+        }
+      },
+      "facet": "Reuse of the existing enclosure names referenceRoot and a copy failure warning containing the missing leaf file, without calling worktree_start.",
+      "id": "PRF-QDPJ48",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -28,6 +47,21 @@
               "end": 538,
               "kind": "line_range",
               "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reusing an enclosure reports its resolved `referenceRoot`; failure to copy an agreed-reference source is returned as a `referenceWarning` naming that leaf file, while the existing enclosure is still reused and no new start is called. The fixture deliberately has no leaf file, so the test checks a named warning rather than claiming a successful copy.\n\nAnchor: `test_missing_leaf_enclosure_passes_selected_sprint_to_worktree_owner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+            "content": "sha256:a428f205170395698193d59724a37939a5d33279d5af0e75e4e87cefb9377a00",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

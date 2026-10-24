@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+        "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
         "content": "sha256:9cb1258001d5f85078ab0c9e55d3e2fc39fa8722296f8a10fc97a3507454f652",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
-        "content": "sha256:dd7f1cff0e46f839c58f630ce0ff91e467fd2de84f6302f20b27f60b11643127",
+        "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+        "content": "sha256:d9bdd29b38aa9f04cbf4d83c357c90a5250992b827192e3f86dd6e4979dc4e7e",
         "locator": {
           "kind": "file"
         }
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:06c7d109aaa47a1083ad40fcf47176f144572afbbda323c050043d37549339d1",
             "locator": {
-              "end": 102,
+              "end": 106,
               "kind": "line_range",
-              "start": 60
+              "start": 64
             }
           },
           "kind": "code"
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
             "locator": {
-              "end": 145,
+              "end": 149,
               "kind": "line_range",
-              "start": 105
+              "start": 109
             }
           },
           "kind": "code"
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:f3359c91b81f415315f67ff238aee9fad9a56d1da031e51ee25bc9ca09035736",
             "locator": {
-              "end": 170,
+              "end": 174,
               "kind": "line_range",
-              "start": 148
+              "start": 152
             }
           },
           "kind": "code"
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:2349c5564a4ce3caaca5ab7515c9e54bf127c705b8cb39e404ab8d4117402aff",
             "locator": {
-              "end": 240,
+              "end": 244,
               "kind": "line_range",
-              "start": 221
+              "start": 225
             }
           },
           "kind": "code"
@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:b42a3f7aea2b0db7845817dbec4eb2851c0cbf61c21de9f27de53e98bb5a3f5e",
             "locator": {
-              "end": 255,
+              "end": 259,
               "kind": "line_range",
-              "start": 243
+              "start": 247
             }
           },
           "kind": "code"
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:a98a0c19a485b04ecc5a2f51fdc9f384962b0b5037e03682f4602e2d699225c9",
             "locator": {
               "kind": "symbol",
@@ -145,11 +145,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6dec6f8a812158814261d92150fe4b27ba20b061",
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:9cb1258001d5f85078ab0c9e55d3e2fc39fa8722296f8a10fc97a3507454f652",
             "locator": {
               "kind": "symbol",
               "name": "ReviewTreesResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "content": "sha256:3e81a6d220d71abaf1eec9b1c8b62084967a2c3cfd40ddab7c166cc73196eb71",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeKnowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "content": "sha256:b7eef2bf2ab6b914fe336bb684cd0696633679ef6cdc08228f530b8a6eede24f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTrees"
             }
           },
           "kind": "code"

@@ -59,6 +59,9 @@ role's capsule fails rather than merely being unmentioned.
 - A capsule carries the common part plus its own stage's parts, and nothing of another role's.
 - A step's detail is an immutable frozen file, not a re-read of the source at send time.
 
+
+The pinned Architect planning paragraph includes the single developer question “go, or review first?”, disclosure that the upfront review has a planned comparison with no task workspace, first-Explain environment creation, and the `intentReview` answer. The Manager paragraphs pin that `intent-review-open` waits for the Architect's go and is not retried. Their planning/coordination seals move with those exact admitted sentences.
+
 ## Evidence
 
 - The compiler delivers only the common and selected role stage parts. [1]
@@ -85,3 +88,5 @@ role's capsule fails rather than merely being unmentioned.
 - A repairing role stops after three repairs of the same check or finding. [22]
 - The expected Reviewer-only paragraph includes the missing-entry return and the clean-sync no-round obligations. [23]
 - The approved implementation and review body hashes are repinned in the existing corpus check. [24]
+
+- The pinned Architect planning paragraph includes the single developer question “go, or review first?”, disclosure that the upfront review has a planned comparison with no task workspace, first-Explain environment creation, and the `intentReview` answer. The Manager paragraphs pin that `intent-review-open` waits for the Architect's go and is not retried. Their planning/coordination seals move with those exact admitted sentences. [25]

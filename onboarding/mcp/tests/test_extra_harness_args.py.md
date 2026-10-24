@@ -10,6 +10,8 @@ A role's settings carry extra harness arguments, and one start's arguments resol
 
 ## Code Commentary
 
-The cases cover the settings family's three places and their layering, the shape and refusals that keep the user's file honest, the resolution of one start's arguments and their record, the hand-over through the host's provider options, and the confined presenter's refusal.
+The cases cover the settings family's three places and their layering, the shape and refusals that keep the user's file honest, the resolution of one start's arguments and their record, the hand-over through the host's provider options, and the record an ordinary start keeps when the host map is unread. The native presenter launch and its duplicate confinement cases are removed; `test_explainer_host.py` owns the confined-seat refusal cases. Settings-role launch resolution is exercised through the catalog owner.
 
 **L184 — NEW-R192-EXTRA-ARGS, NEW-R192-RULE19-PORT.** The plan's two ends are asserted here, which is where the early return is held. These cases drive the host-map read through the injected callable, which is how the test knows no upward import is needed. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
+- the hand-over through the host's provider options, and the record an ordinary start keeps when the host map is unread. The native presenter launch and its duplicate confinement cases are removed; `test_explainer_host.py` owns the confined-seat refusal cases. Settings-role launch resolution is exercised through the catalog owner. [1]

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
+        "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
         "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
         "locator": {
           "kind": "symbol",
@@ -16,12 +16,31 @@
         "handoffEntry": "L82-CODE-R1-02",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "This current shared cleanup/receipt/remainder owner retains evidence of the historical L82 arCaches correction. INV-YQPQ1M remains retired and superseded by INV-25AJSA; the current owner does not implement the retired negative defect statement.",
       "role": "unclassified"
     },
     {
       "anchor": {
-        "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
+        "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+        "content": "sha256:61a6c417ae702179134d9d3c14282af89f3856b1b56003a8875a06adc0eb998b",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-MA5CGT",
+      "invariant": "INV-25AJSA",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-08",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Adding explainerArtifacts to shared deletion keys is actual receipt/replay/remainder behavior and must retain the shared every-deletion-class guarantee.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
         "content": "sha256:7867c89c3d071b0a99eef8068bad3cd91d1670333f0238470d413f99c0eab6ab",
         "locator": {
           "kind": "symbol",
@@ -34,7 +53,7 @@
         "handoffEntry": "L82-MEM-M1-S-02",
         "leaf": "260928-MIK-L82"
       },
-      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "rationale": "The shared ledger plans each registered artifact key before deletion, preserves numbered attempts, attributes interrupted absence and accounts preview/final receipts for arCaches and explainerArtifacts alike. Its receipt paths remain task-confined; artifact-presence checks admit the separately bounded explainer root.",
       "role": "unclassified"
     }
   ],
@@ -109,6 +128,21 @@
             "locator": {
               "kind": "symbol",
               "name": "_ARTIFACT_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current implementation adds explainerArtifacts to the shared deletion keys and retires environments before deletion receipt admission.\n\nAnchor: `ReceiptLedger`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

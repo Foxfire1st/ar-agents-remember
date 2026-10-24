@@ -7,11 +7,12 @@
   },
   "applicability": "Module boundaries in pytest processes loading the repository bootstrap plugin.",
   "conditions": [
-    "Only already-imported product modules are reset."
+    "The process mutable-state scanner resets only already-imported product modules.",
+    "The module fixture explicitly imports the lightweight kernel.worktree_service_binding reset owner and clears its bound services and pending supplier before and after each module."
   ],
   "exclusions": [
     "No reset between ordered cases of one test file.",
-    "No eager import merely to reset an owner."
+    "No eager import merely to reset a collection-scanner owner; the dedicated kernel worktree-services holder is the explicit module-boundary exception."
   ],
   "id": "INV-5YPFVJ",
   "origin": {
@@ -25,9 +26,9 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Each test module resets already-imported product owners before and after execution; removed ambient lifecycle and heartbeat owners are not reset or joined.",
+  "statement": "Each test module resets already-imported product collection owners and the dedicated kernel worktree-services holder before and after execution; removed ambient lifecycle and heartbeat owners are not reset or joined.",
   "status": "proposed",
   "supersedes": []
 }

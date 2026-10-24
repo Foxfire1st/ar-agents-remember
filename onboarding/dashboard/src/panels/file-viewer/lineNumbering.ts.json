@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
             "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
             "locator": {
-              "end": 55,
+              "end": 71,
               "kind": "line_range",
-              "start": 55
+              "start": 71
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
             "content": "sha256:47e6050b0708f223f848ada7795cb3838b746b6b377773314a41b714268627d6",
             "locator": {
-              "end": 114,
+              "end": 237,
               "kind": "line_range",
-              "start": 114
+              "start": 237
             },
             "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },

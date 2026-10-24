@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/mcp/vocabulary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f010dc3d75c42338eb7212c8af6283384216a371",
+        "content": "sha256:e4f8250b0c02378769265fd9266c2bc65d7ee7895dc57086919d7abbf011dd80",
+        "locator": {
+          "kind": "symbol",
+          "name": "REMOVED_ARGUMENT"
+        }
+      },
+      "id": "RLZ-XNYKY0",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The removed-refresh sentinel lives outside the eager payload package; its public and old private names are the same string, preserving omission versus supplied-value refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A removed argument's default is one sentinel value\n\nAnchor: `REMOVED_ARGUMENT: Any = \"removed\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f010dc3d75c42338eb7212c8af6283384216a371",
+            "content": "sha256:e4f8250b0c02378769265fd9266c2bc65d7ee7895dc57086919d7abbf011dd80",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The earlier private spelling is the same object, so the two cannot drift\n\nAnchor: `_REMOVED_ARGUMENT = REMOVED_ARGUMENT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f010dc3d75c42338eb7212c8af6283384216a371",
+            "content": "sha256:b80efa949a703e4e968436d4e2ac12a610457bcad99abc55b4b8f81519b99d3c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only that sentinel is exported from this light module\n\nAnchor: `__all__ = [\"REMOVED_ARGUMENT\", \"_REMOVED_ARGUMENT\"]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f010dc3d75c42338eb7212c8af6283384216a371",
+            "content": "sha256:0a16f71d64df9a8b492f0193842fb1267efaf1e7892100e0c6314675eca3e9a1",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The removed-refresh sentinel lives outside the eager payload package; its public and old private names are the same string, preserving omission versus supplied-value refusal.\n\nAnchor: `REMOVED_ARGUMENT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f010dc3d75c42338eb7212c8af6283384216a371",
+            "content": "sha256:87b4297bfb9ede895be46318eefeee65e255d7b7730e334737c2c7267f7a82c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

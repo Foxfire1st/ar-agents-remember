@@ -31,6 +31,23 @@
           "kind": "test"
         }
       ]
+    },
+    "3": {
+      "note": "- The presenter admission now names only `cli/paseo_bridge.mjs`, with exactly `Claude` and `claude` to describe the removed qualified-provider tool fence. The Python native presenter launch and its owner admission are removed; the original RULE21 owner sets stay separate. Positive witnesses and real-file mutants still reject an unrelated provider word and silence in the retained owner.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
+            "content": "sha256:49c1e655ee924641da7dcb36490eeff3c88b2d74b36feced400a25e2eea54d4a",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

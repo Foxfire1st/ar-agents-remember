@@ -5,12 +5,14 @@
     ],
     "justification": "Treating today's checkout, a neighbouring comparison or a fabricated empty population as the explanation's evidence is the mistake the packet exists to prevent."
   },
-  "applicability": "An explanation prepared for one existing review comparison.",
+  "applicability": "Every evidence packet prepared for one exact recorded or planned review comparison, and every explanatory claim carried by it.",
   "conditions": [
-    "The comparison owner admits the exact four trees and any conversion inputs."
+    "The comparison owner admits the exact code and memory operands and any conversion inputs.",
+    "The planned-only authority check examines present bases and the leaf’s admitted packet, own-document and reference receipts."
   ],
   "exclusions": [
-    "A new comparison, presenter session or execution grant."
+    "History reads beyond the binding may inform the explainer but do not become evidence of this comparison.",
+    "A recorded comparison does not acquire the planned-only intended-claim refusal."
   ],
   "id": "INV-TE5W2D",
   "origin": {
@@ -24,9 +26,9 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A canvas explanation receives a useful evidence packet for one existing, exact review comparison. The packet names both code sides, both memory sides and any recorded conversion inputs. Additional investigation can read relevant code, tests, memory records and relationships at those bound trees. A read never silently substitutes today's checkout, another comparison or another task. Every meaningful explanatory claim has an inspectable basis and a declared classification. Recorded judgments, mechanical facts and presenter interpretations retain their separate authority. The packet and its claims state scope, omissions, applicability, coverage and incomplete evidence. Unavailable data is never presented as an empty or settled population.",
+  "statement": "A canvas explanation receives a useful evidence packet for one exact recorded or planned review comparison. The packet names both code sides, both memory sides and any recorded conversion inputs. Additional investigation can read relevant code, tests, memory records and relationships at those bound trees. A read never silently substitutes today's checkout, another comparison or another task. Every meaningful explanatory claim has an inspectable basis and a declared classification. Recorded judgments, mechanical facts, intended behaviour and explainer interpretations retain their separate authority. On a planned comparison, a claim whose present bases are only admitted receipts of its requirement packets, own task document or leaf reference folder must be classified intended; recorded-fact and mechanical-signal are refused by name. A claim that also cites present code or memory at the tip keeps the authority its actual bases establish. The packet and its claims state scope, omissions, applicability, coverage and incomplete evidence. Unavailable data is never presented as an empty or settled population.",
   "status": "proposed",
   "supersedes": []
 }

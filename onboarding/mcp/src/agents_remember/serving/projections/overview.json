@@ -147,6 +147,19 @@
             "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "content": "sha256:27f85b0e5fcc97c749dc667d6ec9223474cb0655312aa3e45dd824745eab8710",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -247,6 +260,18 @@
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:c45e7a0608de050654ad6d540056877975d60d1e6253c034b5f642c5a0d49f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_tasks_full"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -256,6 +281,18 @@
         {
           "anchor": {
             "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:5a60ab73ccef7d9232887bbb84293b43cb48302b60f3c3927b9e22d954144b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reproject_task_documents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
             "content": "sha256:5a60ab73ccef7d9232887bbb84293b43cb48302b60f3c3927b9e22d954144b37",
             "locator": {
               "kind": "symbol",
@@ -282,6 +319,19 @@
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:aaec3e5e3a6a192b4348b930347fd109138915a5f8fa8ae3a46005e9877b8b18",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -292,6 +342,18 @@
           "anchor": {
             "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
+            "content": "sha256:91d0302742e71a054ec9e189541bd252571ccff79f90082d54679902f56ef9f3",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -482,6 +544,32 @@
               "start": 15
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 377
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "content": "sha256:8ea3a4195058770b535a3919a609c3cd3a136803f2f890bb57769d3c453cad0d",
+            "locator": {
+              "end": 677,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
         }

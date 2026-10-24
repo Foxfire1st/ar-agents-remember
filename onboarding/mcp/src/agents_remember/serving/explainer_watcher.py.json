@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer_watcher.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+        "content": "sha256:6793317dcf5a0959f7a0ec0cd5fa6a54277fc9a730cce6b60d10d5710f2092b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "unexplained_turn_notice"
+        }
+      },
+      "id": "RLZ-4G9CZJ",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The watcher derives current bound comparison/moved evidence and exact leaf subscription data, enumerates only relevant leaf seats and publishes notices without sending a seat message or persisting a held report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+        "content": "sha256:0f3046fae84a5c4dd17044830ef3b2ca5dc95c660762c890a95e453ef322d2aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "notice_for"
+        }
+      },
+      "id": "RLZ-CGBNJ4",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The watcher derives current bound comparison/moved evidence and exact leaf subscription data, enumerates only relevant leaf seats and publishes notices without sending a seat message or persisting a held report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+        "content": "sha256:721db383077e2ab21e18576ceb2c369d2efad8c8bc8cbc5ae3372e0bbede703a",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_seats"
+        }
+      },
+      "id": "RLZ-MHH7GK",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The watcher derives current bound comparison/moved evidence and exact leaf subscription data, enumerates only relevant leaf seats and publishes notices without sending a seat message or persisting a held report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+        "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "MoveNoticeChannel"
+        }
+      },
+      "id": "RLZ-P0FC7T",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The watcher derives current bound comparison/moved evidence and exact leaf subscription data, enumerates only relevant leaf seats and publishes notices without sending a seat message or persisting a held report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+        "content": "sha256:6b65fc977007e45817468e56fb3ad185f9b3e6caebb2a30830a6ff051caf5f97",
+        "locator": {
+          "kind": "symbol",
+          "name": "GitComparisonOwner"
+        }
+      },
+      "id": "RLZ-TV031Q",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The watcher derives current bound comparison/moved evidence and exact leaf subscription data, enumerates only relevant leaf seats and publishes notices without sending a seat message or persisting a held report.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An unreadable environment or capture answers no notice at all\n\nAnchor: `def measure_notice(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:1183036360dd02a9cdd52f450d0bc8b1b50c33b8ed609abad7e5ed0f81c7d263",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The capture records nothing and pins no ref\n\nAnchor: `class GitComparisonOwner:`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:6b65fc977007e45817468e56fb3ad185f9b3e6caebb2a30830a6ff051caf5f97",
+            "locator": {
+              "end": 593,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The changed-block count comes from the review lane's own hunks and non-text changes\n\nAnchor: `def blocks_changed(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:529ec666d4b8ae1cbfbda97ef5bdf20fefc68205f9dccf6329d7d9cac875547e",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 596
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The master line is followed at the tip of the line that still holds the bound commit\n\nAnchor: `def master_tips(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:75f71c92320597b00dc7a07454e193497afef7c9fbdf2f2ce1ed547b425b8a08",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 456
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Notices are held in process, bounded per subscriber and deduplicated\n\nAnchor: `class MoveNoticeChannel:`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
+            "locator": {
+              "end": 809,
+              "kind": "line_range",
+              "start": 696
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Seat discovery lists watched leaves' own folders rather than walking the task tree\n\nAnchor: `def leaf_seats(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:721db383077e2ab21e18576ceb2c369d2efad8c8bc8cbc5ae3372e0bbede703a",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 977
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The no-environment turn-end path retains a baseline and offers no Update, with an explicit provisional block minimum; exact-leaf subscriptions and latest history remain bounded and close-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:6793317dcf5a0959f7a0ec0cd5fa6a54277fc9a730cce6b60d10d5710f2092b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "unexplained_turn_notice"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:721db383077e2ab21e18576ceb2c369d2efad8c8bc8cbc5ae3372e0bbede703a",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_seats"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ea46769220ce8041cb16bb94b40ca702bd00001",
+            "content": "sha256:2c7fdde139d4d033b119c11886d1163c708c8851610d5c618955008e8c4deb7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MoveNoticeChannel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

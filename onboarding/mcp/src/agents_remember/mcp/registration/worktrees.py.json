@@ -1,7 +1,26 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/worktrees.py",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+        "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_worktree_tools"
+        }
+      },
+      "id": "RLZ-NJRK6G",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Current pause declaration is contract-addressed, publishes nothing, hands control back and identifies separate checkpoint publication.",
@@ -52,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
             "content": "sha256:56058015a92fef97436b9d0c169947ec7559a0c25f5575074e1b73b6d76bf4c3",
             "locator": {
               "end": 162,
@@ -70,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
             "content": "sha256:8f6996c17d11971112ef6181192b87e25f773050c0e11867cc3fff5ea8bc4ffe",
             "locator": {
               "kind": "symbol",
@@ -88,6 +107,21 @@
           "anchor": {
             "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
             "content": "sha256:9f4dac8fd5d60b7e138d2ad66be135106a73906bb35a0bae43ca08352956232d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.\n\nAnchor: `register_worktree_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
             "locator": {
               "kind": "file"
             }

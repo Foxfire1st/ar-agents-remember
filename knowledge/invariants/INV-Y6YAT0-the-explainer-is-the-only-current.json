@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Refusing retired authoring POSTs before their handlers prevents a second authoring path from starting sessions or overwriting the explainer environment."
+  },
+  "applicability": "Serving app route registration order for old authoring POSTs and the new explainer composition.",
+  "conditions": [
+    "The retired POST refusal is registered before canvas routes.",
+    "New explainer route wiring requires the supplied host and application ports."
+  ],
+  "exclusions": [
+    "Retained revision/session reads, which keep serving.",
+    "Any process, session or publication credit from the retired POST."
+  ],
+  "id": "INV-Y6YAT0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R106@v2 rule1; MIK-R186@v2"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-retired-authoring-routes",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explainer is the only current authoring route: each retired canvas Generate, regenerate, publish, cancel, replace and attempt-operation POST returns canvas-authoring-replaced before starting any process, opening a session or writing. Retained frame/revision/session reads remain available; missing native host or application composition refuses explainer routes by name rather than claiming a seat.",
+  "status": "proposed",
+  "supersedes": []
+}

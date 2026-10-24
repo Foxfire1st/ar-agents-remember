@@ -305,7 +305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0c8d7ab6901498a84ffa765a41a0743c1724128e79ccbb8ee9479ba1cc5e89e0",
             "locator": {
               "end": 39,
@@ -318,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:76664c6785c117e839fadaae0ec7fdfaa80e8279be2b0ce4275a0ddb91d15e47",
             "locator": {
               "end": 67,
@@ -336,7 +336,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:9cfa13d4bca959417d121cd6bc9d4b97f741e3c0016645d3c741fbe6963dfad4",
             "locator": {
               "end": 107,
@@ -349,7 +349,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0c8d7ab6901498a84ffa765a41a0743c1724128e79ccbb8ee9479ba1cc5e89e0",
             "locator": {
               "end": 39,
@@ -367,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
             "locator": {
               "end": 83,
@@ -385,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:9cfa13d4bca959417d121cd6bc9d4b97f741e3c0016645d3c741fbe6963dfad4",
             "locator": {
               "end": 107,
@@ -421,7 +421,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0c8d7ab6901498a84ffa765a41a0743c1724128e79ccbb8ee9479ba1cc5e89e0",
             "locator": {
               "end": 39,
@@ -439,7 +439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2e3f520beaeb4a178d9575ff6fbf359338d3a8b3f8c627ee6ac7f15a6028bad9",
             "locator": {
               "end": 108,
@@ -470,7 +470,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:a94e02affc8777df31fbb37866eeff4bb435990e4fb4d923a83b083ee94f0ca1",
             "locator": {
               "end": 80,
@@ -679,7 +679,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
             "locator": {
               "end": 83,
@@ -741,7 +741,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:9cfa13d4bca959417d121cd6bc9d4b97f741e3c0016645d3c741fbe6963dfad4",
             "locator": {
               "end": 107,
@@ -798,7 +798,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:9cfa13d4bca959417d121cd6bc9d4b97f741e3c0016645d3c741fbe6963dfad4",
             "locator": {
               "end": 107,
@@ -811,7 +811,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:be58e2892f3619b3d2a8d8d198f17c11d6170623663de3b3899f3089516a4466",
             "locator": {
               "end": 136,
@@ -842,7 +842,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
             "locator": {
               "end": 83,
@@ -1011,7 +1011,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0e1f44f0d02112af1698560aef422124a5d7e3836f9ca5dadb2983cd9309a119",
             "locator": {
               "end": 41,
@@ -1024,7 +1024,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:694c8b87bb4ee3e2cb8b234a36e7724e3cfc5fb26d53ec5507ff922aa21c1068",
             "locator": {
               "end": 83,
@@ -1037,7 +1037,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:1dbe3937d7a5345ffea093fb2a76973fed2e444f84f348b846cf6cfcdaee8d2e",
             "locator": {
               "end": 122,
@@ -1073,7 +1073,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
             "content": "sha256:8dbff0341c543deac6463b938dfa8b34e70319c39c4070b0aa177af9b155cbd8",
             "locator": {
               "end": 24,
@@ -1086,7 +1086,7 @@
         },
         {
           "anchor": {
-            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
             "content": "sha256:d457a91ee8858c864d9e878beffd5bbea084eab32d9b2be8c32cb80cfe0f8674",
             "locator": {
               "end": 58,
@@ -1260,7 +1260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0f16232f63b23d731f3a46fe76299115f107cff50511eaefb7bfda17481e8447",
             "locator": {
               "end": 65,
@@ -1304,7 +1304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:9cfa13d4bca959417d121cd6bc9d4b97f741e3c0016645d3c741fbe6963dfad4",
             "locator": {
               "end": 107,
@@ -1518,7 +1518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:4f248489b1276f536dcc4e4fd38ec78b4111d1488804588bb1b5e51af41a4219",
             "locator": {
               "end": 19,
@@ -1758,7 +1758,7 @@
         },
         {
           "anchor": {
-            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:5624c1f116c9d041175459a453816ce707ef9886c1d44fd8c1484091dd802a8b",
             "locator": {
               "end": 76,
@@ -1771,7 +1771,7 @@
         },
         {
           "anchor": {
-            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:cad914bf846ee01c57e04c4a505543ce8e3fad83776ecb27f832450c73ac8b03",
             "locator": {
               "end": 155,
@@ -1874,7 +1874,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
             "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
             "locator": {
               "end": 22,
@@ -1954,7 +1954,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2011,7 +2011,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2079,7 +2079,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2121,7 +2121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "afe92e859d1ad2b0df2d15676cbac104260be4df",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
             "content": "sha256:5f22ae23b59d66d3e9f236eadf32fab3790a3c41c9bc00943c14acaea3cd2321",
             "locator": {
               "end": 58,
@@ -2160,7 +2160,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2191,7 +2191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:ec5b884bf9ab64fb39e21d13511238e2dbbad25041b3fd19bae019b2863bcd1d",
             "locator": {
               "end": 83,
@@ -2209,7 +2209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2266,7 +2266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6c9cfb51430bc2995590fde9f7d075a95f154e4",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
             "content": "sha256:baea2dbec413ba4e7f40d24248fc483d570ee98dda5e3c3f07de443ac3a3327b",
             "locator": {
               "end": 187,
@@ -2305,7 +2305,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2375,7 +2375,7 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
             "locator": {
               "end": 136,
@@ -2530,14 +2530,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
             "content": "sha256:d3c1d2ef9f801755219644e87b9299d44837398138896e6d57ea4db0953ee147",
             "locator": {
-              "end": 36,
+              "end": 38,
               "kind": "line_range",
-              "start": 26
+              "start": 28
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "content": "sha256:906fdabfc96eb8ecded4f70ae179fff5a0880efde8bb94a3b6f1655beaa2abe6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/planning.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:0be429bce9018a40b3a01e84336a6131dcecf4fc7eda0d6ee05a70a79b231e87",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
           "kind": "code"
         }

@@ -164,12 +164,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
             "content": "sha256:a1f01c07a14499804c1f08f4368ffc7749b58d33c651426b87315cad698c225d",
             "locator": {
-              "end": 144,
+              "end": 174,
               "kind": "line_range",
-              "start": 123
+              "start": 153
             },
             "path": "dashboard/src/cockpit/reviewChat.ts"
           },
@@ -198,6 +198,35 @@
               "start": 220
             },
             "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text and collected picks. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+            "content": "sha256:cbcf519a0e6135b848475968eaa787c925645e0b60f012db8ddf727391f6730d",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/tray/TrayPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/traySend.ts"
           },
           "kind": "code"
         }

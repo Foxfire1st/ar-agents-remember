@@ -29,7 +29,7 @@ The application owner is `application/review_unexplained_lane.py` over `applicat
   (`linked`, `unexplained`, `unknown`).
 - **Hunk facts.** `ReviewLaneSpan` is one side of a zero-context hunk (`start`, `count`; a zero count means the other
   side's lines sit after `start`, as Git prints it). `ReviewLaneHunk` carries both spans, its class, `links` and
-  `unknown`. `ReviewLaneLink` names the side, entry ID, kind, a proof's `facet`, the invariant with
+  `unknown`, and an optional bounded `subject` containing the changed-line content identity at the base and candidate. An unhashable hunk leaves `subject` absent and cannot receive a grade; this does not change its attribution class. `ReviewLaneLink` names the side, entry ID, kind, a proof's `facet`, the invariant with
   `invariant_key`, its revision on that side with `invariant_revision_key`, the range and the family occurrences
   (`ReviewLaneFamilyOccurrence`: family, `family_key`, family revision, membership state and now
   `reason`). Its new validator requires a reason exactly for `membership_unknown`; the supplied
@@ -102,3 +102,7 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- A lane hunk may carry the changed-line content identity of its base and candidate in a bounded subject. An unhashable hunk has no subject and cannot receive a grade; attribution class is unchanged. [12]
+
+- A lane hunk may carry the changed-line content identity of its base and candidate in a bounded subject. An unhashable hunk has no subject and cannot receive a grade; attribution class is unchanged. [12]

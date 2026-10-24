@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
             "content": "sha256:d326e4523d6a2be43e2fb437325bf05139a9b1cfe0fbcd1907ebadb1c205ceec",
             "locator": {
-              "end": 127,
+              "end": 136,
               "kind": "line_range",
-              "start": 121
+              "start": 130
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },

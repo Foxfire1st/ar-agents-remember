@@ -164,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
             "content": "sha256:0ae7ff6f9d128658c46105667b24b23c52288a5ee319a8d177dd2da6d6124e13",
             "locator": {
               "kind": "symbol",
@@ -176,7 +176,7 @@
         },
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
             "content": "sha256:ee869d666225ce11ebd22367359f189c9de8d29c941e8140a26f5ffc3ee9c0f8",
             "locator": {
               "kind": "symbol",
@@ -217,7 +217,7 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:151cf1b44b57d4d43437aecaf75e7c3230b8c28deab6f47b4336fa20e0263673",
             "locator": {
               "kind": "symbol",
@@ -266,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:6e407a4b5245358f59a2db879684ce1016970f157dbd55e6974a565f4fb5f09b",
             "locator": {
-              "end": 775,
+              "end": 800,
               "kind": "line_range",
-              "start": 775
+              "start": 800
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -305,12 +305,12 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:7d10bda865879e1f2d451ede7b79f3594c5fb78dba139d0e47b217332d062ff3",
             "locator": {
-              "end": 791,
+              "end": 816,
               "kind": "line_range",
-              "start": 779
+              "start": 804
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

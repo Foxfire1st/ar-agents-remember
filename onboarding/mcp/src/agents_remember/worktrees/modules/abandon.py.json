@@ -179,6 +179,19 @@
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -357,6 +370,17 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_outputs_result"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -416,12 +440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
             "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
             "locator": {
-              "end": 257,
+              "end": 248,
               "kind": "line_range",
-              "start": 257
+              "start": 248
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

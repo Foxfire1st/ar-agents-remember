@@ -26,3 +26,7 @@ Stand-in review does not establish full review surface behavior or browser geome
 - Checks shell tray composition and review-column first-target behavior. [2]
 - Checks shell tray composition and review-column first-target behavior. [3]
 - Checks shell tray composition and review-column first-target behavior. [4]
+
+The review-column cases now expect the explainer placeholder identity as the automatically published default. The separate explicit a-arch target remains untouched while the shown identity changes. The stand-in surface/frame setup still proves shell composition and pending-default behavior rather than live host delivery.
+
+- The review-column cases now expect the explainer placeholder identity as the automatically published default. The separate explicit a-arch target remains untouched while the shown identity changes. The stand-in surface/frame setup still proves shell composition and pending-default behavior rather than live host delivery. [5]

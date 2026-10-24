@@ -59,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 214,
+              "end": 242,
               "kind": "line_range",
-              "start": 211
+              "start": 239
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -145,12 +145,12 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 214,
+              "end": 242,
               "kind": "line_range",
-              "start": 211
+              "start": 239
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d33c64425a5ec443ee6203e67d8d44ca18e1dbb",
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
             "content": "sha256:a4331704d00458c653941537c9f3609c4eba11c917aa9acbf28d7040601b07ed",
             "locator": {
               "kind": "symbol",
@@ -258,12 +258,12 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 214,
+              "end": 242,
               "kind": "line_range",
-              "start": 211
+              "start": 239
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },

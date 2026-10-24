@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "blob": "6de511c5e79204f783162c6050224750597bbe1c",
             "content": "sha256:749924b87b4f57ea7cd6778ff549fdb9d256cc7a876d7f1fed7c407249113868",
             "locator": {
-              "end": 404,
+              "end": 419,
               "kind": "line_range",
-              "start": 373
+              "start": 388
             },
             "path": "mcp/tests/test_master_retirement.py"
           },

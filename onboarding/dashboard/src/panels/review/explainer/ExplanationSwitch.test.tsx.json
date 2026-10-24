@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationSwitch.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two views are labelled and `aria-selected` reports which one is shown\n\nAnchor: `labels the two views and reports which one is shown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
+            "content": "sha256:17363ab605763eb5d3947590943cbcba8d757c78134e22395e2739043328a1e5",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A stale count and a build each reach the label, and no fetch is made\n\nAnchor: `names the build, and the stale count, without starting anything`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
+            "content": "sha256:4c6cc31225b8b507170735602ee28900d430d42e95bdcd4eb0886942e2dfadfa",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pressing the explanation tab reports the switch, and a retired explainer is named in the label\n\nAnchor: `switches on the developer’s press, and says when the explainer is retired`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
+            "content": "sha256:61395766180fe647fa0256a815449656a53e066608c89e0e4aa49a78268b6d55",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

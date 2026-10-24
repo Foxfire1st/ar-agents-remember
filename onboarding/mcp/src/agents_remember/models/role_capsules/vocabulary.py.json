@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:72aeaaba12a344662d7d84168795d915b1a04887df428d2857cbe8abbec06a6d",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:2621e56d55e0fb0455d1af05b2d3a65bafd1c0f7b69d33b0656132c56ad1e1ed",
             "locator": {
               "kind": "symbol",
@@ -31,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:5fd6ab94aea5614649efeb8e41ec50f350635e96e8bd58f436f9a45b43addd3b",
             "locator": {
               "kind": "symbol",
@@ -43,12 +43,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:2af0167c866e8e0555789b60c73ad9eb396e43766a4c5c26923b9652421a89da",
             "locator": {
-              "end": 153,
+              "end": 149,
               "kind": "line_range",
-              "start": 148
+              "start": 144
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:24ee2a429d6cf61a9dc6c086ab30c650b1f056fb8bb8d74a894272b1955a97a0",
             "locator": {
-              "end": 160,
+              "end": 156,
               "kind": "line_range",
-              "start": 155
+              "start": 151
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:9aaf0965851acb3ba7851b2961d1a437800437e5e01813983a73b9e724a65436",
             "locator": {
-              "end": 166,
+              "end": 162,
               "kind": "line_range",
-              "start": 162
+              "start": 158
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -99,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:dd76f42e46accac0c85e2afbb7053c96a8f73fffd7d3b19758efc24ff0a7d341",
             "locator": {
               "kind": "symbol",
@@ -124,12 +124,12 @@
         },
         {
           "anchor": {
-            "blob": "72dc9fa336d744d13e1ba811c6965cafb7a8ff9f",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
             "content": "sha256:c07f8f9de8b2f8a7a6578664ccc33a4ff25b4b4ad0565966b5a89e7992bfa498",
             "locator": {
-              "end": 98,
+              "end": 94,
               "kind": "line_range",
-              "start": 89
+              "start": 85
             },
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
@@ -154,7 +154,7 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
             "content": "sha256:1813b02c7b7f6f72d28f1af170d139cb3166a6a625775965c73443f7593673f3",
             "locator": {
               "kind": "symbol",
@@ -213,7 +213,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fae8c014dbfcfdd40ef9d82d06334470a9d5ec1d",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:f0dad0a8df6fd0a2092f0cfbc762f0978e1200280daa6856c932da956fc8f041",
             "locator": {
               "end": 6,

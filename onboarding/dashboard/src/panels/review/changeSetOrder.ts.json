@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-        "content": "sha256:ced8be66a1bf3e7048d6a4744bfe00327a2e5b07036a9e46eaf354637c90425e",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:6e9f9329cbfbdcaaec787c09c8a1522f5f5711c3d281ce0982053cedb3e8e3ab",
+        "locator": {
+          "end": 359,
+          "kind": "line_range",
+          "start": 348
+        }
+      },
+      "id": "RLZ-0MQ8SG",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The hint adapter preserves deterministic hints and labels a judgment key as highest grade first, then Priority, presenting the same scale/tie order the model applies.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:982712a01c2b57753174df125aab9a05de45067c6f6d9c86c7fb463df1590c25",
         "locator": {
           "kind": "symbol",
           "name": "sortKey"
@@ -21,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:2aa094f748e30d58874f24ed4838937786d803275a3a6a23a9025b3655739bfb",
         "locator": {
           "kind": "symbol",
@@ -39,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:0999e046989cac8250259b411b2cd978a0dd59e3dc646aae401458b5923de68b",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectNode"
+        }
+      },
+      "id": "RLZ-708ZQZ",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This shared subject builder applies grade matching/order to drawn changed locations, enriches unchanged/not-comparable locations and exposes the Ungraded group once to both tree and reading consumers.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:59095cc47e4a23b8617dcded8fbbf2942aee58c6a9cb31f110b9221136b00044",
         "locator": {
           "kind": "symbol",
@@ -57,7 +94,43 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:8a1ddd4bc08ed0261a49c3827221096def159120447708f5e68471523ae266ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "computeLocationJudgment"
+        }
+      },
+      "id": "RLZ-A5K4BS",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attaches supplied block grades, carried reasons and stale flags and builds presenter-inference hover text with the active category first.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:a262d7e7020bedc4be5583fdc144091d4ebd3c10035d29cb0db4cc527202cf38",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderGradeEntries"
+        }
+      },
+      "id": "RLZ-AWR5A7",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The hover list puts the active category first, orders same-category grades by its declared scale and retains equal-key source order, preserving carried and stale reasons for presentation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:0aace7a34c9b57f5726a7af7e3989b0c589e1933477b8ffeb5f09e50e41ec049",
         "locator": {
           "kind": "symbol",
@@ -75,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:c857cefd5da6b6a49e2eecd46943298f4bed7eb5b349a8c35c1883b3bdd616dd",
         "locator": {
           "kind": "symbol",
@@ -93,7 +166,25 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:bf28135277f5cc71415b29b062e55945b552ab0530fc6fc648317bae1e6d1db5",
+        "locator": {
+          "kind": "symbol",
+          "name": "attachJudgmentsAndOrder"
+        }
+      },
+      "id": "RLZ-G7E73Q",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Ranks drawn changed blocks by category scale with Priority ties and places ungraded blocks last under the count heading.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:98a7f9811ecc421f18de1496448a99da38c10843db1190e91c417f745ea323c9",
         "locator": {
           "kind": "symbol",
@@ -111,8 +202,8 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-        "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:09d1e4f7d045bad853ff9eddcb5266badc9c6702b23b7fd5d94286fc2fe2147d",
         "locator": {
           "kind": "symbol",
           "name": "changeSetModel"
@@ -129,8 +220,8 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-        "content": "sha256:9d3438f2ca59990b50104c6278f2ea15078f1ac73bbb3ac6fbfcbc7612bfe382",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:40653345a2689a48035076a549e1a8c2ae0cee98eeeeda95889829a2b07fc161",
         "locator": {
           "kind": "symbol",
           "name": "sortOptions"
@@ -147,7 +238,7 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:eee389a197f9417acf962617ad7f2976c6cbfa4c00005be706a1760d468b87d1",
         "locator": {
           "kind": "symbol",
@@ -165,7 +256,7 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:5479bd93d51939ffe71a04cdeec7edb3b2146f00fbafa0401607f0cc0e435282",
         "locator": {
           "kind": "symbol",
@@ -183,7 +274,7 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
         "content": "sha256:9e4dbd32c623b141ec431e2f5a9b3c069bf3c1e652c5271b99887625d65aa398",
         "locator": {
           "kind": "symbol",
@@ -201,8 +292,8 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-        "content": "sha256:900de7bf3d1d679f5cd1db23d868097a108e63dbb969d0be459b417fdf87f24f",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:09d1e4f7d045bad853ff9eddcb5266badc9c6702b23b7fd5d94286fc2fe2147d",
         "locator": {
           "kind": "symbol",
           "name": "changeSetModel"
@@ -219,8 +310,8 @@
     },
     {
       "anchor": {
-        "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-        "content": "sha256:ced8be66a1bf3e7048d6a4744bfe00327a2e5b07036a9e46eaf354637c90425e",
+        "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+        "content": "sha256:982712a01c2b57753174df125aab9a05de45067c6f6d9c86c7fb463df1590c25",
         "locator": {
           "kind": "symbol",
           "name": "sortKey"
@@ -276,12 +367,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
+            "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
             "content": "sha256:277021ee1ef858f794daeebb02b539efcb75fecfd1a54c88a10bc272a4903c88",
             "locator": {
-              "end": 961,
+              "end": 1210,
               "kind": "line_range",
-              "start": 928
+              "start": 1177
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The pure model now consumes published explainer categories and grades as inputs. A judgment sort orders each subject's drawn changed blocks by the category's declared scale with the pre-existing Priority order breaking ties, places ungraded blocks last under Ungraded (n), and preserves follower/shared-entry identity. Chips carry explicit presenter-inference hover text with the active category first; carried grades retain all reasons and stale flags. Deterministic sorts remain available, while category sorts are enabled only when their category data exists. The model still authors no judgment: it only renders supplied judgments.\n\nAnchor: `computeLocationJudgment`, `attachJudgmentsAndOrder`, `subjectNode`, `sortOptions`, `changeSetModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+            "content": "sha256:2de77a3cfd3d2fbca92f7d9f6a44701a4dd48e918e3c4e0552d981f5a9bc6e5f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

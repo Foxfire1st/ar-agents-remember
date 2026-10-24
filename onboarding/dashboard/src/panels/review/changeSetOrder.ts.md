@@ -29,3 +29,7 @@ This module has no fetch or React state and creates no intent judgment. Counts r
 - Exact locations, shared-region drawing and deterministic ranking [1]
 - One model/view/order for both consumers [2]
 - Tree-only matching and reachable folded groups [3]
+
+The pure model now consumes published explainer categories and grades as inputs. A judgment sort orders each subject's drawn changed blocks by the category's declared scale with the pre-existing Priority order breaking ties, places ungraded blocks last under Ungraded (n), and preserves follower/shared-entry identity. Chips carry explicit presenter-inference hover text with the active category first; carried grades retain all reasons and stale flags. Deterministic sorts remain available, while category sorts are enabled only when their category data exists. The model still authors no judgment: it only renders supplied judgments.
+
+- The pure model now consumes published explainer categories and grades as inputs. A judgment sort orders each subject's drawn changed blocks by the category's declared scale with the pre-existing Priority order breaking ties, places ungraded blocks last under Ungraded (n), and preserves follower/shared-entry identity. Chips carry explicit presenter-inference hover text with the active category first; carried grades retain all reasons and stale flags. Deterministic sorts remain available, while category sorts are enabled only when their category data exists. The model still authors no judgment: it only renders supplied judgments. [4]

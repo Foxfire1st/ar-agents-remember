@@ -20,6 +20,8 @@ The first attempt writes an initial receipt even when it deletes nothing. A late
 
 `frameRevisions` joins the shared `_ARTIFACT_KEYS`, so planned receipts, already-absent replay, remainder counts, deleted names and preview accounting treat reclaimed frame revisions exactly like the older deletion classes.
 
+`explainerArtifacts` is also a shared artifact key, so the same planned-receipt, attributed-absence replay, remainder and deleted-name consumers account for the explicitly scoped explainer artifacts. Retirement itself is reported separately from the deletion receipt; a refused deletion receipt does not undo a seat already retired.
+
 ## Evidence
 
 - The reclaimed frame revisions are a shared artifact class for every receipt consumer. [8]
@@ -34,3 +36,5 @@ The first attempt writes an initial receipt even when it deletes nothing. A late
 
 
 - Recorded prior deletion or new absence is reported by the ledger. [7]
+
+- The current implementation adds explainerArtifacts to the shared deletion keys and retires environments before deletion receipt admission. [9]

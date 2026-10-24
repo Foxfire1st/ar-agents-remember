@@ -3,34 +3,33 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
-        "content": "sha256:a572b070017dcc846d59e9479a3b8399ad9c8fd94540e2a7b1ef9dc92114063a",
+        "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
+        "content": "sha256:827460694cfc18c5dd9ccc564446583ec7d18cd812d8a5ed6a9a1a15cdd762d4",
         "locator": {
           "kind": "symbol",
-          "name": "create_server"
+          "name": "AuthoringTools"
         }
       },
-      "id": "RLZ-1P18V3",
+      "id": "RLZ-NRXTRA",
       "invariant": "INV-GWMA1V",
       "origin": {
-        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
-        "leaf": "260928-MIK-L104"
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
       },
-      "rationale": "The confined authoring server is built for one prepared folder; that is where the write boundary is real.",
+      "rationale": "The shared authoring implementation now admits explicit explainer instructions/grants and drafts roots while retaining exact input digests and guarded output paths; the removed standalone server is not recreated.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The confined authoring server is built for one prepared folder.",
+      "note": "The shared authoring implementation admits the prepared folder and its exact input grants.\n\nAnchor: `AuthoringTools`",
       "targets": [
         {
           "anchor": {
-            "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
-            "content": "sha256:a572b070017dcc846d59e9479a3b8399ad9c8fd94540e2a7b1ef9dc92114063a",
+            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
+            "content": "sha256:daadee1eab7320cc38395c68d0ba872d1933f075e318a27b03629e6bdd3b4ddd",
             "locator": {
-              "kind": "symbol",
-              "name": "create_server"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -42,11 +41,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c30a7c68f06aa680ab28536de91516062b857ca4",
+            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
             "content": "sha256:d2e1c418712a6d57732dc9205bf3c283b0124e6987c34db723ec0551d3521dc9",
             "locator": {
               "kind": "symbol",
               "name": "DOCUMENTATION_HOSTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "AuthoringTools admits the prepared input grants and output folder; the standalone presenter server constructor and CLI entry are removed.\n\nAnchor: `AuthoringTools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
+            "content": "sha256:daadee1eab7320cc38395c68d0ba872d1933f075e318a27b03629e6bdd3b4ddd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

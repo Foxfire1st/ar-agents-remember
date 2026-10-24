@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
-        "content": "sha256:97ab535702b6ed0fb143e42ecea352e0341a086866bcc660be01c1be03e62ca1",
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.list_tools"
+        }
+      },
+      "id": "RLZ-0VABP5",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "list_tools produces the FastMCP answer before loop.call_soon schedules start_after_discovery with this server config. The scheduled owner starts one sweep and conditional dashboard attempt; source order does not establish serialized client receipt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -21,8 +39,134 @@
     },
     {
       "anchor": {
-        "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
-        "content": "sha256:97ab535702b6ed0fb143e42ecea352e0341a086866bcc660be01c1be03e62ca1",
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_worktree_services"
+        }
+      },
+      "id": "RLZ-6Z7M7P",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The factory binds a supplier without building worktree services; the dependent supplier later composes the canonical services and LeafAgentArchive once through the shared binding owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launched_seat_refusal"
+        }
+      },
+      "id": "RLZ-73C3Y5",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Converts shared seat validation refusal into the explainer data answer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-8T6VV2",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The factory binds a supplier without building worktree services; the dependent supplier later composes the canonical services and LeafAgentArchive once through the shared binding owner.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-DESP0H",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "call_tool invokes start_after_discovery with the stored config before surface checks and dispatch, using the same once latch as discovery for clients that never list. The sweep starts on that first attempt even with no config; dashboard supervision remains conditional.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12908b669ea3101c46ac27e3ef3a02dfe3779b42",
+        "content": "sha256:dddbd3d12df683b084e5ef8cfbae743653d345e4e041d4248e9f5272760ba553",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP.call_tool"
+        }
+      },
+      "id": "RLZ-FPDHZQ",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Enforces exposed tool name and launched-seat identity ahead of every handler.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-HD5W8S",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Server composition sets the lazy service supplier, then chooses ordinary registrars or the exact bound explainer registrar. AgentsRememberMCP.call_tool refuses unexposed names before dispatch and returns named identity refusal when require_launched_seat fails.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-KQGYHP",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The stdio main entry declares MCP ownership before loading trusted configuration, invokes declaration-only preparation, and runs the server. Optional work is reached after the produced discovery answer or through the shared first-call fallback, never at process entry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -72,7 +216,7 @@
         },
         {
           "anchor": {
-            "blob": "07e5ac488c8ea799a99191baeb96392b035235c7",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
             "content": "sha256:dc2073ea4ae2f2e7197038a9a969ff15134dcb8da4095d3c87d7d2b70b1e8d94",
             "locator": {
               "kind": "symbol",
@@ -97,7 +241,7 @@
         },
         {
           "anchor": {
-            "blob": "07e5ac488c8ea799a99191baeb96392b035235c7",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
             "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
             "locator": {
               "end": 23,
@@ -115,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
             "content": "sha256:68e08fd0af1d0f9e7709b3ebca2332ace9b888551b696607dcfca0fe46dae953",
             "locator": {
               "end": 6,
@@ -133,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
             "content": "sha256:7e384b95c08958d4ebd2088a2e5a043c805551caa34f5710d6b607b4a8d3762e",
             "locator": {
-              "end": 38,
+              "end": 39,
               "kind": "line_range",
-              "start": 38
+              "start": 39
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -151,12 +295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
+            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 54,
+              "end": 55,
               "kind": "line_range",
-              "start": 54
+              "start": 55
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -169,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a910753217690db972088e80e392623703633acd",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -197,17 +341,145 @@
       ]
     },
     "8": {
-      "note": "Current server wiring and tool-call boundary initialize application services without an ambient session lifecycle.\n\nAnchor: lines 1-203",
+      "note": "Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
-            "content": "sha256:83afea35e5c2c2716672012f6f4b0b5b051062d8292e7a498bec3cffac25b528",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
             "locator": {
-              "end": 203,
+              "end": 258,
               "kind": "line_range",
-              "start": 1
+              "start": 225
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:40ec448338dfb2e5e1e077d5d721647b88ff6292ac0923d5491255976eaef55c",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
           "kind": "code"
         }

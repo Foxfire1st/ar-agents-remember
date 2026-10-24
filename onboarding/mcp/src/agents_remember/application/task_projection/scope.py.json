@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/task_projection/scope.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b520874e0837707762dcede94c19521961ac366e",
+        "content": "sha256:8066fa6e26c57c7f763122c5edf9f86631e8e4f32561cd7fc13eda1ba398a0cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_task_projection_scope"
+        }
+      },
+      "id": "RLZ-NAK4AD",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Projection scope creates the contract reader at projection time; _contract_of loads the same contract owner and retains the same contract-unavailable error.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The one resolution call: admitted binding plus hints in, bound scope or refusal out.",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:6e2a8819937a2f28766954f64f1b6c828f8cc7fb4cb77da5b791bd5c26acc190",
             "locator": {
               "kind": "symbol",
@@ -29,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:8bf03011ce3cbe350aad3fcf5350fcd6652e9b199603f90aec1efe273e3c28a0",
             "locator": {
               "kind": "symbol",
@@ -52,24 +71,24 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:4b734f64b1f229c35545e1ada0b9ec1ab012f967ad0761bd2ff80c231f38ae4d",
             "locator": {
-              "end": 106,
+              "end": 105,
               "kind": "line_range",
-              "start": 94
+              "start": 93
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:0fa1a963b52d41944086947ea2ef40a0cb8d7e820f1b30d5c86c4f97cfb91aeb",
             "locator": {
-              "end": 121,
+              "end": 120,
               "kind": "line_range",
-              "start": 110
+              "start": 109
             }
           },
           "kind": "code"
@@ -110,12 +129,27 @@
         }
       ]
     },
+    "12": {
+      "note": "Projection scope creates the contract reader at projection time; _contract_of loads the same contract owner and retains the same contract-unavailable error.\n\nAnchor: `resolve_task_projection_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:2316dbe95e9ee98ad7cda76f233fa2c1a0bc69237e741bca41342db6974ac809",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The canonical task reference parser — the admitted identity's only accepted form.",
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:0ece7c10a16e94c10487f1e8699c76eb2817ae9bc055ecc193f505017d1b6760",
             "locator": {
               "kind": "symbol",
@@ -126,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:55fda0d9e552bf51e48d35a8b460df5987bb5ef94dc61ab03cbb75f35d96c1cf",
             "locator": {
-              "end": 90,
+              "end": 89,
               "kind": "line_range",
-              "start": 63
+              "start": 62
             }
           },
           "kind": "code"
@@ -143,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:15d1e21b6de0cc5eab87e37db3e71fe1b0f12cdf369635b9317d44f50e4bdfc4",
             "locator": {
               "kind": "symbol",
@@ -154,7 +188,7 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:e82f2d5dedba62d23f18930b0e583898c0606a083f6cc81fbb3a7f5887c882fe",
             "locator": {
               "kind": "symbol",
@@ -165,24 +199,24 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:3370cbeed73afc658d7f88ef6754dbf1adc5d584c8bcffa2b0ef6485664fce0b",
             "locator": {
-              "end": 391,
+              "end": 400,
               "kind": "line_range",
-              "start": 376
+              "start": 385
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:77d70275d3b93fe4f8ff338767657e1b91e3e9c176ec93fe90eb8b7c5d9308e9",
             "locator": {
-              "end": 405,
+              "end": 414,
               "kind": "line_range",
-              "start": 394
+              "start": 403
             }
           },
           "kind": "code"
@@ -194,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:127f4fb9e590cde302ed6829c02757000693e8cafc900c0e65348ae67511b690",
             "locator": {
               "kind": "symbol",
@@ -205,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:e0f9af4c3f80c89f5584c921b09782a91ef8ec85ee4540ae652596a5c23b4c7b",
             "locator": {
               "kind": "symbol",
@@ -216,7 +250,7 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:4d84cdbce09d5a8c4e73e575887b85a58a3601f92b8083d0de1fa8f50a5ca32e",
             "locator": {
               "kind": "symbol",
@@ -239,24 +273,24 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:55972c44ee40a11043254beb3964f9d29c5d45084e04d3406e76929b2c0f7d43",
             "locator": {
-              "end": 213,
+              "end": 217,
               "kind": "line_range",
-              "start": 195
+              "start": 199
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:c8793ec70c862704e9f0c5c27c5c8a1fb97bff91bcbfe88463a6fcb99c48726f",
             "locator": {
-              "end": 234,
+              "end": 238,
               "kind": "line_range",
-              "start": 216
+              "start": 220
             }
           },
           "kind": "code"
@@ -268,7 +302,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:3c3beeb3dd1083a3c46ab9f14e9ae0d0fcceff98aacc3ab0a5383aee10928b74",
             "locator": {
               "kind": "symbol",
@@ -284,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:580bc2ba7b11f508edd6bbf52a6b4ce9fee772c8c537addc0f34b8b1ea086920",
             "locator": {
               "kind": "symbol",
@@ -296,7 +330,7 @@
         },
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
             "content": "sha256:598b8b132356383cbe0e3888140fd0962fd4bb9ac330950d41110bbb664f3922",
             "locator": {
               "kind": "symbol",
@@ -325,7 +359,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
             "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
             "locator": {
               "kind": "symbol",
@@ -337,7 +371,7 @@
         },
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
             "content": "sha256:c183cac20e62cc80dbfacbff47df1c44dc14cf0da50cbaed25aedc93f553b288",
             "locator": {
               "kind": "symbol",

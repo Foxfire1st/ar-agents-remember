@@ -1,0 +1,164 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_server.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+        "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_and_publish"
+        }
+      },
+      "id": "RLZ-JRT8Z9",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The retained authoring surface publishes only after prospective loading and readiness through the bound frame store.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+        "content": "sha256:57b7513ec777f40593db3267541f6cbf3d3d5ee1a2e1efccad521cf9eff61c15",
+        "locator": {
+          "kind": "symbol",
+          "name": "explainer_authoring"
+        }
+      },
+      "id": "RLZ-TYB54B",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The current call constructs shared AuthoringTools over this environment drafts and current instructions grants, without a separate native presenter tool server.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+        "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+        "locator": {
+          "kind": "symbol",
+          "name": "render_and_publish"
+        }
+      },
+      "id": "RLZ-WVQJNP",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-A-1",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The only reachable publish path: a model-free load and a readiness report decide whether the frame store is written.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A block the bound comparison cannot fingerprint is refused and no partial grade is written\n\nAnchor: `def grade(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:38e81dcdaa399eccfa1d189767ec9be27db3fa40a802115ffae4023112e5615f",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A grade write takes the leaf's one lock and refuses as busy rather than writing beside a build\n\nAnchor: `def _leaf_lock(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:27d3905ea492addaf15aced1e488d7d8ad1a65196e982abc0ddbe5e7d8ee2da8",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The binding and the claim are re-read under the lock before a judgment is written\n\nAnchor: `def _held(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:1653074540466e3bdbcb02b6390a968d0a06e08f89d070d92775cc24b91a9a1f",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 320
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One report per filed tray message, with the developer's words copied byte for byte and their digests answered\n\nAnchor: `def report(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:485088230b6f2abc5bc261571239fda13cfff030903551a7658d862bad84eecb",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A report with no recorded architect goes back to the developer's tray instead of to a seat that would not receive it\n\nAnchor: `def _deliver(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:50078d2ec592240c082423d42da7a989826d04a6601581c2cd4fe59bade043d3",
+            "locator": {
+              "end": 603,
+              "kind": "line_range",
+              "start": 581
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Publication happens only after the draft loaded and the readiness check passed, and a refusal leaves the ready revision untouched\n\nAnchor: `def render_and_publish(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
+            "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+            "locator": {
+              "end": 1338,
+              "kind": "line_range",
+              "start": 1261
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -253,17 +253,161 @@
       ]
     },
     "49": {
-      "note": "Attention uses only drift and blocked-start contributors and a deterministic ranked order.",
+      "note": "The attention queue composes actionable-drift and blocked-start with native_attention_items for permission-wait, held-message, task-stalled, task-landed and task-abandoned. It suppresses matching per-occurrence acknowledgements for every kind and sorts ascending by (waitSeconds or 0.0, id), with no severity key. Native builders retain canonical task/agent targets and their own bounded fact/occurrence semantics; acknowledging a live cause does not resolve it. Drift fingerprints and complete source-owned recovery/removal remain distinct from missing data or elapsed age.",
       "targets": [
         {
           "anchor": {
             "blob": "076d83315223337d2ae1069118fadbb14829c501",
             "content": "sha256:df422e63673c2c2e4d72bcde4ca6020c81448e3c13cdce3f37d7be4ed8236171",
             "locator": {
-              "kind": "symbol",
-              "name": "build_attention_queue"
+              "end": 74,
+              "kind": "line_range",
+              "start": 37
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:459380fdfa212473a9cb39c48e4c495a35891a0c56bcd61cd8f895fcaee09825",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:3260adcda0e83ab1119dfc4c81b77b78acfe48639b88a86cd524d2d21d2bab3c",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:5520816210b8fd9bc65b0d783cca25f07e69099338650af3d77d15fde2e9ed86",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:39c0c8e0f58f3cfa9952c8e6a96ec63f4b70aae8465b3571f6be0c8e57b3dfdb",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:8214cc93e25d32ebdb773fea777bccf1086f9f427c7eeaa113eeb2f4e97a04a7",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a08d5c53494cd6f00af956e451b0f10af40808f3",
+            "content": "sha256:85bf25e1031e124f92f64dee5408743cbb073a1f155d8548b0c7552ecd8ffbaa",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+            "content": "sha256:e4156ba39fda96625a09e3151a9bf7ce5a1e985a12b9b173ccde628e422ad9ca",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/observer/native_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:b4956c91f6beffbc24d4d3a9fd94f1cf90c8f16cd109f97788e754a106a7cd49",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "809a6c11580cb9700bd948d081c47536e942cf58",
+            "content": "sha256:52a82454a7d2706788b716cf83fe84e3b5e9846e2182e4c1397b37376149ba20",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 439
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
           },
           "kind": "code"
         }

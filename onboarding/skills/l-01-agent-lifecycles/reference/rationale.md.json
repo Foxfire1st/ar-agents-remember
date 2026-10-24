@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
             "locator": {
               "kind": "symbol",
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
             "locator": {
-              "end": 230,
+              "end": 229,
               "kind": "line_range",
-              "start": 213
+              "start": 212
             },
             "path": "scripts/sync-skills.py"
           },
@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfc9168b3d1a727fc00d12e21e949acfed4d3537",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
             "content": "sha256:d530d65bfb82a61b4f9c1da86186da3e6b9eda71acdde53d70b7d6325ac792f4",
             "locator": {
-              "end": 260,
+              "end": 259,
               "kind": "line_range",
-              "start": 254
+              "start": 253
             },
             "path": "scripts/sync-skills.py"
           },
@@ -182,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
             "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
             "locator": {
-              "end": 593,
+              "end": 731,
               "kind": "line_range",
-              "start": 585
+              "start": 723
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:605c2bee8b0d54f4fe588a7becc0e193efc32cb36d5ccf70788f982e1e948e05",
             "locator": {
               "kind": "symbol",
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d58977d0180423326b3c4c33f1de00b9453702e",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
             "content": "sha256:6d5b484f150a59af3421ec71ca4228ec8d99521ef7b03f287932f07a5f0309fa",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The task-document writer, worktree start, role workspace and stage planner enforce one answer, preventing a leaf from starting work before the developer has supplied go."
+  },
+  "applicability": "Canonical subTask creation/edit/publication, worktree start or planning attach, leaf-role workspace resolution and task stage planning. Existing inProgress/later attach does not restart work; master documents carry no intentReview.",
+  "conditions": [
+    "A native subTask review is pending or review-first.",
+    "Leaf creation defaults to pending only when the caller supplied no intentReview.",
+    "A bound hosted answer writer is the Architect; an unbound developer may write the answer."
+  ],
+  "exclusions": [
+    "A master document, which admits no intentReview field.",
+    "An older leaf with no field or a review at go.",
+    "Re-entering an already inProgress/later enclosure, which is not a new start."
+  ],
+  "id": "INV-7AJ0ZW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R189@v1 rules2,8; MIK-R189@v2 rule2 amendment"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-intent-review-start-gate",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Creation of a leaf without a supplied intentReview defaults it to pending; pending or review-first blocks every new leaf start and planning/abandoned-to-inProgress transition with intent-review-open before worktree or seat creation. An absent older-leaf field or go admits the existing start path. Only the bound architect, or a developer without a seat binding, changes the answer; replacement preserves it and no write may erase it.",
+  "status": "proposed",
+  "supersedes": []
+}

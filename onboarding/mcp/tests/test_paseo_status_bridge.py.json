@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "eda696511669e8fe8e114349cb31ed35abe93ebc",
+        "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
         "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
         "locator": {
           "kind": "symbol",
@@ -56,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164d85d4956aae02e6be091ca21ca3d767b6fa87",
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
             "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
             "locator": {
-              "end": 448,
+              "end": 464,
               "kind": "line_range",
-              "start": 400
+              "start": 416
             }
           },
           "kind": "test"
@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "164d85d4956aae02e6be091ca21ca3d767b6fa87",
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
             "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
             "locator": {
-              "end": 398,
+              "end": 414,
               "kind": "line_range",
-              "start": 351
+              "start": 367
             }
           },
           "kind": "test"

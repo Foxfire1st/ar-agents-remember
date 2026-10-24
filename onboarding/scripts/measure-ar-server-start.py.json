@@ -1,0 +1,111 @@
+{
+  "path": "scripts/measure-ar-server-start.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+        "content": "sha256:6281b0b575a3141a9e01dd29bd804acc477d24b3f47b40fd07e3c52aa7c9f622",
+        "locator": {
+          "kind": "symbol",
+          "name": "measure"
+        }
+      },
+      "id": "RLZ-GW3V01",
+      "invariant": "INV-JQ1WC6",
+      "origin": {
+        "handoffEntry": "L183-startup-evidence-witnesses",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The script creates a minimal ordinary/explainer world, times initialize and tools/list arrival from spawn, makes no tool call and records command/load. main reports best time and representativeness separately; source provenance is reported, not inferred from adjacency of a venv.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The requirement's bound is stated as 5.0 s at a one-minute load of at most 40.\n\nAnchor: `BOUND_SECONDS = 5.0`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:9d4ef01b950264e30b02c5c99390bb6cdd3228434452f8cd083de117ee1850e9",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measured span starts before the process is spawned and ends when the tool list arrives.\n\nAnchor: `spawn = time.monotonic()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:6281b0b575a3141a9e01dd29bd804acc477d24b3f47b40fd07e3c52aa7c9f622",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each run records its own launch command, tool count and load before and after.\n\nAnchor: `\"command\": \" \".join(command[1:])`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:ce85f22c5e9a1cfc4353ae1fc06d7de278f9e567aa76ffaf52e4afaca16fe5a9",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reported bound is judged against the fastest of the repeated runs.\n\nAnchor: `best_tool_list_seconds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:544e5f9a8119f954087b788fc840039c3f21743f95dc04271411e216015f3392",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A starting load above the stated limit marks the aggregate unrepresentative; load_after remains disclosed without entering this predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:6dbdf8ec12f0da2a93be604c5bd0a418b5e996f8e3270d61dbfed2c05d5f6c6d",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

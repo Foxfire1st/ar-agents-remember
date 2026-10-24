@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - Current registry retains role_start/role_message and the three knowledge read/diff/integrity rows, plus earlier role_start_set=RoleStartSetResponse and native retire_child=RetireChildResponse. `context_packet` now maps to `SlimContextPacket`; `read_ar_files` remains mapped to its rebuilt naming model, and `resolve_context`/`ResolveContextResponse` are removed. The module now declares one thing: `TOOL_RESPONSE_MODELS`, the by-name response-model mapping. No compatibility exclusion set and no derived public subset remain here, so a name this mapping omits is not a private registration this module hides — the mapping is the whole registry.
@@ -279,3 +281,5 @@ explicit `unresolved` list rather than manufacturing a verdict from a passing te
 `TOOL_RESPONSE_MODELS` binds `user_settings_init` to `UserSettingsInitResponse`, so its answer crosses the strict model that declares the state, path, role harnesses and refusal fields.
 
 - The by-name response-model registry, which carries the settings initializer. [15]
+
+- The public response registry maps explainer_control to its strict response model; it does not weaken existing responses. [16]

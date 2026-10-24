@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+        "content": "sha256:ae24711ffa2588e8c5b4bfee02e4cbf71befeb53805469bfd229a1beca397c13",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_services"
+        }
+      },
+      "id": "RLZ-XXRGHK",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "One light process holder accepts a supplier without constructing services. The first dependent lookup builds once and keeps the instance; reset clears both current services and supplier, so reset cannot silently reconstruct cleared services.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Unbound services refuse an operation by name instead of building a default\n\nAnchor: `class WorktreeServicesUnboundError(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:05447aa55479275f4cd335c71bd9b8c8c2dd01144fd2c30a8fe404dab23e38df",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The first dependent operation builds the services from the supplier and keeps them\n\nAnchor: `def worktree_services(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:ae24711ffa2588e8c5b4bfee02e4cbf71befeb53805469bfd229a1beca397c13",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A supplier can be named at startup without loading the services package\n\nAnchor: `def set_worktree_services_supplier(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:234f8c080047044f6880ae88c27710eb2f53ba7704fe5f68d0247aa71846e5aa",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A reset clears both the bound services and the pending supplier",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:6520c587f1fcde40b46afbaacfc138b25f5b2a60595eb953939b5571fb479220",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:df4e9f4174d0511ace4f7789030d2b0857e130995ac3ac65724b0e657ecca6a1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Binding directly leaves any pending supplier untouched\n\nAnchor: `def bind_worktree_services(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4961b9dc90a6124fde95f3c8d258d1b8f9a6c0b3",
+            "content": "sha256:c97deba332ae39d0d1b28db993f97689e0cdedf2d69f42dd0dcdc006d809617f",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One light process holder accepts a supplier without constructing services. The first dependent lookup builds once and keeps the instance; reset clears both current services and supplier, so reset cannot silently reconstruct cleared services.\n\nAnchor: `worktree_services`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:1efee70dda7436cf49db9d5ef2c5ed7c0a32caa041317b189a1af906c2c36b54",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

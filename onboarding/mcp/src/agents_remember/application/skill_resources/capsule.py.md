@@ -18,6 +18,8 @@ operation was addressing.
 
 ## Code Commentary
 
+Capsule compilation loads WorktreeContractReader and contract/error implementations only when enclosure resolution needs them; contract-unavailable keeps its existing refusal path.
+
 ### Logic
 
 Four steps, each of which can only refuse, in `compile_task_capsule`:
@@ -145,3 +147,5 @@ sources.
 
 No meaningful cross-repository reference applies. The MCP SDK is a pinned external dependency, not a
 sibling repository.
+
+- Capsule compilation loads WorktreeContractReader and contract/error implementations only when enclosure resolution needs them; contract-unavailable keeps its existing refusal path. [21]

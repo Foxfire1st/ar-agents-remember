@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
-        "content": "sha256:e9031da708137427a8e18fd2336966a98d96ecf559f15d14aa19e5f19969178d",
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+        "content": "sha256:54076b0052b91938de74c7c5d71ff7da3326f7cc729477cbb8e448e012d47aff",
         "locator": {
           "kind": "symbol",
           "name": "start_outside_scratch_reconcile"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
         "content": "sha256:a544e29f05ab792331f9fd6a4e4f7b44691c5ff9deeefa1186e8a6fec21039cf",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,44 @@
     },
     {
       "anchor": {
-        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
-        "content": "sha256:6a7c4224ef3994761ce51e26f1fd8c681020c6f9f9d80f8df355858a2110c3c7",
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+        "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_tool_event_writer"
+        }
+      },
+      "id": "RLZ-6Z0ZRG",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This owner captures the launch binding and canonical task caller once at boot; the ruling explicitly retains its light ToolEventWriter/EventStore construction as identity capture rather than optional work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+        "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_PostDiscoveryStartLatch.start"
+        }
+      },
+      "id": "RLZ-7HS33R",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The process latch marks its first attempt once under a lock before attempting the sweep even without config, then conditionally invokes the existing dashboard launcher when config exists. Discovery scheduling and direct-call fallback share this owner; failures are contained and later attempts do nothing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+        "content": "sha256:3c50eca9ecb4285b8aae618987a0451c15475bfd0478c335fa60a636e8b48f9e",
         "locator": {
           "kind": "file"
         }
@@ -51,12 +87,12 @@
         "handoffEntry": "L198-F-mcp-src-agents_remember-application-runtime-startup",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The tool server's start now sweeps the outside scratch parent before it serves, and prepares its own process scratch beside it.",
+      "rationale": "The tool-server post-discovery latch starts an isolated background outside-scratch sweep once per process after the first tools/list answer, or on the first tool call when a client never lists; sweep failures are logged without blocking startup.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
         "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
         "locator": {
           "kind": "symbol",
@@ -71,6 +107,24 @@
       },
       "rationale": "build_tool_event_writer snapshots the caller and installs the process writer at startup; a server started a second ago writes at its first call only if this runs before any tool call.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+        "content": "sha256:7d6413b974ffaaa66867a98586801f29c5fbcba435bbd22a31f932018258dbc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_mcp_process"
+        }
+      },
+      "id": "RLZ-RT54W9",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "prepare_mcp_process only declares MCP ownership on the current W10b pair. It launches neither outside-scratch reconciliation nor dashboard supervision; the shared post-discovery owner handles both later.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -79,7 +133,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0b0b3acf41b82b6ac02ed5af87ad23317610ee3",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
+            "locator": {
+              "kind": "symbol",
+              "name": "initialize_mcp_application"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",
@@ -91,16 +156,128 @@
       ]
     },
     "2": {
-      "note": "MCP ownership declaration and optional dashboard autostart precede application initialization.",
+      "note": "Process preparation only declares ownership. A produced tools/list answer schedules the one joint post-discovery start; a first tool call is its fallback. The first attempt starts the sweep even without config and consumes the latch; dashboard supervision needs config and respects autoStart. The sweep runs in a child with MCP stdin disconnected, keeping the heavy worktree owner out of the serving process.",
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
-            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:7d6413b974ffaaa66867a98586801f29c5fbcba435bbd22a31f932018258dbc1",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_mcp_process"
+              "end": 91,
+              "kind": "line_range",
+              "start": 84
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:40ec448338dfb2e5e1e077d5d721647b88ff6292ac0923d5491255976eaef55c",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:32a577c1d77189a630c481e5a894bdccfb10167c3658a92f4c08d997a03f5446",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:eb2ae5b4d45db284f33b3bdd77cc72dabe470351385c87f25455fd0f3a272c9f",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Tool-event startup retains boot-time caller identity through light constructors, with no constructor write or thread.\n\nAnchor: `build_tool_event_writer`, `ToolEventWriter.__init__`, `EventStore.__init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeab03b3c308198c2963d276ea785d00e4877e01",
+            "content": "sha256:ce064755a94ca3cb1d2bd48b679cf49b802392d7fe1db070179431e101fe82fd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:4e53d58ec737ed4e7dbb8e4e3a9cf80ebb66e99d6e502056baa04cc4ab17c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:bc35ba1f447541caad2fc7353d2d428aa512bca66f5d4e586f1068835945e599",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
           },
           "kind": "code"
         }

@@ -10,6 +10,8 @@ Build the dashboard FastAPI application and the long-lived runtime it owns. App 
 
 ## Code Commentary
 
+Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators.
+
 `_build_serving_runtime` resolves live-input capabilities, creates one shared background ledger, optionally creates the landing refresher, and passes those collaborators to the Projector. When landing exists it binds interest to the actual Projector subscriber predicate before returning the runtime. The runtime carries the supplied clock, build stamp, cadence, child shutdown and the **new review_memory_root** collaborator. Provider metrics storage is returned separately for the delegated lifespan owner.
 
 The `review_memory_root=collaborators.review_memory_root` runtime argument is the delta of an earlier comparison, already present in this leaf's BASE: it is labelled by that original epoch and is not this comparison's change. This comparison's own app.py change is the usage-read wiring — one added `usage_read=collaborators.usage_read` argument on the same runtime construction, so the serving tick's limit write reads the host's usage report through the composition root's reader and not through a new import or lifetime poll. The consumer is the projection route’s `api_stream`: it composes ordinary projection events with `multiplex_review_memory`, the optional review identity tuple and that root port. Identity/root admission and watch behavior belong to that consumer and its multiplexer, not to app construction; forwarding the port does not certify every supplied query or create a second worklist read.
@@ -183,3 +185,5 @@ call plus the import.
 - Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent. (historical reference 30)
 
 - `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. \[35] [35]
+
+- Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. [36]

@@ -160,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
             "content": "sha256:f21801a8e7d452cfd44fc7ed8dc5b9733905f934f9b0c5294ff4f21b7a58488a",
             "locator": {
               "end": 31,
@@ -173,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
             "content": "sha256:0c7f69d64a9f8f1248742b4e49d3f8555cf399a006d20e811945f7ebad9d17f0",
             "locator": {
-              "end": 80,
+              "end": 83,
               "kind": "line_range",
-              "start": 80
+              "start": 83
             },
             "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
           },
@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "512be564b35aaf6f9d3b9709113b613309efe221",
+            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
             "content": "sha256:13097fa856c7a30ea33fb6e87fb9236a60d1e67383850f3c5ec4599801591a78",
             "locator": {
-              "end": 448,
+              "end": 621,
               "kind": "line_range",
-              "start": 448
+              "start": 621
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

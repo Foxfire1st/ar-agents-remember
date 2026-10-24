@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/tools/public_roster.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+        "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+        "locator": {
+          "kind": "symbol",
+          "name": "PUBLIC_TOOLS"
+        }
+      },
+      "id": "RLZ-5XSE8N",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The ordinary public roster includes explainer_control for Architect Update, Retire and claim.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "PUBLIC_TOOLS is the single ordered 73-name roster; its tail is knowledge_read, knowledge_diff and knowledge_integrity_check.",
@@ -40,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
             "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",
@@ -85,12 +104,12 @@
       ]
     },
     "14": {
-      "note": "The tuple declares42 unique public names including user_settings_init; prior41/40/73/74 populations are historical source epochs.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "The tuple declares43 unique ordinary public names including user_settings_init and explainer_control; prior41/40/73/74 populations are historical source epochs.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:adddd95646eb8304aba7f9bcc4ebb0372ead80b944bf6120cc8cd73e9f622fc3",
             "locator": {
               "kind": "file"
             }
@@ -129,12 +148,27 @@
         }
       ]
     },
+    "17": {
+      "note": "The ordinary public roster includes explainer_control for Architect Update, Retire and claim.\n\nAnchor: `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:adddd95646eb8304aba7f9bcc4ebb0372ead80b944bf6120cc8cd73e9f622fc3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple.\n\nAnchor: `source range`",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
               "end": 42,
@@ -186,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",

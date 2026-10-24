@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
             "content": "sha256:c48ed41dcd929679cead93e94866b08dc8fc340aacc24edd4170d8a00683bd7c",
             "locator": {
-              "end": 44,
+              "end": 38,
               "kind": "line_range",
-              "start": 44
+              "start": 38
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
           },

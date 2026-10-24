@@ -10,6 +10,8 @@ Registers only the retained native retire_child tool, for the starter’s receip
 
 ## Code Commentary
 
+The retire_child signature stays strict while the payload loads only when retirement is invoked.
+
 ### Logic
 
 The public signature receives the selected task, role, reason, optional agent ID and explicit interrupt_turn. It constructs RetireChildRequest and delegates to retire_child_payload. Registration owns wire shape and description; receipt ownership and actual host retirement belong to the payload route.
@@ -23,3 +25,5 @@ A currently running turn needs explicit interruption authority. Other role agent
 No Domain Documentation source is configured for this repository-specific boundary.
 
 - Native child retirement registration: implementation/assertion boundary described above. [1]
+
+- The retire_child signature stays strict while the payload loads only when retirement is invoked. [2]

@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_staleness_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A read with neither an on-screen comparison nor an environment binding is refused, never answered as current\n\nAnchor: `def screen_target(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb72d25909ea2bbecfa10aab5c03845474cd3e6",
+            "content": "sha256:19817d14fa93de933a5c9e0fac413c07afd0d11270a42dc39d9f436907eec213",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A revision or a comparison belonging to another leaf is refused by name\n\nAnchor: `def _require_same_leaf(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb72d25909ea2bbecfa10aab5c03845474cd3e6",
+            "content": "sha256:8ac43c588468c02760637f4c4d75eb25a88e1760ef0e820f54dd0e98884ef020",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One answer carries the stale parts, the grade states, the trusted lines and the regeneration message\n\nAnchor: `def staleness_read(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb72d25909ea2bbecfa10aab5c03845474cd3e6",
+            "content": "sha256:1c2f70a57f3aa1eb2d1e343f7780470129731ac6f54452791ec9f2b89839c220",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only references the target no longer holds become the prune's `gone` tuple\n\nAnchor: `def gone_grade_references(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb72d25909ea2bbecfa10aab5c03845474cd3e6",
+            "content": "sha256:c72c71fbae7b325e6ae732f5d5852cbeb9b169e607f7c7d9af4d291e123fe291",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Grades are remapped and merged hunks carried, and the store is written only for what changed\n\nAnchor: `def reconcile_grades(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cb72d25909ea2bbecfa10aab5c03845474cd3e6",
+            "content": "sha256:13e933d08d1d4b4698e9cc20de6161bcd7f0e145d08ba3b649bbb24d431b7a2e",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 508
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

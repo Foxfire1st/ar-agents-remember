@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/explainer/ExplainerTaskDocument.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+        "content": "sha256:10f0554ee8f51289bd482f34443fd8caa1817b26b04df866365a827945fb790d",
+        "locator": {
+          "kind": "symbol",
+          "name": "retires an existing explainer directly from a cold task document without visiting Review first"
+        }
+      },
+      "facet": "Pins cold-document retirement and same-receipt recovery while processes remain.",
+      "id": "PRF-8BW43Y",
+      "invariant": "INV-AKRFQY",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE03-retirement",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+        "content": "sha256:3df0c25911573397344138b2e70c115160f4e4501eada83006e45b6befce412b",
+        "locator": {
+          "kind": "symbol",
+          "name": "names the processes a half-retired seat left behind and keeps recovery open until none remain"
+        }
+      },
+      "facet": "Pins cold-document retirement and same-receipt recovery while processes remain.",
+      "id": "PRF-PDH5D7",
+      "invariant": "INV-AKRFQY",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE03-retirement",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A cold document reads the state and shows nothing without an explainer\n\nAnchor: `hydrates a cold task document from /state and shows nothing when no explainer exists`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+            "content": "sha256:0d2ae1ce2c17a378397bad27532b3aed47dea5c357c2f2875985f170ac3341c8",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retire works from a cold document without the review page and posts a receipt id\n\nAnchor: `retires an existing explainer directly from a cold task document without visiting Review first`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+            "content": "sha256:10f0554ee8f51289bd482f34443fd8caa1817b26b04df866365a827945fb790d",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A remainder keeps the confirmation open and the retry keeps the receipt id\n\nAnchor: `names the processes a half-retired seat left behind and keeps recovery open until none remain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+            "content": "sha256:3df0c25911573397344138b2e70c115160f4e4501eada83006e45b6befce412b",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

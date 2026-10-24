@@ -69,6 +69,19 @@
             "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
+            "content": "sha256:2f86385c2a6b0479a5f16362c7a03aa7dc50b9676692719235518453a47d7a0f",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -137,6 +150,30 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:8a6f9ad114ae544fbd0fb710e827a688d95bfa9e6467f798bcba5e3aa5def658",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:dc53b82380678d1f44a42c652a183c88b2442d88b00a8c84bc0d212c32d08a37",
+            "locator": {
+              "end": 407,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -175,6 +212,42 @@
               "end": 177,
               "kind": "line_range",
               "start": 167
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c10ae5cdd58d4abdcc308463495ea415c746ec9",
+            "content": "sha256:eb11a5af06a0021f0a6eca7d41574a75aef4fc42d53a7f9ca91b1d469e2cfbc4",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:b95533b748ef4044558eb70d0300144ec03878f831967fc8a1c927c4398f56ca",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1afc697e5b8f19ff34e05873be02fc9a49f2b55b",
+            "content": "sha256:3b9928e90564a626e19f9527bcca7e40caee31c48d1d5ebbcb23c9a8e3917d4d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 168
             }
           },
           "kind": "test"

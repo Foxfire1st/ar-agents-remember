@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
         "content": "sha256:d77a224065797d0c7b8d98a22453f851334ecd92fa986881d234fafa9f7cbd7c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
         "content": "sha256:927d8fca61d0b5a7909172b8c4a112153f6feb1f99db54156854b8b522970097",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
+        "content": "sha256:1277711b07197c4ae892ddee50a1f78ce128b42b249a06c9c826384da168d27e",
+        "locator": {
+          "kind": "symbol",
+          "name": "CAPABILITY_RESOURCES"
+        }
+      },
+      "id": "RLZ-BF2DJ6",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The required review-presenter capsule phrase changes from attempt to environment, matching the durable per-leaf explainer ownership rather than a transient presenter attempt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
         "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+        "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
         "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
         "locator": {
           "kind": "symbol",
@@ -80,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+            "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
             "content": "sha256:ef6233c30c7bbbb0cb0364d315ac24e3f50e33e55a05ea06615f3a3db596f359",
             "locator": {
               "kind": "symbol",
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+            "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
             "content": "sha256:d1798e85dd6aaccc156de67602bac96d25f21f9de216d918c31de1ef944678a9",
             "locator": {
               "kind": "symbol",
@@ -112,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
+            "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
             "content": "sha256:875e07a41c6e03de0d86129862fee5457b27dfb30c0a2c56918150d9f6d2de18",
             "locator": {
               "kind": "symbol",
@@ -130,6 +148,21 @@
           "anchor": {
             "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
             "content": "sha256:4d8761a408301b584006b5cff6ab5ae76a55fe5cc49c1f03249314d388d58345",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The required review-presenter capsule phrase changes from attempt to environment, matching the durable per-leaf explainer ownership rather than a transient presenter attempt.\n\nAnchor: `CAPABILITY_RESOURCES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
+            "content": "sha256:1f48ff021683abea6ea6f71d4d5313451b4c5db62aa6a07a68ce9083bdc6fc34",
             "locator": {
               "kind": "file"
             }

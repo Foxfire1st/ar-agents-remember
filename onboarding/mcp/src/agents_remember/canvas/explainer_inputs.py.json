@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_inputs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tool server's inputs are one frozen record, with the root, both repositories and the effectful readers supplied by the caller\n\nAnchor: `class ExplainerInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
+            "content": "sha256:d4f2ac86c9ece367aea73cec25fc716a360ec93391eef1c0975a891eb4af5344",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A workspace too shallow to be an explainer placement is refused rather than read as a coordination root\n\nAnchor: `def coordination_of(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
+            "content": "sha256:23f85fa4add5a04468e6da276d2e5e1bc7489cbff5b6ede478e3eac06ea8e9ab",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One clock, in UTC, to whole seconds, is what every stored moment is stamped with\n\nAnchor: `def now_iso(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
+            "content": "sha256:b738dbd1171029143ae5a36ccf49a9416c4734364475653db0edda38f6e12833",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

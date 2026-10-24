@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_planned_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The leaf's reference files are looked for in one task-relative folder\n\nAnchor: `REFERENCE_FOLDER = `",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "content": "sha256:580bbbc04b991a57506a672c326cb5ea97bd003f89476e57aa5de7d248753b7a",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The page is built from the documents and tips the caller's own reads returned\n\nAnchor: `def planned_payload(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "content": "sha256:1c4f392cf2a3cb676a6991a2a5bf2f462cb8a349edabb77886ed3b659ae1743d",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A subject the memory tree does not hold is left out instead of stated from another version\n\nAnchor: `def subject_statements(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "content": "sha256:c4fdcb696d1aad94eef2312067025240612bcc06df20554bab7be230be1a4d6f",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A packet that cannot be read is left out, and the page reports it unread\n\nAnchor: `def _packet_texts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "content": "sha256:2c31afd1218eb22750ef7006554851d658241092be2501658c2b83bc4951e679",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unreadable code tip is a named refusal, not an empty path set\n\nAnchor: `def _code_tip_paths(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b8f67cdf797c17e4e876f32473dcca9585fec0",
+            "content": "sha256:069f91b89fffc67896b7382ae42c166645b6b9e4d90201972540779e7ebbf76c",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 174
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

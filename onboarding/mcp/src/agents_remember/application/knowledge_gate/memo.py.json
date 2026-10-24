@@ -229,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
             "locator": {
               "kind": "symbol",
@@ -246,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3e66f1ca7de4909a676f0be1d097db319d68067",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
             "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
             "locator": {
               "kind": "symbol",

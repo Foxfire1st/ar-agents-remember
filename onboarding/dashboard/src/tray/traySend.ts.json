@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
-        "content": "sha256:be5bf7e6525d1986927fbab81d7c9b2e581d3b48d1b5c4f3e31c037c96fbf210",
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendTray"
+        }
+      },
+      "id": "RLZ-BEH2QG",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Diverts archived/placeholder explainer targets into the first-request form before ordinary posting; only the no-live-target branch bypasses settlement of the whole collection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
         "locator": {
           "kind": "symbol",
           "name": "sendTray"
@@ -21,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
-        "content": "sha256:59c5572a8739afa7299afc72d59899fc4cc06813e61f73e39dc7e8a102d2a93c",
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +56,8 @@
     },
     {
       "anchor": {
-        "blob": "dab6025203c2dde4e4de33eb7824d55dd5349119",
-        "content": "sha256:be5bf7e6525d1986927fbab81d7c9b2e581d3b48d1b5c4f3e31c037c96fbf210",
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
         "locator": {
           "kind": "symbol",
           "name": "sendTray"
@@ -57,16 +75,14 @@
   ],
   "references": {
     "1": {
-      "note": "Sends one immutable collection snapshot separately to each chosen target.\n\nAnchor: \"export function messageRepository(picks: readonly TrayPick[], agentId: string, deps: Pick<SendDeps, 'pageRepository' \\| 'targetRepository'>): string \\| null {\"",
+      "note": "messageRepository chooses the message filing repository from the shown page, the first structured reference or the recipient’s task; it does not post or decide whether an archived explainer target is diverted.\n\nAnchor: `messageRepository`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
-            "content": "sha256:b2493208efec48e4ff2f50cae6af0dc9cb7ca1119acf2d2fe62e6782a29cfafc",
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
             "locator": {
-              "end": 54,
-              "kind": "line_range",
-              "start": 42
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -74,16 +90,14 @@
       ]
     },
     "2": {
-      "note": "Sends one immutable collection snapshot separately to each chosen target.\n\nAnchor: \"export function parseDelivery(answer: unknown, messageId: string): TrayDelivery \\| null {\"",
+      "note": "parseDelivery accepts named delivered, held or refused answers and retains message-file identity, reason, detail and a supplied provider-limit reset without treating other answers as a delivery.\n\nAnchor: `parseDelivery`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
-            "content": "sha256:dcd0f221f273035e01e815659a9b90a9f982c6685315e5624f3a1ce78b41a08d",
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
             "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 74
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -91,16 +105,29 @@
       ]
     },
     "3": {
-      "note": "Sends one immutable collection snapshot separately to each chosen target.\n\nAnchor: \"export function serverDetail(answer: unknown): string \\| null {\"",
+      "note": "serverDetail reads a textual server detail or joins validation error locations and messages so a refused ordinary send retains the host’s stated reason.\n\nAnchor: `serverDetail`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
-            "content": "sha256:d0c7bac2a9c874645e4226c6c332e0ebd20fd7e2bd569bcb164a806eee97b81a",
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
             "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 109
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Before a native send, sendTray separates archived/placeholder explainer targets from live recipients. The first archived target opens its leaf's first-request form with the current text; when no live target remains it returns without wiring picks or posting, preserving the collection. In a mixed selection, the remaining live targets still post and their ordinary settlement applies; this module does not report the first-request handoff as a delivered message. Mixed selections follow ordinary live-target settlement, which can consume the shared picks for successful live recipients.\n\nAnchor: `sendTray`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

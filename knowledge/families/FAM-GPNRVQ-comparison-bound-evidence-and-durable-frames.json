@@ -5,7 +5,7 @@
     ],
     "justification": "The evidence owners and the frame owners together promise that what a reader sees is the same comparison's evidence, before and after the page is saved; neither half alone keeps a reopened page honest about the trees it describes."
   },
-  "guarantee": "An explanation's evidence and its saved frame are bound to one existing review comparison, and every packet, read, receipt, claim, revision, reopen and reclamation keeps that binding's own trees, bytes and stated states — never a caller's root, today's checkout, or a fabricated empty.",
+  "guarantee": "An explanation’s evidence and its saved frame are bound to one addressed recorded or planned review comparison, and every packet, read, receipt, claim, revision, reopen and reclamation keeps that binding’s own owner, trees, bytes and stated states — never a caller’s root, today’s checkout, or a fabricated empty.",
   "id": "FAM-GPNRVQ",
   "members": [
     "INV-S75HA1",
@@ -36,11 +36,13 @@
     "leaf": "260928-MIK-L102",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/models/knowledge",
-    "mcp/tests"
+    "mcp/tests",
+    "mcp/src/agents_remember/canvas",
+    "dashboard/src/panels/review/explainer"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

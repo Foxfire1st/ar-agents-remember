@@ -5,7 +5,7 @@
     ],
     "justification": "Rail retention, message switching, counted loads and burst coalescing live in different files across shell, frame component, controller and chat panel; no member alone promises the one-loaded-chat lifetime, so the guarantee needs the joint reading."
   },
-  "guarantee": "The shell keeps one DocumentChat and frame across Operations, task documents and the review page, hiding it without unloading or reparenting so draft and scroll survive. Operations retains first-show creation when no preload is requested; a review may preload the closed column with an agentless Paseo client, creating no agent, then open its bound existing task chat when shown and the channel is ready. Hidden wrappers stay out of keyboard and accessibility reach. Existing known-no-agent and unknown-discovery presentations, ready-channel message steering, qualified recovery and one-generation-per-document-load rules remain distinct; late responsive answers do not reload, and unavailable nonloading selection bursts coalesce to the latest target.",
+  "guarantee": "The shell keeps one DocumentChat and PaseoChatFrame across Operations task documents and the review page, hiding the retained frame without unloading or reparenting so draft and scroll survive. Operations retains first-show creation when no preload is requested; a review may preload the closed column with an agentless Paseo client. The review column defaults to the bound leaf's explainer or its placeholder, reads no ordinary document-chat binding while in explainer mode, and may steer that same frame to another task seat explicitly selected from its header menu. Opening or preloading the column creates no agent or model turn; an existing closed explainer may resume its process when shown. Ordinary document-chat mode retains its distinct known-no-agent/unknown-discovery presentation and launcher rules; an unbound review retains its own pending/missing presentation instead of borrowing the Projects Architect. Hidden wrappers stay out of keyboard and accessibility reach. Ready-channel message steering, qualified recovery, one-generation-per-document-load and unavailable nonloading burst coalescing remain unchanged.",
   "id": "FAM-0W20JV",
   "members": [
     "INV-VMREN3",
@@ -23,7 +23,7 @@
     "leaf": "260928-MIK-L122",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/cockpit"
   ],

@@ -52,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
+            "blob": "bfa67cd00c85c1ea3eda8dec05ee8089f3eae10e",
             "content": "sha256:1ced0356bdc8b0d19073bd61956b0f4f516795de3bb24cf31a866386a7aadde8",
             "locator": {
-              "end": 16,
+              "end": 13,
               "kind": "line_range",
-              "start": 15
+              "start": 12
             },
             "path": "dashboard/src/main.tsx"
           },
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
             "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
             "locator": {
               "kind": "symbol",

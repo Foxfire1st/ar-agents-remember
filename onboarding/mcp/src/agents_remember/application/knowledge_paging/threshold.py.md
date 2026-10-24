@@ -10,6 +10,8 @@
 
 ## Code Commentary
 
+The threshold header uses the light TOKENIZER_NAME string; measuring a response loads the existing models.tokens counter at first measurement, retaining the same 8000-token threshold and tokenizer name.
+
 ### Logic
 
 - `KNOWLEDGE_PAGE_THRESHOLD_TOKENS = 8000` and `KNOWLEDGE_PAGE_TOKENIZER` (the default counter's name). Every surface that pages a memory tree reads this constant, every page states it, and a continuation binds it, so a resumed read uses the same bound on whichever surface it resumes.
@@ -55,3 +57,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the constant is read by the package's own modules and the two read surfaces.
 
 No cross-repo boundary is crossed by this file.
+
+- The threshold header uses the light TOKENIZER_NAME string; measuring a response loads the existing models.tokens counter at first measurement, retaining the same 8000-token threshold and tokenizer name. [5]

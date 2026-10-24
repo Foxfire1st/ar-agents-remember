@@ -11,6 +11,8 @@ the rendered markdown; the JSON document is the source of truth.
 
 ## Code Commentary
 
+Leaf render prints state, decision and strict agreement fields; master order labels an open review, while older absent fields retain unchanged rendering.
+
 ### Logic
 
 `render_markdown(doc)` assembles the document section by section, mirroring
@@ -173,3 +175,5 @@ and one-way; markdown never becomes authority.
 
 
 - render_markdown formats external leaf-grant and supplied graph/master Order inputs; the master emits truthy fixed fields before preserved authored sections and renders full legacy-cycle identity when unfinished cycle work remains. It neither reads the grant store nor derives Order. [10]
+
+- Leaf render prints state, decision and strict agreement fields; master order labels an open review, while older absent fields retain unchanged rendering. [11]

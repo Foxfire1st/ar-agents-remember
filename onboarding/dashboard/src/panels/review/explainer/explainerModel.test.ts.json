@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerModel.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A planned binding reads planned and never a number\n\nAnchor: `names a recorded comparison by its number and a planned one \"planned\", never #0`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36203e2722c4bd08b46fda58a0b6d81e6f758c09",
+            "content": "sha256:0ce5e70499f34b37bbb1e62b72a123f90188d4f788c9484e4ead41d0a1bd8438",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pinned revision is never removable, and a removed revision is not offered again\n\nAnchor: `is never offered for removal, and a removed revision is not offered again`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36203e2722c4bd08b46fda58a0b6d81e6f758c09",
+            "content": "sha256:e4ee0fed7fbad54f491f436a511eac73895dcca07c3f5f0aab948000c6c88351",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Removal is offered by the task total and by no other refusal\n\nAnchor: `appears only for the task total`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36203e2722c4bd08b46fda58a0b6d81e6f758c09",
+            "content": "sha256:5dd4ac16fe71258ab32115634f9e84652c69cfe88ea2b33ef84169fcbd238a3f",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The default pair takes the shown revision and the newest other, and nothing with one revision\n\nAnchor: `pairs the shown revision with the newest other one, and refuses a single revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36203e2722c4bd08b46fda58a0b6d81e6f758c09",
+            "content": "sha256:13dffaecd59ebb3a8f4254639d1f39a7fcb78b6458c8a9e7357730c7488c0ec8",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

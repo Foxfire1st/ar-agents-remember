@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:2ac014290e03e6cef09c5d4c86328c45a3db96e9e47ee81cdd4c28e284d99354",
         "locator": {
-          "end": 409,
+          "end": 446,
           "kind": "line_range",
-          "start": 366
+          "start": 403
         }
       },
       "id": "RLZ-4SKB8D",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-        "content": "sha256:8622fead4295a561db128f3f2e21a852b9396f6ed802e3c9dcd73849640ab3d6",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+        "content": "sha256:b1bc5def18a88d7435586793fbd19f58e5ff411774761a8e21ba5f5f9ae0cbc7",
         "locator": {
           "end": 243,
           "kind": "line_range",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:b9a6cc9215f7f9530085fb0b484040ee81cd65026bb45ee98b2aba277cb3a97e",
         "locator": {
           "kind": "symbol",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-        "content": "sha256:9823d10da1160dc6fcf88f852c8fea599e434556904e8bb0c6f12e419d6b22ff",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+        "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
         "locator": {
           "kind": "file"
         }
@@ -76,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:c233018d6eb0b24616c32a67cf4ed520bfcb81313f598e4304bbedb695b0acae",
         "locator": {
-          "end": 178,
+          "end": 182,
           "kind": "line_range",
-          "start": 175
+          "start": 179
         }
       },
       "id": "RLZ-HM528R",
@@ -95,8 +95,8 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-        "content": "sha256:9823d10da1160dc6fcf88f852c8fea599e434556904e8bb0c6f12e419d6b22ff",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+        "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
         "locator": {
           "kind": "file"
         }
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:970f000f9538738a71d9798bbe4e298ae76b3ba189cdb226bda54ceac12cb5c3",
         "locator": {
           "kind": "symbol",
@@ -148,7 +148,7 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:cf33268c5297628934284c7f02155d4dd055143056526819505298ceb8fe4185",
         "locator": {
           "kind": "symbol",
@@ -166,12 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
         "locator": {
-          "end": 285,
+          "end": 322,
           "kind": "line_range",
-          "start": 251
+          "start": 288
         }
       },
       "id": "RLZ-V8EXDR",
@@ -185,7 +185,25 @@
     },
     {
       "anchor": {
-        "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+        "content": "sha256:e0f08d71e2b61d6133a9201b01b11e67ef8141a45ec2a08d3baeb72f6f6338e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "serving_collaborators"
+        }
+      },
+      "id": "RLZ-XKDX4F",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
         "content": "sha256:b9a6cc9215f7f9530085fb0b484040ee81cd65026bb45ee98b2aba277cb3a97e",
         "locator": {
           "kind": "symbol",
@@ -208,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:da448e8e235301bc52d4004a9bd1f379a175c63b8c18150f248b12d532eed742",
             "locator": {
-              "end": 79,
+              "end": 83,
               "kind": "line_range",
-              "start": 73
+              "start": 77
             }
           },
           "kind": "code"
@@ -225,12 +243,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:970f000f9538738a71d9798bbe4e298ae76b3ba189cdb226bda54ceac12cb5c3",
             "locator": {
-              "end": 116,
+              "end": 120,
               "kind": "line_range",
-              "start": 82
+              "start": 86
             }
           },
           "kind": "code"
@@ -259,12 +277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
             "locator": {
-              "end": 281,
+              "end": 322,
               "kind": "line_range",
-              "start": 247
+              "start": 288
             }
           },
           "kind": "code"
@@ -276,12 +294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:2ac014290e03e6cef09c5d4c86328c45a3db96e9e47ee81cdd4c28e284d99354",
             "locator": {
-              "end": 405,
+              "end": 446,
               "kind": "line_range",
-              "start": 362
+              "start": 403
             }
           },
           "kind": "code"
@@ -293,12 +311,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:98884214d6b5b83248c46ca8f06228d350afe1acc8bace7a31e553a6176df3e8",
             "locator": {
-              "end": 441,
+              "end": 482,
               "kind": "line_range",
-              "start": 420
+              "start": 461
             }
           },
           "kind": "code"
@@ -310,12 +328,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2300ddf81b2e4adf069e88bb40d7820a5c76967",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:88a60a5cfd42e7057b818d6f34121f8b2312c8dce363d5e5144af96845b11b17",
             "locator": {
-              "end": 549,
+              "end": 590,
               "kind": "line_range",
-              "start": 456
+              "start": 497
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed.\n\nAnchor: `serving_collaborators`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

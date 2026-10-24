@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
         "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+        "content": "sha256:c5f24a7167e8c1dfb9c78465f7ba31cfff0eafbdcc0e320a9e55ed5ba60bc905",
+        "locator": {
+          "kind": "symbol",
+          "name": "subscribeReviewExplainerMoved"
+        }
+      },
+      "id": "RLZ-8SSXDJ",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Each listener retains its exact leaf scope and disposal removes that same registration, so the publisher can deliver only the intended leaf’s move/clear notice.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
         "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
         "locator": {
           "kind": "symbol",
@@ -36,6 +54,24 @@
       },
       "rationale": "For a mounted active live comparison only, register the exact target on the existing state-stream owner; a matching baseline/reconnect/change invalidation calls cycle.memoryChanged and the shared entry revalidate callback. This hook owns no second connection and does not directly read or manufacture a count.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+        "content": "sha256:f7f3a55e0f11ec9e2695f2fe936d8979e59a9ea0537051d8e3e6a605ddb84a67",
+        "locator": {
+          "kind": "symbol",
+          "name": "publishReviewExplainerMoved"
+        }
+      },
+      "id": "RLZ-WX2SRW",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Validates the full leaf address and delivers moved/cleared notices only to subscribers with that exact key.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -44,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:b7e4d8f3bffb83c23c83b1a678572cd5349d84796034b187c9a8287d01d716e2",
             "locator": {
               "kind": "symbol",
@@ -60,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
             "locator": {
               "kind": "symbol",
@@ -76,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
             "locator": {
               "kind": "symbol",
@@ -92,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
             "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
             "locator": {
               "kind": "symbol",
@@ -133,6 +169,21 @@
               "start": 684
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself.\n\nAnchor: `ReviewExplainerMovedEvent`, `subscribeReviewExplainerMoved`, `publishReviewExplainerMoved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "content": "sha256:c1f406754e7c98d6d2a1010f18a240b64ecf9e2fd1d13c8f8fdde50507696947",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/explainer/ExplainerColumnPanels.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header's status word, ✦ Explain and the Retire offer follow the phase and the seat",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
+            "content": "sha256:8fc205c2980fb1c35b3c06b7cfa6a18b7953ea010e44d202a020840c4e43e413",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerHeader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The placeholder fixes the role, names the settings role and offers no Start control",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
+            "content": "sha256:ad7c7537c1d0d08e58a799935ad826763dd2dfd8ff83248b21e6b530b4f6bb08",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerPlaceholder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The build panel states the whole percentage, each step's own mark and count, and a failure's reason and step",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
+            "content": "sha256:7c7ae71b5dae02744a98d2f5aae876635f0b26c9e6290c63db2d3c5f07383912",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildProgress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:bc4d0888e435e9412816d2158dea2f09c2a6262c7d464565fe995d5925eb7c29",
         "locator": {
           "kind": "symbol",
@@ -21,12 +21,12 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
         "locator": {
-          "end": 129,
+          "end": 136,
           "kind": "line_range",
-          "start": 59
+          "start": 66
         }
       },
       "id": "RLZ-5WD4V8",
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:5c780de67ef43ca8a00d67b878a885910f44c620134079dba2d3f5de5aadbcc4",
         "locator": {
-          "end": 101,
+          "end": 108,
           "kind": "line_range",
-          "start": 74
+          "start": 81
         }
       },
       "id": "RLZ-9VV65Z",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:9ab04d15abe1c77840f49eb8a0bd3debbcab0cbca1862cbe333d6e2b4013bbd1",
         "locator": {
           "kind": "symbol",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
         "locator": {
-          "end": 129,
+          "end": 136,
           "kind": "line_range",
-          "start": 59
+          "start": 66
         }
       },
       "id": "RLZ-G8BE9E",
@@ -96,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:bd5aa48145ec388bfef1d3fed70bc83dba9eb574925730b41a5c366a9b6184f0",
         "locator": {
           "kind": "symbol",
@@ -114,12 +114,12 @@
     },
     {
       "anchor": {
-        "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+        "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
         "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
         "locator": {
-          "end": 233,
+          "end": 240,
           "kind": "line_range",
-          "start": 217
+          "start": 224
         }
       },
       "id": "RLZ-VZXF7A",
@@ -138,12 +138,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "end": 129,
+              "end": 136,
               "kind": "line_range",
-              "start": 59
+              "start": 66
             }
           },
           "kind": "code"
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:dfaa478a0dd535fd1e766aa2129b1bdbb1dce74e370ba86c87a1f8f63e7d0893",
             "locator": {
-              "end": 182,
+              "end": 189,
               "kind": "line_range",
-              "start": 174
+              "start": 181
             }
           },
           "kind": "code"
@@ -172,12 +172,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:8093e749dc79d7fe9a65dec179be5a04014fe62c886dce396a8e69ce9391b000",
             "locator": {
-              "end": 190,
+              "end": 197,
               "kind": "line_range",
-              "start": 184
+              "start": 191
             }
           },
           "kind": "code"
@@ -189,12 +189,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
             "locator": {
-              "end": 233,
+              "end": 240,
               "kind": "line_range",
-              "start": 217
+              "start": 224
             }
           },
           "kind": "code"
@@ -206,12 +206,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "end": 129,
+              "end": 136,
               "kind": "line_range",
-              "start": 59
+              "start": 66
             }
           },
           "kind": "code"
@@ -223,24 +223,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:bd5aa48145ec388bfef1d3fed70bc83dba9eb574925730b41a5c366a9b6184f0",
             "locator": {
-              "end": 52,
+              "end": 59,
               "kind": "line_range",
-              "start": 45
+              "start": 52
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:9ab04d15abe1c77840f49eb8a0bd3debbcab0cbca1862cbe333d6e2b4013bbd1",
             "locator": {
-              "end": 57,
+              "end": 64,
               "kind": "line_range",
-              "start": 55
+              "start": 62
             }
           },
           "kind": "code"
@@ -252,12 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:bc4d0888e435e9412816d2158dea2f09c2a6262c7d464565fe995d5925eb7c29",
             "locator": {
-              "end": 210,
+              "end": 217,
               "kind": "line_range",
-              "start": 201
+              "start": 208
             }
           },
           "kind": "code"
@@ -281,12 +281,27 @@
         },
         {
           "anchor": {
-            "blob": "4e97acbdc3497ec6c44c2a236e8f986a76cb0554",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
             "content": "sha256:2e4fdf6cab2e30868a5e04b8c7ceaea35cdbc8d4291a07e6e56500d758783f52",
             "locator": {
-              "end": 129,
+              "end": 136,
               "kind": "line_range",
-              "start": 59
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "DocumentChatProps now accepts an optional ExplainerColumnTarget. This is a mode input for DocumentChat's composition owner, not another ordinary role binding: when it is supplied, that component disables this hook's active reads and delegates to the explainer column. Without it, the document's existing discovery, launcher and warmup behavior remains unchanged.\n\nAnchor: `DocumentChatProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+            "content": "sha256:83efbfa27503cc53b64b97313ff2352ded9f2c92796d8b787affe1783fe7da70",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -1,0 +1,137 @@
+{
+  "path": "mcp/tests/test_explainer_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+        "content": "sha256:666bd2fb9eeeb6116196a46f6842baf671e8b6aad29310a2772dc13808b489fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_cancel_route_targets_the_exact_seat_and_request"
+        }
+      },
+      "facet": "The cancel route targets the ledger's exact agent/request pair, reports prevented publication/stopped turn, marks unknown requests uncertain and rejects a missing request id.",
+      "id": "PRF-MGQYYX",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_state_route_answers_the_trusted_list_of_the_page_it_shows` protects the trusted list being the host's read of the shown revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:f8aefad88d807c0ef504e1fc04aa566ca41d6571b732788016519571e44c9f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_state_route_answers_the_trusted_list_of_the_page_it_shows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_state_route_names_why_it_could_not_read_staleness` protects an unreadable staleness being named, never reported as nothing stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:e74fdd14914e52113d76c510e7a6372d89a392f5155484990f11c1463bf89bc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_state_route_names_why_it_could_not_read_staleness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_the_planned_route_answers_a_planning_leaf_and_refuses_another` protects the planned route serving a planning leaf and refusing any other.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:c54c8f0032c71f1de86cf23183d0782d074c87b51c2ca855e4a5ac9e23ead1b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_planned_route_answers_a_planning_leaf_and_refuses_another"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_the_removal_route_removes_and_never_the_pinned_revision` protects the developer's removal refusing the pinned revision by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:4d3871aa26c89c1075e7defba6abe97b0c299a8ef2c892e1d3267683d0b356c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_removal_route_removes_and_never_the_pinned_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_reads_start_nothing` protects a page read opening, building and waking nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:a7f6dec93c4343e6337dfadf6a0a22f99443bd4141275d4d2a17cfc0f8315478",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reads_start_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_a_stale_comparison_number_and_an_unknown_history_are_refused_before_the_seat` protects a stale comparison number and unknown history being refused before the seat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:4b4f559cb9a4d6d8f24a6dedd042a8ade28162d2804a8ed2122d02b49eafce9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_comparison_number_and_an_unknown_history_are_refused_before_the_seat"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cancel route forwards the exact seat/request pair from the leaf ledger, reports stopped-turn and prevented-publication facts from its host reply, marks a request the ledger never saw uncertain, and rejects a missing request ID. This fixture-level route assertion does not certify a live host cancellation.\n\nAnchor: `test_the_cancel_route_targets_the_exact_seat_and_request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "content": "sha256:3c51476ad2af745c9c17672510bc47d8e5a8ffe7be1c80a27d7b2bd8b1d68cdd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

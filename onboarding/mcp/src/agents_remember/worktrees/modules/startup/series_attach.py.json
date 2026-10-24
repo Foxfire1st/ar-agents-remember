@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f10f508c9cbeadef7f1983c4e81f8ecfe9410256",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
             "content": "sha256:a2a2454e1947ffd3d03307915445591e5de5c91998f87c361735ecc4c3064ac6",
             "locator": {
-              "end": 237,
+              "end": 154,
               "kind": "line_range",
-              "start": 237
+              "start": 154
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -88,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "40d89ac865ac72d0f83e6fc0bf7afcf226d14e98",
+            "blob": "2e811353d50e697906d6ec8a7c1caf3a200a6183",
             "content": "sha256:7a37a7b163759f4cc5874a1b53be9400c75acc195bc01884e01412342211db85",
             "locator": {
-              "end": 14,
+              "end": 18,
               "kind": "line_range",
-              "start": 14
+              "start": 18
             },
             "path": "mcp/src/agents_remember/worktrees/modules/models.py"
           },
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
             "content": "sha256:c85acac7279d856614af2dfed5643d02b7c9a885b29c1499f96201ba3826ec17",
             "locator": {
               "kind": "symbol",
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
             "content": "sha256:18316d86a1aa11fbf719fe3f2a028c141ce603c2f52cfaf49058ec5bffeb7e5e",
             "locator": {
-              "end": 534,
+              "end": 541,
               "kind": "line_range",
-              "start": 534
+              "start": 541
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },

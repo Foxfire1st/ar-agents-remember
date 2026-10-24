@@ -115,6 +115,19 @@
             "path": "dashboard/src/test/contract.test.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 640
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },

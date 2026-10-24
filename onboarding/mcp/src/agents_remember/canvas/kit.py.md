@@ -14,7 +14,11 @@ The pinned offline kit the product ships. A page names a kit file by its path re
 - `kit_assets` returns the named files as revision assets under the contract path a page names them by, so the kit is served through the same admitted-asset route as the page's own files.
 - `KitRefused` is raised for a file that is not shipped or whose bytes are not the manifest's,.
 
+`kit_protocol_helper_js` supplies the in-frame protocol helper: it authenticates the host’s stale-part notice against the session, revision and comparison, marks at most thirty-two admissible part ids, and states any remaining count. `offerSelections` and `requestExplanation` encode bounded envelopes, while `encode_kit_offer` refuses an offer over 4,096 UTF-8 bytes. These helpers request trusted-host actions; they confer no dashboard or message-delivery authority.
+
 ## Evidence
 
 - The manifest is the kit's inventory and the verification source. [1]
 - Kit files are served as revision assets under the manifest's contract path. [2]
+
+- The current implementation adds protocol helpers to the shipped kit; the existing manifest verification and admitted-asset toolbox account remains valid. [3]

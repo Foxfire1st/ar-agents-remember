@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_review_frame_removal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_chosen_revision_is_removed_receipted_and_its_number_is_never_reissued` protects a removed revision being receipted and its number never reissued.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "content": "sha256:558fb5a146ad4c210ae3d547d3cc6dff8a8f4611edba23420f64f23e2eba1281",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_chosen_revision_is_removed_receipted_and_its_number_is_never_reissued"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_pinned_agreed_revision_is_never_removed_and_still_reads` protects the pinned agreed revision being refused and still readable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "content": "sha256:a045b46f4ebf9282cf4a1f0f304509df496fea2bf2a6c9ad3257e8b2107a13ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pinned_agreed_revision_is_never_removed_and_still_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_revision_a_retained_lineage_names_is_refused` protects a revision a retained lineage names being refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "content": "sha256:e1319942174458ff72cf9b9e1429c294ae58c967e664e2d10b30884ec1c13ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revision_a_retained_lineage_names_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_retention_and_the_per_revision_ceiling_still_hold_after_a_removal` protects retention and the per-revision ceiling holding after a removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "content": "sha256:bc6c872479bc7439654b82248c0acbb24b105c50917ceea634f2b9fff5f31f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retention_and_the_per_revision_ceiling_still_hold_after_a_removal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_removal_under_a_held_lock_refuses_instead_of_waiting` protects a removal refusing under a held lock rather than waiting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "content": "sha256:da998f5d596a7043147e17069540bbef29849b65cbeef1e00e6580d0b801600e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removal_under_a_held_lock_refuses_instead_of_waiting"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

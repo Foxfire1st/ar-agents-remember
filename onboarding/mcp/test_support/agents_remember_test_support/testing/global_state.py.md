@@ -50,6 +50,9 @@ whose contract deliberately sets process state.
 - Restoration happens before a leak becomes a failure so later tests cannot inherit it.
 - Begin/end are safe across every pytest exit path and repeated end calls.
 
+
+The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -73,3 +76,5 @@ with its own resetter, `_reset_background_pool`: it takes `_BACKGROUND_POOL_LOCK
 and clears the slot, so the next test module builds a fresh pool. A further row forgets
 `serving.projections.host_activity._ENDINGS`. Both are entries in the declaration this module already
 keeps — process state a test module must not inherit — not a claim about production behaviour.
+
+- The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection. [11]

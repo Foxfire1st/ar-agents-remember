@@ -166,6 +166,19 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -861,6 +874,18 @@
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -1480,6 +1505,18 @@
         {
           "anchor": {
             "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",
@@ -2208,6 +2245,22 @@
               "start": 283
             },
             "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review \\| Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order.\n\nAnchor: `DocumentChatImpl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
           },
           "kind": "code"
         }

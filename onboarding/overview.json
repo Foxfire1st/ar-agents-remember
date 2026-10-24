@@ -2721,14 +2721,14 @@
       ]
     },
     "332": {
-      "note": "The current42-name roster adds user_settings_init to the41-name predecessor and retains the native grant,retire_child androle_start_set boundaries; source declaration is not fresh live advertisement.",
+      "note": "The current 43-name ordinary roster retains `user_settings_init`, `explainer_control`, the native grant, `retire_child` and `role_start_set` boundaries; earlier 41/42-name populations are historical, and source declaration is not fresh live advertisement.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
               "start": 22
             },
@@ -3241,14 +3241,16 @@
       ]
     },
     "356": {
-      "note": "The public source roster includes the settings initializer among42 names.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "The ordinary public source roster includes the settings initializer and architect explainer control among 43 names.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
             "locator": {
-              "kind": "file"
+              "end": 73,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -3273,14 +3275,14 @@
       ]
     },
     "358": {
-      "note": "Current PUBLIC_TOOLS has42 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance.",
+      "note": "Current `PUBLIC_TOOLS` has 43 ordinary names, including mounted `knowledge_write`, `user_settings_init` and `explainer_control`; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
             "locator": {
-              "end": 71,
+              "end": 73,
               "kind": "line_range",
               "start": 22
             },
@@ -3333,6 +3335,58 @@
               "name": "sync_targets"
             },
             "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "360": {
+      "note": "The measurement records spawn-to-initialize/tool-list arrival and environment/load context; no tool invocation or fresh result inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:6281b0b575a3141a9e01dd29bd804acc477d24b3f47b40fd07e3c52aa7c9f622",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure"
+            },
+            "path": "scripts/measure-ar-server-start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "361": {
+      "note": "Complete ordered discovery equality plus raw captures, executing-source qualification and explicit runtime-refusal exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:da408f8dbcf5f40d1e20011f9480623b89313bc788a131dd78e1465ef2510bd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "scripts/compare-discovery-contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "362": {
+      "note": "Current43-name ordinary literal includes user_settings_init and explainer_control, distinct from42-tool capture artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
         }

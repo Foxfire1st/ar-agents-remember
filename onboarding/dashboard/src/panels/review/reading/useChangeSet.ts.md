@@ -29,3 +29,7 @@ This file consumes comparison and owner state; it does not author knowledge or d
 - The resolved comparison, the shown number and the older-comparison state are three separate facts. [4]
 - An unreadable delivery is stated explicitly with no delivered control instead of collapsing to silence. [5]
 - The menu's number list comes from the highest recorded number, kept apart from the resolved comparison. [6]
+
+Per-leaf judgment state is now published separately from comparison facts and consumed by the sole change-set model. It stores categories/grades under repository/master/leaf, emits only when their serialized content changes and deletes empty judgment payloads. A live no-work move increments a leaf generation and re-reads the numbered leaf facts and currently asked invariant cards, while retaining the opening-set card-read owner. This publication carries inference data; it does not author knowledge or convert a grade into a recorded fact.
+
+- Per-leaf judgment state is now published separately from comparison facts and consumed by the sole change-set model. It stores categories/grades under repository/master/leaf, emits only when their serialized content changes and deletes empty judgment payloads. A live no-work move increments a leaf generation and re-reads the numbered leaf facts and currently asked invariant cards, while retaining the opening-set card-read owner. This publication carries inference data; it does not author knowledge or convert a grade into a recorded fact. [7]

@@ -80,6 +80,8 @@ Both sides may share the existing index-cache owner, but cache construction rema
   unavailable side names a path under `.review-knowledge-unavailable/` that is never created.
   `tree_sides_refusal` and `tree_limitations` give the refusal and the declared facts of a comparison.
 
+`ReviewTrees` and `TreeKnowledge` now live in the model owner and are imported here as the same shared payload types. `_recorded` batches durable branch-tip hints with pin listings, but `_candidate_side` resolves an absent hint directly and keeps an explicitly committed delivered endpoint authoritative. Code-tree existence already verified for one live composition is remembered only in a scoped `ContextVar`, reset in `finally`; `_open_sides` supplies measured code states for live and reopened comparisons.
+
 ## Evidence
 
 - The comparison, each memory side's index, the live flag and the code sides. [22]
@@ -114,3 +116,5 @@ tree identities, the pins and the record are unchanged; only the proof that the 
 not move while the comparison was composed became cheaper, not weaker.
 
 - The record is published by an exclusive create, so a lost race answers the winning record or refuses by name instead of replacing bytes a reader already holds. [45]
+
+- The current implementation moves shared payload types and reduces redundant Git observations without changing create-only pins, full operands or named unavailable-history behavior. [46]

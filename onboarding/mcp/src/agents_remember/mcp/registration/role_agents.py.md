@@ -10,6 +10,8 @@ Registers role_start, the Manager-owned role_start_set, and role_message with th
 
 ## Code Commentary
 
+Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.
+
 ### Current Contract
 
 The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.
@@ -60,3 +62,5 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - The transport's own client name, or no name at all. [7]
 - The registration that mounts the role tools and the settings initializer. [8]
+
+- Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation. [9]

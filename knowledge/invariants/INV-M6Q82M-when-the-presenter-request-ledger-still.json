@@ -6,13 +6,14 @@
     ],
     "justification": "The retention test retries a reclaimed identity and counts runner calls; retaining this rule prevents duplicate model sessions after old attempt records are removed."
   },
-  "applicability": "Explicit presenter starts retried with a request ID whose attempt record was reclaimed.",
+  "applicability": "A retried presenter request whose attempt record was reclaimed, a repeated explainer Send, and an Update of a retired environment.",
   "conditions": [
-    "The bounded request ledger still retains that request-to-attempt mapping."
+    "The presenter request identity outlives the attempt record it names.",
+    "The explainer ledger is read under the leaf lock before creating or attaching a seat, and message identity is derived from the leaf and request."
   ],
   "exclusions": [
-    "Request IDs no longer retained by the bounded ledger.",
-    "An explicit replacement with a new request identity."
+    "A request the ledger no longer names is a new request.",
+    "A new first request after Retire can build another environment; a retired marker does not make every future Send forbidden."
   ],
   "id": "INV-M6Q82M",
   "origin": {
@@ -26,9 +27,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "When the presenter request ledger still names a reclaimed attempt, retrying that request must refuse with attempt-record-reclaimed and must not start another session.",
+  "statement": "When the presenter's request ledger still names a reclaimed attempt, retrying that request refuses attempt-record-reclaimed and starts no second session. An explainer Send whose request ledger already records delivery returns the same seat and message identity without a second send or seat; a failed or pending delivery retries against that identity. An Update of a retired environment refuses explainer-retired.",
   "status": "proposed",
   "supersedes": []
 }

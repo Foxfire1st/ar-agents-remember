@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:7caec175c6320d20accf7e357b79e757fff27bd113a5565c683b4beacba3a329",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",
@@ -30,7 +30,7 @@
         },
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:9c29d951910abed0042a43d058e5ae68fd77fd06994e8ab33343aa5808469774",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:3500c6bcf13e029163a8af609ea5070f5acbe80a5f9cc16b3f113a3f63ab2df1",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
             "locator": {
               "kind": "symbol",
@@ -139,13 +139,109 @@
         },
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:2ffb803c1fa60fbe5b634fe22da023a150409f46617f6c60ffe3345f553d154e",
             "locator": {
               "kind": "symbol",
               "name": "build_tool_event_writer"
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Preparation is declaration-only. list_tools produces its answer before scheduling start_after_discovery, and call_tool reaches the same latch as fallback. The sweep attempt consumes the latch even without config; dashboard autostart needs config/settings. The heavy sweep owner is imported only in a one-shot child with stdin=DEVNULL. Source order does not attest client receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:7d6413b974ffaaa66867a98586801f29c5fbcba435bbd22a31f932018258dbc1",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:40ec448338dfb2e5e1e077d5d721647b88ff6292ac0923d5491255976eaef55c",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:32a577c1d77189a630c481e5a894bdccfb10167c3658a92f4c08d997a03f5446",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:eb2ae5b4d45db284f33b3bdd77cc72dabe470351385c87f25455fd0f3a272c9f",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }

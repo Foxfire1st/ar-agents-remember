@@ -111,12 +111,12 @@
         },
         {
           "anchor": {
-            "blob": "2f8b273cc44c9365e0b7df0d1fa61dc61c5e1aa3",
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
             "content": "sha256:e3b1e8d8a26057c75476ce5b8640d7c24d2cfd1bbcddc6099a49499c5bac7e16",
             "locator": {
-              "end": 699,
+              "end": 332,
               "kind": "line_range",
-              "start": 669
+              "start": 302
             },
             "path": "dashboard/src/panels/detail-panel/model.ts"
           },

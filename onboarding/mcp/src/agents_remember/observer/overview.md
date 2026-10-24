@@ -2,7 +2,7 @@
 
 ## Governing Overview
 
-[mcp overview](../../../../overview.md)
+[mcp overview](../../../overview.md)
 
 ## Purpose
 
@@ -16,7 +16,7 @@ File-surface acquisition, shared task/contract inputs, host-to-task binding, lan
 2. host_activity.py validates published host states and event timestamps; serving/projections/host_activity.py owns publication acquisition and caller/parent task binding.
 3. reducer.project_workspace composes supplied facts, passes native tasks/counts through and returns only unbound worktrees in the separate enclosure collection.
 4. tool_events.py writes selected finalized-call facts to the bounded workspace river; store.py and event_retention.py own its lock, byte admission and cursor-safe retained tail.
-5. reducer_impl builds drift and start attention plus engine/process evidence. projection_graph.py retains supplied graph display semantics, not execution admission.
+5. reducer_impl builds drift, start and five-kind native attention plus engine/process evidence. projection_graph.py retains supplied graph display semantics, not execution admission.
 6. Reader summaries and selected full bodies remain separate; task stage/activity and actual eventAt are not recomputed from browser time or old lifecycle logs.
 
 <details>
@@ -46,7 +46,7 @@ TaskState separates planned/started/aborted/completed stage from optional works/
 
 The task-entry producer keeps repository-qualified document identity, optional document references, ordered parent/children links, authoritative step counts, summaries and exact contract bindings together. A declared file-less child can be a native entry without a document reference; consumers must not invent a document jump. Declared-parent checks and the single-parent acyclic membership guard prevent another client-side series/lifecycle hierarchy. The retained explicit orchestrates relation resolves only a unique same-repository commanded master; this is a named task-domain compatibility relation, not a broad title/filename guess.
 
-HostActivityPublication carries bootId, complete, the agent map and ignoredEvents. PublishedAgentActivity admits in-turn, permission, idle and ended; supplied eventAt must include a timezone. The pure projection receives a HostActivitySnapshot with known/agents/ignored_agents. Publication completeness, caller/task binding and ignored-agent accounting are distinct facts; the ignoredEvents and ignored_agents cells are not interchangeable counters.
+HostActivityPublication carries bootId, complete, the agent map and ignoredEvents. PublishedAgentActivity admits in-turn, permission, idle and ended; supplied eventAt must include a timezone. The pure projection receives a HostActivitySnapshot with known, agents, ignored_agents, the one `limits` file and the native `boot_id`. Publication completeness, caller/task binding and ignored-agent accounting are distinct facts; the ignoredEvents and ignored_agents cells are not interchangeable counters.
 
 ### Workspace Event River
 
@@ -99,14 +99,14 @@ Landing refresh is serving-owned, bounded, exact-contract observation. Completed
 
 Always-on native entries/summaries do not carry the complete selected reader body. Current identity, stage/activity, counts, step/review facts and bodyRevision remain authoritative; on-demand bodies contribute long reader content and admitted matching-revision expansions. Canonical enumeration, graph-named masters and declared owner/child reads have their own actual scopes; this is not an unconditional promise of zero directory I/O or universal body-byte parity. Source-defined truncation and step-preview bounds do not become fresh execution or payload-budget acceptance.
 
-Attention now derives actionable drift and blocked-start items together with five native kinds — an unanswered permission prompt, a held role message, a started task idle past 900 seconds with no bound agent working, and terminal landed and abandoned notices — ordered by severity, descending wait and stable id. Nothing derives an item from provider failure, from failed or stale setup, or from a retried start: those builder inputs went with the search providers, and the served projection carries neither a `providers` key nor setup or start-progress analytics. The three live causes clear only when their native cause ends and cannot be acknowledged; the two notices are acknowledged once per occurrence. `native_attention.py` declares the fact shapes and their named bounds, `reducer_impl/_attention_native.py` holds one builder per kind, and `serving/projections/native_attention.py` is the intake that reads the product's own files and resolves nothing from an incomplete read. It does not reconstruct session blocked/awaiting-developer/quiet/fleeting attention. The fold suppresses the reconciled source-owned dismissal map; drift matches complete actionable fingerprints and retains admitted first-read acknowledgements when a fingerprint is missing. Missing data or elapsed age is not invented recovery.
+Attention derives actionable drift and blocked-start items together with five native kinds — an unanswered permission prompt, a held role message, a started task idle for 900 continuous known seconds with no bound agent working, and terminal landed and abandoned notices. The one queue sorts ascending by `(waitSeconds or 0.0, id)`, so younger entries and entries with no known age (treated as zero) precede older ones; severity is not a sort key. No provider-failure or failed/stale-setup builder contributes an item. A blocked-start item still comes from an actual blocked start-progress reason; happy-path progress or retry alone is not an alarm. The served projection carries neither a `providers` key nor setup or start-progress analytics. All seven published kinds can be acknowledged once per occurrence. Acknowledging a permission wait, held message or stall leaves its native cause unchanged; that occurrence ends when its cause ends, and a terminal notice keeps its own retained occurrence identity. `native_attention.py` declares the bounded fact shapes, `reducer_impl/_attention_native.py` holds the native builders, and `serving/projections/native_attention.py` reads the product-owned inputs, retains facts on incomplete reads and breaks the observed stall interval on unknown host state, boot change, bound work or explicit pause in the canonical task lineage. It does not reconstruct session blocked/awaiting-developer/quiet/fleeting attention. The fold suppresses the reconciled source-owned dismissal map; drift matches complete actionable fingerprints and retains admitted first-read acknowledgements when a fingerprint is missing. Missing data or elapsed age is not invented recovery.
 
 ## Invariants And Boundaries
 
 - The workspace fold consumes already-read facts; serving owns acquisition/publication and canonical writers own mutations.
 - Task stage, host activity, actual event time and display age are separate cells. Worktree admission and host liveness do not assign task stage.
 - Provenance remains declared/observed/inferred/approved; a readable model or UI row does not prove execution, approval, landing or source currentness.
-- Native task eventAt is retained; no served task ageSeconds, old session TTL or computed lifecycle-state bucket is restored.
+- Native task eventAt is retained; no served task-state age (an activity age), old session TTL or computed lifecycle-state bucket is restored. The task document summary still carries its file's own volatile `ageSeconds`.
 - Removed read.packet delivery, ambient transitions, save/discard session flows, lifecycle served-key reset and cached lifecycle-log/heartbeat merging below are history only. A retained helper/schema name elsewhere does not make that removed call path operative.
 - N2 still describes separate river/cursor writes. N4 summary/body bounds remain scoped reader limits. The old N6 lifecycle-log heartbeat-string comparison is historical because that reader was removed, not a current host-activity comparison rule.
 
@@ -300,7 +300,6 @@ No external Domain Documentation source is configured for this memory. Current i
 - Every workspace append uses the shared byte-bound admission. [47]
 - Compaction replaces the river and then writes its virtual base offset separately; N2 remains a crash-window limit. [48]
 
-- Attention uses only drift and blocked-start contributors and a deterministic ranked order. [49]
 
 - Dismissal matching distinguishes drift fingerprints from other source-owned recovery/removal. [50]
 
@@ -309,3 +308,5 @@ No external Domain Documentation source is configured for this memory. Current i
 - Graph titles are master-qualified and resolved/abandoned/landed are distinct display predicates. Anchor: graph protocol, frontier and title lookup [35]
 
 - Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape.  Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze` [36]
+
+- The attention queue composes actionable-drift and blocked-start with native_attention_items for permission-wait, held-message, task-stalled, task-landed and task-abandoned. It suppresses matching per-occurrence acknowledgements for every kind and sorts ascending by (waitSeconds or 0.0, id), with no severity key. Native builders retain canonical task/agent targets and their own bounded fact/occurrence semantics; acknowledging a live cause does not resolve it. Drift fingerprints and complete source-owned recovery/removal remain distinct from missing data or elapsed age. [49]

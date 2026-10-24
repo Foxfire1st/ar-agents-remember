@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,25 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "INTERIM_TOOL_LEAF"
+        }
+      },
+      "id": "RLZ-QMYFDP",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
         "locator": {
           "kind": "symbol",
@@ -96,9 +114,9 @@
         "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
         "content": "sha256:02d1c63ebde308d32d8b316a5a3ab98f2510aa1b2adc6ad65598004489b75583",
         "locator": {
-          "end": 491,
+          "end": 494,
           "kind": "line_range",
-          "start": 455
+          "start": 458
         }
       },
       "id": "RLZ-SVSZ9P",
@@ -112,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
         "content": "sha256:e6bab7b8ca5f483bc4622bbaee7fbaafdc33c4221e6716cb90615ae71b30806d",
         "locator": {
           "kind": "symbol",
@@ -135,11 +153,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
             "locator": {
               "kind": "symbol",
               "name": "strip_envelope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.\n\nAnchor: `INTERIM_TOOL_LEAF`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "content": "sha256:37f2480a45e300312e6885478bf1c229ef4284c692741c28ee7943640682e39d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -151,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
             "locator": {
               "kind": "symbol",
@@ -167,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
             "locator": {
               "kind": "symbol",
@@ -183,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -225,7 +258,7 @@
         },
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -241,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:f8beb8d2cc44c00be4c6ae8cd7e96bdd70289c926d7bb5ab42162901fd429403",
             "locator": {
               "kind": "symbol",
@@ -257,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:df48dcc63910c583d3a558832c76c5dba90dda04d0b683514cac44fe80e4dab3",
             "locator": {
               "kind": "symbol",
@@ -273,7 +306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
+            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
             "content": "sha256:b92eaced20571d60e5e359822a26763bc78f3c3109d0aeaf6314fb03dd03ae38",
             "locator": {
               "kind": "symbol",

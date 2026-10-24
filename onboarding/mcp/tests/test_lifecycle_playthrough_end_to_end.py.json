@@ -23,6 +23,19 @@
       "targets": [
         {
           "anchor": {
+            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 555
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
             "blob": "38c4a6f6edfedff4786a29ac8eef205470336a2f",
             "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
             "locator": {
@@ -41,12 +54,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
+            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
             "content": "sha256:6ffeb132bdd1fb709cb2f67647c709cf273cddcdae519f585b9caaa21c504c37",
             "locator": {
-              "end": 900,
+              "end": 935,
               "kind": "line_range",
-              "start": 900
+              "start": 935
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -67,12 +80,12 @@
         },
         {
           "anchor": {
-            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
+            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
             "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
             "locator": {
-              "end": 1028,
+              "end": 1063,
               "kind": "line_range",
-              "start": 1028
+              "start": 1063
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -86,6 +99,32 @@
               "end": 425,
               "kind": "line_range",
               "start": 425
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
+            "content": "sha256:6ffeb132bdd1fb709cb2f67647c709cf273cddcdae519f585b9caaa21c504c37",
+            "locator": {
+              "end": 900,
+              "kind": "line_range",
+              "start": 900
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "776a2e9fa9a0d285b54849fcd971915ba0065f24",
+            "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
+            "locator": {
+              "end": 1028,
+              "kind": "line_range",
+              "start": 1028
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -114,6 +153,19 @@
     "13": {
       "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 555
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "38c4a6f6edfedff4786a29ac8eef205470336a2f",

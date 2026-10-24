@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d29534ed485940b57584dd1b4a69148917831f6",
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
             "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
             "locator": {
               "kind": "symbol",
@@ -40,12 +40,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
             "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
             "locator": {
-              "end": 66,
+              "end": 76,
               "kind": "line_range",
-              "start": 61
+              "start": 71
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

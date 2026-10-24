@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
         "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
         "content": "sha256:41e881993bb56636c68662d4743221d977cdac8455092e0231c0a6f19d70dd86",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
-        "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+        "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
         "locator": {
           "kind": "symbol",
           "name": "prepare_evidence"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
         "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
-        "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+        "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
         "locator": {
           "kind": "symbol",
           "name": "prepare_evidence"
@@ -88,8 +88,26 @@
         "handoffEntry": "L102-F08",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "rationale": "prepare_evidence consumes the comparison owner’s measured code-side and memory-index states; truly absent code-side inputs raise named EvidencePrecondition while measured unavailable sides remain loss states.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+        "content": "sha256:5e6521107981dd609eef4680148291b94524b757f4f89623df7ae56fae1f85e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_intended_authority"
+        }
+      },
+      "id": "RLZ-JZ2JY1",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-A-9",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This function examines the planned binding and each present basis and refuses receipt-only intent claims misclassified as recorded-fact or mechanical-signal; intended claims and mixed actual code/memory bases remain admissible.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -114,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
             "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
             "locator": {
               "kind": "symbol",
@@ -130,11 +148,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
+            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
             "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
             "locator": {
               "kind": "symbol",
               "name": "_carried"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current implementation adds the binding-aware intended-claim rule and typed preparation preconditions; the existing comparison-address and measured-state account remains valid.\n\nAnchor: `require_intended_authority`, `prepare_evidence`, `EvidencePrecondition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+            "content": "sha256:3c41ca9fce6acb20968dc701ad7032c3ca4c3acf9398065fff2ad645be26ee75",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

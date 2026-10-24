@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publishing the found enclosure stage before seat copies prevents active seats from working under a planning document and stale master row."
+  },
+  "applicability": "role_start, role_start_set and dashboard start for worker/reviewer/curator finding an existing enclosure. Created enclosures retain worktree_start behavior.",
+  "conditions": [
+    "Enclosure preparation answered found and its cleanup is not abandoned, reopened or completed.",
+    "The leaf still reads planning and the intent-review and directory checks already passed.",
+    "Publication happens before seat copies are prepared."
+  ],
+  "exclusions": [
+    "A newly created enclosure, whose stage move remains worktree_start.",
+    "A direct-grant leaf, an abandoned leaf or a leaf already inProgress or later."
+  ],
+  "id": "INV-9PCXBN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R189@v2 amendment"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-found-enclosure-stage",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An admitted leaf-role start that finds its existing live enclosure moves a planning leaf and its master row to inProgress as the last workspace-resolution act, after intent-review and directory checks and before seat document copies. Terminal/reopened contracts, abandoned or later-stage leaves and direct leaves are unchanged; a binding-write failure refuses by name before any seat exists, and repeated already-current starts write nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

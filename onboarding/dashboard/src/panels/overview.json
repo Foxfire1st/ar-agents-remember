@@ -1061,6 +1061,18 @@
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -1206,6 +1218,18 @@
         {
           "anchor": {
             "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageControls"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
             "locator": {
               "kind": "symbol",
@@ -2297,12 +2321,12 @@
         },
         {
           "anchor": {
-            "blob": "40824f25bcbde3784567733662bd40a10f09fd89",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
             "content": "sha256:c387ab359409cfaf2096c4557bd4e792002595d18f6fbbe3c62ef452bffc39a3",
             "locator": {
-              "end": 648,
+              "end": 604,
               "kind": "line_range",
-              "start": 625
+              "start": 581
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -3624,6 +3648,18 @@
         {
           "anchor": {
             "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
             "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",

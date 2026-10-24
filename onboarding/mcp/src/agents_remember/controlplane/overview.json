@@ -97,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:e26ef8683885e4c13344e79d00129018e3092fe07925ce6c1070a5facd649158",
             "locator": {
               "end": 1,
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
             "content": "sha256:b92153e2d4b5e8e39fb22f8e3c36fbfaf92ad1984a562be174679233df2efa5a",
             "locator": {
               "end": 1,
@@ -414,7 +414,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
             "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
             "locator": {
               "kind": "symbol",
@@ -444,16 +444,16 @@
       ]
     },
     "43": {
-      "note": "Workspace acknowledgements admit only actionable-drift and blocked-start; reconciliation also removes rows dropped by current admission, including retired provider kinds.",
+      "note": "Workspace acknowledgements admit actionable-drift, blocked-start, permission-wait, held-message, task-stalled, task-landed and task-abandoned once per current occurrence; acknowledgement does not end a live cause. Source-based reconciliation protects unread/incomplete kinds and newer acknowledgements and reclaims absent/healthy/changed occurrences only from complete time-qualified observations. Rewrites remove admission-dropped malformed or retired provider rows, and count/serialized-byte bounds may evict the oldest acknowledgements even while their occurrences remain live.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6ed5130d23e92f71222df2e0ba703ff328f7475",
-            "content": "sha256:222d50299f0cc8315ea9f23e3c1e8fce5698f282d438437754628c4bb3975640",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:7bb56f102ba5348d81f8cb722e94fd667bb44bd51441a040e218001709707289",
             "locator": {
-              "end": 47,
+              "end": 74,
               "kind": "line_range",
-              "start": 33
+              "start": 56
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -461,12 +461,51 @@
         },
         {
           "anchor": {
-            "blob": "a6ed5130d23e92f71222df2e0ba703ff328f7475",
-            "content": "sha256:3c588f8ec8b62ace1562398fe44d7caccb8bd40d364a634dff8310e4f26181bc",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
             "locator": {
-              "end": 202,
+              "end": 131,
               "kind": "line_range",
-              "start": 169
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:1dcc68f7fdbb8adf76fff8050d44630c2189d288412b92924a06e90d728f74a5",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3f402acf9a58d056e00a6a247dd11215c0201a6a94208beb895907352496d6d3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },

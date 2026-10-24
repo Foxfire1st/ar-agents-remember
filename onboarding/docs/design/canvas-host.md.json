@@ -61,6 +61,40 @@
           "kind": "code"
         }
       ]
+    },
+    "5": {
+      "note": "The trusted API row documents retirement and named refusal of the old authoring POSTs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:76b3befa3f70cf1767c0d764476b5f3fcbc864bdba96fe140a95f174b5050d8a",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authoring section documents the injected-runner boundary, unconfigured refusal and retired standalone-native entry, while retaining the kept tools' bounded evidence/assets account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:e03eacd4a00411b97cb3225af821b9af741ff3569f6bddeb31f8d1d9b3d96780",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

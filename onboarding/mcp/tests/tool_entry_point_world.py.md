@@ -55,10 +55,11 @@ against the answer alone.
 - The returned-call arm reads the log-named whole result and delegates validation and delivered-answer judging. [8]
 - The delivered-answer refusal arm classifies `ok: false` from the delivered code and actionable-next marks. [9]
 
-- The shared benign table carries the 42 current roster keys; the earlier 41-key account is the base source before `user_settings_init` was added. Table membership is preparation, not registration or execution. [10]
 
 - The shared world uses an object-form read refusal stimulus, delegates validation through its classifier helpers and records timeout continuation in its own sweep. [11]
 - `build()` authors and starts the addressed enclosure without a session lifecycle option. [13]
 - The shared sweep uses fixed fixture labels and preserves the named timeout continuation. [14]
 
 - A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty — `test_building_the_world_with_the_users_own_environment_is_refused` in mcp/tests/test_user_settings_guard.py. [7]
+
+- The shared benign table carries43 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution. [10]

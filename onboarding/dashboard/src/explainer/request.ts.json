@@ -1,0 +1,103 @@
+{
+  "path": "dashboard/src/explainer/request.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A registered target keeps its agent ids and whether a seat is active, within a bounded map",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:92e405b40c1b3db7eb6cf357d9061d55b41c83aa4c7e6e1dfbd1d51f959178df",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerExplainerTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A prefixed or registered target resolves to an archived explainer, and an active seat resolves to none",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:cc51869358e72d72475f86d52c7c22ff22ce3bb6b4394050bb20b3cea3c910b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "archivedExplainerForTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An ask is recorded and every listener is told at once",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:e09b157fbb9d8c5bddc8b35bfc2aa43528b11485099577a7ea1ed01a40f9661c",
+            "locator": {
+              "kind": "symbol",
+              "name": "askFirstRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A pending ask is offered only to the address that made it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:6536f87a84a12fb7e268053840bcf876669bf075821b1606887c9014f4ca2ef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "pendingFirstRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cancel or Send ends the ask for that address",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:b4e270079358e896bba6063c814ada45f867a5fa7b5a455f4a7611f8d957d9c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "clearFirstRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A listener hears every new ask and unsubscribes by its returned function",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc4303e5b9c10f5d8866ca8ff2673566a271f907",
+            "content": "sha256:d38c9944b395d2332a42d4770ab76baf9e87ede2dfbac470a148d3dffe2dfb64",
+            "locator": {
+              "kind": "symbol",
+              "name": "onFirstRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

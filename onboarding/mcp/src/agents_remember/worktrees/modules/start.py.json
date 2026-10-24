@@ -3,12 +3,30 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:8a6c7608e9e87c98b5ac0e93c4e5be5596fc6d3dd5c132964926ce89e02c0ae2",
+        "locator": {
+          "kind": "symbol",
+          "name": "attach_result"
+        }
+      },
+      "id": "RLZ-4236M1",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
         "locator": {
-          "end": 702,
+          "end": 790,
           "kind": "line_range",
-          "start": 673
+          "start": 761
         }
       },
       "id": "RLZ-4BP8FB",
@@ -22,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:c8193055fb8f5bd54d03a11c297cc2b2415785aa78bb6690df6db60fa48c9379",
         "locator": {
-          "end": 608,
+          "end": 696,
           "kind": "line_range",
-          "start": 605
+          "start": 693
         }
       },
       "id": "RLZ-4C6AGR",
@@ -41,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
         "locator": {
           "kind": "symbol",
@@ -59,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
         "locator": {
-          "end": 936,
+          "end": 1027,
           "kind": "line_range",
-          "start": 836
+          "start": 927
         }
       },
       "id": "RLZ-5F6FY8",
@@ -78,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:0dbc85356fb5d99d02efe6d575b4746a65bb463cbe62c1652c022e8111f8aad1",
         "locator": {
-          "end": 254,
+          "end": 266,
           "kind": "line_range",
-          "start": 251
+          "start": 263
         }
       },
       "id": "RLZ-A9B09Z",
@@ -97,7 +115,25 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_intent_review_start_result"
+        }
+      },
+      "id": "RLZ-FG4NKF",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:b32156cfd6ed249fd360628160a34570fcaf35180734f5155f8512a53da81430",
         "locator": {
           "kind": "symbol",
@@ -115,12 +151,30 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:a934ab68fbe228d011fe893e7cb185e667f271f2ccfdc70187b13f3e5d7fffba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_start_enclosure"
+        }
+      },
+      "id": "RLZ-H78K10",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
         "locator": {
-          "end": 833,
+          "end": 924,
           "kind": "line_range",
-          "start": 784
+          "start": 875
         }
       },
       "id": "RLZ-HS8RJP",
@@ -134,12 +188,12 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:9568d4ac7bbdf73c0c5be3456de95752f329513a0177d085589ca21bafbc7ab3",
         "locator": {
-          "end": 721,
+          "end": 812,
           "kind": "line_range",
-          "start": 718
+          "start": 809
         }
       },
       "id": "RLZ-JD0KQR",
@@ -153,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
-        "content": "sha256:d3fb1ae35e620856520248a06e685800a48919d90ae2c1fa5f64d3837c6b4ce4",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:ffe1db4a9cb003c6de6185dee6dc0c46cb90fb6aaf447f63e8cb1e0c603eb970",
         "locator": {
           "kind": "file"
         }
@@ -170,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
         "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
         "locator": {
           "kind": "symbol",
@@ -188,12 +242,47 @@
     },
     {
       "anchor": {
-        "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
-        "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
         "locator": {
-          "end": 541,
-          "kind": "line_range",
-          "start": 517
+          "kind": "symbol",
+          "name": "_contract_intent_review_block"
+        }
+      },
+      "id": "RLZ-QSADEA",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:31fa9b90cb61db8da368e7974a8734305d63fdcfe11fc7a159fbe10a77063e6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_intent_review_block"
+        }
+      },
+      "id": "RLZ-T769RC",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Attach checks a planning leaf; every new enclosure start checks its bound leaf before progress/materialization; named intent-review-open returns ask-architect rather than retrying or creating anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+        "content": "sha256:1eec313f794e3be4a0d0843e46382b25bca625daa8bdbbb841bf8a44f22d2a8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admitted_start_result"
         }
       },
       "id": "RLZ-T7WGDA",
@@ -212,7 +301,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:3190fb1c0f093b9554c3e0bc8a696ba47bd53baf22788ce1d08261c842da04b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_removed_vocabulary_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:3190fb1c0f093b9554c3e0bc8a696ba47bd53baf22788ce1d08261c842da04b1",
             "locator": {
               "kind": "symbol",
@@ -228,7 +328,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_choice_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:4de71b5551e1489cdcb2dd4f2d826e4345860c01e1c6351b0c61557fd3982a88",
             "locator": {
               "kind": "symbol",
@@ -244,7 +355,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_disabled_leaf_attach_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:bcd4e52ac6bd51f3f29f0a48d6a70b28eabae342fbf347b8873f8a3b51756299",
             "locator": {
               "kind": "symbol",
@@ -276,7 +398,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:eda68804c55e1be89b6d4a982499ee3dc3d4e0ec6dc60e27b1f84e061b705366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_existing_contract_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:eda68804c55e1be89b6d4a982499ee3dc3d4e0ec6dc60e27b1f84e061b705366",
             "locator": {
               "kind": "symbol",
@@ -342,7 +475,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
             "locator": {
               "kind": "symbol",
@@ -358,7 +502,18 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed2ea68e2c45fee3856e582d892643995fa27638",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
             "locator": {
               "kind": "symbol",
@@ -403,16 +558,14 @@
       ]
     },
     "28": {
-      "note": "The retained launch seam returns non-enabled plans without starting a setup job.",
+      "note": "Start refuses before contract creation and repeats the check at enclosure creation. Attach gates a planning leaf only; an already inProgress/later enclosure may be re-entered. Refusal nextAction is ask-architect.\n\nAnchor: `_open_intent_review_start_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
-            "content": "sha256:8fdec9e1de122df37d67dd611da720ea786c3ae8672a12277498ff8296b53957",
+            "blob": "353ce6b000f56e5a2c22af3e0b5571b2b3e1313a",
+            "content": "sha256:05cc3c2f2c830c6a406262bcc02a95a0ba9f6917cd465040b6efb7db616d0ee2",
             "locator": {
-              "end": 1009,
-              "kind": "line_range",
-              "start": 951
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -450,6 +603,23 @@
               "start": 81
             },
             "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The retained launch seam returns non-enabled plans without starting a setup job.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "end": 1127,
+              "kind": "line_range",
+              "start": 1090
+            }
           },
           "kind": "code"
         }

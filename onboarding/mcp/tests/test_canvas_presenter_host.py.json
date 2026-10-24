@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e70d7376a59048517d4ef6a5bbc109a5343c116",
+            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
             "content": "sha256:be4a77ebd8c0c4c4af3ec1e3058fa7f039c58980ea3cdf53e06e942f6bdf7ca5",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e70d7376a59048517d4ef6a5bbc109a5343c116",
+            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
             "content": "sha256:f654f3b0754400c8506d4b23d8e148e6fa8203cb73cbe8b808f344e6a9023d6d",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e70d7376a59048517d4ef6a5bbc109a5343c116",
+            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
             "content": "sha256:6158dafc3df3ee5d54eb73140df130a0a184eff841512f2da2feabb14892811c",
             "locator": {
               "kind": "symbol",
               "name": "test_resume_keeps_the_same_identity_across_a_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The host-operation cases use an explicit deterministic `LocalPresenterHarness`; named cases inject start-only or unconfigured runners. Production wires no presenter harness, and construction without a runner refuses. These facade/fixture assertions establish neither model authoring nor native-host execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
+            "content": "sha256:7d2c9f6f611cccb3232e90af1124149ee674039841349647b2e9e16ce14931a9",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

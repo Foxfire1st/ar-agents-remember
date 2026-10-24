@@ -1,0 +1,146 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationView.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+        "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingJudgmentMounts"
+        }
+      },
+      "id": "RLZ-JNC08X",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Places the model’s chips and Ungraded headings in reading-card DOM and cleans up exactly its inserted nodes.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+        "content": "sha256:9fe515a740a9517823c84d7fe1fc0788150fb2eb053881d6f9174f5118d90772",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplanationView"
+        }
+      },
+      "id": "RLZ-M55PCW",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Chooses the absent, building, failed, saved and compare bodies and gives each saved side its own standfirst, basis legend and revision frame.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The phase chooses between the reading sentence, the named problem, the empty state, the build placeholder and the saved page\n\nAnchor: `function ExplanationBody(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:cd2b1ad9a7cfcccb9302e11b42ec77f27572bab6068b9682ecb6fb210658646a",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The empty state offers one button and states that nothing runs until asked\n\nAnchor: `function EmptyExplanation(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:f283575d068add7f2426b21cb471b3e3186f85a58af7c547360776c2e592dd6f",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable answer names its reason and offers Retry instead of an empty page\n\nAnchor: `function Unreadable(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:d82ca0d0a3201b03d86e7d4ceeb5afa0caaa8def07bc9b1fd7576ad89f0c2848",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The single saved page composes standfirst, legend, one frame, the retired line and the claims\n\nAnchor: `function SingleSavedPage(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:eaaeecc4dbb3ce5e76d9eb4e3ff6faf6dddeb84f5877de8a7e811ac16228421b",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 504
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A chosen or compared revision's own state is read on demand, not taken from the page's default\n\nAnchor: `function useRevisionStates(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:9ad51e43a12e4609efcc3d2e57513d25a440c31b0b12ad130c2014be89266e99",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Judgment chips and ungraded headings are added to reading cards and removed on cleanup\n\nAnchor: `export function ReadingJudgmentMounts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7583663e8ace20dd6762eddf8459508c7f33be39",
+            "content": "sha256:61accd8d6201ca0a20a37dbb1cf4f60f3f138de62dc0858a0027dd9a7b680e23",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 653
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

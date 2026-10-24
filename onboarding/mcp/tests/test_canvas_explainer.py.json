@@ -1,0 +1,105 @@
+{
+  "path": "mcp/tests/test_canvas_explainer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_build_writes_the_bound_trees_and_binds_last` protects the snapshot equalling the bound trees and the binding being the last write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:06c4a34ce5f0712621fe7b647e1158cda041440391867e5f28299883c2879058",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_build_writes_the_bound_trees_and_binds_last"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_unchanged_update_answers_current_and_writes_nothing` protects an unchanged Update answering current without touching the binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:ff3d3e955438f475639aeb5c0fb2af85e64787358c52ba09dbf057b83f6e11e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_update_answers_current_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_moved_update_links_unchanged_files_and_removes_the_old_snapshot` protects a moved Update linking unchanged files and removing the snapshot it replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:8ba2680f0f292c9221dd4e2a1767f316625b351b90a4b5fdf20bba5accaf21a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_update_links_unchanged_files_and_removes_the_old_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_retire_ends_the_seats_processes_and_leaves_a_receipt` protects Retire ending the seat's processes by both counts and leaving a receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:cc23a1f5b5fba6f5f524867afc86d370f22c7c858b1d60001addf2eafedaddbb",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_symlink_in_the_workspace_is_held_and_reported` protects a planted workspace symlink being held rather than followed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:e9439d39aa86a0177c773b08a17e606abd4532023a0f30506bd794f6e401333f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlink_in_the_workspace_is_held_and_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_process_matching_and_signalling_use_exact_markers_and_start_time_identity` protects signalling only on exact markers and a matching start time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01471f157be50190bba28e57e9c8805108ea4fbb",
+            "content": "sha256:0801596f20f8bac9f97dd856ea9fcb60e7cb98fd46c7edc869e5552e7817d6dc",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 442
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

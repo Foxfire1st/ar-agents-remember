@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
             "content": "sha256:36d7702b2074245d813ac292fdddb6016cf6ecd7e92ebb721838ddcd7a8c4dfc",
             "locator": {
-              "end": 20,
+              "end": 13,
               "kind": "line_range",
-              "start": 15
+              "start": 8
             },
             "path": "mcp/src/agents_remember/models/structural/gates.py"
           },
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ece7adf1ca7541bae7cac4eb8a6a45e695916b",
+            "blob": "8ec9eae52d111189212dc74616cf6dc886f7799c",
             "content": "sha256:ccba211f201868aaf84acca7e268aab137d47499306d23512d01f6a65bead559",
             "locator": {
               "kind": "symbol",

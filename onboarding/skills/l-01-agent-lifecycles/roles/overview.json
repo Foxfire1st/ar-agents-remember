@@ -276,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
             "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
               "end": 22,
@@ -781,7 +781,7 @@
         },
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
             "content": "sha256:40801c758934b38552ab7c9d3db59ac5e011f23fd9f3a7034232411b64e15f9b",
             "locator": {
               "end": 38,
@@ -799,7 +799,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
             "content": "sha256:6d46573ed37805030cdd0890398d3892bf680016cad572fa055cc22e21e30d65",
             "locator": {
               "end": 32,
@@ -1039,7 +1039,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
             "content": "sha256:882487e587eee14441347202eb83cf92538943de0b597836077fb57762c095d1",
             "locator": {
               "kind": "symbol",
@@ -1908,6 +1908,24 @@
               "start": 16
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "content": "sha256:0aee283aaa2809cb302a1129df61f643ee37549eb4d577a120817c87d17d8338",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },
           "kind": "code"
         }

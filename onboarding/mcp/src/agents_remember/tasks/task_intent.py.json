@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:ad98f41357803e614888b1c877161432a866e4d747480445dc62b38c734bef4e",
         "locator": {
-          "end": 118,
+          "end": 126,
           "kind": "line_range",
-          "start": 117
+          "start": 125
         }
       },
       "id": "RLZ-0VN3QY",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:d3336f2be640bcba5d99cdc7d858b64c607ec0adeef06cfb8ecc2ec8df368ec6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_NESTED_FIELDS"
+        }
+      },
+      "id": "RLZ-1DTY6P",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit normative-classification allowlists admit the native review field and its strict child fields. This is an allowlist/classification claim; TaskIntentV1 does not serialize intentReview, so this anchor makes no digest-change promise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:df438c1059a150464aff29c529918b232f745101d7b828b9186a70c42c5ca9e1",
         "locator": {
           "kind": "symbol",
@@ -40,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:d9ed4674f4881ff0e65120e61e6eb1d07b3b971438654eeb617e11741d3cc6ea",
         "locator": {
-          "end": 124,
+          "end": 132,
           "kind": "line_range",
-          "start": 122
+          "start": 130
         }
       },
       "id": "RLZ-8379RC",
@@ -59,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:05f9327e3e6cb3a25a22128b6410755be417904c6deb7ff047dd677f6f0b51ec",
         "locator": {
-          "end": 190,
+          "end": 201,
           "kind": "line_range",
-          "start": 189
+          "start": 200
         }
       },
       "id": "RLZ-EK1G64",
@@ -78,12 +96,30 @@
     },
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:153158efb360377b85cab93ac2914daf0fda29829e553446feee808e9d6aaa3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ROOT_FIELDS"
+        }
+      },
+      "id": "RLZ-F83B71",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit normative-classification allowlists admit the native review field and its strict child fields. This is an allowlist/classification claim; TaskIntentV1 does not serialize intentReview, so this anchor makes no digest-change promise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:eca43fd415764946df9485bc308f410f1330cf5594d94b6b75cc8d9f7c170d37",
         "locator": {
-          "end": 250,
+          "end": 261,
           "kind": "line_range",
-          "start": 248
+          "start": 259
         }
       },
       "id": "RLZ-QG9M7D",
@@ -97,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
         "content": "sha256:90bf2b1b2b7eed377ed611e3b0fc6cfb14ee5bbe0f3a966535fb0b02b7580fac",
         "locator": {
-          "end": 140,
+          "end": 148,
           "kind": "line_range",
-          "start": 139
+          "start": 147
         }
       },
       "id": "RLZ-VJBMV7",
@@ -121,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:6b35bbf688102c0902c119c7e24cbabfec1cccb252ae8dbc9b2f50d791053e91",
             "locator": {
-              "end": 125,
+              "end": 133,
               "kind": "line_range",
-              "start": 100
+              "start": 108
             }
           },
           "kind": "code"
@@ -168,24 +204,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
             "locator": {
-              "end": 207,
+              "end": 218,
               "kind": "line_range",
-              "start": 159
+              "start": 170
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
             "locator": {
-              "end": 255,
+              "end": 266,
               "kind": "line_range",
-              "start": 226
+              "start": 237
             }
           },
           "kind": "code"
@@ -197,7 +233,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
             "locator": {
               "kind": "symbol",
@@ -213,7 +249,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:ea3980c42105e1d218003016208a3a85fd50428adb3f555b921a9b2d7d25fed0",
             "locator": {
               "kind": "symbol",
@@ -229,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:6eae6a754590ffe8be0ff968d8637d0aa25df24272c66dbd915697bc158f668e",
             "locator": {
               "kind": "symbol",
@@ -245,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
             "locator": {
               "kind": "symbol",
@@ -277,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:acdb3914cfd938ab271b758c82005f53fbaa51c5e714f9b8fcc33f1486f809e8",
             "locator": {
               "kind": "symbol",
@@ -344,12 +380,61 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
             "content": "sha256:df438c1059a150464aff29c529918b232f745101d7b828b9186a70c42c5ca9e1",
             "locator": {
-              "end": 390,
+              "end": 401,
               "kind": "line_range",
-              "start": 345
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Intent-review answer/agreement fields are added to the exhaustive normative allowlists; leaf construction still explicitly supplies TaskIntentV1 slots without intentReview, unlike the master dictionary projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:153158efb360377b85cab93ac2914daf0fda29829e553446feee808e9d6aaa3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ROOT_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:d3336f2be640bcba5d99cdc7d858b64c607ec0adeef06cfb8ecc2ec8df368ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NESTED_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_projection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_master_projection"
             }
           },
           "kind": "code"

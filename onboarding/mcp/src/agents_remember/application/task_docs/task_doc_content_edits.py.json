@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "715d185a5e3d1fbbc097f731d4726964d8ee63e4",
+        "content": "sha256:e47bb5d4b5ca7fb83e41e6473cf031cca5c5e9337dc758cb29d2cb6a5c5627c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "enforce_intent_review_candidate"
+        }
+      },
+      "id": "RLZ-1XJBKF",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The candidate guard rejects erasure, non-Architect hosted changes and open stage transitions. Raw set_status/set_field checks the review before writing; setting an existing review to null explicitly refuses intent-review-erasure-refused.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Prepared mutation helpers preserve omitted upsert cells and delegate semantic validation and publication to callers.",
@@ -9,6 +28,21 @@
           "anchor": {
             "blob": "2d7806b5114e1fcbb76736d7f767de0ae406955d",
             "content": "sha256:ef2160c480fb0c5403ccea3bf9325f9d8b565c933f537ef240d2731e9be132ca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The candidate guard rejects erasure, non-Architect hosted changes and open stage transitions. Raw set_status/set_field checks the review before writing; setting an existing review to null explicitly refuses intent-review-erasure-refused.\n\nAnchor: `enforce_intent_review_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "715d185a5e3d1fbbc097f731d4726964d8ee63e4",
+            "content": "sha256:cd7eb493edc2b82b07398a765c56434db8f2f72a8dd8389430242212bc55c467",
             "locator": {
               "kind": "file"
             }

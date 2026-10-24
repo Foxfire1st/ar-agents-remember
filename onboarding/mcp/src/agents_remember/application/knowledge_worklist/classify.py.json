@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
-              "end": 313,
+              "end": 324,
               "kind": "line_range",
-              "start": 311
+              "start": 322
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
@@ -84,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
             "content": "sha256:a125d2d23586b1b52cad8992cef936274a1dd516e6b591a698bb268713962f1c",
             "locator": {
               "kind": "symbol",
@@ -204,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
+            "blob": "81d2d1ce629a30d3d1ab1b7f31b7a1fa0506b924",
             "content": "sha256:dc1f7a8ae12f68c36e8788e5c911dfdad44c53a7c91bead5dbc476c0b0f7b284",
             "locator": {
-              "end": 309,
+              "end": 341,
               "kind": "line_range",
-              "start": 309
+              "start": 341
             },
             "path": "mcp/src/agents_remember/application/review_change_kinds.py"
           },
@@ -246,12 +246,12 @@
         },
         {
           "anchor": {
-            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
             "content": "sha256:28d89957e702523fc6796949e41604dc2d43d1e321d8cb493b976212fb72a1e0",
             "locator": {
-              "end": 313,
+              "end": 324,
               "kind": "line_range",
-              "start": 311
+              "start": 322
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },
@@ -325,12 +325,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
             "content": "sha256:e1ef3f03df40f48e9a34cacfe7da3e0a1111ec90ccbc777dd812d8790c048d77",
             "locator": {
-              "end": 277,
+              "end": 288,
               "kind": "line_range",
-              "start": 271
+              "start": 282
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
           },

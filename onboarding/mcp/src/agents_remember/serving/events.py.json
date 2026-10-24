@@ -121,12 +121,12 @@
         },
         {
           "anchor": {
-            "blob": "f1d9f2bdf6b5346afa468b367e7ed3fc0f3824c1",
+            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
             "content": "sha256:8e5edeb641d69e13c474106df2d1b18aec18b1575842e0646fcbdd1e2002c124",
             "locator": {
-              "end": 82,
+              "end": 96,
               "kind": "line_range",
-              "start": 82
+              "start": 96
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },

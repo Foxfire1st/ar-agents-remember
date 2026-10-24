@@ -135,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
             "content": "sha256:8fc6df1212535a977c9793b26dc3a5ec308be1c96e02a37d3970cee21da94a7d",
             "locator": {
-              "end": 106,
+              "end": 60,
               "kind": "line_range",
-              "start": 90
+              "start": 44
             },
             "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
           },
@@ -165,12 +165,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
             "content": "sha256:eb45ca1be52907f0a7f70c29810c746608c9546f337970388382219cd67c3023",
             "locator": {
-              "end": 130,
+              "end": 84,
               "kind": "line_range",
-              "start": 109
+              "start": 63
             },
             "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
           },

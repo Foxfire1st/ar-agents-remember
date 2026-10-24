@@ -62,6 +62,9 @@ No additional work is asserted by this card.
 
 The pinned planned-key set now includes `frameRevisions`, the archive class MIK-R103 rule 8 adds; the case fails on the previous set and passes on this one.
 
+
+The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt.
+
 ## Evidence
 
 - The receipt's planned-key set carries the new frame-revision class. [10]
@@ -88,3 +91,5 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
+
+- The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt. [11]

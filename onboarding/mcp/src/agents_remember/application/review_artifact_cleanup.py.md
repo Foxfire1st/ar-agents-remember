@@ -28,10 +28,7 @@ reuses the existing receipt and reports previously deleted artifacts as already 
 
 ### Logic
 
-- **`cleanup_review_artifacts(request)`** builds a `_Confinement` and opens `ReceiptLedger`. A dry run previews
-  the sweep and receipt effects. A real run first plans the sweep; when deletion is planned, `ledger.begin`
-  records intended deletions in an `in-progress` receipt before they occur. A refused receipt write prevents
-  deletion. The real sweep retains the task's existing identity, confinement and held-generation rules;
+- **`cleanup_review_artifacts(request)`** first retires the task’s explainer environments, or lists them without effects on a dry run, then builds `_Confinement` and opens `ReceiptLedger`. A real run plans the deletion sweep; when deletion is planned, `ledger.begin` records its intent before deletion. A refused receipt write prevents that deletion, but does not undo the retirement already performed. The sweep retains the task’s existing identity, confinement and held-generation rules;
   `ledger.already_absent` supplies prior absence evidence and `ledger.finish` records the outcome.
 - **The hook never raises (review F2, 23:15:34).** A missing repository is a `failures` entry; the Git helpers
   catch `OSError`; the finalizer, and the retirement's `archive_hook`, turn any exception, of any type, into
@@ -80,15 +77,13 @@ reuses the existing receipt and reports previously deleted artifacts as already 
 
 ### Conventions
 
-- Every deletion target is derived from the archived task's own identity, and every filesystem effect lies
-  physically inside the task (the general principle of ruling 01:00:07, with 01:37:42's confinement).
+- Every deletion target is derived from the archived task’s own identity. Task-owned artifacts remain physically inside the admitted task; explainer workspaces and generation counters use the explicitly resolved `<coordination>/explainer/<repository>/<task>/` root as the named outside-task departure. Their grades and receipts remain task-owned, and no record admits an arbitrary outside path.
 - The report schema is `ar-review-artifact-cleanup/v1`; entries carry the repository, the ref and its target, or
   the path, the digest and `via` (the owner, or `content`).
 
 ### Invariants And Boundaries
 
-- **Candidate invariant (not ingested): archival deletes only targets derived from the archived task's own
-  identity, confined to its physical folder.** Realized by the directory-name review namespace,
+- **Candidate invariant (not ingested): archival deletes only targets derived from the archived task’s own identity, confined to its physical folder or, for explainer environments, the explicitly resolved explainer task root.** Realized by the directory-name review namespace,
   `_own_leaf`/`_retained_code_refs`, `_foreign_generation`, `_Confinement` and the removed record sweep. Proved by
   the cases of `test_review_artifact_cleanup.py`, notably
   `test_archiving_one_task_never_selects_a_colliding_tasks_pins`,
@@ -111,6 +106,8 @@ reuses the existing receipt and reports previously deleted artifacts as already 
   copies, including curator scratch copies (65 in the ICR task: 44 through the owner, 21 by content).
 
 MIK-R103 rule 8: `_delete_frames` hands the archived task's frame store to `reclaim_task_frames` — the store's own reclamation owner — in dry or real mode, carries every reclaimed revision into the archive record's new `frameRevisions` class, and turns a held target into a `failures` entry. A frame is a page the task owns, so it ends with the task's other attachments.
+
+The explainer cleanup retires every discovered environment first, then removes its admitted workspace, generation counter, grades and retirement receipts. A pending retirement keeps its recovery folder, counter and receipt; the leaf lock file stays. Symlinked paths are held and reported rather than followed. The report separates `environments` from `explainerArtifacts`, so a partial cleanup states what was retired and what could not be removed.
 
 ## Evidence
 
@@ -176,3 +173,5 @@ No cross-repo boundary is crossed by this file.
 
 - Code-pin history is persisted before releasing the retained pin. [18]
 - Verified snapshot unlink precedes snapshot history, leaving a static failure window. [19]
+
+- The current implementation adds the environment and explainer-artifact classes, pending-retirement preservation and explicit explainer-root confinement. [21]

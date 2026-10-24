@@ -5,7 +5,7 @@
     ],
     "justification": "Module-boundary reset, an exact treatment register and private test-created machine resources protect different collision paths. The joint guarantee concerns surviving imported product owners and tmux isolation, not restoration of removed ambient or provider state."
   },
-  "guarantee": "The remaining Python suite brackets modules with reset of already-imported mutable product owners, enforces its closed source-state treatment register, and gives each process a private test-created tmux server with owned cleanup. Together these prevent retained process-state and tmux-resource collisions from depending on module order or another pytest process. Removed AR ambient/lifecycle owners and removed local Eve provider-process/socket guarantees are no current member obligation.",
+  "guarantee": "The remaining Python suite brackets modules by resetting already-imported scanner-visible mutable product owners and explicitly resetting the relocated kernel worktree-service binding holder, whose object state is outside the module-collection census. It enforces the closed source-state treatment register and gives each process a private test-created tmux server with owned cleanup. Together these prevent retained process state, service suppliers and tmux-resource collisions from depending on module order or another pytest process. Removed ambient/lifecycle owners and removed local Eve provider-process/socket guarantees remain outside the current member obligation.",
   "id": "FAM-3FTGSA",
   "members": [
     "INV-5YPFVJ",
@@ -20,7 +20,7 @@
     "leaf": "260928-MIK-L87",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "mcp/test_support/agents_remember_test_support/testing",
     "mcp/tests"

@@ -1,0 +1,126 @@
+{
+  "path": "scripts/compare-discovery-contract.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+        "content": "sha256:da408f8dbcf5f40d1e20011f9480623b89313bc788a131dd78e1465ef2510bd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-4FFS0G",
+      "invariant": "INV-JQ1WC6",
+      "origin": {
+        "handoffEntry": "L183-startup-evidence-witnesses",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The script saves complete before/after discovery JSON+digests, compares canonical full answers, reports first differing tool schemas/descriptions/annotations and independently probes executed package attribution. It labels tools/list-only scope and excludes runtime refusal claims.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Each compared side is the whole `tools/list` answer from a seat command spawned against that source tree.\n\nAnchor: `def discovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:8886f17c2be1b9b9b4c406ca44a347d9b542b6a4ff03075122c03370b0531090",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The record places each digest beside that tree's resolved root, git head and dirty-entry count.\n\nAnchor: `def provenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:d128a3864041efc87123478543e50e5f3c217596fde15251e348db860c598a86",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Attribution is qualified only when both children report a package under the compared root.\n\nAnchor: `attribution_qualified`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:a44297c298b003e3b2352b39309e026f893b4880e87dc48aeebb33f186cfd333",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Differing paired positions are counted and at most five listed; tool counts and name lists disclose unmatched tails separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:da408f8dbcf5f40d1e20011f9480623b89313bc788a131dd78e1465ef2510bd2",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The process exits non-zero whenever the canonical encodings differ.\n\nAnchor: `return 0 if record[\"identical\"] else 1`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:e748731e2bc4895220acd1cad3a3d80342bffbd79bcf6aef7973607ad4dda1a6",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The script saves complete before/after discovery JSON+digests, compares canonical full answers, reports first differing tool schemas/descriptions/annotations and independently probes executed package attribution. It labels tools/list-only scope and excludes runtime refusal claims.\n\nAnchor: `main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7f55bf1078b31957be873c39cc8ac9f30f7d94",
+            "content": "sha256:5d094377a4abe257eb517fdfc706269ee393c28e8b320c23cd335f2af0b443e1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

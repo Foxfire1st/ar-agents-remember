@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
             "content": "sha256:1f1ce15351268f4e439368061e4bb3c365d1f897bfeef6e8495649da613f9f05",
             "locator": {
-              "end": 331,
+              "end": 329,
               "kind": "line_range",
-              "start": 331
+              "start": 329
             },
             "path": "mcp/src/agents_remember/certification/__init__.py"
           },

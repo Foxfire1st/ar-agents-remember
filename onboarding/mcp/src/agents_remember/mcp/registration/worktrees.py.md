@@ -21,6 +21,8 @@ says "create, re-attach, observe, sync, stop" for exactly that reason.
 
 ## Code Commentary
 
+Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.
+
 ### Current Contract
 
 The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. The current worktree_sync source description is535 characters under the unchanged600 limit; its state list, next-call/log guidance, pre-sync review, raw-memory-merge boundary and landing/fast-forward judgments remain. Description compression changes neither signature nor forwarding behavior and is not live registration evidence.
@@ -160,3 +162,5 @@ L61 current sync qualification: the flat signature is contract_path, memory_sync
 
 
 - The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action and dry_run; it packs only the admitted continue/cancel action. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. The current worktree_sync source description is535 characters under the unchanged600 limit; its state list, next-call/log guidance, pre-sync review, raw-memory-merge boundary and landing/fast-forward judgments remain. Description compression changes neither signature nor forwarding behavior and is not live registration evidence. [13]
+
+- Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time. [14]

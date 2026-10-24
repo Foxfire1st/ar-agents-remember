@@ -12,8 +12,13 @@ The suite checks the same-build tool definition and returned binding, a compact 
 
 The hand-over cases now read the written file through `canonicalPath`, which is the artifact beside the report, while the reference's `path` is the request's locator: the path the recovery note and the first message give the agent. The leaf retry that restores a removed report folder brings the same locator back, so the path the agent was given opens the restored bytes; the retry of a saved receipt compares `canonicalPath`, and the conflicting complete hand-over control passes a request id so publication settles a locator before writing. The recovery-note case asserts both the stored assignment beside the report and the reachable locator path, and the receipt keeps the two apart.
 
+
+The launch-definition case pins `AR_PLAYWRIGHT` in the explicit carried-environment register and checks that the host's module path appears unchanged in the tool-server definition. This is a definition-level environment assertion, not a browser load or page-publication result.
+
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]
 
 - New real report folders and retained alias receipts have distinct retry controls. [2]
+
+- The launch-definition case pins `AR_PLAYWRIGHT` in the explicit carried-environment register and checks that the host's module path appears unchanged in the tool-server definition. This is a definition-level environment assertion, not a browser load or page-publication result. [3]

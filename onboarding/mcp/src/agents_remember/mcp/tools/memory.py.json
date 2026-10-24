@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
         "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
-        "content": "sha256:984daf3ad48bb0b4d0b90bdc40cbe4579e67d48a13b240133ae460a8283a7a32",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_payload"
+        }
+      },
+      "id": "RLZ-76306H",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cutover-lock legacy-format helpers resolve at the carryover/refusal operation rather than module discovery; the same full refusal and compact projection are retained.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
         "locator": {
           "kind": "symbol",
           "name": "_carry_legacy_refusal"
@@ -39,12 +57,30 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carry_legacy_refusal"
+        }
+      },
+      "id": "RLZ-ECTGHA",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Cutover-lock legacy-format helpers resolve at the carryover/refusal operation rather than module discovery; the same full refusal and compact projection are retained.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
         "content": "sha256:9dc6a89d422b00d45be3cd0a157b69bc5b34f27e3aa9d9dd2bf221a0ffc26674",
         "locator": {
-          "end": 250,
+          "end": 253,
           "kind": "line_range",
-          "start": 199
+          "start": 202
         }
       },
       "id": "RLZ-G52W6N",
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
         "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
         "locator": {
           "kind": "symbol",
@@ -76,12 +112,30 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "content": "sha256:3dcddad935eda28d068e65014a7b2c9056140aba53823fd329a100ad867a9375",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_baseline_adopt_payload"
+        }
+      },
+      "id": "RLZ-HXR0S4",
+      "invariant": "INV-5X9WH6",
+      "origin": {
+        "handoffEntry": "L183-legacy-baseline-answer",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
         "content": "sha256:c750e428a274347ebd829786135cd10b36c599405e3fe4d4bca3af8de0fd9cbb",
         "locator": {
-          "end": 460,
+          "end": 470,
           "kind": "line_range",
-          "start": 439
+          "start": 449
         }
       },
       "id": "RLZ-NKTNVE",
@@ -95,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
-        "content": "sha256:b5aa8e105ca24725088652db0db42138c1159cbfa475a87c606ff80833feace9",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
         "locator": {
           "kind": "symbol",
           "name": "memory_carryover_plan_payload"
@@ -113,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "44c8c41eb6769043e70484ac1dace110edafb7fd",
+        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
         "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
@@ -152,7 +206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
             "locator": {
               "kind": "symbol",
@@ -184,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
             "locator": {
               "kind": "symbol",
@@ -211,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d1d7a64b2c3ce5b16748b5fa73df09ee5501b51",
+            "blob": "30dd326ad5bd484a832faaf1dba13488f4247b60",
             "content": "sha256:e614d2725b13a0030c62f9bd39a58f4b917cbad3a5d7c6b43970c9ef14aa15c4",
             "locator": {
               "kind": "symbol",
@@ -239,7 +293,7 @@
         },
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
             "locator": {
               "kind": "symbol",
@@ -261,12 +315,27 @@
         }
       ]
     },
+    "15": {
+      "note": "The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.\n\nAnchor: `memory_baseline_adopt_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "content": "sha256:bdbafb3ac93451a5e694d476f506380efd7edb0fc6adc51b5fc4daa721090e9e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Each named list capped, with its full count.",
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -299,7 +368,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
             "locator": {
               "kind": "symbol",
@@ -351,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:3ad14df6f0cb0c228b49fdd388fc0034b0993668f75311d52fefb5ce45a86309",
             "locator": {
               "end": 115,
@@ -368,12 +437,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
+            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
             "content": "sha256:91efc6cb9c35e004c197d83521a8f0a8893232470d8d0fae53a490b0ba2f34ec",
             "locator": {
-              "end": 282,
+              "end": 285,
               "kind": "line_range",
-              "start": 282
+              "start": 285
             }
           },
           "kind": "code"

@@ -16,6 +16,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+            "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 572
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -55,6 +67,31 @@
               "end": 467,
               "kind": "line_range",
               "start": 453
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:a189bbea179fd400c95a2351cdfddc4801b54913b80f50cd74b12923c5eb8219",
+            "locator": {
+              "kind": "symbol",
+              "name": "valuesAt"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "content": "sha256:e14d6ca126d5b033fc5bc8fcb86d95b1355f23c6bd2a36ad21a5c434f1cf45e5",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -184,6 +221,31 @@
             "path": "scripts/sync-projection-types.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "demandServed"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "content": "sha256:9741921eda39fb5ee6462359d93e7ce7ac93db599bd71107e8ac0ce9a960a6a2",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -272,6 +334,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+            "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 377
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -286,6 +360,18 @@
               "end": 2030,
               "kind": "line_range",
               "start": 1994
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+            "content": "sha256:f1a21c9db71a179f315e271cd83fd0eff6b089e0ff9148b7776236ec0b4829cb",
+            "locator": {
+              "end": 2139,
+              "kind": "line_range",
+              "start": 2103
             }
           },
           "kind": "code"
@@ -332,6 +418,18 @@
               "end": 615,
               "kind": "line_range",
               "start": 599
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2208daced2f3765b8214b6bda19508780a522e57",
+            "content": "sha256:f8f905f07141c8e18288d136810b169d10609ca229a5e116b06d07633d028e0c",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
             }
           },
           "kind": "code"

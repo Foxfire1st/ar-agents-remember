@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Atomic record persistence, declaration arguments and payload caller checks jointly enforce the same ownership boundary; tests cover non-architect claim, named-seat actions and missing/wrong record."
+  },
+  "applicability": "The master-to-architect record written at Manager start or claim and explainer_control actions for that same repository/master.",
+  "conditions": [
+    "Manager start and hosted-architect claim are the two supported acts that write the master-to-architect record.",
+    "Unknown actions refuse before record lookup or mutation.",
+    "Retire requires a receipt ID admitted as one path segment.",
+    "A Manager start resolves its own canonical master reference and a known Architect starter, or an Orchestrator whose recorded parent has an Architect receipt.",
+    "A failed Manager-start persistence attempt does not create or refresh the record and does not fail the admitted seat."
+  ],
+  "exclusions": [
+    "The claim does not itself start, retire or update another leaf.",
+    "Record authority does not grant transaction, closeout or Git authority.",
+    "A failed write is not proof that an older valid record vanished or that no prior owner remains."
+  ],
+  "id": "INV-E2XQHS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "helpers/explainer-tools/behavior-proposals.json; helpers/explainer-tools/sidecar-note-audit.json; helpers/backend/normalized-writer-draft.json; MIK-R186 v2 rule 6; MIK-R189 v2 rule 7"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The master-to-architect record is written by Manager start or by a hosted architect claim, with the last successful whole-record write naming the owner. Manager start records its Architect starter or the verified Architect parent of its Orchestrator starter, never the Orchestrator or an invented launcher owner. Update and Retire accept only the recorded agent; when no record names an agent, both actions refuse. A hosted architect claim writes the record before transferring held reports, and tool caller identity comes from the server binding rather than an argument. Failure to write the Manager-start record does not fail an otherwise admitted seat.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,157 @@
+{
+  "path": "mcp/tests/test_server_startup_imports.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+        "content": "sha256:a5b47767855d5b0ea2391d306749d31100d74bbae8ec78fc5199fe68c38ce9ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_discovery_loads_no_implementation_module"
+        }
+      },
+      "facet": "A fresh process reaches initialize/tools-list without importing any fixed named implementation module under ordinary, rolebound and explainer discovery profiles.",
+      "id": "PRF-DH2X31",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+        "content": "sha256:e8ca7372a93d3c8979b3e56e1a44862e997345f1e5fd20d229faa31690167434",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_guard_catches_an_eager_import"
+        }
+      },
+      "facet": "The fresh-process fixed import guard catches a deliberately eager implementation import, its positive control.",
+      "id": "PRF-JJM6R9",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+        "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
+        }
+      },
+      "facet": "An explainer server refuses a tool outside its frozen exposed roster at its first call; ordinary boot identity preservation is a separate facet.",
+      "id": "PRF-KBVT3V",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+        "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
+        }
+      },
+      "facet": "The first dependent tool call retains the immutable boot-time caller identity instead of adopting later environment identity.",
+      "id": "PRF-ZQK925",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_discovery_loads_no_implementation_module` protects tool discovery loading no implementation module behind the surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee88a37778323a426bc874d2a90f45a88c94ef0",
+            "content": "sha256:56b3da7daaaa67479f5f1f5e6dc299d53c6785c3b734db25af683bc5d6695293",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discovery_loads_no_implementation_module"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_the_guard_catches_an_eager_import` protects the guard reporting an eager import, so a silent guard cannot look like a pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+            "content": "sha256:e8ca7372a93d3c8979b3e56e1a44862e997345f1e5fd20d229faa31690167434",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_catches_an_eager_import"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_binding_for_another_capability_is_refused_at_launch` protects a binding for another capability being refused rather than served.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+            "content": "sha256:f9a3471b7dee9d5167fd0367b423f8bccfff1056af02ce55a46f2a1e286a89e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_binding_for_another_capability_is_refused_at_launch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_the_real_command_answers_initialize_and_tools_list` protects the launched command answering the protocol's own initialize and tools list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ee88a37778323a426bc874d2a90f45a88c94ef0",
+            "content": "sha256:7802b7a01324768fe1f36a0a27ba537ce45d8556d80f6bf83a7fd44610a222ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_real_command_answers_initialize_and_tools_list"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch` protects the first call keeping the boot identity and refusing an unexposed explainer dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f771fd49aff574ae4bff9ebbab538ec41047477",
+            "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

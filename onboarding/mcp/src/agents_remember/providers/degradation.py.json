@@ -208,12 +208,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
+            "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
             "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
             "locator": {
-              "end": 107,
+              "end": 135,
               "kind": "line_range",
-              "start": 107
+              "start": 135
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -320,12 +320,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a454ea6183379b1a887f489de261b2f5f8bd11ff",
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
             "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
             "locator": {
-              "end": 127,
+              "end": 132,
               "kind": "line_range",
-              "start": 127
+              "start": 132
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

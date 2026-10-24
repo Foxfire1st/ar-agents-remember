@@ -1,5 +1,24 @@
 {
   "path": "dashboard/src/data/stream.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "29e9552de22cfcef425b964752ddd9796793770c",
+        "content": "sha256:026977868ca3503e9335d1f51eaabdc1436e31946b7e9d281ec36121ec86a85c",
+        "locator": {
+          "kind": "symbol",
+          "name": "delivers the named SSE event to a mounted subscriber without a page reopen"
+        }
+      },
+      "facet": "Pins exact-leaf stream delivery and no-work renewal versus explicit Update.",
+      "id": "PRF-PCYW1Z",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -47,6 +66,21 @@
               "end": 120,
               "kind": "line_range",
               "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
+            "content": "sha256:9c038ff59a5a8647ce03392bee151e09dbd2acd77c3c016fb6040356f651c769",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

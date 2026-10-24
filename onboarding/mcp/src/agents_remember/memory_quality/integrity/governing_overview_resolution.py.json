@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
             "content": "sha256:2cf0212c074e6e503105011826ed3a023433b3017f523d37b9fb88c36c1eb5ff",
             "locator": {
               "kind": "symbol",
@@ -121,12 +121,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
             "content": "sha256:902f0767b6abf83f5b1e68168cc93585d397f95feb476983899295c2cbe3002d",
             "locator": {
-              "end": 642,
+              "end": 708,
               "kind": "line_range",
-              "start": 616
+              "start": 682
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

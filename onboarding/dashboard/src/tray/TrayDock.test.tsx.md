@@ -33,3 +33,7 @@ Rectangles and CSS classes are fixture inputs; no browser pixel measurement is n
 - Checks single-dock geometry, reserved height and minimized/full/closed transitions. [9]
 
 - Three geometry cases pin the box's own column: the exact box-origin formula with an unclamped width, the drawn dock inside a frame wider than its chat, and the frame-wide fallback when no extent is reported. [10]
+
+Two new DOM cases press the minimized docked line's head to expand the full tray and press its Close control to retain the closed pill without expanding. The fixture supplies the native composer location; these cases prove event composition and collection retention, not fresh browser geometry.
+
+- Two new DOM cases press the minimized docked line's head to expand the full tray and press its Close control to retain the closed pill without expanding. The fixture supplies the native composer location; these cases prove event composition and collection retention, not fresh browser geometry. [11]

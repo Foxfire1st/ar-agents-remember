@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
         "content": "sha256:48c352f731b05c44b83c6883d2b5e3163bf46168c519b5b9724bdcf7cd103a2f",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
         "content": "sha256:c2a75e1d4bad7dc43f170ee71ec6bacff2bc874b14cb41a10685bf0a2a717fe8",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
         "content": "sha256:99d2987068ba31bff4eb7716a6fcd5da45f821c0abfa9d77f4110ccb38f6ead1",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "41528fdd7f545a4ee3d732d1e90e31ffed4c7bc3",
-        "content": "sha256:4bc1dcf81e67dc80b1a58922ee092bac6b4d955a27c22b1a375801364b740557",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+        "content": "sha256:d7f7aec6b36525ee4a36c27f740693a686613fc309b7178d8db13cbe5a778f57",
         "locator": {
           "kind": "symbol",
           "name": "test_a_completed_landed_cleaned_up_archived_leaf_reopens_and_its_seats_start"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
         "content": "sha256:2c9d2d3817afa67dadab3b311c995a4226aed160184ab9aa575f79e229150ff5",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "1c2e140ac9a28949ae7a6b96391a58149d0e56aa",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
         "content": "sha256:d7ac167a94695722731c7ca921d7b705b274c7670d8945d2734183e00a9c81be",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "41528fdd7f545a4ee3d732d1e90e31ffed4c7bc3",
-        "content": "sha256:68c8d1b747d7839f8bb60ab30dccae3076d66c7faf3241ad62bd2dca4d9079f8",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+        "content": "sha256:9995190c3c93cd881e1cd11b98d4d59ab6437c01d0b5bc5f1962d5f181121fdc",
         "locator": {
           "kind": "symbol",
           "name": "test_a_completed_master_reopens_from_the_sprint_line_and_its_leaf_follows"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "41528fdd7f545a4ee3d732d1e90e31ffed4c7bc3",
-        "content": "sha256:28478aedeccb63e64d9ae10d9c8ad69d0c50ea30f1080d8a6c71e997a43df90b",
+        "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+        "content": "sha256:417f6e2fabbdaa5cf37060425a3c4528b2a1bc9c6af1578421daf956319a235d",
         "locator": {
           "kind": "symbol",
           "name": "test_a_completed_master_with_cleanup_pending_passes_the_cleanup_gate"

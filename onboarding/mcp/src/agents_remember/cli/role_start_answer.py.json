@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
             "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
             "locator": {
               "kind": "symbol",
@@ -106,12 +106,12 @@
         },
         {
           "anchor": {
-            "blob": "5b8915684281d9fbe484317de569253e503b52e5",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
             "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
             "locator": {
-              "end": 132,
+              "end": 129,
               "kind": "line_range",
-              "start": 96
+              "start": 93
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

@@ -10,6 +10,8 @@ What the retire operation answers: the result of a request, and what a dry run w
 
 ## Code Commentary
 
+Preview appends the hook exact explainer_line to its change list.
+
 `preview_answer` builds the dry-run answer from a plan: the pending steps (`_pending_steps`) and the pending files (`_pending_files`) — the sprint's document pair and the master folder move. `_archived_state` reports the operation's own state (`retired-with-hook-failures` after a partial cleanup), and `first_answer` builds the result of a request. A dry run lists every file a real run writes, also after a death inside the sprint edit.
 
 ## Evidence
@@ -17,3 +19,5 @@ What the retire operation answers: the result of a request, and what a dry run w
 - A dry run of a retirement lists every file a real run writes, also after a death inside the sprint edit. [1]
 - A dry run names a cleanup that failed hook-failed by the operation's own state table. [2]
 - The answer names the remaining steps and files for a repeated request, so a resumed request does only what remains. [3]
+
+- Preview appends the hook exact explainer_line to its change list. [4]

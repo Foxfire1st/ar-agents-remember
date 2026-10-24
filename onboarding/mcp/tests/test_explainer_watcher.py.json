@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_explainer_watcher.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_notice_names_the_recorded_comparison_and_its_block_count` protects the notice naming its comparison and per-block count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e170591f6d409c2467eeb9d413e458df9a24e1e",
+            "content": "sha256:88b041765f93e0d2466df9319b5897a011ad06de9e4b7ab0cc958939db0055ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_notice_names_the_recorded_comparison_and_its_block_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_unreadable_count_is_no_notice_rather_than_a_zero` protects an unreadable count earning no notice and never a zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e170591f6d409c2467eeb9d413e458df9a24e1e",
+            "content": "sha256:91cf491588964a6569ed00d43dc87ec01d12d000f9e0848c619482b1937c1fa2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_count_is_no_notice_rather_than_a_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_planned_moved_notice_follows_the_builds_declared_contract_without_fallback` protects a planned notice following the declared master contract with no capture, message or record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e170591f6d409c2467eeb9d413e458df9a24e1e",
+            "content": "sha256:236632830b54bc47b4e1bfeb62a5997f9d3ea1a25a62cd8c72d11ebb9042251b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planned_moved_notice_follows_the_builds_declared_contract_without_fallback"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_no_path_sends_holds_or_writes_a_message` protects the watcher never sending, holding or writing a message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e170591f6d409c2467eeb9d413e458df9a24e1e",
+            "content": "sha256:b71e7997bb04748c382acc44934cc8326833c30e9afcfe0e60e25da600abd37e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_path_sends_holds_or_writes_a_message"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_capture_writes_objects_and_no_ref_or_record` protects a capture writing objects and nothing that would claim a comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e170591f6d409c2467eeb9d413e458df9a24e1e",
+            "content": "sha256:2db978077ccd9a206b06e6d12eac3ab13600c303a9a8fdf08a81f624f8fcd37c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_capture_writes_objects_and_no_ref_or_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

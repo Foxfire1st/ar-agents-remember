@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_explainer_end_to_end.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_the_explainer_end_to_end_open_request_grade_retire` protects the whole open, request, grade, retire chain completing in one process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70a416e2fdf01a2ffc004eebfcb8e11df8282dcb",
+            "content": "sha256:2786fff3b7f88a280f30ad8c338b17d01e459bdc0841264c3dfa088d58917855",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explainer_end_to_end_open_request_grade_retire"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

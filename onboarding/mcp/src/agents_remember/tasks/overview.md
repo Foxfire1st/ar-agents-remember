@@ -99,6 +99,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 RouteReviewRecord.baseCommit is optional persisted review evidence and is classified in the EVIDENCE plane. Leaf construction stamps the base before its record digest; the field alone does not establish ancestry or currentness. Legacy None-valued fields remain omitted from digest verification. Task-intent, review-state and mutation-class owners remain separate.
 
+A subTask may hold the canonical `intentReview` answer: `pending`, `review-first` or `go`. An agreed page is the strict `agreedRevision` triple of revision id, SHA-256 and packet versions, admitted only with `go`; it does not replace requirement packets. Rendering exposes the answer and agreement, and master order keeps an open review visible while excluding it from the existing ready set. The field taxonomy and task-intent allowlists classify this nested data as normative. That classification alone does not prove every identity constructor consumes it. A legacy leaf with no answer retains its admitted start behavior.
+
 ## Evidence
 
 - The persisted route-review record declares the optional base stamp. [56]
@@ -165,3 +167,5 @@ RouteReviewRecord.baseCommit is optional persisted review evidence and is classi
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
 
 - Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]
+
+- Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go. [58]

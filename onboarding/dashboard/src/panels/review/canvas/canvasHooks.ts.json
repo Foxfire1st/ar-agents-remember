@@ -31,6 +31,21 @@
           "kind": "code"
         }
       ]
+    },
+    "3": {
+      "note": "forwardedBody now admits one bounded array inside the envelope: at most 32 items, at most 64 total fields once an array is encountered, scalar leaves and no nested array or object inside an array item. Non-array envelopes retain their 16-field limit. Own data descriptors avoid executing accessors; depth, character and serialized-byte limits remain distinct. useCanvasMessages attaches the channel listener in a layout effect so it is installed before a mounted frame can post.\n\nAnchor: `copyArray`, `forwardedBody`, `useCanvasMessages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71064a6c8a1e180cc3932f745d2e528279e8f0bf",
+            "content": "sha256:c954d3042edf09d3a8b563000106124bac6f23de13869596d877be18b14bd1b5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

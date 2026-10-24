@@ -27,7 +27,6 @@ Page controls receive the actual shown answer in Technical details. They offer o
 ## Evidence
 
 - ReviewSurface.tsx current behavior at this source owner. [65]
-- ReviewSurface.tsx current behavior at this source owner. [66]
 - ReviewSurface.tsx current behavior at this source owner. [67]
 - ReviewSurface.tsx current behavior at this source owner. [68]
 - ReviewSurface.tsx current behavior at this source owner. [69]
@@ -35,3 +34,9 @@ Page controls receive the actual shown answer in Technical details. They offer o
 
 - The record frame is state the surface can leave, and the delivered action uses that. [71]
 - Page details receive the resolved comparison and the delivered value. [72]
+
+ReviewSurface now owns a Review | Explanation tab in the page's top line and replaces only the reading-column body with ExplanationView or the planned page; the tree, chat rail, bracket controls and deterministic Review content keep their existing owners. The former CanvasRegion is removed. useSurfaceExplainer reads the applicable planned/explainer state, publishes its judgments to the shared model and resolves claim/evidence returns through the comparison on screen before selecting with keepTree. A matching live moved notice renews deterministic reads and entry generation when no explainer work exists or the event offers no Update; a recorded-history view does not subscribe to that refresh. The ordinary Review body receives judgment chips and Ungraded headings through ReadingJudgmentMounts, with cleanup owned by that mount.
+
+- ReviewSurface now owns a Review \| Explanation tab in the page's top line and replaces only the reading-column body with ExplanationView or the planned page; the tree, chat rail, bracket controls and deterministic Review content keep their existing owners. The former CanvasRegion is removed. useSurfaceExplainer reads the applicable planned/explainer state, publishes its judgments to the shared model and resolves claim/evidence returns through the comparison on screen before selecting with keepTree. A matching live moved notice renews deterministic reads and entry generation when no explainer work exists or the event offers no Update; a recorded-history view does not subscribe to that refresh. The ordinary Review body receives judgment chips and Ungraded headings through ReadingJudgmentMounts, with cleanup owned by that mount. [73]
+
+- PageReading keeps the existing reading-column toggles, notes, summary, lane and technical details, replaces its body through readingReplacementOf and mounts judgment chips only for ordinary Review content. [66]

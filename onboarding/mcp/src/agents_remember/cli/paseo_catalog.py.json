@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:2ee18b0e960d8f26922b3a32dc406473e3eba269f281aaa5250736623678853e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
-        "content": "sha256:d84fc2b8e36640e6c3b6c86655467c3bd47d35023b0178000f7e12c80dde9906",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
         "locator": {
           "kind": "file"
         }
@@ -92,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
         "locator": {
           "kind": "symbol",
@@ -110,7 +110,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
         "locator": {
           "kind": "symbol",
@@ -128,7 +128,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
         "locator": {
           "kind": "symbol",
@@ -146,7 +146,25 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "locator": {
+          "kind": "symbol",
+          "name": "settings_role_launch"
+        }
+      },
+      "id": "RLZ-SJXXVV",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
         "locator": {
           "kind": "symbol",
@@ -164,7 +182,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
         "locator": {
           "kind": "symbol",
@@ -182,7 +200,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
         "locator": {
           "kind": "symbol",
@@ -200,7 +218,7 @@
     },
     {
       "anchor": {
-        "blob": "3c0641af2921e4e3e4cf845a707fd233ab365d1c",
+        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
         "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
         "locator": {
           "kind": "symbol",
@@ -223,11 +241,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
             "locator": {
               "kind": "symbol",
               "name": "launcher_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.\n\nAnchor: `settings_role_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -307,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
             "locator": {
               "kind": "symbol",
@@ -339,7 +372,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
             "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
             "locator": {
               "kind": "symbol",
@@ -355,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
+            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
             "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
             "locator": {
               "kind": "symbol",

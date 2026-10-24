@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:fa8b741094611f7411a293642034a01bf54152b49dd6fb57001f728eb88d1e5d",
             "locator": {
               "end": 29,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd11525f53045fe4db85ff12ed0fab3c45763e8a",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
             "content": "sha256:c50c7ecd23847fd84872c128c914ad5909f82a26145ba3ff51ece2f0aff6d330",
             "locator": {
               "end": 320,
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af473a3e8868057c3b3061751a5c06d36531dab0",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
             "content": "sha256:3af4cd2a0cc0480a338416e063c01aa9b5d1800e376218e5478ce2a176f1eccd",
             "locator": {
-              "end": 231,
+              "end": 235,
               "kind": "line_range",
-              "start": 205
+              "start": 209
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:6def7e5e97cbbaa9fb5e50a52f26ce0827c66e1414fff0982249024963553cb6",
             "locator": {
               "end": 64,
@@ -77,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:a4716d5124522f69f52c63920ecd307dcb0363bf9cc29e2cc27e7fc3fdd25ba8",
             "locator": {
               "end": 43,
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:6def7e5e97cbbaa9fb5e50a52f26ce0827c66e1414fff0982249024963553cb6",
             "locator": {
               "end": 64,
@@ -123,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "099add5cdf04ef39c477a82e83c99963ec3c98d3",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
             "content": "sha256:0c47af355ed74b1fc1cda640c5de75b0baecadb9e8972b2618fca2823b32866f",
             "locator": {
-              "end": 98,
+              "end": 101,
               "kind": "line_range",
-              "start": 90
+              "start": 93
             }
           },
           "kind": "code"

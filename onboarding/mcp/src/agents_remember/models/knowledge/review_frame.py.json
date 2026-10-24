@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:991ce1c199c4db8bc4b52bb6ef3fb09eaf87296ba61b7c92f48c394ca75a2ad6",
+        "locator": {
+          "kind": "symbol",
+          "name": "planned_reference"
+        }
+      },
+      "id": "RLZ-7KR93A",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The distinct planned owner and /planned reference prevent conflating a planned binding with a closed committed number-zero record; comparison_reference itself moved unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:0f455940457009c5a7b75032f7c9e858685ba7e4611435a11b6859cc83ba44af",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameStaleness._only_a_stale_revision_names_stale_parts"
+        }
+      },
+      "id": "RLZ-8AA3JE",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The per-part response validator refuses stale-part data on a current revision, preserving truthful whole/part staleness state.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
         "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
         "locator": {
           "kind": "symbol",
@@ -21,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
-        "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
         "locator": {
           "kind": "symbol",
           "name": "FrameBinding"
@@ -39,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
-        "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:d032d22dc426339181be055245995a44da9d6d8cd08146bb866028cfc9a29f05",
+        "locator": {
+          "kind": "symbol",
+          "name": "_parts_are_true"
+        }
+      },
+      "id": "RLZ-NQYE3G",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-A-6",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The manifest validator that refuses a part map contradicting its own claim map.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:0649f739fd7e33d9d79c3f7ea30dca4fde1aabc792b001e7c6a089bc05d84abb",
         "locator": {
           "kind": "symbol",
           "name": "FrameManifest"
@@ -53,6 +107,43 @@
         "leaf": "260928-MIK-L102"
       },
       "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:92d52c64afef1f84003c46ddd21eb2320dfd349ce276eff1997d2dea18b59bcb",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameStalePart"
+        }
+      },
+      "id": "RLZ-R0TQNJ",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-A-5",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The stale part's own shape: a part id, its title and the reasons, with no claim list.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+        "content": "sha256:128d9740706c5fb6783d645edecc3d1be1342e8edec5363c34b9ef77b1d04f82",
+        "locator": {
+          "end": 77,
+          "kind": "line_range",
+          "start": 76
+        }
+      },
+      "id": "RLZ-X87CFX",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The distinct planned owner and /planned reference prevent conflating a planned binding with a closed committed number-zero record; comparison_reference itself moved unchanged.",
       "role": "enforcement"
     }
   ],
@@ -94,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
             "content": "sha256:379e086d1c6ed6bfb0071fcce8307641ad4b285b806f9b0cada4c39a1a0acaa8",
             "locator": {
               "kind": "symbol",
@@ -110,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
             "content": "sha256:971b9e89db7535d4f4ab1b65170369b566948973157de0a7f43f3d7340ded1f9",
             "locator": {
               "kind": "symbol",
@@ -130,6 +221,99 @@
             "content": "sha256:b5817cae05f6dd1f5e5121f6fb10e392c9e5d9827659d09d9afd2c201e75b27f",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:991ce1c199c4db8bc4b52bb6ef3fb09eaf87296ba61b7c92f48c394ca75a2ad6",
+            "locator": {
+              "kind": "symbol",
+              "name": "planned_reference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:34a422712f60fbd19811d1145848b57467c1c1bcd02d44c5a64bfdc347bf6236",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameLimits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:edd6ca02c498aa09d7d6994cb983534c8906a37bd76523ffeb47c7b08bc6cd8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FramePart"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:d032d22dc426339181be055245995a44da9d6d8cd08146bb866028cfc9a29f05",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parts_are_true"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:27df61d9b8c975690570665d3a496717c8ab946b940fb2ce323c48f676a7ece0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_supplemental_is_true"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:92d52c64afef1f84003c46ddd21eb2320dfd349ce276eff1997d2dea18b59bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameStalePart"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:c4f767ec18ad80bc47f7448f7c2d138e80f5dcbf03106609f152908fbadfb0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameStaleness"
             }
           },
           "kind": "code"

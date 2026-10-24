@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
             "content": "sha256:8a4a5f2dcba515362fe6b6a071e6e590dd15c409a05344b8ebbd531c82e4c8d2",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
             "content": "sha256:2aea0e002f184cbb474913641c7579dec80ee3661337bb3bac5e8b95b874f23a",
             "locator": {
               "kind": "symbol",
@@ -101,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
             "content": "sha256:3fcb180697451d9eed64fe0956add55c7d7dca6f9c928fadb211dc417699eb63",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
         },
         {
           "anchor": {
-            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
             "content": "sha256:4af845c9fea8f1c1b6b995ce683cada1fb5e42174a87b131fbcedbc843a00e4d",
             "locator": {
-              "end": 378,
+              "end": 377,
               "kind": "line_range",
-              "start": 368
+              "start": 367
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -198,12 +198,12 @@
         },
         {
           "anchor": {
-            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
             "content": "sha256:3210b67654efd86b837f892e3568ebe8331b76d1196385091dbe937cc30473ce",
             "locator": {
-              "end": 571,
+              "end": 599,
               "kind": "line_range",
-              "start": 537
+              "start": 565
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -216,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
             "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
             "locator": {
               "kind": "symbol",

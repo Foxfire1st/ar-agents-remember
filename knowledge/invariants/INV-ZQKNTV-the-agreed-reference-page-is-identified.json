@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Strict retained-revision resolution and sealed copy custody prevent a retry or tampered manifest from silently replacing the yardstick the developer agreed to."
+  },
+  "applicability": "Strict agreement resolution, planned revision pin/read helpers and the leaf workspace reference copy. The copied page illustrates requirements and never overrides packet meaning.",
+  "conditions": [
+    "Agreement is a strict revisionId/sha256/packetVersions record riding the go.",
+    "The retained revision is found and either its manifest byte hash or declared artifactDigest/artifact_digest equals the recorded digest.",
+    "Copy sources/destinations are real confined paths and remain within scan/file/total budgets."
+  ],
+  "exclusions": [
+    "Loose legacy agreement keys, unretained or resolver-unverified revisions and symlink traversal. Equality of a declared artifact digest is not independent authentication of every manifest byte.",
+    "Treating the illustrative page as a replacement for approved requirement packets."
+  ],
+  "id": "INV-ZQKNTV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R189@v1 rules8-9"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-agreed-revision-custody",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The agreed reference page is identified by the strict intentReview.agreedRevision triple and the retained revision accepted by the canonical agreement resolver. That resolver accepts the recorded digest against either the manifest bytes or its declared artifactDigest/artifact_digest; an absent or unverified revision supplies no pin and symlinked agreement paths refuse. Leaf-start reference copies exclude runtime binding/ready/draft artifacts, stay within budgets and real paths, and reuse sealed reference custody on retry; copy failure is a named warning rather than refusal of an otherwise admitted leaf start.",
+  "status": "proposed",
+  "supersedes": []
+}

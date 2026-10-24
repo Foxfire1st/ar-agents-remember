@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents the server from losing the module path already supplied by its host or silently choosing another installation."
+  },
+  "applicability": "Environment construction by tool_server_definition for a role tool server launched from this build.",
+  "conditions": [
+    "The launching process supplies a nonempty AR_PLAYWRIGHT value before the definition is built.",
+    "The tool server uses the same explicit carried-environment selection as the launch definition."
+  ],
+  "exclusions": [
+    "This does not establish that the module exists, that a browser loads a page, or that publication succeeds.",
+    "Other launch environment variables and provider-specific confinement retain their own obligations."
+  ],
+  "id": "INV-7PY4J2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_agent_tools.py::test_the_tool_server_carries_the_browser_module_the_host_has; source read at W9 tree0b7e887a130fe432fef9e59f44917c8419d1c111"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-browser-module-carry",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A launched role tool server receives the host's nonempty AR_PLAYWRIGHT module path through the explicit carried-environment register; an absent value is not replaced with another installation or a guessed module path.",
+  "status": "proposed",
+  "supersedes": []
+}

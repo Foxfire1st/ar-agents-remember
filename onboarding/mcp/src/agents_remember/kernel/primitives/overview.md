@@ -136,6 +136,8 @@ None.
 
 **L184.** The host contract's pin moves to 0.12.0, and the runtime settings read the extra harness arguments a harness entry or a role entry carries.
 
+`control_vocabulary.py` defines the shared execution-receipt directory/schema, report-log name, held-message schema, provider-limit reason and bridge timeout/refusal/unknown-outcome spellings. It imports no internal tier: writers and readers use the same constants, while permission, delivery and recovery decisions remain with their operation owners.
+
 ## Evidence
 
 - Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots.
@@ -190,3 +192,5 @@ None.
 [20] mcp/src/agents_remember/kernel/primitives/paseo_authority.py — symbol establish_authority_paseo_runtime
 [21] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — symbol DEFAULT_HOST_LISTEN
 [22] mcp/src/agents_remember/kernel/primitives/fresh_host.py — symbol fresh_host_block
+
+- Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams. [23]

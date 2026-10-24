@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
         "content": "sha256:d751617684c3476193784ec1596862638b8fc0cf9fd031befb0f0877210f148d",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+        "content": "sha256:44257db859c1a254aff10c40cbba7dbbbb9a22b30d91de297fa1731f2308dc93",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_presenter_without_a_runner_refuses_the_retired_native_seat"
+        }
+      },
+      "facet": "A Presenter built with no runner uses UnconfiguredPresenterRunner, fails no-confined-harness and creates no host/prepared-start.json.",
+      "id": "PRF-BQCSHZ",
+      "invariant": "INV-SYH75Z",
+      "origin": {
+        "handoffEntry": "L183-presenter-default-unconfigured",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
         "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
         "locator": {
           "kind": "symbol",
@@ -34,6 +51,23 @@
         "handoffEntry": "L104-M19-settled-receipt",
         "leaf": "260928-MIK-L104"
       }
+    },
+    {
+      "anchor": {
+        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+        "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+        }
+      },
+      "facet": "A cancelled attempt stays cancelled when its receipt arrives late.",
+      "id": "PRF-KWFXXY",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L183-A-4",
+        "leaf": "260928-MIK-L183"
+      }
     }
   ],
   "realizes": [],
@@ -43,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
             "content": "sha256:d751617684c3476193784ec1596862638b8fc0cf9fd031befb0f0877210f148d",
             "locator": {
               "kind": "symbol",
@@ -59,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
             "content": "sha256:0096e17e4aaaf410d1a566a9d035f35ae44340fad99afbd5230ad292fe10746c",
             "locator": {
               "kind": "symbol",
@@ -75,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
             "content": "sha256:a9a0e6222ba3d3b50aa568a2bb795cf35d95ed05eb687b3ae48ab89d529cf710",
             "locator": {
               "kind": "symbol",
@@ -91,11 +125,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f6edc073a01bf87f8db82195fbe52612095d20",
+            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
             "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
             "locator": {
               "kind": "symbol",
               "name": "test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A presenter constructed without an injected runner uses `UnconfiguredPresenterRunner`: its start fails with `no-confined-harness` and creates no `host/prepared-start.json`. The retired native presenter is no longer a production default; explicit fixture runners retain their own tested behavior.\n\nAnchor: `test_a_presenter_without_a_runner_refuses_the_retired_native_seat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+            "content": "sha256:6ab7e9f5474ec75c6e6271a15d641a3f5679ac6e773c319ac27ca4788327bae0",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

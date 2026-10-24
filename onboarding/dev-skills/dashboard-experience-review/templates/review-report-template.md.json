@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d9675efec08314d237737fc275cadad172934ec",
+            "blob": "bf05b5698702f61d5cdb2c079ccbc59c881a89a8",
             "content": "sha256:e48e30714cf6df60f50b93d2548bad857e67f0005597be78257774ed0ff4ecf4",
             "locator": {
-              "end": 79,
+              "end": 78,
               "kind": "line_range",
-              "start": 79
+              "start": 78
             },
             "path": "dev-skills/dashboard-experience-review/SKILL.md"
           },

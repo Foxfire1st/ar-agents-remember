@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e4c5818abdbef011fa9c1e4070499095394676d",
+            "blob": "a203d370b91f8e34a9d49be343da9793f8e54a63",
             "content": "sha256:9c8e1ccf99415a26c0a7740805b47e50789f46efd487c20df7b53a7d210a452d",
             "locator": {
-              "end": 118,
+              "end": 134,
               "kind": "line_range",
-              "start": 118
+              "start": 134
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
           },

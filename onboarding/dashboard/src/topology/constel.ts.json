@@ -55,6 +55,39 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
+            "locator": {
+              "kind": "symbol",
+              "name": "CssVarReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -76,6 +109,30 @@
         {
           "anchor": {
             "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:01952958727382fbeab1945f74c9b32a53e5aeb3a9d28a6178f87512188a0da5",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
             "content": "sha256:01952958727382fbeab1945f74c9b32a53e5aeb3a9d28a6178f87512188a0da5",
             "locator": {
               "end": 433,
@@ -113,6 +170,18 @@
             "path": "dashboard/src/topology/model.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConstelStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -138,6 +207,45 @@
             "locator": {
               "kind": "symbol",
               "name": "buildTopology"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
+            "content": "sha256:1e0a427bdaa5dce035239fcbd766a51a6efa0b9ea72979a8fd5526f9a9cefe8c",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "content": "sha256:fa495b5bda99fac776e92ceb3cc390fe544f0085c7396889c357d03042847871",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 214
             },
             "path": "dashboard/src/topology/model.ts"
           },

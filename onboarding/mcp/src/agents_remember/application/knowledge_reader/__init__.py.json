@@ -115,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddf86aa9d634cedd85802b77ccad90d371225171",
+            "blob": "a83380d5f62ba2d3de463374e6cae852ef42c87c",
             "content": "sha256:752b020c6ab4eab97b9f15f96e4491fa133fb7ae5a701815aebc80f1bd706c6d",
             "locator": {
-              "end": 112,
+              "end": 113,
               "kind": "line_range",
-              "start": 112
+              "start": 113
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
           },
@@ -133,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:1c6c11d8a7208b00eced9d78059bf83be0a5c212a20261dffe372635a52b0788",
             "locator": {
               "kind": "symbol",
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
             "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerModel.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A planned binding is labelled planned and never a number, and an absent one is stated as such\n\nAnchor: `export function bindingLabel(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:e960270889128c4d1489a5c4895f96395a26b3de11ebc7b2e6946968e334b9d8",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One phase function decides reading, unavailable, none, building or saved\n\nAnchor: `export function phaseOf(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:4005456902965c6eeb7aa971cae77060aa7dbe9ad3b0902b69779c584c908842",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The removal set excludes the pinned revision and any already removed one\n\nAnchor: `export function removableRevisions(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:47439795554b01a51f851df2b80402fa8105a38ea430b6a72ca87d764416a126",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only the task total's refusal offers the removal control\n\nAnchor: `export function removalOffered(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:87b143750306f5a90010924f47b95c4c8fe9e955b801b1b7a0814b0bf985532b",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The regeneration label and message are built from the stale parts and stale grades, and absent when nothing is stale\n\nAnchor: `export function staleRegenerationOf(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:ac76e15ec19a9e41fe1a9faa7021fbde4fa71bdeb0493a78aa50de96b974d5ef",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The standfirst states time, revision, binding, kind and retirement from the shown row\n\nAnchor: `export function standfirstText(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e5b5d9dcd7cad8a9626fdd96654c4849a02619c",
+            "content": "sha256:db05bb6dce09108636ce28a5b41b3fd67388862deeff62727fea25fa5f4a9225",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

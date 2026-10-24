@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R112
 
+The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value.
+
 `StartingAgent` also carries the starter's canonical sprint/master/task references beside its native id, role and subject. Handover preparation uses those references to publish a role-addressed return route that survives parent replacement; they are not caller-supplied launch-mode authority or evidence that a host consumed a launch setting.
 
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
@@ -72,3 +74,5 @@ is archived and refused when the response returns. Ordinary launches without a m
 The launch outcome carries `workspace_preparation` (`created`, `found` or `opened`) taken from the public open result, and `role_launch_progress.starting()` moves the one working notice to the starting phase once the workspace call returns. Task placement therefore reports a real created/found outcome, while a Projects open reports `opened` and no invented creation outcome.
 
 </details>
+
+- The native task-server environment carries the host AR_PLAYWRIGHT value when present so the seat uses the host browser module; absence does not invent another installation or browser value. [9]

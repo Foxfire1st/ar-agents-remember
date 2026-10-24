@@ -73,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
             "content": "sha256:5fc3d8d72cd67e9c044e5e4baea38dd22840d5e6cda7c9f71e9637afb1429de4",
             "locator": {
-              "end": 400,
+              "end": 398,
               "kind": "line_range",
-              "start": 369
+              "start": 367
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },
