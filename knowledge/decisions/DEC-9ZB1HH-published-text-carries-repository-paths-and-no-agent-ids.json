@@ -1,0 +1,60 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Publishing the raw text and asking per push were both weighed; each leaves a reader with either a leaked machine layout or a stale open issue, so the transformed text with standing push authority is the only option that keeps the public surface both safe and current."
+  },
+  "alternatives": [
+    {
+      "option": "Publish the text exactly as the private files hold it, with local absolute paths and agent IDs",
+      "reason": "It publishes the host's directory layout and the identities of individual agent seats, which the developer's treatment of published text rules out.",
+      "reconsider_when": "The developer asks for the untransformed text, or for agent identities in public receipts.",
+      "status": "rejected"
+    },
+    {
+      "option": "Ask the developer for a push after every landing",
+      "reason": "An accepted landing would leave its issue open until the next conversation, so the close would lag the AR fact and readers would see a false open state.",
+      "reconsider_when": "The developer withdraws the standing push authority, or a push refusal needs his word per occasion.",
+      "status": "rejected"
+    },
+    {
+      "option": "Rewrite checkout paths as repository paths, shorten other local paths to their meaningful tails, omit agent IDs, and push both branches after each landing without asking again",
+      "reason": "The text keeps its meaning for a reader outside the machine, the receipt keeps every substitution with separate source and public hashes, and an accepted landing reaches its issue the same day.",
+      "reconsider_when": "A published path's tail proves ambiguous, or a push is refused and the refusal changes who authorizes the retry.",
+      "status": "chosen"
+    }
+  ],
+  "consequences": [
+    "Every published body carries a substitution record with a source hash and a separate public hash, and no claim that the transformed copy matches the source. A refused push keeps the issue open, is recorded, and is never forced."
+  ],
+  "context": "Published text is copied out of a machine that keeps absolute checkout paths, scratch folders and role agent IDs. The same ruling settles how a landing's branches reach their remotes before its issue closes.",
+  "decider": "developer direction D463, recorded in the task's authority",
+  "id": "DEC-9ZB1HH",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R202",
+        "packet": "requirements/MIK-R202-v1-publish-ar-tasks-on-github-through-repository-instructions.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "dec-d463-public-text",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

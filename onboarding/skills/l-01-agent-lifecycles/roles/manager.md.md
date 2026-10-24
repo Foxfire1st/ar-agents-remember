@@ -7,11 +7,11 @@ A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer follow
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 - A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [9]
-
-
 ## Task-stage publication boundary
 
 Start, finalize and abandon publish the task stage and mirror the master row themselves. Manager does not follow those operations with a second status write. `task_doc set_status` remains the explicit correction route and the completion act for an organizational master; closeout/integration and acceptance ownership remain unchanged.
+
+The role text's publication sentence names both moments and routes the mechanism: when the resolved memory layer holds `system/task-publication.md`, claiming a leaf assigns its issue and sets `In progress` before the start, and after the landing and both pushes the issue is closed; without that file nothing is published. What those two acts actually do — labels, board `Status`, bodies, continuation parts, recovery — is stated in that file, not in this role text. Both moments are published state only: no issue write advances an AR stage, requirement, review, landing or acceptance, and the pointer grants no authority the role text does not already hold. [14]
 
 ## Message/file transport and return addressing
 
@@ -129,9 +129,9 @@ A Worker repairing an owned finding needs no plan, account or go-ahead from Mana
 
 ## Evidence
 
+- The role text's publication sentence names both moments in the role text itself — the claim and `In progress` before the start, the close after the landing and both pushes — and publishes nothing where the resolved memory lacks the file; the board `Status` and the refusal cases it routes to are stated in that file. [14]
+
 - Manager adds no pre-repair go-ahead, receives the clean-sync result for its closeout preview, and settles covered precedents before escalation. [13]
-
-
 ### Repo-Internal References
 
 
@@ -182,8 +182,6 @@ independent reviewer rejection permits a successor.
 The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.
 
 - This source owns the stated current Investigator scope or canonical vocabulary. [7]
-
-
 ## Refreshed current evidence
 
 - One manager owns one canonical master and the complete leaf closeout chain. [1]
@@ -197,7 +195,6 @@ The Manager retains its master’s leaf diff, direct repair and transaction owne
 - Structural parent/child messages are the role's communication path. [5]
 
 - Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
-
 ## Stage Boundary
 
 The Manager hands a whole stage with its end state to its owner, not a chain of steps; its exactness is at sync, closeout, integration, task end and agent starts.
@@ -207,7 +204,6 @@ Own work/instrument slips and invalid caller input are repaired through the same
 The review budget is the settings number `orchestration.loops.defaults.maxRounds`, read at each begin; the effective task limit includes approved extras and is read from `task_doc.reviewState.limit`. CODE and MEMORY retain separate counts under the same setting. Beyond-limit work needs recorded Architect or developer approval; the Manager asks the task Architect, not the developer.
 
 ## Current Source Evidence
-
 
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]
 

@@ -23,7 +23,7 @@ that relies on onboarding, providers, or repository source goes through
 routing across optional providers, route indexes, onboarding, and bounded source
 confirmation. The generated mirror carries the research-phase naming doctrine: before the build decision, ask `read_ar_files` which cards govern the paths, then read named source/cards/overviews with harness-native tools. The tool carries no document text and has no session front-door or publication continuation. Naming calls remain retrieval evidence; native reads confirm content both before and after the build decision. The authored read doctrine is in `c-04-retrieval-strategy-router` and `l-01-agent-lifecycles`; this template is a synchronized mirror. The memory-layer read path is also explicit: memory repos are not
 expected to provide a root-level `AGENTS.md`; repo-specific guidance is read
-from `system/settings.md`, `system/tools.md`, `system/git-workflow.md` (when
+from `system/settings.md`, `system/tools.md`, `system/task-publication.md` (when
 present, for the gated-branch landing flow read before any commit/push/PR),
 `system/sources.md`, and optional `system/coding-guidelines.md`.
 Provider authority is stated directly as the MCP settings file.

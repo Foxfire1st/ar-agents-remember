@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
-        "content": "sha256:76cbc7846c513c07d1fb28a9bf1abda59aeff7f4356d477124b11802dbe8bf0b",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+        "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
         "locator": {
-          "end": 74,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-EQZH1P",
@@ -93,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,
@@ -110,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
             "content": "sha256:4e568132297bd1cba5578b07d8fd196d1b317e7048f927a07b9ed5290cdd4297",
             "locator": {
               "end": 4,

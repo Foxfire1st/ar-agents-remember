@@ -13,6 +13,8 @@ that the public resolver facade offers.
 
 `parse_coordination_settings(settings_path)` returns `(StorageSettings, CrossRepoSettings)`.
 
+`parse_landing_settings(settings_path)` returns the landing workflow the same repository's settings choose. Markdown settings predate the setting and carry no key for it, so they answer with the default; a JSON sibling is read through `parse_json_landing_settings`, which is the one place a value this product does not implement is refused.
+
 1. The JSON sibling of the given path (`path_settings_path_for`, the same name with `.json`) is probed
    first. When it exists it is the only file parsed (`parse_json_settings`); the Markdown file is not opened.
 2. Otherwise, a missing Markdown file gives the default storage and cross-repository settings.

@@ -1,0 +1,35 @@
+{
+  "anchor": {
+    "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+    "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+  },
+  "id": "WKN-3YN5HX",
+  "kind": "debt",
+  "measurement": {
+    "commit": "1ef442f478a118031599a90f9b547adca503d595",
+    "date": "2026-10-22",
+    "how": "5 required markers (limit of the settings, `body`, `attach`, names the files, never pasted into a message) x 10 skill surfaces, from test_role_message_wording.py::RoleMessageWordingTests::test_the_messaging_operations_state_messages_as_files; reproduced with the L194 freeze stashed",
+    "number": 50,
+    "unit": "reported misses"
+  },
+  "origin": {
+    "handoff": {
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "L194-WKN-MESSAGING-MARKERS",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L194"
+  },
+  "state": "open",
+  "statement": "The implementation operation states none of the five messaging markers that every operation file is required to carry, so its wording guard fails on every surface."
+}

@@ -1,0 +1,60 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "A complete leaf archive, a milestone grouping and a bounded in-work population were each weighed against the sub-issue limit and the reader's use, and only the bounded population holds both."
+  },
+  "alternatives": [
+    {
+      "option": "Create one issue per MIK leaf, completed ones closed at creation",
+      "reason": "It publishes 167 leaf issues under one master, far past the 100 direct-sub-issue limit, and turns the master issue into an archive of work nobody can act on.",
+      "reconsider_when": "GitHub raises the direct-sub-issue limit above the master's leaf count and the developer asks for a complete leaf archive.",
+      "status": "rejected"
+    },
+    {
+      "option": "Give MIK a milestone instead of a sub-issue hierarchy",
+      "reason": "A milestone groups issues without a parent-child link, so the master's body could not enumerate its own leaves and the hierarchy rule would have to be restated as a label convention.",
+      "reconsider_when": "The hierarchy requirement is withdrawn and grouping by milestone, rather than by parent issue, is asked for.",
+      "status": "rejected"
+    },
+    {
+      "option": "Publish an issue only for the leaves in work and planned, and summarize completed work in the master's body",
+      "reason": "It keeps the published population inside the sub-issue limit, matches the population a reader can act on, and states what the completed leaves delivered with their real dates and evidence.",
+      "reconsider_when": "The developer asks for completed-leaf issues, or a future master's open-leaf population outgrows the 100-child limit.",
+      "status": "chosen"
+    }
+  ],
+  "consequences": [
+    "The master issue is both the hierarchy parent and the summary of delivered work; the initial eligible population is the leaves at `planning` or `inProgress`, and a later leaf registers its own issue as it is created. No milestone and no second hierarchy exists."
+  ],
+  "context": "At the census this decision was taken on, the master holds 167 leaf task documents: 151 completed, six in progress, six planned and four abandoned. GitHub allows at most 100 direct sub-issues under one parent, and the developer wants the public surface readable rather than exhaustive.",
+  "decider": "developer direction D462, recorded in the task's authority",
+  "id": "DEC-T3VXT9",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R202",
+        "packet": "requirements/MIK-R202-v1-publish-ar-tasks-on-github-through-repository-instructions.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "dec-stage1-population",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/publication_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The two-parent, tree-equal-`H` admission rule and the pair it is judged against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1c85ee1b55be5899097c6c0abf655c105ab10f",
+            "content": "sha256:81241f4f44b326ab35df7f5df6f2033bcb1bbd067274e8fcb49b752e282ace38",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd1c85ee1b55be5899097c6c0abf655c105ab10f",
+            "content": "sha256:3b37ffde1ab30cccc16da230cd53bb3cb1d02b8cc68b1a6e18da3593a40e3578",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A merge that cannot be read is refused as an input, not admitted or condemned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd1c85ee1b55be5899097c6c0abf655c105ab10f",
+            "content": "sha256:0e4e8564d94c1c2a4f00d16c6ed187a329a9a7b67c2782d5819f76787261858c",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

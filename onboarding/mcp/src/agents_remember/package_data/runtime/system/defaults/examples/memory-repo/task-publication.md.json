@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/task-publication.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:53db09a3552377633435b4ff8f336358e2a1b5301603c7d9e38af33a0e04e7fc",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:d9c22c9567009dece1e7c0be89b615520225baae371a47a0ff9275802aea7e94",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:227a332cd90964322eb4725bce4dda769a876cb67e0f0f10cf0208da265c64ca",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:8bd6f65401452c011dca9370a052873fdcda5dd4b46a801138dfa4556ef3d8ce",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:0b12ca4c055aa50d07dbda7d4acdba3f097be3aab2e7d99ee84556fbbe807fb0",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The example's own text for this part of the publication policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb67fe7ec041a7ed3223a669d45bb54f87167a79",
+            "content": "sha256:1e37f7b7b44aafc0be916aa730f8053a532ddc798ef02f90a7b6ae001ffe7391",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

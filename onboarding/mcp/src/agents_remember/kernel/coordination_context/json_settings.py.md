@@ -6,8 +6,8 @@
 
 ## Purpose
 
-Parses the machine-readable settings file `settings.json` into storage settings, path rules and
-cross-repository settings.
+Parses the machine-readable settings file `settings.json` into storage settings, path rules,
+cross-repository settings and the landing workflow.
 
 ## Code Commentary
 
@@ -24,6 +24,13 @@ cross-repository settings.
   and reads `storage`, `include.paths` (default `*`), `exclude.paths`, `include.fileTypes` and
   `exclude.fileTypes`. A value of the wrong type raises `ValueError` with the rule's label.
 - `parse_json_cross_repo_settings` reads `crossRepo.allow` through `parse_cross_repo_allow`.
+- `parse_json_landing_settings` reads the one landing value, `landing.workflow`, at the root of the
+  file, where policy blocks live. A missing `landing` block or a missing `workflow` key means `local`,
+  the behaviour every repository had before the setting existed. A key that is present must name a
+  workflow the product implements: an explicit null, a value that is not a string, and a name outside
+  `LANDING_WORKFLOWS` each raise `ValueError` naming the implemented values, so no later stage acts on
+  a workflow nobody defined. A `landing` block written inside `onboarding` is not read, because the
+  policy blocks are read at the root; such a repository lands locally.
 
 The parser inspects no file other than the one it is given and starts no Git command.
 

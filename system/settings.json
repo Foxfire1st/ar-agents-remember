@@ -1,35 +1,20 @@
 {
-  "version": 2,
+  "crossRepo": {
+    "allow": []
+  },
+  "landing": {
+    "workflow": "pull-request"
+  },
   "onboarding": {
-    "storage": {
-      "mode": "memory-repo"
-    },
     "pathRules": {
-      "include": {
-        "paths": [
-          "AGENTS.md",
-          "README.md",
-          "dashboard/src/**",
-          "examples/mcp/**",
-          "installer/**",
-          "mcp/**",
-          "skills/**",
-          "scripts/**"
-        ],
-        "fileTypes": [
-          ".css",
-          ".json",
-          ".md",
-          ".patch",
-          ".py",
-          ".sh",
-          ".toml",
-          ".ts",
-          ".tsx",
-          ".txt"
-        ]
-      },
       "exclude": {
+        "fileTypes": [
+          ".gif",
+          ".jpeg",
+          ".jpg",
+          ".png",
+          ".zip"
+        ],
         "paths": [
           "docs/**",
           "CODE_OF_CONDUCT.md",
@@ -58,18 +43,36 @@
           "**/*.generated.*",
           "**/*.Zone.Identifier",
           "**/*:Zone.Identifier"
-        ],
+        ]
+      },
+      "include": {
         "fileTypes": [
-          ".gif",
-          ".jpeg",
-          ".jpg",
-          ".png",
-          ".zip"
+          ".css",
+          ".json",
+          ".md",
+          ".patch",
+          ".py",
+          ".sh",
+          ".toml",
+          ".ts",
+          ".tsx",
+          ".txt"
+        ],
+        "paths": [
+          "AGENTS.md",
+          "README.md",
+          "dashboard/src/**",
+          "examples/mcp/**",
+          "installer/**",
+          "mcp/**",
+          "skills/**",
+          "scripts/**"
         ]
       }
+    },
+    "storage": {
+      "mode": "memory-repo"
     }
   },
-  "crossRepo": {
-    "allow": []
-  }
+  "version": 2
 }

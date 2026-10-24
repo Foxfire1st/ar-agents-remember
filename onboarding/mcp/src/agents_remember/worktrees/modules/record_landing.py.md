@@ -132,8 +132,11 @@ to overwrite one that is already recorded.
 
 ### Todos
 
-None. A standalone PR-tail recording step is required operator doctrine, and it is named as step 8
-of the landing flow in the repo's `system/git-workflow.md`.
+None. `worktree_record_landing` is named as item 4 of the ordinary development landing in this
+repository's `system/task-publication.md` - the `local` workflow, where the merge that carries the
+branch is the landing and the record is written against it. A repository that lands by pull
+request publishes an already-integrated `H` through its own numbered steps and does not invoke
+this standalone recording step; the operation's semantics are unchanged either way.
 
 ## Evidence
 

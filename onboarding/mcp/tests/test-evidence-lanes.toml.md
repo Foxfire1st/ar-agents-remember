@@ -205,6 +205,10 @@ Source declarations, mirrors and fixture assertions are not executed acceptance.
 
 The seven new modules are each selected once in `unit-regression`, in the list's canonical order beside their neighbours: `test_curator_instruction_wording.py` after the curator-coherence modules, `test_memory_case_ranges.py` after `test_memory_branch_authority.py`, `test_reconsideration_recovery.py` and `test_reconsideration_repoint.py` after `test_reader_timeline_spill.py`, and `test_writer_case_proofs.py`, `test_writer_command_layouts.py` and `test_writer_command_raise.py` before `test_writer_correction_history.py`. The registration adds no lane identity, population ceiling or case-budget change: the seven identities of the `[files]` table stand as they are, and every other membership set is unchanged. Membership is the catalog's own selection, so it certifies no invocation, timing or pass.
 
+## Publication-settings and merge-admission registration
+
+`test_landing_workflow_setting.py` and `test_publication_merge_admission.py` are each selected once in `unit-regression`, in the list's canonical order. The first covers the landing-workflow setting: the missing key that means `local`, the two implemented values, and the refusals for an explicit null, a non-string and an unknown name. The second covers the publication merge: ordered parents `(B, H)` with `H`'s tree, the shapes that are refused, and the unreadable authority, which grants nothing and does not raise. It does not cover the unreadable-tree refusal: the wrapper raises its own unreadable error when the merge's parents or tree cannot be read, and no case in this module proves that path. The registration adds no lane identity, population ceiling or case-budget change, and every other membership set is unchanged. Membership is the catalog's own selection, so it certifies no invocation, timing or pass.
+
 ## Evidence Scope
 
 This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.

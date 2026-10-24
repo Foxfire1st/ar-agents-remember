@@ -6,7 +6,7 @@ Architect may grant a beyond-settings round for a concrete shrinking repair set;
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [2]
+- The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
 
 
 ## Current Source Qualification
@@ -29,6 +29,8 @@ This canonical Architect owns the developer conversation, semantic requirements 
 ## Code Commentary
 
 ### Logic
+
+Registration is also the publication trigger. Where the resolved memory carries `system/task-publication.md`, the Architect follows that file: registering a leaf creates its open linked issue, and the issue URL is recorded in the task's `references` through `task_doc set_field` with every existing entry preserved. Where that file is absent from the resolved memory, registration publishes nothing — no issue, comment, label or board item follows from it.
 
 When the packet names an effect on a recorded invariant or family, the Architect declares `expectedKnowledgeEffects` through `task_doc` on the bound task server before implementation. A packet naming no such effect declares nothing. This is the Architect’s planning duty, not permission for the Curator to change tasks, requirements or held role claims.
 
@@ -72,6 +74,10 @@ The Architect answers a child's question within its authority and says the answe
 ## Evidence
 
 - The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them. [3]
+
+- Registration creates the leaf's open linked issue only where the resolved memory carries the publication instruction; where that file is absent, registration publishes nothing. [4]
+
+
 
 
 ### Docs References
@@ -129,6 +135,6 @@ free a runtime selection.
 
 The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary. [6]
 
 The earlier fixed-three budget wording is superseded by MIK-R116: the settings limit governs ordinary CODE and separately counted MEMORY rounds, with recorded Architect-or-developer extras. This updates the operative transaction-boundary account, not the retained historical task authority.

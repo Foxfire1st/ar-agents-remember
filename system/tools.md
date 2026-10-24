@@ -410,10 +410,11 @@ the whole stack on one side, but that is untested/unsupported; do not build work
 
 ## Release And Changelog Convention
 
-Moved to [`git-workflow.md`](git-workflow.md): the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the four
-version-bump locations that must stay in sync, the `Release MCP X.Y.Z: …` commit subject, the
-PR-gated end-to-end release flow (land via PR, then tag the merged commit), and the GitHub Release
-format. This repo keeps release notes in **GitHub Releases**, not a `CHANGELOG.md`.
+Moved to [`task-publication.md`](task-publication.md#the-ordinary-development-landing-and-releases):
+the `mcp-vX.Y.Z` tag scheme (→ PyPI publish), the version-bump locations that must stay in sync, the
+`Release MCP X.Y.Z: …` commit subject, the PR-gated end-to-end release flow (land via PR, then tag
+the merged commit), and the GitHub Release format. This repo keeps release notes in **GitHub
+Releases**, not a `CHANGELOG.md`. `system/git-workflow.md` is retired; this is its surviving home.
 
 ## Testing Policy Reconciliation
 

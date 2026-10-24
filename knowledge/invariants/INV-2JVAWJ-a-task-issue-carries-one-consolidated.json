@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A requirement that is summarized or split loses obligations silently, and a reader who acts on the shortened text builds the wrong thing; the consolidated text is the only record that reader has."
+  },
+  "applicability": "The requirement section of a task issue, for each current requirement of that task.",
+  "conditions": [
+    "The task's requirement packets are current and approved."
+  ],
+  "exclusions": [
+    "A completed-master summary, which reproduces no requirement.",
+    "Historical amendments and requirements the text only mentions, which get no section of their own."
+  ],
+  "id": "INV-2JVAWJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Each leaf section is consolidated from its cumulative packets; L183 carries ten current requirements and L68 two."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-02-rule-5-consolidated-requirement",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task issue carries one consolidated text per current requirement, every obligation present in substance, nothing added and no meaning changed; amendments are folded in and superseded wording removed.",
+  "status": "proposed",
+  "supersedes": []
+}

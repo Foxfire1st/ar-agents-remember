@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
         "locator": {
-          "end": 54,
+          "end": 56,
           "kind": "line_range",
-          "start": 54
+          "start": 56
         }
       },
       "id": "RLZ-1GCP9C",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
-          "end": 38,
+          "end": 40,
           "kind": "line_range",
-          "start": 38
+          "start": 40
         }
       },
       "id": "RLZ-2T4Z9R",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:d0e58240a8ee948790a53c0651e5f0785f352743d624d082c1f513c85d0555c0",
         "locator": {
-          "end": 56,
+          "end": 58,
           "kind": "line_range",
-          "start": 56
+          "start": 58
         }
       },
       "id": "RLZ-418WGG",
@@ -60,8 +60,8 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
-        "content": "sha256:0aa51769bcc461836a14ab527b42c7661cf0fe2c5f7750d5c97cefaf4d7211a1",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+        "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
         "locator": {
-          "end": 24,
+          "end": 26,
           "kind": "line_range",
-          "start": 24
+          "start": 26
         }
       },
       "id": "RLZ-8W0HVX",
@@ -96,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
-        "content": "sha256:0aa51769bcc461836a14ab527b42c7661cf0fe2c5f7750d5c97cefaf4d7211a1",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+        "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
         "locator": {
           "kind": "file"
         }
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
         "locator": {
           "end": 10,
@@ -132,12 +132,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
         "locator": {
-          "end": 26,
+          "end": 28,
           "kind": "line_range",
-          "start": 26
+          "start": 28
         }
       },
       "id": "RLZ-QVQ9HA",
@@ -151,12 +151,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
         "locator": {
-          "end": 20,
+          "end": 22,
           "kind": "line_range",
-          "start": 20
+          "start": 22
         }
       },
       "id": "RLZ-SV2W4A",
@@ -170,8 +170,8 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
-        "content": "sha256:0aa51769bcc461836a14ab527b42c7661cf0fe2c5f7750d5c97cefaf4d7211a1",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+        "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
         "locator": {
           "kind": "file"
         }
@@ -187,12 +187,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
         "locator": {
-          "end": 44,
+          "end": 46,
           "kind": "line_range",
-          "start": 44
+          "start": 46
         }
       },
       "id": "RLZ-XSMK0N",
@@ -206,12 +206,12 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
-          "end": 34,
+          "end": 36,
           "kind": "line_range",
-          "start": 34
+          "start": 36
         }
       },
       "id": "RLZ-Y1FRYJ",
@@ -225,7 +225,7 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,
@@ -244,8 +244,8 @@
     },
     {
       "anchor": {
-        "blob": "c980511dfaaa95aec8a7f04bf11ffd8efb3b592a",
-        "content": "sha256:0aa51769bcc461836a14ab527b42c7661cf0fe2c5f7750d5c97cefaf4d7211a1",
+        "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+        "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
         "locator": {
           "kind": "file"
         }
@@ -261,49 +261,66 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4f9b2f60cc7bd50bde5d9b6c0800938f56943322",
-            "content": "sha256:6931c760b8fd2e788ffd552539d4905466c01f2fdffab9e66e97ada5085b1ee2",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c2d000caba1da2642b41537f45ea0e68d3e2416",
-            "content": "sha256:01ffd5a2f517267c91241d5c46f132656278c72a8300271ad8affc6060588d92",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The Architect declares recorded invariant/family effects through task_doc before implementation only when the packet names them.",
       "targets": [
         {
           "anchor": {
-            "blob": "55753bd253d2eccdfe03bc6ea646b17576c4bc66",
+            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
             "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registration creates the leaf's open linked issue only where the resolved memory carries the publication instruction; where that file is absent, registration publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+            "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
             "locator": {
               "end": 16,
               "kind": "line_range",
               "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+            "content": "sha256:5b673a74c35ebecb9d5c2d62886df69ae934edca9156d954b5fd993744d25405",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
+            "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

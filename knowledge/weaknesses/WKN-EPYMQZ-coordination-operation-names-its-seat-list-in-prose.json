@@ -1,0 +1,37 @@
+{
+  "anchor": {
+    "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
+    "content": "sha256:ea70ef513d87d7d323249ac4213969380061c7ad35d6d248ebdcee88bf250316",
+    "locator": {
+      "end": 22,
+      "kind": "line_range",
+      "start": 22
+    },
+    "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+  },
+  "id": "WKN-EPYMQZ",
+  "kind": "debt",
+  "measurement": {
+    "commit": "1ef442f478a118031599a90f9b547adca503d595",
+    "date": "2026-10-22",
+    "how": "test_curator_instruction_wording.py::CuratorInstructionWordingTests::test_current_coordination_and_curator_rules, 1 of 5 clauses in that case; reproduced with the L194 freeze stashed",
+    "number": 1,
+    "unit": "subfailed clause"
+  },
+  "origin": {
+    "handoff": {
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "L194-WKN-SEATLIST-LITERAL",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L194"
+  },
+  "state": "open",
+  "statement": "The coordination operation names its seat list in prose where a pinned guard requires the literal `leafSeats.roleMessageArguments`, so that clause subfails while the sentence it replaced stays unpinned."
+}

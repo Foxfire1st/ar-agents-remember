@@ -1,0 +1,92 @@
+{
+  "path": "mcp/tests/test_publication_merge_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper builds the admitted shape the rule is tested against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b804d2515376a0cda81dea62bd9d037f5b58502e",
+            "content": "sha256:dcf8951b9f8bc7fe4f71748e1b16f8559149d445cdd1104f3502598757457197",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The rule admits the publication merge and keeps the refusal for any other merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b804d2515376a0cda81dea62bd9d037f5b58502e",
+            "content": "sha256:8a57144ea76993cd1d54a180b2e3fed8d694c04a190fb75604d8ef019fdd5816",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The landing-workflow read is exercised where the admission consumes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b804d2515376a0cda81dea62bd9d037f5b58502e",
+            "content": "sha256:30e8d3fdde69a18a824a13995ee9647528ae0c37142ba3a9e7850d6066fcc2a2",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rule is exercised on real Git objects, not only modeled input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b804d2515376a0cda81dea62bd9d037f5b58502e",
+            "content": "sha256:ed3491ee9606ad426773a846daa694181d5e59ebd9917f92dc29760438312cfd",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal text a caller sees today is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b804d2515376a0cda81dea62bd9d037f5b58502e",
+            "content": "sha256:90153cff73cf9c88075b3bbf6732e635fd24946f329a6908d4a4b6d338e04e16",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

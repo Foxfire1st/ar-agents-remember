@@ -102,4 +102,4 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure. [1]
 
 
-- The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes. [3]
+- The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes. The publication pointers were measured in their own decision entry — twelve capsules, the 36-word Manager clause, both coordination capsules at the 3,700 ceiling and `manager/coordination` at 3,684 — under the capped budget policy unchanged. [3]

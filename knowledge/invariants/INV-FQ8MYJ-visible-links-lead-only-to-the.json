@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A link the reader cannot open, or one that names an issue that does not exist yet, reads as evidence and is not; the creation order is what keeps a published body from naming a target that never appears."
+  },
+  "applicability": "Every visible link in a published text, and the order in which the plan creates the issues those links name.",
+  "conditions": [
+    "The destination is a page of the two public repositories, or an issue that exists when the text is written."
+  ],
+  "exclusions": [
+    "Unresolved targets, which stay in the private plan only.",
+    "Local notes and scratch files, which are described in words or left out."
+  ],
+  "id": "INV-FQ8MYJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The plan has 36 creates before 16 edits, 16 native links and only confirmed-issue URLs; unresolved targets stay private."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-05-rule-4-links-and-order",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Visible links lead only to the two public repositories or to issues that already exist; the agent looks an issue up by its marker before creating one, and a body that named a later issue by title is updated when that issue appears.",
+  "status": "proposed",
+  "supersedes": []
+}

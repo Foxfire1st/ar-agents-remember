@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
         "locator": {
-          "end": 28,
+          "end": 30,
           "kind": "line_range",
-          "start": 24
+          "start": 26
         }
       },
       "id": "RLZ-09EQRE",
@@ -22,12 +22,31 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+        "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-1TSX74",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "MIK-R202@v1 §1 manager-start-and-landing-pointer",
+        "leaf": "260928-MIK-L194"
+      },
+      "rationale": "One 36-word sentence sits between the start paragraph above and the decisions paragraph below: it binds the claim to the start it precedes and the close to the landing and both pushes that must come first, and it leaves the mechanism — labels, board, budget, bodies, recovery — in the file it routes to, so the coordination transaction stays in its operation file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:9584ec2f0e50c087c52bdf05ad3a15badcc93a89e7a6cf725a1ec41b45dec705",
         "locator": {
-          "end": 42,
+          "end": 44,
           "kind": "line_range",
-          "start": 40
+          "start": 42
         }
       },
       "id": "RLZ-64DTJW",
@@ -41,10 +60,10 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
-        "content": "sha256:abe963bcdb890c686ae3c516fe080935ad618fb5e9b023b4c045ed687ec6ade8",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+        "content": "sha256:65f0cf950250722afba8690da1187ce3a6cc955689c6b464327e5c844a4fb975",
         "locator": {
-          "end": 32,
+          "end": 34,
           "kind": "line_range",
           "start": 20
         }
@@ -60,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:d98606f040ac27eea89b8ae26808b500633327a2f24dbdc3ea15c5320e941113",
         "locator": {
           "end": 8,
@@ -79,12 +98,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:23da80ee16775525f92af2523fbcfc26ced0fb17a3b22ff3013df5392a94ed00",
         "locator": {
-          "end": 36,
+          "end": 38,
           "kind": "line_range",
-          "start": 24
+          "start": 26
         }
       },
       "id": "RLZ-8G32JJ",
@@ -98,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:17e02c23d33a9a03ba6fd21ac422dbf9fd8789751f6da9a3b446da0418bd718a",
         "locator": {
-          "end": 70,
+          "end": 72,
           "kind": "line_range",
-          "start": 64
+          "start": 66
         }
       },
       "id": "RLZ-HSZ8FM",
@@ -117,12 +136,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
         "locator": {
-          "end": 30,
+          "end": 32,
           "kind": "line_range",
-          "start": 30
+          "start": 32
         }
       },
       "id": "RLZ-JY5TEM",
@@ -136,12 +155,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
         "locator": {
-          "end": 32,
+          "end": 34,
           "kind": "line_range",
-          "start": 32
+          "start": 34
         }
       },
       "id": "RLZ-M2NFTB",
@@ -155,7 +174,7 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
         "locator": {
           "end": 14,
@@ -174,12 +193,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:5920dad602942bb5f3dc6789c82b0b637d2d6c627dbf5efaf9011f580e2b4cfb",
         "locator": {
-          "end": 62,
+          "end": 64,
           "kind": "line_range",
-          "start": 60
+          "start": 62
         }
       },
       "id": "RLZ-QJ4VJR",
@@ -193,12 +212,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
         "locator": {
-          "end": 34,
+          "end": 36,
           "kind": "line_range",
-          "start": 34
+          "start": 36
         }
       },
       "id": "RLZ-S372ZT",
@@ -212,12 +231,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:da5ed44631c08fd7b33f83086a4daca41f4d5025d3ab5d3f9550dd794fe31137",
         "locator": {
-          "end": 72,
+          "end": 74,
           "kind": "line_range",
-          "start": 68
+          "start": 70
         }
       },
       "id": "RLZ-V9GWTW",
@@ -231,8 +250,8 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
-        "content": "sha256:76cbc7846c513c07d1fb28a9bf1abda59aeff7f4356d477124b11802dbe8bf0b",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+        "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
         "locator": {
           "kind": "file"
         }
@@ -248,12 +267,12 @@
     },
     {
       "anchor": {
-        "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+        "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
         "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
         "locator": {
-          "end": 54,
+          "end": 56,
           "kind": "line_range",
-          "start": 48
+          "start": 50
         }
       },
       "id": "RLZ-WDW9QT",
@@ -272,8 +291,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -283,12 +302,12 @@
       ]
     },
     "10": {
-      "note": "Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership.\n\nAnchor: \"Start, finalize and abandon\"",
+      "note": "Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c14bda6d478f9d220063774ea8b13852e31a0f0",
-            "content": "sha256:10c1004c0fa4df1dc05b9a5a6e8d06938d62feb6276ee767e3b9b600a46c0e0d",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:e0c4ce46791ddb7c47082c8cc81e900a3166c77f7144c0e3c2d5ad0cde417944",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -300,12 +319,12 @@
       ]
     },
     "11": {
-      "note": "Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged.\n\nAnchor: Current source; preserved L88 property 10",
+      "note": "Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
-            "content": "sha256:090d92c2e09ee6bb1b935543576d5acfe12d08f510f5fd0bab9a52dcc64f475f",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:b9cada8cfe04ab12e90d0a55cfec3333b3d61f8d0dcea4076b82ca1e95ffe5a0",
             "locator": {
               "end": 30,
               "kind": "line_range",
@@ -317,12 +336,12 @@
       ]
     },
     "12": {
-      "note": "Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged.\n\nAnchor: Current source; preserved L88 property 11",
+      "note": "Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
-            "content": "sha256:5c699f0b0a3293b618e8b255ccb9f4eaab831d6c5ece397eee15378033fa7d7f",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:97ac8660bc074b507112af50c2a2a4223b45670246c420d301fb916cd6f7ca66",
             "locator": {
               "end": 54,
               "kind": "line_range",
@@ -338,12 +357,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
-            "content": "sha256:934ff58fd7151d05dbb18a4f1254f15752dfec2d41cc4e8ab03e7d5d9ef5f74a",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:cc5d918482db33867beba5562700edd03470ab1e56d68fb5220e3cce76fa70b5",
             "locator": {
               "end": 28,
               "kind": "line_range",
               "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The role text's publication sentence names both moments in the role text itself — the claim and `In progress` before the start, the close after the landing and both pushes — and publishes nothing where the resolved memory lacks the file; the board `Status` and the refusal cases it routes to are stated in that file. [14]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:467bcf23afce8f34cd2d973855a638951417860401fe5f6548616b2c5e30d6ed",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
             }
           },
           "kind": "code"
@@ -355,8 +391,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -370,8 +406,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -385,8 +421,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -400,8 +436,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -415,8 +451,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -430,8 +466,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -445,8 +481,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-            "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
             "locator": {
               "kind": "file"
             }
@@ -460,8 +496,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
-            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:e0c4ce46791ddb7c47082c8cc81e900a3166c77f7144c0e3c2d5ad0cde417944",
             "locator": {
               "end": 70,
               "kind": "line_range",

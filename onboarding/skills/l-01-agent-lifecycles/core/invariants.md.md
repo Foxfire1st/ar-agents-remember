@@ -113,7 +113,7 @@ Role files are model-interpreted Markdown, not executors. The portable knob bloc
 
 ### Instruction ownership and retained composition
 
-`tasks/AGENTS.md` owns task-collaboration doctrine; `w-02-light-task-workflow` owns task format and requirement packets; memory skills and resolved `system/*` own repository commands, coding guidelines and landing flow. The named `system/tools.md`, `system/coding-guidelines.md` and `system/git-workflow.md` are read rather than inventing a runner. `roles/` owns duties, `operations/` the current procedure, and `reference/` rationale/history/superseded rulings.
+`tasks/AGENTS.md` owns task-collaboration doctrine; `w-02-light-task-workflow` owns task format and requirement packets; memory skills and resolved `system/*` own repository commands, coding guidelines and landing flow. The named `system/tools.md`, `system/coding-guidelines.md` and `system/task-publication.md` are read rather than inventing a runner. `roles/` owns duties, `operations/` the current procedure, and `reference/` rationale/history/superseded rulings.
 
 The final core-plus-role-plus-operation injection sentence is retained composition doctrine, not a statement of universal current native injection. The selected Orientation explicitly forbids loading other role/core files for task-bound intake, and the governing overview distinguishes native role-plus-one-operation capsules from retained core material. Preserve the ownership distinctions without treating this card or the underlying prose as a launcher, executable tool, expanded permission set or instruction to load every core block.
 

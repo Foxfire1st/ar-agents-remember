@@ -1,0 +1,92 @@
+{
+  "path": "docs/workflows.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source describes the routing paragraph: role sessions follow their handover, free chat creates or resolves the sprint document, and the architect's phase axis with the job-type lens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "content": "sha256:3023d7f3a631cd58d9826f342dceeea0933e173bec2f6f01c34fef1105958c2b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The source lists the five rules every build keeps, from context resolution to the checks the resolved memory's tools file names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "content": "sha256:50bf41ebbf5bdc4747af3d34ec495224ad067adfce0743b8b9d3e98059f15304",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The source names the three build modes the architect picks at decide: the research-only exit, the durable light task, and the master plus sub-task series.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "content": "sha256:0ca2c306475b4e92d53a494c301fbb2a6c79a7e50bd1d2d09bdd67422990e25f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The source states the worktree ladder, the contract beside the task file, and that the landing flow is deferred to the repository's task-publication instruction with its landing-workflow setting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "content": "sha256:7eff8cc3b714733b30dd0ef924a82f790303d2a35914cb2c724ff009beb940dc",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The source's closing table maps each situation to its build mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "content": "sha256:007294631aab5bf6264eedfc3b372d2cef98dcd44b844c80444fa300f6a444dc",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

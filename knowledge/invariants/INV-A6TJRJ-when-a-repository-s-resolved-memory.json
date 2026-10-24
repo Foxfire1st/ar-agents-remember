@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Registering a leaf without the publication step leaves the sprint's public surface blind to work in flight, while publishing from a seat that never read the repository identity, marker and recovery rules creates duplicate or unmarked issues; the conditional sentence prevents both errors and keeps the absent-file case publishing nothing."
+  },
+  "applicability": "A leaf's registration by an Architect seat whose resolved memory layer is this repository's memory.",
+  "conditions": [
+    "The resolved memory layer carries `system/task-publication.md` at its root."
+  ],
+  "exclusions": [
+    "A resolved memory without that file: registration publishes nothing.",
+    "Master and sprint issues, which the instruction file names separately.",
+    "Any runtime enforcement: no code in the checkout reads the memory path."
+  ],
+  "id": "INV-A6TJRJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/2f9af394-da55-5915-b2e8-b165c69bcf7c/pointer-A1/verdict.md; notes/reports/reviewer/2f9af394-da55-5915-b2e8-b165c69bcf7c/pointer-A1/evidence/independent-measurements.json; notes/reports/reviewer/2f9af394-da55-5915-b2e8-b165c69bcf7c/pointer-A1/evidence/budget-tests.txt"
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "L194-RV-A1-1",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When a repository's resolved memory carries `system/task-publication.md`, the Architect follows it and registering a leaf creates that leaf's open linked issue; where that file is absent, nothing is published at registration.",
+  "status": "proposed",
+  "supersedes": []
+}
